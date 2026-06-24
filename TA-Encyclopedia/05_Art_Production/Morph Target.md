@@ -55,6 +55,13 @@ Skeletal Mesh 导入 Morph Target 后，可由动画曲线、蓝图、Control Ri
 
 从 Maya/Blender 导出一个带口型 Morph Target 的角色到 Unreal，验证曲线驱动。
 
+## 与其他概念的区别
+
+| 概念 | 区别 |
+|---|---|
+| [[建模规范]] | 建模规范偏输入资产质量；本条目可能关注某个具体制作或优化环节。 |
+| [[贴图规范]] | 贴图规范偏纹理侧约束；本条目可能覆盖几何、绑定、动画或特效。 |
+
 ## 相关条目
 
 - [[Blend Shape]]
@@ -64,5 +71,4 @@ Skeletal Mesh 导入 Morph Target 后，可由动画曲线、蓝图、Control Ri
 
 ## 参考来源
 
-- 待补充
-
+- 见 [[91_Sources/source_registry|Source Registry]]；未核验的外部资料按 `待核验` 处理，不编造链接。

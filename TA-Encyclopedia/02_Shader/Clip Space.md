@@ -58,6 +58,13 @@ Unreal 材质中较少直接暴露 Clip Space，但自定义 HLSL、后处理和
 
 写一个全屏三角形后处理，手动输出 Clip Space 顶点位置，理解屏幕覆盖。
 
+## 与其他概念的区别
+
+| 概念 | 区别 |
+|---|---|
+| [[Material Graph]] | Material Graph 偏节点化编辑；本条目可能涉及更底层的代码、编译和采样细节。 |
+| [[Texture Sampling]] | Texture Sampling 是常见操作；本条目可能覆盖更完整的 Shader 结构或控制策略。 |
+
 ## 相关条目
 
 - [[矩阵变换]]
@@ -67,5 +74,4 @@ Unreal 材质中较少直接暴露 Clip Space，但自定义 HLSL、后处理和
 
 ## 参考来源
 
-- 待补充
-
+- 见 [[91_Sources/source_registry|Source Registry]]；未核验的外部资料按 `待核验` 处理，不编造链接。

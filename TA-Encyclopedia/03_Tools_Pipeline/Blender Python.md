@@ -54,6 +54,13 @@ Unreal 项目中可用 Blender Python 预处理 Static Mesh、碰撞命名、LOD
 
 做一个 Blender Add-on：检查选中模型命名、面数、UV、材质槽，并一键导出到项目目录。
 
+## 与其他概念的区别
+
+| 概念 | 区别 |
+|---|---|
+| [[DCC工具链]] | DCC 工具链偏制作软件侧；Pipeline 更强调跨软件、跨引擎和团队流程。 |
+| [[资源检查工具]] | 资源检查工具是管线中的一个执行节点，不等同于完整管线设计。 |
+
 ## 相关条目
 
 - [[Blender]]
@@ -63,5 +70,4 @@ Unreal 项目中可用 Blender Python 预处理 Static Mesh、碰撞命名、LOD
 
 ## 参考来源
 
-- 待补充
-
+- 见 [[91_Sources/source_registry|Source Registry]]；未核验的外部资料按 `待核验` 处理，不编造链接。

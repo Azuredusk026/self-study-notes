@@ -65,6 +65,13 @@ Unreal Navigation System 提供运行时寻路能力。TA 常需要可视化 Nav
 
 做一个二维网格 A* 可视化工具，显示 open set、closed set 和最终路径。
 
+## 与其他概念的区别
+
+| 概念 | 区别 |
+|---|---|
+| [[线性代数]] | 线性代数提供基础语言；本条目可能是其中一个概念或算法应用。 |
+| [[几何算法]] | 几何算法偏空间关系判断；本条目可能偏数据结构、搜索或变换。 |
+
 ## 相关条目
 
 - [[Graph]]
@@ -74,5 +81,4 @@ Unreal Navigation System 提供运行时寻路能力。TA 常需要可视化 Nav
 
 ## 参考来源
 
-- 待补充
-
+- 见 [[91_Sources/source_registry|Source Registry]]；未核验的外部资料按 `待核验` 处理，不编造链接。

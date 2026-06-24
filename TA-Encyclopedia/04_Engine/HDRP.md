@@ -57,6 +57,13 @@ Unreal 默认面向高保真场景的能力更集中在其 Deferred、Lumen、Na
 
 用同一套资产分别在 URP 和 HDRP 中搭建材质球场景，对比光照、后处理、性能和工作流差异。
 
+## 与其他概念的区别
+
+| 概念 | 区别 |
+|---|---|
+| [[Unity]] | Unity 是引擎平台；本条目可能是其中某个系统或工作流。 |
+| [[Unreal_Engine]] | Unreal 是引擎平台；本条目可能与其对应系统形成实现差异。 |
+
 ## 相关条目
 
 - [[URP]]
@@ -66,5 +73,4 @@ Unreal 默认面向高保真场景的能力更集中在其 Deferred、Lumen、Na
 
 ## 参考来源
 
-- 待补充
-
+- 见 [[91_Sources/source_registry|Source Registry]]；未核验的外部资料按 `待核验` 处理，不编造链接。

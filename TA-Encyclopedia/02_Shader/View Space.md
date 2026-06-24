@@ -59,6 +59,13 @@ Unreal 材质和后处理提供 Camera Vector、Pixel Depth、Scene Depth 等相
 
 写一个 View Space Normal 可视化 Shader，观察相机旋转时颜色如何变化。
 
+## 与其他概念的区别
+
+| 概念 | 区别 |
+|---|---|
+| [[Material Graph]] | Material Graph 偏节点化编辑；本条目可能涉及更底层的代码、编译和采样细节。 |
+| [[Texture Sampling]] | Texture Sampling 是常见操作；本条目可能覆盖更完整的 Shader 结构或控制策略。 |
+
 ## 相关条目
 
 - [[World Space]]
@@ -68,5 +75,4 @@ Unreal 材质和后处理提供 Camera Vector、Pixel Depth、Scene Depth 等相
 
 ## 参考来源
 
-- 待补充
-
+- 见 [[91_Sources/source_registry|Source Registry]]；未核验的外部资料按 `待核验` 处理，不编造链接。

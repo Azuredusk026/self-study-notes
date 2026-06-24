@@ -55,6 +55,13 @@ Unreal Animation Blueprint 中可使用 Additive 动画、Aim Offset、Layered B
 
 做一个上半身呼吸叠加层，测试走路、跑步、站立三种基础动画上的表现。
 
+## 与其他概念的区别
+
+| 概念 | 区别 |
+|---|---|
+| [[建模规范]] | 建模规范偏输入资产质量；本条目可能关注某个具体制作或优化环节。 |
+| [[贴图规范]] | 贴图规范偏纹理侧约束；本条目可能覆盖几何、绑定、动画或特效。 |
+
 ## 相关条目
 
 - [[Root Motion]]
@@ -64,5 +71,4 @@ Unreal Animation Blueprint 中可使用 Additive 动画、Aim Offset、Layered B
 
 ## 参考来源
 
-- 待补充
-
+- 见 [[91_Sources/source_registry|Source Registry]]；未核验的外部资料按 `待核验` 处理，不编造链接。

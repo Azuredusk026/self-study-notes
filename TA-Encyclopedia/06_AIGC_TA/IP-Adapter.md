@@ -56,6 +56,13 @@ IP-Adapter 通常把参考图编码成额外条件，与文本条件共同影响
 
 为一组技能图标选定 3 张合法参考图，测试不同参考强度下的风格一致性。
 
+## 与其他概念的区别
+
+| 概念 | 区别 |
+|---|---|
+| [[Stable_Diffusion]] | Stable Diffusion 是常见生成模型生态；本条目可能关注其中某个节点、流程或落地规范。 |
+| [[AIGC管线落地]] | 管线落地强调团队流程；单项工具条目强调具体输入、参数和限制。 |
+
 ## 相关条目
 
 - [[ControlNet]]
@@ -65,5 +72,4 @@ IP-Adapter 通常把参考图编码成额外条件，与文本条件共同影响
 
 ## 参考来源
 
-- 待补充到 [[91_Sources/source_registry|Source Registry]]
-
+- 见 [[91_Sources/source_registry|Source Registry]]；未核验的外部资料按 `待核验` 处理，不编造链接。

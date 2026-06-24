@@ -58,6 +58,13 @@ Unreal 材质和渲染设置封装了大部分深度行为，Custom Depth、Disa
 
 写三个材质分别设置 ZTest LEqual、Greater、Always，观察遮挡显示和透视效果差异。
 
+## 与其他概念的区别
+
+| 概念 | 区别 |
+|---|---|
+| [[PBR]] | 更偏材质和光照模型；本条目更关注具体渲染环节或画面效果。 |
+| [[Shader基础]] | Shader 是实现手段；本条目通常还涉及管线状态、缓冲读写和引擎配置。 |
+
 ## 相关条目
 
 - [[Depth Buffer]]
@@ -67,5 +74,4 @@ Unreal 材质和渲染设置封装了大部分深度行为，Custom Depth、Disa
 
 ## 参考来源
 
-- 待补充
-
+- 见 [[91_Sources/source_registry|Source Registry]]；未核验的外部资料按 `待核验` 处理，不编造链接。

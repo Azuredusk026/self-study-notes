@@ -58,6 +58,13 @@ Unreal 材质静态开关、Quality Switch、Feature Level 和平台编译会生
 
 创建一个包含 5 个二值 keyword 的 Shader，统计变体数量，再移除无用 keyword 观察构建变化。
 
+## 与其他概念的区别
+
+| 概念 | 区别 |
+|---|---|
+| [[Material Graph]] | Material Graph 偏节点化编辑；本条目可能涉及更底层的代码、编译和采样细节。 |
+| [[Texture Sampling]] | Texture Sampling 是常见操作；本条目可能覆盖更完整的 Shader 结构或控制策略。 |
+
 ## 相关条目
 
 - [[Keyword]]
@@ -68,4 +75,3 @@ Unreal 材质静态开关、Quality Switch、Feature Level 和平台编译会生
 ## 参考来源
 
 - 待核验：需要后续查阅 Unity / Unreal 官方文档确认不同版本的变体剔除细节。
-

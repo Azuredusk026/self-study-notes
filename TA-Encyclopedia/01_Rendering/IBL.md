@@ -59,6 +59,13 @@ Unreal 中 Sky Light、Reflection Capture、Lumen 反射等都会影响环境光
 
 同一个金属材质球分别放在无环境、室内 HDRI、室外 HDRI 中，观察反射和亮度差异。
 
+## 与其他概念的区别
+
+| 概念 | 区别 |
+|---|---|
+| [[PBR]] | 更偏材质和光照模型；本条目更关注具体渲染环节或画面效果。 |
+| [[Shader基础]] | Shader 是实现手段；本条目通常还涉及管线状态、缓冲读写和引擎配置。 |
+
 ## 相关条目
 
 - [[PBR]]
@@ -68,5 +75,4 @@ Unreal 中 Sky Light、Reflection Capture、Lumen 反射等都会影响环境光
 
 ## 参考来源
 
-- 待补充
-
+- 见 [[91_Sources/source_registry|Source Registry]]；未核验的外部资料按 `待核验` 处理，不编造链接。

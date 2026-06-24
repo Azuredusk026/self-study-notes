@@ -58,6 +58,13 @@ Unreal 使用 Primitive Bounds 做可见性判断。Niagara、World Position Off
 
 制作一个顶点动画草丛，故意缩小 Bounds，观察相机边缘处被错误剔除的问题。
 
+## 与其他概念的区别
+
+| 概念 | 区别 |
+|---|---|
+| [[线性代数]] | 线性代数提供基础语言；本条目可能是其中一个概念或算法应用。 |
+| [[几何算法]] | 几何算法偏空间关系判断；本条目可能偏数据结构、搜索或变换。 |
+
 ## 相关条目
 
 - [[AABB_OBB]]
@@ -67,5 +74,4 @@ Unreal 使用 Primitive Bounds 做可见性判断。Niagara、World Position Off
 
 ## 参考来源
 
-- 待补充
-
+- 见 [[91_Sources/source_registry|Source Registry]]；未核验的外部资料按 `待核验` 处理，不编造链接。

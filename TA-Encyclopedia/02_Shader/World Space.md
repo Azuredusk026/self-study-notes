@@ -58,6 +58,13 @@ Unreal Material 常用 Absolute World Position、World Space Normal、Camera Vec
 
 实现一个世界坐标棋盘格材质，让多个不同缩放和旋转的物体保持连续图案。
 
+## 与其他概念的区别
+
+| 概念 | 区别 |
+|---|---|
+| [[Material Graph]] | Material Graph 偏节点化编辑；本条目可能涉及更底层的代码、编译和采样细节。 |
+| [[Texture Sampling]] | Texture Sampling 是常见操作；本条目可能覆盖更完整的 Shader 结构或控制策略。 |
+
 ## 相关条目
 
 - [[Object Space]]
@@ -67,5 +74,4 @@ Unreal Material 常用 Absolute World Position、World Space Normal、Camera Vec
 
 ## 参考来源
 
-- 待补充
-
+- 见 [[91_Sources/source_registry|Source Registry]]；未核验的外部资料按 `待核验` 处理，不编造链接。

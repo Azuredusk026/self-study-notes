@@ -55,6 +55,13 @@ Unity URP/HDRP 中相近需求通常用 Renderer Feature、Custom Pass 或后处
 
 实现一个 Custom Stencil 多颜色描边后处理，并用参数控制线宽。
 
+## 与其他概念的区别
+
+| 概念 | 区别 |
+|---|---|
+| [[Unity]] | Unity 是引擎平台；本条目可能是其中某个系统或工作流。 |
+| [[Unreal_Engine]] | Unreal 是引擎平台；本条目可能与其对应系统形成实现差异。 |
+
 ## 相关条目
 
 - [[Custom Depth]]
@@ -64,5 +71,4 @@ Unity URP/HDRP 中相近需求通常用 Renderer Feature、Custom Pass 或后处
 
 ## 参考来源
 
-- 待补充
-
+- 见 [[91_Sources/source_registry|Source Registry]]；未核验的外部资料按 `待核验` 处理，不编造链接。

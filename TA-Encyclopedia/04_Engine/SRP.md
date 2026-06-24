@@ -55,6 +55,13 @@ Unreal 的渲染管线不是 SRP，但同样有 Pass、Render Target、后处理
 
 阅读一个 URP Frame Debugger 帧，按顺序记录 Shadow、Depth、Opaque、Transparent、PostProcess 的输入输出。
 
+## 与其他概念的区别
+
+| 概念 | 区别 |
+|---|---|
+| [[Unity]] | Unity 是引擎平台；本条目可能是其中某个系统或工作流。 |
+| [[Unreal_Engine]] | Unreal 是引擎平台；本条目可能与其对应系统形成实现差异。 |
+
 ## 相关条目
 
 - [[URP]]
@@ -64,5 +71,4 @@ Unreal 的渲染管线不是 SRP，但同样有 Pass、Render Target、后处理
 
 ## 参考来源
 
-- 待补充
-
+- 见 [[91_Sources/source_registry|Source Registry]]；未核验的外部资料按 `待核验` 处理，不编造链接。
