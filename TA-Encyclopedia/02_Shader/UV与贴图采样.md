@@ -1,4 +1,8 @@
 ---
+title: "UV与贴图采样"
+aliases: []
+category: "02_Shader"
+confidence: medium
 tags: [shader, uv, texture]
 status: draft
 created: 2026-06-24

@@ -1,4 +1,8 @@
 ---
+title: "Unity"
+aliases: []
+category: "04_Engine"
+confidence: medium
 tags: [engine, unity]
 status: draft
 created: 2026-06-24

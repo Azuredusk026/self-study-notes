@@ -1,4 +1,8 @@
 ---
+title: "Shader基础"
+aliases: []
+category: "02_Shader"
+confidence: medium
 tags: [shader, basics]
 status: draft
 created: 2026-06-24

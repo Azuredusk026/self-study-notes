@@ -1,4 +1,8 @@
 ---
+title: "Vulkan"
+aliases: []
+category: "01_Rendering"
+confidence: medium
 tags: [rendering, vulkan, graphics-api]
 status: draft
 created: 2026-06-24

@@ -1,4 +1,8 @@
 ---
+title: "CODEX_TASK_TEMPLATE"
+aliases: []
+category: "92_Codex"
+confidence: medium
 tags: [codex, template]
 status: active
 created: 2026-06-24

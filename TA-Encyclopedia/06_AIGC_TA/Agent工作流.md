@@ -1,4 +1,8 @@
 ---
+title: "Agent工作流"
+aliases: []
+category: "06_AIGC_TA"
+confidence: medium
 tags: [aigc, agent, workflow]
 status: draft
 created: 2026-06-24

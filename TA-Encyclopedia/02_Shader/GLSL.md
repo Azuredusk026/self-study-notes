@@ -1,4 +1,8 @@
 ---
+title: "GLSL"
+aliases: []
+category: "02_Shader"
+confidence: medium
 tags: [shader, glsl]
 status: draft
 created: 2026-06-24

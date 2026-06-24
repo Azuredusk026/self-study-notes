@@ -1,0 +1,28 @@
+/* Keep Obsidian Properties from occupying the first screen of each note. */
+.metadata-container {
+  max-height: 2.4rem;
+  overflow: hidden;
+  opacity: 0.72;
+  transition: max-height 160ms ease, opacity 160ms ease;
+}
+
+.metadata-container:hover,
+.metadata-container:focus-within {
+  max-height: 70vh;
+  overflow: auto;
+  opacity: 1;
+}
+
+.metadata-container::after {
+  content: "Properties collapsed - hover to expand";
+  display: block;
+  padding: 0.15rem 0;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+.metadata-container:hover::after,
+.metadata-container:focus-within::after {
+  content: "";
+  display: none;
+}

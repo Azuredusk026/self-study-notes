@@ -1,4 +1,8 @@
 ---
+title: "YooAsset"
+aliases: []
+category: "04_Engine"
+confidence: medium
 tags: [unity, yooasset, resource-management]
 status: draft
 created: 2026-06-24

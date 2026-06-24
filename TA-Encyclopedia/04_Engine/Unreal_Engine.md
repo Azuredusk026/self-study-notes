@@ -1,4 +1,8 @@
 ---
+title: "Unreal_Engine"
+aliases: []
+category: "04_Engine"
+confidence: medium
 tags: [engine, unreal]
 status: draft
 created: 2026-06-24

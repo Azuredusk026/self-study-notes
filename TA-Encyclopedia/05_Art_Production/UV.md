@@ -1,4 +1,8 @@
 ---
+title: "UV"
+aliases: []
+category: "05_Art_Production"
+confidence: medium
 tags: [art-production, uv]
 status: draft
 created: 2026-06-24

@@ -1,4 +1,8 @@
 ---
+title: "CODEX_REVIEW_CHECKLIST"
+aliases: []
+category: "92_Codex"
+confidence: medium
 tags: [codex, review]
 status: active
 created: 2026-06-24

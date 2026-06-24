@@ -1,4 +1,8 @@
 ---
+title: "G-Buffer"
+aliases: []
+category: "01_Rendering"
+confidence: medium
 tags: [rendering, deferred, g-buffer]
 status: draft
 created: 2026-06-24

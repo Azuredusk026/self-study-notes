@@ -1,4 +1,8 @@
 ---
+title: "ComfyUI"
+aliases: []
+category: "06_AIGC_TA"
+confidence: medium
 tags: [aigc, comfyui, workflow]
 status: draft
 created: 2026-06-24

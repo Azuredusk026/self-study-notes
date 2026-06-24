@@ -1,4 +1,8 @@
 ---
+title: "Stable_Diffusion"
+aliases: []
+category: "06_AIGC_TA"
+confidence: medium
 tags: [aigc, stable-diffusion]
 status: draft
 created: 2026-06-24

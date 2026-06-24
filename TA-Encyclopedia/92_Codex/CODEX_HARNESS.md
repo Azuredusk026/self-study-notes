@@ -1,4 +1,8 @@
 ---
+title: "CODEX_HARNESS"
+aliases: []
+category: "92_Codex"
+confidence: medium
 tags: [codex, workflow]
 status: active
 created: 2026-06-24

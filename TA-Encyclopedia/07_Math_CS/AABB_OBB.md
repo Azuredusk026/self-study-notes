@@ -1,4 +1,8 @@
 ---
+title: "AABB_OBB"
+aliases: []
+category: "07_Math_CS"
+confidence: medium
 tags: [math, bounding-volume, collision]
 status: draft
 created: 2026-06-24

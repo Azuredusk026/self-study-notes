@@ -1,4 +1,8 @@
 ---
+title: "Deferred_Rendering"
+aliases: []
+category: "01_Rendering"
+confidence: medium
 tags: [rendering, deferred-rendering]
 status: draft
 created: 2026-06-24

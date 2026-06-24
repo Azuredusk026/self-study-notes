@@ -1,3 +1,14 @@
+---
+title: "TA-Encyclopedia"
+aliases: []
+category: "Root"
+tags: []
+status: active
+created: "2026-06-24"
+updated: "2026-06-24"
+confidence: medium
+---
+
 # TA-Encyclopedia
 
 个人技术美术百科笔记库，用于长期整理、汇总、复盘和查询技术美术相关知识。

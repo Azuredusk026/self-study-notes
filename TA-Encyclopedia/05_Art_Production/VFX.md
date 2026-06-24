@@ -1,4 +1,8 @@
 ---
+title: "VFX"
+aliases: []
+category: "05_Art_Production"
+confidence: medium
 tags: [art-production, vfx]
 status: draft
 created: 2026-06-24

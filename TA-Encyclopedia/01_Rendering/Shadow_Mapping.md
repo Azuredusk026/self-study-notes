@@ -1,4 +1,8 @@
 ---
+title: "Shadow_Mapping"
+aliases: []
+category: "01_Rendering"
+confidence: medium
 tags: [rendering, shadow]
 status: draft
 created: 2026-06-24

@@ -1,4 +1,4 @@
-﻿# 现代渲染引擎架构：从 Pass 到 Material 的进阶与 Unity ShaderLab 对应解析
+# 现代渲染引擎架构：从 Pass 到 Material 的进阶与 Unity ShaderLab 对应解析
 
 ## 一、 核心知识点与原理剖析
 

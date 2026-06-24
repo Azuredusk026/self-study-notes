@@ -1,4 +1,8 @@
 ---
+title: "DCC工具链"
+aliases: []
+category: "03_Tools_Pipeline"
+confidence: medium
 tags: [pipeline, dcc]
 status: draft
 created: 2026-06-24

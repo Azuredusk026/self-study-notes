@@ -1,4 +1,8 @@
 ---
+title: "NPR"
+aliases: []
+category: "01_Rendering"
+confidence: medium
 tags: [rendering, npr]
 status: draft
 created: 2026-06-24

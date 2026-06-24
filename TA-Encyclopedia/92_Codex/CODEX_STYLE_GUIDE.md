@@ -1,4 +1,8 @@
 ---
+title: "CODEX_STYLE_GUIDE"
+aliases: []
+category: "92_Codex"
+confidence: medium
 tags: [codex, style-guide]
 status: active
 created: 2026-06-24
@@ -18,9 +22,9 @@ updated: 2026-06-24
 
 避免写法：
 
-- “它是一个非常重要且广泛使用的技术。”
-- “在现代游戏中有着不可替代的作用。”
-- “通过先进的算法实现了优秀效果。”
+- “它很有用。”
+- “它在很多项目中都会出现。”
+- “它能提升效果。”
 
 ## 术语规则
 
@@ -74,7 +78,7 @@ updated: 2026-06-24
 优先使用双链：
 
 - `[[PBR]]`
-- `[[Shader]]`
+- `[[Shader基础]]`
 - `[[Deferred_Rendering]]`
 
 不要滥用双链。只有真正相关的概念才链接。

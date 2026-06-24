@@ -1,4 +1,8 @@
 ---
+title: "PBR"
+aliases: []
+category: "01_Rendering"
+confidence: medium
 tags: [rendering, pbr, material]
 status: draft
 created: 2026-06-24

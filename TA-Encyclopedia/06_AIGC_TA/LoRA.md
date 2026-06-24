@@ -1,4 +1,8 @@
 ---
+title: "LoRA"
+aliases: []
+category: "06_AIGC_TA"
+confidence: medium
 tags: [aigc, lora]
 status: draft
 created: 2026-06-24

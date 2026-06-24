@@ -1,4 +1,8 @@
 ---
+title: "Shader_Graph"
+aliases: []
+category: "02_Shader"
+confidence: medium
 tags: [shader, node-graph]
 status: draft
 created: 2026-06-24

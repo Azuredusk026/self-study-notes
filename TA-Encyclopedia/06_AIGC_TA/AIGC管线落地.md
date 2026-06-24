@@ -1,4 +1,8 @@
 ---
+title: "AIGC管线落地"
+aliases: []
+category: "06_AIGC_TA"
+confidence: medium
 tags: [aigc, pipeline]
 status: draft
 created: 2026-06-24

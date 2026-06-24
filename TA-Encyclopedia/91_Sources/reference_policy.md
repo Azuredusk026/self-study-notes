@@ -1,4 +1,8 @@
 ---
+title: "reference_policy"
+aliases: []
+category: "91_Sources"
+confidence: medium
 tags: [sources, policy]
 status: active
 created: 2026-06-24

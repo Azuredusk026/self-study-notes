@@ -1,4 +1,8 @@
 ---
+title: "HybridCLR"
+aliases: []
+category: "04_Engine"
+confidence: medium
 tags: [unity, hot-update, hybridclr]
 status: draft
 created: 2026-06-24

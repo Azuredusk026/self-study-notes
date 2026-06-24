@@ -1,4 +1,8 @@
 ---
+title: "Addressables"
+aliases: []
+category: "04_Engine"
+confidence: medium
 tags: [unity, addressables, resource-management]
 status: draft
 created: 2026-06-24

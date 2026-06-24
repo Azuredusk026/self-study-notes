@@ -1,4 +1,8 @@
 ---
+title: "AGENTS"
+aliases: []
+category: "Root"
+confidence: medium
 tags: [codex, instructions]
 status: active
 created: 2026-06-24

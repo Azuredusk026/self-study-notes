@@ -1,4 +1,8 @@
 ---
+title: "ControlNet"
+aliases: []
+category: "06_AIGC_TA"
+confidence: medium
 tags: [aigc, controlnet]
 status: draft
 created: 2026-06-24
