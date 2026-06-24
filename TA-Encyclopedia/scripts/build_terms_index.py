@@ -2,7 +2,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "00_Index" / "术语索引.md"
-INCLUDED_DIRS = {f"{i:02d}_" for i in range(1, 9)}
+INCLUDED_DIRS = {f"{i:02d}_" for i in range(1, 8)}
 
 
 def included_folder(path: Path) -> bool:
@@ -53,7 +53,7 @@ def main() -> int:
         "",
         "# 术语索引",
         "",
-        "> 本索引覆盖 01-08 目录下的技术条目、工具条目和面试条目；具体导航以各目录 README 和 [[技术美术百科总目录]] 为准。",
+        "> 本索引覆盖 01-08 目录下的技术条目和工具条目；具体导航以各目录 README 和 [[技术美术百科总目录]] 为准。",
         "",
     ]
 

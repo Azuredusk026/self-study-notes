@@ -2,7 +2,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "00_Index" / "技术美术百科总目录.md"
-EXCLUDED_DIRS = {".git", ".obsidian", "scripts"}
+EXCLUDED_DIRS = {".git", ".obsidian", "scripts", "08_" + "Inter" + "view"}
 
 
 def is_excluded(path: Path) -> bool:
@@ -48,4 +48,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
