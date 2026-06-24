@@ -4,73 +4,49 @@ aliases:
   - 渲染目标
 category: "Rendering"
 tags: [技术美术, Rendering, Buffer]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # Render Target
 
-## 一句话定义
+## 定义与解释
 
-Render Target 是渲染结果写入的纹理或缓冲。
-
-## 为什么需要它
-
-除了最终屏幕，很多效果需要把中间结果写入纹理，例如 Shadow Map、G-Buffer、后处理颜色、角色遮罩、反射纹理和小地图。TA 需要理解 Render Target 的格式、分辨率、生命周期和带宽成本。
+Render Target 是 GPU 可以写入的渲染目标，通常是纹理或缓冲。它用于离屏渲染、后处理、阴影、G-Buffer、反射和各种中间结果。
 
 ## 核心原理
 
-- 输入：Draw Call 或全屏 Pass。
-- 处理过程：GPU 将 Shader 输出写入指定颜色、深度或模板附件。
-- 输出：可被后续 Pass 读取的纹理或缓冲。
-- 所在层级：GPU 资源和引擎渲染系统。
+Render Target 的机制是把某张纹理或缓冲绑定为当前颜色输出，让 Shader 或固定功能阶段把结果写进去。后续 Pass 可以再把它作为纹理读取，实现多阶段图像处理。
 
-## 技术美术中的典型用途
+Render Target 的成本由分辨率、格式、数量、MSAA、读写次数和生命周期决定。TA 在做后处理或工具效果时需要确认 RT 格式是否支持 HDR、是否需要深度、是否会造成额外拷贝，以及移动端带宽是否可接受。
 
-- 自定义后处理和描边。
-- UI 或小地图相机渲染。
-- 角色遮挡、深度纹理、法线纹理。
-- 优化中间纹理分辨率和格式。
+## 用途
 
-## Unity 中的相关场景
-
-Unity 中常用 RenderTexture、Camera Target Texture、URP RTHandle。TA 需要注意格式、MSAA、Depth Buffer、是否启用 sRGB。
-
-## Unreal Engine 中的相关场景
-
-Unreal 中 Render Target 资源常用于 Scene Capture、材质采样、绘制到纹理、后处理和 Niagara 数据交互。
-
-## 常见误区
-
-1. 认为 Render Target 免费：高分辨率 HDR Render Target 带宽和显存压力明显。
-2. 忘记颜色空间和格式，导致颜色偏差。
-3. 用全分辨率处理不需要高精度的遮罩。
-
-## 面试可能怎么问
-
-### Render Target 和普通 Texture 的区别是什么？
-
-回答要点：Render Target 可以作为 GPU 渲染输出目标，普通 Texture 更多作为采样输入；同一资源在不同阶段也可能切换用途。
-
-## 实践建议
-
-创建一个半分辨率 Render Target 做模糊，再与原图合成，观察性能和画质差异。
+- 在渲染调试中定位与 Render Target 相关的画面异常、性能成本或资源配置问题。
+- 为美术、TA 和图形程序建立统一术语，减少材质、灯光、后处理和管线配置沟通偏差。
+- 把概念落到 Unity、Unreal 或 RenderDoc/Frame Debugger 中可观察的状态、缓冲、Pass 或材质参数上。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[PBR]] | 更偏材质和光照模型；本条目更关注具体渲染环节或画面效果。 |
-| [[Shader基础]] | Shader 是实现手段；本条目通常还涉及管线状态、缓冲读写和引擎配置。 |
+| [[Texture Sampling]] | Render Target 写入后常作为纹理采样；采样和写入是不同阶段。 |
+| [[Depth Buffer]] | Depth Buffer 记录深度；Render Target 多指颜色或通用输出纹理。 |
+
+## 常见误区
+
+1. 随意使用全分辨率 HDR RT，忽略带宽和显存。
+2. 读写同一 RT 时不理解管线限制或隐式拷贝。
+3. 格式选择错误导致颜色截断、精度不足或平台不支持。
 
 ## 相关条目
 
-- [[Framebuffer]]
-- [[Render Pass]]
-- [[后处理]]
-- [[G-Buffer]]
+- [[Framebuffer]]：Render Target 常作为 Framebuffer 的颜色附件。
+- [[Render Pass]]：Render Pass 定义 Render Target 的读写阶段。
+- [[G-Buffer]]：G-Buffer 由多个语义 Render Target 组成。
 
 ## 参考来源
 

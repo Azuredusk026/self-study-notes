@@ -4,72 +4,49 @@ aliases:
   - 贴图压缩
 category: "05_Art_Production"
 tags: [技术美术, ArtProduction, Texture, Optimization]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: medium
 ---
 
+
 # Texture Compression
 
-## 一句话定义
+## 定义与解释
 
-Texture Compression 是把贴图编码成 GPU 可直接采样的压缩格式，以降低显存、包体和带宽成本。
-
-## 为什么需要它
-
-贴图通常是游戏资产中最占空间的部分之一。正确压缩能显著降低内存和加载压力；错误压缩会带来色带、块状伪影、法线错误和透明边缘问题。
+Texture Compression 是把贴图用 GPU 可采样压缩格式存储，以降低显存、带宽和包体成本的技术。
 
 ## 核心原理
 
-不同平台支持不同压缩格式，例如移动端、PC、主机有不同 GPU 格式。TA 需要根据贴图类型选择格式：颜色、法线、Mask、HDR、UI、透明贴图的要求并不一样。
+纹理压缩通常按固定块编码颜色或数据，GPU 可以直接采样压缩格式。不同平台支持 BC、ETC、ASTC、PVRTC 等格式，质量、体积、透明通道和法线贴图表现不同。
 
-> 待核验：具体格式选择和平台支持需要按 Unity/Unreal 版本、目标设备和项目设置确认。
+TA 需要按贴图语义选择压缩：颜色贴图、法线、Mask、HDR、UI 和 SDF 的容错不同。压缩不是越小越好，错误格式会造成色带、块状伪影、法线噪声或遮罩阈值错误。
 
-## 技术美术中的典型用途
+## 用途
 
-- 控制贴图内存和包体。
-- 为 Normal、Mask、UI、HDR 贴图选择不同策略。
-- 排查压缩伪影。
-- 制定平台导入规则。
-
-## Unity 中的相关场景
-
-Unity Texture Importer 可按平台覆盖格式、尺寸、压缩质量、sRGB 和 Mipmap。TA 常用编辑器工具批量检查。
-
-## Unreal Engine 中的相关场景
-
-Unreal Texture Compression Settings、LOD Group、Texture Streaming 和平台 Cook 设置会影响最终纹理格式。
-
-## 常见误区
-
-1. 所有贴图用同一种压缩格式。
-2. Normal Map 压缩错误导致光照异常。
-3. UI 图标过度压缩导致边缘脏。
-
-## 面试可能怎么问
-
-### 为什么贴图压缩要按类型区分？
-
-回答要点：颜色、法线、Mask、HDR 和 UI 对颜色空间、精度、Alpha 和伪影容忍度不同，不能套同一规则。
-
-## 实践建议
-
-选一组 BaseColor、Normal、Mask 和 UI 贴图，在目标平台比较不同压缩格式下的内存和画质。
+- 在资产制作和引擎导入中定位与 Texture Compression 相关的质量、性能或表现问题。
+- 把美术制作约定转成可检查的命名、尺寸、通道、骨骼、LOD 或导入规则。
+- 帮助美术、TA 和程序在视觉质量、生产效率和运行时预算之间取得稳定平衡。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[建模规范]] | 建模规范偏输入资产质量；本条目可能关注某个具体制作或优化环节。 |
-| [[贴图规范]] | 贴图规范偏纹理侧约束；本条目可能覆盖几何、绑定、动画或特效。 |
+| [[Mipmap]] | Mipmap 管距离级别；Texture Compression 管存储和带宽。 |
+| [[Texture Atlas]] | Atlas 组织贴图布局；压缩决定存储格式。 |
+
+## 常见误区
+
+1. 所有贴图使用同一压缩格式。
+2. Mask 贴图压缩后阈值不稳定。
+3. 只在 PC 上看效果，不验证移动端格式。
 
 ## 相关条目
 
-- [[贴图规范]]
-- [[Texture Sampling]]
-- [[Mipmap]]
-- [[Unity Editor Tool]]
+- [[贴图规范]]：贴图规范应定义平台压缩格式。
+- [[Normal Map]]：法线贴图需要适合方向数据的压缩方式。
+- [[Texture Sampling]]：压缩格式会影响采样结果和带宽。
 
 ## 参考来源
 

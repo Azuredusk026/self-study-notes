@@ -4,72 +4,49 @@ aliases:
   - CustomDepth
 category: "04_Engine"
 tags: [技术美术, Unreal, Rendering]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: medium
 ---
 
+
 # Custom Depth
 
-## 一句话定义
+## 定义与解释
 
-Custom Depth 是 Unreal 中把指定物体写入独立深度缓冲，用于后处理和特殊遮罩的机制。
-
-## 为什么需要它
-
-角色描边、交互物高亮、遮挡透视、队友轮廓和选择框常需要知道“哪些物体属于特殊对象”。Custom Depth 提供了比直接扫描场景颜色更稳定的对象遮罩入口。
+Custom Depth 是 Unreal 中让指定对象写入独立深度缓冲的功能，常用于描边、遮挡高亮、角色透视和后处理选择。
 
 ## 核心原理
 
-被启用 Custom Depth 的物体会在额外深度通道中写入深度值。后处理材质可以读取 CustomDepth 或 CustomStencil，与 SceneDepth 比较后生成描边、遮挡或高亮。
+Custom Depth 的机制是让被标记对象在额外 Pass 中写入专用深度纹理，后处理材质再读取该纹理与 Scene Depth 比较，判断对象轮廓、遮挡关系或屏幕区域。Custom Stencil 可进一步提供分类 ID。
 
-> 待核验：Custom Depth/Stencil 的项目设置、透明材质写入能力和平台支持需按 Unreal 版本确认。
+它不是普通深度缓冲的替代品。TA 需要确认对象是否启用写入、透明材质是否参与、Stencil 值是否分配冲突、后处理执行顺序和移动端成本。多个效果共享 Custom Depth 时尤其要规划值域。
 
-## 技术美术中的典型用途
+## 用途
 
-- 交互物描边。
-- 被墙遮挡角色轮廓。
-- 队伍颜色或目标高亮。
-- 后处理 Mask 分层。
-
-## Unity 中的相关场景
-
-Unity 中可通过单独 Layer、Renderer Feature、Depth/Mask RenderTexture 做类似对象遮罩。
-
-## Unreal Engine 中的相关场景
-
-需要在 Mesh 设置中开启 Render CustomDepth Pass，并在 Post Process Material 中采样 CustomDepth/CustomStencil。
-
-## 常见误区
-
-1. 忘记在项目设置中启用 Stencil 或相关缓冲选项。
-2. 只比较 CustomDepth，不处理物体被遮挡和未遮挡两种情况。
-3. 大量对象写 Custom Depth 增加额外 Pass 成本。
-
-## 面试可能怎么问
-
-### Unreal 如何实现角色描边？
-
-回答要点：常见方案是让目标物体写 Custom Depth/Stencil，再用后处理材质做边缘检测或深度比较生成轮廓。
-
-## 实践建议
-
-做一个可交互物描边效果，使用 Custom Stencil 区分不同颜色。
+- 在引擎项目中定位与 Custom Depth 相关的资源导入、渲染表现、运行时加载、编辑器工具或构建问题。
+- 把引擎功能转化为团队可执行的资产规范、材质模板、工具入口和调试流程。
+- 与程序协作确认运行时成本、平台限制、版本差异和可维护边界。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Unity]] | Unity 是引擎平台；本条目可能是其中某个系统或工作流。 |
-| [[Unreal_Engine]] | Unreal 是引擎平台；本条目可能与其对应系统形成实现差异。 |
+| [[Depth Buffer]] | Depth Buffer 是主场景深度；Custom Depth 是选择性额外深度。 |
+| [[Stencil Buffer]] | Stencil 存分类标记；Custom Depth 存被标记对象深度。 |
+
+## 常见误区
+
+1. 启用了后处理但对象没写 Custom Depth。
+2. 多个功能共用 Stencil 值导致分类冲突。
+3. 透明材质和 Nanite 等路径是否写入未核验就下结论。
 
 ## 相关条目
 
-- [[Depth Buffer]]
-- [[后处理]]
-- [[Unreal_Engine|Unreal Engine]]
-- [[Render Pass]]
+- [[Post Process Material]]：Custom Depth 常由后处理材质读取。
+- [[Stencil Buffer]]：Custom Stencil 与模板分类思路接近。
+- [[Unreal_Engine]]：Custom Depth 是 Unreal 渲染扩展功能。
 
 ## 参考来源
 

@@ -4,73 +4,49 @@ aliases:
   - 过度绘制
 category: "Rendering"
 tags: [技术美术, Rendering, Optimization]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # Overdraw
 
-## 一句话定义
+## 定义与解释
 
-Overdraw 指同一屏幕像素被多个片元重复绘制或着色的现象。
-
-## 为什么需要它
-
-Overdraw 会让 Fragment Shader 重复执行，尤其在透明粒子、UI、植被、毛发、烟雾和大面积特效中常见。TA 优化移动端和特效性能时，Overdraw 往往比面数更关键。
+Overdraw 是同一屏幕像素被多个片元重复绘制或着色的现象。它会增加片元着色、带宽和混合成本，在透明、粒子、植被和复杂遮挡场景中特别常见。
 
 ## 核心原理
 
-- 输入：屏幕上重叠的图元和片元。
-- 处理过程：同一区域多次通过或尝试通过深度、混合和颜色写入。
-- 输出：更高片元执行次数和带宽消耗。
-- 所在层级：光栅化和片元着色成本。
+Overdraw 的本质是屏幕空间覆盖重复。即使最后只看到最前面的颜色，后面的片元也可能已经执行了着色、采样或混合。Early-Z 可以减少不透明物体的无效片元，但透明和裁剪材质往往更难优化。
 
-## 技术美术中的典型用途
+TA 需要结合 Overdraw 视图、材质复杂度、绘制顺序和屏幕占比判断成本。一个低面数粒子如果覆盖全屏并多层叠加，可能比高面数小物体更贵。
 
-- 粒子特效预算。
-- UI 层级和透明图集优化。
-- 植被 Alpha Clip 与几何复杂度取舍。
-- Scene View Overdraw 或 RenderDoc 热点分析。
+## 用途
 
-## Unity 中的相关场景
-
-Unity Scene View 可查看 Overdraw 模式。URP 移动端项目中，大量透明特效和 UI 叠层会明显影响 GPU。
-
-## Unreal Engine 中的相关场景
-
-Unreal 提供 Shader Complexity / Quad Overdraw 等视图帮助分析材质复杂度和过度绘制。
-
-## 常见误区
-
-1. 只压面数不看屏幕覆盖面积。
-2. 认为透明贴图空白区域没有成本：卡片仍可能产生片元。
-3. 用更复杂 Shader 处理本可通过网格或贴图预算解决的问题。
-
-## 面试可能怎么问
-
-### 如何优化粒子 Overdraw？
-
-回答要点：减小屏幕覆盖面积、减少叠层、降低分辨率和采样、用软粒子谨慎处理交界、必要时用 Mesh VFX 替代大透明面片。
-
-## 实践建议
-
-做一个命中特效：比较一张大透明贴图和多个紧贴轮廓的小 Mesh 粒子的 Overdraw 差异。
+- 在渲染调试中定位与 Overdraw 相关的画面异常、性能成本或资源配置问题。
+- 为美术、TA 和图形程序建立统一术语，减少材质、灯光、后处理和管线配置沟通偏差。
+- 把概念落到 Unity、Unreal 或 RenderDoc/Frame Debugger 中可观察的状态、缓冲、Pass 或材质参数上。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[PBR]] | 更偏材质和光照模型；本条目更关注具体渲染环节或画面效果。 |
-| [[Shader基础]] | Shader 是实现手段；本条目通常还涉及管线状态、缓冲读写和引擎配置。 |
+| [[Draw Call]] | Draw Call 是提交次数成本；Overdraw 是屏幕片元重复成本。 |
+| [[Z-Test]] | Z-Test 决定片元是否通过；Overdraw 描述重复覆盖现象。 |
+
+## 常见误区
+
+1. 只按三角形数量估算渲染成本。
+2. 忽略大面积透明粒子和 UI 叠加的片元成本。
+3. 认为关闭看不见的模型就解决了所有 Overdraw，忽略透明层级。
 
 ## 相关条目
 
-- [[Rasterization]]
-- [[Fragment Shader]]
-- [[Alpha Blend]]
-- [[Early-Z]]
+- [[Early-Z]]：Early-Z 可减少部分不透明 Overdraw 成本。
+- [[Alpha Blend]]：透明混合常造成高 Overdraw。
+- [[Fragment Shader]]：Overdraw 会放大片元着色成本。
 
 ## 参考来源
 

@@ -4,72 +4,49 @@ aliases:
   - Helix Core
 category: "03_Tools_Pipeline"
 tags: [技术美术, Pipeline, VersionControl]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: medium
 ---
 
+
 # Perforce
 
-## 一句话定义
+## 定义与解释
 
-Perforce 是游戏行业常用的集中式版本控制系统，适合管理大量二进制资产和大项目内容。
-
-## 为什么需要它
-
-大型游戏项目有大量 `.uasset`、贴图、模型、音频和关卡文件。Perforce 的锁文件、流、权限和大文件处理能力适合美术和关卡团队协作。
+Perforce 是大型游戏项目中常见的集中式版本管理系统，适合管理大量二进制资产、锁文件和大规模团队协作。
 
 ## 核心原理
 
-Perforce 使用集中式服务器保存版本，客户端同步工作区。二进制文件可通过 checkout/lock 控制编辑权，减少多人同时修改冲突。
+Perforce 的核心是中心服务器、Workspace、Changelist、文件类型和锁定机制。美术可以 checkout 独占编辑二进制文件，提交时保留变更列表和文件状态。
 
-> 待核验：Perforce 具体部署、许可和工作流策略依团队和版本而定。
+它适合大型资产库，但需要清晰的 Depot 结构、权限、文件类型、Ignore 规则、锁定策略和自动化同步。TA 需要考虑 DCC/引擎临时文件、生成文件、构建机器和资源检查流程如何与 Perforce 协作。
 
-## 技术美术中的典型用途
+## 用途
 
-- 管理 Unreal 大型内容库。
-- 锁定二进制资源。
-- 版本回退和分支流管理。
-- 与自动构建和资产检查集成。
-
-## Unity 中的相关场景
-
-Unity 项目也可使用 Perforce，尤其是大量美术二进制资源和多人协作项目。
-
-## Unreal Engine 中的相关场景
-
-Unreal 与 Perforce 集成常见，Content Browser 可显示 checkout 状态，适合 `.uasset` 和 `.umap` 协作。
-
-## 常见误区
-
-1. 以为 Perforce 能自动解决所有二进制冲突。
-2. 没有锁文件规范，仍会出现覆盖。
-3. 工作区映射过大，导致同步成本高。
-
-## 面试可能怎么问
-
-### Perforce 相比 Git LFS 的常见优势是什么？
-
-回答要点：Perforce 对大规模二进制资产、文件锁、集中式权限和游戏内容库协作更成熟，但部署和管理成本也更高。
-
-## 实践建议
-
-设计一套内容目录锁定策略：关卡、角色、材质、贴图分别由谁 checkout，如何提交说明。
+- 把 Perforce 纳入资产生产、检查、导出、导入或版本管理流程，减少人工操作和沟通成本。
+- 把团队规范转成可执行规则、工具入口或自动化报告，让问题尽早暴露。
+- 连接 DCC、引擎、版本库和 CI/CD，让美术资产从制作到落地有可追踪的状态。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[DCC工具链]] | DCC 工具链偏制作软件侧；Pipeline 更强调跨软件、跨引擎和团队流程。 |
-| [[资源检查工具]] | 资源检查工具是管线中的一个执行节点，不等同于完整管线设计。 |
+| [[Git LFS]] | Git LFS 基于 Git 扩展；Perforce 原生支持大规模二进制和锁定工作流。 |
+| [[CI_CD for Game Assets]] | Perforce 管版本；CI/CD 管自动检查和构建反馈。 |
+
+## 常见误区
+
+1. 没有文件锁策略导致二进制资产互相覆盖。
+2. Depot 中混入缓存和临时文件。
+3. 构建机器同步规则不稳定，导致资源版本不可复现。
 
 ## 相关条目
 
-- [[Git LFS]]
-- [[Unreal_TA管线]]
-- [[资源检查工具]]
-- [[CI_CD for Game Assets]]
+- [[Git LFS]]：Git LFS 是另一种大文件管理方案。
+- [[目录规范]]：Perforce Depot 结构需要目录规范支撑。
+- [[CI_CD for Game Assets]]：CI 需要从 Perforce 同步资产。
 
 ## 参考来源
 

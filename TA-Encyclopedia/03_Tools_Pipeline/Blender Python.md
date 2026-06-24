@@ -3,70 +3,49 @@ title: "Blender Python"
 aliases: []
 category: "03_Tools_Pipeline"
 tags: [技术美术, Blender, Python, Pipeline]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # Blender Python
 
-## 一句话定义
+## 定义与解释
 
-Blender Python 是通过 Python 扩展 Blender、批处理资产和开发 DCC 工具的方式。
-
-## 为什么需要它
-
-Blender 在个人项目、独立团队和部分商业管线中很常见。TA 可以用 Python 自动化导入导出、命名检查、批量处理、Geometry Nodes 参数管理和资产规范检查。
+Blender Python 是 Blender 提供的脚本和插件接口，用于自动化资产检查、批量处理、导出、命名整理和自定义 UI。
 
 ## 核心原理
 
-Blender Python 通过 `bpy` 访问场景、对象、Mesh、材质、动画和 UI。工具可以是一次性脚本，也可以打包成 Add-on。
+Blender Python 的核心是通过 `bpy` 访问 Blender 内部数据块，例如 Object、Mesh、Material、Collection、Armature 和 Operator。TA 可以读取场景状态、修改属性、执行导出、生成报告或封装工具面板。
 
-## 技术美术中的典型用途
+脚本设计要区分一次性批处理、交互式插件和团队管线工具。可靠工具需要处理选择状态、上下文依赖、撤销、安全写入、路径规范、版本兼容和错误报告，而不是只录制一段操作宏。
 
-- 批量重命名和导出 FBX/GLTF。
-- 检查模型比例、Pivot、材质槽和 UV。
-- 生成碰撞体、LOD 或辅助节点。
-- 与 Unity/Unreal 导入规范对接。
+## 用途
 
-## Unity 中的相关场景
-
-Blender 工具可以在导出前规范 FBX、贴图命名和模型层级，减少 Unity 导入后修复。
-
-## Unreal Engine 中的相关场景
-
-Unreal 项目中可用 Blender Python 预处理 Static Mesh、碰撞命名、LOD 和材质槽。
-
-## 常见误区
-
-1. 只写临时脚本，不考虑 Add-on 配置和团队使用。
-2. 导出工具不记录日志。
-3. Blender 单位和引擎单位没有统一。
-
-## 面试可能怎么问
-
-### Blender Python 对 TA 有什么价值？
-
-回答要点：它能把 Blender 资产生产中的重复步骤自动化，并在导出前执行规范检查，降低引擎侧返工。
-
-## 实践建议
-
-做一个 Blender Add-on：检查选中模型命名、面数、UV、材质槽，并一键导出到项目目录。
+- 把 Blender Python 纳入资产生产、检查、导出、导入或版本管理流程，减少人工操作和沟通成本。
+- 把团队规范转成可执行规则、工具入口或自动化报告，让问题尽早暴露。
+- 连接 DCC、引擎、版本库和 CI/CD，让美术资产从制作到落地有可追踪的状态。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[DCC工具链]] | DCC 工具链偏制作软件侧；Pipeline 更强调跨软件、跨引擎和团队流程。 |
-| [[资源检查工具]] | 资源检查工具是管线中的一个执行节点，不等同于完整管线设计。 |
+| [[Maya Python]] | 两者都是 DCC 脚本接口，但对象模型和命令系统不同。 |
+| [[Unity Editor Tool]] | Blender Python 处理制作侧；Unity Editor Tool 处理引擎侧。 |
+
+## 常见误区
+
+1. 脚本依赖当前选择和 UI 上下文，批处理时失败。
+2. 不输出明确错误文件和对象路径，导致美术无法修复。
+3. 没有固定 Blender 版本和插件依赖。
 
 ## 相关条目
 
-- [[Blender]]
-- [[FBX 导出规范]]
-- [[资源检查工具]]
-- [[Unity Editor Tool]]
+- [[Blender]]：Blender Python 运行在 Blender 环境内。
+- [[自动化导出工具]]：导出工具可由 Blender Python 实现。
+- [[资源检查工具]]：Blender 场景检查可作为资源检查的一环。
 
 ## 参考来源
 

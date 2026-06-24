@@ -4,70 +4,49 @@ aliases:
   - 根运动
 category: "05_Art_Production"
 tags: [技术美术, ArtProduction, Animation]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # Root Motion
 
-## 一句话定义
+## 定义与解释
 
-Root Motion 是从动画根骨骼中提取角色位移和旋转，用于驱动角色实际移动的方式。
-
-## 为什么需要它
-
-攻击位移、翻滚、跳跃、攀爬和过场动画常需要动画位移与游戏逻辑一致。Root Motion 能减少脚滑，但会增加动画、程序和网络同步协作成本。
+Root Motion 是从动画根骨骼或根节点提取角色整体位移和旋转，并用于驱动角色移动的机制。
 
 ## 核心原理
 
-动画中 Root 骨骼记录位移和旋转，引擎播放时将这些运动提取并应用到角色 Actor 或 GameObject 上。
+Root Motion 的关键是把运动来源从代码速度转移到动画数据。动画中的 Root 轨迹被引擎解析后，应用到角色胶囊体、Actor 或 Transform 上，使脚步和位移更贴合。
 
-## 技术美术中的典型用途
+它依赖清晰 Root 骨骼、动画 Bake、循环边界和引擎导入设置。TA 需要和动画、程序约定哪些动画使用 Root Motion，哪些使用代码驱动，并处理转向、混合、网络同步和碰撞关系。
 
-- 检查 Root 骨骼方向和位移。
-- 处理脚滑和动作位移。
-- 动画导出规范。
-- 与战斗、导航和网络同步协作。
+## 用途
 
-## Unity 中的相关场景
-
-Unity Animator 可启用 Apply Root Motion。Humanoid 动画还涉及 Bake Into Pose、Root Transform Position/Rotation 等设置。
-
-## Unreal Engine 中的相关场景
-
-Unreal 支持 Root Motion 提取和 Montage 使用。项目需要决定由动画驱动移动还是 Character Movement 驱动。
-
-## 常见误区
-
-1. Root 骨骼不是稳定根节点。
-2. 动画位移和程序位移重复叠加。
-3. 多人游戏中未考虑同步和预测。
-
-## 面试可能怎么问
-
-### Root Motion 的优缺点是什么？
-
-回答要点：优点是动作和位移更匹配、减少脚滑；缺点是控制和网络同步更复杂，需要动画和程序协作。
-
-## 实践建议
-
-导入一个翻滚动画，分别测试启用和关闭 Root Motion 的位移表现。
+- 在资产制作和引擎导入中定位与 Root Motion 相关的质量、性能或表现问题。
+- 把美术制作约定转成可检查的命名、尺寸、通道、骨骼、LOD 或导入规则。
+- 帮助美术、TA 和程序在视觉质量、生产效率和运行时预算之间取得稳定平衡。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[建模规范]] | 建模规范偏输入资产质量；本条目可能关注某个具体制作或优化环节。 |
-| [[贴图规范]] | 贴图规范偏纹理侧约束；本条目可能覆盖几何、绑定、动画或特效。 |
+| [[Additive Animation]] | Additive 叠加姿势差值；Root Motion 提取整体位移。 |
+| [[Skinning]] | Skinning 处理网格变形；Root Motion 处理角色整体移动。 |
+
+## 常见误区
+
+1. Root 骨骼和骨盆骨骼职责混乱。
+2. 循环动画首尾 Root 不连续导致滑步或跳变。
+3. 没有和程序移动系统约定权责。
 
 ## 相关条目
 
-- [[动画技术]]
-- [[Rigging]]
-- [[Skinning]]
-- [[Unity]]
+- [[Rigging]]：Root 骨骼结构来自 Rigging 规范。
+- [[动画技术]]：Root Motion 是动画驱动移动的一种技术。
+- [[Additive Animation]]：Additive 动画通常不应污染 Root 位移。
 
 ## 参考来源
 

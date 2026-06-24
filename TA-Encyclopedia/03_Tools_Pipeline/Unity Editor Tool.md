@@ -4,70 +4,49 @@ aliases:
   - Unity 编辑器工具
 category: "03_Tools_Pipeline"
 tags: [技术美术, Unity, Tool, Pipeline]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # Unity Editor Tool
 
-## 一句话定义
+## 定义与解释
 
-Unity Editor Tool 是在 Unity 编辑器中扩展菜单、窗口、导入流程和资产处理逻辑的工具。
-
-## 为什么需要它
-
-项目越大，靠人工点选和口头规范越不可靠。TA 通过编辑器工具把资源检查、批量设置、Prefab 生成、材质替换、贴图压缩和打包配置固化下来，让美术、策划和程序使用同一套生产规则。
+Unity Editor Tool 是运行在 Unity 编辑器中的自定义工具，用于资产检查、批处理、导入规则、关卡辅助、报告生成和流程自动化。
 
 ## 核心原理
 
-Unity 编辑器工具通常基于 EditorWindow、MenuItem、AssetPostprocessor、ScriptableObject、SerializedObject 和自定义 Inspector。它们运行在编辑器环境，不进入玩家包体。
+Unity 编辑器工具通常通过 EditorWindow、MenuItem、AssetPostprocessor、ScriptedImporter、PrefabUtility、Addressables API 等接口操作项目资产和编辑器状态。它的核心是把重复编辑器操作变成可执行流程。
 
-## 技术美术中的典型用途
+工具设计要区分交互式工具、导入钩子和 CI 命令行工具。可靠工具应避免隐式选择状态，支持批量路径、进度、日志、撤销、安全写入和错误定位，并考虑 Unity 版本和包依赖。
 
-- 批量设置贴图压缩和导入格式。
-- 检查 Prefab、材质、Mesh、动画资源。
-- 自动创建材质实例或 Addressables 分组。
-- 生成场景报告和性能预算表。
+## 用途
 
-## Unity 中的相关场景
-
-常见入口是顶部菜单、右键菜单、自定义窗口、Inspector 扩展和导入回调。复杂工具建议把规则、UI 和执行逻辑分离。
-
-## Unreal Engine 中的相关场景
-
-Unreal 对应方向包括 Editor Utility Widget、Blutility、Python 工具和内容浏览器扩展。
-
-## 常见误区
-
-1. 工具只服务作者本人，缺少错误提示和撤销机制。
-2. 直接修改大量资产但不生成报告。
-3. 把项目规则写死在 UI 代码里，后期难以维护。
-
-## 面试可能怎么问
-
-### 你会如何设计一个 Unity 资源检查工具？
-
-回答要点：先定义检查规则和输出报告，再做批量扫描、问题定位、可选自动修复和日志记录，避免直接静默修改资产。
-
-## 实践建议
-
-做一个 Texture Import 批量检查器，按平台列出尺寸、格式、sRGB、Mipmap 和压缩设置。
+- 把 Unity Editor Tool 纳入资产生产、检查、导出、导入或版本管理流程，减少人工操作和沟通成本。
+- 把团队规范转成可执行规则、工具入口或自动化报告，让问题尽早暴露。
+- 连接 DCC、引擎、版本库和 CI/CD，让美术资产从制作到落地有可追踪的状态。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[DCC工具链]] | DCC 工具链偏制作软件侧；Pipeline 更强调跨软件、跨引擎和团队流程。 |
-| [[资源检查工具]] | 资源检查工具是管线中的一个执行节点，不等同于完整管线设计。 |
+| [[Maya Python]] | Maya Python 处理 DCC 源文件；Unity Editor Tool 处理引擎内资产。 |
+| [[自动化导出工具]] | 导出工具多在 DCC 侧；Unity Editor Tool 多在导入和项目整理侧。 |
+
+## 常见误区
+
+1. 工具依赖当前选中对象，批处理和 CI 不可用。
+2. 自动修改资产前没有预览和日志。
+3. 没有区分错误、警告和建议，影响团队接受度。
 
 ## 相关条目
 
-- [[Unity]]
-- [[资源检查工具]]
-- [[Texture Compression]]
-- [[Addressables]]
+- [[Unity_TA管线]]：Unity Editor Tool 是 Unity TA 管线的执行入口。
+- [[资源检查工具]]：Unity 中的检查工具可用 Editor Tool 实现。
+- [[Addressables]]：资源打包和依赖检查常与 Addressables 相关。
 
 ## 参考来源
 

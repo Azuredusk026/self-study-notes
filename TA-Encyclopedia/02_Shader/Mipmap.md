@@ -4,86 +4,49 @@ aliases: []
 category: "02_Shader"
 tags:
   - 技术美术
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: low
 ---
 
+
 # Mipmap
 
-## 一句话定义
+## 定义与解释
 
-Mipmap 是后续需要扩充的技术美术相关主题。本页当前用于补全知识库双链，避免核心条目引用到不存在的页面。
-
-## 为什么需要它
-
-该主题已经在第一轮核心条目中被引用，说明它与渲染、Shader、引擎、资产生产或算法基础存在直接关系。
+Mipmap 是同一纹理的多级缩小版本，用于在远距离或小屏幕覆盖时采样合适分辨率。它减少闪烁、锯齿和带宽浪费，是纹理采样质量的基础机制。
 
 ## 核心原理
 
-- 输入：顶点属性、纹理、常量缓冲、材质参数、关键字和渲染状态。
-- 处理过程：在顶点、片元、计算或材质图阶段执行采样、空间变换、分支、插值和混合。
-- 输出：颜色、法线、深度、遮罩、材质属性或供后续 Pass 使用的中间结果。
-- 所在层级：GPU / Shader / Material System。
+GPU 根据纹理坐标在屏幕上的变化率估算需要的 LOD，再从对应 Mip 级别采样。距离远、表面倾斜或屏幕占比小时，会选择更小的 Mip，必要时进行双线性或三线性过滤。
 
-## 技术美术中的典型用途
+Mipmap 的问题在于它会混合纹理信息。颜色贴图通常受益明显，但 Mask、UI、法线、SDF 和通道打包贴图需要特殊生成策略。TA 需要检查 Mip 生成、锐化、边缘扩展、Streaming 和各平台压缩。
 
-- 编写和维护可复用 Shader/Material Graph。
-- 控制变体数量、采样次数和移动端精度。
-- 为美术暴露稳定、可理解的材质参数。
+## 用途
 
-## Unity 中的相关场景
-
-常见于 ShaderLab/HLSL、Shader Graph、MaterialPropertyBlock、Keyword、SRP Batcher 和 URP/HDRP 自定义材质。
-
-## Unreal Engine 中的相关场景
-
-常见于 Material Editor、Material Function、Custom HLSL、Static Switch、Material Instance 和平台材质质量分级。
+- 在材质或 Shader 调试中定位与 Mipmap 相关的画面异常、编译问题、性能成本或资源配置错误。
+- 把概念落到 Unity ShaderLab/Shader Graph、Unreal Material Editor、RenderDoc 或引擎材质面板中可观察的参数和状态。
+- 为美术暴露稳定的材质控制项，同时限制采样次数、变体数量、精度和平台差异带来的风险。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Material Graph]] | Material Graph 偏节点化编辑；本条目可能涉及更底层的代码、编译和采样细节。 |
-| [[Texture Sampling]] | Texture Sampling 是常见操作；本条目可能覆盖更完整的 Shader 结构或控制策略。 |
+| [[Texture Sampling]] | Texture Sampling 是读取过程；Mipmap 是选择合适纹理级别的机制。 |
+| [[Texture Compression]] | 压缩改变存储格式；Mipmap 改变距离级别。 |
 
 ## 常见误区
 
-1. 只记概念名，不确认它在项目中的输入、输出和所在管线阶段。
-2. 把引擎默认效果当成固定标准，忽略渲染管线、平台和项目配置差异。
-3. 没有保留可复现的测试场景，导致问题只能靠截图或主观描述沟通。
-
-## 面试可能怎么问
-
-### 问题 1
-
-`Mipmap` 解决的核心问题是什么？
-
-回答要点：先说明它在Shader 开发中处理哪类输入和输出，再结合一个项目场景说明为什么需要它。
-
-### 问题 2
-
-在 Unity 和 Unreal 中落地 `Mipmap` 时，TA 需要分别关注什么？
-
-回答要点：比较两边的工具入口、资源规则、调试方式和平台限制，不要只背 API 名称。
-
-### 问题 3
-
-如果 `Mipmap` 相关效果或资产在项目中出问题，你会怎么排查？
-
-回答要点：从资源输入、引擎配置、运行时状态、性能指标和最小复现场景逐层缩小范围。
-
-## 实践建议
-
-- 为 `Mipmap` 保留一个最小测试场景或示例资产，便于回归检查。
-- 把关键参数、命名规则和导入设置写入团队规范，避免只存在个人经验里。
-- 涉及具体版本、API 或第三方工具行为时，先标记 `待核验`，再登记到 [[91_Sources/source_registry|Source Registry]]。
+1. 为所有纹理关闭 Mipmap 导致远处闪烁。
+2. Mask 或 SDF 的 Mip 生成策略错误导致边界变形。
+3. 忽略纹理 Streaming 造成低清或显存压力。
 
 ## 相关条目
 
-- [[技术美术百科总目录]]
-- [[待扩充条目]]
+- [[Texture Sampling]]：Mipmap 是纹理采样 LOD 机制。
+- [[Normal Map]]：法线贴图 Mip 处理会影响远处光照。
+- [[Precision]]：采样 LOD 和压缩精度共同影响结果。
 
 ## 参考来源
 

@@ -4,74 +4,50 @@ aliases:
   - Shader 精度
 category: "Shader"
 tags: [技术美术, Shader, Optimization]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: medium
 ---
 
+
 # Precision
 
-## 一句话定义
+## 定义与解释
 
-Precision 指 Shader 中数值类型的精度选择，例如 half、float、fixed 或平台对应的低/中/高精度。
-
-## 为什么需要它
-
-精度影响寄存器、带宽、运算吞吐和画面稳定性。移动端和低功耗设备上，合理使用 half 可能降低成本；但在世界坐标、深度、法线重建、时间累积等场景中过低精度会产生抖动、条带或计算错误。
+Precision 是 Shader 中数值精度和数据格式的选择问题。它影响画面稳定性、性能、寄存器压力和移动端兼容性。
 
 ## 核心原理
 
-- 输入：数值范围、精度需求、目标平台。
-- 处理过程：编译器将类型映射到平台支持的寄存器和指令。
-- 输出：不同精度下的性能和误差表现。
-- 所在层级：Shader 代码和 GPU 编译。
+Shader 计算可能使用 half、float、fixed 或平台对应的低/中/高精度类型。较低精度能降低带宽和寄存器压力，但会带来量化误差、溢出、Banding 或法线归一化问题。
 
-## 技术美术中的典型用途
+精度选择要看数据语义：颜色、遮罩、UV、法线、世界位置、深度和时间累积需要不同范围和误差容忍度。移动端 GPU 对精度更敏感，桌面端有时会把类型提升或优化，不能只凭单个平台判断。
 
-- 移动端材质优化。
-- 控制颜色、法线、UV、世界坐标的类型。
-- 排查条带、闪烁、深度重建错误。
-- 平衡画质和性能。
+## 用途
 
-## Unity 中的相关场景
-
-Unity HLSL 中常见 `half`、`float`。Shader Graph 也允许部分节点设置 Precision。不同平台实际映射需要以目标设备测试为准。
-
-## Unreal Engine 中的相关场景
-
-Unreal 材质通常由编译器和平台后端决定精度，移动端材质和项目设置会影响实际生成代码。
-
-## 常见误区
-
-1. 全部用 float 保守处理，导致移动端成本偏高。
-2. 全部用 half，导致大世界坐标和深度计算不稳定。
-3. 不在目标机验证精度假设。
-
-## 面试可能怎么问
-
-### half 和 float 应该怎么选择？
-
-回答要点：颜色、局部向量、部分中间结果可优先 half；世界坐标、深度、矩阵变换和高动态范围计算更谨慎使用 float，并以目标平台验证。
-
-## 实践建议
-
-在移动设备上比较同一材质 half/float 版本的 GPU 时间和画面误差。
+- 在材质或 Shader 调试中定位与 Precision 相关的画面异常、编译问题、性能成本或资源配置错误。
+- 把概念落到 Unity ShaderLab/Shader Graph、Unreal Material Editor、RenderDoc 或引擎材质面板中可观察的参数和状态。
+- 为美术暴露稳定的材质控制项，同时限制采样次数、变体数量、精度和平台差异带来的风险。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Material Graph]] | Material Graph 偏节点化编辑；本条目可能涉及更底层的代码、编译和采样细节。 |
-| [[Texture Sampling]] | Texture Sampling 是常见操作；本条目可能覆盖更完整的 Shader 结构或控制策略。 |
+| [[Mipmap]] | Mipmap 管采样级别；Precision 管数值表示。 |
+| [[Texture Sampling]] | 采样得到的数据还要经过合适精度参与计算。 |
+
+## 常见误区
+
+1. 所有变量都用 float，忽略移动端成本。
+2. 世界坐标或深度使用过低精度导致抖动。
+3. 只看最终截图，不检查不同平台和 HDR/后处理链路。
 
 ## 相关条目
 
-- [[Shader Variant]]
-- [[Texture Sampling]]
-- [[World Space]]
-- [[Depth Buffer]]
+- [[HLSL]]：HLSL 中 half/float 等类型体现精度选择。
+- [[GLSL]]：GLSL ES 有 lowp/mediump/highp 精度限定。
+- [[Depth Buffer]]：深度精度直接影响 Z-Fighting 和屏幕效果。
 
 ## 参考来源
 
-- 待核验：不同 GPU 架构的 half/float 性能差异需要查阅厂商文档和实机验证。
+- 见 [[91_Sources/source_registry|Source Registry]]；未核验的外部资料按 `待核验` 处理，不编造链接。

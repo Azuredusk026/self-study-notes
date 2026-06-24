@@ -4,73 +4,50 @@ aliases:
   - 深度缓冲
 category: "Rendering"
 tags: [技术美术, Rendering, Depth]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
+
 # Depth Buffer
 
-## 一句话定义
+## 定义与解释
 
-Depth Buffer 保存屏幕每个像素位置当前最近表面的深度值。
-
-## 为什么需要它
-
-深度缓冲让 GPU 判断新片元是否被已有表面遮挡。TA 在处理遮挡、描边、软粒子、景深、SSAO、透明排序、Z-Fighting 和性能优化时都会用到深度概念。
+Depth Buffer 是记录屏幕像素对应深度值的缓冲，用于判断片元之间的前后遮挡关系。它是 Z-Test、Early-Z、阴影、后处理和许多屏幕空间效果的基础。
 
 ## 核心原理
 
-- 输入：片元深度值。
-- 处理过程：按 Z-Test 函数与缓冲中已有深度比较。
-- 输出：通过测试的片元可写颜色并更新深度。
-- 所在层级：GPU 深度测试阶段。
+Depth Buffer 存储的通常不是线性世界距离，而是经过投影变换后的深度值。透视投影下深度精度分布不均，Near Plane 越近，远处可用精度越差，容易出现 Z-Fighting。
 
-## 技术美术中的典型用途
+深度缓冲的价值不只在可见性判断。后处理会用它重建位置或判断边缘，SSAO、Depth of Field、雾效、描边和软粒子都会依赖深度语义。TA 需要知道当前管线的深度范围、反向 Z、深度纹理生成时机和透明物体是否写深度。
 
-- 深度预通道和 Early-Z 优化。
-- 屏幕空间边缘检测、景深、雾效、软粒子。
-- 角色遮挡高亮和 Custom Depth 效果。
-- 排查 Z-Fighting、透明穿插。
+## 用途
 
-## Unity 中的相关场景
-
-Unity URP 中 `_CameraDepthTexture` 常被后处理和 Shader 读取。TA 需要注意 Depth Texture 是否开启、深度精度、平台差异。
-
-## Unreal Engine 中的相关场景
-
-Unreal 中 Scene Depth、Custom Depth、Virtual Shadow Maps 等都和深度密切相关。Post Process Material 可以读取 SceneDepth 做屏幕空间效果。
-
-## 常见误区
-
-1. 认为深度值是线性的：透视投影下通常是非线性的。
-2. 忘记透明物体通常不写深度或写深度策略不同。
-3. 近远裁剪面设置不合理，导致深度精度不足。
-
-## 面试可能怎么问
-
-### 为什么会出现 Z-Fighting？
-
-回答要点：两个表面的深度非常接近，深度缓冲精度无法稳定区分，常见于重叠面、过大的远裁剪面或过小的近裁剪面。
-
-## 实践建议
-
-做一个深度可视化 Shader，观察相机近远裁剪面对深度分布的影响。
+- 在渲染调试中定位与 Depth Buffer 相关的画面异常、性能成本或资源配置问题。
+- 为美术、TA 和图形程序建立统一术语，减少材质、灯光、后处理和管线配置沟通偏差。
+- 把概念落到 Unity、Unreal 或 RenderDoc/Frame Debugger 中可观察的状态、缓冲、Pass 或材质参数上。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[PBR]] | 更偏材质和光照模型；本条目更关注具体渲染环节或画面效果。 |
-| [[Shader基础]] | Shader 是实现手段；本条目通常还涉及管线状态、缓冲读写和引擎配置。 |
+| [[Framebuffer]] | Framebuffer 是一组渲染附件；Depth Buffer 是其中的深度附件。 |
+| [[Render Target]] | Render Target 常指颜色输出；Depth Buffer 专门记录深度。 |
+
+## 常见误区
+
+1. 把深度值当作线性距离直接使用。
+2. Near/Far Plane 设置不合理导致深度精度不足。
+3. 忽略透明物体通常不写深度，导致屏幕空间效果缺失或穿帮。
 
 ## 相关条目
 
-- [[Z-Test]]
-- [[Early-Z]]
-- [[SSAO]]
-- [[Depth of Field]]
+- [[Z-Test]]：Z-Test 读取 Depth Buffer 判断片元是否通过。
+- [[Early-Z]]：Early-Z 依赖深度提前剔除片元。
+- [[Depth of Field]]：DoF 使用深度估计离焦程度。
 
 ## 参考来源
 

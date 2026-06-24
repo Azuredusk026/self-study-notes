@@ -4,73 +4,49 @@ aliases:
   - 切线空间
 category: "Shader"
 tags: [技术美术, Shader, Math]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # Tangent Space
 
-## 一句话定义
+## 定义与解释
 
-Tangent Space 是由法线、切线和副切线组成的局部表面坐标系。
-
-## 为什么需要它
-
-法线贴图中的 RGB 方向通常不是世界方向，而是相对于模型表面的局部方向。切线空间让同一张法线贴图可以贴在不同位置、朝向和变形后的模型上。
+Tangent Space 是以表面法线、切线和副切线组成的局部坐标空间。它常用于法线贴图，使贴图中的方向能随模型表面和动画正确变化。
 
 ## 核心原理
 
-- 输入：顶点 Normal、Tangent、UV 方向和 handedness。
-- 处理过程：构建 TBN 矩阵，将切线空间方向转换到世界或视图空间。
-- 输出：用于光照计算的法线方向。
-- 所在层级：Vertex/Fragment Shader。
+Tangent Space 的基底通常由 Normal、Tangent、Bitangent 组成，形成 TBN 矩阵。Shader 采样 Normal Map 后，会把贴图中的局部方向通过 TBN 转换到 World 或 View Space 参与光照。
 
-## 技术美术中的典型用途
+切线空间的可靠性依赖模型 UV、切线生成算法、镜像 UV、DCC 烘焙工具和引擎导入设置一致。只要烘焙和引擎使用的切线基底不同，就可能出现接缝、高光断裂或绿通道方向错误。
 
-- 法线贴图解码。
-- 角色变形后的稳定光照。
-- DCC 与引擎切线基准一致性检查。
-- 排查镜像 UV、接缝和烘焙不匹配。
+## 用途
 
-## Unity 中的相关场景
-
-Unity Mesh 导入可选择导入或计算 Tangents。不同法线烘焙工具和 Unity 切线计算方式不一致时，可能出现接缝。
-
-## Unreal Engine 中的相关场景
-
-Unreal 常使用 MikkTSpace 作为切线空间标准。资产导入时可选择导入法线/切线或由引擎计算。
-
-## 常见误区
-
-1. 认为法线贴图方向天然是世界空间方向。
-2. 镜像 UV 后没有处理切线符号，导致一侧光照反。
-3. DCC 烘焙和引擎显示使用不同切线基准。
-
-## 面试可能怎么问
-
-### TBN 矩阵的作用是什么？
-
-回答要点：TBN 由 Tangent、Bitangent、Normal 构成，用于在切线空间和世界/视图空间之间转换方向。
-
-## 实践建议
-
-导入一个带镜像 UV 的模型，分别使用导入切线和引擎重算法线，观察法线贴图接缝。
+- 在材质或 Shader 调试中定位与 Tangent Space 相关的画面异常、编译问题、性能成本或资源配置错误。
+- 把概念落到 Unity ShaderLab/Shader Graph、Unreal Material Editor、RenderDoc 或引擎材质面板中可观察的参数和状态。
+- 为美术暴露稳定的材质控制项，同时限制采样次数、变体数量、精度和平台差异带来的风险。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Material Graph]] | Material Graph 偏节点化编辑；本条目可能涉及更底层的代码、编译和采样细节。 |
-| [[Texture Sampling]] | Texture Sampling 是常见操作；本条目可能覆盖更完整的 Shader 结构或控制策略。 |
+| [[Object Space]] | Object Space 依附模型整体；Tangent Space 依附表面局部基底。 |
+| [[View Space]] | View Space 以相机为参考；Tangent Space 以表面为参考。 |
+
+## 常见误区
+
+1. 忽略 DCC 和引擎切线基底不一致。
+2. 镜像 UV 没处理好导致法线接缝。
+3. 把 Tangent Space Normal 当作 World Space 方向使用。
 
 ## 相关条目
 
-- [[Normal Map]]
-- [[矩阵变换]]
-- [[World Space]]
-- [[UV]]
+- [[Normal Map]]：切线空间是法线贴图最常见的解释空间。
+- [[Object Space]]：Object Space 是模型整体局部空间。
+- [[World Space]]：Tangent Space 法线常转换到 World Space 参与光照。
 
 ## 参考来源
 

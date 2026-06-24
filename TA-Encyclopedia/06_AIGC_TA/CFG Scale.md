@@ -4,71 +4,49 @@ aliases:
   - Classifier-Free Guidance Scale
 category: "06_AIGC_TA"
 tags: [技术美术, AIGC, Sampling]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: medium
 ---
 
+
 # CFG Scale
 
-## 一句话定义
+## 定义与解释
 
-CFG Scale 是控制生成过程对文本条件跟随强度的参数。
-
-## 为什么需要它
-
-CFG 太低时结果可能不听 Prompt；太高时可能出现过锐、过饱和、结构异常或风格僵硬。TA 在搭建批量生成流程时，需要把它当成可记录、可对比、可复现的参数。
+CFG Scale 是扩散生成中控制文本条件约束强度的参数。它影响模型在遵循 Prompt 和保留自然采样之间的平衡。
 
 ## 核心原理
 
-CFG 通过调整条件预测和无条件预测之间的差异，影响模型朝 Prompt 描述靠近的程度。不同模型和采样器的适用范围不完全一致。
+CFG 的核心是 Classifier-Free Guidance：模型会比较有条件和无条件预测，并按权重强化条件方向。Scale 越高，Prompt 约束越强，但也可能带来过饱和、结构僵硬、细节破碎或不自然纹理。
 
-> 待核验：具体推荐范围必须按模型、采样器和工作流验证，不应写成固定结论。
+CFG 不是质量滑杆。合适范围取决于模型、Sampler、步数、Prompt、LoRA 和图像尺寸。TA 做可复现工作流时应记录 CFG，并用对比图评估它对风格、构图和材质的影响。
 
-## 技术美术中的典型用途
+## 用途
 
-- 控制图标是否严格跟随元素和形状描述。
-- 调整角色图对服装、颜色、构图的服从程度。
-- 在批量生成中保持参数可复现。
-
-## Unity 中的相关场景
-
-Unity 资产导入前，CFG 影响生成图是否符合图标、贴图、UI 或道具规范，间接影响后处理和人工修图成本。
-
-## Unreal Engine 中的相关场景
-
-用于 VFX、环境概念或材质参考时，CFG 会影响概念图是否贴合项目描述和镜头需求。
-
-## 常见误区
-
-1. 把 CFG 当成“质量”参数。
-2. 不同模型直接套同一个 CFG。
-3. 只调 CFG，不调 Prompt、Seed、Sampler 和参考控制。
-
-## 面试可能怎么问
-
-### CFG Scale 调大一定更好吗？
-
-回答要点：不一定。它提高对 Prompt 的跟随强度，但过高可能带来伪影、过饱和或结构异常。
-
-## 实践建议
-
-固定 Prompt、Seed、Sampler，只改变 CFG，生成一组对比图并记录质量变化。
+- 在 AIGC 资产流程中定位与 CFG Scale 相关的可复现性、质量、风格一致性或审核风险。
+- 把生成过程转成可记录、可复跑、可比较的工作流，而不是只保存单张结果图。
+- 连接概念探索、参考生成、DCC 精修、引擎导入和来源审核，避免临时素材直接混入正式资产。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Stable_Diffusion]] | Stable Diffusion 是常见生成模型生态；本条目可能关注其中某个节点、流程或落地规范。 |
-| [[AIGC管线落地]] | 管线落地强调团队流程；单项工具条目强调具体输入、参数和限制。 |
+| [[Seed]] | Seed 控制随机初始状态；CFG 控制文本条件强度。 |
+| [[Negative Prompt]] | Negative Prompt 提供反向条件，CFG 决定条件整体权重。 |
+
+## 常见误区
+
+1. 把 CFG 拉高当作提升质量。
+2. 比较结果时不固定 Seed 和 Sampler。
+3. 不同模型套用同一 CFG 范围。
 
 ## 相关条目
 
-- [[Prompt Engineering]]
-- [[Seed]]
-- [[Sampler]]
-- [[Stable_Diffusion|Stable Diffusion]]
+- [[Prompt Engineering]]：CFG 决定 Prompt 约束强度。
+- [[Sampler]]：CFG 与采样器和步数共同影响结果。
+- [[Stable_Diffusion]]：CFG 是 Stable Diffusion 常见生成参数。
 
 ## 参考来源
 

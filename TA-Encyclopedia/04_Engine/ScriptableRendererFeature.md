@@ -4,72 +4,49 @@ aliases:
   - Renderer Feature
 category: "04_Engine"
 tags: [技术美术, Unity, URP, Rendering]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: medium
 ---
 
+
 # ScriptableRendererFeature
 
-## 一句话定义
+## 定义与解释
 
-ScriptableRendererFeature 是 URP 中用于向 Renderer 注入自定义 Render Pass 的扩展入口。
-
-## 为什么需要它
-
-TA 做 URP 项目时，常要实现描边、遮挡高亮、自定义后处理、角色 Mask、模糊或特殊渲染层。Renderer Feature 是这些效果进入 URP 管线的常用方式。
+ScriptableRendererFeature 是 Unity URP 中向 Renderer 注入自定义渲染 Pass 的扩展点，常用于后处理、描边、深度预处理和特殊对象渲染。
 
 ## 核心原理
 
-Renderer Feature 创建并配置一个或多个 ScriptableRenderPass，在指定渲染事件执行，读取或写入颜色、深度、临时 RenderTexture 等资源。
+它的核心是通过 Feature 创建和配置 ScriptableRenderPass，并在指定 RenderPassEvent 插入 URP 渲染流程。Pass 可以设置目标、筛选对象、执行 Blit、绘制 Renderers 或读写临时 RT。
 
-> 待核验：Unity 不同版本中 Render Graph、Blit、RTHandle 和 Compatibility Mode 的推荐写法不同。
+TA 使用它时要理解 URP 的相机堆叠、渲染事件、RTHandle、深度纹理、透明/不透明阶段和 Renderer Data 资产。插入点不对会导致缓冲未准备好或结果被后续 Pass 覆盖。
 
-## 技术美术中的典型用途
+## 用途
 
-- 角色描边和交互高亮。
-- 自定义后处理。
-- 分层渲染 Mask。
-- 屏幕空间效果调试。
-
-## Unity 中的相关场景
-
-在 URP Renderer Data 中添加 Feature，配置执行时机和材质。TA 需要关注目标平台、Pass 顺序、临时纹理释放和 Scene/Game View 差异。
-
-## Unreal Engine 中的相关场景
-
-Unreal 中类似需求常通过 Post Process Material、Custom Depth、材质域或渲染插件实现。
-
-## 常见误区
-
-1. 不清楚 Pass 插入时机，读取到错误的相机颜色。
-2. 每帧创建临时资源但不释放。
-3. 用全屏 Pass 解决本可局部处理的问题。
-
-## 面试可能怎么问
-
-### URP 里如何做一个自定义描边？
-
-回答要点：可用 Renderer Feature 注入 Pass，先写 Mask 或法线/深度，再用全屏 Pass 做边缘检测并合成。
-
-## 实践建议
-
-实现一个“选中物体描边”Renderer Feature，支持 Layer 过滤、颜色参数和开关。
+- 在引擎项目中定位与 ScriptableRendererFeature 相关的资源导入、渲染表现、运行时加载、编辑器工具或构建问题。
+- 把引擎功能转化为团队可执行的资产规范、材质模板、工具入口和调试流程。
+- 与程序协作确认运行时成本、平台限制、版本差异和可维护边界。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Unity]] | Unity 是引擎平台；本条目可能是其中某个系统或工作流。 |
-| [[Unreal_Engine]] | Unreal 是引擎平台；本条目可能与其对应系统形成实现差异。 |
+| [[CommandBuffer]] | CommandBuffer 是命令容器；ScriptableRendererFeature 是 URP 管线扩展结构。 |
+| [[SRP]] | SRP 是框架；Renderer Feature 是 URP 中的具体扩展点。 |
+
+## 常见误区
+
+1. 不理解 RenderPassEvent，导致效果时序错误。
+2. 未处理相机堆叠和 SceneView。
+3. 临时 RT 分配释放不规范。
 
 ## 相关条目
 
-- [[URP]]
-- [[Render Pass]]
-- [[CommandBuffer]]
-- [[RenderTexture]]
+- [[URP]]：ScriptableRendererFeature 是 URP 扩展机制。
+- [[CommandBuffer]]：Pass 内部常使用命令缓冲执行绘制。
+- [[RenderTexture]]：自定义 Pass 常读写中间 RT。
 
 ## 参考来源
 

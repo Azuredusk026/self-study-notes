@@ -5,73 +5,50 @@ aliases:
   - 透明裁剪
 category: "Rendering"
 tags: [技术美术, Rendering, Transparency]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
+
 # Alpha Test
 
-## 一句话定义
+## 定义与解释
 
-Alpha Test 根据透明度阈值直接保留或丢弃片元，不做半透明混合。
-
-## 为什么需要它
-
-树叶、草、铁丝网、破洞布料等需要轮廓透明，但不一定需要半透明。Alpha Test 可以保留深度写入和相对稳定的遮挡关系，但可能带来锯齿和 Early-Z 限制。
+Alpha Test 是根据 Alpha 或遮罩阈值直接丢弃片元的透明裁剪方式。它适合树叶、铁丝网、破洞布料等边界明确的材质，不适合表达玻璃、烟雾这类连续半透明。
 
 ## 核心原理
 
-- 输入：Alpha 值和裁剪阈值。
-- 处理过程：Alpha 小于阈值时 discard/clip 片元。
-- 输出：保留的片元按不透明方式写颜色和深度。
-- 所在层级：Fragment Shader 或固定裁剪逻辑。
+Alpha Test 的机制是片元着色阶段执行裁剪判断，低于阈值的片元不会继续写入颜色和深度。由于剩余片元仍可写深度，它更接近不透明渲染路径，排序问题通常比 Alpha Blend 少，但边缘会呈现硬切断。
 
-## 技术美术中的典型用途
+在实时项目中，Alpha Test 的质量主要受遮罩分辨率、阈值、抗锯齿策略、Mip 边界和阴影 Pass 一致性影响。移动端或植被密集场景还要关注被裁掉的片元是否已经产生了昂贵采样和 Overdraw 成本。
 
-- 植被卡片。
-- 破洞、镂空、栅栏。
-- Masked 材质和裁剪溶解。
-- 需要深度遮挡但不需要半透明的美术资产。
+## 用途
 
-## Unity 中的相关场景
-
-Unity Shader 中常用 `clip(alpha - cutoff)`。URP/HDRP Lit 材质提供 Alpha Clipping 设置。
-
-## Unreal Engine 中的相关场景
-
-Unreal 中 Masked Blend Mode 使用 Opacity Mask，常用于植被和镂空材质。
-
-## 常见误区
-
-1. 以为 Alpha Test 一定比 Alpha Blend 快：大量裁剪和复杂 Shader 仍有成本。
-2. 阈值过硬导致边缘闪烁。
-3. 忽略 Mipmap 后 Alpha 边缘变化。
-
-## 面试可能怎么问
-
-### Alpha Test 和 Alpha Blend 的区别是什么？
-
-回答要点：Alpha Test 是二值裁剪，通常可写深度；Alpha Blend 是半透明混合，结果依赖绘制顺序。
-
-## 实践建议
-
-制作一张树叶贴图，比较 Alpha Clip、Alpha Blend 和几何叶片的性能与边缘质量。
+- 在渲染调试中定位与 Alpha Test 相关的画面异常、性能成本或资源配置问题。
+- 为美术、TA 和图形程序建立统一术语，减少材质、灯光、后处理和管线配置沟通偏差。
+- 把概念落到 Unity、Unreal 或 RenderDoc/Frame Debugger 中可观察的状态、缓冲、Pass 或材质参数上。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[PBR]] | 更偏材质和光照模型；本条目更关注具体渲染环节或画面效果。 |
-| [[Shader基础]] | Shader 是实现手段；本条目通常还涉及管线状态、缓冲读写和引擎配置。 |
+| [[Alpha Blend]] | Alpha Test 不保留半透明层次；Alpha Blend 会与背景颜色混合。 |
+| [[Depth Buffer]] | Alpha Test 可写入深度，Depth Buffer 决定后续遮挡。 |
+
+## 常见误区
+
+1. 以为 Alpha Test 没有性能成本，忽略被裁掉片元之前的采样和着色。
+2. 遮罩阈值在主 Pass、阴影 Pass、Depth Pass 中不一致。
+3. 忽略 Mipmap 后遮罩边缘变粗、变细或闪烁。
 
 ## 相关条目
 
-- [[Alpha Blend]]
-- [[Early-Z]]
-- [[Overdraw]]
-- [[Texture Sampling]]
+- [[Alpha Blend]]：连续半透明使用混合而不是二值裁剪。
+- [[Z-Test]]：被保留的片元通常可以正常写入深度。
+- [[Overdraw]]：大量遮罩面片仍可能造成片元浪费。
 
 ## 参考来源
 

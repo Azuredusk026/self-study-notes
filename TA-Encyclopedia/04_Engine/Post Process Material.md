@@ -4,70 +4,49 @@ aliases:
   - 后处理材质
 category: "04_Engine"
 tags: [技术美术, Unreal, PostProcessing]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # Post Process Material
 
-## 一句话定义
+## 定义与解释
 
-Post Process Material 是 Unreal 中在后处理阶段执行的材质，用于基于屏幕数据修改最终画面。
-
-## 为什么需要它
-
-描边、X-Ray、屏幕扭曲、风格化颜色、深度雾和特殊镜头效果都常通过后处理材质实现。TA 需要理解它读取的是屏幕空间数据，而不是单个物体材质。
+Post Process Material 是 Unreal 中用于在后处理阶段读取场景缓冲并修改最终画面的材质类型。
 
 ## 核心原理
 
-后处理材质通常读取 Scene Color、Scene Depth、Custom Depth、GBuffer 或屏幕 UV，并输出修改后的屏幕颜色。
+它的核心是材质不再服务单个物体表面，而是在屏幕空间处理 Scene Color、Scene Depth、Custom Depth、GBuffer 或自定义输入。材质输出会插入后处理链的指定位置，影响整屏或局部区域。
 
-## 技术美术中的典型用途
+TA 需要确认 Blendable Location、输入缓冲、颜色空间、深度重建、分辨率、透明物体参与和性能成本。描边、色彩风格化、局部高亮和屏幕特效都容易因为执行顺序或缓冲缺失产生错误。
 
-- Custom Depth 描边。
-- 屏幕空间风格化。
-- 角色遮挡高亮。
-- 演出镜头效果。
+## 用途
 
-## Unity 中的相关场景
-
-Unity URP/HDRP 中相近需求通常用 Renderer Feature、Custom Pass 或后处理 Volume 实现。
-
-## Unreal Engine 中的相关场景
-
-通过 Post Process Volume 或相机设置挂载材质，Blendable Location 决定执行时机。
-
-## 常见误区
-
-1. 期望后处理材质知道完整物体拓扑。
-2. 忽略全屏 Pass 成本。
-3. SceneDepth 和 CustomDepth 比较空间理解错误。
-
-## 面试可能怎么问
-
-### Unreal 后处理描边常用哪些数据？
-
-回答要点：常用 SceneDepth、CustomDepth、CustomStencil 或法线/GBuffer 数据做边缘检测，再在后处理阶段合成轮廓。
-
-## 实践建议
-
-实现一个 Custom Stencil 多颜色描边后处理，并用参数控制线宽。
+- 在引擎项目中定位与 Post Process Material 相关的资源导入、渲染表现、运行时加载、编辑器工具或构建问题。
+- 把引擎功能转化为团队可执行的资产规范、材质模板、工具入口和调试流程。
+- 与程序协作确认运行时成本、平台限制、版本差异和可维护边界。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Unity]] | Unity 是引擎平台；本条目可能是其中某个系统或工作流。 |
-| [[Unreal_Engine]] | Unreal 是引擎平台；本条目可能与其对应系统形成实现差异。 |
+| [[Material Instance]] | Material Instance 覆盖材质参数；Post Process Material 定义后处理材质用途。 |
+| [[后处理]] | 后处理是阶段；Post Process Material 是 Unreal 中的实现载体。 |
+
+## 常见误区
+
+1. 不知道材质插入后处理链的位置。
+2. 读取了未启用的 Custom Depth 或 GBuffer 数据。
+3. 全屏效果叠加过多导致带宽和采样成本过高。
 
 ## 相关条目
 
-- [[Custom Depth]]
-- [[Material Editor]]
-- [[Depth Buffer]]
-- [[后处理]]
+- [[Custom Depth]]：后处理材质常读取 Custom Depth 做描边或高亮。
+- [[Screen Space]]：Post Process Material 多在屏幕空间工作。
+- [[Material Editor]]：后处理材质也通过材质编辑器创建。
 
 ## 参考来源
 

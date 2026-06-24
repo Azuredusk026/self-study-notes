@@ -3,72 +3,49 @@ title: "Unreal Python"
 aliases: []
 category: "03_Tools_Pipeline"
 tags: [技术美术, Unreal, Python, Pipeline]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: medium
 ---
 
+
 # Unreal Python
 
-## 一句话定义
+## 定义与解释
 
-Unreal Python 是 Unreal Editor 中用于自动化内容处理、批量操作和管线工具开发的脚本接口。
-
-## 为什么需要它
-
-Unreal 项目内容量大，手动改材质实例、导入设置、目录、LOD 或命名容易出错。Python 可以把这些操作变成可复用脚本或工具。
+Unreal Python 是 Unreal Editor 中用于自动化内容管理、批处理、工具面板和资产检查的 Python 接口。
 
 ## 核心原理
 
-Unreal Python 运行在编辑器环境，通过 Unreal API 访问资产、关卡对象、导入任务、材质实例和编辑器功能。
+Unreal Python 通过 Editor Scripting API 操作 Content Browser、Asset Registry、导入任务、Data Validation、关卡对象和编辑器工具。它适合批量重命名、导入、修复引用、生成报告和接入管线检查。
 
-> 待核验：Unreal Python API 覆盖范围和函数名称会随版本变化，需要查对应版本文档。
+它主要运行在编辑器上下文，不等同于运行时 Gameplay 脚本。TA 需要注意 API 版本差异、资产加载成本、事务/撤销、路径命名、重定向器清理和命令行无界面执行。
 
-## 技术美术中的典型用途
+## 用途
 
-- 批量导入和重导入资产。
-- 修改材质实例参数。
-- 扫描 Content 目录并生成报告。
-- 批量设置 LOD、碰撞、贴图组。
-
-## Unity 中的相关场景
-
-Unity 对应方向通常是 C# Editor Tool 和 AssetPostprocessor。
-
-## Unreal Engine 中的相关场景
-
-常与 Editor Utility Widget、Data Validation 和命令行自动化配合，适合批处理和 CI 前检查。
-
-## 常见误区
-
-1. 在运行时逻辑里期待使用 Editor Python。
-2. 批量修改资产不保存日志。
-3. 没有先 dry-run，直接写入大量资产。
-
-## 面试可能怎么问
-
-### Unreal Python 适合做哪些 TA 工具？
-
-回答要点：适合内容批处理、导入导出、材质实例修改、资产检查、报告生成和编辑器自动化。
-
-## 实践建议
-
-写一个脚本扫描所有 Texture，输出尺寸、压缩设置、LOD Group 和引用数量。
+- 把 Unreal Python 纳入资产生产、检查、导出、导入或版本管理流程，减少人工操作和沟通成本。
+- 把团队规范转成可执行规则、工具入口或自动化报告，让问题尽早暴露。
+- 连接 DCC、引擎、版本库和 CI/CD，让美术资产从制作到落地有可追踪的状态。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[DCC工具链]] | DCC 工具链偏制作软件侧；Pipeline 更强调跨软件、跨引擎和团队流程。 |
-| [[资源检查工具]] | 资源检查工具是管线中的一个执行节点，不等同于完整管线设计。 |
+| [[Maya Python]] | Maya Python 处理 DCC 侧；Unreal Python 处理 Unreal 编辑器内容。 |
+| [[Unity Editor Tool]] | 两者都是引擎编辑器自动化，但 API 和资源系统不同。 |
+
+## 常见误区
+
+1. 把 Unreal Python 当运行时逻辑使用。
+2. 批量操作后不处理 Redirector。
+3. 没有考虑编辑器版本 API 变化。
 
 ## 相关条目
 
-- [[Editor Utility Widget]]
-- [[Unreal_TA管线]]
-- [[资源检查工具]]
-- [[Texture Compression]]
+- [[Unreal_TA管线]]：Unreal Python 是 Unreal TA 管线常用自动化入口。
+- [[资源检查工具]]：Unreal 内容检查可结合 Python 和 Data Validation。
+- [[Editor Utility Widget]]：Unreal 编辑器工具可与 Python 流程配合。
 
 ## 参考来源
 

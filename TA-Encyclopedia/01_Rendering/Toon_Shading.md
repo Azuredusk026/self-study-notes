@@ -4,85 +4,48 @@ aliases: []
 category: "01_Rendering"
 confidence: medium
 tags: [rendering, toon-shading, npr]
-status: draft
+status: active
 created: 2026-06-24
 updated: "2026-06-24"
 ---
 
+
 # Toon Shading
 
-## 一句话定义
-Toon Shading 通过离散化光照和风格化边缘来模拟卡通渲染效果。
+## 定义与解释
 
-## 为什么需要它
-
-TA 需要理解 `Toon_Shading`，因为它会影响资源制作、引擎配置、画面表现、调试路径或团队协作边界。把它写成明确条目，可以减少口头经验传递，并让问题排查有稳定入口。
+Toon Shading 是用阶梯化光照、色带、描边和风格化阴影模拟卡通或赛璐璐观感的渲染方法。它属于 NPR 的常见方向。
 
 ## 核心原理
 
-- 输入：几何数据、材质参数、灯光、相机、深度/法线/颜色等缓冲数据。
-- 处理过程：在渲染管线的对应阶段采样、计算、混合或写入缓冲，并受排序、精度和平台能力影响。
-- 输出：屏幕颜色、深度/模板结果、Render Target、调试图或后处理输入。
-- 所在层级：GPU / Render Pipeline。
+Toon Shading 通常不使用连续 Lambert 或 PBR 光照，而是把 NdotL、半角高光、阴影或 Ramp 贴图量化成有限层级。描边可以通过法线外扩、反向 Hull、深度/法线边缘检测或 Stencil 组合实现。
 
-## 技术美术中的典型用途
+核心不是单个 Shader 技巧，而是风格规则统一。角色、场景、阴影、后处理和灯光都需要遵循同一套层级、色带和边线规范。TA 需要控制美术参数暴露方式，避免每个材质单独调出不同风格。
 
-- 定位画面异常和渲染顺序问题。
-- 制定材质、灯光和后处理规范。
-- 评估带宽、Overdraw、Render Target 数量和平台性能预算。
+## 用途
 
-## Unity 中的相关场景
-
-常见于 URP/HDRP 的 Renderer Feature、Render Pass、Shader、后处理 Volume、Frame Debugger 和 RenderDoc 排查流程。
-
-## Unreal Engine 中的相关场景
-
-常见于 Material、Post Process Material、Custom Depth/Stencil、Render Target、Buffer Visualization 和 Unreal Insights/RenderDoc 分析流程。
+- 在渲染调试中定位与 Toon_Shading 相关的画面异常、性能成本或资源配置问题。
+- 为美术、TA 和图形程序建立统一术语，减少材质、灯光、后处理和管线配置沟通偏差。
+- 把概念落到 Unity、Unreal 或 RenderDoc/Frame Debugger 中可观察的状态、缓冲、Pass 或材质参数上。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[PBR]] | 更偏材质和光照模型；本条目更关注具体渲染环节或画面效果。 |
-| [[Shader基础]] | Shader 是实现手段；本条目通常还涉及管线状态、缓冲读写和引擎配置。 |
+| [[PBR]] | PBR 强调物理一致性；Toon Shading 强调风格化层级。 |
+| [[NPR]] | NPR 是大类；Toon Shading 是其中一种常见方案。 |
 
 ## 常见误区
 
-1. 只记概念名，不确认它在项目中的输入、输出和所在管线阶段。
-2. 把引擎默认效果当成固定标准，忽略渲染管线、平台和项目配置差异。
-3. 没有保留可复现的测试场景，导致问题只能靠截图或主观描述沟通。
-
-## 面试可能怎么问
-
-### 问题 1
-
-`Toon_Shading` 解决的核心问题是什么？
-
-回答要点：先说明它在实时渲染中处理哪类输入和输出，再结合一个项目场景说明为什么需要它。
-
-### 问题 2
-
-在 Unity 和 Unreal 中落地 `Toon_Shading` 时，TA 需要分别关注什么？
-
-回答要点：比较两边的工具入口、资源规则、调试方式和平台限制，不要只背 API 名称。
-
-### 问题 3
-
-如果 `Toon_Shading` 相关效果或资产在项目中出问题，你会怎么排查？
-
-回答要点：从资源输入、引擎配置、运行时状态、性能指标和最小复现场景逐层缩小范围。
-
-## 实践建议
-
-- 为 `Toon_Shading` 保留一个最小测试场景或示例资产，便于回归检查。
-- 把关键参数、命名规则和导入设置写入团队规范，避免只存在个人经验里。
-- 涉及具体版本、API 或第三方工具行为时，先标记 `待核验`，再登记到 [[91_Sources/source_registry|Source Registry]]。
+1. 只做光照二值化就认为完成卡通渲染。
+2. 角色和场景使用不同 Ramp 规则导致风格割裂。
+3. 描边方案不考虑距离、FOV、模型厚度和平台性能。
 
 ## 相关条目
 
-- [[01_Rendering/README|01_Rendering README]]
-- [[技术美术百科总目录]]
-- [[术语索引]]
+- [[NPR]]：Toon Shading 是 NPR 的具体表现方向。
+- [[Lambert]]：Toon 常对漫反射项进行阶梯化。
+- [[Stencil Buffer]]：部分描边方案会使用模板控制。
 
 ## 参考来源
 

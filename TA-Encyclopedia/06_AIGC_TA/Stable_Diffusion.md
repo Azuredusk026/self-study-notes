@@ -4,85 +4,48 @@ aliases: []
 category: "06_AIGC_TA"
 confidence: medium
 tags: [aigc, stable-diffusion]
-status: draft
+status: active
 created: 2026-06-24
 updated: "2026-06-24"
 ---
 
+
 # Stable Diffusion
 
-## 一句话定义
-Stable Diffusion 是常用于图像生成、风格探索和资产辅助生产的扩散模型。
+## 定义与解释
 
-## 为什么需要它
-
-TA 需要理解 `Stable_Diffusion`，因为它会影响资源制作、引擎配置、画面表现、调试路径或团队协作边界。把它写成明确条目，可以减少口头经验传递，并让问题排查有稳定入口。
+Stable Diffusion 是常用于图像生成、风格探索和资产辅助生产的潜空间扩散模型生态。
 
 ## 核心原理
 
-- 输入：Prompt、参考图、模型、LoRA、ControlNet 条件、节点图、种子、标签和审核规则。
-- 处理过程：通过生成、约束、筛选、重绘、放大、标注、审核和资产化步骤控制结果质量。
-- 输出：概念图、贴图草案、参考资产、训练数据、节点工作流或审核报告。
-- 所在层级：AIGC Workflow / Toolchain / Asset Review。
+Stable Diffusion 的典型流程是：CLIP 将文本条件编码，U-Net 在 Latent Space 中按 Sampler 多步去噪，VAE 再把潜空间结果解码为图像。LoRA、ControlNet、IP-Adapter、Img2Img 和 Inpainting 都是在这个基础流程上增加条件或改写入口。
 
-## 技术美术中的典型用途
+TA 需要把它视为可配置生成系统，而不是单一软件。模型版本、VAE、Sampler、Seed、CFG、分辨率、Prompt、参考图和节点工作流共同决定结果，正式资产还必须经过来源和质量审核。
 
-- 设计可复现的生成流程。
-- 建立版权、风格和质量审核标准。
-- 把生成结果转成可进入 DCC/引擎的资产。
+## 用途
 
-## Unity 中的相关场景
-
-常见于把生成贴图、概念参考或批量变体接入 Unity 资源目录，并通过导入规则和审核表控制使用范围。
-
-## Unreal Engine 中的相关场景
-
-常见于把生成素材接入材质、关卡原型、Niagara 参考或 Editor Utility 审核流程，正式资产需保留来源记录。
+- 在 AIGC 资产流程中定位与 Stable_Diffusion 相关的可复现性、质量、风格一致性或审核风险。
+- 把生成过程转成可记录、可复跑、可比较的工作流，而不是只保存单张结果图。
+- 连接概念探索、参考生成、DCC 精修、引擎导入和来源审核，避免临时素材直接混入正式资产。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Stable_Diffusion]] | Stable Diffusion 是常见生成模型生态；本条目可能关注其中某个节点、流程或落地规范。 |
-| [[AIGC管线落地]] | 管线落地强调团队流程；单项工具条目强调具体输入、参数和限制。 |
+| [[LoRA]] | LoRA 是附加微调权重，Stable Diffusion 是基础生成模型生态。 |
+| [[ControlNet]] | ControlNet 给 Stable Diffusion 增加结构条件。 |
 
 ## 常见误区
 
-1. 只记概念名，不确认它在项目中的输入、输出和所在管线阶段。
-2. 把引擎默认效果当成固定标准，忽略渲染管线、平台和项目配置差异。
-3. 没有保留可复现的测试场景，导致问题只能靠截图或主观描述沟通。
-
-## 面试可能怎么问
-
-### 问题 1
-
-`Stable_Diffusion` 解决的核心问题是什么？
-
-回答要点：先说明它在AIGC 技术美术中处理哪类输入和输出，再结合一个项目场景说明为什么需要它。
-
-### 问题 2
-
-在 Unity 和 Unreal 中落地 `Stable_Diffusion` 时，TA 需要分别关注什么？
-
-回答要点：比较两边的工具入口、资源规则、调试方式和平台限制，不要只背 API 名称。
-
-### 问题 3
-
-如果 `Stable_Diffusion` 相关效果或资产在项目中出问题，你会怎么排查？
-
-回答要点：从资源输入、引擎配置、运行时状态、性能指标和最小复现场景逐层缩小范围。
-
-## 实践建议
-
-- 为 `Stable_Diffusion` 保留一个最小测试场景或示例资产，便于回归检查。
-- 把关键参数、命名规则和导入设置写入团队规范，避免只存在个人经验里。
-- 涉及具体版本、API 或第三方工具行为时，先标记 `待核验`，再登记到 [[91_Sources/source_registry|Source Registry]]。
+1. 把模型名、界面工具和完整工作流混为一谈。
+2. 只保存结果图，不保存参数和模型版本。
+3. 生成结果未经审核直接进入正式资源库。
 
 ## 相关条目
 
-- [[06_AIGC_TA/README|06_AIGC_TA README]]
-- [[技术美术百科总目录]]
-- [[术语索引]]
+- [[Diffusion Model]]：Stable Diffusion 属于扩散模型应用。
+- [[Latent Space]]：它通常在潜空间中去噪。
+- [[ComfyUI]]：ComfyUI 可组织 Stable Diffusion 工作流。
 
 ## 参考来源
 

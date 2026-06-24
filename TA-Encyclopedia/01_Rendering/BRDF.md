@@ -4,73 +4,50 @@ aliases:
   - Bidirectional Reflectance Distribution Function
 category: "Rendering"
 tags: [技术美术, Rendering, PBR, Lighting]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
+
 # BRDF
 
-## 一句话定义
+## 定义与解释
 
-BRDF 描述光从某个入射方向照到表面后，向某个观察方向反射多少能量。
-
-## 为什么需要它
-
-PBR 材质需要可预测地表达漫反射、高光、粗糙度、金属度和菲涅尔。BRDF 是这些计算的数学核心。TA 不一定每天推公式，但需要知道材质参数为什么会影响高光形状、能量守恒和不同光照环境下的观感。
+BRDF（Bidirectional Reflectance Distribution Function）描述光从某个方向照到表面后，沿另一个方向反射出去的分布规律。它是 PBR 光照模型中连接材质参数、入射光和观察方向的核心函数。
 
 ## 核心原理
 
-- 输入：入射光方向、观察方向、法线、粗糙度、金属度、基础颜色等。
-- 处理过程：计算漫反射项和镜面反射项，常见微表面模型包含 D、G、F 三部分。
-- 输出：某方向上的反射比例。
-- 所在层级：Shader 光照模型。
+BRDF 的核心是能量如何在漫反射和镜面反射之间分配。实时 PBR 常用微表面模型：表面被看作大量微小镜面，法线分布、几何遮蔽和 Fresnel 共同决定高光形状和强度。
 
-## 技术美术中的典型用途
+在工程实现中，BRDF 不只是一个公式，还涉及法线空间、粗糙度映射、金属度工作流、IBL 积分近似和 LUT。不同引擎的参数命名和压缩方式可能不同，但必须保持能量守恒、颜色空间和贴图语义一致。
 
-- 建立 PBR 材质标准。
-- 排查高光过亮、塑料感、金属错误。
-- 调整角色皮肤、布料、金属和非金属材质表现。
-- 解释不同引擎材质观感差异。
+## 用途
 
-## Unity 中的相关场景
-
-Unity Lit Shader 内部使用基于物理的 BRDF。TA 通常通过 Base Color、Metallic、Smoothness/Roughness、Normal 和环境光影响最终结果。
-
-## Unreal Engine 中的相关场景
-
-Unreal 默认材质模型使用 PBR 工作流，Base Color、Metallic、Roughness、Specular 等输入最终进入 BRDF 光照计算。
-
-## 常见误区
-
-1. 认为 BRDF 只是高光公式：它描述更完整的方向性反射。
-2. 把 Roughness 当成简单模糊：它会改变微表面法线分布和高光形态。
-3. 金属材质仍使用普通漫反射思路。
-
-## 面试可能怎么问
-
-### PBR 中 BRDF 的作用是什么？
-
-回答要点：BRDF 定义材质如何根据光线方向、观察方向和表面属性反射光，是 PBR 光照计算的核心。
-
-## 实践建议
-
-在同一 HDR 环境下对比 Roughness 从 0 到 1 的材质球，观察高光宽度和反射清晰度变化。
+- 在渲染调试中定位与 BRDF 相关的画面异常、性能成本或资源配置问题。
+- 为美术、TA 和图形程序建立统一术语，减少材质、灯光、后处理和管线配置沟通偏差。
+- 把概念落到 Unity、Unreal 或 RenderDoc/Frame Debugger 中可观察的状态、缓冲、Pass 或材质参数上。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[PBR]] | 更偏材质和光照模型；本条目更关注具体渲染环节或画面效果。 |
-| [[Shader基础]] | Shader 是实现手段；本条目通常还涉及管线状态、缓冲读写和引擎配置。 |
+| [[Lambert]] | Lambert 是简单漫反射模型；BRDF 可以包含更完整的漫反射和镜面反射项。 |
+| [[IBL]] | IBL 提供环境光来源；BRDF 决定材质如何响应这些光。 |
+
+## 常见误区
+
+1. 把 BRDF 等同于某一个固定公式，忽略引擎实现和近似差异。
+2. 只调 Base Color，不检查 Roughness、Metallic、Fresnel 对能量分配的影响。
+3. 忽略颜色空间错误导致的光照不守恒。
 
 ## 相关条目
 
-- [[PBR]]
-- [[Roughness]]
-- [[Metallic]]
-- [[Fresnel]]
+- [[PBR]]：PBR 使用 BRDF 组织材质和光照交互。
+- [[Fresnel]]：Fresnel 通常是 BRDF 镜面项的重要部分。
+- [[Roughness]]：粗糙度控制微表面分布和高光宽度。
 
 ## 参考来源
 

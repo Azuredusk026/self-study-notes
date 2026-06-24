@@ -4,70 +4,49 @@ aliases:
   - 材质实例
 category: "04_Engine"
 tags: [技术美术, Unreal, Material]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # Material Instance
 
-## 一句话定义
+## 定义与解释
 
-Material Instance 是 Unreal 中基于父材质创建的参数化材质实例，用于复用 Shader 逻辑并调整参数。
-
-## 为什么需要它
-
-项目中大量材质共享相同逻辑，只是颜色、贴图、粗糙度、开关不同。材质实例能减少重复材质图，方便美术调参，也利于 TA 统一规范。
+Material Instance 是 Unreal 中基于父材质创建的参数化材质实例，用于复用 Shader 逻辑并覆盖贴图、颜色、数值和开关参数。
 
 ## 核心原理
 
-父材质定义节点逻辑和可暴露参数；实例只覆盖参数值。静态参数可能影响编译变体，动态参数主要影响运行时 uniform。
+父材质定义节点逻辑和可暴露参数，Material Instance 只保存参数覆盖。运行时或编辑器使用实例时，仍复用父材质的核心编译逻辑；Static 参数可能影响编译排列，普通标量/向量/纹理参数主要改变运行时常量或资源绑定。
 
-## 技术美术中的典型用途
+它的价值在于规范和复用：TA 可以设计主材质和参数分组，让美术只调整安全范围内的参数。若静态开关过多或父材质过于庞大，实例体系也会变得难以维护。
 
-- 角色换色、皮肤和装备材质。
-- 场景资产共享主材质。
-- VFX 参数模板。
-- 与蓝图或 Niagara 动态控制参数。
+## 用途
 
-## Unity 中的相关场景
-
-Unity 中类似思路是共享 Shader/Material，并通过 MaterialPropertyBlock 或材质实例控制参数。
-
-## Unreal Engine 中的相关场景
-
-常用 Material Instance Constant 做资产参数，Material Instance Dynamic 在运行时由蓝图或 C++ 修改。
-
-## 常见误区
-
-1. 每个资产都复制一份完整材质图。
-2. 参数分组和命名混乱，美术难以使用。
-3. 静态开关过多导致变体膨胀。
-
-## 面试可能怎么问
-
-### Material Instance 的优势是什么？
-
-回答要点：复用父材质逻辑，减少重复维护，方便调参和统一规范，同时可通过实例覆盖贴图和数值参数。
-
-## 实践建议
-
-为一组道具建立主材质和多个实例，参数分组为 Base、Mask、Detail、VFX。
+- 在引擎项目中定位与 Material Instance 相关的资源导入、渲染表现、运行时加载、编辑器工具或构建问题。
+- 把引擎功能转化为团队可执行的资产规范、材质模板、工具入口和调试流程。
+- 与程序协作确认运行时成本、平台限制、版本差异和可维护边界。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Unity]] | Unity 是引擎平台；本条目可能是其中某个系统或工作流。 |
-| [[Unreal_Engine]] | Unreal 是引擎平台；本条目可能与其对应系统形成实现差异。 |
+| [[Material Editor]] | Material Editor 定义父材质逻辑；Material Instance 覆盖参数。 |
+| [[MaterialPropertyBlock]] | MaterialPropertyBlock 是 Unity 的 per-renderer 参数覆盖机制。 |
+
+## 常见误区
+
+1. 每个资产复制父材质而不是使用实例。
+2. 实例参数没有分组和命名规范。
+3. 静态开关过多导致编译排列膨胀。
 
 ## 相关条目
 
-- [[Material Editor]]
-- [[MaterialPropertyBlock]]
-- [[PBR]]
-- [[Unreal_Engine|Unreal Engine]]
+- [[Material Editor]]：父材质逻辑在 Material Editor 中搭建。
+- [[MaterialPropertyBlock]]：Unity 中类似需求常用 MaterialPropertyBlock 或材质实例处理。
+- [[PBR]]：实例常覆盖 PBR 贴图和参数。
 
 ## 参考来源
 

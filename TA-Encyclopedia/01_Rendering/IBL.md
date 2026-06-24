@@ -5,73 +5,49 @@ aliases:
   - 图像基光照
 category: "Rendering"
 tags: [技术美术, Rendering, PBR, Lighting]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # IBL
 
-## 一句话定义
+## 定义与解释
 
-IBL 使用环境贴图或预计算环境信息为物体提供间接光照和反射。
-
-## 为什么需要它
-
-真实场景中的物体不只受直接灯光影响，也会反射天空、房间和周围环境。IBL 让 PBR 材质在没有大量真实光源时仍能表现合理的金属反射、粗糙反射和环境漫反射。
+IBL（Image-Based Lighting）是使用环境贴图或预计算环境数据为材质提供间接光照的技术。它让 PBR 材质在没有大量显式灯光的情况下仍能获得环境反射和漫反射氛围。
 
 ## 核心原理
 
-- 输入：环境 Cubemap、法线、视线方向、Roughness、Metallic。
-- 处理过程：根据材质属性采样预过滤环境贴图和 BRDF LUT。
-- 输出：环境漫反射和环境镜面反射。
-- 所在层级：PBR Shader 和引擎光照系统。
+IBL 通常把环境贴图分成漫反射部分和镜面反射部分。漫反射会使用低频卷积结果，镜面反射会根据 Roughness 采样不同模糊级别的预滤波环境贴图，并结合 BRDF LUT 得到近似积分。
 
-## 技术美术中的典型用途
+IBL 的质量受 HDR 环境、色彩空间、反射探针位置、粗糙度 Mip、曝光和 Tone Mapping 影响。TA 需要检查环境来源是否可信、探针是否覆盖场景、动态物体和室内外过渡是否出现反射不匹配。
 
-- 设置 Reflection Probe / Sky Light。
-- 调整角色在不同场景中的材质一致性。
-- 解决金属材质发黑或反射不合理。
-- 管理移动端环境反射质量和性能。
+## 用途
 
-## Unity 中的相关场景
-
-Unity 使用 Reflection Probe、Skybox、Light Probe 等提供环境光照。URP/HDRP 的 Lit 材质会根据 Smoothness 和 Probe 数据显示反射。
-
-## Unreal Engine 中的相关场景
-
-Unreal 中 Sky Light、Reflection Capture、Lumen 反射等都会影响环境光照。不同项目设置会显著改变 PBR 材质观感。
-
-## 常见误区
-
-1. 只调材质不调环境，导致 PBR 看起来错误。
-2. 金属材质缺少环境反射时发黑，以为贴图坏了。
-3. Probe 分辨率、范围和更新策略不合理。
-
-## 面试可能怎么问
-
-### 为什么 PBR 材质需要 IBL？
-
-回答要点：PBR 需要环境间接光和反射来表达真实材质，尤其金属和高光表面对环境非常敏感。
-
-## 实践建议
-
-同一个金属材质球分别放在无环境、室内 HDRI、室外 HDRI 中，观察反射和亮度差异。
+- 在渲染调试中定位与 IBL 相关的画面异常、性能成本或资源配置问题。
+- 为美术、TA 和图形程序建立统一术语，减少材质、灯光、后处理和管线配置沟通偏差。
+- 把概念落到 Unity、Unreal 或 RenderDoc/Frame Debugger 中可观察的状态、缓冲、Pass 或材质参数上。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[PBR]] | 更偏材质和光照模型；本条目更关注具体渲染环节或画面效果。 |
-| [[Shader基础]] | Shader 是实现手段；本条目通常还涉及管线状态、缓冲读写和引擎配置。 |
+| [[Light Probe]] | Light Probe 更偏局部间接光采样；IBL 更强调环境贴图驱动的光照。 |
+| [[Reflection Probe]] | Reflection Probe 是采集或提供 IBL 反射数据的常见引擎对象。 |
+
+## 常见误区
+
+1. 使用 LDR 或曝光错误的环境贴图导致材质灰暗或过曝。
+2. 室内外共用同一反射环境，造成反射不可信。
+3. 把 IBL 当作简单贴图反射，忽略 BRDF 和 Roughness 影响。
 
 ## 相关条目
 
-- [[PBR]]
-- [[BRDF]]
-- [[Reflection Probe]]
-- [[Light Probe]]
+- [[PBR]]：IBL 是 PBR 间接光的重要来源。
+- [[Reflection Probe]]：Reflection Probe 常提供局部 IBL 数据。
+- [[Roughness]]：粗糙度决定镜面 IBL 的模糊级别。
 
 ## 参考来源
 

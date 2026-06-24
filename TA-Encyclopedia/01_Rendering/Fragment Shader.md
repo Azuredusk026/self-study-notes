@@ -5,77 +5,49 @@ aliases:
   - 片元着色器
 category: "Rendering"
 tags: [技术美术, Rendering, Shader]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # Fragment Shader
 
-## 一句话定义
+## 定义与解释
 
-Fragment Shader 是对光栅化产生的片元执行的 GPU 程序，用于计算颜色、材质属性或其他 Render Target 输出。
-
-## 为什么需要它
-
-一个三角形覆盖屏幕后，每个片元可能有不同的 UV、法线、深度和光照结果。Fragment Shader 负责采样贴图、计算光照、透明、溶解、描边遮罩等效果，是 TA 最常接触的 Shader 阶段。
+Fragment Shader 是 GPU 中为片元计算颜色、材质属性或其他输出的 Shader 阶段。它位于光栅化之后，直接影响最终像素表现和大量片元级性能成本。
 
 ## 核心原理
 
-- 输入：插值后的 UV、法线、颜色、深度、屏幕坐标等。
-- 处理过程：纹理采样、光照计算、分支、混合前颜色输出。
-- 输出：颜色、G-Buffer 数据、深度或自定义 Render Target。
-- 所在层级：GPU 可编程阶段，位于 [[Rasterization]] 后。
+Fragment Shader 接收光栅化插值得到的数据，例如 UV、法线、颜色、屏幕坐标等，然后执行采样、光照、遮罩、分支和输出。它的结果可能写入颜色缓冲、G-Buffer，或被裁剪丢弃。
 
-## 技术美术中的典型用途
+片元阶段的成本通常随屏幕覆盖面积和 Overdraw 放大。高分辨率贴图采样、复杂分支、循环、法线重建、透明叠加都会让 Fragment Shader 成为瓶颈。TA 在材质规范中需要关注采样次数、精度、关键字变体和移动端限制。
 
-- PBR、NPR、Toon、MatCap、溶解、流光、水、火、护盾等材质。
-- 后处理和全屏 Pass。
-- G-Buffer 写入和屏幕空间效果。
-- 性能分析中评估采样次数、分支、Overdraw 和精度。
+## 用途
 
-## Unity 中的相关场景
-
-Unity 中常写 `frag` 函数或通过 Shader Graph Fragment 端口输出 Base Color、Normal、Emission、Alpha 等。URP 自定义后处理也常使用全屏 Fragment Shader。
-
-## Unreal Engine 中的相关场景
-
-Unreal Material Graph 主要面向像素阶段表达材质逻辑。Post Process Material、Custom 节点和 Material Function 都常涉及片元计算。
-
-## 常见误区
-
-1. 认为屏幕上看不到就没有成本：被透明层覆盖的片元仍可能被执行。
-2. 忽略纹理采样成本：多张高分辨率采样会显著增加带宽压力。
-3. 在移动端滥用高精度和复杂分支。
-
-## 面试可能怎么问
-
-### Fragment Shader 的输入通常来自哪里？
-
-回答要点：来自顶点阶段输出的插值属性、纹理、常量缓冲、屏幕数据和引擎传入的光照或相机参数。
-
-### 为什么后处理通常是 Fragment Shader？
-
-回答要点：后处理主要在屏幕空间对每个像素处理颜色、深度或法线等缓冲数据。
-
-## 实践建议
-
-实现一个屏幕空间灰度后处理，再加入深度边缘检测，理解片元阶段和屏幕空间采样的关系。
+- 在渲染调试中定位与 Fragment Shader 相关的画面异常、性能成本或资源配置问题。
+- 为美术、TA 和图形程序建立统一术语，减少材质、灯光、后处理和管线配置沟通偏差。
+- 把概念落到 Unity、Unreal 或 RenderDoc/Frame Debugger 中可观察的状态、缓冲、Pass 或材质参数上。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[PBR]] | 更偏材质和光照模型；本条目更关注具体渲染环节或画面效果。 |
-| [[Shader基础]] | Shader 是实现手段；本条目通常还涉及管线状态、缓冲读写和引擎配置。 |
+| [[Vertex Shader]] | Vertex Shader 按顶点执行；Fragment Shader 按片元执行。 |
+| [[Shader基础]] | Shader基础是总体概念；Fragment Shader 是具体阶段。 |
+
+## 常见误区
+
+1. 只看模型面数，不看屏幕覆盖和片元复杂度。
+2. 在移动端过度使用高精度和多纹理采样。
+3. 以为分支一定省性能，忽略 GPU 分支执行方式。
 
 ## 相关条目
 
-- [[Vertex Shader]]
-- [[Texture Sampling]]
-- [[G-Buffer]]
-- [[后处理]]
+- [[Vertex Shader]]：顶点阶段提供插值前的数据。
+- [[Rasterization]]：光栅化产生片元并插值属性。
+- [[Overdraw]]：片元重复覆盖会放大片元着色成本。
 
 ## 参考来源
 

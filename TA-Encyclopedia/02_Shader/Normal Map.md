@@ -4,73 +4,49 @@ aliases:
   - 法线贴图
 category: "Shader"
 tags: [技术美术, Shader, Texture, Lighting]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # Normal Map
 
-## 一句话定义
+## 定义与解释
 
-Normal Map 用纹理存储表面法线扰动，让低模在光照中表现出更多细节。
-
-## 为什么需要它
-
-游戏资产不能无限增加面数。法线贴图让低模在不改变轮廓的情况下表现高模细节，是角色、道具、场景和材质生产的基础。TA 需要处理切线空间、通道方向、压缩格式和导入设置。
+Normal Map 用纹理存储表面法线扰动，让低模在光照中呈现高频细节。它改变的是光照响应，不改变模型轮廓。
 
 ## 核心原理
 
-- 输入：法线贴图、模型切线空间、片元基础法线。
-- 处理过程：将贴图颜色解码为方向，再从 Tangent Space 转换到 World/View Space 参与光照。
-- 输出：扰动后的法线方向。
-- 所在层级：Fragment Shader 光照计算。
+法线贴图通常把方向向量编码到 RGB 通道，再在 Shader 中解码为切线空间法线。片元阶段会用 TBN 基底把它转换到世界或视图空间，参与 PBR 或其他光照计算。
 
-## 技术美术中的典型用途
+核心风险来自切线空间一致性。DCC、烘焙工具、Unity、Unreal、DirectX/OpenGL 法线方向和压缩格式可能不同。TA 需要检查绿通道方向、sRGB、压缩、切线生成方式、UV 接缝和镜像 UV。
 
-- 高模到低模 Baking。
-- PBR 材质细节。
-- 角色皮肤、布料、硬表面刻线。
-- 排查接缝、翻绿通道、压缩伪影。
+## 用途
 
-## Unity 中的相关场景
-
-Unity 导入纹理时需要设置 Texture Type 为 Normal Map。不同平台压缩格式和 Y 通道方向会影响最终光照。
-
-## Unreal Engine 中的相关场景
-
-Unreal 通常自动识别 Normal 压缩设置，材质中接入 Normal 输入。若来自不同 DCC 或烘焙工具，需要确认 DirectX/OpenGL 法线方向。
-
-## 常见误区
-
-1. 法线贴图会改变模型轮廓：它只影响光照，不改变几何边界。
-2. 忽略切线空间一致性，导致接缝或高光断裂。
-3. 把 Normal Map 当 sRGB 颜色处理。
-
-## 面试可能怎么问
-
-### Tangent Space Normal Map 为什么常用？
-
-回答要点：它可以随模型变形和旋转使用，适合角色动画和通用材质；但依赖正确的切线、法线和副切线基底。
-
-## 实践建议
-
-用同一低模分别导入 DirectX 和 OpenGL 法线贴图，观察绿通道翻转对光照方向的影响。
+- 在材质或 Shader 调试中定位与 Normal Map 相关的画面异常、编译问题、性能成本或资源配置错误。
+- 把概念落到 Unity ShaderLab/Shader Graph、Unreal Material Editor、RenderDoc 或引擎材质面板中可观察的参数和状态。
+- 为美术暴露稳定的材质控制项，同时限制采样次数、变体数量、精度和平台差异带来的风险。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Material Graph]] | Material Graph 偏节点化编辑；本条目可能涉及更底层的代码、编译和采样细节。 |
-| [[Texture Sampling]] | Texture Sampling 是常见操作；本条目可能覆盖更完整的 Shader 结构或控制策略。 |
+| [[Tangent Space]] | Tangent Space 提供法线贴图解码后的方向基底。 |
+| [[PBR]] | PBR 使用 Normal Map 改变局部光照响应。 |
+
+## 常见误区
+
+1. 认为法线贴图会改变模型剪影。
+2. 把 Normal Map 当 sRGB 颜色贴图导入。
+3. 忽略切线空间不一致导致接缝和高光断裂。
 
 ## 相关条目
 
-- [[Tangent Space]]
-- [[Texture Sampling]]
-- [[PBR]]
-- [[Baking]]
+- [[Tangent Space]]：切线空间法线贴图依赖 TBN 基底。
+- [[Texture Sampling]]：Normal Map 需要按线性数据采样。
+- [[Baking]]：高模细节常通过 Baking 写入法线贴图。
 
 ## 参考来源
 

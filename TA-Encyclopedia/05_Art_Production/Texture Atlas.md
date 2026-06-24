@@ -4,70 +4,49 @@ aliases:
   - 贴图图集
 category: "05_Art_Production"
 tags: [技术美术, ArtProduction, Texture]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # Texture Atlas
 
-## 一句话定义
+## 定义与解释
 
-Texture Atlas 是把多张小贴图合并到一张大贴图中，以减少材质或采样切换成本的方法。
-
-## 为什么需要它
-
-UI、场景小物件、粒子和模块化资产常有很多小图。图集能降低资源绑定和 Draw Call 压力，但也会增加 UV 管理、Mipmap 串色和局部更新复杂度。
+Texture Atlas 是把多张小贴图合并到一张大贴图中的技术，用于减少材质切换、批处理成本和采样资源数量。
 
 ## 核心原理
 
-多个纹理区域被打包进一张大图，模型或 UI 通过对应 UV 区域采样。需要 padding、统一格式和合理分辨率。
+Atlas 的核心是把多个 UV 岛或多个资产的纹理区域排布到同一纹理空间。模型材质通过调整 UV 采样对应区域，从而共享同一材质和贴图资源。
 
-## 技术美术中的典型用途
+Atlas 需要处理 padding、Mip Bleeding、压缩块、旋转缩放、通道一致性和更新粒度。TA 不能只看合并后 Draw Call 下降，还要评估贴图浪费、内存、局部更新和美术迭代成本。
 
-- UI 图集。
-- 粒子序列或 Flipbook。
-- 小道具贴图合并。
-- 与 Trim Sheet、Mask Map 做资源复用。
+## 用途
 
-## Unity 中的相关场景
-
-Unity UI Sprite Atlas、粒子 Flipbook 和场景图集都与 Texture Atlas 思路相关。
-
-## Unreal Engine 中的相关场景
-
-Unreal 中可用于 UI、Flipbook、材质贴图合并和部分移动端优化。
-
-## 常见误区
-
-1. 图集过大导致内存浪费。
-2. padding 不足导致 Mipmap 串色。
-3. 把更新频率不同的贴图合进同一图集。
-
-## 面试可能怎么问
-
-### Texture Atlas 和 Trim Sheet 有什么区别？
-
-回答要点：Atlas 更强调把多张贴图合并减少切换；Trim Sheet 更强调可复用条带和模块化建模贴图设计。
-
-## 实践建议
-
-把一组 UI 图标打成图集，检查边缘 padding、压缩格式和不同缩放下的清晰度。
+- 在资产制作和引擎导入中定位与 Texture Atlas 相关的质量、性能或表现问题。
+- 把美术制作约定转成可检查的命名、尺寸、通道、骨骼、LOD 或导入规则。
+- 帮助美术、TA 和程序在视觉质量、生产效率和运行时预算之间取得稳定平衡。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[建模规范]] | 建模规范偏输入资产质量；本条目可能关注某个具体制作或优化环节。 |
-| [[贴图规范]] | 贴图规范偏纹理侧约束；本条目可能覆盖几何、绑定、动画或特效。 |
+| [[Trim Sheet]] | Trim Sheet 是可复用条带纹理；Atlas 是把多个纹理区域打包。 |
+| [[Texture Compression]] | Atlas 管布局；压缩管存储格式。 |
+
+## 常见误区
+
+1. Padding 不足导致 Mip 边缘串色。
+2. 把更新频率不同的贴图打在一起。
+3. 合并贴图后材质参数差异仍导致无法批处理。
 
 ## 相关条目
 
-- [[Trim Sheet]]
-- [[Texel Density]]
-- [[Mipmap]]
-- [[Texture Compression]]
+- [[UV]]：Atlas 依赖 UV 重新布局。
+- [[Texel Density]]：Atlas 中不同资产仍要控制贴图密度。
+- [[Draw Call]]：Atlas 常用于减少材质切换。
 
 ## 参考来源
 

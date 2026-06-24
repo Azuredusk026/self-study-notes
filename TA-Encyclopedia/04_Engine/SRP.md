@@ -4,70 +4,49 @@ aliases:
   - Scriptable Render Pipeline
 category: "04_Engine"
 tags: [技术美术, Unity, Rendering]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: medium
 ---
 
+
 # SRP
 
-## 一句话定义
+## 定义与解释
 
-SRP 是 Unity 允许开发者用脚本控制渲染流程的渲染管线架构。
-
-## 为什么需要它
-
-Built-in 管线封装较深，很多自定义效果只能绕路。SRP 让项目可以明确控制相机、剔除、Pass 调度、Render Target、后处理和 Shader Library。TA 在 URP/HDRP 项目中做工具和效果时，实际面对的是 SRP 思维。
+SRP（Scriptable Render Pipeline）是 Unity 的可编程渲染管线框架，让渲染流程由 C# 管线资产和渲染器代码组织。
 
 ## 核心原理
 
-SRP 的核心是由 C# 端组织渲染：获取相机数据，执行剔除，安排 Draw Call、Render Pass 和后处理，并把 GPU 资源在不同阶段传递。
+SRP 的核心是把原本固定的内置渲染流程开放给管线实现。URP、HDRP 和自定义管线通过 Render Pipeline Asset、Renderer、Pass、Shader Library 和资源配置定义渲染顺序、光照、后处理和平台策略。
 
-## 技术美术中的典型用途
+TA 需要理解项目使用哪条 SRP、哪些 Shader 和材质兼容、哪些 Renderer Feature 生效、哪些管线设置影响资产。SRP 提供扩展能力，也带来版本升级和管线差异成本。
 
-- 理解 URP/HDRP 的渲染入口。
-- 定位一个效果应该插入哪个 Pass。
-- 管理 [[RenderTexture]]、深度、法线和颜色缓冲。
-- 解释 SRP Batcher、Shader Variant 和材质兼容性问题。
+## 用途
 
-## Unity 中的相关场景
-
-URP 和 HDRP 都建立在 SRP 之上。自定义 SRP 成本较高，但理解 SRP 对写 Renderer Feature、Debug Pass 和性能分析很有帮助。
-
-## Unreal Engine 中的相关场景
-
-Unreal 的渲染管线不是 SRP，但同样有 Pass、Render Target、后处理和材质编译概念。面试中可用 SRP 与 Unreal 的渲染扩展方式做对比。
-
-## 常见误区
-
-1. 把 SRP 只理解成 URP：URP/HDRP 是 SRP 的官方实现。
-2. 认为 SRP 只影响渲染，不影响 Shader 和资源规范。
-3. 在不了解内置 Pass 的情况下盲目插入全屏效果。
-
-## 面试可能怎么问
-
-### SRP 相比 Built-in 管线的价值是什么？
-
-回答要点：SRP 给项目更多渲染流程控制能力，便于定制渲染路径、Pass、后处理和平台策略，但也要求团队理解更完整的渲染流程。
-
-## 实践建议
-
-阅读一个 URP Frame Debugger 帧，按顺序记录 Shadow、Depth、Opaque、Transparent、PostProcess 的输入输出。
+- 在引擎项目中定位与 SRP 相关的资源导入、渲染表现、运行时加载、编辑器工具或构建问题。
+- 把引擎功能转化为团队可执行的资产规范、材质模板、工具入口和调试流程。
+- 与程序协作确认运行时成本、平台限制、版本差异和可维护边界。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Unity]] | Unity 是引擎平台；本条目可能是其中某个系统或工作流。 |
-| [[Unreal_Engine]] | Unreal 是引擎平台；本条目可能与其对应系统形成实现差异。 |
+| [[URP]] | URP 是具体管线；SRP 是框架。 |
+| [[HDRP]] | HDRP 也是 SRP 实现，但目标平台和特性不同。 |
+
+## 常见误区
+
+1. 以为 SRP 是单一渲染管线。
+2. 升级管线版本前不检查 Shader 和 Renderer Feature 兼容性。
+3. 把 Built-in 管线经验直接套到 URP/HDRP。
 
 ## 相关条目
 
-- [[URP]]
-- [[HDRP]]
-- [[Render Pass]]
-- [[SRP Batcher]]
+- [[URP]]：URP 是 Unity 官方 SRP 实现。
+- [[HDRP]]：HDRP 是高端 SRP 实现。
+- [[ScriptableRendererFeature]]：URP 使用 Renderer Feature 扩展 SRP 流程。
 
 ## 参考来源
 

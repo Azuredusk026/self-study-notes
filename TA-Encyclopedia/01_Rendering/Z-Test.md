@@ -5,72 +5,49 @@ aliases:
   - 深度测试
 category: "Rendering"
 tags: [技术美术, Rendering, Depth]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # Z-Test
 
-## 一句话定义
+## 定义与解释
 
-Z-Test 是用片元深度和 Depth Buffer 中已有深度比较，判断该片元是否可见的测试。
-
-## 为什么需要它
-
-没有 Z-Test，后绘制的物体会错误覆盖先绘制的物体。TA 需要理解 Z-Test 才能正确处理透明、描边、遮挡高亮、深度预通道和特殊材质。
+Z-Test 是根据片元深度和 Depth Buffer 中已有深度比较，决定片元是否通过的深度测试规则。它是解决物体前后遮挡和减少无效绘制的基础机制。
 
 ## 核心原理
 
-- 输入：当前片元深度、Depth Buffer 深度、比较函数。
-- 处理过程：按 Less、LEqual、Greater、Always 等规则判断。
-- 输出：通过则继续写颜色或深度，失败则丢弃片元。
-- 所在层级：GPU 固定功能阶段。
+Z-Test 的核心是比较函数，例如 Less、LessEqual、Greater、Always 等。片元深度与缓冲中的深度比较后，只有通过的片元才可能继续写颜色；如果开启深度写入，还会更新 Depth Buffer。
 
-## 技术美术中的典型用途
+Z-Test 和 ZWrite 是不同概念：前者决定能不能通过，后者决定是否写入深度。透明、描边、特效、UI 和特殊遮罩经常需要调整这两个状态。TA 排查穿插、消失、透视错误和排序问题时必须同时看渲染队列、深度测试、深度写入和混合状态。
 
-- 控制 X-Ray、遮挡轮廓、透视高亮。
-- 透明物体排序和深度写入策略。
-- 深度预通道配合 Early-Z 降低片元成本。
+## 用途
 
-## Unity 中的相关场景
-
-ShaderLab 中可通过 `ZTest`、`ZWrite`、`Queue` 控制深度行为。URP/HDRP 自定义 Shader 也需要明确深度状态。
-
-## Unreal Engine 中的相关场景
-
-Unreal 材质和渲染设置封装了大部分深度行为，Custom Depth、Disable Depth Test、Translucency Sort Priority 常用于特殊效果。
-
-## 常见误区
-
-1. 把 Z-Test 和 ZWrite 混为一谈：前者是测试，后者是写入。
-2. 透明材质开启 ZWrite 后可能导致后续透明层被错误遮挡。
-3. Always 不是免费，它可能增加无意义的片元写入。
-
-## 面试可能怎么问
-
-### Z-Test 和 ZWrite 有什么区别？
-
-回答要点：Z-Test 决定片元是否通过深度比较；ZWrite 决定通过后是否更新 Depth Buffer。
-
-## 实践建议
-
-写三个材质分别设置 ZTest LEqual、Greater、Always，观察遮挡显示和透视效果差异。
+- 在渲染调试中定位与 Z-Test 相关的画面异常、性能成本或资源配置问题。
+- 为美术、TA 和图形程序建立统一术语，减少材质、灯光、后处理和管线配置沟通偏差。
+- 把概念落到 Unity、Unreal 或 RenderDoc/Frame Debugger 中可观察的状态、缓冲、Pass 或材质参数上。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[PBR]] | 更偏材质和光照模型；本条目更关注具体渲染环节或画面效果。 |
-| [[Shader基础]] | Shader 是实现手段；本条目通常还涉及管线状态、缓冲读写和引擎配置。 |
+| [[Early-Z]] | Z-Test 是规则；Early-Z 是提前执行该规则的优化。 |
+| [[Stencil Buffer]] | Z-Test 比较深度；Stencil Test 比较模板值。 |
+
+## 常见误区
+
+1. 混淆 Z-Test 和 ZWrite。
+2. 透明材质关闭深度写入后，仍期待完全正确的遮挡排序。
+3. 特殊效果使用 Always 测试后忘记恢复遮挡关系。
 
 ## 相关条目
 
-- [[Depth Buffer]]
-- [[Early-Z]]
-- [[Alpha Blend]]
-- [[Render Pass]]
+- [[Depth Buffer]]：Z-Test 读取并可能更新深度缓冲。
+- [[Early-Z]]：Z-Test 可能提前执行形成 Early-Z 优化。
+- [[Alpha Blend]]：透明材质常保留 Z-Test 但关闭 ZWrite。
 
 ## 参考来源
 

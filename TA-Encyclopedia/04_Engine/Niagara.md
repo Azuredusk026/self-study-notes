@@ -3,72 +3,49 @@ title: "Niagara"
 aliases: []
 category: "04_Engine"
 tags: [技术美术, Unreal, VFX]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: medium
 ---
 
+
 # Niagara
 
-## 一句话定义
+## 定义与解释
 
-Niagara 是 Unreal Engine 的程序化实时特效系统，用于构建粒子、网格、GPU 模拟和数据驱动 VFX。
-
-## 为什么需要它
-
-TA 在 Unreal 项目中经常需要把美术特效变成可复用、可调参、可优化的系统。Niagara 不只是粒子编辑器，它还涉及材质、蓝图、事件、数据接口、LOD、性能预算和团队规范。
+Niagara 是 Unreal 的 VFX 和粒子系统，用于构建粒子、网格粒子、GPU 模拟、事件和复杂特效模块。
 
 ## 核心原理
 
-Niagara 通常由 System、Emitter、Module、Parameter 和 Renderer 组成。粒子数据经过 Spawn、Update、Render 阶段，被 Sprite、Mesh、Ribbon 等 Renderer 输出。
+Niagara 的核心是以 System、Emitter、Module 和 Parameter 组织特效逻辑。模块在 Spawn、Update、Render 等阶段修改粒子属性，参数可以来自用户、蓝图、材质或数据接口。
 
-> 待核验：Niagara 模块、数据接口和 GPU 模拟能力随 Unreal 版本持续变化，具体功能需要查官方文档。
+TA 需要关注特效表现和运行时成本之间的平衡：粒子数量、GPU/CPU 模拟、排序、碰撞、材质复杂度、透明 Overdraw、LOD 和平台裁剪都会影响性能。参数命名和模块复用也决定特效团队是否能稳定生产。
 
-## 技术美术中的典型用途
+## 用途
 
-- 命中特效、技能轨迹、环境粒子。
-- Mesh Particle、Ribbon、Beam。
-- GPU 粒子和大量实例特效。
-- 特效参数暴露给蓝图或策划。
-
-## Unity 中的相关场景
-
-Unity 中相近方向是 Particle System 和 VFX Graph。TA 可以从“模块化粒子系统”和“GPU 特效图”的角度对比。
-
-## Unreal Engine 中的相关场景
-
-Niagara 与 Material、Blueprint、Sequencer、Gameplay Cue、User Parameter 和性能分析工具紧密相关。
-
-## 常见误区
-
-1. 只追求粒子数量，不控制 Overdraw 和材质复杂度。
-2. 所有特效都开 GPU 模拟，忽略平台和交互限制。
-3. 参数暴露混乱，导致特效模板不可复用。
-
-## 面试可能怎么问
-
-### Niagara 中 System 和 Emitter 的区别是什么？
-
-回答要点：System 是一个完整特效资产容器，可以包含多个 Emitter；Emitter 定义某一类粒子的生成、更新和渲染逻辑。
-
-## 实践建议
-
-做一个命中特效模板：包含火花、冲击波、烟尘三个 Emitter，并暴露颜色、尺寸、持续时间参数。
+- 在引擎项目中定位与 Niagara 相关的资源导入、渲染表现、运行时加载、编辑器工具或构建问题。
+- 把引擎功能转化为团队可执行的资产规范、材质模板、工具入口和调试流程。
+- 与程序协作确认运行时成本、平台限制、版本差异和可维护边界。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Unity]] | Unity 是引擎平台；本条目可能是其中某个系统或工作流。 |
-| [[Unreal_Engine]] | Unreal 是引擎平台；本条目可能与其对应系统形成实现差异。 |
+| [[Material Editor]] | Material Editor 定义粒子材质；Niagara 定义粒子行为和发射逻辑。 |
+| [[VFX]] | VFX 是美术效果领域；Niagara 是 Unreal 中的实现系统。 |
+
+## 常见误区
+
+1. 只看粒子数量，不看透明 Overdraw 和材质复杂度。
+2. 所有效果都开 GPU 模拟而不评估平台限制。
+3. 参数和模块没有规范，导致复用困难。
 
 ## 相关条目
 
-- [[VFX]]
-- [[Overdraw]]
-- [[Texture Sampling]]
-- [[Unreal_Engine|Unreal Engine]]
+- [[Unreal_Engine]]：Niagara 是 Unreal 特效系统。
+- [[Blueprint]]：Blueprint 可驱动 Niagara 参数。
+- [[Alpha Blend]]：粒子材质常涉及透明混合和 Overdraw。
 
 ## 参考来源
 

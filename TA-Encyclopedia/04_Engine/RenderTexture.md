@@ -4,71 +4,49 @@ aliases:
   - Render Texture
 category: "04_Engine"
 tags: [技术美术, Unity, Rendering]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # RenderTexture
 
-## 一句话定义
+## 定义与解释
 
-RenderTexture 是 Unity 中可作为渲染输出目标并可被后续采样的纹理资源。
-
-## 为什么需要它
-
-很多 TA 效果都需要中间图：小地图、角色头像、后处理、模糊、描边 Mask、场景捕捉、UI 预览、深度或法线缓存。RenderTexture 是 Unity 中承载这些中间结果的常用资源。
+RenderTexture 是 Unity 中可作为渲染目标的纹理资源，用于相机输出、后处理、中间缓冲、反射、UI 显示和离屏渲染。
 
 ## 核心原理
 
-相机、CommandBuffer 或 Render Pass 可以把颜色、深度等输出写入 RenderTexture。后续 Shader 再把它作为普通纹理采样。
+RenderTexture 的核心是让渲染结果写入纹理，而不是直接写到屏幕。相机、CommandBuffer、Blit 或自定义 Pass 可以把颜色和深度写入 RT，后续材质再采样它。
 
-## 技术美术中的典型用途
+TA 需要关注分辨率、格式、深度缓冲、MSAA、HDR、生命周期和释放。临时 RT 过多会造成显存和带宽压力，格式选择错误会导致颜色截断、精度不足或平台不兼容。
 
-- 小地图和监视器画面。
-- Bloom、Blur、Outline 等后处理。
-- UI 角色预览。
-- 低分辨率特效缓冲。
-- 与 [[Render Target]] 和 [[Framebuffer]] 概念对应。
+## 用途
 
-## Unity 中的相关场景
-
-常见参数包括分辨率、颜色格式、深度位数、MSAA、sRGB、MipMap 和生命周期管理。移动端尤其需要控制格式和尺寸。
-
-## Unreal Engine 中的相关场景
-
-Unreal 中相近概念是 Render Target 资源，可被 Scene Capture、材质和蓝图使用。
-
-## 常见误区
-
-1. 使用全分辨率 HDR RenderTexture 做所有中间效果。
-2. 忘记释放临时 RenderTexture。
-3. 颜色空间、格式或深度配置错误导致画面偏色或不可采样。
-
-## 面试可能怎么问
-
-### RenderTexture 和普通 Texture 有什么区别？
-
-回答要点：RenderTexture 可以作为渲染输出目标，普通 Texture 更多作为资源输入；RenderTexture 写入后也可以被 Shader 采样。
-
-## 实践建议
-
-做一个半分辨率模糊 Pass，对比全分辨率和半分辨率的性能与画质。
+- 在引擎项目中定位与 RenderTexture 相关的资源导入、渲染表现、运行时加载、编辑器工具或构建问题。
+- 把引擎功能转化为团队可执行的资产规范、材质模板、工具入口和调试流程。
+- 与程序协作确认运行时成本、平台限制、版本差异和可维护边界。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Unity]] | Unity 是引擎平台；本条目可能是其中某个系统或工作流。 |
-| [[Unreal_Engine]] | Unreal 是引擎平台；本条目可能与其对应系统形成实现差异。 |
+| [[Unreal_Render_Target]] | 两者都是引擎中的渲染目标资源，但 API 和编辑器工作流不同。 |
+| [[Texture Sampling]] | RenderTexture 写入后常作为纹理采样。 |
+
+## 常见误区
+
+1. 使用全分辨率 HDR RT 而不评估带宽。
+2. 临时 RenderTexture 未释放。
+3. 深度、MSAA 或颜色格式设置与效果需求不匹配。
 
 ## 相关条目
 
-- [[CommandBuffer]]
-- [[Render Target]]
-- [[Bloom]]
-- [[后处理]]
+- [[Render Target]]：RenderTexture 是 Unity 中的 Render Target 形式。
+- [[CommandBuffer]]：CommandBuffer 常读写 RenderTexture。
+- [[后处理]]：后处理通常依赖中间 RenderTexture。
 
 ## 参考来源
 

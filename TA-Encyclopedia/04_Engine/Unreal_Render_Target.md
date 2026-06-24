@@ -4,70 +4,49 @@ aliases:
   - Unreal Render Target
 category: "04_Engine"
 tags: [技术美术, Unreal, Rendering]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # Unreal Render Target
 
-## 一句话定义
+## 定义与解释
 
-Render Target 是 Unreal 中可被相机、材质或蓝图写入并再次采样的渲染目标资源。
-
-## 为什么需要它
-
-小地图、监控屏、绘制到纹理、动态遮罩、角色预览和交互式材质都需要中间纹理。Render Target 是实现这些效果的基础资源。
+Unreal Render Target 是 Unreal 中可被相机、Scene Capture、材质或蓝图写入和读取的渲染目标资源。
 
 ## 核心原理
 
-Scene Capture、Canvas、材质或渲染流程可以把颜色写入 Render Target。后续材质可像普通贴图一样读取它。
+它的核心是把某次渲染或绘制结果保存到 Texture Render Target，再供材质、UI、后处理或工具逻辑采样。常见来源包括 SceneCapture2D、Canvas 绘制、Niagara 或自定义渲染流程。
 
-## 技术美术中的典型用途
+TA 需要关注 Render Target 格式、分辨率、更新频率、Mip、HDR、清理方式和读回成本。实时 Scene Capture 或高分辨率 RT 很容易造成性能和显存压力，尤其在 UI 预览、镜面、监控屏和特效中。
 
-- 小地图和监控屏。
-- 动态绘制遮罩。
-- UI 角色预览。
-- Niagara 或材质数据交互。
+## 用途
 
-## Unity 中的相关场景
-
-Unity 中对应概念是 [[RenderTexture]]。
-
-## Unreal Engine 中的相关场景
-
-常与 Scene Capture 2D、Blueprint、Material 和 UMG 配合使用。需要关注分辨率、格式、更新频率和内存。
-
-## 常见误区
-
-1. 每帧高分辨率更新，成本过高。
-2. 忘记 Render Target 格式和颜色空间。
-3. 用 Render Target 保存本可用参数表达的简单状态。
-
-## 面试可能怎么问
-
-### Render Target 可以做哪些 TA 效果？
-
-回答要点：小地图、动态遮罩、屏幕显示器、角色预览、绘制轨迹和材质交互。
-
-## 实践建议
-
-做一个角色脚印系统，把移动轨迹写入 Render Target，再在地面材质中采样显示。
+- 在引擎项目中定位与 Unreal Render Target 相关的资源导入、渲染表现、运行时加载、编辑器工具或构建问题。
+- 把引擎功能转化为团队可执行的资产规范、材质模板、工具入口和调试流程。
+- 与程序协作确认运行时成本、平台限制、版本差异和可维护边界。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Unity]] | Unity 是引擎平台；本条目可能是其中某个系统或工作流。 |
-| [[Unreal_Engine]] | Unreal 是引擎平台；本条目可能与其对应系统形成实现差异。 |
+| [[RenderTexture]] | 两者分别是 Unreal 和 Unity 的渲染目标资源。 |
+| [[Framebuffer]] | Framebuffer 是底层附件集合；Render Target 是引擎暴露的纹理资源。 |
+
+## 常见误区
+
+1. 每帧更新多个高分辨率 Scene Capture。
+2. RT 格式和颜色空间选择错误。
+3. 把 GPU RT 频繁读回 CPU 造成卡顿。
 
 ## 相关条目
 
-- [[RenderTexture]]
-- [[Post Process Material]]
-- [[Blueprint]]
-- [[Material Editor]]
+- [[RenderTexture]]：Unity 中类似的渲染目标资源。
+- [[Render Target]]：通用渲染目标概念。
+- [[Post Process Material]]：后处理材质可读取 RT 或屏幕缓冲。
 
 ## 参考来源
 

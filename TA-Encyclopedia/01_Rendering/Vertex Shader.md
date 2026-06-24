@@ -4,77 +4,49 @@ aliases:
   - 顶点着色器
 category: "Rendering"
 tags: [技术美术, Rendering, Shader]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # Vertex Shader
 
-## 一句话定义
+## 定义与解释
 
-Vertex Shader 是 GPU 上处理每个顶点的程序，通常负责坐标变换和向后续阶段传递插值属性。
-
-## 为什么需要它
-
-模型文件中的顶点通常处于 Object Space，不能直接用于屏幕显示。Vertex Shader 会把顶点经过 Model、View、Projection 变换送入裁剪空间，也可以处理风吹草动、角色顶点动画、描边外扩和 GPU Instancing 参数。
+Vertex Shader 是 GPU 中按顶点执行的 Shader 阶段，负责顶点位置变换和向后续阶段输出可插值属性。它连接模型数据和裁剪空间，是渲染管线早期的重要阶段。
 
 ## 核心原理
 
-- 输入：顶点位置、法线、切线、UV、颜色、实例数据。
-- 处理过程：坐标空间变换、属性计算、可选顶点偏移。
-- 输出：裁剪空间位置和传给片元阶段的 varying/interpolator。
-- 所在层级：GPU 可编程阶段，位于图元装配和 [[Rasterization]] 前。
+Vertex Shader 通常把对象空间顶点变换到裁剪空间，并输出 UV、法线、切线、颜色、自定义数据等。随后光栅化会根据三角形覆盖区域插值这些属性，供 Fragment Shader 使用。
 
-## 技术美术中的典型用途
+顶点阶段适合做顶点动画、风吹草动、GPU Skinning 的部分逻辑或实例化数据处理，但它按顶点而非按像素执行，细节受网格密度限制。TA 需要理解空间变换、法线变换和插值误差，避免把片元级效果错误放到顶点阶段。
 
-- 顶点动画、风场、旗帜、水面扰动。
-- 反向法线或顶点外扩描边。
-- GPU Instancing 中根据实例参数改变颜色、缩放或位置。
-- 计算世界空间法线、视线方向等片元阶段需要的数据。
+## 用途
 
-## Unity 中的相关场景
-
-Unity 手写 HLSL、ShaderLab、Shader Graph Custom Function 都可能涉及顶点阶段。URP/HDRP 的 Shader Graph 也提供 Vertex Position、Normal、Tangent 等顶点修改入口。
-
-## Unreal Engine 中的相关场景
-
-Unreal 材质中的 World Position Offset 本质上影响顶点阶段输出，常用于植被风动、简单水面和材质驱动的模型形变。
-
-## 常见误区
-
-1. 把顶点阶段当成逐像素效果：顶点密度不足时形变会很粗糙。
-2. 忽略坐标空间：Object、World、View 混用会导致方向错误。
-3. 顶点动画影响阴影时，没有同步 Shadow Pass 或深度写入。
-
-## 面试可能怎么问
-
-### Vertex Shader 和 Fragment Shader 的主要区别是什么？
-
-回答要点：Vertex Shader 按顶点执行，主要做坐标和顶点属性处理；Fragment Shader 按片元执行，主要计算最终颜色或材质数据。
-
-### 为什么顶点动画需要考虑模型细分程度？
-
-回答要点：顶点动画只能移动已有顶点，网格太稀会导致轮廓和表面变化不连续。
-
-## 实践建议
-
-实现一个简单 Wind Shader：用顶点颜色作为权重，让草叶顶部随时间和噪声摆动，底部保持稳定。
+- 在渲染调试中定位与 Vertex Shader 相关的画面异常、性能成本或资源配置问题。
+- 为美术、TA 和图形程序建立统一术语，减少材质、灯光、后处理和管线配置沟通偏差。
+- 把概念落到 Unity、Unreal 或 RenderDoc/Frame Debugger 中可观察的状态、缓冲、Pass 或材质参数上。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[PBR]] | 更偏材质和光照模型；本条目更关注具体渲染环节或画面效果。 |
-| [[Shader基础]] | Shader 是实现手段；本条目通常还涉及管线状态、缓冲读写和引擎配置。 |
+| [[Fragment Shader]] | Vertex Shader 按顶点执行；Fragment Shader 按片元执行。 |
+| [[Object Space]] | Object Space 是输入空间之一；Vertex Shader 负责把它转换到后续空间。 |
+
+## 常见误区
+
+1. 以为顶点阶段可以表达任意像素细节。
+2. 法线变换没有使用正确矩阵，导致光照错误。
+3. 顶点动画改变位置但没有同步包围盒，导致剔除异常。
 
 ## 相关条目
 
-- [[Fragment Shader]]
-- [[矩阵变换]]
-- [[World Space]]
-- [[GPU Instancing]]
+- [[Fragment Shader]]：片元阶段使用顶点阶段输出的插值数据。
+- [[Rasterization]]：光栅化插值 Vertex Shader 输出。
+- [[矩阵变换]]：顶点空间变换依赖矩阵。
 
 ## 参考来源
 

@@ -4,70 +4,49 @@ aliases:
   - 材质图
 category: "02_Shader"
 tags: [技术美术, Shader, Material]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # Material Graph
 
-## 一句话定义
+## 定义与解释
 
-Material Graph 是用节点方式组织材质计算逻辑的图形化 Shader 表达方式。
-
-## 为什么需要它
-
-很多项目让美术和 TA 通过节点搭建材质，而不是直接手写 Shader。Material Graph 能提高可视化和复用性，但也容易隐藏性能成本。
+Material Graph 是用节点网络组织材质逻辑的编辑方式。它让美术和 TA 通过连接纹理、参数、数学节点和材质输出构建 Shader 行为。
 
 ## 核心原理
 
-节点图最终会被转换或编译为 Shader 代码。每个采样、数学节点、分支和静态开关都可能影响指令数、采样数和变体数量。
+Material Graph 的核心是把材质计算表达成有向数据流。节点代表采样、数学、空间变换、分支或函数，连线代表数据依赖，最终由引擎生成或组合成 Shader 代码。
 
-## 技术美术中的典型用途
+节点化提高可视化和复用性，但不自动保证性能。每个采样、分支、函数和关键字仍会进入实际 Shader。TA 需要把节点图拆解成采样次数、指令复杂度、变体数量和参数暴露规则来评估。
 
-- PBR、Toon、VFX 材质。
-- 材质函数库。
-- 参数暴露和实例化。
-- 性能调试和节点重构。
+## 用途
 
-## Unity 中的相关场景
-
-Unity 中对应工具是 Shader Graph。
-
-## Unreal Engine 中的相关场景
-
-Unreal 的 Material Editor 就是典型 Material Graph 工作流。
-
-## 常见误区
-
-1. 节点图越直观就越便宜。
-2. 复杂逻辑没有封装成函数或子图。
-3. 不检查最终 Shader 变体和采样次数。
-
-## 面试可能怎么问
-
-### Material Graph 和手写 Shader 怎么取舍？
-
-回答要点：节点图更适合可视化、快速迭代和美术协作；手写 Shader 更适合底层控制、复杂优化和特殊管线需求。
-
-## 实践建议
-
-把一个复杂材质拆成 Base、Mask、Detail、VFX 四个函数或子图，减少重复连线。
+- 在材质或 Shader 调试中定位与 Material Graph 相关的画面异常、编译问题、性能成本或资源配置错误。
+- 把概念落到 Unity ShaderLab/Shader Graph、Unreal Material Editor、RenderDoc 或引擎材质面板中可观察的参数和状态。
+- 为美术暴露稳定的材质控制项，同时限制采样次数、变体数量、精度和平台差异带来的风险。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Material Graph]] | Material Graph 偏节点化编辑；本条目可能涉及更底层的代码、编译和采样细节。 |
-| [[Texture Sampling]] | Texture Sampling 是常见操作；本条目可能覆盖更完整的 Shader 结构或控制策略。 |
+| [[HLSL]] | HLSL 是代码表达；Material Graph 是节点表达。 |
+| [[Shader基础]] | Shader基础解释底层阶段；Material Graph 是引擎封装的创作界面。 |
+
+## 常见误区
+
+1. 认为节点图比手写 Shader 一定更便宜。
+2. 节点复用不当导致隐藏采样和重复计算。
+3. 暴露过多参数让材质规范失控。
 
 ## 相关条目
 
-- [[Material Editor]]
-- [[Shader_Graph|Shader Graph]]
-- [[Shader Variant]]
-- [[Texture Sampling]]
+- [[Shader_Graph]]：Shader_Graph 是具体节点化 Shader 工具条目。
+- [[Texture Sampling]]：材质图中纹理采样是常见节点。
+- [[Keyword]]：材质图开关可能生成 Keyword。
 
 ## 参考来源
 

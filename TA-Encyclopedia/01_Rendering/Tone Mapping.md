@@ -4,86 +4,49 @@ aliases: []
 category: "01_Rendering"
 tags:
   - 技术美术
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: low
 ---
 
+
 # Tone Mapping
 
-## 一句话定义
+## 定义与解释
 
-Tone Mapping 是后续需要扩充的技术美术相关主题。本页当前用于补全知识库双链，避免核心条目引用到不存在的页面。
-
-## 为什么需要它
-
-该主题已经在第一轮核心条目中被引用，说明它与渲染、Shader、引擎、资产生产或算法基础存在直接关系。
+Tone Mapping 是把 HDR 颜色映射到显示设备可表达范围的过程。它决定高光如何压缩、暗部如何保留，以及最终画面的曝光和对比观感。
 
 ## 核心原理
 
-- 输入：几何数据、材质参数、灯光、相机、深度/法线/颜色等缓冲数据。
-- 处理过程：在渲染管线的对应阶段采样、计算、混合或写入缓冲，并受排序、精度和平台能力影响。
-- 输出：屏幕颜色、深度/模板结果、Render Target、调试图或后处理输入。
-- 所在层级：GPU / Render Pipeline。
+实时渲染中光照和 Bloom 等效果常在 HDR 空间计算，最终需要通过 Tone Mapping 转成 LDR 或目标显示格式。不同曲线如 Reinhard、ACES 或引擎自定义曲线，会产生不同的高光滚降、饱和度和肤色表现。
 
-## 技术美术中的典型用途
+Tone Mapping 不是简单的亮度缩放，它与曝光、色彩管理、Bloom、后处理 LUT 和显示设备相关。TA 需要统一项目的亮度基准和校色流程，否则材质、灯光和后期会互相补偿，难以稳定复现。
 
-- 定位画面异常和渲染顺序问题。
-- 制定材质、灯光和后处理规范。
-- 评估带宽、Overdraw、Render Target 数量和平台性能预算。
+## 用途
 
-## Unity 中的相关场景
-
-常见于 URP/HDRP 的 Renderer Feature、Render Pass、Shader、后处理 Volume、Frame Debugger 和 RenderDoc 排查流程。
-
-## Unreal Engine 中的相关场景
-
-常见于 Material、Post Process Material、Custom Depth/Stencil、Render Target、Buffer Visualization 和 Unreal Insights/RenderDoc 分析流程。
+- 在渲染调试中定位与 Tone Mapping 相关的画面异常、性能成本或资源配置问题。
+- 为美术、TA 和图形程序建立统一术语，减少材质、灯光、后处理和管线配置沟通偏差。
+- 把概念落到 Unity、Unreal 或 RenderDoc/Frame Debugger 中可观察的状态、缓冲、Pass 或材质参数上。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[PBR]] | 更偏材质和光照模型；本条目更关注具体渲染环节或画面效果。 |
-| [[Shader基础]] | Shader 是实现手段；本条目通常还涉及管线状态、缓冲读写和引擎配置。 |
+| [[Bloom]] | Bloom 扩散高亮；Tone Mapping 压缩动态范围。 |
+| [[后处理]] | Tone Mapping 是后处理链中的关键颜色转换步骤。 |
 
 ## 常见误区
 
-1. 只记概念名，不确认它在项目中的输入、输出和所在管线阶段。
-2. 把引擎默认效果当成固定标准，忽略渲染管线、平台和项目配置差异。
-3. 没有保留可复现的测试场景，导致问题只能靠截图或主观描述沟通。
-
-## 面试可能怎么问
-
-### 问题 1
-
-`Tone Mapping` 解决的核心问题是什么？
-
-回答要点：先说明它在实时渲染中处理哪类输入和输出，再结合一个项目场景说明为什么需要它。
-
-### 问题 2
-
-在 Unity 和 Unreal 中落地 `Tone Mapping` 时，TA 需要分别关注什么？
-
-回答要点：比较两边的工具入口、资源规则、调试方式和平台限制，不要只背 API 名称。
-
-### 问题 3
-
-如果 `Tone Mapping` 相关效果或资产在项目中出问题，你会怎么排查？
-
-回答要点：从资源输入、引擎配置、运行时状态、性能指标和最小复现场景逐层缩小范围。
-
-## 实践建议
-
-- 为 `Tone Mapping` 保留一个最小测试场景或示例资产，便于回归检查。
-- 把关键参数、命名规则和导入设置写入团队规范，避免只存在个人经验里。
-- 涉及具体版本、API 或第三方工具行为时，先标记 `待核验`，再登记到 [[91_Sources/source_registry|Source Registry]]。
+1. 把 Tone Mapping 当成最终调色滤镜，忽略 HDR 到显示范围的转换职责。
+2. 材质和灯光没有亮度基准，只靠后期曲线补救。
+3. 不同平台使用不同 Tone Mapping 曲线导致画面风格不一致。
 
 ## 相关条目
 
-- [[技术美术百科总目录]]
-- [[待扩充条目]]
+- [[Bloom]]：Bloom 与 Tone Mapping 共同决定高亮观感。
+- [[PBR]]：PBR 光照通常需要合理曝光和 Tone Mapping 呈现。
+- [[Render Target]]：Tone Mapping 常读取 HDR RT 并输出到显示目标。
 
 ## 参考来源
 

@@ -4,85 +4,48 @@ aliases: []
 category: "02_Shader"
 confidence: medium
 tags: [shader, node-graph]
-status: draft
+status: active
 created: 2026-06-24
 updated: "2026-06-24"
 ---
 
+
 # Shader Graph
 
-## 一句话定义
-Shader Graph 用节点方式组织材质逻辑，降低手写 Shader 门槛。
+## 定义与解释
 
-## 为什么需要它
-
-TA 需要理解 `Shader_Graph`，因为它会影响资源制作、引擎配置、画面表现、调试路径或团队协作边界。把它写成明确条目，可以减少口头经验传递，并让问题排查有稳定入口。
+Shader Graph 是 Unity 等引擎提供的节点化 Shader 创作工具。它让用户通过节点网络生成 Shader，而不是直接手写完整 HLSL。
 
 ## 核心原理
 
-- 输入：顶点属性、纹理、常量缓冲、材质参数、关键字和渲染状态。
-- 处理过程：在顶点、片元、计算或材质图阶段执行采样、空间变换、分支、插值和混合。
-- 输出：颜色、法线、深度、遮罩、材质属性或供后续 Pass 使用的中间结果。
-- 所在层级：GPU / Shader / Material System。
+Shader Graph 的核心是把节点网络编译为目标渲染管线可用的 Shader。每个节点会生成对应代码或函数调用，黑板参数会映射为材质属性，Sub Graph 则提供复用逻辑。
 
-## 技术美术中的典型用途
+它降低了创作门槛，但仍受 SRP、Pass、Keyword、采样次数、精度和平台限制约束。TA 需要设计节点规范、Sub Graph 复用方式和参数命名，避免项目中出现大量难维护的节点图。
 
-- 编写和维护可复用 Shader/Material Graph。
-- 控制变体数量、采样次数和移动端精度。
-- 为美术暴露稳定、可理解的材质参数。
+## 用途
 
-## Unity 中的相关场景
-
-常见于 ShaderLab/HLSL、Shader Graph、MaterialPropertyBlock、Keyword、SRP Batcher 和 URP/HDRP 自定义材质。
-
-## Unreal Engine 中的相关场景
-
-常见于 Material Editor、Material Function、Custom HLSL、Static Switch、Material Instance 和平台材质质量分级。
+- 在材质或 Shader 调试中定位与 Shader_Graph 相关的画面异常、编译问题、性能成本或资源配置错误。
+- 把概念落到 Unity ShaderLab/Shader Graph、Unreal Material Editor、RenderDoc 或引擎材质面板中可观察的参数和状态。
+- 为美术暴露稳定的材质控制项，同时限制采样次数、变体数量、精度和平台差异带来的风险。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Material Graph]] | Material Graph 偏节点化编辑；本条目可能涉及更底层的代码、编译和采样细节。 |
-| [[Texture Sampling]] | Texture Sampling 是常见操作；本条目可能覆盖更完整的 Shader 结构或控制策略。 |
+| [[Material Graph]] | Material Graph 是通用概念；Shader Graph 是 Unity 生态具体工具。 |
+| [[HLSL]] | HLSL 是代码路径；Shader Graph 是节点生成路径。 |
 
 ## 常见误区
 
-1. 只记概念名，不确认它在项目中的输入、输出和所在管线阶段。
-2. 把引擎默认效果当成固定标准，忽略渲染管线、平台和项目配置差异。
-3. 没有保留可复现的测试场景，导致问题只能靠截图或主观描述沟通。
-
-## 面试可能怎么问
-
-### 问题 1
-
-`Shader_Graph` 解决的核心问题是什么？
-
-回答要点：先说明它在Shader 开发中处理哪类输入和输出，再结合一个项目场景说明为什么需要它。
-
-### 问题 2
-
-在 Unity 和 Unreal 中落地 `Shader_Graph` 时，TA 需要分别关注什么？
-
-回答要点：比较两边的工具入口、资源规则、调试方式和平台限制，不要只背 API 名称。
-
-### 问题 3
-
-如果 `Shader_Graph` 相关效果或资产在项目中出问题，你会怎么排查？
-
-回答要点：从资源输入、引擎配置、运行时状态、性能指标和最小复现场景逐层缩小范围。
-
-## 实践建议
-
-- 为 `Shader_Graph` 保留一个最小测试场景或示例资产，便于回归检查。
-- 把关键参数、命名规则和导入设置写入团队规范，避免只存在个人经验里。
-- 涉及具体版本、API 或第三方工具行为时，先标记 `待核验`，再登记到 [[91_Sources/source_registry|Source Registry]]。
+1. 认为节点化就不需要理解 Shader。
+2. Sub Graph 无规范导致重复逻辑和隐藏成本。
+3. Graph 参数命名随意，导致材质面板难以维护。
 
 ## 相关条目
 
-- [[02_Shader/README|02_Shader README]]
-- [[技术美术百科总目录]]
-- [[术语索引]]
+- [[Material Graph]]：Shader Graph 是具体节点材质工具。
+- [[HLSL]]：Shader Graph 可包含或生成 HLSL 逻辑。
+- [[Keyword]]：Graph 中的开关可能生成 Keyword。
 
 ## 参考来源
 

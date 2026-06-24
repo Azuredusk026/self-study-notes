@@ -4,85 +4,48 @@ aliases: []
 category: "02_Shader"
 confidence: medium
 tags: [shader, uv, texture]
-status: draft
+status: active
 created: 2026-06-24
 updated: "2026-06-24"
 ---
 
+
 # UV与贴图采样
 
-## 一句话定义
-UV 是模型表面到贴图空间的映射，采样决定如何从纹理读取颜色或数据。
+## 定义与解释
 
-## 为什么需要它
-
-TA 需要理解 `UV与贴图采样`，因为它会影响资源制作、引擎配置、画面表现、调试路径或团队协作边界。把它写成明确条目，可以减少口头经验传递，并让问题排查有稳定入口。
+UV 与贴图采样描述模型表面二维坐标如何映射到纹理，并在 Shader 中被用来读取贴图数据。它连接 DCC 展 UV、贴图绘制、引擎导入和材质表现。
 
 ## 核心原理
 
-- 输入：顶点属性、纹理、常量缓冲、材质参数、关键字和渲染状态。
-- 处理过程：在顶点、片元、计算或材质图阶段执行采样、空间变换、分支、插值和混合。
-- 输出：颜色、法线、深度、遮罩、材质属性或供后续 Pass 使用的中间结果。
-- 所在层级：GPU / Shader / Material System。
+UV 是每个顶点或片元携带的二维坐标，光栅化后在三角形内部插值。Shader 使用插值后的 UV 采样纹理，再根据纹理语义参与颜色、法线、遮罩或效果计算。
 
-## 技术美术中的典型用途
+UV 问题通常跨越美术和 Shader：拉伸、接缝、重叠、密度不一致、Wrap、Tiling、Offset、Mip Bleeding 都会改变最终采样结果。TA 需要同时检查模型 UV、纹理边缘扩展、导入设置和材质节点。
 
-- 编写和维护可复用 Shader/Material Graph。
-- 控制变体数量、采样次数和移动端精度。
-- 为美术暴露稳定、可理解的材质参数。
+## 用途
 
-## Unity 中的相关场景
-
-常见于 ShaderLab/HLSL、Shader Graph、MaterialPropertyBlock、Keyword、SRP Batcher 和 URP/HDRP 自定义材质。
-
-## Unreal Engine 中的相关场景
-
-常见于 Material Editor、Material Function、Custom HLSL、Static Switch、Material Instance 和平台材质质量分级。
+- 在材质或 Shader 调试中定位与 UV与贴图采样 相关的画面异常、编译问题、性能成本或资源配置错误。
+- 把概念落到 Unity ShaderLab/Shader Graph、Unreal Material Editor、RenderDoc 或引擎材质面板中可观察的参数和状态。
+- 为美术暴露稳定的材质控制项，同时限制采样次数、变体数量、精度和平台差异带来的风险。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Material Graph]] | Material Graph 偏节点化编辑；本条目可能涉及更底层的代码、编译和采样细节。 |
-| [[Texture Sampling]] | Texture Sampling 是常见操作；本条目可能覆盖更完整的 Shader 结构或控制策略。 |
+| [[Texture Sampling]] | UV 是采样坐标；Texture Sampling 是读取纹理的过程。 |
+| [[Texel Density]] | Texel Density 管贴图密度规范；UV 采样管坐标和读取结果。 |
 
 ## 常见误区
 
-1. 只记概念名，不确认它在项目中的输入、输出和所在管线阶段。
-2. 把引擎默认效果当成固定标准，忽略渲染管线、平台和项目配置差异。
-3. 没有保留可复现的测试场景，导致问题只能靠截图或主观描述沟通。
-
-## 面试可能怎么问
-
-### 问题 1
-
-`UV与贴图采样` 解决的核心问题是什么？
-
-回答要点：先说明它在Shader 开发中处理哪类输入和输出，再结合一个项目场景说明为什么需要它。
-
-### 问题 2
-
-在 Unity 和 Unreal 中落地 `UV与贴图采样` 时，TA 需要分别关注什么？
-
-回答要点：比较两边的工具入口、资源规则、调试方式和平台限制，不要只背 API 名称。
-
-### 问题 3
-
-如果 `UV与贴图采样` 相关效果或资产在项目中出问题，你会怎么排查？
-
-回答要点：从资源输入、引擎配置、运行时状态、性能指标和最小复现场景逐层缩小范围。
-
-## 实践建议
-
-- 为 `UV与贴图采样` 保留一个最小测试场景或示例资产，便于回归检查。
-- 把关键参数、命名规则和导入设置写入团队规范，避免只存在个人经验里。
-- 涉及具体版本、API 或第三方工具行为时，先标记 `待核验`，再登记到 [[91_Sources/source_registry|Source Registry]]。
+1. 只看贴图本身，不检查 UV 拉伸和接缝。
+2. 忽略纹理边缘扩展导致 Mip 出血。
+3. 多套 UV 用途混乱，导致光照贴图、材质贴图或特效采样错位。
 
 ## 相关条目
 
-- [[02_Shader/README|02_Shader README]]
-- [[技术美术百科总目录]]
-- [[术语索引]]
+- [[Texture Sampling]]：UV 是纹理采样的主要坐标。
+- [[Mipmap]]：UV 密度和 Mip 选择影响远处质量。
+- [[UV]]：美术生产中的 UV 规范与 Shader 采样直接相关。
 
 ## 参考来源
 

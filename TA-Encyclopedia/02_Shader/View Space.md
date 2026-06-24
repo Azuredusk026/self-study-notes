@@ -5,73 +5,49 @@ aliases:
   - 视图空间
 category: "Shader"
 tags: [技术美术, Shader, Space]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # View Space
 
-## 一句话定义
+## 定义与解释
 
-View Space 是以相机为基准的坐标空间。
-
-## 为什么需要它
-
-很多屏幕相关效果需要知道物体相对相机的位置和方向，例如视线方向、深度重建、法线可视化、边缘检测、雾效和后处理。View Space 让这些计算以相机为中心表达。
+View Space 是以相机为原点和方向参考的坐标空间。它常用于光照、深度、法线、屏幕效果和与相机相关的计算。
 
 ## 核心原理
 
-- 输入：World Space 位置或方向。
-- 处理过程：乘以 View Matrix 转到相机坐标系。
-- 输出：相机空间位置、方向或深度。
-- 所在层级：Vertex/Fragment Shader 和后处理。
+物体从 World Space 经过 View Matrix 转换到 View Space，此时相机位于空间原点。视图空间能方便表达到相机的方向、深度和相对位置，再进一步通过投影矩阵进入 Clip Space。
 
-## 技术美术中的典型用途
+不同引擎对相机前向轴、深度正负和矩阵布局有约定差异。TA 在写深度重建、边缘检测、View Direction、法线变换和雾效时，需要确认使用的是 View Space、World Space 还是 Screen Space 数据。
 
-- 屏幕空间法线和深度效果。
-- Rim Light 与视线方向。
-- 后处理深度重建。
-- 相机相关的 VFX 变形和淡出。
+## 用途
 
-## Unity 中的相关场景
-
-Unity 中常用 View Matrix 或内置转换函数。URP 后处理和深度重建常涉及 View Space。
-
-## Unreal Engine 中的相关场景
-
-Unreal 材质和后处理提供 Camera Vector、Pixel Depth、Scene Depth 等相机相关数据。
-
-## 常见误区
-
-1. 把 View Space Z 直接当线性世界距离。
-2. 相机翻转或平台差异导致深度方向理解错误。
-3. 混用世界法线和视图法线做屏幕空间计算。
-
-## 面试可能怎么问
-
-### View Space 在后处理中有什么用？
-
-回答要点：它可以根据深度和屏幕坐标重建相机空间位置，用于 SSAO、雾效、景深等屏幕空间效果。
-
-## 实践建议
-
-写一个 View Space Normal 可视化 Shader，观察相机旋转时颜色如何变化。
+- 在材质或 Shader 调试中定位与 View Space 相关的画面异常、编译问题、性能成本或资源配置错误。
+- 把概念落到 Unity ShaderLab/Shader Graph、Unreal Material Editor、RenderDoc 或引擎材质面板中可观察的参数和状态。
+- 为美术暴露稳定的材质控制项，同时限制采样次数、变体数量、精度和平台差异带来的风险。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Material Graph]] | Material Graph 偏节点化编辑；本条目可能涉及更底层的代码、编译和采样细节。 |
-| [[Texture Sampling]] | Texture Sampling 是常见操作；本条目可能覆盖更完整的 Shader 结构或控制策略。 |
+| [[World Space]] | World Space 是场景坐标；View Space 是相机相对坐标。 |
+| [[Clip Space]] | Clip Space 加入投影和齐次裁剪；View Space 仍是三维相机空间。 |
+
+## 常见误区
+
+1. 把 View Space 深度当作非线性深度纹理值。
+2. 相机前向轴约定弄错导致方向反了。
+3. 混用 View Space 法线和 World Space 光照方向。
 
 ## 相关条目
 
-- [[World Space]]
-- [[Clip Space]]
-- [[Depth Buffer]]
-- [[后处理]]
+- [[World Space]]：View Space 由 World Space 经相机矩阵得到。
+- [[Clip Space]]：View Space 经投影矩阵进入 Clip Space。
+- [[Screen Space]]：屏幕空间效果常由 View Space 重建位置。
 
 ## 参考来源
 

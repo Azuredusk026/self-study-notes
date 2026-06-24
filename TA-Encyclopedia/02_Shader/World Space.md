@@ -4,73 +4,49 @@ aliases:
   - 世界空间
 category: "Shader"
 tags: [技术美术, Shader, Space]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # World Space
 
-## 一句话定义
+## 定义与解释
 
-World Space 是以场景全局坐标系为基准的空间。
-
-## 为什么需要它
-
-灯光、相机、场景位置、世界法线、角色脚底检测、世界坐标投射和场景级渐变都需要统一坐标基准。TA 在 Shader 中混用空间会导致光照方向、雾效、扫描线和位置特效错误。
+World Space 是整个场景共享的全局坐标空间。它用于描述物体位置、灯光方向、世界法线、体积效果和跨对象一致的材质逻辑。
 
 ## 核心原理
 
-- 输入：Object Space 数据和对象变换矩阵。
-- 处理过程：用 Model Matrix 将局部位置转换到世界坐标。
-- 输出：世界位置、世界法线、世界方向。
-- 所在层级：Shader、引擎 Transform、场景系统。
+模型顶点从 Object Space 通过模型矩阵转换到 World Space。世界空间让不同对象可以在同一坐标系中比较位置、方向和距离，再根据需要转换到 View、Clip 或 Screen Space。
 
-## 技术美术中的典型用途
+World Space 适合做世界坐标渐变、三平面投射、全局风场、体积雾和基于高度的效果。风险是大世界坐标精度、浮点抖动、原点重定位、非均匀缩放和实例化矩阵处理。TA 需要确认效果是否应该跟随物体还是固定在世界中。
 
-- 世界坐标贴图和三平面映射。
-- 场景高度雾、扫描线、范围特效。
-- 光照方向和视线方向计算。
-- VFX 与场景位置同步。
+## 用途
 
-## Unity 中的相关场景
-
-Unity HLSL 常用 `TransformObjectToWorld` 或矩阵转换。Shader Graph 中有 Position 节点可选择 World。
-
-## Unreal Engine 中的相关场景
-
-Unreal Material 常用 Absolute World Position、World Space Normal、Camera Vector 等节点。
-
-## 常见误区
-
-1. 忽略坐标空间转换，直接把 Object Space 法线用于世界光照。
-2. 世界坐标贴图在大世界中出现精度问题。
-3. 以为 World Space 效果会跟随模型局部旋转。
-
-## 面试可能怎么问
-
-### 为什么 Shader 中要区分 Object、World、View、Clip Space？
-
-回答要点：不同计算需要不同基准；模型局部效果用 Object，光照和场景交互常用 World，相机相关用 View，屏幕投影用 Clip/Screen。
-
-## 实践建议
-
-实现一个世界坐标棋盘格材质，让多个不同缩放和旋转的物体保持连续图案。
+- 在材质或 Shader 调试中定位与 World Space 相关的画面异常、编译问题、性能成本或资源配置错误。
+- 把概念落到 Unity ShaderLab/Shader Graph、Unreal Material Editor、RenderDoc 或引擎材质面板中可观察的参数和状态。
+- 为美术暴露稳定的材质控制项，同时限制采样次数、变体数量、精度和平台差异带来的风险。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Material Graph]] | Material Graph 偏节点化编辑；本条目可能涉及更底层的代码、编译和采样细节。 |
-| [[Texture Sampling]] | Texture Sampling 是常见操作；本条目可能覆盖更完整的 Shader 结构或控制策略。 |
+| [[Object Space]] | Object Space 跟随模型；World Space 统一整个场景。 |
+| [[Screen Space]] | Screen Space 跟随相机投影；World Space 独立于屏幕像素。 |
+
+## 常见误区
+
+1. 用 World Space 做本应跟随模型的局部效果。
+2. 大世界坐标下使用低精度导致抖动。
+3. 非均匀缩放下直接变换法线导致光照错误。
 
 ## 相关条目
 
-- [[Object Space]]
-- [[View Space]]
-- [[Clip Space]]
-- [[矩阵变换]]
+- [[Object Space]]：Object Space 经模型矩阵变为 World Space。
+- [[View Space]]：World Space 经相机矩阵变为 View Space。
+- [[Tangent Space]]：法线常从 Tangent Space 转到 World Space。
 
 ## 参考来源
 

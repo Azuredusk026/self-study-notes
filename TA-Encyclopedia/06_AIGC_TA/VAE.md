@@ -4,70 +4,49 @@ aliases:
   - Variational Autoencoder
 category: "06_AIGC_TA"
 tags: [技术美术, AIGC, Model]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: medium
 ---
 
+
 # VAE
 
-## 一句话定义
+## 定义与解释
 
-VAE 是把图像压缩到潜空间并从潜空间解码回图像的模型组件。
-
-## 为什么需要它
-
-许多图像生成模型不直接在原始像素空间里去噪，而是在更紧凑的 Latent Space 中工作。TA 需要知道 VAE 会影响颜色、细节、对比度和最终解码质量。
+VAE 是 Stable Diffusion 类流程中常用的编码/解码模块，用于在像素图像和潜空间表示之间转换。
 
 ## 核心原理
 
-编码器把图像压缩为潜变量，解码器把潜变量还原为图像。扩散过程常在潜空间中进行，最后再通过 VAE 解码成可见图像。
+VAE 的核心是压缩和重建。编码器把图像压缩成 Latent，解码器把 Latent 还原为像素图。扩散去噪通常发生在 Latent Space 中，最终图像质量和色彩会受 VAE 影响。
 
-> 待核验：不同模型使用的 VAE 结构和替换策略不同，具体兼容性需要按模型文档确认。
+TA 需要记录使用的 VAE 版本，因为更换 VAE 可能改变颜色、对比度、细节和暗部表现。Img2Img、Inpainting 和高清修复都可能受到编码/解码差异影响。
 
-## 技术美术中的典型用途
+## 用途
 
-- 排查生成图偏灰、偏色或细节异常。
-- 理解 Latent Upscale、潜空间编辑和图像解码。
-- 管理模型、VAE、工作流版本的一致性。
-
-## Unity 中的相关场景
-
-VAE 影响输出图质量，最终会影响进入 Unity 的 UI、贴图参考或图标清晰度。
-
-## Unreal Engine 中的相关场景
-
-在 Unreal 相关概念图和材质参考生成中，VAE 解码质量会影响后续人工重制和参考可信度。
-
-## 常见误区
-
-1. 把 VAE 当作普通后处理滤镜。
-2. 混用不兼容 VAE 导致颜色或细节异常。
-3. 只保存最终图，不记录使用的 VAE。
-
-## 面试可能怎么问
-
-### VAE 在 Stable Diffusion 类工作流中的作用是什么？
-
-回答要点：它负责图像与潜空间之间的编码和解码，影响生成过程的表示空间和最终图像还原质量。
-
-## 实践建议
-
-固定 Prompt、Seed 和模型，对比不同 VAE 的颜色和细节差异，并把结果写入工作流记录。
+- 在 AIGC 资产流程中定位与 VAE 相关的可复现性、质量、风格一致性或审核风险。
+- 把生成过程转成可记录、可复跑、可比较的工作流，而不是只保存单张结果图。
+- 连接概念探索、参考生成、DCC 精修、引擎导入和来源审核，避免临时素材直接混入正式资产。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Stable_Diffusion]] | Stable Diffusion 是常见生成模型生态；本条目可能关注其中某个节点、流程或落地规范。 |
-| [[AIGC管线落地]] | 管线落地强调团队流程；单项工具条目强调具体输入、参数和限制。 |
+| [[U-Net]] | U-Net 去噪，VAE 编码和解码图像。 |
+| [[Sampler]] | Sampler 控制去噪路径，VAE 不负责采样步进。 |
+
+## 常见误区
+
+1. 更换 VAE 后不记录版本。
+2. 把 VAE 色彩差异误判为 Prompt 问题。
+3. 多次编码解码导致细节损失却未检查。
 
 ## 相关条目
 
-- [[Latent Space]]
-- [[Diffusion Model]]
-- [[Stable_Diffusion|Stable Diffusion]]
+- [[Latent Space]]：VAE 负责进入和离开潜空间。
+- [[Stable_Diffusion]]：Stable Diffusion 流程常包含 VAE。
+- [[Img2Img]]：Img2Img 需要先编码参考图。
 
 ## 参考来源
 

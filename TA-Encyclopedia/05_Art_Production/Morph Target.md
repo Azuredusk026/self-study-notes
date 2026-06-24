@@ -4,70 +4,49 @@ aliases:
   - 变形目标
 category: "05_Art_Production"
 tags: [技术美术, ArtProduction, Unreal, Animation]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
 # Morph Target
 
-## 一句话定义
+## 定义与解释
 
-Morph Target 是 Unreal 中通过目标形态顶点偏移驱动模型变形的技术，概念上接近 Blend Shape。
-
-## 为什么需要它
-
-Unreal 角色表情、口型、修型和局部变形常用 Morph Target。TA 需要保证 DCC 导出、命名、顶点顺序和运行时驱动一致。
+Morph Target 是通过目标形状权重驱动网格顶点位移的变形机制，常用于面部表情、口型、肌肉和局部形变。
 
 ## 核心原理
 
-Morph Target 存储目标形态相对基础网格的顶点差值，运行时通过权重混合。要求基础网格和目标形态拓扑一致。
+Morph Target 要求基础网格和目标网格拥有一致顶点数量和顺序。运行时根据权重混合多个目标位移，再与骨骼蒙皮等变形阶段组合。
 
-## 技术美术中的典型用途
+它和 Blend Shape 在很多工具和引擎中是同类概念。TA 需要关注目标数量、压缩、LOD、导出命名、运行时权重控制和与骨骼动画的叠加顺序，避免表情资产在引擎中丢失或成本过高。
 
-- 面部表情。
-- 口型同步。
-- 肌肉和关节修型。
-- 角色自定义滑条。
+## 用途
 
-## Unity 中的相关场景
-
-Unity 中通常称为 BlendShape，概念类似。
-
-## Unreal Engine 中的相关场景
-
-Skeletal Mesh 导入 Morph Target 后，可由动画曲线、蓝图、Control Rig 或材质逻辑配合驱动。
-
-## 常见误区
-
-1. DCC 中改了顶点顺序导致导入失败。
-2. Morph 数量过多但没有性能预算。
-3. 命名混乱，动画曲线无法稳定匹配。
-
-## 面试可能怎么问
-
-### Morph Target 导入失败常见原因是什么？
-
-回答要点：拓扑或顶点顺序不一致、导出设置错误、命名不规范或引擎导入选项未启用。
-
-## 实践建议
-
-从 Maya/Blender 导出一个带口型 Morph Target 的角色到 Unreal，验证曲线驱动。
+- 在资产制作和引擎导入中定位与 Morph Target 相关的质量、性能或表现问题。
+- 把美术制作约定转成可检查的命名、尺寸、通道、骨骼、LOD 或导入规则。
+- 帮助美术、TA 和程序在视觉质量、生产效率和运行时预算之间取得稳定平衡。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[建模规范]] | 建模规范偏输入资产质量；本条目可能关注某个具体制作或优化环节。 |
-| [[贴图规范]] | 贴图规范偏纹理侧约束；本条目可能覆盖几何、绑定、动画或特效。 |
+| [[Blend Shape]] | 两者多为同类机制在不同软件或引擎中的命名。 |
+| [[Skinning]] | Skinning 用骨骼变形；Morph Target 用目标形状变形。 |
+
+## 常见误区
+
+1. 目标网格顶点顺序被修改导致形变损坏。
+2. 目标数量过多导致内存和运行时成本上升。
+3. 导出设置没启用 Morph Target。
 
 ## 相关条目
 
-- [[Blend Shape]]
-- [[Rigging]]
-- [[Unreal_Engine|Unreal Engine]]
-- [[动画技术]]
+- [[Blend Shape]]：Blend Shape 与 Morph Target 是近义概念。
+- [[Skinning]]：Morph Target 常与骨骼蒙皮叠加。
+- [[Rigging]]：面部 Rig 常驱动 Morph Target。
 
 ## 参考来源
 

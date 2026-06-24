@@ -4,86 +4,49 @@ aliases: []
 category: "01_Rendering"
 tags:
   - 技术美术
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: low
 ---
 
+
 # Fresnel
 
-## 一句话定义
+## 定义与解释
 
-Fresnel 是后续需要扩充的技术美术相关主题。本页当前用于补全知识库双链，避免核心条目引用到不存在的页面。
-
-## 为什么需要它
-
-该主题已经在第一轮核心条目中被引用，说明它与渲染、Shader、引擎、资产生产或算法基础存在直接关系。
+Fresnel 描述表面反射强度随观察角度变化的现象：视线越接近掠射角，反射通常越强。它是 PBR 高光、边缘光、水面、玻璃和风格化材质中的重要机制。
 
 ## 核心原理
 
-- 输入：几何数据、材质参数、灯光、相机、深度/法线/颜色等缓冲数据。
-- 处理过程：在渲染管线的对应阶段采样、计算、混合或写入缓冲，并受排序、精度和平台能力影响。
-- 输出：屏幕颜色、深度/模板结果、Render Target、调试图或后处理输入。
-- 所在层级：GPU / Render Pipeline。
+Fresnel 的核心是反射率不是固定值，而由视线方向和表面法线夹角决定。PBR 中常用 Schlick 近似计算 Fresnel 项，并与 Roughness、Metallic、法线和 BRDF 共同影响高光。
 
-## 技术美术中的典型用途
+在美术应用中，Fresnel 经常被简化成边缘亮度控制，但物理材质中的 Fresnel 还承担能量分配。TA 需要区分风格化 Fresnel、PBR Fresnel 和引擎材质节点中的近似实现，避免边缘光滥用破坏材质一致性。
 
-- 定位画面异常和渲染顺序问题。
-- 制定材质、灯光和后处理规范。
-- 评估带宽、Overdraw、Render Target 数量和平台性能预算。
+## 用途
 
-## Unity 中的相关场景
-
-常见于 URP/HDRP 的 Renderer Feature、Render Pass、Shader、后处理 Volume、Frame Debugger 和 RenderDoc 排查流程。
-
-## Unreal Engine 中的相关场景
-
-常见于 Material、Post Process Material、Custom Depth/Stencil、Render Target、Buffer Visualization 和 Unreal Insights/RenderDoc 分析流程。
+- 在渲染调试中定位与 Fresnel 相关的画面异常、性能成本或资源配置问题。
+- 为美术、TA 和图形程序建立统一术语，减少材质、灯光、后处理和管线配置沟通偏差。
+- 把概念落到 Unity、Unreal 或 RenderDoc/Frame Debugger 中可观察的状态、缓冲、Pass 或材质参数上。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[PBR]] | 更偏材质和光照模型；本条目更关注具体渲染环节或画面效果。 |
-| [[Shader基础]] | Shader 是实现手段；本条目通常还涉及管线状态、缓冲读写和引擎配置。 |
+| [[Roughness]] | Roughness 控制高光扩散；Fresnel 控制角度相关反射强度。 |
+| [[Lambert]] | Lambert 漫反射不表达镜面 Fresnel 变化。 |
 
 ## 常见误区
 
-1. 只记概念名，不确认它在项目中的输入、输出和所在管线阶段。
-2. 把引擎默认效果当成固定标准，忽略渲染管线、平台和项目配置差异。
-3. 没有保留可复现的测试场景，导致问题只能靠截图或主观描述沟通。
-
-## 面试可能怎么问
-
-### 问题 1
-
-`Fresnel` 解决的核心问题是什么？
-
-回答要点：先说明它在实时渲染中处理哪类输入和输出，再结合一个项目场景说明为什么需要它。
-
-### 问题 2
-
-在 Unity 和 Unreal 中落地 `Fresnel` 时，TA 需要分别关注什么？
-
-回答要点：比较两边的工具入口、资源规则、调试方式和平台限制，不要只背 API 名称。
-
-### 问题 3
-
-如果 `Fresnel` 相关效果或资产在项目中出问题，你会怎么排查？
-
-回答要点：从资源输入、引擎配置、运行时状态、性能指标和最小复现场景逐层缩小范围。
-
-## 实践建议
-
-- 为 `Fresnel` 保留一个最小测试场景或示例资产，便于回归检查。
-- 把关键参数、命名规则和导入设置写入团队规范，避免只存在个人经验里。
-- 涉及具体版本、API 或第三方工具行为时，先标记 `待核验`，再登记到 [[91_Sources/source_registry|Source Registry]]。
+1. 把 Fresnel 只当作边缘光特效。
+2. 在 PBR 材质中随意改 F0，破坏材质可信度。
+3. 忽略法线贴图会改变 Fresnel 的局部角度响应。
 
 ## 相关条目
 
-- [[技术美术百科总目录]]
-- [[待扩充条目]]
+- [[BRDF]]：Fresnel 是常见 BRDF 镜面项。
+- [[PBR]]：PBR 使用 Fresnel 控制角度相关反射。
+- [[Metallic]]：金属和非金属的 Fresnel 颜色语义不同。
 
 ## 参考来源
 

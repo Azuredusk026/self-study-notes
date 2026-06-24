@@ -4,72 +4,49 @@ aliases:
   - EUW
 category: "04_Engine"
 tags: [技术美术, Unreal, Tool]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: medium
 ---
 
+
 # Editor Utility Widget
 
-## 一句话定义
+## 定义与解释
 
-Editor Utility Widget 是 Unreal 中用 UMG 和蓝图创建编辑器工具界面的方式。
-
-## 为什么需要它
-
-TA 需要把批量重命名、资源检查、材质替换、关卡整理、导入设置修正等流程做成美术可用工具。EUW 能快速做出编辑器内工具面板。
+Editor Utility Widget 是 Unreal 中用于制作编辑器工具面板的系统，可把批处理、资产整理、关卡操作和检查流程做成可交互 UI。
 
 ## 核心原理
 
-EUW 运行在编辑器环境，可通过蓝图调用编辑器功能、访问选中资产或关卡对象，并提供可交互 UI。
+它的核心是把 UMG 风格界面、Blueprint/Python 逻辑和编辑器 API 结合起来。工具可以读取选中资产、遍历 Content Browser、修改 Actor、调用导入导出或触发检查。
 
-> 待核验：EUW 可调用的 API 和权限随 Unreal 版本变化，复杂自动化需查官方文档。
+TA 需要把它当作编辑器流程入口，而不是临时按钮集合。可靠工具要处理选择为空、路径错误、事务撤销、批量操作日志、权限和版本差异，并避免误修改大量资产。
 
-## 技术美术中的典型用途
+## 用途
 
-- 批量重命名和整理资产。
-- 批量修改材质实例参数。
-- 关卡对象检查。
-- 一键生成报告或执行规范修复。
-
-## Unity 中的相关场景
-
-Unity 中对应方向是 [[Unity Editor Tool]]、EditorWindow 和自定义 Inspector。
-
-## Unreal Engine 中的相关场景
-
-EUW 常与 Content Browser、Selected Actors、Data Validation 和 Python 工具配合。
-
-## 常见误区
-
-1. 工具没有预览和确认，直接批量修改。
-2. 没有错误报告和日志。
-3. 蓝图工具越写越大，缺少模块化。
-
-## 面试可能怎么问
-
-### Unreal TA 如何给美术做编辑器工具？
-
-回答要点：可用 Editor Utility Widget 或 Python，把批处理和检查流程做成可交互工具，并输出报告和可回滚操作。
-
-## 实践建议
-
-做一个批量材质实例参数修改工具，支持选择资产、预览变更和导出日志。
+- 在引擎项目中定位与 Editor Utility Widget 相关的资源导入、渲染表现、运行时加载、编辑器工具或构建问题。
+- 把引擎功能转化为团队可执行的资产规范、材质模板、工具入口和调试流程。
+- 与程序协作确认运行时成本、平台限制、版本差异和可维护边界。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Unity]] | Unity 是引擎平台；本条目可能是其中某个系统或工作流。 |
-| [[Unreal_Engine]] | Unreal 是引擎平台；本条目可能与其对应系统形成实现差异。 |
+| [[Blueprint]] | Editor Utility Widget 常用 Blueprint 组织 UI 和逻辑，但目标是编辑器工具。 |
+| [[Unity Editor Tool]] | 两者都是编辑器扩展，但分别服务 Unreal 和 Unity。 |
+
+## 常见误区
+
+1. 把一次性操作做成无日志批量工具。
+2. 依赖当前选择状态但不做空值和类型检查。
+3. 没有撤销或预览就直接修改资产。
 
 ## 相关条目
 
-- [[Blueprint]]
-- [[Unreal Python]]
-- [[资源检查工具]]
-- [[Unreal_TA管线]]
+- [[Unreal_TA管线]]：Editor Utility Widget 是 Unreal 管线工具入口。
+- [[Unreal Python]]：复杂批处理可由 Python 配合。
+- [[资源检查工具]]：检查结果可通过工具面板展示。
 
 ## 参考来源
 

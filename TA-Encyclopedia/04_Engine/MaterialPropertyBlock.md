@@ -4,86 +4,49 @@ aliases: []
 category: "04_Engine"
 tags:
   - 技术美术
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: low
 ---
 
+
 # MaterialPropertyBlock
 
-## 一句话定义
+## 定义与解释
 
-MaterialPropertyBlock 是后续需要扩充的技术美术相关主题。本页当前用于补全知识库双链，避免核心条目引用到不存在的页面。
-
-## 为什么需要它
-
-该主题已经在第一轮核心条目中被引用，说明它与渲染、Shader、引擎、资产生产或算法基础存在直接关系。
+MaterialPropertyBlock 是 Unity 中按 Renderer 覆盖材质参数的机制，常用于在不复制材质的情况下给不同对象设置颜色、数值或纹理。
 
 ## 核心原理
 
-- 输入：资源、场景、材质、脚本、构建配置、平台限制和运行时数据。
-- 处理过程：通过引擎系统完成导入、序列化、渲染、加载、实例化、剔除、调度或热更新。
-- 输出：运行时表现、构建产物、资源包、调试数据、编辑器工具或性能指标。
-- 所在层级：Engine / Runtime / Editor。
+它的核心是把 per-renderer 参数单独传给渲染器，而不修改共享材质资源。这样多个对象可以使用同一材质和 Shader，同时拥有不同显示参数。
 
-## 技术美术中的典型用途
+TA 需要理解它对批处理、SRP Batcher、GPU Instancing 和材质实例化的影响。频繁创建、滥用纹理覆盖或与实例化数据混用，都可能破坏预期优化或增加管理复杂度。
 
-- 制定引擎侧资产接入规范。
-- 排查渲染和加载问题。
-- 和程序协作设计可维护的工具与运行时流程。
+## 用途
 
-## Unity 中的相关场景
-
-常见于 URP/HDRP、SRP、Addressables、AssetBundle、Editor Tool、Profiler、Frame Debugger 和构建管线。
-
-## Unreal Engine 中的相关场景
-
-常见于 Blueprint、Material、Niagara、Editor Utility、Content Browser、Packaging、Profiling 和渲染调试工具。
+- 在引擎项目中定位与 MaterialPropertyBlock 相关的资源导入、渲染表现、运行时加载、编辑器工具或构建问题。
+- 把引擎功能转化为团队可执行的资产规范、材质模板、工具入口和调试流程。
+- 与程序协作确认运行时成本、平台限制、版本差异和可维护边界。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[Unity]] | Unity 是引擎平台；本条目可能是其中某个系统或工作流。 |
-| [[Unreal_Engine]] | Unreal 是引擎平台；本条目可能与其对应系统形成实现差异。 |
+| [[Material Instance]] | Material Instance 是 Unreal 的实例化材质资产；MaterialPropertyBlock 是 Unity 的渲染器参数覆盖。 |
+| [[SRP Batcher]] | SRP Batcher 优化材质常量绑定；MPB 可能改变参数更新路径。 |
 
 ## 常见误区
 
-1. 只记概念名，不确认它在项目中的输入、输出和所在管线阶段。
-2. 把引擎默认效果当成固定标准，忽略渲染管线、平台和项目配置差异。
-3. 没有保留可复现的测试场景，导致问题只能靠截图或主观描述沟通。
-
-## 面试可能怎么问
-
-### 问题 1
-
-`MaterialPropertyBlock` 解决的核心问题是什么？
-
-回答要点：先说明它在引擎落地中处理哪类输入和输出，再结合一个项目场景说明为什么需要它。
-
-### 问题 2
-
-在 Unity 和 Unreal 中落地 `MaterialPropertyBlock` 时，TA 需要分别关注什么？
-
-回答要点：比较两边的工具入口、资源规则、调试方式和平台限制，不要只背 API 名称。
-
-### 问题 3
-
-如果 `MaterialPropertyBlock` 相关效果或资产在项目中出问题，你会怎么排查？
-
-回答要点：从资源输入、引擎配置、运行时状态、性能指标和最小复现场景逐层缩小范围。
-
-## 实践建议
-
-- 为 `MaterialPropertyBlock` 保留一个最小测试场景或示例资产，便于回归检查。
-- 把关键参数、命名规则和导入设置写入团队规范，避免只存在个人经验里。
-- 涉及具体版本、API 或第三方工具行为时，先标记 `待核验`，再登记到 [[91_Sources/source_registry|Source Registry]]。
+1. 为了改颜色复制材质，造成材质资源膨胀。
+2. 每帧频繁 new MaterialPropertyBlock。
+3. 使用 MPB 后没有确认批处理是否仍然生效。
 
 ## 相关条目
 
-- [[技术美术百科总目录]]
-- [[待扩充条目]]
+- [[Unity]]：MaterialPropertyBlock 是 Unity 渲染器参数机制。
+- [[SRP Batcher]]：参数布局会影响 SRP Batcher 兼容性。
+- [[GPU Instancing]]：实例参数和 MPB 常共同用于大量对象差异化。
 
 ## 参考来源
 

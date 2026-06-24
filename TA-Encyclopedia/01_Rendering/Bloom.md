@@ -4,73 +4,50 @@ aliases:
   - 泛光
 category: "Rendering"
 tags: [技术美术, Rendering, PostProcessing]
-status: draft
+status: active
 created: "2026-06-24"
 updated: "2026-06-24"
 confidence: high
 ---
 
+
+
 # Bloom
 
-## 一句话定义
+## 定义与解释
 
-Bloom 是把画面中高亮区域扩散到周围，模拟镜头或眼睛眩光感的后处理效果。
-
-## 为什么需要它
-
-游戏中发光材质、霓虹灯、魔法特效、太阳和高亮 UI 需要更强的亮度感。Bloom 常配合 HDR 和 Tone Mapping 使用，让超过阈值的亮部产生柔和外扩。
+Bloom 是把画面中高亮区域扩散到周围，模拟镜头或眼睛对强光产生的泛光效果。它属于后处理效果，不会真实增加几何光照，只会改变最终图像的亮部观感。
 
 ## 核心原理
 
-- 输入：HDR 场景颜色或提取后的高亮图。
-- 处理过程：亮度筛选、多级降采样、模糊、上采样合成。
-- 输出：叠加回场景颜色的泛光结果。
-- 所在层级：后处理 Render Pass。
+Bloom 通常先从 HDR 颜色缓冲中按阈值提取高亮区域，再经过多级降采样和模糊，最后把模糊结果叠加回原图。阈值、强度、半径、色调映射顺序和曝光会共同决定 Bloom 是否自然。
 
-## 技术美术中的典型用途
+核心风险是 Bloom 很容易掩盖材质和灯光问题：如果曝光、Tone Mapping 或发光材质亮度没有统一规范，Bloom 会在不同平台、不同相机设置下表现差异很大。TA 需要把 Bloom 当作图像管线的一环，而不是单独调一个漂亮参数。
 
-- 强化发光材质和 VFX。
-- 调整场景曝光和视觉层级。
-- 控制移动端后处理成本。
-- 排查画面发灰、过曝或边缘闪烁。
+## 用途
 
-## Unity 中的相关场景
-
-URP/HDRP Volume 中有 Bloom 设置。TA 需要关注 Threshold、Intensity、Scatter、Dirt Texture 和 HDR 是否启用。
-
-## Unreal Engine 中的相关场景
-
-Unreal Post Process Volume 中可调 Bloom。发光材质通常通过 Emissive 强度配合 Bloom 产生视觉发光。
-
-## 常见误区
-
-1. 用 Bloom 代替真实光照：Bloom 只影响画面扩散，不照亮周围物体。
-2. 阈值过低导致整个画面发灰。
-3. 移动端使用过多高分辨率模糊 Pass。
-
-## 面试可能怎么问
-
-### Bloom 的基本实现流程是什么？
-
-回答要点：从场景颜色提取高亮区域，降采样并模糊，再逐级上采样合成回原图。
-
-## 实践建议
-
-做一个 HDR 发光材质，调整 Emission、Bloom Threshold 和 Tone Mapping，观察亮度链路。
+- 在渲染调试中定位与 Bloom 相关的画面异常、性能成本或资源配置问题。
+- 为美术、TA 和图形程序建立统一术语，减少材质、灯光、后处理和管线配置沟通偏差。
+- 把概念落到 Unity、Unreal 或 RenderDoc/Frame Debugger 中可观察的状态、缓冲、Pass 或材质参数上。
 
 ## 与其他概念的区别
 
 | 概念 | 区别 |
 |---|---|
-| [[PBR]] | 更偏材质和光照模型；本条目更关注具体渲染环节或画面效果。 |
-| [[Shader基础]] | Shader 是实现手段；本条目通常还涉及管线状态、缓冲读写和引擎配置。 |
+| [[Tone Mapping]] | Tone Mapping 负责动态范围压缩；Bloom 负责高亮扩散。 |
+| [[Depth of Field]] | 两者都是后处理，但 Bloom 基于亮度，DoF 基于焦距和深度。 |
+
+## 常见误区
+
+1. 用 Bloom 修复本应由灯光、材质或曝光解决的问题。
+2. 在 LDR 颜色上强行做 Bloom，导致阈值和亮度语义混乱。
+3. 忽略移动端多次模糊和高分辨率 RT 的带宽成本。
 
 ## 相关条目
 
-- [[后处理]]
-- [[Render Pass]]
-- [[Tone Mapping]]
-- [[Render Target]]
+- [[Tone Mapping]]：Bloom 常在 HDR 到 LDR 转换前后与曝光共同决定亮部。
+- [[Render Target]]：Bloom 依赖中间颜色缓冲和降采样纹理。
+- [[HDRP]]：具体后处理入口与管线设置有关。
 
 ## 参考来源
 
