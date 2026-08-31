@@ -73,3 +73,9 @@
 - 重构骨骼层级、蒙皮矩阵与 CPU/GPU Skinning。
 - 整理状态混合、Root Motion、IK 和 Retargeting。
 - 补全动画压缩、面部 Rig、布料和毛发二级运动。
+
+### P2 - VFX 与模拟
+
+- 重构粒子生命周期、CPU/GPU 模拟和 Alive/Dead List 调度。
+- 整理 GPU 排序、碰撞、事件与 Niagara/VFX Graph 架构。
+- 补全常用 VFX 材质、透明混合、Overdraw 与平台降级。
