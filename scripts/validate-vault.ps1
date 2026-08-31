@@ -205,6 +205,34 @@ if (Test-Path -LiteralPath $slideTitlePath) {
     }
 }
 
+$courseRoots = @(
+    'Games104', '图形工程', '图形学', '数据结构和算法', 'C++基础',
+    '编辑器设计', '游戏AI', '游戏网络', 'ACT'
+)
+foreach ($courseRoot in $courseRoots) {
+    $coursePath = Join-Path $VaultRoot $courseRoot
+    foreach ($file in Get-ChildItem -LiteralPath $coursePath -File -Filter '*.md') {
+        if ($file.Name -notmatch '^\d{2}-.+\.md$') {
+            Add-Failure "课程笔记命名不符合两位序号规则：$courseRoot/$($file.Name)"
+        }
+    }
+}
+
+$renameManifestPath = Join-Path $VaultRoot 'docs\manifests\course-renames.tsv'
+if (-not (Test-Path -LiteralPath $renameManifestPath)) {
+    Add-Failure '缺少课程笔记命名映射：docs/manifests/course-renames.tsv'
+}
+else {
+    foreach ($row in Import-Csv -LiteralPath $renameManifestPath -Delimiter "`t") {
+        if (Test-Path -LiteralPath (Join-Path $VaultRoot $row.old_path)) {
+            Add-Failure "课程笔记旧路径仍存在：$($row.old_path)"
+        }
+        if (-not (Test-Path -LiteralPath (Join-Path $VaultRoot $row.new_path) -PathType Leaf)) {
+            Add-Failure "课程笔记新路径不存在：$($row.new_path)"
+        }
+    }
+}
+
 foreach ($group in $inventoryRows | Group-Object migration_status) {
     if ($group.Name -notin $allowedStatuses) {
         Add-Failure "迁移台账仍有非终态：$($group.Name)（$($group.Count) 项）"
