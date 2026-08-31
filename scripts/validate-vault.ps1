@@ -209,9 +209,12 @@ $courseRoots = @(
     'Games104', '图形工程', '图形学', '数据结构和算法', 'C++基础',
     '编辑器设计', '游戏AI', '游戏网络', 'ACT'
 )
+$courseFiles = @()
 foreach ($courseRoot in $courseRoots) {
     $coursePath = Join-Path $VaultRoot $courseRoot
-    foreach ($file in Get-ChildItem -LiteralPath $coursePath -File -Filter '*.md') {
+    $rootFiles = @(Get-ChildItem -LiteralPath $coursePath -File -Filter '*.md')
+    $courseFiles += $rootFiles
+    foreach ($file in $rootFiles) {
         if ($file.Name -notmatch '^\d{2}-.+\.md$') {
             Add-Failure "课程笔记命名不符合两位序号规则：$courseRoot/$($file.Name)"
         }
@@ -229,6 +232,65 @@ else {
         }
         if (-not (Test-Path -LiteralPath (Join-Path $VaultRoot $row.new_path) -PathType Leaf)) {
             Add-Failure "课程笔记新路径不存在：$($row.new_path)"
+        }
+    }
+}
+
+$coveragePath = Join-Path $VaultRoot 'docs\manifests\course-coverage.tsv'
+if (-not (Test-Path -LiteralPath $coveragePath -PathType Leaf)) {
+    Add-Failure '缺少课程章节覆盖台账：docs/manifests/course-coverage.tsv'
+}
+else {
+    $coverageRows = @(Import-Csv -LiteralPath $coveragePath -Delimiter "`t")
+    $coverageIndex = @{}
+    foreach ($row in $coverageRows) {
+        $sourcePath = $row.source_path.Replace('\', '/')
+        $key = "$sourcePath|$($row.section_line)"
+        if ($coverageIndex.ContainsKey($key)) {
+            Add-Failure "课程章节覆盖台账包含重复行：$key"
+        }
+        $coverageIndex[$key] = $row
+
+        if (-not $row.target_article) {
+            Add-Failure "课程章节没有目标文章：$key"
+        }
+        if ($row.coverage_status -match '非\s*TA|跳过|不相关') {
+            Add-Failure "课程章节使用了禁止的跳过状态：$key -> $($row.coverage_status)"
+        }
+        $allowedCoverageStatuses = @('已覆盖', '重复内容已覆盖')
+        if ($AllowPendingCoverage) { $allowedCoverageStatuses += '已映射' }
+        if ($row.coverage_status -notin $allowedCoverageStatuses) {
+            Add-Failure "课程章节覆盖状态无效：$key -> $($row.coverage_status)"
+        }
+
+        foreach ($targetArticle in $row.target_article -split '；') {
+            $normalizedTarget = $targetArticle.Trim().Replace('\', '/')
+            if (-not $normalizedTarget) { continue }
+            if (-not $AllowPendingCoverage -and
+                -not (Test-Path -LiteralPath (Join-Path $VaultRoot $normalizedTarget) -PathType Leaf)) {
+                Add-Failure "课程章节目标文章不存在：$key -> $normalizedTarget"
+            }
+        }
+    }
+
+    $expectedCoverageKeys = @{}
+    foreach ($file in $courseFiles) {
+        $relative = $file.FullName.Substring($VaultRoot.Length + 1).Replace('\', '/')
+        $lineNumber = 0
+        foreach ($line in Get-Content -LiteralPath $file.FullName -Encoding UTF8) {
+            $lineNumber++
+            if ($line -match '^##\s+') {
+                $key = "$relative|$lineNumber"
+                $expectedCoverageKeys[$key] = $true
+                if (-not $coverageIndex.ContainsKey($key)) {
+                    Add-Failure "公开课程章节未进入覆盖台账：$key"
+                }
+            }
+        }
+    }
+    foreach ($key in $coverageIndex.Keys) {
+        if (-not $expectedCoverageKeys.ContainsKey($key)) {
+            Add-Failure "覆盖台账包含过期章节：$key"
         }
     }
 }

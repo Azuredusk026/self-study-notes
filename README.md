@@ -28,7 +28,8 @@
 
 ```powershell
 .\scripts\audit-vault.ps1
+.\scripts\build-course-coverage.ps1
 .\scripts\validate-vault.ps1
 ```
 
-第一条命令更新公开来源、标题和重复检查清单。第二条命令检查隐私边界、正式文章、Wikilink、来源覆盖和终态。
+第一条命令更新公开来源与标题清单。第二条命令按人工目标映射展开课程 H2 章节。第三条命令检查隐私边界、正式文章、Wikilink、来源覆盖和终态。
