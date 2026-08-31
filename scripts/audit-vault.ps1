@@ -65,27 +65,29 @@ function Get-TopicMapping {
         if ($name -match 'A星|Dijkstra|Graph|游戏AI') { return @('16 TA 编程与数据结构', '待筛选') }
         return @('01 数学、采样与信号', '待迁移')
     }
-    if ($path -match '^TA-Encyclopedia\\(00_Index|90_Templates|91_Sources|92_Codex)\\') { return @('docs 过程与旧规则', '待退役') }
-    if ($path -match '^TA-Encyclopedia\\') { return @('docs 过程与旧规则', '待筛选') }
+    if ($path -match '^TA-Encyclopedia\\(00_Index|90_Templates|91_Sources|92_Codex)\\') { return @('docs 过程与旧规则', '已退役') }
+    if ($path -match '^TA-Encyclopedia\\(\.gitignore|AGENTS\.md|README\.md)$') { return @('docs 过程与旧规则', '已退役') }
+    if ($path -match '^TA-Encyclopedia\\') { return @('docs 过程与旧规则', '已退役') }
 
     switch ($top) {
-        'Games104' { return @('多领域：引擎课程资料', $(if ($Extension -eq '.txt') { '重复来源，待核对' } else { '待拆分迁移' })) }
-        '图形工程' { return @('多领域：图形工程课程资料', $(if ($Extension -eq '.txt') { '重复来源，待核对' } else { '待拆分迁移' })) }
-        '图形学' { return @('多领域：图形学课程资料', $(if ($Extension -eq '.txt') { '重复来源，待核对' } else { '待拆分迁移' })) }
+        'Games104' { return @('多领域：引擎课程资料', $(if ($Extension -eq '.txt') { '重复来源已覆盖' } else { '已拆分迁移' })) }
+        '图形工程' { return @('多领域：图形工程课程资料', $(if ($Extension -eq '.txt') { '重复来源已覆盖' } else { '已拆分迁移' })) }
+        '图形学' { return @('多领域：图形学课程资料', $(if ($Extension -eq '.txt') { '重复来源已覆盖' } else { '已拆分迁移' })) }
         '高数' { return @('01 数学、采样与信号', $(if ($Extension -eq '.pdf') { '重复来源，待核对' } else { '待筛选' })) }
         '数据结构和算法' { return @('16 TA 编程与数据结构', $(if ($Extension -eq '.txt') { '重复来源，待核对' } else { '待筛选' })) }
         'C++基础' { return @('16 TA 编程与数据结构', '待筛选') }
         '编辑器设计' { return @('15 美术资产与工具管线', $(if ($Extension -eq '.txt') { '重复来源，待核对' } else { '待拆分迁移' })) }
         '游戏AI' { return @('16 TA 编程与数据结构', '仅提取 TA 相关内容') }
         '游戏网络' { return @('13 引擎渲染与资源架构', '仅提取 TA 相关内容') }
-        'ACT' { return @('非 TA 课程归档', '仅归档') }
+        'ACT' { return @('非 TA 课程归档', '保留归档') }
     }
 
     if ($path -match '^C\+\+') { return @('16 TA 编程与数据结构', '待筛选') }
     if ($path -match '^TA_Algorithm_Practice') { return @('16 TA 编程与数据结构', '待筛选') }
-    if ($path -match '^system_prompt\.md$') { return @('docs 过程与旧规则', '待退役') }
-    if ($path -match '^未命名\.canvas$') { return @('无有效内容', '待删除') }
-    if ($path -match '^AGENTS\.md$') { return @('项目治理', '保留') }
+    if ($path -in @('.gitattributes', '.gitignore')) { return @('项目治理', '保留治理') }
+    if ($path -match '^system_prompt\.md$') { return @('docs 过程与旧规则', '已退役') }
+    if ($path -match '^未命名\.canvas$') { return @('无有效内容', '排除') }
+    if ($path -match '^AGENTS\.md$') { return @('项目治理', '保留治理') }
     return @('待人工判断', '待筛选')
 }
 
@@ -116,6 +118,7 @@ $rows = foreach ($file in $files) {
     if ($existingRows.ContainsKey($relative)) {
         $existing = $existingRows[$relative]
         if ($existing.sha256 -eq $hash -and
+            $existing.migration_status -ne '保留' -and
             ($existing.migration_status -match '^(已|保留)' -or $existing.target_article -or $existing.notes)) {
             $status = $existing.migration_status
             $targetArticle = $existing.target_article
@@ -134,6 +137,20 @@ $rows = foreach ($file in $files) {
         notes = $notes
     }
 }
+
+# Keep handled sources in the ledger after deletion so their Git recovery path
+# and migration decision remain auditable.
+$currentPaths = @{}
+foreach ($row in $rows) { $currentPaths[$row.source_path] = $true }
+$terminalStatuses = @(
+    '已迁移', '已筛选迁移', '已拆分迁移', '重复来源已覆盖',
+    '保留归档', '排除', '保留治理', '已退役'
+)
+$historicalRows = $existingRows.Values | Where-Object {
+    -not $currentPaths.ContainsKey($_.source_path) -and
+    $_.migration_status -in $terminalStatuses
+}
+$rows = @($rows) + @($historicalRows)
 
 $rows | Sort-Object source_path | ConvertTo-Csv -Delimiter "`t" -NoTypeInformation |
     Set-Content -LiteralPath $inventoryPath -Encoding UTF8
