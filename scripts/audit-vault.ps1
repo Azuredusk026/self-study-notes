@@ -93,7 +93,10 @@ function Get-MarkdownTitle {
 }
 
 $files = Get-ChildItem -LiteralPath $VaultRoot -Recurse -File | Where-Object {
-    $_.FullName -notmatch '\\.git\\|\\.obsidian\\|\\.idea\\|\\docs\\|\\scripts\\'
+    $relative = $_.FullName.Substring($VaultRoot.Length + 1)
+    $_.FullName -notmatch '\\.git\\|\\.obsidian\\|\\.idea\\|\\docs\\|\\scripts\\' -and
+        $relative -notmatch '^(?:0[0-9]|1[0-7])_[^\\]+\\' -and
+        $relative -notin @('README.md', 'CHANGELOG.md')
 }
 
 $rows = foreach ($file in $files) {
@@ -128,8 +131,14 @@ $duplicateRows = foreach ($group in $duplicates) {
         }
     }
 }
-$duplicateRows | ConvertTo-Csv -Delimiter "`t" -NoTypeInformation |
-    Set-Content -LiteralPath $duplicatePath -Encoding UTF8
+if ($duplicateRows) {
+    $duplicateRows | ConvertTo-Csv -Delimiter "`t" -NoTypeInformation |
+        Set-Content -LiteralPath $duplicatePath -Encoding UTF8
+}
+else {
+    "sha256`tduplicate_count`tsource_path" |
+        Set-Content -LiteralPath $duplicatePath -Encoding UTF8
+}
 
 $headingPath = Join-Path $manifestDir 'markdown-headings.tsv'
 $headingRows = foreach ($file in $files | Where-Object Extension -eq '.md') {
@@ -191,7 +200,7 @@ $slideTitleRows | ConvertTo-Csv -Delimiter "`t" -NoTypeInformation |
 
 $summaryPath = Join-Path $manifestDir 'audit-summary.txt'
 $summary = @(
-    "generated_at`t$((Get-Date).ToString('s'))",
+    "schema_version`t1",
     "source_files`t$($rows.Count)",
     "source_bytes`t$(($rows | Measure-Object bytes -Sum).Sum)",
     "duplicate_hash_groups`t$($duplicates.Count)",
