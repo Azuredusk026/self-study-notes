@@ -91,3 +91,9 @@
 - 重构 Ray 求交、BVH 构建遍历与 BLAS/TLAS 更新。
 - 补全实时采样、时空降噪和 ReSTIR Reservoir 复用。
 - 整理 GPU-Driven、Meshlet/Mesh Shader、Visibility Buffer 与 Nanite。
+
+### P2 - 资产与工具管线
+
+- 重构 DCC 数据契约、FBX/glTF/USD 交换和资产语义校验。
+- 建立确定性导入、Validator、Manifest、Staging 与发布门禁。
+- 整理编辑器事务、批处理架构、Git LFS/Perforce/PlasticSCM 和资产 CI。
