@@ -6,6 +6,13 @@ $ErrorActionPreference = 'Stop'
 
 $manifestDir = Join-Path $VaultRoot 'docs\manifests'
 New-Item -ItemType Directory -Force -Path $manifestDir | Out-Null
+$inventoryPath = Join-Path $manifestDir 'source-inventory.tsv'
+$existingRows = @{}
+if (Test-Path -LiteralPath $inventoryPath) {
+    foreach ($row in Import-Csv -Delimiter "`t" -LiteralPath $inventoryPath) {
+        $existingRows[$row.source_path] = $row
+    }
+}
 
 function Get-TopicMapping {
     param(
@@ -103,6 +110,18 @@ $rows = foreach ($file in $files) {
     $relative = $file.FullName.Substring($VaultRoot.Length + 1)
     $mapping = Get-TopicMapping -RelativePath $relative -Extension $file.Extension.ToLowerInvariant()
     $hash = (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+    $status = $mapping[1]
+    $targetArticle = ''
+    $notes = ''
+    if ($existingRows.ContainsKey($relative)) {
+        $existing = $existingRows[$relative]
+        if ($existing.sha256 -eq $hash -and
+            ($existing.migration_status -match '^(已|保留)' -or $existing.target_article -or $existing.notes)) {
+            $status = $existing.migration_status
+            $targetArticle = $existing.target_article
+            $notes = $existing.notes
+        }
+    }
     [pscustomobject]@{
         source_path = $relative
         file_type = $(if ($file.Extension) { $file.Extension.ToLowerInvariant() } else { '(none)' })
@@ -110,13 +129,12 @@ $rows = foreach ($file in $files) {
         sha256 = $hash
         title = Get-MarkdownTitle -Path $file.FullName
         target_domain = $mapping[0]
-        migration_status = $mapping[1]
-        target_article = ''
-        notes = ''
+        migration_status = $status
+        target_article = $targetArticle
+        notes = $notes
     }
 }
 
-$inventoryPath = Join-Path $manifestDir 'source-inventory.tsv'
 $rows | Sort-Object source_path | ConvertTo-Csv -Delimiter "`t" -NoTypeInformation |
     Set-Content -LiteralPath $inventoryPath -Encoding UTF8
 
