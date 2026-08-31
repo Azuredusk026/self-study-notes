@@ -1,6 +1,6 @@
 param(
     [string]$VaultRoot = (Split-Path -Parent $PSScriptRoot),
-    [int]$ExpectedFormalCount = 55,
+    [int]$ExpectedFormalCount = 69,
     [switch]$AllowPendingCoverage
 )
 

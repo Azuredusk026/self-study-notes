@@ -7,10 +7,19 @@ $ErrorActionPreference = 'Stop'
 $manifestDir = Join-Path $VaultRoot 'docs\manifests'
 New-Item -ItemType Directory -Force -Path $manifestDir | Out-Null
 $inventoryPath = Join-Path $manifestDir 'source-inventory.tsv'
+$courseTargetsPath = Join-Path $manifestDir 'course-targets.tsv'
 $existingRows = @{}
 if (Test-Path -LiteralPath $inventoryPath) {
     foreach ($row in Import-Csv -Delimiter "`t" -LiteralPath $inventoryPath) {
         $existingRows[$row.source_path] = $row
+    }
+}
+
+$courseTargets = @{}
+if (Test-Path -LiteralPath $courseTargetsPath) {
+    foreach ($row in Import-Csv -Delimiter "`t" -LiteralPath $courseTargetsPath) {
+        $normalizedSource = $row.source_path.Replace('\', '/')
+        $courseTargets[$normalizedSource] = $row
     }
 }
 
@@ -130,12 +139,19 @@ $files = @(Get-PublicFiles | Where-Object {
 
 $rows = foreach ($file in $files) {
     $relative = $file.FullName.Substring($VaultRoot.Length + 1)
+    $normalizedRelative = $relative.Replace('\', '/')
     $mapping = Get-TopicMapping -RelativePath $relative -Extension $file.Extension.ToLowerInvariant()
     $hash = (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
     $status = $mapping[1]
     $targetArticle = ''
     $notes = ''
-    if ($existingRows.ContainsKey($relative)) {
+    if ($courseTargets.ContainsKey($normalizedRelative)) {
+        $courseTarget = $courseTargets[$normalizedRelative]
+        $status = $courseTarget.coverage_status
+        $targetArticle = $courseTarget.target_article
+        $notes = $courseTarget.notes
+    }
+    elseif ($existingRows.ContainsKey($relative)) {
         $existing = $existingRows[$relative]
         if ($existing.sha256 -eq $hash -and
             $existing.migration_status -in @('已覆盖', '重复内容已覆盖', '保留治理')) {
