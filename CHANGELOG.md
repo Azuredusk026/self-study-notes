@@ -67,3 +67,9 @@
 - 重构网格数据、顶点拆分、索引缓存和网格简化机制。
 - 整理屏幕占比 LOD、地形分层和材质成本。
 - 吸收 Houdini HeightField、HDA 与 PDG 程序化资产流程。
+
+### P2 - 动画系统
+
+- 重构骨骼层级、蒙皮矩阵与 CPU/GPU Skinning。
+- 整理状态混合、Root Motion、IK 和 Retargeting。
+- 补全动画压缩、面部 Rig、布料和毛发二级运动。
