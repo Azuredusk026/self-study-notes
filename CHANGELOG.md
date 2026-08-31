@@ -85,3 +85,9 @@
 - 重构 Toon Ramp、分层光照、材质区域和风格一致性。
 - 补全 Face SDF、头发高光、角色阴影与调试约定。
 - 整理模型/屏幕描边、Billboard 假深度、Impostor 和植被风动。
+
+### P2 - 光追与现代渲染
+
+- 重构 Ray 求交、BVH 构建遍历与 BLAS/TLAS 更新。
+- 补全实时采样、时空降噪和 ReSTIR Reservoir 复用。
+- 整理 GPU-Driven、Meshlet/Mesh Shader、Visibility Buffer 与 Nanite。
