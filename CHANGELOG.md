@@ -21,3 +21,9 @@
 - 重构 CPU/GPU 提交和图形管线阶段。
 - 补充深度模板、Early-Z、Hi-Z、透明和剔除机制。
 - 完整整理 MSAA、FXAA、TAA 和时域重建基础。
+
+### P1 - Shader 编程
+
+- 重构 Shader 语言、资源和阶段数据流。
+- 补全 Unity Shader 变体收集、剥离和预热机制。
+- 重构 Compute Shader 与 GPU 线程执行模型。
