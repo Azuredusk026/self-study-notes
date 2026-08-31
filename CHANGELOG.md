@@ -49,3 +49,9 @@
 
 - 重构 sRGB、Linear、Alpha、HDR 和曝光。
 - 完整整理 Tone Mapping、Bloom、调色和屏幕空间效果。
+
+### P1 - 引擎渲染与资源架构
+
+- 重构 Forward、Deferred、Tiled 和 Clustered 渲染路径。
+- 补全 Command Buffer、Render Graph、Batching 和 GPU Instancing。
+- 整理 Unity/Unreal 扩展入口与资源依赖、分包和异步加载。
