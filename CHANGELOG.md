@@ -44,3 +44,8 @@
 
 - 聚合纹理采样、过滤、Mipmap、寻址和平台压缩格式。
 - 重构 UV、图集、纹理流送和虚拟纹理。
+
+### P1 - 颜色管理与后处理
+
+- 重构 sRGB、Linear、Alpha、HDR 和曝光。
+- 完整整理 Tone Mapping、Bloom、调色和屏幕空间效果。
