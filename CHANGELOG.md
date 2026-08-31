@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### P0-public - 公开仓库边界
+
+- 审计脚本通过 Git 公开文件集合生成来源清单，不读取被 ignore 的课程私密目录。
+- 清理公开 manifest 中的私密路径、哈希和幻灯片文本预览。
+- 增加私密目录、本机工作区、环境文件和密钥文件的公开安全检查。
+- 将 Obsidian 工作区状态保留在本机并移出 Git 索引。
+
 ### P0 - 治理与架构
 
 - 建立根 `AGENTS.md` 和 Autonomous Implementation Mode。

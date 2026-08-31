@@ -101,12 +101,33 @@ function Get-MarkdownTitle {
     return ''
 }
 
-$files = Get-ChildItem -LiteralPath $VaultRoot -Recurse -File | Where-Object {
+function Get-PublicFiles {
+    $paths = @(& git -c core.quotepath=false -C $VaultRoot ls-files --cached --others --exclude-standard)
+    if ($LASTEXITCODE -ne 0) {
+        throw '无法通过 Git 获取公开文件清单。'
+    }
+
+    foreach ($path in $paths) {
+        if ([string]::IsNullOrWhiteSpace($path)) { continue }
+        $relative = $path.Replace('/', '\\')
+        if ($relative -match '(^|\\)文字记录(\\|$)' -or
+            $relative -match '文字记录.*\.zip$') {
+            continue
+        }
+
+        $fullPath = Join-Path $VaultRoot $relative
+        if (Test-Path -LiteralPath $fullPath -PathType Leaf) {
+            Get-Item -LiteralPath $fullPath
+        }
+    }
+}
+
+$files = @(Get-PublicFiles | Where-Object {
     $relative = $_.FullName.Substring($VaultRoot.Length + 1)
     $_.FullName -notmatch '\\.git\\|\\.obsidian\\|\\.idea\\|\\docs\\|\\scripts\\' -and
-        $relative -notmatch '^(?:0[0-9]|1[0-7])_[^\\]+\\' -and
+        $relative -notmatch '^(?:0[0-9]|1[0-9]|2[0-9])_[^\\]+\\' -and
         $relative -notin @('README.md', 'CHANGELOG.md')
-}
+})
 
 $rows = foreach ($file in $files) {
     $relative = $file.FullName.Substring($VaultRoot.Length + 1)
@@ -137,20 +158,6 @@ $rows = foreach ($file in $files) {
         notes = $notes
     }
 }
-
-# Keep handled sources in the ledger after deletion so their Git recovery path
-# and migration decision remain auditable.
-$currentPaths = @{}
-foreach ($row in $rows) { $currentPaths[$row.source_path] = $true }
-$terminalStatuses = @(
-    '已迁移', '已筛选迁移', '已拆分迁移', '重复来源已覆盖',
-    '保留归档', '排除', '保留治理', '已退役'
-)
-$historicalRows = $existingRows.Values | Where-Object {
-    -not $currentPaths.ContainsKey($_.source_path) -and
-    $_.migration_status -in $terminalStatuses
-}
-$rows = @($rows) + @($historicalRows)
 
 $rows | Sort-Object source_path | ConvertTo-Csv -Delimiter "`t" -NoTypeInformation |
     Set-Content -LiteralPath $inventoryPath -Encoding UTF8
@@ -230,8 +237,14 @@ $slideTitleRows = foreach ($file in $files | Where-Object Extension -eq '.pptx')
         $archive.Dispose()
     }
 }
-$slideTitleRows | ConvertTo-Csv -Delimiter "`t" -NoTypeInformation |
-    Set-Content -LiteralPath $slideTitlePath -Encoding UTF8
+if ($slideTitleRows) {
+    $slideTitleRows | ConvertTo-Csv -Delimiter "`t" -NoTypeInformation |
+        Set-Content -LiteralPath $slideTitlePath -Encoding UTF8
+}
+else {
+    "source_path`tslide`ttitle`ttext_preview" |
+        Set-Content -LiteralPath $slideTitlePath -Encoding UTF8
+}
 
 $summaryPath = Join-Path $manifestDir 'audit-summary.txt'
 $summary = @(

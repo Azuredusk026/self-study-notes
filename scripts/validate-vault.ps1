@@ -12,6 +12,21 @@ function Add-Failure {
     $failures.Add($Message)
 }
 
+function Get-PublicMarkdownFiles {
+    $paths = @(& git -c core.quotepath=false -C $VaultRoot ls-files --cached --others --exclude-standard -- '*.md')
+    if ($LASTEXITCODE -ne 0) {
+        throw '无法通过 Git 获取公开 Markdown 清单。'
+    }
+
+    foreach ($path in $paths) {
+        $relativePath = $path.Replace('/', '\\')
+        $fullPath = Join-Path $VaultRoot $relativePath
+        if (Test-Path -LiteralPath $fullPath -PathType Leaf) {
+            Get-Item -LiteralPath $fullPath
+        }
+    }
+}
+
 function Resolve-WikiLink {
     param(
         [string]$Target,
@@ -98,9 +113,7 @@ foreach ($entry in $titleToPaths.GetEnumerator()) {
     }
 }
 
-$allMarkdown = @(Get-ChildItem -LiteralPath $VaultRoot -Recurse -File -Filter '*.md' | Where-Object {
-    $_.FullName -notmatch '\\.git\\|\\.obsidian\\'
-})
+$allMarkdown = @(Get-PublicMarkdownFiles)
 $pathIndex = @{}
 $nameIndex = @{}
 foreach ($file in $allMarkdown) {
@@ -162,6 +175,37 @@ $allowedStatuses = @(
     '已退役'
 )
 $inventoryRows = @(Import-Csv -LiteralPath $inventoryPath -Delimiter "`t")
+
+$trackedPrivatePaths = @(& git -c core.quotepath=false -C $VaultRoot ls-files | Where-Object {
+    $_ -match '(^|/)文字记录(/|$)' -or
+        $_ -match '文字记录.*\.zip$' -or
+        $_ -match '^\.obsidian/workspace.*\.json$' -or
+        $_ -match '(^|/)\.env(?:\.|$)' -or
+        $_ -match '\.(?:key|pem|p12|pfx|secret)$'
+})
+foreach ($path in $trackedPrivatePaths) {
+    Add-Failure "公开仓库仍跟踪私密或本机状态文件：$path"
+}
+
+foreach ($row in $inventoryRows | Where-Object {
+    $_.source_path -match '(^|[\\/])文字记录([\\/]|$)' -or
+        $_.source_path -match '文字记录.*\.zip$' -or
+        $_.source_path -match '(^|[\\/])\.obsidian[\\/]workspace.*\.json$'
+}) {
+    Add-Failure "公开来源台账包含私密路径：$($row.source_path)"
+}
+
+$slideTitlePath = Join-Path $VaultRoot 'docs\manifests\pptx-slide-titles.tsv'
+if (Test-Path -LiteralPath $slideTitlePath) {
+    $privateSlideRows = @(Import-Csv -LiteralPath $slideTitlePath -Delimiter "`t" | Where-Object {
+        $_.source_path -match '(^|[\\/])文字记录([\\/]|$)' -or
+            $_.source_path -match '文字记录.*\.zip$'
+    })
+    if ($privateSlideRows.Count -gt 0) {
+        Add-Failure "公开幻灯片索引包含 $($privateSlideRows.Count) 条私密来源预览。"
+    }
+}
+
 foreach ($group in $inventoryRows | Group-Object migration_status) {
     if ($group.Name -notin $allowedStatuses) {
         Add-Failure "迁移台账仍有非终态：$($group.Name)（$($group.Count) 项）"
