@@ -61,3 +61,9 @@
 - 重构帧时间、CPU/GPU 瓶颈、同步和 GPU 成本判断。
 - 建立 Profiler、RenderDoc、GPU Counter 和单帧分析流程。
 - 整理优化验证、性能回归和移动端 Tile-based GPU 实践。
+
+### P2 - 几何与网格
+
+- 重构网格数据、顶点拆分、索引缓存和网格简化机制。
+- 整理屏幕占比 LOD、地形分层和材质成本。
+- 吸收 Houdini HeightField、HDA 与 PDG 程序化资产流程。
