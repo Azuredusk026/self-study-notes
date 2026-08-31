@@ -55,3 +55,9 @@
 - 重构 Forward、Deferred、Tiled 和 Clustered 渲染路径。
 - 补全 Command Buffer、Render Graph、Batching 和 GPU Instancing。
 - 整理 Unity/Unreal 扩展入口与资源依赖、分包和异步加载。
+
+### P1 - 性能分析与优化
+
+- 重构帧时间、CPU/GPU 瓶颈、同步和 GPU 成本判断。
+- 建立 Profiler、RenderDoc、GPU Counter 和单帧分析流程。
+- 整理优化验证、性能回归和移动端 Tile-based GPU 实践。
