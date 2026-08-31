@@ -79,3 +79,9 @@
 - 重构粒子生命周期、CPU/GPU 模拟和 Alive/Dead List 调度。
 - 整理 GPU 排序、碰撞、事件与 Niagara/VFX Graph 架构。
 - 补全常用 VFX 材质、透明混合、Overdraw 与平台降级。
+
+### P2 - NPR 与风格化渲染
+
+- 重构 Toon Ramp、分层光照、材质区域和风格一致性。
+- 补全 Face SDF、头发高光、角色阴影与调试约定。
+- 整理模型/屏幕描边、Billboard 假深度、Impostor 和植被风动。
