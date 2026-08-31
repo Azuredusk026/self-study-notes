@@ -1,6 +1,7 @@
 param(
     [string]$VaultRoot = (Split-Path -Parent $PSScriptRoot),
-    [int]$ExpectedFormalCount = 55
+    [int]$ExpectedFormalCount = 55,
+    [switch]$AllowPendingCoverage
 )
 
 $ErrorActionPreference = 'Stop'
@@ -165,15 +166,13 @@ foreach ($relativePath in $uniqueFormalPaths) {
 }
 
 $allowedStatuses = @(
-    '已迁移',
-    '已筛选迁移',
-    '已拆分迁移',
-    '重复来源已覆盖',
-    '保留归档',
-    '排除',
-    '保留治理',
-    '已退役'
+    '已覆盖',
+    '重复内容已覆盖',
+    '保留治理'
 )
+if ($AllowPendingCoverage) {
+    $allowedStatuses += '待覆盖核验'
+}
 $inventoryRows = @(Import-Csv -LiteralPath $inventoryPath -Delimiter "`t")
 
 $trackedPrivatePaths = @(& git -c core.quotepath=false -C $VaultRoot ls-files | Where-Object {
@@ -234,4 +233,4 @@ foreach ($warning in $warnings) { Write-Warning $warning }
 foreach ($failure in $failures) { Write-Host "[FAIL] $failure" -ForegroundColor Red }
 
 if ($failures.Count -gt 0) { exit 1 }
-Write-Host 'Technical Art 知识库验证通过。' -ForegroundColor Green
+Write-Host '个人知识库验证通过。' -ForegroundColor Green

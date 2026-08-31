@@ -62,7 +62,7 @@ function Get-TopicMapping {
     if ($path -match '^TA-Encyclopedia\\06_AIGC_TA\\') { return @('17 AIGC 与 Agent 管线', '待迁移') }
     if ($path -match '^TA-Encyclopedia\\07_Math_CS\\') {
         if ($name -match 'BVH|Ray|AABB|OBB|空间') { return @('12 光线追踪与现代渲染', '待迁移') }
-        if ($name -match 'A星|Dijkstra|Graph|游戏AI') { return @('16 TA 编程与数据结构', '待筛选') }
+        if ($name -match 'A星|Dijkstra|Graph|游戏AI') { return @('16 编程与数据结构', '待覆盖核验') }
         return @('01 数学、采样与信号', '待迁移')
     }
     if ($path -match '^TA-Encyclopedia\\(00_Index|90_Templates|91_Sources|92_Codex)\\') { return @('docs 过程与旧规则', '已退役') }
@@ -70,20 +70,19 @@ function Get-TopicMapping {
     if ($path -match '^TA-Encyclopedia\\') { return @('docs 过程与旧规则', '已退役') }
 
     switch ($top) {
-        'Games104' { return @('多领域：引擎课程资料', $(if ($Extension -eq '.txt') { '重复来源已覆盖' } else { '已拆分迁移' })) }
-        '图形工程' { return @('多领域：图形工程课程资料', $(if ($Extension -eq '.txt') { '重复来源已覆盖' } else { '已拆分迁移' })) }
-        '图形学' { return @('多领域：图形学课程资料', $(if ($Extension -eq '.txt') { '重复来源已覆盖' } else { '已拆分迁移' })) }
-        '高数' { return @('01 数学、采样与信号', $(if ($Extension -eq '.pdf') { '重复来源，待核对' } else { '待筛选' })) }
-        '数据结构和算法' { return @('16 TA 编程与数据结构', $(if ($Extension -eq '.txt') { '重复来源，待核对' } else { '待筛选' })) }
-        'C++基础' { return @('16 TA 编程与数据结构', '待筛选') }
-        '编辑器设计' { return @('15 美术资产与工具管线', $(if ($Extension -eq '.txt') { '重复来源，待核对' } else { '待拆分迁移' })) }
-        '游戏AI' { return @('16 TA 编程与数据结构', '仅提取 TA 相关内容') }
-        '游戏网络' { return @('13 引擎渲染与资源架构', '仅提取 TA 相关内容') }
-        'ACT' { return @('非 TA 课程归档', '保留归档') }
+        'Games104' { return @('多领域：游戏引擎课程', '待覆盖核验') }
+        '图形工程' { return @('多领域：图形工程课程', '待覆盖核验') }
+        '图形学' { return @('多领域：图形学课程', '待覆盖核验') }
+        '数据结构和算法' { return @('16 编程与数据结构', '待覆盖核验') }
+        'C++基础' { return @('16 编程与数据结构', '待覆盖核验') }
+        '编辑器设计' { return @('15 资产与工具管线', '待覆盖核验') }
+        '游戏AI' { return @('20 游戏 AI', '待覆盖核验') }
+        '游戏网络' { return @('21 游戏网络', '待覆盖核验') }
+        'ACT' { return @('19 Gameplay 与游戏框架', '待覆盖核验') }
     }
 
-    if ($path -match '^C\+\+') { return @('16 TA 编程与数据结构', '待筛选') }
-    if ($path -match '^TA_Algorithm_Practice') { return @('16 TA 编程与数据结构', '待筛选') }
+    if ($path -match '^C\+\+') { return @('16 编程与数据结构', '待覆盖核验') }
+    if ($path -match '^TA_Algorithm_Practice') { return @('16 编程与数据结构', '待覆盖核验') }
     if ($path -in @('.gitattributes', '.gitignore')) { return @('项目治理', '保留治理') }
     if ($path -match '^system_prompt\.md$') { return @('docs 过程与旧规则', '已退役') }
     if ($path -match '^未命名\.canvas$') { return @('无有效内容', '排除') }
@@ -139,8 +138,7 @@ $rows = foreach ($file in $files) {
     if ($existingRows.ContainsKey($relative)) {
         $existing = $existingRows[$relative]
         if ($existing.sha256 -eq $hash -and
-            $existing.migration_status -ne '保留' -and
-            ($existing.migration_status -match '^(已|保留)' -or $existing.target_article -or $existing.notes)) {
+            $existing.migration_status -in @('已覆盖', '重复内容已覆盖', '保留治理')) {
             $status = $existing.migration_status
             $targetArticle = $existing.target_article
             $notes = $existing.notes

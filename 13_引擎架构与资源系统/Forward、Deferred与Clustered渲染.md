@@ -126,7 +126,7 @@ Forward+ 保留 Forward 材质阶段，但先用 Tiled/Clustered Culling 建立�
 
 - [[02_GPU与光栅化管线/一帧如何到达屏幕]]
 - [[05_光照阴影与GI/光源与直接光照]]
-- [[13_引擎渲染与资源架构/Render Pass、Command Buffer与Render Graph]]
+- [[13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph]]
 - [[14_性能分析与优化/帧时间、瓶颈与GPU成本]]
 
 ## 参考资料

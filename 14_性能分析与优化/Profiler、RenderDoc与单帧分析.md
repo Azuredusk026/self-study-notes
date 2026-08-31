@@ -146,7 +146,7 @@ Counter 高不是自动的问题。例如带宽利用高但帧时间达标，可
 
 - [[14_性能分析与优化/帧时间、瓶颈与GPU成本]]
 - [[14_性能分析与优化/渲染优化验证与移动端实践]]
-- [[13_引擎渲染与资源架构/Render Pass、Command Buffer与Render Graph]]
+- [[13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph]]
 - [[06_纹理技术/UV、图集、流送与虚拟纹理]]
 
 ## 参考资料

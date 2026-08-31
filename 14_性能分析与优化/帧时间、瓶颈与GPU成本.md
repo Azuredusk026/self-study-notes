@@ -134,7 +134,7 @@ Occupancy 不是目标分数。算法带宽已满时，提高 Occupancy 不一�
 
 ## 相关主题
 
-- [[13_引擎渲染与资源架构/Draw Call、Batching与GPU Instancing]]
+- [[13_引擎架构与资源系统/Draw Call、Batching与GPU Instancing]]
 - [[02_GPU与光栅化管线/光栅化、插值与深度模板]]
 - [[14_性能分析与优化/Profiler、RenderDoc与单帧分析]]
 - [[14_性能分析与优化/渲染优化验证与移动端实践]]

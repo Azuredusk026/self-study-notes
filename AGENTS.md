@@ -1,211 +1,85 @@
-# Technical Art Knowledge Base Instructions
+# 个人游戏开发知识库协作规则
 
-## Scope
+## 范围
 
-This repository is a personal Obsidian knowledge base for Technical Art.
-The goal is to build durable understanding from concept to mechanism, tradeoff,
-and practical verification. It is not a portfolio, project diary, interview
-question bank, or collection of isolated definitions.
+这是一个公开托管的个人 Obsidian 知识库。正式知识覆盖图形学、引擎、编程、算法、物理、Gameplay、游戏 AI、网络、音频、工具管线、AIGC，以及后续加入的课程主题。
 
-These instructions apply to the whole repository. A nested `AGENTS.md` may add
-local migration notes, but must not restore the legacy encyclopedia rules or
-contradict this file.
+知识库的目标是形成可反复阅读和维护的理解。文章需要说明机制、取舍和验证方法，而不是只收集名词。项目经历、面试题和过程文档可以作为来源，但不能代替正式知识结构。
 
-## Primary Goals
+## 公开仓库与隐私
 
-- Build a systematic, readable, extensible Technical Art knowledge system.
-- Repair knowledge that currently stops at names, APIs, or surface definitions.
-- Preserve useful knowledge from old notes and course materials while replacing
-  their old file organization.
-- Keep writing accurate, concise, natural, and suitable for repeated study.
-- Keep terminology, navigation, sources, and Git history maintainable.
+- `文字记录/` 保存本地私密课程原件。任何任务都不得读取、枚举、移动、重命名、哈希、索引或处理其中的内容。
+- 文件名包含 `文字记录` 的私密压缩包也不得进入 Git、审计清单或公开索引。
+- `.obsidian/workspace*.json`、`.idea/`、环境变量、密钥和 `secrets/` 只保留在本机。
+- 审计脚本必须以 Git 可公开文件集合为输入，并遵守 `.gitignore`。
+- 公开 manifest 不得包含私密来源的路径、大小、哈希、标题或内容预览。
+- Git 历史清理和强制推送需要用户单独授权。普通整理不得改写历史。
 
-## Non-Goals
+## 知识架构
 
-- Do not organize formal knowledge around personal projects or resume entries.
-- Do not turn the vault into a list of interview questions.
-- Do not preserve an old file merely because it already exists.
-- Do not chase completeness by creating one page for every keyword.
-- Do not reproduce an external wiki tool's default schema when it conflicts with
-  this repository's topic-based organization.
+- 正式知识按自然领域和学习依赖组织，不按课程顺序组织。
+- 优先在一篇主题文章中使用 H2/H3 组织相关概念。只有职责独立或文章已经难以维护时才拆页。
+- 不设置统一正文模板。机制、对比、流程和实践类文章使用适合主题的结构。
+- `00_知识库说明/` 提供知识地图、术语和维护方法。
+- 编号正式目录保存长期正文。`docs/` 保存计划、清单、覆盖台账、构建日志和审核报告。
+- 课程笔记直接放在课程根目录，文件名使用 `{两位序号}-{简短内容标题}.md`。不为课程笔记增加嵌套分类目录。
 
-## Knowledge Architecture
+## 来源与覆盖
 
-- Organize by natural knowledge domains and learning dependencies.
-- Prefer a cohesive topic article with H2/H3 sections over many tiny term pages.
-- Split a page only when it contains distinct responsibilities, learning goals,
-  or has become meaningfully difficult to read and maintain.
-- Do not impose a universal article template. Let mechanism-heavy, comparison,
-  workflow, and practical articles use structures that fit their subject.
-- Keep formal knowledge separate from project process documents in `docs/` and
-  source material in the designated source/archive area.
-- Treat the architecture in `docs/知识库重构计划.md` as a working baseline. Change
-  it only with a documented reason found during the full source audit.
+- 公开课程笔记既是可阅读笔记，也是正式知识的来源。
+- 每份公开课程笔记都必须进入 `docs/manifests/course-coverage.tsv`。
+- 每个有实际知识含量的章节都要映射到一篇正式文章。重复知识可以映射到已有文章，并注明等价内容。
+- `非 TA`、`与当前岗位无关`、`保留归档` 不能作为跳过知识的理由。
+- 来源内容存在错误、版本差异或证据不足时，在正式文章中保留边界和核验状态。
+- 优先使用规范、官方文档、源码、论文和官方技术演讲核验实现细节。课程笔记用于补充解释和学习线索。
 
-As a concrete granularity example, one article named `纹理技术` may contain
-texture sampling, filtering, Mipmap, addressing, compression, and their
-relationships. Those terms do not each require a separate page.
+## 内容深度
 
-## Source Audit And Migration
+重要主题需要沿自然顺序解释以下内容中的必要部分：
 
-- Audit the complete vault, including Markdown, TXT, PDF, PPT/PPTX, DOC/DOCX,
-  code, course notes, transcripts, exercises, and attachments when relevant.
-- Treat course material as a source to understand, deduplicate, and integrate;
-  do not copy its course-by-course structure into the formal knowledge system.
-- Maintain a migration ledger with at least: source path, topic, value, target,
-  processing status, and notes about uncertainty or duplication.
-- A legacy file may be rewritten, moved, merged, split, archived, or deleted.
-- Never delete a legacy source until its valuable content is marked as migrated,
-  intentionally archived, duplicated elsewhere, or out of Technical Art scope.
-- Preserve recoverability through Git commits and the migration ledger.
-- Non-TA course material may remain as a source/archive, but must not pollute the
-  formal Technical Art navigation.
+- 它解决什么问题；
+- 问题为什么存在；
+- 数据和控制如何流动；
+- 成本、限制、失败情况和替代方案；
+- 能在引擎、捕获、代码或小实验中观察到什么。
 
-## Content Depth
+这些是质量维度，不是固定小标题。公式、图、伪代码和示例只在帮助理解时使用，并解释变量与前提。
 
-Important topics must go beyond a definition. Build the most natural path among:
+## 写作与 Markdown
 
-- what problem the technique solves;
-- why the problem exists;
-- the underlying mechanism and execution flow;
-- costs, limits, failure cases, and alternatives;
-- what can be observed in an engine, capture, profiler, asset, or small test;
-- a short example, formula, diagram, pseudocode, or code fragment when useful.
+- 使用简短、自然、准确的中文笔记风格。每句话只表达一个主要判断。
+- 长英文术语按需使用 `中文（English）`，稳定缩写如 MSAA、TAA、BRDF、BVH 直接保留，并在正文解释全名。
+- 同一概念只维护一个主名称。别名进入术语表或页面 aliases。
+- `[[wikilink]]` 只表达有用的前置、依赖、对比和延伸关系。
+- 不编造引擎内部实现、驱动行为、版本特性或性能数字。不确定内容使用清晰的核验说明。
+- 遵守全局中文定稿文风。普通正文只描述现行知识和现行做法；变更对比只写在 Changelog、迁移记录和构建日志中。
 
-These are quality dimensions, not mandatory section headings. Do not fill empty
-sections simply to satisfy a template.
+## 工作流程
 
-## Writing Style
+完整整理按以下顺序连续执行：
 
-- Write in concise, natural Chinese note style.
-- Prefer short sentences and one clear claim per sentence.
-- Avoid academic filler, promotional wording, fake narrative, and long sentences.
-- Keep technical terms accurate and consistent.
-- Use `中文（English）` on first mention when the Chinese translation materially
-  helps search or understanding, such as `时域采样（Temporal Sampling）`.
-- Keep established abbreviations such as MSAA, TAA, BRDF, BVH, and PCF as titles
-  when that is the clearest convention; explain the full name in the text.
-- Use formulas only where they help explain a mechanism. Define every variable.
-- Do not invent engine internals, GPU/driver behavior, version-specific facts, or
-  performance numbers. Mark unresolved details as `待补充` or use a warning callout.
+1. `P0-public`：公开仓库边界、ignore、审计来源和隐私门禁。
+2. `P0-scope`：知识范围、领域边界和正式文章规划。
+3. `P1-naming`：课程笔记命名与根目录整理。
+4. `P1-coverage`：章节级来源覆盖台账。
+5. `P2-content`：补齐缺失知识并建立必要链接。
+6. `P2-review`：隐私、覆盖、标题、链接、内容深度和确定性回归。
 
-## Markdown And Obsidian
+用户要求完整执行时进入 Autonomous Implementation Mode。阶段之间持续推进，不等待常规确认。每阶段完成测试、文档同步和独立 Git 提交。测试失败后定位、修复并重新测试，不降低验收标准。
 
-- Use normal Markdown headings to express the subject's natural structure.
-- Use `**bold**` for core terms or conclusions and `==highlight==` sparingly.
-- Use Obsidian callouts only when they add real value:
-  - `[!warning]` for mistakes, constraints, and uncertain behavior;
-  - `[!question]` for a useful reasoning check;
-  - collapsed `[!tip]-` for optional depth.
-- Add `[[wikilinks]]` only for meaningful prerequisites, dependencies,
-  comparisons, or follow-up topics. Do not add links to inflate graph density.
-- Avoid duplicate pages and aliases for the same concept. Maintain one canonical
-  term and record alternate names in the terminology index or page aliases.
-- Frontmatter is optional and minimal. Do not force metadata that is not used.
+## 验收门禁
 
-## Sources And Accuracy
-
-- Prefer primary sources: specifications, engine documentation, source code,
-  papers, and official technical presentations.
-- Secondary articles and course notes may help explanation but do not override a
-  primary source on implementation details.
-- Record sources for version-specific behavior, disputed mechanisms, equations,
-  hardware details, and non-obvious factual claims.
-- Separate verified facts, source interpretation, and personal practical notes.
-- When evidence conflicts, retain the conflict and explain it instead of silently
-  selecting a convenient answer.
-
-## Working Process
-
-Follow these phases for a full rebuild:
-
-1. Audit all sources and produce the inventory, topic map, duplicate map, gaps,
-   terminology problems, and migration ledger.
-2. Review module boundaries and article granularity using the complete audit.
-3. Rebuild formal knowledge in dependency order and absorb legacy sources.
-4. Establish useful links and remove duplicated explanations.
-5. Review each major module and repair it before moving on.
-6. Run a final vault-wide review and continue fixing until acceptance criteria
-   are met.
-
-Do not pause after every small decision. Continue through analysis, execution,
-review, and correction unless access fails, data is damaged, or a genuinely
-important ambiguity cannot be resolved safely.
-
-## Autonomous Implementation Mode
-
-When the user asks to execute the full rebuild, enter Autonomous Implementation
-Mode and continue from P0 to P1 to P2 without pausing between phases, asking
-whether to continue, or waiting for routine confirmation.
-
-- P0 covers project rules, source audit, migration ledger, and architecture.
-- P1 covers the core prerequisite knowledge and its module reviews.
-- P2 covers specialist domains, legacy retirement, links, terminology, and the
-  final vault-wide acceptance review.
-- Complete each independently testable phase or task, then run its relevant
-  checks before proceeding.
-- Diagnose and fix failed checks. Do not skip them or weaken acceptance criteria.
-- Preserve existing behavior and run regression checks where scripts or existing
-  workflows are affected.
-- Before each commit, inspect `git diff`, test results, documentation, indexes,
-  logs, and manifests for consistency.
-- Keep plans, design documents, README files, changelogs, indexes, and migration
-  records synchronized with the actual repository state.
-- After all phases, run the complete regression and report completed phases,
-  commits, checks, documentation updates, and remaining risks.
-- Stop for user input only when a hard blocker cannot be resolved from the code,
-  local materials, documentation, environment, or a safe reversible approach.
-
-Each completed phase or independently accepted task receives its own commit.
-Use a Chinese summary in this form:
-
-```text
-feat(<phase>): <中文摘要>
-```
-
-Do not include unrelated user changes in these commits.
-
-## Process Documents
-
-Keep project-management material in `docs/`, including:
-
-- architecture and execution plan;
-- current-state audit;
-- migration ledger;
-- terminology decisions;
-- build log;
-- module and final review reports.
-
-Formal Technical Art notes do not belong in `docs/`.
-
-## Quality Gates
-
-Before considering a module complete, check:
-
-- Topic boundaries are natural and neither fragmented nor excessively large.
-- Core knowledge explains mechanisms rather than listing names.
-- Claims are accurate, uncertainty is visible, and important sources are tracked.
-- Terminology is consistent and useful links resolve.
-- Writing remains concise and does not show rigid AI-generated structure.
-- Valuable legacy and course knowledge mapped to this module has been handled.
-- Repeated content has been consolidated.
-
-The final review must also check broken links, orphan pages, duplicate titles,
-stale placeholders, inconsistent aliases, and material left unprocessed.
+- 私密或 ignored 文件没有进入 Git 和公开 manifest。
+- 所有公开课程笔记和有效章节都有覆盖记录。
+- 正式文章恰好一个 H1，标题不重复，正文不是占位内容。
+- 正式链接可解析，正式文章有来自知识地图或其他正式文章的入口。
+- 来源状态全部收口，不能以知识领域为理由跳过。
+- 审计连续运行两次时产物一致。
 
 ## Git
 
-- Inspect `git status` before editing and preserve unrelated user changes.
-- Use one meaningful commit per audit milestone, accepted task, or major module.
-- Do not combine the whole rebuild into one opaque commit.
-- Do not rewrite history or use destructive Git commands.
-- The existing pre-rebuild backup commit is a recovery point, not a reason to
-  skip migration accounting.
-- Commit summaries must be in Chinese and follow the Autonomous Implementation
-  Mode format when the full rebuild is active.
-
-## Legacy Instructions
-
-`system_prompt.md` and the old rules below `TA-Encyclopedia/` describe the
-previous course-summary and one-term-per-page workflows. They are migration
-sources only and do not govern new formal knowledge.
+- 编辑前检查 `git status`，保留用户已有改动。
+- 每个阶段独立提交，标题使用 `feat(<phase>): <中文摘要>`。
+- 提交前检查 diff、暂存范围、测试结果、文档和 manifest。
+- 用户删除的官方字幕保持删除状态，不恢复、不分析，也不混入阶段提交。
+- 不使用破坏性 Git 命令，不改写历史。

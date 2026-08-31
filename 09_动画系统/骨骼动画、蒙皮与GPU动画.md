@@ -129,7 +129,7 @@ Motion Vector 必须使用当前与上一帧一致的变形结果。只保存 Ob
 
 - [[01_数学与采样/向量、矩阵与空间变换]]
 - [[01_数学与采样/旋转、四元数与插值]]
-- [[13_引擎渲染与资源架构/Draw Call、Batching与GPU Instancing]]
+- [[13_引擎架构与资源系统/Draw Call、Batching与GPU Instancing]]
 - [[14_性能分析与优化/帧时间、瓶颈与GPU成本]]
 
 ## 参考资料

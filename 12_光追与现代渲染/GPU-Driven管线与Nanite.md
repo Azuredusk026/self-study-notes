@@ -196,7 +196,7 @@ Nanite 的具体支持范围会随 Unreal 版本扩展。笔记应按当前官�
 
 - [[08_几何与网格/网格数据、缓存与几何处理]]
 - [[08_几何与网格/LOD、地形与程序化资产]]
-- [[13_引擎渲染与资源架构/Draw Call、Batching与GPU Instancing]]
+- [[13_引擎架构与资源系统/Draw Call、Batching与GPU Instancing]]
 - [[14_性能分析与优化/帧时间、瓶颈与GPU成本]]
 
 ## 参考资料

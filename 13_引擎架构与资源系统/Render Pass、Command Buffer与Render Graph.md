@@ -134,7 +134,7 @@ Unity `CommandBuffer` 可以记录 Draw、Blit、Dispatch、SetRenderTarget 等�
 
 - [[02_GPU与光栅化管线/一帧如何到达屏幕]]
 - [[03_Shader编程/Compute Shader与GPU执行模型]]
-- [[13_引擎渲染与资源架构/Unity与Unreal渲染扩展入口]]
+- [[13_引擎架构与资源系统/Unity与Unreal渲染扩展入口]]
 - [[14_性能分析与优化/Profiler、RenderDoc与单帧分析]]
 
 ## 参考资料
