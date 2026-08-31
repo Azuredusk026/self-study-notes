@@ -97,3 +97,9 @@
 - 重构 DCC 数据契约、FBX/glTF/USD 交换和资产语义校验。
 - 建立确定性导入、Validator、Manifest、Staging 与发布门禁。
 - 整理编辑器事务、批处理架构、Git LFS/Perforce/PlasticSCM 和资产 CI。
+
+### P2 - TA 编程与数据结构
+
+- 重构 C++/C#/Python 构建、模块、运行环境和跨语言边界。
+- 补全内存、GC、Unity 对象生命周期、对象池与数据局部性。
+- 整理复杂度、树图、图搜索和空间划分的工程选择。
