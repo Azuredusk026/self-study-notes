@@ -1,10 +1,22 @@
-图形学/图形学文字记录.zip
+# Local knowledge sources and maintenance
+/课程记录/
+/docs/
+/scripts/
+/AGENTS.md
+/CHANGELOG.md
+
+# Obsidian and IDE state
+**/.obsidian/
+/.idea/
+
+# Private source material
 **/文字记录/
 **/*文字记录*.zip
+*.zip
+*.7z
+*.rar
 
-.idea
-.obsidian
-
+# Local environment and credentials
 .env
 .env.*
 !.env.example
@@ -14,3 +26,8 @@
 *.pfx
 *.secret
 secrets/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
