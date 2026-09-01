@@ -160,10 +160,10 @@ GPU Event 可以在设备内驱动二级 Emitter，例如死亡火花生成小�
 
 ## 相关主题
 
-- [[知识库/03_Shader编程/Compute Shader与GPU执行模型]]
-- [[知识库/10_VFX与模拟/常用VFX材质、模拟与性能]]
-- [[知识库/13_引擎架构与资源系统/Draw Call、Batching与GPU Instancing]]
-- [[知识库/14_性能分析与优化/帧时间、瓶颈与GPU成本]]
+- [[03_Shader编程/Compute Shader与GPU执行模型]]
+- [[10_VFX与模拟/常用VFX材质、模拟与性能]]
+- [[13_引擎架构与资源系统/Draw Call、Batching与GPU Instancing]]
+- [[14_性能分析与优化/帧时间、瓶颈与GPU成本]]
 
 ## 参考资料
 

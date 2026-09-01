@@ -150,10 +150,10 @@ Volumetric Fog 把视锥划成三维 Froxel，注入介质密度、灯光和阴�
 
 ## 相关主题
 
-- [[知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光]]
-- [[知识库/01_数学与采样/信号、频率与噪声]]
-- [[知识库/02_GPU与光栅化管线/抗锯齿与时域采样]]
-- [[知识库/13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph]]
+- [[07_颜色与后处理/颜色空间、Alpha、HDR与曝光]]
+- [[01_数学与采样/信号、频率与噪声]]
+- [[02_GPU与光栅化管线/抗锯齿与时域采样]]
+- [[13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph]]
 
 ## 参考资料
 

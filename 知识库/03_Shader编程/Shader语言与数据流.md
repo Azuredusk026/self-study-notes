@@ -138,10 +138,10 @@ Shader Graph 是生成 Shader 代码的前端，不是另一种 GPU 管线。节
 
 ## 相关主题
 
-- [[知识库/02_GPU与光栅化管线/一帧如何到达屏幕]]
-- [[知识库/03_Shader编程/Shader编译、关键字与变体]]
-- [[知识库/03_Shader编程/Compute Shader与GPU执行模型]]
-- [[知识库/06_纹理技术/纹理采样、过滤、Mipmap与压缩]]
+- [[02_GPU与光栅化管线/一帧如何到达屏幕]]
+- [[03_Shader编程/Shader编译、关键字与变体]]
+- [[03_Shader编程/Compute Shader与GPU执行模型]]
+- [[06_纹理技术/纹理采样、过滤、Mipmap与压缩]]
 
 ## 参考资料
 

@@ -115,10 +115,10 @@ Unity URP/HDRP 和 Unreal 每个大版本都会调整接口、Render Graph 和�
 
 ## 相关主题
 
-- [[知识库/13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph]]
-- [[知识库/03_Shader编程/Shader编译、关键字与变体]]
-- [[知识库/11_NPR与风格化渲染/描边、Billboard与场景风格化]]
-- [[知识库/14_性能分析与优化/Profiler、RenderDoc与单帧分析]]
+- [[13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph]]
+- [[03_Shader编程/Shader编译、关键字与变体]]
+- [[11_NPR与风格化渲染/描边、Billboard与场景风格化]]
+- [[14_性能分析与优化/Profiler、RenderDoc与单帧分析]]
 
 ## 参考资料
 
