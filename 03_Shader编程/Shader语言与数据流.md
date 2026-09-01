@@ -36,6 +36,28 @@ GPU 读取常量时偏好对齐后的连续布局。HLSL Constant Buffer 常以 
 
 大量结构化数据可以使用 Structured Buffer、Byte Address Buffer 或 Storage Buffer。它们比普通常量灵活，但访问成本、缓存行为和平台支持不同。
 
+HLSL 用 `cbuffer` 声明常量缓冲区，并可用 `register(b0)` 指定绑定槽位。CPU 侧需要创建同样大小和布局的 Buffer，把数据写入后绑定到对应 Shader Stage。动态更新常见路径是 `Map/Unmap`：`WRITE_DISCARD` 取得一段可重新分配的写入区域，适合整块替换；`NO_OVERWRITE` 保证不会覆盖 GPU 尚未读取的区间，适合环形缓冲中的追加写入。两者都要求 CPU 明确管理正在飞行的帧和资源寿命。
+
+常量应按更新频率分组，而不是把所有参数塞进一个大 Buffer：
+
+- Per-frame：时间、全局环境；
+- Per-view：相机、投影和曝光；
+- Per-material：材质参数；
+- Per-draw：对象矩阵和对象 ID。
+
+频率分组能避免只改一个对象时重新上传全局数据。Unity SRP Batcher 要求材质属性位于 `UnityPerMaterial`，引擎按对象提供的数据位于 `UnityPerDraw`，并保持各 Pass 的布局一致。违反布局约定会失去批处理兼容性或读到错误偏移。
+
+## 资源视图与访问权限
+
+同一底层资源可以通过不同视图进入管线。Direct3D 常见名称包括：
+
+- SRV（Shader Resource View）：Shader 只读访问纹理或 Buffer；
+- UAV（Unordered Access View）：Shader 随机读写，常用于 Compute 和图像写入；
+- RTV（Render Target View）：作为颜色输出；
+- DSV（Depth Stencil View）：作为深度模板输出。
+
+视图决定格式解释、Mip、数组层和允许的访问方式，不等于复制一份资源。资源从 Render Target 写入转为 Shader 读取时，现代显式 API 还需要正确的 Resource State、Barrier 和同步范围。把仍在写的资源同时当作 SRV/UAV 读取，会形成读写冲突；调试时应同时检查视图、槽位和状态转换。
+
 ## Texture 和 Sampler
 
 Texture 保存数据。Sampler 描述如何读取：过滤、寻址、LOD 等。

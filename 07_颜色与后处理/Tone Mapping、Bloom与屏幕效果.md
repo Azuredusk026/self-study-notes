@@ -117,6 +117,12 @@ Vignette、Chromatic Aberration、Film Grain、Lens Distortion 可以塑造镜�
 
 这些效果不应遮盖曝光、颜色空间或上游渲染错误。Chromatic Aberration 和 Grain 还会降低 TAA/压缩后的细节稳定性。
 
+## Fog 与参与介质
+
+Linear Fog 在起止距离之间线性增加雾量；Exponential Fog 使用指数衰减，让密度随距离自然累积；Height Fog 再让密度随高度变化，用于地面雾和大气层次。这些简化模型通常只根据像素位置计算透射率，不能表达局部光束和体积遮挡。
+
+Volumetric Fog 把视锥划成三维 Froxel，注入介质密度、灯光和阴影，再沿视线积分散射与透射。它能表现局部雾、光柱和带阴影的空气透视，但需要时域重投影稳定低分辨率体积数据。快速变化的灯光、相机切换和密度边界容易出现拖影或分层。
+
 ## 性能和分辨率
 
 后处理多为全屏工作，成本约与像素数、采样数和中间 Buffer 带宽相关。

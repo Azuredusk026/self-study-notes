@@ -49,6 +49,14 @@ Rotation 通常用 Nlerp/Slerp。每个 Joint 混合后再累积层级，能保�
 
 它适合连续参数，不适合用几十个离散动作强行铺满二维空间。样本分布不均时，简单三角插值会造成权重突变，需要检查参数空间和动作相位。
 
+二维 Blend Space 常对样本点做 Delaunay Triangulation。运行参数落入某个三角形后，只采样三个顶点动画，并用重心坐标计算权重。这样能处理不规则样本分布，也避免每帧混合全部 Clip；三角形过瘦、样本覆盖不足和参数越界仍需专门处理。
+
+## Motion Matching
+
+Motion Matching 把动画数据库切成可检索帧，为每帧保存姿势特征和未来轨迹特征。运行时根据当前骨骼状态、期望速度与轨迹查找代价最低的候选，再跳转并混合到该片段。
+
+特征需要归一化和加权，否则位置、速度、朝向等不同量纲会让距离失真。检索结果还要考虑 Pose Continuity、Foot Contact、Transition Cost 和最短驻留时间，避免频繁跳片与脚滑。数据库质量、标签约束和查询可视化通常比单纯更换最近邻算法更重要。
+
 ## Additive Animation
 
 Additive Clip 保存相对 Reference Pose 的差值，而不是完整 Pose。

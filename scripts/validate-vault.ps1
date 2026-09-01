@@ -314,6 +314,19 @@ foreach ($row in $inventoryRows | Where-Object migration_status -eq '排除') {
     }
 }
 
+$conceptValidatorPath = Join-Path $VaultRoot 'scripts\validate-course-concepts.ps1'
+if (-not (Test-Path -LiteralPath $conceptValidatorPath -PathType Leaf)) {
+    Add-Failure '缺少课程概念覆盖验证脚本。'
+}
+else {
+    try {
+        & $conceptValidatorPath -VaultRoot $VaultRoot
+    }
+    catch {
+        Add-Failure $_.Exception.Message
+    }
+}
+
 Write-Host "正式文章：$($uniqueFormalPaths.Count)"
 Write-Host "来源台账：$($inventoryRows.Count)"
 Write-Host "警告：$($warnings.Count)"

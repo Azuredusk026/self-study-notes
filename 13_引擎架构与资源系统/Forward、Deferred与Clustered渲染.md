@@ -40,6 +40,8 @@ Deferred 先把可见表面的属性写入 GBuffer，再在屏幕空间计算光
 
 具体布局取决于引擎、平台和材质模型。每多一个通道都会增加显存和带宽。
 
+一次像素着色同时写入多个颜色 Attachment 称为多渲染目标（Multiple Render Targets，MRT）。GBuffer 正是典型用法。MRT 减少重复几何绘制，但所有目标的总字节数都会进入颜色写带宽；平台还会限制目标数量、格式组合和混合能力。
+
 ### Lighting Pass
 
 读取 GBuffer，重建表面位置，再累加灯光。

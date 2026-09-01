@@ -57,6 +57,8 @@ Reversed-Z 下 Pyramid 取 Min/Max 的方向与普通 Depth 不同。必须按�
 
 Occlusion False Positive 会让物体消失，不能以错误剔除换性能。
 
+Hi-Z 也常称 HZB（Hierarchical Z-Buffer）。两者都指深度的分层降采样结构；归约使用最大值还是最小值取决于正向或反向 Z 以及遮挡测试定义。
+
 ## Compaction 与 Prefix Sum
 
 每个线程判断可见后，需要把结果紧凑写入 Visible List。可以使用 Atomic Append，简单但高密度时有竞争；也可先写 0/1 Flag，通过 Prefix Sum 得到输出 Offset，再 Scatter。
@@ -173,6 +175,10 @@ Nanite 的公开设计以 Cluster Group 为简化单元：
 - 多视图、阴影和反射带来的额外需求。
 
 虚拟化把“全部常驻”改成“按需驻留”，不是取消内存预算。
+
+几何 Page 可以对父级或相邻层级做增量编码，只保存可重建的差值，再使用 LZ 等无损压缩降低磁盘和传输体积。压缩率、随机访问粒度和解压吞吐需要一起设计：Page 太大增加无效传输，Page 太小会放大请求、元数据和 IO 开销。
+
+DirectStorage 一类直接存储路径减少传统逐文件 CPU IO 和中间复制，让批量请求、GPU 可用压缩数据与上传队列更紧密地衔接。它不会消除资产调度问题，仍需要优先级、反馈延迟、驻留预算和缺页时的父级回退。
 
 ## 材质、透明与动态几何
 

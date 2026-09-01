@@ -102,6 +102,14 @@ Bias 太小会 Acne，太大会 Peter Panning，让阴影与物体脚底分离�
 
 Cascade 越多不一定越好，会增加渲染和采样成本。
 
+## 方差阴影与虚拟阴影
+
+方差阴影贴图（Variance Shadow Map，VSM）保存深度的一阶、二阶矩，用切比雪夫不等式估计受光概率。矩数据可以线性过滤和预过滤，适合较软阴影，但数值误差与深度分布重叠会产生 Light Bleeding。EVSM 等变体通过指数变换增强分离度，同时更依赖精度和参数控制。
+
+虚拟阴影贴图（Virtual Shadow Map，也简称 VSM）把高分辨率阴影空间切成 Page，只分配和更新当前视图需要的区域。它依赖虚拟地址映射、Page Cache、接收者驱动请求和失效规则，目标是让大世界和高密度几何保持细致阴影。
+
+两个 VSM 指代完全不同：Variance 是基于深度矩的可过滤表示，Virtual 是稀疏分页与缓存方案。阅读资料或抓帧时要先确认上下文。
+
 ## Point Light Shadow
 
 Cubemap Shadow 需要六个面，意味着最多六次场景渲染。Dual Paraboloid 等替代方案可以减少面数，但会引入投影畸变和接缝。

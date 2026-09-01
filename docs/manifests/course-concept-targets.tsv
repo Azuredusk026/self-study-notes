@@ -1,0 +1,51 @@
+concept	aliases	source_examples	target_article	coverage_status	notes
+常量缓冲区绑定与更新	cbuffer|register(b0)|WRITE_DISCARD|NO_OVERWRITE	图形工程/03-HLSL与图形管线.md；图形工程/05-前向渲染与内存对齐.md	03_Shader编程/Shader语言与数据流.md	已覆盖	包含槽位、CPU 写入、布局和更新频率
+Unity 常量缓冲布局	UnityPerMaterial|UnityPerDraw|SRP Batcher	图形工程/06-Pass、Material与ShaderLab.md	03_Shader编程/Shader语言与数据流.md	已覆盖	材质与对象数据布局
+图形资源视图	SRV|UAV|RTV|DSV	图形学/03-图形API、渲染管线与优化.md	03_Shader编程/Shader语言与数据流.md	已覆盖	视图、权限和状态转换
+Stream Output	Stream Output	图形学/03-图形API、渲染管线与优化.md	02_GPU与光栅化管线/一帧如何到达屏幕.md	已覆盖	管线输出写回 Buffer
+Swapchain 与呈现	Swapchain|Present Mode|Screen Tearing	图形学/04-帧流程与分析工具.md	02_GPU与光栅化管线/一帧如何到达屏幕.md	已覆盖	缓冲轮换和呈现队列
+显示同步	VSync|VRR|可变刷新率	图形学/04-帧流程与分析工具.md	02_GPU与光栅化管线/一帧如何到达屏幕.md	已覆盖	撕裂、等待和延迟
+时域超分输入契约	DLSS|FSR|Reactive Mask	Games104/07-现代渲染与后处理.md	02_GPU与光栅化管线/抗锯齿与时域采样.md	已覆盖	颜色、深度、运动向量和遮罩
+多渲染目标	MRT|Multiple Render Targets	图形工程/05-前向渲染与内存对齐.md	13_引擎架构与资源系统/Forward、Deferred与Clustered渲染.md	已覆盖	GBuffer 写入与带宽
+RSM 与 LPV	Reflective Shadow Map|RSM|Light Propagation Volume|LPV	Games104/26-Lumen、蒙特卡洛与SDF追踪.md	05_光照阴影与GI/烘焙光照、Probe与实时GI.md	已覆盖	从光源采样到体素传播
+体素 GI 家族	VXGI|SVOGI|体素锥追踪	Games104/26-Lumen、蒙特卡洛与SDF追踪.md	05_光照阴影与GI/烘焙光照、Probe与实时GI.md	已覆盖	体素表示、追踪和稀疏层级
+动态 Probe GI	SDFDDGI|Screen Probe|Clipmap	Games104/26-Lumen、蒙特卡洛与SDF追踪.md	05_光照阴影与GI/烘焙光照、Probe与实时GI.md	已覆盖	距离场、屏幕 Probe 和大世界更新
+方差阴影贴图	Variance Shadow Map|Light Bleeding|EVSM	Games104/29-Nanite虚拟几何与虚拟阴影.md	05_光照阴影与GI/阴影贴图、PCF与PCSS.md	已覆盖	深度矩过滤
+虚拟阴影贴图	Virtual Shadow Map|Page Cache	Games104/29-Nanite虚拟几何与虚拟阴影.md	05_光照阴影与GI/阴影贴图、PCF与PCSS.md	已覆盖	分页、缓存和失效
+HZB	HZB|Hierarchical Z-Buffer	Games104/28-GPU驱动几何与Nanite基础.md	12_光追与现代渲染/GPU-Driven管线与Nanite.md	已覆盖	Hi-Z 同义词和深度约定
+几何页编码与直读	DirectStorage|增量编码|LZ	Games104/29-Nanite虚拟几何与虚拟阴影.md	12_光追与现代渲染/GPU-Driven管线与Nanite.md	已覆盖	压缩、IO、上传和驻留
+雾效模型	Linear Fog|Exponential Fog|Height Fog|Volumetric Fog	Games104/07-现代渲染与后处理.md	07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md	已覆盖	距离、高度和体积雾
+渲染硬件接口	RHI|Render Hardware Interface	Games104/02-引擎架构分层.md	13_引擎架构与资源系统/引擎分层、世界与对象模型.md	已覆盖	跨图形 API 抽象边界
+反射代码生成	Clang AST|Schema|Accessor|代码生成	Games104/14-世界编辑器、插件与反射.md	13_引擎架构与资源系统/引擎分层、世界与对象模型.md	已覆盖	类型扫描、Schema 和生成产物
+编辑器职责分离	WYSIWYG|MVC|MVVM	编辑器设计/03-地图编辑器MVP与调试.md	15_资产与工具管线/编辑器工具与批处理架构.md	已覆盖	界面、状态和运行结果契约
+规则式与脚本式 AI	Script-based AI|Rule-based AI	游戏AI/01-AI架构与工程实践.md	20_游戏AI/行为树、效用与规划.md	已覆盖	确定演出和条件规则
+BDI	BDI|Belief|Desire|Intention	游戏AI/01-AI架构与工程实践.md	20_游戏AI/行为树、效用与规划.md	已覆盖	信念、目标和持续意图
+AI 节点设计模式	Template Method|Decorator	游戏AI/02-AI架构与核心模式.md	20_游戏AI/行为树、效用与规划.md	已覆盖	节点生命周期与组合
+UCB、UCT 与 PUCT	UCB|UCT|PUCT	Games104/18-HTN、GOAP与MCTS.md	20_游戏AI/群体、学习与高级决策.md	已覆盖	搜索中的探索利用平衡
+神经网络结构	MLP|CNN|RNN|LSTM	Games104/19-机器学习与强化学习AI.md	20_游戏AI/群体、学习与高级决策.md	已覆盖	状态、空间和时序输入
+学习方式	监督学习|模仿学习|强化学习	Games104/19-机器学习与强化学习AI.md	20_游戏AI/群体、学习与高级决策.md	已覆盖	数据来源和优化目标边界
+游戏 AI 训练案例	AlphaGo|AlphaZero|AlphaStar	Games104/19-机器学习与强化学习AI.md	20_游戏AI/群体、学习与高级决策.md	已覆盖	模型、搜索与训练分布
+网络分层	OSI|TCP/IP	Games104/20-网络协议、时钟与RPC.md	21_游戏网络/网络协议、时钟与RPC.md	已覆盖	协议职责和游戏关注边界
+IPv4 与端口	IPv4|端口|NAT	游戏网络/01-局域网与Mirror.md	21_游戏网络/网络协议、时钟与RPC.md	已覆盖	端点与可达性
+ARQ 与滑动窗口	ARQ|Sliding Window|Stop-and-Wait	Games104/20-网络协议、时钟与RPC.md	21_游戏网络/网络协议、时钟与RPC.md	已覆盖	确认、窗口和重传
+KCP	KCP	Games104/20-网络协议、时钟与RPC.md	21_游戏网络/网络协议、时钟与RPC.md	已覆盖	可靠 UDP 实例
+TCP 消息边界	TCP 粘包|半包|Length Prefix	游戏网络/01-局域网与Mirror.md	21_游戏网络/网络协议、时钟与RPC.md	已覆盖	字节流组帧
+网络时钟偏移	NTP|时钟偏移	Games104/20-网络协议、时钟与RPC.md	21_游戏网络/网络协议、时钟与RPC.md	已覆盖	双向时间戳估计
+控制面与数据面	HTTP/HTTPS|控制面|实时数据面	Games104/20-网络协议、时钟与RPC.md	21_游戏网络/网络协议、时钟与RPC.md	已覆盖	不同流量的协议职责
+Mirror 同步接口	Mirror|SyncVar	游戏网络/01-局域网与Mirror.md	21_游戏网络/网络协议、时钟与RPC.md	已覆盖	引擎框架集成边界
+最大子数组与矩阵链	最大子数组|Kadane|矩阵链乘法	数据结构和算法/04-动态规划与贪心.md	16_编程与数据结构/算法设计、树、图与空间划分.md	已覆盖	线性和区间动态规划
+Bellman-Ford	Bellman-Ford|负权环	数据结构和算法/06-进阶图算法与最短路径.md	16_编程与数据结构/算法设计、树、图与空间划分.md	已覆盖	负权边和环检测
+Floyd-Warshall 与传递闭包	Floyd-Warshall|传递闭包	数据结构和算法/06-进阶图算法与最短路径.md	16_编程与数据结构/算法设计、树、图与空间划分.md	已覆盖	所有点对距离与可达性
+连通分量与边分类	连通分量|Back Edge|Cross Edge	数据结构和算法/06-进阶图算法与最短路径.md	16_编程与数据结构/算法设计、树、图与空间划分.md	已覆盖	图遍历结构
+Cache 映射	Direct-mapped|Set-associative|Fully-associative	C++基础/05-存储层级与缓存.md	16_编程与数据结构/内存、对象生命周期与对象池.md	已覆盖	Set、Way 和冲突
+Cache 写与替换	Write-through|Write-back|Replacement Policy	C++基础/05-存储层级与缓存.md	16_编程与数据结构/内存、对象生命周期与对象池.md	已覆盖	脏数据与驱逐
+Win32 消息循环	WndProc|WPARAM|LPARAM	图形工程/01-Windows、Win32与COM基础.md	16_编程与数据结构/C++、CSharp与Python工程基础.md	已覆盖	消息分发和参数解释
+COM	COM|QueryInterface|AddRef|Release	图形工程/01-Windows、Win32与COM基础.md	16_编程与数据结构/C++、CSharp与Python工程基础.md	已覆盖	接口查询与引用计数
+C++ 类型与布局	STL|模板|Struct|Union|Padding	C++基础/03-面向对象与内存结构.md；C++基础/04-继承、多态与模板.md	16_编程与数据结构/C++、CSharp与Python工程基础.md	已覆盖	多态、对齐和边界数据
+二维动画	Live2D	Games104/08-动画技术与旋转基础.md	09_动画系统/动画压缩、面部、布料与毛发.md	已覆盖	二维网格变形与合成
+Motion Matching	Motion Matching	Games104/08-动画技术与旋转基础.md	09_动画系统/动画状态、混合与IK.md	已覆盖	特征检索、代价与连续性
+Blend Space 三角化	Delaunay Triangulation|重心坐标	Games104/10-动画树、IK与表情.md	09_动画系统/动画状态、混合与IK.md	已覆盖	不规则二维样本混合
+Merlin 关键帧抽取	Merlin|关键帧抽取	Games104/09-蒙皮矩阵与动画压缩.md	09_动画系统/动画压缩、面部、布料与毛发.md	已覆盖	误差阈值与非均匀 Key
+物理库集成	Jolt|PhysX	Games104/11-高级物理系统.md	18_游戏物理与模拟/角色、布料、破坏与载具物理.md	已覆盖	选型、适配和测试
+搓招输入识别	搓招识别|Input Buffer|有序模式	ACT/02-输入层设计.md	19_Gameplay与游戏框架/输入、动作状态与框架分层.md	已覆盖	输入序列到语义命令
+PCG 稳定重建	Procedural Content Generation|PCG|局部重建|Override	Games104/14-世界编辑器、插件与反射.md	08_几何与网格/LOD、地形与程序化资产.md	已覆盖	确定性、分块和人工覆盖

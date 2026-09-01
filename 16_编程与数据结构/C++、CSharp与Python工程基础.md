@@ -92,6 +92,18 @@ C++ 类、STL Container、Exception 和 Name Mangling 容易受编译器/版本�
 
 不要跨边界直接传 `std::string`、`std::vector` 或编译器私有对象，除非所有模块严格锁定同一工具链。
 
+## Win32 与 COM 边界
+
+Win32 GUI 程序从消息队列取出事件，经 `TranslateMessage` 和 `DispatchMessage` 送到窗口过程 `WndProc`。`WPARAM`、`LPARAM` 的解释取决于消息类型，可能保存整数、位域或指针。窗口创建、输入、缩放和销毁都通过消息发生；引擎平台层应把它们转换成稳定事件，再交给上层系统。
+
+COM 用接口和二进制契约连接不同组件。对象通过 `QueryInterface` 查询支持的接口，用 `AddRef/Release` 管理引用计数，接口以 GUID 标识。DirectX 与许多 Windows API 返回 COM 对象，C++ 中应使用智能指针封装引用计数，并明确线程 Apartment、初始化与释放顺序。
+
+## C++ 类型与布局
+
+STL 提供容器、迭代器和算法，模板在编译期生成具体类型代码。继承与虚函数支持运行时多态，但会引入对象布局、间接调用和 ABI 约束；数据导向热路径更常用显式数据与批处理。
+
+Struct 的 Padding 由成员对齐要求决定，成员顺序会改变 `sizeof`。Union 让多个成员共享同一段存储，必须记录当前有效成员；现代 C++ 更适合用 `std::variant` 表达带标签联合。任何跨文件、网络、GPU 或插件边界的数据结构都应固定宽度、布局和版本，不能直接依赖编译器默认内存表示。
+
 ## C++ 所有权
 
 RAII 让资源生命周期绑定对象作用域。Constructor 获取资源，Destructor 释放资源。它不仅用于内存，也用于 File、Lock、GPU Handle 和 Transaction。
