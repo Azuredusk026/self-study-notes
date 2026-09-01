@@ -140,6 +140,24 @@ Retargeting 把源 Skeleton 动作映射到目标 Skeleton。即使骨骼名称�
 - 记录更新顺序，确认 Gameplay、Animation、Physics 和 Camera 使用同一帧的数据。
 - 对低帧率、时间缩放、网络延迟和状态被打断做回归。
 
+### Crossfade 的局部姿态混合
+
+输入是两个相同骨架的局部 Pose。Translation 与 Scale 线性插值，Rotation 使用最短弧 Slerp：
+
+```cpp
+for (int joint = 0; joint < skeleton.JointCount(); ++joint) {
+    TRS a = SampleLocal(fromClip, joint, fromTime);
+    TRS b = SampleLocal(toClip, joint, toTime);
+    float alpha = SmoothStep01(blendElapsed / blendDuration);
+    localPose[joint].translation = Lerp(a.translation, b.translation, alpha);
+    localPose[joint].rotation = SlerpShortest(a.rotation, b.rotation, alpha);
+    localPose[joint].scale = Lerp(a.scale, b.scale, alpha);
+}
+BuildModelPose(localPose, skeleton.parents, modelPose);
+```
+
+混合发生在局部空间，层级累积只执行一次。两个 Clip 的时间推进策略、Root Motion 和事件归属需要由状态转换明确决定。若先转成模型空间再逐关节混合，长骨链容易出现长度和轨迹异常；可用手臂快速摆动的转换检查末端轨迹是否连续。
+
 ## 相关主题
 
 - [[01_数学与采样/旋转、四元数与插值]]

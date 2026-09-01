@@ -127,6 +127,24 @@ Lumen 不是单一“光追开关”。理解时可以拆成：
 - 在屏幕边缘、镜后、薄墙和大尺度场景测试漏光。
 - 对比静态参考烘焙或离线路径追踪结果。
 
+### 三线性 Probe 插值
+
+规则网格内的着色点先转为 Probe 网格坐标，再对包围它的八个 Probe 做三线性插值。每个 Probe 保存相同基底下的 SH 系数：
+
+```hlsl
+float3 grid = (positionWS - gridOriginWS) / cellSize;
+int3 baseCell = clamp((int3)floor(grid), 0, gridSize - 2);
+float3 t = saturate(grid - baseCell);
+SH9 sh = 0;
+for (uint corner = 0; corner < 8; ++corner) {
+    int3 bit = int3(corner & 1, (corner >> 1) & 1, (corner >> 2) & 1);
+    sh += LoadProbe(baseCell + bit) * TrilinearWeight(bit, t);
+}
+float3 irradiance = max(EvaluateSH9(sh, normalWS), 0.0);
+```
+
+位置、网格原点和 Cell Size 必须在同一世界空间。简单三线性插值会穿过墙体漏光，实际 Probe 系统还需要可见性、分类或位置偏移。把物体沿单元边界缓慢移动，亮度应连续；出现格子跳变时先检查索引 Clamp 和八角权重和是否为 1。
+
 ## 相关主题
 
 - [[01_数学与采样/概率采样、积分与球谐函数]]

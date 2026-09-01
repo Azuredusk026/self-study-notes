@@ -212,6 +212,26 @@ Perforce Shelve、Git PR Artifact 或 Plastic Changeset Preview 都可承载这�
 - 测试分支切换、场景拆分、Shelve/Review 和 Release 回滚。
 - 统计同步时间、仓库/Depot 增长、LFS 带宽、Cache 命中与构建时长。
 
+### CI 中检查 LFS 指针
+
+大型二进制文件应在仓库中保存为 LFS 指针。下面的 Bash 检查暂存区中常见大型资产是否仍是普通 Git Blob：
+
+```bash
+git diff --cached --name-only --diff-filter=ACM | while IFS= read -r path; do
+  case "$path" in
+    *.psd|*.fbx|*.wav|*.mp4)
+      head_line=$(git show ":$path" | head -n 1)
+      if [ "$head_line" != "version https://git-lfs.github.com/spec/v1" ]; then
+        echo "应由 Git LFS 跟踪: $path" >&2
+        exit 1
+      fi
+      ;;
+  esac
+done
+```
+
+规则中的扩展名应与项目 `.gitattributes` 和资产类型表一致。仅检查扩展名不能识别改名或自定义容器，CI 还可结合文件大小和文件头。验证时分别提交一个 LFS 文件和一个普通 Blob，确保失败能指向具体路径。
+
 ## 相关主题
 
 - [[15_资产与工具管线/资产导入、验证与发布]]

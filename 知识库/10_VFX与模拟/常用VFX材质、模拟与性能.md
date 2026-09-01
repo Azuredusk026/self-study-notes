@@ -159,6 +159,22 @@ $$
 
 测试应包含近距离、多个效果叠加、低帧率、大战斗和移动端热稳定状态。单独预览器中的一个效果无法代表 Gameplay 峰值。
 
+### 带抗锯齿边缘的 Dissolve
+
+输入噪声和阈值都位于 $[0,1]$。`fwidth` 根据屏幕像素覆盖调整边缘宽度，输出包含裁剪结果与发光边缘：
+
+```hlsl
+float noise = DissolveNoise.Sample(LinearRepeat, uv).r;
+float signedDistance = noise - threshold;
+float pixelWidth = max(fwidth(signedDistance), 1e-4);
+float coverage = smoothstep(-pixelWidth, pixelWidth, signedDistance);
+float edge = saturate(1.0 - abs(signedDistance) / max(edgeWidth, pixelWidth));
+clip(coverage - alphaCutoff);
+float3 color = baseColor + edge * edgeColor * edgeIntensity;
+```
+
+这里的 `edgeWidth` 属于噪声值域，不是世界距离。噪声对比度或 UV Scale 改变时，视觉边宽也会改变。验证时缓慢推进 `threshold`，检查边缘是否连续，并在远近距离观察 `fwidth` 是否减少锯齿和闪烁。
+
 ## 相关主题
 
 - [[02_GPU与光栅化管线/剔除、透明与混合]]

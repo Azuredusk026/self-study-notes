@@ -198,6 +198,26 @@ Nanite 的具体支持范围会随 Unreal 版本扩展。笔记应按当前官�
 - 在不同三角形屏幕尺寸下区分 Setup、Coverage、Pixel 与 Atomic 成本。
 - 对缺页回退、LOD Popping、裂缝、Masked Material 和 Motion Vector 做回归。
 
+### GPU 剔除与间接绘制列表
+
+输入是实例 Bounds 与 Hi-Z，输出是紧凑可见实例索引。计数器和输出容量在 Dispatch 前准备好：
+
+```hlsl
+[numthreads(64, 1, 1)]
+void CullInstances(uint id : SV_DispatchThreadID)
+{
+    if (id >= instanceCount) return;
+    Bounds b = InstanceBounds[id];
+    if (!IntersectsFrustum(b, viewFrustum)) return;
+    if (IsOccludedByHiZ(b, hiZTexture)) return;
+    uint dst;
+    InterlockedAdd(VisibleCount[0], 1, dst);
+    if (dst < visibleCapacity) VisibleInstances[dst] = id;
+}
+```
+
+剔除前要保证 Hi-Z 对应当前约定的深度方向，并在写入可见列表后建立到 Indirect Draw 读取的同步。原子追加适合最小实现，大规模场景可用 Prefix Sum 做稳定压紧。验证时关闭各项剔除分别比较计数，并把 Bounds、Mip 选择和被拒绝原因可视化；计数溢出必须有显式统计，不能静默丢对象。
+
 ## 相关主题
 
 - [[08_几何与网格/网格数据、缓存与几何处理]]

@@ -148,6 +148,21 @@ Shadow Map 的结果是可见性，不应直接等同于最终阴影颜色。可
 - 检查主光切换、多光源重叠、Light Probe 和实时阴影组合。
 - 用灰球、标准角色和场景资产共享一套 Profile 做风格回归。
 
+### Ramp 分层采样
+
+输入法线和光方向处于同一空间。`halfLambert` 把 $N\cdot L$ 映射到 $[0,1]$，材质行选择一条 Ramp：
+
+```hlsl
+float ndotl = dot(normalize(normalWS), normalize(lightDirWS));
+float halfLambert = ndotl * 0.5 + 0.5;
+float2 rampUv = float2(saturate(halfLambert), materialRowUv);
+float3 ramp = LightRamp.SampleLevel(PointClamp, rampUv, 0).rgb;
+float shadow = lerp(shadowTint, 1.0.xxx, visibility);
+float3 litColor = baseColor * ramp * shadow;
+```
+
+Point 采样适合保留硬分层，Linear 采样适合平滑过渡；两者都要关闭不期望的 Mip 混合或准备专用 Ramp Mip。把场景阴影直接乘黑会丢掉阴影层的艺术控制，示例用 `shadowTint` 保留色相。验证时分别显示 `halfLambert`、Ramp 和 Visibility，避免把法线、Ramp 与 Shadow Map 问题混在一起。
+
 ## 相关主题
 
 - [[04_光照模型与PBR/经典光照、BRDF与微表面模型]]

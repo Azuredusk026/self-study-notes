@@ -158,6 +158,29 @@ GPU Event 可以在设备内驱动二级 Emitter，例如死亡火花生成小�
 - 测试暂停、时间缩放、大帧间隔、Emitter 销毁和场景切换。
 - 检查容量耗尽时是拒绝 Spawn、替换旧粒子还是降级，不能静默写越界。
 
+### GPU 粒子更新
+
+输入 Buffer 保存上一帧粒子，输出 Buffer 与存活计数器属于当前帧。每个线程处理一个槽位，存活粒子通过原子计数压紧写入：
+
+```hlsl
+[numthreads(64, 1, 1)]
+void Simulate(uint id : SV_DispatchThreadID)
+{
+    if (id >= inputCount) return;
+    Particle p = InputParticles[id];
+    p.velocity += gravityWS * deltaTime;
+    p.position += p.velocity * deltaTime;
+    p.age += deltaTime;
+    if (p.age < p.lifetime) {
+        uint dst;
+        InterlockedAdd(AliveCount[0], 1, dst);
+        OutputParticles[dst] = p;
+    }
+}
+```
+
+Dispatch 前要把 `AliveCount` 清零，并确保上一轮写入已完成；模拟后再用计数生成 Indirect Draw 参数。原子追加在粒子很多时可能争用，分组前缀和能进一步优化。验证时读取少量计数器或在 GPU 调试器中检查：`AliveCount` 不得超过输出容量，死亡粒子不能残留到 Draw。
+
 ## 相关主题
 
 - [[03_Shader编程/Compute Shader与GPU执行模型]]

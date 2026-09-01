@@ -169,6 +169,25 @@ PCG 的验收还包括密度、可达性、穿插、性能预算和重复模式�
 - 记录 HDA/Houdini Engine 版本、随机种子、参数和导出日志。
 - 在引擎 Profiler 中验证 GPU 时间、内存和流送收益。
 
+### 带滞回的 LOD 选择
+
+输入 `screenFraction` 是对象投影尺寸占屏幕高度的比例，阈值按从高细节到低细节排列。滞回让进入和退出使用不同边界：
+
+```cpp
+int SelectLod(float screenFraction, int currentLod,
+              Span<float> enterLower, float hysteresis)
+{
+    int lod = currentLod;
+    while (lod < enterLower.size()
+        && screenFraction < enterLower[lod] - hysteresis) ++lod;
+    while (lod > 0
+        && screenFraction > enterLower[lod - 1] + hysteresis) --lod;
+    return lod;
+}
+```
+
+阈值单位必须与 `screenFraction` 一致。滞回区间过大，会让对象长时间停留在不合适的 LOD；没有滞回时，相机在阈值附近抖动会造成频繁切换。验证应记录每秒 LOD 切换次数，并用缓慢往返相机检查进入与退出边界。
+
 ## 相关主题
 
 - [[06_纹理技术/UV、图集、流送与虚拟纹理]]

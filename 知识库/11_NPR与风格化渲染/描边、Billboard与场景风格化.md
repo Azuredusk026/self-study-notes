@@ -155,6 +155,21 @@ Root Mask 要保证接地点稳定；不同实例用 World Position/Random Seed 
 - 绕 Billboard/Impostor 旋转相机，检查 Foot Anchor、视角切换和假深度。
 - 对植被风动检查 Shadow、Depth 和 Motion Vector 一致性。
 
+### 屏幕尺度 Inverted Hull
+
+下面的顶点逻辑先把法线变到视空间，再按裁剪空间的 $w$ 和屏幕高度调整偏移，使描边宽度近似以像素计：
+
+```hlsl
+float4 clip = mul(clipFromObject, float4(positionOS, 1.0));
+float3 normalVS = normalize(mul((float3x3)viewFromObject, normalOS));
+float2 dir = normalVS.xy / max(length(normalVS.xy), 1e-4);
+float2 pixelToNdc = 2.0 / renderSize;
+clip.xy += dir * outlinePixels * pixelToNdc * clip.w;
+return clip;
+```
+
+输入法线需要与轮廓资产规则一致，描边 Pass 通常剔除正面并输出纯色。`clip.w` 补偿透视除法，省略它会让远处轮廓变细。视空间法线接近相机方向时 `normalVS.xy` 很小，尖角和硬边仍可能开裂；可用不同距离、FOV 和非均匀缩放验证宽度稳定性。
+
 ## 相关主题
 
 - [[02_GPU与光栅化管线/抗锯齿与时域采样]]

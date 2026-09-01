@@ -97,6 +97,24 @@ UDP 需要额外防止地址伪造与放大攻击。建立会话前不要对小�
 
 网络问题至少记录时间、连接、消息类型、序号、字节数、RTT、丢包率、重传和队列长度。抓包能看见传输事实，游戏内 Network Profiler 则要关联到实体和系统。模拟延迟、抖动、丢包、乱序和限带宽，比只在本机回环测试更接近真实环境。
 
+### TCP 字节流分帧
+
+TCP 保证有序字节流，不保留发送时的消息边界。接收 Buffer 需要先等待固定长度头，再等待完整 Payload：
+
+```cpp
+while (receiveBuffer.Size() >= sizeof(PacketHeader)) {
+    PacketHeader header = PeekNetworkOrderHeader(receiveBuffer);
+    if (header.payloadBytes > maxPayloadBytes) Disconnect("oversized packet");
+    size_t packetBytes = sizeof(PacketHeader) + header.payloadBytes;
+    if (receiveBuffer.Size() < packetBytes) break;
+    receiveBuffer.Consume(sizeof(PacketHeader));
+    Bytes payload = receiveBuffer.Consume(header.payloadBytes);
+    DispatchValidated(header.messageType, payload);
+}
+```
+
+头字段需要固定字节序，长度在分配内存前校验，消息类型进入反序列化器前校验权限和版本。一次 `recv` 可能只得到半个包，也可能得到多个包。用随机切分的输入字节流做测试，解析结果应与发送边界无关。
+
 ## 相关主题
 
 - [[21_游戏网络/状态同步、预测与回滚]]

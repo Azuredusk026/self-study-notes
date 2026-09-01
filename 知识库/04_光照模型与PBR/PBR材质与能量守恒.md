@@ -127,6 +127,22 @@ HDR Emissive 应在线性空间保存和计算。最终画面亮度还会受曝�
 
 材质只在一个电影式灯光里好看，不代表参数正确。
 
+### 漫反射与镜面能量分配
+
+输入颜色已经从 sRGB 解码到线性空间，`metallic` 和 `roughness` 位于 $[0,1]$。下面只展示能量分配，实际 BRDF 还需要 NDF、Geometry 和光照积分：
+
+```hlsl
+float3 F0 = lerp(0.04.xxx, baseColor, metallic);
+float3 F = FresnelSchlick(saturate(dot(H, V)), F0);
+float3 kSpecular = F;
+float3 kDiffuse = (1.0 - kSpecular) * (1.0 - metallic);
+float3 diffuse = kDiffuse * baseColor / PI;
+float3 specular = EvaluateMicrofacetSpecular(N, V, L, F0, roughness);
+float3 result = (diffuse + specular) * radiance * saturate(dot(N, L));
+```
+
+金属把 Base Color 用作 $F_0$，漫反射权重收敛到零；电介质保留漫反射，并由 Fresnel 把掠射角能量移向镜面。把 `kDiffuse` 固定为 1 会重复计算镜面反射已经占用的能量，常表现为材质整体过亮。
+
 ## 相关主题
 
 - [[04_光照模型与PBR/经典光照、BRDF与微表面模型]]

@@ -126,6 +126,21 @@ Virtual Texture 把超大纹理拆成 Page。Shader 使用虚拟地址，系统�
 - 显示 Virtual Texture Page、Cache 命中和 Feedback。
 - 对比 Atlas、Array 和独立纹理的 Draw、内存和加载粒度。
 
+### 图集 UV 变换
+
+输入 `uvLocal` 是子图内部 $[0,1]^2$ 坐标，`rectPixels` 是图集中的像素矩形，`atlasSize` 是图集尺寸。半纹素内缩避免双线性过滤直接采到相邻子图：
+
+```hlsl
+float2 AtlasUv(float2 uvLocal, float4 rectPixels, float2 atlasSize)
+{
+    float2 minUv = (rectPixels.xy + 0.5) / atlasSize;
+    float2 maxUv = (rectPixels.xy + rectPixels.zw - 0.5) / atlasSize;
+    return lerp(minUv, maxUv, uvLocal);
+}
+```
+
+半纹素内缩不能代替 Padding。较低 Mip 会把更大范围的 Texel 混合进一个样本，因此子图边缘仍要复制扩展，并按最大使用 Mip 预留间距。用高对比相邻子图和倾斜平面测试；若只在远处出现串色，问题通常来自 Mip Padding 或 Atlas Mip 生成。
+
 ## 相关主题
 
 - [[06_纹理技术/纹理采样、过滤、Mipmap与压缩]]
