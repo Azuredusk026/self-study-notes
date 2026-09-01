@@ -21,6 +21,14 @@ $$
 
 计算纹理时通常要做边界判断，因为 Dispatch 尺寸经常向上取整到 Group 大小。
 
+CPU 侧的 Group 数通常按上取整计算：
+
+$$
+groupCount=\left\lceil\frac{elementCount}{threadCountPerGroup}\right\rceil
+$$
+
+`numthreads` 决定编译后 Kernel 的组内线程布局，运行时不能直接修改。不同 Kernel 可以使用不同 Group Size。选择 64、128、256 或二维 `8x8` 只是候选起点，需要结合目标 GPU 的 Wave 宽度、寄存器、共享内存和访问模式实测。
+
 ## Thread Group
 
 同一 Group 的线程可以：
@@ -89,6 +97,21 @@ UAV/Storage Resource 支持无序读写。多个线程写同一地址会产生 R
 
 原子操作保证更新不丢失，但大量线程竞争同一地址会串行化。
 
+## 资源类型与计数器
+
+常见 Compute 资源包括：
+
+- `Texture2D`、`StructuredBuffer<T>`：只读资源；
+- `RWTexture2D<T>`、`RWStructuredBuffer<T>`：随机读写资源；
+- `ByteAddressBuffer`、`RWByteAddressBuffer`：按字节寻址，适合自定义布局；
+- `AppendStructuredBuffer<T>`、`ConsumeStructuredBuffer<T>`：带隐藏计数器的追加与消费队列。
+
+RW Texture 通常使用整数坐标直接读写。普通采样器提供过滤、寻址和 LOD，RW 访问表达的是精确元素地址，两者的访问语义不同。
+
+Append/Consume Buffer 的计数器属于资源状态，不会因新一帧自动归零。CPU 或前置 Pass 必须显式设置计数器初值。后续 Indirect Draw 可以通过 `CopyCount` 或 API 对应操作把计数复制到 Argument Buffer，避免把数量同步回 CPU。
+
+结构化 Buffer 的 CPU 结构和 Shader 结构必须具有相同步长、对齐和字段顺序。`bool`、混合精度和编译器 Padding 容易造成跨边界布局错误，交换结构优先使用固定宽度标量并显式核对 Stride。
+
 ## 内存访问和合并
 
 相邻 Lane 访问连续地址时，硬件更容易合并内存事务并利用 Cache。随机跳跃访问会浪费带宽。
@@ -100,6 +123,22 @@ UAV/Storage Resource 支持无序读写。多个线程写同一地址会产生 R
 - 对齐和步长会影响事务数量；
 - 纹理缓存适合具有空间局部性的采样。
 
+## CPU、GPU 与资源生命周期
+
+完整调用链通常是：
+
+1. CPU 创建 Buffer/Texture，并确定容量、格式和访问标志；
+2. 绑定 Kernel、常量和 SRV/UAV；
+3. 记录 Dispatch；
+4. 建立后续 Pass 所需的资源状态与 Barrier；
+5. GPU 执行；
+6. 结果留在 GPU 继续消费，或按需要异步回读；
+7. Fence 确认 GPU 不再使用后才能复用或释放资源。
+
+同一资源先被 UAV 写入、再作为 SRV、Indirect Argument 或 Copy Source 使用时，需要匹配 API 的状态转换和内存可见性。Shader 内的 Group Barrier 只能协调一个 Group，不能替代 Dispatch 之间的 API Barrier。
+
+同步 Readback 会让 CPU 等待 GPU 完成前面的工作，容易形成流水线停顿。`AsyncGPUReadback` 或 Staging Buffer 把结果延迟到后续帧取得，避免当前帧硬等待，但调用方必须接受延迟、处理请求失败，并保证源资源在复制完成前有效。
+
 ## Occupancy
 
 GPU 通过同时驻留多个 Wave 隐藏访存延迟。Occupancy 受以下资源限制：
@@ -110,6 +149,10 @@ GPU 通过同时驻留多个 Wave 隐藏访存延迟。Occupancy 受以下资源
 - 硬件最大 Wave/Group 数。
 
 Occupancy 高不等于一定快。算法可能受带宽、指令吞吐或同步限制。它只是分析维度之一。
+
+寄存器压力过高时，编译器可能把线程私有临时数据 Spill 到 Local Memory。这里的 Local 通常仍位于显存层级，不是低延迟的 `groupshared`。Spill 会增加访存并降低可驻留 Wave 数，应通过编译统计、ISA 和性能计数器确认。
+
+Wave Intrinsic 可以直接做 Lane 间求和、投票、广播和前缀操作，省去部分共享内存与 Barrier。它的作用范围是当前 Wave，不能假设整个 Group 只有一个 Wave；跨平台代码还要检查 Shader Model、Subgroup 支持和 Wave Size 约束。
 
 ## 常见算法
 
@@ -137,6 +180,9 @@ Compute Shader 统计可见对象并写 Indirect Draw 参数，让后续绘制�
 - 测试不同 Group Size，不凭 8x8 或 16x16 的惯例决定。
 - 查看寄存器、共享内存、Occupancy 和带宽指标。
 - 对原子竞争和非确定顺序做压力测试。
+- 检查 Append Counter 是否在正确时机初始化，Indirect Args 是否来自当前帧结果。
+- 检查 CPU 结构体大小、Buffer Stride 与 Shader 字段偏移。
+- 分别测同步回读、异步回读和全 GPU 消费路径的等待时间。
 
 ## 相关主题
 
