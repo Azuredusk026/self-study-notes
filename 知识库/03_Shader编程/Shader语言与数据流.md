@@ -47,6 +47,35 @@ HLSL 用 `cbuffer` 声明常量缓冲区，并可用 `register(b0)` 指定绑定
 
 频率分组能避免只改一个对象时重新上传全局数据。Unity SRP Batcher 要求材质属性位于 `UnityPerMaterial`，引擎按对象提供的数据位于 `UnityPerDraw`，并保持各 Pass 的布局一致。违反布局约定会失去批处理兼容性或读到错误偏移。
 
+### 对齐示例
+
+下面的 HLSL 布局把相关字段填满 16 字节边界。CPU 侧结构也使用相同字段顺序和总大小：
+
+```hlsl
+cbuffer PerView : register(b1)
+{
+    float4x4 ViewProjection;
+    float3 CameraPositionWS;
+    float Exposure;
+    float2 RenderSize;
+    float2 InvRenderSize;
+};
+```
+
+```cpp
+struct alignas(16) PerViewConstants
+{
+    Matrix4x4 viewProjection;
+    Float3 cameraPositionWS;
+    float exposure;
+    Float2 renderSize;
+    Float2 invRenderSize;
+};
+static_assert(sizeof(PerViewConstants) % 16 == 0);
+```
+
+`static_assert` 只能检查总大小。实际还要检查每个字段偏移、矩阵行列主序和转置约定。GLSL 的 `std140`、HLSL `cbuffer` 与结构化 Buffer 使用的布局规则也不能混用。
+
 ## 资源视图与访问权限
 
 同一底层资源可以通过不同视图进入管线。Direct3D 常见名称包括：
@@ -148,3 +177,4 @@ Shader Graph 是生成 Shader 代码的前端，不是另一种 GPU 管线。节
 - Microsoft Learn, *HLSL Reference*.
 - Khronos, *OpenGL Shading Language Specification*.
 - Unity Manual, *Writing shaders*.
+- LearnOpenGL, `src/4.advanced_opengl/8.advanced_glsl_ubo`.

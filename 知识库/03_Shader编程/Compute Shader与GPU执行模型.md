@@ -29,6 +29,38 @@ $$
 
 `numthreads` 决定编译后 Kernel 的组内线程布局，运行时不能直接修改。不同 Kernel 可以使用不同 Group Size。选择 64、128、256 或二维 `8x8` 只是候选起点，需要结合目标 GPU 的 Wave 宽度、寄存器、共享内存和访问模式实测。
 
+### 最小 Dispatch
+
+下面的 Kernel 一一对应输入和输出像素。CPU 对尺寸向上取整，因此 Shader 必须处理边缘线程：
+
+```hlsl
+Texture2D<float4> InputTexture : register(t0);
+RWTexture2D<float4> OutputTexture : register(u0);
+
+cbuffer DispatchParams : register(b0)
+{
+    uint2 OutputSize;
+    uint2 _Padding;
+};
+
+[numthreads(8, 8, 1)]
+void CopyKernel(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= OutputSize))
+        return;
+
+    OutputTexture[id.xy] = InputTexture.Load(int3(id.xy, 0));
+}
+```
+
+```cpp
+uint groupsX = (width + 7) / 8;
+uint groupsY = (height + 7) / 8;
+commandList.Dispatch(groupsX, groupsY, 1);
+```
+
+输入和输出使用不同资源，避免同一次 Dispatch 中相邻线程读到正在被改写的数据。若算法需要原地更新，必须证明每个线程只依赖自己的旧值，或拆分阶段并建立 Barrier。
+
 ## Thread Group
 
 同一 Group 的线程可以：
@@ -196,3 +228,4 @@ Compute Shader 统计可见对象并写 Indirect Draw 参数，让后续绘制�
 - Microsoft Learn, *Compute Shader Overview* and *HLSL Shader Model 6 Wave Intrinsics*.
 - Khronos, *Vulkan Specification*, Compute Pipelines and Memory Model.
 - NVIDIA and AMD GPU architecture/performance guides.
+- LearnOpenGL, `src/8.guest/2022/5.computeshader_helloworld`.

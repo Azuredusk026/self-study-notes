@@ -70,6 +70,25 @@ CPU 可以用一次 Instanced Draw 提交多个实例。主要收益是减少 Dr
 
 GPU 仍会为每个实例处理对应顶点和片元。
 
+Vertex Shader 可以使用系统提供的 Instance ID 索引实例 Buffer。下面的例子让一个 Mesh 共享顶点数据，只为每个实例读取一份变换和颜色：
+
+```hlsl
+StructuredBuffer<float4x4> ObjectToWorld : register(t0);
+StructuredBuffer<float4> InstanceColor : register(t1);
+
+VSOutput VSMain(VSInput input, uint instanceID : SV_InstanceID)
+{
+    VSOutput output;
+    float4 positionWS = mul(ObjectToWorld[instanceID],
+                            float4(input.positionOS, 1.0));
+    output.positionCS = mul(ViewProjection, positionWS);
+    output.color = InstanceColor[instanceID];
+    return output;
+}
+```
+
+Draw 的 `startInstance`、Buffer 中的基址和 `SV_InstanceID` 语义需要按 API 对齐。实例矩阵的行列主序也必须与 CPU 上传格式一致。
+
 ## 实例数据成本
 
 每实例完整 4x4 矩阵需要 64 字节。大量实例时可以保存 Position、Quaternion、Scale，或使用压缩格式减少带宽，但会增加 Shader 解码。
@@ -136,3 +155,4 @@ GPU Culling 后把可见实例数量和参数写入 Indirect Argument Buffer，�
 - Unity Manual, *Draw call batching* and *SRP Batcher*.
 - Microsoft Learn, *DrawInstanced and ExecuteIndirect*.
 - GPUOpen, GPU-driven rendering references.
+- LearnOpenGL, `src/4.advanced_opengl/10.3.asteroids_instanced`.

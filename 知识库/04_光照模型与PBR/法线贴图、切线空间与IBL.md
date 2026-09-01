@@ -48,6 +48,29 @@ $$
 
 DirectX 和 OpenGL Normal Map 常在 Y 方向约定上相反。错误时凹凸会翻转。
 
+### 从纹理到世界法线
+
+下面的 HLSL 示例从 BC5 风格的 XY 解码切线空间法线，再用顶点切线的 `w` 恢复手性。输入的世界法线和切线需要在插值后重新归一化：
+
+```hlsl
+float3 DecodeNormalWS(
+    float2 packedXY,
+    float3 normalWS,
+    float4 tangentWS)
+{
+    float2 xy = packedXY * 2.0 - 1.0;
+    float z = sqrt(saturate(1.0 - dot(xy, xy)));
+    float3 normalTS = float3(xy, z);
+
+    float3 N = normalize(normalWS);
+    float3 T = normalize(tangentWS.xyz - N * dot(N, tangentWS.xyz));
+    float3 B = cross(N, T) * tangentWS.w;
+    return normalize(mul(normalTS, float3x3(T, B, N)));
+}
+```
+
+Gram-Schmidt 步骤去掉切线在法线方向的插值误差。矩阵乘法方向取决于 HLSL 编译约定；接入引擎时应使用其标准切线空间函数，并用方向 RGB 检查结果。
+
 ## Normal 强度
 
 简单把 X/Y 乘强度后应重新计算或归一化 Z。直接把整个法线乘一个数，再 Normalize，不会改变方向，因此也不会改变凹凸强度。
@@ -129,3 +152,4 @@ Reflection Probe 保存某个位置周围的环境。物体远离 Probe 中心�
 - Mikkelsen, *MikkTSpace*.
 - Brian Karis, *Real Shading in Unreal Engine 4*.
 - Colin Barré-Brisebois and Stephen Hill, *Blending in Detail*.
+- LearnOpenGL, `src/5.advanced_lighting/4.normal_mapping`.

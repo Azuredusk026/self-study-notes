@@ -46,6 +46,29 @@ Percentage-Closer Filtering 产生的是过滤后的可见比例。固定采样�
 
 Poisson Disk、旋转采样核和时域抖动可以减少规则图案，但会引入噪声或时间稳定性问题。
 
+硬件比较采样器可以把深度比较和过滤组合起来。下面的 HLSL 代码执行一个 3x3 PCF 核，`shadowCoord.xy` 已在 $[0,1]$，`shadowCoord.z` 与 Shadow Map 使用同一深度约定：
+
+```hlsl
+float SampleShadowPCF(float3 shadowCoord, float bias)
+{
+    uint width, height;
+    ShadowMap.GetDimensions(width, height);
+    float2 texel = 1.0 / float2(width, height);
+    float visibility = 0.0;
+
+    for (int y = -1; y <= 1; ++y)
+        for (int x = -1; x <= 1; ++x)
+            visibility += ShadowMap.SampleCmpLevelZero(
+                ShadowSampler,
+                shadowCoord.xy + float2(x, y) * texel,
+                shadowCoord.z - bias);
+
+    return visibility / 9.0;
+}
+```
+
+这里返回的是受光比例。Comparison Function、反向 Z、Border Color 和深度格式都会影响结果，移植时需要一起核对。
+
 ## PCSS
 
 Percentage-Closer Soft Shadows 用三个步骤近似面积光半影。

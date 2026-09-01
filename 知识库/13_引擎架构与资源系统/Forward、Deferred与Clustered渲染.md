@@ -42,6 +42,41 @@ Deferred 先把可见表面的属性写入 GBuffer，再在屏幕空间计算光
 
 一次像素着色同时写入多个颜色 Attachment 称为多渲染目标（Multiple Render Targets，MRT）。GBuffer 正是典型用法。MRT 减少重复几何绘制，但所有目标的总字节数都会进入颜色写带宽；平台还会限制目标数量、格式组合和混合能力。
 
+HLSL 可以用多个 `SV_Target` 明确 GBuffer 写入。下面的布局只表达数据流，具体项目还需要压缩法线并选择可用格式：
+
+```hlsl
+struct GBufferOutput
+{
+    float4 baseColorMetallic : SV_Target0;
+    float4 normalRoughness : SV_Target1;
+    float4 emissiveAO : SV_Target2;
+};
+
+GBufferOutput WriteGBuffer(MaterialData m)
+{
+    GBufferOutput output;
+    output.baseColorMetallic = float4(m.baseColor, m.metallic);
+    output.normalRoughness = float4(normalize(m.normalVS) * 0.5 + 0.5,
+                                    m.roughness);
+    output.emissiveAO = float4(m.emissive, m.ao);
+    return output;
+}
+```
+
+存储观察空间位置通常需要较高带宽。常见做法是保存硬件深度，在 Lighting Pass 用逆投影矩阵重建：
+
+```hlsl
+float3 ReconstructPositionVS(float2 uv, float deviceDepth)
+{
+    float2 ndcXY = uv * 2.0 - 1.0;
+    float4 positionH = mul(InvProjection,
+                           float4(ndcXY, deviceDepth, 1.0));
+    return positionH.xyz / positionH.w;
+}
+```
+
+`deviceDepth` 的 NDC 范围、Y 轴和反向 Z 取决于 API 与引擎。重建函数必须和生成 Depth Buffer 的投影矩阵使用同一约定。
+
 ### Lighting Pass
 
 读取 GBuffer，重建表面位置，再累加灯光。
@@ -136,3 +171,4 @@ Forward+ 保留 Forward 材质阶段，但先用 Tiled/Clustered Culling 建立�
 - Ola Olsson et al., *Clustered Deferred and Forward Shading*.
 - Johan Andersson, *Tiled Deferred Shading*.
 - Unity and Unreal documentation on Forward+, Deferred and mobile renderers.
+- LearnOpenGL, `src/5.advanced_lighting/8.1.deferred_shading`.

@@ -18,6 +18,26 @@ Vulkan Render Pass、Dynamic Rendering、Metal Render Command Encoder 等描述 
 
 讨论时必须指出层次。
 
+OpenGL Framebuffer 可以作为图形 API 层的最小离屏渲染例子。颜色附件和深度附件的尺寸、样本数必须兼容，提交前检查完整性：
+
+```cpp
+GLuint framebuffer = 0;
+glCreateFramebuffers(1, &framebuffer);
+glNamedFramebufferTexture(framebuffer, GL_COLOR_ATTACHMENT0,
+                          colorTexture, 0);
+glNamedFramebufferTexture(framebuffer, GL_DEPTH_ATTACHMENT,
+                          depthTexture, 0);
+
+GLenum drawBuffers[] = { GL_COLOR_ATTACHMENT0 };
+glNamedFramebufferDrawBuffers(framebuffer, 1, drawBuffers);
+
+if (glCheckNamedFramebufferStatus(framebuffer, GL_FRAMEBUFFER)
+    != GL_FRAMEBUFFER_COMPLETE)
+    ReportFramebufferError(framebuffer);
+```
+
+这段代码只建立 Attachment 关系。实际 Pass 还要设置 Viewport、Clear/Load 行为、读写状态，并在后续采样前保证写入可见。
+
 ## Command Buffer 为什么存在
 
 GPU 不直接执行 CPU 函数调用。CPU 把状态、Draw、Dispatch、Copy 和 Barrier 编码成命令序列，再提交到 Queue。
@@ -142,3 +162,4 @@ Unity `CommandBuffer` 可以记录 Draw、Blit、Dispatch、SetRenderTarget 等�
 - Khronos, *Vulkan Specification*, Command Buffers and Synchronization.
 - Microsoft Learn, *Direct3D 12 Command Queues and Command Lists*.
 - Unity Manual, *Render Graph system*.
+- LearnOpenGL, `src/4.advanced_opengl/5.1.framebuffers`.

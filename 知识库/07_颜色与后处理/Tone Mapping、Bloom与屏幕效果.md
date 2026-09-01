@@ -91,6 +91,37 @@ AO 应主要影响间接光。直接把它乘到所有光照会让有主光的�
 
 HBAO/GTAO 等方法改进方向包括 Horizon Search、法线余弦权重、距离衰减和更接近参考积分的近似。
 
+### SSAO 的采样数据流
+
+最小 SSAO 通常在观察空间工作。每个像素读取位置和法线，用一张小 Noise Texture 随机旋转半球 Kernel，再把样本点投影回屏幕，与深度缓冲中的表面比较。
+
+```hlsl
+float ComputeSSAO(float2 uv, float3 positionVS, float3 normalVS)
+{
+    float3 randomDir = normalize(NoiseTexture.Sample(NoiseSampler,
+                                  uv * NoiseScale).xyz * 2.0 - 1.0);
+    float3 T = normalize(randomDir - normalVS * dot(randomDir, normalVS));
+    float3 B = cross(normalVS, T);
+    float3x3 tbn = float3x3(T, B, normalVS);
+    float occlusion = 0.0;
+
+    for (uint i = 0; i < KernelSize; ++i) {
+        float3 sampleVS = positionVS + mul(Kernel[i], tbn) * Radius;
+        float4 clip = mul(Projection, float4(sampleVS, 1.0));
+        float2 sampleUV = clip.xy / clip.w * 0.5 + 0.5;
+        float sceneZ = PositionTexture.SampleLevel(PointSampler, sampleUV, 0).z;
+        float range = smoothstep(0.0, 1.0,
+                                 Radius / max(abs(positionVS.z - sceneZ), 1e-4));
+        occlusion += (sceneZ >= sampleVS.z + Bias) * range;
+    }
+    return 1.0 - occlusion / KernelSize;
+}
+```
+
+代码假定观察空间相机前方为负 Z，并直接保存 Position Buffer。实际管线常从深度重建位置以节省 GBuffer。深度约定改变时，比较方向也要改变。
+
+Kernel 样本靠近原点时更密，能保留接触阴影；Noise Texture 只负责旋转采样方向，后续需要空间或时域滤波消除噪声。Radius 使用观察空间长度，Bias 用来减轻表面对自身的错误遮挡。
+
 ## Depth of Field
 
 景深根据镜头参数和深度估计 Circle of Confusion（CoC）。焦平面附近 CoC 小，前景和背景离焦区域 CoC 大。
@@ -160,3 +191,4 @@ Volumetric Fog 把视锥划成三维 Froxel，注入介质密度、灯光和阴�
 - John Hable, *Filmic Tonemapping Operators*.
 - Jorge Jimenez et al., *Next Generation Post Processing in Call of Duty: Advanced Warfare*.
 - Epic Games and Unity documentation on Bloom, Exposure and Color Grading.
+- LearnOpenGL, `src/5.advanced_lighting/9.ssao`.

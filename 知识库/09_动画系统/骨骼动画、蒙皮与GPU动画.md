@@ -58,6 +58,32 @@ LBS 简单、稳定、硬件友好，但手腕等部位大角度扭转时容易�
 
 DQS 更能保持刚体旋转和体积，但对 Scale、混合管线和资产支持要求更高。
 
+### GPU 蒙皮核心
+
+下面的 HLSL 代码使用四个骨骼影响计算位置。`SkinMatrices` 已经是 $M_i(t)B_i^{-1}$，因此顶点不需要再次进入 Bind Pose 空间：
+
+```hlsl
+float4 SkinPosition(
+    float3 positionOS,
+    uint4 jointIndices,
+    float4 jointWeights)
+{
+    float weightSum = dot(jointWeights, float4(1.0, 1.0, 1.0, 1.0));
+    float4 weights = jointWeights / max(weightSum, 1e-5);
+    float4 source = float4(positionOS, 1.0);
+    float4 skinned = 0.0;
+
+    [unroll]
+    for (uint i = 0; i < 4; ++i)
+        skinned += mul(SkinMatrices[jointIndices[i]], source)
+                 * weights[i];
+
+    return skinned;
+}
+```
+
+生产资产应在导入阶段处理零权重和越界索引。运行时归一化可以防止小误差，但不能修复引用无效 Joint 的数据。
+
 ## Skin Weight 的实际约束
 
 每个顶点影响骨骼数越多，Vertex Shader 读取和矩阵运算越多。移动端常限制为 4 个 Influence；高端角色可能允许 8 个，但需要实测。
@@ -137,3 +163,4 @@ Motion Vector 必须使用当前与上一帧一致的变形结果。只保存 Ob
 - Kavan et al., *Skinning with Dual Quaternions*.
 - Unity Manual, *Skinned Mesh Renderer* and *Animation compression*.
 - Unreal Engine Documentation, *Skeletal Mesh Animation System*.
+- LearnOpenGL, `src/8.guest/2020/skeletal_animation`.
