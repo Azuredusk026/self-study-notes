@@ -6,8 +6,9 @@ $ErrorActionPreference = 'Stop'
 $targetPath = Join-Path $VaultRoot 'docs\manifests\course-targets.tsv'
 $coveragePath = Join-Path $VaultRoot 'docs\manifests\course-coverage.tsv'
 $courseRoots = @(
-    'Games104', '图形工程', '图形学', '数据结构和算法', 'C++基础',
-    '编辑器设计', '游戏AI', '游戏网络', 'ACT'
+    '课程记录\Games104', '课程记录\图形工程', '课程记录\图形学',
+    '课程记录\数据结构和算法', '课程记录\C++基础', '课程记录\编辑器设计',
+    '课程记录\游戏AI', '课程记录\游戏网络', '课程记录\ACT'
 )
 
 if (-not (Test-Path -LiteralPath $targetPath -PathType Leaf)) {

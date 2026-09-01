@@ -98,7 +98,7 @@ foreach ($relativePath in $uniqueFormalPaths) {
         Add-Failure "正式文章内容过浅：$relativePath（$($content.Trim().Length) 字符）"
     }
 
-    if ($relativePath -notlike '00_知识库说明/*' -and
+    if ($relativePath -notlike '知识库/00_知识库说明/*' -and
         $content -match '(?im)(?:^|\s)(TODO|TBD)(?:\s|$)|待补充|占位内容') {
         Add-Failure "正式文章包含未收口占位内容：$relativePath"
     }
@@ -206,8 +206,9 @@ if (Test-Path -LiteralPath $slideTitlePath) {
 }
 
 $courseRoots = @(
-    'Games104', '图形工程', '图形学', '数据结构和算法', 'C++基础',
-    '编辑器设计', '游戏AI', '游戏网络', 'ACT'
+    '课程记录\Games104', '课程记录\图形工程', '课程记录\图形学',
+    '课程记录\数据结构和算法', '课程记录\C++基础', '课程记录\编辑器设计',
+    '课程记录\游戏AI', '课程记录\游戏网络', '课程记录\ACT'
 )
 $courseFiles = @()
 foreach ($courseRoot in $courseRoots) {

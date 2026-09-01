@@ -30,7 +30,8 @@ function Get-TopicMapping {
     )
 
     $path = $RelativePath.Replace('/', '\')
-    $top = ($path -split '\\')[0]
+    $parts = @($path -split '\\')
+    $top = if ($parts.Count -gt 1 -and $parts[0] -eq '课程记录') { $parts[1] } else { $parts[0] }
     $name = [System.IO.Path]::GetFileNameWithoutExtension($path)
 
     if ($path -match '^TA-Encyclopedia\\01_Rendering\\') {
@@ -133,7 +134,7 @@ function Get-PublicFiles {
 $files = @(Get-PublicFiles | Where-Object {
     $relative = $_.FullName.Substring($VaultRoot.Length + 1)
     $_.FullName -notmatch '\\.git\\|\\.obsidian\\|\\.idea\\|\\docs\\|\\scripts\\' -and
-        $relative -notmatch '^(?:0[0-9]|1[0-9]|2[0-9])_[^\\]+\\' -and
+        $relative -notmatch '^知识库\\(?:0[0-9]|1[0-9]|2[0-9])_[^\\]+\\' -and
         $relative -notin @('README.md', 'CHANGELOG.md')
 })
 
