@@ -81,6 +81,45 @@ Gram-Schmidt 步骤去掉切线在法线方向的插值误差。矩阵乘法方�
 
 Reoriented Normal Mapping 等方法会把 Detail Normal 重新定向到 Base Normal 的局部表面，更适合层叠材质。具体公式需要与当前法线编码一致。
 
+## Cubemap、Skybox 与环境映射
+
+Cubemap 用三维方向查找六个二维面。采样坐标不是普通 UV，而是从立方体中心指向目标方向的向量。硬件根据绝对值最大的分量选择面，再计算面内坐标。
+
+六个面的朝向、坐标手性和纹理原点必须一致。接缝常来自：
+
+- 面顺序或旋转错误；
+- 边缘 Texel 没有连续过滤；
+- 各面曝光和颜色处理不同；
+- Mip 生成时没有跨面处理；
+- 方向在错误空间中计算。
+
+Skybox 常使用一个以相机为中心的立方体。View Matrix 保留旋转、去掉平移，让背景看起来位于无限远。下面的 GLSL 写法让输出深度位于远平面；深度测试使用 `LEQUAL`，并在不透明物体之后绘制：
+
+```glsl
+vec4 SkyboxPosition(vec3 cubePosition)
+{
+    mat4 viewRotation = mat4(mat3(view));
+    vec4 clip = projection * viewRotation
+              * vec4(cubePosition, 1.0);
+    return clip.xyww;
+}
+
+vec3 SampleSkybox(vec3 directionWS)
+{
+    return texture(environmentMap, normalize(directionWS)).rgb;
+}
+```
+
+`clip.xyww` 让透视除法后的 Z 等于 1。反向 Z 管线的深度值和比较函数不同，需要使用引擎提供的 Skybox 深度约定。
+
+环境反射使用反射方向查询 Cubemap：
+
+$$
+\mathbf R=reflect(-\mathbf V,\mathbf N)
+$$
+
+$\mathbf V$ 和 $\mathbf N$ 必须处于 Cubemap 期望的同一空间。直接采样清晰环境只适合理想镜面；粗糙材质需要按 BRDF 预过滤后的环境 Mip。
+
 ## Image-Based Lighting
 
 IBL 使用环境图表示各方向入射光。材质需要计算：
@@ -153,3 +192,4 @@ Reflection Probe 保存某个位置周围的环境。物体远离 Probe 中心�
 - Brian Karis, *Real Shading in Unreal Engine 4*.
 - Colin Barré-Brisebois and Stephen Hill, *Blending in Detail*.
 - LearnOpenGL, `src/5.advanced_lighting/4.normal_mapping`.
+- LearnOpenGL, `src/4.advanced_opengl/6.1.cubemaps_skybox` and `6.2.cubemaps_environment_mapping`.

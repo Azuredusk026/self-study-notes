@@ -110,6 +110,34 @@ $F_0$ 是正视角反射率。掠射角通常趋近更强反射。
 
 常见实现使用 Smith 方法，把视线和光线方向的遮蔽组合起来。
 
+### 代码中的组合顺序
+
+下面的 HLSL 片段把 D、F、G 和能量分配组合成单个直接光 BRDF。三个辅助函数分别对应上面的 GGX 分布、Schlick Fresnel 和 Smith 几何项：
+
+```hlsl
+float3 EvaluateDirectBRDF(
+    float3 N, float3 V, float3 L,
+    float3 baseColor, float metallic, float roughness, float3 F0)
+{
+    float3 H = normalize(V + L);
+    float NoL = saturate(dot(N, L));
+    float NoV = saturate(dot(N, V));
+    float NoH = saturate(dot(N, H));
+    float VoH = saturate(dot(V, H));
+    float alpha = max(roughness * roughness, 0.002);
+
+    float D = DistributionGGX(NoH, alpha);
+    float G = GeometrySmith(NoV, NoL, alpha);
+    float3 F = FresnelSchlick(VoH, F0);
+    float3 specular = D * G * F / max(4.0 * NoV * NoL, 1e-4);
+
+    float3 diffuseWeight = (1.0 - F) * (1.0 - metallic);
+    return (diffuseWeight * baseColor / PI + specular) * NoL;
+}
+```
+
+光源 Radiance、距离衰减、阴影和曝光位于函数外。`roughness` 的最小值防止分布退化成数值奇点，具体阈值应与引擎材质和 IBL 预过滤保持一致。
+
 ## 为什么 Roughness 不能直接当高光指数
 
 不同 BRDF 对 Roughness 的映射不同。引擎还可能使用 $\alpha=roughness^2$ 让美术控制更线性。
@@ -148,3 +176,4 @@ $F_0$ 是正视角反射率。掠射角通常趋近更强反射。
 - Bruce Walter et al., *Microfacet Models for Refraction through Rough Surfaces*.
 - Brian Karis, *Real Shading in Unreal Engine 4*.
 - Google Filament, *Physically Based Rendering in Filament*.
+- LearnOpenGL, `src/6.pbr/1.1.lighting` and `1.2.lighting_textured`.

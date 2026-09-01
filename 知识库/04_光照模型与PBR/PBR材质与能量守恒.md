@@ -35,7 +35,7 @@ Metallic 通常应接近 0 或 1。中间值主要用于抗锯齿、脏污混合
 简化实时模型常写成：
 
 $$
-k_s=F,qquad k_d=(1-k_s)(1-metallic)
+k_s=F,\qquad k_d=(1-k_s)(1-metallic)
 $$
 
 $k_s$ 是镜面部分，$k_d$ 是漫反射部分。Fresnel 增强时，漫反射相应减少，避免两部分相加超过入射能量。

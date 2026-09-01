@@ -148,6 +148,7 @@ GPU Culling 后把可见实例数量和参数写入 Indirect Argument Buffer，�
 - [[03_Shader编程/Shader编译、关键字与变体]]
 - [[09_动画系统/骨骼动画、蒙皮与GPU动画]]
 - [[12_光追与现代渲染/GPU-Driven管线与Nanite]]
+- [[13_引擎架构与资源系统/UI、字体与文本渲染]]
 - [[14_性能分析与优化/帧时间、瓶颈与GPU成本]]
 
 ## 参考资料

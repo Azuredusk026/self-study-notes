@@ -60,6 +60,19 @@ Heightfield 用二维标量网格表示高度，天然适合连续地表、分�
 
 规则网格可按 Chunk 或 Quadtree 管理。远处使用更低采样密度，边界通过 Stitching、Skirt 或约束相邻层级差来避免裂缝。
 
+## GPU 细分地形
+
+GPU Tessellation 可以让每个地形 Patch 根据屏幕贡献生成不同密度的三角形。Hull/Tessellation Control 阶段计算边和内部细分因子，固定 Tessellator 生成参数坐标，Domain/Tessellation Evaluation 阶段再采样高度图并计算最终位置。
+
+细分因子适合由边的屏幕像素长度或位移误差决定。只按 Patch 中心到相机的距离会让同一共享边的两侧得到不同因子，产生裂缝。稳定方案包括：
+
+- 共享边只使用两个端点或同一边界球计算因子；
+- 相邻 Patch 约束到兼容层级；
+- 使用 Fractional Even/Odd Partitioning 缓和因子变化；
+- 最终边界增加 Skirt 处理地形 Tile 接缝。
+
+细分增加的是当前帧生成和处理的图元，不会降低高度纹理带宽。因子过高会把瓶颈推到 Tessellator、Vertex/Domain Shader 或光栅化。近处需要真实轮廓时细分有效；远处地形仍应依赖 Chunk LOD、Mipmap 和流送。
+
 ## 地形材质分层
 
 Splat Map 的 RGBA 通道保存各 Terrain Layer 权重。若层数超过四个，需要多张控制图或改用索引/虚拟纹理方案。
@@ -169,3 +182,4 @@ PCG 的验收还包括密度、可达性、穿插、性能预算和重复模式�
 - Houdini Documentation, *HeightField*, *PDG* and *Houdini Engine for Unity*.
 - Lindstrom and Turk, *Fast and Memory Efficient Polygonal Simplification*.
 - meshoptimizer documentation, *Vertex cache optimization*.
+- LearnOpenGL, `src/8.guest/2021/3.tessellation`.

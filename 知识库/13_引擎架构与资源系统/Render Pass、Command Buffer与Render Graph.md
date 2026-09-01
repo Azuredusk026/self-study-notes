@@ -38,6 +38,8 @@ if (glCheckNamedFramebufferStatus(framebuffer, GL_FRAMEBUFFER)
 
 这段代码只建立 Attachment 关系。实际 Pass 还要设置 Viewport、Clear/Load 行为、读写状态，并在后续采样前保证写入可见。
 
+示例使用 OpenGL Direct State Access（DSA），函数参数明确指出被修改的对象。它减少依赖全局 Bind State 造成的误操作，也方便封装资源创建。DSA 主要改善 API 状态管理，不会自动减少 GPU 的 Attachment、带宽或同步成本。
+
 ## Command Buffer 为什么存在
 
 GPU 不直接执行 CPU 函数调用。CPU 把状态、Draw、Dispatch、Copy 和 Barrier 编码成命令序列，再提交到 Queue。
@@ -163,3 +165,4 @@ Unity `CommandBuffer` 可以记录 Draw、Blit、Dispatch、SetRenderTarget 等�
 - Microsoft Learn, *Direct3D 12 Command Queues and Command Lists*.
 - Unity Manual, *Render Graph system*.
 - LearnOpenGL, `src/4.advanced_opengl/5.1.framebuffers`.
+- LearnOpenGL, `src/8.guest/2021/4.dsa`.

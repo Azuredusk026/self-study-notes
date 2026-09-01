@@ -55,6 +55,23 @@ Bloom 模拟强光在镜头、传感器和视觉系统中向周围扩散。它�
 
 逐级把高亮图缩小。每级都需要低通过滤，避免降采样混叠。低分辨率也让大范围 Blur 更便宜。
 
+下面的 HLSL 代码用四个双线性样本构造一次简单低通降采样。`sourceTexelSize` 是上一层的单个 Texel 尺寸：
+
+```hlsl
+float3 DownsampleBloom(float2 uv, float2 sourceTexelSize)
+{
+    float2 o = sourceTexelSize * 0.5;
+    float3 sum = 0.0;
+    sum += Source.SampleLevel(LinearClamp, uv + float2(-o.x, -o.y), 0).rgb;
+    sum += Source.SampleLevel(LinearClamp, uv + float2( o.x, -o.y), 0).rgb;
+    sum += Source.SampleLevel(LinearClamp, uv + float2(-o.x,  o.y), 0).rgb;
+    sum += Source.SampleLevel(LinearClamp, uv + float2( o.x,  o.y), 0).rgb;
+    return sum * 0.25;
+}
+```
+
+完整实现可以使用更宽、经过推导的核，减少降采样混叠和方块感。逐级上采样时，用 Tent/Kawase 核把低 Mip 加回上一层，再以 Scatter 控制各尺度能量。每层都从相邻 Mip 合成，比只对最低分辨率做一次大模糊更容易保留不同大小的光晕。
+
 ### 3. Blur
 
 可以使用 Separable Gaussian、Kawase、Dual Filter 等。不同核会改变光斑形状、稳定性和采样成本。
@@ -192,3 +209,4 @@ Volumetric Fog 把视锥划成三维 Froxel，注入介质密度、灯光和阴�
 - Jorge Jimenez et al., *Next Generation Post Processing in Call of Duty: Advanced Warfare*.
 - Epic Games and Unity documentation on Bloom, Exposure and Color Grading.
 - LearnOpenGL, `src/5.advanced_lighting/9.ssao`.
+- LearnOpenGL, `src/8.guest/2022/6.physically_based_bloom`.

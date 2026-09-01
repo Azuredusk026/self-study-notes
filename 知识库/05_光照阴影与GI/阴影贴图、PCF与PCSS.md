@@ -271,9 +271,37 @@ Cascade 数量、分辨率和更新频率应按平台与画面需求设置。远
 
 ## Point Light Shadow
 
-Cubemap Shadow 需要六个面，意味着最多六次场景渲染。Dual Paraboloid 等替代方案可以减少面数，但会引入投影畸变和接缝。
+点光源向所有方向发光，不能用单个透视投影覆盖。常见方案是以光源为中心建立六个 90 度视锥，把径向距离写入深度 Cubemap。
 
-动态 Point Light Shadow 很贵，项目通常限制数量、分辨率、更新频率或使用缓存。
+每个面使用相同近远平面，View Matrix 分别朝向正负 X、Y、Z。面 Up Vector 需要保持一致，否则会旋转或翻转。六面可以逐次渲染，也可以使用 Layered Rendering 写入 Cubemap Layer。
+
+查询时用从光源到接收点的向量同时完成方向寻址和距离比较：
+
+```glsl
+float PointShadow(vec3 positionWS)
+{
+    vec3 lightToPoint = positionWS - lightPositionWS;
+    float receiverDistance = length(lightToPoint);
+    float blockerDistance = texture(pointShadowMap, lightToPoint).r
+                          * shadowFar;
+    return receiverDistance - shadowBias > blockerDistance
+         ? 1.0 : 0.0;
+}
+```
+
+示例把线性距离除以 `shadowFar` 写入 Cubemap，因此读取后乘回同一值。若资源保存投影深度，必须先按投影公式还原，不能直接与欧氏距离比较。
+
+软化点光阴影时，可以在 `lightToPoint` 周围按一组球面方向偏移采样。采样半径应转换到世界空间或随接收距离调整。直接使用固定方向偏移会让近远处软化尺度不一致。
+
+主要工程问题包括：
+
+- 六个面带来的 Caster 绘制、剔除和带宽；
+- 面边界的过滤接缝；
+- 近距离 Bias 和远距离精度；
+- 动态物体引起的缓存失效；
+- 大采样核的 Cubemap 纹理成本。
+
+项目通常限制阴影点光数量、影响半径、分辨率和更新频率。静止灯光可以缓存静态 Caster，再单独更新动态层。Dual Paraboloid 等两面方案减少面数，同时带来投影畸变和接缝。
 
 ## 常见伪影定位
 
@@ -309,3 +337,4 @@ Cubemap Shadow 需要六个面，意味着最多六次场景渲染。Dual Parabo
 - NVIDIA, *Integrating Realistic Soft Shadows into Your Game Engine*.
 - Microsoft Learn, *Cascaded Shadow Maps*.
 - LearnOpenGL, `src/8.guest/2021/2.csm`.
+- LearnOpenGL, `src/5.advanced_lighting/3.2.1.point_shadows` and `3.2.2.point_shadows_soft`.

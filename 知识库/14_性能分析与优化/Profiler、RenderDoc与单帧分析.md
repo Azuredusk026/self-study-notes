@@ -66,6 +66,29 @@ RenderDoc 捕获一个图形 API 帧，可以检查：
 
 它主要回答“这一帧发生了什么”，不是长时间卡顿、温度和 CPU 调度工具。
 
+## API Debug Message
+
+图形 API 的验证层和调试回调适合在开发构建中尽早发现无效状态、资源绑定、同步和对象生命周期问题。OpenGL Debug Output 的最小接入如下：
+
+```cpp
+void APIENTRY OnGlMessage(GLenum source, GLenum type, GLuint id,
+                          GLenum severity, GLsizei length,
+                          const GLchar* message, const void* user)
+{
+    if (severity == GL_DEBUG_SEVERITY_NOTIFICATION)
+        return;
+    LogGraphicsMessage(source, type, id, severity, message);
+}
+
+glEnable(GL_DEBUG_OUTPUT);
+glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
+glDebugMessageCallback(OnGlMessage, nullptr);
+```
+
+同步回调便于在调试器中定位触发调用，也会增加 CPU 开销。正式运行可以关闭同步或按来源、类型和 ID 过滤消息。
+
+调试层只能报告 API 能识别的问题。合法但错误的矩阵、坐标空间、光照公式和性能设计仍需要帧捕获、可视化和对照实验定位。Vulkan Validation Layer、D3D12 Debug Layer 和 GPU-based Validation 也遵循相同边界。
+
 ## 单帧分析顺序
 
 ### 1. 看 Pass 构成
@@ -155,3 +178,4 @@ Counter 高不是自动的问题。例如带宽利用高但帧时间达标，可
 - Microsoft PIX documentation.
 - NVIDIA Nsight Graphics and AMD Radeon GPU Profiler documentation.
 - Unity Profiler and Frame Debugger manuals.
+- LearnOpenGL, `src/7.in_practice/1.debugging`.
