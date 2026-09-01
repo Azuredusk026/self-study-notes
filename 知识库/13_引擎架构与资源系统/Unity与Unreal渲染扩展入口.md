@@ -115,7 +115,7 @@ Unity URP/HDRP 和 Unreal 每个大版本都会调整接口、Render Graph 和�
 
 ### Unity 渲染功能的生命周期入口
 
-下面的 C# 骨架展示 URP Renderer Feature 的职责边界：Feature 创建并配置 Pass，Renderer 决定每个相机是否入队。具体资源 API 需要按项目锁定的 URP 版本实现：
+下面以提供 `SetupRenderPasses` 的 URP 版本为例。Feature 创建 Pass，在资源句柄可用的回调中配置目标，再决定每个相机是否入队：
 
 ```csharp
 sealed class OutlineFeature : ScriptableRendererFeature
@@ -124,17 +124,23 @@ sealed class OutlineFeature : ScriptableRendererFeature
 
     public override void Create() => pass = new OutlinePass();
 
+    public override void SetupRenderPasses(
+        ScriptableRenderer renderer, in RenderingData data)
+    {
+        if (data.cameraData.cameraType != CameraType.Game) return;
+        pass.Setup(renderer.cameraColorTargetHandle);
+    }
+
     public override void AddRenderPasses(
         ScriptableRenderer renderer, ref RenderingData data)
     {
         if (data.cameraData.cameraType != CameraType.Game) return;
-        pass.Setup(renderer.cameraColorTargetHandle);
         renderer.EnqueuePass(pass);
     }
 }
 ```
 
-Pass 内部需要声明读写的颜色、深度或法线资源，并选择稳定的插入事件。相机堆叠、Scene View、XR 和 Render Graph 路径会改变调用次数与资源生命周期。验证时记录每个相机的 Pass 入队次数，并在 Frame Debugger 中确认插入位置和资源状态。
+Pass 内部需要声明读写的颜色、深度或法线资源，并选择稳定的插入事件。启用 Render Graph 的 URP 版本还要在 `RecordRenderGraph` 中声明资源使用。相机堆叠、Scene View 和 XR 会改变调用次数与资源生命周期。验证时记录每个相机的 Pass 入队次数，并在 Frame Debugger 中确认插入位置和资源状态。
 
 ## 相关主题
 

@@ -220,8 +220,9 @@ Perforce Shelve、Git PR Artifact 或 Plastic Changeset Preview 都可承载这�
 git diff --cached --name-only --diff-filter=ACM | while IFS= read -r path; do
   case "$path" in
     *.psd|*.fbx|*.wav|*.mp4)
-      head_line=$(git show ":$path" | head -n 1)
-      if [ "$head_line" != "version https://git-lfs.github.com/spec/v1" ]; then
+      if ! git show ":$path" \
+        | head -n 1 \
+        | grep -qx 'version https://git-lfs.github.com/spec/v1'; then
         echo "应由 Git LFS 跟踪: $path" >&2
         exit 1
       fi
@@ -230,7 +231,7 @@ git diff --cached --name-only --diff-filter=ACM | while IFS= read -r path; do
 done
 ```
 
-规则中的扩展名应与项目 `.gitattributes` 和资产类型表一致。仅检查扩展名不能识别改名或自定义容器，CI 还可结合文件大小和文件头。验证时分别提交一个 LFS 文件和一个普通 Blob，确保失败能指向具体路径。
+管道直接检查暂存 Blob 的首行，不把二进制内容放入 Shell 变量。规则中的扩展名应与项目 `.gitattributes` 和资产类型表一致。仅检查扩展名不能识别改名或自定义容器，CI 还可结合文件大小和文件头。验证时分别提交一个 LFS 文件和一个普通 Blob，确保失败能指向具体路径。
 
 ## 相关主题
 
