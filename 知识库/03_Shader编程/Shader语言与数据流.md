@@ -121,6 +121,32 @@ HLSL 常用 `POSITION`、`TEXCOORD0`、`SV_Position` 等 Semantic 连接阶段�
 
 System Value 表示管线提供的特殊数据，例如 Vertex ID、Instance ID、Position、Depth。它们不是普通顶点属性。
 
+### GLSL 接口块与片元内建输入
+
+接口块把跨阶段的多个字段组织在一起。生产者与消费者的块名可以不同，但字段的类型、顺序、数组大小和插值修饰必须满足链接规则。显式 `location` 能让接口契约更清楚：
+
+```glsl
+// Vertex Shader
+layout(location = 0) in vec3 positionOS;
+out VertexData { vec2 uv; vec3 normalWS; } vsOut;
+
+// Fragment Shader
+in VertexData { vec2 uv; vec3 normalWS; } fsIn;
+layout(location = 0) out vec4 color;
+
+void main()
+{
+    vec3 normal = gl_FrontFacing ? fsIn.normalWS : -fsIn.normalWS;
+    float checker = mod(floor(gl_FragCoord.x / 8.0)
+                      + floor(gl_FragCoord.y / 8.0), 2.0);
+    color = vec4(normalize(normal) * 0.5 + 0.5, checker);
+}
+```
+
+`gl_FragCoord.xy` 是窗口空间片元坐标，原点和像素中心约定应以当前 API 设置为准。`gl_FrontFacing` 来自图元绕序与正反面判断，双面材质可以用它翻转几何法线，但 Normal Map 的切线手性也要一致处理。
+
+片元 Shader 可以写 `gl_FragDepth` 覆盖光栅器生成的深度。任意改写深度会限制提前深度测试；能保证写出值只比原深度更近或更远时，可使用保守深度布局向驱动声明约束。验证时同时显示颜色和深度附件：接口错配常表现为属性全零或跳变，深度约定错误会表现为遮挡反转或 Early-Z 效率下降。
+
 ## 精度
 
 `float`、`half`、`min16float` 的实际位宽和运算方式受目标平台、编译器和 GPU 影响。桌面 GPU 可能把 `half` 仍按 32 位执行，移动 GPU 则可能真正受益。
@@ -178,3 +204,4 @@ Shader Graph 是生成 Shader 代码的前端，不是另一种 GPU 管线。节
 - Khronos, *OpenGL Shading Language Specification*.
 - Unity Manual, *Writing shaders*.
 - LearnOpenGL, `src/4.advanced_opengl/8.advanced_glsl_ubo`.
+- LearnOpenGL 中文镜像，*Advanced GLSL*。

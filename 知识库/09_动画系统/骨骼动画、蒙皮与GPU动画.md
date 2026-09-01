@@ -27,6 +27,26 @@ $$
 
 旋转应在局部空间插值。直接插值两个模型空间 Joint 位置，可能让骨骼在中间帧伸缩或走不自然的直线。
 
+### 轨道采样与层级累积
+
+每个 Joint 的轨道可以有独立关键帧时间。采样时先在当前轨道找到包围时间的两个 Key，Translation 与 Scale 做线性插值，Rotation 使用最短弧 Slerp，再按拓扑顺序累积父变换：
+
+```cpp
+for (JointIndex joint : skeleton.topologicalOrder) {
+    TRS local = SampleLocalTRS(clip.track[joint], time);
+    Matrix4 localMatrix = Compose(local.translation,
+                                  local.rotation,
+                                  local.scale);
+    Matrix4 modelMatrix = skeleton.HasParent(joint)
+        ? modelPose[skeleton.Parent(joint)] * localMatrix
+        : rootMotion * localMatrix;
+    modelPose[joint] = modelMatrix;
+    skinPalette[joint] = modelMatrix * inverseBind[joint];
+}
+```
+
+输入轨道时间应先按 Clip 的循环或 Clamp 规则归一化。四元数点积小于 0 时翻转其中一个端点，才能沿同一旋转的短弧插值。没有轨道的 Joint 使用参考姿态局部变换。最终矩阵的顺序必须与导入时的坐标和矩阵约定一致；在绑定姿态时间点，`modelMatrix * inverseBind` 应接近单位矩阵，这是最直接的层级与逆绑定检查。
+
 ## Bind Pose 与 Inverse Bind Matrix
 
 Bind Pose 是蒙皮权重建立时的参考姿态。顶点在绑定时位于模型空间，但每个 Joint 有自己的绑定模型空间变换 $B_i$。

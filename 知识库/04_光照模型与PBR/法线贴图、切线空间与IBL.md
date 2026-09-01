@@ -120,6 +120,19 @@ $$
 
 $\mathbf V$ 和 $\mathbf N$ 必须处于 Cubemap 期望的同一空间。直接采样清晰环境只适合理想镜面；粗糙材质需要按 BRDF 预过滤后的环境 Mip。
 
+透明介质的理想折射方向可以用 `refract` 计算。输入的 $\eta$ 是入射介质折射率与透射介质折射率之比：
+
+```glsl
+vec3 incidentWS = normalize(positionWS - cameraPositionWS);
+float eta = etaIncident / etaTransmitted;
+vec3 refractedWS = refract(incidentWS, normalize(normalWS), eta);
+vec3 environment = texture(environmentMap, refractedWS).rgb;
+```
+
+当发生全反射时，`refract` 返回零向量，Shader 应改用反射方向。这个环境采样只近似无限远背景，不包含物体厚度、吸收、局部遮挡和折射后的场景深度。
+
+动态环境捕获会从 Probe 位置覆盖 Cubemap 的六个面。实现可以提交六个视图，也可以使用分层渲染一次写入多个面；完整更新还要生成 Mip 或重新预过滤。常见调度方式是分面、分帧或按重要性更新，并从捕获列表中排除 Probe 自己。验证时在 Probe 六面放置方向标记，检查接缝、手性、更新延迟和递归捕获。
+
 ## Image-Based Lighting
 
 IBL 使用环境图表示各方向入射光。材质需要计算：
@@ -149,6 +162,18 @@ Lambert 漫反射对环境光做余弦加权半球积分。结果变化平滑，
 4. 运行时组合 Prefiltered Environment、$F_0$ 和 LUT。
 
 Roughness 高时使用更模糊的 Mip。这不是普通图片缩小，而是按微表面分布对入射方向做积分近似。
+
+预过滤时按 GGX 分布采样半向量，再把样本方向转换为入射方向。样本的概率密度函数决定一个样本代表的立体角；环境图纹素也有自己的立体角。用两者比值选择源 Cubemap 的 Mip，可以减少高亮环境在粗糙表面上的闪烁。
+
+常见伪影及原因：
+
+- Roughness 接近 0 时样本锥很窄，样本数不足会漏掉高亮点；
+- Cubemap 面边界没有无缝采样或跨面 Mip，会出现接缝；
+- 直接用 `roughness * mipCount`，却没有匹配烘焙器的分布和 Mip 数，会让模糊速度错误；
+- BRDF LUT 采到纹理边缘会产生数值外推，应把 $N\cdot V$ 与 Roughness 映射到纹素中心；
+- 低分辨率预过滤图会让强小光源在相邻 Mip 间突然消失。
+
+BRDF LUT 通常保存 Fresnel 分解后的两个系数，输入限定在 $[0,1]^2$。它依赖固定的 NDF、Geometry 项和采样约定，更换 BRDF 后需要重新积分，不能把任意 LUT 与任意材质模型混用。
 
 ## Split-sum 的限制
 

@@ -145,6 +145,28 @@ DCC Shader Graph 很少能一比一转换成引擎 Shader。更可靠的交换�
 - Relative Path/Asset ID，而不是某台机器绝对路径；
 - Source Texture 与平台压缩产物的关系。
 
+### Assimp 场景遍历与纹理去重
+
+Assimp 的 `aiScene` 保存根节点、网格数组、材质数组和动画。节点构成场景层级，每个节点通过索引引用 `scene->mMeshes`。导入器应递归累积节点变换，再处理节点引用的网格；只遍历全局网格数组会丢失实例关系和节点局部变换。
+
+```cpp
+void VisitNode(const aiScene& scene, const aiNode& node,
+               const Matrix4& parentToRoot)
+{
+    Matrix4 nodeToRoot = parentToRoot * Convert(node.mTransformation);
+    for (unsigned i = 0; i < node.mNumMeshes; ++i) {
+        const aiMesh& mesh = *scene.mMeshes[node.mMeshes[i]];
+        ImportMesh(mesh, *scene.mMaterials[mesh.mMaterialIndex], nodeToRoot);
+    }
+    for (unsigned i = 0; i < node.mNumChildren; ++i)
+        VisitNode(scene, *node.mChildren[i], nodeToRoot);
+}
+```
+
+矩阵乘法顺序取决于库与引擎的向量约定。导入后可用一个带父子旋转和非均匀缩放的测试层级核对结果。Assimp 材质纹理类型是来源格式的语义提示，例如 Diffuse、Normals、Metalness；它不保证与项目 PBR 槽位一一对应。导入层应建立明确映射，并保留无法识别的属性供诊断。
+
+同一纹理可能被多个 Mesh 和材质引用。去重键应使用规范化后的资源标识，例如模型目录加相对路径、内嵌纹理 ID 和颜色空间语义。只按文件名缓存会把不同目录的同名纹理合并；只按完整路径缓存又可能把同图的 Base Color 与 Linear 数据视图错误复用。验证时统计场景声明的纹理引用数、唯一资源数和实际 GPU 资源数。
+
 ## Metadata 与 Sidecar
 
 交换格式无法稳定表达的项目数据，可使用 Custom Property、USD Schema 或 Sidecar Manifest。Manifest 可保存：
