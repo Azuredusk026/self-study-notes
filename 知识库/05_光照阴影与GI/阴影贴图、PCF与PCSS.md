@@ -89,18 +89,154 @@ Bias 太小会 Acne，太大会 Peter Panning，让阴影与物体脚底分离�
 
 ## CSM
 
-方向光需要覆盖很大范围。单张 Shadow Map 会把分辨率浪费在远处。Cascaded Shadow Maps 按相机深度把视锥分段，每段使用独立 Shadow Projection。
+级联阴影贴图（Cascaded Shadow Maps，CSM）为方向光准备多张不同覆盖范围的 Shadow Map。近处 Cascade 覆盖小、世界空间 Texel 密度高；远处 Cascade 覆盖大，用较低精度维持可见距离。
 
-需要处理：
+单张方向光 Shadow Map 必须同时容纳相机附近和远处视锥。透视相机中，近处物体占屏幕面积大，却只得到和远处相同的光空间 Texel 密度，因此近景最容易出现锯齿和游动。
 
-- Cascade Split 分布；
-- Cascade 间过渡；
-- 相机移动导致的投影抖动；
-- Texel Snapping/Stabilization；
-- 不同 Cascade 的 Bias 和过滤尺度；
-- 远距离阴影淡出。
+### 1. 分割相机视锥
 
-Cascade 越多不一定越好，会增加渲染和采样成本。
+设相机近远平面为 $n,f$，Cascade 数量为 $m$，第 $i$ 个分割位置可以使用均匀分割：
+
+$$
+d_i^{uniform}=n+(f-n)\frac{i}{m}
+$$
+
+对数分割会把更多范围留给近处：
+
+$$
+d_i^{log}=n\left(\frac{f}{n}\right)^{i/m}
+$$
+
+实际常用 Practical Split 在两者之间插值：
+
+$$
+d_i=(1-\lambda)d_i^{uniform}+\lambda d_i^{log}
+$$
+
+$\lambda$ 越大，近处 Cascade 越密。分割距离通常按正的观察空间深度保存。右手观察空间常用 $d=-z_{view}$，不能直接拿非线性的 Depth Buffer 值比较。
+
+### 2. 计算每层光空间矩阵
+
+每个 $[d_i,d_{i+1}]$ 都形成一个截断视锥。计算步骤是：
+
+1. 用该层的近远距离建立相机投影矩阵。
+2. 反投影 NDC 的八个角点到世界空间。
+3. 计算角点中心，建立方向光 View Matrix。
+4. 把八个角点变换到光空间。
+5. 对光空间角点求包围范围，建立正交投影。
+6. 沿光照 Z 方向扩展范围，容纳可能投影进层内的 Caster。
+
+NDC 深度范围取决于 API。OpenGL 默认使用 $[-1,1]$，Direct3D 和常见 Vulkan 配置使用 $[0,1]$。反投影时必须与实际投影矩阵约定一致。
+
+下面的伪代码表达矩阵构造的数据流：
+
+```cpp
+Matrix BuildCascadeMatrix(float splitNear, float splitFar)
+{
+    Matrix sliceProj = Perspective(fov, aspect, splitNear, splitFar);
+    Vector4 corners[8] = InverseProjectNdcCorners(sliceProj * view);
+
+    Vector3 center = Average(corners);
+    Matrix lightView = LookAt(center - lightDir * casterRange,
+                              center, stableUp);
+    Bounds bounds = FitLightSpaceBounds(corners, lightView);
+    bounds.ExpandDepth(casterRange);
+
+    Matrix lightProj = Orthographic(bounds.min, bounds.max);
+    return lightProj * lightView;
+}
+```
+
+`casterRange` 不能只按接收者视锥取值。视锥外的树或建筑仍可能把阴影投进视锥，过小会丢失阴影，过大则浪费深度精度。
+
+### 3. 保存每层深度
+
+各层可以使用独立纹理，也可以使用同尺寸、格式和 Mip 规则一致的 Texture Array。Array Layer 让 Shader 通过层索引采样，资源绑定更集中。
+
+深度生成可以逐层提交 Draw，也可以使用 Layered Rendering。LearnOpenGL 的 CSM 示例用 Geometry Shader 的 `gl_Layer` 把图元写入不同 Array Layer。现代引擎也会通过多视图、实例化或逐层 Pass 完成，具体方式取决于 API、硬件和场景提交成本。
+
+光空间矩阵数组适合放在 UBO 或 Constant Buffer。CPU 结构、Shader 布局和矩阵主次序必须一致。
+
+### 4. 选择 Cascade
+
+像素先计算正的观察空间深度，再找到包含它的分层区间。随后使用对应光空间矩阵和 Texture Array Layer：
+
+```glsl
+int SelectCascade(vec3 positionWS)
+{
+    float viewDepth = -(view * vec4(positionWS, 1.0)).z;
+    int layer = cascadeCount - 1;
+
+    for (int i = 0; i < cascadeCount - 1; ++i) {
+        if (viewDepth < cascadeSplits[i]) {
+            layer = i;
+            break;
+        }
+    }
+    return layer;
+}
+```
+
+这段代码假定右手观察空间中相机前方 Z 为负。引擎使用其他约定时，`viewDepth` 的符号需要同步调整。
+
+### 5. 处理边界过渡
+
+相邻 Cascade 的投影、Bias 和过滤结果不同。硬切换会在分割平面出现明显跳线。常见做法是在边界附近定义一段重叠区，同时采样相邻两层：
+
+$$
+V=lerp(V_i,V_{i+1},t)
+$$
+
+$t$ 由观察空间深度在过渡区中的位置得到。过渡越宽，双层采样区域越大；过窄则难以隐藏差异。两层的世界空间过滤半径也应接近，否则混合仍会看到软硬变化。
+
+### 6. Bias 和过滤尺度
+
+同样的 Shadow UV 偏移在不同 Cascade 中代表不同世界距离。每层需要按正交投影范围和纹理分辨率计算世界空间 Texel 尺寸，再据此调整：
+
+- Constant/Slope Bias；
+- Normal Bias；
+- PCF 或 PCSS 采样半径；
+- Cascade 过渡区宽度。
+
+直接复用同一数值会让近层 Peter Panning，或让远层 Acne 和锯齿加重。
+
+### 7. 稳定化和 Texel Snapping
+
+紧致包围盒会随着相机旋转和移动持续改变，导致世界点映射到不同 Shadow Texel，画面出现阴影游动。稳定化通常包含：
+
+- 使用包围球或固定尺度确定 Cascade 的 XY 范围；
+- 把光空间投影中心吸附到 Shadow Texel 网格；
+- 固定方向光基底，避免 Up Vector 在临界方向翻转；
+- 对分割距离和投影范围保持确定性。
+
+若正交投影宽度为 $w$、阴影分辨率为 $R$，一个 Texel 对应的光空间长度是：
+
+$$
+s_{texel}=\frac{w}{R}
+$$
+
+将投影中心除以 $s_{texel}$、取整后再乘回去，就能让平移以整 Texel 发生。包围球通常更稳定，紧致 AABB 的分辨率利用率更高。工程实现需要在稳定性和有效分辨率之间取舍。
+
+### 8. 成本
+
+CSM 的主要成本来自：
+
+- 每个 Cascade 重复生成方向光深度；
+- Caster 剔除、命令生成和状态提交；
+- 多层深度纹理的显存和带宽；
+- 边界混合的额外采样；
+- PCF/PCSS 的采样核。
+
+Cascade 数量、分辨率和更新频率应按平台与画面需求设置。远层可以降低更新频率或渐隐到烘焙阴影、距离场阴影等结果。
+
+### 9. 调试
+
+- 用不同纯色显示 Cascade Index，检查层选择和过渡。
+- 单独显示 Texture Array 每一层的深度。
+- 绘制每层世界空间视锥和方向光正交包围盒。
+- 缓慢平移和旋转相机，观察边缘是否按整 Texel 移动。
+- 在边界放置斜面、细杆和远处高 Caster，检查 Bias、漏投影和跳变。
+- 记录每层 Draw、Caster 数量、分辨率和更新时间。
 
 ## 方差阴影与虚拟阴影
 
@@ -138,8 +274,10 @@ Cubemap Shadow 需要六个面，意味着最多六次场景渲染。Dual Parabo
 ## 相关主题
 
 - [[02_GPU与光栅化管线/光栅化、插值与深度模板]]
+- [[01_数学与采样/向量、矩阵与空间变换]]
 - [[05_光照阴影与GI/光源与直接光照]]
 - [[06_纹理技术/纹理采样、过滤、Mipmap与压缩]]
+- [[13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph]]
 - [[11_NPR与风格化渲染/角色面部、头发与阴影]]
 
 ## 参考资料
@@ -147,3 +285,4 @@ Cubemap Shadow 需要六个面，意味着最多六次场景渲染。Dual Parabo
 - Randima Fernando, *Percentage-Closer Soft Shadows*.
 - NVIDIA, *Integrating Realistic Soft Shadows into Your Game Engine*.
 - Microsoft Learn, *Cascaded Shadow Maps*.
+- LearnOpenGL, `src/8.guest/2021/2.csm`.
