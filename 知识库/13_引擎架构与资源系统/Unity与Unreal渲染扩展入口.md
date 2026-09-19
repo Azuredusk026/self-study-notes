@@ -18,6 +18,10 @@
 
 SRP 让 C# 代码显式组织可见性、Draw、Render Target 和 Pass。URP/HDRP 都建立在 SRP 上，但提供不同功能和扩展约束。
 
+一条自定义管线只需两样东西：一个继承 `RenderPipeline` 的实例类，一个继承 `RenderPipelineAsset` 的资产类。前者重写 `Render` 方法组织渲染流程，后者负责创建实例并作为资产被项目引用。
+
+`ScriptableRenderContext` 是 C# 与底层图形代码之间的接口。它采用**延迟执行**：无论是传入 CommandBuffer 还是直接调用 `Cull`、`DrawRenderers`，命令都只是被记录下来，只有调用 `Submit` 后才真正执行。调试时若发现命令似乎没有生效，先确认是否遗漏了提交。
+
 ### URP Renderer Feature/Pass
 
 常见流程：
@@ -36,6 +40,21 @@ SRP 让 C# 代码显式组织可见性、Draw、Render Target 和 Pass。URP/HDR
 - Dynamic Resolution 和 Render Scale；
 - MSAA Resolve；
 - 新旧 Compatibility/Render Graph 路径。
+
+Feature 不是唯一入口。不需要编辑器配置界面、或希望完全由代码控制插入时机时，也可以在管线回调中直接向 Renderer 入队 Pass。Feature 的价值在于把 Pass 暴露为资产上的可配置项，便于美术调整和按 Renderer 切换。
+
+#### 全屏 Blit 的浪费
+
+后处理中常见的写法是先把源拷到临时目标，再带材质拷回去：
+
+```text
+Blit(source, temp);        // 纯拷贝
+Blit(temp, source, mat);   // 带效果
+```
+
+第一次拷贝存在的原因是同一张 RT 不能同时作为采样源和写入目标。这个约束在部分桌面 GPU 上表现宽松，开发机上看不出问题，打包到移动设备后出现花屏——这是典型的平台差异陷阱。
+
+但第一次全屏拷贝确实是纯粹的浪费。优化方向是使用双缓冲在两张 RT 之间来回 Blit，以及把多个后处理效果合并进同一个 Shader，减少全屏往返次数。全屏拷贝的代价是带宽而非计算，在移动端尤其显著。
 
 ### HDRP Custom Pass
 
@@ -154,3 +173,5 @@ Pass 内部需要声明读写的颜色、深度或法线资源，并选择稳定
 - Unity Manual, URP/HDRP custom rendering documentation.
 - Unreal Engine Documentation, *Materials*, *Custom Depth* and *Render Dependency Graph*.
 - Unity and Unreal release notes for the target project version.
+- Unity Blog, *SRP Batcher: Speed up your rendering*.
+- Unity Manual, *Scriptable Render Pipeline* and `ScriptableRenderContext` API reference.

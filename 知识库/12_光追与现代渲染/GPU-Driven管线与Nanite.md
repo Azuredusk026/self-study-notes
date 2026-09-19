@@ -29,6 +29,21 @@ GPU-Driven 让 CPU 主要提交场景 Buffer、相机和少量 Dispatch/Indirect
 
 数据应使用稳定 ID。GPU Buffer 的 Slot 不应直接等同 Gameplay 对象地址，删除和新增需要 Free List、Generation 或其他生命周期机制。
 
+### 引擎中的场景 Buffer
+
+Unreal 的 GPUScene 是这类结构的具体实现。它把场景中所有图元的变换、包围盒、材质与实例数据维护在 GPU 侧的持久 Buffer 中，每帧只上传变化的部分——增量更新而非全量重传，这是场景规模能够扩展的前提。
+
+与之配套的是延迟剔除（Deferred Culling）。流程是先注册、后收集、再统一剔除：
+
+1. 帧初始化时创建剔除上下文并注册回调；
+2. 各个 Pass 构建渲染命令时，把收集到的动态网格加入待剔除批次；
+3. 收集完成后触发回调，更新 Compute Shader 所需的 Buffer；
+4. 执行剔除 Pass，输出可见实例列表与 Indirect 绘制参数。
+
+"先收集后剔除"正是"延迟"一词的含义。这样做的好处是把分散在各 Pass 的剔除工作合并成一次 Dispatch，减少 GPU 的启动开销与同步点。
+
+需要区分两个同名概念：这里的实例剔除作用于普通图元的实例列表，与 Nanite 内部的 Cluster 级剔除是不同层级的机制，两者可以并存。
+
 ## Frustum 与 Distance/Screen Error
 
 Compute Culling 先用 Sphere/AABB 对 View Frustum。再根据距离、Projected Size 或 Screen-space Error 选择 LOD。

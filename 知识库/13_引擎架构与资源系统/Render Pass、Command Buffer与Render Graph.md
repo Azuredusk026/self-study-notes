@@ -144,6 +144,40 @@ Unity `CommandBuffer` 可以记录 Draw、Blit、Dispatch、SetRenderTarget 等�
 
 具体 API 随 Unity 版本变化，应按项目版本核对。
 
+## Unreal 的 RHI 分层
+
+Unreal 在图形 API 之上建立了自己的抽象层，理解这个分层有助于定位问题发生在哪一级。
+
+```text
+渲染器            平台无关的算法与 Pass 组织
+  ↓
+RHI              统一抽象：资源、命令列表、Shader、PSO
+  ↓
+DynamicRHI 实现   D3D12 / Vulkan / Metal / OpenGL 各自的后端
+  ↓
+图形 API
+```
+
+`FRHIResource` 是资源基类，纹理、缓冲、Uniform Buffer 都派生自它；`FDynamicRHI` 是后端入口，每个平台提供一份实现。渲染器只面向 RHI 接口编程，平台差异被约束在后端。
+
+这个分层也解释了 Shader 的两级结构：`FShader` 及其派生的 `FGlobalShader` 属于引擎层，描述参数绑定与编译条件；平台相关的字节码与创建过程在 RHI 后端完成。
+
+### 参数绑定模型
+
+D3D12 的根签名、Vulkan 的描述符集布局，在 RHI 层被统一成 Shader 参数结构的声明。引擎用宏声明参数布局，编译期生成绑定信息，运行时按这份信息填充。
+
+绑定模型的成本差异值得留意：频繁更换的参数应放在更廉价的绑定槽位，稳定不变的参数适合打包进 Uniform Buffer 一次绑定。参数结构设计不当会让每次 Draw 都重新绑定大量资源。
+
+### RDG
+
+Unreal 的 Render Dependency Graph 是 Render Graph 思路的具体实现。Pass 通过参数结构声明读写的资源，RDG 据此生成 Barrier、管理 Transient 资源、剔除无人消费的 Pass。
+
+两个实践要点：
+
+其一，**未被消费的 Pass 会被静默剔除**。新增的 Pass 如果写入的资源没有任何后续 Pass 读取，它不会执行，在帧捕获里也找不到。调试时若发现 Pass "消失"，先检查输出是否被消费，而不是怀疑注册失败。
+
+其二，**不要混用手工资源管理**。手动创建的资源不参与别名复用，手动插入的 Barrier 可能与 RDG 生成的冲突。修改引擎渲染代码前先确认目标路径是否仍走 RDG。
+
 ## 验证方法
 
 - 在 Frame Capture 中跟踪资源从写入到读取。
@@ -158,6 +192,8 @@ Unity `CommandBuffer` 可以记录 Draw、Blit、Dispatch、SetRenderTarget 等�
 - [[03_Shader编程/Compute Shader与GPU执行模型]]
 - [[13_引擎架构与资源系统/Unity与Unreal渲染扩展入口]]
 - [[14_性能分析与优化/Profiler、RenderDoc与单帧分析]]
+- [[13_引擎架构与资源系统/Unreal网格绘制与自定义Pass]]
+- [[14_性能分析与优化/PSO缓存与运行时卡顿]]
 
 ## 参考资料
 
@@ -166,3 +202,5 @@ Unity `CommandBuffer` 可以记录 Draw、Blit、Dispatch、SetRenderTarget 等�
 - Unity Manual, *Render Graph system*.
 - LearnOpenGL, `src/4.advanced_opengl/5.1.framebuffers`.
 - LearnOpenGL, `src/8.guest/2021/4.dsa`.
+- Epic Games, *Render Dependency Graph* and *Graphics Programming* documentation.
+- Unreal Engine source, `FRHIResource`, `FDynamicRHI`, `FRHICommandList`.

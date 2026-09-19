@@ -56,6 +56,31 @@ Unity SRP Batcher 的重点是减少相同 Shader Variant 间材质常量设置�
 
 材质 Shader 的 Constant Buffer 布局、兼容 Pass 和 Keyword 会影响是否进入 SRP Batcher。
 
+它的前提是**相同 Shader Variant**，而不是相同材质。同一 Shader 的不同材质可以进入同一批，因为材质数据被组织成稳定布局的常量缓冲，切换材质只需换绑定偏移，不必重新设置全部状态。
+
+### 与 GPU Instancing 的取舍
+
+两者优化的是不同环节，因此存在选择问题：
+
+| | 减少的对象 | 前提 | 典型场景 |
+|---|---|---|---|
+| SRP Batcher | SetPass Call | 相同 Shader Variant | 材质多样、网格各异的普通场景 |
+| GPU Instancing | Draw Call | 相同 Mesh 与 Material | 同屏大量相同网格 |
+
+同屏有大量相同网格时，GPU Instancing 实打实地减少 Draw Call 数量，收益高于只优化状态准备的 SRP Batcher。
+
+关键在于两者**不能同时作用于同一对象**，且存在固定优先级：
+
+```text
+SRP Batcher > GPU Instancing > Dynamic Batching
+```
+
+这意味着在启用 SRP Batcher 的项目中，兼容 SRP Batcher 的 Shader 不会走 Instancing 路径——即使场景中确实有几千个相同的网格。想让这批对象走 Instancing，需要主动让其 Shader 不满足 SRP Batcher 的兼容条件。
+
+这是一个容易踩的坑：开发者为大量重复物体写好 Instancing 支持，却发现 Frame Debugger 显示它们走的是 SRP Batcher，Draw Call 数毫无变化。
+
+默认策略仍是开启 SRP Batcher——URP 的内置 Shader 全部兼容，对绝大多数场景是正向优化。只有在确认某批对象满足"同网格同材质且数量巨大"时，才值得单独让它走 Instancing。
+
 ## GPU Instancing
 
 多个对象共享 Mesh 和 Material/Shader Variant，只为每个实例提供不同数据：
@@ -134,6 +159,8 @@ GPU Culling 后把可见实例数量和参数写入 Indirect Argument Buffer，�
 - Per-object 数据没有放入兼容实例通道；
 - 排序或透明顺序不能合并；
 - 负缩放、特殊渲染层或 Renderer Feature 分开绘制。
+
+还要留意"合批成功但不是期望的那一种"：Frame Debugger 会标明每个批次采用的路径，看到 SRP Batcher 而非 Instancing 时，通常是优先级而非兼容性问题。
 
 ## 验证方法
 

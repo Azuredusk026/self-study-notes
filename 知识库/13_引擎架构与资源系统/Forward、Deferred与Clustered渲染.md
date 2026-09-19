@@ -138,6 +138,28 @@ Forward+ 保留 Forward 材质阶段，但先用 Tiled/Clustered Culling 建立�
 - 移动端 Tile-based GPU 可能不适合把大 GBuffer 写回外部内存；
 - 每像素只保留最前表面，不适合多层材质。
 
+### 移动端的特殊路径
+
+最后两条在移动端需要单独展开。TBDR 架构把渲染分块进行，每个 Tile 的中间结果驻留在片上内存（Tile Memory）中，只在 Pass 结束时写回主存。
+
+朴素的延迟渲染在这里代价极高：GBuffer 写回主存、Lighting Pass 再从主存读回，一来一回的带宽在移动端是致命的。
+
+解法是把 Geometry 与 Lighting 合并进同一个 Render Pass，让 GBuffer 始终留在 Tile Memory 中不落主存。Vulkan 的 Subpass 与 Metal 的 Programmable Blending 提供了这个能力，引擎侧对应的是各类"移动端延迟渲染"路径。
+
+约束随之而来：Tile Memory 容量有限，GBuffer 通道数与格式必须严格压缩；两个阶段必须在同一 Pass 内，中间不能插入需要完整画面的操作；只能读取当前像素位置的 GBuffer，无法采样邻域。
+
+这解释了为什么移动端延迟路径的 GBuffer 布局通常比桌面端精简得多，也解释了为什么某些屏幕空间效果在移动端延迟路径下不可用。
+
+### 自定义着色模型的接入难度
+
+延迟路径下，材质只负责把数据写进 GBuffer，光照由统一的 Lighting Pass 计算。想要一种新的着色方式，就必须让 Lighting Pass 知道如何处理它。
+
+两条路：在 GBuffer 中编码材质分类 ID，让 Lighting Pass 分支到不同着色函数；或者扩展 GBuffer 携带额外参数。前者受限于分类位宽，后者增加带宽。
+
+这是延迟路径与前向路径在扩展性上的本质差异：前向路径下每个材质自带完整光照代码，加一种着色方式只需写一个新 Shader；延迟路径下必须改动引擎的光照阶段。
+
+以 Unity URP 为例，Lit Shader 的 GBuffer Pass 通过 `LightMode` 标签标识，片元阶段先求出标准的 BRDF 数据与全局光照，再统一打包写入四个目标——其中一个同时承担相机颜色附件的职责。想插入自定义着色，要么在写入前修改这批数据，要么改动管线的解包与光照代码。
+
 ## Deferred 并不一定更快
 
 大量小灯、复杂不透明材质时可能占优。灯很少、分辨率高、带宽有限或透明很多时，Forward/Forward+ 可能更合适。
