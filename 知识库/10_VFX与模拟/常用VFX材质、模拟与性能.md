@@ -180,6 +180,7 @@ float3 color = baseColor + edge * edgeColor * edgeIntensity;
 - [[02_GPU与光栅化管线/剔除、透明与混合]]
 - [[07_颜色与后处理/颜色空间、Alpha、HDR与曝光]]
 - [[10_VFX与模拟/粒子系统与GPU模拟]]
+- [[10_VFX与模拟/水体与海洋渲染]]
 - [[14_性能分析与优化/渲染优化验证与移动端实践]]
 
 ## 参考资料

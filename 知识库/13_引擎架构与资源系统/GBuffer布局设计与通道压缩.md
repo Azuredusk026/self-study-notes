@@ -144,6 +144,53 @@ Vulkan 的 Subpass 与 Metal 的 Framebuffer Fetch 提供这个能力。Shader �
 - Tile Memory 容量有限，GBuffer 总字节数必须严格控制——这反过来加强了前面压缩手段的必要性；
 - Shader 需要维护两套签名，增加维护成本。
 
+### Load 与 Store 操作
+
+Subpass 的收益不只来自"数据留在片上"，还来自显式声明的 Load/Store 行为。每个 Attachment 在 Render Pass 开始与结束时各有一个操作：
+
+| 操作 | 含义 | 带宽 |
+|---|---|---|
+| `LOAD_OP_LOAD` | 从主存读入已有内容 | 一次全屏读 |
+| `LOAD_OP_CLEAR` | 清成常量 | 无 |
+| `LOAD_OP_DONT_CARE` | 内容未定义 | 无 |
+| `STORE_OP_STORE` | 写回主存 | 一次全屏写 |
+| `STORE_OP_DONT_CARE` | 丢弃 | 无 |
+
+GBuffer 的正确配置是 `CLEAR`/`DONT_CARE` 进、`DONT_CARE` 出——它只是中间数据，光照阶段用完就不再需要，写回主存纯属浪费。只有最终的着色结果需要 `STORE`。
+
+这是移动端最容易被忽略、收益却极高的一处。默认配置往往是 `LOAD` + `STORE`，仅仅把 GBuffer 的 Store 改成 `DONT_CARE`，就能省下每帧数张全屏纹理的写带宽。深度附件同理：不需要在后续 Pass 采样时，应当丢弃。
+
+### 依赖声明
+
+Subpass 之间的关系必须显式声明：后一个 Subpass 读取哪些 Attachment 作为 Input Attachment，以及两者之间的执行与内存依赖。
+
+依赖声明不准确有两种后果。声明过松会出现竞态——光照阶段可能读到尚未写完的 GBuffer；声明过严则会引入不必要的同步，抵消合并的收益。
+
+Input Attachment 在着色器中是独立的资源类型，读取时不经过采样器，只能取当前片元位置的值。这个限制不是实现偷懒，而是硬件本质：Tile Memory 中只有当前 Tile 的数据，邻域可能根本不在片上。
+
+### 移动端的真实收益边界
+
+Subpass 常被当作移动端延迟渲染的万能解，实际收益取决于几个条件，不满足时优势会大幅缩水：
+
+**GBuffer 必须装得进 Tile Memory**。片上内存通常只有几十到上百 KB，按每像素字节数折算，GBuffer 总位宽超标时驱动会退回普通多 Pass 路径——代码照常运行，收益悄然消失。这正是前面各种压缩手段的意义所在。
+
+**中间不能插入需要完整画面的操作**。屏幕空间反射、屏幕空间阴影、任何需要采样邻域或整屏的效果都会打断 Subpass 链。真实管线中这类需求很常见，能够合并的往往只是链条的一段。
+
+**驱动实现质量参差**。同样的声明在不同厂商、不同驱动版本上未必都能合并。是否真正生效必须用帧捕获或厂商工具确认，不能只看代码写法。
+
+**与 MSAA 的交互复杂**。多采样 Attachment 占用的 Tile Memory 成倍增加，更容易超标；Resolve 时机也会影响能否合并。
+
+因此"用了 Subpass 所以移动端更快"是一个需要验证的假设，而非结论。收益成立时非常可观，但前置条件不少。
+
+### 从 Subpass 到 Dynamic Rendering
+
+Vulkan 的 Render Pass 与 Subpass 对象需要提前声明完整的 Attachment 结构与依赖关系，样板代码多、与引擎的动态管线组织方式不契合，实践中被广泛认为难用。
+
+后续版本引入的 Dynamic Rendering 取消了预先声明的 Render Pass 对象，改为在录制命令时直接指定 Attachment。它大幅简化了 API 使用，但最初并不具备 Subpass 的核心能力——读取同一位置的前序输出。
+
+随后补充的 Local Read 一类扩展把这个能力带回了 Dynamic Rendering 路径，使得既能享受简化的 API，又能保留 Tile 内数据复用。
+
+对使用者的意义是：**"Subpass 被取代"这个说法需要分开看**。被取代的是笨重的 Render Pass 对象声明方式；而"同一 Render Pass 内多阶段共享 Tile Memory"这个底层能力并未消失，只是换了表达形式。判断某个 API 路径是否可用，应当确认目标版本与驱动对相应扩展的支持，而不是看名词的新旧。
 ## 特殊 Pass：贴花
 
 贴花是 GBuffer 阶段的一个特例。它不应改变深度，因此不输出深度；而它需要与已有 GBuffer 内容混合，而非覆盖。
@@ -194,6 +241,7 @@ half4 DecalBlendManually(half4 dst, half4 src)
 - [[02_GPU与光栅化管线/光栅化、插值与深度模板]]
 - [[04_光照模型与PBR/次表面散射与皮肤渲染]]
 - [[14_性能分析与优化/渲染优化验证与移动端实践]]
+- [[13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph]]
 
 ## 参考资料
 
