@@ -146,6 +146,7 @@ float3 result = (diffuse + specular) * radiance * saturate(dot(N, L));
 ## 相关主题
 
 - [[04_光照模型与PBR/经典光照、BRDF与微表面模型]]
+- [[04_光照模型与PBR/次表面散射与皮肤渲染]]
 - [[06_纹理技术/纹理采样、过滤、Mipmap与压缩]]
 - [[07_颜色与后处理/颜色空间、Alpha、HDR与曝光]]
 - [[15_资产与工具管线/资产导入、验证与发布]]
