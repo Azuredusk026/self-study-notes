@@ -204,6 +204,149 @@ Wave Intrinsic 可以直接做 Lane 间求和、投票、广播和前缀操作�
 
 Compute Shader 统计可见对象并写 Indirect Draw 参数，让后续绘制不回读 CPU。
 
+## 归约的标准范式
+
+归约（多个输入求出一个值）与逐像素处理（一对一）是两类完全不同的问题。GPU 上的标准解法是"组内树形折半 + 多次 Dispatch 收尾"：
+
+```hlsl
+groupshared float s_Min[64];
+groupshared float s_Max[64];
+
+// 阶段一：每线程读一个元素写入共享内存
+s_Min[idx] = value;  s_Max[idx] = value;
+GroupMemoryBarrierWithGroupSync();
+
+// 阶段二：树形折半，log2(64) = 6 轮
+for (int offset = 32; offset > 0; offset /= 2)
+{
+    if (idx < offset)
+    {
+        s_Min[idx] = min(s_Min[idx], s_Min[idx + offset]);
+        s_Max[idx] = max(s_Max[idx], s_Max[idx + offset]);
+    }
+    GroupMemoryBarrierWithGroupSync();   // 每轮之后都必须同步
+}
+
+if (idx == 0) _TileResults[groupIndex] = float2(s_Min[0], s_Max[0]);
+```
+
+三个容易出错的地方：
+ 
+- **每轮都要同步**。少一个 Barrier 就是竞态，表现为结果随机波动且难以复现；
+- **Barrier 只在组内有效**。跨组无法同步，因此单次 Dispatch 只能把数据归约到"每组一个值"；
+- **收尾靠多次 Dispatch**。第一次把每个 Tile 归约成一个值，之后反复对上一轮结果归约，直到剩下一个。CPU 侧循环 Dispatch 直到计数为 1。
+ 
+这个范式是许多算法的基础，下面的层级深度金字塔就是它的变体。
+
+## 一次 Dispatch 生成多级结果
+
+构建深度金字塔（每级取若干子像素的最远深度）的朴素做法是每级一次 Dispatch，十级就是十次。
+
+利用共享内存可以在一次 Dispatch 内完成多级。思路是每轮让活跃线程数降到四分之一，用位掩码筛选哪些线程继续工作：
+
+```hlsl
+gs_Depth[localIndex] = mipDepth;
+GroupMemoryBarrierWithGroupSync();
+
+// 0x9 = 二进制 001001，筛出 x、y 均为偶数的线程
+if ((localIndex & 0x9) == 0)
+{
+    // 合并右、下、右下三个邻居
+    mipDepth = MaxDepth(float4(mipDepth,
+                               gs_Depth[localIndex + 0x01],
+                               gs_Depth[localIndex + 0x08],
+                               gs_Depth[localIndex + 0x09]));
+    _OutMip1[dispatchId.xy >> 1] = mipDepth;
+    gs_Depth[localIndex] = mipDepth;
+}
+// 下一轮用 0x1B，再下一轮判断 localIndex == 0
+```
+
+8×8 的组每轮活跃线程 64 → 16 → 4 → 1，一次 Dispatch 产出四级。十级金字塔因此只需三次 Dispatch。
+
+两个实现细节：
+
+**反向 Z 的方向**。金字塔要保存"最远"深度，但反向 Z 下最远对应数值最小，比较函数必须跟着翻转。这类符号错误不会报错，表现为遮挡剔除把该显示的物体剔掉。
+
+**未使用的 UAV 槽位**。着色器声明了固定数量的输出资源，某些平台上不绑定会直接报错。不用的槽位需要绑定占位资源，靠标志位屏蔽实际写入。
+
+## 位掩码表达集合
+
+当集合元素数量不超过 32 时，一个 `uint` 就能表达任意子集，交集是一条与指令，遍历用 `firstbitlow` 逐位取出。
+
+这在光照剔除中很典型：把屏幕切成 Tile、视锥深度切成 Bin，分别预计算各自影响的灯光集合，着色时两个掩码求交即可：
+
+```hlsl
+uint tileLightMask = 0u;
+for (uint j = 0; j < lightCount; ++j)
+{
+    if (RaySphereOrConeIntersection(tileFrustum, lights[j]))
+        tileLightMask |= (1u << j);
+}
+_XYLightMaskMap[globalId.xy] = uint4(tileLightMask, 0, 0, 0);
+```
+
+一个 Tile 的灯光列表被压成四字节。超过 32 盏灯时用多个 `uint` 扩展，求交仍是几条指令。
+
+这类 Kernel 常有共享计算的机会：$4\times4$ 个 Tile 需要 $5\times5$ 个角点，多出的角点可以由空闲线程顺带算出并存入共享内存，避免相邻 Tile 重复计算同一角点。
+
+## 移动端的两条硬约束
+
+这两条认知在移动 GPU 上的影响远大于桌面端。
+
+### 寄存器是静态分配的
+
+编译器按整个 Kernel 的最大寄存器需求分配，**写了但运行时没走到的分支照样占用寄存器**。占用过多会 Spill 到显存，性能出现断崖。
+
+因此可选功能必须用 `#ifdef` 在编译期彻底切掉，不能依赖运行时分支。即使条件在整个 Dispatch 内一致、即使分支从不进入，只要代码存在，寄存器就被占着。
+
+对应的做法是把功能开关做成 Shader Keyword，由 CPU 侧按质量档位设置。收益是双份的：既省下寄存器，也省下该功能的 UAV 声明、常量读取与写入带宽。
+
+### 分支本身有代价
+
+老的移动 GPU 上，跳转指令即使在条件一致时也会造成流水线停顿。对于两侧都很轻量的分支，两边都算再选择反而更快——多出的几条按位或与选择指令，代价低于一次跳转。
+
+这正是 `UNITY_FLATTEN` 一类提示的用途。判断依据是两侧工作量：轻量分支倾向压平，重量分支仍应保留跳转以跳过昂贵计算。
+
+## 异步回读与延迟数据
+
+结果需要回到 CPU 时（例如 CPU 侧执行剔除），同步回读会让 CPU 硬等 GPU，形成流水线停顿。异步回读避免了等待，但结果要几帧之后才能取到。
+
+工程做法是维护一个环形队列：本帧使用最新已完成的回读结果，同时提交本帧的新请求。队列长度取决于可容忍的延迟。
+
+用旧数据必然不准，因此需要有效性判断。以遮挡剔除为例：
+
+```csharp
+var isTooFarAway   = Vector3.Distance(currentCameraPos, recordCameraPos) >= 20.0f;
+var isDifferentDir = Vector3.Dot(currentCameraForward, recordCameraForward) <= 0.0f;
+var isStale        = Mathf.Abs(Time.frameCount - recordFrameIndex) > k_MaxInflight;
+
+if (isTooFarAway || isDifferentDir || isStale)
+    SkipCullingThisFrame();   // 宁可多画，不能画漏
+```
+
+失效策略的方向必须是保守的：剔除失效时宁可多提交绘制，也不能漏画——多画只是掉帧，漏画是可见的画面错误。
+
+## 一份源码编译多个 Kernel
+
+同一套逻辑常需要多个变体：首级与后续级采样来源不同、输出到 Buffer 还是 Texture、是否启用某项功能。用宏定义在编译期生成多个 Kernel，比运行时分支更合适（原因见前述寄存器约束）。
+
+输出目标保留两条路径有实际意义：不同移动 GPU 上 Buffer 与 Texture 的回读性能差异很大，保留开关便于按机型选择。
+
+## 运行时与编辑器工具的差异
+
+同样是 Compute Shader，两种场景的工程要求差别很大：
+
+| | 运行时管线 | 编辑器工具 |
+|---|---|---|
+| 调度 | Render Graph Pass 内记录命令 | 直接调用 Dispatch |
+| 资源 | 由 Render Graph 托管生命周期 | 手动创建并显式释放 |
+| 取结果 | 异步回读，多帧队列 | 同步阻塞，卡一下无妨 |
+| 优化重点 | 寄存器、带宽、Keyword 裁剪 | 只要比 CPU 版快即可 |
+
+编辑器工具中手动创建的 Buffer 必须显式释放，遗漏会造成显存泄漏，且在编辑器长时间运行下不断累积。
+
+编辑器工具还有一个验证优势：可以同时保留一份逻辑相同的 CPU 实现，直接比对两者结果。这是验证 Compute 逻辑正确性最可靠的方式，值得在开发期保留。
 ## 调试与验证
 
 - 检查 Dispatch 尺寸和边界条件。
@@ -222,6 +365,7 @@ Compute Shader 统计可见对象并写 Indirect Draw 参数，让后续绘制�
 - [[10_VFX与模拟/粒子系统与GPU模拟]]
 - [[12_光追与现代渲染/GPU-Driven管线与Nanite]]
 - [[14_性能分析与优化/帧时间、瓶颈与GPU成本]]
+- [[10_VFX与模拟/大气散射、天空与体积云]]
 
 ## 参考资料
 

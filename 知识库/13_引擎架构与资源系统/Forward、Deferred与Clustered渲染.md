@@ -95,6 +95,47 @@ float3 ReconstructPositionVS(float2 uv, float deviceDepth)
 
 Depth/Stencil、Front/Back Face 和相机位于 Volume 内外时的状态需要正确设置，否则会漏算或重复计算。
 
+#### 用模板精确圈定光体积
+
+直接绘制光体积几何体有个问题：如何只对"真正位于光照范围内"的像素着色。相机在体积内外、几何体正反面都会影响判断，单靠深度测试容易漏算或重复计算。
+
+模板缓冲提供了一个稳健的两步方案：
+
+**第一步，标记**。绘制光体积几何体，关闭颜色输出，只在深度测试失败处翻转模板的标记位：
+
+```text
+ColorMask 0
+compare = NotEqual, readMask = 对象类别掩码
+zFail   = IncrementWrap, writeMask = 标记位
+```
+
+深度测试失败意味着该处已有更近的几何——也就是说，场景表面位于光体积的这一部分之内。翻转操作把这些像素标记出来。读掩码同时限定只处理需要光照的对象类别，天空等被排除。
+
+**第二步，着色**。只对刚标记的像素执行光照，着色完把标记清零：
+
+```text
+compare = Equal, reference = 标记位
+pass    = Zero
+```
+
+清零让同一个标记位可以被下一盏灯复用。这很关键——模板位宽紧张，几十盏灯不可能各占一位。
+
+#### 聚光灯几何体的顶点变形
+
+点光用球体近似，聚光灯的圆锥则有一个实际问题：每盏灯的张角与长度不同，为每种参数准备一个网格不现实。
+
+做法是在顶点着色器中把统一的半球网格现场变形为所需的锥体：先按参数缩放偏移，归一化后乘以长度，再做一次轻微外扩以保证多面体网格能完全包住解析的圆锥形状：
+
+```hlsl
+positionOS = spotLightBias.xyz + lightSpotScale.xyz * positionOS;
+positionOS = normalize(positionOS) * lightSpotScale.w;
+// 轻微膨胀，确保离散网格包住解析锥体
+positionOS = (positionOS - float3(0, 0, guard.w)) * guard.xyz + float3(0, 0, guard.w);
+```
+
+外扩不可省略：网格是有限面数的多面体，内接于理想锥体时边缘会漏掉一部分本应受光的像素。
+
+还有一个容易出错的细节——**三维光体积的屏幕 UV 必须在片元着色器中从屏幕坐标现算**，不能在顶点着色器算好再插值。光体积是三维几何，插值会经过透视校正，得到的 UV 与实际屏幕位置不符。全屏四边形没有这个问题，因为它本就贴在屏幕上。
 ### Tiled Deferred
 
 先把屏幕分成 Tile，例如 16x16。Compute Shader 计算每个 Tile 与哪些灯相交，再让像素只遍历该 Tile 的灯列表。
@@ -115,6 +156,22 @@ Forward+ 保留 Forward 材质阶段，但先用 Tiled/Clustered Culling 建立�
 ## Clustered Rendering
 
 二维 Tile 无法区分同一屏幕区域内近处和远处的灯。Clustered Rendering 再沿深度划分，把视锥变成三维 Cluster。
+
+### 二维 Tile 与 Z Bin 分离
+
+Clustered 的一种实现方式是把 XY 与 Z 两个维度**分开预计算**，而非直接构建三维 Cluster 列表。
+
+屏幕切成若干 Tile，深度范围切成若干 Bin，分别计算各自影响的灯光集合并存为位掩码。着色时取当前像素所在 Tile 的掩码与所在 Bin 的掩码求交：
+
+$$
+\text{lights} = \text{mask}_{XY} \;\&\; \text{mask}_{Z}
+$$
+
+相比直接存三维 Cluster 列表，这种分离的存储量从 $N_x \times N_y \times N_z$ 降到 $N_x \times N_y + N_z$。代价是求交结果偏保守——某盏灯可能同时命中某个 Tile 和某个 Bin，实际却不在两者的交叉区域内。
+
+这个保守性在多数场景下可以接受，因为多算几盏灯的成本远低于存储与构建完整三维列表。深度跨度极大或灯光分布极不均匀时需要实测确认。
+
+两个剔除 Kernel 的工作方式不同：XY 方向对 Tile 视锥的角射线做求交测试，Z 方向用前后两个平面做包含测试。前者可以让相邻 Tile 共享角点的计算结果。
 
 优势：
 
@@ -185,6 +242,7 @@ Forward+ 保留 Forward 材质阶段，但先用 Tiled/Clustered Culling 建立�
 
 - [[02_GPU与光栅化管线/一帧如何到达屏幕]]
 - [[05_光照阴影与GI/光源与直接光照]]
+- [[13_引擎架构与资源系统/GBuffer布局设计与通道压缩]]
 - [[13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph]]
 - [[14_性能分析与优化/帧时间、瓶颈与GPU成本]]
 
