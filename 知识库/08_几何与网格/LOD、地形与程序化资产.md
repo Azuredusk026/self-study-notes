@@ -230,6 +230,8 @@ int SelectLod(float screenFraction, int currentLod,
 
 ## 参考资料
 
+- Paul Merrell, *Model Synthesis* and SideFX WFC dungeon generator tutorial.
+
 - Unity Manual, *LOD Group* and *Terrain Data*.
 - Houdini Documentation, *HeightField*, *PDG* and *Houdini Engine for Unity*.
 - Lindstrom and Turk, *Fast and Memory Efficient Polygonal Simplification*.

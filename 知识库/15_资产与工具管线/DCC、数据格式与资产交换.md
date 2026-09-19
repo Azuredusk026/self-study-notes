@@ -256,6 +256,8 @@ DCC Scene、Plugin 与交换格式都存在版本。新版本保存的源文件�
 
 ## 参考资料
 
+- SideFX, *Houdini VEX language reference* and *Geometry attributes* documentation.
+
 - Autodesk, *FBX SDK Documentation*.
 - Khronos Group, *glTF 2.0 Specification*.
 - Alliance for OpenUSD, *OpenUSD Documentation*.
