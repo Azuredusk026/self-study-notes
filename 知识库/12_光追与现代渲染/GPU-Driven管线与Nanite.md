@@ -235,6 +235,7 @@ void CullInstances(uint id : SV_DispatchThreadID)
 
 ## 相关主题
 
+- [[02_GPU与光栅化管线/几何着色器、曲面细分与流输出]]
 - [[08_几何与网格/网格数据、缓存与几何处理]]
 - [[08_几何与网格/LOD、地形与程序化资产]]
 - [[13_引擎架构与资源系统/Draw Call、Batching与GPU Instancing]]
