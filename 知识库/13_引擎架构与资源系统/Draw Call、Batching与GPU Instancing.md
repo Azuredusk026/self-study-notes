@@ -79,7 +79,7 @@ SRP Batcher > GPU Instancing > Dynamic Batching
 
 这是一个容易踩的坑：开发者为大量重复物体写好 Instancing 支持，却发现 Frame Debugger 显示它们走的是 SRP Batcher，Draw Call 数毫无变化。
 
-默认策略仍是开启 SRP Batcher——URP 的内置 Shader 全部兼容，对绝大多数场景是正向优化。只有在确认某批对象满足"同网格同材质且数量巨大"时，才值得单独让它走 Instancing。
+默认策略仍是开启 SRP Batcher——URP 的内置 Shader 全部兼容，对绝大多数场景是正向优化。只有在确认某批对象满足“同网格同材质且数量巨大”时，才值得单独让它走 Instancing。
 
 ## GPU Instancing
 
@@ -160,7 +160,7 @@ GPU Culling 后把可见实例数量和参数写入 Indirect Argument Buffer，�
 - 排序或透明顺序不能合并；
 - 负缩放、特殊渲染层或 Renderer Feature 分开绘制。
 
-还要留意"合批成功但不是期望的那一种"：Frame Debugger 会标明每个批次采用的路径，看到 SRP Batcher 而非 Instancing 时，通常是优先级而非兼容性问题。
+还要留意“合批成功但不是期望的那一种”：Frame Debugger 会标明每个批次采用的路径，看到 SRP Batcher 而非 Instancing 时，通常是优先级而非兼容性问题。
 
 ## 验证方法
 

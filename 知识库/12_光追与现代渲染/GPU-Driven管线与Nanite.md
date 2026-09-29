@@ -1,6 +1,6 @@
 # GPU-Driven 管线与 Nanite
 
-GPU-Driven Rendering 把可见性、LOD、实例列表和绘制参数尽量留在 GPU 内生成。目标不是“CPU 完全不参与”，而是避免 CPU 每帧逐对象提交和读回大规模可见列表。
+GPU-Driven Rendering 把可见性、LOD、实例列表和绘制参数尽量留在 GPU 内生成。目的是避免 CPU 每帧逐对象提交和读回大规模可见列表。CPU 仍然参与调度，只是不再逐对象跑腿。
 
 ## CPU-Driven 的扩展瓶颈
 
@@ -40,7 +40,7 @@ Unreal 的 GPUScene 是这类结构的具体实现。它把场景中所有图元
 3. 收集完成后触发回调，更新 Compute Shader 所需的 Buffer；
 4. 执行剔除 Pass，输出可见实例列表与 Indirect 绘制参数。
 
-"先收集后剔除"正是"延迟"一词的含义。这样做的好处是把分散在各 Pass 的剔除工作合并成一次 Dispatch，减少 GPU 的启动开销与同步点。
+“先收集后剔除”正是“延迟”一词的含义。这样做的好处是把分散在各 Pass 的剔除工作合并成一次 Dispatch，减少 GPU 的启动开销与同步点。
 
 需要区分两个同名概念：这里的实例剔除作用于普通图元的实例列表，与 Nanite 内部的 Cluster 级剔除是不同层级的机制，两者可以并存。
 
