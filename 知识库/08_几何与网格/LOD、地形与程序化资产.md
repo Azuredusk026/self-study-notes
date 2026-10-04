@@ -62,7 +62,7 @@ Heightfield 用二维标量网格表示高度，天然适合连续地表、分�
 
 ## GPU 细分地形
 
-GPU Tessellation 可以让每个地形 Patch 根据屏幕贡献生成不同密度的三角形。Hull/Tessellation Control 阶段计算边和内部细分因子，固定 Tessellator 生成参数坐标，Domain/Tessellation Evaluation 阶段再采样高度图并计算最终位置。
+GPU Tessellation 可以让每个地形 Patch 根据屏幕贡献生成不同密度的三角形。细分控制阶段确定边和内部因子。固定细分器生成参数坐标，求值阶段据此采样高度图并计算顶点位置。Direct3D 对应 Hull/Domain，OpenGL 对应 Tessellation Control/Evaluation。
 
 细分因子适合由边的屏幕像素长度或位移误差决定。只按 Patch 中心到相机的距离会让同一共享边的两侧得到不同因子，产生裂缝。稳定方案包括：
 

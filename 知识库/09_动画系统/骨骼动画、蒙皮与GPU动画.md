@@ -122,7 +122,7 @@ float4 SkinPosition(
 
 CPU Skinning 在 CPU 计算变形顶点，再上传动态 Vertex Buffer。优点是 CPU 侧容易访问最终几何，也能兼容部分碰撞或旧管线；缺点是计算和上传带宽随顶点数增长。
 
-GPU Skinning 把 Joint Palette 放入 Constant Buffer、Structured Buffer 或 Texture，由 Vertex/Compute Shader 计算。它减少 CPU 顶点工作，但 GPU 每个相关 Pass 都可能重复蒙皮。
+GPU 蒙皮将骨骼矩阵表放进常量缓冲、结构化缓冲或纹理，再由顶点或计算着色器读取。具体布局取决于骨骼数量、复用通道与平台限制。它减少 CPU 顶点工作，但 GPU 每个相关 Pass 都可能重复蒙皮。
 
 Compute Skinning 可以先把结果写入 Buffer，供 Depth、Shadow、GBuffer 等 Pass 复用。代价是额外显存、写带宽、Barrier 和调度。是否更快取决于角色数量、Pass 数和平台。
 

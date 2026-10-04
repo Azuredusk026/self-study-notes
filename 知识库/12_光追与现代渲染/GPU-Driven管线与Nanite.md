@@ -1,6 +1,6 @@
 # GPU-Driven 管线与 Nanite
 
-GPU-Driven Rendering 把可见性、LOD、实例列表和绘制参数尽量留在 GPU 内生成。目的是避免 CPU 每帧逐对象提交和读回大规模可见列表。CPU 仍然参与调度，只是不再逐对象跑腿。
+GPU-Driven Rendering 把可见性、LOD、实例列表和绘制参数尽量留在 GPU 内生成。目的是避免 CPU 每帧逐对象提交和读回大规模可见列表。CPU 仍负责场景更新、资源与批次调度，GPU 负责生成可见列表和绘制参数。
 
 ## 专题阅读
 

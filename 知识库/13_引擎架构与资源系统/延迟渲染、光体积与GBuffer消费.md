@@ -139,7 +139,7 @@ positionOS = (positionOS - float3(0, 0, guard.w)) * guard.xyz + float3(0, 0, gua
 
 解法是把 Geometry 与 Lighting 合并进同一个 Render Pass，让 GBuffer 始终留在 Tile Memory 中不落主存。Vulkan 的 Subpass 与 Metal 的 Programmable Blending 提供了这个能力，引擎侧对应的是各类“移动端延迟渲染”路径。
 
-约束随之而来：Tile Memory 容量有限，GBuffer 通道数与格式必须严格压缩；两个阶段必须在同一 Pass 内，中间不能插入需要完整画面的操作；只能读取当前像素位置的 GBuffer，无法采样邻域。
+片上路径受附件容量和通道合并约束。GBuffer 写入与光照读取需要处于兼容的 API 执行范围，采样完整画面可能使数据写回主存。传统 input attachment 读取当前片元位置，不提供普通纹理的任意邻域采样。
 
 这解释了为什么移动端延迟路径的 GBuffer 布局通常比桌面端精简得多，也解释了为什么某些屏幕空间效果在移动端延迟路径下不可用。
 
@@ -151,7 +151,7 @@ positionOS = (positionOS - float3(0, 0, guard.w)) * guard.xyz + float3(0, 0, gua
 
 这是延迟路径与前向路径在扩展性上的本质差异：前向路径下每个材质自带完整光照代码，加一种着色方式只需写一个新 Shader；延迟路径下必须改动引擎的光照阶段。
 
-以 Unity URP 为例，Lit Shader 的 GBuffer Pass 通过 `LightMode` 标签标识，片元阶段先求出标准的 BRDF 数据与全局光照，再统一打包写入四个目标——其中一个同时承担相机颜色附件的职责。想插入自定义着色，要么在写入前修改这批数据，要么改动管线的解包与光照代码。
+Unity URP 通过 `LightMode` 选择 GBuffer 材质通道。片元阶段编码材质属性及相应照明数据，再写入配置要求的附件。准确目标数量、格式与相机颜色关系需核对目标 URP 包、渲染层和阴影设置。想插入自定义着色，要么在写入前修改这批数据，要么改动管线的解包与光照代码。
 
 ## Deferred 并不一定更快
 

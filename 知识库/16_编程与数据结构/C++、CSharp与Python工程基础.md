@@ -136,7 +136,7 @@ RAII 让资源生命周期绑定对象作用域。Constructor 获取资源，Des
 
 ## Copy、Move 与异常安全
 
-资源类型应优先遵守 Rule of Zero：让标准容器和智能指针管理资源，类型本身不手写析构、复制和移动。必须直接持有资源时，需要一起考虑 Destructor、Copy Constructor、Copy Assignment、Move Constructor 和 Move Assignment，这就是 Rule of Five。
+资源类型应优先遵守 Rule of Zero：让标准容器和智能指针管理资源，类型本身不手写析构、复制和移动。直接持有资源的 C++ 类型，需要一起设计析构、复制构造、复制赋值、移动构造和移动赋值。这是五法则（Rule of Five）。优先用标准资源包装类型承担所有权，减少手写这些操作的需要。
 
 Move 把资源所有权转移到新对象，源对象仍需保持可析构、可赋值的有效状态。`std::move` 只是把表达式转换为右值引用，不会自动搬运；是否移动取决于目标类型是否实现移动操作。
 

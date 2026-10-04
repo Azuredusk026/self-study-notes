@@ -26,7 +26,10 @@ Feature 的 `Create` 可能因编辑器重建多次调用，需处理已有资�
 public override void RecordRenderGraph(RenderGraph graph, ContextContainer frameData)
 {
     UniversalResourceData resources = frameData.Get<UniversalResourceData>();
-    if (resources.isActiveTargetBackBuffer) return;
+    if (resources.isActiveTargetBackBuffer)
+    {
+        return;
+    }
     TextureHandle source = resources.activeColorTexture;
     TextureDesc descriptor = graph.GetTextureDesc(source);
     descriptor.name = "CustomColor";
@@ -35,21 +38,21 @@ public override void RecordRenderGraph(RenderGraph graph, ContextContainer frame
     using (IRasterRenderGraphBuilder builder =
         graph.AddRasterRenderPass<PassData>("CustomColor", out PassData data))
     {
-        data.Source = source;
-        data.Material = m_Material;
+        data.source = source;
+        data.material = m_material;
         builder.UseTexture(source, AccessFlags.Read);
         builder.SetRenderAttachment(destination, 0, AccessFlags.Write);
         builder.SetRenderFunc((PassData passData, RasterGraphContext context) =>
         {
-            Blitter.BlitTexture(context.cmd, passData.Source,
-                new Vector4(1, 1, 0, 0), passData.Material, 0);
+            Blitter.BlitTexture(context.cmd, passData.source,
+                new Vector4(1, 1, 0, 0), passData.material, 0);
         });
     }
     resources.cameraColor = destination;
 }
 ```
 
-`PassData` 包含 `TextureHandle Source` 与 `Material Material`。方法省略命名空间，主要来自 Rendering、RenderGraphModule 与 Universal。材质需兼容 URP Blitter 和 XR 采样路径。完整覆盖才允许不清除目标，片元丢弃或局部 viewport 时应处理未写区域。
+`PassData` 包含 `TextureHandle source` 与 `Material material`，`m_material` 是该通道已创建并持有的材质字段。方法省略命名空间，主要来自 Rendering、RenderGraphModule 与 Universal。材质需兼容 URP Blitter 和 XR 采样路径。完整覆盖才允许不清除目标，片元丢弃或局部 viewport 时应处理未写区域。
 
 颜色格式与样本数继承输入，MSAA 输入是否可以直接采样需按资源状态和算法确认。回调中的缩放向量示例适用于完整区域；RTHandle 缩放、XR 和动态尺寸用官方 Blitter 约定核对。
 

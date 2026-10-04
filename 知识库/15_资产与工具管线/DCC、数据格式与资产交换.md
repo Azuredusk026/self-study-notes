@@ -16,7 +16,7 @@ FBX 适合作为交换边界，不适合直接作为游戏运行时格式。运�
 
 ## DCC 的职责
 
-Maya 常用于角色建模、Rig、动画和引用式制作；Blender 覆盖通用建模、动画与开源脚本流程；Houdini 擅长属性驱动、程序化几何、地形、VFX 和批处理；Substance 工具负责材质图与纹理烘焙。
+制作流程常由多种工具协作。Maya 和 Blender 可承担建模、绑定与动画；Houdini 适合程序化几何和批处理；Substance 工具常用于材质与烘焙。工具分工应按项目资产类型和团队流程确定。
 
 管线不应要求所有软件采用同一内部结构。应统一的是交付契约：
 
@@ -134,7 +134,7 @@ USD 的强项是场景组合与数据治理，不保证所有 DCC/引擎支持�
 
 ## 材质与贴图
 
-DCC Shader Graph 很少能一比一转换成引擎 Shader。更可靠的交换方式是传递语义参数和纹理：Base Color、Normal、Metallic、Roughness、AO、Emissive、Opacity 等，再由引擎创建受控 Material Template/Instance。
+DCC Shader Graph 很少能一比一转换成引擎 Shader。交换时传递有明确语义的参数和纹理，如基础色、法线、金属度、粗糙度、遮挡、自发光与透明度。引擎再按统一模板创建材质实例，避免把制作工具内部节点直接当成运行时接口。
 
 同时记录：
 
@@ -231,7 +231,7 @@ Metadata 名称与类型应有 Schema。随意塞字符串会把解析和兼容�
 
 跨工具传递时先决定是引用还是复制。Reference 保留来源关系、文件小，但下游必须能解析路径、版本和权限；Copy/Snapshot 自包含，适合交付，却容易与原始资产分叉。
 
-不应默认承诺无损 Round-trip。FBX 从 Maya 导入 Blender、修改后再回 Maya，节点、Constraint、材质和切线可能已经改变。更稳妥的流程指定每类数据的 Authoritative Source 和单向发布方向：例如 Rig 由 Maya 权威维护，材质贴图由 Substance 发布，引擎只保存 Import Setting 和运行时实例。
+不应默认承诺无损 Round-trip。FBX 从 Maya 导入 Blender、修改后再回 Maya，节点、Constraint、材质和切线可能已经改变。每类数据应指定维护源和发布方向。例如绑定由 DCC 工程维护，贴图由材质工具发布，引擎保存导入设置与运行时实例。修改应返回对应维护源，再生成派生产物。
 
 确实需要双向编辑时，应使用稳定 ID 和明确冲突规则，而不是按对象名称猜映射。每次回写生成变更预览，区分新增、修改、删除和无法表达的数据。
 

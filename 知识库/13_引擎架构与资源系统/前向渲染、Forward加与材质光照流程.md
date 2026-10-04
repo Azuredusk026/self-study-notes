@@ -34,6 +34,26 @@ Forward+ 保留 Forward 材质阶段，但先用 Tiled/Clustered Culling 建立�
 
 代价是需要构建灯列表，且不透明和透明阶段可能使用不同列表或深度信息。
 
+## 局部灯列表着色
+
+以下为 HLSL 函数轮廓。输入片元位置、法线和对应区域索引，区域表记录灯索引缓冲的起点和数量。真实 BRDF、阴影和距离衰减由 `EvaluateLight` 提供。
+
+```hlsl
+float3 ShadeLocalLights(float3 positionWS, float3 normalWS, uint region)
+{
+    uint2 range = LightRanges[region];
+    float3 lighting = 0.0;
+    for (uint localIndex = 0; localIndex < range.y; ++localIndex)
+    {
+        uint lightIndex = LightIndices[range.x + localIndex];
+        lighting += EvaluateLight(Lights[lightIndex], positionWS, normalWS);
+    }
+    return lighting;
+}
+```
+
+读取前要保证构建列表的计算写入对图形着色可见。区域索引、数组容量与灯数据寿命必须匹配。用遍历全部光源的参考着色验证局部列表，结果差异提示漏灯、范围或阴影数据错误。
+
 ## 验证方法
 
 - 记录材质绘制与灯光循环，确认列表只影响候选灯。

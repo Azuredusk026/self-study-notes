@@ -14,7 +14,7 @@ IPv6 使用更大的地址空间，并通过邻居发现等机制处理本地寻
 
 ## DNS
 
-Domain Name System 把域名解析为地址和其他记录。客户端先查本机和系统缓存，再询问配置的 Recursive Resolver；Resolver 必要时沿 Root、TLD 和 Authoritative Name Server 查询，并按 TTL 缓存结果。
+Domain Name System 把域名解析为地址和其他记录。客户端先查询本机缓存，再请求配置的递归解析器。解析器在需要时逐级查询根、顶级域和权威服务器，并按 TTL 缓存响应。应用的解析路径还受操作系统和网络配置影响。
 
 常见记录：
 

@@ -56,11 +56,11 @@ Teleport、低帧率和角色瞬移必须重置或重新初始化模拟，否则
 
 遍历量很大，应当用作业系统或 Compute Shader 加速。有两个实现细节容易出错：碰撞体需要在同一帧之前建好，否则射线查询返回空结果；多层服装要按层级顺序处理，并防止服装触发自身或同链上其他网格的裁剪。
 
-它的优势是零运行时成本，代价是需要为每种服装组合预先生成，且身体形态可变（捏脸、体型滑条）时预生成组合数会爆炸。
+离线裁剪可避免运行时再次做遮挡裁剪，生成的网格仍有正常加载、蒙皮和绘制成本。服装与体型组合越多，预生成产物和维护成本越高，需要限定组合或采用受控的运行时方案。
 
 ### 建模与权重约束
 
-美术侧的措施成本最低：服装与身体之间保留足够间隙，服装的蒙皮权重尽量与对应身体部位一致。权重不一致是穿模的直接原因——同一块区域，身体按一组权重变形、服装按另一组变形，两者必然分离。
+美术侧的措施成本最低：服装与身体之间保留足够间隙，服装的蒙皮权重尽量与对应身体部位一致。身体与服装的权重差异会改变相对形变，可能增加穿透风险，但相同权重也不能保证极端动作不穿模。需要同时检查网格间隙、骨骼变换、矫正形状与碰撞。
 
 关节弯曲极限处是重灾区，肘部、膝盖、肩部需要单独检查。
 
@@ -81,6 +81,26 @@ Hair Cards 用少量带 Alpha 的面片表示发束。主要成本在 Overdraw�
 Strand/Groom 直接表示大量发丝，通常先模拟少量 Guide Hair，再插值 Follower。还需要分 Cluster 做剔除、LOD 和渲染。
 
 毛发模拟要处理长度、弯曲、碰撞和阻尼约束。近景可保留更多 Guide 与发丝，远景逐步降低密度，最终切到 Cards 或体积近似。几何 LOD、阴影 LOD 和材质 LOD 需要一起变化。
+
+## 模拟代理映射
+
+渲染顶点可以绑定到低模模拟三角形的重心坐标，再保留离面偏移。以下 HLSL 片段输入同一世界空间的三个模拟顶点、权重和长度单位的偏移，输出渲染位置。
+
+```hlsl
+float3 BindRenderVertex(float3 first, float3 second, float3 third,
+                        float3 weights, float offset)
+{
+    float3 surface = first * weights.x
+                   + second * weights.y
+                   + third * weights.z;
+    float3 areaNormal = cross(second - first, third - first);
+    float inverseLength = rsqrt(max(dot(areaNormal, areaNormal), 1e-12));
+    float3 normal = areaNormal * inverseLength;
+    return surface + normal * offset;
+}
+```
+
+退化三角形需要单独回退，重心权重与绑定三角形来自离线映射。该例只说明位置传递，完整表示还需法线、蒙皮变换、碰撞厚度和 LOD 切换映射。将同一运动输入传给多个渲染密度，检查形态一致性。
 
 ## 验证方法
 
