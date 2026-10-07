@@ -1,4 +1,4 @@
-# 烘焙光照、Probe 与实时 GI
+# 烘焙光照、Probe与实时GI
 
 全局光照（Global Illumination，GI）包含光在场景中的间接传播。实时项目不会只用一种方案，而是组合静态预计算、空间 Probe、屏幕空间、体素、距离场和光线追踪。
 
@@ -170,8 +170,8 @@ float3 irradiance = max(EvaluateSH9(sh, normalWS), 0.0);
 
 - [[01_数学与采样/概率采样、积分与球谐函数]]
 - [[04_光照模型与PBR/法线贴图、切线空间与IBL]]
-- [[12_光追与现代渲染/实时光追、采样与降噪]]
-- [[12_光追与现代渲染/GPU-Driven管线与Nanite]]
+- [[12_光线追踪/实时光追、采样与降噪]]
+- [[26_GPU驱动与虚拟几何/GPU-Driven Rendering]]
 
 ## 参考资料
 

@@ -3,7 +3,7 @@
   "applied": [
     {
       "previous_path": "知识库/11_NPR与风格化渲染/Billboard朝向、锚点与深度.md",
-      "current_path": "知识库/11_NPR与风格化渲染/Billboard.md",
+      "current_path": "知识库/08_几何与网格/Billboard.md",
       "previous_title": "Billboard朝向、锚点与深度",
       "current_title": "Billboard",
       "title_type": "概念型",
@@ -14,7 +14,7 @@
     },
     {
       "previous_path": "知识库/11_NPR与风格化渲染/植被风动与顶点变形.md",
-      "current_path": "知识库/11_NPR与风格化渲染/植被风动.md",
+      "current_path": "知识库/09_动画系统/植被风动.md",
       "previous_title": "植被风动与顶点变形",
       "current_title": "植被风动",
       "title_type": "方案型",
@@ -25,7 +25,7 @@
     },
     {
       "previous_path": "知识库/13_引擎架构与资源系统/GBuffer布局设计与通道压缩.md",
-      "current_path": "知识库/13_引擎架构与资源系统/GBuffer布局.md",
+      "current_path": "知识库/13_渲染架构/GBuffer布局.md",
       "previous_title": "GBuffer 布局设计与通道压缩",
       "current_title": "GBuffer布局",
       "title_type": "工程限定型",
@@ -58,7 +58,7 @@
     },
     {
       "previous_path": "知识库/13_引擎架构与资源系统/Unity Render Graph与自定义通道.md",
-      "current_path": "知识库/13_引擎架构与资源系统/URP Render Graph自定义Pass.md",
+      "current_path": "知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md",
       "previous_title": "Unity Render Graph 与自定义通道",
       "current_title": "URP Render Graph自定义Pass",
       "title_type": "工程限定型",
@@ -69,7 +69,7 @@
     },
     {
       "previous_path": "知识库/13_引擎架构与资源系统/Forward、Deferred与Clustered渲染.md",
-      "current_path": "知识库/13_引擎架构与资源系统/渲染路径与光源组织.md",
+      "current_path": "知识库/13_渲染架构/渲染路径与光源组织.md",
       "previous_title": "Forward、Deferred 与 Clustered 渲染",
       "current_title": "渲染路径与光源组织",
       "title_type": "导读型",
@@ -92,7 +92,7 @@
   ],
   "controls": [
     {
-      "path": "知识库/02_GPU与光栅化管线/抗锯齿、TAA与时域超采样.md",
+      "path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
       "proposal": "抗锯齿",
       "decision": "HELD",
       "title_coverage_review": "待用户采用前确认",
@@ -108,11 +108,11 @@
   ],
   "held_outside_pilot": [
     {
-      "path": "知识库/13_引擎架构与资源系统/命令记录、队列提交与在途帧.md",
+      "path": "知识库/13_渲染架构/Command Buffer与帧提交.md",
       "reason": "GPU命令提交与资源复用是否覆盖录制与在途帧重点仍需确认"
     },
     {
-      "path": "知识库/13_引擎架构与资源系统/资源状态、屏障与跨队列同步.md",
+      "path": "知识库/13_渲染架构/GPU同步与屏障.md",
       "reason": "GPU资源同步是否充分保留布局和跨队列范围仍需确认"
     }
   ]

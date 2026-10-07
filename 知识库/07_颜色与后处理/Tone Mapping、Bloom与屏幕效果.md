@@ -1,4 +1,4 @@
-# Tone Mapping、Bloom 与屏幕效果
+# Tone Mapping、Bloom与屏幕效果
 
 后处理读取已经渲染出的屏幕 Buffer，再生成最终画面。很多效果依赖 HDR 颜色、深度、法线和运动向量。执行顺序会直接改变结果。
 
@@ -200,8 +200,8 @@ Volumetric Fog 把视锥划成三维 Froxel，注入介质密度、灯光和阴�
 
 - [[07_颜色与后处理/颜色空间、Alpha、HDR与曝光]]
 - [[01_数学与采样/信号、频率与噪声]]
-- [[02_GPU与光栅化管线/抗锯齿、TAA与时域超采样]]
-- [[13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph]]
+- [[02_GPU与光栅化管线/抗锯齿与时域重建]]
+- [[13_渲染架构/Render Pass、Command Buffer与Render Graph]]
 
 ## 参考资料
 

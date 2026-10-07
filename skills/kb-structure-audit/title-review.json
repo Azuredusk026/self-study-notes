@@ -1,9 +1,9 @@
 {
   "date": "2026-10-07",
-  "scope": "30篇审查样本；本轮10案例采用试点，8项改名，2项保留/边界对照",
+  "scope": "113页全部完成标题处置：采用或明确延后",
   "records": [
     {
-      "path": "知识库/13_引擎架构与资源系统/Render Graph.md",
+      "path": "知识库/13_渲染架构/Render Graph.md",
       "primary_question": "如何把通道资源声明编译成执行、同步与分配计划",
       "primary_concept": "Render Graph",
       "article_boundary": "通用依赖编译模型，输入读写声明，输出执行与资源计划；引擎接口引用专篇",
@@ -52,18 +52,21 @@
       "review_batch": "首批样本，沿用已完成的全文审查",
       "original_title_type": "核心概念",
       "content_sha256": "c6fe37169f7fb2c66e2c8fa356daff0bb8d3966521a43d8614b8417172e6285b",
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
       "reviewed_content_sha256": "9d13e0d06f1e70f101f7885f0d922be29689ef2e8e66a0606a233242f42ae975",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "现有标题准确表达主概念，保留"
     },
     {
-      "path": "知识库/13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph.md",
+      "path": "知识库/13_渲染架构/Render Pass、Command Buffer与Render Graph.md",
       "primary_question": "如何区分算法任务、命令记录和图依赖，并找到深入入口",
       "primary_concept": "渲染命令组织",
       "article_boundary": "导读：跨抽象层说明任务、记录、提交与完成；已有机制专篇",
       "title_type": "导读型",
-      "current_title": "Render Pass、Command Buffer 与 Render Graph",
+      "current_title": "Render Pass、Command Buffer与Render Graph",
       "current_title_problems": [
         "三个术语罗列掩盖导读职责"
       ],
@@ -85,11 +88,11 @@
           "reason": "结合读者问题与图关系"
         }
       ],
-      "suggested_title": "渲染命令的组织方式",
+      "suggested_title": null,
       "title_review": "OVERVIEW",
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "建议待采用",
+      "adoption_status": "DEFERRED",
       "review_basis": "全文、围栏外标题、代码与相关主题已复读",
       "solution_families": [
         "阅读路径、颜色效果数据流、引擎入口与验证"
@@ -107,10 +110,13 @@
       "review_batch": "首批样本，沿用已完成的全文审查",
       "original_title_type": "导读",
       "content_sha256": "90b3e2d46e08c075a06975b779b2a477cff44f18132b0f9eaccca0ac2dd9a73a",
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "先确认导读职责和概念主归属，再采用关系型标题",
       "reviewed_content_sha256": "7556d00ab57da4ae468184667d0c5ca38a61845775d5904202efc163134023bc",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
     },
     {
       "path": "知识库/11_NPR与风格化渲染/描边.md",
@@ -138,7 +144,7 @@
       "title_review": "PASS",
       "rename_file": false,
       "update_links": false,
-      "adoption_status": "保留",
+      "adoption_status": "已采用",
       "review_basis": "全文、围栏外标题、代码与相关主题已复读",
       "solution_families": [
         "几何壳、显式边、手绘/SDF、屏幕信号"
@@ -156,13 +162,16 @@
       "review_batch": "首批样本，沿用已完成的全文审查",
       "original_title_type": "核心技术问题",
       "content_sha256": "e2469c007ea5c8ad0335bbf5b09a365fc8e2f7dd315d26c7dff42027fba07aa4",
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
       "reviewed_content_sha256": "89870fed439741222dc00d1a1c36cf0d1b8f77eb1d7f8a0ef07cb2ca758a432d",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "现有标题准确表达主概念，保留"
     },
     {
-      "path": "知识库/11_NPR与风格化渲染/Billboard.md",
+      "path": "知识库/08_几何与网格/Billboard.md",
       "primary_question": "如何让面片面向相机并保持锚点和场景深度关系",
       "primary_concept": "Billboard",
       "article_boundary": "朝向坐标架、脚底锚点、假视差和多视角Impostor；输入相机和资产，输出面片位置/采样",
@@ -193,7 +202,7 @@
       "title_review": "PASS",
       "rename_file": false,
       "update_links": false,
-      "adoption_status": "试点已采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、围栏外标题、代码与相关主题已复读",
       "solution_families": [
         "球面与轴约束、锚点、深度Impostor"
@@ -211,16 +220,19 @@
       "review_batch": "首批样本，沿用已完成的全文审查",
       "original_title_type": "核心概念",
       "content_sha256": "09b868c88462ca710752330fe98d0d52231b7ec81af8efa682860fedb3471875",
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
       "previous_title": "Billboard朝向、锚点与深度",
       "reviewed_title_decision": "REWRITE",
       "title_coverage_review": "朝向、锚点和深度是同一面片空间问题，正文Impostor作为表示扩展，名称覆盖主轴",
       "reviewed_content_sha256": "d1783ac18b5f8cef3d81fd34ad94cca8567bd4468d885aa434d019149c4e5961",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "现有标题准确表达主概念，保留"
     },
     {
-      "path": "知识库/11_NPR与风格化渲染/植被风动.md",
+      "path": "知识库/09_动画系统/植被风动.md",
       "primary_question": "如何用权重与相位驱动植被并保持跨通道运动一致",
       "primary_concept": "植被风动",
       "article_boundary": "以顶点位移实现枝叶风动；输入锚点、权重、相位与风参数，输出变形",
@@ -247,7 +259,7 @@
       "title_review": "PASS",
       "rename_file": false,
       "update_links": false,
-      "adoption_status": "试点已采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、围栏外标题、代码与相关主题已复读",
       "solution_families": [
         "主摆动、细抖动、阵风、跨Pass一致"
@@ -265,16 +277,19 @@
       "review_batch": "首批样本，沿用已完成的全文审查",
       "original_title_type": "技术方案",
       "content_sha256": "1b9e5b8fc95f4d4c614e2e535352be0cec7bacb8b898385608f7f5632687a703",
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
       "previous_title": "植被风动与顶点变形",
       "reviewed_title_decision": "REWRITE",
       "title_coverage_review": "顶点变形是风动实现路径，根部、相位和跨Pass一致性都服务风动",
       "reviewed_content_sha256": "2dc9fbb2e14fd770b26ca27b5e56c52b6a033e0cee5d46f2fb11db69ab3daf8f",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "现有标题准确表达主概念，保留"
     },
     {
-      "path": "知识库/13_引擎架构与资源系统/GBuffer布局.md",
+      "path": "知识库/13_渲染架构/GBuffer布局.md",
       "primary_question": "如何在字节和精度预算内存储光照需要的表面数据",
       "primary_concept": "GBuffer布局",
       "article_boundary": "布局设计、字段编码、互斥和阶段复用，附件局部读取是布局的平台条件",
@@ -305,7 +320,7 @@
       "title_review": "PASS",
       "rename_file": false,
       "update_links": false,
-      "adoption_status": "试点已采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、围栏外标题、代码与相关主题已复读",
       "solution_families": [
         "法线编码、位域、互斥属性、时间复用、附件条件"
@@ -323,21 +338,24 @@
       "review_batch": "首批样本，沿用已完成的全文审查",
       "original_title_type": "工程问题",
       "content_sha256": "8e8e085eb430ba5cfc6ce6e96ad1ce232ce1713bb944c053d2ab084a7c14547e",
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
       "previous_title": "GBuffer 布局设计与通道压缩",
       "reviewed_title_decision": "REWRITE",
       "title_coverage_review": "保留布局限定，编码/通道复用是布局预算方法，不缩成所有GBuffer概念",
       "reviewed_content_sha256": "130878949f4f1cc63d6cacb82d7b0bb82e0e0d7f06a620e1459f25862161d6bf",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "现有标题准确表达主概念，保留"
     },
     {
-      "path": "知识库/03_Shader编程/Shader编译、关键字与变体.md",
+      "path": "知识库/03_Shader编程/Shader Variant管理.md",
       "primary_question": "如何控制Shader编译组合并避免缺失变体和首次使用问题",
       "primary_concept": "Shader Variant管理",
       "article_boundary": "编译背景、组合来源、收集、剥离、预热与预算；个人贡献段属于待正文审查项",
       "title_type": "工程限定型",
-      "current_title": "Shader 编译、关键字与变体",
+      "current_title": "Shader Variant管理",
       "current_title_problems": [
         "编译、关键字和变体并列，未突出组合管理主轴"
       ],
@@ -360,10 +378,10 @@
         }
       ],
       "suggested_title": "Shader Variant管理",
-      "title_review": "REWRITE",
+      "title_review": "PASS",
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "建议待采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、围栏外标题、代码与相关主题已复读",
       "solution_families": [
         "动态分支与变体、Unity关键字、UE组合、剥离预热"
@@ -381,13 +399,16 @@
       "review_batch": "首批样本，沿用已完成的全文审查",
       "original_title_type": "工程问题",
       "content_sha256": "804d66a41ee01cc55b0b20f5ae53da6ddc31052c9a74fe173fffdb22edca581a",
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
       "reviewed_content_sha256": "3767304644498ff260c70b90dbf5f8ae2392aed8769d149baaa86c7beef5f5df",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "保留组合控制、编译与构建覆盖主轴"
     },
     {
-      "path": "知识库/02_GPU与光栅化管线/深度缓冲、反向深度与位置重建.md",
+      "path": "知识库/02_GPU与光栅化管线/深度缓冲与位置重建.md",
       "primary_question": "如何解释投影深度并正确测试或重建表面位置",
       "primary_concept": "深度缓冲",
       "article_boundary": "深度编码、精度、读取与重建；反向深度是编码选择，重建是数据消费",
@@ -422,7 +443,7 @@
         "GBuffer布局"
       ],
       "title_type": "概念型",
-      "current_title": "深度缓冲、反向深度与位置重建",
+      "current_title": "深度缓冲与位置重建",
       "current_title_problems": [
         "标题把缓冲、编码选择与使用方式并列，核心概念可直接定位"
       ],
@@ -444,15 +465,15 @@
           "reason": "限定精度，不能覆盖当前完整范围"
         }
       ],
-      "suggested_title": "深度缓冲",
-      "title_review": "REWRITE",
+      "suggested_title": "深度缓冲与位置重建",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "建议待采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "深度表示是共同主问题，三个名词是编码与消费环节，不需要按名词拆页。",
       "review_batch": "第二批跨领域样本",
@@ -474,13 +495,16 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
       "reviewed_content_sha256": "2041c54cc35126abbb122d45456ca1daa990c0550de5bc345ce83a51c316e6ce",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "保留重建消费方式，不把工程用途藏入概念名"
     },
     {
-      "path": "知识库/02_GPU与光栅化管线/提前深度测试、深度预通道与分层深度.md",
+      "path": "知识库/02_GPU与光栅化管线/基于深度的可见性优化.md",
       "primary_question": "如何利用深度减少被遮挡片元的工作",
       "primary_concept": "深度可见性优化",
       "article_boundary": "Early-Z、Depth Prepass和Hi-Z围绕同一深度优化链，应用与成本比较",
@@ -515,7 +539,7 @@
         "可见性剔除"
       ],
       "title_type": "方案型",
-      "current_title": "提前深度测试、深度预通道与分层深度",
+      "current_title": "基于深度的可见性优化",
       "current_title_problems": [
         "三种机制并列较长，但不是三个无关问题"
       ],
@@ -538,14 +562,14 @@
         }
       ],
       "suggested_title": "基于深度的可见性优化",
-      "title_review": "REWRITE",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "建议待采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "现有H2区别测试时机、预先建立深度和层级加速，名称可以表达共同目标。",
       "review_batch": "第二批跨领域样本",
@@ -566,13 +590,16 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
       "reviewed_content_sha256": "cfde2804d23251401351204316faee80cc189f46e1a974aaa8305b8a1fbdebd9",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "Early-Z、预通道与Hi-Z属于共同优化问题"
     },
     {
-      "path": "知识库/02_GPU与光栅化管线/光栅覆盖、重心坐标与属性插值.md",
+      "path": "知识库/02_GPU与光栅化管线/光栅化与属性插值.md",
       "primary_question": "如何把三角形转换为覆盖样本和正确的片元属性",
       "primary_concept": "光栅化与插值",
       "article_boundary": "覆盖、重心坐标、透视校正与屏幕导数形成从图元到属性的流程",
@@ -608,7 +635,7 @@
         "空间变换"
       ],
       "title_type": "机制型",
-      "current_title": "光栅覆盖、重心坐标与属性插值",
+      "current_title": "光栅化与属性插值",
       "current_title_problems": [
         "把内部计算工具也放进主标题"
       ],
@@ -627,14 +654,14 @@
         }
       ],
       "suggested_title": "光栅化与属性插值",
-      "title_review": "REWRITE",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "建议待采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "重心坐标是插值工具，标题只需保留流程的两个关键职责。",
       "review_batch": "第二批跨领域样本",
@@ -652,13 +679,16 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
       "reviewed_content_sha256": "74aa8277d52a958037059e2b7066e6672216573b7963b0ac6ef6e2d16b57860a",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "重心坐标是内部机制，标题保留图元到属性流程"
     },
     {
-      "path": "知识库/02_GPU与光栅化管线/抗锯齿、TAA与时域超采样.md",
+      "path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
       "primary_question": "如何从空间与时间样本重建稳定图像",
       "primary_concept": "抗锯齿",
       "article_boundary": "比较空间方法，深入时域抖动、重投影、校验、积累与超采样",
@@ -692,7 +722,7 @@
         "深度/纹理"
       ],
       "title_type": "概念型",
-      "current_title": "抗锯齿、TAA 与时域超采样",
+      "current_title": "抗锯齿与时域重建",
       "current_title_problems": [
         "上位概念与两个实现方向并列，长标题没有增加定位价值"
       ],
@@ -714,15 +744,15 @@
           "reason": "问题式，仅覆盖时域部分"
         }
       ],
-      "suggested_title": "抗锯齿",
-      "title_review": "REWRITE",
+      "suggested_title": "抗锯齿与时域重建",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "范围敏感，待用户采用前确认",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "TAA与超采样共享重建闭环，深度集中在时域机制，不宜按阶段拆成词条。",
       "review_batch": "第二批跨领域样本",
@@ -774,13 +804,16 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
       "reviewed_content_sha256": "cd21d3d41b54d8741186a634b6c82df6b7c3bf9fa175f2fab157812a28fb37d0",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "保留时域重点，避免仅用抗锯齿弱化实际深度"
     },
     {
-      "path": "知识库/13_引擎架构与资源系统/命令记录、队列提交与在途帧.md",
+      "path": "知识库/13_渲染架构/Command Buffer与帧提交.md",
       "primary_question": "如何记录、提交命令并在GPU完成后安全复用帧资源",
       "primary_concept": "命令提交与完成",
       "article_boundary": "同一生命周期：CPU录制到GPU完成；在途帧与多线程是流程约束",
@@ -816,7 +849,7 @@
         "一帧到屏幕"
       ],
       "title_type": "机制型",
-      "current_title": "命令记录、队列提交与在途帧",
+      "current_title": "Command Buffer与帧提交",
       "current_title_problems": [
         "同一机制三个阶段并列，名称可收敛"
       ],
@@ -838,15 +871,15 @@
           "reason": "按生命周期定位整条链"
         }
       ],
-      "suggested_title": "GPU命令提交与资源复用",
-      "title_review": "REWRITE",
+      "suggested_title": "Command Buffer与帧提交",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "范围敏感，待用户采用前确认",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "H2均服务提交和复用，Command Buffer单独作为名称会弱化提交/完成主轴。",
       "review_batch": "第二批跨领域样本",
@@ -864,11 +897,14 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "bulk_adoption_authorized": true,
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "保留命令记录和提交限定，在途完成属于流程"
     },
     {
-      "path": "知识库/13_引擎架构与资源系统/资源状态、屏障与跨队列同步.md",
+      "path": "知识库/13_渲染架构/GPU同步与屏障.md",
       "primary_question": "如何保证GPU资源访问顺序、可见性、布局与队列归属正确",
       "primary_concept": "GPU资源同步",
       "article_boundary": "执行/内存依赖、状态与跨队列都是同一同步问题",
@@ -903,7 +939,7 @@
         "Compute"
       ],
       "title_type": "概念型",
-      "current_title": "资源状态、屏障与跨队列同步",
+      "current_title": "GPU同步与屏障",
       "current_title_problems": [
         "标题罗列同步的不同层面"
       ],
@@ -921,15 +957,15 @@
           "reason": "具体问题，但不能覆盖全部布局与所有权"
         }
       ],
-      "suggested_title": "GPU资源同步",
-      "title_review": "REWRITE",
+      "suggested_title": "GPU同步与屏障",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "范围敏感，待用户采用前确认",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "屏障是实现机制，资源状态和队列是约束；共同概念足以定位。",
       "review_batch": "第二批跨领域样本",
@@ -947,11 +983,14 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "bulk_adoption_authorized": true,
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "保留屏障机制与布局/跨队列同步，不只用泛同步名"
     },
     {
-      "path": "知识库/13_引擎架构与资源系统/资源绑定、描述符与材质数据组织.md",
+      "path": "知识库/13_渲染架构/GPU资源绑定.md",
       "primary_question": "如何按材质更新频率组织GPU资源寻址并管理描述符寿命",
       "primary_concept": "GPU资源绑定",
       "article_boundary": "Vulkan/D3D12/Metal绑定模型、动态参数和Bindless，同题方案比较",
@@ -987,7 +1026,7 @@
         "GPU驱动管线"
       ],
       "title_type": "工程限定型",
-      "current_title": "资源绑定、描述符与材质数据组织",
+      "current_title": "GPU资源绑定",
       "current_title_problems": [
         "把概念、对象与组织方式平级罗列"
       ],
@@ -1006,14 +1045,14 @@
         }
       ],
       "suggested_title": "GPU资源绑定",
-      "title_review": "REWRITE",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "建议待采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "材质是应用输入，描述符是绑定工具；GPU限定区分一般程序参数绑定。",
       "review_batch": "第二批跨领域样本",
@@ -1032,11 +1071,14 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "bulk_adoption_authorized": true,
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "保留GPU工程语境，布局和材质是输入约束"
     },
     {
-      "path": "知识库/13_引擎架构与资源系统/渲染路径与光源组织.md",
+      "path": "知识库/13_渲染架构/渲染路径与光源组织.md",
       "primary_question": "如何理解材质求值时机与光源筛选之间的关系并选择路径",
       "primary_concept": "渲染路径选择",
       "article_boundary": "已是导读，链接前向、延迟和簇剔除专篇",
@@ -1087,15 +1129,15 @@
           "reason": "对照清楚，但忽略已有筛光导读职责"
         }
       ],
-      "suggested_title": "渲染路径与光源组织",
-      "title_review": "PASS",
+      "suggested_title": null,
+      "title_review": "OVERVIEW",
       "boundary_action": "OVERVIEW",
       "content_actions": [
         "KEEP"
       ],
       "rename_file": false,
       "update_links": false,
-      "adoption_status": "试点已采用",
+      "adoption_status": "DEFERRED",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "Clustered是筛光维度，可与Forward/Deferred组合，列成互斥三选一容易误导。",
       "review_batch": "第二批跨领域样本",
@@ -1109,16 +1151,19 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "先确认导读职责和概念主归属，再采用关系型标题",
       "previous_title": "Forward、Deferred 与 Clustered 渲染",
       "reviewed_title_decision": "OVERVIEW",
       "title_coverage_review": "已是导读；求值时机和灯光筛选两个维度关系清楚，使用关系名",
       "reviewed_content_sha256": "bec94947395b78f1cf95c2a86463e80857815f56dd0a372cabead8c908771cf3",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
     },
     {
-      "path": "知识库/13_引擎架构与资源系统/URP Render Graph自定义Pass.md",
+      "path": "知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md",
       "primary_question": "如何在Unity 6 URP中记录自定义Pass并让输出被相机消费",
       "primary_concept": "URP Render Graph扩展",
       "article_boundary": "版本实现片段：Feature入队、资源声明、回调、颜色交接与失败诊断",
@@ -1178,7 +1223,7 @@
       ],
       "rename_file": false,
       "update_links": false,
-      "adoption_status": "试点已采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "Unity限定不够精确，正文实际只讲URP路径；版本保留在适用环境，不把整个版本号塞标题。",
       "review_batch": "第二批跨领域样本",
@@ -1196,13 +1241,16 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
       "previous_title": "Unity Render Graph 与自定义通道",
       "reviewed_title_decision": "REWRITE",
       "title_coverage_review": "明确URP实现，避免Unity暗示HDRP；正文版本约束保持",
       "reviewed_content_sha256": "812a16a357fffb275706f7e1ba9d168d7a0a87981cef26eca14922192bd5eae5",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "现有标题准确表达主概念，保留"
     },
     {
       "path": "知识库/06_纹理技术/纹理采样与过滤.md",
@@ -1270,7 +1318,7 @@
       ],
       "rename_file": false,
       "update_links": false,
-      "adoption_status": "试点已采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "过滤和Mip是采样选择，压缩正文已链接专篇，标题移除不属于主轴的词。",
       "review_batch": "第二批跨领域样本",
@@ -1302,16 +1350,19 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
       "previous_title": "纹理采样、过滤、Mipmap 与压缩",
       "reviewed_title_decision": "REWRITE",
       "title_coverage_review": "保留过滤限定；压缩只有专篇链接、验证和书目，正文没有独立压缩实现章节，边界不隐藏",
       "reviewed_content_sha256": "8d06c5a21c360afb7259315ee9d647f588428483a2d842e5648c90fa2f8a1d04",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "现有标题准确表达主概念，保留"
     },
     {
-      "path": "知识库/06_纹理技术/高度、法线与视差映射.md",
+      "path": "知识库/06_纹理技术/视差映射.md",
       "primary_question": "如何沿高度场移动UV近似表面视差",
       "primary_concept": "视差映射",
       "article_boundary": "比较基础、限偏移、分层与POM，法线只解释背景和TBN前提",
@@ -1348,7 +1399,7 @@
         "曲面细分"
       ],
       "title_type": "方案型",
-      "current_title": "高度、法线与视差映射",
+      "current_title": "视差映射",
       "current_title_problems": [
         "背景表示与主要方案并列，弱化真实目的"
       ],
@@ -1371,14 +1422,14 @@
         }
       ],
       "suggested_title": "视差映射",
-      "title_review": "REWRITE",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "建议待采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "代码与验证都落在视差；法线与真实位移负责对照，不应充当三主题标题。",
       "review_batch": "第二批跨领域样本",
@@ -1399,13 +1450,16 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
       "reviewed_content_sha256": "d5cf1ff14d5e7913398da909cacbb099603d0abea078bc38107cf62177eac994",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "代码和验证落在高度场UV偏移，法线和位移为对照"
     },
     {
-      "path": "知识库/01_数学与采样/旋转、四元数与插值.md",
+      "path": "知识库/01_数学与采样/旋转表示与插值.md",
       "primary_question": "如何表示、更新和插值三维旋转",
       "primary_concept": "旋转表示与插值",
       "article_boundary": "主轴为旋转，通用Bezier/Hermite只有背景概述，后续归属仍待正文审查",
@@ -1439,7 +1493,7 @@
         "物理积分"
       ],
       "title_type": "机制型",
-      "current_title": "旋转、四元数与插值",
+      "current_title": "旋转表示与插值",
       "current_title_problems": [
         "四元数为子机制，标题可去掉重复；曲线概述有范围复读事项"
       ],
@@ -1458,14 +1512,14 @@
         }
       ],
       "suggested_title": "旋转表示与插值",
-      "title_review": "REWRITE",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "建议待采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "四元数是旋转表示之一，保留表示与插值主轴，避免标题将它平级重复。",
       "review_batch": "第二批跨领域样本",
@@ -1495,8 +1549,11 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "bulk_adoption_authorized": true,
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "保留表示与插值两项核心职责"
     },
     {
       "path": "知识库/09_动画系统/动画压缩.md",
@@ -1563,7 +1620,7 @@
       ],
       "rename_file": false,
       "update_links": false,
-      "adoption_status": "试点已采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "量化与解码是压缩实现环节，标题只定位压缩即可。",
       "review_batch": "第二批跨领域样本",
@@ -1582,13 +1639,16 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
       "previous_title": "动画压缩、轨道量化与运行时解码",
       "reviewed_title_decision": "REWRITE",
       "title_coverage_review": "轨道抽取、量化和解码共同实现压缩，名称覆盖误差/性能取舍",
       "reviewed_content_sha256": "ed4cee1f9d002874e5a56a7850bdd8eacd2b2f908c0086460723d23815844ce4",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "现有标题准确表达主概念，保留"
     },
     {
       "path": "知识库/14_性能分析与优化/PSO首次使用为什么卡顿.md",
@@ -1656,7 +1716,7 @@
       ],
       "rename_file": false,
       "update_links": false,
-      "adoption_status": "试点已采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "本文主目的就是首次使用卡顿，问题型比缓存方法并列更直接；数字和平台断言待事实复核。",
       "review_batch": "第二批跨领域样本",
@@ -1682,16 +1742,19 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
       "previous_title": "PSO 缓存与运行时卡顿",
       "reviewed_title_decision": "REWRITE",
       "title_coverage_review": "全文调查首次使用卡顿与缓存策略；PSO限定排除其他首次绘制卡顿",
       "reviewed_content_sha256": "04e22ebef2758215ac47d70d0ecd184baba7986c3c95bb5f6490148225d9259e",
-      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "现有标题准确表达主概念，保留"
     },
     {
-      "path": "知识库/20_游戏AI/导航、寻路与移动控制.md",
+      "path": "知识库/20_游戏AI/游戏AI导航.md",
       "primary_question": "如何从可行走空间生成并执行角色路线",
       "primary_concept": "游戏AI导航",
       "article_boundary": "全局表示、图搜索、走廊、局部速度与执行集成；A*基础主归属需协调",
@@ -1726,7 +1789,7 @@
         "决策模型"
       ],
       "title_type": "工程限定型",
-      "current_title": "导航、寻路与移动控制",
+      "current_title": "游戏AI导航",
       "current_title_problems": [
         "三个流程环节罗列，领域概念可以定位"
       ],
@@ -1745,14 +1808,14 @@
         }
       ],
       "suggested_title": "游戏AI导航",
-      "title_review": "REWRITE",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "建议待采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "目前讲集成链，三个环节共同服务可达移动，不按名词直接拆分；算法深化后可有专篇。",
       "review_batch": "第二批跨领域样本",
@@ -1774,8 +1837,11 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "bulk_adoption_authorized": true,
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "路径表示、搜索与执行是一条集成任务"
     },
     {
       "path": "知识库/21_游戏网络/状态同步、预测与回滚.md",
@@ -1840,7 +1906,7 @@
       ],
       "rename_file": false,
       "update_links": false,
-      "adoption_status": "边界待处理",
+      "adoption_status": "DEFERRED",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "回滚模拟与服务器历史命中检查只共享时间背景，执行、调试和成本不同；短标题不足以修复主归属。 联合入口名称是边界处理后的条件方案，当前整页不直接采用短名。",
       "review_batch": "第二批跨领域样本",
@@ -1891,9 +1957,12 @@
           "missing": "合法时间窗口及公平性用例"
         }
       ],
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "proposed_overview_title": "联机状态同步导读",
-      "suggested_title": null
+      "suggested_title": null,
+      "pending_split": true,
+      "deferred_title": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
     },
     {
       "path": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
@@ -1932,7 +2001,7 @@
         "后处理链"
       ],
       "title_type": "导读型",
-      "current_title": "颜色空间、Alpha、HDR 与曝光",
+      "current_title": "颜色空间、Alpha、HDR与曝光",
       "current_title_problems": [
         "四项并列对应至少三种独立问题"
       ],
@@ -1957,7 +2026,7 @@
       ],
       "rename_file": false,
       "update_links": false,
-      "adoption_status": "边界待处理",
+      "adoption_status": "DEFERRED",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "相关但不同数据契约，不能用颜色空间一个短名承接曝光与Alpha全部细节。 联合入口名称是边界处理后的条件方案，当前整页不直接采用短名。",
       "review_batch": "第二批跨领域样本",
@@ -2007,9 +2076,12 @@
           "missing": "目标引擎测光与预曝光约定核验"
         }
       ],
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "proposed_overview_title": "颜色工作流导读",
-      "suggested_title": null
+      "suggested_title": null,
+      "pending_split": true,
+      "deferred_title": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
     },
     {
       "path": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
@@ -2065,7 +2137,7 @@
           "reason": "独立问题，有检索价值但不能覆盖本页"
         }
       ],
-      "suggested_title": "算法与数据结构选型",
+      "suggested_title": null,
       "title_review": "OVERVIEW",
       "boundary_action": "OVERVIEW",
       "content_actions": [
@@ -2073,7 +2145,7 @@
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "建议待采用",
+      "adoption_status": "DEFERRED",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "排序、KMP、图搜索和空间索引不能共享一套实施与诊断；联合页应定位选型路线并归集专篇。",
       "review_batch": "第二批跨领域样本",
@@ -2112,8 +2184,11 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
-      "adoption_gate": "先确认导读职责和概念主归属，再采用关系型标题"
+      "bulk_adoption_authorized": true,
+      "adoption_gate": "先确认导读职责和概念主归属，再采用关系型标题",
+      "pending_split": false,
+      "deferred_title": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
     },
     {
       "path": "知识库/09_动画系统/布料与毛发的表示、碰撞和LOD.md",
@@ -2152,7 +2227,7 @@
         "毛发材质"
       ],
       "title_type": "导读型",
-      "current_title": "布料与毛发的表示、碰撞和 LOD",
+      "current_title": "布料与毛发的表示、碰撞和LOD",
       "current_title_problems": [
         "两种对象与多个实现环节叠加，应该先确定主归属"
       ],
@@ -2177,7 +2252,7 @@
       ],
       "rename_file": false,
       "update_links": false,
-      "adoption_status": "边界待处理",
+      "adoption_status": "DEFERRED",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "段落和代码以布料表面映射为主，毛发仅概要；缩成二级运动会掩盖两种问题深度差异。 联合入口名称是边界处理后的条件方案，当前整页不直接采用短名。",
       "review_batch": "第二批跨领域样本",
@@ -2222,12 +2297,15 @@
           "missing": "Guide插值与各级表示实质实现"
         }
       ],
-      "bulk_adoption_authorized": false,
+      "bulk_adoption_authorized": true,
       "proposed_overview_title": "二级运动导读",
-      "suggested_title": null
+      "suggested_title": null,
+      "pending_split": true,
+      "deferred_title": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
     },
     {
-      "path": "知识库/15_资产与工具管线/编辑器工具与批处理架构.md",
+      "path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
       "primary_question": "如何让编辑器操作和批处理共享可预览、撤销与恢复的业务规则",
       "primary_concept": "编辑器工具事务",
       "article_boundary": "围绕工具用例的事务、输入、执行与部署闭环，批处理属于同一规则消费路径",
@@ -2262,7 +2340,7 @@
         "对象生命周期"
       ],
       "title_type": "工程限定型",
-      "current_title": "编辑器工具与批处理架构",
+      "current_title": "编辑器工具的事务与批处理",
       "current_title_problems": [
         "现标题范围可成立，可进一步定位可靠编辑器操作主轴"
       ],
@@ -2281,14 +2359,14 @@
         }
       ],
       "suggested_title": "编辑器工具的事务与批处理",
-      "title_review": "REWRITE",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "建议待采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "大量H2是同一可靠工具的约束，不宜按API关键词拆小页；编辑器限定区分运行时事务。",
       "review_batch": "第二批跨领域样本",
@@ -2318,8 +2396,11 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "bulk_adoption_authorized": true,
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "保留操作和批执行两个共享契约"
     },
     {
       "path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
@@ -2371,15 +2452,15 @@
           "reason": "导读清楚，但问题指向较弱"
         }
       ],
-      "suggested_title": "一帧如何到达屏幕",
-      "title_review": "PASS",
+      "suggested_title": null,
+      "title_review": "OVERVIEW",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
       "rename_file": false,
       "update_links": false,
-      "adoption_status": "保留",
+      "adoption_status": "DEFERRED",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "当前问题式标题能容纳从准备到呈现的连续主线，保留比换成“渲染管线”更明确。",
       "review_batch": "第二批跨领域样本",
@@ -2407,11 +2488,14 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "bulk_adoption_authorized": true,
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "pending_split": false,
+      "deferred_title": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
     },
     {
-      "path": "知识库/14_性能分析与优化/帧时间、瓶颈与GPU成本.md",
+      "path": "知识库/14_性能分析与优化/帧瓶颈怎么判断.md",
       "primary_question": "怎样从CPU/GPU时间线和控制变量识别帧瓶颈",
       "primary_concept": "帧瓶颈诊断",
       "article_boundary": "成本分类与瓶颈实验，具体GPU硬件和工具在相关主归属",
@@ -2444,7 +2528,7 @@
         "GPU执行",
         "Profiler/RenderDoc"
       ],
-      "current_title": "帧时间、瓶颈与 GPU 成本",
+      "current_title": "帧瓶颈怎么判断",
       "current_title_problems": [
         "多个成本名词罗列，缺少诊断动作"
       ],
@@ -2464,14 +2548,14 @@
         }
       ],
       "suggested_title": "帧瓶颈怎么判断",
-      "title_review": "REWRITE",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "建议待采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "每项成本都服务帧瓶颈定位，问题式可替代三个指标与对象并列。",
       "review_batch": "第二批跨领域样本",
@@ -2499,11 +2583,14 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "bulk_adoption_authorized": true,
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "读者从时间线与成本进入诊断"
     },
     {
-      "path": "知识库/14_性能分析与优化/性能调查、对照实验与帧捕获证据.md",
+      "path": "知识库/14_性能分析与优化/性能对照实验.md",
       "primary_question": "怎样设计能支持或否定性能假设的对照实验",
       "primary_concept": "性能对照实验",
       "article_boundary": "固定条件、关键路径、实验与证据；工具操作引用专篇",
@@ -2536,7 +2623,7 @@
         "工具单帧分析",
         "命令提交"
       ],
-      "current_title": "性能调查、对照实验与帧捕获证据",
+      "current_title": "性能对照实验",
       "current_title_problems": [
         "任务、方法和证据类型全部出现在标题"
       ],
@@ -2560,14 +2647,14 @@
         }
       ],
       "suggested_title": "性能对照实验",
-      "title_review": "REWRITE",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "建议待采用",
+      "adoption_status": "已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "对照实验是本文主要工作，帧捕获是证据来源，可以用实验机制命名。",
       "review_batch": "第二批跨领域样本",
@@ -2585,8 +2672,1505 @@
         "## 参考资料"
       ],
       "split_recommendation": [],
-      "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "bulk_adoption_authorized": true,
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_reason": "固定条件与假设验证为主要方法"
+    },
+    {
+      "path": "知识库/00_知识库说明/学习与维护方法.md",
+      "primary_question": "作者如何组织、验证和维护文章",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "学习与维护方法",
+      "suggested_title": "学习与维护方法",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "现有标题准确表达主概念，保留"
+    },
+    {
+      "path": "知识库/00_知识库说明/技术中文写作规范.md",
+      "primary_question": "技术中文写作规范",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "技术中文写作规范",
+      "suggested_title": "技术中文写作规范",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "现有标题准确表达主概念，保留"
+    },
+    {
+      "path": "知识库/00_知识库说明/术语表.md",
+      "primary_question": "读者如何统一技术叫法",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "术语表",
+      "suggested_title": "术语表",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "现有标题准确表达主概念，保留"
+    },
+    {
+      "path": "知识库/00_知识库说明/知识地图.md",
+      "primary_question": "读者如何按问题找到学习路线",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "知识地图",
+      "suggested_title": "知识地图",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "现有标题准确表达主概念，保留"
+    },
+    {
+      "path": "知识库/00_知识库说明/知识库实施规范.md",
+      "primary_question": "知识库实施规范",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "知识库实施规范",
+      "suggested_title": "知识库实施规范",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "现有标题准确表达主概念，保留"
+    },
+    {
+      "path": "知识库/01_数学与采样/信号、频率与噪声.md",
+      "primary_question": "如何理解采样混叠以及生成程序噪声",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "信号、频率与噪声",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/01_数学与采样/空间变换.md",
+      "primary_question": "如何保持空间变换与法线变换正确",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "空间变换",
+      "suggested_title": "空间变换",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "位置、方向、矩阵和法线是同一空间转换问题"
+    },
+    {
+      "path": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
+      "primary_question": "如何估计光照积分以及表示低频球面信号",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "概率采样、积分与球谐函数",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/GPU执行与访存.md",
+      "primary_question": "如何把GPU执行和访存行为对应到性能瓶颈",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "GPU执行与访存",
+      "suggested_title": "GPU执行与访存",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "执行、占用率、带宽与平台模型围绕指令和数据访问"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/光栅化、插值与深度模板.md",
+      "primary_question": "如何定位光栅覆盖、深度与模板问题",
+      "article_boundary": "OVERVIEW",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "光栅化、插值与深度模板",
+      "suggested_title": null,
+      "title_review": "OVERVIEW",
+      "adoption_status": "DEFERRED",
+      "pending_split": false,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md",
+      "primary_question": "如何选择图元生成、规则细分和几何结果捕获",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "几何着色器、曲面细分与流输出",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/剔除、透明与混合.md",
+      "primary_question": "如何查找可见性与透明合成方案",
+      "article_boundary": "OVERVIEW",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "剔除、透明与混合",
+      "suggested_title": null,
+      "title_review": "OVERVIEW",
+      "adoption_status": "DEFERRED",
+      "pending_split": false,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/Stencil与对象遮罩.md",
+      "primary_question": "如何用模板状态表达对象遮罩并避免位冲突",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Stencil与对象遮罩",
+      "suggested_title": "Stencil与对象遮罩",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "保留对象遮罩消费与位管理职责"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/可见性剔除.md",
+      "primary_question": "如何用保守可见性测试减少绘制",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "可见性剔除",
+      "suggested_title": "可见性剔除",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "不同剔除层级解同一保守可见性问题"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/透明合成.md",
+      "primary_question": "如何在不透明遮挡之后正确合成透明表面",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "透明合成",
+      "suggested_title": "透明合成",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "排序与OIT为同题方案比较"
+    },
+    {
+      "path": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
+      "primary_question": "如何组织Compute执行以及实现多类并行算法",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Compute Shader与GPU执行模型",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/03_Shader编程/Shader接口与数据流.md",
+      "primary_question": "如何使Shader阶段接口与资源布局一致",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Shader接口与数据流",
+      "suggested_title": "Shader接口与数据流",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "语言背景为阶段接口、绑定与布局服务"
+    },
+    {
+      "path": "知识库/04_光照模型与PBR/PBR材质.md",
+      "primary_question": "如何用PBR参数保持材质响应和能量约束",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "PBR材质",
+      "suggested_title": "PBR材质",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "守恒是材质约束，核心标题覆盖参数和标定"
+    },
+    {
+      "path": "知识库/04_光照模型与PBR/皮肤次表面散射.md",
+      "primary_question": "如何以实时预算近似皮肤次表面散射",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "皮肤次表面散射",
+      "suggested_title": "皮肤次表面散射",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "保留目标材质和散射机制"
+    },
+    {
+      "path": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
+      "primary_question": "如何解码局部法线以及预滤环境光",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "法线贴图、切线空间与IBL",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/04_光照模型与PBR/BRDF与微表面模型.md",
+      "primary_question": "如何从反射约束得到直接光照BRDF",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "BRDF与微表面模型",
+      "suggested_title": "BRDF与微表面模型",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "保留模型与推导核心，经典光照为背景"
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/直接光照.md",
+      "primary_question": "如何评估不同光源在表面的直接贡献",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "直接光照",
+      "suggested_title": "直接光照",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "光源类型是直接贡献的方案与输入"
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
+      "primary_question": "如何按场景与更新需求选择间接光照表示",
+      "article_boundary": "OVERVIEW",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "烘焙光照、Probe与实时GI",
+      "suggested_title": null,
+      "title_review": "OVERVIEW",
+      "adoption_status": "DEFERRED",
+      "pending_split": false,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/Shadow Map.md",
+      "primary_question": "如何生成、过滤和调试光源可见性",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Shadow Map",
+      "suggested_title": "Shadow Map",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "PCF、PCSS和CSM为覆盖/过滤实现，主概念有明确预期"
+    },
+    {
+      "path": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
+      "primary_question": "如何安排纹理坐标以及按需驻留纹理",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "UV、图集、流送与虚拟纹理",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/06_纹理技术/纹理压缩格式.md",
+      "primary_question": "如何根据通道误差和平台支持选择压缩格式",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "纹理压缩格式",
+      "suggested_title": "纹理压缩格式",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "保留格式选择目的与平台预算内容"
+    },
+    {
+      "path": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
+      "primary_question": "如何在屏幕缓冲上组合不同后处理效果",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Tone Mapping、Bloom与屏幕效果",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
+      "primary_question": "如何控制远近几何成本并生成地形资产",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "LOD、地形与程序化资产",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/08_几何与网格/Tessellation与位移.md",
+      "primary_question": "如何用Patch细分与位移产生连续几何细节",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Tessellation与位移",
+      "suggested_title": "Tessellation与位移",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "保留几何生成与实际形变的区别"
+    },
+    {
+      "path": "知识库/08_几何与网格/网格数据与GPU访问.md",
+      "primary_question": "如何把资产拓扑组织成高效GPU网格",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "网格数据与GPU访问",
+      "suggested_title": "网格数据与GPU访问",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "资产拓扑转换与缓冲访问为当前主轴"
+    },
+    {
+      "path": "知识库/09_动画系统/动画压缩、面部、布料与毛发.md",
+      "primary_question": "如何定位角色动画资源与二级运动专题",
+      "article_boundary": "OVERVIEW",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "动画压缩、面部、布料与毛发",
+      "suggested_title": null,
+      "title_review": "OVERVIEW",
+      "adoption_status": "DEFERRED",
+      "pending_split": false,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/09_动画系统/动画状态、混合与IK.md",
+      "primary_question": "如何生成连续姿态并满足运行时约束",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "动画状态、混合与IK",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/09_动画系统/面部动画.md",
+      "primary_question": "如何组合面部形状目标得到可用表情",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "面部动画",
+      "suggested_title": "面部动画",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "形状目标、Rig和口型控制围绕表情求值"
+    },
+    {
+      "path": "知识库/09_动画系统/骨骼动画与蒙皮.md",
+      "primary_question": "如何从局部姿态得到蒙皮顶点",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "骨骼动画与蒙皮",
+      "suggested_title": "骨骼动画与蒙皮",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "GPU编码是姿态与蒙皮消费路径"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/Froxel体积雾.md",
+      "primary_question": "如何将视锥散射数据积分并时域稳定",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Froxel体积雾",
+      "suggested_title": "Froxel体积雾",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "视锥资源、积分和历史为同一体积方案"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/大气散射、天空与体积云.md",
+      "primary_question": "如何近似天空大气和云层的辐射传输",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "大气散射、天空与体积云",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
+      "primary_question": "如何选用VFX材质机制并控制覆盖成本",
+      "article_boundary": "OVERVIEW",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "常用VFX材质、模拟与性能",
+      "suggested_title": null,
+      "title_review": "OVERVIEW",
+      "adoption_status": "DEFERRED",
+      "pending_split": false,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/水面与海洋渲染.md",
+      "primary_question": "如何在预算内组合网格、波形和水面着色",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "水面与海洋渲染",
+      "suggested_title": "水面与海洋渲染",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "保留水面集成问题与大尺度海洋限定"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/GPU粒子系统.md",
+      "primary_question": "如何维护GPU粒子生命周期与渲染数据",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "GPU粒子系统",
+      "suggested_title": "GPU粒子系统",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "正文以状态布局、并行更新、绘制与交互为主"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
+      "primary_question": "NPR与场景风格导读",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "NPR与场景风格导读",
+      "suggested_title": "NPR与场景风格导读",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "现有标题准确表达主概念，保留"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/NPR材质与分层光照.md",
+      "primary_question": "如何把连续光照转为可控的风格化材质层",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "NPR材质与分层光照",
+      "suggested_title": "NPR材质与分层光照",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "现名覆盖明暗坐标与材质组合，保留"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/描边、Billboard与场景风格化.md",
+      "primary_question": "如何从联合入口找到NPR机制专题",
+      "article_boundary": "OVERVIEW",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "描边、Billboard与场景风格化",
+      "suggested_title": null,
+      "title_review": "OVERVIEW",
+      "adoption_status": "DEFERRED",
+      "pending_split": false,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
+      "primary_question": "如何控制卡通面部明暗、发丝高光和角色阴影",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "角色面部、头发与阴影",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
+      "primary_question": "如何在GPU生成可见对象与间接绘制参数",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "GPU-Driven Rendering",
+      "suggested_title": "GPU-Driven Rendering",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "Nanite已有主归属，本文负责可见列表与间接绘制"
+    },
+    {
+      "path": "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md",
+      "primary_question": "如何按屏幕误差选择并流送Nanite几何",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Nanite几何选择与流送",
+      "suggested_title": "Nanite几何选择与流送",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "保留版本系统和运行职责，避免无限宽的Nanite总称"
+    },
+    {
+      "path": "知识库/12_光线追踪/光线求交与BVH.md",
+      "primary_question": "如何用层级结构减少光线求交工作",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "光线求交与BVH",
+      "suggested_title": "光线求交与BVH",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "保留求交与加速主轴，其他空间结构作为对照"
+    },
+    {
+      "path": "知识库/12_光线追踪/实时光追、采样与降噪.md",
+      "primary_question": "如何分配光追样本并重建低噪结果",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "实时光追、采样与降噪",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/13_渲染架构/Draw Call与合批.md",
+      "primary_question": "如何选择和验证减少CPU绘制提交的路径",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Draw Call与合批",
+      "suggested_title": "Draw Call与合批",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "保持提交方案比较，实例化是方法之一"
+    },
+    {
+      "path": "知识库/25_UI与文本/UI、字体与文本渲染.md",
+      "primary_question": "如何将UI布局和文字语义转为绘制命令",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "UI、字体与文本渲染",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
+      "primary_question": "如何定位Unity渲染管线的帧与扩展边界",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Unity渲染帧组织",
+      "suggested_title": "Unity渲染帧组织",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "保留Unity实际管线追踪范围，版本细节在正文"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
+      "primary_question": "如何按资源和注入需求选择引擎扩展入口",
+      "article_boundary": "OVERVIEW",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Unity与Unreal渲染扩展入口",
+      "suggested_title": null,
+      "title_review": "OVERVIEW",
+      "adoption_status": "DEFERRED",
+      "pending_split": false,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unreal RDG Pass实现.md",
+      "primary_question": "如何用RDG参数表达资源依赖并执行通道",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Unreal RDG Pass实现",
+      "suggested_title": "Unreal RDG Pass实现",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "版本资源声明和AddPass为明确工程任务"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
+      "primary_question": "如何沿场景线程数据定位Unreal渲染功能",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Unreal渲染帧组织",
+      "suggested_title": "Unreal渲染帧组织",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "多层系统是帧追踪流程，保留引擎限定"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unreal自定义Mesh Pass.md",
+      "primary_question": "如何把自定义网格效果接入Unreal绘制流程",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Unreal自定义Mesh Pass",
+      "suggested_title": "Unreal自定义Mesh Pass",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "网格数据到通道接入为主轴"
+    },
+    {
+      "path": "知识库/13_渲染架构/GPU资源生命周期.md",
+      "primary_question": "如何按GPU完成值分配和回收资源内存",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "GPU资源生命周期",
+      "suggested_title": "GPU资源生命周期",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "上传、回读与临时/历史为寿命实例"
+    },
+    {
+      "path": "知识库/13_渲染架构/Tiled与Clustered光源剔除.md",
+      "primary_question": "如何保守建立每个区域的灯光列表",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Tiled与Clustered光源剔除",
+      "suggested_title": "Tiled与Clustered光源剔除",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "两种同题列表方案有比较价值"
+    },
+    {
+      "path": "知识库/13_渲染架构/Forward Rendering与Forward+.md",
+      "primary_question": "如何在材质着色时消费全局或局部灯光",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Forward Rendering与Forward+",
+      "suggested_title": "Forward Rendering与Forward+",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "保留前向与列表扩展，实际着色路径统一"
+    },
+    {
+      "path": "知识库/13_渲染架构/Deferred Rendering.md",
+      "primary_question": "如何在延迟光照阶段消费表面与灯光数据",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Deferred Rendering",
+      "suggested_title": "Deferred Rendering",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "GBuffer消费和光体积为同一路径实现"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/引擎世界与对象模型.md",
+      "primary_question": "如何定义引擎世界的依赖、所有权与更新阶段",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "引擎世界与对象模型",
+      "suggested_title": "引擎世界与对象模型",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "对象契约为主，分层与更新阶段是组织方式"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/数据导向设计与任务系统.md",
+      "primary_question": "如何安排热点数据以及调度依赖任务",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "数据导向设计与任务系统",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/13_渲染架构/Render Pass与附件.md",
+      "primary_question": "如何表达附件开始和结束时的内容需求",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Render Pass与附件",
+      "suggested_title": "Render Pass与附件",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "保留附件内容与加载存储目的，不缩成不明API对象"
+    },
+    {
+      "path": "知识库/24_游戏音频/游戏音频系统.md",
+      "primary_question": "如何在实时回调预算内混音并管理声音",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "游戏音频系统",
+      "suggested_title": "游戏音频系统",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "现标题清楚表达运行领域"
+    },
+    {
+      "path": "知识库/13_渲染架构/Pipeline State Object.md",
+      "primary_question": "如何组成和缓存合法的管线状态对象",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Pipeline State Object",
+      "suggested_title": "Pipeline State Object",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "缓存键、组合和寿命为对象实现内容"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/资源依赖与异步加载.md",
+      "primary_question": "如何沿依赖加载资产并保持版本与所有权",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "资源依赖与异步加载",
+      "suggested_title": "资源依赖与异步加载",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "保留构建到加载所有权主轴"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/帧捕获与性能分析工具.md",
+      "primary_question": "如何用工具定位一帧的状态与成本来源",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "帧捕获与性能分析工具",
+      "suggested_title": "帧捕获与性能分析工具",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "工具角色与单帧观察为主问题"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/移动端渲染优化.md",
+      "primary_question": "如何按移动设备约束验证渲染优化",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "移动端渲染优化",
+      "suggested_title": "移动端渲染优化",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "保留设备约束与回归语境"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/DCC资产交换.md",
+      "primary_question": "如何跨DCC和引擎保持资产语义",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "DCC资产交换",
+      "suggested_title": "DCC资产交换",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "格式/坐标/语义为制作交换问题"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/版本控制、CI与大型资产协作.md",
+      "primary_question": "如何协作修改二进制资产并增量验证构建",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "版本控制、CI与大型资产协作",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/资产构建与发布.md",
+      "primary_question": "如何将制作输入变成可验证发布资产",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "资产构建与发布",
+      "suggested_title": "资产构建与发布",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "导入和验证为生产构建闭环"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
+      "primary_question": "如何理解三种语言的运行和工程边界",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "C++、CSharp与Python工程基础",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
+      "primary_question": "如何管理CPU内存、引擎对象和池复用",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "内存、对象生命周期与对象池",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
+      "primary_question": "如何理解进程内存以及实现并发同步",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "操作系统、进程与并发基础",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+      "primary_question": "如何令Agent工具任务可追踪、幂等和验收",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "Agent资产管线",
+      "suggested_title": "Agent资产管线",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "保留自动生产组织目的，质量为执行约束"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
+      "primary_question": "如何版本化生产工作流以及稳定多帧生成",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "ComfyUI工作流与时序一致性",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
+      "primary_question": "如何理解扩散采样、结构条件与LoRA训练",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "扩散模型、条件控制与微调",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/刚体物理求解.md",
+      "primary_question": "如何从状态积分和碰撞生成受约束运动",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "刚体物理求解",
+      "suggested_title": "刚体物理求解",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "同一物理步中积分、碰撞与约束闭环"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
+      "primary_question": "如何为不同玩法对象构造物理代理与约束",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "角色、布料、破坏与载具物理",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/19_Gameplay与游戏框架/玩法事件与脚本.md",
+      "primary_question": "如何解耦玩法规则与事件脚本执行",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "玩法事件与脚本",
+      "suggested_title": "玩法事件与脚本",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "保留规则分发及脚本接入职责"
+    },
+    {
+      "path": "知识库/19_Gameplay与游戏框架/输入与动作状态.md",
+      "primary_question": "如何从输入请求推进角色动作并驱动表现",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "输入与动作状态",
+      "suggested_title": "输入与动作状态",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "表现框架为命令推进支撑"
+    },
+    {
+      "path": "知识库/20_游戏AI/群体、学习与高级决策.md",
+      "primary_question": "如何处理群体信息、搜索决策和学习策略",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "群体、学习与高级决策",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI决策模型.md",
+      "primary_question": "如何按决策问题选择行为组织模型",
+      "article_boundary": "KEEP",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "游戏AI决策模型",
+      "suggested_title": "游戏AI决策模型",
+      "title_review": "PASS",
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "bulk_adoption_authorized": true,
+      "title_reason": "反应、效用和规划为行为选择方法比较"
+    },
+    {
+      "path": "知识库/21_游戏网络/服务器架构、分区与反作弊.md",
+      "primary_question": "如何分配会话与世界权威并核验客户端行为",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "服务器架构、分区与反作弊",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
+    },
+    {
+      "path": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
+      "primary_question": "如何选择传输、估计共同时间并实现远程调用",
+      "article_boundary": "SPLIT",
+      "candidates": [],
+      "review_basis": "全文结构与已有主问题复读后冻结；正文待后续批次",
+      "content_actions": [
+        "KEEP"
+      ],
+      "current_title": "网络协议、时钟与RPC",
+      "suggested_title": null,
+      "title_review": "SPLIT",
+      "adoption_status": "DEFERRED",
+      "pending_split": true,
+      "deferred_title": true,
+      "bulk_adoption_authorized": true,
+      "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分"
     }
   ],
   "sample_dimensions": [

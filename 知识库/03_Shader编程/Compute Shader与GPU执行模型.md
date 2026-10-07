@@ -1,4 +1,4 @@
-# Compute Shader 与 GPU 执行模型
+# Compute Shader与GPU执行模型
 
 Compute Shader 让程序直接提交并行计算，不需要顶点、三角形和光栅化。它适合大量结构相似、能够并行拆分的任务。
 
@@ -363,9 +363,9 @@ if (isTooFarAway || isDifferentDir || isStale)
 ## 相关主题
 
 - [[02_GPU与光栅化管线/一帧如何到达屏幕]]
-- [[10_VFX与模拟/粒子系统与GPU模拟]]
-- [[12_光追与现代渲染/GPU-Driven管线与Nanite]]
-- [[14_性能分析与优化/帧时间、瓶颈与GPU成本]]
+- [[10_VFX与模拟/GPU粒子系统]]
+- [[26_GPU驱动与虚拟几何/GPU-Driven Rendering]]
+- [[14_性能分析与优化/帧瓶颈怎么判断]]
 - [[10_VFX与模拟/大气散射、天空与体积云]]
 
 ## 参考资料
