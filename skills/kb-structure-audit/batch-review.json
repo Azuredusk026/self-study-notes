@@ -532,6 +532,533 @@
       ],
       "static_validation": "待提交前运行",
       "semantic_review": "本机内容复读，不代替目标运行与用户质量评审"
+    },
+    {
+      "id": "Batch3-P0-B",
+      "pages": 20,
+      "articles": [
+        {
+          "path": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# 概率采样、积分与球谐函数",
+            "## Monte Carlo Integration",
+            "## 低差异序列",
+            "## 均匀半球和余弦加权半球",
+            "## 多重重要性采样",
+            "## 概率密度不是概率",
+            "## 球谐函数（Spherical Harmonics）",
+            "## 球面函数表示",
+            "## 相关主题",
+            "## 积分估计",
+            "## 采样分布",
+            "## 重要性采样（Importance Sampling）",
+            "### Monte Carlo Integration",
+            "### Probe 插值",
+            "### 为什么适合低频光照",
+            "### 低差异序列",
+            "### 均匀半球和余弦加权半球",
+            "### 多重重要性采样",
+            "### 概率密度不是概率",
+            "### 球谐函数（Spherical Harmonics）",
+            "### 离散重要性采样",
+            "### 系数怎么得到",
+            "### 重要性采样（Importance Sampling）",
+            "#### Probe 插值",
+            "#### 为什么适合低频光照",
+            "#### 系数怎么得到"
+          ],
+          "before_sha256": "2f7952d0b7eddce2b0c9140076827a2a5c3bc47b970d99beab27379a5f0ac320",
+          "after_sha256": "908016d56df64c7023ee55f8b9d9ffdfa1029ed4b1c49836f952252f0b6518bc",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": true
+        },
+        {
+          "path": "知识库/02_GPU与光栅化管线/Stencil与对象遮罩.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# Stencil与对象遮罩",
+            "## 相关主题"
+          ],
+          "before_sha256": "1ee7e4fe9b36653b9fe7af33b300dcc538101b00cc5589657612c22bd42ec4a0",
+          "after_sha256": "51eda3fa41cf33e44b069354befa61641c0506d3799cd8784eaf3905a608ccda",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/02_GPU与光栅化管线/光栅化与属性插值.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 光栅化与属性插值",
+            "## 相关主题"
+          ],
+          "before_sha256": "d81fe20181aed9468262076b4191427b1276c1169b8ece63712129c3d75c338f",
+          "after_sha256": "28c08a507e6c1580f5a50935c333e325bb6d2c190dd1444e5bbcf544fb685690",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 几何着色器、曲面细分与流输出",
+            "## 相关主题"
+          ],
+          "before_sha256": "43bef901aecfaa7435e5316e61d83247783e15032861841ad451c0bad244fc86",
+          "after_sha256": "785f5e86bf10accef8b2d44a3f4b2f48532be3b7972243e0c3a021700b28bc44",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": true
+        },
+        {
+          "path": "知识库/02_GPU与光栅化管线/可见性剔除.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 可见性剔除",
+            "## 相关主题"
+          ],
+          "before_sha256": "7f93982940ad2434efcadb14672f07f1f9f0cb7deeb07dc33da1af8a73d0264e",
+          "after_sha256": "897dbbb4d1175264f51eec69eef0693a1c9fa7466a547c91d24922e81b05c196",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/02_GPU与光栅化管线/基于深度的可见性优化.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 基于深度的可见性优化",
+            "## Early-Z",
+            "## 相关主题",
+            "### 什么时候划算",
+            "### 多 Pass 打断合批"
+          ],
+          "before_sha256": "452801a4a6e734ac306a186f479b415ae56cb4ec405b62672e21cf358ded8475",
+          "after_sha256": "896e3afeca2d51e85ab81459ee7c857047c03573b8f5e59792a37ffdadf475dc",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/02_GPU与光栅化管线/深度缓冲与位置重建.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 深度缓冲与位置重建",
+            "## 相关主题"
+          ],
+          "before_sha256": "f4fe28088aaaeb47850440eeb507d69432c93200400d9b4ba088d345b5a83f90",
+          "after_sha256": "ce555890cf673cb0b3210a3390213fd2543c04160af4b1b5b505f4f325939347",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/02_GPU与光栅化管线/透明合成.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 透明合成",
+            "## 相关主题"
+          ],
+          "before_sha256": "0b11e61b6394fdb544084f8e1ef6931231b305e66dba589425fbdb566d7a3ee5",
+          "after_sha256": "a5080dc74e316d3fda9818494069f65f1a3be112863285bf1717292e5466e58a",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/03_Shader编程/Shader接口与数据流.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# Shader接口与数据流",
+            "## Constant、Uniform 和 Buffer",
+            "## HLSL、GLSL 和 ShaderLab",
+            "## Semantic 和 Location",
+            "## Shader Graph",
+            "## Texture 和 Sampler",
+            "## Varying 和插值",
+            "## 分支",
+            "## 接口与布局",
+            "## 数值与控制流",
+            "## 相关主题",
+            "## 精度",
+            "## 资源视图与访问权限",
+            "## 资源访问",
+            "## 阶段数据",
+            "## 顶点输入",
+            "### Constant、Uniform 和 Buffer",
+            "### GLSL 接口块与片元内建输入",
+            "### HLSL、GLSL 和 ShaderLab",
+            "### Semantic 和 Location",
+            "### Shader Graph",
+            "### Texture 和 Sampler",
+            "### Varying 和插值",
+            "### 分支",
+            "### 对齐示例",
+            "### 精度",
+            "### 编译期分支",
+            "### 资源视图与访问权限",
+            "### 运行时分支",
+            "### 顶点输入",
+            "#### GLSL 接口块与片元内建输入",
+            "#### 对齐示例",
+            "#### 编译期分支",
+            "#### 运行时分支"
+          ],
+          "before_sha256": "1b1825d1da23b5a82592aee0876aade175f484f0dc5482a54776879bb1f899ec",
+          "after_sha256": "9558db37f1799ca059af0ce21879083342dc7069256930803dca69f283a9881f",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/04_光照模型与PBR/BRDF与微表面模型.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# BRDF与微表面模型",
+            "## BRDF 的约束",
+            "## Lambert Diffuse",
+            "## Phong 和 Blinn-Phong",
+            "## Rendering Equation",
+            "## 为什么 Roughness 不能直接当高光指数",
+            "## 先区分几个量",
+            "## 参数与能量",
+            "## 反射积分",
+            "## 多次散射",
+            "## 微表面分解",
+            "## 微表面模型",
+            "## 物理约束",
+            "## 相关主题",
+            "## 表面反射模型",
+            "### BRDF 的约束",
+            "### D：Normal Distribution Function",
+            "### F：Fresnel",
+            "### G：Geometry Term",
+            "### Helmholtz Reciprocity",
+            "### Lambert Diffuse",
+            "### Phong 和 Blinn-Phong",
+            "### Rendering Equation",
+            "### 为什么 Roughness 不能直接当高光指数",
+            "### 代码中的组合顺序",
+            "### 先区分几个量",
+            "### 多次散射",
+            "### 微表面模型",
+            "### 能量守恒",
+            "### 非负",
+            "#### D：Normal Distribution Function",
+            "#### F：Fresnel",
+            "#### G：Geometry Term",
+            "#### Helmholtz Reciprocity",
+            "#### 代码中的组合顺序",
+            "#### 能量守恒",
+            "#### 非负"
+          ],
+          "before_sha256": "76c652811fd09a26ee01df552ca545ef1ad42ee366cb34af6f7bb86bf5d7298b",
+          "after_sha256": "f665626da466a825ce5808c591016c1d9fa801e1bc9f5f25284758f01e948266",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/04_光照模型与PBR/PBR材质.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# PBR材质",
+            "## Ambient Occlusion",
+            "## Base Color 的边界",
+            "## Dielectric 和 Metal",
+            "## Emissive",
+            "## Metalness/Roughness 工作流",
+            "## PBR 资产检查",
+            "## Roughness",
+            "## 反射语义",
+            "## 材质标定场景",
+            "## 漫反射和镜面反射如何分配",
+            "## 相关主题",
+            "## 纹理参数",
+            "## 贴图通道打包",
+            "## 资产与标定",
+            "### Ambient Occlusion",
+            "### Base Color 的边界",
+            "### Dielectric 和 Metal",
+            "### Emissive",
+            "### F0 从哪里来",
+            "### Metalness/Roughness 工作流",
+            "### PBR 资产检查",
+            "### Roughness",
+            "### 导入",
+            "### 材质标定场景",
+            "### 漫反射和镜面反射如何分配",
+            "### 能量守恒从哪来",
+            "### 范围",
+            "### 语义",
+            "### 贴图通道打包",
+            "### 金属",
+            "### 非金属",
+            "#### F0 从哪里来",
+            "#### 导入",
+            "#### 能量守恒从哪来",
+            "#### 范围",
+            "#### 语义",
+            "#### 金属",
+            "#### 非金属"
+          ],
+          "before_sha256": "3219d083000577c38dc1733fe41052650f617b4e58d6f8b7fa3f36b80d3738c6",
+          "after_sha256": "573a601e1390c06c9700df74dab7321b35f8e38e6b4aa890b28edb4ddaf705bd",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 法线贴图、切线空间与IBL",
+            "## 相关主题",
+            "### 两通道编码的精度陷阱"
+          ],
+          "before_sha256": "84ef6cbe95089a232876c37c16b8d5316a72de0fb3c2e03167a908449ef4e2ba",
+          "after_sha256": "e83c243eee84e4b24f204f220bfb75e2b6cf25191a485d0800e9d686c90faeba",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": true
+        },
+        {
+          "path": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# UV、图集、流送与虚拟纹理",
+            "## Padding 和 Bleeding",
+            "## Runtime Virtual Texture",
+            "## Streaming 估算为什么会错",
+            "## Texel Density",
+            "## Texture Array",
+            "## Texture Atlas",
+            "## Texture Streaming",
+            "## Trim Sheet",
+            "## UV Layout",
+            "## Virtual Texture",
+            "## 相关主题",
+            "## 纹理驻留",
+            "## 虚拟分页",
+            "## 表面坐标与共享纹理",
+            "### Padding 和 Bleeding",
+            "### Runtime Virtual Texture",
+            "### Streaming 估算为什么会错",
+            "### Texel Density",
+            "### Texture Array",
+            "### Texture Atlas",
+            "### Texture Streaming",
+            "### Trim Sheet",
+            "### UV Layout",
+            "### Virtual Texture",
+            "### 间距的定量估算",
+            "### 页表与页边框",
+            "#### 间距的定量估算",
+            "#### 页表与页边框"
+          ],
+          "before_sha256": "0b98b90b17ae27a672afb08a5bd667442abef6d929d2d5ba83594d84490b30ee",
+          "after_sha256": "dd3f50a243ff8cc17e3b09bd6e3ff0b5cc48f024da1e7c12294f64aa6058e97d",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": true
+        },
+        {
+          "path": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# Tone Mapping、Bloom与屏幕效果",
+            "## 相关主题"
+          ],
+          "before_sha256": "336d8384593c28d07929409181354145b5f687981a65f445d3355beeea4fbd77",
+          "after_sha256": "5652c7239b8394a8812f67ee5bc3c8272baed7656061e1ca0b82bf154fbf37e7",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": true
+        },
+        {
+          "path": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# 颜色空间、Alpha、HDR与曝光",
+            "## Alpha Blend 应在线性空间进行",
+            "## Alpha 通道怎么处理",
+            "## Exposure",
+            "## HDR Buffer",
+            "## Pre-Exposure",
+            "## Straight 和 Premultiplied Alpha",
+            "## UI 在线性项目中为什么容易出问题",
+            "## sRGB 不是单纯 Gamma 2.2",
+            "## 为什么光照要在线性空间计算",
+            "## 哪些纹理使用 sRGB",
+            "## 场景亮度",
+            "## 相关主题",
+            "## 线性空间与距离衰减",
+            "## 覆盖与合成",
+            "## 颜色编码",
+            "### Alpha Blend 应在线性空间进行",
+            "### Alpha 通道怎么处理",
+            "### Exposure",
+            "### HDR Buffer",
+            "### Pre-Exposure",
+            "### Premultiplied Alpha",
+            "### Straight Alpha",
+            "### Straight 和 Premultiplied Alpha",
+            "### UI 在线性项目中为什么容易出问题",
+            "### sRGB 不是单纯 Gamma 2.2",
+            "### 为什么光照要在线性空间计算",
+            "### 哪些纹理使用 sRGB",
+            "### 常用 Linear/Data",
+            "### 常用 sRGB",
+            "### 线性空间与距离衰减",
+            "#### Premultiplied Alpha",
+            "#### Straight Alpha",
+            "#### 常用 Linear/Data",
+            "#### 常用 sRGB"
+          ],
+          "before_sha256": "2177a4650c4881241dfafd9473419390bcc7e68306300ff897ad44e22a09b9cb",
+          "after_sha256": "21066fa442fb071fed8c79e3477d3fd5a70f2b45951527c6149390c300feabb3",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": true
+        },
+        {
+          "path": "知识库/13_渲染架构/Deferred Rendering.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# Deferred Rendering",
+            "## 相关主题"
+          ],
+          "before_sha256": "85e1decec20005c3937f96cf38ae3e19dd6b21fe5e49759408f4153db9a9fc16",
+          "after_sha256": "fa1284dca697ebbe50fca4c1f83fdc809da7949880a475613cab89b54e053f00",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/13_渲染架构/Draw Call与合批.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# Draw Call与合批",
+            "## 相关主题",
+            "### 与 GPU Instancing 的取舍"
+          ],
+          "before_sha256": "2393d02a07e37a25cac0681399fa6bff470c81c32525ed0679fd0e1ecea1046b",
+          "after_sha256": "17fa397d8b482dc972c4e5da52961a850bd7314f41872f243452ae1ae9d85350",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/13_渲染架构/Forward Rendering与Forward+.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# Forward Rendering与Forward+",
+            "## 相关主题"
+          ],
+          "before_sha256": "24666ead838d662f968a155d1203f4d2d1487073c605c5159c041b560775ef60",
+          "after_sha256": "5558adf08a324e0aaeb4e0a86b2bef48a2b21cebf710a54f98947d6a5405bf68",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# Unity渲染帧组织",
+            "## 相关主题"
+          ],
+          "before_sha256": "68b2a55c3963825389f245e1f58068e6bfa193eb3a2ea9b3f74d94d350b8806a",
+          "after_sha256": "244148b651726c8dd9e67a91b6636742f2195dbd66ceb78bfa753a6fe8f66e47",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
+          "batch": "Batch3-P0-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# Unreal渲染帧组织",
+            "## 相关主题"
+          ],
+          "before_sha256": "58daf2ff4a9e2ad3c3710b3d26269b7e5ccbf1e752e88cb155e2c32f5c41c19e",
+          "after_sha256": "af93355369d46d3e7f60656687afcf7744848a509784e3995d97cb28429cdf19",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        }
+      ],
+      "static_validation": "待提交前运行",
+      "semantic_review": "本机内容复读，不代替目标运行与用户质量评审"
     }
   ]
 }

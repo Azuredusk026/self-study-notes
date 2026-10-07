@@ -1,8 +1,10 @@
 # UV、图集、流送与虚拟纹理
 
-纹理组织解决两个问题：表面坐标如何对应纹理，以及大量纹理如何在有限内存中按需加载。
+近看子图边缘正常，拉远却串色，先看Mip过滤是否跨过了Padding；相机移动后纹理迟迟不清楚，则检查想要的Mip是否已经驻留。这是坐标组织与运行加载两类问题。我们沿各自数据与消费者解释，保持独立边界，避免用一个开关同时掩盖两种错误。
 
-## UV Layout
+## 表面坐标与共享纹理
+
+### UV Layout
 
 展开 UV 时需要平衡：
 
@@ -15,13 +17,13 @@
 
 没有一种展开能同时最小化所有指标。角色脸部可能优先连续和高密度，硬表面可能优先直线、对齐和 Trim Sheet 复用。
 
-## Texel Density
+### Texel Density
 
 Texel Density 描述单位世界尺寸对应多少纹理像素。统一密度让同类资产的细节尺度一致，也方便估算内存。
 
 它不是所有资产必须同值。主角、背景、可交互物体和远景可以使用不同预算，但差异应来自可见性和项目规范，而不是随意缩放 UV。
 
-## Padding 和 Bleeding
+### Padding 和 Bleeding
 
 过滤和 Mipmap 会读取 UV 岛边缘以外的 Texel。如果岛屿间距不够，远处 Mip 会混入别的岛或背景颜色。
 
@@ -32,13 +34,13 @@ Texel Density 描述单位世界尺寸对应多少纹理像素。统一密度让
 - Atlas 子图保持边缘扩展；
 - Clamp 不能代替岛屿内部 Padding。
 
-### 间距的定量估算
+#### 间距的定量估算
 
 每向下一级 Mip，分辨率减半，同样宽的物理间距在 UV 上能容纳的误差范围也减半。如果最深的可用 Mip 是第 $k$ 级，原始分辨率下岛屿间距至少需要 $2^k$ 个纹素才能完全隔离；不足的部分由边缘向外扩展的颜色填充来兜底。
 
 这解释了为什么“近距离看正常、拉远就串色”几乎都指向 Padding 不足：近距离用的是高等级 Mip，间距够；远处切到低等级 Mip，一个采样核覆盖的范围已经超过岛屿间距。Clamp 只能保证不越出整张纹理，挡不住同一纹理内相邻岛屿的颜色渗入。
 
-## Texture Atlas
+### Texture Atlas
 
 Atlas 把多张小纹理放进一张大纹理，通过 UV Rect 选择区域。
 
@@ -58,19 +60,21 @@ Atlas 把多张小纹理放进一张大纹理，通过 UV Rect 选择区域。
 
 Atlas 本身不会自动减少 Draw Call。材质状态、Shader、Render State、网格提交和引擎 Batching 条件仍要一致。
 
-## Trim Sheet
+### Trim Sheet
 
 Trim Sheet 把可重复的边、面板和装饰带放在一张纹理中，多资产通过 UV 复用。它适合模块化硬表面和建筑。
 
 相比唯一展开，它减少纹理数量和制作成本，但会限制局部独特细节，需要 Decal、Vertex Color 或额外 Mask 补充变化。
 
-## Texture Array
+### Texture Array
 
 Texture Array 保存一组尺寸、格式和 Mip 一致的纹理层。Shader 用 Layer Index 选择，不需要改变 Sampler 绑定。
 
 它避免 Atlas UV 重映射和边缘串色，适合地形、材质集合和粒子。但所有层仍共享尺寸/格式，并且整个 Array 的流送策略受引擎实现影响。
 
-## Texture Streaming
+## 纹理驻留
+
+### Texture Streaming
 
 纹理流送根据相机、Bounds、UV 密度和预算，只保留当前需要的高 Mip。远处使用低 Mip，接近时逐步加载高 Mip。
 
@@ -83,7 +87,7 @@ Texture Array 保存一组尺寸、格式和 Mip 一致的纹理层。Shader 用
 
 如果加载速度追不上相机移动，会看到低清停留或 Mip Pop。盲目把所有纹理设为 Never Stream 会把问题转成显存溢出。
 
-## Streaming 估算为什么会错
+### Streaming 估算为什么会错
 
 - Shader 对 UV 做了缩放或程序化变换；
 - 同一纹理在不同对象上使用不同密度；
@@ -93,7 +97,9 @@ Texture Array 保存一组尺寸、格式和 Mip 一致的纹理层。Shader 用
 
 引擎通常提供 Streaming Debug View，需要检查实际 Desired/Resident Mip。
 
-## Virtual Texture
+## 虚拟分页
+
+### Virtual Texture
 
 Virtual Texture 把超大纹理拆成 Page。Shader 使用虚拟地址，系统通过 Page Table 映射到物理缓存。
 
@@ -108,7 +114,7 @@ Virtual Texture 把超大纹理拆成 Page。Shader 使用虚拟地址，系统�
 
 它让纹理逻辑尺寸大于实际驻留内存，适合大地形、Megatexture 和大量唯一表面。
 
-### 页表与页边框
+#### 页表与页边框
 
 实现上通常有一张间接纹理（Indirection Texture），每个纹素存“这个虚拟页当前在物理缓存的哪个位置、处于哪个 Mip”。采样时先查间接纹理拿到物理地址，再访问物理缓存。物理缓存是一组固定大小（常见 128×128 加边框）的页槽，槽位数量远小于虚拟页总数。
 
@@ -125,7 +131,7 @@ Virtual Texture 把超大纹理拆成 Page。Shader 使用虚拟地址，系统�
 - 随机访问导致缓存抖动；
 - 资产构建和 IO 管线更复杂。
 
-## Runtime Virtual Texture
+### Runtime Virtual Texture
 
 引擎可以在运行时把地形、Decal、道路或物体材质写入虚拟纹理，再由其他表面读取。它常用于地形融合和缓存昂贵材质结果。
 
@@ -162,6 +168,8 @@ float2 AtlasUv(float2 uvLocal, float4 rectPixels, float2 atlasSize)
 - [[23_引擎运行系统/资源依赖与异步加载]]
 - [[25_UI与文本/UI、字体与文本渲染]]
 - [[15_资产与工具管线/资产构建与发布]]
+
+示例与验证范围：代码按文中前提解释机制，完整类型、资源和项目状态需由接入工程补齐。本轮以正文、公式和调用范围复读为主，未执行此页的目标引擎运行与GPU性能实验。
 
 ## 参考资料
 

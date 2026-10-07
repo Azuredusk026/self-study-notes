@@ -1,6 +1,6 @@
 # Draw Call与合批
 
-Draw Call 的主要问题通常在 CPU 提交、状态管理和驱动/API 工作。它不是 GPU “画一次像素”的单位，也不能脱离三角形、像素和 Shader 成本只看数量。
+Frame Debugger里的Draw数量减少了，GPU时间却没变，说明原瓶颈可能不在提交。合批改变命令与状态组织，实例化仍会为每个实例处理顶点和像素。把CPU准备、Draw、实例数据与覆盖分开计量，再比较静态、动态、SRP和实例路径。
 
 ## 一次 Draw 包含什么
 
@@ -67,9 +67,9 @@ Unity SRP Batcher 的重点是减少相同 Shader Variant 间材质常量设置�
 | SRP Batcher | SetPass Call | 相同 Shader Variant | 材质多样、网格各异的普通场景 |
 | GPU Instancing | Draw Call | 相同 Mesh 与 Material | 同屏大量相同网格 |
 
-同屏有大量相同网格时，GPU Instancing 实打实地减少 Draw Call 数量，收益高于只优化状态准备的 SRP Batcher。
+同屏有大量相同网格时，GPU Instancing 实打实地减少 Draw Call 数量，可能比只减少状态准备更有价值，结果由网格、实例、材质与设备计时决定。
 
-关键在于两者**不能同时作用于同一对象**，且存在固定优先级：
+关键在于两者**不能同时作用于同一对象**，且在特定Unity/SRP版本与Renderer路径中存在优先关系，示意为：
 
 ```text
 SRP Batcher > GPU Instancing > Dynamic Batching
@@ -177,6 +177,8 @@ GPU Culling 后把可见实例数量和参数写入 Indirect Argument Buffer，�
 - [[26_GPU驱动与虚拟几何/GPU-Driven Rendering]]
 - [[25_UI与文本/UI、字体与文本渲染]]
 - [[14_性能分析与优化/帧瓶颈怎么判断]]
+
+示例与验证范围：代码按文中前提解释机制，完整类型、资源和项目状态需由接入工程补齐。本轮以正文、公式和调用范围复读为主，未执行此页的目标引擎运行与GPU性能实验。
 
 ## 参考资料
 

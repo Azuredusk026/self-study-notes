@@ -1,8 +1,10 @@
 # Shader接口与数据流
 
-Shader 是运行在 GPU 特定阶段的小程序。写法像普通函数，但输入、输出、资源访问和执行方式都受管线阶段约束。
+CPU上传了一组参数，Shader却读到错位的值，类型名字相似并不能保证布局相同。阶段接口、常量对齐、资源视图和采样方式构成一份契约。沿着数据从顶点或缓冲进入Shader，再输出到后续阶段，能把编译问题与运行数据问题分开。
 
-## HLSL、GLSL 和 ShaderLab
+## 接口与布局
+
+### HLSL、GLSL 和 ShaderLab
 
 - HLSL 是 Direct3D 体系常用的着色语言，也被 Unity、Unreal 和现代跨平台编译链广泛使用。
 - GLSL 是 OpenGL 体系的着色语言。
@@ -11,7 +13,7 @@ Shader 是运行在 GPU 特定阶段的小程序。写法像普通函数，但�
 
 语言语法不是主要差异。资源绑定、坐标约定、编译目标和引擎生成代码更容易造成跨平台问题。
 
-## 顶点输入
+### 顶点输入
 
 Vertex Shader 通常读取：
 
@@ -23,7 +25,7 @@ Vertex Shader 通常读取：
 
 数据来自 Vertex Buffer。Input Layout/Vertex Declaration 说明每个属性的格式、步长和位置。Shader 声明与 Buffer 实际布局不一致时，结果可能完全错误，但 API 不一定能替你发现语义问题。
 
-## Constant、Uniform 和 Buffer
+### Constant、Uniform 和 Buffer
 
 同一个 Draw 中保持不变的小数据通常放在 Constant/Uniform Buffer：
 
@@ -47,7 +49,7 @@ HLSL 用 `cbuffer` 声明常量缓冲区，并可用 `register(b0)` 指定绑定
 
 频率分组能避免只改一个对象时重新上传全局数据。Unity SRP Batcher 要求材质属性位于 `UnityPerMaterial`，引擎按对象提供的数据位于 `UnityPerDraw`，并保持各 Pass 的布局一致。违反布局约定会失去批处理兼容性或读到错误偏移。
 
-### 对齐示例
+#### 对齐示例
 
 下面的 HLSL 布局把相关字段填满 16 字节边界。CPU 侧结构也使用相同字段顺序和总大小：
 
@@ -76,7 +78,9 @@ static_assert(sizeof(PerViewConstants) % 16 == 0);
 
 `static_assert` 只能检查总大小。实际还要检查每个字段偏移、矩阵行列主序和转置约定。GLSL 的 `std140`、HLSL `cbuffer` 与结构化 Buffer 使用的布局规则也不能混用。
 
-## 资源视图与访问权限
+## 资源访问
+
+### 资源视图与访问权限
 
 同一底层资源可以通过不同视图进入管线。Direct3D 常见名称包括：
 
@@ -87,7 +91,7 @@ static_assert(sizeof(PerViewConstants) % 16 == 0);
 
 视图决定格式解释、Mip、数组层和允许的访问方式，不等于复制一份资源。资源从 Render Target 写入转为 Shader 读取时，现代显式 API 还需要正确的 Resource State、Barrier 和同步范围。把仍在写的资源同时当作 SRV/UAV 读取，会形成读写冲突；调试时应同时检查视图、槽位和状态转换。
 
-## Texture 和 Sampler
+### Texture 和 Sampler
 
 Texture 保存数据。Sampler 描述如何读取：过滤、寻址、LOD 等。
 
@@ -104,7 +108,9 @@ Texture 保存数据。Sampler 描述如何读取：过滤、寻址、LOD 等。
 
 因此“只采了一张纹理”并不等于只读一次显存。
 
-## Varying 和插值
+## 阶段数据
+
+### Varying 和插值
 
 Vertex Shader 输出会在三角形内部插值，再进入 Pixel Shader。常见数据有 UV、世界位置、法线和颜色。
 
@@ -115,13 +121,13 @@ Vertex Shader 输出会在三角形内部插值，再进入 Pixel Shader。常�
 - `flat/nointerpolation` 不做插值，适合 ID 等离散数据；
 - `noperspective` 使用屏幕线性插值，不做透视修正。
 
-## Semantic 和 Location
+### Semantic 和 Location
 
 HLSL 常用 `POSITION`、`TEXCOORD0`、`SV_Position` 等 Semantic 连接阶段。GLSL/Vulkan 常用显式 Location。
 
 System Value 表示管线提供的特殊数据，例如 Vertex ID、Instance ID、Position、Depth。它们不是普通顶点属性。
 
-### GLSL 接口块与片元内建输入
+#### GLSL 接口块与片元内建输入
 
 接口块把跨阶段的多个字段组织在一起。生产者与消费者的块名可以不同，但字段的类型、顺序、数组大小和插值修饰必须满足链接规则。显式 `location` 能让接口契约更清楚：
 
@@ -147,7 +153,9 @@ void main()
 
 片元 Shader 可以写 `gl_FragDepth` 覆盖光栅器生成的深度。任意改写深度会限制提前深度测试；能保证写出值只比原深度更近或更远时，可使用保守深度布局向驱动声明约束。验证时同时显示颜色和深度附件：接口错配常表现为属性全零或跳变，深度约定错误会表现为遮挡反转或 Early-Z 效率下降。
 
-## 精度
+## 数值与控制流
+
+### 精度
 
 `float`、`half`、`min16float` 的实际位宽和运算方式受目标平台、编译器和 GPU 影响。桌面 GPU 可能把 `half` 仍按 32 位执行，移动 GPU 则可能真正受益。
 
@@ -161,13 +169,13 @@ void main()
 
 精度优化必须看编译结果和目标硬件，不应只改类型名。
 
-## 分支
+### 分支
 
-### 编译期分支
+#### 编译期分支
 
 预处理宏会产生不同程序。未选中的代码不会进入当前变体，但组合过多会增加编译、包体和加载成本。
 
-### 运行时分支
+#### 运行时分支
 
 条件在运行时判断。若同一 Wave 中线程走不同路径，GPU 可能依次执行两边并屏蔽不参与的 Lane。
 
@@ -177,7 +185,7 @@ void main()
 - 分支能跳过很重的工作时可能值得；
 - 很短的分支可能被编译器改成无分支选择。
 
-## Shader Graph
+### Shader Graph
 
 Shader Graph 是生成 Shader 代码的前端，不是另一种 GPU 管线。节点最终仍会变成采样、算术、分支、Varying 和 Pass。
 
@@ -197,6 +205,8 @@ Shader Graph 是生成 Shader 代码的前端，不是另一种 GPU 管线。节
 - [[03_Shader编程/Shader Variant管理]]
 - [[03_Shader编程/Compute Shader与GPU执行模型]]
 - [[06_纹理技术/纹理采样与过滤]]
+
+示例与验证范围：代码按文中前提解释机制，完整类型、资源和项目状态需由接入工程补齐。本轮以正文、公式和调用范围复读为主，未执行此页的目标引擎运行与GPU性能实验。
 
 ## 参考资料
 
