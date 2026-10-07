@@ -1,16 +1,16 @@
 # GBuffer布局
 
-延迟渲染把光照成本从“物体数 × 灯数”降到“屏幕像素数 × 灯数”，代价是每帧要写入并读回若干张全屏纹理。在带宽受限的平台上，这份代价直接决定方案可行与否——每多一张全屏 RT 就多一份读写带宽。
-
-因此 GBuffer 布局是一道约束优化题：在有限的字节数内，装下光照阶段真正需要的全部信息；把属性各占一个通道简单罗列，很快就会撞上字节上限。
+延迟光照要从GBuffer取出表面参数。如果给每个参数单独分配通道，布局很快会变大；若过度压缩，法线、分类或遮罩的误差又会改变光照。我们先看字段由谁消费，再用编码和复用减少成本。
 
 ## 先算带宽账
 
-一张 1080p 的 RGBA8 纹理约 8 MB。几何阶段写一次、光照阶段读一次，每帧就是 16 MB 的流量；60 帧就是接近 1 GB/s。四张 GBuffer 与两张的差距，在移动端往往就是能否达标的分界。
+一张 1080p 的 RGBA8 纹理约 8 MB。几何阶段写一次、光照阶段读一次，每帧就是 16 MB 的流量；60 帧就是接近 1 GB/s。这是完整读写的逻辑字节量，不包含缓存、附件压缩和片上驻留；实际外部流量由平台测量。减少附件的收益取决于当前瓶颈。
 
-桌面端的典型延迟管线用四到六张 GBuffer。移动优先的方案可以压到两张，加上深度与着色累加区共四个 Attachment。压缩手段主要有三类：编码降维、位域打包、通道复用。
+布局数量由材质字段、渲染路径和消费者决定。两张GBuffer可以作为受限材质集合的设计目标，但不是所有桌面或移动管线的标准。压缩手段主要有三类：编码降维、位域打包、通道复用。
 
-## 编码降维：八面体法线
+## 字段编码
+
+### 八面体法线
 
 世界空间法线是单位向量，只有两个自由度，用三个通道存储是浪费。
 
@@ -19,53 +19,42 @@
 八面体映射（Octahedral Encoding）把球面先投影到八面体，再展开成正方形，用两个数覆盖整个球面方向。它的精度分布远比半球投影均匀，且不丢符号：
 
 ```hlsl
-float2 PackNormalWS(float3 normalWS)
+float2 EncodeNormal(float3 normal)
 {
-    float2 oct = PackNormalOctQuadEncode(normalWS);
-    return saturate(oct * 0.5 + 0.5);   // [-1,1] 映射到 [0,1] 以便存入 UNorm 通道
-}
-
-float3 UnpackNormalWS(float2 packed)
-{
-    return UnpackNormalOctQuadEncode(packed * 2.0 - 1.0);
+    normal /= abs(normal.x) + abs(normal.y) + abs(normal.z);
+    float2 f = normal.xy;
+    if (normal.z < 0.0)
+        f = (1.0 - abs(f.yx)) * float2(f.x >= 0 ? 1 : -1,
+                                      f.y >= 0 ? 1 : -1);
+    return f * 0.5 + 0.5;
 }
 ```
 
-省下的一个通道正好安置 Smoothness 或 Metallic。8 位量化下八面体编码的角度误差通常在可接受范围内，但低粗糙度的镜面反射对法线精度敏感，需要实测确认——高光在光滑表面上出现阶梯状色带就是精度不足的典型信号。
+完整编码/解码见 [Packing.hlsl](../examples/gbuffer/Packing.hlsl)。输入是非零单位法线，解码后归一化；下半球折叠保存符号。省下的一个通道可以安置 Smoothness 或 Metallic。8 位量化下八面体编码的角度误差通常在可接受范围内，但低粗糙度的镜面反射对法线精度敏感，需要实测确认——高光在光滑表面上出现阶梯状色带就是精度不足的典型信号。
 
 存储格式必须是 UNorm 而非 SRGB。法线是数据不是颜色，走 sRGB 传递函数会引入非线性误差。
 
-## 位域打包：一个字节装两个值
+### 一个字节装两个字段
 
 当两个量各自都不需要完整 8 位时，可以切分同一个字节。例如用高 3 位存一个 $0\sim7$ 的整数、低 5 位存一个 $[0,1]$ 的浮点：
 
+输入浮点遮罩位于0–1，类别为0–7。先量化遮罩到0–31，再组成一个字节，写入R8_UNORM。读取时点采样，先恢复字节，再拆类别与遮罩：
+
 ```hlsl
-static const half t1 = 31.0 / 255.0;   // 5 位量化步长
-static const half t2 = 32.0 / 255.0;   // 3 位进位步长
-
-half PackFloat5UInt3(half floatPart, uint uintPart)
-{
-    return t1 * floatPart + t2 * half(uintPart);
-}
-
-uint UnpackUIntPart(half value)
-{
-    return uint((value / t2) + rcp(255.0));   // 补偿项不可省略
-}
-
-half UnpackFloatPart(half value, uint uintPart)
-{
-    return saturate((-t2 * half(uintPart) + value) / t1);
-}
+uint q = (uint)floor(saturate(mask) * 31.0 + 0.5);
+float packed = ((identifier & 7u) * 32u + q) / 255.0;
+uint byteValue = (uint)floor(saturate(packed) * 255.0 + 0.5);
+uint restoredId = byteValue / 32u;
+float restoredMask = (byteValue % 32u) / 31.0;
 ```
 
-`rcp(255.0)` 这个补偿项是实现的关键。通道值经过量化与插值后是浮点数，理应为 3 的整数部分可能实际存成 2.9999，直接截断会得到 2，整个材质分类随之出错。加上半个量化步长的偏移可以把值推回正确区间。
+这里的0.5是恢复整数时的半步偏移，量化误差由字段位宽决定。不能把打包值当颜色线性过滤：相邻类别混合会生成第三个类别。MSAA resolve、贴花和后处理都要保持这个字段契约。示例使用float计算，半精度行为在目标编译器和GPU上另测。
 
-不能改用 `round()` 代替：`round` 在不同平台的舍入行为与精度不完全一致，而这里需要的是确定性的向下取整加固定偏移。
+[reference.py](../examples/gbuffer/reference.py)遍历8种类别与32级遮罩，并检查端点和过滤反例，264项CPU检查通过。该结果支持R8_UNORM点读模型，不支持任意精度与过滤方式。5位遮罩误差上限约为1/(2×31)，是否满足AO或阴影用途由画面对照决定。
 
-这类打包的代价是精度：5 位意味着浮点部分只有 32 个可分辨等级。适合 AO、遮罩这类容差大的量，不适合直接参与高频计算的值。
+## 字段复用
 
-## 通道复用：互斥属性共用位置
+### 互斥属性共用位置
 
 延迟渲染的经典缺陷是材质模型单一——GBuffer 字段固定，皮肤的次表面散射、头发的各向异性高光这类专用参数无处安放。
 
@@ -91,11 +80,11 @@ else if (isPlant)
     surfaceData.translucency = gbuffer1.a;              // 又不同
 ```
 
-复用的前提是**属性互斥**：头发不需要金属度，植被不需要各向异性高光。GBuffer 布局设计的典型思路就是先找出互斥的属性集合，再让它们共用通道。
+复用的前提是当前着色模型确实不同时需要这些属性。示例中的头发和植被模型选择了互斥参数；其他材质体系可能同时需要它们。GBuffer 布局设计的典型思路就是先找出互斥的属性集合，再让它们共用通道。
 
 代价是可读性。同一个通道的语义随材质分类变化，阅读与调试成本上升，必须在代码注释与文档中写明每种分类下的通道含义。
 
-## 时间维度的复用
+### 不同执行阶段复用字段
 
 除了按材质复用，还可以按**生命周期**复用：如果某个通道的数据在某个阶段之后不再需要，就可以拿它存别的东西。
 
@@ -119,9 +108,9 @@ mainLight.shadowAttenuation = surfaceData.occlusion;
 
 ## Framebuffer Fetch 与 Subpass
 
-前面所有压缩手段都在减少数据量。移动端还有一条更彻底的路径：让 GBuffer **根本不落显存**。
+前面所有压缩手段都在减少数据量。移动端还有一条更彻底的路径：减少GBuffer的外部内存往返。
 
-Tile-Based 架构的中间结果驻留在片上 Tile Memory 中，只在 Render Pass 结束时写回主存。如果几何阶段与光照阶段能合并成同一个 Render Pass 的多个 Subpass，GBuffer 就可以全程留在 Tile Memory 里。
+Tile-Based 架构的中间结果驻留在片上 Tile Memory 中，只在 Render Pass 结束时写回主存。如果几何阶段与光照阶段能合并成同一个 Render Pass 的多个 Subpass，GBuffer就有机会留在Tile Memory里，实际驻留由附件大小、设备和驱动决定。
 
 Vulkan 的 Subpass 与 Metal 的 Framebuffer Fetch 提供这个能力。Shader 侧的表现是同一个 Attachment 既是输入又是输出：
 
@@ -135,7 +124,7 @@ Vulkan 的 Subpass 与 Metal 的 Framebuffer Fetch 提供这个能力。Shader �
 #endif
 ```
 
-启用后，读取上一个 Subpass 的结果是零成本的——数据本来就在寄存器或片上内存中；未启用时则需要通过专门的 Framebuffer Input 指令加载。
+局部附件读取可以减少外部读写，但仍有执行与片上访问成本。Shader签名是具体项目的表达示例，不能据此断言所有平台零成本。
 
 约束也很明确：
 
@@ -150,13 +139,13 @@ Subpass 的收益不只来自“数据留在片上”，还来自显式声明的
 
 | 操作 | 含义 | 带宽 |
 |---|---|---|
-| `LOAD_OP_LOAD` | 从主存读入已有内容 | 一次全屏读 |
-| `LOAD_OP_CLEAR` | 清成常量 | 无 |
-| `LOAD_OP_DONT_CARE` | 内容未定义 | 无 |
-| `STORE_OP_STORE` | 写回主存 | 一次全屏写 |
-| `STORE_OP_DONT_CARE` | 丢弃 | 无 |
+| `LOAD_OP_LOAD` | 保留已有内容 | 可能增加加载，具体由实现决定 |
+| `LOAD_OP_CLEAR` | 清成常量 | 可采用快速清除，实际计量 |
+| `LOAD_OP_DONT_CARE` | 允许丢弃旧内容 | 不要求保留加载 |
+| `STORE_OP_STORE` | 保留附件结果 | 可能增加存储，具体由实现决定 |
+| `STORE_OP_DONT_CARE` | 允许丢弃结果 | 不要求保留存储 |
 
-GBuffer 的正确配置是 `CLEAR`/`DONT_CARE` 进、`DONT_CARE` 出——它只是中间数据，光照阶段用完就不再需要，写回主存纯属浪费。只有最终的着色结果需要 `STORE`。
+开始操作取决于是否完整写入或需要初始背景；结束操作取决于后续消费者。若同一渲染范围内光照已消费全部字段，范围外没有SSR、SSAO、贴花、调试或回读消费者，就可以丢弃对应附件。需要后续读取时保留STORE。
 
 这是移动端最容易被忽略、收益却极高的一处。默认配置往往是 `LOAD` + `STORE`，仅仅把 GBuffer 的 Store 改成 `DONT_CARE`，就能省下每帧数张全屏纹理的写带宽。深度附件同理：不需要在后续 Pass 采样时，应当丢弃。
 
@@ -172,7 +161,7 @@ Input Attachment 在着色器中是独立的资源类型，读取时不经过采
 
 Subpass 常被当作移动端延迟渲染的万能解，实际收益取决于几个条件，不满足时优势会大幅缩水：
 
-**GBuffer 必须装得进 Tile Memory**。片上内存通常只有几十到上百 KB，按每像素字节数折算，GBuffer 总位宽超标时驱动会退回普通多 Pass 路径——代码照常运行，收益悄然消失。这正是前面各种压缩手段的意义所在。
+**附件预算影响片上驻留**。格式、样本数、附件数量和设备的Tile组织都会影响片上压力。驱动如何拆分或溢出并不统一，用平台计数器和捕获核对结果，不能只按一个固定KB上限推断。
 
 **中间不能插入需要完整画面的操作**。屏幕空间反射、屏幕空间阴影、任何需要采样邻域或整屏的效果都会打断 Subpass 链。真实管线中这类需求很常见，能够合并的往往只是链条的一段。
 
@@ -209,11 +198,11 @@ half4 DecalBlendManually(half4 dst, half4 src)
 
 ## 精度类型
 
-移动端还有一层收益来自精度限定。`real` 一类的抽象类型在移动平台展开为 `half`（16 位）、桌面端为 `float`（32 位）。
+移动端还有一层收益来自精度限定。`real`等别名由项目宏、包版本和编译目标定义，不是硬件通用类型规则。检查预处理结果后再确认实际使用half还是float。
 
-半精度减少寄存器占用与 ALU 开销，对颜色、遮罩、法线这类值通常足够。但位置、深度、累加量需要全精度——半精度在大数值范围上的精度损失会直接表现为可见的跳变。
+半精度在支持有效窄精度执行的目标上可能减少寄存器或ALU成本，对颜色、遮罩、法线这类值通常足够。但位置、深度、累加量需要全精度——半精度在大数值范围上的精度损失会直接表现为可见的跳变。
 
-## 设计取舍总览
+## 字段预算与方案选择
 
 | 收益 | 代价 |
 |---|---|
@@ -232,7 +221,7 @@ half4 DecalBlendManually(half4 dst, half4 src)
 - 用一个粗糙度极低的金属球检查八面体编码精度，高光出现阶梯色带说明位数不足。
 - 统计 GBuffer 总字节数与每帧读写带宽，与目标平台的可用带宽对比。
 - 开关 Framebuffer Fetch 两条路径分别验证，两者结果应当一致。
-- 在帧捕获中确认 Subpass 确实合并，GBuffer 未被写回主存。
+- 结合API捕获、图合并信息与厂商外部流量计数器，检查驻留和读写收益。
 - 检查贴花绘制后目标像素的分类标记是否保持不变。
 
 ## 相关主题
@@ -251,3 +240,5 @@ half4 DecalBlendManually(half4 dst, half4 src)
 - Arm, *Mali GPU Best Practices*, Transaction Elimination and Framebuffer Fetch.
 - Khronos, *Vulkan Specification*, Render Pass and Subpass Input Attachments.
 - Apple, *Metal Programming Guide*, Programmable Blending.
+
+核验范围：CPU打包参考检查和API中立HLSL编译已执行，完整GBuffer管线与目标GPU流量未运行验证。

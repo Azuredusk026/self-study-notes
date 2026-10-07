@@ -1,0 +1,537 @@
+{
+  "batches": [
+    {
+      "id": "Batch3-P0-A",
+      "pages": 21,
+      "articles": [
+        {
+          "path": "知识库/02_GPU与光栅化管线/GPU执行与访存.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# GPU执行与访存",
+            "## 一次通道的带宽下限",
+            "## 相关主题",
+            "## 逻辑流量估算"
+          ],
+          "before_sha256": "054bb51663befb1359185479b35aa9cdb462214ab96030bf29d86b14a11467e9",
+          "after_sha256": "071930ce19b690a9853fd21a4acaf15f909eaca04468659f4b82244c7a0c246d",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# Compute Shader与GPU执行模型",
+            "## 一次 Dispatch 生成多级结果",
+            "## 平台编译与执行边界",
+            "## 相关主题",
+            "## 移动端的两条硬约束",
+            "### 分支本身有代价",
+            "### 寄存器是静态分配的"
+          ],
+          "before_sha256": "ff4681e99aacca969b66b57b589ec279d9de54b0316f8b922c9ee0e5bd6e8a35",
+          "after_sha256": "65411f4e84427e014b6ad6ecb9856dc2b70ae0ef7c371c4ba1cc50adea083471",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": true
+        },
+        {
+          "path": "知识库/03_Shader编程/Shader Variant管理.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# Shader Variant管理",
+            "## 相关主题"
+          ],
+          "before_sha256": "c4ab56b3b9562919a6dc90a7b76f78b01de15ae24f3e9262491966c7712cab2b",
+          "after_sha256": "f54b1854725d5d169057ec8768f7a72d918b94753fd6728c9ab2e9d3490abb73",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/06_纹理技术/纹理采样与过滤.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 纹理采样与过滤",
+            "## 相关主题"
+          ],
+          "before_sha256": "4ab78a2b141727bd8c589ba15a8d8efb2d6c1ad87729816986d943dffdbcfa5b",
+          "after_sha256": "176a4c7193caf8cab5fba34d27f7beb880fbf972531c2a32d5f2f21ab52b1216",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/08_几何与网格/Billboard.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# Billboard",
+            "## 相关主题"
+          ],
+          "before_sha256": "90ae12c4aff848db9c08aa1f6b7aa69fdbd85cbbe6950becd7742e4d29723121",
+          "after_sha256": "48bfe04aa1d22303b9f5e7433b215e01022415ddcf879bfe35e010dc67f267fa",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/08_几何与网格/Tessellation与位移.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# Tessellation与位移",
+            "## 相关主题"
+          ],
+          "before_sha256": "1543cea8db7daf13364743858243fb2be24d2e5dbdd5126834d64ad93de3dc64",
+          "after_sha256": "e76c7cdd41da396d0e2efc1b905175fd18206feb4d571481b112b261bd31a97e",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/09_动画系统/植被风动.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 植被风动",
+            "## 相关主题"
+          ],
+          "before_sha256": "193401d20950c9c2b6ca82a1854e4eeda11235da318c72cc808c11e99532e37f",
+          "after_sha256": "7015802bb8e516a7eee3f7633883b91e3ff6bc84b1d81a11464953dc7cd86b27",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/11_NPR与风格化渲染/NPR材质与分层光照.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# NPR材质与分层光照",
+            "## MatCap 与视角空间细节",
+            "## Ramp Texture",
+            "## 与 PBR 的结合路线",
+            "## 二值化的固有问题",
+            "## 从 NdotL 到明暗坐标",
+            "## 光照组合",
+            "## 分层颜色",
+            "## 参数放在光源还是材质",
+            "## 多光源",
+            "## 数据与工程边界",
+            "## 明暗坐标与颜色层",
+            "## 材质 ID 与区域控制",
+            "## 材质区域与高光",
+            "## 皮肤 Ramp 与 SSS 近似",
+            "## 相关主题",
+            "## 阴影与环境光",
+            "## 风格一致性与质量档",
+            "## 风格化高光",
+            "### MatCap与视角空间细节",
+            "### Ramp Texture",
+            "### 与PBR的结合路线",
+            "### 二值化的固有问题",
+            "### 从NdotL到明暗坐标",
+            "### 分层颜色",
+            "### 参数放在光源还是材质",
+            "### 多光源",
+            "### 材质ID与区域控制",
+            "### 皮肤Ramp与SSS近似",
+            "### 阴影与环境光",
+            "### 风格一致性与质量档",
+            "### 风格化高光"
+          ],
+          "before_sha256": "9d3759df8228cb27cc918bb73a515452d19da01c305af2861464080d93161c80",
+          "after_sha256": "f2f1366677381dd6693a4ebaaa8f13ad5a6c41c2f35d803d3f4971b771fa835a",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# 角色面部、头发与阴影",
+            "## Face SDF 的含义",
+            "## Kajiya-Kay 头发高光",
+            "## SDF 阈值与软边",
+            "## 发流与高光",
+            "## 头发投脸阴影",
+            "## 头发的切线方向",
+            "## 左右脸与翻转",
+            "## 角色 Shadow Map",
+            "## 角色遮挡与阴影",
+            "## 面部为什么难",
+            "## 面部明暗",
+            "## 高光 Mask 与视角稳定",
+            "### Face SDF的含义",
+            "### Kajiya-Kay头发高光",
+            "### SDF阈值与软边",
+            "### 为什么眼睛需要深度感",
+            "### 光追投影",
+            "### 头发投脸阴影",
+            "### 头发的切线方向",
+            "### 左右脸与翻转",
+            "### 方案对照",
+            "### 深度偏移法",
+            "### 角色Shadow Map",
+            "### 面部为什么难",
+            "### 高光Mask与视角稳定",
+            "#### 光追投影",
+            "#### 方案对照",
+            "#### 深度偏移法"
+          ],
+          "before_sha256": "181a5095ba5269bf4e6a095dc06265e6196d60abd35a185c9f87b7a23b077d5c",
+          "after_sha256": "a943861dcd81fd08ae3698451692e68efb14a2329414252749b281ecea49358a",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": true
+        },
+        {
+          "path": "知识库/13_渲染架构/Command Buffer与帧提交.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# Command Buffer与帧提交",
+            "## D3D12 的安全复用",
+            "## 一帧的所有权",
+            "## 在途帧数量",
+            "## 多线程记录",
+            "## 引擎对应",
+            "## 引擎映射",
+            "## 相关主题",
+            "## 记录与排队策略",
+            "## 记录到完成",
+            "### D3D12 的安全复用",
+            "### 一帧的所有权",
+            "### 在途帧数量",
+            "### 多线程记录",
+            "### 引擎对应"
+          ],
+          "before_sha256": "e55db37aaa3f72357fade7d0d0d840728feab4b64c192b76daca2bc4894f9497",
+          "after_sha256": "ef03985e7942ff506d8bbbbc063bda56f657ed7199da9b7db68681ea7d8e5adf",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/13_渲染架构/GBuffer布局.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE",
+            "DEEPEN",
+            "FACT-CHECK"
+          ],
+          "changed_sections": [
+            "# GBuffer布局",
+            "## Framebuffer Fetch 与 Subpass",
+            "## 位域打包：一个字节装两个值",
+            "## 先算带宽账",
+            "## 参考资料",
+            "## 字段复用",
+            "## 字段编码",
+            "## 字段预算与方案选择",
+            "## 时间维度的复用",
+            "## 精度类型",
+            "## 编码降维：八面体法线",
+            "## 设计取舍总览",
+            "## 通道复用：互斥属性共用位置",
+            "## 验证方法",
+            "### Load 与 Store 操作",
+            "### 一个字节装两个字段",
+            "### 不同执行阶段复用字段",
+            "### 互斥属性共用位置",
+            "### 八面体法线",
+            "### 移动端的真实收益边界"
+          ],
+          "before_sha256": "5a37fd5867c0d27e9abe91b161889b2d0ace04b3bc44e47656e67f4e384a13ec",
+          "after_sha256": "628b911d1955d63425d5fce7fa4ed182152fd8c3e2fff0935669ded78077f8dd",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/13_渲染架构/GPU同步与屏障.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# GPU同步与屏障",
+            "## GPU访问依赖",
+            "## Vulkan 写后读示例",
+            "## 图像布局与子资源",
+            "## 异步计算的条件",
+            "## 执行与内存依赖",
+            "## 提交与队列",
+            "## 相关主题",
+            "## 队列同步",
+            "### Vulkan 写后读示例",
+            "### 图像布局与子资源",
+            "### 异步计算的条件",
+            "### 执行与内存依赖",
+            "### 队列同步"
+          ],
+          "before_sha256": "f2c30f7b9e089d6b17f085b871ba4bebcf157036700a0c08e1927e546036ad05",
+          "after_sha256": "1a6a486058e74e571a55bcc7d3222b334e401cb70e36262f0ec9b8c9497d660d",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/13_渲染架构/GPU资源生命周期.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# GPU资源生命周期",
+            "## 上传与回读",
+            "## 内容与完成边界",
+            "## 分配与复用",
+            "## 帧内与跨帧资源",
+            "## 数据传输",
+            "## 池复用与堆别名",
+            "## 环形上传区间",
+            "## 相关主题",
+            "## 驻留与内存预算",
+            "### 上传与回读",
+            "### 帧内与跨帧资源",
+            "### 池复用与堆别名",
+            "### 环形上传区间",
+            "### 驻留与内存预算"
+          ],
+          "before_sha256": "53b56f486dcdf7935c14dcd9b797290adb326a16cdf2dd299687895e5abbd494",
+          "after_sha256": "0e41a5240fbbe6bfc75aff1632a301fdd22c554ac250b2ef63112fd6f7657b1d",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/13_渲染架构/GPU资源绑定.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# GPU资源绑定",
+            "## API 暴露方式",
+            "## Bindless 的索引访问",
+            "## Vulkan 动态 uniform 示例",
+            "## 动态数据与索引",
+            "## 寻址与布局",
+            "## 寿命与成本",
+            "## 小参数与推送常量",
+            "## 成本与边界",
+            "## 按访问和更新频率组织",
+            "## 相关主题",
+            "### API 暴露方式",
+            "### Bindless 的索引访问",
+            "### Vulkan 动态 uniform 示例",
+            "### 小参数与推送常量",
+            "### 成本与边界",
+            "### 按访问和更新频率组织"
+          ],
+          "before_sha256": "c0ae400b1c8a1270ab585cc32fbbce211966c119bfe1b2b2a33d1cd3ae83f57b",
+          "after_sha256": "d4bd25126146c8d0796aee695465f252ea1694eef4a38ed196709ff2dd0597b6",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/13_渲染架构/Pipeline State Object.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# Pipeline State Object",
+            "## 与 Shader 变体的关系",
+            "## 创建与使用",
+            "## 创建与消费",
+            "## 状态组成",
+            "## 相关主题",
+            "## 组合与缓存",
+            "## 缓存键",
+            "### 与 Shader 变体的关系",
+            "### 创建与使用",
+            "### 状态组成",
+            "### 缓存键"
+          ],
+          "before_sha256": "392fdad585aa06f030379bcc9a1af999044b9f2a525e961d0b68e1ac455604f5",
+          "after_sha256": "ef63bfeeaa27e8d293ed60d95ecd63b144dadcf769e847995accbae85cb7c2a3",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/13_渲染架构/Render Graph.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE",
+            "DEEPEN",
+            "FACT-CHECK"
+          ],
+          "changed_sections": [
+            "## 生命周期与别名复用",
+            "## 调度与合并",
+            "## 资源版本和依赖",
+            "## 通道剔除",
+            "## 验证方法",
+            "### Pass合并与Tile GPU",
+            "### 从可观察结果反向标记",
+            "### 可运行参考编译器",
+            "### 在实际执行顺序上统计区间",
+            "### 引擎与GPU验证",
+            "### 数据边与执行边各负责什么",
+            "### 最小标记算法",
+            "### 用版本标识内容",
+            "### 跨队列与跨帧寿命",
+            "### 队列并行与关键路径"
+          ],
+          "before_sha256": "ff941239ad02d2e7e5b733cd260ed7536aa7ab2ec6e4b57609f3e58b292959d4",
+          "after_sha256": "9cf37462ac9477f36ae0a434fd73be993e335a6c25f434cbe87f3353fbbb6ec0",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/13_渲染架构/Render Pass与附件.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# Render Pass与附件",
+            "## OpenGL 帧缓冲与对象状态",
+            "## Tile GPU 与带宽",
+            "## Vulkan 动态渲染示例",
+            "## 后端表达",
+            "## 平台与采样",
+            "## 相关主题",
+            "## 附件契约",
+            "## 附件的内容需求",
+            "### OpenGL 帧缓冲与对象状态",
+            "### Tile GPU 与带宽",
+            "### Vulkan 动态渲染示例",
+            "### 附件的内容需求"
+          ],
+          "before_sha256": "b041f4e6e949e21dc9cc37f55704b70b5795412d6e81b7e5f173f35ed1db81c7",
+          "after_sha256": "4c57ce601e5a95991d64c97d327f48a8117ed1ec9908e387746f8231d9b60d45",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/13_渲染架构/Tiled与Clustered光源剔除.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# Tiled与Clustered光源剔除",
+            "## 相关主题"
+          ],
+          "before_sha256": "85e7b487deeea23183b012beb9038c605903c94faa88a70c28a64e12335929d3",
+          "after_sha256": "547531c2b549e16a7f0445d6aa5e24f6f4030a5a14ca23a8657b024bd4bcaebf",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/14_性能分析与优化/PSO首次使用为什么卡顿.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# PSO首次使用为什么卡顿",
+            "## PSO Precaching",
+            "## 内存代价",
+            "## 参考资料",
+            "## 各图形 API 的差异",
+            "## 相关主题",
+            "### 等待预编译完成"
+          ],
+          "before_sha256": "cd4315b9754c73c62598d5cb61971b3e35853cd06b84daf4eca04509fd791e6a",
+          "after_sha256": "e9aaff63dd8eba41574542c69549968862860cd3ec54748cb00dfd92f07ce683",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# URP Render Graph自定义Pass"
+          ],
+          "before_sha256": "78ce150cae20033e4b81782ff76b64c0a6b1b29445e573b8009be72b6bf00faa",
+          "after_sha256": "7071bcde0ab5f8dc0bc20c01e435a837df57ab11b0bf4434e0c449b389dde6ee",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/22_渲染引擎实现/Unreal RDG Pass实现.md",
+          "batch": "Batch3-P0-A",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# Unreal RDG Pass实现",
+            "## 参数、引用与执行回调"
+          ],
+          "before_sha256": "48f07c11c8785219b26ca2d04785e58f9d628ab6e95ea26a7bf4cef9658233da",
+          "after_sha256": "9eddb422401fb604cacdef163bd9334a2bf4ac96dc05881950eb14c02ecec56a",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        }
+      ],
+      "static_validation": "待提交前运行",
+      "semantic_review": "本机内容复读，不代替目标运行与用户质量评审"
+    }
+  ]
+}
