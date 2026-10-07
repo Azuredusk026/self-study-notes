@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "asset_id": "outline-screen-flow",
+      "kind": "deterministic-diagram",
+      "local_path": "outline/screen-flow.svg",
+      "sha256": "9eff93d55c3009201d57b31aa84c46bea4a7b17af38aadc5b6d7d90797ccb377",
+      "author": "本知识库",
+      "source_url": null,
+      "license": "本仓库自制资产，未单独声明许可证",
+      "publication_status": "adopted",
+      "article_usage": [
+        "11_NPR与风格化渲染/描边"
+      ],
+      "section_usage": "屏幕空间描边",
+      "caption": "输入缓冲到边缘再到颜色合成的数据依赖",
+      "reusable": true,
+      "verification_status": "关系与数值核对；非GPU截图"
+    },
+    {
+      "asset_id": "outline-mask-dilation",
+      "kind": "cpu-reference-result",
+      "local_path": "outline/mask-dilation.svg",
+      "sha256": "877cf59b373677809142188cb4faf5ca5fcbd106f70e2193bee717cbafcd18b3",
+      "author": "本知识库",
+      "source_url": null,
+      "license": "本仓库自制资产，未单独声明许可证",
+      "publication_status": "adopted",
+      "article_usage": [
+        "11_NPR与风格化渲染/描边"
+      ],
+      "section_usage": "对象遮罩与ID",
+      "caption": "CPU参考二值膨胀与差值24像素结果",
+      "reusable": true,
+      "verification_status": "关系与数值核对；非GPU截图"
+    }
+  ],
+  "source_candidates": [
+    {
+      "asset_id": "zhihu-603649633-03",
+      "source_url": "https://zhuanlan.zhihu.com/p/603649633",
+      "author": "别看着我笑了",
+      "original_asset": "images/img_03.jpg",
+      "license": "公开复制许可未确认",
+      "publication_status": "candidate-not-adopted",
+      "local_path": null
+    },
+    {
+      "asset_id": "zhihu-603649633-11",
+      "source_url": "https://zhuanlan.zhihu.com/p/603649633",
+      "author": "别看着我笑了",
+      "original_asset": "images/img_11.jpg",
+      "license": "公开复制许可未确认",
+      "publication_status": "candidate-not-adopted",
+      "local_path": null
+    },
+    {
+      "asset_id": "zhihu-603649633-13",
+      "source_url": "https://zhuanlan.zhihu.com/p/603649633",
+      "author": "别看着我笑了",
+      "original_asset": "images/img_13.jpg",
+      "license": "公开复制许可未确认",
+      "publication_status": "candidate-not-adopted",
+      "local_path": null
+    },
+    {
+      "asset_id": "zhihu-603649633-16",
+      "source_url": "https://zhuanlan.zhihu.com/p/603649633",
+      "author": "别看着我笑了",
+      "original_asset": "images/img_16.jpg",
+      "license": "公开复制许可未确认",
+      "publication_status": "candidate-not-adopted",
+      "local_path": null
+    },
+    {
+      "asset_id": "zhihu-603649633-34",
+      "source_url": "https://zhuanlan.zhihu.com/p/603649633",
+      "author": "别看着我笑了",
+      "original_asset": "images/img_34.jpg",
+      "license": "公开复制许可未确认",
+      "publication_status": "candidate-not-adopted",
+      "local_path": null
+    },
+    {
+      "asset_id": "zhihu-603649633-35",
+      "source_url": "https://zhuanlan.zhihu.com/p/603649633",
+      "author": "别看着我笑了",
+      "original_asset": "images/img_35.jpg",
+      "license": "公开复制许可未确认",
+      "publication_status": "candidate-not-adopted",
+      "local_path": null
+    },
+    {
+      "asset_id": "zhihu-603649633-36",
+      "source_url": "https://zhuanlan.zhihu.com/p/603649633",
+      "author": "别看着我笑了",
+      "original_asset": "images/img_36.jpg",
+      "license": "公开复制许可未确认",
+      "publication_status": "candidate-not-adopted",
+      "local_path": null
+    },
+    {
+      "asset_id": "zhihu-603649633-37",
+      "source_url": "https://zhuanlan.zhihu.com/p/603649633",
+      "author": "别看着我笑了",
+      "original_asset": "images/img_37.jpg",
+      "license": "公开复制许可未确认",
+      "publication_status": "candidate-not-adopted",
+      "local_path": null
+    }
+  ]
+}

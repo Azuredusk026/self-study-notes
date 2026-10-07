@@ -21,7 +21,8 @@
       "Writing Style": "首轮自检通过",
       "Visuals": "按用途验证或不适用"
     },
-    "batch_migration_authorized": false
+    "batch_migration_authorized": false,
+    "implementation_status": "首轮已实施，待标杆评审"
   },
   {
     "path": "知识库/00_知识库说明/技术中文写作规范.md",
@@ -44,7 +45,8 @@
       "Writing Style": "首轮自检通过",
       "Visuals": "按用途验证或不适用"
     },
-    "batch_migration_authorized": false
+    "batch_migration_authorized": false,
+    "implementation_status": "首轮已实施，待标杆评审"
   },
   {
     "path": "知识库/00_知识库说明/术语表.md",
@@ -114,7 +116,8 @@
       "Writing Style": "首轮自检通过",
       "Visuals": "按用途验证或不适用"
     },
-    "batch_migration_authorized": false
+    "batch_migration_authorized": false,
+    "implementation_status": "首轮已实施，待标杆评审"
   },
   {
     "path": "知识库/01_数学与采样/信号、频率与噪声.md",
@@ -1247,7 +1250,8 @@
       "Writing Style": "首轮自检通过",
       "Visuals": "按用途验证或不适用"
     },
-    "batch_migration_authorized": false
+    "batch_migration_authorized": false,
+    "implementation_status": "首轮已实施，待标杆评审"
   },
   {
     "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
@@ -1270,7 +1274,8 @@
       "Writing Style": "首轮自检通过",
       "Visuals": "按用途验证或不适用"
     },
-    "batch_migration_authorized": false
+    "batch_migration_authorized": false,
+    "implementation_status": "首轮已实施，待标杆评审"
   },
   {
     "path": "知识库/11_NPR与风格化渲染/NPR材质与分层光照.md",
@@ -1317,12 +1322,13 @@
       "Writing Style": "首轮自检通过",
       "Visuals": "按用途验证或不适用"
     },
-    "batch_migration_authorized": false
+    "batch_migration_authorized": false,
+    "implementation_status": "首轮已实施，待标杆评审"
   },
   {
     "path": "知识库/11_NPR与风格化渲染/描边、Billboard与场景风格化.md",
-    "primary_question": "如何绘制描边、构造Billboard并保持场景风格",
-    "boundary_action": "SPLIT",
+    "primary_question": "如何从联合入口找到NPR机制专题",
+    "boundary_action": "OVERVIEW",
     "content_actions": [
       "REWRITE",
       "FACT-CHECK",
@@ -1341,7 +1347,19 @@
       "Writing Style": "首轮自检通过",
       "Visuals": "按用途验证或不适用"
     },
-    "batch_migration_authorized": false
+    "batch_migration_authorized": false,
+    "planned_boundary_action": "SPLIT",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "migration_targets": [
+      "描边",
+      "Billboard朝向、锚点与深度",
+      "植被风动与顶点变形",
+      "NPR与场景风格导读"
+    ],
+    "implementation_status": "首轮已实施，待标杆评审"
   },
   {
     "path": "知识库/11_NPR与风格化渲染/植被风动与顶点变形.md",
@@ -1364,7 +1382,8 @@
       "Writing Style": "首轮自检通过",
       "Visuals": "按用途验证或不适用"
     },
-    "batch_migration_authorized": false
+    "batch_migration_authorized": false,
+    "implementation_status": "首轮已实施，待标杆评审"
   },
   {
     "path": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
