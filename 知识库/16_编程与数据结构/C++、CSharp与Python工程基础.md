@@ -26,7 +26,9 @@ TA 不需要用一种语言解决全部问题。C++、C# 和 Python 常处在不
 
 “Python 慢、C++ 快”不足以做选择。瓶颈可能在 DCC API、磁盘、网络或外部进程。先 Profile，再决定是否把热点移到 Native/Vectorized 库。
 
-## C++ 构建链
+## C++ 从源码到模块边界
+
+### C++ 构建链
 
 一个典型流程：
 
@@ -51,7 +53,7 @@ Preprocessor 展开 `#include`、宏和条件编译。Compiler 对每个 Transla
 
 排错先判断阶段，不要看到“编译失败”就反复改代码。
 
-## Header 与 Translation Unit
+### Header 与 Translation Unit
 
 Header 通常放声明、Inline/Template 和必要类型；`.cpp` 放实现。Header 被多少文件包含，影响增量编译范围。
 
@@ -64,7 +66,7 @@ Header 通常放声明、Inline/Template 和必要类型；`.cpp` 放实现。He
 
 Include Guard/`#pragma once` 防止同一 Translation Unit 重复包含，但不解决跨 Translation Unit 的 One Definition Rule。
 
-## Static 与 Dynamic Library
+### Static 与 Dynamic Library
 
 Static Library 在 Link 时把所需 Object 合入目标。部署简单，但多个程序可能各自包含一份，更新需要重新链接。
 
@@ -79,7 +81,7 @@ Dynamic Library 在运行时加载，多个模块可共享并独立替换，但�
 
 跨 DLL 分配、另一侧释放若使用不同 Heap/CRT，可能崩溃。边界常提供成对 `Create/Destroy`，由分配方负责释放。
 
-## ABI 与 C Interface
+### ABI 与 C Interface
 
 C++ 类、STL Container、Exception 和 Name Mangling 容易受编译器/版本影响。长期稳定插件接口常暴露简单 C ABI：
 
@@ -92,19 +94,21 @@ C++ 类、STL Container、Exception 和 Name Mangling 容易受编译器/版本�
 
 不要跨边界直接传 `std::string`、`std::vector` 或编译器私有对象，除非所有模块严格锁定同一工具链。
 
-## Win32 与 COM 边界
+### Win32 与 COM 边界
 
 Win32 GUI 程序从消息队列取出事件，经 `TranslateMessage` 和 `DispatchMessage` 送到窗口过程 `WndProc`。`WPARAM`、`LPARAM` 的解释取决于消息类型，可能保存整数、位域或指针。窗口创建、输入、缩放和销毁都通过消息发生；引擎平台层应把它们转换成稳定事件，再交给上层系统。
 
 COM 用接口和二进制契约连接不同组件。对象通过 `QueryInterface` 查询支持的接口，用 `AddRef/Release` 管理引用计数，接口以 GUID 标识。DirectX 与许多 Windows API 返回 COM 对象，C++ 中应使用智能指针封装引用计数，并明确线程 Apartment、初始化与释放顺序。
 
-## C++ 类型与布局
+## C++ 类型与资源怎样工作
+
+### C++ 类型与布局
 
 STL 提供容器、迭代器和算法，模板在编译期生成具体类型代码。继承与虚函数支持运行时多态，但会引入对象布局、间接调用和 ABI 约束；数据导向热路径更常用显式数据与批处理。
 
 Struct 的 Padding 由成员对齐要求决定，成员顺序会改变 `sizeof`。Union 让多个成员共享同一段存储，必须记录当前有效成员；现代 C++ 更适合用 `std::variant` 表达带标签联合。任何跨文件、网络、GPU 或插件边界的数据结构都应固定宽度、布局和版本，不能直接依赖编译器默认内存表示。
 
-## C++ 对象模型与虚函数
+### C++ 对象模型与虚函数
 
 普通非虚成员函数不存放在每个对象内。对象主要保存非静态数据成员和编译器需要的隐藏信息。含虚函数的对象通常带一个虚表指针，指向该动态类型的虚函数表。通过基类指针或引用调用虚函数时，程序根据动态类型查表完成运行时分派。
 
@@ -121,7 +125,7 @@ Struct 的 Padding 由成员对齐要求决定，成员顺序会改变 `sizeof`�
 
 虚调用的主要代价是一次间接调用，并可能限制内联。真正风险通常是对象分散、指针追逐和所有权不清。稳定扩展点适合接口多态，海量同构对象的热循环更适合连续数据与显式类型分组。
 
-## C++ 所有权
+### C++ 所有权
 
 RAII 让资源生命周期绑定对象作用域。Constructor 获取资源，Destructor 释放资源。它不仅用于内存，也用于 File、Lock、GPU Handle 和 Transaction。
 
@@ -134,7 +138,7 @@ RAII 让资源生命周期绑定对象作用域。Constructor 获取资源，Des
 
 `shared_ptr` 不是默认安全选择。它增加原子引用计数、控制块和环引用风险。能用明确 Owner 和 Borrowed Reference 时更简单。
 
-## Copy、Move 与异常安全
+### Copy、Move 与异常安全
 
 资源类型应优先遵守 Rule of Zero：让标准容器和智能指针管理资源，类型本身不手写析构、复制和移动。直接持有资源的 C++ 类型，需要一起设计析构、复制构造、复制赋值、移动构造和移动赋值。这是五法则（Rule of Five）。优先用标准资源包装类型承担所有权，减少手写这些操作的需要。
 
@@ -142,7 +146,9 @@ Move 把资源所有权转移到新对象，源对象仍需保持可析构、可
 
 容器和工具代码常讨论三种异常保证：失败后没有资源泄漏；失败后对象仍有效但值可能变化；失败后状态完全不变。RAII、先构造临时结果再交换，以及不抛异常的 Move 能帮助实现更强保证。
 
-## C# 的运行模型
+## C# 怎样编译并管理对象
+
+### C# 的运行模型
 
 C# 编译为 .NET Assembly 与中间语言，随后由 Runtime JIT 或 AOT 成本机代码。具体路径取决于平台和引擎。
 
@@ -155,7 +161,7 @@ Unity 中需要区分 Mono、IL2CPP 和平台 AOT：
 
 因此只在 Editor 运行成功的反射/动态加载代码，不一定能在目标平台工作。需要 Link 配置、显式引用和设备构建测试。
 
-## Assembly 与模块边界
+### Assembly 与模块边界
 
 Unity Assembly Definition 可减少无关脚本重编译，并约束 Runtime/Editor/Test 依赖。建议：
 
@@ -167,7 +173,7 @@ Unity Assembly Definition 可减少无关脚本重编译，并约束 Runtime/Edi
 
 模块化的目标是稳定依赖和可测试，不是让目录数量变多。
 
-## C# 的值与引用
+### C# 的值与引用
 
 `class` 实例通常是引用类型，变量保存对象引用；`struct` 是值类型，赋值和传参可能复制。
 
@@ -179,7 +185,7 @@ Unboxing 要求对象实际装箱的值类型与目标类型匹配。它先检�
 
 值类型作为接口调用、传给 `object`、使用非泛型集合或某些格式化路径时可能发生隐式装箱。判断时应查看 IL、Profiler 分配或生成代码，不能只凭源码表面推测。
 
-## C# 委托、事件与资源释放
+### C# 委托、事件与资源释放
 
 Delegate 是类型安全的函数引用，可以组合多个调用目标。Event 在 Delegate 外增加发布边界，订阅方只能订阅和取消，只有声明事件的类型能够触发。长生命周期发布者持有短生命周期订阅者时，未取消订阅会让对象保持可达。
 
@@ -187,7 +193,7 @@ Delegate 是类型安全的函数引用，可以组合多个调用目标。Event
 
 `async`/`await` 把异步操作的后续过程编译成状态机。它不会自动创建线程。IO 等待可以在不占用工作线程时挂起，CPU 密集工作仍需要明确调度。`Task` 表示未来结果，异常会保存在 Task 中，调用方应 `await` 或显式观察。
 
-## C# 泛型、LINQ 与相等性
+### C# 泛型、LINQ 与相等性
 
 C# 泛型在编译和运行时保留类型信息，能提供类型安全，并减少值类型通过 `object` 传递产生的装箱。约束用于声明类型参数必须提供的能力，例如接口、引用类型、值类型或无参构造。
 
@@ -195,7 +201,9 @@ LINQ 提高表达力，但许多操作使用延迟执行、Iterator、Delegate �
 
 引用类型默认按引用身份比较，`string` 和实现了值相等的类型除外。自定义 Key 若重写 `Equals`，必须提供一致的 `GetHashCode`；参与 Hash 的字段在放入 Dictionary 后不应变化。
 
-## Python 环境
+## Python 怎样接入制作环境
+
+### Python 环境
 
 DCC 常嵌入特定 Python 版本，并附带自己的 Module、Qt Binding 和动态库。系统 Python 能运行，不代表 Maya/Blender 内能导入相同包。
 
@@ -210,7 +218,7 @@ DCC 常嵌入特定 Python 版本，并附带自己的 Module、Qt Binding 和�
 
 不要在用户全局 `site-packages` 随意 `pip install`。项目可使用受控目录、Wheelhouse 或 Launcher 注入路径，并固定依赖 Hash。
 
-## Python 的 Context 与数据 API
+### Python 的 Context 与数据 API
 
 Maya `cmds`、Blender `bpy.ops` 等命令 API 可能依赖 Selection、Mode 和当前 UI。批处理优先使用显式对象和 Data API。
 
@@ -223,15 +231,17 @@ Maya `cmds`、Blender `bpy.ops` 等命令 API 可能依赖 Selection、Mode 和�
 
 频繁调用一次处理一个点的 Native Binding，成本可能主要来自边界切换，而不是算法。
 
-## GIL 与并发
+### GIL 与并发
 
-CPython 的 Global Interpreter Lock 使同一进程中多个 Python Thread 通常不能并行执行 CPU-bound Python Bytecode。
+本机采用的常规 CPython 3.12 构建带有 Global Interpreter Lock，同一进程中的线程通常不能并行执行 CPU 密集 Python 字节码。较新版本还提供可选 free-threaded 构建，是否启用以及扩展兼容性要按实际解释器核对。
 
 Thread 仍适合 IO 等待；释放 GIL 的 Native 库可并行；CPU-heavy 任务可使用 Process Pool，但要承担数据序列化和进程启动成本。
 
 DCC API 多数要求主线程调用。不要从后台线程直接修改 Scene。可后台解析文件，再把对象修改排回主线程。
 
-## 跨语言边界
+## 跨语言接口怎样落地
+
+### 跨语言边界
 
 常见方式：
 
@@ -244,7 +254,7 @@ DCC API 多数要求主线程调用。不要从后台线程直接修改 Scene。
 
 边界设计要明确 Ownership、Thread、Encoding、Error、Cancellation 和 Version。高频小调用应合并为 Batch，避免 Serialization/Interop 成为瓶颈。
 
-## Error Handling
+### Error Handling
 
 C++ Exception、C# Exception 和 Python Exception 不应未经转换跨 ABI/进程边界。
 
@@ -258,7 +268,7 @@ C++ Exception、C# Exception 和 Python Exception 不应未经转换跨 ABI/进�
 
 不要用 Exception 表示普通 Validation Failure，也不要吞掉异常后返回空数据，让下游继续生成错误资产。
 
-## 配置与路径
+### 配置与路径
 
 使用结构化配置和 `Path` API，不手工拼接分隔符。区分：
 

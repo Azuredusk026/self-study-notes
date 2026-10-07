@@ -5083,21 +5083,21 @@
     "primary_question": "如何跨DCC和引擎保持资产语义",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -5112,29 +5112,74 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## DCC 的职责",
+      "## FBX",
+      "## Houdini 的属性模型",
+      "## Metadata 与 Sidecar",
+      "## Normal 与 Tangent",
+      "## Reference、Copy 与 Round-trip",
+      "## Transform 与 Pivot",
+      "## USD",
+      "## glTF",
+      "## 交换前先固定数据契约",
+      "## 几何语义",
+      "## 坐标系",
+      "## 材质与贴图",
+      "## 来源与版本怎样保留",
+      "## 格式怎样表达制作数据",
+      "## 版本兼容",
+      "## 骨骼与动画",
+      "### Assimp 场景遍历与纹理去重",
+      "### DCC 的职责",
+      "### FBX",
+      "### HDA 与参数暴露",
+      "### Houdini 的属性模型",
+      "### Metadata 与 Sidecar",
+      "### Normal 与 Tangent",
+      "### Reference、Copy 与 Round-trip",
+      "### Transform 与 Pivot",
+      "### USD",
+      "### VEX",
+      "### glTF",
+      "### 几何语义",
+      "### 坐标系",
+      "### 材质与贴图",
+      "### 版本兼容",
+      "### 骨骼与动画",
+      "#### Assimp 场景遍历与纹理去重",
+      "#### HDA 与参数暴露",
+      "#### VEX"
+    ]
   },
   {
     "path": "知识库/15_资产与工具管线/版本控制、CI与大型资产协作.md",
     "primary_question": "如何协作修改二进制资产并增量验证构建",
     "boundary_action": "SPLIT",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "待拆边界保留",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -5149,29 +5194,38 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "DEFERRED",
     "deferred_title": true,
-    "pending_split": true
+    "pending_split": true,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## 并行修改怎样进入同一版本"
+    ]
   },
   {
     "path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
     "primary_question": "如何让编辑器操作可预览、撤销和批量恢复",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -5188,29 +5242,69 @@
     "proposed_domain": "15_资产与工具管线",
     "category_adoption_status": "方案B已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "# 编辑器工具的事务与批处理",
+      "## Command、Patch 与 Transaction",
+      "## Editor 与 Runtime 隔离",
+      "## Preview 与 Dry-run",
+      "## Unity 与 Unreal 的撤销",
+      "## 一项编辑操作怎样可撤销",
+      "## 可观测性",
+      "## 工具可用性",
+      "## 工具怎样进入团队环境",
+      "## 幂等与可重入",
+      "## 序列化层",
+      "## 批处理",
+      "## 批量操作怎样安全完成",
+      "## 插件部署",
+      "## 文件写入",
+      "## 进度与取消",
+      "## 配置与 Schema",
+      "## 错误模型",
+      "### Command、Patch 与 Transaction",
+      "### Editor 与 Runtime 隔离",
+      "### Preview 与 Dry-run",
+      "### Unity 与 Unreal 的撤销",
+      "### 可观测性",
+      "### 工具可用性",
+      "### 幂等与可重入",
+      "### 序列化层",
+      "### 批处理",
+      "### 插件部署",
+      "### 文件写入",
+      "### 进度与取消",
+      "### 配置与 Schema",
+      "### 错误模型"
+    ]
   },
   {
     "path": "知识库/15_资产与工具管线/资产构建与发布.md",
     "primary_question": "如何将制作输入变成可验证发布资产",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -5225,29 +5319,73 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## Asset Identity",
+      "## Auto-fix 的边界",
+      "## DCC 侧与引擎侧分工",
+      "## Derived Data",
+      "## Error、Warning 与 Info",
+      "## Hash 与增量构建",
+      "## Import Preset 与规则匹配",
+      "## Importer 是编译器",
+      "## Manifest 与数据血缘",
+      "## Reimport 与人工修改",
+      "## Schema 与迁移",
+      "## Staging 与原子发布",
+      "## Validator 的层级",
+      "## 一组结果怎样发布",
+      "## 依赖图与循环",
+      "## 发布门禁",
+      "## 数据怎样通过验证",
+      "## 派生数据与依赖怎样维护",
+      "## 用户可读的失败报告",
+      "## 资产身份与可重复构建",
+      "### Asset Identity",
+      "### Auto-fix 的边界",
+      "### DCC 侧与引擎侧分工",
+      "### Derived Data",
+      "### Error、Warning 与 Info",
+      "### Hash 与增量构建",
+      "### Import Preset 与规则匹配",
+      "### Importer 是编译器",
+      "### Manifest 与数据血缘",
+      "### Reimport 与人工修改",
+      "### Schema 与迁移",
+      "### Staging 与原子发布",
+      "### Validator 的层级",
+      "### 依赖图与循环",
+      "### 发布门禁",
+      "### 用户可读的失败报告"
+    ]
   },
   {
     "path": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
     "primary_question": "如何理解三种语言的运行和工程边界",
     "boundary_action": "SPLIT",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "待拆边界保留",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -5262,28 +5400,81 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "DEFERRED",
     "deferred_title": true,
-    "pending_split": true
+    "pending_split": true,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## ABI 与 C Interface",
+      "## Assembly 与模块边界",
+      "## C# 委托、事件与资源释放",
+      "## C# 怎样编译并管理对象",
+      "## C# 泛型、LINQ 与相等性",
+      "## C# 的值与引用",
+      "## C# 的运行模型",
+      "## C++ 从源码到模块边界",
+      "## C++ 对象模型与虚函数",
+      "## C++ 所有权",
+      "## C++ 构建链",
+      "## C++ 类型与布局",
+      "## C++ 类型与资源怎样工作",
+      "## Copy、Move 与异常安全",
+      "## Error Handling",
+      "## GIL 与并发",
+      "## Header 与 Translation Unit",
+      "## Python 怎样接入制作环境",
+      "## Python 环境",
+      "## Python 的 Context 与数据 API",
+      "## Static 与 Dynamic Library",
+      "## Win32 与 COM 边界",
+      "## 跨语言接口怎样落地",
+      "## 跨语言边界",
+      "## 配置与路径",
+      "### ABI 与 C Interface",
+      "### Assembly 与模块边界",
+      "### C# 委托、事件与资源释放",
+      "### C# 泛型、LINQ 与相等性",
+      "### C# 的值与引用",
+      "### C# 的运行模型",
+      "### C++ 对象模型与虚函数",
+      "### C++ 所有权",
+      "### C++ 构建链",
+      "### C++ 类型与布局",
+      "### Copy、Move 与异常安全",
+      "### Error Handling",
+      "### GIL 与并发",
+      "### Header 与 Translation Unit",
+      "### Python 环境",
+      "### Python 的 Context 与数据 API",
+      "### Static 与 Dynamic Library",
+      "### Win32 与 COM 边界",
+      "### 跨语言边界",
+      "### 配置与路径"
+    ]
   },
   {
     "path": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
     "primary_question": "如何管理CPU内存、引擎对象和池复用",
     "boundary_action": "SPLIT",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "待拆边界保留",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -5298,29 +5489,39 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "DEFERRED",
     "deferred_title": true,
-    "pending_split": true
+    "pending_split": true,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "# 内存、对象生命周期与对象池",
+      "## 复用以前先确认旧使用者已退出"
+    ]
   },
   {
     "path": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
     "primary_question": "如何理解进程内存以及实现并发同步",
     "boundary_action": "SPLIT",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "待拆边界保留",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -5335,28 +5536,37 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "DEFERRED",
     "deferred_title": true,
-    "pending_split": true
+    "pending_split": true,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## 并发错误怎样缩小范围"
+    ]
   },
   {
     "path": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
     "primary_question": "如何按操作和查询需求选择算法结构",
     "boundary_action": "OVERVIEW",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -5373,7 +5583,66 @@
     "proposed_domain": "16_编程与数据结构",
     "category_adoption_status": "方案B已采用",
     "deferred_title": true,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## A*",
+      "## Array、List 与 Deque",
+      "## BVH",
+      "## Dijkstra",
+      "## Graph",
+      "## Hash Table",
+      "## KD-Tree 与空间分割",
+      "## Quadtree 与 Octree",
+      "## Scene Graph 不是空间索引",
+      "## Stack、Queue 与 Priority Queue",
+      "## Topological Sort",
+      "## Tree",
+      "## Uniform Grid 与 Spatial Hash",
+      "## `std::vector` 的容量与失效",
+      "## 依赖与路径怎样表示",
+      "## 先定义操作",
+      "## 动态规划",
+      "## 字符串匹配与 KMP",
+      "## 排序与分治",
+      "## 操作决定容器",
+      "## 渐进复杂度",
+      "## 空间查询为什么需要结构",
+      "## 空间查询怎样缩小候选",
+      "## 红黑树与有序关联容器",
+      "## 贪心算法",
+      "## 递归与枚举",
+      "## 问题怎样化成可求解状态",
+      "### A*",
+      "### A* 的核心循环",
+      "### Array、List 与 Deque",
+      "### BVH",
+      "### Dijkstra",
+      "### Graph",
+      "### Hash Table",
+      "### KD-Tree 与空间分割",
+      "### Quadtree 与 Octree",
+      "### Scene Graph 不是空间索引",
+      "### Stack、Queue 与 Priority Queue",
+      "### Topological Sort",
+      "### Tree",
+      "### Uniform Grid 与 Spatial Hash",
+      "### `std::vector` 的容量与失效",
+      "### 先定义操作",
+      "### 动态规划",
+      "### 字符串匹配与 KMP",
+      "### 排序与分治",
+      "### 渐进复杂度",
+      "### 空间查询为什么需要结构",
+      "### 红黑树与有序关联容器",
+      "### 贪心算法",
+      "### 递归与枚举"
+    ]
   },
   {
     "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
@@ -5491,20 +5760,21 @@
     "primary_question": "如何从状态积分和碰撞生成受约束运动",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
-      "FACT-CHECK"
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -5519,28 +5789,50 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## 冲量与约束",
+      "## 接触怎样改变运动",
+      "## 接触怎样生成",
+      "## 查询、层与事件",
+      "## 碰撞检测",
+      "### 2D 圆与 AABB",
+      "### Narrow Phase 的两类主力算法",
+      "### 冲量与约束",
+      "### 查询、层与事件",
+      "### 碰撞检测",
+      "### 穿透修正的三种取向",
+      "#### 2D 圆与 AABB",
+      "#### Narrow Phase 的两类主力算法",
+      "#### 穿透修正的三种取向"
+    ]
   },
   {
     "path": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
     "primary_question": "如何为不同玩法对象构造物理代理与约束",
     "boundary_action": "SPLIT",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "待拆边界保留",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -5555,29 +5847,38 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "DEFERRED",
     "deferred_title": true,
-    "pending_split": true
+    "pending_split": true,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## 载具",
+      "### XPBD 距离约束"
+    ]
   },
   {
     "path": "知识库/19_Gameplay与游戏框架/玩法事件与脚本.md",
     "primary_question": "如何解耦玩法规则与事件脚本执行",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -5592,28 +5893,37 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "# 玩法事件与脚本",
+      "### 延迟派发事件"
+    ]
   },
   {
     "path": "知识库/19_Gameplay与游戏框架/输入与动作状态.md",
     "primary_question": "如何从输入请求推进角色动作并驱动表现",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -5628,28 +5938,54 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## 2D Sprite 的变换与投影",
+      "## 从设备到命令",
+      "## 分层框架",
+      "## 意图怎样成为合法动作",
+      "## 数据驱动与调试",
+      "## 最小游戏循环",
+      "## 状态怎样进入显示帧",
+      "## 移动与状态解耦",
+      "## 请求层与行为层",
+      "### 2D Sprite 的变换与投影",
+      "### 从设备到命令",
+      "### 分层框架",
+      "### 数据驱动与调试",
+      "### 最小游戏循环",
+      "### 移动与状态解耦",
+      "### 请求层与行为层",
+      "### 输入缓冲与土狼时间",
+      "#### 输入缓冲与土狼时间"
+    ]
   },
   {
     "path": "知识库/20_游戏AI/游戏AI导航.md",
     "primary_question": "如何从可行走空间得到可执行路径与移动",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -5666,29 +6002,54 @@
     "proposed_domain": "20_游戏AI",
     "category_adoption_status": "方案B已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## A* 与启发函数",
+      "## NavMesh 生成",
+      "## Steering 与跟随",
+      "## 世界怎样成为搜索数据",
+      "## 可行走空间表示",
+      "## 局部避障",
+      "## 搜索结果怎样变成移动",
+      "## 路径走廊与 Funnel",
+      "## 验证方法",
+      "### A* 与启发函数",
+      "### A* 主循环",
+      "### Steering 与跟随",
+      "### 可行走空间表示",
+      "### 局部避障",
+      "### 路径走廊与 Funnel",
+      "#### A* 主循环",
+      "#### NavMesh 生成"
+    ]
   },
   {
     "path": "知识库/20_游戏AI/群体、学习与高级决策.md",
     "primary_question": "如何处理群体信息、搜索决策和学习策略",
     "boundary_action": "SPLIT",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "待拆边界保留",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -5703,29 +6064,37 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "DEFERRED",
     "deferred_title": true,
-    "pending_split": true
+    "pending_split": true,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## 验证方法"
+    ]
   },
   {
     "path": "知识库/20_游戏AI/游戏AI决策模型.md",
     "primary_question": "如何按决策问题选择行为组织模型",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -5740,28 +6109,55 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## Behavior Tree",
+      "## FSM 与 HFSM",
+      "## GOAP",
+      "## HTN",
+      "## Utility AI",
+      "## 反应式行为怎样组合",
+      "## 目标怎样分解成计划",
+      "## 验证方法",
+      "### Behavior Tree",
+      "### FSM 与 HFSM",
+      "### GOAP",
+      "### HTN",
+      "### Utility AI",
+      "### 中止语义",
+      "### 效用的组合与迟滞",
+      "### 规划的反向搜索",
+      "#### 中止语义",
+      "#### 效用的组合与迟滞",
+      "#### 规划的反向搜索"
+    ]
   },
   {
     "path": "知识库/21_游戏网络/服务器架构、分区与反作弊.md",
     "primary_question": "如何分配会话与世界权威并核验客户端行为",
     "boundary_action": "SPLIT",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "待拆边界保留",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -5776,28 +6172,54 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "DEFERRED",
     "deferred_title": true,
-    "pending_split": true
+    "pending_split": true,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## AOI 与世界分区",
+      "## 会话与服务职责",
+      "## 反作弊分层",
+      "## 发现、负载与实例",
+      "## 存储与一致性",
+      "## 安全与可观测性",
+      "## 对局怎样找到权威实例",
+      "## 故障与测试",
+      "## 状态怎样保存并验证",
+      "### AOI 与世界分区",
+      "### 会话与服务职责",
+      "### 反作弊分层",
+      "### 发现、负载与实例",
+      "### 基于网格的 AOI 查询",
+      "### 存储与一致性",
+      "### 安全与可观测性",
+      "### 故障与测试",
+      "#### 基于网格的 AOI 查询"
+    ]
   },
   {
     "path": "知识库/21_游戏网络/状态同步、预测与回滚.md",
     "primary_question": "如何同步远端世界并补偿输入与传输延迟",
     "boundary_action": "SPLIT",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "待拆边界保留",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -5815,7 +6237,35 @@
     "proposed_domain": "21_游戏网络",
     "category_adoption_status": "方案B已采用",
     "deferred_title": true,
-    "pending_split": true
+    "pending_split": true,
+    "modernization_batch": "Batch4-P2-A",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "# 状态同步、预测与回滚",
+      "## 三类同步思路",
+      "## 历史模拟怎样恢复",
+      "## 压缩与基线",
+      "## 回滚与命中判定",
+      "## 客户端预测与校正",
+      "## 断线、重连与回放",
+      "## 显示怎样消化网络延迟",
+      "## 权威边界",
+      "## 状态怎样传到另一端",
+      "## 远端实体插值",
+      "## 验证方法",
+      "### 三类同步思路",
+      "### 压缩与基线",
+      "### 回滚与命中判定",
+      "### 插值缓冲的取时刻",
+      "### 断线、重连与回放",
+      "### 权威边界",
+      "### 远端实体插值",
+      "#### 插值缓冲的取时刻"
+    ]
   },
   {
     "path": "知识库/21_游戏网络/网络协议、时钟与RPC.md",

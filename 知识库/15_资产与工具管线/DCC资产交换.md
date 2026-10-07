@@ -14,7 +14,9 @@ FBX 适合作为交换边界，不适合直接作为游戏运行时格式。运�
 
 制作源应保留以便返修，但构建机器不一定每次重新执行整个 DCC 历史。是否提交导出中间产物取决于团队能否稳定、快速、合法地在 CI 重建。
 
-## DCC 的职责
+## 交换前先固定数据契约
+
+### DCC 的职责
 
 制作流程常由多种工具协作。Maya 和 Blender 可承担建模、绑定与动画；Houdini 适合程序化几何和批处理；Substance 工具常用于材质与烘焙。工具分工应按项目资产类型和团队流程确定。
 
@@ -28,7 +30,7 @@ FBX 适合作为交换边界，不适合直接作为游戏运行时格式。运�
 - 材质槽、贴图语义与颜色空间；
 - LOD、Collision、Socket 和 Metadata。
 
-## 坐标系
+### 坐标系
 
 交换前要明确：
 
@@ -44,7 +46,7 @@ FBX 适合作为交换边界，不适合直接作为游戏运行时格式。运�
 
 若坐标转换改变 Handedness，三角形 Winding 或 Tangent Sign 需要同步翻转。否则会出现背面剔除、Normal Map 方向和动画镜像错误。
 
-## Transform 与 Pivot
+### Transform 与 Pivot
 
 Freeze/Apply Transform 会把 Object Transform 烘进几何，但也可能改变子层级、Rig 和动画语义。工具需要区分静态 Mesh、Skinned Mesh、Socket 和 Group Node，不能对全部对象执行同一清理命令。
 
@@ -58,7 +60,7 @@ Pivot 决定摆放、旋转、物理和工具交互。常见约定：
 
 导出前自动移动到原点再恢复场景是一种高风险操作。更稳妥的是在临时副本或导出矩阵中转换，保证失败也不污染源文件。
 
-## 几何语义
+### 几何语义
 
 交换内容至少包括 Position、Index、Normal、Tangent、UV、Color、Material Slot 和 Skin Data。
 
@@ -66,7 +68,7 @@ DCC 的一个 Point 可能因硬边、UV 缝或材质边界在引擎拆成多个
 
 是否三角化需要明确。不同 DCC/Importer 对 N-gon 的三角化可能不同，导致 Normal、Bake 和 Morph Target 不一致。关键资产通常在受控步骤三角化，并保留可编辑源版本。
 
-## Normal 与 Tangent
+### Normal 与 Tangent
 
 Normal 可以导入、重新计算或混合处理。Tangent 必须和 UV、Normal Map 编码及引擎切线基一致。
 
@@ -78,7 +80,7 @@ Normal 可以导入、重新计算或混合处理。Tangent 必须和 UV、Norma
 - Hard Edge 与 UV Seam 规则；
 - 负缩放/镜像的 Tangent Handedness。
 
-## 骨骼与动画
+### 骨骼与动画
 
 交换 Skeleton 时需要稳定 Joint Name、Parent、Bind Pose、Inverse Bind Matrix 和 Skin Weight。重名、额外 Group、Namespace 清理和非均匀 Scale 都可能破坏绑定。
 
@@ -93,7 +95,9 @@ Normal 可以导入、重新计算或混合处理。Tangent 必须和 UV、Norma
 
 FBX 能保存动画曲线，但自定义 Rig Graph、控制器逻辑和 DCC Constraint 不会自动成为引擎运行时 Rig。交付前一般 Bake 到约定 Skeleton。
 
-## FBX
+## 格式怎样表达制作数据
+
+### FBX
 
 FBX 生态广、DCC 与引擎支持成熟，适合 Mesh/Skeleton/Animation 交换。但它的数据模型和 SDK 复杂，不同软件版本与选项可能产生不同结果。
 
@@ -109,7 +113,7 @@ FBX 生态广、DCC 与引擎支持成熟，适合 Mesh/Skeleton/Animation 交�
 
 不要让艺术家每次手工点一遍选项。工具应保存 Preset，导出后生成 Manifest，并在引擎侧验证实际结果。
 
-## glTF
+### glTF
 
 glTF 面向高效传输和运行时场景表达，常见内容包括 Mesh、PBR Material、Texture、Skin、Animation、Camera 和 Node Hierarchy。`.glb` 可把 JSON 与 Buffer/Texture 打包为单文件。
 
@@ -117,7 +121,7 @@ glTF 面向高效传输和运行时场景表达，常见内容包括 Mesh、PBR 
 
 使用 Extension 前要确认生产端、消费端和验证器都支持。文件符合 glTF Schema 不代表目标引擎正确实现该 Extension。
 
-## USD
+### USD
 
 OpenUSD 不只是一个“更大的 FBX”。它提供 Scene Description、Layer、Reference、Payload、Variant、Composition 和 Schema，用于大型内容协作与非破坏组合。
 
@@ -132,7 +136,7 @@ OpenUSD 不只是一个“更大的 FBX”。它提供 Scene Description、Layer
 
 USD 的强项是场景组合与数据治理，不保证所有 DCC/引擎支持相同 Schema、MaterialX、Rig 或实时行为。项目需要定义支持子集和 Flatten/Cook 边界。
 
-## 材质与贴图
+### 材质与贴图
 
 DCC Shader Graph 很少能一比一转换成引擎 Shader。交换时传递有明确语义的参数和纹理，如基础色、法线、金属度、粗糙度、遮挡、自发光与透明度。引擎再按统一模板创建材质实例，避免把制作工具内部节点直接当成运行时接口。
 
@@ -145,7 +149,7 @@ DCC Shader Graph 很少能一比一转换成引擎 Shader。交换时传递有�
 - Relative Path/Asset ID，而不是某台机器绝对路径；
 - Source Texture 与平台压缩产物的关系。
 
-### Assimp 场景遍历与纹理去重
+#### Assimp 场景遍历与纹理去重
 
 Assimp 的 `aiScene` 保存根节点、网格数组、材质数组和动画。节点构成场景层级，每个节点通过索引引用 `scene->mMeshes`。导入器应递归累积节点变换，再处理节点引用的网格；只遍历全局网格数组会丢失实例关系和节点局部变换。
 
@@ -167,7 +171,7 @@ void VisitNode(const aiScene& scene, const aiNode& node,
 
 同一纹理可能被多个 Mesh 和材质引用。去重键应使用规范化后的资源标识，例如模型目录加相对路径、内嵌纹理 ID 和颜色空间语义。只按文件名缓存会把不同目录的同名纹理合并；只按完整路径缓存又可能把同图的 Base Color 与 Linear 数据视图错误复用。验证时统计场景声明的纹理引用数、唯一资源数和实际 GPU 资源数。
 
-## Houdini 的属性模型
+### Houdini 的属性模型
 
 Houdini 与建模类 DCC 的根本差异在于它把几何当作**带属性的数据表**而非固定的网格对象。理解它的属性层级，是理解整条程序化管线的前提。
 
@@ -180,13 +184,13 @@ Houdini 与建模类 DCC 的根本差异在于它把几何当作**带属性的�
 | Primitive | 单个面或曲线 | 材质名、分组标记 |
 | Detail | 整个几何体 | 全局参数、统计量 |
 
-Point 与 Vertex 的区别直接影响导出结果：Point 只存局部空间位置，Vertex 遵循 OBJ/FBX 的习惯，可以携带各自独立的 UV 与法线。硬边和 UV 接缝正是靠“多个 Vertex 共享一个 Point 但携带不同法线或 UV”来表达的。把 UV 放在 Point 层会丢失接缝信息。
+Point 与 Vertex 的区别直接影响导出结果：Point 保存位置，也能保存法线、颜色等任意点属性。Vertex 表示图元上的角，能为共享同一 Point 的各个角保存不同 UV 与法线。硬边和 UV 接缝正是靠“多个 Vertex 共享一个 Point 但携带不同法线或 UV”来表达的。把 UV 放在 Point 层会丢失接缝信息。
 
 属性可以在层级间提升或下降。从 Point 提升到 Primitive 需要一个聚合规则（取最大、平均等），这个过程是有损的。
  
 几个约定俗成的属性名会被系统识别并影响行为：`P`、`N`、`Cd`、`pscale`、`orient`、`width`。`orient` 是四元数，类型为 float 且 size 为 4——手工创建时类型声明错误是常见问题。
 
-### VEX
+#### VEX
 
 VEX 是逐元素并行执行的表达式语言。写在 Wrangle 节点中的代码会对每个点、每个图元各执行一次，这个执行模型与 Compute Shader 的逐线程模型相通。
 
@@ -200,13 +204,13 @@ if (@a < t) {
 }
 ```
 
-`@` 前缀用于访问几何属性，只在 Wrangle 环境中有效，纯 VEX 代码不使用它。`chf` 读取节点参数并自动生成界面控件，这是把程序化逻辑暴露成美术可调参数的标准做法。
+`@` 前缀用于访问几何属性，只在 Wrangle 环境中有效，纯 VEX 代码不使用它。`chf` 读取节点浮点参数；Wrangle 的创建备用参数操作可根据通道引用生成控件，这是把程序化逻辑暴露成美术可调参数的标准做法。
 
 分组的写法值得单记：给 `@group_名称` 赋非零值即加入该组，赋零则移出。
 
 几个容易踩的语言细节：函数参数按引用传递；函数会被自动内联因而无法递归；不同维度的向量运算时，低维向量会被补齐为 `{0,0,0,1}` 形式，导致 `{1,2} + {1,2,3,4}` 得到 `{2,4,3,5}` 这类反直觉结果。
 
-### HDA 与参数暴露
+#### HDA 与参数暴露
 
 Houdini Digital Asset 把一个节点网络封装成可复用资产，只暴露选定参数。它是 Houdini 与引擎之间的交付单元。
 
@@ -214,7 +218,9 @@ Houdini Digital Asset 把一个节点网络封装成可复用资产，只暴露�
 
 引擎侧的对接需要确认：单位与坐标系转换、材质与属性名的映射约定、生成结果是烘焙成静态资产还是保持实时求值、以及 HDA 版本与引擎插件版本的兼容关系。跨版本兼容是实践中最常见的问题来源，工具链版本应当与项目版本一同锁定。
 
-## Metadata 与 Sidecar
+## 来源与版本怎样保留
+
+### Metadata 与 Sidecar
 
 交换格式无法稳定表达的项目数据，可使用 Custom Property、USD Schema 或 Sidecar Manifest。Manifest 可保存：
 
@@ -227,7 +233,7 @@ Houdini Digital Asset 把一个节点网络封装成可复用资产，只暴露�
 
 Metadata 名称与类型应有 Schema。随意塞字符串会把解析和兼容问题推迟到下游。
 
-## Reference、Copy 与 Round-trip
+### Reference、Copy 与 Round-trip
 
 跨工具传递时先决定是引用还是复制。Reference 保留来源关系、文件小，但下游必须能解析路径、版本和权限；Copy/Snapshot 自包含，适合交付，却容易与原始资产分叉。
 
@@ -235,7 +241,7 @@ Metadata 名称与类型应有 Schema。随意塞字符串会把解析和兼容�
 
 确实需要双向编辑时，应使用稳定 ID 和明确冲突规则，而不是按对象名称猜映射。每次回写生成变更预览，区分新增、修改、删除和无法表达的数据。
 
-## 版本兼容
+### 版本兼容
 
 DCC Scene、Plugin 与交换格式都存在版本。新版本保存的源文件可能无法被旧构建机打开；Exporter 升级也可能改变三角化、动画采样或材质输出。
 
