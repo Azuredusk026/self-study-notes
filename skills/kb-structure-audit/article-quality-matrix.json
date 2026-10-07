@@ -217,12 +217,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "旋转、四元数与插值",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "机制型",
+    "suggested_title": "旋转表示与插值",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
@@ -302,12 +305,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "当前命名可保留"
     },
     "batch_migration_authorized": false,
     "current_title": "一帧如何到达屏幕",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "PASS",
+    "title_review_status": "已全文审查",
+    "title_type": "问题型",
+    "suggested_title": "一帧如何到达屏幕",
+    "title_adoption_status": "保留"
   },
   {
     "path": "知识库/02_GPU与光栅化管线/光栅化、插值与深度模板.md",
@@ -359,12 +365,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "光栅覆盖、重心坐标与属性插值",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "机制型",
+    "suggested_title": "光栅化与属性插值",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md",
@@ -444,12 +453,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "抗锯齿、TAA 与时域超采样",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "概念型",
+    "suggested_title": "抗锯齿",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/02_GPU与光栅化管线/提前深度测试、深度预通道与分层深度.md",
@@ -472,12 +484,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "提前深度测试、深度预通道与分层深度",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "方案型",
+    "suggested_title": "基于深度的可见性优化",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/02_GPU与光栅化管线/模板缓冲、位分配与对象遮罩.md",
@@ -528,12 +543,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "深度缓冲、反向深度与位置重建",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "概念型",
+    "suggested_title": "深度缓冲",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/02_GPU与光栅化管线/背面、视锥与遮挡剔除.md",
@@ -640,14 +658,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "需命名优化，建议待采用"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "Shader 编译、关键字与变体",
     "title_review": "REWRITE",
-    "title_review_status": "已审查",
+    "title_review_status": "已全文审查",
     "suggested_title": "Shader Variant管理",
-    "title_adoption_status": "建议待采用"
+    "title_adoption_status": "建议待采用",
+    "title_type": "工程限定型"
   },
   {
     "path": "知识库/03_Shader编程/Shader语言与数据流.md",
@@ -952,12 +971,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "纹理采样、过滤、Mipmap 与压缩",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "概念型",
+    "suggested_title": "纹理采样",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/06_纹理技术/高度、法线与视差映射.md",
@@ -980,12 +1002,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "高度、法线与视差映射",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "方案型",
+    "suggested_title": "视差映射",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
@@ -1037,12 +1062,16 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "边界待处理；暂不改名"
     },
     "batch_migration_authorized": false,
     "current_title": "颜色空间、Alpha、HDR 与曝光",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "SPLIT",
+    "title_review_status": "已全文审查",
+    "title_type": "导读型",
+    "suggested_title": null,
+    "title_adoption_status": "边界待处理",
+    "proposed_overview_title": "颜色工作流导读"
   },
   {
     "path": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
@@ -1149,12 +1178,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "动画压缩、轨道量化与运行时解码",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "机制型",
+    "suggested_title": "动画压缩",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/09_动画系统/动画压缩、面部、布料与毛发.md",
@@ -1233,12 +1265,16 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "边界待处理；暂不改名"
     },
     "batch_migration_authorized": false,
     "current_title": "布料与毛发的表示、碰撞和 LOD",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "SPLIT",
+    "title_review_status": "已全文审查",
+    "title_type": "导读型",
+    "suggested_title": null,
+    "title_adoption_status": "边界待处理",
+    "proposed_overview_title": "二级运动导读"
   },
   {
     "path": "知识库/09_动画系统/面部变形、口型与表情控制.md",
@@ -1455,15 +1491,16 @@
       "Evidence": "关键来源核对；工程状态分列",
       "Writing Style": "首轮自检通过",
       "Visuals": "按用途验证或不适用",
-      "Title": "需命名优化，建议待采用"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "implementation_status": "首轮已实施，待标杆评审",
     "current_title": "Billboard朝向、锚点与深度",
     "title_review": "REWRITE",
-    "title_review_status": "已审查",
+    "title_review_status": "已全文审查",
     "suggested_title": "Billboard",
-    "title_adoption_status": "建议待采用"
+    "title_adoption_status": "建议待采用",
+    "title_type": "概念型"
   },
   {
     "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
@@ -1538,7 +1575,7 @@
       "Evidence": "用户评审通过",
       "Visuals": "用户评审通过",
       "Writing Style": "GOLD STANDARD，用户已批准",
-      "Title": "命名通过，保留"
+      "Title": "当前命名可保留"
     },
     "batch_migration_authorized": false,
     "implementation_status": "试点验收通过；目标Unity运行状态分列",
@@ -1546,9 +1583,10 @@
     "runtime_status": "Unity运行未验证",
     "current_title": "描边",
     "title_review": "PASS",
-    "title_review_status": "已审查",
+    "title_review_status": "已全文审查",
     "suggested_title": "描边",
-    "title_adoption_status": "保留"
+    "title_adoption_status": "保留",
+    "title_type": "概念型"
   },
   {
     "path": "知识库/11_NPR与风格化渲染/描边、Billboard与场景风格化.md",
@@ -1610,15 +1648,16 @@
       "Evidence": "关键来源核对；工程状态分列",
       "Writing Style": "首轮自检通过",
       "Visuals": "按用途验证或不适用",
-      "Title": "需命名优化，建议待采用"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "implementation_status": "首轮已实施，待标杆评审",
     "current_title": "植被风动与顶点变形",
     "title_review": "REWRITE",
-    "title_review_status": "已审查",
+    "title_review_status": "已全文审查",
     "suggested_title": "植被风动",
-    "title_adoption_status": "建议待采用"
+    "title_adoption_status": "建议待采用",
+    "title_type": "方案型"
   },
   {
     "path": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
@@ -1811,12 +1850,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "导读职责确认后采用"
     },
     "batch_migration_authorized": false,
     "current_title": "Forward、Deferred 与 Clustered 渲染",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "OVERVIEW",
+    "title_review_status": "已全文审查",
+    "title_type": "导读型",
+    "suggested_title": "渲染路径与光源组织",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/13_引擎架构与资源系统/GBuffer布局设计与通道压缩.md",
@@ -1839,14 +1881,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "需命名优化，建议待采用"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "GBuffer 布局设计与通道压缩",
     "title_review": "REWRITE",
-    "title_review_status": "已审查",
+    "title_review_status": "已全文审查",
     "suggested_title": "GBuffer布局",
-    "title_adoption_status": "建议待采用"
+    "title_adoption_status": "建议待采用",
+    "title_type": "工程限定型"
   },
   {
     "path": "知识库/13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph.md",
@@ -1870,14 +1913,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "需命名优化，建议待采用"
+      "Title": "导读职责确认后采用"
     },
     "batch_migration_authorized": false,
     "current_title": "Render Pass、Command Buffer 与 Render Graph",
     "title_review": "OVERVIEW",
-    "title_review_status": "已审查",
+    "title_review_status": "已全文审查",
     "suggested_title": "渲染命令的组织方式",
-    "title_adoption_status": "建议待采用"
+    "title_adoption_status": "建议待采用",
+    "title_type": "导读型"
   },
   {
     "path": "知识库/13_引擎架构与资源系统/UI、字体与文本渲染.md",
@@ -1928,12 +1972,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "Unity Render Graph 与自定义通道",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "工程限定型",
+    "suggested_title": "URP Render Graph自定义Pass",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/13_引擎架构与资源系统/Unity SRP、URP与HDRP帧组织.md",
@@ -2183,12 +2230,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "命令记录、队列提交与在途帧",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "机制型",
+    "suggested_title": "GPU命令提交与资源复用",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/13_引擎架构与资源系统/延迟渲染、光体积与GBuffer消费.md",
@@ -2297,7 +2347,7 @@
       "Evidence": "原来源保留；本轮无新增技术事实核验",
       "Writing Style": "用户评审通过",
       "Visuals": "无新增图，文风试点按文字与既有流程说明",
-      "Title": "命名通过，已采用"
+      "Title": "当前命名可保留"
     },
     "batch_migration_authorized": false,
     "current_content_actions": [
@@ -2306,10 +2356,11 @@
     "implementation_status": "本轮只完成叙述修订；深度实现和事实核验按原计划另行验收",
     "current_title": "Render Graph",
     "title_review": "PASS",
-    "title_review_status": "已审查",
+    "title_review_status": "已全文审查",
     "suggested_title": "Render Graph",
     "title_adoption_status": "已采用",
-    "gold_standard_status": "文风通过，完整技术标杆待深度验收"
+    "gold_standard_status": "文风通过，完整技术标杆待深度验收",
+    "title_type": "概念型"
   },
   {
     "path": "知识库/13_引擎架构与资源系统/渲染通道、附件与加载存储语义.md",
@@ -2447,12 +2498,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "资源状态、屏障与跨队列同步",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "概念型",
+    "suggested_title": "GPU资源同步",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/13_引擎架构与资源系统/资源绑定、描述符与材质数据组织.md",
@@ -2475,12 +2529,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "资源绑定、描述符与材质数据组织",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "工程限定型",
+    "suggested_title": "GPU资源绑定",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/14_性能分析与优化/Profiler、RenderDoc与单帧分析.md",
@@ -2531,12 +2588,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "PSO 缓存与运行时卡顿",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "问题型",
+    "suggested_title": "PSO首次使用为什么卡顿",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/14_性能分析与优化/帧时间、瓶颈与GPU成本.md",
@@ -2560,12 +2620,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "帧时间、瓶颈与 GPU 成本",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "问题型",
+    "suggested_title": "帧瓶颈怎么判断",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/14_性能分析与优化/性能调查、对照实验与帧捕获证据.md",
@@ -2589,12 +2652,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "性能调查、对照实验与帧捕获证据",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "机制型",
+    "suggested_title": "性能对照实验",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/14_性能分析与优化/渲染优化验证与移动端实践.md",
@@ -2704,12 +2770,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "编辑器工具与批处理架构",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "工程限定型",
+    "suggested_title": "编辑器工具的事务与批处理",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/15_资产与工具管线/资产导入、验证与发布.md",
@@ -2847,12 +2916,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "导读职责确认后采用"
     },
     "batch_migration_authorized": false,
     "current_title": "算法设计、树、图与空间划分",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "OVERVIEW",
+    "title_review_status": "已全文审查",
+    "title_type": "导读型",
+    "suggested_title": "算法与数据结构选型",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/17_AIGC与Agent管线/Agent驱动资产管线与质量门禁.md",
@@ -3074,12 +3146,15 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "命名建议待采用"
     },
     "batch_migration_authorized": false,
     "current_title": "导航、寻路与移动控制",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "REWRITE",
+    "title_review_status": "已全文审查",
+    "title_type": "工程限定型",
+    "suggested_title": "游戏AI导航",
+    "title_adoption_status": "建议待采用"
   },
   {
     "path": "知识库/20_游戏AI/群体、学习与高级决策.md",
@@ -3188,12 +3263,16 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "待全文审查"
+      "Title": "边界待处理；暂不改名"
     },
     "batch_migration_authorized": false,
     "current_title": "状态同步、预测与回滚",
-    "title_review": null,
-    "title_review_status": "待审查"
+    "title_review": "SPLIT",
+    "title_review_status": "已全文审查",
+    "title_type": "导读型",
+    "suggested_title": null,
+    "title_adoption_status": "边界待处理",
+    "proposed_overview_title": "联机状态同步导读"
   },
   {
     "path": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
