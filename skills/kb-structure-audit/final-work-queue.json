@@ -1,0 +1,1349 @@
+{
+  "baseline": "fcf4de0",
+  "authorized": true,
+  "items": [
+    {
+      "source": "知识库/01_数学与采样/信号、频率与噪声.md",
+      "decision": "SPLIT",
+      "reason": "信号重建解释采样误差，程序噪声生成空间场；输入模型、实现与验证各自独立。",
+      "products": [
+        {
+          "path": "知识库/01_数学与采样/采样与混叠.md",
+          "primary_question": "为什么离散采样会丢失或伪造信号细节",
+          "source_sections": [
+            "信号和频率",
+            "采样和混叠（Aliasing）",
+            "低通和高通",
+            "Fourier Transform",
+            "时域噪声和抖动",
+            "用屏幕导数限制程序纹理频率"
+          ]
+        },
+        {
+          "path": "知识库/01_数学与采样/程序噪声.md",
+          "primary_question": "如何生成可重复且具有空间结构的标量场",
+          "source_sections": [
+            "空间噪声不是随机白点",
+            "FBM 和多尺度细节"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
+      "decision": "SPLIT",
+      "reason": "随机积分与球面函数压缩有独立表示、误差及验证，SH不承担采样方法的主归属。",
+      "products": [
+        {
+          "path": "知识库/01_数学与采样/Monte Carlo采样.md",
+          "primary_question": "如何用概率分布估计积分并控制方差",
+          "source_sections": [
+            "积分估计",
+            "采样分布",
+            "离散重要性采样"
+          ]
+        },
+        {
+          "path": "知识库/01_数学与采样/球谐光照.md",
+          "primary_question": "如何用少量系数表示并重建低频球面光照",
+          "source_sections": [
+            "球面函数表示"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md",
+      "decision": "SPLIT",
+      "reason": "Geometry Shader改写图元，Stream Output保存结果；细分机制合入既有Tessellation主归属。",
+      "products": [
+        {
+          "path": "知识库/02_GPU与光栅化管线/Geometry Shader.md",
+          "primary_question": "如何按输入图元生成有限数量的输出图元",
+          "source_sections": [
+            "几何着色器的编程模型",
+            "几何着色器的应用",
+            "几何着色器为什么慢"
+          ]
+        },
+        {
+          "path": "知识库/02_GPU与光栅化管线/Stream Output.md",
+          "primary_question": "如何把几何前端结果保存到缓冲供后续消费",
+          "source_sections": [
+            "流输出：把几何结果存下来"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
+      "decision": "SPLIT",
+      "reason": "调度模型、并行集合算法与回读状态机分别维护；多级深度生成归入深度可见性优化，灯光位掩码归入簇光照。",
+      "products": [
+        {
+          "path": "知识库/03_Shader编程/Compute Shader.md",
+          "primary_question": "如何按线程索引安全调度设备端数据计算",
+          "source_sections": [
+            "Dispatch 和线程索引",
+            "Thread Group",
+            "Wave 和 Warp",
+            "分支什么时候危险",
+            "`groupshared` 内存",
+            "Barrier",
+            "UAV 和原子操作",
+            "资源类型与计数器",
+            "内存访问和合并",
+            "CPU、GPU 与资源生命周期",
+            "Occupancy",
+            "平台编译与执行边界",
+            "一份源码编译多个 Kernel",
+            "运行时与编辑器工具的差异"
+          ]
+        },
+        {
+          "path": "知识库/03_Shader编程/GPU归约与前缀和.md",
+          "primary_question": "如何把并行元素合成统计量或唯一输出偏移",
+          "source_sections": [
+            "常见算法",
+            "归约的标准范式"
+          ]
+        },
+        {
+          "path": "知识库/03_Shader编程/GPU异步回读.md",
+          "primary_question": "如何把设备端结果交给CPU并控制延迟与寿命",
+          "source_sections": [
+            "异步回读与延迟数据"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
+      "decision": "SPLIT",
+      "reason": "贴图方向还原、环境方向寻址和BRDF预积分是不同输入与实现。",
+      "products": [
+        {
+          "path": "知识库/04_光照模型与PBR/法线贴图.md",
+          "primary_question": "如何把纹理方向恢复成一致的着色法线",
+          "source_sections": [
+            "几何法线和着色法线",
+            "Tangent Space",
+            "为什么切线需要统一生成规则",
+            "Normal Map 解码",
+            "Normal 强度",
+            "多张法线如何混合"
+          ]
+        },
+        {
+          "path": "知识库/04_光照模型与PBR/IBL.md",
+          "primary_question": "如何预积分环境光并求漫反射与粗糙镜面响应",
+          "source_sections": [
+            "Image-Based Lighting",
+            "Diffuse Irradiance",
+            "Specular Prefilter",
+            "Split-sum 的限制",
+            "Probe 和 Reflection Capture"
+          ]
+        },
+        {
+          "path": "知识库/04_光照模型与PBR/Cubemap环境采样.md",
+          "primary_question": "如何按方向寻址六面环境并正确绘制天空背景",
+          "source_sections": [
+            "Cubemap、Skybox 与环境映射"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
+      "decision": "SPLIT",
+      "reason": "静态烘焙、漫反射探针、反射捕获和动态更新各有独立资产与验证；原页成为GI方案导读。",
+      "products": [
+        {
+          "path": "知识库/05_光照阴影与GI/Lightmap.md",
+          "primary_question": "如何把静态表面的光照预计算为可稳定采样的纹理",
+          "source_sections": [
+            "静态表面怎样保存间接光"
+          ]
+        },
+        {
+          "path": "知识库/05_光照阴影与GI/Light Probe.md",
+          "primary_question": "如何让动态物体插值空间中的低频间接光",
+          "source_sections": [
+            "Light Probe",
+            "三线性 Probe 插值"
+          ]
+        },
+        {
+          "path": "知识库/05_光照阴影与GI/Reflection Probe.md",
+          "primary_question": "如何捕获并混合局部环境反射",
+          "source_sections": [
+            "Reflection Probe"
+          ]
+        },
+        {
+          "path": "知识库/05_光照阴影与GI/动态GI.md",
+          "primary_question": "如何在场景变化后更新间接光表示",
+          "source_sections": [
+            "场景变化后怎样更新",
+            "静态和动态方案怎么选"
+          ]
+        }
+      ],
+      "overview": {
+        "title": "GI方案选择",
+        "intro": "间接光可以保存在表面纹理、空间探针或持续更新的场景缓存中。选择先看哪些对象和灯会变化，再看目标设备能承担多少更新成本。",
+        "extra": "静态环境从Lightmap开始，动态角色接Light Probe，间接镜面使用Reflection Probe与IBL；场景本身持续变化时进入动态GI。前置是线性光照与采样模型，比较时固定曝光，分别观察间接漫反射和镜面。"
+      },
+      "status": "READY"
+    },
+    {
+      "source": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
+      "decision": "SPLIT",
+      "reason": "UV子图组织、mip驻留和页表虚拟化具有不同资源模型。",
+      "products": [
+        {
+          "path": "知识库/06_纹理技术/纹理图集.md",
+          "primary_question": "如何用UV布局共享纹理并避免过滤串色",
+          "source_sections": [
+            "表面坐标与共享纹理",
+            "图集 UV 变换"
+          ]
+        },
+        {
+          "path": "知识库/06_纹理技术/Texture Streaming.md",
+          "primary_question": "如何在内存预算内让所需mip及时驻留",
+          "source_sections": [
+            "纹理驻留"
+          ]
+        },
+        {
+          "path": "知识库/06_纹理技术/Virtual Texture.md",
+          "primary_question": "如何按页寻址超出驻留预算的纹理",
+          "source_sections": [
+            "虚拟分页"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
+      "decision": "SPLIT",
+      "reason": "显示映射、光晕、遮挡与镜头覆盖各有不同输入与验证；原页成为后处理路线，雾机制引用既有Froxel。",
+      "products": [
+        {
+          "path": "知识库/07_颜色与后处理/Tone Mapping.md",
+          "primary_question": "如何把场景HDR亮度映射到显示范围",
+          "source_sections": [
+            "Tone Mapping",
+            "Color Grading 和 LUT"
+          ]
+        },
+        {
+          "path": "知识库/07_颜色与后处理/Bloom.md",
+          "primary_question": "如何通过多尺度滤波合成光晕",
+          "source_sections": [
+            "Bloom 的完整流程"
+          ]
+        },
+        {
+          "path": "知识库/07_颜色与后处理/屏幕空间AO.md",
+          "primary_question": "如何从可见深度估计局部环境遮挡",
+          "source_sections": [
+            "Screen-space Ambient Occlusion"
+          ]
+        },
+        {
+          "path": "知识库/07_颜色与后处理/景深与运动模糊.md",
+          "primary_question": "如何根据离焦与曝光时间扩展像素覆盖",
+          "source_sections": [
+            "Depth of Field",
+            "Motion Blur",
+            "Lens Effect"
+          ]
+        }
+      ],
+      "overview": {
+        "title": "后处理链",
+        "intro": "后处理读取某个阶段的颜色、深度或运动数据。先确认这些数据是否经过曝光、时域处理和显示编码，再选择效果的位置。",
+        "extra": "先理解颜色空间与HDR曝光。光晕通常在HDR阶段生成，AO与光照项关联，景深和运动模糊利用深度及速度，最后进入Tone Mapping与显示输出。具体引擎顺序由资源消费者和帧捕获核对。"
+      },
+      "status": "READY"
+    },
+    {
+      "source": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
+      "decision": "SPLIT",
+      "reason": "颜色编码、覆盖表示与场景曝光是三份不同的数据契约。",
+      "products": [
+        {
+          "path": "知识库/07_颜色与后处理/颜色空间.md",
+          "primary_question": "如何在编码与线性光计算之间正确转换",
+          "source_sections": [
+            "颜色编码"
+          ]
+        },
+        {
+          "path": "知识库/07_颜色与后处理/Alpha表示.md",
+          "primary_question": "如何在纹理过滤与混合中保持覆盖颜色一致",
+          "source_sections": [
+            "覆盖与合成"
+          ]
+        },
+        {
+          "path": "知识库/07_颜色与后处理/HDR与曝光.md",
+          "primary_question": "如何保存场景亮度并让不同帧的曝光数据可比较",
+          "source_sections": [
+            "场景亮度"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
+      "decision": "SPLIT",
+      "reason": "屏幕密度选择、地形表示、规则生成、植被着色方向与约束求解各自有独立模型。",
+      "products": [
+        {
+          "path": "知识库/08_几何与网格/LOD选择.md",
+          "primary_question": "如何按屏幕误差降低资产成本并稳定切换",
+          "source_sections": [
+            "以屏幕占比决定 LOD",
+            "LOD 减什么",
+            "切换、Cross Fade 与 Hysteresis",
+            "Geometry LOD 与 Mipmap 要同步",
+            "LOD 预算来自画面与平台",
+            "带滞回的 LOD 选择"
+          ]
+        },
+        {
+          "path": "知识库/08_几何与网格/Heightfield地形.md",
+          "primary_question": "如何把高度场转换成连续的分块地形",
+          "source_sections": [
+            "地形的基本表示",
+            "GPU 细分地形",
+            "地形材质分层",
+            "Houdini HeightField 流程"
+          ]
+        },
+        {
+          "path": "知识库/15_资产与工具管线/程序化资产生成.md",
+          "primary_question": "如何用稳定规则生成并局部重建可交付资产",
+          "source_sections": [
+            "SOP、HDA 与 PDG",
+            "程序化不等于完全自动",
+            "分块散布与稳定重建"
+          ]
+        },
+        {
+          "path": "知识库/08_几何与网格/植被包裹法线.md",
+          "primary_question": "如何用代理体积给面片植被生成连贯受光方向",
+          "source_sections": [
+            "植被的包裹法线"
+          ]
+        },
+        {
+          "path": "知识库/15_资产与工具管线/WFC.md",
+          "primary_question": "如何通过局部兼容约束生成模块布局",
+          "source_sections": [
+            "约束求解式生成"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/09_动画系统/动画状态、混合与IK.md",
+      "decision": "SPLIT",
+      "reason": "姿态合成、末端反求与跨骨架映射是独立输入和求解。",
+      "products": [
+        {
+          "path": "知识库/09_动画系统/动画姿态混合.md",
+          "primary_question": "如何从动作状态与层权重生成连续局部姿态",
+          "source_sections": [
+            "怎样生成基础姿态",
+            "Crossfade",
+            "Blend Tree",
+            "Motion Matching",
+            "Additive Animation",
+            "Layer 与 Bone Mask",
+            "Root Motion",
+            "Crossfade 的局部姿态混合"
+          ]
+        },
+        {
+          "path": "知识库/09_动画系统/IK.md",
+          "primary_question": "如何在骨长约束下让关节链末端到达目标",
+          "source_sections": [
+            "FK 与 IK",
+            "让末端适应交互目标"
+          ]
+        },
+        {
+          "path": "知识库/09_动画系统/动画重定向.md",
+          "primary_question": "如何把源骨架动作映射到比例与轴向不同的目标骨架",
+          "source_sections": [
+            "Retargeting"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/09_动画系统/布料与毛发的表示、碰撞和LOD.md",
+      "decision": "SPLIT",
+      "reason": "服装三角代理与毛发Guide有不同数据、渲染与LOD模型。",
+      "products": [
+        {
+          "path": "知识库/09_动画系统/角色布料.md",
+          "primary_question": "如何用低模模拟代理驱动角色服装并控制穿透",
+          "source_sections": [
+            "布料怎样模拟并保持稳定",
+            "模拟代理映射"
+          ]
+        },
+        {
+          "path": "知识库/09_动画系统/毛发表示与模拟.md",
+          "primary_question": "如何用Cards或Guide驱动可分级的毛发表示",
+          "source_sections": [
+            "毛发：Cards、Strands 与 Guides"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/10_VFX与模拟/大气散射、天空与体积云.md",
+      "decision": "SPLIT",
+      "reason": "行星尺度LUT与局部云密度步进有不同输入和更新条件。",
+      "products": [
+        {
+          "path": "知识库/10_VFX与模拟/大气散射.md",
+          "primary_question": "如何用光学深度与查表计算天空和空气透视",
+          "source_sections": [
+            "消光、透射与入射散射",
+            "实时大气"
+          ]
+        },
+        {
+          "path": "知识库/10_VFX与模拟/体积云.md",
+          "primary_question": "如何从密度场步进求云层散射并稳定重建",
+          "source_sections": [
+            "体积云"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
+      "decision": "SPLIT",
+      "reason": "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。",
+      "products": [
+        {
+          "path": "知识库/11_NPR与风格化渲染/Face SDF.md",
+          "primary_question": "如何用艺术阈值场控制角色脸部明暗",
+          "source_sections": [
+            "面部明暗",
+            "Face SDF 阈值"
+          ]
+        },
+        {
+          "path": "知识库/11_NPR与风格化渲染/角色阴影.md",
+          "primary_question": "如何控制角色局部遮挡并保持风格化色块",
+          "source_sections": [
+            "角色遮挡与阴影"
+          ]
+        },
+        {
+          "path": "知识库/11_NPR与风格化渲染/风格化头发高光.md",
+          "primary_question": "如何沿发流生成可控且稳定的高光色带",
+          "source_sections": [
+            "发流与高光"
+          ]
+        },
+        {
+          "path": "知识库/11_NPR与风格化渲染/风格化眼睛.md",
+          "primary_question": "如何用独立角膜与虹膜层表现眼球深度",
+          "source_sections": [
+            "面部法线与眼睛"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
+      "decision": "SPLIT",
+      "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
+      "products": [
+        {
+          "path": "知识库/12_光线追踪/实时光追采样.md",
+          "primary_question": "如何在有限射线预算内取得有效光照样本",
+          "source_sections": [
+            "有限射线怎样估计贡献"
+          ]
+        },
+        {
+          "path": "知识库/12_光线追踪/光追降噪.md",
+          "primary_question": "如何利用几何与历史过滤低样本光照",
+          "source_sections": [
+            "噪声怎样稳定下来",
+            "Denoiser 常见伪影",
+            "与 TAA/Upscaler 的关系",
+            "带拒绝条件的时域积累"
+          ]
+        },
+        {
+          "path": "知识库/12_光线追踪/ReSTIR.md",
+          "primary_question": "如何用reservoir复用候选光照样本并校正权重",
+          "source_sections": [
+            "候选样本怎样跨时空复用"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/25_UI与文本/UI、字体与文本渲染.md",
+      "decision": "SPLIT",
+      "reason": "控件布局提交与Unicode塑形/字形采样是不同数据流。",
+      "products": [
+        {
+          "path": "知识库/25_UI与文本/UI绘制.md",
+          "primary_question": "如何把布局与裁剪转换成可批量提交的界面命令",
+          "source_sections": [
+            "从 UI 树到绘制列表",
+            "控件怎样提交到屏幕"
+          ]
+        },
+        {
+          "path": "知识库/25_UI与文本/文字渲染.md",
+          "primary_question": "如何把Unicode文本塑形成字形并恢复像素覆盖",
+          "source_sections": [
+            "从字符串到字形位置",
+            "字形怎样变成可采样数据"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/23_引擎运行系统/数据导向设计与任务系统.md",
+      "decision": "SPLIT",
+      "reason": "组件数据组织与CPU任务调度可以独立采用，主模型不同。",
+      "products": [
+        {
+          "path": "知识库/23_引擎运行系统/ECS与数据布局.md",
+          "primary_question": "如何按访问与查询模式组织大量实体数据",
+          "source_sections": [
+            "从访问模式开始",
+            "ECS 的三个角色",
+            "Archetype 与查询"
+          ]
+        },
+        {
+          "path": "知识库/23_引擎运行系统/任务系统.md",
+          "primary_question": "如何用显式依赖调度帧内CPU工作",
+          "source_sections": [
+            "任务图",
+            "同步与内存顺序",
+            "显式任务依赖"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/15_资产与工具管线/版本控制、CI与大型资产协作.md",
+      "decision": "SPLIT",
+      "reason": "版本协作与自动构建流水线有独立输入、状态和责任。",
+      "products": [
+        {
+          "path": "知识库/15_资产与工具管线/大型资产版本控制.md",
+          "primary_question": "如何管理不可合并资产的历史锁与协作边界",
+          "source_sections": [
+            "文本与二进制的差异",
+            "Git 的对象历史",
+            "Git LFS",
+            "Git LFS Lock",
+            "Perforce Helix Core",
+            "PlasticSCM / Unity Version Control",
+            "选择方案",
+            "文件粒度",
+            "Generated File",
+            "分支、主干与合入队列",
+            "二进制资产审查",
+            "锁与任务系统",
+            "跨职能合作",
+            "故障与恢复",
+            "并行修改怎样进入同一版本"
+          ]
+        },
+        {
+          "path": "知识库/15_资产与工具管线/资产构建CI.md",
+          "primary_question": "如何从固定提交自动验证构建资产并复用缓存",
+          "source_sections": [
+            "资产 CI",
+            "缓存",
+            "变更范围与依赖",
+            "CI 中检查 LFS 指针"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
+      "decision": "SPLIT",
+      "reason": "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。",
+      "products": [
+        {
+          "path": "知识库/16_编程与数据结构/C++工程边界.md",
+          "primary_question": "如何从编译链接到插件ABI保持类型与资源契约",
+          "source_sections": [
+            "C++ 从源码到模块边界",
+            "C++ 类型与资源怎样工作"
+          ]
+        },
+        {
+          "path": "知识库/16_编程与数据结构/CSharp运行模型.md",
+          "primary_question": "如何在JIT与AOT环境中管理类型调用与资源",
+          "source_sections": [
+            "C# 怎样编译并管理对象"
+          ]
+        },
+        {
+          "path": "知识库/16_编程与数据结构/Python宿主集成.md",
+          "primary_question": "如何在DCC嵌入解释器中固定依赖与线程边界",
+          "source_sections": [
+            "Python 怎样接入制作环境"
+          ]
+        },
+        {
+          "path": "知识库/16_编程与数据结构/跨语言接口.md",
+          "primary_question": "如何跨ABI或进程传递数据所有权与错误",
+          "source_sections": [
+            "跨语言接口怎样落地"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
+      "decision": "SPLIT",
+      "reason": "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。",
+      "products": [
+        {
+          "path": "知识库/16_编程与数据结构/内存布局与分配.md",
+          "primary_question": "如何按访问和寿命选择分配器及数据布局",
+          "source_sections": [
+            "Stack 与 Heap",
+            "Virtual、Physical 与 GPU Memory",
+            "分配器与碎片",
+            "Data Locality",
+            "Cache 映射与写策略"
+          ]
+        },
+        {
+          "path": "知识库/16_编程与数据结构/对象生命周期.md",
+          "primary_question": "如何协调托管可达性与原生资源释放",
+          "source_sections": [
+            "Ownership",
+            "Managed Heap 与 GC",
+            "常见 C# 隐式分配",
+            "Native Container 与 Pinning",
+            "资源引用与泄漏"
+          ]
+        },
+        {
+          "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
+          "primary_question": "如何让UObject引用被引擎GC识别",
+          "source_sections": [
+            "Unreal 的 UObject 生命周期"
+          ]
+        },
+        {
+          "path": "知识库/23_引擎运行系统/Unity对象生命周期.md",
+          "primary_question": "如何协调托管包装与Unity原生对象的创建销毁",
+          "source_sections": [
+            "Unity Object 的两层身份",
+            "Instantiate 的成本",
+            "Destroy 的成本"
+          ]
+        },
+        {
+          "path": "知识库/16_编程与数据结构/对象池.md",
+          "primary_question": "如何安全复用短生命周期对象并防止状态污染",
+          "source_sections": [
+            "对象池解决什么",
+            "Pool 的代价",
+            "Pool 与生命周期回调",
+            "复用以前先确认旧使用者已退出"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
+      "decision": "SPLIT",
+      "reason": "调度隔离、页表映射、内存同步与文件系统服务有独立模型。",
+      "products": [
+        {
+          "path": "知识库/16_编程与数据结构/进程与调度.md",
+          "primary_question": "如何用线程和进程隔离并调度工作",
+          "source_sections": [
+            "用户态、内核态与系统调用",
+            "进程与线程",
+            "调度与上下文切换",
+            "进程间通信",
+            "时间与计时器"
+          ]
+        },
+        {
+          "path": "知识库/16_编程与数据结构/虚拟内存.md",
+          "primary_question": "如何通过页表映射管理地址空间与工作集",
+          "source_sections": [
+            "虚拟内存、页表与 TLB",
+            "Stack、Heap 与内存映射"
+          ]
+        },
+        {
+          "path": "知识库/16_编程与数据结构/线程同步.md",
+          "primary_question": "如何建立共享数据的互斥和发布顺序",
+          "source_sections": [
+            "锁与等待原语",
+            "原子操作与内存顺序",
+            "数据竞争与死锁",
+            "条件变量的谓词等待",
+            "并发错误怎样缩小范围"
+          ]
+        },
+        {
+          "path": "知识库/16_编程与数据结构/文件IO.md",
+          "primary_question": "如何在缓存与异步请求下读写并可靠发布文件",
+          "source_sections": [
+            "文件系统与 IO"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
+      "decision": "SPLIT",
+      "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
+      "products": [
+        {
+          "path": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
+          "primary_question": "如何把生成节点与模型依赖组织成可复现任务",
+          "source_sections": [
+            "工作流怎样可重复执行",
+            "失败恢复"
+          ]
+        },
+        {
+          "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+          "primary_question": "如何在运动与遮挡变化下复用生成特征",
+          "source_sections": [
+            "视频怎样追踪同一份内容",
+            "技术通道怎样保持一致"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
+      "decision": "SPLIT",
+      "reason": "去噪模型、结构参考控制与参数适配训练分别维护。",
+      "products": [
+        {
+          "path": "知识库/17_AIGC与Agent管线/扩散模型.md",
+          "primary_question": "如何从噪声状态逐步生成图像表示",
+          "source_sections": [
+            "噪声怎样变成图像",
+            "文本条件与 CLIP",
+            "Classifier-Free Guidance",
+            "Seed 与可复现性",
+            "Text-to-Image、Img2Img 与 Inpainting",
+            "推理精度与显存"
+          ]
+        },
+        {
+          "path": "知识库/17_AIGC与Agent管线/生成条件控制.md",
+          "primary_question": "如何用结构图与参考图约束扩散生成",
+          "source_sections": [
+            "ControlNet",
+            "IP-Adapter"
+          ]
+        },
+        {
+          "path": "知识库/17_AIGC与Agent管线/LoRA训练.md",
+          "primary_question": "如何用低秩增量学习目标概念并验证泛化",
+          "source_sections": [
+            "适配器怎样学习目标概念",
+            "资产化",
+            "基线评估",
+            "数据与隐私"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
+      "decision": "SPLIT",
+      "reason": "扫掠角色、骨架刚体切换、柔软约束、断裂连接与轮胎动力学有独立求解和验证。",
+      "products": [
+        {
+          "path": "知识库/18_游戏物理与模拟/Character Controller.md",
+          "primary_question": "如何用扫掠滑动生成可预测的角色位移",
+          "source_sections": [
+            "Character Controller"
+          ]
+        },
+        {
+          "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+          "primary_question": "如何在动画姿态与刚体骨架之间切换控制",
+          "source_sections": [
+            "Ragdoll 与动画混合"
+          ]
+        },
+        {
+          "path": "知识库/18_游戏物理与模拟/XPBD.md",
+          "primary_question": "如何通过Compliance求解可控柔软约束",
+          "source_sections": [
+            "布料与 XPBD",
+            "XPBD 距离约束"
+          ]
+        },
+        {
+          "path": "知识库/18_游戏物理与模拟/破坏系统.md",
+          "primary_question": "如何用连接图控制碎片激活与预算",
+          "source_sections": [
+            "破坏"
+          ]
+        },
+        {
+          "path": "知识库/18_游戏物理与模拟/载具物理.md",
+          "primary_question": "如何把悬挂与轮胎滑移转换成车体力",
+          "source_sections": [
+            "载具"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/20_游戏AI/群体、学习与高级决策.md",
+      "decision": "SPLIT",
+      "reason": "群体空间信息、树搜索与策略训练采用不同状态和评估方式。",
+      "products": [
+        {
+          "path": "知识库/20_游戏AI/群体战术信息.md",
+          "primary_question": "如何以感知与影响场支持群体协作决策",
+          "source_sections": [
+            "群体与战术信息",
+            "感知预算与信息抽象"
+          ]
+        },
+        {
+          "path": "知识库/20_游戏AI/MCTS.md",
+          "primary_question": "如何在有限预算内用模拟平衡探索与回报",
+          "source_sections": [
+            "MCTS",
+            "MCTS 的 UCT 选择"
+          ]
+        },
+        {
+          "path": "知识库/20_游戏AI/游戏强化学习.md",
+          "primary_question": "如何用观测动作与奖励训练可部署策略",
+          "source_sections": [
+            "MDP、Policy 与 Value",
+            "强化学习管线",
+            "神经网络与学习方式",
+            "混合架构"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/21_游戏网络/服务器架构、分区与反作弊.md",
+      "decision": "SPLIT",
+      "reason": "服务路由存储、空间复制迁移与异常校验分别有独立故障模型。",
+      "products": [
+        {
+          "path": "知识库/21_游戏网络/对局服务器架构.md",
+          "primary_question": "如何组织权威实例路由存储与故障恢复",
+          "source_sections": [
+            "会话与服务职责",
+            "发现、负载与实例",
+            "存储与一致性",
+            "安全与可观测性",
+            "故障与测试"
+          ]
+        },
+        {
+          "path": "知识库/21_游戏网络/世界分区与AOI.md",
+          "primary_question": "如何筛选复制对象并交接跨区权威",
+          "source_sections": [
+            "AOI 与世界分区",
+            "基于网格的 AOI 查询"
+          ]
+        },
+        {
+          "path": "知识库/21_游戏网络/服务端反作弊校验.md",
+          "primary_question": "如何验证客户端请求并记录可审计异常",
+          "source_sections": [
+            "反作弊分层"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/21_游戏网络/状态同步、预测与回滚.md",
+      "decision": "SPLIT",
+      "reason": "快照显示、预测校正、确定性重模拟与历史命中查询有不同状态恢复范围。",
+      "products": [
+        {
+          "path": "知识库/21_游戏网络/快照同步.md",
+          "primary_question": "如何用基线压缩与延后插值显示远端状态",
+          "source_sections": [
+            "压缩与基线",
+            "远端实体插值"
+          ]
+        },
+        {
+          "path": "知识库/21_游戏网络/客户端预测.md",
+          "primary_question": "如何用权威确认重放未确认输入并分离视觉误差",
+          "source_sections": [
+            "客户端预测与校正",
+            "权威边界"
+          ]
+        },
+        {
+          "path": "知识库/21_游戏网络/回滚同步.md",
+          "primary_question": "如何恢复历史Tick并重模拟迟到输入",
+          "source_sections": [
+            "三类同步思路",
+            "断线、重连与回放"
+          ]
+        },
+        {
+          "path": "知识库/21_游戏网络/延迟补偿命中.md",
+          "primary_question": "如何按受控历史时刻回退碰撞体进行命中判断",
+          "source_sections": []
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
+      "decision": "SPLIT",
+      "reason": "消息传输、时钟估计与远程事务有独立协议和正确性条件。",
+      "products": [
+        {
+          "path": "知识库/21_游戏网络/游戏网络传输.md",
+          "primary_question": "如何在乱序丢包与字节流下传送有边界的消息",
+          "source_sections": [
+            "端点怎样建立通信",
+            "消息怎样在链路上传输",
+            "诊断"
+          ]
+        },
+        {
+          "path": "知识库/21_游戏网络/游戏网络时钟.md",
+          "primary_question": "如何估计往返延迟与共同模拟时间",
+          "source_sections": [
+            "RTT 与时钟偏移"
+          ]
+        },
+        {
+          "path": "知识库/21_游戏网络/RPC.md",
+          "primary_question": "如何把远程请求转成可校验可重试的事务",
+          "source_sections": [
+            "RPC",
+            "安全边界"
+          ]
+        }
+      ],
+      "overview": null,
+      "status": "READY"
+    },
+    {
+      "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
+      "decision": "SPLIT",
+      "reason": "纹理动画、覆盖裁剪、颜色扰动、深度软交界与负载诊断各自成篇；Ribbon与场查询归入粒子系统，原页保留方案组合入口。",
+      "products": [
+        {
+          "path": "知识库/10_VFX与模拟/VFX纹理动画.md",
+          "primary_question": "如何用帧序列与流向场控制表面动态",
+          "source_sections": [
+            "Flipbook",
+            "Polar UV、Flow 与噪声"
+          ]
+        },
+        {
+          "path": "知识库/10_VFX与模拟/溶解材质.md",
+          "primary_question": "如何用标量阈值控制覆盖与发光边缘",
+          "source_sections": [
+            "Dissolve",
+            "带抗锯齿边缘的 Dissolve"
+          ]
+        },
+        {
+          "path": "知识库/10_VFX与模拟/屏幕扰动.md",
+          "primary_question": "如何在已有场景颜色上采样视觉折射偏移",
+          "source_sections": [
+            "Distortion 与 Refraction"
+          ]
+        },
+        {
+          "path": "知识库/10_VFX与模拟/软粒子.md",
+          "primary_question": "如何用线性深度差淡化粒子与几何交界",
+          "source_sections": [
+            "Depth Fade 与 Soft Particle"
+          ]
+        },
+        {
+          "path": "知识库/14_性能分析与优化/VFX性能.md",
+          "primary_question": "如何按模拟排序与屏幕覆盖控制特效预算",
+          "source_sections": [
+            "透明效果的成本从哪里来"
+          ]
+        }
+      ],
+      "overview": {
+        "title": "VFX效果组合",
+        "intro": "一个特效可以同时需要时间动画、覆盖变化和场景交界。先看缺少的是哪份信号，再组合对应材质与模拟，性能按同屏负载单独验证。",
+        "extra": "基础是纹理采样、Alpha表示和粒子数据。纹理动画改变UV，溶解改变覆盖，屏幕扰动改变背景采样，软粒子使用深度差，GPU粒子负责状态与运动。各模块组合时共享时间、空间和资源约定；VFX性能记录实际组合负载。"
+      },
+      "status": "READY"
+    },
+    {
+      "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
+      "decision": "SPLIT",
+      "reason": "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。",
+      "products": [
+        {
+          "path": "知识库/16_编程与数据结构/算法设计.md",
+          "primary_question": "如何从状态与操作推导合适的求解方法",
+          "source_sections": [
+            "问题怎样化成可求解状态",
+            "字符串匹配与 KMP"
+          ]
+        },
+        {
+          "path": "知识库/16_编程与数据结构/容器选择.md",
+          "primary_question": "如何按查找更新顺序与稳定性选择数据结构",
+          "source_sections": [
+            "操作决定容器"
+          ]
+        },
+        {
+          "path": "知识库/16_编程与数据结构/图搜索.md",
+          "primary_question": "如何从依赖与路径图求可达顺序和最低成本",
+          "source_sections": [
+            "Graph",
+            "Topological Sort",
+            "Dijkstra",
+            "A*",
+            "A* 的核心循环"
+          ]
+        },
+        {
+          "path": "知识库/16_编程与数据结构/空间索引.md",
+          "primary_question": "如何用区域与包围体减少空间查询候选",
+          "source_sections": [
+            "空间查询怎样缩小候选",
+            "复杂度与数据局部性"
+          ]
+        }
+      ],
+      "overview": {
+        "title": "算法与数据结构导读",
+        "intro": "算法先决定状态怎样推进，数据结构决定这些状态怎样保存与查询。工程中先写工作负载，再在求解、容器、图和空间索引四条路线里选择。",
+        "extra": "离线求解和规则转换从算法设计进入；查找、更新和有序访问进入容器选择；依赖、可达与最短路进入图搜索；位置、范围和近邻进入空间索引。数学正确性、内存布局和规模曲线共同验收。"
+      },
+      "status": "READY"
+    },
+    {
+      "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "decision": "FINALIZE",
+      "reason": "一帧路线负责组织职责，OpenGL对象与显示机制移入专篇，完整阶段算法引用既有主归属。",
+      "products": [],
+      "overview": {
+        "title": "一帧如何到达屏幕",
+        "intro": "CPU准备逻辑与资源，GPU执行队列中的命令，显示系统再呈现完成图像。三者可以重叠，所以帧率、排队和输入延迟要沿整条时间线理解。",
+        "links": [
+          [
+            "13_渲染架构/Command Buffer与帧提交",
+            "命令怎样从记录走到提交与完成"
+          ],
+          [
+            "02_GPU与光栅化管线/光栅化与属性插值",
+            "几何怎样成为片元"
+          ],
+          [
+            "13_渲染架构/Render Pass与附件",
+            "片元结果保存在哪里"
+          ],
+          [
+            "02_GPU与光栅化管线/显示呈现",
+            "完成图像怎样到达显示器"
+          ]
+        ],
+        "extra": "先掌握空间变换与GPU执行，再沿记录、覆盖、附件和呈现阅读。等待Present可能来自限帧、显示同步或GPU积压，诊断从实际时间线找原因。"
+      },
+      "status": "READY"
+    },
+    {
+      "source": "知识库/02_GPU与光栅化管线/光栅化、插值与深度模板.md",
+      "decision": "FINALIZE",
+      "reason": "导航保留问题路线，标题以共同可见性职责命名。",
+      "products": [],
+      "overview": {
+        "title": "光栅化可见性导读",
+        "intro": "几何覆盖产生候选样本，深度决定最近表面，模板选择区域。它们位于同一条可见性链，却使用不同数据和比较规则。",
+        "links": [
+          [
+            "02_GPU与光栅化管线/光栅化与属性插值",
+            "如何生成覆盖与片元属性"
+          ],
+          [
+            "02_GPU与光栅化管线/深度缓冲与位置重建",
+            "如何解释设备深度"
+          ],
+          [
+            "02_GPU与光栅化管线/基于深度的可见性优化",
+            "如何减少无效着色与遮挡工作"
+          ],
+          [
+            "02_GPU与光栅化管线/Stencil与对象遮罩",
+            "如何控制有限位宽区域标签"
+          ]
+        ],
+        "extra": ""
+      },
+      "status": "READY"
+    },
+    {
+      "source": "知识库/02_GPU与光栅化管线/剔除、透明与混合.md",
+      "decision": "FINALIZE",
+      "reason": "该页只负责两类职责关系。",
+      "products": [],
+      "overview": {
+        "title": "可见性与合成导读",
+        "intro": "不透明只需要最近层，透明还要组合后方颜色。剔除减少无用候选，合成则按覆盖与顺序保留贡献，两者分别进入专篇。",
+        "links": [
+          [
+            "02_GPU与光栅化管线/可见性剔除",
+            "哪些对象和图元可以不提交"
+          ],
+          [
+            "02_GPU与光栅化管线/透明合成",
+            "交叉透明层怎样合成"
+          ]
+        ],
+        "extra": ""
+      },
+      "status": "READY"
+    },
+    {
+      "source": "知识库/09_动画系统/动画压缩、面部、布料与毛发.md",
+      "decision": "FINALIZE",
+      "reason": "原量化代码已有动画压缩主归属，导读不再保留完整实现。",
+      "products": [],
+      "overview": {
+        "title": "角色动画导读",
+        "intro": "角色动作先生成骨骼姿态，面部目标和物理代理再补充表情与二级运动。数据压缩减少存储，不改变这些阶段各自的职责。",
+        "links": [
+          [
+            "09_动画系统/骨骼动画与蒙皮",
+            "轨道与骨骼怎样驱动表面"
+          ],
+          [
+            "09_动画系统/动画姿态混合",
+            "动作怎样连续切换"
+          ],
+          [
+            "09_动画系统/动画压缩",
+            "动作数据怎样降低存储成本"
+          ],
+          [
+            "09_动画系统/面部动画",
+            "表情目标怎样组合"
+          ],
+          [
+            "09_动画系统/角色布料",
+            "服装代理怎样连接角色"
+          ],
+          [
+            "09_动画系统/毛发表示与模拟",
+            "Guide与渲染密度怎样分级"
+          ]
+        ],
+        "extra": ""
+      },
+      "status": "READY"
+    },
+    {
+      "source": "知识库/13_渲染架构/渲染路径与光源组织.md",
+      "decision": "FINALIZE",
+      "reason": "关系型标题准确，保留采用并删去重复实施清单。",
+      "products": [],
+      "overview": {
+        "title": "渲染路径与光源组织",
+        "intro": "Forward与Deferred决定材质和光照在何时求值，Tiled与Clustered决定哪些光源进入局部计算。先分清着色时机与灯列表组织，再比较成本。",
+        "links": [
+          [
+            "13_渲染架构/Forward Rendering与Forward+",
+            "材质绘制时怎样计算光照"
+          ],
+          [
+            "13_渲染架构/Deferred Rendering",
+            "可见表面怎样先保存再照明"
+          ],
+          [
+            "13_渲染架构/Tiled与Clustered光源剔除",
+            "怎样建立局部灯光列表"
+          ]
+        ],
+        "extra": ""
+      },
+      "status": "READY"
+    },
+    {
+      "source": "知识库/13_渲染架构/Render Pass、Command Buffer与Render Graph.md",
+      "decision": "FINALIZE",
+      "reason": "以关系命名，完整依赖代码已有Render Graph主归属。",
+      "products": [],
+      "overview": {
+        "title": "渲染命令的组织方式",
+        "intro": "一帧效果先声明任务与资源，随后记录命令，再提交GPU。Render Graph编译依赖，Render Pass表达附件范围，Command Buffer承载实际操作，三者按职责衔接。",
+        "links": [
+          [
+            "13_渲染架构/Render Graph",
+            "资源读写怎样编译成执行计划"
+          ],
+          [
+            "13_渲染架构/Render Pass与附件",
+            "附件首尾内容怎样保存"
+          ],
+          [
+            "13_渲染架构/Command Buffer与帧提交",
+            "CPU记录与GPU完成怎样区分"
+          ],
+          [
+            "13_渲染架构/GPU同步与屏障",
+            "前序访问怎样对后序可见"
+          ],
+          [
+            "13_渲染架构/GPU资源生命周期",
+            "资源什么时候能回收"
+          ]
+        ],
+        "extra": ""
+      },
+      "status": "READY"
+    },
+    {
+      "source": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
+      "decision": "FINALIZE",
+      "reason": "按版本化实现路线组织，原接口正文合入引擎专篇。",
+      "products": [],
+      "overview": {
+        "title": "引擎渲染扩展导读",
+        "intro": "效果需要哪些资源和阶段，决定它应接入材质、屏幕通道还是网格绘制。先在通用帧模型定位需求，再进入所用引擎版本的接口。",
+        "links": [
+          [
+            "22_渲染引擎实现/Unity渲染帧组织",
+            "Unity帧模型与相机资源"
+          ],
+          [
+            "22_渲染引擎实现/URP Render Graph自定义Pass",
+            "URP图通道的实现入口"
+          ],
+          [
+            "22_渲染引擎实现/Unreal渲染帧组织",
+            "Unreal场景与线程边界"
+          ],
+          [
+            "22_渲染引擎实现/Unreal RDG Pass实现",
+            "RDG资源与通道"
+          ],
+          [
+            "22_渲染引擎实现/Unreal自定义Mesh Pass",
+            "对象绘制批次与Vertex Factory"
+          ]
+        ],
+        "extra": ""
+      },
+      "status": "READY"
+    },
+    {
+      "source": "知识库/11_NPR与风格化渲染/描边、Billboard与场景风格化.md",
+      "decision": "FINALIZE",
+      "reason": "该入口与现有NPR导读重复，引用全部合入现有导读。",
+      "products": [],
+      "overview": {
+        "title": "NPR效果入口",
+        "intro": "风格化效果按所需数据进入轮廓、材质或资产运动专题。",
+        "links": [
+          [
+            "11_NPR与风格化渲染/NPR与场景风格导读",
+            "场景风格与工程路线"
+          ]
+        ],
+        "extra": ""
+      },
+      "status": "READY"
+    }
+  ],
+  "extra_canonical_articles": [
+    {
+      "path": "知识库/02_GPU与光栅化管线/OpenGL对象与状态.md",
+      "primary_question": "如何在上下文中管理图形对象绑定和使用"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/显示呈现.md",
+      "primary_question": "如何让GPU完成图像进入扫描输出并控制排队延迟"
+    }
+  ]
+}
