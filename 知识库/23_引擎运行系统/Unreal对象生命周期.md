@@ -68,3 +68,5 @@ TObjectPtr<UObject> ownedObject;
 - Microsoft .NET Documentation, *Garbage collection fundamentals*.
 - Unity Manual, *Memory management*, *Object pooling*, *Native containers* and lifecycle documentation.
 - ISO C++ Core Guidelines, resource management sections.
+
+- [官方增量可达性分析与TObjectPtr写屏障，2026-10-07核读当前页面；目标运行UNVERIFIED](https://dev.epicgames.com/documentation/en-us/unreal-engine/incremental-garbage-collection-in-unreal-engine)。

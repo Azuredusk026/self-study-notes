@@ -72,3 +72,5 @@ drawCapturedGeometry()
 - Joshua Barczak, *Why Geometry Shaders Are Slow (Unless you're Intel)*.
 - Jasper Bekkers, *Mesh Shaders and the Future of Geometry Processing*.
 - Catlike Coding, *Flat and Wireframe Shading*.
+
+- [D3D11声明字段顺序，2026-10-07核读](https://learn.microsoft.com/en-us/windows/win32/api/d3d11/ns-d3d11-d3d11_so_declaration_entry)。

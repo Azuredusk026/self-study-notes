@@ -106,3 +106,5 @@ Sample DrawFromCdf(Span<float> weights, Span<float> cdf, float u)
 - Matt Pharr, Wenzel Jakob, Greg Humphreys, *Physically Based Rendering*.
 - Peter-Pike Sloan, *Stupid Spherical Harmonics Tricks*.
 - Ravi Ramamoorthi and Pat Hanrahan, *An Efficient Representation for Irradiance Environment Maps*.
+
+- [CDF逆映射与采样域，2026-10-07核读](https://pbr-book.org/4ed/Monte_Carlo_Integration/Sampling_Using_the_Inversion_Method)。

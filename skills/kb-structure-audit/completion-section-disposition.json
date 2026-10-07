@@ -246,9 +246,9 @@
     {
       "source": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
       "heading": "Probe 插值",
-      "target": "知识库/01_数学与采样/球谐光照.md",
-      "current_heading": "Probe 插值",
-      "decision": "独立主归属或明确合并",
+      "target": "知识库/05_光照阴影与GI/Light Probe.md",
+      "current_heading": "三线性 Probe 插值",
+      "decision": "既有主归属合并或条件修正",
       "reason": "随机积分与球面函数压缩有独立表示、误差及验证，SH不承担采样方法的主归属。",
       "source_hash": "4b1108b2baca5ba1eedc17f59ff32f4b9406fff0488c74b8dc9ff6fa190b6cd9"
     },
@@ -553,8 +553,8 @@
       "source": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
       "heading": "常见算法",
       "target": "知识库/03_Shader编程/GPU归约与前缀和.md",
-      "current_heading": "常见算法",
-      "decision": "独立主归属或明确合并",
+      "current_heading": "输出语义",
+      "decision": "既有主归属合并或条件修正",
       "reason": "调度模型、并行集合算法与回读状态机分别维护；多级深度生成归入深度可见性优化，灯光位掩码归入簇光照。",
       "source_hash": "598ef028d34cac3b919fd78916d9914f76403f1a11cfb0bff638970b4b9338bb"
     },
@@ -579,18 +579,18 @@
     {
       "source": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
       "heading": "Tiled Processing",
-      "target": "知识库/03_Shader编程/GPU归约与前缀和.md",
-      "current_heading": "Tiled Processing",
-      "decision": "独立主归属或明确合并",
+      "target": "知识库/03_Shader编程/Compute Shader.md",
+      "current_heading": "`groupshared` 内存",
+      "decision": "既有主归属合并或条件修正",
       "reason": "调度模型、并行集合算法与回读状态机分别维护；多级深度生成归入深度可见性优化，灯光位掩码归入簇光照。",
       "source_hash": "f4325c3a56ee6c06c7ab0cce4954a329f546fe27902746b1b0f2eadc0617ce91"
     },
     {
       "source": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
       "heading": "Indirect Argument Generation",
-      "target": "知识库/03_Shader编程/GPU归约与前缀和.md",
-      "current_heading": "Indirect Argument Generation",
-      "decision": "独立主归属或明确合并",
+      "target": "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
+      "current_heading": "Indirect Draw",
+      "decision": "既有主归属合并或条件修正",
       "reason": "调度模型、并行集合算法与回读状态机分别维护；多级深度生成归入深度可见性优化，灯光位掩码归入簇光照。",
       "source_hash": "7fd76e3b03b0aa5f91f7421bf703a6b72db43d5e2184cbca723384c541217762"
     },
@@ -858,9 +858,9 @@
     {
       "source": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
       "heading": "从 Radiance 到 SH 的推演",
-      "target": "知识库/05_光照阴影与GI/Light Probe.md",
-      "current_heading": "从 Radiance 到 SH 的推演",
-      "decision": "独立主归属或明确合并",
+      "target": "知识库/01_数学与采样/球谐光照.md",
+      "current_heading": "系数求值",
+      "decision": "既有主归属合并或条件修正",
       "reason": "静态烘焙、漫反射探针、反射捕获和动态更新各有独立资产与验证；原页成为GI方案导读。",
       "source_hash": "0bde47d0555c5c3134577c9450aa89b99524424f01a870c1f0d93c228a31c220"
     },
@@ -1345,8 +1345,8 @@
       "source": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
       "heading": "Straight 和 Premultiplied Alpha",
       "target": "知识库/07_颜色与后处理/Alpha表示.md",
-      "current_heading": "Straight 和 Premultiplied Alpha",
-      "decision": "独立主归属或明确合并",
+      "current_heading": "两种颜色表示",
+      "decision": "既有主归属合并或条件修正",
       "reason": "颜色编码、覆盖表示与场景曝光是三份不同的数据契约。",
       "source_hash": "e6057d05c1602000019536eceff9be56faf8febe2a9a1460113e938ed040cf10"
     },
@@ -2011,8 +2011,8 @@
       "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
       "heading": "面部法线与眼睛",
       "target": "知识库/11_NPR与风格化渲染/风格化眼睛.md",
-      "current_heading": "面部法线与眼睛",
-      "decision": "独立主归属或明确合并",
+      "current_heading": "眼球分层",
+      "decision": "既有主归属合并或条件修正",
       "reason": "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。",
       "source_hash": "9a3401920ef8f4274b8aae8b9da2892f7b8b6ebaf7a9f70dfeddd3846b75612a"
     },
@@ -2658,9 +2658,9 @@
     {
       "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
       "heading": "C++ 所有权",
-      "target": "知识库/16_编程与数据结构/C++工程边界.md",
-      "current_heading": "C++ 所有权",
-      "decision": "独立主归属或明确合并",
+      "target": "知识库/16_编程与数据结构/对象生命周期.md",
+      "current_heading": "Ownership",
+      "decision": "既有主归属合并或条件修正",
       "reason": "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。",
       "source_hash": "e3b98abedc4c0f5658c2c39f54a4054a3cbba24f825c4f9e83c4b5c4c717a0df"
     },
@@ -2920,8 +2920,8 @@
       "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
       "heading": "触发时机",
       "target": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
-      "current_heading": "触发时机",
-      "decision": "独立主归属或明确合并",
+      "current_heading": "标记—清除",
+      "decision": "既有主归属合并或条件修正",
       "reason": "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。",
       "source_hash": "2197d91bd1a9567622e706c9fce7f0ea124d1608d0aef4e58194f891107f5c1b"
     },
@@ -4062,9 +4062,9 @@
     {
       "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
       "heading": "Alpha Blend、Premultiplied 与 Additive",
-      "target": "知识库/14_性能分析与优化/VFX性能.md",
-      "current_heading": "Alpha Blend、Premultiplied 与 Additive",
-      "decision": "独立主归属或明确合并",
+      "target": "知识库/02_GPU与光栅化管线/透明合成.md",
+      "current_heading": "Alpha Blend",
+      "decision": "既有主归属合并或条件修正",
       "reason": "纹理动画、覆盖裁剪、颜色扰动、深度软交界与负载诊断各自成篇；Ribbon与场查询归入粒子系统，原页保留方案组合入口。",
       "source_hash": "68794caf27e993296cc265c4fb83bc904e1788b9625e64f8cc7f0334b9ecf91c"
     },
@@ -4098,9 +4098,9 @@
     {
       "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
       "heading": "带抗锯齿边缘的 Dissolve",
-      "target": "知识库/14_性能分析与优化/VFX性能.md",
+      "target": "知识库/10_VFX与模拟/溶解材质.md",
       "current_heading": "带抗锯齿边缘的 Dissolve",
-      "decision": "独立主归属或明确合并",
+      "decision": "既有主归属合并或条件修正",
       "reason": "纹理动画、覆盖裁剪、颜色扰动、深度软交界与负载诊断各自成篇；Ribbon与场查询归入粒子系统，原页保留方案组合入口。",
       "source_hash": "74dc98ab73bdbe7e6f89743daf1a3eddf283926eaa3bf2d964c2d553eddbfeb5"
     },

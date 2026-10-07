@@ -149,6 +149,13 @@ def batch_validate(root):
         concepts = [r['concept'].casefold() for r in ownership]
         if len(concepts) != len(set(concepts)):
             errors.append('重复主归属概念')
+        dispositions = read('completion-section-disposition.json')['records']
+        for disposition in dispositions:
+            destination = root / disposition['target']
+            if not destination.is_file():
+                errors.append('来源章节处置目标缺失 ' + disposition['target'])
+            elif disposition.get('current_heading') and disposition['current_heading'] not in anchors(destination.read_text(encoding='utf-8-sig')):
+                errors.append('来源章节处置锚点缺失 ' + disposition['heading'])
         shared_code = defaultdict(list)
         for path, text in page_text.items():
             for language, code in re.findall(r'^```([^\n]*)\n(.*?)^```\s*$', text, re.M | re.S):

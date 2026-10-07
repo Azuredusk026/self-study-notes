@@ -63,7 +63,7 @@
     {
       "path": "知识库/01_数学与采样/Monte Carlo采样.md",
       "primary_question": "如何用概率分布估计积分并控制方差",
-      "references": "- Matt Pharr, Wenzel Jakob, Greg Humphreys, *Physically Based Rendering*.\n- Peter-Pike Sloan, *Stupid Spherical Harmonics Tricks*.\n- Ravi Ramamoorthi and Pat Hanrahan, *An Efficient Representation for Irradiance Environment Maps*.",
+      "references": "- Matt Pharr, Wenzel Jakob, Greg Humphreys, *Physically Based Rendering*.\n- Peter-Pike Sloan, *Stupid Spherical Harmonics Tricks*.\n- Ravi Ramamoorthi and Pat Hanrahan, *An Efficient Representation for Irradiance Environment Maps*.\n\n- [CDF逆映射与采样域，2026-10-07核读](https://pbr-book.org/4ed/Monte_Carlo_Integration/Sampling_Using_the_Inversion_Method)。",
       "urls": [],
       "runtime": "UNVERIFIED",
       "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
@@ -186,7 +186,7 @@
     {
       "path": "知识库/02_GPU与光栅化管线/Stream Output.md",
       "primary_question": "如何把几何前端结果保存到缓冲供后续消费",
-      "references": "- Frank Luna, *Introduction to 3D Game Programming with DirectX 12*, Tessellation and Geometry Shader chapters.\n- Khronos OpenGL Wiki, *Tessellation*, *Tessellation Control Shader*, *Tessellation Evaluation Shader*, *Transform Feedback*.\n- Microsoft Learn, *Geometry-Shader Stage*, *Primitive Topologies*, *Getting Started with the Stream-Output Stage*.\n- Microsoft, *Direct3D 11.3 Functional Specification*, Tessellation Pattern and Fixed Order of Pipeline Results.\n- NVIDIA, *GeForce 8 and 9 Series GPU Programming Guide*, Geometry Shader performance sections.\n- Joshua Barczak, *Why Geometry Shaders Are Slow (Unless you're Intel)*.\n- Jasper Bekkers, *Mesh Shaders and the Future of Geometry Processing*.\n- Catlike Coding, *Flat and Wireframe Shading*.",
+      "references": "- Frank Luna, *Introduction to 3D Game Programming with DirectX 12*, Tessellation and Geometry Shader chapters.\n- Khronos OpenGL Wiki, *Tessellation*, *Tessellation Control Shader*, *Tessellation Evaluation Shader*, *Transform Feedback*.\n- Microsoft Learn, *Geometry-Shader Stage*, *Primitive Topologies*, *Getting Started with the Stream-Output Stage*.\n- Microsoft, *Direct3D 11.3 Functional Specification*, Tessellation Pattern and Fixed Order of Pipeline Results.\n- NVIDIA, *GeForce 8 and 9 Series GPU Programming Guide*, Geometry Shader performance sections.\n- Joshua Barczak, *Why Geometry Shaders Are Slow (Unless you're Intel)*.\n- Jasper Bekkers, *Mesh Shaders and the Future of Geometry Processing*.\n- Catlike Coding, *Flat and Wireframe Shading*.\n\n- [D3D11声明字段顺序，2026-10-07核读](https://learn.microsoft.com/en-us/windows/win32/api/d3d11/ns-d3d11-d3d11_so_declaration_entry)。",
       "urls": [],
       "runtime": "UNVERIFIED",
       "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
@@ -2166,7 +2166,7 @@
     {
       "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
       "primary_question": "如何让UObject引用被引擎GC识别",
-      "references": "- Epic Games, *Unreal Object Handling* and *Smart Pointer Library* documentation.\n\n- Microsoft .NET Documentation, *Garbage collection fundamentals*.\n- Unity Manual, *Memory management*, *Object pooling*, *Native containers* and lifecycle documentation.\n- ISO C++ Core Guidelines, resource management sections.",
+      "references": "- Epic Games, *Unreal Object Handling* and *Smart Pointer Library* documentation.\n\n- Microsoft .NET Documentation, *Garbage collection fundamentals*.\n- Unity Manual, *Memory management*, *Object pooling*, *Native containers* and lifecycle documentation.\n- ISO C++ Core Guidelines, resource management sections.\n\n- [官方增量可达性分析与TObjectPtr写屏障，2026-10-07核读当前页面；目标运行UNVERIFIED](https://dev.epicgames.com/documentation/en-us/unreal-engine/incremental-garbage-collection-in-unreal-engine)。",
       "urls": [],
       "runtime": "UNVERIFIED",
       "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
