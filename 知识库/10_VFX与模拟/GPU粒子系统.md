@@ -2,7 +2,9 @@
 
 粒子系统用大量生命周期短、行为相似的元素近似烟、火、碎片、轨迹和环境动态。系统真正困难的部分是生命周期管理、数据布局、并行更新、排序与跨系统交互。
 
-## Particle、Emitter 与 System
+## 从发射到回收
+
+### Particle、Emitter 与 System
 
 Particle 保存单个元素的状态，例如：
 
@@ -15,7 +17,7 @@ Emitter 定义 Spawn Rate、Burst、初始分布和 Update 规则。System 组�
 
 一个爆炸可能由火球、烟、火星、冲击波、碎片、光源和声音组成。它们应共享时间与 Gameplay 语义，但不一定使用同一种模拟或材质。
 
-## 生命周期
+### 生命周期
 
 最基本的流程是 Spawn → Initialize → Update → Render → Kill。每帧应确保 Age 超过 Lifetime 的粒子被回收。只生成不回收会让存活数量持续增长。
 
@@ -27,9 +29,9 @@ $$
 
 $r$ 是每秒发射率，$a$ 是上一帧余数。这样帧率变化时平均数量仍稳定。Burst 则在事件时一次生成指定数量。
 
-Random 不应直接依赖线程执行顺序。使用粒子 Stable ID、Emitter Seed 和 Spawn Index 派生随机数，才能重放和调试。
+压紧后的数组下标会随并行调度变化，因而不能把它当作稳定身份。Random 不应直接依赖线程执行顺序。使用粒子 Stable ID、Emitter Seed 和 Spawn Index 派生随机数，才能重放和调试。
 
-## 基础积分
+### 基础积分
 
 简单粒子常用 Semi-implicit Euler：
 
@@ -58,7 +60,9 @@ CPU 适合：
 
 CPU 模拟后仍要把实例数据上传 GPU。数量很大时，模拟和上传都会成为瓶颈。
 
-## GPU Particle Pool
+## 设备端状态怎样流转
+
+### GPU Particle Pool
 
 GPU 粒子通常预分配固定容量的 Structured Buffer，不在每帧动态创建对象。常见资源：
 
@@ -74,7 +78,7 @@ Dead List 保存可复用 Slot。Spawn 从 Dead List 取索引并初始化；Upd
 
 这相当于 GPU 上的对象池和 Stream Compaction。Append/Consume Buffer 或 Atomic Counter 可以管理数量，但原子竞争和无序写仍需控制。
 
-## 一帧 GPU 模拟
+### 一帧 GPU 模拟
 
 典型调度：
 
@@ -89,7 +93,7 @@ Dead List 保存可复用 Slot。Spawn 从 Dead List 取索引并初始化；Upd
 
 Pass 间 Buffer 从 UAV Write 变为 SRV/Indirect Read 时需要正确 Barrier。漏同步可能表现为随机丢粒子或读取上一帧数据。
 
-## Bounds 与可见性
+### Bounds 与可见性
 
 CPU 不知道 GPU 粒子的最终位置时，很难得到紧致 Bounds。固定巨大 Bounds 会让离屏系统无法剔除；过小则粒子突然消失。
 
@@ -102,7 +106,9 @@ CPU 不知道 GPU 粒子的最终位置时，很难得到紧致 Bounds。固定�
 
 GPU 回读会引入延迟，不能为了实时 Bounds 强制同步。
 
-## Billboard、Mesh 与 Ribbon
+## 怎样把粒子画出来
+
+### Billboard、Mesh 与 Ribbon
 
 Billboard 用面片朝向摄像机。它顶点少，但透明区域可能很大。
 
@@ -110,7 +116,7 @@ Mesh Particle 适合碎片、石块和简单 Crowd。可通过 Instancing 绘制
 
 Ribbon/Trail 按历史点生成带状网格。Catmull-Rom 等曲线可平滑轨迹，但过密采样会增加顶点，过稀会在急转弯处折断。还要处理宽度方向、UV 距离和相机朝向。
 
-## 排序
+### 排序
 
 标准 Alpha Blend 依赖 Back-to-front 顺序。Per-emitter 排序便宜，但两个 Emitter 互相穿插时错误；Global Sorting 更正确，却要统一收集粒子并减少状态切换。
 
@@ -179,7 +185,7 @@ void Simulate(uint id : SV_DispatchThreadID)
 }
 ```
 
-Dispatch 前要把 `AliveCount` 清零，并确保上一轮写入已完成；模拟后再用计数生成 Indirect Draw 参数。原子追加在粒子很多时可能争用，分组前缀和能进一步优化。验证时读取少量计数器或在 GPU 调试器中检查：`AliveCount` 不得超过输出容量，死亡粒子不能残留到 Draw。
+Dispatch 前要把 `AliveCount` 清零，并确保上一轮写入已完成；模拟后再用计数生成 Indirect Draw 参数。原子追加在粒子很多时可能争用，分组前缀和能进一步优化。验证时读取少量计数器或在 GPU 调试器中检查：片段要求 `inputCount` 不超过输出容量，且每个输入最多输出一次；生产流程还要把 Spawn 的需求一起纳入容量预算。`AliveCount` 不得超过输出容量，死亡粒子不能残留到 Draw。
 
 ## 相关主题
 

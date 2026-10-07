@@ -1059,6 +1059,618 @@
       ],
       "static_validation": "待提交前运行",
       "semantic_review": "本机内容复读，不代替目标运行与用户质量评审"
+    },
+    {
+      "id": "Batch4-P1-A",
+      "pages": 20,
+      "articles": [
+        {
+          "path": "知识库/01_数学与采样/信号、频率与噪声.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "### 欠采样的两种形态",
+            "### 混叠的频域机制"
+          ],
+          "before_sha256": "ccb616c8ffa9b295850c7f3fb9d3e75794d162e8265b32ef9912b72c8da874c9",
+          "after_sha256": "9c0f08cf556ca119d6dacb1decd51ebf1a0a4f4039de1f7480028938bc088283",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": true
+        },
+        {
+          "path": "知识库/01_数学与采样/旋转表示与插值.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "RESTRUCTURE",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "## Lerp",
+            "## 两个状态怎样连续连接",
+            "## 四元数（Quaternion）",
+            "## 姿态怎样保存",
+            "## 方向和旋转插值",
+            "## 旋转矩阵",
+            "## 曲线插值",
+            "## 欧拉角（Euler Angles）",
+            "### Bezier",
+            "### Hermite",
+            "### Lerp",
+            "### Nlerp",
+            "### Nlerp 与 Slerp 的误差",
+            "### Slerp",
+            "### Smoothstep",
+            "### 万向节锁的本质",
+            "### 四元数（Quaternion）",
+            "### 方向和旋转插值",
+            "### 旋转矩阵",
+            "### 曲线插值",
+            "### 欧拉角（Euler Angles）",
+            "### 矩阵为什么会漂移",
+            "### 角速度积分",
+            "#### Bezier",
+            "#### Hermite",
+            "#### Nlerp",
+            "#### Nlerp 与 Slerp 的误差",
+            "#### Slerp",
+            "#### Smoothstep",
+            "#### 万向节锁的本质",
+            "#### 矩阵为什么会漂移",
+            "#### 角速度积分"
+          ],
+          "before_sha256": "bcb6ba60f726e1d145cbfd3df4ea0522d159484f3e27c0dd06f09a4a4681e1d7",
+          "after_sha256": "5f65578bc7bc5da53715c0e9d8ad476dabb0d8a9bfa3374dca91cd60b0a48ffc",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/01_数学与采样/空间变换.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "RESTRUCTURE",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "## Clip Space、NDC 和透视除法",
+            "## 从模型坐标走到屏幕",
+            "## 叉积（Cross Product）",
+            "## 向量如何表达几何关系",
+            "## 法线为什么不能当普通方向变换",
+            "## 点和向量",
+            "## 点积（Dot Product）",
+            "## 矩阵表示变换",
+            "## 长度和归一化",
+            "### Clip Space、NDC 和透视除法",
+            "### Model Matrix",
+            "### Projection Matrix",
+            "### View Matrix",
+            "### 为什么要多出一个分量",
+            "### 叉积（Cross Product）",
+            "### 点和向量",
+            "### 点积（Dot Product）",
+            "### 矩阵表示变换",
+            "### 行主序、列主序与向量约定是三件事",
+            "### 长度和归一化",
+            "### 顶点阶段的 MVP",
+            "#### Model Matrix",
+            "#### Projection Matrix",
+            "#### View Matrix",
+            "#### 为什么要多出一个分量",
+            "#### 行主序、列主序与向量约定是三件事",
+            "#### 顶点阶段的 MVP"
+          ],
+          "before_sha256": "f85bb5bfdcf72abeb52df9e964cb4d03f21ace109e5a1540f97ead23c0581b62",
+          "after_sha256": "ecdf7a0e8aba04b9ffd296fa03b5eb0d7cbbe85b5697dcc409d56bc5769c6b11",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/05_光照阴影与GI/Shadow Map.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "RESTRUCTURE",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# Shadow Map",
+            "## CSM",
+            "## PCF 的含义",
+            "## PCSS",
+            "## Point Light Shadow",
+            "## 为什么不能直接双线性插值深度",
+            "## 平面投影阴影",
+            "## 方差阴影与虚拟阴影",
+            "## 过滤离散可见性",
+            "## 阴影资源如何分配",
+            "### 1. Blocker Search",
+            "### 1. 分割相机视锥",
+            "### 2. 估计 Penumbra",
+            "### 2. 计算每层光空间矩阵",
+            "### 3. Variable-radius PCF",
+            "### 3. 保存每层深度",
+            "### 4. 选择 Cascade",
+            "### 5. 处理边界过渡",
+            "### 6. Bias 和过滤尺度",
+            "### 7. 稳定化和 Texel Snapping",
+            "### 8. 成本",
+            "### 9. 调试",
+            "### CSM",
+            "### PCF 的含义",
+            "### PCSS",
+            "### Point Light Shadow",
+            "### 为什么不能直接双线性插值深度",
+            "### 平面投影阴影",
+            "### 方差阴影与虚拟阴影",
+            "#### 1. Blocker Search",
+            "#### 1. 分割相机视锥",
+            "#### 2. 估计 Penumbra",
+            "#### 2. 计算每层光空间矩阵",
+            "#### 3. Variable-radius PCF",
+            "#### 3. 保存每层深度",
+            "#### 4. 选择 Cascade",
+            "#### 5. 处理边界过渡",
+            "#### 6. Bias 和过滤尺度",
+            "#### 7. 稳定化和 Texel Snapping",
+            "#### 8. 成本",
+            "#### 9. 调试",
+            "#### 三条前提",
+            "#### 从半影宽度到采样半径",
+            "#### 这个比例式从哪来"
+          ],
+          "before_sha256": "43e01c54bc51a10bc88f20ceda292be3e676089628ed8333e29700b4268e7b3d",
+          "after_sha256": "3b478443c3c273ad0446a181ba6033799c36f1f2f58617090ca8766916b06bb8",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "RESTRUCTURE",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 烘焙光照、Probe与实时GI",
+            "## Directional Lightmap",
+            "## Distance Field GI",
+            "## Light Probe",
+            "## Lightmap",
+            "## Lumen 的理解框架",
+            "## Probe-based Dynamic GI",
+            "## Reflection Probe",
+            "## Screen-space GI",
+            "## Voxel GI",
+            "## 动态物体怎样查询环境",
+            "## 场景变化后怎样更新",
+            "## 静态表面怎样保存间接光",
+            "### Directional Lightmap",
+            "### Distance Field GI",
+            "### Light Probe",
+            "### Lightmap",
+            "### Lumen 的理解框架",
+            "### Probe-based Dynamic GI",
+            "### Reflection Probe",
+            "### Screen-space GI",
+            "### Voxel GI",
+            "### 从 Radiance 到 SH 的推演",
+            "### 存储与运行时读取",
+            "#### 从 Radiance 到 SH 的推演",
+            "#### 存储与运行时读取"
+          ],
+          "before_sha256": "ea5fd4baaa59c17595f5f73eb0df93c675ac21abe541e55a4081636bdf25e8f8",
+          "after_sha256": "5c4e2f8dea57dd79d63bcbf3dd0d1d6bfdd21dbc700676c106b620ace353366d",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/05_光照阴影与GI/直接光照.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "RESTRUCTURE",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 直接光照",
+            "## Area Light",
+            "## Directional Light",
+            "## Light Cookie 和 IES",
+            "## Point Light",
+            "## Spot Light",
+            "## 不同光源怎样送来能量",
+            "## 光源剔除",
+            "## 光源尺寸影响什么",
+            "## 光的单位和曝光",
+            "## 单位与空间分布",
+            "## 多光源成本",
+            "## 把贡献累加到表面",
+            "## 直接光照的典型计算",
+            "### Area Light",
+            "### Directional Light",
+            "### Horizon Clipping 与 LUT 边界",
+            "### LTC 的执行过程",
+            "### Light Cookie 和 IES",
+            "### Point Light",
+            "### Point、Spot 和 Area 的单位不能直接互换",
+            "### Spot Light",
+            "### 光源剔除",
+            "### 光源尺寸影响什么",
+            "### 光的单位和曝光",
+            "### 多光源成本",
+            "### 直接光照的典型计算",
+            "#### Horizon Clipping 与 LUT 边界",
+            "#### LTC 的执行过程",
+            "#### Point、Spot 和 Area 的单位不能直接互换"
+          ],
+          "before_sha256": "84ad387b2eabc1615da5d1c62a7257179ceae4f8a306a2f54a178147fb23e2a8",
+          "after_sha256": "261033f6564433f55aae75c606f59265a589f7d4c6462e61795d55be76dedb6b",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/06_纹理技术/纹理压缩格式.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 纹理压缩格式",
+            "## 参考资料",
+            "## 块存储预算",
+            "### ASTC"
+          ],
+          "before_sha256": "dbe2858613d4c7e23bc455a19b08cb2fc309ff990747872686c36793e0a7522d",
+          "after_sha256": "aff48a7fca22b9e39d74371bb7e7819ce1d58ba8b7b0511a2a3ffaa587c0f8d7",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/06_纹理技术/视差映射.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "RESTRUCTURE",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "## Offset Limiting",
+            "## 基础视差映射",
+            "## 沿视线寻找高度层交点",
+            "## 视差遮蔽映射",
+            "## 陡峭视差映射",
+            "### Offset Limiting",
+            "### 基础视差映射",
+            "### 视差遮蔽映射",
+            "### 陡峭视差映射"
+          ],
+          "before_sha256": "d6c9a210b379f6328f3920ac722964d70e40e304dca83b5339eafffbf1ea717e",
+          "after_sha256": "fbf70004048b625f596cf5faabe7bc6d2a3f425ee87b74069ad16505541f629c",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "### 求解流程",
+            "### 生成流程"
+          ],
+          "before_sha256": "f1a90e9e93f60e28d4c5e4273fc266aad4316cb646e18c90dd9a2aa825af23e5",
+          "after_sha256": "8c81fcc182526ba1e30006a933f3a8e71d581b82e18e935f36e531b3634d36f8",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": true
+        },
+        {
+          "path": "知识库/08_几何与网格/网格数据与GPU访问.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "## Bounds、Submesh 与碰撞"
+          ],
+          "before_sha256": "7378b7670e520f8ca3dabc3c4637b1dbe77a6b891e4da0d74944e9b35207340a",
+          "after_sha256": "21d8f618900c1deb89740be2073cd7ccdf3ee553a8ce466f80f258a670c76632",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/09_动画系统/动画压缩.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 动画压缩",
+            "## Track 与 Key Reduction",
+            "## 参考资料"
+          ],
+          "before_sha256": "15ebd2446049914b9b40e3afce59e588db6d8d9681a32b846c78a633ab55020b",
+          "after_sha256": "6eaf5447db73616f854bace74f3a450b0888dd2b4947a32cae7c6fa55e8cd5a4",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/09_动画系统/动画状态、混合与IK.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "RESTRUCTURE",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "## CCD 与 FABRIK",
+            "## Clip 采样",
+            "## Foot IK",
+            "## State Machine",
+            "## Two Bone IK",
+            "## 怎样生成基础姿态",
+            "## 让末端适应交互目标",
+            "### CCD 与 FABRIK",
+            "### Clip 采样",
+            "### Crossfade 的局部姿态混合",
+            "### Foot IK",
+            "### State Machine",
+            "### Two Bone IK"
+          ],
+          "before_sha256": "2b6bd100c7b67d4dbebd22bb33a6f1ca2b221fea61110e3042068f39fdc6478e",
+          "after_sha256": "375b1036829632cc45e751bd2ef3ebdbab43d2c1b4c854fd712e462b7cb5a6ed",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": true
+        },
+        {
+          "path": "知识库/09_动画系统/布料与毛发的表示、碰撞和LOD.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "RESTRUCTURE",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "## 从质点弹簧到 PBD",
+            "## 参考资料",
+            "## 布料怎样模拟并保持稳定",
+            "## 布料的表示层级",
+            "## 碰撞与穿插",
+            "## 角色与服装穿模",
+            "### 从质点弹簧到 PBD",
+            "### 布料的表示层级",
+            "### 建模与权重约束",
+            "### 碰撞与穿插",
+            "### 离线裁剪",
+            "### 角色与服装穿模",
+            "### 运行时约束",
+            "### 验证",
+            "#### 建模与权重约束",
+            "#### 离线裁剪",
+            "#### 运行时约束",
+            "#### 验证"
+          ],
+          "before_sha256": "8a4d114f123e86b222f0261b8b2356046af4a288c2491eda0e5f69a7d56bf943",
+          "after_sha256": "ef598fb2f7c6048dbca5e8937f5f2426888805e2c6d7bfe7cb60f570917b0a19",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": true
+        },
+        {
+          "path": "知识库/09_动画系统/面部动画.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 面部动画",
+            "## 参考资料",
+            "## 面部 Rig"
+          ],
+          "before_sha256": "d1493e1de0ac2aaefa9d80b268637c9e4dab290a7195fecf55332ec108eb3846",
+          "after_sha256": "c8fb03fd3cbbc1a5c9efe3ecca7be2bdf4533fb7eac131011f73d097d7da4a7c",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/09_动画系统/骨骼动画与蒙皮.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "RESTRUCTURE",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "## Animation Texture",
+            "## Bind Pose 与 Inverse Bind Matrix",
+            "## Bone Palette 与分段",
+            "## CPU 与 GPU Skinning",
+            "## Linear Blend Skinning",
+            "## Skeleton 与 Joint",
+            "## Skin Weight 的实际约束",
+            "## 从轨道到骨骼矩阵",
+            "## 变形数据怎样送给渲染",
+            "## 局部 Pose 到模型空间",
+            "## 更新与渲染顺序",
+            "## 由骨骼恢复表面运动",
+            "### Animation Texture",
+            "### Bind Pose 与 Inverse Bind Matrix",
+            "### Bone Palette 与分段",
+            "### CPU 与 GPU Skinning",
+            "### GPU 蒙皮核心",
+            "### Linear Blend Skinning",
+            "### Skeleton 与 Joint",
+            "### Skin Weight 的实际约束",
+            "### 局部 Pose 到模型空间",
+            "### 更新与渲染顺序",
+            "### 轨道采样与层级累积",
+            "#### GPU 蒙皮核心",
+            "#### 轨道采样与层级累积"
+          ],
+          "before_sha256": "1dc092242e15124eee152779a3379c1c4f7bba5063ee749ee5744ee1a6bf7c2a",
+          "after_sha256": "74740a47420ab78a00e0069926f8e0dd6e7267175e2fa05690fa2a7a81cf71fd",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/10_VFX与模拟/Froxel体积雾.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# Froxel体积雾",
+            "## Froxel 体积雾",
+            "### 时域累积"
+          ],
+          "before_sha256": "10b00ee03e83950a06c8cc796529c8bf97639545b9f855a57eef91c300104e6c",
+          "after_sha256": "7a22da138d917051f29ebf9ffe161cdc59b5fa93f79508e36c8a98d5c65c811d",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/10_VFX与模拟/GPU粒子系统.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "RESTRUCTURE",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "## Billboard、Mesh 与 Ribbon",
+            "## Bounds 与可见性",
+            "## GPU Particle Pool",
+            "## Particle、Emitter 与 System",
+            "## 一帧 GPU 模拟",
+            "## 从发射到回收",
+            "## 基础积分",
+            "## 怎样把粒子画出来",
+            "## 排序",
+            "## 生命周期",
+            "## 设备端状态怎样流转",
+            "### Billboard、Mesh 与 Ribbon",
+            "### Bounds 与可见性",
+            "### GPU Particle Pool",
+            "### GPU 粒子更新",
+            "### Particle、Emitter 与 System",
+            "### 一帧 GPU 模拟",
+            "### 基础积分",
+            "### 排序",
+            "### 生命周期"
+          ],
+          "before_sha256": "1d553b5819a7909eccae4afb547c041f4867d58227a5bd5663ca5d1719919b60",
+          "after_sha256": "11c45c60065ce2bcc92e492c6b981d9bb34410c23b93f0093766e85433dfd7df",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/10_VFX与模拟/大气散射、天空与体积云.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "### 体积步进中的透射率"
+          ],
+          "before_sha256": "91647ea9eaebc28508ffaaceb1f1b9396b4b69b8c4d89fe63508c7e60900faff",
+          "after_sha256": "b55cc378f628807cd59b56e9c385a3e0a0db0e5cfc736d6e3b8a15e3e05f4370",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": true
+        },
+        {
+          "path": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "RESTRUCTURE",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "## Alpha Blend、Premultiplied 与 Additive",
+            "## Depth Fade 与 Soft Particle",
+            "## Dissolve",
+            "## Distortion 与 Refraction",
+            "## Flipbook",
+            "## Fresnel、Rim 与 Camera Fade",
+            "## Overdraw 的成本",
+            "## Polar UV、Flow 与噪声",
+            "## 与场景和镜头怎样相接",
+            "## 常见降级手段",
+            "## 纹理怎样随时间变化",
+            "## 透明效果的成本从哪里来",
+            "## 预算与验证",
+            "### Alpha Blend、Premultiplied 与 Additive",
+            "### Depth Fade 与 Soft Particle",
+            "### Dissolve",
+            "### Distortion 与 Refraction",
+            "### Flipbook",
+            "### Fresnel、Rim 与 Camera Fade",
+            "### Overdraw 的成本",
+            "### 带抗锯齿边缘的 Dissolve",
+            "### 常见降级手段",
+            "### 预算与验证",
+            "#### Polar UV、Flow 与噪声",
+            "#### 带抗锯齿边缘的 Dissolve"
+          ],
+          "before_sha256": "00814e039fedc31ba141d1afdf1f35919c0ffc7c12700b875a8eee5c91635e76",
+          "after_sha256": "616defeb3bb7e2c956843796f17ce1ae74553ddabf09325732017ff7d8eb8103",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/10_VFX与模拟/水面与海洋渲染.md",
+          "batch": "Batch4-P1-A",
+          "actions": [
+            "FACT-CHECK",
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "## 平铺重复",
+            "### Gerstner 波",
+            "### 反射与折射",
+            "### 岸边过渡",
+            "### 水体颜色与透光"
+          ],
+          "before_sha256": "7eea0caf01cecaad61ba6418e8d6596a2f6f2c4f5967eb24010773ebd2335c09",
+          "after_sha256": "0e585004e55ae526f83f98f5f07bb3cfae938d789d1ee5464e917154dc623136",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        }
+      ],
+      "static_validation": "validate.py：0 error；git diff --check通过",
+      "semantic_review": "本机内容复读，不代替目标运行与用户质量评审"
     }
   ]
 }

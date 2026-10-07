@@ -2,7 +2,9 @@
 
 动画系统的职责是根据 Gameplay 状态生成连续 Pose，并在最后用 IK 和约束适应地面、武器与交互目标；播放 Clip 只是其中一环。
 
-## Clip 采样
+## 怎样生成基础姿态
+
+### Clip 采样
 
 Animation Clip 保存多个 Joint 或属性随时间变化的 Track。运行时根据归一化时间找到相邻 Key，对 Translation/Scale 做 Lerp，对 Rotation 做 Nlerp 或 Slerp。
 
@@ -16,7 +18,7 @@ Clip 需要明确：
 
 高 Sample Rate 不保证更好。源动画频率、压缩误差和最终动作速度共同决定所需采样密度。
 
-## State Machine
+### State Machine
 
 State Machine 把 Idle、Walk、Run、Jump、Attack 等动作组织成状态和 Transition。Transition 一般依赖参数、事件、Exit Time 和优先级。
 
@@ -91,7 +93,9 @@ Inverse Kinematics（IK）给定 End Effector 目标，反求链上 Joint。它�
 
 IK 通常是在已采样动画上做最后修正，不是替代全部动画。
 
-## Two Bone IK
+## 让末端适应交互目标
+
+### Two Bone IK
 
 手臂和腿可近似为两段固定长度。给定根节点、目标和 Pole Vector，可解析求出中间 Joint 的弯曲平面和两个角度。
 
@@ -103,7 +107,7 @@ $$
 
 超出范围时需要 Clamp 或允许 Stretch。Pole Vector 决定膝盖/肘部朝向；接近完全伸直时平面不稳定，应使用上一帧方向或动画 Hint 防止翻转。
 
-## CCD 与 FABRIK
+### CCD 与 FABRIK
 
 CCD 从末端向根部迭代旋转每个 Joint，使末端逐步靠近目标。实现简单，但长链可能收敛慢，姿势也容易卷曲。
 
@@ -111,7 +115,7 @@ FABRIK 在位置空间做 Forward/Backward Pass：先从末端向根部拉直，
 
 迭代 IK 必须设置最大迭代次数和误差阈值，避免不可达目标消耗无限时间。
 
-## Foot IK
+### Foot IK
 
 一个可用的 Foot IK 不只是 Raycast 后移动脚：
 
@@ -156,7 +160,7 @@ for (int joint = 0; joint < skeleton.JointCount(); ++joint) {
 BuildModelPose(localPose, skeleton.parents, modelPose);
 ```
 
-混合发生在局部空间，层级累积只执行一次。两个 Clip 的时间推进策略、Root Motion 和事件归属需要由状态转换明确决定。若先转成模型空间再逐关节混合，长骨链容易出现长度和轨迹异常；可用手臂快速摆动的转换检查末端轨迹是否连续。
+`blendDuration` 为零时直接使用目标姿态；正时长则先把进度限制到 `[0,1]`。片段省略了这条分支。混合发生在局部空间，层级累积只执行一次。两个 Clip 的时间推进策略、Root Motion 和事件归属需要由状态转换明确决定。若先转成模型空间再逐关节混合，长骨链容易出现长度和轨迹异常；可用手臂快速摆动的转换检查末端轨迹是否连续。
 
 ## 相关主题
 
