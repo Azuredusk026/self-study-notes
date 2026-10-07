@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-07",
+  "python": "Python 3.12.10",
+  "dotnet_sdks": "10.0.401 [C:\\Program Files\\dotnet\\sdk]",
+  "dxc": "dxcompiler.dll: 1.9(5399-a107ba61)(1.9.0.5399) - 1.9.0.5399 (a107ba613)",
+  "checks": 523,
+  "hlsl_probes": 3,
+  "tests": [
+    {
+      "name": "原有数学与A*",
+      "command": [
+        "python",
+        "-B",
+        "scripts/verify_mechanisms.py"
+      ],
+      "passed": true,
+      "checks": 115,
+      "output": "{'astar_admissible_cases': 100, 'skin_width_unit_cases': 3, 'depth_roundtrip_cases': 5, 'stencil_classification_cases': 4, 'volume_prefix_cases': 3}"
+    },
+    {
+      "name": "描边CPU",
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/outline/reference.py"
+      ],
+      "passed": true,
+      "checks": 43,
+      "output": "{\"passed\": true, \"cases\": {\"smooth_order_independence\": 6, \"weighted_direction\": 1, \"pixel_width_sizes_distances_directions\": 27, \"mask_boundary_checks\": 5, \"relative_depth\": 2, \"stencil_mask_vs_id\": 2}, \"total\": 43, \"scope\": \"CPU reference algorithms and numeric checks; no GPU execution\", \"unity_shader\": \"not compiled or run in Unity\"}"
+    },
+    {
+      "name": "Render GraphCPU",
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/rendergraph/reference.py"
+      ],
+      "passed": true,
+      "checks": 15,
+      "output": "{\"passed\": true, \"checks\": 15, \"blur_plan\": {\"order\": [\"Downsample\", \"Blur\", \"Compose\"], \"culled\": [], \"edges\": [[\"Downsample\", \"Blur\", \"RAW\"], [\"Blur\", \"Compose\", \"RAW\"]], \"intervals\": {\"Scene\": [0, 2], \"Half\": [0, 1], \"Blurred\": [1, 2], \"Output\": [2, 3]}}, \"culled_plan\": {\"order\": [\"Compose\"], \"culled\": [\"Downsample\", \"Blur\"], \"edges\": [], \"intervals\": {\"Scene\": [0, 0], \"Output\": [0, 1]}}, \"version_plan\": {\"order\": [\"A\", \"B\", \"C\", \"D\"], \"culled\": [], \"edges\": [[\"A\", \"B\", \"RAW\"], [\"A\", \"C\", \"WAW\"], [\"B\", \"C\", \"WAR\"], [\"C\", \"D\", \"RAW\"]], \"intervals\": {\"X\": [0, 3], \"BResult\": [1, 4], \"DResult\": [3, 4]}}, \"scope\": \"single serial physical resource per name; no GPU barrier emission or engine integration\"}"
+    },
+    {
+      "name": "GBufferCPU",
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/gbuffer/reference.py"
+      ],
+      "passed": true,
+      "checks": 264,
+      "output": "{\"passed\": true, \"cases\": 264, \"scope\": \"R8_UNORM CPU round trip; GPU/half precision and filtering not validated\"}"
+    },
+    {
+      "name": "扩展机制CPU",
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanisms/reference.py"
+      ],
+      "passed": true,
+      "checks": 83,
+      "output": "{\"passed\": true, \"checks\": {\"block_mip_budget\": 4, \"circle_box_resolution\": 15, \"parallel_slab_and_intervals\": 5, \"gerstner_analytic_derivatives\": 30, \"normalized_diffusion_energy\": 3, \"temporal_weights_and_reinhard\": 6, \"tcp_fragmentation\": 20}, \"total\": 83, \"taa_effective_samples\": {\"5\": 2.171823277349955, \"10\": 5.132772068820295, \"15\": 9.783598442618132}, \"scope\": \"CPU mathematical and framing models; no engine, network socket, or GPU execution\"}"
+    },
+    {
+      "name": "事件队列C#",
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanisms/verify_event_queue.py"
+      ],
+      "passed": true,
+      "checks": 3,
+      "output": "{\"passed\": true, \"checks\": 3, \"scope\": \"C# article fragment with mock handlers on .NET 10; no Unity runtime\"}"
+    },
+    {
+      "name": "OutlineVS",
+      "command": [
+        "C:\\VulkanSDK\\1.4.357.0\\Bin\\dxc.exe",
+        "-T",
+        "vs_6_0",
+        "-E",
+        "OutlineVS",
+        "知识库/examples/outline/CompileProbe.hlsl",
+        "-Fo",
+        "知识库/examples/outline/build/outline-vs.dxil"
+      ],
+      "passed": true,
+      "scope": "HLSL探针编译，未执行GPU",
+      "output_sha256": "a9f8f9292b94b71bf2124a624828f456c49f653fd5c51f63509c883a03ac8595"
+    },
+    {
+      "name": "OutlinePS",
+      "command": [
+        "C:\\VulkanSDK\\1.4.357.0\\Bin\\dxc.exe",
+        "-T",
+        "ps_6_0",
+        "-E",
+        "OutlinePS",
+        "知识库/examples/outline/CompileProbe.hlsl",
+        "-Fo",
+        "知识库/examples/outline/build/outline-ps.dxil"
+      ],
+      "passed": true,
+      "scope": "HLSL探针编译，未执行GPU",
+      "output_sha256": "2bbe04cba8747920ffce82942b2cee3641c4459536fa030d4ae59650e78a5058"
+    },
+    {
+      "name": "ProbePS",
+      "command": [
+        "C:\\VulkanSDK\\1.4.357.0\\Bin\\dxc.exe",
+        "-T",
+        "ps_6_0",
+        "-E",
+        "ProbePS",
+        "知识库/examples/gbuffer/Packing.hlsl",
+        "-Fo",
+        "知识库/examples/gbuffer/build/packing-ps.dxil"
+      ],
+      "passed": true,
+      "scope": "HLSL探针编译，未执行GPU",
+      "output_sha256": "d4b39ec18f55d4034403ea2a7bceb2746fde28944dcc6fc32bf64fe63ea0808d"
+    }
+  ],
+  "engine_runtime": "未执行Unity/Unreal运行、帧捕获或GPU计时"
+}

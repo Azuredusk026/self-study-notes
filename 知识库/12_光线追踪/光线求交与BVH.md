@@ -204,6 +204,8 @@ bool IntersectAabb(float3 origin, float3 direction,
 
 这个倒数片段在射线平行轴且原点恰在盒面时可能产生 `0 * infinity`，随后出现 NaN。可靠路径对平行轴单独判断：原点在该轴区间外就拒绝，在区间内则不收紧参数区间。近零阈值还要随尺度设计，不能把任意极小非零方向当零。BVH 遍历使用 `tEnter` 做近节点优先，并用当前最近命中距离裁剪远节点。用从盒内出发、平行盒面和负方向三组射线测试区间符号。
 
+本机机制检查：5组 CPU 用例覆盖平行轴、盒面起点、盒内起点和正负方向，使用显式平行轴分支。检查代码见 [reference.py](../examples/mechanisms/reference.py)，运行 `python 知识库/examples/mechanisms/reference.py`。引擎画面、GPU捕获与性能另外验证。
+
 ## 相关主题
 
 - [[01_数学与采样/空间变换]]

@@ -1,0 +1,161 @@
+{
+  "claims": [
+    {
+      "id": "RG-01",
+      "article": "知识库/13_渲染架构/Render Graph.md",
+      "claim": "版本生产者与RAW/WAR/WAW区别",
+      "conditions": "内容依赖决定保活，执行边约束同一物理资源覆盖顺序",
+      "source": "本机串行模型15项检查",
+      "locator": null,
+      "date": "2026-10-07",
+      "verdict": "CPU模型支持；不是引擎源码实现"
+    },
+    {
+      "id": "RG-02",
+      "article": "知识库/13_渲染架构/Render Graph.md",
+      "claim": "RDG通过参数结构声明资源",
+      "conditions": "资源访问必须出现在通道参数声明中",
+      "source": "https://dev.epicgames.com/documentation/en-us/unreal-engine/render-dependency-graph-in-unreal-engine",
+      "locator": "Shader Parameter Structs / RDG resources",
+      "date": "2026-10-07",
+      "verdict": "依据支持"
+    },
+    {
+      "id": "RG-03",
+      "article": "知识库/13_渲染架构/Render Graph.md",
+      "claim": "URP图可剔除无用通道并优化资源",
+      "conditions": "具体合并受图、附件与实现约束",
+      "source": "https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-introduction.html",
+      "locator": "Render Graph introduction",
+      "date": "2026-10-07",
+      "verdict": "依据支持"
+    },
+    {
+      "id": "SYNC-01",
+      "article": "知识库/13_渲染架构/GPU同步与屏障.md",
+      "claim": "执行依赖与内存可见性不同",
+      "conditions": "写入availability、visibility与执行先后各有范围",
+      "source": "https://docs.vulkan.org/spec/latest/chapters/synchronization.html",
+      "locator": "Execution dependencies / Availability and Visibility",
+      "date": "2026-10-07",
+      "verdict": "依据支持"
+    },
+    {
+      "id": "PASS-01",
+      "article": "知识库/13_渲染架构/Render Pass与附件.md",
+      "claim": "loadOp/storeOp描述附件内容行为",
+      "conditions": "字段语义与实际外存流量分别判断",
+      "source": "https://docs.vulkan.org/spec/latest/chapters/renderpass.html",
+      "locator": "VkRenderingAttachmentInfo",
+      "date": "2026-10-07",
+      "verdict": "依据支持"
+    },
+    {
+      "id": "PSO-01",
+      "article": "知识库/13_渲染架构/Pipeline State Object.md",
+      "claim": "D3D12 PSO包含root signature且部分状态动态",
+      "conditions": "动态状态不在同一PSO键中",
+      "source": "https://learn.microsoft.com/en-us/windows/win32/direct3d12/managing-graphics-pipeline-state-in-direct3d-12",
+      "locator": "Graphics pipeline states set outside PSO",
+      "date": "2026-10-07",
+      "verdict": "依据支持"
+    },
+    {
+      "id": "PSO-02",
+      "article": "知识库/14_性能分析与优化/PSO首次使用为什么卡顿.md",
+      "claim": "预缓存不要求全部PSO对象永久保留",
+      "conditions": "当前Epic说明编译后可删除部分预缓存对象",
+      "source": "https://dev.epicgames.com/documentation/en-us/unreal-engine/pso-precaching-for-unreal-engine",
+      "locator": "Manage System Resources / Memory",
+      "date": "2026-10-07",
+      "verdict": "依据支持"
+    },
+    {
+      "id": "CMD-01",
+      "article": "知识库/13_渲染架构/Command Buffer与帧提交.md",
+      "claim": "allocator Reset必须等待关联GPU工作完成",
+      "conditions": "Fence完成值检查",
+      "source": "https://learn.microsoft.com/en-us/windows/win32/api/d3d12/nf-d3d12-id3d12commandallocator-reset",
+      "locator": "Remarks：未完成时Reset为undefined behavior",
+      "date": "2026-10-07",
+      "verdict": "依据支持"
+    },
+    {
+      "id": "ANIM-01",
+      "article": "知识库/09_动画系统/动画压缩.md",
+      "claim": "精度、解码与内存共同决定压缩",
+      "conditions": "ACL README阐述目标；不支持任意压缩率保证",
+      "source": "https://raw.githubusercontent.com/nfrechette/acl/develop/README.md",
+      "locator": "Goals / Philosophy",
+      "date": "2026-10-07",
+      "verdict": "依据支持"
+    },
+    {
+      "id": "ASTC-01",
+      "article": "知识库/06_纹理技术/纹理压缩格式.md",
+      "claim": "ASTC LDR/HDR profile分别查询",
+      "conditions": "扩展分别暴露，不能只凭LDR支持推断HDR",
+      "source": "https://registry.khronos.org/OpenGL/extensions/KHR/KHR_texture_compression_astc_hdr.txt",
+      "locator": "Name Strings / Dependencies / profiles",
+      "date": "2026-10-07",
+      "verdict": "依据支持"
+    },
+    {
+      "id": "MATH-01",
+      "article": "知识库/04_光照模型与PBR/皮肤次表面散射.md",
+      "claim": "归一化剖面缺少d会破坏能量",
+      "conditions": "补齐分母d并按2πr dr积分",
+      "source": "本机3组数值积分",
+      "locator": null,
+      "date": "2026-10-07",
+      "verdict": "CPU模型支持；材料拟合未验证"
+    },
+    {
+      "id": "WATER-01",
+      "article": "知识库/10_VFX与模拟/水面与海洋渲染.md",
+      "claim": "单波Gerstner解析导数",
+      "conditions": "波数与角速度单位、XZ单位方向",
+      "source": "本机30组差分",
+      "locator": null,
+      "date": "2026-10-07",
+      "verdict": "CPU模型支持；没有水面画面验证"
+    },
+    {
+      "id": "NET-01",
+      "article": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
+      "claim": "分帧与send/recv调用边界独立",
+      "conditions": "固定线头、长度与溢出校验",
+      "source": "本机20组随机切分",
+      "locator": null,
+      "date": "2026-10-07",
+      "verdict": "CPU模型支持；没有网络故障注入"
+    },
+    {
+      "id": "GAME-01",
+      "article": "知识库/19_Gameplay与游戏框架/玩法事件与脚本.md",
+      "claim": "派发期间新增事件进入下一轮",
+      "conditions": "单线程、队列交换、重入与异常处理",
+      "source": "本机.NET 10正文片段",
+      "locator": null,
+      "date": "2026-10-07",
+      "verdict": "实际编译运行3项检查"
+    },
+    {
+      "id": "FACT-REST",
+      "article": "全库",
+      "claim": "其他书目与版本相关内部细节",
+      "conditions": "保留资料入口与条件，完整目标源码/引擎未复现",
+      "source": "正文参考资料",
+      "locator": null,
+      "date": "2026-10-07",
+      "verdict": "部分未逐条核验；不得视为全库事实证明"
+    }
+  ],
+  "source_fetch_is_not_verification": true,
+  "not_verified_sources": [
+    {
+      "id": "sssdiffusion",
+      "reason": "取得页面未获得可用定位文字；公式由独立数值实验检查"
+    }
+  ]
+}

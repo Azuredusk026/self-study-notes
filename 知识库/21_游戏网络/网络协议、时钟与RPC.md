@@ -124,6 +124,8 @@ while (receiveBuffer.Size() >= sizeof(PacketHeader)) {
 
 片段中的 `sizeof(PacketHeader)` 代表已定义的固定线协议头长；实际实现应使用明确常量，逐字段解码，不能让 C++ padding 改变线上格式。总长度加法也要检查整数溢出。头字段需要固定字节序，长度在分配内存前校验，消息类型进入反序列化器前校验权限和版本。一次 `recv` 可能只得到半个包，也可能得到多个包。用随机切分的输入字节流做测试，解析结果应与发送边界无关。
 
+本机机制检查：20种随机字节切分得到相同的消息序列；模型使用2字节长度头，没有建立真实 Socket。检查代码见 [reference.py](../examples/mechanisms/reference.py)，运行 `python 知识库/examples/mechanisms/reference.py`。引擎画面、GPU捕获与性能另外验证。
+
 ## 相关主题
 
 - [[21_游戏网络/状态同步、预测与回滚]]
