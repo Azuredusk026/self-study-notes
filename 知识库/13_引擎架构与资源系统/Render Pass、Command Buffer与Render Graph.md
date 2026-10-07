@@ -39,7 +39,7 @@ retainResourcesUntilGpuCompletion()
 Unity 6 URP 在 `RecordRenderGraph` 声明通道，旧兼容路径使用其既有执行接口。Unreal RDG 通过参数结构表达读写，再生成 RHI 请求。图内逻辑句柄不等同于可以无限保存的原生资源指针。
 
 - [[13_引擎架构与资源系统/Unity SRP、URP与HDRP帧组织]]
-- [[13_引擎架构与资源系统/Unity Render Graph与自定义通道]]
+- [[13_引擎架构与资源系统/URP Render Graph自定义Pass]]
 - [[13_引擎架构与资源系统/Unreal Renderer、RDG与RHI帧组织]]
 - [[13_引擎架构与资源系统/Unreal RDG资源声明与通道实现]]
 

@@ -217,9 +217,9 @@ Unreal 默认的 Shading Model 上限是 16。这个数字不是随意规定的�
 ## 相关主题
 
 - [[13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph]]
-- [[13_引擎架构与资源系统/Forward、Deferred与Clustered渲染]]
+- [[13_引擎架构与资源系统/渲染路径与光源组织]]
 - [[13_引擎架构与资源系统/Unity与Unreal渲染扩展入口]]
-- [[13_引擎架构与资源系统/GBuffer布局设计与通道压缩]]
+- [[13_引擎架构与资源系统/GBuffer布局]]
 - [[13_引擎架构与资源系统/Draw Call、Batching与GPU Instancing]]
 - [[03_Shader编程/Shader编译、关键字与变体]]
 - [[11_NPR与风格化渲染/NPR材质与分层光照]]

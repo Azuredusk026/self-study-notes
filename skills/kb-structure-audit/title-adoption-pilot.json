@@ -1,0 +1,119 @@
+{
+  "scope": "10个案例：8项改名、1项覆盖度待确认、1项SPLIT对照；没有目录迁移",
+  "applied": [
+    {
+      "previous_path": "知识库/11_NPR与风格化渲染/Billboard朝向、锚点与深度.md",
+      "current_path": "知识库/11_NPR与风格化渲染/Billboard.md",
+      "previous_title": "Billboard朝向、锚点与深度",
+      "current_title": "Billboard",
+      "title_type": "概念型",
+      "title_coverage_review": "通过本轮采用前范围复读",
+      "reader_expectation": "朝向、锚点和深度是同一面片空间问题，正文Impostor作为表示扩展，名称覆盖主轴",
+      "decision": "APPLIED",
+      "before_body_sha256": "4bd5a7468f18dceb939ba6f68feec62cb1478993a9d4ec53f216f813366322d6"
+    },
+    {
+      "previous_path": "知识库/11_NPR与风格化渲染/植被风动与顶点变形.md",
+      "current_path": "知识库/11_NPR与风格化渲染/植被风动.md",
+      "previous_title": "植被风动与顶点变形",
+      "current_title": "植被风动",
+      "title_type": "方案型",
+      "title_coverage_review": "通过本轮采用前范围复读",
+      "reader_expectation": "顶点变形是风动实现路径，根部、相位和跨Pass一致性都服务风动",
+      "decision": "APPLIED",
+      "before_body_sha256": "1f52d3b08130c2247236769fdc816770e719853fe4a6a1701be57d26d6c85d9f"
+    },
+    {
+      "previous_path": "知识库/13_引擎架构与资源系统/GBuffer布局设计与通道压缩.md",
+      "current_path": "知识库/13_引擎架构与资源系统/GBuffer布局.md",
+      "previous_title": "GBuffer 布局设计与通道压缩",
+      "current_title": "GBuffer布局",
+      "title_type": "工程限定型",
+      "title_coverage_review": "通过本轮采用前范围复读",
+      "reader_expectation": "保留布局限定，编码/通道复用是布局预算方法，不缩成所有GBuffer概念",
+      "decision": "APPLIED",
+      "before_body_sha256": "6318ec5dbf89fc60259d25c087cbaa76de9861de44bad67b68d1ce958dbd7b08"
+    },
+    {
+      "previous_path": "知识库/14_性能分析与优化/PSO缓存与运行时卡顿.md",
+      "current_path": "知识库/14_性能分析与优化/PSO首次使用为什么卡顿.md",
+      "previous_title": "PSO 缓存与运行时卡顿",
+      "current_title": "PSO首次使用为什么卡顿",
+      "title_type": "问题型",
+      "title_coverage_review": "通过本轮采用前范围复读",
+      "reader_expectation": "全文调查首次使用卡顿与缓存策略；PSO限定排除其他首次绘制卡顿",
+      "decision": "APPLIED",
+      "before_body_sha256": "38c5ec66d717313aef2b41aa3629e88152fbed817971cc43263029b7acdf597d"
+    },
+    {
+      "previous_path": "知识库/09_动画系统/动画压缩、轨道量化与运行时解码.md",
+      "current_path": "知识库/09_动画系统/动画压缩.md",
+      "previous_title": "动画压缩、轨道量化与运行时解码",
+      "current_title": "动画压缩",
+      "title_type": "机制型",
+      "title_coverage_review": "通过本轮采用前范围复读",
+      "reader_expectation": "轨道抽取、量化和解码共同实现压缩，名称覆盖误差/性能取舍",
+      "decision": "APPLIED",
+      "before_body_sha256": "72a6dac96b123394c596958efed8eb2ec98630fd0cce561d97921aeb2215f409"
+    },
+    {
+      "previous_path": "知识库/13_引擎架构与资源系统/Unity Render Graph与自定义通道.md",
+      "current_path": "知识库/13_引擎架构与资源系统/URP Render Graph自定义Pass.md",
+      "previous_title": "Unity Render Graph 与自定义通道",
+      "current_title": "URP Render Graph自定义Pass",
+      "title_type": "工程限定型",
+      "title_coverage_review": "通过本轮采用前范围复读",
+      "reader_expectation": "明确URP实现，避免Unity暗示HDRP；正文版本约束保持",
+      "decision": "APPLIED",
+      "before_body_sha256": "17caaf6283915ccc3cb4de95f703ba07dd1740ce83631deb1385404a805d4f73"
+    },
+    {
+      "previous_path": "知识库/13_引擎架构与资源系统/Forward、Deferred与Clustered渲染.md",
+      "current_path": "知识库/13_引擎架构与资源系统/渲染路径与光源组织.md",
+      "previous_title": "Forward、Deferred 与 Clustered 渲染",
+      "current_title": "渲染路径与光源组织",
+      "title_type": "导读型",
+      "title_coverage_review": "通过本轮采用前范围复读",
+      "reader_expectation": "已是导读；求值时机和灯光筛选两个维度关系清楚，使用关系名",
+      "decision": "APPLIED",
+      "before_body_sha256": "5e94b107c5bd7786cb9f878b1ef8415016e3a72d86d841ba2341e1be12af1bef"
+    },
+    {
+      "previous_path": "知识库/06_纹理技术/纹理采样、过滤、Mipmap与压缩.md",
+      "current_path": "知识库/06_纹理技术/纹理采样与过滤.md",
+      "previous_title": "纹理采样、过滤、Mipmap 与压缩",
+      "current_title": "纹理采样与过滤",
+      "title_type": "机制型",
+      "title_coverage_review": "通过本轮采用前范围复读",
+      "reader_expectation": "保留过滤限定；压缩只有专篇链接、验证和书目，正文没有独立压缩实现章节，边界不隐藏",
+      "decision": "APPLIED",
+      "before_body_sha256": "048c92b85705d9c2a3acdabaf6da91fd1dfe938d945e45c1650877c35836e4f7"
+    }
+  ],
+  "controls": [
+    {
+      "path": "知识库/02_GPU与光栅化管线/抗锯齿、TAA与时域超采样.md",
+      "proposal": "抗锯齿",
+      "decision": "HELD",
+      "title_coverage_review": "待用户采用前确认",
+      "reason": "时域内容占主要深度，抗锯齿总称可能弱化阅读重点；比较抗锯齿与时域重建，当前保留"
+    },
+    {
+      "path": "知识库/21_游戏网络/状态同步、预测与回滚.md",
+      "proposal": null,
+      "decision": "BOUNDARY_FIRST",
+      "title_coverage_review": "不采用",
+      "reason": "快照、预测、回滚和命中回退独立，先处理边界，不做拆分"
+    }
+  ],
+  "held_outside_pilot": [
+    {
+      "path": "知识库/13_引擎架构与资源系统/命令记录、队列提交与在途帧.md",
+      "reason": "GPU命令提交与资源复用是否覆盖录制与在途帧重点仍需确认"
+    },
+    {
+      "path": "知识库/13_引擎架构与资源系统/资源状态、屏障与跨队列同步.md",
+      "reason": "GPU资源同步是否充分保留布局和跨队列范围仍需确认"
+    }
+  ]
+}

@@ -8,6 +8,70 @@
       "current_title": "Render Graph",
       "reason": "标题定位核心概念，机制细节在正文展开",
       "date": "2026-10-07"
+    },
+    {
+      "previous_path": "11_NPR与风格化渲染/Billboard朝向、锚点与深度",
+      "current_path": "11_NPR与风格化渲染/Billboard",
+      "previous_title": "Billboard朝向、锚点与深度",
+      "current_title": "Billboard",
+      "reason": "朝向、锚点和深度是同一面片空间问题，正文Impostor作为表示扩展，名称覆盖主轴",
+      "date": "2026-10-07"
+    },
+    {
+      "previous_path": "11_NPR与风格化渲染/植被风动与顶点变形",
+      "current_path": "11_NPR与风格化渲染/植被风动",
+      "previous_title": "植被风动与顶点变形",
+      "current_title": "植被风动",
+      "reason": "顶点变形是风动实现路径，根部、相位和跨Pass一致性都服务风动",
+      "date": "2026-10-07"
+    },
+    {
+      "previous_path": "13_引擎架构与资源系统/GBuffer布局设计与通道压缩",
+      "current_path": "13_引擎架构与资源系统/GBuffer布局",
+      "previous_title": "GBuffer 布局设计与通道压缩",
+      "current_title": "GBuffer布局",
+      "reason": "保留布局限定，编码/通道复用是布局预算方法，不缩成所有GBuffer概念",
+      "date": "2026-10-07"
+    },
+    {
+      "previous_path": "14_性能分析与优化/PSO缓存与运行时卡顿",
+      "current_path": "14_性能分析与优化/PSO首次使用为什么卡顿",
+      "previous_title": "PSO 缓存与运行时卡顿",
+      "current_title": "PSO首次使用为什么卡顿",
+      "reason": "全文调查首次使用卡顿与缓存策略；PSO限定排除其他首次绘制卡顿",
+      "date": "2026-10-07"
+    },
+    {
+      "previous_path": "09_动画系统/动画压缩、轨道量化与运行时解码",
+      "current_path": "09_动画系统/动画压缩",
+      "previous_title": "动画压缩、轨道量化与运行时解码",
+      "current_title": "动画压缩",
+      "reason": "轨道抽取、量化和解码共同实现压缩，名称覆盖误差/性能取舍",
+      "date": "2026-10-07"
+    },
+    {
+      "previous_path": "13_引擎架构与资源系统/Unity Render Graph与自定义通道",
+      "current_path": "13_引擎架构与资源系统/URP Render Graph自定义Pass",
+      "previous_title": "Unity Render Graph 与自定义通道",
+      "current_title": "URP Render Graph自定义Pass",
+      "reason": "明确URP实现，避免Unity暗示HDRP；正文版本约束保持",
+      "date": "2026-10-07"
+    },
+    {
+      "previous_path": "13_引擎架构与资源系统/Forward、Deferred与Clustered渲染",
+      "current_path": "13_引擎架构与资源系统/渲染路径与光源组织",
+      "previous_title": "Forward、Deferred 与 Clustered 渲染",
+      "current_title": "渲染路径与光源组织",
+      "reason": "已是导读；求值时机和灯光筛选两个维度关系清楚，使用关系名",
+      "date": "2026-10-07"
+    },
+    {
+      "previous_path": "06_纹理技术/纹理采样、过滤、Mipmap与压缩",
+      "current_path": "06_纹理技术/纹理采样与过滤",
+      "previous_title": "纹理采样、过滤、Mipmap 与压缩",
+      "current_title": "纹理采样与过滤",
+      "reason": "保留过滤限定；压缩只有专篇链接、验证和书目，正文没有独立压缩实现章节，边界不隐藏",
+      "date": "2026-10-07"
     }
   ]
 }

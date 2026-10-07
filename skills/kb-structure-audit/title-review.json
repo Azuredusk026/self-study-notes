@@ -1,6 +1,6 @@
 {
   "date": "2026-10-07",
-  "scope": "30篇命名样本：首批7篇＋跨领域扩展23篇；本轮只审查和汇总，无新增改名",
+  "scope": "30篇审查样本；本轮10案例采用试点，8项改名，2项保留/边界对照",
   "records": [
     {
       "path": "知识库/13_引擎架构与资源系统/Render Graph.md",
@@ -51,9 +51,11 @@
       "reason": "标题定位实际主问题；内部机制留在H2/H3；必要术语按读者习惯保留",
       "review_batch": "首批样本，沿用已完成的全文审查",
       "original_title_type": "核心概念",
-      "content_sha256": "9d13e0d06f1e70f101f7885f0d922be29689ef2e8e66a0606a233242f42ae975",
+      "content_sha256": "c6fe37169f7fb2c66e2c8fa356daff0bb8d3966521a43d8614b8417172e6285b",
       "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "reviewed_content_sha256": "9d13e0d06f1e70f101f7885f0d922be29689ef2e8e66a0606a233242f42ae975",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
       "path": "知识库/13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph.md",
@@ -104,9 +106,11 @@
       "reason": "标题定位实际主问题；内部机制留在H2/H3；必要术语按读者习惯保留",
       "review_batch": "首批样本，沿用已完成的全文审查",
       "original_title_type": "导读",
-      "content_sha256": "7556d00ab57da4ae468184667d0c5ca38a61845775d5904202efc163134023bc",
+      "content_sha256": "90b3e2d46e08c075a06975b779b2a477cff44f18132b0f9eaccca0ac2dd9a73a",
       "bulk_adoption_authorized": false,
-      "adoption_gate": "先确认导读职责和概念主归属，再采用关系型标题"
+      "adoption_gate": "先确认导读职责和概念主归属，再采用关系型标题",
+      "reviewed_content_sha256": "7556d00ab57da4ae468184667d0c5ca38a61845775d5904202efc163134023bc",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
       "path": "知识库/11_NPR与风格化渲染/描边.md",
@@ -151,17 +155,19 @@
       "reason": "标题定位实际主问题；内部机制留在H2/H3；必要术语按读者习惯保留",
       "review_batch": "首批样本，沿用已完成的全文审查",
       "original_title_type": "核心技术问题",
-      "content_sha256": "89870fed439741222dc00d1a1c36cf0d1b8f77eb1d7f8a0ef07cb2ca758a432d",
+      "content_sha256": "e2469c007ea5c8ad0335bbf5b09a365fc8e2f7dd315d26c7dff42027fba07aa4",
       "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "reviewed_content_sha256": "89870fed439741222dc00d1a1c36cf0d1b8f77eb1d7f8a0ef07cb2ca758a432d",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
-      "path": "知识库/11_NPR与风格化渲染/Billboard朝向、锚点与深度.md",
+      "path": "知识库/11_NPR与风格化渲染/Billboard.md",
       "primary_question": "如何让面片面向相机并保持锚点和场景深度关系",
       "primary_concept": "Billboard",
       "article_boundary": "朝向坐标架、脚底锚点、假视差和多视角Impostor；输入相机和资产，输出面片位置/采样",
       "title_type": "概念型",
-      "current_title": "Billboard朝向、锚点与深度",
+      "current_title": "Billboard",
       "current_title_problems": [
         "把三个实现子问题塞进标题"
       ],
@@ -184,10 +190,10 @@
         }
       ],
       "suggested_title": "Billboard",
-      "title_review": "REWRITE",
-      "rename_file": true,
-      "update_links": true,
-      "adoption_status": "建议待采用",
+      "title_review": "PASS",
+      "rename_file": false,
+      "update_links": false,
+      "adoption_status": "试点已采用",
       "review_basis": "全文、围栏外标题、代码与相关主题已复读",
       "solution_families": [
         "球面与轴约束、锚点、深度Impostor"
@@ -204,17 +210,22 @@
       "reason": "标题定位实际主问题；内部机制留在H2/H3；必要术语按读者习惯保留",
       "review_batch": "首批样本，沿用已完成的全文审查",
       "original_title_type": "核心概念",
-      "content_sha256": "d1783ac18b5f8cef3d81fd34ad94cca8567bd4468d885aa434d019149c4e5961",
+      "content_sha256": "09b868c88462ca710752330fe98d0d52231b7ec81af8efa682860fedb3471875",
       "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "previous_title": "Billboard朝向、锚点与深度",
+      "reviewed_title_decision": "REWRITE",
+      "title_coverage_review": "朝向、锚点和深度是同一面片空间问题，正文Impostor作为表示扩展，名称覆盖主轴",
+      "reviewed_content_sha256": "d1783ac18b5f8cef3d81fd34ad94cca8567bd4468d885aa434d019149c4e5961",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
-      "path": "知识库/11_NPR与风格化渲染/植被风动与顶点变形.md",
+      "path": "知识库/11_NPR与风格化渲染/植被风动.md",
       "primary_question": "如何用权重与相位驱动植被并保持跨通道运动一致",
       "primary_concept": "植被风动",
       "article_boundary": "以顶点位移实现枝叶风动；输入锚点、权重、相位与风参数，输出变形",
       "title_type": "方案型",
-      "current_title": "植被风动与顶点变形",
+      "current_title": "植被风动",
       "current_title_problems": [
         "顶点变形是实现手段，标题可以直接定位效果"
       ],
@@ -233,10 +244,10 @@
         }
       ],
       "suggested_title": "植被风动",
-      "title_review": "REWRITE",
-      "rename_file": true,
-      "update_links": true,
-      "adoption_status": "建议待采用",
+      "title_review": "PASS",
+      "rename_file": false,
+      "update_links": false,
+      "adoption_status": "试点已采用",
       "review_basis": "全文、围栏外标题、代码与相关主题已复读",
       "solution_families": [
         "主摆动、细抖动、阵风、跨Pass一致"
@@ -253,17 +264,22 @@
       "reason": "标题定位实际主问题；内部机制留在H2/H3；必要术语按读者习惯保留",
       "review_batch": "首批样本，沿用已完成的全文审查",
       "original_title_type": "技术方案",
-      "content_sha256": "2dc9fbb2e14fd770b26ca27b5e56c52b6a033e0cee5d46f2fb11db69ab3daf8f",
+      "content_sha256": "1b9e5b8fc95f4d4c614e2e535352be0cec7bacb8b898385608f7f5632687a703",
       "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "previous_title": "植被风动与顶点变形",
+      "reviewed_title_decision": "REWRITE",
+      "title_coverage_review": "顶点变形是风动实现路径，根部、相位和跨Pass一致性都服务风动",
+      "reviewed_content_sha256": "2dc9fbb2e14fd770b26ca27b5e56c52b6a033e0cee5d46f2fb11db69ab3daf8f",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
-      "path": "知识库/13_引擎架构与资源系统/GBuffer布局设计与通道压缩.md",
+      "path": "知识库/13_引擎架构与资源系统/GBuffer布局.md",
       "primary_question": "如何在字节和精度预算内存储光照需要的表面数据",
       "primary_concept": "GBuffer布局",
       "article_boundary": "布局设计、字段编码、互斥和阶段复用，附件局部读取是布局的平台条件",
       "title_type": "工程限定型",
-      "current_title": "GBuffer 布局设计与通道压缩",
+      "current_title": "GBuffer布局",
       "current_title_problems": [
         "布局和压缩同属预算问题，名称可更短"
       ],
@@ -286,10 +302,10 @@
         }
       ],
       "suggested_title": "GBuffer布局",
-      "title_review": "REWRITE",
-      "rename_file": true,
-      "update_links": true,
-      "adoption_status": "建议待采用",
+      "title_review": "PASS",
+      "rename_file": false,
+      "update_links": false,
+      "adoption_status": "试点已采用",
       "review_basis": "全文、围栏外标题、代码与相关主题已复读",
       "solution_families": [
         "法线编码、位域、互斥属性、时间复用、附件条件"
@@ -306,9 +322,14 @@
       "reason": "标题定位实际主问题；内部机制留在H2/H3；必要术语按读者习惯保留",
       "review_batch": "首批样本，沿用已完成的全文审查",
       "original_title_type": "工程问题",
-      "content_sha256": "130878949f4f1cc63d6cacb82d7b0bb82e0e0d7f06a620e1459f25862161d6bf",
+      "content_sha256": "8e8e085eb430ba5cfc6ce6e96ad1ce232ce1713bb944c053d2ab084a7c14547e",
       "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "previous_title": "GBuffer 布局设计与通道压缩",
+      "reviewed_title_decision": "REWRITE",
+      "title_coverage_review": "保留布局限定，编码/通道复用是布局预算方法，不缩成所有GBuffer概念",
+      "reviewed_content_sha256": "130878949f4f1cc63d6cacb82d7b0bb82e0e0d7f06a620e1459f25862161d6bf",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
       "path": "知识库/03_Shader编程/Shader编译、关键字与变体.md",
@@ -359,9 +380,11 @@
       "reason": "标题定位实际主问题；内部机制留在H2/H3；必要术语按读者习惯保留",
       "review_batch": "首批样本，沿用已完成的全文审查",
       "original_title_type": "工程问题",
-      "content_sha256": "3767304644498ff260c70b90dbf5f8ae2392aed8769d149baaa86c7beef5f5df",
+      "content_sha256": "804d66a41ee01cc55b0b20f5ae53da6ddc31052c9a74fe173fffdb22edca581a",
       "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "reviewed_content_sha256": "3767304644498ff260c70b90dbf5f8ae2392aed8769d149baaa86c7beef5f5df",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
       "path": "知识库/02_GPU与光栅化管线/深度缓冲、反向深度与位置重建.md",
@@ -434,7 +457,7 @@
       "reason": "深度表示是共同主问题，三个名词是编码与消费环节，不需要按名词拆页。",
       "review_batch": "第二批跨领域样本",
       "confidence": "命名建议可供采用评审",
-      "content_sha256": "2041c54cc35126abbb122d45456ca1daa990c0550de5bc345ce83a51c316e6ce",
+      "content_sha256": "9fc5697145767fa458d274e793baf6b6898070eaa983e897acf9bb5c97b936b5",
       "heading_outline": [
         "# 深度缓冲、反向深度与位置重建",
         "## 深度值不是线性距离",
@@ -452,7 +475,9 @@
       ],
       "split_recommendation": [],
       "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "reviewed_content_sha256": "2041c54cc35126abbb122d45456ca1daa990c0550de5bc345ce83a51c316e6ce",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
       "path": "知识库/02_GPU与光栅化管线/提前深度测试、深度预通道与分层深度.md",
@@ -525,7 +550,7 @@
       "reason": "现有H2区别测试时机、预先建立深度和层级加速，名称可以表达共同目标。",
       "review_batch": "第二批跨领域样本",
       "confidence": "命名建议可供采用评审",
-      "content_sha256": "cfde2804d23251401351204316faee80cc189f46e1a974aaa8305b8a1fbdebd9",
+      "content_sha256": "f76e2f4d7ce88b1e9406e92c1e762636ed5caf08770a06b9e32c6ee14a4b8c58",
       "heading_outline": [
         "# 提前深度测试、深度预通道与分层深度",
         "## Early-Z",
@@ -542,7 +567,9 @@
       ],
       "split_recommendation": [],
       "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "reviewed_content_sha256": "cfde2804d23251401351204316faee80cc189f46e1a974aaa8305b8a1fbdebd9",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
       "path": "知识库/02_GPU与光栅化管线/光栅覆盖、重心坐标与属性插值.md",
@@ -612,7 +639,7 @@
       "reason": "重心坐标是插值工具，标题只需保留流程的两个关键职责。",
       "review_batch": "第二批跨领域样本",
       "confidence": "命名建议可供采用评审",
-      "content_sha256": "74aa8277d52a958037059e2b7066e6672216573b7963b0ac6ef6e2d16b57860a",
+      "content_sha256": "33e6ce075f7585009be417cf4b76829b72d3cc134601cd410e8308fab588d76a",
       "heading_outline": [
         "# 光栅覆盖、重心坐标与属性插值",
         "## 三角形覆盖",
@@ -626,7 +653,9 @@
       ],
       "split_recommendation": [],
       "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "reviewed_content_sha256": "74aa8277d52a958037059e2b7066e6672216573b7963b0ac6ef6e2d16b57860a",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
       "path": "知识库/02_GPU与光栅化管线/抗锯齿、TAA与时域超采样.md",
@@ -693,12 +722,12 @@
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "建议待采用",
+      "adoption_status": "范围敏感，待用户采用前确认",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "TAA与超采样共享重建闭环，深度集中在时域机制，不宜按阶段拆成词条。",
       "review_batch": "第二批跨领域样本",
       "confidence": "命名建议可供采用评审",
-      "content_sha256": "cd21d3d41b54d8741186a634b6c82df6b7c3bf9fa175f2fab157812a28fb37d0",
+      "content_sha256": "973f73cd84da8ce4830d3d6dc4a9e94e9780dceee8bd39b40d8976f4c911f9c9",
       "heading_outline": [
         "# 抗锯齿、TAA 与时域超采样",
         "## 空间方案",
@@ -746,7 +775,9 @@
       ],
       "split_recommendation": [],
       "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "reviewed_content_sha256": "cd21d3d41b54d8741186a634b6c82df6b7c3bf9fa175f2fab157812a28fb37d0",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
       "path": "知识库/13_引擎架构与资源系统/命令记录、队列提交与在途帧.md",
@@ -815,7 +846,7 @@
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "建议待采用",
+      "adoption_status": "范围敏感，待用户采用前确认",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "H2均服务提交和复用，Command Buffer单独作为名称会弱化提交/完成主轴。",
       "review_batch": "第二批跨领域样本",
@@ -898,7 +929,7 @@
       ],
       "rename_file": true,
       "update_links": true,
-      "adoption_status": "建议待采用",
+      "adoption_status": "范围敏感，待用户采用前确认",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "屏障是实现机制，资源状态和队列是约束；共同概念足以定位。",
       "review_batch": "第二批跨领域样本",
@@ -1005,7 +1036,7 @@
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
     },
     {
-      "path": "知识库/13_引擎架构与资源系统/Forward、Deferred与Clustered渲染.md",
+      "path": "知识库/13_引擎架构与资源系统/渲染路径与光源组织.md",
       "primary_question": "如何理解材质求值时机与光源筛选之间的关系并选择路径",
       "primary_concept": "渲染路径选择",
       "article_boundary": "已是导读，链接前向、延迟和簇剔除专篇",
@@ -1038,7 +1069,7 @@
         "分块与簇剔除"
       ],
       "title_type": "导读型",
-      "current_title": "Forward、Deferred 与 Clustered 渲染",
+      "current_title": "渲染路径与光源组织",
       "current_title_problems": [
         "三个术语不处于同一选择维度，导读应表达关系"
       ],
@@ -1057,19 +1088,19 @@
         }
       ],
       "suggested_title": "渲染路径与光源组织",
-      "title_review": "OVERVIEW",
+      "title_review": "PASS",
       "boundary_action": "OVERVIEW",
       "content_actions": [
         "KEEP"
       ],
-      "rename_file": true,
-      "update_links": true,
-      "adoption_status": "建议待采用",
+      "rename_file": false,
+      "update_links": false,
+      "adoption_status": "试点已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "Clustered是筛光维度，可与Forward/Deferred组合，列成互斥三选一容易误导。",
       "review_batch": "第二批跨领域样本",
       "confidence": "命名建议可供采用评审",
-      "content_sha256": "bec94947395b78f1cf95c2a86463e80857815f56dd0a372cabead8c908771cf3",
+      "content_sha256": "17169a2f8836953e16adb62099e33896b2dfaddb170d4aada7ba7bf003ae35d9",
       "heading_outline": [
         "# Forward、Deferred 与 Clustered 渲染",
         "## 专题阅读",
@@ -1079,10 +1110,15 @@
       ],
       "split_recommendation": [],
       "bulk_adoption_authorized": false,
-      "adoption_gate": "先确认导读职责和概念主归属，再采用关系型标题"
+      "adoption_gate": "先确认导读职责和概念主归属，再采用关系型标题",
+      "previous_title": "Forward、Deferred 与 Clustered 渲染",
+      "reviewed_title_decision": "OVERVIEW",
+      "title_coverage_review": "已是导读；求值时机和灯光筛选两个维度关系清楚，使用关系名",
+      "reviewed_content_sha256": "bec94947395b78f1cf95c2a86463e80857815f56dd0a372cabead8c908771cf3",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
-      "path": "知识库/13_引擎架构与资源系统/Unity Render Graph与自定义通道.md",
+      "path": "知识库/13_引擎架构与资源系统/URP Render Graph自定义Pass.md",
       "primary_question": "如何在Unity 6 URP中记录自定义Pass并让输出被相机消费",
       "primary_concept": "URP Render Graph扩展",
       "article_boundary": "版本实现片段：Feature入队、资源声明、回调、颜色交接与失败诊断",
@@ -1116,7 +1152,7 @@
         "GPU资源绑定"
       ],
       "title_type": "工程限定型",
-      "current_title": "Unity Render Graph 与自定义通道",
+      "current_title": "URP Render Graph自定义Pass",
       "current_title_problems": [
         "Unity标题容易暗示HDRP也适用，需保留URP限定"
       ],
@@ -1135,19 +1171,19 @@
         }
       ],
       "suggested_title": "URP Render Graph自定义Pass",
-      "title_review": "REWRITE",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
-      "rename_file": true,
-      "update_links": true,
-      "adoption_status": "建议待采用",
+      "rename_file": false,
+      "update_links": false,
+      "adoption_status": "试点已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "Unity限定不够精确，正文实际只讲URP路径；版本保留在适用环境，不把整个版本号塞标题。",
       "review_batch": "第二批跨领域样本",
       "confidence": "命名建议可供采用评审",
-      "content_sha256": "812a16a357fffb275706f7e1ba9d168d7a0a87981cef26eca14922192bd5eae5",
+      "content_sha256": "dae37dade576149b3de7f303e23df1379ba8ae2f3d8f3a97e94eb215493e5ac2",
       "heading_outline": [
         "# Unity Render Graph 与自定义通道",
         "## 适用环境",
@@ -1161,10 +1197,15 @@
       ],
       "split_recommendation": [],
       "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "previous_title": "Unity Render Graph 与自定义通道",
+      "reviewed_title_decision": "REWRITE",
+      "title_coverage_review": "明确URP实现，避免Unity暗示HDRP；正文版本约束保持",
+      "reviewed_content_sha256": "812a16a357fffb275706f7e1ba9d168d7a0a87981cef26eca14922192bd5eae5",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
-      "path": "知识库/06_纹理技术/纹理采样、过滤、Mipmap与压缩.md",
+      "path": "知识库/06_纹理技术/纹理采样与过滤.md",
       "primary_question": "如何根据采样足迹和数据语义选择纹理过滤",
       "primary_concept": "纹理采样",
       "article_boundary": "采样、Mip、过滤和地址模式；压缩已有独立专篇",
@@ -1199,7 +1240,7 @@
         "UV流送"
       ],
       "title_type": "概念型",
-      "current_title": "纹理采样、过滤、Mipmap 与压缩",
+      "current_title": "纹理采样与过滤",
       "current_title_problems": [
         "四项罗列，压缩比实际正文主归属更宽"
       ],
@@ -1215,22 +1256,26 @@
         {
           "title": "斜面纹理为什么变糊",
           "reason": "问题式但范围过窄"
+        },
+        {
+          "title": "纹理采样与过滤",
+          "reason": "采用前保留过滤限定，准确覆盖Mip、采样足迹与过滤模式"
         }
       ],
-      "suggested_title": "纹理采样",
-      "title_review": "REWRITE",
+      "suggested_title": "纹理采样与过滤",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
-      "rename_file": true,
-      "update_links": true,
-      "adoption_status": "建议待采用",
+      "rename_file": false,
+      "update_links": false,
+      "adoption_status": "试点已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "过滤和Mip是采样选择，压缩正文已链接专篇，标题移除不属于主轴的词。",
       "review_batch": "第二批跨领域样本",
       "confidence": "命名建议可供采用评审",
-      "content_sha256": "8d06c5a21c360afb7259315ee9d647f588428483a2d842e5648c90fa2f8a1d04",
+      "content_sha256": "51cf1521beab2863022ba24dffea8ef663f0595f532a9faafeba954f227a0590",
       "heading_outline": [
         "# 纹理采样、过滤、Mipmap 与压缩",
         "## 专题阅读",
@@ -1258,7 +1303,12 @@
       ],
       "split_recommendation": [],
       "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "previous_title": "纹理采样、过滤、Mipmap 与压缩",
+      "reviewed_title_decision": "REWRITE",
+      "title_coverage_review": "保留过滤限定；压缩只有专篇链接、验证和书目，正文没有独立压缩实现章节，边界不隐藏",
+      "reviewed_content_sha256": "8d06c5a21c360afb7259315ee9d647f588428483a2d842e5648c90fa2f8a1d04",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
       "path": "知识库/06_纹理技术/高度、法线与视差映射.md",
@@ -1333,7 +1383,7 @@
       "reason": "代码与验证都落在视差；法线与真实位移负责对照，不应充当三主题标题。",
       "review_batch": "第二批跨领域样本",
       "confidence": "命名建议可供采用评审",
-      "content_sha256": "d5cf1ff14d5e7913398da909cacbb099603d0abea078bc38107cf62177eac994",
+      "content_sha256": "30da4ddbcc9c42ee4efdf93a45df8d4dfd98cfefd833b738752f4e29e1f68c73",
       "heading_outline": [
         "# 高度、法线与视差映射",
         "## 高度图、深度图和法线贴图",
@@ -1350,7 +1400,9 @@
       ],
       "split_recommendation": [],
       "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "reviewed_content_sha256": "d5cf1ff14d5e7913398da909cacbb099603d0abea078bc38107cf62177eac994",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
       "path": "知识库/01_数学与采样/旋转、四元数与插值.md",
@@ -1447,7 +1499,7 @@
       "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
     },
     {
-      "path": "知识库/09_动画系统/动画压缩、轨道量化与运行时解码.md",
+      "path": "知识库/09_动画系统/动画压缩.md",
       "primary_question": "如何减少动画存储并控制解码与末端误差",
       "primary_concept": "动画压缩",
       "article_boundary": "轨道删减、量化、分段流送与解码服务同一压缩问题",
@@ -1481,7 +1533,7 @@
         "角色动画导读"
       ],
       "title_type": "机制型",
-      "current_title": "动画压缩、轨道量化与运行时解码",
+      "current_title": "动画压缩",
       "current_title_problems": [
         "把实现环节都列进标题"
       ],
@@ -1504,19 +1556,19 @@
         }
       ],
       "suggested_title": "动画压缩",
-      "title_review": "REWRITE",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
-      "rename_file": true,
-      "update_links": true,
-      "adoption_status": "建议待采用",
+      "rename_file": false,
+      "update_links": false,
+      "adoption_status": "试点已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "量化与解码是压缩实现环节，标题只定位压缩即可。",
       "review_batch": "第二批跨领域样本",
       "confidence": "命名建议可供采用评审",
-      "content_sha256": "ed4cee1f9d002874e5a56a7850bdd8eacd2b2f908c0086460723d23815844ce4",
+      "content_sha256": "f6053177abc39b65a858db5822b78d2722857beda38750baaddbafdbb0a02d97",
       "heading_outline": [
         "# 动画压缩、轨道量化与运行时解码",
         "## 动画数据为什么大",
@@ -1531,10 +1583,15 @@
       ],
       "split_recommendation": [],
       "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "previous_title": "动画压缩、轨道量化与运行时解码",
+      "reviewed_title_decision": "REWRITE",
+      "title_coverage_review": "轨道抽取、量化和解码共同实现压缩，名称覆盖误差/性能取舍",
+      "reviewed_content_sha256": "ed4cee1f9d002874e5a56a7850bdd8eacd2b2f908c0086460723d23815844ce4",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
-      "path": "知识库/14_性能分析与优化/PSO缓存与运行时卡顿.md",
+      "path": "知识库/14_性能分析与优化/PSO首次使用为什么卡顿.md",
       "primary_question": "如何识别并减少首次使用PSO产生的卡顿",
       "primary_concept": "PSO首次使用卡顿",
       "article_boundary": "采集、缓存、预编译、precaching和设备验证；PSO对象语义在架构专篇",
@@ -1569,7 +1626,7 @@
         "性能调查"
       ],
       "title_type": "问题型",
-      "current_title": "PSO 缓存与运行时卡顿",
+      "current_title": "PSO首次使用为什么卡顿",
       "current_title_problems": [
         "现标题可用，但重点在治理症状而非定义缓存"
       ],
@@ -1592,19 +1649,19 @@
         }
       ],
       "suggested_title": "PSO首次使用为什么卡顿",
-      "title_review": "REWRITE",
+      "title_review": "PASS",
       "boundary_action": "KEEP",
       "content_actions": [
         "KEEP"
       ],
-      "rename_file": true,
-      "update_links": true,
-      "adoption_status": "建议待采用",
+      "rename_file": false,
+      "update_links": false,
+      "adoption_status": "试点已采用",
       "review_basis": "全文、H2/H3/H4、代码、验证与相关主题已复读；仅审查命名，不核验技术断言真伪",
       "reason": "本文主目的就是首次使用卡顿，问题型比缓存方法并列更直接；数字和平台断言待事实复核。",
       "review_batch": "第二批跨领域样本",
       "confidence": "命名建议可供采用评审",
-      "content_sha256": "04e22ebef2758215ac47d70d0ecd184baba7986c3c95bb5f6490148225d9259e",
+      "content_sha256": "9fe140b5e2920e89416a6fbb4267c63f6a552a4512018cce6ac13c69d466bc9a",
       "heading_outline": [
         "# PSO 缓存与运行时卡顿",
         "## 卡顿的成因",
@@ -1626,7 +1683,12 @@
       ],
       "split_recommendation": [],
       "bulk_adoption_authorized": false,
-      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立"
+      "adoption_gate": "命名方案单独评审与授权，同步文件和引用；正文技术验收独立",
+      "previous_title": "PSO 缓存与运行时卡顿",
+      "reviewed_title_decision": "REWRITE",
+      "title_coverage_review": "全文调查首次使用卡顿与缓存策略；PSO限定排除其他首次绘制卡顿",
+      "reviewed_content_sha256": "04e22ebef2758215ac47d70d0ecd184baba7986c3c95bb5f6490148225d9259e",
+      "hash_update_scope": "标题或必要命名引用同步，技术正文保持"
     },
     {
       "path": "知识库/20_游戏AI/导航、寻路与移动控制.md",
@@ -2536,5 +2598,6 @@
     "导读型"
   ],
   "selection_basis": "覆盖短概念、问题症状、同题多机制、引擎限定、既有导读与边界混合；非随机样本，不代表全库质量比例",
-  "naming_patterns_report": "references/title-pattern-report.md"
+  "naming_patterns_report": "references/title-pattern-report.md",
+  "title_gold_example": "Render Graph"
 }

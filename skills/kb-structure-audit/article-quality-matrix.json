@@ -461,7 +461,7 @@
     "title_review_status": "已全文审查",
     "title_type": "概念型",
     "suggested_title": "抗锯齿",
-    "title_adoption_status": "建议待采用"
+    "title_adoption_status": "范围敏感，待用户采用前确认"
   },
   {
     "path": "知识库/02_GPU与光栅化管线/提前深度测试、深度预通道与分层深度.md",
@@ -950,7 +950,7 @@
     "title_review_status": "待审查"
   },
   {
-    "path": "知识库/06_纹理技术/纹理采样、过滤、Mipmap与压缩.md",
+    "path": "知识库/06_纹理技术/纹理采样与过滤.md",
     "primary_question": "如何从采样足迹选择Mip和过滤",
     "boundary_action": "KEEP",
     "content_actions": [
@@ -971,15 +971,16 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "命名建议待采用"
+      "Title": "采用前覆盖度复读与命名同步通过"
     },
     "batch_migration_authorized": false,
-    "current_title": "纹理采样、过滤、Mipmap 与压缩",
-    "title_review": "REWRITE",
+    "current_title": "纹理采样与过滤",
+    "title_review": "PASS",
     "title_review_status": "已全文审查",
     "title_type": "概念型",
-    "suggested_title": "纹理采样",
-    "title_adoption_status": "建议待采用"
+    "suggested_title": "纹理采样与过滤",
+    "title_adoption_status": "试点已采用",
+    "title_coverage_review": "保留过滤限定；压缩只有专篇链接、验证和书目，正文没有独立压缩实现章节，边界不隐藏"
   },
   {
     "path": "知识库/06_纹理技术/高度、法线与视差映射.md",
@@ -1158,7 +1159,7 @@
     "title_review_status": "待审查"
   },
   {
-    "path": "知识库/09_动画系统/动画压缩、轨道量化与运行时解码.md",
+    "path": "知识库/09_动画系统/动画压缩.md",
     "primary_question": "如何压缩动画轨道并控制末端误差",
     "boundary_action": "KEEP",
     "content_actions": [
@@ -1178,15 +1179,16 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "命名建议待采用"
+      "Title": "采用前覆盖度复读与命名同步通过"
     },
     "batch_migration_authorized": false,
-    "current_title": "动画压缩、轨道量化与运行时解码",
-    "title_review": "REWRITE",
+    "current_title": "动画压缩",
+    "title_review": "PASS",
     "title_review_status": "已全文审查",
     "title_type": "机制型",
     "suggested_title": "动画压缩",
-    "title_adoption_status": "建议待采用"
+    "title_adoption_status": "试点已采用",
+    "title_coverage_review": "轨道抽取、量化和解码共同实现压缩，名称覆盖误差/性能取舍"
   },
   {
     "path": "知识库/09_动画系统/动画压缩、面部、布料与毛发.md",
@@ -1472,7 +1474,7 @@
     "title_review_status": "待审查"
   },
   {
-    "path": "知识库/11_NPR与风格化渲染/Billboard朝向、锚点与深度.md",
+    "path": "知识库/11_NPR与风格化渲染/Billboard.md",
     "primary_question": "Billboard朝向、锚点与深度",
     "boundary_action": "KEEP",
     "content_actions": [
@@ -1491,16 +1493,17 @@
       "Evidence": "关键来源核对；工程状态分列",
       "Writing Style": "首轮自检通过",
       "Visuals": "按用途验证或不适用",
-      "Title": "命名建议待采用"
+      "Title": "采用前覆盖度复读与命名同步通过"
     },
     "batch_migration_authorized": false,
     "implementation_status": "首轮已实施，待标杆评审",
-    "current_title": "Billboard朝向、锚点与深度",
-    "title_review": "REWRITE",
+    "current_title": "Billboard",
+    "title_review": "PASS",
     "title_review_status": "已全文审查",
     "suggested_title": "Billboard",
-    "title_adoption_status": "建议待采用",
-    "title_type": "概念型"
+    "title_adoption_status": "试点已采用",
+    "title_type": "概念型",
+    "title_coverage_review": "朝向、锚点和深度是同一面片空间问题，正文Impostor作为表示扩展，名称覆盖主轴"
   },
   {
     "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
@@ -1629,7 +1632,7 @@
     "title_review_status": "待审查"
   },
   {
-    "path": "知识库/11_NPR与风格化渲染/植被风动与顶点变形.md",
+    "path": "知识库/11_NPR与风格化渲染/植被风动.md",
     "primary_question": "植被风动与顶点变形",
     "boundary_action": "KEEP",
     "content_actions": [
@@ -1648,16 +1651,17 @@
       "Evidence": "关键来源核对；工程状态分列",
       "Writing Style": "首轮自检通过",
       "Visuals": "按用途验证或不适用",
-      "Title": "命名建议待采用"
+      "Title": "采用前覆盖度复读与命名同步通过"
     },
     "batch_migration_authorized": false,
     "implementation_status": "首轮已实施，待标杆评审",
-    "current_title": "植被风动与顶点变形",
-    "title_review": "REWRITE",
+    "current_title": "植被风动",
+    "title_review": "PASS",
     "title_review_status": "已全文审查",
     "suggested_title": "植被风动",
-    "title_adoption_status": "建议待采用",
-    "title_type": "方案型"
+    "title_adoption_status": "试点已采用",
+    "title_type": "方案型",
+    "title_coverage_review": "顶点变形是风动实现路径，根部、相位和跨Pass一致性都服务风动"
   },
   {
     "path": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
@@ -1829,7 +1833,7 @@
     "title_review_status": "待审查"
   },
   {
-    "path": "知识库/13_引擎架构与资源系统/Forward、Deferred与Clustered渲染.md",
+    "path": "知识库/13_引擎架构与资源系统/渲染路径与光源组织.md",
     "primary_question": "如何选择材质光照路径与光源筛选方式",
     "boundary_action": "OVERVIEW",
     "content_actions": [
@@ -1850,18 +1854,19 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "导读职责确认后采用"
+      "Title": "采用前覆盖度复读与命名同步通过"
     },
     "batch_migration_authorized": false,
-    "current_title": "Forward、Deferred 与 Clustered 渲染",
-    "title_review": "OVERVIEW",
+    "current_title": "渲染路径与光源组织",
+    "title_review": "PASS",
     "title_review_status": "已全文审查",
     "title_type": "导读型",
     "suggested_title": "渲染路径与光源组织",
-    "title_adoption_status": "建议待采用"
+    "title_adoption_status": "试点已采用",
+    "title_coverage_review": "已是导读；求值时机和灯光筛选两个维度关系清楚，使用关系名"
   },
   {
-    "path": "知识库/13_引擎架构与资源系统/GBuffer布局设计与通道压缩.md",
+    "path": "知识库/13_引擎架构与资源系统/GBuffer布局.md",
     "primary_question": "如何在字节预算内编码可见表面属性",
     "boundary_action": "KEEP",
     "content_actions": [
@@ -1881,15 +1886,16 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "命名建议待采用"
+      "Title": "采用前覆盖度复读与命名同步通过"
     },
     "batch_migration_authorized": false,
-    "current_title": "GBuffer 布局设计与通道压缩",
-    "title_review": "REWRITE",
+    "current_title": "GBuffer布局",
+    "title_review": "PASS",
     "title_review_status": "已全文审查",
     "suggested_title": "GBuffer布局",
-    "title_adoption_status": "建议待采用",
-    "title_type": "工程限定型"
+    "title_adoption_status": "试点已采用",
+    "title_type": "工程限定型",
+    "title_coverage_review": "保留布局限定，编码/通道复用是布局预算方法，不缩成所有GBuffer概念"
   },
   {
     "path": "知识库/13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph.md",
@@ -1952,7 +1958,7 @@
     "title_review_status": "待审查"
   },
   {
-    "path": "知识库/13_引擎架构与资源系统/Unity Render Graph与自定义通道.md",
+    "path": "知识库/13_引擎架构与资源系统/URP Render Graph自定义Pass.md",
     "primary_question": "如何在Unity 6 URP记录并消费自定义通道",
     "boundary_action": "KEEP",
     "content_actions": [
@@ -1972,15 +1978,16 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "命名建议待采用"
+      "Title": "采用前覆盖度复读与命名同步通过"
     },
     "batch_migration_authorized": false,
-    "current_title": "Unity Render Graph 与自定义通道",
-    "title_review": "REWRITE",
+    "current_title": "URP Render Graph自定义Pass",
+    "title_review": "PASS",
     "title_review_status": "已全文审查",
     "title_type": "工程限定型",
     "suggested_title": "URP Render Graph自定义Pass",
-    "title_adoption_status": "建议待采用"
+    "title_adoption_status": "试点已采用",
+    "title_coverage_review": "明确URP实现，避免Unity暗示HDRP；正文版本约束保持"
   },
   {
     "path": "知识库/13_引擎架构与资源系统/Unity SRP、URP与HDRP帧组织.md",
@@ -2238,7 +2245,7 @@
     "title_review_status": "已全文审查",
     "title_type": "机制型",
     "suggested_title": "GPU命令提交与资源复用",
-    "title_adoption_status": "建议待采用"
+    "title_adoption_status": "范围敏感，待用户采用前确认"
   },
   {
     "path": "知识库/13_引擎架构与资源系统/延迟渲染、光体积与GBuffer消费.md",
@@ -2506,7 +2513,7 @@
     "title_review_status": "已全文审查",
     "title_type": "概念型",
     "suggested_title": "GPU资源同步",
-    "title_adoption_status": "建议待采用"
+    "title_adoption_status": "范围敏感，待用户采用前确认"
   },
   {
     "path": "知识库/13_引擎架构与资源系统/资源绑定、描述符与材质数据组织.md",
@@ -2568,7 +2575,7 @@
     "title_review_status": "待审查"
   },
   {
-    "path": "知识库/14_性能分析与优化/PSO缓存与运行时卡顿.md",
+    "path": "知识库/14_性能分析与优化/PSO首次使用为什么卡顿.md",
     "primary_question": "如何减少运行时首次使用PSO的卡顿",
     "boundary_action": "KEEP",
     "content_actions": [
@@ -2588,15 +2595,16 @@
       "Evidence": "待复读",
       "Writing Style": "待复读",
       "Visuals": "待复读",
-      "Title": "命名建议待采用"
+      "Title": "采用前覆盖度复读与命名同步通过"
     },
     "batch_migration_authorized": false,
-    "current_title": "PSO 缓存与运行时卡顿",
-    "title_review": "REWRITE",
+    "current_title": "PSO首次使用为什么卡顿",
+    "title_review": "PASS",
     "title_review_status": "已全文审查",
     "title_type": "问题型",
     "suggested_title": "PSO首次使用为什么卡顿",
-    "title_adoption_status": "建议待采用"
+    "title_adoption_status": "试点已采用",
+    "title_coverage_review": "全文调查首次使用卡顿与缓存策略；PSO限定排除其他首次绘制卡顿"
   },
   {
     "path": "知识库/14_性能分析与优化/帧时间、瓶颈与GPU成本.md",
