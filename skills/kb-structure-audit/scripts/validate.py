@@ -93,6 +93,10 @@ def validate(root):
             errors.append(f"标题维度缺失 {record['path']}")
         if record.get("title_review") not in (None, "PASS", "REWRITE", "SPLIT", "OVERVIEW"):
             errors.append(f"标题审查状态无效 {record['path']}")
+        if "Information Architecture" not in record["quality_matrix"]:
+            errors.append(f"信息架构维度缺失 {record['path']}")
+        if record.get("category_review") not in (None, "PASS", "RECLASSIFY", "SPLIT", "MERGE", "CREATE", "OVERVIEW"):
+            errors.append(f"目录审查状态无效 {record['path']}")
     renames_path = root / "skills/kb-structure-audit/rename-map.json"
     renames = json.loads(renames_path.read_text(encoding="utf-8"))["renames"]
     for rename in renames:
@@ -106,9 +110,26 @@ def validate(root):
                 errors.append(f"已采用命名的H1与文件名不一致 {current}")
         if rename["previous_path"] in keys:
             errors.append(f"命名映射原路径仍为重复文章 {rename['previous_path']}")
+    categories_path = root / "skills/kb-structure-audit/category-review.json"
+    categories = json.loads(categories_path.read_text(encoding="utf-8"))
+    categories_paths = [record["path"] for record in categories["articles"]]
+    if len(categories_paths) != len(set(categories_paths)) or set(categories_paths) != expected_paths:
+        errors.append("目录审查的逐篇路径缺失、重复或过期")
+    actual_domains = {p.parent.name for p in pages}
+    category_names = [record["domain"] for record in categories["domains"]]
+    if len(category_names) != len(set(category_names)) or set(category_names) != actual_domains:
+        errors.append("目录使命登记缺失或重复")
+    for domain in categories["domains"]:
+        actual_count = sum(p.parent.name == domain["domain"] for p in pages)
+        if not domain.get("domain_mission") or domain["article_count"] != actual_count:
+            errors.append(f"目录使命或计数不一致 {domain['domain']}")
+    for article in categories["articles"]:
+        if Path(article["path"]).parent.name != article["current_domain"]:
+            errors.append(f"目录审查当前归属不一致 {article['path']}")
     return {"formal_articles": len(formal), "support_pages": len(pages)-len(formal),
             "registered_images": len(registered), "errors": errors,
             "quality_matrix_pages": len(matrix), "rename_targets": len(renames),
+            "category_domains": len(category_names), "category_articles": len(categories_paths),
             "writing_candidates": sum(len(r["writing_candidates"]) for r in facts),
             "scope": "静态不变量；写作质量和技术断言需原文复读及证据核验"}
 

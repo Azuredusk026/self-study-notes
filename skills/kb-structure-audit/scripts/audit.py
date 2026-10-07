@@ -36,6 +36,7 @@ def inspect(path, root):
         title_candidates.append("并列结构需复读主问题与独立机制；不是自动拆分结论")
     return {"path": path.relative_to(root).as_posix(), "bytes": path.stat().st_size,
             "current_title": title, "title_review": None, "title_review_status": "待审查",
+            "category_review": None, "category_review_status": "待审查",
             "title_candidates": title_candidates,
             "headings": headings, "code_blocks": codes, "unclosed_fence": fence is not None,
             "wiki_links": re.findall(r"\[\[([^\]|]+)(?:\|[^\]]+)?\]\]", body),
@@ -43,7 +44,7 @@ def inspect(path, root):
             "writing_candidates": candidates, "writing_review": "待复读",
             "boundary_action": None, "content_actions": [],
             "quality_matrix": {key: "待复读" for key in
-                               ("Scope", "Structure", "Depth", "Implementation", "Evidence", "Writing Style", "Title", "Visuals")}}
+                               ("Scope", "Structure", "Depth", "Implementation", "Evidence", "Writing Style", "Title", "Information Architecture", "Visuals")}}
 
 
 def main():
