@@ -23,6 +23,8 @@ description: 审计知识库文章边界、标题、目录领域与语义层级�
 
 批量实施验收运行 `python skills/kb-structure-audit/scripts/batch_validate.py <仓库根>`，核对冻结路径与H1、正文批次覆盖、最终哈希、锚点、反链、术语重复和当前章节映射。隔离夹具检查运行 `python skills/kb-structure-audit/scripts/test_batch_validate.py <仓库根>`。检查结果只证明这些不变量，全文结论与证据范围见 [批量迁移验收报告](references/batch-acceptance-report.md)。
 
+HTML报告验证使用 [verify_report.cjs](scripts/verify_report.cjs)。在技能scripts目录运行 `npm ci`、`npx playwright install chromium`，然后从仓库根运行 `node skills/kb-structure-audit/scripts/verify_report.cjs`。默认检查docs中的HTML报告，也可用命令参数指定文件。浏览器使用Playwright默认Chromium；`REPORT_BROWSER_PATH`可指定已有浏览器，`REPORT_QA_OUTPUT`可指定截图与结果目录。浏览器始终无界面运行，截图与结果属于本机维护层。
+
 全库工作状态见 [article-quality-matrix.json](article-quality-matrix.json)，只在全库计划或迁移进度任务中读取。新建、拆分和评审后同步路径、正文动作与质量状态。
 
 当前标题方案见 [title-review.json](title-review.json)，命名迁移见 [rename-map.json](rename-map.json)。标题方案包含全文理解、不同候选与采用状态；映射连接历史审计中的原路径和当前页面，历史验证记录保持其原始含义。

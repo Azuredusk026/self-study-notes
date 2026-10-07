@@ -229,7 +229,8 @@
       "actual_evidence": [
         "completion-test-results.json",
         "batch-claim-review.json"
-      ]
+      ],
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
     },
     {
       "path": "知识库/02_GPU与光栅化管线/可见性与合成导读.md",
@@ -241,7 +242,8 @@
       "actual_evidence": [
         "completion-test-results.json",
         "batch-claim-review.json"
-      ]
+      ],
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
     },
     {
       "path": "知识库/02_GPU与光栅化管线/可见性剔除.md",
@@ -257,7 +259,7 @@
     },
     {
       "path": "知识库/02_GPU与光栅化管线/基于深度的可见性优化.md",
-      "primary_question": "如何组织Compute执行以及实现多类并行算法",
+      "primary_question": "如何利用提前深度测试、深度预通道与Hi-Z减少被遮挡的着色工作",
       "references": "- Microsoft Learn, *Depth-Stencil Functionality*.\n- Khronos, *Vulkan Specification*, Rasterization and Fragment Operations.\n- Emil Persson, *Creating Vast Game Worlds* and reversed-Z references collected by NVIDIA.\n- Nathan Reed, *Depth Precision Visualized*, NVIDIA Developer Blog.\n- Unity Manual, *Platform-specific rendering differences* and URP Depth Priming documentation.\n- Unity Technologies, URP `CanCopyDepth` implementation in the Universal Render Pipeline package.",
       "urls": [],
       "runtime": "UNVERIFIED",
@@ -861,7 +863,8 @@
       "actual_evidence": [
         "completion-test-results.json",
         "batch-claim-review.json"
-      ]
+      ],
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
     },
     {
       "path": "知识库/09_动画系统/角色布料.md",
@@ -1319,7 +1322,7 @@
     },
     {
       "path": "知识库/13_渲染架构/Tiled与Clustered光源剔除.md",
-      "primary_question": "如何组织Compute执行以及实现多类并行算法",
+      "primary_question": "如何按屏幕Tile与深度Cluster构建保守且有容量约束的光源列表",
       "references": "- Ola Olsson et al., *Clustered Deferred and Forward Shading*.\n- Johan Andersson, *Tiled Deferred Shading*.\n- Unity and Unreal documentation on Forward+, Deferred and mobile renderers.\n- LearnOpenGL, `src/5.advanced_lighting/8.1.deferred_shading`.",
       "urls": [],
       "runtime": "UNVERIFIED",
@@ -1339,7 +1342,8 @@
       "actual_evidence": [
         "completion-test-results.json",
         "batch-claim-review.json"
-      ]
+      ],
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
     },
     {
       "path": "知识库/13_渲染架构/渲染路径与光源组织.md",
@@ -1351,7 +1355,8 @@
       "actual_evidence": [
         "completion-test-results.json",
         "batch-claim-review.json"
-      ]
+      ],
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
     },
     {
       "path": "知识库/14_性能分析与优化/PSO首次使用为什么卡顿.md",
@@ -2072,7 +2077,7 @@
     },
     {
       "path": "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
-      "primary_question": "如何按资源和注入需求选择引擎扩展入口",
+      "primary_question": "Unity如何按管线资产与相机配置组织剔除、通道、资源和提交",
       "references": "- [Unity 6 URP](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/urp-introduction.html)，管线配置与资源。\n- [Unity ScriptableRenderContext](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Rendering.ScriptableRenderContext.html)。\n- [UnityCsReference](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Export/RenderPipeline/ScriptableRenderContext.cs)，剔除与提交入口。\n- Unity Graphics 包源码：`UniversalRenderPipeline.cs`、`UniversalRenderer.cs`、`ScriptableRenderer.cs`。",
       "urls": [
         "https://docs.unity3d.com/6000.0/Documentation/Manual/urp/urp-introduction.html",
@@ -2102,7 +2107,7 @@
     },
     {
       "path": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
-      "primary_question": "如何按资源和注入需求选择引擎扩展入口",
+      "primary_question": "Unreal如何把游戏线程场景更新转换为渲染线程、RDG、RHI与GPU帧工作",
       "references": "- [Unreal RDG](https://dev.epicgames.com/documentation/en-us/unreal-engine/render-dependency-graph-in-unreal-engine)。\n- [Unreal Mesh Drawing Pipeline](https://dev.epicgames.com/documentation/en-us/unreal-engine/mesh-drawing-pipeline-in-unreal-engine)。\n- Epic Games，Shader Development、Unreal Insights 与 Graphics Programming 官方文档。\n- 源码定位：`Renderer/Private`、`RenderGraphBuilder.h`、`RHICommandList.h`、`MeshPassProcessor.h`。",
       "urls": [
         "https://dev.epicgames.com/documentation/en-us/unreal-engine/render-dependency-graph-in-unreal-engine",
@@ -2137,7 +2142,8 @@
       "actual_evidence": [
         "completion-test-results.json",
         "batch-claim-review.json"
-      ]
+      ],
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
     },
     {
       "path": "知识库/23_引擎运行系统/ECS与数据布局.md",

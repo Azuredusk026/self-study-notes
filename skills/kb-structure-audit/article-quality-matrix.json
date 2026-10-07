@@ -1340,11 +1340,10 @@
     "changes": [
       "# 光栅化可见性导读",
       "## 按问题进入专题",
-      "## 阅读与选择",
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "e52e3d887856e10e4dcecfcdd2f83e72e24e7e3a3c25ac476a5b3eaff73abbfa",
+    "final_sha256": "0b95bc7843d85bd08fb7bbc64ef85f77ad67bcdc2d1ea75dad9b888e1c924e26",
     "content_commit": "8045bc0",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "OVERVIEW",
@@ -1357,8 +1356,9 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "e52e3d887856e10e4dcecfcdd2f83e72e24e7e3a3c25ac476a5b3eaff73abbfa",
-    "source_article_path": "知识库/02_GPU与光栅化管线/光栅化、插值与深度模板.md"
+    "reviewed_content_sha256": "0b95bc7843d85bd08fb7bbc64ef85f77ad67bcdc2d1ea75dad9b888e1c924e26",
+    "source_article_path": "知识库/02_GPU与光栅化管线/光栅化、插值与深度模板.md",
+    "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
   },
   {
     "path": "知识库/02_GPU与光栅化管线/可见性与合成导读.md",
@@ -1405,11 +1405,10 @@
     "changes": [
       "# 可见性与合成导读",
       "## 按问题进入专题",
-      "## 阅读与选择",
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "e455be17e40546d0961953a8a0b2edbbfcd39dfb3c8a88f9f9f731183da6e438",
+    "final_sha256": "09b85918518a7ca91ce9f0bbfa7eab20b96fc8b683b01a9a55864afe76816cd5",
     "content_commit": "9160f31",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "OVERVIEW",
@@ -1422,8 +1421,9 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "e455be17e40546d0961953a8a0b2edbbfcd39dfb3c8a88f9f9f731183da6e438",
-    "source_article_path": "知识库/02_GPU与光栅化管线/剔除、透明与混合.md"
+    "reviewed_content_sha256": "09b85918518a7ca91ce9f0bbfa7eab20b96fc8b683b01a9a55864afe76816cd5",
+    "source_article_path": "知识库/02_GPU与光栅化管线/剔除、透明与混合.md",
+    "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
   },
   {
     "path": "知识库/02_GPU与光栅化管线/可见性剔除.md",
@@ -1491,7 +1491,7 @@
   },
   {
     "path": "知识库/02_GPU与光栅化管线/基于深度的可见性优化.md",
-    "primary_question": "如何组织Compute执行以及实现多类并行算法",
+    "primary_question": "如何利用提前深度测试、深度预通道与Hi-Z减少被遮挡的着色工作",
     "boundary_action": "KEEP",
     "content_actions": [
       "FACT-CHECK",
@@ -5107,11 +5107,10 @@
     "changes": [
       "# 角色动画导读",
       "## 按问题进入专题",
-      "## 阅读与选择",
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "52aaf9d886adc2e2d85b9234d335a152524497b54162893db681aba9701a539a",
+    "final_sha256": "0a8290f15312f178896d29ef11551906f61e99748669fdb99e47ac327b772ad0",
     "content_commit": "9160f31",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "OVERVIEW",
@@ -5124,8 +5123,9 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "52aaf9d886adc2e2d85b9234d335a152524497b54162893db681aba9701a539a",
-    "source_article_path": "知识库/09_动画系统/动画压缩、面部、布料与毛发.md"
+    "reviewed_content_sha256": "0a8290f15312f178896d29ef11551906f61e99748669fdb99e47ac327b772ad0",
+    "source_article_path": "知识库/09_动画系统/动画压缩、面部、布料与毛发.md",
+    "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
   },
   {
     "path": "知识库/09_动画系统/角色布料.md",
@@ -7643,7 +7643,7 @@
   },
   {
     "path": "知识库/13_渲染架构/Tiled与Clustered光源剔除.md",
-    "primary_question": "如何组织Compute执行以及实现多类并行算法",
+    "primary_question": "如何按屏幕Tile与深度Cluster构建保守且有容量约束的光源列表",
     "boundary_action": "KEEP",
     "content_actions": [
       "FACT-CHECK",
@@ -7754,11 +7754,10 @@
     "changes": [
       "# 渲染命令的组织方式",
       "## 按问题进入专题",
-      "## 阅读与选择",
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "f7f5817c7ab50d106e2833f7d08fde2ea2ce632e17a17c3d8851198bc19b94d0",
+    "final_sha256": "4e242ce6988dfc34017809258150b65f5bfe3c76a0a9271f3624af85d31281e5",
     "content_commit": "8045bc0",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "OVERVIEW",
@@ -7771,8 +7770,9 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "f7f5817c7ab50d106e2833f7d08fde2ea2ce632e17a17c3d8851198bc19b94d0",
-    "source_article_path": "知识库/13_渲染架构/Render Pass、Command Buffer与Render Graph.md"
+    "reviewed_content_sha256": "4e242ce6988dfc34017809258150b65f5bfe3c76a0a9271f3624af85d31281e5",
+    "source_article_path": "知识库/13_渲染架构/Render Pass、Command Buffer与Render Graph.md",
+    "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
   },
   {
     "path": "知识库/13_渲染架构/渲染路径与光源组织.md",
@@ -7822,11 +7822,10 @@
     "changes": [
       "# 渲染路径与光源组织",
       "## 按问题进入专题",
-      "## 阅读与选择",
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "5f987747e5c3d3bae35392e602d9827d95c2a9a1a016118d5ea1289385523923",
+    "final_sha256": "44685d454dadccaf90117a814548aea4b4d380b249e8b1cc59f5ffe95ca9e588",
     "content_commit": "8045bc0",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "OVERVIEW",
@@ -7839,7 +7838,8 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "5f987747e5c3d3bae35392e602d9827d95c2a9a1a016118d5ea1289385523923"
+    "reviewed_content_sha256": "44685d454dadccaf90117a814548aea4b4d380b249e8b1cc59f5ffe95ca9e588",
+    "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
   },
   {
     "path": "知识库/14_性能分析与优化/PSO首次使用为什么卡顿.md",
@@ -12117,7 +12117,7 @@
   },
   {
     "path": "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
-    "primary_question": "如何按资源和注入需求选择引擎扩展入口",
+    "primary_question": "Unity如何按管线资产与相机配置组织剔除、通道、资源和提交",
     "boundary_action": "KEEP",
     "content_actions": [
       "FACT-CHECK",
@@ -12256,7 +12256,7 @@
   },
   {
     "path": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
-    "primary_question": "如何按资源和注入需求选择引擎扩展入口",
+    "primary_question": "Unreal如何把游戏线程场景更新转换为渲染线程、RDG、RHI与GPU帧工作",
     "boundary_action": "KEEP",
     "content_actions": [
       "FACT-CHECK",
@@ -12324,7 +12324,8 @@
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
     "reviewed_content_sha256": "c1c65dc6213eca3d18d6b1b2d115606ad8a2e008c4f8234aedf1fc250a3099a2",
-    "source_article_path": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md"
+    "source_article_path": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
+    "maintenance_boundary": "主线为游戏线程场景更新、SceneProxy、渲染任务、RDG与RHI；新增功能的完整实现归具体专篇，本页保留帧内定位摘要。"
   },
   {
     "path": "知识库/22_渲染引擎实现/Unreal自定义Mesh Pass.md",
@@ -12448,11 +12449,10 @@
     "changes": [
       "# 引擎渲染扩展导读",
       "## 按问题进入专题",
-      "## 阅读与选择",
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "635ea4a78ef6eb244402caa4a02cca43c8bb276fbb9037d65a17ac72110b6d0d",
+    "final_sha256": "0f1ccdad48e76da5f4e7431dfa889820415dfcea888aafcddb7ff5eb8491c6c8",
     "content_commit": "8045bc0",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "OVERVIEW",
@@ -12465,8 +12465,9 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "635ea4a78ef6eb244402caa4a02cca43c8bb276fbb9037d65a17ac72110b6d0d",
-    "source_article_path": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md"
+    "reviewed_content_sha256": "0f1ccdad48e76da5f4e7431dfa889820415dfcea888aafcddb7ff5eb8491c6c8",
+    "source_article_path": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
+    "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
   },
   {
     "path": "知识库/23_引擎运行系统/ECS与数据布局.md",

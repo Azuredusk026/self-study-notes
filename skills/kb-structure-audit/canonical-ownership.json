@@ -200,7 +200,8 @@
           "知识库/02_GPU与光栅化管线/光栅化、插值与深度模板.md",
           []
         ]
-      ]
+      ],
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
     },
     {
       "concept": "可见性与合成导读",
@@ -212,7 +213,8 @@
           "知识库/02_GPU与光栅化管线/剔除、透明与混合.md",
           []
         ]
-      ]
+      ],
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
     },
     {
       "concept": "可见性剔除",
@@ -225,7 +227,7 @@
       "concept": "基于深度的可见性优化",
       "path": "知识库/02_GPU与光栅化管线/基于深度的可见性优化.md",
       "article_type": "ARTICLE",
-      "primary_question": "如何组织Compute执行以及实现多类并行算法",
+      "primary_question": "如何利用提前深度测试、深度预通道与Hi-Z减少被遮挡的着色工作",
       "source_sections": [
         [
           "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
@@ -840,7 +842,8 @@
           "知识库/09_动画系统/动画压缩、面部、布料与毛发.md",
           []
         ]
-      ]
+      ],
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
     },
     {
       "concept": "角色布料",
@@ -1215,7 +1218,7 @@
       "concept": "Tiled与Clustered光源剔除",
       "path": "知识库/13_渲染架构/Tiled与Clustered光源剔除.md",
       "article_type": "ARTICLE",
-      "primary_question": "如何组织Compute执行以及实现多类并行算法",
+      "primary_question": "如何按屏幕Tile与深度Cluster构建保守且有容量约束的光源列表",
       "source_sections": [
         [
           "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
@@ -1235,7 +1238,8 @@
           "知识库/13_渲染架构/Render Pass、Command Buffer与Render Graph.md",
           []
         ]
-      ]
+      ],
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
     },
     {
       "concept": "渲染路径与光源组织",
@@ -1247,7 +1251,8 @@
           "知识库/13_渲染架构/渲染路径与光源组织.md",
           []
         ]
-      ]
+      ],
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
     },
     {
       "concept": "PSO首次使用为什么卡顿",
@@ -2044,7 +2049,7 @@
       "concept": "Unity渲染帧组织",
       "path": "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
       "article_type": "ARTICLE",
-      "primary_question": "如何按资源和注入需求选择引擎扩展入口",
+      "primary_question": "Unity如何按管线资产与相机配置组织剔除、通道、资源和提交",
       "source_sections": [
         [
           "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
@@ -2067,7 +2072,7 @@
       "concept": "Unreal渲染帧组织",
       "path": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
       "article_type": "ARTICLE",
-      "primary_question": "如何按资源和注入需求选择引擎扩展入口",
+      "primary_question": "Unreal如何把游戏线程场景更新转换为渲染线程、RDG、RHI与GPU帧工作",
       "source_sections": [
         [
           "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
@@ -2097,7 +2102,8 @@
           "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
           []
         ]
-      ]
+      ],
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
     },
     {
       "concept": "ECS与数据布局",

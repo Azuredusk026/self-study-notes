@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "checks": 9,
+  "checks": 11,
   "cases": [
     "H1与冻结表",
     "失效双链",
@@ -10,7 +10,9 @@
     "最终哈希漂移",
     "正文批次遗漏",
     "未审查标题",
-    "最终待拆状态"
+    "最终待拆状态",
+    "空H2章节",
+    "主问题登记漂移"
   ],
   "scope": "isolated malformed-fixture detection; no prose quality scoring"
 }

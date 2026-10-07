@@ -16,6 +16,15 @@ def validate(root):
     errors = []
     facts = [inspect(p, root) for p in pages]
     for fact in facts:
+        text = (root / fact['path']).read_text(encoding='utf-8-sig')
+        lines = text.splitlines()
+        for index, heading in enumerate(fact['headings']):
+            if heading['level'] < 2:
+                continue
+            end = fact['headings'][index + 1]['line'] - 1 if index + 1 < len(fact['headings']) else len(lines)
+            next_level = fact['headings'][index + 1]['level'] if index + 1 < len(fact['headings']) else 0
+            if next_level <= heading['level'] and not '\n'.join(lines[heading['line']:end]).strip():
+                errors.append(f"空标题章节 {fact['path']}:{heading['line']}")
         previous = 0
         for h in fact["headings"]:
             if previous and h["level"] > previous + 1:
@@ -28,7 +37,8 @@ def validate(root):
             if key not in keys:
                 errors.append(f"双链缺失 {fact['path']} -> {link}")
     image_users = {}
-    for p in [root / "README.md", root / "AGENTS.md", *pages, *(root / "skills").rglob("*.md")]:
+    skill_docs = [p for p in (root / "skills").rglob("*.md") if 'node_modules' not in p.parts]
+    for p in [root / "README.md", root / "AGENTS.md", *pages, *skill_docs]:
         text = p.read_text(encoding="utf-8-sig")
         # Exclude examples in fences before validating prose links.
         text = re.sub(r"^```.*?^```\s*$", "", text, flags=re.M | re.S)

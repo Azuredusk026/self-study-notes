@@ -1,0 +1,67 @@
+{
+  "scope": "用户指定Final Cleanup；4项主要问题、6空H2、2空目录与报告验证器可复现性",
+  "primary_question_fixes": [
+    "基于深度的可见性优化",
+    "Tiled与Clustered光源剔除",
+    "Unity渲染帧组织",
+    "Unreal渲染帧组织"
+  ],
+  "empty_headings_removed": [
+    "渲染命令的组织方式",
+    "渲染路径与光源组织",
+    "引擎渲染扩展导读",
+    "可见性与合成导读",
+    "光栅化可见性导读",
+    "角色动画导读"
+  ],
+  "empty_directories_removed": [
+    "12_光追与现代渲染",
+    "13_引擎架构与资源系统"
+  ],
+  "validation": {
+    "pages": 184,
+    "formal_pages": 179,
+    "errors": [],
+    "orphans": [],
+    "h1_consistent": 184,
+    "local_markdown_references": 740
+  },
+  "mechanism_regression": {
+    "cpu_dotnet_checks": 612,
+    "passed": true,
+    "scope": "既有CPU模型和.NET宿主；未更改HLSL，无新增引擎或GPU验证"
+  },
+  "validator_regression": {
+    "passed": true,
+    "checks": 11,
+    "cases": [
+      "H1与冻结表",
+      "失效双链",
+      "失效Wiki锚点",
+      "失效Markdown锚点",
+      "围栏内目录污染",
+      "最终哈希漂移",
+      "正文批次遗漏",
+      "未审查标题",
+      "最终待拆状态",
+      "空H2章节",
+      "主问题登记漂移"
+    ],
+    "scope": "isolated malformed-fixture detection; no prose quality scoring"
+  },
+  "report_browser": {
+    "command": "node scripts/verify_report.cjs",
+    "dependency": "playwright 1.62.1",
+    "browser": "Playwright默认Chromium",
+    "clean_dependency_install": "npm ci --ignore-scripts --no-audit --no-fund通过",
+    "result": {
+      "brokenAnchors": 0,
+      "visibleRows": 3,
+      "mobileOverflow": false,
+      "pageErrors": []
+    }
+  },
+  "local_command": "scripts/verify_report.cjs转发到随仓库发布的技能脚本",
+  "engine_runtime": "UNVERIFIED",
+  "gpu_performance": "UNVERIFIED"
+}

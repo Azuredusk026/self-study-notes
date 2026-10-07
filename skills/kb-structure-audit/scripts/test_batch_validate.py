@@ -14,7 +14,7 @@ def verify(root):
     fixture.mkdir()
     for folder in ('知识库', 'skills'):
         shutil.copytree(root / folder, fixture / folder,
-                        ignore=shutil.ignore_patterns('build', '__pycache__'))
+                        ignore=shutil.ignore_patterns('build', '__pycache__', 'node_modules'))
     for name in ('README.md', 'AGENTS.md'):
         shutil.copy2(root / name, fixture / name)
     cases = []
@@ -58,6 +58,12 @@ def verify(root):
             obj[0]['pending_split'] = True
             return json.dumps(obj, ensure_ascii=False)
         mutate('最终待拆状态', 'skills/kb-structure-audit/article-quality-matrix.json', pending_split, '最终迁移状态未完成')
+        mutate('空H2章节', article, lambda s: s + '\n## 空章节\n\n## 下一节\n\n有内容。\n', '空标题章节')
+        def wrong_question(text):
+            obj = json.loads(text)
+            obj['records'][0]['primary_question'] = '错误主问题'
+            return json.dumps(obj, ensure_ascii=False)
+        mutate('主问题登记漂移', 'skills/kb-structure-audit/title-review.json', wrong_question, '主要问题登记不一致')
         return {'passed': True, 'checks': len(cases), 'cases': cases,
                 'scope': 'isolated malformed-fixture detection; no prose quality scoring'}
     finally:

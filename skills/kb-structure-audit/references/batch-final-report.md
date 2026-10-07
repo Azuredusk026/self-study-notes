@@ -8,6 +8,12 @@
 
 本文记录编辑复读与实际运行证据。完整Unity/Unreal运行、GPU捕获和性能测量为UNVERIFIED；代码编译或CPU模型通过只支持其对应范围。全部引用尚未逐条外部复现，版本敏感与经验结论保留条件及未验证状态。
 
+### 验收清理记录
+
+用户验收通过大规模迁移，项目进入稳定维护。Final Cleanup修正4篇文章的主要问题登记，删除6个导读空H2，并移除两个空旧目录。Unreal渲染帧组织以场景更新、线程、RDG、RHI与GPU为维护主线，功能系统的完整实现归对应专篇。
+
+HTML验证器使用项目局部Playwright依赖与默认Chromium，支持环境变量指定浏览器。按锁文件重新安装后，`node scripts/verify_report.cjs`实际通过：导航锚点缺失0、Unity搜索3行、移动横向溢出false、页面异常0。空章节与主要问题登记漂移已加入静态检查，11项故障夹具检查通过；612项CPU/.NET机制回归通过。清理结果见 [final-cleanup-results.json](../final-cleanup-results.json)。
+
 ## 数量与处置
 
 | 项目 | 结果 |
@@ -291,7 +297,7 @@
 | [光栅化可见性导读](../../../知识库/02_GPU与光栅化管线/光栅化可见性导读.md) | OVERVIEW | 这些专题如何按输入与工程问题衔接 | PASS / 02_GPU与光栅化管线 | COMPLETE |
 | [可见性与合成导读](../../../知识库/02_GPU与光栅化管线/可见性与合成导读.md) | OVERVIEW | 这些专题如何按输入与工程问题衔接 | PASS / 02_GPU与光栅化管线 | COMPLETE |
 | [可见性剔除](../../../知识库/02_GPU与光栅化管线/可见性剔除.md) | ARTICLE | 如何用保守可见性测试减少绘制 | PASS / 02_GPU与光栅化管线 | COMPLETE |
-| [基于深度的可见性优化](../../../知识库/02_GPU与光栅化管线/基于深度的可见性优化.md) | ARTICLE | 如何组织Compute执行以及实现多类并行算法 | PASS / 02_GPU与光栅化管线 | COMPLETE |
+| [基于深度的可见性优化](../../../知识库/02_GPU与光栅化管线/基于深度的可见性优化.md) | ARTICLE | 如何利用提前深度测试、深度预通道与Hi-Z减少被遮挡的着色工作 | PASS / 02_GPU与光栅化管线 | COMPLETE |
 | [抗锯齿与时域重建](../../../知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md) | ARTICLE | 如何从空间和时间样本重建稳定图像 | PASS / 02_GPU与光栅化管线 | COMPLETE |
 | [显示呈现](../../../知识库/02_GPU与光栅化管线/显示呈现.md) | ARTICLE | 如何让GPU完成图像进入扫描输出并控制排队延迟 | PASS / 02_GPU与光栅化管线 | COMPLETE |
 | [深度缓冲与位置重建](../../../知识库/02_GPU与光栅化管线/深度缓冲与位置重建.md) | ARTICLE | 如何正确解释并消费深度值 | PASS / 02_GPU与光栅化管线 | COMPLETE |
@@ -376,7 +382,7 @@
 | [Pipeline State Object](../../../知识库/13_渲染架构/Pipeline State Object.md) | ARTICLE | 如何组成和缓存合法的管线状态对象 | PASS / 13_渲染架构 | COMPLETE |
 | [Render Graph](../../../知识库/13_渲染架构/Render Graph.md) | ARTICLE | 如何把资源声明编译为合法执行与分配计划 | PASS / 13_渲染架构 | COMPLETE |
 | [Render Pass与附件](../../../知识库/13_渲染架构/Render Pass与附件.md) | ARTICLE | 如何表达附件开始和结束时的内容需求 | PASS / 13_渲染架构 | COMPLETE |
-| [Tiled与Clustered光源剔除](../../../知识库/13_渲染架构/Tiled与Clustered光源剔除.md) | ARTICLE | 如何组织Compute执行以及实现多类并行算法 | PASS / 13_渲染架构 | COMPLETE |
+| [Tiled与Clustered光源剔除](../../../知识库/13_渲染架构/Tiled与Clustered光源剔除.md) | ARTICLE | 如何按屏幕Tile与深度Cluster构建保守且有容量约束的光源列表 | PASS / 13_渲染架构 | COMPLETE |
 | [渲染命令的组织方式](../../../知识库/13_渲染架构/渲染命令的组织方式.md) | OVERVIEW | 这些专题如何按输入与工程问题衔接 | PASS / 13_渲染架构 | COMPLETE |
 | [渲染路径与光源组织](../../../知识库/13_渲染架构/渲染路径与光源组织.md) | OVERVIEW | 这些专题如何按输入与工程问题衔接 | PASS / 13_渲染架构 | COMPLETE |
 | [PSO首次使用为什么卡顿](../../../知识库/14_性能分析与优化/PSO首次使用为什么卡顿.md) | ARTICLE | 如何减少运行时首次使用PSO的卡顿 | PASS / 14_性能分析与优化 | COMPLETE |
@@ -438,9 +444,9 @@
 | [游戏网络传输](../../../知识库/21_游戏网络/游戏网络传输.md) | ARTICLE | 如何在乱序丢包与字节流下传送有边界的消息 | PASS / 21_游戏网络 | COMPLETE |
 | [游戏网络时钟](../../../知识库/21_游戏网络/游戏网络时钟.md) | ARTICLE | 如何估计往返延迟与共同模拟时间 | PASS / 21_游戏网络 | COMPLETE |
 | [URP Render Graph自定义Pass](../../../知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md) | ARTICLE | 如何在Unity 6 URP记录并消费自定义通道 | PASS / 22_渲染引擎实现 | COMPLETE |
-| [Unity渲染帧组织](../../../知识库/22_渲染引擎实现/Unity渲染帧组织.md) | ARTICLE | 如何按资源和注入需求选择引擎扩展入口 | PASS / 22_渲染引擎实现 | COMPLETE |
+| [Unity渲染帧组织](../../../知识库/22_渲染引擎实现/Unity渲染帧组织.md) | ARTICLE | Unity如何按管线资产与相机配置组织剔除、通道、资源和提交 | PASS / 22_渲染引擎实现 | COMPLETE |
 | [Unreal RDG Pass实现](../../../知识库/22_渲染引擎实现/Unreal RDG Pass实现.md) | ARTICLE | 如何用RDG参数表达资源依赖并执行通道 | PASS / 22_渲染引擎实现 | COMPLETE |
-| [Unreal渲染帧组织](../../../知识库/22_渲染引擎实现/Unreal渲染帧组织.md) | ARTICLE | 如何按资源和注入需求选择引擎扩展入口 | PASS / 22_渲染引擎实现 | COMPLETE |
+| [Unreal渲染帧组织](../../../知识库/22_渲染引擎实现/Unreal渲染帧组织.md) | ARTICLE | Unreal如何把游戏线程场景更新转换为渲染线程、RDG、RHI与GPU帧工作 | PASS / 22_渲染引擎实现 | COMPLETE |
 | [Unreal自定义Mesh Pass](../../../知识库/22_渲染引擎实现/Unreal自定义Mesh Pass.md) | ARTICLE | 如何把自定义网格效果接入Unreal绘制流程 | PASS / 22_渲染引擎实现 | COMPLETE |
 | [引擎渲染扩展导读](../../../知识库/22_渲染引擎实现/引擎渲染扩展导读.md) | OVERVIEW | 这些专题如何按输入与工程问题衔接 | PASS / 22_渲染引擎实现 | COMPLETE |
 | [ECS与数据布局](../../../知识库/23_引擎运行系统/ECS与数据布局.md) | ARTICLE | 如何按访问与查询模式组织大量实体数据 | PASS / 23_引擎运行系统 | COMPLETE |

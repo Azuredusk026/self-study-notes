@@ -84,6 +84,10 @@ def batch_validate(root):
         if path.parent.name != entry['final_category'] or path.name != entry['final_filename']:
             errors.append('冻结路径字段不一致 ' + entry['final_path'])
         row = next(r for r in matrix if r['path'] == entry['final_path'])
+        title_row = next((r for r in reviews if r['path'] == entry['final_path']), {})
+        category_row = next((r for r in read('category-review.json')['articles'] if r['path'] == entry['final_path']), {})
+        if any(r.get('primary_question') != row['primary_question'] for r in (entry, title_row, category_row)):
+            errors.append('主要问题登记不一致 ' + entry['final_path'])
         if not row.get('modernization_batch') or not row.get('executed_content_actions'):
             errors.append('正文状态缺失 ' + entry['final_path'])
         if row.get('final_sha256') != hashlib.sha256(text.encode()).hexdigest():
@@ -109,7 +113,8 @@ def batch_validate(root):
                 errors.append('代码类型混入历史目录 ' + entry['final_path'])
     keys = {p.relative_to(root/'知识库').as_posix()[:-3]: p for p in page_text}
     backlinks = defaultdict(set)
-    all_docs = [root/'README.md', root/'AGENTS.md', *page_text, *(root/'skills').rglob('*.md')]
+    skill_docs = [p for p in (root/'skills').rglob('*.md') if 'node_modules' not in p.parts]
+    all_docs = [root/'README.md', root/'AGENTS.md', *page_text, *skill_docs]
     wiki_count = markdown_count = anchor_count = 0
     for path in all_docs:
         text = prose(path.read_text(encoding='utf-8-sig'))
