@@ -1,0 +1,332 @@
+{
+  "date": "2026-10-07",
+  "scope": "7篇已全文复读的命名样本；仅Render Graph命名已采用",
+  "records": [
+    {
+      "path": "知识库/13_引擎架构与资源系统/Render Graph.md",
+      "primary_question": "如何把通道资源声明编译成执行、同步与分配计划",
+      "primary_concept": "Render Graph",
+      "article_boundary": "通用依赖编译模型，输入读写声明，输出执行与资源计划；引擎接口引用专篇",
+      "title_type": "核心概念",
+      "current_title": "Render Graph",
+      "current_title_problems": [
+        "已采用简洁主叫法，完整机制由正文展开"
+      ],
+      "candidates": [
+        {
+          "title": "Render Graph",
+          "reason": "直接定位稳定概念"
+        },
+        {
+          "title": "Render Graph编译器",
+          "reason": "侧重内部实现，当前深度尚需补足"
+        },
+        {
+          "title": "一帧的资源依赖如何编译",
+          "reason": "以问题定位声明到计划过程"
+        },
+        {
+          "title": "渲染任务与资源依赖",
+          "reason": "覆盖任务关系，检索辨识度较弱"
+        }
+      ],
+      "suggested_title": "Render Graph",
+      "title_review": "PASS",
+      "rename_file": false,
+      "update_links": false,
+      "adoption_status": "已采用",
+      "review_basis": "全文、围栏外标题、代码与相关主题已复读",
+      "solution_families": [
+        "声明、资源版本、反向剔除、寿命、别名与调度"
+      ],
+      "related_primary_homes": [
+        "Unity Render Graph与自定义通道",
+        "Unreal RDG资源声明与通道实现",
+        "资源状态、屏障与跨队列同步"
+      ],
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "reason": "标题定位实际主问题；内部机制留在H2/H3；必要术语按读者习惯保留"
+    },
+    {
+      "path": "知识库/13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph.md",
+      "primary_question": "如何区分算法任务、命令记录和图依赖，并找到深入入口",
+      "primary_concept": "渲染命令组织",
+      "article_boundary": "导读：跨抽象层说明任务、记录、提交与完成；已有机制专篇",
+      "title_type": "导读",
+      "current_title": "Render Pass、Command Buffer 与 Render Graph",
+      "current_title_problems": [
+        "三个术语罗列掩盖导读职责"
+      ],
+      "candidates": [
+        {
+          "title": "渲染命令的组织方式",
+          "reason": "表达任务到命令的关系"
+        },
+        {
+          "title": "从渲染任务到GPU执行",
+          "reason": "按执行路径命名"
+        },
+        {
+          "title": "渲染架构导读",
+          "reason": "表达导航职责，但限定较宽"
+        },
+        {
+          "title": "一帧的任务与资源如何组织",
+          "reason": "结合读者问题与图关系"
+        }
+      ],
+      "suggested_title": "渲染命令的组织方式",
+      "title_review": "OVERVIEW",
+      "rename_file": true,
+      "update_links": true,
+      "adoption_status": "建议待采用",
+      "review_basis": "全文、围栏外标题、代码与相关主题已复读",
+      "solution_families": [
+        "阅读路径、颜色效果数据流、引擎入口与验证"
+      ],
+      "related_primary_homes": [
+        "Render Graph",
+        "命令记录、队列提交与在途帧",
+        "渲染通道、附件与加载存储语义"
+      ],
+      "boundary_action": "OVERVIEW",
+      "content_actions": [
+        "KEEP"
+      ],
+      "reason": "标题定位实际主问题；内部机制留在H2/H3；必要术语按读者习惯保留"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/描边.md",
+      "primary_question": "如何生成外轮廓与结构线并控制质量和成本",
+      "primary_concept": "描边",
+      "article_boundary": "一个轮廓问题，比较几何壳、结构线和屏幕检测；输入几何/缓冲/艺术数据",
+      "title_type": "核心技术问题",
+      "current_title": "描边",
+      "current_title_problems": [],
+      "candidates": [
+        {
+          "title": "描边",
+          "reason": "短且覆盖同题多方案"
+        },
+        {
+          "title": "轮廓线渲染",
+          "reason": "用效果命名，略偏外轮廓"
+        },
+        {
+          "title": "模型与屏幕中的轮廓线",
+          "reason": "表达两类数据路径，但更长"
+        }
+      ],
+      "suggested_title": "描边",
+      "title_review": "PASS",
+      "rename_file": false,
+      "update_links": false,
+      "adoption_status": "保留",
+      "review_basis": "全文、围栏外标题、代码与相关主题已复读",
+      "solution_families": [
+        "几何壳、显式边、手绘/SDF、屏幕信号"
+      ],
+      "related_primary_homes": [
+        "模板缓冲",
+        "深度缓冲",
+        "NPR材质"
+      ],
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "reason": "标题定位实际主问题；内部机制留在H2/H3；必要术语按读者习惯保留"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/Billboard朝向、锚点与深度.md",
+      "primary_question": "如何让面片面向相机并保持锚点和场景深度关系",
+      "primary_concept": "Billboard",
+      "article_boundary": "朝向坐标架、脚底锚点、假视差和多视角Impostor；输入相机和资产，输出面片位置/采样",
+      "title_type": "核心概念",
+      "current_title": "Billboard朝向、锚点与深度",
+      "current_title_problems": [
+        "把三个实现子问题塞进标题"
+      ],
+      "candidates": [
+        {
+          "title": "Billboard",
+          "reason": "读者习惯的概念入口"
+        },
+        {
+          "title": "Billboard的空间关系",
+          "reason": "强调朝向与接地、深度"
+        },
+        {
+          "title": "面向相机的面片",
+          "reason": "中文问题形象，但检索术语不如概念名"
+        },
+        {
+          "title": "Billboard与Impostor",
+          "reason": "强调表示差别，当前正文主轴仍为面片空间关系"
+        }
+      ],
+      "suggested_title": "Billboard",
+      "title_review": "REWRITE",
+      "rename_file": true,
+      "update_links": true,
+      "adoption_status": "建议待采用",
+      "review_basis": "全文、围栏外标题、代码与相关主题已复读",
+      "solution_families": [
+        "球面与轴约束、锚点、深度Impostor"
+      ],
+      "related_primary_homes": [
+        "粒子系统与GPU模拟",
+        "透明排序",
+        "几何着色器"
+      ],
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "reason": "标题定位实际主问题；内部机制留在H2/H3；必要术语按读者习惯保留"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/植被风动与顶点变形.md",
+      "primary_question": "如何用权重与相位驱动植被并保持跨通道运动一致",
+      "primary_concept": "植被风动",
+      "article_boundary": "以顶点位移实现枝叶风动；输入锚点、权重、相位与风参数，输出变形",
+      "title_type": "技术方案",
+      "current_title": "植被风动与顶点变形",
+      "current_title_problems": [
+        "顶点变形是实现手段，标题可以直接定位效果"
+      ],
+      "candidates": [
+        {
+          "title": "植被风动",
+          "reason": "中文自然，范围明确"
+        },
+        {
+          "title": "植被怎样随风弯曲",
+          "reason": "问题式，突出形变"
+        },
+        {
+          "title": "风动的顶点实现",
+          "reason": "强调实现路径，但对象限定较弱"
+        }
+      ],
+      "suggested_title": "植被风动",
+      "title_review": "REWRITE",
+      "rename_file": true,
+      "update_links": true,
+      "adoption_status": "建议待采用",
+      "review_basis": "全文、围栏外标题、代码与相关主题已复读",
+      "solution_families": [
+        "主摆动、细抖动、阵风、跨Pass一致"
+      ],
+      "related_primary_homes": [
+        "Billboard",
+        "动画/蒙皮",
+        "TAA"
+      ],
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "reason": "标题定位实际主问题；内部机制留在H2/H3；必要术语按读者习惯保留"
+    },
+    {
+      "path": "知识库/13_引擎架构与资源系统/GBuffer布局设计与通道压缩.md",
+      "primary_question": "如何在字节和精度预算内存储光照需要的表面数据",
+      "primary_concept": "GBuffer布局",
+      "article_boundary": "布局设计、字段编码、互斥和阶段复用，附件局部读取是布局的平台条件",
+      "title_type": "工程问题",
+      "current_title": "GBuffer 布局设计与通道压缩",
+      "current_title_problems": [
+        "布局和压缩同属预算问题，名称可更短"
+      ],
+      "candidates": [
+        {
+          "title": "GBuffer布局",
+          "reason": "明确本篇设计职责"
+        },
+        {
+          "title": "GBuffer",
+          "reason": "最短但范围更宽"
+        },
+        {
+          "title": "表面数据怎样装进GBuffer",
+          "reason": "问题式解释编码预算"
+        },
+        {
+          "title": "GBuffer的编码与复用",
+          "reason": "突出两种优化机制"
+        }
+      ],
+      "suggested_title": "GBuffer布局",
+      "title_review": "REWRITE",
+      "rename_file": true,
+      "update_links": true,
+      "adoption_status": "建议待采用",
+      "review_basis": "全文、围栏外标题、代码与相关主题已复读",
+      "solution_families": [
+        "法线编码、位域、互斥属性、时间复用、附件条件"
+      ],
+      "related_primary_homes": [
+        "延迟渲染",
+        "渲染通道",
+        "PSO/Shader实现"
+      ],
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "reason": "标题定位实际主问题；内部机制留在H2/H3；必要术语按读者习惯保留"
+    },
+    {
+      "path": "知识库/03_Shader编程/Shader编译、关键字与变体.md",
+      "primary_question": "如何控制Shader编译组合并避免缺失变体和首次使用问题",
+      "primary_concept": "Shader Variant管理",
+      "article_boundary": "编译背景、组合来源、收集、剥离、预热与预算；个人贡献段属于待正文审查项",
+      "title_type": "工程问题",
+      "current_title": "Shader 编译、关键字与变体",
+      "current_title_problems": [
+        "编译、关键字和变体并列，未突出组合管理主轴"
+      ],
+      "candidates": [
+        {
+          "title": "Shader Variant管理",
+          "reason": "稳定术语加管理职责"
+        },
+        {
+          "title": "Shader变体为什么膨胀",
+          "reason": "问题式但覆盖收集/预热较窄"
+        },
+        {
+          "title": "Shader编译组合与构建覆盖",
+          "reason": "强调组合与验证"
+        },
+        {
+          "title": "Shader Variant",
+          "reason": "简洁概念入口，管理职责不如限定明确"
+        }
+      ],
+      "suggested_title": "Shader Variant管理",
+      "title_review": "REWRITE",
+      "rename_file": true,
+      "update_links": true,
+      "adoption_status": "建议待采用",
+      "review_basis": "全文、围栏外标题、代码与相关主题已复读",
+      "solution_families": [
+        "动态分支与变体、Unity关键字、UE组合、剥离预热"
+      ],
+      "related_primary_homes": [
+        "PSO缓存",
+        "资源打包",
+        "Shader语言"
+      ],
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "reason": "标题定位实际主问题；内部机制留在H2/H3；必要术语按读者习惯保留"
+    }
+  ]
+}

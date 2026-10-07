@@ -29,14 +29,21 @@ def inspect(path, root):
         if re.search(r"本文(?:将|主要)|在现代.*中|综上所述|我们可以看到|需要注意的是|为了更好地理解", line):
             candidates.append({"line": number, "text": line, "reason": "复读主语、信息量与过渡用途"})
     body = "\n".join(prose)
+    titles = [heading["title"] for heading in headings if heading["level"] == 1]
+    title = titles[0] if titles else None
+    title_candidates = []
+    if title and len(re.split(r"、|与", title)) >= 3:
+        title_candidates.append("并列结构需复读主问题与独立机制；不是自动拆分结论")
     return {"path": path.relative_to(root).as_posix(), "bytes": path.stat().st_size,
+            "current_title": title, "title_review": None, "title_review_status": "待审查",
+            "title_candidates": title_candidates,
             "headings": headings, "code_blocks": codes, "unclosed_fence": fence is not None,
             "wiki_links": re.findall(r"\[\[([^\]|]+)(?:\|[^\]]+)?\]\]", body),
             "images": re.findall(r"!\[[^\]]*\]\(([^)]+)\)|!\[\[([^\]]+)\]\]", body),
             "writing_candidates": candidates, "writing_review": "待复读",
             "boundary_action": None, "content_actions": [],
             "quality_matrix": {key: "待复读" for key in
-                               ("Scope", "Structure", "Depth", "Implementation", "Evidence", "Writing Style", "Visuals")}}
+                               ("Scope", "Structure", "Depth", "Implementation", "Evidence", "Writing Style", "Title", "Visuals")}}
 
 
 def main():

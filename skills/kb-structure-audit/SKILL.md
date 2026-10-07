@@ -9,12 +9,16 @@ description: 审计知识文章的单一问题、章节主归属、拆分合并�
 
 一句话说明主问题。比较主要章节的输入输出、前提、实现、验证、来源和独立检索意图。一个问题的替代方案集中比较；不同问题分归属；只有概述的材料先放导读。查找现有主归属，重复机制按章节合并。
 
-输出字段为路径、主问题、`boundary_action`、`content_actions`、章节归属、目标、理由、置信度、受影响反链与七维质量矩阵。脚本输出结构事实和候选，编辑判断单独记录；脚本只读仓库。
+输出字段为路径、主问题、`boundary_action`、`content_actions`、`title_review`、章节归属、目标、理由、置信度、受影响反链与八维质量矩阵。脚本输出结构事实和候选，编辑判断单独记录；脚本只读仓库。
+
+标题审查先读全文和实际主归属，按实施规范生成不同定位的候选。完整可复用流程见 [标题审查提示词](references/title-review-prompt.md)，仅在标题任务中读取。三术语并列与长标题作为复读线索，SPLIT是语义判断，采用命名按授权同步H1、文件及引用。
 
 写作复读覆盖全部文章，边界KEEP不会排除语言、结构和事实工作。已是导读的文章按关系与路线验收，避免重复建立其已有专篇。
 
 实施前产生迁移映射，迁移后核对来源、图片、参考、地图、术语和反链。当前范围由用户批准的实施规范决定。
 
-[validate.py](scripts/validate.py)核对链接、围栏、标题跨级、地图和登记资产。运行 `python skills/kb-structure-audit/scripts/validate.py <仓库根>`；检查器只报告确定的不变量，语义层级与语言由复读判断。
+[validate.py](scripts/validate.py)核对链接、围栏、标题跨级、地图、登记资产、质量矩阵和已采用命名的一致性。运行 `python skills/kb-structure-audit/scripts/validate.py <仓库根>`；检查器只报告确定的不变量，语义层级、标题质量与语言由复读判断。
 
 全库工作状态见 [article-quality-matrix.json](article-quality-matrix.json)，只在全库计划或迁移进度任务中读取。新建、拆分和评审后同步路径、正文动作与质量状态。
+
+当前标题方案见 [title-review.json](title-review.json)，命名迁移见 [rename-map.json](rename-map.json)。标题方案包含全文理解、不同候选与采用状态；映射连接历史审计中的原路径和当前页面，历史验证记录保持其原始含义。

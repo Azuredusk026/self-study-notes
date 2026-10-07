@@ -82,8 +82,33 @@ def validate(root):
         key = p.relative_to(kb).as_posix()[:-3]
         if key not in knowledge_map:
             errors.append(f"地图漏收 {key}")
+    matrix_path = root / "skills/kb-structure-audit/article-quality-matrix.json"
+    matrix = json.loads(matrix_path.read_text(encoding="utf-8"))
+    matrix_paths = [record["path"] for record in matrix]
+    expected_paths = {p.relative_to(root).as_posix() for p in pages}
+    if len(matrix_paths) != len(set(matrix_paths)) or set(matrix_paths) != expected_paths:
+        errors.append("质量矩阵路径缺失、重复或过期")
+    for record in matrix:
+        if "Title" not in record["quality_matrix"]:
+            errors.append(f"标题维度缺失 {record['path']}")
+        if record.get("title_review") not in (None, "PASS", "REWRITE", "SPLIT", "OVERVIEW"):
+            errors.append(f"标题审查状态无效 {record['path']}")
+    renames_path = root / "skills/kb-structure-audit/rename-map.json"
+    renames = json.loads(renames_path.read_text(encoding="utf-8"))["renames"]
+    for rename in renames:
+        current = rename["current_path"]
+        if current not in keys:
+            errors.append(f"命名映射目标缺失 {current}")
+        else:
+            fact = next(item for item in facts if item["path"] == keys[current].relative_to(root).as_posix())
+            titles = [heading["title"] for heading in fact["headings"] if heading["level"] == 1]
+            if titles != [rename["current_title"]] or keys[current].stem != rename["current_title"]:
+                errors.append(f"已采用命名的H1与文件名不一致 {current}")
+        if rename["previous_path"] in keys:
+            errors.append(f"命名映射原路径仍为重复文章 {rename['previous_path']}")
     return {"formal_articles": len(formal), "support_pages": len(pages)-len(formal),
             "registered_images": len(registered), "errors": errors,
+            "quality_matrix_pages": len(matrix), "rename_targets": len(renames),
             "writing_candidates": sum(len(r["writing_candidates"]) for r in facts),
             "scope": "静态不变量；写作质量和技术断言需原文复读及证据核验"}
 
