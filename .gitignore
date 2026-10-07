@@ -2,7 +2,6 @@
 /课程记录/
 /docs/
 /scripts/
-/AGENTS.md
 /CHANGELOG.md
 
 # Obsidian and IDE state
@@ -31,3 +30,8 @@ secrets/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Generated verification output
+**/__pycache__/
+**/*.pyc
+/知识库/examples/**/build/

@@ -1,0 +1,2737 @@
+[
+  {
+    "path": "知识库/00_知识库说明/学习与维护方法.md",
+    "primary_question": "作者如何组织、验证和维护文章",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "首轮自检通过；待用户评审",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "首轮自检通过",
+      "Structure": "首轮自检通过",
+      "Depth": "首轮内容复读；待用户评审",
+      "Implementation": "分层验证，详见文章",
+      "Evidence": "关键来源核对；工程状态分列",
+      "Writing Style": "首轮自检通过",
+      "Visuals": "按用途验证或不适用"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/00_知识库说明/技术中文写作规范.md",
+    "primary_question": "技术中文写作规范",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "DEEPEN",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "writing_priority": "P0",
+    "writing_review": "首轮自检通过；待用户评审",
+    "quality_matrix": {
+      "Scope": "首轮自检通过",
+      "Structure": "首轮自检通过",
+      "Depth": "首轮内容复读；待用户评审",
+      "Implementation": "分层验证，详见文章",
+      "Evidence": "关键来源核对；工程状态分列",
+      "Writing Style": "首轮自检通过",
+      "Visuals": "按用途验证或不适用"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/00_知识库说明/术语表.md",
+    "primary_question": "读者如何统一技术叫法",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/00_知识库说明/知识地图.md",
+    "primary_question": "读者如何按问题找到学习路线",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/00_知识库说明/知识库实施规范.md",
+    "primary_question": "知识库实施规范",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "DEEPEN",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "writing_priority": "P0",
+    "writing_review": "首轮自检通过；待用户评审",
+    "quality_matrix": {
+      "Scope": "首轮自检通过",
+      "Structure": "首轮自检通过",
+      "Depth": "首轮内容复读；待用户评审",
+      "Implementation": "分层验证，详见文章",
+      "Evidence": "关键来源核对；工程状态分列",
+      "Writing Style": "首轮自检通过",
+      "Visuals": "按用途验证或不适用"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/01_数学与采样/信号、频率与噪声.md",
+    "primary_question": "如何理解采样混叠以及生成程序噪声",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/01_数学与采样/向量、矩阵与空间变换.md",
+    "primary_question": "如何保持空间变换与法线变换正确",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/01_数学与采样/旋转、四元数与插值.md",
+    "primary_question": "如何表示旋转并保持旋转插值连续",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
+    "primary_question": "如何估计光照积分以及表示低频球面信号",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/02_GPU与光栅化管线/GPU执行、缓存带宽与平台架构.md",
+    "primary_question": "如何把GPU执行和访存行为对应到性能瓶颈",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+    "primary_question": "如何沿CPU到显示链路理解一帧",
+    "boundary_action": "OVERVIEW",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/02_GPU与光栅化管线/光栅化、插值与深度模板.md",
+    "primary_question": "如何定位光栅覆盖、深度与模板问题",
+    "boundary_action": "OVERVIEW",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/02_GPU与光栅化管线/光栅覆盖、重心坐标与属性插值.md",
+    "primary_question": "如何把三角形覆盖转为正确片元属性",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md",
+    "primary_question": "如何选择图元生成、规则细分和几何结果捕获",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/02_GPU与光栅化管线/剔除、透明与混合.md",
+    "primary_question": "如何查找可见性与透明合成方案",
+    "boundary_action": "OVERVIEW",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/02_GPU与光栅化管线/抗锯齿、TAA与时域超采样.md",
+    "primary_question": "如何从空间和时间样本重建稳定图像",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/02_GPU与光栅化管线/提前深度测试、深度预通道与分层深度.md",
+    "primary_question": "如何利用深度减少后续着色工作",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/02_GPU与光栅化管线/模板缓冲、位分配与对象遮罩.md",
+    "primary_question": "如何用模板状态表达对象遮罩并避免位冲突",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/02_GPU与光栅化管线/深度缓冲、反向深度与位置重建.md",
+    "primary_question": "如何正确解释并消费深度值",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/02_GPU与光栅化管线/背面、视锥与遮挡剔除.md",
+    "primary_question": "如何用保守可见性测试减少绘制",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/02_GPU与光栅化管线/透明排序、深度剥离与顺序无关透明.md",
+    "primary_question": "如何在不透明遮挡之后正确合成透明表面",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
+    "primary_question": "如何组织Compute执行以及实现多类并行算法",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/03_Shader编程/Shader编译、关键字与变体.md",
+    "primary_question": "如何控制Shader编译组合并验证构建覆盖",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/03_Shader编程/Shader语言与数据流.md",
+    "primary_question": "如何使Shader阶段接口与资源布局一致",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/04_光照模型与PBR/PBR材质与能量守恒.md",
+    "primary_question": "如何用PBR参数保持材质响应和能量约束",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/04_光照模型与PBR/次表面散射与皮肤渲染.md",
+    "primary_question": "如何以实时预算近似皮肤次表面散射",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
+    "primary_question": "如何解码局部法线以及预滤环境光",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/04_光照模型与PBR/经典光照、BRDF与微表面模型.md",
+    "primary_question": "如何从反射约束得到直接光照BRDF",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/05_光照阴影与GI/光源与直接光照.md",
+    "primary_question": "如何评估不同光源在表面的直接贡献",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
+    "primary_question": "如何按场景与更新需求选择间接光照表示",
+    "boundary_action": "OVERVIEW",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/05_光照阴影与GI/阴影贴图、PCF与PCSS.md",
+    "primary_question": "如何生成、过滤和调试光源可见性",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
+    "primary_question": "如何安排纹理坐标以及按需驻留纹理",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/06_纹理技术/纹理压缩、格式选择与平台预算.md",
+    "primary_question": "如何根据通道误差和平台支持选择压缩格式",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/06_纹理技术/纹理采样、过滤、Mipmap与压缩.md",
+    "primary_question": "如何从采样足迹选择Mip和过滤",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/06_纹理技术/高度、法线与视差映射.md",
+    "primary_question": "如何用高度场偏移采样以近似表面视差",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
+    "primary_question": "如何在屏幕缓冲上组合不同后处理效果",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
+    "primary_question": "如何正确编码颜色、混合Alpha并控制曝光",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
+    "primary_question": "如何控制远近几何成本并生成地形资产",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/08_几何与网格/曲面细分与位移.md",
+    "primary_question": "如何用Patch细分与位移产生连续几何细节",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/08_几何与网格/网格数据、缓存与几何处理.md",
+    "primary_question": "如何把资产拓扑组织成高效GPU网格",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/09_动画系统/动画压缩、轨道量化与运行时解码.md",
+    "primary_question": "如何压缩动画轨道并控制末端误差",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/09_动画系统/动画压缩、面部、布料与毛发.md",
+    "primary_question": "如何定位角色动画资源与二级运动专题",
+    "boundary_action": "OVERVIEW",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/09_动画系统/动画状态、混合与IK.md",
+    "primary_question": "如何生成连续姿态并满足运行时约束",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/09_动画系统/布料与毛发的表示、碰撞和LOD.md",
+    "primary_question": "如何把布料或毛发模拟代理映射到渲染资产",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/09_动画系统/面部变形、口型与表情控制.md",
+    "primary_question": "如何组合面部形状目标得到可用表情",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/09_动画系统/骨骼动画、蒙皮与GPU动画.md",
+    "primary_question": "如何从局部姿态得到蒙皮顶点",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/10_VFX与模拟/体积雾、视锥网格与时域积分.md",
+    "primary_question": "如何将视锥散射数据积分并时域稳定",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/10_VFX与模拟/大气散射、天空与体积云.md",
+    "primary_question": "如何近似天空大气和云层的辐射传输",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
+    "primary_question": "如何选用VFX材质机制并控制覆盖成本",
+    "boundary_action": "OVERVIEW",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/10_VFX与模拟/水体与海洋渲染.md",
+    "primary_question": "如何在预算内组合网格、波形和水面着色",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/10_VFX与模拟/粒子系统与GPU模拟.md",
+    "primary_question": "如何维护GPU粒子生命周期与渲染数据",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/11_NPR与风格化渲染/Billboard朝向、锚点与深度.md",
+    "primary_question": "Billboard朝向、锚点与深度",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "DEEPEN",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "writing_priority": "P0",
+    "writing_review": "首轮自检通过；待用户评审",
+    "quality_matrix": {
+      "Scope": "首轮自检通过",
+      "Structure": "首轮自检通过",
+      "Depth": "首轮内容复读；待用户评审",
+      "Implementation": "分层验证，详见文章",
+      "Evidence": "关键来源核对；工程状态分列",
+      "Writing Style": "首轮自检通过",
+      "Visuals": "按用途验证或不适用"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
+    "primary_question": "NPR与场景风格导读",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "DEEPEN",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "writing_priority": "P0",
+    "writing_review": "首轮自检通过；待用户评审",
+    "quality_matrix": {
+      "Scope": "首轮自检通过",
+      "Structure": "首轮自检通过",
+      "Depth": "首轮内容复读；待用户评审",
+      "Implementation": "分层验证，详见文章",
+      "Evidence": "关键来源核对；工程状态分列",
+      "Writing Style": "首轮自检通过",
+      "Visuals": "按用途验证或不适用"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/11_NPR与风格化渲染/NPR材质与分层光照.md",
+    "primary_question": "如何把连续光照转为可控的风格化材质层",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/11_NPR与风格化渲染/描边.md",
+    "primary_question": "描边",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "DEEPEN",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "writing_priority": "P0",
+    "writing_review": "首轮自检通过；待用户评审",
+    "quality_matrix": {
+      "Scope": "首轮自检通过",
+      "Structure": "首轮自检通过",
+      "Depth": "首轮内容复读；待用户评审",
+      "Implementation": "分层验证，详见文章",
+      "Evidence": "关键来源核对；工程状态分列",
+      "Writing Style": "首轮自检通过",
+      "Visuals": "按用途验证或不适用"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/11_NPR与风格化渲染/描边、Billboard与场景风格化.md",
+    "primary_question": "如何绘制描边、构造Billboard并保持场景风格",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "首轮自检通过；待用户评审",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "首轮自检通过",
+      "Structure": "首轮自检通过",
+      "Depth": "首轮内容复读；待用户评审",
+      "Implementation": "分层验证，详见文章",
+      "Evidence": "关键来源核对；工程状态分列",
+      "Writing Style": "首轮自检通过",
+      "Visuals": "按用途验证或不适用"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/11_NPR与风格化渲染/植被风动与顶点变形.md",
+    "primary_question": "植被风动与顶点变形",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "DEEPEN",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "writing_priority": "P0",
+    "writing_review": "首轮自检通过；待用户评审",
+    "quality_matrix": {
+      "Scope": "首轮自检通过",
+      "Structure": "首轮自检通过",
+      "Depth": "首轮内容复读；待用户评审",
+      "Implementation": "分层验证，详见文章",
+      "Evidence": "关键来源核对；工程状态分列",
+      "Writing Style": "首轮自检通过",
+      "Visuals": "按用途验证或不适用"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
+    "primary_question": "如何控制卡通面部明暗、发丝高光和角色阴影",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/12_光追与现代渲染/GPU-Driven管线与Nanite.md",
+    "primary_question": "如何在GPU生成可见对象与间接绘制参数",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/12_光追与现代渲染/Nanite虚拟化几何、层级选择与流送.md",
+    "primary_question": "如何按屏幕误差选择并流送Nanite几何",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/12_光追与现代渲染/光线、求交与加速结构.md",
+    "primary_question": "如何用层级结构减少光线求交工作",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/12_光追与现代渲染/实时光追、采样与降噪.md",
+    "primary_question": "如何分配光追样本并重建低噪结果",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/Draw Call、Batching与GPU Instancing.md",
+    "primary_question": "如何选择和验证减少CPU绘制提交的路径",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/Forward、Deferred与Clustered渲染.md",
+    "primary_question": "如何选择材质光照路径与光源筛选方式",
+    "boundary_action": "OVERVIEW",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/GBuffer布局设计与通道压缩.md",
+    "primary_question": "如何在字节预算内编码可见表面属性",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph.md",
+    "primary_question": "如何区分通道、命令和依赖图并选择深入入口",
+    "boundary_action": "OVERVIEW",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/UI、字体与文本渲染.md",
+    "primary_question": "如何将UI布局和文字语义转为绘制命令",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/Unity Render Graph与自定义通道.md",
+    "primary_question": "如何在Unity 6 URP记录并消费自定义通道",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/Unity SRP、URP与HDRP帧组织.md",
+    "primary_question": "如何定位Unity渲染管线的帧与扩展边界",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/Unity与Unreal渲染扩展入口.md",
+    "primary_question": "如何按资源和注入需求选择引擎扩展入口",
+    "boundary_action": "OVERVIEW",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/Unreal RDG资源声明与通道实现.md",
+    "primary_question": "如何用RDG参数表达资源依赖并执行通道",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/Unreal Renderer、RDG与RHI帧组织.md",
+    "primary_question": "如何沿场景线程数据定位Unreal渲染功能",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/Unreal网格绘制与自定义Pass.md",
+    "primary_question": "如何把自定义网格效果接入Unreal绘制流程",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/临时资源、上传回读与GPU内存生命周期.md",
+    "primary_question": "如何按GPU完成值分配和回收资源内存",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/分块与簇光照剔除.md",
+    "primary_question": "如何保守建立每个区域的灯光列表",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/前向渲染、Forward加与材质光照流程.md",
+    "primary_question": "如何在材质着色时消费全局或局部灯光",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/命令记录、队列提交与在途帧.md",
+    "primary_question": "如何在提交与完成之间安全复用帧资源",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/延迟渲染、光体积与GBuffer消费.md",
+    "primary_question": "如何在延迟光照阶段消费表面与灯光数据",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/引擎分层、世界与对象模型.md",
+    "primary_question": "如何定义引擎世界的依赖、所有权与更新阶段",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/数据导向设计与任务系统.md",
+    "primary_question": "如何安排热点数据以及调度依赖任务",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/渲染图、依赖编译与资源调度.md",
+    "primary_question": "如何把资源声明编译为合法执行与分配计划",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/渲染通道、附件与加载存储语义.md",
+    "primary_question": "如何表达附件开始和结束时的内容需求",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/游戏音频系统.md",
+    "primary_question": "如何在实时回调预算内混音并管理声音",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/管线状态、PSO组合与创建生命周期.md",
+    "primary_question": "如何组成和缓存合法的管线状态对象",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/资源打包、依赖与异步加载.md",
+    "primary_question": "如何沿依赖加载资产并保持版本与所有权",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/资源状态、屏障与跨队列同步.md",
+    "primary_question": "如何令GPU资源访问顺序和可见性正确",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/13_引擎架构与资源系统/资源绑定、描述符与材质数据组织.md",
+    "primary_question": "如何使材质资源寻址和描述符寿命正确",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/14_性能分析与优化/Profiler、RenderDoc与单帧分析.md",
+    "primary_question": "如何用工具定位一帧的状态与成本来源",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/14_性能分析与优化/PSO缓存与运行时卡顿.md",
+    "primary_question": "如何减少运行时首次使用PSO的卡顿",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P0",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/14_性能分析与优化/帧时间、瓶颈与GPU成本.md",
+    "primary_question": "如何识别CPU/GPU关键路径及成本维度",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/14_性能分析与优化/性能调查、对照实验与帧捕获证据.md",
+    "primary_question": "如何设计可复查的性能实验",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/14_性能分析与优化/渲染优化验证与移动端实践.md",
+    "primary_question": "如何按移动设备约束验证渲染优化",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/15_资产与工具管线/DCC、数据格式与资产交换.md",
+    "primary_question": "如何跨DCC和引擎保持资产语义",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/15_资产与工具管线/版本控制、CI与大型资产协作.md",
+    "primary_question": "如何协作修改二进制资产并增量验证构建",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/15_资产与工具管线/编辑器工具与批处理架构.md",
+    "primary_question": "如何让编辑器操作可预览、撤销和批量恢复",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/15_资产与工具管线/资产导入、验证与发布.md",
+    "primary_question": "如何将制作输入变成可验证发布资产",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
+    "primary_question": "如何理解三种语言的运行和工程边界",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
+    "primary_question": "如何管理CPU内存、引擎对象和池复用",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
+    "primary_question": "如何理解进程内存以及实现并发同步",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
+    "primary_question": "如何按操作和查询需求选择算法结构",
+    "boundary_action": "OVERVIEW",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/17_AIGC与Agent管线/Agent驱动资产管线与质量门禁.md",
+    "primary_question": "如何令Agent工具任务可追踪、幂等和验收",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P3",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
+    "primary_question": "如何版本化生产工作流以及稳定多帧生成",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P3",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
+    "primary_question": "如何理解扩散采样、结构条件与LoRA训练",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P3",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/18_游戏物理与模拟/刚体、碰撞与约束求解.md",
+    "primary_question": "如何从状态积分和碰撞生成受约束运动",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
+    "primary_question": "如何为不同玩法对象构造物理代理与约束",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/19_Gameplay与游戏框架/玩法系统、事件与脚本.md",
+    "primary_question": "如何解耦玩法规则与事件脚本执行",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/19_Gameplay与游戏框架/输入、动作状态与框架分层.md",
+    "primary_question": "如何从输入请求推进角色动作并驱动表现",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/20_游戏AI/导航、寻路与移动控制.md",
+    "primary_question": "如何从可行走空间得到可执行路径与移动",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/20_游戏AI/群体、学习与高级决策.md",
+    "primary_question": "如何处理群体信息、搜索决策和学习策略",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/20_游戏AI/行为树、效用与规划.md",
+    "primary_question": "如何按决策问题选择行为组织模型",
+    "boundary_action": "KEEP",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE",
+      "DEEPEN"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/21_游戏网络/服务器架构、分区与反作弊.md",
+    "primary_question": "如何分配会话与世界权威并核验客户端行为",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/21_游戏网络/状态同步、预测与回滚.md",
+    "primary_question": "如何同步远端世界并补偿输入与传输延迟",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P1",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  },
+  {
+    "path": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
+    "primary_question": "如何选择传输、估计共同时间并实现远程调用",
+    "boundary_action": "SPLIT",
+    "content_actions": [
+      "REWRITE",
+      "FACT-CHECK",
+      "RESTRUCTURE"
+    ],
+    "technical_priority": "P2",
+    "writing_priority": "P0",
+    "writing_review": "待复读",
+    "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
+    "quality_matrix": {
+      "Scope": "待复读",
+      "Structure": "待复读",
+      "Depth": "待复读",
+      "Implementation": "待复读",
+      "Evidence": "待复读",
+      "Writing Style": "待复读",
+      "Visuals": "待复读"
+    },
+    "batch_migration_authorized": false
+  }
+]
