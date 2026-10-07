@@ -29,7 +29,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
@@ -54,7 +54,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md",
@@ -79,7 +79,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
@@ -123,7 +123,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
@@ -162,7 +162,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
@@ -205,7 +205,7 @@
         "intro": "间接光可以保存在表面纹理、空间探针或持续更新的场景缓存中。选择先看哪些对象和灯会变化，再看目标设备能承担多少更新成本。",
         "extra": "静态环境从Lightmap开始，动态角色接Light Probe，间接镜面使用Reflection Probe与IBL；场景本身持续变化时进入动态GI。前置是线性光照与采样模型，比较时固定曝光，分别观察间接漫反射和镜面。"
       },
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
@@ -236,7 +236,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
@@ -280,7 +280,7 @@
         "intro": "后处理读取某个阶段的颜色、深度或运动数据。先确认这些数据是否经过曝光、时域处理和显示编码，再选择效果的位置。",
         "extra": "先理解颜色空间与HDR曝光。光晕通常在HDR阶段生成，AO与光照项关联，景深和运动模糊利用深度及速度，最后进入Tone Mapping与显示输出。具体引擎顺序由资源消费者和帧捕获核对。"
       },
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
@@ -310,7 +310,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
@@ -364,7 +364,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/09_动画系统/动画状态、混合与IK.md",
@@ -402,7 +402,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/09_动画系统/布料与毛发的表示、碰撞和LOD.md",
@@ -426,7 +426,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/10_VFX与模拟/大气散射、天空与体积云.md",
@@ -450,7 +450,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
@@ -488,7 +488,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
@@ -521,7 +521,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/25_UI与文本/UI、字体与文本渲染.md",
@@ -546,7 +546,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/23_引擎运行系统/数据导向设计与任务系统.md",
@@ -573,7 +573,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/15_资产与工具管线/版本控制、CI与大型资产协作.md",
@@ -613,7 +613,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
@@ -651,7 +651,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
@@ -708,7 +708,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
@@ -754,7 +754,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
@@ -779,7 +779,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
@@ -818,7 +818,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
@@ -863,7 +863,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/20_游戏AI/群体、学习与高级决策.md",
@@ -898,7 +898,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/21_游戏网络/服务器架构、分区与反作弊.md",
@@ -933,7 +933,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/21_游戏网络/状态同步、预测与回滚.md",
@@ -971,7 +971,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
@@ -1004,7 +1004,7 @@
         }
       ],
       "overview": null,
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
@@ -1054,7 +1054,7 @@
         "intro": "一个特效可以同时需要时间动画、覆盖变化和场景交界。先看缺少的是哪份信号，再组合对应材质与模拟，性能按同屏负载单独验证。",
         "extra": "基础是纹理采样、Alpha表示和粒子数据。纹理动画改变UV，溶解改变覆盖，屏幕扰动改变背景采样，软粒子使用深度差，GPU粒子负责状态与运动。各模块组合时共享时间、空间和资源约定；VFX性能记录实际组合负载。"
       },
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
@@ -1101,7 +1101,7 @@
         "intro": "算法先决定状态怎样推进，数据结构决定这些状态怎样保存与查询。工程中先写工作负载，再在求解、容器、图和空间索引四条路线里选择。",
         "extra": "离线求解和规则转换从算法设计进入；查找、更新和有序访问进入容器选择；依赖、可达与最短路进入图搜索；位置、范围和近邻进入空间索引。数学正确性、内存布局和规模曲线共同验收。"
       },
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
@@ -1131,7 +1131,7 @@
         ],
         "extra": "先掌握空间变换与GPU执行，再沿记录、覆盖、附件和呈现阅读。等待Present可能来自限帧、显示同步或GPU积压，诊断从实际时间线找原因。"
       },
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/02_GPU与光栅化管线/光栅化、插值与深度模板.md",
@@ -1161,7 +1161,7 @@
         ],
         "extra": ""
       },
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/02_GPU与光栅化管线/剔除、透明与混合.md",
@@ -1183,7 +1183,7 @@
         ],
         "extra": ""
       },
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/09_动画系统/动画压缩、面部、布料与毛发.md",
@@ -1221,7 +1221,7 @@
         ],
         "extra": ""
       },
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/13_渲染架构/渲染路径与光源组织.md",
@@ -1247,7 +1247,7 @@
         ],
         "extra": ""
       },
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/13_渲染架构/Render Pass、Command Buffer与Render Graph.md",
@@ -1281,7 +1281,7 @@
         ],
         "extra": ""
       },
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
@@ -1315,7 +1315,7 @@
         ],
         "extra": ""
       },
-      "status": "READY"
+      "status": "COMPLETE"
     },
     {
       "source": "知识库/11_NPR与风格化渲染/描边、Billboard与场景风格化.md",
@@ -1333,7 +1333,7 @@
         ],
         "extra": ""
       },
-      "status": "READY"
+      "status": "COMPLETE"
     }
   ],
   "extra_canonical_articles": [

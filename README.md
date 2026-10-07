@@ -4,7 +4,7 @@
 
 内容覆盖图形学、游戏引擎、编程、算法、物理、Gameplay、游戏 AI、网络、工具管线和 AIGC。相关概念按自然主题聚合，重点解释问题来源、执行机制、工程代价与验证方法。
 
-正式知识位于 `知识库/00-26`，共 108 篇主题文章。
+正式知识位于 `知识库/00-26`，共 179 篇主题文章。
 
 ## 入口
 
@@ -41,4 +41,4 @@ Git 仓库发布 README、`知识库/`、`skills/` 与 `AGENTS.md`。本机课�
 
 项目技能位于 `skills/`，负责粒度、写作、事实和技术图代码。描边是已认可的文风示范，提供机制、最小样例与分层验证状态。标题审查按实施规范选择读者习惯的主概念。
 
-批量实施覆盖113页，正文按六个15–25页子批次复读与修订。方案B目录、冻结命名、双链和登记同步；38项边界相关标题保留延后状态。全文结果见 [批量迁移验收报告](skills/kb-structure-audit/references/batch-acceptance-report.md)，逐页证据见 [质量矩阵](skills/kb-structure-audit/article-quality-matrix.json)。
+最终迁移覆盖原始113页，当前184页包含179篇主题与导读以及5篇说明。全部边界与标题已确定，执行和实际验证见 [最终报告](skills/kb-structure-audit/references/batch-final-report.md)。

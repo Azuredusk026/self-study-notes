@@ -59,7 +59,7 @@ D3D12、Vulkan 和 Metal 都允许显式表达资源与提交，但绑定、同�
 
 ## 相关主题
 
-- [[03_Shader编程/Compute Shader与GPU执行模型]]
+- [[03_Shader编程/Compute Shader]]、[[03_Shader编程/GPU归约与前缀和]]、[[03_Shader编程/GPU异步回读]]
 - [[14_性能分析与优化/帧瓶颈怎么判断]]
 - [[13_渲染架构/Render Pass与附件]]
 

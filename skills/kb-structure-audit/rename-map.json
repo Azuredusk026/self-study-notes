@@ -63,7 +63,10 @@
       "previous_title": "Forward、Deferred 与 Clustered 渲染",
       "current_title": "渲染路径与光源组织",
       "reason": "已是导读；求值时机和灯光筛选两个维度关系清楚，使用关系名",
-      "date": "2026-10-07"
+      "date": "2026-10-07",
+      "split_targets": [
+        "13_渲染架构/渲染路径与光源组织"
+      ]
     },
     {
       "previous_path": "06_纹理技术/纹理采样、过滤、Mipmap与压缩",
@@ -323,11 +326,16 @@
     },
     {
       "previous_path": "12_光追与现代渲染/实时光追、采样与降噪",
-      "current_path": "12_光线追踪/实时光追、采样与降噪",
+      "current_path": "12_光线追踪/实时光追采样",
       "previous_title": "实时光追、采样与降噪",
-      "current_title": "实时光追、采样与降噪",
+      "current_title": "实时光追采样",
       "reason": "边界或导读任务保留原标题，不在标题阶段拆分",
-      "date": "2026-10-07"
+      "date": "2026-10-07",
+      "split_targets": [
+        "12_光线追踪/实时光追采样",
+        "12_光线追踪/光追降噪",
+        "12_光线追踪/ReSTIR"
+      ]
     },
     {
       "previous_path": "13_引擎架构与资源系统/Draw Call、Batching与GPU Instancing",
@@ -343,7 +351,10 @@
       "previous_title": "渲染路径与光源组织",
       "current_title": "渲染路径与光源组织",
       "reason": "边界或导读任务保留原标题，不在标题阶段拆分",
-      "date": "2026-10-07"
+      "date": "2026-10-07",
+      "split_targets": [
+        "13_渲染架构/渲染路径与光源组织"
+      ]
     },
     {
       "previous_path": "13_引擎架构与资源系统/GBuffer布局",
@@ -355,19 +366,26 @@
     },
     {
       "previous_path": "13_引擎架构与资源系统/Render Pass、Command Buffer与Render Graph",
-      "current_path": "13_渲染架构/Render Pass、Command Buffer与Render Graph",
+      "current_path": "13_渲染架构/渲染命令的组织方式",
       "previous_title": "Render Pass、Command Buffer与Render Graph",
-      "current_title": "Render Pass、Command Buffer与Render Graph",
+      "current_title": "渲染命令的组织方式",
       "reason": "边界或导读任务保留原标题，不在标题阶段拆分",
-      "date": "2026-10-07"
+      "date": "2026-10-07",
+      "split_targets": [
+        "13_渲染架构/渲染命令的组织方式"
+      ]
     },
     {
       "previous_path": "13_引擎架构与资源系统/UI、字体与文本渲染",
-      "current_path": "25_UI与文本/UI、字体与文本渲染",
+      "current_path": "25_UI与文本/UI绘制",
       "previous_title": "UI、字体与文本渲染",
-      "current_title": "UI、字体与文本渲染",
+      "current_title": "UI绘制",
       "reason": "边界或导读任务保留原标题，不在标题阶段拆分",
-      "date": "2026-10-07"
+      "date": "2026-10-07",
+      "split_targets": [
+        "25_UI与文本/UI绘制",
+        "25_UI与文本/文字渲染"
+      ]
     },
     {
       "previous_path": "13_引擎架构与资源系统/URP Render Graph自定义Pass",
@@ -387,11 +405,14 @@
     },
     {
       "previous_path": "13_引擎架构与资源系统/Unity与Unreal渲染扩展入口",
-      "current_path": "22_渲染引擎实现/Unity与Unreal渲染扩展入口",
+      "current_path": "22_渲染引擎实现/引擎渲染扩展导读",
       "previous_title": "Unity与Unreal渲染扩展入口",
-      "current_title": "Unity与Unreal渲染扩展入口",
+      "current_title": "引擎渲染扩展导读",
       "reason": "边界或导读任务保留原标题，不在标题阶段拆分",
-      "date": "2026-10-07"
+      "date": "2026-10-07",
+      "split_targets": [
+        "22_渲染引擎实现/引擎渲染扩展导读"
+      ]
     },
     {
       "previous_path": "13_引擎架构与资源系统/Unreal RDG资源声明与通道实现",
@@ -467,11 +488,15 @@
     },
     {
       "previous_path": "13_引擎架构与资源系统/数据导向设计与任务系统",
-      "current_path": "23_引擎运行系统/数据导向设计与任务系统",
+      "current_path": "23_引擎运行系统/ECS与数据布局",
       "previous_title": "数据导向设计与任务系统",
-      "current_title": "数据导向设计与任务系统",
+      "current_title": "ECS与数据布局",
       "reason": "边界或导读任务保留原标题，不在标题阶段拆分",
-      "date": "2026-10-07"
+      "date": "2026-10-07",
+      "split_targets": [
+        "23_引擎运行系统/ECS与数据布局",
+        "23_引擎运行系统/任务系统"
+      ]
     },
     {
       "previous_path": "13_引擎架构与资源系统/Render Graph",
@@ -632,6 +657,383 @@
       "current_title": "游戏AI决策模型",
       "reason": "反应、效用和规划为行为选择方法比较",
       "date": "2026-10-07"
+    },
+    {
+      "previous_path": "01_数学与采样/信号、频率与噪声",
+      "current_path": "01_数学与采样/采样与混叠",
+      "current_title": "采样与混叠",
+      "split_targets": [
+        "01_数学与采样/采样与混叠",
+        "01_数学与采样/程序噪声"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "01_数学与采样/概率采样、积分与球谐函数",
+      "current_path": "01_数学与采样/Monte Carlo采样",
+      "current_title": "Monte Carlo采样",
+      "split_targets": [
+        "01_数学与采样/Monte Carlo采样",
+        "01_数学与采样/球谐光照"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "02_GPU与光栅化管线/几何着色器、曲面细分与流输出",
+      "current_path": "02_GPU与光栅化管线/Geometry Shader",
+      "current_title": "Geometry Shader",
+      "split_targets": [
+        "02_GPU与光栅化管线/Geometry Shader",
+        "02_GPU与光栅化管线/Stream Output"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "03_Shader编程/Compute Shader与GPU执行模型",
+      "current_path": "03_Shader编程/Compute Shader",
+      "current_title": "Compute Shader",
+      "split_targets": [
+        "03_Shader编程/Compute Shader",
+        "03_Shader编程/GPU归约与前缀和",
+        "03_Shader编程/GPU异步回读"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "04_光照模型与PBR/法线贴图、切线空间与IBL",
+      "current_path": "04_光照模型与PBR/法线贴图",
+      "current_title": "法线贴图",
+      "split_targets": [
+        "04_光照模型与PBR/法线贴图",
+        "04_光照模型与PBR/IBL",
+        "04_光照模型与PBR/Cubemap环境采样"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "05_光照阴影与GI/烘焙光照、Probe与实时GI",
+      "current_path": "05_光照阴影与GI/GI方案选择",
+      "current_title": "GI方案选择",
+      "split_targets": [
+        "05_光照阴影与GI/GI方案选择"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "06_纹理技术/UV、图集、流送与虚拟纹理",
+      "current_path": "06_纹理技术/纹理图集",
+      "current_title": "纹理图集",
+      "split_targets": [
+        "06_纹理技术/纹理图集",
+        "06_纹理技术/Texture Streaming",
+        "06_纹理技术/Virtual Texture"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "07_颜色与后处理/Tone Mapping、Bloom与屏幕效果",
+      "current_path": "07_颜色与后处理/后处理链",
+      "current_title": "后处理链",
+      "split_targets": [
+        "07_颜色与后处理/后处理链"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "07_颜色与后处理/颜色空间、Alpha、HDR与曝光",
+      "current_path": "07_颜色与后处理/颜色空间",
+      "current_title": "颜色空间",
+      "split_targets": [
+        "07_颜色与后处理/颜色空间",
+        "07_颜色与后处理/Alpha表示",
+        "07_颜色与后处理/HDR与曝光"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "08_几何与网格/LOD、地形与程序化资产",
+      "current_path": "08_几何与网格/LOD选择",
+      "current_title": "LOD选择",
+      "split_targets": [
+        "08_几何与网格/LOD选择",
+        "08_几何与网格/Heightfield地形",
+        "15_资产与工具管线/程序化资产生成",
+        "08_几何与网格/植被包裹法线",
+        "15_资产与工具管线/WFC"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "09_动画系统/动画状态、混合与IK",
+      "current_path": "09_动画系统/动画姿态混合",
+      "current_title": "动画姿态混合",
+      "split_targets": [
+        "09_动画系统/动画姿态混合",
+        "09_动画系统/IK",
+        "09_动画系统/动画重定向"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "09_动画系统/布料与毛发的表示、碰撞和LOD",
+      "current_path": "09_动画系统/角色布料",
+      "current_title": "角色布料",
+      "split_targets": [
+        "09_动画系统/角色布料",
+        "09_动画系统/毛发表示与模拟"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "10_VFX与模拟/大气散射、天空与体积云",
+      "current_path": "10_VFX与模拟/大气散射",
+      "current_title": "大气散射",
+      "split_targets": [
+        "10_VFX与模拟/大气散射",
+        "10_VFX与模拟/体积云"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "11_NPR与风格化渲染/角色面部、头发与阴影",
+      "current_path": "11_NPR与风格化渲染/Face SDF",
+      "current_title": "Face SDF",
+      "split_targets": [
+        "11_NPR与风格化渲染/Face SDF",
+        "11_NPR与风格化渲染/角色阴影",
+        "11_NPR与风格化渲染/风格化头发高光",
+        "11_NPR与风格化渲染/风格化眼睛"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "12_光线追踪/实时光追、采样与降噪",
+      "current_path": "12_光线追踪/实时光追采样",
+      "current_title": "实时光追采样",
+      "split_targets": [
+        "12_光线追踪/实时光追采样",
+        "12_光线追踪/光追降噪",
+        "12_光线追踪/ReSTIR"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "25_UI与文本/UI、字体与文本渲染",
+      "current_path": "25_UI与文本/UI绘制",
+      "current_title": "UI绘制",
+      "split_targets": [
+        "25_UI与文本/UI绘制",
+        "25_UI与文本/文字渲染"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "23_引擎运行系统/数据导向设计与任务系统",
+      "current_path": "23_引擎运行系统/ECS与数据布局",
+      "current_title": "ECS与数据布局",
+      "split_targets": [
+        "23_引擎运行系统/ECS与数据布局",
+        "23_引擎运行系统/任务系统"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "15_资产与工具管线/版本控制、CI与大型资产协作",
+      "current_path": "15_资产与工具管线/大型资产版本控制",
+      "current_title": "大型资产版本控制",
+      "split_targets": [
+        "15_资产与工具管线/大型资产版本控制",
+        "15_资产与工具管线/资产构建CI"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "16_编程与数据结构/C++、CSharp与Python工程基础",
+      "current_path": "16_编程与数据结构/C++工程边界",
+      "current_title": "C++工程边界",
+      "split_targets": [
+        "16_编程与数据结构/C++工程边界",
+        "16_编程与数据结构/CSharp运行模型",
+        "16_编程与数据结构/Python宿主集成",
+        "16_编程与数据结构/跨语言接口"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "16_编程与数据结构/内存、对象生命周期与对象池",
+      "current_path": "16_编程与数据结构/内存布局与分配",
+      "current_title": "内存布局与分配",
+      "split_targets": [
+        "16_编程与数据结构/内存布局与分配",
+        "16_编程与数据结构/对象生命周期",
+        "23_引擎运行系统/Unreal对象生命周期",
+        "23_引擎运行系统/Unity对象生命周期",
+        "16_编程与数据结构/对象池"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "16_编程与数据结构/操作系统、进程与并发基础",
+      "current_path": "16_编程与数据结构/进程与调度",
+      "current_title": "进程与调度",
+      "split_targets": [
+        "16_编程与数据结构/进程与调度",
+        "16_编程与数据结构/虚拟内存",
+        "16_编程与数据结构/线程同步",
+        "16_编程与数据结构/文件IO"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "17_AIGC与Agent管线/ComfyUI工作流与时序一致性",
+      "current_path": "17_AIGC与Agent管线/ComfyUI工作流",
+      "current_title": "ComfyUI工作流",
+      "split_targets": [
+        "17_AIGC与Agent管线/ComfyUI工作流",
+        "17_AIGC与Agent管线/视频生成时序一致性"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "17_AIGC与Agent管线/扩散模型、条件控制与微调",
+      "current_path": "17_AIGC与Agent管线/扩散模型",
+      "current_title": "扩散模型",
+      "split_targets": [
+        "17_AIGC与Agent管线/扩散模型",
+        "17_AIGC与Agent管线/生成条件控制",
+        "17_AIGC与Agent管线/LoRA训练"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "18_游戏物理与模拟/角色、布料、破坏与载具物理",
+      "current_path": "18_游戏物理与模拟/Character Controller",
+      "current_title": "Character Controller",
+      "split_targets": [
+        "18_游戏物理与模拟/Character Controller",
+        "18_游戏物理与模拟/Ragdoll",
+        "18_游戏物理与模拟/XPBD",
+        "18_游戏物理与模拟/破坏系统",
+        "18_游戏物理与模拟/载具物理"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "20_游戏AI/群体、学习与高级决策",
+      "current_path": "20_游戏AI/群体战术信息",
+      "current_title": "群体战术信息",
+      "split_targets": [
+        "20_游戏AI/群体战术信息",
+        "20_游戏AI/MCTS",
+        "20_游戏AI/游戏强化学习"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "21_游戏网络/服务器架构、分区与反作弊",
+      "current_path": "21_游戏网络/对局服务器架构",
+      "current_title": "对局服务器架构",
+      "split_targets": [
+        "21_游戏网络/对局服务器架构",
+        "21_游戏网络/世界分区与AOI",
+        "21_游戏网络/服务端反作弊校验"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "21_游戏网络/状态同步、预测与回滚",
+      "current_path": "21_游戏网络/快照同步",
+      "current_title": "快照同步",
+      "split_targets": [
+        "21_游戏网络/快照同步",
+        "21_游戏网络/客户端预测",
+        "21_游戏网络/回滚同步",
+        "21_游戏网络/延迟补偿命中"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "21_游戏网络/网络协议、时钟与RPC",
+      "current_path": "21_游戏网络/游戏网络传输",
+      "current_title": "游戏网络传输",
+      "split_targets": [
+        "21_游戏网络/游戏网络传输",
+        "21_游戏网络/游戏网络时钟",
+        "21_游戏网络/RPC"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "10_VFX与模拟/常用VFX材质、模拟与性能",
+      "current_path": "10_VFX与模拟/VFX效果组合",
+      "current_title": "VFX效果组合",
+      "split_targets": [
+        "10_VFX与模拟/VFX效果组合"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "16_编程与数据结构/算法设计、树、图与空间划分",
+      "current_path": "16_编程与数据结构/算法与数据结构导读",
+      "current_title": "算法与数据结构导读",
+      "split_targets": [
+        "16_编程与数据结构/算法与数据结构导读"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "02_GPU与光栅化管线/光栅化、插值与深度模板",
+      "current_path": "02_GPU与光栅化管线/光栅化可见性导读",
+      "current_title": "光栅化可见性导读",
+      "split_targets": [
+        "02_GPU与光栅化管线/光栅化可见性导读"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "02_GPU与光栅化管线/剔除、透明与混合",
+      "current_path": "02_GPU与光栅化管线/可见性与合成导读",
+      "current_title": "可见性与合成导读",
+      "split_targets": [
+        "02_GPU与光栅化管线/可见性与合成导读"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "09_动画系统/动画压缩、面部、布料与毛发",
+      "current_path": "09_动画系统/角色动画导读",
+      "current_title": "角色动画导读",
+      "split_targets": [
+        "09_动画系统/角色动画导读"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "13_渲染架构/Render Pass、Command Buffer与Render Graph",
+      "current_path": "13_渲染架构/渲染命令的组织方式",
+      "current_title": "渲染命令的组织方式",
+      "split_targets": [
+        "13_渲染架构/渲染命令的组织方式"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "22_渲染引擎实现/Unity与Unreal渲染扩展入口",
+      "current_path": "22_渲染引擎实现/引擎渲染扩展导读",
+      "current_title": "引擎渲染扩展导读",
+      "split_targets": [
+        "22_渲染引擎实现/引擎渲染扩展导读"
+      ],
+      "reason": "最终边界与命名采用"
+    },
+    {
+      "previous_path": "11_NPR与风格化渲染/描边、Billboard与场景风格化",
+      "current_path": "11_NPR与风格化渲染/NPR与场景风格导读",
+      "current_title": "NPR与场景风格导读",
+      "split_targets": [
+        "11_NPR与风格化渲染/NPR与场景风格导读"
+      ],
+      "reason": "最终边界与命名采用"
     }
   ]
 }

@@ -132,12 +132,38 @@ URP 用 `#pragma` 声明各阶段入口，这里示例使用 Shader Target 4.6�
 - 把位移强度归零，画面应与关闭细分一致。
 - 统计输出三角形的平均屏幕面积，小于一个像素说明细分过度。
 
+
+## Phong细分曲面
+
+线性插值只能让细分点落在原三角形平面内，几何形状没有变化。Phong 细分沿插值法线把细分点向外偏移，用低模平面逼近圆润表面：
+
+```hlsl
+float3 posOS = patch[0].positionOS * bary.x
+             + patch[1].positionOS * bary.y
+             + patch[2].positionOS * bary.z;
+float3 normalOS = normalize(patch[0].normalOS * bary.x
+                          + patch[1].normalOS * bary.y
+                          + patch[2].normalOS * bary.z);
+posOS += normalOS * phongStrength;   // 强度为 0 时退化为线性插值
+```
+
+它不需要额外的控制点或曲率数据，适合给低模加圆润感。偏移量与真实曲率无关，强度过大在凹陷区域会产生外翻。
+
+
+## 参数点生成的API约定
+
+固定细分阶段输出参数域坐标和拓扑，Domain Shader再赋予几何位置。Direct3D功能规范定义其精度和生成规则，不能把这一后端规则自动推广成所有API硬件实现。
+
+三角域可按内部因子形成环，再用各边外部因子连接边界。具体拓扑和退化处理以目标API规范为准；应用只依赖域坐标、因子和一致共享边。
+
+OpenGL的equal、fractional_even与fractional_odd分别向对应整数段数约束。fractional模式有少量短段参与连续过渡，短段长度和位置由规范决定，不能把“分数段数”直接当作世界距离。
+
 ## 相关主题
 
-- [[08_几何与网格/LOD、地形与程序化资产]]
+- [[08_几何与网格/LOD选择]]、[[08_几何与网格/Heightfield地形]]、[[15_资产与工具管线/程序化资产生成]]、[[08_几何与网格/植被包裹法线]]、[[15_资产与工具管线/WFC]]
 - [[06_纹理技术/视差映射]]
-- [[02_GPU与光栅化管线/光栅化、插值与深度模板]]
-- [[02_GPU与光栅化管线/几何着色器、曲面细分与流输出]]
+- [[02_GPU与光栅化管线/光栅化可见性导读]]
+- [[02_GPU与光栅化管线/Geometry Shader]]、[[02_GPU与光栅化管线/Stream Output]]
 - [[26_GPU驱动与虚拟几何/GPU-Driven Rendering]]
 - [[10_VFX与模拟/水面与海洋渲染]]
 

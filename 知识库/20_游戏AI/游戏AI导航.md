@@ -26,36 +26,9 @@ $g(n)$ 是起点到当前节点的实际成本，$h(n)$ 是剩余成本估计。
 
 Open Set 可用最小堆保存候选节点。使用重复入堆的实现时，每条记录同时保存入堆时的路径成本；弹出后与最新成本比较，跳过过期记录。调试视图显示已访问节点、父节点和路径成本，便于解释搜索为何失败。
 
-#### A* 主循环
+### 搜索实现与导航约束
 
-```cpp
-Path AStar(const Graph& graph, NodeId start, NodeId goal)
-{
-    CostTable bestCost(graph.NodeCount(), Infinity);
-    ParentTable parent(graph.NodeCount(), InvalidNode);
-    MinHeap open;
-    bestCost[start] = 0;
-    open.Push({start, 0, Heuristic(start, goal)});
-    while (!open.Empty()) {
-        Entry entry = open.Pop();
-        if (entry.cost != bestCost[entry.node]) continue;
-        if (entry.node == goal) return Reconstruct(parent, goal);
-        for (const Edge& edge : graph.Neighbors(entry.node)) {
-            float candidate = entry.cost + edge.cost;
-            if (candidate >= bestCost[edge.to]) continue;
-            bestCost[edge.to] = candidate;
-            parent[edge.to] = entry.node;
-            open.Push({edge.to, candidate,
-                       candidate + Heuristic(edge.to, goal)});
-        }
-    }
-    return NoPath;
-}
-```
-
-这是算法伪代码。堆按估计总成本排序，边代价非负，启发函数在目标处为零。节点找到更短路径后可以再次入堆，因此也支持可采纳但不一致的启发函数。每次搜索独立初始化成本表；弹出目标时得到路径。
-
-在同一张图上分别运行 Dijkstra 和使用可采纳启发函数的 A*，两者路径成本应相等。A* 成本更高时检查启发函数及重开节点逻辑；成本更低时检查代价定义和两种实现。Dijkstra 在非负代价图上已给出最优成本。扩展节点数用于比较搜索效率。
+完整堆更新与重开节点实现见 [[16_编程与数据结构/图搜索#A* 主循环]]。导航把可行走连接与区域代价输入搜索，结果再进入走廊与Funnel；扩展节点数和路线成本分别记录。
 
 #### NavMesh 生成
 
@@ -124,8 +97,8 @@ Vec3 acceleration = ClampLength(
 
 ## 相关主题
 
-- [[16_编程与数据结构/算法设计、树、图与空间划分]]
-- [[18_游戏物理与模拟/角色、布料、破坏与载具物理]]
+- [[16_编程与数据结构/算法与数据结构导读]]
+- [[18_游戏物理与模拟/Character Controller]]、[[18_游戏物理与模拟/Ragdoll]]、[[18_游戏物理与模拟/XPBD]]、[[18_游戏物理与模拟/破坏系统]]、[[18_游戏物理与模拟/载具物理]]
 - [[20_游戏AI/游戏AI决策模型]]
 
 ## 参考资料

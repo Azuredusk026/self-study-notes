@@ -59,14 +59,38 @@ Shader 关键字、剥离与预热的通用机制见编译专题。设置索引�
 
 Development 构建用于定位，发布配置用于最终成本测量。记录包版本、图形 API、设备、画质和捕获日期。
 
+
+## Unity Built-in Pipeline
+
+常见入口：
+
+- Camera Event + CommandBuffer；
+- `OnRenderImage`；
+- Replacement Shader；
+- GrabPass；
+- Surface Shader 和多 Pass ShaderLab。
+
+这些入口适用于 Built-in 管线。URP/HDRP 使用各自扩展接口，接入前确认当前管线。GrabPass 尤其容易产生昂贵的屏幕拷贝。
+
+## HDRP Custom Pass
+
+HDRP 提供 Custom Pass Injection Point 和专用 Buffer 接口。它的材质、Custom Buffer 和曝光体系与 URP 不同，不能直接移植 Renderer Feature。
+
+## Unity Shader 与渲染层
+
+- ShaderLab Pass/LightMode 决定某个 Pass 在管线何处被选择；
+- Render Queue 和 Sorting 控制绘制顺序；
+- Rendering Layer/Layer Mask 控制对象、灯和 Feature 范围；
+- Volume Framework 管理相机区域内的后处理参数。
+
 ## 相关主题
 
-- [[22_渲染引擎实现/Unity与Unreal渲染扩展入口]]
+- [[22_渲染引擎实现/引擎渲染扩展导读]]
 - [[22_渲染引擎实现/URP Render Graph自定义Pass]]
 - [[13_渲染架构/Forward Rendering与Forward+]]
 - [[13_渲染架构/Deferred Rendering]]
 
-示例与验证范围：代码按文中前提解释机制，完整类型、资源和项目状态需由接入工程补齐。本轮以正文、公式和调用范围复读为主，未执行此页的目标引擎运行与GPU性能实验。
+示例与验证范围：代码按文中前提解释机制，完整类型、资源和项目状态需由接入工程补齐。完整目标引擎运行与GPU性能为UNVERIFIED；正文给出的机制与实际实验范围分别记录。
 
 ## 参考资料
 

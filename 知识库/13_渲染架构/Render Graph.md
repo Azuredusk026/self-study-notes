@@ -194,7 +194,7 @@ python 知识库/examples/rendergraph/reference.py --out 知识库/examples/rend
 
 ## 相关主题
 
-- [[13_渲染架构/Render Pass、Command Buffer与Render Graph]]
+- [[13_渲染架构/渲染命令的组织方式]]
 - [[13_渲染架构/GPU同步与屏障]]
 - [[13_渲染架构/GPU资源生命周期]]
 

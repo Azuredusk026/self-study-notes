@@ -228,10 +228,10 @@ half4 DecalBlendManually(half4 dst, half4 src)
 
 - [[13_渲染架构/渲染路径与光源组织]]
 - [[22_渲染引擎实现/Unreal自定义Mesh Pass]]
-- [[02_GPU与光栅化管线/光栅化、插值与深度模板]]
+- [[02_GPU与光栅化管线/光栅化可见性导读]]
 - [[04_光照模型与PBR/皮肤次表面散射]]
 - [[14_性能分析与优化/移动端渲染优化]]
-- [[13_渲染架构/Render Pass、Command Buffer与Render Graph]]
+- [[13_渲染架构/渲染命令的组织方式]]
 
 ## 参考资料
 

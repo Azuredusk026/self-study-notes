@@ -187,10 +187,33 @@ void Simulate(uint id : SV_DispatchThreadID)
 
 Dispatch 前要把 `AliveCount` 清零，并确保上一轮写入已完成；模拟后再用计数生成 Indirect Draw 参数。原子追加在粒子很多时可能争用，分组前缀和能进一步优化。验证时读取少量计数器或在 GPU 调试器中检查：片段要求 `inputCount` 不超过输出容量，且每个输入最多输出一次；生产流程还要把 Spawn 的需求一起纳入容量预算。`AliveCount` 不得超过输出容量，死亡粒子不能残留到 Draw。
 
+
+## 轨迹材质与连续采样
+
+Trail UV 常用 U 表示沿轨迹累计距离，V 表示横向。按累计距离而不是点序号铺 UV，可以避免采样密度变化时纹理伸缩。
+
+转弯处宽度方向可能翻转。生成网格时应保持连续 Frame，或使用 View-facing Ribbon 并处理相机方向接近平行时的退化。
+
+透明 Ribbon 的自交无法通过简单排序完全解决。可改用 Additive、缩短寿命、控制轨迹形状，或在关键效果使用 OIT/专门网格。
+
+
+## 场数据与运动输入
+
+VFX 常用低成本场而不是完整物理：
+
+- Scene Depth 做屏幕空间碰撞和交界；
+- SDF 做体积碰撞、吸引和避障；
+- Curl Noise 生成近似无散度的旋涡速度场；
+- Vector Field 驱动群体流向；
+- Heightfield 模拟水面或地面传播；
+- Flipbook 播放 Houdini 离线流体结果。
+
+实时网格流体、Grid/FLIP 和体积烟雾需要更完整的模拟和渲染管线。游戏效果常把低分辨率模拟、上采样、历史重建与艺术控制结合，而不是追求完全物理准确。
+
 ## 相关主题
 
-- [[03_Shader编程/Compute Shader与GPU执行模型]]
-- [[10_VFX与模拟/常用VFX材质、模拟与性能]]
+- [[03_Shader编程/Compute Shader]]、[[03_Shader编程/GPU归约与前缀和]]、[[03_Shader编程/GPU异步回读]]
+- [[10_VFX与模拟/VFX效果组合]]
 - [[13_渲染架构/Draw Call与合批]]
 - [[14_性能分析与优化/帧瓶颈怎么判断]]
 

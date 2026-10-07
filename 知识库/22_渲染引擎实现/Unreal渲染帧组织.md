@@ -66,13 +66,49 @@ Global Shader 适合独立的全屏或计算功能。Material Shader 与 VertexF
 - 捕获游戏线程、渲染线程与 GPU，判断卡顿是编译、记录、等待还是执行。
 - 升级引擎时重新检查类型注册、参数结构、消费者和平台实现。
 
+
+## Unreal Material
+
+Material Graph 生成目标 Shading Model 和 Pass 所需 Shader。Material Domain、Blend Mode、Shading Model、Two Sided 等设置会影响生成哪些变体和管线路径。
+
+Unlit Material 只表示不走常规受光模型，不代表没有 Base Pass、Depth、Translucency 或后处理成本。
+
+## Custom Depth 和 Stencil
+
+Unreal 可以让选定对象写 Custom Depth/Stencil，再在 Post Process Material 中读取，用于描边、遮挡显示和分类效果。
+
+需要处理：
+
+- Translucent 是否写 Custom Depth；
+- Stencil 位和项目分配；
+- TAA 前后执行位置；
+- 分辨率和 Upsampling；
+- 被遮挡和可见部分的深度比较。
+
+## Post Process Material
+
+通过 Blendable Location 插入后处理。不同位置提供不同 Scene Color 状态：HDR、Tone Mapping 前后、Translucency 前后可能不同。
+
+材质必须明确读取的 Scene Texture 是否在当前路径可用。
+
+## Niagara
+
+Niagara 是 Unreal 的数据驱动 VFX 系统，包含 System、Emitter、Particle 和 Render 阶段。Simulation 可以在 CPU 或 GPU。
+
+GPU Simulation 适合大量粒子，但：
+
+- 与 CPU Gameplay 交互受限；
+- GPU Readback 有延迟；
+- Collision、Sort 和透明 Overdraw 仍昂贵；
+- Data Interface 访问需要理解同步和资源生命周期。
+
 ## 相关主题
 
 - [[22_渲染引擎实现/Unreal RDG Pass实现]]
 - [[22_渲染引擎实现/Unreal自定义Mesh Pass]]
 - [[14_性能分析与优化/PSO首次使用为什么卡顿]]
 
-示例与验证范围：代码按文中前提解释机制，完整类型、资源和项目状态需由接入工程补齐。本轮以正文、公式和调用范围复读为主，未执行此页的目标引擎运行与GPU性能实验。
+示例与验证范围：代码按文中前提解释机制，完整类型、资源和项目状态需由接入工程补齐。完整目标引擎运行与GPU性能为UNVERIFIED；正文给出的机制与实际实验范围分别记录。
 
 ## 参考资料
 

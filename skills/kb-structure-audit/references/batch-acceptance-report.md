@@ -1,6 +1,9 @@
-# 知识库批量迁移全文验收报告
+# 批量迁移阶段验收记录
 
 验收日期：2026-10-07。范围：`E:\docs\projects\self-study-notes`，基线提交 `b5d057f`。
+
+
+本文件保存fcf4de0阶段的统计与证据，后续边界完成结果见 [最终报告](batch-final-report.md)。
 
 ## 验收结论
 
@@ -205,71 +208,71 @@ AI决策与导航整理世界表示、搜索、局部控制和计划家族，约
 | [术语表](../../../知识库/00_知识库说明/术语表.md) | Batch4-P2-P3-B | FACT-CHECK / REWRITE | PASS | KEEP |
 | [知识地图](../../../知识库/00_知识库说明/知识地图.md) | Batch4-P2-P3-B | FACT-CHECK / REWRITE | PASS | KEEP |
 | [知识库实施规范](../../../知识库/00_知识库说明/知识库实施规范.md) | Batch4-P2-P3-B | FACT-CHECK / REWRITE | PASS | KEEP |
-| [信号、频率与噪声](../../../知识库/01_数学与采样/信号、频率与噪声.md) | Batch4-P1-A | FACT-CHECK / REWRITE | SPLIT | pending_split |
+| [采样与混叠](../../../知识库/01_数学与采样/采样与混叠.md)、[程序噪声](../../../知识库/01_数学与采样/程序噪声.md) | Batch4-P1-A | FACT-CHECK / REWRITE | SPLIT | pending_split |
 | [空间变换](../../../知识库/01_数学与采样/空间变换.md) | Batch4-P1-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [旋转表示与插值](../../../知识库/01_数学与采样/旋转表示与插值.md) | Batch4-P1-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
-| [概率采样、积分与球谐函数](../../../知识库/01_数学与采样/概率采样、积分与球谐函数.md) | Batch3-P0-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [Monte Carlo采样](../../../知识库/01_数学与采样/Monte Carlo采样.md)、[球谐光照](../../../知识库/01_数学与采样/球谐光照.md) | Batch3-P0-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
 | [GPU执行与访存](../../../知识库/02_GPU与光栅化管线/GPU执行与访存.md) | Batch3-P0-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [一帧如何到达屏幕](../../../知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md) | Batch4-P1-B | FACT-CHECK / REWRITE | OVERVIEW | OVERVIEW |
-| [光栅化、插值与深度模板](../../../知识库/02_GPU与光栅化管线/光栅化、插值与深度模板.md) | Batch4-P1-B | FACT-CHECK / REWRITE | OVERVIEW | OVERVIEW |
+| [光栅化、插值与深度模板](../../../知识库/02_GPU与光栅化管线/光栅化可见性导读.md) | Batch4-P1-B | FACT-CHECK / REWRITE | OVERVIEW | OVERVIEW |
 | [光栅化与属性插值](../../../知识库/02_GPU与光栅化管线/光栅化与属性插值.md) | Batch3-P0-B | FACT-CHECK / REWRITE | PASS | KEEP |
-| [几何着色器、曲面细分与流输出](../../../知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md) | Batch3-P0-B | FACT-CHECK / REWRITE | SPLIT | pending_split |
-| [剔除、透明与混合](../../../知识库/02_GPU与光栅化管线/剔除、透明与混合.md) | Batch4-P2-P3-B | FACT-CHECK / RESTRUCTURE / REWRITE | OVERVIEW | OVERVIEW |
+| [Geometry Shader](../../../知识库/02_GPU与光栅化管线/Geometry Shader.md)、[Stream Output](../../../知识库/02_GPU与光栅化管线/Stream Output.md) | Batch3-P0-B | FACT-CHECK / REWRITE | SPLIT | pending_split |
+| [剔除、透明与混合](../../../知识库/02_GPU与光栅化管线/可见性与合成导读.md) | Batch4-P2-P3-B | FACT-CHECK / RESTRUCTURE / REWRITE | OVERVIEW | OVERVIEW |
 | [抗锯齿与时域重建](../../../知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md) | Batch4-P1-B | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [基于深度的可见性优化](../../../知识库/02_GPU与光栅化管线/基于深度的可见性优化.md) | Batch3-P0-B | FACT-CHECK / REWRITE | PASS | KEEP |
 | [Stencil与对象遮罩](../../../知识库/02_GPU与光栅化管线/Stencil与对象遮罩.md) | Batch3-P0-B | FACT-CHECK / REWRITE | PASS | KEEP |
 | [深度缓冲与位置重建](../../../知识库/02_GPU与光栅化管线/深度缓冲与位置重建.md) | Batch3-P0-B | FACT-CHECK / REWRITE | PASS | KEEP |
 | [可见性剔除](../../../知识库/02_GPU与光栅化管线/可见性剔除.md) | Batch3-P0-B | FACT-CHECK / REWRITE | PASS | KEEP |
 | [透明合成](../../../知识库/02_GPU与光栅化管线/透明合成.md) | Batch3-P0-B | FACT-CHECK / REWRITE | PASS | KEEP |
-| [Compute Shader与GPU执行模型](../../../知识库/03_Shader编程/Compute Shader与GPU执行模型.md) | Batch3-P0-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [Compute Shader](../../../知识库/03_Shader编程/Compute Shader.md)、[GPU归约与前缀和](../../../知识库/03_Shader编程/GPU归约与前缀和.md)、[GPU异步回读](../../../知识库/03_Shader编程/GPU异步回读.md) | Batch3-P0-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
 | [Shader Variant管理](../../../知识库/03_Shader编程/Shader Variant管理.md) | Batch3-P0-A | FACT-CHECK / REWRITE | PASS | KEEP |
 | [Shader接口与数据流](../../../知识库/03_Shader编程/Shader接口与数据流.md) | Batch3-P0-B | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [PBR材质](../../../知识库/04_光照模型与PBR/PBR材质.md) | Batch3-P0-B | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [皮肤次表面散射](../../../知识库/04_光照模型与PBR/皮肤次表面散射.md) | Batch4-P1-B | FACT-CHECK / REWRITE | PASS | KEEP |
-| [法线贴图、切线空间与IBL](../../../知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md) | Batch3-P0-B | FACT-CHECK / REWRITE | SPLIT | pending_split |
+| [法线贴图](../../../知识库/04_光照模型与PBR/法线贴图.md)、[IBL](../../../知识库/04_光照模型与PBR/IBL.md)、[Cubemap环境采样](../../../知识库/04_光照模型与PBR/Cubemap环境采样.md) | Batch3-P0-B | FACT-CHECK / REWRITE | SPLIT | pending_split |
 | [BRDF与微表面模型](../../../知识库/04_光照模型与PBR/BRDF与微表面模型.md) | Batch3-P0-B | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [直接光照](../../../知识库/05_光照阴影与GI/直接光照.md) | Batch4-P1-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
-| [烘焙光照、Probe与实时GI](../../../知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md) | Batch4-P1-A | FACT-CHECK / RESTRUCTURE / REWRITE | OVERVIEW | OVERVIEW |
+| [烘焙光照、Probe与实时GI](../../../知识库/05_光照阴影与GI/GI方案选择.md) | Batch4-P1-A | FACT-CHECK / RESTRUCTURE / REWRITE | OVERVIEW | OVERVIEW |
 | [Shadow Map](../../../知识库/05_光照阴影与GI/Shadow Map.md) | Batch4-P1-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
-| [UV、图集、流送与虚拟纹理](../../../知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md) | Batch3-P0-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [纹理图集](../../../知识库/06_纹理技术/纹理图集.md)、[Texture Streaming](../../../知识库/06_纹理技术/Texture Streaming.md)、[Virtual Texture](../../../知识库/06_纹理技术/Virtual Texture.md) | Batch3-P0-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
 | [纹理压缩格式](../../../知识库/06_纹理技术/纹理压缩格式.md) | Batch4-P1-A | FACT-CHECK / REWRITE | PASS | KEEP |
 | [纹理采样与过滤](../../../知识库/06_纹理技术/纹理采样与过滤.md) | Batch3-P0-A | FACT-CHECK / REWRITE | PASS | KEEP |
 | [视差映射](../../../知识库/06_纹理技术/视差映射.md) | Batch4-P1-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
-| [Tone Mapping、Bloom与屏幕效果](../../../知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md) | Batch3-P0-B | FACT-CHECK / REWRITE | SPLIT | pending_split |
-| [颜色空间、Alpha、HDR与曝光](../../../知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md) | Batch3-P0-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
-| [LOD、地形与程序化资产](../../../知识库/08_几何与网格/LOD、地形与程序化资产.md) | Batch4-P1-A | FACT-CHECK / REWRITE | SPLIT | pending_split |
+| [Tone Mapping、Bloom与屏幕效果](../../../知识库/07_颜色与后处理/后处理链.md) | Batch3-P0-B | FACT-CHECK / REWRITE | SPLIT | pending_split |
+| [颜色空间](../../../知识库/07_颜色与后处理/颜色空间.md)、[Alpha表示](../../../知识库/07_颜色与后处理/Alpha表示.md)、[HDR与曝光](../../../知识库/07_颜色与后处理/HDR与曝光.md) | Batch3-P0-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [LOD选择](../../../知识库/08_几何与网格/LOD选择.md)、[Heightfield地形](../../../知识库/08_几何与网格/Heightfield地形.md)、[程序化资产生成](../../../知识库/15_资产与工具管线/程序化资产生成.md)、[植被包裹法线](../../../知识库/08_几何与网格/植被包裹法线.md)、[WFC](../../../知识库/15_资产与工具管线/WFC.md) | Batch4-P1-A | FACT-CHECK / REWRITE | SPLIT | pending_split |
 | [Tessellation与位移](../../../知识库/08_几何与网格/Tessellation与位移.md) | Batch3-P0-A | FACT-CHECK / REWRITE | PASS | KEEP |
 | [网格数据与GPU访问](../../../知识库/08_几何与网格/网格数据与GPU访问.md) | Batch4-P1-A | FACT-CHECK / REWRITE | PASS | KEEP |
 | [动画压缩](../../../知识库/09_动画系统/动画压缩.md) | Batch4-P1-A | FACT-CHECK / REWRITE | PASS | KEEP |
-| [动画压缩、面部、布料与毛发](../../../知识库/09_动画系统/动画压缩、面部、布料与毛发.md) | Batch4-P2-P3-B | FACT-CHECK / RESTRUCTURE / REWRITE | OVERVIEW | OVERVIEW |
-| [动画状态、混合与IK](../../../知识库/09_动画系统/动画状态、混合与IK.md) | Batch4-P1-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
-| [布料与毛发的表示、碰撞和LOD](../../../知识库/09_动画系统/布料与毛发的表示、碰撞和LOD.md) | Batch4-P1-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [动画压缩、面部、布料与毛发](../../../知识库/09_动画系统/角色动画导读.md) | Batch4-P2-P3-B | FACT-CHECK / RESTRUCTURE / REWRITE | OVERVIEW | OVERVIEW |
+| [动画姿态混合](../../../知识库/09_动画系统/动画姿态混合.md)、[IK](../../../知识库/09_动画系统/IK.md)、[动画重定向](../../../知识库/09_动画系统/动画重定向.md) | Batch4-P1-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [角色布料](../../../知识库/09_动画系统/角色布料.md)、[毛发表示与模拟](../../../知识库/09_动画系统/毛发表示与模拟.md) | Batch4-P1-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
 | [面部动画](../../../知识库/09_动画系统/面部动画.md) | Batch4-P1-A | FACT-CHECK / REWRITE | PASS | KEEP |
 | [骨骼动画与蒙皮](../../../知识库/09_动画系统/骨骼动画与蒙皮.md) | Batch4-P1-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [Froxel体积雾](../../../知识库/10_VFX与模拟/Froxel体积雾.md) | Batch4-P1-A | FACT-CHECK / REWRITE | PASS | KEEP |
-| [大气散射、天空与体积云](../../../知识库/10_VFX与模拟/大气散射、天空与体积云.md) | Batch4-P1-A | FACT-CHECK / REWRITE | SPLIT | pending_split |
-| [常用VFX材质、模拟与性能](../../../知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md) | Batch4-P1-A | FACT-CHECK / RESTRUCTURE / REWRITE | OVERVIEW | OVERVIEW |
+| [大气散射](../../../知识库/10_VFX与模拟/大气散射.md)、[体积云](../../../知识库/10_VFX与模拟/体积云.md) | Batch4-P1-A | FACT-CHECK / REWRITE | SPLIT | pending_split |
+| [常用VFX材质、模拟与性能](../../../知识库/10_VFX与模拟/VFX效果组合.md) | Batch4-P1-A | FACT-CHECK / RESTRUCTURE / REWRITE | OVERVIEW | OVERVIEW |
 | [水面与海洋渲染](../../../知识库/10_VFX与模拟/水面与海洋渲染.md) | Batch4-P1-A | FACT-CHECK / REWRITE | PASS | KEEP |
 | [GPU粒子系统](../../../知识库/10_VFX与模拟/GPU粒子系统.md) | Batch4-P1-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [Billboard](../../../知识库/08_几何与网格/Billboard.md) | Batch3-P0-A | FACT-CHECK / REWRITE | PASS | KEEP |
 | [NPR与场景风格导读](../../../知识库/11_NPR与风格化渲染/NPR与场景风格导读.md) | Batch4-P2-P3-B | FACT-CHECK / REWRITE | PASS | KEEP |
 | [NPR材质与分层光照](../../../知识库/11_NPR与风格化渲染/NPR材质与分层光照.md) | Batch3-P0-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [描边](../../../知识库/11_NPR与风格化渲染/描边.md) | Batch4-P2-P3-B | KEEP | PASS | KEEP |
-| [描边、Billboard与场景风格化](../../../知识库/11_NPR与风格化渲染/描边、Billboard与场景风格化.md) | Batch4-P2-P3-B | FACT-CHECK / REWRITE | OVERVIEW | OVERVIEW |
+| [描边、Billboard与场景风格化](../../../知识库/11_NPR与风格化渲染/NPR与场景风格导读.md) | Batch4-P2-P3-B | FACT-CHECK / REWRITE | OVERVIEW | OVERVIEW |
 | [植被风动](../../../知识库/09_动画系统/植被风动.md) | Batch3-P0-A | FACT-CHECK / REWRITE | PASS | KEEP |
-| [角色面部、头发与阴影](../../../知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md) | Batch3-P0-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [Face SDF](../../../知识库/11_NPR与风格化渲染/Face SDF.md)、[角色阴影](../../../知识库/11_NPR与风格化渲染/角色阴影.md)、[风格化头发高光](../../../知识库/11_NPR与风格化渲染/风格化头发高光.md)、[风格化眼睛](../../../知识库/11_NPR与风格化渲染/风格化眼睛.md) | Batch3-P0-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
 | [GPU-Driven Rendering](../../../知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md) | Batch4-P1-B | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [Nanite几何选择与流送](../../../知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md) | Batch4-P1-B | FACT-CHECK / REWRITE | PASS | KEEP |
 | [光线求交与BVH](../../../知识库/12_光线追踪/光线求交与BVH.md) | Batch4-P1-B | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
-| [实时光追、采样与降噪](../../../知识库/12_光线追踪/实时光追、采样与降噪.md) | Batch4-P1-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [实时光追采样](../../../知识库/12_光线追踪/实时光追采样.md)、[光追降噪](../../../知识库/12_光线追踪/光追降噪.md)、[ReSTIR](../../../知识库/12_光线追踪/ReSTIR.md) | Batch4-P1-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
 | [Draw Call与合批](../../../知识库/13_渲染架构/Draw Call与合批.md) | Batch3-P0-B | FACT-CHECK / REWRITE | PASS | KEEP |
 | [渲染路径与光源组织](../../../知识库/13_渲染架构/渲染路径与光源组织.md) | Batch4-P1-B | FACT-CHECK / RESTRUCTURE / REWRITE | OVERVIEW | OVERVIEW |
 | [GBuffer布局](../../../知识库/13_渲染架构/GBuffer布局.md) | Batch3-P0-A | DEEPEN / FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
-| [Render Pass、Command Buffer与Render Graph](../../../知识库/13_渲染架构/Render Pass、Command Buffer与Render Graph.md) | Batch4-P1-B | FACT-CHECK / REWRITE | OVERVIEW | OVERVIEW |
-| [UI、字体与文本渲染](../../../知识库/25_UI与文本/UI、字体与文本渲染.md) | Batch4-P1-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [Render Pass、Command Buffer与Render Graph](../../../知识库/13_渲染架构/渲染命令的组织方式.md) | Batch4-P1-B | FACT-CHECK / REWRITE | OVERVIEW | OVERVIEW |
+| [UI绘制](../../../知识库/25_UI与文本/UI绘制.md)、[文字渲染](../../../知识库/25_UI与文本/文字渲染.md) | Batch4-P1-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
 | [URP Render Graph自定义Pass](../../../知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md) | Batch3-P0-A | FACT-CHECK / REWRITE | PASS | KEEP |
 | [Unity渲染帧组织](../../../知识库/22_渲染引擎实现/Unity渲染帧组织.md) | Batch3-P0-B | FACT-CHECK / REWRITE | PASS | KEEP |
-| [Unity与Unreal渲染扩展入口](../../../知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md) | Batch4-P1-B | FACT-CHECK / RESTRUCTURE / REWRITE | OVERVIEW | OVERVIEW |
+| [Unity与Unreal渲染扩展入口](../../../知识库/22_渲染引擎实现/引擎渲染扩展导读.md) | Batch4-P1-B | FACT-CHECK / RESTRUCTURE / REWRITE | OVERVIEW | OVERVIEW |
 | [Unreal RDG Pass实现](../../../知识库/22_渲染引擎实现/Unreal RDG Pass实现.md) | Batch3-P0-A | FACT-CHECK / REWRITE | PASS | KEEP |
 | [Unreal渲染帧组织](../../../知识库/22_渲染引擎实现/Unreal渲染帧组织.md) | Batch3-P0-B | FACT-CHECK / REWRITE | PASS | KEEP |
 | [Unreal自定义Mesh Pass](../../../知识库/22_渲染引擎实现/Unreal自定义Mesh Pass.md) | Batch4-P1-B | FACT-CHECK / REWRITE | PASS | KEEP |
@@ -279,7 +282,7 @@ AI决策与导航整理世界表示、搜索、局部控制和计划家族，约
 | [Command Buffer与帧提交](../../../知识库/13_渲染架构/Command Buffer与帧提交.md) | Batch3-P0-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [Deferred Rendering](../../../知识库/13_渲染架构/Deferred Rendering.md) | Batch3-P0-B | FACT-CHECK / REWRITE | PASS | KEEP |
 | [引擎世界与对象模型](../../../知识库/23_引擎运行系统/引擎世界与对象模型.md) | Batch4-P1-B | FACT-CHECK / REWRITE | PASS | KEEP |
-| [数据导向设计与任务系统](../../../知识库/23_引擎运行系统/数据导向设计与任务系统.md) | Batch4-P1-B | FACT-CHECK / REWRITE | SPLIT | pending_split |
+| [ECS与数据布局](../../../知识库/23_引擎运行系统/ECS与数据布局.md)、[任务系统](../../../知识库/23_引擎运行系统/任务系统.md) | Batch4-P1-B | FACT-CHECK / REWRITE | SPLIT | pending_split |
 | [Render Graph](../../../知识库/13_渲染架构/Render Graph.md) | Batch3-P0-A | DEEPEN / FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [Render Pass与附件](../../../知识库/13_渲染架构/Render Pass与附件.md) | Batch3-P0-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [游戏音频系统](../../../知识库/24_游戏音频/游戏音频系统.md) | Batch4-P2-P3-B | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
@@ -293,26 +296,26 @@ AI决策与导航整理世界表示、搜索、局部控制和计划家族，约
 | [性能对照实验](../../../知识库/14_性能分析与优化/性能对照实验.md) | Batch4-P1-B | FACT-CHECK / REWRITE | PASS | KEEP |
 | [移动端渲染优化](../../../知识库/14_性能分析与优化/移动端渲染优化.md) | Batch4-P1-B | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [DCC资产交换](../../../知识库/15_资产与工具管线/DCC资产交换.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
-| [版本控制、CI与大型资产协作](../../../知识库/15_资产与工具管线/版本控制、CI与大型资产协作.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [大型资产版本控制](../../../知识库/15_资产与工具管线/大型资产版本控制.md)、[资产构建CI](../../../知识库/15_资产与工具管线/资产构建CI.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
 | [编辑器工具的事务与批处理](../../../知识库/15_资产与工具管线/编辑器工具的事务与批处理.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [资产构建与发布](../../../知识库/15_资产与工具管线/资产构建与发布.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
-| [C++、CSharp与Python工程基础](../../../知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
-| [内存、对象生命周期与对象池](../../../知识库/16_编程与数据结构/内存、对象生命周期与对象池.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
-| [操作系统、进程与并发基础](../../../知识库/16_编程与数据结构/操作系统、进程与并发基础.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
-| [算法设计、树、图与空间划分](../../../知识库/16_编程与数据结构/算法设计、树、图与空间划分.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | OVERVIEW | OVERVIEW |
+| [C++工程边界](../../../知识库/16_编程与数据结构/C++工程边界.md)、[CSharp运行模型](../../../知识库/16_编程与数据结构/CSharp运行模型.md)、[Python宿主集成](../../../知识库/16_编程与数据结构/Python宿主集成.md)、[跨语言接口](../../../知识库/16_编程与数据结构/跨语言接口.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [内存布局与分配](../../../知识库/16_编程与数据结构/内存布局与分配.md)、[对象生命周期](../../../知识库/16_编程与数据结构/对象生命周期.md)、[Unreal对象生命周期](../../../知识库/23_引擎运行系统/Unreal对象生命周期.md)、[Unity对象生命周期](../../../知识库/23_引擎运行系统/Unity对象生命周期.md)、[对象池](../../../知识库/16_编程与数据结构/对象池.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [进程与调度](../../../知识库/16_编程与数据结构/进程与调度.md)、[虚拟内存](../../../知识库/16_编程与数据结构/虚拟内存.md)、[线程同步](../../../知识库/16_编程与数据结构/线程同步.md)、[文件IO](../../../知识库/16_编程与数据结构/文件IO.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [算法设计、树、图与空间划分](../../../知识库/16_编程与数据结构/算法与数据结构导读.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | OVERVIEW | OVERVIEW |
 | [Agent资产管线](../../../知识库/17_AIGC与Agent管线/Agent资产管线.md) | Batch4-P2-P3-B | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
-| [ComfyUI工作流与时序一致性](../../../知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md) | Batch4-P2-P3-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
-| [扩散模型、条件控制与微调](../../../知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md) | Batch4-P2-P3-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [ComfyUI工作流](../../../知识库/17_AIGC与Agent管线/ComfyUI工作流.md)、[视频生成时序一致性](../../../知识库/17_AIGC与Agent管线/视频生成时序一致性.md) | Batch4-P2-P3-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [扩散模型](../../../知识库/17_AIGC与Agent管线/扩散模型.md)、[生成条件控制](../../../知识库/17_AIGC与Agent管线/生成条件控制.md)、[LoRA训练](../../../知识库/17_AIGC与Agent管线/LoRA训练.md) | Batch4-P2-P3-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
 | [刚体物理求解](../../../知识库/18_游戏物理与模拟/刚体物理求解.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
-| [角色、布料、破坏与载具物理](../../../知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md) | Batch4-P2-A | FACT-CHECK / REWRITE | SPLIT | pending_split |
+| [Character Controller](../../../知识库/18_游戏物理与模拟/Character Controller.md)、[Ragdoll](../../../知识库/18_游戏物理与模拟/Ragdoll.md)、[XPBD](../../../知识库/18_游戏物理与模拟/XPBD.md)、[破坏系统](../../../知识库/18_游戏物理与模拟/破坏系统.md)、[载具物理](../../../知识库/18_游戏物理与模拟/载具物理.md) | Batch4-P2-A | FACT-CHECK / REWRITE | SPLIT | pending_split |
 | [玩法事件与脚本](../../../知识库/19_Gameplay与游戏框架/玩法事件与脚本.md) | Batch4-P2-A | FACT-CHECK / REWRITE | PASS | KEEP |
 | [输入与动作状态](../../../知识库/19_Gameplay与游戏框架/输入与动作状态.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [游戏AI导航](../../../知识库/20_游戏AI/游戏AI导航.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
-| [群体、学习与高级决策](../../../知识库/20_游戏AI/群体、学习与高级决策.md) | Batch4-P2-A | FACT-CHECK / REWRITE | SPLIT | pending_split |
+| [群体战术信息](../../../知识库/20_游戏AI/群体战术信息.md)、[MCTS](../../../知识库/20_游戏AI/MCTS.md)、[游戏强化学习](../../../知识库/20_游戏AI/游戏强化学习.md) | Batch4-P2-A | FACT-CHECK / REWRITE | SPLIT | pending_split |
 | [游戏AI决策模型](../../../知识库/20_游戏AI/游戏AI决策模型.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
-| [服务器架构、分区与反作弊](../../../知识库/21_游戏网络/服务器架构、分区与反作弊.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
-| [状态同步、预测与回滚](../../../知识库/21_游戏网络/状态同步、预测与回滚.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
-| [网络协议、时钟与RPC](../../../知识库/21_游戏网络/网络协议、时钟与RPC.md) | Batch4-P2-P3-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [对局服务器架构](../../../知识库/21_游戏网络/对局服务器架构.md)、[世界分区与AOI](../../../知识库/21_游戏网络/世界分区与AOI.md)、[服务端反作弊校验](../../../知识库/21_游戏网络/服务端反作弊校验.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [快照同步](../../../知识库/21_游戏网络/快照同步.md)、[客户端预测](../../../知识库/21_游戏网络/客户端预测.md)、[回滚同步](../../../知识库/21_游戏网络/回滚同步.md)、[延迟补偿命中](../../../知识库/21_游戏网络/延迟补偿命中.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
+| [游戏网络传输](../../../知识库/21_游戏网络/游戏网络传输.md)、[游戏网络时钟](../../../知识库/21_游戏网络/游戏网络时钟.md)、[RPC](../../../知识库/21_游戏网络/RPC.md) | Batch4-P2-P3-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
 
 ## 113页最终路径映射
 

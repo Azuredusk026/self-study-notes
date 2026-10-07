@@ -42,7 +42,10 @@ def verify(root):
         mutate('最终哈希漂移', article, lambda s: s + '\n未登记修改。\n', '最终正文哈希')
         def drop_batch(text):
             obj = json.loads(text)
-            obj['batches'][0]['articles'].pop()
+            if 'completion' in obj:
+                obj['completion']['articles'].pop()
+            else:
+                obj['batches'][0]['articles'].pop()
             return json.dumps(obj, ensure_ascii=False)
         mutate('正文批次遗漏', 'skills/kb-structure-audit/batch-review.json', drop_batch, '正文批次覆盖')
         def title_unreviewed(text):
@@ -50,6 +53,11 @@ def verify(root):
             obj[0]['title_review'] = None
             return json.dumps(obj, ensure_ascii=False)
         mutate('未审查标题', 'skills/kb-structure-audit/article-quality-matrix.json', title_unreviewed, '审查未完成')
+        def pending_split(text):
+            obj = json.loads(text)
+            obj[0]['pending_split'] = True
+            return json.dumps(obj, ensure_ascii=False)
+        mutate('最终待拆状态', 'skills/kb-structure-audit/article-quality-matrix.json', pending_split, '最终迁移状态未完成')
         return {'passed': True, 'checks': len(cases), 'cases': cases,
                 'scope': 'isolated malformed-fixture detection; no prose quality scoring'}
     finally:

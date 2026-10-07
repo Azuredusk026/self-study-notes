@@ -154,7 +154,7 @@ EnterGameplay();
 ## 相关主题
 
 - [[03_Shader编程/Shader Variant管理]]
-- [[13_渲染架构/Render Pass、Command Buffer与Render Graph]]
+- [[13_渲染架构/渲染命令的组织方式]]
 - [[22_渲染引擎实现/Unreal自定义Mesh Pass]]
 - [[14_性能分析与优化/帧瓶颈怎么判断]]
 - [[14_性能分析与优化/移动端渲染优化]]

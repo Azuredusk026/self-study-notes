@@ -1,5 +1,6 @@
 {
-  "batches": [
+  "schema_version": 2,
+  "historical_batches": [
     {
       "id": "Batch3-P0-A",
       "pages": 21,
@@ -3671,5 +3672,2805 @@
       "semantic_review": "本机内容复读，不代替目标运行与用户质量评审",
       "commit": "9160f31"
     }
-  ]
+  ],
+  "completion": {
+    "baseline": "fcf4de0",
+    "original_pages": 113,
+    "pages": 184,
+    "articles": [
+      {
+        "path": "知识库/00_知识库说明/学习与维护方法.md",
+        "source": "知识库/00_知识库说明/学习与维护方法.md",
+        "actions": [
+          "KEEP"
+        ],
+        "final_sha256": "4509364d4def32133d4da314acd73d2db168237f4e02f3796f3ea0866428fd08",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "作者如何组织、验证和维护文章",
+        "article_type": "SUPPORT",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/00_知识库说明/技术中文写作规范.md",
+        "source": "知识库/00_知识库说明/技术中文写作规范.md",
+        "actions": [
+          "KEEP"
+        ],
+        "final_sha256": "3f6ce2b344c2258a075b96d3e4b495655bc792d5b1174972b9489f15c84b810a",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "技术中文写作规范",
+        "article_type": "SUPPORT",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/00_知识库说明/术语表.md",
+        "source": "知识库/00_知识库说明/术语表.md",
+        "actions": [
+          "KEEP"
+        ],
+        "final_sha256": "e89244c9a204500ce628f2c3b88908e93d49282b1beda90164846b9d73ef665b",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "读者如何统一技术叫法",
+        "article_type": "SUPPORT",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/00_知识库说明/知识地图.md",
+        "source": "知识库/00_知识库说明/知识地图.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "0c4d44ad0f1ac6c30138c01f8687536635db694de2da4a9eaa4c0ae176568042",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "读者如何按问题找到学习路线",
+        "article_type": "SUPPORT",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/00_知识库说明/知识库实施规范.md",
+        "source": "知识库/00_知识库说明/知识库实施规范.md",
+        "actions": [
+          "KEEP"
+        ],
+        "final_sha256": "355364e96113ee024abab9803e94480d3b97734b63b31e4b54522fd773781f68",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "知识库实施规范",
+        "article_type": "SUPPORT",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/01_数学与采样/Monte Carlo采样.md",
+        "source": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "83055a26fd434e88b00bce3871108d5d1e0d2b41953ca88494f17af7e1c3e946",
+        "reason": [
+          "随机积分与球面函数压缩有独立表示、误差及验证，SH不承担采样方法的主归属。"
+        ],
+        "primary_question": "如何用概率分布估计积分并控制方差",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/01_数学与采样/旋转表示与插值.md",
+        "source": "知识库/01_数学与采样/旋转表示与插值.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "716f91105a7070db1b5e96d337507c0d5a0850ba64eb48e803291c56d3a5fd37",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何表示旋转并保持旋转插值连续",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/01_数学与采样/球谐光照.md",
+        "source": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "b34ac540e71342d9159f2460a41c9fbdd5c76e21eae9357933e24db6beb0bf73",
+        "reason": [
+          "随机积分与球面函数压缩有独立表示、误差及验证，SH不承担采样方法的主归属。"
+        ],
+        "primary_question": "如何用少量系数表示并重建低频球面光照",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/01_数学与采样/程序噪声.md",
+        "source": "知识库/01_数学与采样/信号、频率与噪声.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "cb647ea7cf74124cdcfac094d430c4607a56476eba1bc0b3c032ade786b3450c",
+        "reason": [
+          "信号重建解释采样误差，程序噪声生成空间场；输入模型、实现与验证各自独立。"
+        ],
+        "primary_question": "如何生成可重复且具有空间结构的标量场",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/01_数学与采样/空间变换.md",
+        "source": "知识库/01_数学与采样/空间变换.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "c585bf138e6ba31e1118f7666aae471fbbe1b2d7ac623184f3b02e8f28886b78",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何保持空间变换与法线变换正确",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/01_数学与采样/采样与混叠.md",
+        "source": "知识库/01_数学与采样/信号、频率与噪声.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "94f7b80f731c6c70ea78c886c12fbd182d06d64663b89d900015ce2978a65b69",
+        "reason": [
+          "信号重建解释采样误差，程序噪声生成空间场；输入模型、实现与验证各自独立。"
+        ],
+        "primary_question": "为什么离散采样会丢失或伪造信号细节",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/GPU执行与访存.md",
+        "source": "知识库/02_GPU与光栅化管线/GPU执行与访存.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "a38b011b456135e4201c5ca2d88ff2e5c1060a9c17e9f07df54ee2e630028b05",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何把GPU执行和访存行为对应到性能瓶颈",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/Geometry Shader.md",
+        "source": "知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "3aebddad7663518623b964c7f7eae9630731eb0f7ee011768d025b30b3e33fc6",
+        "reason": [
+          "Geometry Shader改写图元，Stream Output保存结果；细分机制合入既有Tessellation主归属。"
+        ],
+        "primary_question": "如何按输入图元生成有限数量的输出图元",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/OpenGL对象与状态.md",
+        "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "bfd389d021ab1e9f4b3b7a946ce18c474c139cdba74e9c58770507e067a110c3",
+        "reason": [
+          "原导读内完整机制建立独立主归属"
+        ],
+        "primary_question": "如何在上下文中管理图形对象绑定和使用",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/Stencil与对象遮罩.md",
+        "source": "知识库/02_GPU与光栅化管线/Stencil与对象遮罩.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "932839d958724a52820fdd9765cfd824882822eb57e020f7af5d51372e5937ab",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何用模板状态表达对象遮罩并避免位冲突",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/Stream Output.md",
+        "source": "知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "eb9e42a49c0901ba4565598d4789283708e4e23344a44414d596cae029f6cb90",
+        "reason": [
+          "Geometry Shader改写图元，Stream Output保存结果；细分机制合入既有Tessellation主归属。"
+        ],
+        "primary_question": "如何把几何前端结果保存到缓冲供后续消费",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+        "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE"
+        ],
+        "final_sha256": "c65ba8b25e8cfd3c0f73a32014fb3ddc654e13aabd4c4bfa4159531ccc7d8fc0",
+        "reason": [
+          "一帧路线负责组织职责，OpenGL对象与显示机制移入专篇，完整阶段算法引用既有主归属。"
+        ],
+        "primary_question": "这些专题如何按输入与工程问题衔接",
+        "article_type": "OVERVIEW",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/光栅化与属性插值.md",
+        "source": "知识库/02_GPU与光栅化管线/光栅化与属性插值.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "ba7a45c66559c07291875bbdcb2047c77b8c95a11081d4e7985dd72b9baf90b8",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何把三角形覆盖转为正确片元属性",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/光栅化可见性导读.md",
+        "source": "知识库/02_GPU与光栅化管线/光栅化、插值与深度模板.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE"
+        ],
+        "final_sha256": "e52e3d887856e10e4dcecfcdd2f83e72e24e7e3a3c25ac476a5b3eaff73abbfa",
+        "reason": [
+          "导航保留问题路线，标题以共同可见性职责命名。"
+        ],
+        "primary_question": "这些专题如何按输入与工程问题衔接",
+        "article_type": "OVERVIEW",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/可见性与合成导读.md",
+        "source": "知识库/02_GPU与光栅化管线/剔除、透明与混合.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE"
+        ],
+        "final_sha256": "e455be17e40546d0961953a8a0b2edbbfcd39dfb3c8a88f9f9f731183da6e438",
+        "reason": [
+          "该页只负责两类职责关系。"
+        ],
+        "primary_question": "这些专题如何按输入与工程问题衔接",
+        "article_type": "OVERVIEW",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/可见性剔除.md",
+        "source": "知识库/02_GPU与光栅化管线/可见性剔除.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "4e4e9b056c6281ee428cf5e156624f66b82accfd3789d1f422bb1f043d57d6da",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何用保守可见性测试减少绘制",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/基于深度的可见性优化.md",
+        "source": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "9f3d0d7c418fa645808b65f8e45e76cd370d1248b45d1d83d13ca661139e3590",
+        "reason": [
+          "独有应用资料合入既有主归属"
+        ],
+        "primary_question": "如何组织Compute执行以及实现多类并行算法",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+        "source": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "c394d9d1b44fe7b12aa5038d208d2f079e589bf5950bd497298b4abfdef7c275",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何从空间和时间样本重建稳定图像",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/显示呈现.md",
+        "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "fed893d2b10e7d59b5ca0fff555580e1a65ddefa7c55ba3555bb9d81fa0ffdb9",
+        "reason": [
+          "原导读内完整机制建立独立主归属"
+        ],
+        "primary_question": "如何让GPU完成图像进入扫描输出并控制排队延迟",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/深度缓冲与位置重建.md",
+        "source": "知识库/02_GPU与光栅化管线/深度缓冲与位置重建.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "817985712e552648ec5a1df699a7f2d2de0196f4e32726d5877f71624a20f39a",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何正确解释并消费深度值",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/透明合成.md",
+        "source": "知识库/02_GPU与光栅化管线/透明合成.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "af83f228a8c14f6deaee3bbe04447f39e410158fd4fec9b4eb625b2d527f163f",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何在不透明遮挡之后正确合成透明表面",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/03_Shader编程/Compute Shader.md",
+        "source": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "cd757610b75f411211de05fd86cb0271d580ff20f8dec97429184b4486592136",
+        "reason": [
+          "调度模型、并行集合算法与回读状态机分别维护；多级深度生成归入深度可见性优化，灯光位掩码归入簇光照。"
+        ],
+        "primary_question": "如何按线程索引安全调度设备端数据计算",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/03_Shader编程/GPU异步回读.md",
+        "source": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "89dbc0b6545d653f3d2a1c6f78d00b20830ff4c0bb42521ccf3f55f4bed2499e",
+        "reason": [
+          "调度模型、并行集合算法与回读状态机分别维护；多级深度生成归入深度可见性优化，灯光位掩码归入簇光照。"
+        ],
+        "primary_question": "如何把设备端结果交给CPU并控制延迟与寿命",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/03_Shader编程/GPU归约与前缀和.md",
+        "source": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "afb5aa035651bb044c6650dd5b3c8c10f64c66e58a324c64e66ff29edca580e8",
+        "reason": [
+          "调度模型、并行集合算法与回读状态机分别维护；多级深度生成归入深度可见性优化，灯光位掩码归入簇光照。"
+        ],
+        "primary_question": "如何把并行元素合成统计量或唯一输出偏移",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/03_Shader编程/Shader Variant管理.md",
+        "source": "知识库/03_Shader编程/Shader Variant管理.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "75f9f6b1b4f197b71b102ced2209e82393e1de6f779909df2ead17eba4a6e4a6",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何控制Shader编译组合并验证构建覆盖",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/03_Shader编程/Shader接口与数据流.md",
+        "source": "知识库/03_Shader编程/Shader接口与数据流.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "580f24d92c5de4fdb77bfdc3ce0317da128eb5d41a8809a0c7df20ef513d78d6",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何使Shader阶段接口与资源布局一致",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/04_光照模型与PBR/BRDF与微表面模型.md",
+        "source": "知识库/04_光照模型与PBR/BRDF与微表面模型.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "fb5b6c1d666fe0321907ba2bc0cd236cf1fd3ad19ecfd6be011db3cc8cb4df5e",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何从反射约束得到直接光照BRDF",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/04_光照模型与PBR/Cubemap环境采样.md",
+        "source": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "43f1482ec61fdce4b446dd460908834f4d1cefb43423b5fbd4269779ff4896d3",
+        "reason": [
+          "贴图方向还原、环境方向寻址和BRDF预积分是不同输入与实现。"
+        ],
+        "primary_question": "如何按方向寻址六面环境并正确绘制天空背景",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/04_光照模型与PBR/IBL.md",
+        "source": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "0c9e21faccbd9210985334309900952b2ed438807b376e11088b84a001441356",
+        "reason": [
+          "贴图方向还原、环境方向寻址和BRDF预积分是不同输入与实现。"
+        ],
+        "primary_question": "如何预积分环境光并求漫反射与粗糙镜面响应",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/04_光照模型与PBR/PBR材质.md",
+        "source": "知识库/04_光照模型与PBR/PBR材质.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "46a0af10652abad92c6486d3a495a672d8e6636344ca3d501dfb52b216ffe570",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何用PBR参数保持材质响应和能量约束",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/04_光照模型与PBR/法线贴图.md",
+        "source": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "76766607241eaf3f13f721383e33ab716bf9c94245e89af29b40cc6679ebf262",
+        "reason": [
+          "贴图方向还原、环境方向寻址和BRDF预积分是不同输入与实现。"
+        ],
+        "primary_question": "如何把纹理方向恢复成一致的着色法线",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/04_光照模型与PBR/皮肤次表面散射.md",
+        "source": "知识库/04_光照模型与PBR/皮肤次表面散射.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "4dbbb900ab1004c0ee32f2a2a7c1f5ee95e641ada9c1522e8b4a366fb54003e4",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何以实时预算近似皮肤次表面散射",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/05_光照阴影与GI/GI方案选择.md",
+        "source": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE"
+        ],
+        "final_sha256": "d0151a6339430868920927c3e4613458f4dd41d1a0e5ae8a0e933554e15e9883",
+        "reason": [
+          "静态烘焙、漫反射探针、反射捕获和动态更新各有独立资产与验证；原页成为GI方案导读。"
+        ],
+        "primary_question": "这些专题如何按输入与工程问题衔接",
+        "article_type": "OVERVIEW",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/05_光照阴影与GI/Light Probe.md",
+        "source": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "78423a5108bc5686d88b0f15f937df414f9b3734f8fbc43622ee0d04ac0a5542",
+        "reason": [
+          "静态烘焙、漫反射探针、反射捕获和动态更新各有独立资产与验证；原页成为GI方案导读。"
+        ],
+        "primary_question": "如何让动态物体插值空间中的低频间接光",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/05_光照阴影与GI/Lightmap.md",
+        "source": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "8337a78d35a7f94703cb70b8378c49ef1c806b5da309f201ebbf3d0e7b44061b",
+        "reason": [
+          "静态烘焙、漫反射探针、反射捕获和动态更新各有独立资产与验证；原页成为GI方案导读。"
+        ],
+        "primary_question": "如何把静态表面的光照预计算为可稳定采样的纹理",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/05_光照阴影与GI/Reflection Probe.md",
+        "source": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "50ab10c207a24b4c7f7f5631e32186cc48b891a8405c904c57c4a1605aa8a691",
+        "reason": [
+          "静态烘焙、漫反射探针、反射捕获和动态更新各有独立资产与验证；原页成为GI方案导读。"
+        ],
+        "primary_question": "如何捕获并混合局部环境反射",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/05_光照阴影与GI/Shadow Map.md",
+        "source": "知识库/05_光照阴影与GI/Shadow Map.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "c94919664a6d16c315c56afd9f02f908d15c94cc34511baa171dc27e79a16216",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何生成、过滤和调试光源可见性",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/05_光照阴影与GI/动态GI.md",
+        "source": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "079c18942082fde200a173493c33db1ad9d18e3fe4dbdcb67b9cce04c74bf829",
+        "reason": [
+          "静态烘焙、漫反射探针、反射捕获和动态更新各有独立资产与验证；原页成为GI方案导读。"
+        ],
+        "primary_question": "如何在场景变化后更新间接光表示",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/05_光照阴影与GI/直接光照.md",
+        "source": "知识库/05_光照阴影与GI/直接光照.md",
+        "actions": [
+          "KEEP"
+        ],
+        "final_sha256": "261033f6564433f55aae75c606f59265a589f7d4c6462e61795d55be76dedb6b",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何评估不同光源在表面的直接贡献",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/06_纹理技术/Texture Streaming.md",
+        "source": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "38b4393c523384b7cee3d3f3f6509a707d6e38ae47329a88ea8ebe2caf547c86",
+        "reason": [
+          "UV子图组织、mip驻留和页表虚拟化具有不同资源模型。"
+        ],
+        "primary_question": "如何在内存预算内让所需mip及时驻留",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/06_纹理技术/Virtual Texture.md",
+        "source": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "cd4c2e721a2e90c3f8f8a4a553d811b999328cbca01340920de67d5dcd1d6dcf",
+        "reason": [
+          "UV子图组织、mip驻留和页表虚拟化具有不同资源模型。"
+        ],
+        "primary_question": "如何按页寻址超出驻留预算的纹理",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/06_纹理技术/纹理压缩格式.md",
+        "source": "知识库/06_纹理技术/纹理压缩格式.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "a2b7404878740168331e191bba59f0ff29b2b6ee35c4441e11647d88aa5d07d8",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何根据通道误差和平台支持选择压缩格式",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/06_纹理技术/纹理图集.md",
+        "source": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "fa8989d08fc9fd6b6f6b9536ae75d2e6e127c0a79e817919ead3b35692bf2191",
+        "reason": [
+          "UV子图组织、mip驻留和页表虚拟化具有不同资源模型。"
+        ],
+        "primary_question": "如何用UV布局共享纹理并避免过滤串色",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/06_纹理技术/纹理采样与过滤.md",
+        "source": "知识库/06_纹理技术/纹理采样与过滤.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "c68dcd35f5027f111c966c8b1ed02a4cef8647fe3e488359ac4f04c4bf135b19",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何从采样足迹选择Mip和过滤",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/06_纹理技术/视差映射.md",
+        "source": "知识库/06_纹理技术/视差映射.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "223fd3936b0b7e701fe09c36026fb3a4ba61bab5c7b1b674eafaae82b9f01ecc",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何用高度场偏移采样以近似表面视差",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/07_颜色与后处理/Alpha表示.md",
+        "source": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "9a11d6aa15920ccc50d71293a3ef86b5349e65c658798f304735c35ee055f3b8",
+        "reason": [
+          "颜色编码、覆盖表示与场景曝光是三份不同的数据契约。"
+        ],
+        "primary_question": "如何在纹理过滤与混合中保持覆盖颜色一致",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/07_颜色与后处理/Bloom.md",
+        "source": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "b3cc23740e4fa0fd57ad4b935d77029c4e0a8ae7ab2ae6dcd5b7e495ecb72bbe",
+        "reason": [
+          "显示映射、光晕、遮挡与镜头覆盖各有不同输入与验证；原页成为后处理路线，雾机制引用既有Froxel。"
+        ],
+        "primary_question": "如何通过多尺度滤波合成光晕",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/07_颜色与后处理/HDR与曝光.md",
+        "source": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "2282be503ac805bafb6442b76a5f001c27164037700ac7b5297700e6e2971223",
+        "reason": [
+          "颜色编码、覆盖表示与场景曝光是三份不同的数据契约。"
+        ],
+        "primary_question": "如何保存场景亮度并让不同帧的曝光数据可比较",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/07_颜色与后处理/Tone Mapping.md",
+        "source": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "5e0093846137587fe1ba6a64a016e6094579305e0b010553fe58e672266c4ee7",
+        "reason": [
+          "显示映射、光晕、遮挡与镜头覆盖各有不同输入与验证；原页成为后处理路线，雾机制引用既有Froxel。"
+        ],
+        "primary_question": "如何把场景HDR亮度映射到显示范围",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/07_颜色与后处理/后处理链.md",
+        "source": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE"
+        ],
+        "final_sha256": "78b6b6cecd8cd61da43ba2df7fa86e4bdb40728aa63990500e56981585a6fce3",
+        "reason": [
+          "显示映射、光晕、遮挡与镜头覆盖各有不同输入与验证；原页成为后处理路线，雾机制引用既有Froxel。"
+        ],
+        "primary_question": "这些专题如何按输入与工程问题衔接",
+        "article_type": "OVERVIEW",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/07_颜色与后处理/屏幕空间AO.md",
+        "source": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "36c7c23f4ed0ef919c96d71216345c548a2e7eabae263b146c10407c0a8b9f78",
+        "reason": [
+          "显示映射、光晕、遮挡与镜头覆盖各有不同输入与验证；原页成为后处理路线，雾机制引用既有Froxel。"
+        ],
+        "primary_question": "如何从可见深度估计局部环境遮挡",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/07_颜色与后处理/景深与运动模糊.md",
+        "source": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "390e9fd34d4948e511d741c4b0c3755110b28dcb1cc1666ff4183ed52ca664fa",
+        "reason": [
+          "显示映射、光晕、遮挡与镜头覆盖各有不同输入与验证；原页成为后处理路线，雾机制引用既有Froxel。"
+        ],
+        "primary_question": "如何根据离焦与曝光时间扩展像素覆盖",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/07_颜色与后处理/颜色空间.md",
+        "source": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "f3cadb1c6e8fec6a2bb30309bdf12d6a361eacfa196a82b9c237e1c6b8fd1730",
+        "reason": [
+          "颜色编码、覆盖表示与场景曝光是三份不同的数据契约。"
+        ],
+        "primary_question": "如何在编码与线性光计算之间正确转换",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/08_几何与网格/Billboard.md",
+        "source": "知识库/08_几何与网格/Billboard.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "3762968f2c53dff265ea0872933466e54ec853c1a8e1e42ab4ac333c847b3523",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "Billboard朝向、锚点与深度",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/08_几何与网格/Heightfield地形.md",
+        "source": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "84f724ff6af202b9a7a26964ddab46d3c5f6e5426aeda54315aa98095fe3138c",
+        "reason": [
+          "屏幕密度选择、地形表示、规则生成、植被着色方向与约束求解各自有独立模型。"
+        ],
+        "primary_question": "如何把高度场转换成连续的分块地形",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/08_几何与网格/LOD选择.md",
+        "source": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "597e8d432caddc86c69982fe3dfca10c128c67121caba8d5053417badc8e2094",
+        "reason": [
+          "屏幕密度选择、地形表示、规则生成、植被着色方向与约束求解各自有独立模型。"
+        ],
+        "primary_question": "如何按屏幕误差降低资产成本并稳定切换",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/08_几何与网格/Tessellation与位移.md",
+        "source": "知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "7d762856cc255bf8087d347a00e3989702bd9fa4af9df5ee022be947a5a3149c",
+        "reason": [
+          "独有应用资料合入既有主归属"
+        ],
+        "primary_question": "如何选择图元生成、规则细分和几何结果捕获",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/08_几何与网格/植被包裹法线.md",
+        "source": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "90eacc88c67155b18f321b4da98a448783ab977c68af7c9482059856b65a25e3",
+        "reason": [
+          "屏幕密度选择、地形表示、规则生成、植被着色方向与约束求解各自有独立模型。"
+        ],
+        "primary_question": "如何用代理体积给面片植被生成连贯受光方向",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/08_几何与网格/网格数据与GPU访问.md",
+        "source": "知识库/08_几何与网格/网格数据与GPU访问.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "fa7f26e65f98ae01afeb1dd1db3636cb1a7862945e4c0c5fa31a7a8fab3b429c",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何把资产拓扑组织成高效GPU网格",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/09_动画系统/IK.md",
+        "source": "知识库/09_动画系统/动画状态、混合与IK.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "352c7c780012f121c2d9f2426283c0a94d92ba3ded1acaede8e67d97538eeb3c",
+        "reason": [
+          "姿态合成、末端反求与跨骨架映射是独立输入和求解。"
+        ],
+        "primary_question": "如何在骨长约束下让关节链末端到达目标",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/09_动画系统/动画压缩.md",
+        "source": "知识库/09_动画系统/动画压缩.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "a789d46359b374eef79fee318842a0dcac6d78c33dd8f50567115bb05f8f9bb2",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何压缩动画轨道并控制末端误差",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/09_动画系统/动画姿态混合.md",
+        "source": "知识库/09_动画系统/动画状态、混合与IK.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "5177dbed697e6265e97238f350410656e99498448e5467bea9d6c1b09eb0f960",
+        "reason": [
+          "姿态合成、末端反求与跨骨架映射是独立输入和求解。"
+        ],
+        "primary_question": "如何从动作状态与层权重生成连续局部姿态",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/09_动画系统/动画重定向.md",
+        "source": "知识库/09_动画系统/动画状态、混合与IK.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "504b4ea532886ad7ab12b22d28d7423c371de6ba30fd693be3a2c29f5486547c",
+        "reason": [
+          "姿态合成、末端反求与跨骨架映射是独立输入和求解。"
+        ],
+        "primary_question": "如何把源骨架动作映射到比例与轴向不同的目标骨架",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/09_动画系统/植被风动.md",
+        "source": "知识库/09_动画系统/植被风动.md",
+        "actions": [
+          "KEEP"
+        ],
+        "final_sha256": "7015802bb8e516a7eee3f7633883b91e3ff6bc84b1d81a11464953dc7cd86b27",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "植被风动与顶点变形",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/09_动画系统/毛发表示与模拟.md",
+        "source": "知识库/09_动画系统/布料与毛发的表示、碰撞和LOD.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "c063c0e576492058df26512e9a9b947efa323b5b1fd8904a53d765c0e7946a5d",
+        "reason": [
+          "服装三角代理与毛发Guide有不同数据、渲染与LOD模型。"
+        ],
+        "primary_question": "如何用Cards或Guide驱动可分级的毛发表示",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/09_动画系统/角色动画导读.md",
+        "source": "知识库/09_动画系统/动画压缩、面部、布料与毛发.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE"
+        ],
+        "final_sha256": "52aaf9d886adc2e2d85b9234d335a152524497b54162893db681aba9701a539a",
+        "reason": [
+          "原量化代码已有动画压缩主归属，导读不再保留完整实现。"
+        ],
+        "primary_question": "这些专题如何按输入与工程问题衔接",
+        "article_type": "OVERVIEW",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/09_动画系统/角色布料.md",
+        "source": "知识库/09_动画系统/布料与毛发的表示、碰撞和LOD.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "df7c9a74d7e3e74aa7e2732a76373214e3f8ef1545235bc413cd14f71649c759",
+        "reason": [
+          "服装三角代理与毛发Guide有不同数据、渲染与LOD模型。"
+        ],
+        "primary_question": "如何用低模模拟代理驱动角色服装并控制穿透",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/09_动画系统/面部动画.md",
+        "source": "知识库/09_动画系统/面部动画.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "545c2562b39d587727fdc67d57d5fb0b9acddc4b5bfc7779459bbd6c3fa3065a",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何组合面部形状目标得到可用表情",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/09_动画系统/骨骼动画与蒙皮.md",
+        "source": "知识库/09_动画系统/骨骼动画与蒙皮.md",
+        "actions": [
+          "KEEP"
+        ],
+        "final_sha256": "74740a47420ab78a00e0069926f8e0dd6e7267175e2fa05690fa2a7a81cf71fd",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何从局部姿态得到蒙皮顶点",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/10_VFX与模拟/Froxel体积雾.md",
+        "source": "知识库/10_VFX与模拟/Froxel体积雾.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "a11756b91aa44007db21ec540b39bc7f7fe93ce9660d1aaf67eac1731700dd13",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何将视锥散射数据积分并时域稳定",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/10_VFX与模拟/GPU粒子系统.md",
+        "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "f884fc6ad481c91313be52e2de331b209425dd63f420e5e36bbb5ae6c14e4f9d",
+        "reason": [
+          "独有应用资料合入既有主归属",
+          "独有应用资料合入既有主归属"
+        ],
+        "primary_question": "如何选用VFX材质机制并控制覆盖成本",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/10_VFX与模拟/VFX效果组合.md",
+        "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE"
+        ],
+        "final_sha256": "1ee01411db637ab058d623b040dff60856b7b340a59b3063e2b6cfbd7ed3d1f5",
+        "reason": [
+          "纹理动画、覆盖裁剪、颜色扰动、深度软交界与负载诊断各自成篇；Ribbon与场查询归入粒子系统，原页保留方案组合入口。"
+        ],
+        "primary_question": "这些专题如何按输入与工程问题衔接",
+        "article_type": "OVERVIEW",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/10_VFX与模拟/VFX纹理动画.md",
+        "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "dfc6a3e09419b0afd5ba4738a965d160e6102ef1bc2769bd76783859bde5deaf",
+        "reason": [
+          "纹理动画、覆盖裁剪、颜色扰动、深度软交界与负载诊断各自成篇；Ribbon与场查询归入粒子系统，原页保留方案组合入口。"
+        ],
+        "primary_question": "如何用帧序列与流向场控制表面动态",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/10_VFX与模拟/体积云.md",
+        "source": "知识库/10_VFX与模拟/大气散射、天空与体积云.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "7df4971b5a3d2c1aafdd9c9e0e7872c7a495cb8e7d86fb1758b7b7eb54ef29c0",
+        "reason": [
+          "行星尺度LUT与局部云密度步进有不同输入和更新条件。"
+        ],
+        "primary_question": "如何从密度场步进求云层散射并稳定重建",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/10_VFX与模拟/大气散射.md",
+        "source": "知识库/10_VFX与模拟/大气散射、天空与体积云.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "ed1d2958828e5a6635868d9058deb67fb13979c2dd92a562560c4e850f05c783",
+        "reason": [
+          "行星尺度LUT与局部云密度步进有不同输入和更新条件。"
+        ],
+        "primary_question": "如何用光学深度与查表计算天空和空气透视",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/10_VFX与模拟/屏幕扰动.md",
+        "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "410d036780926b132f912d32a7e67d6ecd7c65d4255a42dd8d0ebd0505c681b1",
+        "reason": [
+          "纹理动画、覆盖裁剪、颜色扰动、深度软交界与负载诊断各自成篇；Ribbon与场查询归入粒子系统，原页保留方案组合入口。"
+        ],
+        "primary_question": "如何在已有场景颜色上采样视觉折射偏移",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/10_VFX与模拟/水面与海洋渲染.md",
+        "source": "知识库/10_VFX与模拟/水面与海洋渲染.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "844af312853049f5f5dbf58f872ebb146d03f8c5507a723580a782bc2388b2e3",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何在预算内组合网格、波形和水面着色",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/10_VFX与模拟/溶解材质.md",
+        "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "bd4a43213d7bd25c1dd4ec2b18e21628d20ca3b3c0c7fee8fabe2d4e69faacd9",
+        "reason": [
+          "纹理动画、覆盖裁剪、颜色扰动、深度软交界与负载诊断各自成篇；Ribbon与场查询归入粒子系统，原页保留方案组合入口。"
+        ],
+        "primary_question": "如何用标量阈值控制覆盖与发光边缘",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/10_VFX与模拟/软粒子.md",
+        "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "56789251fc85bd1f93233f46ab804201bbb9a900842af14b51a3b7ab5a0d1a4d",
+        "reason": [
+          "纹理动画、覆盖裁剪、颜色扰动、深度软交界与负载诊断各自成篇；Ribbon与场查询归入粒子系统，原页保留方案组合入口。"
+        ],
+        "primary_question": "如何用线性深度差淡化粒子与几何交界",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/11_NPR与风格化渲染/Face SDF.md",
+        "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "066a0491f850578833e310e65e5d95bbbbd44cf9ffc4a861fd92b68c97a2a47b",
+        "reason": [
+          "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。"
+        ],
+        "primary_question": "如何用艺术阈值场控制角色脸部明暗",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
+        "source": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "24240f8ada2079c05a511944a3f409f24c357206bde15f52c82bcd1064f75061",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "NPR与场景风格导读",
+        "article_type": "OVERVIEW",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/11_NPR与风格化渲染/NPR材质与分层光照.md",
+        "source": "知识库/11_NPR与风格化渲染/NPR材质与分层光照.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "44395a48eb3dab6d908234023e63b967b8ceffb7be976c92c875cbed7566ae5e",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何把连续光照转为可控的风格化材质层",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/11_NPR与风格化渲染/描边.md",
+        "source": "知识库/11_NPR与风格化渲染/描边.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "b38d67ca1f6e2bd032bfabda54d213ce621ecf07294009cc9feed3b07ad52b37",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "描边",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/11_NPR与风格化渲染/角色阴影.md",
+        "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "fec6322560895c8a89aa810b826f79653455bc98a0153522a6734b507174891c",
+        "reason": [
+          "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。"
+        ],
+        "primary_question": "如何控制角色局部遮挡并保持风格化色块",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/11_NPR与风格化渲染/风格化头发高光.md",
+        "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "a9eeae4a5b589e6bfa57cffdc1b0dd7c6d5fa326865338df5e8ace22f23282a9",
+        "reason": [
+          "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。"
+        ],
+        "primary_question": "如何沿发流生成可控且稳定的高光色带",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/11_NPR与风格化渲染/风格化眼睛.md",
+        "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "3912961ea20a58c03f128af607dca25adf23237b247c6257551dbac4a06d0a5d",
+        "reason": [
+          "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。"
+        ],
+        "primary_question": "如何用独立角膜与虹膜层表现眼球深度",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/12_光线追踪/ReSTIR.md",
+        "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "c4b63b36c373f563f23f792c68aa5914642c3e2f595968239a3d87e43a902358",
+        "reason": [
+          "射线估计、重建滤波与候选reservoir有不同统计状态和误差。"
+        ],
+        "primary_question": "如何用reservoir复用候选光照样本并校正权重",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/12_光线追踪/光线求交与BVH.md",
+        "source": "知识库/12_光线追踪/光线求交与BVH.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "cb9866dc3f380cf44f408cb30cee03258822e6ed68ef067563ac1bda5e8edfdf",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何用层级结构减少光线求交工作",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/12_光线追踪/光追降噪.md",
+        "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "81aae2dc57c29ae1d0b8143057008d4c753b8a67ea87012457e787917168cfda",
+        "reason": [
+          "射线估计、重建滤波与候选reservoir有不同统计状态和误差。"
+        ],
+        "primary_question": "如何利用几何与历史过滤低样本光照",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/12_光线追踪/实时光追采样.md",
+        "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "f5f2fd6c79859d2b9c0950ce7e330631073ca51dd868445e6d00e52b3f648ccd",
+        "reason": [
+          "射线估计、重建滤波与候选reservoir有不同统计状态和误差。"
+        ],
+        "primary_question": "如何在有限射线预算内取得有效光照样本",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/13_渲染架构/Command Buffer与帧提交.md",
+        "source": "知识库/13_渲染架构/Command Buffer与帧提交.md",
+        "actions": [
+          "KEEP"
+        ],
+        "final_sha256": "ef03985e7942ff506d8bbbbc063bda56f657ed7199da9b7db68681ea7d8e5adf",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何在提交与完成之间安全复用帧资源",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/13_渲染架构/Deferred Rendering.md",
+        "source": "知识库/13_渲染架构/Deferred Rendering.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "823a1e9c964035a6ed6f787f8bde4e145280bcff6f477ed1d96b0997e48bbd3d",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何在延迟光照阶段消费表面与灯光数据",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/13_渲染架构/Draw Call与合批.md",
+        "source": "知识库/13_渲染架构/Draw Call与合批.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "703bb40d60974ee7e22ccf95fed3ad251c03a311bef3f0d238a485fc43f41fba",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何选择和验证减少CPU绘制提交的路径",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/13_渲染架构/Forward Rendering与Forward+.md",
+        "source": "知识库/13_渲染架构/Forward Rendering与Forward+.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "b82cea81429964b10e784ea643f4bac9a0831b1d8b5f49be1162536c07cf7d77",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何在材质着色时消费全局或局部灯光",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/13_渲染架构/GBuffer布局.md",
+        "source": "知识库/13_渲染架构/GBuffer布局.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "fdb25644a8d276935e179239ccf7d930879dba54690a698cb0ac94f67a34ffe0",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何在字节预算内编码可见表面属性",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/13_渲染架构/GPU同步与屏障.md",
+        "source": "知识库/13_渲染架构/GPU同步与屏障.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "042fdaf91237c2a8f7b49f610eb16c8f02dd27b418602b3663689066a0d55711",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何令GPU资源访问顺序和可见性正确",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/13_渲染架构/GPU资源生命周期.md",
+        "source": "知识库/13_渲染架构/GPU资源生命周期.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "837898039461989ac87e62c67abe1fc84b0c80ad40233c9b2b720fbc3c0e27cd",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何按GPU完成值分配和回收资源内存",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/13_渲染架构/GPU资源绑定.md",
+        "source": "知识库/13_渲染架构/GPU资源绑定.md",
+        "actions": [
+          "KEEP"
+        ],
+        "final_sha256": "d4bd25126146c8d0796aee695465f252ea1694eef4a38ed196709ff2dd0597b6",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何使材质资源寻址和描述符寿命正确",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/13_渲染架构/Pipeline State Object.md",
+        "source": "知识库/13_渲染架构/Pipeline State Object.md",
+        "actions": [
+          "KEEP"
+        ],
+        "final_sha256": "ef63bfeeaa27e8d293ed60d95ecd63b144dadcf769e847995accbae85cb7c2a3",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何组成和缓存合法的管线状态对象",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/13_渲染架构/Render Graph.md",
+        "source": "知识库/13_渲染架构/Render Graph.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "e6190658bb8b1f87628c519b5804b5fd8633bfb4a4ae7e2d674b97009786c476",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何把资源声明编译为合法执行与分配计划",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/13_渲染架构/Render Pass与附件.md",
+        "source": "知识库/13_渲染架构/Render Pass与附件.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "ae3467ad819d8cb43cfa7b6ba26acea63b0894b3f0012369a7c0938a8a6dc87c",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何表达附件开始和结束时的内容需求",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/13_渲染架构/Tiled与Clustered光源剔除.md",
+        "source": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "b470d6a8772c7889f7f57013742a04d4897ed70635a769bda7588d6f95f28a25",
+        "reason": [
+          "独有应用资料合入既有主归属"
+        ],
+        "primary_question": "如何组织Compute执行以及实现多类并行算法",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/13_渲染架构/渲染命令的组织方式.md",
+        "source": "知识库/13_渲染架构/Render Pass、Command Buffer与Render Graph.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE"
+        ],
+        "final_sha256": "f7f5817c7ab50d106e2833f7d08fde2ea2ce632e17a17c3d8851198bc19b94d0",
+        "reason": [
+          "以关系命名，完整依赖代码已有Render Graph主归属。"
+        ],
+        "primary_question": "这些专题如何按输入与工程问题衔接",
+        "article_type": "OVERVIEW",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/13_渲染架构/渲染路径与光源组织.md",
+        "source": "知识库/13_渲染架构/渲染路径与光源组织.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE"
+        ],
+        "final_sha256": "5f987747e5c3d3bae35392e602d9827d95c2a9a1a016118d5ea1289385523923",
+        "reason": [
+          "关系型标题准确，保留采用并删去重复实施清单。"
+        ],
+        "primary_question": "这些专题如何按输入与工程问题衔接",
+        "article_type": "OVERVIEW",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/14_性能分析与优化/PSO首次使用为什么卡顿.md",
+        "source": "知识库/14_性能分析与优化/PSO首次使用为什么卡顿.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "3a50266b03dd1a5243e362f34cc89db714d95d224048a4c441e89b92869b71d8",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何减少运行时首次使用PSO的卡顿",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/14_性能分析与优化/VFX性能.md",
+        "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "6e35e2c555364e6a923e58b29f66248a76bd044f6ed79fdc16e56839aa9f631d",
+        "reason": [
+          "纹理动画、覆盖裁剪、颜色扰动、深度软交界与负载诊断各自成篇；Ribbon与场查询归入粒子系统，原页保留方案组合入口。"
+        ],
+        "primary_question": "如何按模拟排序与屏幕覆盖控制特效预算",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/14_性能分析与优化/帧捕获与性能分析工具.md",
+        "source": "知识库/14_性能分析与优化/帧捕获与性能分析工具.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "6942627cb50c2129dd0bdc178458b46b70b516a03eda2ac1bdb8bbab6cca56df",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何用工具定位一帧的状态与成本来源",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/14_性能分析与优化/帧瓶颈怎么判断.md",
+        "source": "知识库/14_性能分析与优化/帧瓶颈怎么判断.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "0901c84329e72dc888131eb17d5fc48075c1cc3f6aa625a216ca39a451214ea4",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何识别CPU/GPU关键路径及成本维度",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/14_性能分析与优化/性能对照实验.md",
+        "source": "知识库/14_性能分析与优化/性能对照实验.md",
+        "actions": [
+          "KEEP"
+        ],
+        "final_sha256": "320723cc98b6030a4fc1726ece18b808f4f6f402b0fc76edaa1e38dc1052f567",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何设计可复查的性能实验",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/14_性能分析与优化/移动端渲染优化.md",
+        "source": "知识库/14_性能分析与优化/移动端渲染优化.md",
+        "actions": [
+          "KEEP"
+        ],
+        "final_sha256": "2ffa1d936c233b710c047e85fd48b3a4206e4d6a9711236b6ad8f0446d3f580b",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何按移动设备约束验证渲染优化",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/15_资产与工具管线/DCC资产交换.md",
+        "source": "知识库/15_资产与工具管线/DCC资产交换.md",
+        "actions": [
+          "KEEP"
+        ],
+        "final_sha256": "94d134aabbf841fe8fdc3066aa5899f7e29e4d07f1606adbd5318e53ace14695",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何跨DCC和引擎保持资产语义",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/15_资产与工具管线/WFC.md",
+        "source": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "30d8a4341793d263bbb5e9fa6aa80b6568ef40ec16280f088d7093618ec184af",
+        "reason": [
+          "屏幕密度选择、地形表示、规则生成、植被着色方向与约束求解各自有独立模型。"
+        ],
+        "primary_question": "如何通过局部兼容约束生成模块布局",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/15_资产与工具管线/大型资产版本控制.md",
+        "source": "知识库/15_资产与工具管线/版本控制、CI与大型资产协作.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "ff28fa748e1c4f7003838618ca089f4dbe9ce680784ae82ce2d0cd15c6a147a1",
+        "reason": [
+          "版本协作与自动构建流水线有独立输入、状态和责任。"
+        ],
+        "primary_question": "如何管理不可合并资产的历史锁与协作边界",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/15_资产与工具管线/程序化资产生成.md",
+        "source": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "44a419536a16ba9d9f71f714e595949050f3a43c680948fde761172c6c234f01",
+        "reason": [
+          "屏幕密度选择、地形表示、规则生成、植被着色方向与约束求解各自有独立模型。"
+        ],
+        "primary_question": "如何用稳定规则生成并局部重建可交付资产",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+        "source": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "1656f915fdb2871cd127333aa8758a571c61426517f8a1797d6ca0c19f7377cc",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何让编辑器操作可预览、撤销和批量恢复",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/15_资产与工具管线/资产构建CI.md",
+        "source": "知识库/15_资产与工具管线/版本控制、CI与大型资产协作.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "bb3da01e747ee8e7b9e43f634a40385c64abcb8f9214ac6b2941796685236763",
+        "reason": [
+          "版本协作与自动构建流水线有独立输入、状态和责任。"
+        ],
+        "primary_question": "如何从固定提交自动验证构建资产并复用缓存",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/15_资产与工具管线/资产构建与发布.md",
+        "source": "知识库/15_资产与工具管线/资产构建与发布.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "54eb6487418489c5cec7298c3ce4dc0fcc187baab5cf9abf89e2e3e825909458",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何将制作输入变成可验证发布资产",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/C++工程边界.md",
+        "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "dbf8b38419fddf14d26b88870b562c0c7ea92f31ea18b9455a4ee4474dd32ba4",
+        "reason": [
+          "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。"
+        ],
+        "primary_question": "如何从编译链接到插件ABI保持类型与资源契约",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/CSharp运行模型.md",
+        "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "c45b1c26a6ae7c051d97027e6e0fb642c4be1d61bc7a72b9b1d52be0bbe7d8a2",
+        "reason": [
+          "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。"
+        ],
+        "primary_question": "如何在JIT与AOT环境中管理类型调用与资源",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/Python宿主集成.md",
+        "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "c119c53a23dd9f25882836b81c6cbc372e83bb83342b599288c6b12fa370579f",
+        "reason": [
+          "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。"
+        ],
+        "primary_question": "如何在DCC嵌入解释器中固定依赖与线程边界",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/内存布局与分配.md",
+        "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "759ecf229234d78867d1db9ab41b26af76b36ce3b5fd6a1421f3574b3f600131",
+        "reason": [
+          "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。"
+        ],
+        "primary_question": "如何按访问和寿命选择分配器及数据布局",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/图搜索.md",
+        "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "be21d8712c54952d5695ca38a0b31037ceb84641cb16906a3a1aa481d96af8a9",
+        "reason": [
+          "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。"
+        ],
+        "primary_question": "如何从依赖与路径图求可达顺序和最低成本",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/容器选择.md",
+        "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "232ddc3de61d0fd2e10e5792ae8394dabe7a6a48ed2f247d6541d7f6d133cb49",
+        "reason": [
+          "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。"
+        ],
+        "primary_question": "如何按查找更新顺序与稳定性选择数据结构",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/对象池.md",
+        "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "c30e25e86285ea3a3013dc3fcc6421179505543090d01a355b0aed057af80b82",
+        "reason": [
+          "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。"
+        ],
+        "primary_question": "如何安全复用短生命周期对象并防止状态污染",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/对象生命周期.md",
+        "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "d052d221c7a4f169fbb6f1c0003e7ad7352340dd67029c7ed3ff27ee4066c0bc",
+        "reason": [
+          "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。"
+        ],
+        "primary_question": "如何协调托管可达性与原生资源释放",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/文件IO.md",
+        "source": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "43b315b3e627c45bedf22ce16a55d7397559851cd3fcc1a373cfd53bcf6bc731",
+        "reason": [
+          "调度隔离、页表映射、内存同步与文件系统服务有独立模型。"
+        ],
+        "primary_question": "如何在缓存与异步请求下读写并可靠发布文件",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/空间索引.md",
+        "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "69872c4eecb18174b24a8fa05b75eb3c8b46f915ebb323352fda9f3f87253b84",
+        "reason": [
+          "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。"
+        ],
+        "primary_question": "如何用区域与包围体减少空间查询候选",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/算法与数据结构导读.md",
+        "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE"
+        ],
+        "final_sha256": "fe18924b6e5608f28d84bde7bf069bad25a684c5802c0b1d79cdab7109cc281d",
+        "reason": [
+          "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。"
+        ],
+        "primary_question": "这些专题如何按输入与工程问题衔接",
+        "article_type": "OVERVIEW",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/算法设计.md",
+        "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "f7a06f1a0f2cf22f498d1152c403e76dcb27de623ff8ed7b5f71a07bd1c874a0",
+        "reason": [
+          "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。"
+        ],
+        "primary_question": "如何从状态与操作推导合适的求解方法",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/线程同步.md",
+        "source": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "1cb604ad8ae2d30fb7ea91cea1116263aecef60b6422fd87321c82fe4d3de98a",
+        "reason": [
+          "调度隔离、页表映射、内存同步与文件系统服务有独立模型。"
+        ],
+        "primary_question": "如何建立共享数据的互斥和发布顺序",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/虚拟内存.md",
+        "source": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "5811b97a467f4b756407ed8e81048ed4b62da962c585ff1e0bdc9ee8a525294a",
+        "reason": [
+          "调度隔离、页表映射、内存同步与文件系统服务有独立模型。"
+        ],
+        "primary_question": "如何通过页表映射管理地址空间与工作集",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/跨语言接口.md",
+        "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "b9e18c3e95009a24fa9643d166782eed07d92c0306321bff64ef197e40e91362",
+        "reason": [
+          "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。"
+        ],
+        "primary_question": "如何跨ABI或进程传递数据所有权与错误",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/进程与调度.md",
+        "source": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "9878a02f681b19ba51eb7d488cfaee1d219392a6d376dec83fceaa35d44531d8",
+        "reason": [
+          "调度隔离、页表映射、内存同步与文件系统服务有独立模型。"
+        ],
+        "primary_question": "如何用线程和进程隔离并调度工作",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+        "source": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "43c0d99da0caf1d6a215fd632d1484cc0fa1b88a369ffc77ff2e04f97e7fd36f",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何令Agent工具任务可追踪、幂等和验收",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
+        "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "112639bd6eeb8e583dfce70cd639e2bf82719ab410e99051eb05e92d7cf16981",
+        "reason": [
+          "节点运行资产与跨帧内容对应关系是不同主问题。"
+        ],
+        "primary_question": "如何把生成节点与模型依赖组织成可复现任务",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/LoRA训练.md",
+        "source": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "18e23068f7cf15708c132111ba775b0b2ed271cf08482da35b2baf8bf32ad4d4",
+        "reason": [
+          "去噪模型、结构参考控制与参数适配训练分别维护。"
+        ],
+        "primary_question": "如何用低秩增量学习目标概念并验证泛化",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/扩散模型.md",
+        "source": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "1fa860267c8dd509f1df65224f55b5f1c9a2ae77007be578e8781d9bf3c94f77",
+        "reason": [
+          "去噪模型、结构参考控制与参数适配训练分别维护。"
+        ],
+        "primary_question": "如何从噪声状态逐步生成图像表示",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/生成条件控制.md",
+        "source": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "0e89208e2fa22fc721e78f8de19cab5fb200e87aa3386e0941437ab3f1465d06",
+        "reason": [
+          "去噪模型、结构参考控制与参数适配训练分别维护。"
+        ],
+        "primary_question": "如何用结构图与参考图约束扩散生成",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+        "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "aaf058dc177ccf69b833447f77059066d8624dfa787a81de9be7a164f8e2ae0a",
+        "reason": [
+          "节点运行资产与跨帧内容对应关系是不同主问题。"
+        ],
+        "primary_question": "如何在运动与遮挡变化下复用生成特征",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/18_游戏物理与模拟/Character Controller.md",
+        "source": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "03ba247c493e6b5808a5e09f6250c8738f76da865fad98413f5699a254c9a21f",
+        "reason": [
+          "扫掠角色、骨架刚体切换、柔软约束、断裂连接与轮胎动力学有独立求解和验证。"
+        ],
+        "primary_question": "如何用扫掠滑动生成可预测的角色位移",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+        "source": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "44251ba9e9992ae6b8f574a630e53d5f1d3cd4b1d57e1efdfc6ec4c634189c3b",
+        "reason": [
+          "扫掠角色、骨架刚体切换、柔软约束、断裂连接与轮胎动力学有独立求解和验证。"
+        ],
+        "primary_question": "如何在动画姿态与刚体骨架之间切换控制",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/18_游戏物理与模拟/XPBD.md",
+        "source": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "14c6e70acc7c209ffda708a69e70aef12670558ffdfc0050c82191eb90a2c629",
+        "reason": [
+          "扫掠角色、骨架刚体切换、柔软约束、断裂连接与轮胎动力学有独立求解和验证。"
+        ],
+        "primary_question": "如何通过Compliance求解可控柔软约束",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/18_游戏物理与模拟/刚体物理求解.md",
+        "source": "知识库/18_游戏物理与模拟/刚体物理求解.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "293ef685bddb1e5548c7942df95279e6e0b9c99880251dc74701cd22407d683b",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何从状态积分和碰撞生成受约束运动",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/18_游戏物理与模拟/破坏系统.md",
+        "source": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "b831847e662bb0197ef4e9c603a0515f52088c6ede871eccd6167ceccf239aff",
+        "reason": [
+          "扫掠角色、骨架刚体切换、柔软约束、断裂连接与轮胎动力学有独立求解和验证。"
+        ],
+        "primary_question": "如何用连接图控制碎片激活与预算",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/18_游戏物理与模拟/载具物理.md",
+        "source": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "ec08906c61c80be9c1f2a31d426592dd21f2521d82e623728bca0f2dc1fa72d9",
+        "reason": [
+          "扫掠角色、骨架刚体切换、柔软约束、断裂连接与轮胎动力学有独立求解和验证。"
+        ],
+        "primary_question": "如何把悬挂与轮胎滑移转换成车体力",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/19_Gameplay与游戏框架/玩法事件与脚本.md",
+        "source": "知识库/19_Gameplay与游戏框架/玩法事件与脚本.md",
+        "actions": [
+          "KEEP"
+        ],
+        "final_sha256": "8d11e7a8e656f48ce940c161a5d06c4297f7caa462cdde425abc4489f5820129",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何解耦玩法规则与事件脚本执行",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/19_Gameplay与游戏框架/输入与动作状态.md",
+        "source": "知识库/19_Gameplay与游戏框架/输入与动作状态.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "c6eafd7f4e95169c448516d649d62cf185e2c9fac1961fcc7a0789f13be7cbb2",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何从输入请求推进角色动作并驱动表现",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/20_游戏AI/MCTS.md",
+        "source": "知识库/20_游戏AI/群体、学习与高级决策.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "1b767e6b17c80a7fda928bce07ed0f09259f9b8908e1274b6935fc562d5f141d",
+        "reason": [
+          "群体空间信息、树搜索与策略训练采用不同状态和评估方式。"
+        ],
+        "primary_question": "如何在有限预算内用模拟平衡探索与回报",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/20_游戏AI/游戏AI决策模型.md",
+        "source": "知识库/20_游戏AI/游戏AI决策模型.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "991aeb390c698a13e54b90587458f3f37ed3c1d7a88f3251b8dd01b04e0c33af",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何按决策问题选择行为组织模型",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/20_游戏AI/游戏AI导航.md",
+        "source": "知识库/20_游戏AI/游戏AI导航.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "15e8b57cac03668790be50640e28f30c6c1a9e88d0f99aa908ae6d4dd85bdaed",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何从可行走空间得到可执行路径与移动",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/20_游戏AI/游戏强化学习.md",
+        "source": "知识库/20_游戏AI/群体、学习与高级决策.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "3c11b016e5f8176cdec3242f735803b16cc9f0e659cc5b4932ad8537dc4720e7",
+        "reason": [
+          "群体空间信息、树搜索与策略训练采用不同状态和评估方式。"
+        ],
+        "primary_question": "如何用观测动作与奖励训练可部署策略",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/20_游戏AI/群体战术信息.md",
+        "source": "知识库/20_游戏AI/群体、学习与高级决策.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "e59dcded4e9e17e28835bba53f3e09d41fea0bbc1abd017347b3076f6e21476a",
+        "reason": [
+          "群体空间信息、树搜索与策略训练采用不同状态和评估方式。"
+        ],
+        "primary_question": "如何以感知与影响场支持群体协作决策",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/21_游戏网络/RPC.md",
+        "source": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "0ee880c288acc2626904cf2a41ee93241db1e1a4a80538547a9bdbb34349158d",
+        "reason": [
+          "消息传输、时钟估计与远程事务有独立协议和正确性条件。"
+        ],
+        "primary_question": "如何把远程请求转成可校验可重试的事务",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/21_游戏网络/世界分区与AOI.md",
+        "source": "知识库/21_游戏网络/服务器架构、分区与反作弊.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "b8c272bb9edb77ed968aadfe53fcfce02611a6aaf5f35c8914352a3d9e3f741f",
+        "reason": [
+          "服务路由存储、空间复制迁移与异常校验分别有独立故障模型。"
+        ],
+        "primary_question": "如何筛选复制对象并交接跨区权威",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/21_游戏网络/回滚同步.md",
+        "source": "知识库/21_游戏网络/状态同步、预测与回滚.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "fd5208daae5d34e308fa62846aa9513c85e4b4a26c401dd6891248485bd7a14e",
+        "reason": [
+          "快照显示、预测校正、确定性重模拟与历史命中查询有不同状态恢复范围。"
+        ],
+        "primary_question": "如何恢复历史Tick并重模拟迟到输入",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/21_游戏网络/客户端预测.md",
+        "source": "知识库/21_游戏网络/状态同步、预测与回滚.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "e33997f501e7127df897c850a03475c8a808efc61df5e9bf0f571e25260f5457",
+        "reason": [
+          "快照显示、预测校正、确定性重模拟与历史命中查询有不同状态恢复范围。"
+        ],
+        "primary_question": "如何用权威确认重放未确认输入并分离视觉误差",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/21_游戏网络/对局服务器架构.md",
+        "source": "知识库/21_游戏网络/服务器架构、分区与反作弊.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "e1af77616c6b24894e468169c3b44d586c08ab028888b37cb6c8529b9d6b454a",
+        "reason": [
+          "服务路由存储、空间复制迁移与异常校验分别有独立故障模型。"
+        ],
+        "primary_question": "如何组织权威实例路由存储与故障恢复",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/21_游戏网络/延迟补偿命中.md",
+        "source": "知识库/21_游戏网络/状态同步、预测与回滚.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "cecd6efbb47d54e49cd280f67a75797ac440d71add8a1daf7b37d823555c7ca1",
+        "reason": [
+          "快照显示、预测校正、确定性重模拟与历史命中查询有不同状态恢复范围。"
+        ],
+        "primary_question": "如何按受控历史时刻回退碰撞体进行命中判断",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/21_游戏网络/快照同步.md",
+        "source": "知识库/21_游戏网络/状态同步、预测与回滚.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "c829e6333f306e0d0d9a6c76025c86c65253a6cb7a966f1fa69a9e1e3c5b3e62",
+        "reason": [
+          "快照显示、预测校正、确定性重模拟与历史命中查询有不同状态恢复范围。"
+        ],
+        "primary_question": "如何用基线压缩与延后插值显示远端状态",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/21_游戏网络/服务端反作弊校验.md",
+        "source": "知识库/21_游戏网络/服务器架构、分区与反作弊.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "25aacce589c820c1243871d3ef38dc91e37449bc45def501169f071d44e804c7",
+        "reason": [
+          "服务路由存储、空间复制迁移与异常校验分别有独立故障模型。"
+        ],
+        "primary_question": "如何验证客户端请求并记录可审计异常",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/21_游戏网络/游戏网络传输.md",
+        "source": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "bd200b979436f7f77c5cb0b6c8a0772a5ac58022f9f04d91f44fade19ebe1ac2",
+        "reason": [
+          "消息传输、时钟估计与远程事务有独立协议和正确性条件。"
+        ],
+        "primary_question": "如何在乱序丢包与字节流下传送有边界的消息",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/21_游戏网络/游戏网络时钟.md",
+        "source": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "5ee3cf18677fbebea7203dc4c5d6f63d13145269de847de82bdcb7210d9634ad",
+        "reason": [
+          "消息传输、时钟估计与远程事务有独立协议和正确性条件。"
+        ],
+        "primary_question": "如何估计往返延迟与共同模拟时间",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md",
+        "source": "知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md",
+        "actions": [
+          "KEEP"
+        ],
+        "final_sha256": "411241b60a8df40e54203a81a222732c2e4335df646181606f4a3457c9dec6d2",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何在Unity 6 URP记录并消费自定义通道",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
+        "source": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "acd48b79a05181720b5eb125ddf851c0b8cdeeacd179dee4ed701b53da0ef045",
+        "reason": [
+          "版本化条件保存在对应引擎实现页"
+        ],
+        "primary_question": "如何按资源和注入需求选择引擎扩展入口",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/22_渲染引擎实现/Unreal RDG Pass实现.md",
+        "source": "知识库/22_渲染引擎实现/Unreal RDG Pass实现.md",
+        "actions": [
+          "KEEP"
+        ],
+        "final_sha256": "9eddb422401fb604cacdef163bd9334a2bf4ac96dc05881950eb14c02ecec56a",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何用RDG参数表达资源依赖并执行通道",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
+        "source": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "c1c65dc6213eca3d18d6b1b2d115606ad8a2e008c4f8234aedf1fc250a3099a2",
+        "reason": [
+          "版本化条件保存在对应引擎实现页"
+        ],
+        "primary_question": "如何按资源和注入需求选择引擎扩展入口",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/22_渲染引擎实现/Unreal自定义Mesh Pass.md",
+        "source": "知识库/22_渲染引擎实现/Unreal自定义Mesh Pass.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "21fb9a86f5a23932afff015003a3cb9dd51ef9489c11df411ecce769bf143100",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何把自定义网格效果接入Unreal绘制流程",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/22_渲染引擎实现/引擎渲染扩展导读.md",
+        "source": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE"
+        ],
+        "final_sha256": "635ea4a78ef6eb244402caa4a02cca43c8bb276fbb9037d65a17ac72110b6d0d",
+        "reason": [
+          "按版本化实现路线组织，原接口正文合入引擎专篇。"
+        ],
+        "primary_question": "这些专题如何按输入与工程问题衔接",
+        "article_type": "OVERVIEW",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/23_引擎运行系统/ECS与数据布局.md",
+        "source": "知识库/23_引擎运行系统/数据导向设计与任务系统.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "73108cf807636487b8a7d9308cfcbe44b6f73871ded6fb7d499871b422b85485",
+        "reason": [
+          "组件数据组织与CPU任务调度可以独立采用，主模型不同。"
+        ],
+        "primary_question": "如何按访问与查询模式组织大量实体数据",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/23_引擎运行系统/Unity对象生命周期.md",
+        "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "62b2f94e67a247b9a155c12d226c85b37e9a6169a2c970422f87fcc76dbb4842",
+        "reason": [
+          "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。"
+        ],
+        "primary_question": "如何协调托管包装与Unity原生对象的创建销毁",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
+        "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "996999fd81640dca2b5995017243c85ef002f902efbf60e36eee441b5088986b",
+        "reason": [
+          "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。"
+        ],
+        "primary_question": "如何让UObject引用被引擎GC识别",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/23_引擎运行系统/任务系统.md",
+        "source": "知识库/23_引擎运行系统/数据导向设计与任务系统.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "78a48faa678b33338aa3d450abac45ef3bb3f157c38dc947f168f3d2716f2232",
+        "reason": [
+          "组件数据组织与CPU任务调度可以独立采用，主模型不同。"
+        ],
+        "primary_question": "如何用显式依赖调度帧内CPU工作",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/23_引擎运行系统/引擎世界与对象模型.md",
+        "source": "知识库/23_引擎运行系统/引擎世界与对象模型.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "698383e8bdb97bf11d0cbf640866763d27a730466eb27d3a130449ec8a9c2393",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何定义引擎世界的依赖、所有权与更新阶段",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/23_引擎运行系统/资源依赖与异步加载.md",
+        "source": "知识库/23_引擎运行系统/资源依赖与异步加载.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "a8d703d6af88d83d045e54b3c155eebe7bb0f227a5619a7e3c0e42fb273e5a95",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何沿依赖加载资产并保持版本与所有权",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/24_游戏音频/游戏音频系统.md",
+        "source": "知识库/24_游戏音频/游戏音频系统.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "cc2944a357e6acb303cba4a1b05450115b994ea4d44252d4b816c599376d8a0a",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何在实时回调预算内混音并管理声音",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/25_UI与文本/UI绘制.md",
+        "source": "知识库/25_UI与文本/UI、字体与文本渲染.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "3ac9f2b876a8d47df89c3fcd39aecca54a9bcc77ea78c344c41e30e14aeb315f",
+        "reason": [
+          "控件布局提交与Unicode塑形/字形采样是不同数据流。"
+        ],
+        "primary_question": "如何把布局与裁剪转换成可批量提交的界面命令",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/25_UI与文本/文字渲染.md",
+        "source": "知识库/25_UI与文本/UI、字体与文本渲染.md",
+        "actions": [
+          "REWRITE",
+          "RESTRUCTURE",
+          "DEEPEN"
+        ],
+        "final_sha256": "90b65c509bf77007aaa957f0d50b991925de4bdd9611d8df603ea9550a34b512",
+        "reason": [
+          "控件布局提交与Unicode塑形/字形采样是不同数据流。"
+        ],
+        "primary_question": "如何把Unicode文本塑形成字形并恢复像素覆盖",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
+        "source": "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "a2c362da7eec0a561aaa043cc821a202a4785cf1ec404c83b03f03249facd242",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何在GPU生成可见对象与间接绘制参数",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      },
+      {
+        "path": "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md",
+        "source": "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md",
+        "actions": [
+          "REWRITE"
+        ],
+        "final_sha256": "52da2649331f18e00c3d9634bd28fb9a0c032005de5fb703f1d4e4fb0cffe47e",
+        "reason": [
+          "既有PASS页面保持正文；同步必要引用"
+        ],
+        "primary_question": "如何按屏幕误差选择并流送Nanite几何",
+        "article_type": "ARTICLE",
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+      }
+    ],
+    "status": "COMPLETE",
+    "static_validation": "全局检查已通过，实际结果见completion-validation-results.json"
+  }
 }

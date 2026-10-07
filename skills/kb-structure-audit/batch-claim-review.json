@@ -122,13 +122,14 @@
     },
     {
       "id": "NET-01",
-      "article": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
+      "article": "知识库/21_游戏网络/游戏网络传输.md",
       "claim": "分帧与send/recv调用边界独立",
       "conditions": "固定线头、长度与溢出校验",
       "source": "本机20组随机切分",
       "locator": null,
       "date": "2026-10-07",
-      "verdict": "CPU模型支持；没有网络故障注入"
+      "verdict": "CPU模型支持；没有网络故障注入",
+      "split_context": "最终主归属见completion-migration-map"
     },
     {
       "id": "GAME-01",

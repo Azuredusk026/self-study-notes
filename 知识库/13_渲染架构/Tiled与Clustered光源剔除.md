@@ -65,12 +65,33 @@ uint ClusterIndex(uint2 pixel, float viewDistance)
 - 测试近远平面和对数切片边界，排除漏灯。
 - 记录列表构建、原子竞争、溢出回退和最终着色时间。
 
+
+## 灯光集合的位掩码
+
+当集合元素数量不超过 32 时，一个 `uint` 就能表达任意子集，交集是一条与指令，遍历用 `firstbitlow` 逐位取出。
+
+这在光照剔除中很典型：把屏幕切成 Tile、视锥深度切成 Bin，分别预计算各自影响的灯光集合，着色时两个掩码求交即可：
+
+```hlsl
+uint tileLightMask = 0u;
+for (uint j = 0; j < lightCount; ++j)
+{
+    if (RaySphereOrConeIntersection(tileFrustum, lights[j]))
+        tileLightMask |= (1u << j);
+}
+_XYLightMaskMap[globalId.xy] = uint4(tileLightMask, 0, 0, 0);
+```
+
+一个 Tile 的灯光列表被压成四字节。超过 32 盏灯时用多个 `uint` 扩展，求交仍是几条指令。
+
+这类 Kernel 常有共享计算的机会：$4\times4$ 个 Tile 需要 $5\times5$ 个角点，多出的角点可以由空闲线程顺带算出并存入共享内存，避免相邻 Tile 重复计算同一角点。
+
 ## 相关主题
 
 - [[02_GPU与光栅化管线/一帧如何到达屏幕]]
 - [[05_光照阴影与GI/直接光照]]
 - [[13_渲染架构/GBuffer布局]]
-- [[13_渲染架构/Render Pass、Command Buffer与Render Graph]]
+- [[13_渲染架构/渲染命令的组织方式]]
 - [[14_性能分析与优化/帧瓶颈怎么判断]]
 
 - [[13_渲染架构/渲染路径与光源组织]]

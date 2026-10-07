@@ -1,0 +1,2314 @@
+{
+  "records": [
+    {
+      "path": "知识库/00_知识库说明/学习与维护方法.md",
+      "primary_question": "作者如何组织、验证和维护文章",
+      "references": "",
+      "urls": [],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/00_知识库说明/技术中文写作规范.md",
+      "primary_question": "技术中文写作规范",
+      "references": "",
+      "urls": [],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/00_知识库说明/术语表.md",
+      "primary_question": "读者如何统一技术叫法",
+      "references": "",
+      "urls": [],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/00_知识库说明/知识地图.md",
+      "primary_question": "读者如何按问题找到学习路线",
+      "references": "",
+      "urls": [],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/00_知识库说明/知识库实施规范.md",
+      "primary_question": "知识库实施规范",
+      "references": "",
+      "urls": [],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/01_数学与采样/Monte Carlo采样.md",
+      "primary_question": "如何用概率分布估计积分并控制方差",
+      "references": "- Matt Pharr, Wenzel Jakob, Greg Humphreys, *Physically Based Rendering*.\n- Peter-Pike Sloan, *Stupid Spherical Harmonics Tricks*.\n- Ravi Ramamoorthi and Pat Hanrahan, *An Efficient Representation for Irradiance Environment Maps*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/01_数学与采样/旋转表示与插值.md",
+      "primary_question": "如何表示旋转并保持旋转插值连续",
+      "references": "- Ken Shoemake, *Animating Rotation with Quaternion Curves*.\n- Eric Lengyel, *Foundations of Game Engine Development, Volume 1: Mathematics*.\n- Unity Scripting API, `Quaternion.Slerp` and `Quaternion.Lerp`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/01_数学与采样/球谐光照.md",
+      "primary_question": "如何用少量系数表示并重建低频球面光照",
+      "references": "- Matt Pharr, Wenzel Jakob, Greg Humphreys, *Physically Based Rendering*.\n- Peter-Pike Sloan, *Stupid Spherical Harmonics Tricks*.\n- Ravi Ramamoorthi and Pat Hanrahan, *An Efficient Representation for Irradiance Environment Maps*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/01_数学与采样/程序噪声.md",
+      "primary_question": "如何生成可重复且具有空间结构的标量场",
+      "references": "- Matt Pharr, Wenzel Jakob, Greg Humphreys, *Physically Based Rendering*, Sampling and Reconstruction chapters.\n- Ken Perlin, *An Image Synthesizer*.\n- Stefan Gustavson, *Simplex Noise Demystified*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/01_数学与采样/空间变换.md",
+      "primary_question": "如何保持空间变换与法线变换正确",
+      "references": "- Khronos OpenGL Wiki, *General OpenGL: Transformations*.\n- Eric Lengyel, *Foundations of Game Engine Development, Volume 1: Mathematics*.\n- Unity Manual, *Built-in shader variables*.\n- LearnOpenGL, `src/1.getting_started/5.1.transformations` and `6.1.coordinate_systems`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/01_数学与采样/采样与混叠.md",
+      "primary_question": "为什么离散采样会丢失或伪造信号细节",
+      "references": "- Matt Pharr, Wenzel Jakob, Greg Humphreys, *Physically Based Rendering*, Sampling and Reconstruction chapters.\n- Ken Perlin, *An Image Synthesizer*.\n- Stefan Gustavson, *Simplex Noise Demystified*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/GPU执行与访存.md",
+      "primary_question": "如何把GPU执行和访存行为对应到性能瓶颈",
+      "references": "- [Arm Tile-based GPUs](https://developer.arm.com/documentation/102546/latest)，分块渲染和带宽。\n- NVIDIA Nsight Graphics 与 AMD Radeon GPU Profiler 官方计数器文档。\n- [Vulkan GPU Memory](https://docs.vulkan.org/spec/latest/chapters/memory.html)。",
+      "urls": [
+        "https://developer.arm.com/documentation/102546/latest",
+        "https://docs.vulkan.org/spec/latest/chapters/memory.html"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/Geometry Shader.md",
+      "primary_question": "如何按输入图元生成有限数量的输出图元",
+      "references": "- Frank Luna, *Introduction to 3D Game Programming with DirectX 12*, Tessellation and Geometry Shader chapters.\n- Khronos OpenGL Wiki, *Tessellation*, *Tessellation Control Shader*, *Tessellation Evaluation Shader*, *Transform Feedback*.\n- Microsoft Learn, *Geometry-Shader Stage*, *Primitive Topologies*, *Getting Started with the Stream-Output Stage*.\n- Microsoft, *Direct3D 11.3 Functional Specification*, Tessellation Pattern and Fixed Order of Pipeline Results.\n- NVIDIA, *GeForce 8 and 9 Series GPU Programming Guide*, Geometry Shader performance sections.\n- Joshua Barczak, *Why Geometry Shaders Are Slow (Unless you're Intel)*.\n- Jasper Bekkers, *Mesh Shaders and the Future of Geometry Processing*.\n- Catlike Coding, *Flat and Wireframe Shading*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/OpenGL对象与状态.md",
+      "primary_question": "如何在上下文中管理图形对象绑定和使用",
+      "references": "- Microsoft Learn, *Graphics Pipeline (Direct3D 11)*.\n- Khronos, *Vulkan Specification*, Chapter: Pipelines.\n- AMD GPUOpen, graphics performance guides.\n- LearnOpenGL, `src/4.advanced_opengl/9.*.geometry_shader_*`.\n- LearnOpenGL, `src/8.guest/2021/3.tessellation`.\n- LearnOpenGL 中文镜像，*OpenGL*、*Hello Window*、*Hello Triangle*。",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/Stencil与对象遮罩.md",
+      "primary_question": "如何用模板状态表达对象遮罩并避免位冲突",
+      "references": "- Microsoft Learn, *Depth-Stencil Functionality*.\n- Khronos, *Vulkan Specification*, Rasterization and Fragment Operations.\n- Emil Persson, *Creating Vast Game Worlds* and reversed-Z references collected by NVIDIA.\n- Nathan Reed, *Depth Precision Visualized*, NVIDIA Developer Blog.\n- Unity Manual, *Platform-specific rendering differences* and URP Depth Priming documentation.\n- Unity Technologies, URP `CanCopyDepth` implementation in the Universal Render Pipeline package.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/Stream Output.md",
+      "primary_question": "如何把几何前端结果保存到缓冲供后续消费",
+      "references": "- Frank Luna, *Introduction to 3D Game Programming with DirectX 12*, Tessellation and Geometry Shader chapters.\n- Khronos OpenGL Wiki, *Tessellation*, *Tessellation Control Shader*, *Tessellation Evaluation Shader*, *Transform Feedback*.\n- Microsoft Learn, *Geometry-Shader Stage*, *Primitive Topologies*, *Getting Started with the Stream-Output Stage*.\n- Microsoft, *Direct3D 11.3 Functional Specification*, Tessellation Pattern and Fixed Order of Pipeline Results.\n- NVIDIA, *GeForce 8 and 9 Series GPU Programming Guide*, Geometry Shader performance sections.\n- Joshua Barczak, *Why Geometry Shaders Are Slow (Unless you're Intel)*.\n- Jasper Bekkers, *Mesh Shaders and the Future of Geometry Processing*.\n- Catlike Coding, *Flat and Wireframe Shading*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "primary_question": "这些专题如何按输入与工程问题衔接",
+      "references": "各专篇列出对应机制的原始资料、版本与实际验证范围。",
+      "urls": [],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/光栅化与属性插值.md",
+      "primary_question": "如何把三角形覆盖转为正确片元属性",
+      "references": "- Microsoft Learn, *Depth-Stencil Functionality*.\n- Khronos, *Vulkan Specification*, Rasterization and Fragment Operations.\n- Emil Persson, *Creating Vast Game Worlds* and reversed-Z references collected by NVIDIA.\n- Nathan Reed, *Depth Precision Visualized*, NVIDIA Developer Blog.\n- Unity Manual, *Platform-specific rendering differences* and URP Depth Priming documentation.\n- Unity Technologies, URP `CanCopyDepth` implementation in the Universal Render Pipeline package.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/光栅化可见性导读.md",
+      "primary_question": "这些专题如何按输入与工程问题衔接",
+      "references": "各专篇列出对应机制的原始资料、版本与实际验证范围。",
+      "urls": [],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/可见性与合成导读.md",
+      "primary_question": "这些专题如何按输入与工程问题衔接",
+      "references": "各专篇列出对应机制的原始资料、版本与实际验证范围。",
+      "urls": [],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/可见性剔除.md",
+      "primary_question": "如何用保守可见性测试减少绘制",
+      "references": "- Khronos, *Vulkan Specification*, Fragment Operations and Blending.\n- Morgan McGuire and Louis Bavoil, *Weighted Blended Order-Independent Transparency*.\n- Eric Haines, *Premultiplied Alpha* references.\n- LearnOpenGL, `src/8.guest/2020/oit`.\n- LearnOpenGL, `src/8.guest/2021/1.scene/2.frustum_culling`.\n- Cass Everitt, *Interactive Order-Independent Transparency*, NVIDIA.\n- Louis Bavoil and Kevin Myers, *Order Independent Transparency with Dual Depth Peeling*, NVIDIA.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/基于深度的可见性优化.md",
+      "primary_question": "如何组织Compute执行以及实现多类并行算法",
+      "references": "- Microsoft Learn, *Depth-Stencil Functionality*.\n- Khronos, *Vulkan Specification*, Rasterization and Fragment Operations.\n- Emil Persson, *Creating Vast Game Worlds* and reversed-Z references collected by NVIDIA.\n- Nathan Reed, *Depth Precision Visualized*, NVIDIA Developer Blog.\n- Unity Manual, *Platform-specific rendering differences* and URP Depth Priming documentation.\n- Unity Technologies, URP `CanCopyDepth` implementation in the Universal Render Pipeline package.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+      "primary_question": "如何从空间和时间样本重建稳定图像",
+      "references": "- Lei Yang, Shiqiu Liu, Marco Salvi, *A Survey of Temporal Antialiasing Techniques*, Eurographics STAR 2020.\n- Lei Yang et al., *Amortized Supersampling*, SIGGRAPH Asia 2009.\n- Brian Karis, *High Quality Temporal Supersampling*, SIGGRAPH 2014 Advances in Real-Time Rendering.\n- Marco Salvi, *An Excursion in Temporal Supersampling*, GDC 2016.\n- Jorge Jimenez et al., *Filtering Approaches for Real-Time Anti-Aliasing*, SIGGRAPH Courses.\n- Timothy Lottes, *FXAA*, NVIDIA.\n- Timothy Lottes, *TSSAA: Temporal Super-Sampling AA*.\n- Playdead, *Temporal Reprojection Anti-Aliasing in INSIDE*, GDC 2016.\n- Microsoft Learn, *Multisample Antialiasing* and `Texture2DMS` documentation.\n- LearnOpenGL, `src/4.advanced_opengl/11.1.anti_aliasing_msaa` and `11.2.anti_aliasing_offscreen`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/显示呈现.md",
+      "primary_question": "如何让GPU完成图像进入扫描输出并控制排队延迟",
+      "references": "- Microsoft Learn, *Graphics Pipeline (Direct3D 11)*.\n- Khronos, *Vulkan Specification*, Chapter: Pipelines.\n- AMD GPUOpen, graphics performance guides.\n- LearnOpenGL, `src/4.advanced_opengl/9.*.geometry_shader_*`.\n- LearnOpenGL, `src/8.guest/2021/3.tessellation`.\n- LearnOpenGL 中文镜像，*OpenGL*、*Hello Window*、*Hello Triangle*。",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/深度缓冲与位置重建.md",
+      "primary_question": "如何正确解释并消费深度值",
+      "references": "- Microsoft Learn, *Depth-Stencil Functionality*.\n- Khronos, *Vulkan Specification*, Rasterization and Fragment Operations.\n- Emil Persson, *Creating Vast Game Worlds* and reversed-Z references collected by NVIDIA.\n- Nathan Reed, *Depth Precision Visualized*, NVIDIA Developer Blog.\n- Unity Manual, *Platform-specific rendering differences* and URP Depth Priming documentation.\n- Unity Technologies, URP `CanCopyDepth` implementation in the Universal Render Pipeline package.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/透明合成.md",
+      "primary_question": "如何在不透明遮挡之后正确合成透明表面",
+      "references": "- Khronos, *Vulkan Specification*, Fragment Operations and Blending.\n- Morgan McGuire and Louis Bavoil, *Weighted Blended Order-Independent Transparency*.\n- Eric Haines, *Premultiplied Alpha* references.\n- LearnOpenGL, `src/8.guest/2020/oit`.\n- LearnOpenGL, `src/8.guest/2021/1.scene/2.frustum_culling`.\n- Cass Everitt, *Interactive Order-Independent Transparency*, NVIDIA.\n- Louis Bavoil and Kevin Myers, *Order Independent Transparency with Dual Depth Peeling*, NVIDIA.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/03_Shader编程/Compute Shader.md",
+      "primary_question": "如何按线程索引安全调度设备端数据计算",
+      "references": "- Microsoft Learn, *Compute Shader Overview* and *HLSL Shader Model 6 Wave Intrinsics*.\n- Khronos, *Vulkan Specification*, Compute Pipelines and Memory Model.\n- NVIDIA and AMD GPU architecture/performance guides.\n- LearnOpenGL, `src/8.guest/2022/5.computeshader_helloworld`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/03_Shader编程/GPU异步回读.md",
+      "primary_question": "如何把设备端结果交给CPU并控制延迟与寿命",
+      "references": "- Microsoft Learn, *Compute Shader Overview* and *HLSL Shader Model 6 Wave Intrinsics*.\n- Khronos, *Vulkan Specification*, Compute Pipelines and Memory Model.\n- NVIDIA and AMD GPU architecture/performance guides.\n- LearnOpenGL, `src/8.guest/2022/5.computeshader_helloworld`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/03_Shader编程/GPU归约与前缀和.md",
+      "primary_question": "如何把并行元素合成统计量或唯一输出偏移",
+      "references": "- Microsoft Learn, *Compute Shader Overview* and *HLSL Shader Model 6 Wave Intrinsics*.\n- Khronos, *Vulkan Specification*, Compute Pipelines and Memory Model.\n- NVIDIA and AMD GPU architecture/performance guides.\n- LearnOpenGL, `src/8.guest/2022/5.computeshader_helloworld`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/03_Shader编程/Shader Variant管理.md",
+      "primary_question": "如何控制Shader编译组合并验证构建覆盖",
+      "references": "- Unity Manual, *Shader variants and keywords*.\n- Unity Manual, *Shader variant stripping*.\n- Unity Scripting API, `IPreprocessShaders` and `ShaderVariantCollection`.\n- Epic Games, *Shader Development* and *Mesh Drawing Pipeline* documentation.\n- Unreal Engine source, `FMaterialShaderMap`, `FShaderLibrary` serialization paths.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/03_Shader编程/Shader接口与数据流.md",
+      "primary_question": "如何使Shader阶段接口与资源布局一致",
+      "references": "- Microsoft Learn, *HLSL Reference*.\n- Khronos, *OpenGL Shading Language Specification*.\n- Unity Manual, *Writing shaders*.\n- LearnOpenGL, `src/4.advanced_opengl/8.advanced_glsl_ubo`.\n- LearnOpenGL 中文镜像，*Advanced GLSL*。",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/04_光照模型与PBR/BRDF与微表面模型.md",
+      "primary_question": "如何从反射约束得到直接光照BRDF",
+      "references": "- Bruce Walter et al., *Microfacet Models for Refraction through Rough Surfaces*.\n- Brian Karis, *Real Shading in Unreal Engine 4*.\n- Google Filament, *Physically Based Rendering in Filament*.\n- LearnOpenGL, `src/6.pbr/1.1.lighting` and `1.2.lighting_textured`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/04_光照模型与PBR/Cubemap环境采样.md",
+      "primary_question": "如何按方向寻址六面环境并正确绘制天空背景",
+      "references": "- Mikkelsen, *MikkTSpace*.\n- Brian Karis, *Real Shading in Unreal Engine 4*.\n- Colin Barré-Brisebois and Stephen Hill, *Blending in Detail*.\n- LearnOpenGL, `src/5.advanced_lighting/4.normal_mapping`.\n- LearnOpenGL, `src/4.advanced_opengl/6.1.cubemaps_skybox` and `6.2.cubemaps_environment_mapping`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/04_光照模型与PBR/IBL.md",
+      "primary_question": "如何预积分环境光并求漫反射与粗糙镜面响应",
+      "references": "- Mikkelsen, *MikkTSpace*.\n- Brian Karis, *Real Shading in Unreal Engine 4*.\n- Colin Barré-Brisebois and Stephen Hill, *Blending in Detail*.\n- LearnOpenGL, `src/5.advanced_lighting/4.normal_mapping`.\n- LearnOpenGL, `src/4.advanced_opengl/6.1.cubemaps_skybox` and `6.2.cubemaps_environment_mapping`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/04_光照模型与PBR/PBR材质.md",
+      "primary_question": "如何用PBR参数保持材质响应和能量约束",
+      "references": "- Google Filament, *Material System* and *Physically Based Rendering in Filament*.\n- Adobe Substance 3D, *PBR Guide*.\n- Epic Games, *Physically Based Materials*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/04_光照模型与PBR/法线贴图.md",
+      "primary_question": "如何把纹理方向恢复成一致的着色法线",
+      "references": "- Mikkelsen, *MikkTSpace*.\n- Brian Karis, *Real Shading in Unreal Engine 4*.\n- Colin Barré-Brisebois and Stephen Hill, *Blending in Detail*.\n- LearnOpenGL, `src/5.advanced_lighting/4.normal_mapping`.\n- LearnOpenGL, `src/4.advanced_opengl/6.1.cubemaps_skybox` and `6.2.cubemaps_environment_mapping`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/04_光照模型与PBR/皮肤次表面散射.md",
+      "primary_question": "如何以实时预算近似皮肤次表面散射",
+      "references": "- Eric Penner and George Borshukov, *Pre-Integrated Skin Shading*, GPU Pro 2.\n- Jorge Jimenez et al., *Separable Subsurface Scattering*, Computer Graphics Forum.\n- Jorge Jimenez et al., *Screen-Space Perceptual Rendering of Human Skin*.\n- Brent Burley, *Approximate Reflectance Profiles for Efficient Subsurface Scattering*, Disney.\n- NVIDIA GameWorks, *FaceWorks* library and GTC overview slides.\n- Unity Technologies, HDRP `SubsurfaceScattering.compute` and diffusion profile documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/GI方案选择.md",
+      "primary_question": "这些专题如何按输入与工程问题衔接",
+      "references": "各专篇列出对应机制的原始资料、版本与实际验证范围。",
+      "urls": [],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/Light Probe.md",
+      "primary_question": "如何让动态物体插值空间中的低频间接光",
+      "references": "- Epic Games, *Lumen Global Illumination and Reflections*.\n- NVIDIA, *RTXGI / Dynamic Diffuse Global Illumination*.\n- Unity Manual, *Lightmapping and Light Probes*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/Lightmap.md",
+      "primary_question": "如何把静态表面的光照预计算为可稳定采样的纹理",
+      "references": "- Epic Games, *Lumen Global Illumination and Reflections*.\n- NVIDIA, *RTXGI / Dynamic Diffuse Global Illumination*.\n- Unity Manual, *Lightmapping and Light Probes*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/Reflection Probe.md",
+      "primary_question": "如何捕获并混合局部环境反射",
+      "references": "- Epic Games, *Lumen Global Illumination and Reflections*.\n- NVIDIA, *RTXGI / Dynamic Diffuse Global Illumination*.\n- Unity Manual, *Lightmapping and Light Probes*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/Shadow Map.md",
+      "primary_question": "如何生成、过滤和调试光源可见性",
+      "references": "- Randima Fernando, *Percentage-Closer Soft Shadows*.\n- NVIDIA, *Integrating Realistic Soft Shadows into Your Game Engine*.\n- Microsoft Learn, *Cascaded Shadow Maps*.\n- LearnOpenGL, `src/8.guest/2021/2.csm`.\n- LearnOpenGL, `src/5.advanced_lighting/3.2.1.point_shadows` and `3.2.2.point_shadows_soft`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/动态GI.md",
+      "primary_question": "如何在场景变化后更新间接光表示",
+      "references": "- Epic Games, *Lumen Global Illumination and Reflections*.\n- NVIDIA, *RTXGI / Dynamic Diffuse Global Illumination*.\n- Unity Manual, *Lightmapping and Light Probes*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/直接光照.md",
+      "primary_question": "如何评估不同光源在表面的直接贡献",
+      "references": "- Google Filament, *Lighting*.\n- Epic Games, *Physical Lighting Units*.\n- Eric Heitz et al., *Real-Time Polygonal-Light Shading with Linearly Transformed Cosines*.\n- LearnOpenGL, `src/8.guest/2022/7.area_lights`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/06_纹理技术/Texture Streaming.md",
+      "primary_question": "如何在内存预算内让所需mip及时驻留",
+      "references": "- id Software, *MegaTexture* references.\n- Microsoft Learn, *Sampler Feedback and Tiled Resources*.\n- Unity and Unreal documentation on Texture Streaming and Virtual Texturing.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/06_纹理技术/Virtual Texture.md",
+      "primary_question": "如何按页寻址超出驻留预算的纹理",
+      "references": "- id Software, *MegaTexture* references.\n- Microsoft Learn, *Sampler Feedback and Tiled Resources*.\n- Unity and Unreal documentation on Texture Streaming and Virtual Texturing.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/06_纹理技术/纹理压缩格式.md",
+      "primary_question": "如何根据通道误差和平台支持选择压缩格式",
+      "references": "- Microsoft Learn, *Block Compression*.\n- Khronos, *ASTC Specification* and *Data Format Specification*.\n- NVIDIA, *Texture Filtering and Mipmapping* references.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/06_纹理技术/纹理图集.md",
+      "primary_question": "如何用UV布局共享纹理并避免过滤串色",
+      "references": "- id Software, *MegaTexture* references.\n- Microsoft Learn, *Sampler Feedback and Tiled Resources*.\n- Unity and Unreal documentation on Texture Streaming and Virtual Texturing.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/06_纹理技术/纹理采样与过滤.md",
+      "primary_question": "如何从采样足迹选择Mip和过滤",
+      "references": "- Microsoft Learn, *Block Compression*.\n- Khronos, *ASTC Specification* and *Data Format Specification*.\n- NVIDIA, *Texture Filtering and Mipmapping* references.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/06_纹理技术/视差映射.md",
+      "primary_question": "如何用高度场偏移采样以近似表面视差",
+      "references": "- LearnOpenGL CN, *视差贴图*。\n- LearnOpenGL, `src/5.advanced_lighting/5.1.parallax_mapping`。\n- LearnOpenGL, `src/5.advanced_lighting/5.2.steep_parallax_mapping`。\n- LearnOpenGL, `src/5.advanced_lighting/5.3.parallax_occlusion_mapping`。",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/07_颜色与后处理/Alpha表示.md",
+      "primary_question": "如何在纹理过滤与混合中保持覆盖颜色一致",
+      "references": "- IEC 61966-2-1, sRGB color space.\n- Microsoft Learn, *Data Conversion Rules* for sRGB resources.\n- Epic Games, *Auto Exposure* and *Pre-Exposure* documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/07_颜色与后处理/Bloom.md",
+      "primary_question": "如何通过多尺度滤波合成光晕",
+      "references": "- John Hable, *Filmic Tonemapping Operators*.\n- Jorge Jimenez et al., *Next Generation Post Processing in Call of Duty: Advanced Warfare*.\n- Epic Games and Unity documentation on Bloom, Exposure and Color Grading.\n- LearnOpenGL, `src/5.advanced_lighting/9.ssao`.\n- LearnOpenGL, `src/8.guest/2022/6.physically_based_bloom`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/07_颜色与后处理/HDR与曝光.md",
+      "primary_question": "如何保存场景亮度并让不同帧的曝光数据可比较",
+      "references": "- IEC 61966-2-1, sRGB color space.\n- Microsoft Learn, *Data Conversion Rules* for sRGB resources.\n- Epic Games, *Auto Exposure* and *Pre-Exposure* documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/07_颜色与后处理/Tone Mapping.md",
+      "primary_question": "如何把场景HDR亮度映射到显示范围",
+      "references": "- John Hable, *Filmic Tonemapping Operators*.\n- Jorge Jimenez et al., *Next Generation Post Processing in Call of Duty: Advanced Warfare*.\n- Epic Games and Unity documentation on Bloom, Exposure and Color Grading.\n- LearnOpenGL, `src/5.advanced_lighting/9.ssao`.\n- LearnOpenGL, `src/8.guest/2022/6.physically_based_bloom`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/07_颜色与后处理/后处理链.md",
+      "primary_question": "这些专题如何按输入与工程问题衔接",
+      "references": "各专篇列出对应机制的原始资料、版本与实际验证范围。",
+      "urls": [],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/07_颜色与后处理/屏幕空间AO.md",
+      "primary_question": "如何从可见深度估计局部环境遮挡",
+      "references": "- John Hable, *Filmic Tonemapping Operators*.\n- Jorge Jimenez et al., *Next Generation Post Processing in Call of Duty: Advanced Warfare*.\n- Epic Games and Unity documentation on Bloom, Exposure and Color Grading.\n- LearnOpenGL, `src/5.advanced_lighting/9.ssao`.\n- LearnOpenGL, `src/8.guest/2022/6.physically_based_bloom`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/07_颜色与后处理/景深与运动模糊.md",
+      "primary_question": "如何根据离焦与曝光时间扩展像素覆盖",
+      "references": "- John Hable, *Filmic Tonemapping Operators*.\n- Jorge Jimenez et al., *Next Generation Post Processing in Call of Duty: Advanced Warfare*.\n- Epic Games and Unity documentation on Bloom, Exposure and Color Grading.\n- LearnOpenGL, `src/5.advanced_lighting/9.ssao`.\n- LearnOpenGL, `src/8.guest/2022/6.physically_based_bloom`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/07_颜色与后处理/颜色空间.md",
+      "primary_question": "如何在编码与线性光计算之间正确转换",
+      "references": "- IEC 61966-2-1, sRGB color space.\n- Microsoft Learn, *Data Conversion Rules* for sRGB resources.\n- Epic Games, *Auto Exposure* and *Pre-Exposure* documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/08_几何与网格/Billboard.md",
+      "primary_question": "Billboard朝向、锚点与深度",
+      "references": "- Microsoft Learn，[Geometry Shader Stage](https://learn.microsoft.com/en-us/windows/win32/direct3d11/geometry-shader-stage)：点和图元输入、可变输出模型。\n- Epic Games，[Impostor Baker](https://dev.epicgames.com/documentation/en-us/unreal-engine/impostor-baker-plugin-in-unreal-engine)：多方向表示与烘焙；具体插件功能按目标版本核对。\n- 本仓库几何Shader专题的Billboard示例，作为坐标架与阶段应用说明。",
+      "urls": [
+        "https://learn.microsoft.com/en-us/windows/win32/direct3d11/geometry-shader-stage",
+        "https://dev.epicgames.com/documentation/en-us/unreal-engine/impostor-baker-plugin-in-unreal-engine"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/08_几何与网格/Heightfield地形.md",
+      "primary_question": "如何把高度场转换成连续的分块地形",
+      "references": "- Paul Merrell, *Model Synthesis* and SideFX WFC dungeon generator tutorial.\n- Gabriel Taubin, *A Signal Processing Approach to Fair Surface Design*, SIGGRAPH.\n\n- Unity Manual, *LOD Group* and *Terrain Data*.\n- Houdini Documentation, *HeightField*, *PDG* and *Houdini Engine for Unity*.\n- Lindstrom and Turk, *Fast and Memory Efficient Polygonal Simplification*.\n- meshoptimizer documentation, *Vertex cache optimization*.\n- LearnOpenGL, `src/8.guest/2021/3.tessellation`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/08_几何与网格/LOD选择.md",
+      "primary_question": "如何按屏幕误差降低资产成本并稳定切换",
+      "references": "- Paul Merrell, *Model Synthesis* and SideFX WFC dungeon generator tutorial.\n- Gabriel Taubin, *A Signal Processing Approach to Fair Surface Design*, SIGGRAPH.\n\n- Unity Manual, *LOD Group* and *Terrain Data*.\n- Houdini Documentation, *HeightField*, *PDG* and *Houdini Engine for Unity*.\n- Lindstrom and Turk, *Fast and Memory Efficient Polygonal Simplification*.\n- meshoptimizer documentation, *Vertex cache optimization*.\n- LearnOpenGL, `src/8.guest/2021/3.tessellation`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/08_几何与网格/Tessellation与位移.md",
+      "primary_question": "如何选择图元生成、规则细分和几何结果捕获",
+      "references": "- Frank Luna, *Introduction to 3D Game Programming with DirectX 12*, Tessellation Stages.\n- Khronos OpenGL Wiki, *Tessellation*.\n- Microsoft Learn, *Tessellation Overview* and HLSL Hull/Domain Shader attributes.\n- Nathan Reed, *Tessellation Modes Quick Reference*.\n- Unity Manual, URP shader stage pragmas and shader target levels.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/08_几何与网格/植被包裹法线.md",
+      "primary_question": "如何用代理体积给面片植被生成连贯受光方向",
+      "references": "- Paul Merrell, *Model Synthesis* and SideFX WFC dungeon generator tutorial.\n- Gabriel Taubin, *A Signal Processing Approach to Fair Surface Design*, SIGGRAPH.\n\n- Unity Manual, *LOD Group* and *Terrain Data*.\n- Houdini Documentation, *HeightField*, *PDG* and *Houdini Engine for Unity*.\n- Lindstrom and Turk, *Fast and Memory Efficient Polygonal Simplification*.\n- meshoptimizer documentation, *Vertex cache optimization*.\n- LearnOpenGL, `src/8.guest/2021/3.tessellation`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/08_几何与网格/网格数据与GPU访问.md",
+      "primary_question": "如何把资产拓扑组织成高效GPU网格",
+      "references": "- Microsoft Learn, *Introduction to buffers in Direct3D 11*.\n- Hoppe, *New Quadric Metric for Simplifying Meshes with Appearance Attributes*.\n- Mikkelsen, *MikkTSpace*.\n- Houdini Documentation, *Geometry attributes* and *Houdini Engine for Unity*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/09_动画系统/IK.md",
+      "primary_question": "如何在骨长约束下让关节链末端到达目标",
+      "references": "- Buss, *Introduction to Inverse Kinematics with Jacobian Transpose, Pseudoinverse and Damped Least Squares Methods*.\n- Aristidou and Lasenby, *FABRIK: A fast, iterative solver for the Inverse Kinematics problem*.\n- Unity and Unreal Engine animation state machine, IK and Root Motion documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/09_动画系统/动画压缩.md",
+      "primary_question": "如何压缩动画轨道并控制末端误差",
+      "references": "- [Animation Compression Library](https://github.com/nfrechette/acl)：轨道压缩、误差度量与运行时解码。\n- Unity Manual, *Animation compression*：导入端压缩选项。\n- Unreal Engine Documentation, *Animation Compression*：压缩配置与工程接入。",
+      "urls": [
+        "https://github.com/nfrechette/acl"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/09_动画系统/动画姿态混合.md",
+      "primary_question": "如何从动作状态与层权重生成连续局部姿态",
+      "references": "- Buss, *Introduction to Inverse Kinematics with Jacobian Transpose, Pseudoinverse and Damped Least Squares Methods*.\n- Aristidou and Lasenby, *FABRIK: A fast, iterative solver for the Inverse Kinematics problem*.\n- Unity and Unreal Engine animation state machine, IK and Root Motion documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/09_动画系统/动画重定向.md",
+      "primary_question": "如何把源骨架动作映射到比例与轴向不同的目标骨架",
+      "references": "- Buss, *Introduction to Inverse Kinematics with Jacobian Transpose, Pseudoinverse and Damped Least Squares Methods*.\n- Aristidou and Lasenby, *FABRIK: A fast, iterative solver for the Inverse Kinematics problem*.\n- Unity and Unreal Engine animation state machine, IK and Root Motion documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/09_动画系统/植被风动.md",
+      "primary_question": "植被风动与顶点变形",
+      "references": "- Tiago Sousa，[GPU Gems 3 Chapter 16: Vegetation Procedural Animation and Shading in Crysis](https://developer.nvidia.com/gpugems/gpugems3/part-iii-rendering/chapter-16-vegetation-procedural-animation-and-shading-crysis)：主弯曲、细节弯曲与植被属性。\n- Unity6000.0，[Mesh.SetUVs](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Mesh.SetUVs.html)：顶点属性通道契约。\n- 本仓库参考模型中的正弦位移为机制示意，完整形变、法线与运动向量需按项目实现验证。",
+      "urls": [
+        "https://developer.nvidia.com/gpugems/gpugems3/part-iii-rendering/chapter-16-vegetation-procedural-animation-and-shading-crysis",
+        "https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Mesh.SetUVs.html"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/09_动画系统/毛发表示与模拟.md",
+      "primary_question": "如何用Cards或Guide驱动可分级的毛发表示",
+      "references": "- Macklin et al., *XPBD: Position-Based Simulation of Compliant Constrained Dynamics*.\n- Unity and Unreal Engine documentation on animation compression, Blendshape/Morph Target and Cloth.\n- Epic Games, *Hair Rendering and Simulation*：Groom、Guides 与 LOD。",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/09_动画系统/角色动画导读.md",
+      "primary_question": "这些专题如何按输入与工程问题衔接",
+      "references": "各专篇列出对应机制的原始资料、版本与实际验证范围。",
+      "urls": [],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/09_动画系统/角色布料.md",
+      "primary_question": "如何用低模模拟代理驱动角色服装并控制穿透",
+      "references": "- Macklin et al., *XPBD: Position-Based Simulation of Compliant Constrained Dynamics*.\n- Unity and Unreal Engine documentation on animation compression, Blendshape/Morph Target and Cloth.\n- Epic Games, *Hair Rendering and Simulation*：Groom、Guides 与 LOD。",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/09_动画系统/面部动画.md",
+      "primary_question": "如何组合面部形状目标得到可用表情",
+      "references": "- Epic Games, [FBX Morph Target Pipeline](https://dev.epicgames.com/documentation/en-us/unreal-engine/fbx-morph-target-pipeline-in-unreal-engine)：导入形状目标与曲线。\n- Unity Manual, *Working with blend shapes*：权重与导入数据。\n- Ekman, Friesen and Hager, *Facial Action Coding System*：面部动作单元的描述体系。",
+      "urls": [
+        "https://dev.epicgames.com/documentation/en-us/unreal-engine/fbx-morph-target-pipeline-in-unreal-engine"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/09_动画系统/骨骼动画与蒙皮.md",
+      "primary_question": "如何从局部姿态得到蒙皮顶点",
+      "references": "- Kavan et al., *Skinning with Dual Quaternions*.\n- Unity Manual, *Skinned Mesh Renderer* and *Animation compression*.\n- Unreal Engine Documentation, *Skeletal Mesh Animation System*.\n- LearnOpenGL, `src/8.guest/2020/skeletal_animation`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/10_VFX与模拟/Froxel体积雾.md",
+      "primary_question": "如何将视锥散射数据积分并时域稳定",
+      "references": "- Sébastien Hillaire, *A Scalable and Production Ready Sky and Atmosphere Rendering Technique*.\n- Eric Bruneton and Fabrice Neyret, *Precomputed Atmospheric Scattering*.\n- Andrew Schneider, *The Real-time Volumetric Cloudscapes of Horizon Zero Dawn*.\n- Bartlomiej Wronski, *Volumetric Fog: Unified Compute Shader Based Solution to Atmospheric Scattering*, SIGGRAPH.\n- Sébastien Hillaire, *Physically Based and Unified Volumetric Rendering in Frostbite*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/10_VFX与模拟/GPU粒子系统.md",
+      "primary_question": "如何选用VFX材质机制并控制覆盖成本",
+      "references": "- Reeves, *Particle Systems: A Technique for Modeling a Class of Fuzzy Objects*.\n- Unreal Engine Documentation, *Niagara Overview*.\n- Unity Documentation, *Visual Effect Graph*.\n- GPU Gems 3, *Chapter 23. High-Speed, Off-Screen Particles*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/10_VFX与模拟/VFX效果组合.md",
+      "primary_question": "这些专题如何按输入与工程问题衔接",
+      "references": "各专篇列出对应机制的原始资料、版本与实际验证范围。",
+      "urls": [],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/10_VFX与模拟/VFX纹理动画.md",
+      "primary_question": "如何用帧序列与流向场控制表面动态",
+      "references": "- Unity Documentation, *Visual Effect Graph* and *Particle System*.\n- Unreal Engine Documentation, *Niagara Renderers* and *Scalability*.\n- GPU Gems, particle and flow simulation chapters.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/10_VFX与模拟/体积云.md",
+      "primary_question": "如何从密度场步进求云层散射并稳定重建",
+      "references": "- Sébastien Hillaire, *A Scalable and Production Ready Sky and Atmosphere Rendering Technique*.\n- Eric Bruneton and Fabrice Neyret, *Precomputed Atmospheric Scattering*.\n- Andrew Schneider, *The Real-time Volumetric Cloudscapes of Horizon Zero Dawn*.\n- Bartlomiej Wronski, *Volumetric Fog: Unified Compute Shader Based Solution to Atmospheric Scattering*, SIGGRAPH.\n- Sébastien Hillaire, *Physically Based and Unified Volumetric Rendering in Frostbite*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/10_VFX与模拟/大气散射.md",
+      "primary_question": "如何用光学深度与查表计算天空和空气透视",
+      "references": "- Sébastien Hillaire, *A Scalable and Production Ready Sky and Atmosphere Rendering Technique*.\n- Eric Bruneton and Fabrice Neyret, *Precomputed Atmospheric Scattering*.\n- Andrew Schneider, *The Real-time Volumetric Cloudscapes of Horizon Zero Dawn*.\n- Bartlomiej Wronski, *Volumetric Fog: Unified Compute Shader Based Solution to Atmospheric Scattering*, SIGGRAPH.\n- Sébastien Hillaire, *Physically Based and Unified Volumetric Rendering in Frostbite*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/10_VFX与模拟/屏幕扰动.md",
+      "primary_question": "如何在已有场景颜色上采样视觉折射偏移",
+      "references": "- Unity Documentation, *Visual Effect Graph* and *Particle System*.\n- Unreal Engine Documentation, *Niagara Renderers* and *Scalability*.\n- GPU Gems, particle and flow simulation chapters.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/10_VFX与模拟/水面与海洋渲染.md",
+      "primary_question": "如何在预算内组合网格、波形和水面着色",
+      "references": "- Jerry Tessendorf, *Simulating Ocean Water*.\n- Mark Finch, *Effective Water Simulation from Physical Models*, GPU Gems.\n- Claes Johanson, *Real-time Water Rendering: Introducing the Projected Grid Concept*.\n- Filip Strugar, *Continuous Distance-Dependent Level of Detail for Rendering Heightmaps*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/10_VFX与模拟/溶解材质.md",
+      "primary_question": "如何用标量阈值控制覆盖与发光边缘",
+      "references": "- Unity Documentation, *Visual Effect Graph* and *Particle System*.\n- Unreal Engine Documentation, *Niagara Renderers* and *Scalability*.\n- GPU Gems, particle and flow simulation chapters.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/10_VFX与模拟/软粒子.md",
+      "primary_question": "如何用线性深度差淡化粒子与几何交界",
+      "references": "- Unity Documentation, *Visual Effect Graph* and *Particle System*.\n- Unreal Engine Documentation, *Niagara Renderers* and *Scalability*.\n- GPU Gems, particle and flow simulation chapters.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/Face SDF.md",
+      "primary_question": "如何用艺术阈值场控制角色脸部明暗",
+      "references": "- Kajiya and Kay, *Rendering Fur with Three Dimensional Textures*.\n- Marschner et al., *Light Scattering from Human Hair Fibers*.\n- Arc System Works and miHoYo technical presentations on anime character rendering.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
+      "primary_question": "NPR与场景风格导读",
+      "references": "- Gooch et al.，[A Non-Photorealistic Lighting Model for Automatic Technical Illustration](https://users.cs.northwestern.edu/~ago820/SIG98/abstract.html)，SIGGRAPH1998。\n- 各机制专篇的规范、来源与实验记录，用于验证实际数据和实现。",
+      "urls": [
+        "https://users.cs.northwestern.edu/~ago820/SIG98/abstract.html"
+      ],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/NPR材质与分层光照.md",
+      "primary_question": "如何把连续光照转为可控的风格化材质层",
+      "references": "- Gooch et al., *A Non-Photorealistic Lighting Model for Automatic Technical Illustration*.\n- Unity and Unreal Engine documentation on custom lighting and material functions.\n- Arc System Works and miHoYo technical presentations on stylized character rendering.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/描边.md",
+      "primary_question": "描边",
+      "references": "- 别看着我笑了，[风格化渲染常用技巧总结：描边](https://zhuanlan.zhihu.com/p/603649633)。用于方案与工程现象线索；代码与状态独立核验，来源图片许可尚未确认。\n- Unity6000.0，[Mesh.SetUVs](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Mesh.SetUVs.html)：通道索引与属性分量。\n- Unity6000.0，[Stencil](https://docs.unity3d.com/6000.0/Documentation/Manual/SL-Stencil.html)、[Offset](https://docs.unity3d.com/6000.0/Documentation/Manual/SL-Offset.html)：状态、掩码与深度偏移。\n- Unity6000.0，[Render Objects](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/renderer-features/renderer-feature-render-objects.html)：筛选、材质和状态覆盖。\n- Khronos，[Vulkan Depth Bias](https://docs.vulkan.org/spec/latest/chapters/primsrast.html#primsrast-depthbias)：光栅阶段深度偏移条件。\n- 本仓库 [OutlineMath.hlsl](../examples/outline/OutlineMath.hlsl)、[reference.py](../examples/outline/reference.py)：像素偏移、差分与遮罩算法及本机验证。",
+      "urls": [
+        "https://zhuanlan.zhihu.com/p/603649633",
+        "https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Mesh.SetUVs.html",
+        "https://docs.unity3d.com/6000.0/Documentation/Manual/SL-Stencil.html",
+        "https://docs.unity3d.com/6000.0/Documentation/Manual/SL-Offset.html",
+        "https://docs.unity3d.com/6000.0/Documentation/Manual/urp/renderer-features/renderer-feature-render-objects.html",
+        "https://docs.vulkan.org/spec/latest/chapters/primsrast.html#primsrast-depthbias"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/角色阴影.md",
+      "primary_question": "如何控制角色局部遮挡并保持风格化色块",
+      "references": "- Kajiya and Kay, *Rendering Fur with Three Dimensional Textures*.\n- Marschner et al., *Light Scattering from Human Hair Fibers*.\n- Arc System Works and miHoYo technical presentations on anime character rendering.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/风格化头发高光.md",
+      "primary_question": "如何沿发流生成可控且稳定的高光色带",
+      "references": "- Kajiya and Kay, *Rendering Fur with Three Dimensional Textures*.\n- Marschner et al., *Light Scattering from Human Hair Fibers*.\n- Arc System Works and miHoYo technical presentations on anime character rendering.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/风格化眼睛.md",
+      "primary_question": "如何用独立角膜与虹膜层表现眼球深度",
+      "references": "- Kajiya and Kay, *Rendering Fur with Three Dimensional Textures*.\n- Marschner et al., *Light Scattering from Human Hair Fibers*.\n- Arc System Works and miHoYo technical presentations on anime character rendering.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/12_光线追踪/ReSTIR.md",
+      "primary_question": "如何用reservoir复用候选光照样本并校正权重",
+      "references": "- Bitterli et al., *Spatiotemporal Reservoir Resampling for Real-Time Ray Tracing with Dynamic Direct Lighting*.\n- Schied et al., *Spatiotemporal Variance-Guided Filtering*.\n- NVIDIA, *Real-Time Denoising With Spatiotemporal Variance-Guided Filtering*.\n- Heitz et al., *A Fast and Robust Method for Avoiding Self-Intersection*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/12_光线追踪/光线求交与BVH.md",
+      "primary_question": "如何用层级结构减少光线求交工作",
+      "references": "- Möller and Trumbore, *Fast, Minimum Storage Ray-Triangle Intersection*.\n- Wald, *On Fast Construction of SAH-based Bounding Volume Hierarchies*.\n- NVIDIA, *Thinking Parallel: Part III, Tree Construction on the GPU*.\n- Microsoft DXR and Vulkan Ray Tracing specifications.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/12_光线追踪/光追降噪.md",
+      "primary_question": "如何利用几何与历史过滤低样本光照",
+      "references": "- Bitterli et al., *Spatiotemporal Reservoir Resampling for Real-Time Ray Tracing with Dynamic Direct Lighting*.\n- Schied et al., *Spatiotemporal Variance-Guided Filtering*.\n- NVIDIA, *Real-Time Denoising With Spatiotemporal Variance-Guided Filtering*.\n- Heitz et al., *A Fast and Robust Method for Avoiding Self-Intersection*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/12_光线追踪/实时光追采样.md",
+      "primary_question": "如何在有限射线预算内取得有效光照样本",
+      "references": "- Bitterli et al., *Spatiotemporal Reservoir Resampling for Real-Time Ray Tracing with Dynamic Direct Lighting*.\n- Schied et al., *Spatiotemporal Variance-Guided Filtering*.\n- NVIDIA, *Real-Time Denoising With Spatiotemporal Variance-Guided Filtering*.\n- Heitz et al., *A Fast and Robust Method for Avoiding Self-Intersection*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/Command Buffer与帧提交.md",
+      "primary_question": "如何在提交与完成之间安全复用帧资源",
+      "references": "- [D3D12 Command Queues and Lists](https://learn.microsoft.com/en-us/windows/win32/direct3d12/command-queues-and-command-lists)。\n- [Vulkan Command Buffers](https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html)，pending 状态与重用限制。\n- [Vulkan Frames in Flight](https://docs.vulkan.org/tutorial/latest/03_Drawing_a_triangle/03_Drawing/03_Frames_in_flight.html)。",
+      "urls": [
+        "https://learn.microsoft.com/en-us/windows/win32/direct3d12/command-queues-and-command-lists",
+        "https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html",
+        "https://docs.vulkan.org/tutorial/latest/03_Drawing_a_triangle/03_Drawing/03_Frames_in_flight.html"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/Deferred Rendering.md",
+      "primary_question": "如何在延迟光照阶段消费表面与灯光数据",
+      "references": "- Ola Olsson et al., *Clustered Deferred and Forward Shading*.\n- Johan Andersson, *Tiled Deferred Shading*.\n- Unity and Unreal documentation on Forward+, Deferred and mobile renderers.\n- LearnOpenGL, `src/5.advanced_lighting/8.1.deferred_shading`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/Draw Call与合批.md",
+      "primary_question": "如何选择和验证减少CPU绘制提交的路径",
+      "references": "- Unity Manual, *Draw call batching* and *SRP Batcher*.\n- Microsoft Learn, *DrawInstanced and ExecuteIndirect*.\n- GPUOpen, GPU-driven rendering references.\n- LearnOpenGL, `src/4.advanced_opengl/10.3.asteroids_instanced`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/Forward Rendering与Forward+.md",
+      "primary_question": "如何在材质着色时消费全局或局部灯光",
+      "references": "- Ola Olsson et al., *Clustered Deferred and Forward Shading*.\n- Johan Andersson, *Tiled Deferred Shading*.\n- Unity and Unreal documentation on Forward+, Deferred and mobile renderers.\n- LearnOpenGL, `src/5.advanced_lighting/8.1.deferred_shading`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/GBuffer布局.md",
+      "primary_question": "如何在字节预算内编码可见表面属性",
+      "references": "- Zina Cigolle et al., *A Survey of Efficient Representations for Independent Unit Vectors*.\n- Krzysztof Narkowicz, *Octahedron normal vector encoding*.\n- Arm, *Mali GPU Best Practices*, Transaction Elimination and Framebuffer Fetch.\n- Khronos, *Vulkan Specification*, Render Pass and Subpass Input Attachments.\n- Apple, *Metal Programming Guide*, Programmable Blending.\n\n核验范围：CPU打包参考检查和API中立HLSL编译已执行，完整GBuffer管线与目标GPU流量未运行验证。",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/GPU同步与屏障.md",
+      "primary_question": "如何令GPU资源访问顺序和可见性正确",
+      "references": "- [Vulkan Synchronization](https://docs.vulkan.org/spec/latest/chapters/synchronization.html)，执行、内存、semaphore 与 fence。\n- [Khronos Synchronization Examples](https://github.com/KhronosGroup/Vulkan-Docs/wiki/Synchronization-Examples)，实际访问的屏障对应。\n- [D3D12 Resource Barriers](https://learn.microsoft.com/en-us/windows/win32/direct3d12/using-resource-barriers-to-synchronize-resource-states-in-direct3d-12)。",
+      "urls": [
+        "https://docs.vulkan.org/spec/latest/chapters/synchronization.html",
+        "https://github.com/KhronosGroup/Vulkan-Docs/wiki/Synchronization-Examples",
+        "https://learn.microsoft.com/en-us/windows/win32/direct3d12/using-resource-barriers-to-synchronize-resource-states-in-direct3d-12"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/GPU资源生命周期.md",
+      "primary_question": "如何按GPU完成值分配和回收资源内存",
+      "references": "- [D3D12 Heap Types](https://learn.microsoft.com/en-us/windows/win32/direct3d12/upload-and-readback-of-texture-data)。\n- [Vulkan Memory Allocation](https://docs.vulkan.org/spec/latest/chapters/memory.html)，coherent、flush、invalidate 与绑定。\n- Unreal RDG 官方文档，外部资源导入、导出和 transient allocator。",
+      "urls": [
+        "https://learn.microsoft.com/en-us/windows/win32/direct3d12/upload-and-readback-of-texture-data",
+        "https://docs.vulkan.org/spec/latest/chapters/memory.html"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/GPU资源绑定.md",
+      "primary_question": "如何使材质资源寻址和描述符寿命正确",
+      "references": "- [Vulkan Resource Descriptors](https://docs.vulkan.org/spec/latest/chapters/descriptorsets.html)。\n- [D3D12 Root Signatures](https://learn.microsoft.com/en-us/windows/win32/direct3d12/root-signatures)。\n- [NonUniformResourceIndex](https://learn.microsoft.com/en-us/windows/win32/direct3d12/resource-binding-in-hlsl)，动态索引与资源绑定。",
+      "urls": [
+        "https://docs.vulkan.org/spec/latest/chapters/descriptorsets.html",
+        "https://learn.microsoft.com/en-us/windows/win32/direct3d12/root-signatures",
+        "https://learn.microsoft.com/en-us/windows/win32/direct3d12/resource-binding-in-hlsl"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/Pipeline State Object.md",
+      "primary_question": "如何组成和缓存合法的管线状态对象",
+      "references": "- [D3D12 Pipeline State](https://learn.microsoft.com/en-us/windows/win32/direct3d12/managing-graphics-pipeline-state-in-direct3d-12)。\n- [Vulkan Pipelines](https://docs.vulkan.org/spec/latest/chapters/pipelines.html)。\n- Epic Games，PSO Precaching 和 Shader Development 官方文档。",
+      "urls": [
+        "https://learn.microsoft.com/en-us/windows/win32/direct3d12/managing-graphics-pipeline-state-in-direct3d-12",
+        "https://docs.vulkan.org/spec/latest/chapters/pipelines.html"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/Render Graph.md",
+      "primary_question": "如何把资源声明编译为合法执行与分配计划",
+      "references": "- Yuriy O'Donnell，*FrameGraph: Extensible Rendering Architecture in Frostbite*，GDC 2017。\n- [Unity 6 URP Render Graph](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph.html)，记录与执行模型。\n- [Unreal Render Dependency Graph](https://dev.epicgames.com/documentation/en-us/unreal-engine/render-dependency-graph-in-unreal-engine)，参数、剔除及调试约定。",
+      "urls": [
+        "https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph.html",
+        "https://dev.epicgames.com/documentation/en-us/unreal-engine/render-dependency-graph-in-unreal-engine"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/Render Pass与附件.md",
+      "primary_question": "如何表达附件开始和结束时的内容需求",
+      "references": "- [Vulkan Render Pass](https://docs.vulkan.org/spec/latest/chapters/renderpass.html)，附件、动态渲染和 local read。\n- Unity URP Render Graph 官方文档，附件访问和通道合并。\n- Arm Developer，Tile-based rendering 与 framebuffer bandwidth 资料。",
+      "urls": [
+        "https://docs.vulkan.org/spec/latest/chapters/renderpass.html"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/Tiled与Clustered光源剔除.md",
+      "primary_question": "如何组织Compute执行以及实现多类并行算法",
+      "references": "- Ola Olsson et al., *Clustered Deferred and Forward Shading*.\n- Johan Andersson, *Tiled Deferred Shading*.\n- Unity and Unreal documentation on Forward+, Deferred and mobile renderers.\n- LearnOpenGL, `src/5.advanced_lighting/8.1.deferred_shading`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/渲染命令的组织方式.md",
+      "primary_question": "这些专题如何按输入与工程问题衔接",
+      "references": "各专篇列出对应机制的原始资料、版本与实际验证范围。",
+      "urls": [],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/渲染路径与光源组织.md",
+      "primary_question": "这些专题如何按输入与工程问题衔接",
+      "references": "各专篇列出对应机制的原始资料、版本与实际验证范围。",
+      "urls": [],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/14_性能分析与优化/PSO首次使用为什么卡顿.md",
+      "primary_question": "如何减少运行时首次使用PSO的卡顿",
+      "references": "- Epic Games, *PSO Caching* and *PSO Precaching* documentation.\n- Unreal Engine source, `FShaderPipelineCache`, `FPipelineFileCache`, `UShaderPipelineCacheToolsCommandlet`.\n- Microsoft Learn, *Managing Graphics Pipeline State in Direct3D 12*.\n- Khronos, *Vulkan Specification*, Pipeline Cache.\n\n- [Epic PSO Precaching](https://dev.epicgames.com/documentation/en-us/unreal-engine/pso-precaching-for-unreal-engine)，对象保留、异步准备与运行时系统成本。",
+      "urls": [
+        "https://dev.epicgames.com/documentation/en-us/unreal-engine/pso-precaching-for-unreal-engine"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/14_性能分析与优化/VFX性能.md",
+      "primary_question": "如何按模拟排序与屏幕覆盖控制特效预算",
+      "references": "- Unity Documentation, *Visual Effect Graph* and *Particle System*.\n- Unreal Engine Documentation, *Niagara Renderers* and *Scalability*.\n- GPU Gems, particle and flow simulation chapters.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/14_性能分析与优化/帧捕获与性能分析工具.md",
+      "primary_question": "如何用工具定位一帧的状态与成本来源",
+      "references": "- RenderDoc documentation.\n- Microsoft PIX documentation.\n- NVIDIA Nsight Graphics and AMD Radeon GPU Profiler documentation.\n- Unity Profiler and Frame Debugger manuals.\n- LearnOpenGL, `src/7.in_practice/1.debugging`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/14_性能分析与优化/帧瓶颈怎么判断.md",
+      "primary_question": "如何识别CPU/GPU关键路径及成本维度",
+      "references": "- NVIDIA, *GPU Performance Background User's Guide*.\n- AMD GPUOpen, *Performance Guide*.\n- Unity Manual, *Understanding performance*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/14_性能分析与优化/性能对照实验.md",
+      "primary_question": "如何设计可复查的性能实验",
+      "references": "- [RenderDoc Documentation](https://renderdoc.org/docs/)。\n- Microsoft PIX、NVIDIA Nsight Graphics、AMD RGP 官方性能分析文档。\n- Unity Profiler 与 Epic Unreal Insights 官方文档。",
+      "urls": [
+        "https://renderdoc.org/docs/"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/14_性能分析与优化/移动端渲染优化.md",
+      "primary_question": "如何按移动设备约束验证渲染优化",
+      "references": "- Arm, *Mali GPU Best Practices*.\n- Qualcomm, *Adreno GPU Performance* guides.\n- Apple, *Metal Best Practices Guide*.\n- Android, *Performance Tuner* and *Android GPU Inspector* documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/15_资产与工具管线/DCC资产交换.md",
+      "primary_question": "如何跨DCC和引擎保持资产语义",
+      "references": "- SideFX, *Houdini VEX language reference* and *Geometry attributes* documentation.\n\n- Autodesk, *FBX SDK Documentation*.\n- Khronos Group, *glTF 2.0 Specification*.\n- Alliance for OpenUSD, *OpenUSD Documentation*.\n- Autodesk Maya, Blender and SideFX Houdini scripting/export documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/15_资产与工具管线/WFC.md",
+      "primary_question": "如何通过局部兼容约束生成模块布局",
+      "references": "- Paul Merrell, *Model Synthesis* and SideFX WFC dungeon generator tutorial.\n- Gabriel Taubin, *A Signal Processing Approach to Fair Surface Design*, SIGGRAPH.\n\n- Unity Manual, *LOD Group* and *Terrain Data*.\n- Houdini Documentation, *HeightField*, *PDG* and *Houdini Engine for Unity*.\n- Lindstrom and Turk, *Fast and Memory Efficient Polygonal Simplification*.\n- meshoptimizer documentation, *Vertex cache optimization*.\n- LearnOpenGL, `src/8.guest/2021/3.tessellation`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/15_资产与工具管线/大型资产版本控制.md",
+      "primary_question": "如何管理不可合并资产的历史锁与协作边界",
+      "references": "- Git LFS Documentation, *Pointer files*, *Tracking* and *Locking*.\n- Perforce Helix Core Documentation, *Streams*, *File types*, *Shelving* and *Protections*.\n- Unity Version Control Documentation, *Branches*, *Locks* and *Gluon*.\n- Unity and Unreal Engine build automation and asset pipeline documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/15_资产与工具管线/程序化资产生成.md",
+      "primary_question": "如何用稳定规则生成并局部重建可交付资产",
+      "references": "- Paul Merrell, *Model Synthesis* and SideFX WFC dungeon generator tutorial.\n- Gabriel Taubin, *A Signal Processing Approach to Fair Surface Design*, SIGGRAPH.\n\n- Unity Manual, *LOD Group* and *Terrain Data*.\n- Houdini Documentation, *HeightField*, *PDG* and *Houdini Engine for Unity*.\n- Lindstrom and Turk, *Fast and Memory Efficient Polygonal Simplification*.\n- meshoptimizer documentation, *Vertex cache optimization*.\n- LearnOpenGL, `src/8.guest/2021/3.tessellation`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "primary_question": "如何让编辑器操作可预览、撤销和批量恢复",
+      "references": "- Unity Documentation, *Editor scripting*, *SerializedObject* and *Undo*.\n- Unreal Engine Documentation, *Transactions*, *Editor Utility Widgets* and *Python API*.\n- Autodesk Maya and Blender Python API documentation.\n- Fowler, *Patterns of Enterprise Application Architecture*，Command、Unit of Work 与分层参考。",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/15_资产与工具管线/资产构建CI.md",
+      "primary_question": "如何从固定提交自动验证构建资产并复用缓存",
+      "references": "- Git LFS Documentation, *Pointer files*, *Tracking* and *Locking*.\n- Perforce Helix Core Documentation, *Streams*, *File types*, *Shelving* and *Protections*.\n- Unity Version Control Documentation, *Branches*, *Locks* and *Gluon*.\n- Unity and Unreal Engine build automation and asset pipeline documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/15_资产与工具管线/资产构建与发布.md",
+      "primary_question": "如何将制作输入变成可验证发布资产",
+      "references": "- Unity Manual, *AssetPostprocessor*, *Asset Database* and *Scripted Importers*.\n- Unreal Engine Documentation, *Interchange Framework*, *Asset Registry* and *Cooking Content*.\n- OpenUSD, glTF Validator and DCC exporter documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "primary_question": "如何从编译链接到插件ABI保持类型与资源契约",
+      "references": "- ISO C++ Core Guidelines.\n- Microsoft .NET and C# documentation.\n- Unity Manual, *Scripting backend*, *IL2CPP* and *Managed code stripping*.\n- Python Documentation, *Embedding*, *Extending* and *GIL*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/CSharp运行模型.md",
+      "primary_question": "如何在JIT与AOT环境中管理类型调用与资源",
+      "references": "- ISO C++ Core Guidelines.\n- Microsoft .NET and C# documentation.\n- Unity Manual, *Scripting backend*, *IL2CPP* and *Managed code stripping*.\n- Python Documentation, *Embedding*, *Extending* and *GIL*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/Python宿主集成.md",
+      "primary_question": "如何在DCC嵌入解释器中固定依赖与线程边界",
+      "references": "- ISO C++ Core Guidelines.\n- Microsoft .NET and C# documentation.\n- Unity Manual, *Scripting backend*, *IL2CPP* and *Managed code stripping*.\n- Python Documentation, *Embedding*, *Extending* and *GIL*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/内存布局与分配.md",
+      "primary_question": "如何按访问和寿命选择分配器及数据布局",
+      "references": "- Epic Games, *Unreal Object Handling* and *Smart Pointer Library* documentation.\n\n- Microsoft .NET Documentation, *Garbage collection fundamentals*.\n- Unity Manual, *Memory management*, *Object pooling*, *Native containers* and lifecycle documentation.\n- ISO C++ Core Guidelines, resource management sections.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/图搜索.md",
+      "primary_question": "如何从依赖与路径图求可达顺序和最低成本",
+      "references": "- Cormen et al., *Introduction to Algorithms*.\n- Sedgewick and Wayne, *Algorithms*.\n- Ericson, *Real-Time Collision Detection*.\n- LaValle, *Planning Algorithms*，图搜索与空间表示章节。",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/容器选择.md",
+      "primary_question": "如何按查找更新顺序与稳定性选择数据结构",
+      "references": "- Cormen et al., *Introduction to Algorithms*.\n- Sedgewick and Wayne, *Algorithms*.\n- Ericson, *Real-Time Collision Detection*.\n- LaValle, *Planning Algorithms*，图搜索与空间表示章节。",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/对象池.md",
+      "primary_question": "如何安全复用短生命周期对象并防止状态污染",
+      "references": "- Epic Games, *Unreal Object Handling* and *Smart Pointer Library* documentation.\n\n- Microsoft .NET Documentation, *Garbage collection fundamentals*.\n- Unity Manual, *Memory management*, *Object pooling*, *Native containers* and lifecycle documentation.\n- ISO C++ Core Guidelines, resource management sections.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/对象生命周期.md",
+      "primary_question": "如何协调托管可达性与原生资源释放",
+      "references": "- Epic Games, *Unreal Object Handling* and *Smart Pointer Library* documentation.\n\n- Microsoft .NET Documentation, *Garbage collection fundamentals*.\n- Unity Manual, *Memory management*, *Object pooling*, *Native containers* and lifecycle documentation.\n- ISO C++ Core Guidelines, resource management sections.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/文件IO.md",
+      "primary_question": "如何在缓存与异步请求下读写并可靠发布文件",
+      "references": "- Silberschatz et al., *Operating System Concepts*.\n- Tanenbaum and Bos, *Modern Operating Systems*.\n- C++ Reference, *Memory model* and *Atomic operations*.\n- Microsoft Learn, Windows processes, threads, virtual memory and asynchronous I/O.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/空间索引.md",
+      "primary_question": "如何用区域与包围体减少空间查询候选",
+      "references": "- Cormen et al., *Introduction to Algorithms*.\n- Sedgewick and Wayne, *Algorithms*.\n- Ericson, *Real-Time Collision Detection*.\n- LaValle, *Planning Algorithms*，图搜索与空间表示章节。",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法与数据结构导读.md",
+      "primary_question": "这些专题如何按输入与工程问题衔接",
+      "references": "各专篇列出对应机制的原始资料、版本与实际验证范围。",
+      "urls": [],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法设计.md",
+      "primary_question": "如何从状态与操作推导合适的求解方法",
+      "references": "- Cormen et al., *Introduction to Algorithms*.\n- Sedgewick and Wayne, *Algorithms*.\n- Ericson, *Real-Time Collision Detection*.\n- LaValle, *Planning Algorithms*，图搜索与空间表示章节。",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/线程同步.md",
+      "primary_question": "如何建立共享数据的互斥和发布顺序",
+      "references": "- Silberschatz et al., *Operating System Concepts*.\n- Tanenbaum and Bos, *Modern Operating Systems*.\n- C++ Reference, *Memory model* and *Atomic operations*.\n- Microsoft Learn, Windows processes, threads, virtual memory and asynchronous I/O.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/虚拟内存.md",
+      "primary_question": "如何通过页表映射管理地址空间与工作集",
+      "references": "- Silberschatz et al., *Operating System Concepts*.\n- Tanenbaum and Bos, *Modern Operating Systems*.\n- C++ Reference, *Memory model* and *Atomic operations*.\n- Microsoft Learn, Windows processes, threads, virtual memory and asynchronous I/O.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/跨语言接口.md",
+      "primary_question": "如何跨ABI或进程传递数据所有权与错误",
+      "references": "- ISO C++ Core Guidelines.\n- Microsoft .NET and C# documentation.\n- Unity Manual, *Scripting backend*, *IL2CPP* and *Managed code stripping*.\n- Python Documentation, *Embedding*, *Extending* and *GIL*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/进程与调度.md",
+      "primary_question": "如何用线程和进程隔离并调度工作",
+      "references": "- Silberschatz et al., *Operating System Concepts*.\n- Tanenbaum and Bos, *Modern Operating Systems*.\n- C++ Reference, *Memory model* and *Atomic operations*.\n- Microsoft Learn, Windows processes, threads, virtual memory and asynchronous I/O.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+      "primary_question": "如何令Agent工具任务可追踪、幂等和验收",
+      "references": "- NIST, *AI Risk Management Framework*.\n- OWASP, *Top 10 for Large Language Model Applications*.\n- OpenAI and Anthropic documentation on tool use, structured outputs and evaluations.\n- Workflow/Saga, data lineage and MLOps engineering references.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
+      "primary_question": "如何把生成节点与模型依赖组织成可复现任务",
+      "references": "- ComfyUI Official Documentation.\n- Hugging Face Diffusers video and image-to-image documentation.\n- Rerender A Video and TokenFlow papers，视频重绘与特征传播参考。\n- Optical Flow and temporal reprojection literature.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/LoRA训练.md",
+      "primary_question": "如何用低秩增量学习目标概念并验证泛化",
+      "references": "- Ho et al., *Denoising Diffusion Probabilistic Models*.\n- Rombach et al., *High-Resolution Image Synthesis with Latent Diffusion Models*.\n- Zhang et al., *Adding Conditional Control to Text-to-Image Diffusion Models*.\n- Hu et al., *LoRA: Low-Rank Adaptation of Large Language Models*.\n- Hugging Face Diffusers and ComfyUI official documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/扩散模型.md",
+      "primary_question": "如何从噪声状态逐步生成图像表示",
+      "references": "- Ho et al., *Denoising Diffusion Probabilistic Models*.\n- Rombach et al., *High-Resolution Image Synthesis with Latent Diffusion Models*.\n- Zhang et al., *Adding Conditional Control to Text-to-Image Diffusion Models*.\n- Hu et al., *LoRA: Low-Rank Adaptation of Large Language Models*.\n- Hugging Face Diffusers and ComfyUI official documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/生成条件控制.md",
+      "primary_question": "如何用结构图与参考图约束扩散生成",
+      "references": "- Ho et al., *Denoising Diffusion Probabilistic Models*.\n- Rombach et al., *High-Resolution Image Synthesis with Latent Diffusion Models*.\n- Zhang et al., *Adding Conditional Control to Text-to-Image Diffusion Models*.\n- Hu et al., *LoRA: Low-Rank Adaptation of Large Language Models*.\n- Hugging Face Diffusers and ComfyUI official documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+      "primary_question": "如何在运动与遮挡变化下复用生成特征",
+      "references": "- ComfyUI Official Documentation.\n- Hugging Face Diffusers video and image-to-image documentation.\n- Rerender A Video and TokenFlow papers，视频重绘与特征传播参考。\n- Optical Flow and temporal reprojection literature.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Character Controller.md",
+      "primary_question": "如何用扫掠滑动生成可预测的角色位移",
+      "references": "- Matthias Müller et al., *Position Based Dynamics*（PBD 原始论文）.\n- Miles Macklin et al., *XPBD: Position-Based Simulation of Compliant Constrained Dynamics*（Compliance 形式化的来源）.\n- Erin Catto, *Soft Constraints* 与 *Solver* 系列 GDC 讲义（约束求解的工程推导）.\n- Hans Pacejka, *Tire and Vehicle Dynamics*（滑移率、侧偏角与魔术公式）.\n- NVIDIA PhysX Character Controller 与 Vehicle 文档；Unreal Chaos 布料与破坏文档.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+      "primary_question": "如何在动画姿态与刚体骨架之间切换控制",
+      "references": "- Matthias Müller et al., *Position Based Dynamics*（PBD 原始论文）.\n- Miles Macklin et al., *XPBD: Position-Based Simulation of Compliant Constrained Dynamics*（Compliance 形式化的来源）.\n- Erin Catto, *Soft Constraints* 与 *Solver* 系列 GDC 讲义（约束求解的工程推导）.\n- Hans Pacejka, *Tire and Vehicle Dynamics*（滑移率、侧偏角与魔术公式）.\n- NVIDIA PhysX Character Controller 与 Vehicle 文档；Unreal Chaos 布料与破坏文档.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/XPBD.md",
+      "primary_question": "如何通过Compliance求解可控柔软约束",
+      "references": "- Matthias Müller et al., *Position Based Dynamics*（PBD 原始论文）.\n- Miles Macklin et al., *XPBD: Position-Based Simulation of Compliant Constrained Dynamics*（Compliance 形式化的来源）.\n- Erin Catto, *Soft Constraints* 与 *Solver* 系列 GDC 讲义（约束求解的工程推导）.\n- Hans Pacejka, *Tire and Vehicle Dynamics*（滑移率、侧偏角与魔术公式）.\n- NVIDIA PhysX Character Controller 与 Vehicle 文档；Unreal Chaos 布料与破坏文档.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/刚体物理求解.md",
+      "primary_question": "如何从状态积分和碰撞生成受约束运动",
+      "references": "- LearnOpenGL 中文镜像，*Collision detection*、*Collision resolution*。",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/破坏系统.md",
+      "primary_question": "如何用连接图控制碎片激活与预算",
+      "references": "- Matthias Müller et al., *Position Based Dynamics*（PBD 原始论文）.\n- Miles Macklin et al., *XPBD: Position-Based Simulation of Compliant Constrained Dynamics*（Compliance 形式化的来源）.\n- Erin Catto, *Soft Constraints* 与 *Solver* 系列 GDC 讲义（约束求解的工程推导）.\n- Hans Pacejka, *Tire and Vehicle Dynamics*（滑移率、侧偏角与魔术公式）.\n- NVIDIA PhysX Character Controller 与 Vehicle 文档；Unreal Chaos 布料与破坏文档.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/载具物理.md",
+      "primary_question": "如何把悬挂与轮胎滑移转换成车体力",
+      "references": "- Matthias Müller et al., *Position Based Dynamics*（PBD 原始论文）.\n- Miles Macklin et al., *XPBD: Position-Based Simulation of Compliant Constrained Dynamics*（Compliance 形式化的来源）.\n- Erin Catto, *Soft Constraints* 与 *Solver* 系列 GDC 讲义（约束求解的工程推导）.\n- Hans Pacejka, *Tire and Vehicle Dynamics*（滑移率、侧偏角与魔术公式）.\n- NVIDIA PhysX Character Controller 与 Vehicle 文档；Unreal Chaos 布料与破坏文档.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/19_Gameplay与游戏框架/玩法事件与脚本.md",
+      "primary_question": "如何解耦玩法规则与事件脚本执行",
+      "references": "- Epic Games, *Gameplay Ability System* documentation.\n- Robert Nystrom, *Game Programming Patterns*, Event Queue and Component chapters.\n- Unity Manual, *ScriptableObject* and event-driven architecture guidance.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/19_Gameplay与游戏框架/输入与动作状态.md",
+      "primary_question": "如何从输入请求推进角色动作并驱动表现",
+      "references": "- Robert Nystrom, *Game Programming Patterns*（Command 模式与输入队列）.\n- Jason Gregory, *Game Engine Architecture*（输入设备、动作映射与角色状态机章节）.\n- Maddy Thorson and Noel Berry, *Celeste and TowerFall Physics*（土狼时间、跳跃缓冲与手感参数的实践记录）.\n- LearnOpenGL, `src/7.in_practice/3.2d_game/0.full_source`；中文镜像 *Rendering Sprites*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/20_游戏AI/MCTS.md",
+      "primary_question": "如何在有限预算内用模拟平衡探索与回报",
+      "references": "- Sutton and Barto, *Reinforcement Learning: An Introduction*.\n- Browne et al., *A Survey of Monte Carlo Tree Search Methods*.\n- Millington and Funge, *Artificial Intelligence for Games*.\n- Silver et al., *Mastering the Game of Go with Deep Neural Networks and Tree Search*（策略网络与 MCTS 结合的开山之作，Nature 2016）.\n- Vinyals et al., *Grandmaster Level in StarCraft II Using Multi-agent Reinforcement Learning*（AlphaStar，部分可观察与长时序问题的工程样本，Nature 2019）.\n- Berner et al., *Dota 2 with Large Scale Deep Reinforcement Learning*（OpenAI Five，连续控制与联盟式训练）.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI决策模型.md",
+      "primary_question": "如何按决策问题选择行为组织模型",
+      "references": "- Millington and Funge, *Artificial Intelligence for Games*.\n- Orkin, *Three States and a Plan: The AI of F.E.A.R.*（GOAP 的原始实践报告）.\n- Isla, *Handling Complexity in the Halo 2 AI*（行为树在工业项目中的成形）.\n- Colledanchise and Ögren, *Behavior Trees in Robotics and AI*（节点语义与中止的形式化整理）.\n- Dave Mark, *Behavioral Mathematics for Game AI*（Utility 曲线组合、补偿因子与迟滞的系统推导）.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI导航.md",
+      "primary_question": "如何从可行走空间得到可执行路径与移动",
+      "references": "- Millington and Funge, *Artificial Intelligence for Games*.\n- Mikko Mononen, Recast Navigation documentation and source（体素化、区域合并与多边形生成的实现蓝本）.\n- *The Simple Stupid Funnel Algorithm*（Digesting Duck 整理的标准漏斗流程）.\n- van den Berg et al., *Reciprocal n-body Collision Avoidance*（RVO）.\n- van den Berg et al., *Reciprocal Velocity Obstacles for Real-Time Multi-Agent Navigation*（RVO，ICRA 2008）；ORCA 见 *Reciprocal n-body Collision Avoidance*。\n- Amit Patel, [Introduction to A*](https://www.redblobgames.com/pathfinding/a-star/introduction.html)，搜索代价、启发函数与可运行参考。",
+      "urls": [
+        "https://www.redblobgames.com/pathfinding/a-star/introduction.html"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏强化学习.md",
+      "primary_question": "如何用观测动作与奖励训练可部署策略",
+      "references": "- Sutton and Barto, *Reinforcement Learning: An Introduction*.\n- Browne et al., *A Survey of Monte Carlo Tree Search Methods*.\n- Millington and Funge, *Artificial Intelligence for Games*.\n- Silver et al., *Mastering the Game of Go with Deep Neural Networks and Tree Search*（策略网络与 MCTS 结合的开山之作，Nature 2016）.\n- Vinyals et al., *Grandmaster Level in StarCraft II Using Multi-agent Reinforcement Learning*（AlphaStar，部分可观察与长时序问题的工程样本，Nature 2019）.\n- Berner et al., *Dota 2 with Large Scale Deep Reinforcement Learning*（OpenAI Five，连续控制与联盟式训练）.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/20_游戏AI/群体战术信息.md",
+      "primary_question": "如何以感知与影响场支持群体协作决策",
+      "references": "- Sutton and Barto, *Reinforcement Learning: An Introduction*.\n- Browne et al., *A Survey of Monte Carlo Tree Search Methods*.\n- Millington and Funge, *Artificial Intelligence for Games*.\n- Silver et al., *Mastering the Game of Go with Deep Neural Networks and Tree Search*（策略网络与 MCTS 结合的开山之作，Nature 2016）.\n- Vinyals et al., *Grandmaster Level in StarCraft II Using Multi-agent Reinforcement Learning*（AlphaStar，部分可观察与长时序问题的工程样本，Nature 2019）.\n- Berner et al., *Dota 2 with Large Scale Deep Reinforcement Learning*（OpenAI Five，连续控制与联盟式训练）.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/RPC.md",
+      "primary_question": "如何把远程请求转成可校验可重试的事务",
+      "references": "- Glenn Fiedler, *Networking for Game Programmers*.\n- IETF TCP, UDP and QUIC RFCs.\n- Valve, *Source Multiplayer Networking*.\n- Cloudflare Learning Center and IETF DNS RFCs.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/世界分区与AOI.md",
+      "primary_question": "如何筛选复制对象并交接跨区权威",
+      "references": "- Michael Nygard, *Release It!*（容量、稳定性与降级模式）.\n- Martin Kleppmann, *Designing Data-Intensive Applications*（一致性、幂等与分区的系统参照）.\n- Gaffer on Games, networking article series.\n- Thor Alexander (ed.), *Massively Multiplayer Game Development*（MMO 分区、迁移与服务拆分的早期系统整理）.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/回滚同步.md",
+      "primary_question": "如何恢复历史Tick并重模拟迟到输入",
+      "references": "- Glenn Fiedler, *Networking for Game Programmers* 与 *Networked Physics*（Gaffer on Games）.\n- Valve, *Source Multiplayer Networking*（插值延迟与 Lag Compensation 的工业蓝本）.\n- Gabriel Gambetta, *Fast-Paced Multiplayer*（客户端预测与服务端校正的逐步推导）.\n- Tony Cannon, *Fight the Lag!*（GGPO 回滚网络代码的设计动机与输入延迟取舍）.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/客户端预测.md",
+      "primary_question": "如何用权威确认重放未确认输入并分离视觉误差",
+      "references": "- Glenn Fiedler, *Networking for Game Programmers* 与 *Networked Physics*（Gaffer on Games）.\n- Valve, *Source Multiplayer Networking*（插值延迟与 Lag Compensation 的工业蓝本）.\n- Gabriel Gambetta, *Fast-Paced Multiplayer*（客户端预测与服务端校正的逐步推导）.\n- Tony Cannon, *Fight the Lag!*（GGPO 回滚网络代码的设计动机与输入延迟取舍）.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/对局服务器架构.md",
+      "primary_question": "如何组织权威实例路由存储与故障恢复",
+      "references": "- Michael Nygard, *Release It!*（容量、稳定性与降级模式）.\n- Martin Kleppmann, *Designing Data-Intensive Applications*（一致性、幂等与分区的系统参照）.\n- Gaffer on Games, networking article series.\n- Thor Alexander (ed.), *Massively Multiplayer Game Development*（MMO 分区、迁移与服务拆分的早期系统整理）.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/延迟补偿命中.md",
+      "primary_question": "如何按受控历史时刻回退碰撞体进行命中判断",
+      "references": "- Glenn Fiedler, *Networking for Game Programmers* 与 *Networked Physics*（Gaffer on Games）.\n- Valve, *Source Multiplayer Networking*（插值延迟与 Lag Compensation 的工业蓝本）.\n- Gabriel Gambetta, *Fast-Paced Multiplayer*（客户端预测与服务端校正的逐步推导）.\n- Tony Cannon, *Fight the Lag!*（GGPO 回滚网络代码的设计动机与输入延迟取舍）.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/快照同步.md",
+      "primary_question": "如何用基线压缩与延后插值显示远端状态",
+      "references": "- Glenn Fiedler, *Networking for Game Programmers* 与 *Networked Physics*（Gaffer on Games）.\n- Valve, *Source Multiplayer Networking*（插值延迟与 Lag Compensation 的工业蓝本）.\n- Gabriel Gambetta, *Fast-Paced Multiplayer*（客户端预测与服务端校正的逐步推导）.\n- Tony Cannon, *Fight the Lag!*（GGPO 回滚网络代码的设计动机与输入延迟取舍）.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/服务端反作弊校验.md",
+      "primary_question": "如何验证客户端请求并记录可审计异常",
+      "references": "- Michael Nygard, *Release It!*（容量、稳定性与降级模式）.\n- Martin Kleppmann, *Designing Data-Intensive Applications*（一致性、幂等与分区的系统参照）.\n- Gaffer on Games, networking article series.\n- Thor Alexander (ed.), *Massively Multiplayer Game Development*（MMO 分区、迁移与服务拆分的早期系统整理）.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络传输.md",
+      "primary_question": "如何在乱序丢包与字节流下传送有边界的消息",
+      "references": "- Glenn Fiedler, *Networking for Game Programmers*.\n- IETF TCP, UDP and QUIC RFCs.\n- Valve, *Source Multiplayer Networking*.\n- Cloudflare Learning Center and IETF DNS RFCs.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络时钟.md",
+      "primary_question": "如何估计往返延迟与共同模拟时间",
+      "references": "- Glenn Fiedler, *Networking for Game Programmers*.\n- IETF TCP, UDP and QUIC RFCs.\n- Valve, *Source Multiplayer Networking*.\n- Cloudflare Learning Center and IETF DNS RFCs.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md",
+      "primary_question": "如何在Unity 6 URP记录并消费自定义通道",
+      "references": "- [Unity 6 Write a Render Pass](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-write-render-pass.html)。\n- [Unity 6 Render Graph](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph.html)。\n- Unity Graphics 包源码：`ScriptableRenderPass.cs`、`UniversalResourceData.cs`、`DrawObjectsPass.cs`；复现时锁定 URP 17 源码。",
+      "urls": [
+        "https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-write-render-pass.html",
+        "https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph.html"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
+      "primary_question": "如何按资源和注入需求选择引擎扩展入口",
+      "references": "- [Unity 6 URP](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/urp-introduction.html)，管线配置与资源。\n- [Unity ScriptableRenderContext](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Rendering.ScriptableRenderContext.html)。\n- [UnityCsReference](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Export/RenderPipeline/ScriptableRenderContext.cs)，剔除与提交入口。\n- Unity Graphics 包源码：`UniversalRenderPipeline.cs`、`UniversalRenderer.cs`、`ScriptableRenderer.cs`。",
+      "urls": [
+        "https://docs.unity3d.com/6000.0/Documentation/Manual/urp/urp-introduction.html",
+        "https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Rendering.ScriptableRenderContext.html",
+        "https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Export/RenderPipeline/ScriptableRenderContext.cs"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unreal RDG Pass实现.md",
+      "primary_question": "如何用RDG参数表达资源依赖并执行通道",
+      "references": "- [Epic Render Dependency Graph](https://dev.epicgames.com/documentation/en-us/unreal-engine/render-dependency-graph-in-unreal-engine)，参数、通道、外部资源与调试。\n- UE5 源码：`RenderGraphBuilder.h`、`RenderGraphResources.h`、`RenderGraphUtils.h`；使用项目相同版本核对。",
+      "urls": [
+        "https://dev.epicgames.com/documentation/en-us/unreal-engine/render-dependency-graph-in-unreal-engine"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
+      "primary_question": "如何按资源和注入需求选择引擎扩展入口",
+      "references": "- [Unreal RDG](https://dev.epicgames.com/documentation/en-us/unreal-engine/render-dependency-graph-in-unreal-engine)。\n- [Unreal Mesh Drawing Pipeline](https://dev.epicgames.com/documentation/en-us/unreal-engine/mesh-drawing-pipeline-in-unreal-engine)。\n- Epic Games，Shader Development、Unreal Insights 与 Graphics Programming 官方文档。\n- 源码定位：`Renderer/Private`、`RenderGraphBuilder.h`、`RHICommandList.h`、`MeshPassProcessor.h`。",
+      "urls": [
+        "https://dev.epicgames.com/documentation/en-us/unreal-engine/render-dependency-graph-in-unreal-engine",
+        "https://dev.epicgames.com/documentation/en-us/unreal-engine/mesh-drawing-pipeline-in-unreal-engine"
+      ],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unreal自定义Mesh Pass.md",
+      "primary_question": "如何把自定义网格效果接入Unreal绘制流程",
+      "references": "- Epic Games, *Mesh Drawing Pipeline* documentation.\n- Unreal Engine source, `MeshPassProcessor.h`, `MeshBatch.h`, `LocalVertexFactory.cpp`, `GBufferInfo.cpp`, `DeferredShadingCommon.ush`.\n- Epic Games, *Render Dependency Graph* documentation.\n- 向往, Unreal Engine 渲染系统源码剖析系列。",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/引擎渲染扩展导读.md",
+      "primary_question": "这些专题如何按输入与工程问题衔接",
+      "references": "各专篇列出对应机制的原始资料、版本与实际验证范围。",
+      "urls": [],
+      "runtime": "NOT_APPLICABLE",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/23_引擎运行系统/ECS与数据布局.md",
+      "primary_question": "如何按访问与查询模式组织大量实体数据",
+      "references": "- Epic Games, *Mass Entity* documentation.\n- Unity, *Entities* package documentation and DOTS best practices.\n- Mike Acton, *Data-Oriented Design and C++*, CppCon.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/23_引擎运行系统/Unity对象生命周期.md",
+      "primary_question": "如何协调托管包装与Unity原生对象的创建销毁",
+      "references": "- Epic Games, *Unreal Object Handling* and *Smart Pointer Library* documentation.\n\n- Microsoft .NET Documentation, *Garbage collection fundamentals*.\n- Unity Manual, *Memory management*, *Object pooling*, *Native containers* and lifecycle documentation.\n- ISO C++ Core Guidelines, resource management sections.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
+      "primary_question": "如何让UObject引用被引擎GC识别",
+      "references": "- Epic Games, *Unreal Object Handling* and *Smart Pointer Library* documentation.\n\n- Microsoft .NET Documentation, *Garbage collection fundamentals*.\n- Unity Manual, *Memory management*, *Object pooling*, *Native containers* and lifecycle documentation.\n- ISO C++ Core Guidelines, resource management sections.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/23_引擎运行系统/任务系统.md",
+      "primary_question": "如何用显式依赖调度帧内CPU工作",
+      "references": "- Epic Games, *Mass Entity* documentation.\n- Unity, *Entities* package documentation and DOTS best practices.\n- Mike Acton, *Data-Oriented Design and C++*, CppCon.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/23_引擎运行系统/引擎世界与对象模型.md",
+      "primary_question": "如何定义引擎世界的依赖、所有权与更新阶段",
+      "references": "- LearnOpenGL, `src/8.guest/2021/1.scene/1.scene_graph`.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/23_引擎运行系统/资源依赖与异步加载.md",
+      "primary_question": "如何沿依赖加载资产并保持版本与所有权",
+      "references": "- Unity Manual, *AssetBundles* and *Addressables*.\n- YooAsset documentation, manifest, downloader and resource lifetime sections.\n- Unity Memory Profiler documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/24_游戏音频/游戏音频系统.md",
+      "primary_question": "如何在实时回调预算内混音并管理声音",
+      "references": "- Audiokinetic, *Wwise Fundamentals* documentation.\n- Firelight Technologies, *FMOD Studio* documentation.\n- Unity Manual, *Audio* and Unreal Engine *MetaSounds* documentation.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/25_UI与文本/UI绘制.md",
+      "primary_question": "如何把布局与裁剪转换成可批量提交的界面命令",
+      "references": "- LearnOpenGL, `src/7.in_practice/2.text_rendering`.\n- FreeType Documentation, *Glyph Conventions*.\n- HarfBuzz Documentation, *Shaping Concepts*.\n- Viktor Chlumský, *Multi-channel Signed Distance Field*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/25_UI与文本/文字渲染.md",
+      "primary_question": "如何把Unicode文本塑形成字形并恢复像素覆盖",
+      "references": "- LearnOpenGL, `src/7.in_practice/2.text_rendering`.\n- FreeType Documentation, *Glyph Conventions*.\n- HarfBuzz Documentation, *Shaping Concepts*.\n- Viktor Chlumský, *Multi-channel Signed Distance Field*.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
+      "primary_question": "如何在GPU生成可见对象与间接绘制参数",
+      "references": "- Epic Games, *A Deep Dive into Nanite Virtualized Geometry* and current Nanite documentation.\n- Burns and Hunt, *The Visibility Buffer: A Cache-Friendly Approach to Deferred Shading*.\n- NVIDIA and Microsoft Mesh Shader specifications and programming guides.\n- Haar and Aaltonen, *GPU-Driven Rendering Pipelines* technical presentations.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    },
+    {
+      "path": "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md",
+      "primary_question": "如何按屏幕误差选择并流送Nanite几何",
+      "references": "- Epic Games, *A Deep Dive into Nanite Virtualized Geometry* and current Nanite documentation.\n- Burns and Hunt, *The Visibility Buffer: A Cache-Friendly Approach to Deferred Shading*.\n- NVIDIA and Microsoft Mesh Shader specifications and programming guides.\n- Haar and Aaltonen, *GPU-Driven Rendering Pipelines* technical presentations.",
+      "urls": [],
+      "runtime": "UNVERIFIED",
+      "evidence_status": "资料归属已复读；全部断言未逐条外部复現，目标版本/运行按正文UNVERIFIED与条件说明",
+      "actual_evidence": [
+        "completion-test-results.json",
+        "batch-claim-review.json"
+      ]
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "COMP-GC",
+      "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
+      "claim": "增量可达性分析可分帧，TObjectPtr反射字段提供写屏障",
+      "source": "https://dev.epicgames.com/documentation/en-us/unreal-engine/incremental-garbage-collection-in-unreal-engine",
+      "locator": "Incremental Reachability Analysis",
+      "status": "已读取官方定位文本，当前页面UE5.8；运行UNVERIFIED"
+    },
+    {
+      "id": "COMP-SO",
+      "path": "知识库/02_GPU与光栅化管线/Stream Output.md",
+      "claim": "D3D11_SO_DECLARATION_ENTRY首字段为Stream",
+      "source": "https://learn.microsoft.com/en-us/windows/win32/api/d3d11/ns-d3d11-d3d11_so_declaration_entry",
+      "locator": "Syntax / Members",
+      "status": "已读取并按字段修正声明"
+    },
+    {
+      "id": "COMP-CDF",
+      "path": "知识库/01_数学与采样/Monte Carlo采样.md",
+      "claim": "CDF逆映射输入[0,1)，零概率区间不得被选中",
+      "source": "https://pbr-book.org/4ed/Monte_Carlo_Integration/Sampling_Using_the_Inversion_Method",
+      "locator": "Sampling Using the Inversion Method",
+      "status": "读取CDF方法文本，零区间CPU16项验证"
+    },
+    {
+      "id": "COMP-ALPHA",
+      "path": "知识库/02_GPU与光栅化管线/透明合成.md",
+      "claim": "前到后透射累积与后到前Alpha合成等价",
+      "source": "知识库/examples/mechanisms/completion_reference.py",
+      "locator": "ordered_alpha_equivalence",
+      "status": "30项CPU模型验证，GPUUNVERIFIED"
+    }
+  ],
+  "fetch_without_claim_validation": [
+    "SH PDF已取得但未提取核读，本轮不新增核验结论",
+    "JCGT入口仅取得短页面，不新增核验结论",
+    "URP自定义Feature首个URL404，使用现有Unity6资源接口与替代官方入口，完整运行UNVERIFIED"
+  ]
+}

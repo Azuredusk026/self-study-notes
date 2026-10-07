@@ -1,0 +1,116 @@
+{
+  "passed": true,
+  "cpu_dotnet_checks": 612,
+  "hlsl_probes": 7,
+  "environment": "Python3.12, .NET10.0.401, DXC1.9",
+  "tests": [
+    {
+      "name": "completion CPU",
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanisms/completion_reference.py"
+      ],
+      "count": 89,
+      "passed": true,
+      "output": "{\"passed\": true, \"checks\": {\"cdf_zero_intervals\": 16, \"periodic_stripe_integral\": 24, \"exclusive_scan_compaction\": 6, \"ordered_alpha_equivalence\": 30, \"prediction_replay\": 10, \"probe_trilinear_weights\": 3}, \"total\": 89, \"scope\": \"CPU models of CDF, stripe integral, scan, Alpha, replay and Probe weights; no engine or GPU execution\"}"
+    },
+    {
+      "name": "new HLSL",
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanisms/compile_completion.py"
+      ],
+      "count": 4,
+      "passed": true,
+      "output": "{\"passed\": true, \"probes\": [{\"entry\": \"CopyKernel\", \"target\": \"cs_6_0\", \"passed\": true, \"scope\": \"DXC fragment compile only\"}, {\"entry\": \"StripePS\", \"target\": \"ps_6_0\", \"passed\": true, \"scope\": \"DXC fragment compile only\"}, {\"entry\": \"GlyphPS\", \"target\": \"ps_6_0\", \"passed\": true, \"scope\": \"DXC fragment compile only\"}, {\"entry\": \"MorphPS\", \"target\": \"ps_6_0\", \"passed\": true, \"scope\": \"DXC fragment compile only\"}], \"total\": 4, \"runtime\": \"UNVERIFIED\"}"
+    },
+    {
+      "name": "event queue",
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanisms/verify_event_queue.py"
+      ],
+      "count": 3,
+      "passed": true,
+      "output": "{\"passed\": true, \"checks\": 3, \"scope\": \"C# article fragment with mock handlers on .NET 10; no Unity runtime\"}"
+    },
+    {
+      "name": "original math",
+      "command": [
+        "python",
+        "-B",
+        "scripts/verify_mechanisms.py"
+      ],
+      "count": 115,
+      "passed": true,
+      "output": "{'astar_admissible_cases': 100, 'skin_width_unit_cases': 3, 'depth_roundtrip_cases': 5, 'stencil_classification_cases': 4, 'volume_prefix_cases': 3}"
+    },
+    {
+      "name": "original mechanisms",
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanisms/reference.py"
+      ],
+      "count": 83,
+      "passed": true,
+      "output": "{\"passed\": true, \"checks\": {\"block_mip_budget\": 4, \"circle_box_resolution\": 15, \"parallel_slab_and_intervals\": 5, \"gerstner_analytic_derivatives\": 30, \"normalized_diffusion_energy\": 3, \"temporal_weights_and_reinhard\": 6, \"tcp_fragmentation\": 20}, \"total\": 83, \"taa_effective_samples\": {\"5\": 2.171823277349955, \"10\": 5.132772068820295, \"15\": 9.783598442618132}, \"scope\": \"CPU mathematical and framing models; no engine, network socket, or GPU execution\"}"
+    },
+    {
+      "name": "outline",
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/outline/reference.py"
+      ],
+      "count": 43,
+      "passed": true,
+      "output": "{\"passed\": true, \"cases\": {\"smooth_order_independence\": 6, \"weighted_direction\": 1, \"pixel_width_sizes_distances_directions\": 27, \"mask_boundary_checks\": 5, \"relative_depth\": 2, \"stencil_mask_vs_id\": 2}, \"total\": 43, \"scope\": \"CPU reference algorithms and numeric checks; no GPU execution\", \"unity_shader\": \"not compiled or run in Unity\"}"
+    },
+    {
+      "name": "gbuffer",
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/gbuffer/reference.py"
+      ],
+      "count": 264,
+      "passed": true,
+      "output": "{\"passed\": true, \"cases\": 264, \"scope\": \"R8_UNORM CPU round trip; GPU/half precision and filtering not validated\"}"
+    },
+    {
+      "name": "rendergraph",
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/rendergraph/reference.py"
+      ],
+      "count": 15,
+      "passed": true,
+      "output": "{\"passed\": true, \"checks\": 15, \"blur_plan\": {\"order\": [\"Downsample\", \"Blur\", \"Compose\"], \"culled\": [], \"edges\": [[\"Downsample\", \"Blur\", \"RAW\"], [\"Blur\", \"Compose\", \"RAW\"]], \"intervals\": {\"Scene\": [0, 2], \"Half\": [0, 1], \"Blurred\": [1, 2], \"Output\": [2, 3]}}, \"culled_plan\": {\"order\": [\"Compose\"], \"culled\": [\"Downsample\", \"Blur\"], \"edges\": [], \"intervals\": {\"Scene\": [0, 0], \"Output\": [0, 1]}}, \"version_plan\": {\"order\": [\"A\", \"B\", \"C\", \"D\"], \"culled\": [], \"edges\": [[\"A\", \"B\", \"RAW\"], [\"A\", \"C\", \"WAW\"], [\"B\", \"C\", \"WAR\"], [\"C\", \"D\", \"RAW\"]], \"intervals\": {\"X\": [0, 3], \"BResult\": [1, 4], \"DResult\": [3, 4]}}, \"scope\": \"single serial physical resource per name; no GPU barrier emission or engine integration\"}"
+    },
+    {
+      "name": "OutlineVS",
+      "passed": true,
+      "scope": "DXC compile only",
+      "hash": "a9f8f9292b94b71bf2124a624828f456c49f653fd5c51f63509c883a03ac8595"
+    },
+    {
+      "name": "OutlinePS",
+      "passed": true,
+      "scope": "DXC compile only",
+      "hash": "2bbe04cba8747920ffce82942b2cee3641c4459536fa030d4ae59650e78a5058"
+    },
+    {
+      "name": "ProbePS",
+      "passed": true,
+      "scope": "DXC compile only",
+      "hash": "d4b39ec18f55d4034403ea2a7bceb2746fde28944dcc6fc32bf64fe63ea0808d"
+    }
+  ],
+  "engine_runtime": "UNVERIFIED",
+  "gpu_performance": "UNVERIFIED"
+}

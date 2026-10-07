@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checks": 9,
+  "cases": [
+    "H1与冻结表",
+    "失效双链",
+    "失效Wiki锚点",
+    "失效Markdown锚点",
+    "围栏内目录污染",
+    "最终哈希漂移",
+    "正文批次遗漏",
+    "未审查标题",
+    "最终待拆状态"
+  ],
+  "scope": "isolated malformed-fixture detection; no prose quality scoring"
+}

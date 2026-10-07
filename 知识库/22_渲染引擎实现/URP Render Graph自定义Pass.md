@@ -4,7 +4,7 @@
 
 ## 适用环境
 
-接口范围为 Unity 6.0 / URP 17 的 Render Graph 路径，核对日期 2026-10-04。以下代码为自定义 `ScriptableRenderPass` 内的方法片段，使用官方记录模式；类壳、材质资产和 feature 入队代码由项目提供。本轮未执行完整 Unity 工程编译。
+接口范围为 Unity 6.0 / URP 17 的 Render Graph 路径，核对日期 2026-10-04。以下代码为自定义 `ScriptableRenderPass` 内的方法片段，使用官方记录模式；类壳、材质资产和 feature 入队代码由项目提供。完整Unity工程编译与运行为UNVERIFIED。
 
 ## 记录、执行与输出交接
 
@@ -75,6 +75,34 @@ Frame Debugger 展示绘制、附件和结果，图查看器展示逻辑通道�
 - 添加两个相机与 Overlay，确认每个视图的数据独立。
 - 切换 MSAA、render scale 与 XR，查看实际尺寸、切片和 resolve。
 - 检查图内新纹理数量与峰值，确认没有每帧常驻资源泄漏。
+
+
+## Feature与相机入口
+
+Unity 6.0 / URP17的Feature在Create建立Pass，在AddRenderPasses按相机类型入队。图路径把资源声明放在RecordRenderGraph，避免在Feature长期保存帧内TextureHandle。兼容路径的SetupRenderPasses与RTHandle访问按目标包接口核对。
+
+下面是Feature类中的C#方法片段，m_pass由Create初始化，输出是本相机Pass队列。它不包含完整类、资源释放或图声明，完整Unity编译运行为UNVERIFIED。
+
+```csharp
+/// <summary>Creates the pass owned by this feature.</summary>
+public override void Create()
+{
+    m_pass = new ColorEffectPass();
+}
+
+/// <summary>Queues the pass for game cameras.</summary>
+public override void AddRenderPasses(
+    ScriptableRenderer renderer, ref RenderingData renderingData)
+{
+    if (renderingData.cameraData.cameraType != CameraType.Game)
+    {
+        return;
+    }
+    renderer.EnqueuePass(m_pass);
+}
+```
+
+多个相机、Overlay与Scene View可能改变入队次数。记录相机ID和通道名核对执行，XR与动态分辨率由图资源描述接入。
 
 ## 相关主题
 

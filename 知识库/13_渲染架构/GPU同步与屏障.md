@@ -78,7 +78,7 @@ Vulkan 独占资源跨 queue family 使用时，通常还需要匹配的 release
 
 - [[13_渲染架构/Render Graph]]
 - [[13_渲染架构/Command Buffer与帧提交]]
-- [[03_Shader编程/Compute Shader与GPU执行模型]]
+- [[03_Shader编程/Compute Shader]]、[[03_Shader编程/GPU归约与前缀和]]、[[03_Shader编程/GPU异步回读]]
 
 示例状态：本页代码用于解释对应的数据和调用约束，完整资源创建、类型与调用环境由项目提供。除文中另列的实际实验外，本页未执行目标引擎编译、GPU捕获或性能计时。
 
