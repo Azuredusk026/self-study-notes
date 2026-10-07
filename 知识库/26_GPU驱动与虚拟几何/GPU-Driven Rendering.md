@@ -35,7 +35,7 @@ GPU-Driven 让 CPU 主要提交场景 Buffer、相机和少量 Dispatch/Indirect
 
 ### 引擎中的场景 Buffer
 
-Unreal 的 GPUScene 是这类结构的具体实现。它把场景中所有图元的变换、包围盒、材质与实例数据维护在 GPU 侧的持久 Buffer 中，每帧只上传变化的部分——增量更新而非全量重传，这是场景规模能够扩展的前提。
+Unreal 的 GPUScene 是这类结构的具体实现。它把参与 GPUScene 路径的图元与实例数据维护在 GPU 侧的持久 Buffer 中，每帧只上传变化的部分——增量更新而非全量重传，这是场景规模能够扩展的前提。
 
 与之配套的是延迟剔除（Deferred Culling）。流程是先注册、后收集、再统一剔除：
 
@@ -44,23 +44,25 @@ Unreal 的 GPUScene 是这类结构的具体实现。它把场景中所有图元
 3. 收集完成后触发回调，更新 Compute Shader 所需的 Buffer；
 4. 执行剔除 Pass，输出可见实例列表与 Indirect 绘制参数。
 
-“先收集后剔除”正是“延迟”一词的含义。这样做的好处是把分散在各 Pass 的剔除工作合并成一次 Dispatch，减少 GPU 的启动开销与同步点。
+“先收集后剔除”正是“延迟”一词的含义。这样做的好处是把兼容的剔除工作集中成批次，减少 GPU 的启动开销与同步点。
 
 需要区分两个同名概念：这里的实例剔除作用于普通图元的实例列表，与 Nanite 内部的 Cluster 级剔除是不同层级的机制，两者可以并存。
 
-## Frustum 与 Distance/Screen Error
+## 哪些实例进入工作集
+
+### Frustum 与 Distance/Screen Error
 
 Compute Culling 先用 Sphere/AABB 对 View Frustum。再根据距离、Projected Size 或 Screen-space Error 选择 LOD。
 
 LOD 选择应有 Hysteresis，避免阈值附近来回切换。若精细 LOD 尚未流送，可回退到可用父级，不应等待 GPU/IO 同步。
 
-## Backface Cone Culling
+### Backface Cone Culling
 
 一个 Cluster 可预计算 Normal Cone：Axis 和最大偏转角。如果从相机看，整个 Cone 都背向视线，就能在光栅化前剔除整个 Cluster。
 
 双面材质、负缩放、变形和非流形几何会让 Cone 假设失效。工具应按资产标记是否允许此剔除。
 
-## Hi-Z Occlusion
+### Hi-Z Occlusion
 
 Depth Pyramid 每级保存一块区域的保守深度。把 Bounds 投影到屏幕后，选择覆盖范围对应的 Mip，并比较最近可能深度与 Hi-Z。
 
@@ -78,13 +80,15 @@ Occlusion False Positive 会让物体消失，不能以错误剔除换性能。
 
 Hi-Z 也常称 HZB（Hierarchical Z-Buffer）。两者都指深度的分层降采样结构；归约使用最大值还是最小值取决于正向或反向 Z 以及遮挡测试定义。
 
-## Compaction 与 Prefix Sum
+## 可见列表怎样变成绘制
+
+### Compaction 与 Prefix Sum
 
 每个线程判断可见后，需要把结果紧凑写入 Visible List。可以使用 Atomic Append，简单但高密度时有竞争；也可先写 0/1 Flag，通过 Prefix Sum 得到输出 Offset，再 Scatter。
 
 Prefix Sum 通常分组内 Scan、Group Sum Scan、最终 Offset Add。它是 GPU Culling、粒子系统和 Cluster Pipeline 的基础并行原语。
 
-## Indirect Draw
+### Indirect Draw
 
 GPU 把可见数量和参数写入 Indirect Argument Buffer，随后执行 `DrawIndexedIndirect`、`ExecuteIndirect` 或对应 API。CPU 不读取数量，避免同步。
 
@@ -92,7 +96,7 @@ GPU 把可见数量和参数写入 Indirect Argument Buffer，随后执行 `Draw
 
 Indirect Argument 从 UAV 写入到 Indirect Read 需要 Barrier。计数溢出和 Buffer 容量不足必须有可观察错误。
 
-## Material 与排序
+### Material 与排序
 
 可见几何需要按 Pipeline/Material 分类。常用：
 
@@ -103,7 +107,9 @@ Indirect Argument 从 UAV 写入到 Indirect Read 需要 Barrier。计数溢出�
 
 Bindless 降低绑定次数，却提高随机访问和资源生命周期要求。同一 Wave 中材质差异大也会产生 Divergence。
 
-## Cluster 与 Meshlet
+## 细粒度几何怎样处理
+
+### Cluster 与 Meshlet
 
 Cluster/Meshlet 把 Mesh 切成几十到几百个三角形的小块，并限制唯一顶点数。每块保存 Bounds、Normal Cone、Material Range 和局部索引。
 
@@ -116,7 +122,7 @@ Cluster/Meshlet 把 Mesh 切成几十到几百个三角形的小块，并限制�
 
 Cluster 太小会增加元数据和调度；太大则剔除不精细。最佳大小取决于硬件、几何和工作负载，不是固定 64/128 就通用。
 
-## Mesh Shader
+### Mesh Shader
 
 现代 Mesh Pipeline 常由 Task/Amplification Shader 产生工作组，再由 Mesh Shader 输出一组顶点和 Primitive。它能在 GPU 内完成 Cluster Culling、LOD 与解码，减少传统 Vertex/Geometry 阶段限制。
 
@@ -124,7 +130,7 @@ Mesh Shader 不是软件光栅化。它最终仍把 Primitive 交给硬件 Raste
 
 平台不支持 Mesh Shader 时，可使用 Compute Culling + Indirect Indexed Draw 作为回退。
 
-## Visibility Buffer
+### Visibility Buffer
 
 Visibility Pass 只写 Instance/Primitive/Triangle ID 和 Barycentric 等最小数据。后续 Compute/Pixel Shading 根据 ID 读取顶点与材质，重建属性并着色。
 
@@ -170,7 +176,7 @@ void CullInstances(uint id : SV_DispatchThreadID)
 }
 ```
 
-剔除前要保证 Hi-Z 对应当前约定的深度方向，并在写入可见列表后建立到 Indirect Draw 读取的同步。原子追加适合最小实现，大规模场景可用 Prefix Sum 做稳定压紧。验证时关闭各项剔除分别比较计数，并把 Bounds、Mip 选择和被拒绝原因可视化；计数溢出必须有显式统计，不能静默丢对象。
+剔除前要保证 Hi-Z 对应当前约定的深度方向，并在写入可见列表后建立到 Indirect Draw 读取的同步。原子追加适合最小实现，大规模场景可用 Prefix Sum 做稳定压紧。验证时关闭各项剔除分别比较计数，并把 Bounds、Mip 选择和被拒绝原因可视化；这里的原子计数在容量溢出后仍会增长，因此最终绘制计数必须限制到已写入容量，并报告溢出。生产系统还要准备保守回退，避免缺失对象。仅在写数组时判断 `dst < visibleCapacity` 并不能修复间接绘制读取越界。
 
 ## 相关主题
 

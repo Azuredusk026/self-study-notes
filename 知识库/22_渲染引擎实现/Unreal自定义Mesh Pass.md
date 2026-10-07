@@ -32,9 +32,9 @@ Proxy 是组件在渲染线程的镜像。游戏线程随时改变组件属性�
 
 ### FMeshDrawCommand
 
-这是整条链路的设计核心：**FMeshDrawCommand 是完全无状态的**。
+这是整条链路的设计核心：**FMeshDrawCommand 是自包含的绘制描述**。
 
-它只记录绘制所需的 Shader、资源绑定和绘制参数，不像 Component 那样需要维护变化与更新。无状态带来三个能力：可以按任意键排序、可以跨帧缓存、可以合并为更少的实际绘制。
+它只记录绘制所需的 Shader、资源绑定和绘制参数，不像 Component 那样需要维护变化与更新。显式保存状态和参数带来三个能力：可以按任意键排序、可以跨帧缓存、可以合并为更少的实际绘制。
 
 `FSceneRenderer` 通过 `SetupMeshPass` 为每个 Pass 创建 `FMeshPassProcessor`，由它把 MeshBatch 转换为 MeshDrawCommand。转换在 `FMeshDrawCommandPassSetupTask` 中并行完成，最后由 `SubmitMeshDrawCommands` 翻译为 RHI 命令。
 
@@ -64,7 +64,7 @@ Vertex Factory 回答一个问题：顶点数据以什么布局存在，Shader �
 - `PositionOnly`：仅位置，供 Depth Only Pass 使用；
 - `PositionAndNormal`：位置加法线，供需要法线的深度类 Pass 使用。
 
-Depth Prepass 与 Shadow Depth 只需位置，使用精简流可以显著降低顶点带宽。这是引擎层面对深度 Pass 的针对性优化。
+不透明且没有位移的深度绘制可以使用仅位置流。Masked 材质还要 UV 和 Alpha 测试，世界位置偏移也需要对应输入，处理器应按材质与 Vertex Factory 能力选择精简流。这是引擎层面对深度 Pass 的针对性优化。
 
 ### 顶点元素顺序必须与 Shader 对应
 
@@ -94,7 +94,7 @@ InitDeclaration(Elements);
 
 这里的顺序必须与 `.ush` 中输入结构的语义槽位一一对应。顺序错位不会报编译错误，表现为顶点属性被解释成错误的数据——常见现象是模型撕裂、UV 错乱或顶点色变成法线数据。用 RenderDoc 查看 Input Assembler 的顶点布局是最直接的排查方式。
 
-顶点色的类型必须是 `VET_Color`。用其他类型传入时，ES3 与 Metal 平台会按平台约定做通道交换，导致颜色分量顺序错误。
+沿用引擎颜色流时使用对应的 `VET_Color` 与 Shader 解码约定。自定义格式也能传颜色，但归一化与通道顺序必须匹配，跨 API 用纯红、绿、蓝样本核对。
 
 ### 初始化顺序
 
@@ -127,7 +127,7 @@ VertexFactory.InitResource(RHICmdList);
 
 Unreal 默认的 Shading Model 上限是 16。这个数字不是随意规定的——ShadingModelID 存储在 GBufferB 的 Alpha 通道低 4 位，$2^4=16$ 就是硬上限。
 
-突破它需要同步修改六处，只改其中一部分会编译通过但行为错误：
+下面列出位宽扩展涉及的六类位置，属于 UE5.4 传统 GBuffer 路径的调查清单，完整补丁还要覆盖材质编译、其他编码路径及消费者：
 
 | 位置 | 改动 |
 |---|---|
@@ -191,7 +191,7 @@ Unreal 默认的 Shading Model 上限是 16。这个数字不是随意规定的�
 
 关键在于让材质能够访问光照相关数据。做法是在 Light Pass 之后插入一个专用 Pass，把阴影等信息传递进去，材质图便可读取这些数据完成主光着色。
 
-这与“在自发光里做卡渲”的区别正在于此：后者完全脱离光照管线，拿不到阴影与多光源；前者保留了这些能力，同时把着色决策权交还给项目。
+这与“在自发光里做卡渲”的区别正在于此：后者完全脱离光照管线，拿不到阴影与多光源；该组合路径是否保留这些能力，取决于阴影、多光源与历史资源的接入实现。
 
 扩展层次按输入、输出和执行时机选择，各部分落在能够表达其需求的接口上。
 

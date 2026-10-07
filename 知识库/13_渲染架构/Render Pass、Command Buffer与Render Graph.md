@@ -1,6 +1,6 @@
 # Render Pass、Command Buffer与Render Graph
 
-渲染通道说明执行哪项任务，命令缓冲记录实际 GPU 操作，渲染图组织资源依赖。阅读时沿“资源与任务 → 记录与提交 → 执行与完成”追踪，区分引擎软件分工与图形 API 的对象。
+渲染通道说明执行哪项任务，命令缓冲记录实际 GPU 操作，Render Graph 组织资源依赖。阅读时沿“资源与任务 → 记录与提交 → 执行与完成”追踪，区分引擎软件分工与图形 API 的对象。
 
 ## 阅读路径
 
@@ -36,7 +36,7 @@ retainResourcesUntilGpuCompletion()
 
 ## 引擎入口
 
-Unity 6 URP 在 `RecordRenderGraph` 声明通道，旧兼容路径使用其既有执行接口。Unreal RDG 通过参数结构表达读写，再生成 RHI 请求。图内逻辑句柄不等同于可以无限保存的原生资源指针。
+Unity 6 URP 在 `RecordRenderGraph` 声明通道，旧兼容路径使用其既有执行接口。Unreal RDG 通过参数结构表达读写，再生成 RHI 请求。逻辑句柄由当前图拥有。跨帧历史先通过外部资源或提取机制保留，再在下一帧导入；保存一个句柄本身不会延长资源寿命。
 
 - [[22_渲染引擎实现/Unity渲染帧组织]]
 - [[22_渲染引擎实现/URP Render Graph自定义Pass]]

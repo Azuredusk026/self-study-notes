@@ -30,7 +30,9 @@ $$
 
 这些解析求交适合 Primitive Collider、调试和特殊体积。复杂场景最终主要处理三角形。
 
-## Ray-Triangle
+## 单个形状怎样求交
+
+### Ray-Triangle
 
 三角形可写为：
 
@@ -50,7 +52,7 @@ Barycentric Weight 为 $(1-u-v,u,v)$，可用于插值 UV、Normal、Tangent 和
 - Ray Direction 未归一化时的距离语义；
 - Alpha-tested Triangle 命中后的纹理可见性。
 
-## AABB Slab Test
+### AABB Slab Test
 
 Axis-Aligned Bounding Box 由每轴 Min/Max 定义。Ray 在每个轴进入和离开盒子的参数为：
 
@@ -64,19 +66,21 @@ $$
 
 AABB 求交便宜、合并容易，适合 BVH 节点。物体旋转后 World AABB 会变松，但遍历仍简单。
 
-## OBB
+### OBB
 
 Oriented Bounding Box 更贴合旋转物体，但直接求交更贵。常见做法是用 OBB 的逆变换把 Ray 变到 Box Local Space，再做 AABB Slab Test。
 
 若变换含非均匀缩放，Direction 和 $t$ 的距离意义要谨慎处理。碰撞系统也可能使用 SAT 等方法，而 Ray Query 只需局部空间 Slab。
 
-## 为什么不能逐三角形扫描
+## 大量几何怎样缩小候选
+
+### 为什么不能逐三角形扫描
 
 $N$ 个三角形逐个测试是 $O(N)$。Shadow、Reflection、GI 每像素可能发多条 Ray，分辨率与 Bounce 又继续放大次数。
 
 空间结构先用便宜包围体排除大量几何，再只对少量候选做精确 Triangle Test。实际成本由节点访问、内存局部性、包围体重叠和 Ray Coherence 决定，不能只看渐进复杂度。
 
-## Uniform Grid、Octree 与 KD-Tree
+### Uniform Grid、Octree 与 KD-Tree
 
 Uniform Grid 构建和查询简单，适合分布较均匀的场景。密度差异大时，空 Cell 和拥挤 Cell 都会浪费。
 
@@ -84,7 +88,7 @@ Octree 每次把三维空间分成八块。稀疏八叉树只存非空区域，�
 
 KD-Tree 用轴对齐平面递归切空间，可为静态 Ray Tracing 建高质量结构，但动态更新和构建较重。
 
-## BVH
+### BVH
 
 Bounding Volume Hierarchy 按几何对象分组。每个内部节点保存包住子节点的 Bounds，叶节点保存少量 Primitive。
 
@@ -92,7 +96,7 @@ Bounding Volume Hierarchy 按几何对象分组。每个内部节点保存包住
 
 理想情况下，查询沿树访问少量节点，接近 $O(\log N+k)$，也常写作 `O(log N + k)`；$k$ 是命中候选数。高度失衡或 Bounds 大量重叠时，最坏仍可能退化到 $O(N)$。
 
-## BVH 构建
+### BVH 构建
 
 最简单方法按 Primitive Centroid 的最长轴做 Median Split，树较平衡，构建快，但不一定减少遍历工作。
 
@@ -108,7 +112,7 @@ $A_P/A_L/A_R$ 是父、左右 Bounds 表面积，$N_L/N_R$ 是 Primitive 数，$
 
 LBVH 用 Morton Code 把空间位置编码排序，再并行生成层级。它适合 GPU 快速构建，但树质量通常低于精细 SAH。工程中可先 LBVH，再局部优化或重建上层。
 
-## BVH 遍历
+### BVH 遍历
 
 遍历从 Root 开始：
 
@@ -121,13 +125,15 @@ Closest-hit 查询宜优先访问 Entry Distance 更近的子节点。Any-hit/Sh
 
 实现可使用显式 Stack、Rope/Parent Pointer 的 Stackless Traversal，或 Wide BVH 一次测试多个 Child。GPU 上还要考虑 Wave 内 Ray 访问不同节点造成的 Divergence。
 
-## BVH2、BVH4 与 BVH8
+### BVH2、BVH4 与 BVH8
 
 二叉 BVH 节点简单、树较深。更宽的 BVH 减少层数，并适合 SIMD/SIMT 一次测试多个 Bounds，但每节点数据更大，也可能测试更多空分支。
 
 硬件和 API 的内部布局通常不可见。应用侧更重要的是提供合适的几何、Build Flag 和更新策略。
 
-## BLAS 与 TLAS
+## 硬件追踪怎样接入场景
+
+### BLAS 与 TLAS
 
 现代硬件光追通常使用两级结构：
 
@@ -138,7 +144,7 @@ Closest-hit 查询宜优先访问 Entry Distance 更近的子节点。Any-hit/Sh
 
 TLAS 使 Instance 移动时不必重建底层三角形结构。Skinned/Deformed Mesh 的顶点变化会影响 BLAS，需要 Refit/Update 或重建。
 
-## Build、Refit 与 Rebuild
+### Build、Refit 与 Rebuild
 
 Refit 只根据变化后的 Leaf 重新合并上层 Bounds，速度快，拓扑不变。物体长期大幅变形后，Sibling Bounds 可能严重重叠，遍历质量下降。
 
@@ -152,7 +158,7 @@ Rebuild 重新划分几何，成本高但恢复质量。常见策略：
 
 Acceleration Structure 构建还需要 Scratch Buffer、临时峰值和同步，应计入帧预算。
 
-## Ray Tracing Pipeline
+### Ray Tracing Pipeline
 
 DXR/Vulkan RT 常见 Shader 阶段：
 
@@ -196,7 +202,7 @@ bool IntersectAabb(float3 origin, float3 direction,
 }
 ```
 
-生产实现要明确方向分量为零时的 IEEE 浮点行为，或单独处理平行轴。BVH 遍历使用 `tEnter` 做近节点优先，并用当前最近命中距离裁剪远节点。用从盒内出发、平行盒面和负方向三组射线测试区间符号。
+这个倒数片段在射线平行轴且原点恰在盒面时可能产生 `0 * infinity`，随后出现 NaN。可靠路径对平行轴单独判断：原点在该轴区间外就拒绝，在区间内则不收紧参数区间。近零阈值还要随尺度设计，不能把任意极小非零方向当零。BVH 遍历使用 `tEnter` 做近节点优先，并用当前最近命中距离裁剪远节点。用从盒内出发、平行盒面和负方向三组射线测试区间符号。
 
 ## 相关主题
 

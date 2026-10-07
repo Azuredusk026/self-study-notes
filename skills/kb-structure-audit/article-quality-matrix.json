@@ -501,21 +501,21 @@
     "primary_question": "如何沿CPU到显示链路理解一帧",
     "boundary_action": "OVERVIEW",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -532,29 +532,37 @@
     "proposed_domain": "02_GPU与光栅化管线",
     "category_adoption_status": "方案B已采用",
     "deferred_title": true,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## OpenGL 状态机与对象"
+    ]
   },
   {
     "path": "知识库/02_GPU与光栅化管线/光栅化、插值与深度模板.md",
     "primary_question": "如何定位光栅覆盖、深度与模板问题",
     "boundary_action": "OVERVIEW",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -569,7 +577,15 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "DEFERRED",
     "deferred_title": true,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## 验证方法"
+    ]
   },
   {
     "path": "知识库/02_GPU与光栅化管线/光栅化与属性插值.md",
@@ -705,21 +721,21 @@
     "primary_question": "如何从空间和时间样本重建稳定图像",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -736,7 +752,67 @@
     "proposed_domain": "02_GPU与光栅化管线",
     "category_adoption_status": "方案B已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "# 抗锯齿与时域重建",
+      "## 历史怎样加入本帧",
+      "## 历史校验",
+      "## 在管线中的位置",
+      "## 怎样生成新样本",
+      "## 抖动",
+      "## 样本累积",
+      "## 空间方案",
+      "## 重投影",
+      "### $\\alpha$ 的下界",
+      "### FXAA",
+      "### MSAA",
+      "### 亮度自适应权重",
+      "### 写入投影矩阵",
+      "### 历史校验",
+      "### 固定系数等价于指数平滑",
+      "### 在管线中的位置",
+      "### 序列的选择",
+      "### 抖动",
+      "### 拒绝",
+      "### 样本累积",
+      "### 混合系数自适应",
+      "### 矫正",
+      "### 空间方案",
+      "### 等效采样数",
+      "### 等权重方案",
+      "### 纹理需要补偿",
+      "### 超采样（SSAA）",
+      "### 运动向量",
+      "### 采样邻域最近深度",
+      "### 重投影",
+      "### 重采样滤波",
+      "### 颜色空间与离群值",
+      "#### $\\alpha$ 的下界",
+      "#### FXAA",
+      "#### MSAA",
+      "#### Sample Frequency 和 Resolve",
+      "#### 亮度自适应权重",
+      "#### 写入投影矩阵",
+      "#### 固定系数等价于指数平滑",
+      "#### 序列的选择",
+      "#### 拒绝",
+      "#### 混合系数自适应",
+      "#### 矫正",
+      "#### 等效采样数",
+      "#### 等权重方案",
+      "#### 纹理需要补偿",
+      "#### 超采样（SSAA）",
+      "#### 运动向量",
+      "#### 采样邻域最近深度",
+      "#### 重采样滤波",
+      "#### 颜色空间与离群值"
+    ]
   },
   {
     "path": "知识库/02_GPU与光栅化管线/基于深度的可见性优化.md",
@@ -1234,21 +1310,21 @@
     "primary_question": "如何以实时预算近似皮肤次表面散射",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -1263,7 +1339,16 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## 三类实时方案",
+      "## 扩散剖面"
+    ]
   },
   {
     "path": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
@@ -3091,21 +3176,21 @@
     "primary_question": "如何在GPU生成可见对象与间接绘制参数",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -3120,29 +3205,60 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## Backface Cone Culling",
+      "## Cluster 与 Meshlet",
+      "## Compaction 与 Prefix Sum",
+      "## Frustum 与 Distance/Screen Error",
+      "## Hi-Z Occlusion",
+      "## Indirect Draw",
+      "## Material 与排序",
+      "## Mesh Shader",
+      "## Visibility Buffer",
+      "## 可见列表怎样变成绘制",
+      "## 哪些实例进入工作集",
+      "## 细粒度几何怎样处理",
+      "### Backface Cone Culling",
+      "### Cluster 与 Meshlet",
+      "### Compaction 与 Prefix Sum",
+      "### Frustum 与 Distance/Screen Error",
+      "### GPU 剔除与间接绘制列表",
+      "### Hi-Z Occlusion",
+      "### Indirect Draw",
+      "### Material 与排序",
+      "### Mesh Shader",
+      "### Visibility Buffer",
+      "### 引擎中的场景 Buffer"
+    ]
   },
   {
     "path": "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md",
     "primary_question": "如何按屏幕误差选择并流送Nanite几何",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -3157,28 +3273,37 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "# Nanite几何选择与流送",
+      "## Page Streaming 与虚拟化"
+    ]
   },
   {
     "path": "知识库/12_光线追踪/光线求交与BVH.md",
     "primary_question": "如何用层级结构减少光线求交工作",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -3193,28 +3318,64 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## AABB Slab Test",
+      "## BLAS 与 TLAS",
+      "## BVH",
+      "## BVH 构建",
+      "## BVH 遍历",
+      "## BVH2、BVH4 与 BVH8",
+      "## Build、Refit 与 Rebuild",
+      "## OBB",
+      "## Ray Tracing Pipeline",
+      "## Ray-Triangle",
+      "## Uniform Grid、Octree 与 KD-Tree",
+      "## 为什么不能逐三角形扫描",
+      "## 单个形状怎样求交",
+      "## 大量几何怎样缩小候选",
+      "## 硬件追踪怎样接入场景",
+      "### AABB Slab Test",
+      "### AABB Slab 求交",
+      "### BLAS 与 TLAS",
+      "### BVH",
+      "### BVH 构建",
+      "### BVH 遍历",
+      "### BVH2、BVH4 与 BVH8",
+      "### Build、Refit 与 Rebuild",
+      "### OBB",
+      "### Ray Tracing Pipeline",
+      "### Ray-Triangle",
+      "### Uniform Grid、Octree 与 KD-Tree",
+      "### 为什么不能逐三角形扫描"
+    ]
   },
   {
     "path": "知识库/12_光线追踪/实时光追、采样与降噪.md",
     "primary_question": "如何分配光追样本并重建低噪结果",
     "boundary_action": "SPLIT",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "待拆边界保留",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -3229,7 +3390,48 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "DEFERRED",
     "deferred_title": true,
-    "pending_split": true
+    "pending_split": true,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "# 实时光追、采样与降噪",
+      "## Direct Lighting 采样",
+      "## Disocclusion 与 History Reject",
+      "## History Clamp",
+      "## Monte Carlo 估计",
+      "## Ray Budget",
+      "## Ray Cone 与材质 LOD",
+      "## ReSTIR",
+      "## ReSTIR 的可见性问题",
+      "## Screen Space、SDF 与 Hardware RT",
+      "## Spatial Filter",
+      "## Temporal Accumulation",
+      "## Variance 与 Adaptive Sampling",
+      "## 为什么 Denoiser 需要辅助 Buffer",
+      "## 候选样本怎样跨时空复用",
+      "## 噪声怎样稳定下来",
+      "## 常见实时效果",
+      "## 有限射线怎样估计贡献",
+      "### Direct Lighting 采样",
+      "### Disocclusion 与 History Reject",
+      "### History Clamp",
+      "### Monte Carlo 估计",
+      "### Ray Budget",
+      "### Ray Cone 与材质 LOD",
+      "### ReSTIR",
+      "### ReSTIR 的可见性问题",
+      "### Screen Space、SDF 与 Hardware RT",
+      "### Spatial Filter",
+      "### Temporal Accumulation",
+      "### Variance 与 Adaptive Sampling",
+      "### 为什么 Denoiser 需要辅助 Buffer",
+      "### 带拒绝条件的时域积累",
+      "### 常见实时效果"
+    ]
   },
   {
     "path": "知识库/13_渲染架构/Draw Call与合批.md",
@@ -3282,22 +3484,22 @@
     "primary_question": "如何选择材质光照路径与光源筛选方式",
     "boundary_action": "OVERVIEW",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -3315,7 +3517,16 @@
     "category_adoption_status": "方案B已采用",
     "title_coverage_review": "已是导读；求值时机和灯光筛选两个维度关系清楚，使用关系名",
     "deferred_title": true,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## 先看一次材质与光源相遇"
+    ]
   },
   {
     "path": "知识库/13_渲染架构/GBuffer布局.md",
@@ -3392,22 +3603,22 @@
     "primary_question": "如何区分通道、命令和依赖图并选择深入入口",
     "boundary_action": "OVERVIEW",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -3424,28 +3635,37 @@
     "proposed_domain": "13_渲染架构",
     "category_adoption_status": "方案B已采用",
     "deferred_title": true,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "# Render Pass、Command Buffer与Render Graph",
+      "## 引擎入口"
+    ]
   },
   {
     "path": "知识库/25_UI与文本/UI、字体与文本渲染.md",
     "primary_question": "如何将UI布局和文字语义转为绘制命令",
     "boundary_action": "SPLIT",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "待拆边界保留",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -3460,7 +3680,34 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "DEFERRED",
     "deferred_title": true,
-    "pending_split": true
+    "pending_split": true,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## SDF 和 MSDF",
+      "## 从字符串到字形位置",
+      "## 位图字体和 Glyph Atlas",
+      "## 字形度量",
+      "## 字形怎样变成可采样数据",
+      "## 字符、码点和字形",
+      "## 批处理和网格生成",
+      "## 控件怎样提交到屏幕",
+      "## 裁剪、遮罩和九宫格",
+      "## 颜色和混合",
+      "## 高 DPI、本地化和输入",
+      "### SDF 和 MSDF",
+      "### 位图字体和 Glyph Atlas",
+      "### 字形度量",
+      "### 字符、码点和字形",
+      "### 批处理和网格生成",
+      "### 裁剪、遮罩和九宫格",
+      "### 颜色和混合",
+      "### 高 DPI、本地化和输入"
+    ]
   },
   {
     "path": "知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md",
@@ -3560,21 +3807,21 @@
     "primary_question": "如何按资源和注入需求选择引擎扩展入口",
     "boundary_action": "OVERVIEW",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -3589,7 +3836,44 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "DEFERRED",
     "deferred_title": true,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## Custom Depth 和 Stencil",
+      "## Niagara",
+      "## Post Process Material",
+      "## Scriptable Render Pipeline",
+      "## Unity Built-in Pipeline",
+      "## Unity Shader 与渲染层",
+      "## Unity 的管线与资源入口",
+      "## Unreal Material",
+      "## Unreal Render Dependency Graph",
+      "## Unreal 的材质与绘制入口",
+      "## 修改 Shading Model 还是材质实现",
+      "### Custom Depth 和 Stencil",
+      "### HDRP Custom Pass",
+      "### Niagara",
+      "### Post Process Material",
+      "### Scriptable Render Pipeline",
+      "### URP Renderer Feature/Pass",
+      "### Unity Built-in Pipeline",
+      "### Unity Shader 与渲染层",
+      "### Unreal Material",
+      "### Unreal Render Dependency Graph",
+      "### 修改 Shading Model 还是材质实现",
+      "### 材质/Unlit 实现",
+      "### 自定义 Shading Model",
+      "#### HDRP Custom Pass",
+      "#### URP Renderer Feature/Pass",
+      "#### 全屏 Blit 的浪费",
+      "#### 材质/Unlit 实现",
+      "#### 自定义 Shading Model"
+    ]
   },
   {
     "path": "知识库/22_渲染引擎实现/Unreal RDG Pass实现.md",
@@ -3687,21 +3971,21 @@
     "primary_question": "如何把自定义网格效果接入Unreal绘制流程",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -3716,7 +4000,19 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "### FMeshDrawCommand",
+      "### Shading Model 数量上限",
+      "### 三套顶点流",
+      "### 延迟路径对风格化渲染的约束",
+      "### 顶点元素顺序必须与 Shader 对应"
+    ]
   },
   {
     "path": "知识库/13_渲染架构/GPU资源生命周期.md",
@@ -3979,21 +4275,21 @@
     "primary_question": "如何定义引擎世界的依赖、所有权与更新阶段",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P2",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -4008,29 +4304,37 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## Transform 层级和 Scene Graph"
+    ]
   },
   {
     "path": "知识库/23_引擎运行系统/数据导向设计与任务系统.md",
     "primary_question": "如何安排热点数据以及调度依赖任务",
     "boundary_action": "SPLIT",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "待拆边界保留",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "边界/导读延后命名",
       "Information Architecture": "方案B目录归位通过"
@@ -4045,7 +4349,16 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "DEFERRED",
     "deferred_title": true,
-    "pending_split": true
+    "pending_split": true,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## ECS 的三个角色",
+      "## 同步与内存顺序"
+    ]
   },
   {
     "path": "知识库/13_渲染架构/Render Graph.md",
@@ -4272,22 +4585,22 @@
     "primary_question": "如何沿依赖加载资产并保持版本与所有权",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -4302,7 +4615,46 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "# 资源依赖与异步加载",
+      "## Addressables 和 YooAsset",
+      "## Unity AssetBundle",
+      "## 为什么按格式分包通常不够",
+      "## 依赖怎样决定分包",
+      "## 共享依赖",
+      "## 加载框架怎样管理对象",
+      "## 异步加载阶段",
+      "## 异步阶段怎样接上运行时",
+      "## 引用计数",
+      "## 版本和热更新",
+      "## 资源依赖图",
+      "## 预加载和时间窗口",
+      "### Addressables 和 YooAsset",
+      "### Unity AssetBundle",
+      "### 为什么按格式分包通常不够",
+      "### 依赖图怎么构建",
+      "### 公共 Bundle",
+      "### 共享依赖",
+      "### 加载瀑布的定量看法",
+      "### 异步加载状态机",
+      "### 异步加载阶段",
+      "### 版本和热更新",
+      "### 资源依赖图",
+      "### 错误情况",
+      "### 预加载和时间窗口",
+      "#### 依赖图怎么构建",
+      "#### 公共 Bundle",
+      "#### 加载瀑布的定量看法",
+      "#### 引用计数",
+      "#### 错误情况"
+    ]
   },
   {
     "path": "知识库/13_渲染架构/GPU同步与屏障.md",
@@ -4432,21 +4784,21 @@
     "primary_question": "如何用工具定位一帧的状态与成本来源",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
       "FACT-CHECK",
-      "RESTRUCTURE"
+      "RESTRUCTURE",
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -4461,7 +4813,16 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## 捕获结果怎样进入调查"
+    ]
   },
   {
     "path": "知识库/14_性能分析与优化/PSO首次使用为什么卡顿.md",
@@ -4521,22 +4882,22 @@
     "primary_question": "如何识别CPU/GPU关键路径及成本维度",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -4553,29 +4914,65 @@
     "proposed_domain": "14_性能分析与优化",
     "category_adoption_status": "方案B已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## CPU 和 GPU 时间为什么不能简单相加",
+      "## Cache",
+      "## Draw Call 成本",
+      "## Fill Rate 和带宽",
+      "## GPU 时间由哪些工作构成",
+      "## Occupancy 和 Latency Hiding",
+      "## Pixel 和 Overdraw",
+      "## VRAM 和内存压力",
+      "## Vertex 成本",
+      "## 先区分工作与等待",
+      "## 同步成本",
+      "### CPU 和 GPU 时间为什么不能简单相加",
+      "### Cache",
+      "### Draw Call 成本",
+      "### Fill Rate 和带宽",
+      "### Occupancy 和 Latency Hiding",
+      "### Pixel 和 Overdraw",
+      "### Quad 利用率",
+      "### VRAM 和内存压力",
+      "### Vertex 成本",
+      "### 同步成本",
+      "### 带宽的算术",
+      "### 瓶颈隔离的实验协议",
+      "### 等待的归属",
+      "#### Quad 利用率",
+      "#### 带宽的算术",
+      "#### 瓶颈隔离的实验协议",
+      "#### 等待的归属"
+    ]
   },
   {
     "path": "知识库/14_性能分析与优化/性能对照实验.md",
     "primary_question": "如何设计可复查的性能实验",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -4592,29 +4989,37 @@
     "proposed_domain": "14_性能分析与优化",
     "category_adoption_status": "方案B已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "## 固定测量条件"
+    ]
   },
   {
     "path": "知识库/14_性能分析与优化/移动端渲染优化.md",
     "primary_question": "如何按移动设备约束验证渲染优化",
     "boundary_action": "KEEP",
     "content_actions": [
-      "REWRITE",
+      "DEEPEN",
       "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "批量正文待处理",
+    "writing_review": "本批全文复读与修订完成；语言待交付评审",
     "basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "quality_matrix": {
-      "Scope": "待复读",
+      "Scope": "主问题边界复读",
       "Structure": "待复读",
       "Depth": "待复读",
-      "Implementation": "待复读",
+      "Implementation": "验证状态分层，完整目标工程未运行",
       "Evidence": "待复读",
-      "Writing Style": "待复读",
+      "Writing Style": "已按主问题与因果复读；修订或保留见逐页记录",
       "Visuals": "待复读",
       "Title": "最终标题已采用",
       "Information Architecture": "方案B目录归位通过"
@@ -4629,7 +5034,49 @@
     "category_adoption_status": "方案B已采用",
     "title_adoption_status": "已采用",
     "deferred_title": false,
-    "pending_split": false
+    "pending_split": false,
+    "modernization_batch": "Batch4-P1-B",
+    "executed_content_actions": [
+      "REWRITE",
+      "RESTRUCTURE"
+    ],
+    "modernization_status": "本批处理完成",
+    "changes": [
+      "# 移动端渲染优化",
+      "## MSAA 在移动端",
+      "## Mobile Deferred",
+      "## Overdraw 和透明",
+      "## TBDR 和 Immediate Mode",
+      "## Tile-based GPU",
+      "## 像素与带宽怎样减少",
+      "## 可变着色率",
+      "## 带宽优先思维",
+      "## 持续性能怎样验收",
+      "## 热和 DVFS",
+      "## 画质与性能回归（Regression）",
+      "## 移动端资源优化清单",
+      "## 设备矩阵",
+      "## 附件怎样留在片上",
+      "### MSAA 在移动端",
+      "### Mobile Deferred",
+      "### Overdraw 和透明",
+      "### Shader",
+      "### TBDR 和 Immediate Mode",
+      "### Tile-based GPU",
+      "### 三级粒度",
+      "### 判据从哪里来",
+      "### 后处理",
+      "### 带宽优先思维",
+      "### 收益边界",
+      "### 热和 DVFS",
+      "### 画质与性能回归（Regression）",
+      "### 纹理",
+      "### 设备矩阵",
+      "### 适合与不适合",
+      "### 验证顺序",
+      "#### 可变着色率",
+      "#### 移动端资源优化清单"
+    ]
   },
   {
     "path": "知识库/15_资产与工具管线/DCC资产交换.md",
