@@ -2842,6 +2842,396 @@
       ],
       "static_validation": "validate.py：0 error；git diff --check通过",
       "semantic_review": "本机内容复读，不代替目标运行与用户质量评审"
+    },
+    {
+      "id": "Batch4-P2-P3-B",
+      "pages": 15,
+      "articles": [
+        {
+          "path": "知识库/00_知识库说明/学习与维护方法.md",
+          "batch": "Batch4-P2-P3-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 学习与维护方法",
+            "## 双链怎么使用"
+          ],
+          "before_sha256": "e0b9d44dff75216981e3f718bc08807d9ec916abad88f95d57fb0b09440de032",
+          "after_sha256": "4509364d4def32133d4da314acd73d2db168237f4e02f3796f3ea0866428fd08",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/00_知识库说明/技术中文写作规范.md",
+          "batch": "Batch4-P2-P3-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "## 用因果推进解释",
+            "### 项目文章正例"
+          ],
+          "before_sha256": "ab894ea06926ed18f58d68a16eed9233cd3ba32526466abd7e75e08fcf573b76",
+          "after_sha256": "3f6ce2b344c2258a075b96d3e4b495655bc792d5b1174972b9489f15c84b810a",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/00_知识库说明/术语表.md",
+          "batch": "Batch4-P2-P3-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 术语表"
+          ],
+          "before_sha256": "714c109d5f1fa9bf9f8e910cd5a82e13a23bfdc53eec9000378421487d37a861",
+          "after_sha256": "e89244c9a204500ce628f2c3b88908e93d49282b1beda90164846b9d73ef665b",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/00_知识库说明/知识地图.md",
+          "batch": "Batch4-P2-P3-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 个人游戏开发知识地图"
+          ],
+          "before_sha256": "0ee15c218d89f623b75f2d36780d8c9899f11d3cbc021384eb22b05f29633156",
+          "after_sha256": "8fc4be555d996e772cb0b6c8144622566f02b24dd77b856900b3463173e7a71e",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/00_知识库说明/知识库实施规范.md",
+          "batch": "Batch4-P2-P3-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "## 文章决策",
+            "## 阶段与标杆"
+          ],
+          "before_sha256": "514802580a03cf1e55b6d88c8f9ac5e6211d2681f2d2c4c2a23decd80148af59",
+          "after_sha256": "845e8f01948590b8035cd117e764537e9c804e33b673c800eceb6f670de283e9",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/02_GPU与光栅化管线/剔除、透明与混合.md",
+          "batch": "Batch4-P2-P3-B",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "## 哪些结果值得保留"
+          ],
+          "before_sha256": "79667aa6da3d4c2381407393cc6e6c5437a508f755f97561332ff9442581cad0",
+          "after_sha256": "b50b870502feec6bace448692456ae46ac93164357d6a28c64b5a8be833f9b7e",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/09_动画系统/动画压缩、面部、布料与毛发.md",
+          "batch": "Batch4-P2-P3-B",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "## 先分清动作数据与模拟状态"
+          ],
+          "before_sha256": "dddd86d0c7e6219d9be5f5aa9862f32b463b9a60c777cae3dc2b70093b1eb0d3",
+          "after_sha256": "f61ceb702c146fd36f3f980f012034d681b1838c6f3810dfdc476b67ffeaf91c",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
+          "batch": "Batch4-P2-P3-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "## 建立一致的场景尺度"
+          ],
+          "before_sha256": "6f0e60274092371f349d15430a1340332d98fabc67a871d92b51365a64152cee",
+          "after_sha256": "cf3a120e5c341e4167da539847a109b73e96812aa997cef44975c283053e9809",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/11_NPR与风格化渲染/描边.md",
+          "batch": "Batch4-P2-P3-B",
+          "actions": [
+            "KEEP"
+          ],
+          "changed_sections": [],
+          "before_sha256": "341c42b6010b725bde8a4605eefa51516adb4f2b583e353bd36d4d01903cadc5",
+          "after_sha256": "341c42b6010b725bde8a4605eefa51516adb4f2b583e353bd36d4d01903cadc5",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/11_NPR与风格化渲染/描边、Billboard与场景风格化.md",
+          "batch": "Batch4-P2-P3-B",
+          "actions": [
+            "REWRITE"
+          ],
+          "changed_sections": [
+            "# 描边、Billboard与场景风格化"
+          ],
+          "before_sha256": "62834d9aeeadba26c9c0b365e076cf7eb132d5eca06883127ef338263da6edca",
+          "after_sha256": "e3ff2092f606af241abbb22368226af4f3ad9d9173c4134efcfaddd831b8a90c",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/24_游戏音频/游戏音频系统.md",
+          "batch": "Batch4-P2-P3-B",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "## Mixer 与资源系统",
+            "## Voice 与空间化",
+            "## 回调的实时预算",
+            "## 声音怎样形成空间与混音",
+            "## 数字音频基础",
+            "## 样本怎样按时到达设备",
+            "## 调试",
+            "### Mixer 与资源系统",
+            "### Voice 与空间化",
+            "### 回调的实时预算",
+            "### 数字音频基础",
+            "### 调试"
+          ],
+          "before_sha256": "4b1b3fc01dcbe7aa5f6042c1723ac45406299ef501793af2e55a3cc0f97e12a4",
+          "after_sha256": "f3f0ac7ed4bb9f9ce3262e73cb7a44b69177e4fdbf86e6466139e84cda2afd49",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+          "batch": "Batch4-P2-P3-B",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# Agent资产管线",
+            "## Compensation 与回滚",
+            "## Job 与 Artifact",
+            "## Orchestrator",
+            "## Prompt Contract",
+            "## Prompt Injection 与不可信输入",
+            "## Retry 与 Backoff",
+            "## 任务怎样有状态地推进",
+            "## 失败后怎样恢复",
+            "## 工具接口",
+            "## 幂等",
+            "## 技术质量门禁",
+            "## 推理怎样进入受控工具",
+            "## 日志与审计",
+            "## 权限",
+            "## 状态机",
+            "## 结果怎样进入正式资产",
+            "## 自动验证不等于自我评分",
+            "## 视觉与语义审核",
+            "## 角色提示词",
+            "## 评估",
+            "## 适合 Agent 的任务",
+            "## 错误分类",
+            "### Compensation 与回滚",
+            "### Job 与 Artifact",
+            "### Orchestrator",
+            "### Prompt Contract",
+            "### Prompt Injection 与不可信输入",
+            "### Retry 与 Backoff",
+            "### 工具接口",
+            "### 幂等",
+            "### 技术质量门禁",
+            "### 日志与审计",
+            "### 权限",
+            "### 状态机",
+            "### 自动验证不等于自我评分",
+            "### 视觉与语义审核",
+            "### 角色提示词",
+            "### 评估",
+            "### 适合 Agent 的任务",
+            "### 错误分类"
+          ],
+          "before_sha256": "e6633a4eba3d8803ef6166437f08c3e213eb1c40667f1179790f44710857ea40",
+          "after_sha256": "fb351150a2343543524133e4ad9820d3e8fd02618d7009546b10b45742964a6d",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": false
+        },
+        {
+          "path": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
+          "batch": "Batch4-P2-P3-B",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "# ComfyUI工作流与时序一致性",
+            "## Custom Node 风险",
+            "## Keyframe 与传播",
+            "## Latent 与噪声一致性",
+            "## Normal Temporal Filter",
+            "## Optical Flow Warp",
+            "## Parameter Group",
+            "## Queue 与批处理",
+            "## Workflow 是管线资产",
+            "## 基础图",
+            "## 多通道一致性",
+            "## 工作流怎样可重复执行",
+            "## 技术通道怎样保持一致",
+            "## 时序一致性为什么难",
+            "## 时序法线生成",
+            "## 时序质量指标",
+            "## 曝光与颜色稳定",
+            "## 模型与路径",
+            "## 约束分层",
+            "## 视频怎样追踪同一份内容",
+            "## 输出与 Metadata",
+            "### Custom Node 风险",
+            "### Keyframe 与传播",
+            "### Latent 与噪声一致性",
+            "### Normal Temporal Filter",
+            "### Optical Flow Warp",
+            "### Parameter Group",
+            "### Queue 与批处理",
+            "### Workflow 是管线资产",
+            "### 基础图",
+            "### 多通道一致性",
+            "### 时序一致性为什么难",
+            "### 时序法线生成",
+            "### 时序质量指标",
+            "### 曝光与颜色稳定",
+            "### 模型与路径",
+            "### 约束分层",
+            "### 输出与 Metadata"
+          ],
+          "before_sha256": "93fd463c27ca44b8a4a9ddff44da3e0872e477ee9fec370fa599500bd6875dca",
+          "after_sha256": "390dedbd6aff7372ae7589cd0bde33c71dd184dca51ef30e84736002c8c451ec",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": true
+        },
+        {
+          "path": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
+          "batch": "Batch4-P2-P3-B",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "## Caption 与 Tag",
+            "## Classifier-Free Guidance",
+            "## ControlNet",
+            "## Forward Diffusion",
+            "## IP-Adapter",
+            "## Latent Diffusion",
+            "## LoRA",
+            "## LoRA 数据",
+            "## Reverse Process",
+            "## Seed 与可复现性",
+            "## Text-to-Image、Img2Img 与 Inpainting",
+            "## U-Net 与其他去噪网络",
+            "## 噪声怎样变成图像",
+            "## 基线评估",
+            "## 推理精度与显存",
+            "## 数据与隐私",
+            "## 文本条件与 CLIP",
+            "## 条件怎样改变生成路径",
+            "## 模型怎样进入生产",
+            "## 训练与过拟合",
+            "## 资产化",
+            "## 适配器怎样学习目标概念",
+            "### Caption 与 Tag",
+            "### Classifier-Free Guidance",
+            "### ControlNet",
+            "### Forward Diffusion",
+            "### IP-Adapter",
+            "### Latent Diffusion",
+            "### LoRA",
+            "### LoRA 数据",
+            "### Reverse Process",
+            "### Seed 与可复现性",
+            "### Text-to-Image、Img2Img 与 Inpainting",
+            "### U-Net 与其他去噪网络",
+            "### 基线评估",
+            "### 推理精度与显存",
+            "### 数据与隐私",
+            "### 文本条件与 CLIP",
+            "### 训练与过拟合",
+            "### 资产化"
+          ],
+          "before_sha256": "b9b01ca511a8fbdb0fefc092cdc0c8a3c09e996404120d9df7874f149b00bd8e",
+          "after_sha256": "ebbfb3c027736d59dd6e3fcd3b6a8fa4edb829905f3006e0cfc28bd72c0357bb",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": true
+        },
+        {
+          "path": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
+          "batch": "Batch4-P2-P3-B",
+          "actions": [
+            "REWRITE",
+            "RESTRUCTURE"
+          ],
+          "changed_sections": [
+            "## DNS",
+            "## RPC",
+            "## RTT 与时钟偏移",
+            "## TCP 与 UDP",
+            "## TCP 连接与可靠性",
+            "## 分层、地址与端点",
+            "## 安全边界",
+            "## 数据包与序列化",
+            "## 消息怎样在链路上传输",
+            "## 端点怎样建立通信",
+            "## 诊断",
+            "## 远端状态怎样被解释",
+            "### DNS",
+            "### RPC",
+            "### RTT 与时钟偏移",
+            "### TCP 与 UDP",
+            "### TCP 字节流分帧",
+            "### TCP 连接与可靠性",
+            "### 分层、地址与端点",
+            "### 安全边界",
+            "### 数据包与序列化",
+            "### 诊断",
+            "#### TCP 字节流分帧"
+          ],
+          "before_sha256": "0dcb81eb464b1dca739d8b5df3d84628d1cc34e242676791e08473833d87d590",
+          "after_sha256": "c00ff9445d3fd12153973d3e156a70ee06551c0ffbe7404b2959ad602608855f",
+          "review_scope": "全文正文与章节、代码上下文复读，修订记录由实际diff提取；语言自检不等于用户评审",
+          "runtime_status": "正文示例未执行目标引擎运行；实际CPU/HLSL检查在对应样例结果中记录",
+          "pending_split": true
+        }
+      ],
+      "static_validation": "validate.py：0 error；git diff --check通过",
+      "semantic_review": "本机内容复读，不代替目标运行与用户质量评审"
     }
   ]
 }

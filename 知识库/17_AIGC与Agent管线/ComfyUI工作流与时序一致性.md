@@ -1,8 +1,10 @@
 # ComfyUI工作流与时序一致性
 
-ComfyUI 把模型加载、条件、采样、解码和后处理显式组织成节点图。它适合作为可复现生成管线，但前提是把 Workflow、Model、Custom Node、输入和输出一起版本化。
+同一份工作流换一台机器，节点可以正常运行，图像却未必相同。模型文件、节点实现和数值精度都会改变去噪路径。单帧先锁定这些依赖，视频再处理运动与遮挡带来的历史失效，才有一条能复现、能定位漂移的生成流程。
 
-## 基础图
+## 工作流怎样可重复执行
+
+### 基础图
 
 典型 Text-to-Image：
 
@@ -19,7 +21,7 @@ Checkpoint Loader 可能同时返回 Model、Text Encoder 和 VAE。工作流也
 
 线连通只表示类型兼容，不表示语义正确。错误 VAE、Control Model、Latent Format 或 Resolution 仍可能产出图像。
 
-## Workflow 是管线资产
+### Workflow 是管线资产
 
 正式 Workflow 至少记录：
 
@@ -35,7 +37,7 @@ Checkpoint Loader 可能同时返回 Model、Text Encoder 和 VAE。工作流也
 
 只保存截图无法重建节点、Widget 和连接。只保存 JSON 但不保存依赖版本，也可能因节点升级改变结果。
 
-## 模型与路径
+### 模型与路径
 
 不要让 Workflow 依赖某台电脑的绝对路径。使用受控 Model Registry、逻辑 ID 和配置映射到本地缓存。
 
@@ -43,7 +45,7 @@ Checkpoint Loader 可能同时返回 Model、Text Encoder 和 VAE。工作流也
 
 模型下载与许可应由独立步骤处理，生成 Worker 只读取批准 Registry。不要让 Custom Node 在执行中任意联网下载未知文件。
 
-## Parameter Group
+### Parameter Group
 
 将常调参数集中为输入节点或 API Schema：
 
@@ -57,7 +59,7 @@ Checkpoint Loader 可能同时返回 Model、Text Encoder 和 VAE。工作流也
 
 节点内部散落的 Magic Number 很难审查。参数要有单位、范围和默认值，非法组合在排队前拒绝。
 
-## Queue 与批处理
+### Queue 与批处理
 
 ComfyUI Server 可通过 API 提交 Workflow 和读取 History/Output。生产调度还需要外围 Job 状态：
 
@@ -70,7 +72,7 @@ Job 记录 Workflow Hash、Input Hash、Worker、GPU、开始结束时间和输�
 
 Batch 应限制并发、VRAM 和磁盘。OOM 后无限重试会持续挤占 Worker；可以降低 Batch/Resolution 或转到更大 GPU，但必须记录已改变参数。
 
-## Custom Node 风险
+### Custom Node 风险
 
 Custom Node 本质是可执行代码。风险包括：
 
@@ -83,7 +85,7 @@ Custom Node 本质是可执行代码。风险包括：
 
 生产环境使用白名单、固定 Commit、隔离环境和代码审查。升级先跑 Golden Workflow，不在工作日直接拉最新版本。
 
-## 输出与 Metadata
+### 输出与 Metadata
 
 输出文件名应来自 Job/Asset ID，不以 Prompt 直接拼接路径。Prompt 可能包含非法字符、隐私内容或过长文本。
 
@@ -98,7 +100,9 @@ Sidecar Manifest 保存：
 
 图片 Metadata 可作为方便入口，但发布系统不应只依赖可能被编辑软件清除的嵌入字段。
 
-## 时序一致性为什么难
+## 视频怎样追踪同一份内容
+
+### 时序一致性为什么难
 
 逐帧独立生成时，每帧虽然 Prompt 相同，随机采样仍会改变：
 
@@ -111,7 +115,7 @@ Sidecar Manifest 保存：
 
 视频看起来会 Flicker、Boiling 或形体漂移。只固定 Seed 不能解决，因为每帧输入结构和去噪轨迹不同。
 
-## 约束分层
+### 约束分层
 
 可以从强到弱组合：
 
@@ -123,23 +127,23 @@ Sidecar Manifest 保存：
 6. Temporal Module/Video Diffusion；
 7. 输出后 Temporal Filter 与人工修复。
 
-结构控制保证大形，参考条件保证身份/风格，Temporal Model 负责跨帧特征。单一方法通常不能同时解决全部问题。
+结构控制约束大形，参考条件帮助保持身份与风格，Temporal Model 负责跨帧特征。单一方法通常不能同时解决全部问题。
 
-## Optical Flow Warp
+### Optical Flow Warp
 
-已知前一帧图像 $I_{t-1}$ 和 Flow $F_{t-1\rightarrow t}$，可把历史 Warp 到当前：
+已知前一帧图像 $I_{t-1}$，使用定义在当前像素上的反向光流 $B_{t\rightarrow t-1}$ 查询历史：
 
 $$
-\hat I_t(\mathbf{x})=I_{t-1}(\mathbf{x}-F(\mathbf{x}))
+\hat I_t(\mathbf{x})=I_{t-1}(\mathbf{x}+B_{t\rightarrow t-1}(\mathbf{x}))
 $$
 
-$\hat I_t$ 作为 Img2Img 初始图或一致性参考。
+$\hat I_t$ 作为 Img2Img 初始图或一致性参考。前向光流定义在前帧坐标上，适合向当前帧散布；它不能直接在当前像素上取反就当作反向流，遮挡与空洞也需要单独处理。
 
 Flow 在 Disocclusion、快速运动、反射、透明和 Motion Blur 区域不可靠。需要 Occlusion/Confidence Mask：可信区域保留历史，新出现区域重新生成。
 
 反复 Warp 会累积拉伸和模糊。应定期用 Keyframe 重新锚定，并让当前结构 Control 修正漂移。
 
-## Latent 与噪声一致性
+### Latent 与噪声一致性
 
 相邻帧使用完全独立 Noise 会增加闪烁；使用相关 Noise 可让细节更连贯。但相机/物体运动后，同一 Latent 像素不再对应同一表面。
 
@@ -147,7 +151,7 @@ Flow 在 Disocclusion、快速运动、反射、透明和 Motion Blur 区域不�
 
 固定 Latent 也可能让纹理粘在 Screen Space。要检查细节是随对象、UV 还是相机移动。
 
-## Keyframe 与传播
+### Keyframe 与传播
 
 先人工确认 Keyframe，再向前后传播：
 
@@ -160,7 +164,9 @@ Flow 在 Disocclusion、快速运动、反射、透明和 Motion Blur 区域不�
 
 长镜头不应从第一帧一路单向传播，误差会积累。分段后在边界做双向传播或重叠 Blend。
 
-## 时序法线生成
+## 技术通道怎样保持一致
+
+### 时序法线生成
 
 单图 Normal Estimator 只能从外观猜几何，存在尺度、凹凸和光照歧义。逐帧预测会让法线方向和细节跳动。
 
@@ -176,7 +182,7 @@ Flow 在 Disocclusion、快速运动、反射、透明和 Motion Blur 区域不�
 
 仅对 RGB Normal 做时间平均会缩短向量并跨表面污染。应解码到向量、按 Motion Warp、使用 Depth/Mask/Confidence 拒绝，再归一化。
 
-## Normal Temporal Filter
+### Normal Temporal Filter
 
 对当前法线 $\mathbf{n}_t$ 与重投影历史 $\mathbf{n}_h$，先检查：
 
@@ -196,7 +202,7 @@ $$
 
 对离线序列可双向处理，利用前后帧；实时流程只能使用过去历史，延迟策略不同。
 
-## 多通道一致性
+### 多通道一致性
 
 生成 Base Color、Normal、Depth、Mask 等多个通道时，不能各自独立生成后再假设对齐。
 
@@ -208,7 +214,7 @@ $$
 - 纹理细节不会在 Normal 中产生假几何；
 - 分辨率、Crop 和镜头参数一致。
 
-## 曝光与颜色稳定
+### 曝光与颜色稳定
 
 结构稳定时，自动曝光、VAE 解码和每帧生成的色彩仍可能闪动。输入序列先固定 Color Space、Exposure 和 Tone Mapping；输出比较应在线性或明确的显示空间进行。
 
@@ -216,7 +222,7 @@ $$
 
 颜色校正参数应平滑并限制变化速度。Keyframe 已批准的颜色可以作为 Anchor，镜头切换时重置历史，不把上一镜头统计带入下一镜头。
 
-## 时序质量指标
+### 时序质量指标
 
 单帧质量检查之外：
 

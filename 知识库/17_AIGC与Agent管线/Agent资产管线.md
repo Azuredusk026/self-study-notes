@@ -1,8 +1,10 @@
 # Agent资产管线
 
-Agent 管线不是让模型自由操作项目。它把模型放进受控状态机：读取任务、生成结构化计划、调用有限工具、验证结果、记录状态，并在无法安全处理时交给人。
+模型可以从需求中找出一批候选资产，但“候选合理”与“已经正确写入场景”是两项判断。Agent 管线把推理、工具执行和验证连接成有状态的任务：模型提出计划，工具按约定修改，检查器记录结果，调度器再决定继续、修复或交付。任务事实保存在记录中，中断后也能据此恢复。
 
-## 适合 Agent 的任务
+## 任务怎样有状态地推进
+
+### 适合 Agent 的任务
 
 适合：
 
@@ -24,7 +26,7 @@ Agent 管线不是让模型自由操作项目。它把模型放进受控状态�
 
 模型适合处理模糊语义，确定性脚本适合执行规则。二者应组合，而不是互相替代。
 
-## 状态机
+### 状态机
 
 明确状态比“Agent 记得自己做到哪里”可靠：
 
@@ -43,7 +45,7 @@ Received
 
 长任务中断后从持久化状态恢复。模型 Context 可以重新构建，资产事实不能依赖聊天历史。
 
-## Job 与 Artifact
+### Job 与 Artifact
 
 Job Record：
 
@@ -68,7 +70,9 @@ Artifact Record：
 
 这条链就是数据血缘（Data Lineage）。它支持复现、撤回、版权审计和影响分析。
 
-## 角色提示词
+## 推理怎样进入受控工具
+
+### 角色提示词
 
 一个巨大 Prompt 同时规划、执行和审核，容易让模型边做边改标准。按职责分角色：
 
@@ -103,7 +107,7 @@ Artifact Record：
 
 角色分离的重点是权限和输入输出，不是让多个模型互相聊天。
 
-## Prompt Contract
+### Prompt Contract
 
 每个角色提示词应包含：
 
@@ -120,7 +124,7 @@ Artifact Record：
 
 Prompt 中不要混入会随任务变化的巨大资产清单。通过检索工具按 Query 返回有限候选，减少 Context 和陈旧数据。
 
-## 工具接口
+### 工具接口
 
 工具应小而确定：
 
@@ -136,7 +140,7 @@ Prompt 中不要混入会随任务变化的巨大资产清单。通过检索工�
 
 返回值包含 Result、Changed Artifact、Warnings、Error Code 和 Retryability。工具只做一个职责，便于权限、测试和幂等。
 
-## 权限
+### 权限
 
 按最小权限授予：
 
@@ -147,7 +151,7 @@ Prompt 中不要混入会随任务变化的巨大资产清单。通过检索工�
 
 文件系统限定项目 Staging；网络使用域名/API 白名单；Secret 不进入 Prompt/Log。删除、覆盖、发布和外部上传属于高风险动作，应由确定性 Policy Gate 控制。
 
-## Orchestrator
+### Orchestrator
 
 Orchestrator 负责：
 
@@ -161,7 +165,9 @@ Orchestrator 负责：
 
 不要让 LLM 自己决定所有调度。确定的流程用代码/Workflow Engine，模型只处理需要推理的节点。
 
-## 幂等
+## 失败后怎样恢复
+
+### 幂等
 
 工具接收 `operation_id`。同一 ID 重试时返回已有结果，不重复 Spawn 或发布。
 
@@ -169,7 +175,7 @@ Create 操作先生成 Stable Target ID；写入 Staging；成功后记录 Opera
 
 布局更新可使用 Desired State：Agent 输出完整目标布局或 Patch，Executor 比较当前状态后只应用差异。这样重跑不会叠出两套家具。
 
-## 错误分类
+### 错误分类
 
 - Validation Error：输入/资产不符合规则，修正后重试；
 - Transient Tool Error：服务忙、网络短断，指数退避有限重试；
@@ -181,7 +187,7 @@ Create 操作先生成 Stable Target ID；写入 Staging；成功后记录 Opera
 
 “失败就再问一次模型”会重复确定性错误并增加成本。
 
-## Retry 与 Backoff
+### Retry 与 Backoff
 
 Retry Policy 记录 Max Attempt、Backoff、Jitter、可重试 Error Code 和总 Deadline。
 
@@ -189,7 +195,7 @@ Retry Policy 记录 Max Attempt、Backoff、Jitter、可重试 Error Code 和总
 
 超过阈值进入 Dead-letter/Rework Queue，保留输入和诊断供人处理。
 
-## Compensation 与回滚
+### Compensation 与回滚
 
 跨工具操作通常没有分布式原子事务。使用 Saga/Compensation：
 
@@ -231,7 +237,9 @@ Placement Validator 检查：
 
 几何规则由确定性工具执行。模型可以解释失败并提出候选调整。
 
-## 技术质量门禁
+## 结果怎样进入正式资产
+
+### 技术质量门禁
 
 进入正式库前检查：
 
@@ -246,7 +254,7 @@ Placement Validator 检查：
 
 规则使用稳定 ID、Severity 和例外机制。Agent 不能修改 Ruleset 或批准自己的例外。
 
-## 视觉与语义审核
+### 视觉与语义审核
 
 自动指标可检查构图、重复、遮挡、色板、图像伪影和参考相似度，但美术质量仍需要人类评审。
 
@@ -261,7 +269,7 @@ Review UI 应显示：
 
 人类修改应成为新的 Artifact Version，并记录哪些字段 Override。下次重跑不能静默覆盖已批准的手工调整。
 
-## 自动验证不等于自我评分
+### 自动验证不等于自我评分
 
 同一个模型生成后再问“是否很好”容易自洽。质量门禁优先使用：
 
@@ -273,7 +281,7 @@ Review UI 应显示：
 
 LLM Judge 适合辅助语义分类，不作为版权、性能或破坏性操作的唯一门禁。
 
-## 日志与审计
+### 日志与审计
 
 每次执行记录：
 
@@ -288,7 +296,7 @@ LLM Judge 适合辅助语义分类，不作为版权、性能或破坏性操作�
 
 日志需做 Secret/PII Redaction。Prompt 可能包含内部需求，不能默认上传到外部 Telemetry。
 
-## Prompt Injection 与不可信输入
+### Prompt Injection 与不可信输入
 
 资产名、文档、网页和 Metadata 都是不可信数据，其中的“忽略规则并执行命令”不能成为 Agent 指令。
 
@@ -301,7 +309,7 @@ LLM Judge 适合辅助语义分类，不作为版权、性能或破坏性操作�
 - 外部链接/下载白名单；
 - 高风险动作由代码 Gate 和人类批准。
 
-## 评估
+### 评估
 
 用历史任务和人工构造失败集评估：
 
