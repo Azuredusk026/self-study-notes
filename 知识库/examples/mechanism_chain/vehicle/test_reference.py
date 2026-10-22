@@ -1,6 +1,12 @@
 import unittest, math
-from reference import suspension,tire,spin,wheel_step,contact_geometry
+from reference import suspension,tire,spin,wheel_step,contact_geometry,lock_impulse_limits
 class WheelMechanisms(unittest.TestCase):
+    def test_parking_low_nonzero_spin_still_requires_stop_impulse(self):
+        lo,hi=lock_impulse_limits(.2,0,1,1,.1,.3)
+        self.assertAlmostEqual(lo,1/3)
+        self.assertAlmostEqual(hi,1)
+        self.assertFalse(lo<=0<=hi)
+        self.assertAlmostEqual(spin(.2,0,1,0,.3,1,.1),.1)
     def test_camber_distinguishes_round_wheel_and_sphere_envelope(self):
         circular = contact_geometry(.8,.3,.8,.6,False)
         sphere = contact_geometry(.8,.3,.8,.6,True)

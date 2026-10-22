@@ -3,14 +3,14 @@
   "articles": [
     {
       "path": "知识库/21_游戏网络/世界分区与AOI.md",
-      "content_sha256": "d57c380de74ccb336c304cf70e45b0034e96e831956f9aceb531a744cdb429ed",
+      "content_sha256": "02379166653b226528b0f723bda78bc278cef75c867446321c48be7109300c47",
       "boundary_action": "KEEP",
       "content_actions": [
         "REWRITE",
         "DEEPEN",
         "FACT-CHECK"
       ],
-      "title_review": "KEEP",
+      "title_review": "PASS",
       "full_body_read": true,
       "mechanisms": [
         {
@@ -58,14 +58,14 @@
     },
     {
       "path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
-      "content_sha256": "afb4266f85caa17b60333c8e6ce8abefdff48fd61c85cb4be4f5001ce20990f3",
+      "content_sha256": "4a4259ebf4611c45a3bd58db46aa725874f89e673d19c9bb3792b6591fe23b98",
       "boundary_action": "KEEP",
       "content_actions": [
         "REWRITE",
         "DEEPEN",
         "FACT-CHECK"
       ],
-      "title_review": "KEEP",
+      "title_review": "PASS",
       "full_body_read": true,
       "mechanisms": [
         {
@@ -120,16 +120,20 @@
   "implementation": "知识库/examples/mechanism_chain/protocol/reference.py",
   "tests": {
     "command": "python -B 知识库/examples/mechanism_chain/protocol/test_protocol.py",
-    "count": 11,
+    "count": 15,
     "result": "PASS",
     "red": "9项未实现行为断言失败后实现；取消测试首次意外通过，补充预览态断言后确认失败。",
     "actual": "真实SQLite数据库；两项子进程os._exit(19)分别在事务提交前与提交后终止；重开库核对库存/序号。 新会话重置与旧会话拒绝；drained参数是已完成队列关闭屏障的输入，不代表测试部署了网关队列。",
-    "boundaries": "非分布式服务或编辑器集成实测，可靠控制流/发件箱/创建删除的完整协议按正文状态推演，非实际部署结果。"
+    "boundaries": "非分布式服务或编辑器集成实测，可靠控制流/发件箱/创建删除的完整协议按正文状态推演，非实际部署结果。",
+    "additional_red_green": "旧m准备迟到冻结B、同序号异载荷、旧序号原结果及异常未回滚四项反证先失败后修正；consume返回status/result对象，旧测试保留原状态断言。"
   },
   "additional_adversarial_repairs": [
     "独立etcd仲裁与业务库先查后写的跨域竞态：以同库记录作为权威，etcd为路由镜像。",
     "同名B替代进程复用epoch使隔离旧B可继续写：新实例先推进epoch。",
     "发布后外部编辑和ABA：代次与回执共同判断，冲突保留输出。",
-    "会话切换与序号重置：activeInputSession和lastInput共同保存，关闭旧会话屏障后切换，迁移携带会话。"
+    "会话切换与序号重置：activeInputSession和lastInput共同保存，关闭旧会话屏障后切换，迁移携带会话。",
+    "prepare先读稳定m，已存在仅返回已有准备身份；新准备先核对源owner/epoch/Active再冻结。",
+    "输入结果表按会话/序号保存载荷SHA与原结果，重复异载荷拒绝，历史重复返回当时结果。",
+    "consume/publish/recover_output显式事务置于数据库上下文，异常回滚并释放事务。"
   ]
 }

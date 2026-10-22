@@ -21,6 +21,28 @@ class ProtocolTests(unittest.TestCase):
         self.assertFalse(self.store.transfer('A', 7, 'C', 'm'))
         self.assertEqual(self.store.state(), ('B', 8, 3, 100))
 
+    def test_late_prepare_retry_does_not_freeze_current_owner(self):
+        self.store.prepare('m')
+        self.store.transfer('A', 7, 'B', 'm')
+        self.assertEqual(self.store.prepare('m'), 'committed')
+        self.assertEqual(self.store.consume('B', 8, 101)['status'], 'applied')
+
+    def test_repeated_sequence_with_different_payload_is_rejected(self):
+        self.store.consume('A', 7, 101)
+        self.assertEqual(self.store.consume('A', 7, 101, amount=2), {'status':'payload', 'result':None})
+
+    def test_old_retry_returns_its_original_result(self):
+        self.store.consume('A', 7, 101)
+        self.store.consume('A', 7, 102)
+        self.assertEqual(self.store.consume('A', 7, 101), {'status':'duplicate', 'result':2})
+
+    def test_write_failure_rolls_back_effect(self):
+        self.store.db.execute('CREATE TRIGGER reject_effect BEFORE UPDATE ON entity BEGIN SELECT RAISE(ABORT,"disk-write-failed"); END')
+        with self.assertRaises(sqlite3.IntegrityError):
+            self.store.consume('A', 7, 101)
+        self.assertFalse(self.store.db.in_transaction)
+        self.assertEqual(self.store.state()[2:], (3, 100))
+
     def test_crash_before_commit_does_not_consume_or_apply(self):
         self.store.close()
         run = subprocess.run([sys.executable, str(Path(__file__).with_name('reference.py')),
@@ -28,7 +50,7 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual(run.returncode, 19)
         self.store = Store(self.path)
         self.assertEqual(self.store.state(), ('A', 7, 3, 100))
-        self.assertEqual(self.store.consume('A', 7, 101), 'applied')
+        self.assertEqual(self.store.consume('A', 7, 101)['status'], 'applied')
         self.assertEqual(self.store.state()[2:], (2, 101))
 
     def test_crash_after_commit_replay_does_not_repeat_effect(self):
@@ -37,25 +59,25 @@ class ProtocolTests(unittest.TestCase):
                               str(self.path), 'after'], check=False)
         self.assertEqual(run.returncode, 19)
         self.store = Store(self.path)
-        self.assertEqual(self.store.consume('A', 7, 101), 'duplicate')
+        self.assertEqual(self.store.consume('A', 7, 101)['status'], 'duplicate')
         self.assertEqual(self.store.state()[2:], (2, 101))
 
     def test_fencing_and_gap_reject_without_effect(self):
         self.store.prepare('m')
         self.store.transfer('A', 7, 'B', 'm')
-        self.assertEqual(self.store.consume('A', 7, 101), 'fenced')
-        self.assertEqual(self.store.consume('B', 8, 102), 'gap')
+        self.assertEqual(self.store.consume('A', 7, 101)['status'], 'fenced')
+        self.assertEqual(self.store.consume('B', 8, 102)['status'], 'gap')
         self.assertEqual(self.store.state()[2:], (3, 100))
 
     def test_new_session_does_not_treat_sequence_one_as_old_duplicate(self):
         self.assertTrue(self.store.switch_session('session-1', 'session-2', drained=True))
-        self.assertEqual(self.store.consume('A', 7, 101, session='session-1'), 'session')
-        self.assertEqual(self.store.consume('A', 7, 1, session='session-2'), 'applied')
+        self.assertEqual(self.store.consume('A', 7, 101, session='session-1')['status'], 'session')
+        self.assertEqual(self.store.consume('A', 7, 1, session='session-2')['status'], 'applied')
         self.assertEqual(self.store.state()[2:], (2, 1))
 
     def test_pending_queue_prevents_session_reset(self):
         self.assertFalse(self.store.switch_session('session-1', 'session-2', drained=False))
-        self.assertEqual(self.store.consume('A', 7, 101), 'applied')
+        self.assertEqual(self.store.consume('A', 7, 101)['status'], 'applied')
 
     def test_generation_cas_preserves_external_edit_after_publish(self):
         self.store.plan_output('job', b'generated')

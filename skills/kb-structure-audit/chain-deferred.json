@@ -3,7 +3,7 @@
   "articles": [
     {
       "path": "知识库/13_渲染架构/Deferred Rendering.md",
-      "content_sha256": "befe6f0ad00cd2c655793c747a3d6f70c036244ccb7bd287addfa1b5ac6598c5",
+      "content_sha256": "c0e40f1c21bd937a1622af69f04d0ea3412e4b70ef3f6b21ffbe23779272aeb0",
       "read_scope": "全文直接复读，正文主要机制逐项推演；未用矩阵或旧报告判断",
       "boundary_action": "KEEP",
       "content_actions": [
@@ -77,7 +77,7 @@
       ],
       "evidence": {
         "cpu": "8手算反例先8 FAIL后8 PASS",
-        "shader": "GBufferPS ps_6_0，LightingCS cs_6_0实际编译通过",
+        "shader": "GBufferPS ps_6_0、LightingCS cs_6_0、LightingMSPS ps_6_0三个入口实际编译通过",
         "runtime": "未执行目标引擎/GPU；不作为正文达标理由"
       },
       "sources": [

@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-23",
+  "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+  "content_sha256": "dc7daad78d1370cb791380fd77c8c47205c3a8b92bd9c0c0188a6b0c06222e95",
+  "method": "P1作者修订后再次直接复读全篇的符号/门限/历史与融合交接，未用矩阵报告或测试判断正文",
+  "findings": [
+    {
+      "mechanism": "颜色输入与法线旋转",
+      "counterexample": "R_t在帧输入表示颜色，在法线式又表示相机旋转，读者把同符号跨节连接时类型不一致",
+      "repair": "相机/对象旋转改C/U并说明为3×3旋转部分；R保留渲染颜色",
+      "status": "FIXED"
+    },
+    {
+      "mechanism": "历史拒绝与关键帧融合",
+      "counterexample": "历史置信度0.5已低于0.8门限，却仍在关键帧数例中参加0.25权重混合",
+      "repair": "低于门限的路径先记零；以右0.8计算0.652/0.348，颜色0.2/0.4得到0.270",
+      "status": "FIXED"
+    },
+    {
+      "mechanism": "局部新生成与批准锚点传播",
+      "counterexample": "显露区新生成Q重置1，下一帧Q0.9若当锚点权重，会把已经断开关键帧的内容伪装成高置信传播",
+      "repair": "Q与A_anchor两份状态；批准关键帧1/1，M拒绝后新生成可1/0，接受历史时各自乘对应置信，V0两者0；融合只消费A_anchor，两路无效从R且M0重新生成",
+      "status": "FIXED"
+    },
+    {
+      "mechanism": "证据段定稿表述",
+      "counterexample": "新增、补充等改稿腔进入正式机制文档",
+      "repair": "直接说明链路数例覆盖关系与17项实际结果",
+      "status": "FIXED"
+    }
+  ],
+  "mechanism_trace": [
+    "原始R和历史几何→反投影/对象相机矩阵→对应与M",
+    "法线同空间输送→角门限→有效历史",
+    "M在像素域合成A→整图VAE编码，不把像素mask当精确latentmask",
+    "固定起始580→ControlNet/CFG→干净估计→像素投影→下一alpha重建",
+    "关键帧两方向独立缓存→A_anchor门限和权重→对象级冲突仲裁",
+    "局部曝光校正遮罩→内容V→局部Q和锚点A_anchor→记录与下一帧"
+  ],
+  "actual_tests": "video/test_reference.py 17项通过；新增7项锚点行为测试中6项先观察失败，再实现；内容V拒绝行为原占位零值已能满足，保留为真实分支回归。旧retained_review/video测试3项仍通过。",
+  "status": "READY_FOR_FINAL_INDEPENDENT_BODY_REVIEW",
+  "runtime_boundary": "模型未加载，不声称视频质量实测；本文完成性由机制及相邻接口推演判断。"
+}

@@ -8,9 +8,9 @@ cbuffer Frame : register(b0) {
 };
 struct GeometryInput {
     float4 position : SV_Position;
-    float3 normalVS : TEXCOORD0;
-    float4 baseMetal : TEXCOORD1;
-    float4 emissiveRoughness : TEXCOORD2;
+    sample float3 normalVS : TEXCOORD0;
+    sample float4 baseMetal : TEXCOORD1;
+    sample float4 emissiveRoughness : TEXCOORD2;
     nointerpolation uint model : TEXCOORD3;
 };
 struct GBufferOutput {
@@ -89,4 +89,28 @@ void LightingCS(uint3 tid:SV_DispatchThreadID) {
         color+=PointContribution(P,N,V,bm,nr.w,Lights[index]);
     }
     Output[pixel]=float4(color,1);
+}
+// Bind these multisample views instead of t0..t4 for the sample-frequency path.
+Texture2DMS<float4> BaseMetalMS : register(t8);
+Texture2DMS<float4> NormalRoughnessMS : register(t9);
+Texture2DMS<float4> EmissiveMS : register(t10);
+Texture2DMS<uint> ModelMS : register(t11);
+Texture2DMS<float> DepthMS : register(t12);
+float4 LightingMSPS(float4 position:SV_Position, uint s:SV_SampleIndex):SV_Target {
+    int2 pixel=int2(position.xy);
+    uint id=ModelMS.Load(pixel,s);
+    if(id==0xFFFFFFFF) return float4(0,0,0,1);
+    float4 bm=BaseMetalMS.Load(pixel,s);
+    float3 color=EmissiveMS.Load(pixel,s).xyz;
+    if(id==1) return float4(bm.xyz+color,1);
+    if(id!=0) return float4(1,0,1,1);
+    float4 nr=NormalRoughnessMS.Load(pixel,s);
+    float2 uv=(pixel+0.5+DepthMS.GetSamplePosition(s))/RenderSize;
+    float3 P=ReconstructPositionVS(uv,DepthMS.Load(pixel,s));
+    float3 N=normalize(nr.xyz*2-1),V=normalize(-P);
+    uint2 tile=uint2(pixel)/16;
+    uint2 header=TileHeaders[tile.y*TilesX+tile.x];
+    for(uint i=0;i<header.y;++i)
+        color+=PointContribution(P,N,V,bm,nr.w,Lights[LightIndices[header.x+i]]);
+    return float4(color,1);
 }

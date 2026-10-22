@@ -24,3 +24,9 @@ def merge_outcomes(pools, current_target, source_targets, mode):
         multiplier=total*numerator/(current_target[y]*denominator)
         outcomes.append((y,multiplier,weight/total,origin))
     return outcomes
+
+
+def area_to_parameter(area, contribution, target, proposal_pdf, multiplier):
+    if area <= 0:
+        raise ValueError('emitter area must be positive')
+    return (contribution*area,target*area,proposal_pdf*area,multiplier/area)

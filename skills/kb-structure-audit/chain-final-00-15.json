@@ -1,0 +1,423 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/00_知识库说明/技术中文写作规范.md",
+      "content_sha256": "2aa55f0268d4e7d2d8794b79f06b7356bf6edc34084d1ee050e39489166c6150",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "因果推进/句段轻重/自然过渡/定稿/复读"
+      ],
+      "counterexamples": [
+        "仅增加公式或结论词而不交代数据变化仍不满足规范；正文用描边裂缝→独立方向给实际正例",
+        "机制与工程限制、来源正例与技术证据分别说明，规则没有以词频自动评分"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/00_知识库说明/知识地图.md",
+      "content_sha256": "7017f0e8c00c0e7c8b2581dd6a996c720150a40d2211203342fe31baefeb6ce1",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "工程路线与跨领域前置",
+        "各领域使命和主归属定位"
+      ],
+      "counterexamples": [
+        "联机路线先传输与时钟再预测/快照，回滚和命中不同分支，能避免把两种历史查询当同一模型",
+        "角色动画与NPR通过两个导读接同一资产，地图没有把入口当完整实现"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/光栅化可见性.md",
+      "content_sha256": "e4711efe5fbded08da7f2bae1aa7dd73db879b366cd356a0e68337b806a07ca9",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "覆盖→深度→模板职责",
+        "深度生产与优化消费"
+      ],
+      "counterexamples": [
+        "不存在独立预通道时已有绘制深度也可拒绝，正文未把预通道当Early-Z必要条件",
+        "模板区域标签不能代替覆盖和深度约定"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/可见性与合成.md",
+      "content_sha256": "68bdc4f4b4c41a2220e8d58dca13e183b331851df80b37d2780eeb6a3f8db82e",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "候选剔除→样本可见性",
+        "Alpha语义→透明多层合成"
+      ],
+      "counterexamples": [
+        "相机不可见不等于阴影视图不可见，正文分开",
+        "透明层可能保留后方贡献，不能按普通不透明遮挡删除"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
+      "content_sha256": "5f51c8f4aab99e75bc4b9491a16c2101b3149ea5724c3da110e502eb32ac6792",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "CPU记录→GPU队列→附件→呈现",
+        "时间线等待到主归属"
+      ],
+      "counterexamples": [
+        "CPU录完不能推出GPU已完成",
+        "Present等待可能限帧或队列积压，导读正确指向呈现和瓶颈调查"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/GI方案选择.md",
+      "content_sha256": "b12cf2af945ecdd790de5fd78dafadde5c1f9686b8814de3c748411c3b1e622e",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "Lightmap/Probe表面归属",
+        "漫反射/镜面/动态更新"
+      ],
+      "counterexamples": [
+        "同一表面间接漫反射不能Lightmap与Probe双加",
+        "实时关灯仍残留静态烘焙间接贡献，导读给出更新责任"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/06_纹理技术/视差映射.md",
+      "content_sha256": "41b4a0e4cbd7957559dacc237002660de7954e63b0c2884d952eb57fe0ba6d55",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "高度/深度与TBN尺度",
+        "一次采样/限幅/逐层/POM交点",
+        "同PomHit→自阴影",
+        "显式导数/边界/真实几何限制"
+      ],
+      "counterexamples": [
+        "D(u)=u时起点0.6单采样返回0.48不是交点，逐层F零点u0.5",
+        "POM只返回UV无法给正视rayUV0反求深度，正文接口同时返深度并供自阴影",
+        "q>0步进避免起点误判，自阴影只乘直射可见性",
+        "uvDepthScale说明H/L各向尺度；原始梯度是足迹近似而非精确POM导数"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/07_颜色与后处理/Alpha表示.md",
+      "content_sha256": "3eef24e2d962d155d01711005064c4fcb260c9185013a85791f93eb018a1dca8",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "覆盖语义与sRGB视图",
+        "Straight/Premult过滤和mip",
+        "UI tint→预乘混合→输出编码"
+      ],
+      "counterexamples": [
+        "红/透明黑过滤后straight再乘Alpha只有0.25，预乘源ONE得到0.5",
+        "tintA0.5必须同时把Cp0.5变0.25、a0.5变0.25",
+        "sRGB纹理解码及目标编码各一次，手工编码再sRGB目标会双编码"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/07_颜色与后处理/后处理链.md",
+      "content_sha256": "73fc64ff047404450f75a773b392316c2f79f72c1e6f3348f57119cc4dd3ff8d",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "AO/HDR/透明/模糊/Bloom/Tone/UI",
+        "分辨率运动向量与预曝光接口"
+      ],
+      "counterexamples": [
+        "预曝光k变化而Bloom阈值不同比例变化会闪，正文写同域阈值与历史换算",
+        "低分辨率像素运动向量要经UV再到目标像素，不能直接用于重建后目标"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/09_动画系统/角色动画导读.md",
+      "content_sha256": "abd38bca6e939261e4cd9d876481a40d68ac1ec0869450616b33f13258dd09a9",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "局部混合→FK/IK→重算全局→蒙皮",
+        "Blend Shape→表面与布料毛发代理"
+      ],
+      "counterexamples": [
+        "世界模拟结果重复乘对象矩阵会双变换",
+        "上一帧锚点与当前骨架会布料滞后，正文明确最终姿态生产消费"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/VFX效果组合.md",
+      "content_sha256": "8209fbda707a0f96c66cc11fdb779e9d346fb67145ef7794296839271d49d814",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "粒子年龄→纹理动画→溶解覆盖→软粒子",
+        "预乘合成与背景扰动"
+      ],
+      "counterexamples": [
+        "只缩Alpha不缩预乘RGB会残色",
+        "不透明背景副本没有同批透明粒子，正文据此说明透明分层需求"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
+      "content_sha256": "d228cbd5257abe805002b2b15e33b56cdc9cadd59ad9bb60c2bb72c4c842e0f4",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "主光→身体/头局部FaceSDF",
+        "最终蒙皮→描边→时域/曝光组合"
+      ],
+      "counterexamples": [
+        "不同空间方向仍须来自同一盏灯",
+        "线条和身体抖动/分辨率不一致会轮廓跳动，导读指定共同输入与四份诊断"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/描边.md",
+      "content_sha256": "123ab9a80c1fe11677f5cf40482eb0e8a8d33ef0f51b3e53fcdd82ba42a18199",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "几何壳剔除/深度",
+        "硬边共享方向/权重/数据通道/蒙皮",
+        "像素宽度与clip.w",
+        "模板与显式边几何",
+        "SDF/表面方向/深度法线ID边缘",
+        "时域合成与成本"
+      ],
+      "counterexamples": [
+        "同位置但独立拓扑不能盲焊；每加项归一化会顺序相关",
+        "像素偏移先NDC乘clip.w而近零方向拒绝，宽度不等于壳实际覆盖",
+        "模板共一位只保联合遮罩不能保持对象内部边界",
+        "ID线性过滤或颜色式resolve会损失类别语义",
+        "斜面深度差不等于边界，着色法线高频也可能多检；正文对应修法与输入空间"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/12_光线追踪/ReSTIR.md",
+      "content_sha256": "b34ddb0a85c6c5199690a5f161df14b0f8fd192f877b059ade14fdbb9eb3bb29",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "候选密度/目标/蓄水池选择与W",
+        "面积域→固定平方参数域",
+        "A初始→B时域→C空间→H历史",
+        "计数限幅与来源支持/连续h归一化",
+        "最终当前可见性与动态光域"
+      ],
+      "counterexamples": [
+        "同一灯面积2→6，面积W2原样乘当前f_area1误得2；修初始写池前W_param=W_area/A，当前f_param6×W_param1得6",
+        "f/target/pdf同时乘Jac=A，候选重采样权重不变，来源h仍用历史面积与几何",
+        "已选光删除不应随机删除整份来源，保留M和支持，只有参数版本整体失效拒绝",
+        "空间原地更新产生执行序相关；正文冻结B写C",
+        "连续h的分子必须用真正选中来源，不能固定当前目标"
+      ],
+      "changed_in_final_review": true,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/13_渲染架构/Command Buffer与帧提交.md",
+      "content_sha256": "8050284c8915e3120ff82f21ad7d727593f5b5f1039b4b31d83fbab813aa98bb",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "帧槽allocator/上传/描述符",
+        "同队列完成与多队列汇合",
+        "提交故障/多线程记录协调",
+        "CPU/GPU寿命与呈现"
+      ],
+      "counterexamples": [
+        "设备移除GetCompletedValue返回UINT64_MAX，比完成值大却不是正常完成；新增等待前后哨兵检查和故障路径",
+        "Execute后Signal失败不能当未提交复用",
+        "线程先录完L不表示先提交L，应按S写D→屏障→L读D",
+        "交换链索引0不证明帧槽0完成17"
+      ],
+      "changed_in_final_review": true,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/13_渲染架构/GPU资源绑定.md",
+      "content_sha256": "b2f0d4f812e2d983b7e1c95328b9866def2de0ba43b67c7b1dd3dba6fd108ee4",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "API布局/更新频率",
+        "动态偏移/对齐/非一致刷新",
+        "push/root小参数",
+        "Bindless索引发布与槽位回收"
+      ],
+      "counterexamples": [
+        "frameBase放descriptor与dynamic两处会把4864读成8960",
+        "正确地址但未刷新非一致内存仍不可见，绑定不提供上传同步",
+        "槽7旧红纹理在GPU未完时改蓝会串材质；新槽8+新材质版本+完成回收保持链"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/13_渲染架构/渲染命令的组织方式.md",
+      "content_sha256": "19438daf4837cd356c1fb53b2363a1dd1b9d7b967e3500e1d998d76b630e05b7",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "图版本依赖→附件→命令记录→提交/完成",
+        "资源生产消费与物理回收"
+      ],
+      "counterexamples": [
+        "D最后读命令录完但GPU尚未执行，不可回收",
+        "逻辑漏声明/附件状态错/提交逆序/过早回收按不同层定位"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/13_渲染架构/渲染路径与光源组织.md",
+      "content_sha256": "6faf0aef5c1af11dc24a682873e63e04b7e101a028e1da20388fb2741276b85b",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "Forward/Deferred着色时机",
+        "Tile/Cluster灯光列表范围→透明/不透明消费"
+      ],
+      "counterexamples": [
+        "最近不透明深度裁列表可能漏前方透明所需灯，路径名称不能解决列表支持范围",
+        "两条路径RGB保持同一线性HDR与BRDF单位后进入后处理"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/PSO首次使用卡顿.md",
+      "content_sha256": "28f29a47b6ff0fdd04cece06ff960df297e61d67dd7725f0579bbd8dd88d537d",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "组合键/三层缓存",
+        "收集冻结/异步请求状态",
+        "首屏集合封闭→Ready/Failure",
+        "首用期限与LRU回收"
+      ],
+      "counterexamples": [
+        "请求20ms完成80ms首用60ms，即使覆盖仍缺20ms",
+        "Failed不等于待完成计数归零；内容发现未封闭也不能以零判Ready",
+        "已完成后被LRU回收，再次使用应记重建而非覆盖漏项"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/帧捕获与性能分析工具.md",
+      "content_sha256": "14c504485acdd4ddb7ba386c71e3e96caf888837bd4e4f1548237d670b738144",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "稳定场景→CPU/GPU trace",
+        "事件/像素写入回溯",
+        "计数器/构建/内存",
+        "frameId与跨时钟校准"
+      ],
+      "counterexamples": [
+        "最终黑像素可能未生成、深度拒绝或后续覆盖，逐事件前后资源追写者",
+        "CPU槽位与交换链索引相同数不代表同帧，跨时钟无校准不能相加",
+        "捕获重放6ms与独立4ms先核同事件及同步变化，性能回归在未捕获窗口"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/帧瓶颈诊断.md",
+      "content_sha256": "1559b340e8073fe0a8b5ce009670bf4c1b414dcbe030a902f85ec03a7826541d",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "CPU/GPU与呈现关键路径",
+        "Draw/顶点/Quad/覆盖/带宽",
+        "缓存/占用/同步/读回/驻留"
+      ],
+      "counterexamples": [
+        "CPU6+GPU12稳态约12不是18，60Hz仍可能16.67",
+        "降低分辨率变快不能单独区分ALU与带宽",
+        "MSAA覆盖增加不等于像素shader调用一律乘样本数",
+        "复制11ms才完成导致图形8—11空泡，删wait会读半上传数据",
+        "分配接近显存不证明驱逐，需驻留事件与预算曲线对应"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/性能对照实验.md",
+      "content_sha256": "5fb1358dfb373e5eba4dd39100b29c00241e0e610bff85757e2435634898dd2e",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "固定条件/交替配对",
+        "可否定像素时间模型",
+        "局部成本→整帧汇合",
+        "工具状态证据与性能证据"
+      ],
+      "counterexamples": [
+        "A/B/B/A例差0.7/0.9均值0.8减轻线性升温，保留原始分布",
+        "T(1)4/T(.5)1.75解a1 b3，预测.75为2.6875；拟合不自动证明带宽",
+        "局部4→3而并行队列5→6时汇合更慢，正文不将局部收益当吞吐"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/大型资产版本控制.md",
+      "content_sha256": "5ac11de7e85c238b339ecf97f19294584935abef8d43388569d5d84ba396e70d",
+      "full_body_read": true,
+      "major_mechanisms": [
+        "Git blob与LFS指针/对象/跟踪",
+        "锁与新鲜基线",
+        "Perforce/UVCS职责与选型",
+        "文件粒度/派生/合入队列/审查",
+        "干净检出/备份恢复"
+      ],
+      "counterexamples": [
+        "只恢复提交C没有OID H对象仍不可构建；检出F核长度和哈希再构建",
+        "本地装LFS但不提交gitattributes无法使同事沿同规则处理",
+        "持锁仍可能遇绕锁提交D，须保存工作副本并核新基线而非覆盖",
+        "构建队列在主干最新组合校验，避免各旧基线单独通过后破坏"
+      ],
+      "changed_in_final_review": false,
+      "final_body_status": "PASS_AFTER_DIRECT_COUNTEREXAMPLE_REVIEW",
+      "basis": "直接逐篇复读正文及主要机制交接；不依赖矩阵、作者报告或测试数量"
+    }
+  ],
+  "count": 23,
+  "repaired": 2,
+  "actual_checks": [
+    "ReSTIR measure转换新增4项先失败后通过；restir/test_reference.py现10项通过",
+    "Command Buffer设备移除返回值核读Microsoft ID3D12Fence::GetCompletedValue，未声称D3D12运行"
+  ],
+  "runtime_scope": "新增正文确定计算与明确故障分支；GPU/引擎捕获与计时仍无新增实测，运行状态不是正文验收依据。"
+}

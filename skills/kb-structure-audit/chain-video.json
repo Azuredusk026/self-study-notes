@@ -2,7 +2,7 @@
   "articles": [
     {
       "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "content_sha256": "fc8f3cd5b016462b13b013e50ca316d3dec1fb0a8cd213d4e35b715426918702",
+      "content_sha256": "62ab9515d534c777982c4d457a6717ed5d5d21241865d108fb65b02ba48c9bf1",
       "boundary_action": "KEEP",
       "content_actions": [
         "REWRITE",
@@ -45,7 +45,7 @@
         {
           "name": "关键帧双向传播",
           "trace": "独立方向缓存与对应流→时间乘置信→零和回退→整对象冲突门限→混合或选路",
-          "counterexample": "右向简单反转前向流；融合回写造成循环；像素择路切碎面部，正文禁止循环并按对象选择"
+          "counterexample": "右向简单反转前向流；融合回写造成循环；像素择路切碎面部，正文禁止循环并按对象选择；置信度低于0.8的传播路径在关键帧融合前记零，数例用0.8避免拒绝与融合矛盾"
         },
         {
           "name": "曝光及下一帧",

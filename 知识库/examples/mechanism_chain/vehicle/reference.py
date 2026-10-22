@@ -1,6 +1,11 @@
 """Wheel-step reference. SI units; suspension force follows the upward travel axis."""
 from math import atan2,hypot,isfinite,copysign,sqrt
 
+def lock_impulse_limits(omega,drive,brake,inertia,dt,lever):
+    spin_impulse=inertia*omega
+    return (((drive-brake)*dt+spin_impulse)/lever,
+            ((drive+brake)*dt+spin_impulse)/lever)
+
 def contact_geometry(distance,radius,normal_alignment,axis_dot_normal,spherical):
     factor=sqrt(max(0,1-axis_dot_normal**2))
     support=radius if spherical else radius*factor

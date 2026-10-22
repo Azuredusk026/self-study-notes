@@ -35,4 +35,24 @@ class Correction(unittest.TestCase):
         self.assertEqual(outcomes,[(1,8,0.25,0),(0,2,0.75,1)])
 
 
+class MeasureConversion(unittest.TestCase):
+    def test_old_area_weight_does_not_freeze_growing_light(self):
+        from reference import area_to_parameter
+        f,h,p,w=area_to_parameter(2,1,1,.5,2)
+        self.assertEqual(w,1)
+        self.assertEqual(6*w,6)  # Current area is 6; its contribution in parameter measure is 6.
+    def test_static_light_estimate_is_invariant_to_measure(self):
+        from reference import area_to_parameter
+        f,h,p,w=area_to_parameter(2,3,4,.25,4)
+        self.assertEqual((f,h,p,w),(6,8,.5,2))
+        self.assertEqual(f*w,12)
+    def test_candidate_weight_uses_same_jacobian_in_target_and_pdf(self):
+        from reference import area_to_parameter
+        f,h,p,w=area_to_parameter(6,1,2,1/12,12)
+        self.assertEqual((h,p),(12,.5))
+        self.assertEqual(h/p,24)
+    def test_degenerate_emitter_cannot_convert_measure(self):
+        from reference import area_to_parameter
+        with self.assertRaises(ValueError): area_to_parameter(0,1,1,1,1)
+
 if __name__=='__main__': unittest.main(verbosity=2)

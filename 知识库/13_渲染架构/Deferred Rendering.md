@@ -93,13 +93,13 @@ if (dot(toLight, toLight) >= lightRadius * lightRadius) discard;
 
 覆盖网格只减少候选片元；场景点位于解析球内才接受。低面数球的三角面通常内接于球面，直接使用会漏掉边缘，所以网格须外接或保守放大。最容易核对的实现从全屏与解析判断开始，随后用相同求值替换为保守体积覆盖，逐像素比较两份贡献。
 
-光照不写深度，逐灯Draw使用HDR目标的加法混合`ONE,ONE`。采用体积覆盖时，以闭合体积背面形成一次覆盖，几何光栅深度测试可先关闭，场景位置判断负责接收；相机进入体积、近面切开体积或保守性无法保证时切换全屏。这样不会依赖尚未建立的模板技巧来保证正确性。若目标引擎使用反向绕序或投影翻转，剔除面也随实际绕序配置。
+光照不写深度，逐灯Draw使用HDR目标的加法混合`ONE,ONE`。采用体积覆盖时，以闭合体积背面形成一次覆盖，几何光栅深度测试可先关闭，场景位置判断负责接收；相机进入体积、近面切开体积或保守性无法保证时切换全屏。场景位置测试直接决定该表面是否接收这盏灯。若目标引擎使用反向绕序或投影翻转，剔除面也随实际绕序配置。
 
 深度模板剔除是进一步优化。完整的模板体积判定需要考虑前后面、场景深度和近面裁剪，单次深度失败只能说明这个体积片元在场景之后，不能证明场景点位于闭合体积内。共享模板时把分类与计数位域分开，避免计数覆盖对象标签。
 
 ### 聚光灯外接锥体
 
-一份单位闭合锥体可以复用于不同灯。局部轴取`+Z`，锥尖位于原点，底面在`z=1`，N个底面顶点在单位圆上。灯轴向长度为`L`，外半角为`θ`，满足`0<θ<π/2`、`N≥3`。理想底面半径为`L*tan(θ)`；正N边形边中点离中心只有顶点半径的`cos(π/N)`倍，因此把顶点半径再除以这个余弦，才能外接理想圆。
+一份单位闭合锥体可以复用于不同灯。局部轴取`+Z`，锥尖位于原点，底面在`z=1`，N个底面顶点在单位圆上。本页距离截断半径为r，覆盖锥体取轴向长度`L=r`，外半角为`θ`，满足`0<θ<π/2`、`N≥3`。理想底面半径为`L*tan(θ)`；正N边形边中点离中心只有顶点半径的`cos(π/N)`倍，因此把顶点半径再除以这个余弦，才能外接理想圆。
 
 ```hlsl
 float outerRadius = axialLength * tan(outerHalfAngle) / cos(PI / sideCount);
@@ -137,7 +137,7 @@ MSAA让一个像素包含多个覆盖和深度样本。几何边缘的四个样�
 
 例如两个样本的法线为`(0,0,1)`和`(0,0,-1)`，白色Lambert材质，来光沿`+Z`且单位照度。分别着色得到`1/π`和0，最终颜色平均为`1/(2π)`。先平均法线得到零向量，无法归一化，更无法代表原来的两块表面。两个不同材质ID平均也可能变成第三种材质，这与颜色Resolve的语义不同。
 
-正确的基线路径把GBuffer、深度和HDR颜色都建立为同样的多样本数。光照按样本读取`Texture2DMS.Load(pixel,sampleIndex)`，背景样本填背景色；有效样本用该样本的深度、材质和法线求值，再写对应HDR样本。位置重建的UV使用`pixel+0.5+sampleOffset`，偏移来自当前样本布局；只用像素中心会把不同样本错误地放在同一条视线上。像素着色器的`SV_SampleIndex`可请求逐样本执行，全屏覆盖所有样本，以单独的样本读写与几何结果对应。
+正确的基线路径把GBuffer、深度和HDR颜色都建立为同样的多样本数。光照按样本读取`Texture2DMS.Load(pixel,sampleIndex)`，背景样本填背景色；有效样本用该样本的深度、材质和法线求值，再写对应HDR样本。位置重建的UV使用`pixel+0.5+sampleOffset`，偏移来自当前样本布局；只用像素中心会把不同样本错误地放在同一条视线上。像素着色器的`SV_SampleIndex`可请求逐样本执行，全屏覆盖所有样本，以单独的样本读写与几何结果对应。几何材质的连续输入采用sample插值，样例`GBufferPS`的法线和材质输入已如此声明，使逐样本位置与表面属性一致。
 
 光照与透明都完成后，对线性HDR颜色做Resolve。例如四样本颜色`[1,1,0,0]`得到0.5，未覆盖的样本保留背景，不能按“有效样本数”除成1。色调映射是非线性运算，放在颜色平均之后；每样本先色调映射再平均会得到另一种结果。
 
@@ -149,7 +149,7 @@ MSAA让一个像素包含多个覆盖和深度样本。几何边缘的四个样�
 
 分块式GPU可以在片上处理一个Tile的颜色与深度。如果几何结束时把GBuffer写到外部内存，光照又读回来，就增加一次往返；让相邻几何与光照阶段在兼容的渲染范围内共享附件，才有机会保留中间值。
 
-采用Vulkan传统Render Pass的一条明确路线是：子通道0把GBuffer作为颜色附件写入，子通道1把同一附件作为input attachment读取，HDR作为颜色附件输出；深度由写入转为只读。子通道依赖覆盖`COLOR_ATTACHMENT_OUTPUT/颜色写`和深度写入所在的`EARLY_FRAGMENT_TESTS|LATE_FRAGMENT_TESTS/深度模板写`，到`FRAGMENT_SHADER/INPUT_ATTACHMENT_READ`，并使用`BY_REGION`表达帧缓冲局部依赖。附件布局随引用从颜色/深度写入布局转成对应只读布局。执行先后和内存可见性都满足以后，光照才可以消费几何结果。
+采用Vulkan传统Render Pass的一条明确路线是：子通道0把GBuffer作为颜色附件写入，子通道1把同一附件作为input attachment读取，HDR作为颜色附件输出；深度同样作为input attachment读取，光照片元的固定深度测试关闭，按深度重建表面。子通道依赖覆盖`COLOR_ATTACHMENT_OUTPUT/颜色写`和深度写入所在的`EARLY_FRAGMENT_TESTS|LATE_FRAGMENT_TESTS/深度模板写`，到`FRAGMENT_SHADER/INPUT_ATTACHMENT_READ`，并使用`BY_REGION`表达帧缓冲局部依赖。附件布局随引用从颜色/深度写入布局转成对应只读布局。执行先后和内存可见性都满足以后，光照才可以消费几何结果。
 
 input attachment只读取当前片元位置对应的输入，不是任意邻域纹理采样。GBuffer若仅在当前Render Pass内部使用，可配置瞬态用途、合适的延迟分配内存及结束时丢弃；HDR则存储供后处理使用。需要下一阶段采样深度、法线或其他GBuffer时，把相关附件存储并保持资源有效，不能仍按内部临时数据丢弃。
 
@@ -179,9 +179,11 @@ Forward也可以一次绘制后循环多灯，因此比较不能把所有前向�
 
 ### 最小实现路径
 
-[Deferred.hlsl](../examples/mechanism_chain/deferred/Deferred.hlsl)保留四目标`GBufferPS`与读取GBuffer、遍历Tile列表的`LightingCS`，其中展开GGX直接响应与点光衰减。文件按本文空间和格式约定编写，几何输入已完成材质采样，世界变换、列表构建和API资源创建由接入工程提供；核心消费没有藏在未定义的着色函数中。
+[Deferred.hlsl](../examples/mechanism_chain/deferred/Deferred.hlsl)保留四目标`GBufferPS`、单样本`LightingCS`和逐样本`LightingMSPS`，光照入口均读取GBuffer并遍历Tile列表，其中展开GGX直接响应与点光衰减。文件按本文空间和格式约定编写，几何输入已完成材质采样，世界变换、列表构建和API资源创建由接入工程提供。
 
 接入先建立单样本资源：清理附件，绘制不透明几何，生成保守灯列表，完成附件与列表的写后读同步，再以8×8线程组调度光照。`TilesX=ceil(W/16)`，调度组数为`ceil(W/8),ceil(H/8)`；边界线程提前退出。列表采用主归属的完整构建路径；最初也可把全部灯放入每个Tile，得到正确的对照结果，再检查剔除列表与完整列表的差值。样例Compute列表消费要求已完成溢出回退，数组与灯索引经过验证。
+
+多样本路径将同格式、同样本数的GBuffer视图绑定到样例`t8..t12`，HDR颜色附件也使用相同样本数，列表覆盖所有有效样本的深度范围。以`LightingMSPS`画全屏三角形，深度测试关闭、混合关闭，每个样本独立写完整光照和；透明阶段完成后再对HDR做颜色Resolve。`DepthMS.GetSamplePosition`取得当前样本相对像素中心的偏移，所有附件保持相同样本布局。
 
 将球体、硬边立方体与背景放在一张图里，分别显示Model、解码法线与重建位置。接着加入一点光和一盏锥角已知的聚光，比较全屏与光体积结果；然后加入两层颜色不同的透明平面，按前文数例核对顺序；最后打开MSAA，逐样本查看物体边缘和不同模型交界。每次改变一项，错误才容易对应到资源、空间或合成规则。
 
@@ -191,9 +193,10 @@ Forward也可以一次绘制后循环多灯，因此比较不能把所有前向�
 python -B 知识库/examples/mechanism_chain/deferred/test_reference.py
 dxc -T ps_6_0 -E GBufferPS 知识库/examples/mechanism_chain/deferred/Deferred.hlsl -Fo "$env:TEMP/kb-chain-deferred-gbuffer.dxil"
 dxc -T cs_6_0 -E LightingCS 知识库/examples/mechanism_chain/deferred/Deferred.hlsl -Fo "$env:TEMP/kb-chain-deferred-lighting.dxil"
+dxc -T ps_6_0 -E LightingMSPS 知识库/examples/mechanism_chain/deferred/Deferred.hlsl -Fo "$env:TEMP/kb-chain-deferred-msaa.dxil"
 ```
 
-CPU参考的8项检查以手算输入覆盖Y轴、齐次除法、位置与方向变换、模型分派、透明顺序、无效平均法线和背景样本；它们支持这些数值关系。两个HLSL入口已实际通过DXC编译，完整引擎接入、绘制状态、逐样本画面与设备带宽仍需按上述场景观测。编译证明代码类型与入口合法，正文机制的判断来自逐项追踪输入、输出和反例。
+CPU参考的8项检查以手算输入覆盖Y轴、齐次除法、位置与方向变换、模型分派、透明顺序、无效平均法线和背景样本；它们支持这些数值关系。三个HLSL入口已实际通过DXC编译，完整引擎接入、绘制状态、逐样本画面与设备带宽仍需按上述场景观测。编译证明代码类型与入口合法，逐样本覆盖、附件绑定与混合关系仍由接入场景检查。
 
 ## 相关主题
 
@@ -210,3 +213,5 @@ CPU参考的8项检查以手算输入覆盖Y轴、齐次除法、位置与方向
 - [Vulkan规范：Render Pass](https://docs.vulkan.org/spec/latest/chapters/renderpass.html)，子通道依赖、附件布局及生命周期语义。
 - [Microsoft：Rasterization Rules](https://learn.microsoft.com/en-us/windows/win32/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage-rules)，逐样本覆盖与深度测试；本文逐样本求值和法线反例由数据语义独立推导。
 - [Microsoft：Texture2DMS Load](https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/sm5-object-texture2dms-load)，按整数位置与样本索引读取多样本资源。
+
+- [Microsoft：GetSamplePosition](https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-to-get-sample-position)，样本位置与`SV_SampleIndex`逐样本执行接口。

@@ -1,0 +1,661 @@
+{
+  "date": "2026-10-23",
+  "scope": "16—23中扣除优先视频、载具、AOI的20篇",
+  "direct_read_count": 20,
+  "changed_in_final_review": 5,
+  "retained_after_final_review": 15,
+  "articles": [
+    {
+      "path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "content_sha256": "ba158c74f95229edd49cadffe0d0ef067e7056e0c2da465a24bb5fa94302ceb2",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": false,
+      "mechanisms": [
+        {
+          "section": "构建与翻译单元",
+          "trace": "头文件声明→各TU目标文件→链接符号→运行加载",
+          "counterexample": "a/b都定义全局变量时包含保护不解决跨TU重复；正文给extern或内联变量路线",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "ABI与资源",
+          "trace": "版本/size前缀→输出句柄置空→内部异常转错误码→Create/Destroy同分配方",
+          "counterexample": "不认识的尾字段可忽略，短必需前缀拒绝；STL布局不跨未锁定工具链",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "复制移动与异常",
+          "trace": "RAII临时构造→不失败交换提交→析构释放",
+          "counterexample": "先释放旧缓冲后分配不能提供强保证；std::move不自动搬运",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "模块与COM",
+          "trace": "同一门内Running检查+在途计数→Closing→注销排空/任务结束→清理对象→卸载；QI取得引用",
+          "counterexample": "检查状态与增计数分开有卸载空隙；复制COM裸指针不转Apartment权限",
+          "decision": "现正文可推演，保留"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/内存布局与分配.md",
+      "content_sha256": "da43ee22f7d5be8a1da3f6a374de014dec2d88b3fd750ddfbc6a35b690bfb2ff",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": false,
+      "mechanisms": [
+        {
+          "section": "存储与碎片",
+          "trace": "虚拟地址/物理页/缓存→按尺寸和寿命分配",
+          "counterexample": "空闲48B但无连续40B是外部碎片；32尺寸类装20浪费12",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "线性分配与对齐",
+          "trace": "MAX加法边界→向上对齐→capacity减法检查→独占区间",
+          "counterexample": "cursor13 align16 size20取[16,36)，回绕不能误判可用",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "批次关闭与复用",
+          "trace": "Open领取引用→Closing同门阻止新入口→子任务先增后减→GPU值先登记再释放CPU引用→各队列完成",
+          "counterexample": "图形42/需41但复制16/需17不可复用；迟到小完成值不能覆盖大值",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "局部性与Buddy",
+          "trace": "字段使用决定AoS/SoA；组号floor(addr/64)%4；buddy=o XOR b按同阶空闲表合并",
+          "counterexample": "地址0/256在4组教学缓存冲突；非伙伴两16不能合成32",
+          "decision": "现正文可推演，保留"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/文件IO.md",
+      "content_sha256": "2ac8f8d6e7419ff21ebc4ff1cce543824f1319e136b92189668d93fc0ad2d270",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": true,
+      "mechanisms": [
+        {
+          "section": "读与缓存",
+          "trace": "固定头循环短读→长度上限→负载→页缓存/设备成本分开",
+          "counterexample": "8字节读3再2遇EOF必须报截断，不能消费缓冲尾旧字节",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "异步所有权",
+          "trace": "请求提交→业务取消独立→系统终态→解码持缓冲→所有消费者结束释放",
+          "counterexample": "CancelIoEx请求不等最终取消，迟到成功仍可业务丢弃",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "版本发布",
+          "trace": "私有解码→同入口复查代次→切版本；临时写/flush/fsync/replace分开持久性",
+          "counterexample": "代次7成功不能装入当前8；名称原子不等掉电持久",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "读者与多文件寿命",
+          "trace": "固定一次清单版本→同锁登记引用→非当前且零引用回收；跨进程版本租约",
+          "counterexample": "已读旧版本名尚未加引用时发布者删目录是实际竞争，本次补齐登记门禁",
+          "decision": "正文可推演；新增断点已修复"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法与数据结构导读.md",
+      "content_sha256": "76401e70fa0b8dc72675a2fd9a677840a0541653c5e14f6f4b4d94b56594ce1a",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": false,
+      "mechanisms": [
+        {
+          "section": "选择关系",
+          "trace": "状态求解/容器访问/依赖可达/位置范围四入口",
+          "counterexample": "任务依赖顺序不由空间索引解决；附近查询与全量扫描对照",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "组合与验证",
+          "trace": "构建器图顺序→ID容器；近邻空间候选→内存热字段",
+          "counterexample": "复杂度推导不直接证明本机工作负载收益，正文给独立验证职责",
+          "decision": "现正文可推演，保留"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/进程与调度.md",
+      "content_sha256": "ffe6c039607b1a6bff9a39b65f960862d5942089d309462c0ee39b20e10f699b",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": false,
+      "mechanisms": [
+        {
+          "section": "系统调用与执行者",
+          "trace": "用户态请求→内核检查服务；线程共享地址，Task运行在OS线程",
+          "counterexample": "系统调用不必切线程；异步CPU函数不自动并行",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "等待与时间",
+          "trace": "Running/Ready/Blocked区分→单调累计器固定Tick→最多5步与丢弃规则",
+          "counterexample": "0.055消费2步余0.015；高优先级不能让被等待磁盘更快",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "IPC与子进程",
+          "trace": "偏移映射→发布同步；持续排空双管道→长度帧解析→退出/超时→校验产物",
+          "counterexample": "父等退出子等管道形成环；截日志仍须读至EOF",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "超时和退出",
+          "trace": "协作取消→宽限→终止受控进程组→全组结束+双EOF→目录复用",
+          "counterexample": "子进程脱组继续写会破坏复用条件；零退出仍可能产物不完整",
+          "decision": "现正文可推演，保留"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+      "content_sha256": "0b07a11a4e24472b1bd30a3a49138c0e2962bbe3f8ca2f45cb53fc0de7486c97",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": false,
+      "mechanisms": [
+        {
+          "section": "状态与产物",
+          "trace": "任务持久状态→输入/工具/哈希派生链→技术门禁→视觉审核→批准发布",
+          "counterexample": "合法JSON和执行成功均不能代替实际产物检查",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "计划与执行",
+          "trace": "米制元数据→房间局部布局→实际世界实例回读→碰撞/导航独立",
+          "counterexample": "桌宽1.6中心0.5越墙0.3；Bbox可过但通路被堵",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "单写与恢复",
+          "trace": "fencing场景令牌→登记稳定操作/目标ID→完整对象或场景快照提交→结果对账",
+          "counterexample": "令牌代次不混入稳定业务摘要；超时不证明未创建；旧进程恢复不能写",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "补偿和发布",
+          "trace": "操作ID+版本针对性补偿→批准哈希与规则/输入再检查→条件指针",
+          "counterexample": "人工改后哈希变即重审；同失败3轮无改善停止自动返工",
+          "decision": "现正文可推演，保留"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Character Controller.md",
+      "content_sha256": "0c5fa2b8b6ef51c435fdcdba39a2723001c206820d57dc18d931aade4a30297f",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": true,
+      "mechanisms": [
+        {
+          "section": "扫掠与滑动",
+          "trace": "无穿透起点→最早hit→skin/长度→移除向内分量→多活动平面交线/第三面停止",
+          "counterexample": "离开墙的分量不得移除；近乎平行叉积不可归一化",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "坡台阶",
+          "trace": "n·Up坡阈值→上/前/下胶囊候选→可站立且进度更优再提交",
+          "counterexample": "上成功前失败不能永久抬高；墙接触不提供跳跃资格",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "平台与初始恢复",
+          "trace": "旧局部脚点→当前目标carry中心→当前世界MTD恢复→只扫target减recovered→输入→最终接地重新附着",
+          "counterexample": "上移1m恢复已抬1m则剩余0，再加delta会抬到3m；Y转90度1m点保持(-1,0,-1)位移例",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "失败与反馈",
+          "trace": "4次初始恢复后核当前世界旧安全点→失败停止后续Sweep；实际位移反馈",
+          "counterexample": "旧安全点已被动态墙占用不能回退；平台世界速度不能再次积分携带",
+          "decision": "正文可推演；新增断点已修复"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+      "content_sha256": "014ceb048a517b4f9773e508ec0490b939ccbfafa21fd0038f86e0daba62e228",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": false,
+      "mechanisms": [
+        {
+          "section": "空间与速度",
+          "trace": "T_WC=T_WB*T_BC；质心差分、q1*q0^-1短弧→所有体/关节初始化后切动态",
+          "counterexample": "骨关节原点不等质心；传送差分暴速；半周以上采样角速度混叠",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "恢复根",
+          "trace": "选动作首帧骨盆→前向投影选yaw→p_WR=p_WB-R_WR*p_RB→胶囊查询→捕获局部姿态",
+          "counterexample": "骨盆roll/pitch不可直接作为竖直根；根移动后局部重建维持w0世界姿态",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "权威切换",
+          "trace": "持续速度门禁→表现混合或关节驱动二选一→唯一胶囊/肢体阻挡→中断统一重建",
+          "counterexample": "动态刚体与动画直接写同位置会冲突；受击取消不留下双权威",
+          "decision": "现正文可推演，保留"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/破坏系统.md",
+      "content_sha256": "ac4da52879bce33b1dbcca213a77cb032e87fba91de9a30c9d11d4dd4d44c466",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": true,
+      "mechanisms": [
+        {
+          "section": "资产到拓扑",
+          "trace": "Voronoi封闭块→几何/凸包/质量ID→黏结与支撑",
+          "counterexample": "节点未标固定也可能经完整路径获得支撑；退化块不进入资产",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "伤害与分组",
+          "trace": "径向归一伤害→强度累积零断边→DFS完整连通分量→支撑判定",
+          "counterexample": "10/4两次D6得到2/0；另有0—2边时2不脱落",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "动力学重建",
+          "trace": "质量/质心→旋转惯性+平行轴→簇局部碰撞变换→v0+ω×r→独立冲量",
+          "counterexample": "I_z=11/3非2/3；90度簇世界偏移不能直接存局部；已有接触冲量不重加",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "候选与提交",
+          "trace": "待处理/已应用同入口去重→候选图/分组/物理准备→基础版本复核→同步替换+事件应用",
+          "counterexample": "待处理重试若重复入队会二次扣损伤，本次补齐Pending幂等；图开门不能与堵门旧碰撞异步发布",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "预算与回收",
+          "trace": "关键分量先预留→装饰按体积/ID→代理节点集合与通道误差→容量不足背压→休眠/权威退出/代次回收",
+          "counterexample": "4槽装5关键分量保持旧版暂缓；单凸包门框封通道；重试不提前消耗事件ID",
+          "decision": "正文可推演；新增断点已修复"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/20_游戏AI/MCTS.md",
+      "content_sha256": "6621c0c0f0e1d17694d69053e4508d5b66530d4725efe9440883c118099cbf7f",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": false,
+      "mechanisms": [
+        {
+          "section": "状态/模拟",
+          "trace": "石子数和下一行动者→合法动作→每轮扩展一次→随机终局→根视角收益",
+          "counterexample": "漏撤销污染局面；随机失败样本不推翻最优可胜",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "UCT与回传",
+          "trace": "父行动者符号乘均值+正探索项→全路径N/W→实际按访问数选行动",
+          "counterexample": "对手s写+形成合作；逐层翻W再用s双重翻转",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "树复用与真实提交",
+          "trace": "局面版本核对→匹配子节点新根→新根玩家变换整树W/行动者→计算本轮N增量",
+          "counterexample": "复用根5/子4新3得到8/7不强改计数；旧根视角不转换会追求旧玩家胜利",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "预算终止",
+          "trace": "迭代/模拟检查点→中止不回传→空预算稳定备用→平局稳定ID",
+          "counterexample": "半轮默认0回传伪造平局；墙钟预算不等固定种子复现",
+          "decision": "现正文可推演，保留"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI决策模型.md",
+      "content_sha256": "6014c6b9002dd8e6768628a18bc6b831dac376cf33f7a949975c427e1e387146",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": false,
+      "mechanisms": [
+        {
+          "section": "反应组合",
+          "trace": "感知只读版本快照→FSM/HFSM退出入栈或BT返回状态→动作提交",
+          "counterexample": "HFSM找LCA避免父状态重入；中止需取消动作不只索引归零",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "节点和异步",
+          "trace": "叶Idle首次Enter→Running同实例→终态Exit；动作代次拒迟到回调",
+          "counterexample": "旧追击完成不能把新攻击标成功；遍历中改黑板混两状态",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "Utility/BDI",
+          "trace": "必要条件门禁；偏好几何平均→0.1迟滞/0.3秒；持续意图重考虑",
+          "counterexample": "3个0.8乘积与单个0.8不能随意比；偏好epsilon不替代必要零分",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "GOAP/HTN",
+          "trace": "回归事实负效果冲突→cost表/去重；HTN临时状态+任务栈分支回退→执行前复查真实前提",
+          "counterexample": "捡弹药删掩体不能满足两目标；方法失败不回滚真实世界",
+          "decision": "现正文可推演，保留"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI导航.md",
+      "content_sha256": "9dc4a0bdf26d02e6f9b912e400015ca1f7dd92c46c6a93892f5048cad89f0832",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": false,
+      "mechanisms": [
+        {
+          "section": "世界到路径",
+          "trace": "米制→高度段/侵蚀ceil半径净空/floor爬高→邻接/version→A*重开/过期堆",
+          "counterexample": "半径0.4/cell0.15须3格；楼层投影重叠不连通；传送使欧氏h可能高估",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "漏斗",
+          "trace": "有向门户→叉积收缩→跨边输出对侧→保存索引回退→验证全线段门户",
+          "counterexample": "左右反转翻符号；只检拐点不能保证凹走廊段不穿墙",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "局部避障",
+          "trace": "相对p/v圆盘并集→截断圆弧/射线最近q→责任半平面→速度/加速双圆凸域候选",
+          "counterexample": "v=p/T圆心不能normalize0；只用一维±0.75不等二维ORCA",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "跟随提交",
+          "trace": "沿路径前视→制动距离→避障可达速度→Controller→实际门户进度和低速到达",
+          "counterexample": "后置加速度限幅可能拉回禁区；无可行解应制动+扫掠并报告失败；旧版异步路径拒绝",
+          "decision": "现正文可推演，保留"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/21_游戏网络/RPC.md",
+      "content_sha256": "1a0418dd8eb82f30067899fa732d38fda114bba6f9b7acb1f6cb5e9319bb2122",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": false,
+      "mechanisms": [
+        {
+          "section": "封套与预算",
+          "trace": "版本/大小/会话→白名单→ID应答；剩余预算在服务器本地建立deadline",
+          "counterexample": "客户端绝对单调时刻不能直接比较；超时结果未知不新建业务ID",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "幂等事务",
+          "trace": "账号+ID与载荷→串行写事务检查→业务变化+结果同提交",
+          "counterexample": "并发先查询后各加余额会重复；同ID不同载荷拒绝",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "外部交付",
+          "trace": "余额/结果/outbox同事务→重试发送→接收ID与业务同事务→确认完成",
+          "counterexample": "先标发送完成会丢；后标可能重复，需接收端幂等",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "寿命与权限",
+          "trace": "业务有效期限定去重寿命；TLS与权限独立；重连接口映射旧业务ID",
+          "counterexample": "删除去重缓存不让过期交易复活；合法TLS客户端仍可提交作弊请求",
+          "decision": "现正文可推演，保留"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/21_游戏网络/客户端预测.md",
+      "content_sha256": "f808523e01dc7a80804f35c1b9ae74e38d101e43337b65fe54d1e9cbf20596ee",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": false,
+      "mechanisms": [
+        {
+          "section": "输入与状态",
+          "trace": "会话/序号/固定步控制→服务器按序消费→完整权威状态+ACK同Tick",
+          "counterexample": "缺号不算消费；同ACK新Tick仍可能平台移动要接纳",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "重放",
+          "trace": "恢复权威→删ACK前→按生成顺序同Simulate重放；(ack,tickAck)映射外部条件",
+          "counterexample": "65535后0/1先撞10m墙再退1得到9非12；整数排序破回绕",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "平台与视觉",
+          "trace": "对应Tick平台状态/限时预测→依赖更新再校正→逻辑即刻/视觉半衰期",
+          "counterexample": "用平台当前位置重放旧输入失配；超过窗口需新锚点",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "事件与会话",
+          "trace": "输入槽ID预测表现去重→权威接受/拒绝→队列上限与业务会话关闭屏障",
+          "counterexample": "重放不重复枪口粒子；清本地预测不撤销已提交开火",
+          "decision": "现正文可推演，保留"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/21_游戏网络/对局服务器架构.md",
+      "content_sha256": "80acbd6e9393a44ae89508e9fa4a2e4a89ef1a99a0db92e874b07bcf1d76017a",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": false,
+      "mechanisms": [
+        {
+          "section": "实例分配",
+          "trace": "稳定allocation→原子预留→版本进程加载→Ready与取消CAS→路由/票据",
+          "counterexample": "取消先提交的迟到Ready不可发布；超时重试不启动第二局",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "权威和下线",
+          "trace": "instance代数/epoch仲裁→提交端验证→排空现有对局→撤路由/容量",
+          "counterexample": "网关换路由不阻旧进程写；健康端口不证明Tick正常",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "结果一致",
+          "trace": "match42/r42→胜负/奖励/结果耐久边界→广播→下游幂等/派生榜单",
+          "counterexample": "提交后广播前崩溃可查询，同结果奖励不重复；客户端动画不能补造奖励",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "运行恢复",
+          "trace": "固定输入/随机状态→每Tick输入/版本/outbox共同耐久→快照文件先可读再提交引用→保日志→新epoch重放Ready",
+          "counterexample": "删日志早于快照引用丢状态；100+日志101..105恢复105，未提交106只重试一次",
+          "decision": "现正文可推演，保留"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/21_游戏网络/延迟补偿命中.md",
+      "content_sha256": "fd782544aa65adb34d50cfff232cad0eec95c5e15f09b16852a38c64c664a3d9",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": true,
+      "mechanisms": [
+        {
+          "section": "真实视图",
+          "trace": "开火实际r/纪元/呈现段/状态/有效性→年龄和速率/冻结校验→查询tq",
+          "counterexample": "重算t_fire-Dtarget不是缓冲恢复期所见r；Frozen速率为0，Waiting/无效视图拒绝",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "双边界",
+          "trace": "枪口取实际消费输入Tick权威姿态；目标/门/平台取tq，静态几何固定",
+          "counterexample": "排队晚一步不能用射手早一步；门留现在而人物退过去混时间",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "历史与射线",
+          "trace": "实体代数/连续段→区间插值→球判别式/正向最近→遮挡优先",
+          "counterexample": "(5,0,0)r1距离4，后方球不命中；传送不生成中间人",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "提交和重试",
+          "trace": "历史查询结果ID/代数/时间→当前同实例存活→弹药/伤害/结果事件同事务→重复返回",
+          "counterexample": "旧命中不伤新生代数；重试不能等后来弹药有了改拒绝结果",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "显示估计与权威历史",
+          "trace": "采用同一实际r查询权威历史；客户端插值/外推只是姿态估计，严格展示重建需原快照及相同规则",
+          "counterexample": "t1.0 x0/v1，a20，r1.1客户端外推x0.1、权威x0.2；半宽.04可出现所见射线落空，Frozen不会自动消除这份误差",
+          "decision": "正文已明确采用规则、数例与误差因果；不声称仅r精确复现所见"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断",
+      "integration_review": {
+        "reader": "主任务",
+        "prior_review_sha256": "15dcc9127d8a842a4402fa316a7b26c304c9490662552b9f508451936f2a1fa1",
+        "body_check": "直接复读新增加速数例与相邻段，首段和枪口段统一为按所见时刻查权威碰撞历史，避免再次声称时间对应即姿态精确相同。"
+      }
+    },
+    {
+      "path": "知识库/21_游戏网络/快照同步.md",
+      "content_sha256": "cb059e8c18d21af05798688448704b9add0f547d3f81beb31ce9ba05bdc2c11d",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": true,
+      "mechanisms": [
+        {
+          "section": "压缩和接收",
+          "trace": "量化整数/0.005误差→基线ID/窗口代次→全量恢复后ACK",
+          "counterexample": "缺42不能把dq加40；满32先阻确认而非先存33；退休握手后才释放",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "插值目标与播放",
+          "trace": "右端有效包P95/Delay→时钟目标→独立实际r→左右样本插值",
+          "counterexample": "旧乱序包不刷新最新到达统计；首句不能另设renderTime直接取样，已统一r",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "外推和冻结",
+          "trace": "candidate→min(latest+E)→冻结r与姿态；已知Te截段",
+          "counterexample": "画面冻r却前进使开火历史错时；断段缺位置隐藏/占位且viewReady=false",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "恢复与重锚",
+          "trace": "Frozen需latest-r≥max(2T,0.1)和覆盖；0.5s/缺左样本Waiting→不倒退锚点≤secondLatest",
+          "counterexample": "latest1.05不足恢复r1；新1.8/1.85/1.9,target2.1只能锚1.85；旧0.99不能倒退",
+          "decision": "正文可推演；新增断点已修复"
+        },
+        {
+          "section": "事件与命中衔接",
+          "trace": "呈现段/播放代次/有效性随r记录；补齐状态后重建请求锚点",
+          "counterexample": "缺新段不可继续以旧姿态当有效目标，历史命中暂停且不延后补发",
+          "decision": "正文可推演；新增断点已修复"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络时钟.md",
+      "content_sha256": "5e5eda27ef4b5aae3b5d2161e460754b87688566e10302d13f5f9ee16e65a3e2",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": false,
+      "mechanisms": [
+        {
+          "section": "四时间戳",
+          "trace": "去处理时间RTT与偏移→本地/服务器中点",
+          "counterexample": "0/.4与5.1/5.3得RTT.2 offset5；上下150/50固定偏差50ms无法消除",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "频率与连续发布",
+          "trace": "低RTT锚点→≥5秒跨度LS a/b→oldNow作为新Sref→物理ppm和phaseRate分开",
+          "counterexample": "直接减Sref导致刚发布值倒退；最小0.9898仍正",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "Tick与重同步",
+          "trace": "服务器epoch/S0/Tick0/dt→floor估计→本地同步代次，物理固定Tick",
+          "counterexample": "10.05锚600/10s得603；连续大相位重建不加超大物理步",
+          "decision": "现正文可推演，保留"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/引擎渲染扩展导读.md",
+      "content_sha256": "65fd47526a3e17bd62999c843d573180472d96a06b0cb34ef93da3ab4c6ff712",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": false,
+      "mechanisms": [
+        {
+          "section": "任务选择",
+          "trace": "资源/阶段需求→普通材质/网格筛选/图通道→锁定Unity或Unreal版本",
+          "counterexample": "创建资源但未声明读可能剔除生产者，不是材质输出问题",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "描边衔接",
+          "trace": "视图一致遮罩→独立颜色合成→相机颜色消费者→曝光阶段选择",
+          "counterexample": "后续通道覆盖输出或线亮度不随曝光由阶段/编码判定",
+          "decision": "现正文可推演，保留"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
+      "content_sha256": "30a02cdc1e541b8fe78e1b77cdd8c49aeb508256770fd4dac50df3996205bae6",
+      "read_scope": "最终全文直接复读，按每个主要机制与跨节接口构造反例；未用矩阵/报告/测试作正文结论",
+      "changed_in_final_review": false,
+      "mechanisms": [
+        {
+          "section": "引用图",
+          "trace": "Root/UPROPERTY/FGCObject/TStrong→可达标记→清理；非UObject引用计数独立",
+          "counterexample": "普通结构TObjectPtr不自动受追踪；无根循环可回收；Outer不替代强引用",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "创建与就绪",
+          "trace": "NewObject或Actor世界Spawn→加载PostLoad/生成PostActorCreated分流→组件/BeginPlay",
+          "counterexample": "延迟生成未FinishSpawning组件未齐；EndPlay重入用玩法代数重新安装",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "增量标记",
+          "trace": "已扫描A后新增B→TObjectPtr写屏障→保持可达",
+          "counterexample": "只改类型不证明自定义引用/跨线程数据安全，配置按UE5.6",
+          "decision": "现正文可推演，保留"
+        },
+        {
+          "section": "异步与销毁",
+          "trace": "软路径/句柄+请求世界代次→GT回调→安装强字段→释放本次handle；EndPlay清任务→BeginDestroy释放→完成后FinishDestroy",
+          "counterexample": "旧回调不清新handle；对象弱有效但已退出玩法仍不能运行；渲染队列未完不能删资源",
+          "decision": "现正文可推演，保留"
+        }
+      ],
+      "runtime_boundary": "实际引擎/服务运行状态按正文另列；未以未验证、缩小教学范围或单段深入代替全文判断"
+    }
+  ],
+  "new_code": [
+    "知识库/examples/mechanism_chain/snapshot/playback.py",
+    "知识库/examples/mechanism_chain/snapshot/test_playback.py"
+  ],
+  "verification": "新播放模型先5 FAIL后5 PASS；新增积压反例先FAIL后6 PASS；随后范围回归6/17/15/6/2项全部通过。正文判断以实际输入、过程、输出、失效衔接为先。"
+}

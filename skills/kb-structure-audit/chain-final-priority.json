@@ -1,0 +1,239 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+      "content_sha256": "b85460dd52f9a38e8c09cd5969b3a2cc36efb66f8f3a9d42a8697d62a96ee72a",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        {
+          "mechanism": "输入→历史位置",
+          "trace": "B=-8从100查92；刚体相机逆变换产生历史q/expectedDepth，天空先走旋转背景分支。",
+          "counterexample": "天空无有限深度/法线，若走统一有限实体判定会全部拒绝，已补显式分支。"
+        },
+        {
+          "mechanism": "采样足迹→内容置信",
+          "trace": "每个非零权重tap先检查ID、深度和Q，再插值W/Q，当前c×Q仍过0.8门限。",
+          "counterexample": "90%Q1颜色.2与10%Q0颜色.9插值成Q.9/颜色.27，已逐tap拒绝；真实数例先FAIL后PASS。"
+        },
+        {
+          "mechanism": "法线→M",
+          "trace": "C/U旋转把历史视法线送到当前视空间，角度与零向量判定之后才构M。",
+          "counterexample": "相机旋转不能误作表面变化；非均匀缩放与形变需要相应映射，缺对应则当前结构生成。"
+        },
+        {
+          "mechanism": "颜色工作域→编码",
+          "trace": "固定色调映射后显示线性RGB；T只sRGB传递，像素M构整图后编码。",
+          "counterexample": "防二次tone map与直接缩小mask污染潜变量；反向流除8只适用明确替代路线。"
+        },
+        {
+          "mechanism": "模型条件→DDIM循环",
+          "trace": "50步尾30从580加噪，CFG两分支/ControlNet残差，反推x0→像素投影→重新编码→下一alpha。",
+          "counterexample": "不将干净历史直接塞入带噪潜变量，不把同一alpha误当下一步；最终alpha=1。"
+        },
+        {
+          "mechanism": "局部Q→锚点A→双向融合",
+          "trace": "Q允许内容通过的新生成当邻帧历史，A_anchor在无批准路径时0；双向只用>=.8的A。",
+          "counterexample": "A逐非零tap门控，不能靠邻tap混出批准路径；两路无锚点R+M0生成，不虚构批准来源。"
+        },
+        {
+          "mechanism": "曝光→下一历史",
+          "trace": "M/S排除真实光照；稳定像素中位log比率，局部S应用增益；空统计S0；V内容拒绝优先于新生成Q1。",
+          "counterexample": "整帧增益会改真实照明，Q重置会覆盖拒绝，均在前轮实际修正且本次全文再验证。"
+        }
+      ],
+      "conclusion": "最新全文逐项反证，发现的机制连接实际修正；解释性结论来自正文状态/公式/接口追踪，测试仅核对对应可执行关系。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/载具物理.md",
+      "content_sha256": "3364fa2a576f0c792c4421f49901e29fcb68fffec8f0605f276421fe219fb8df",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        {
+          "mechanism": "查询→轮心/接触",
+          "trace": "球包络与外倾圆轮rEff/Q分支；真实轮轴u/接触t,b与rho分别定义。",
+          "counterexample": "圆轮与球包络不可共用半径、接触力臂；符号翻轴同时翻omega和扭矩。"
+        },
+        {
+          "mechanism": "压缩速度→轮载",
+          "trace": "固定l的vC0消除自引用，完整导数含rEffDot/nDot；Fs投影Fz传附着预算。",
+          "counterexample": "本次发现v_n减Q地面速度时必须用nDot·(C-Q)，不能用C-P，已修。"
+        },
+        {
+          "mechanism": "轮速/接触→原始力→联合力",
+          "trace": "rho*omega与接触相对vx生成kappa，侧偏alpha生成Fy，摩擦圆共同限幅，世界力与反作用使用同一Fx。",
+          "counterexample": "分开夹取两个分量超预算；离地Fz0仍继续驱动轮速。"
+        },
+        {
+          "mechanism": "发动机→离合/差速→轮速",
+          "trace": "明确Te曲线、离合滑差与限幅、开放/限滑轴扭矩、制动跨零实际值。",
+          "counterexample": "轮速反作用只用限幅Fx，发动机与轮子角动量都回到车体总账本。"
+        },
+        {
+          "mechanism": "转向→每步姿态",
+          "trace": "Ackermann R>W/2与最大内轮角限制，实际u变化重建t，随后积分/控制器接触。",
+          "counterexample": "只旋转渲染轮子不会改变轮胎力方向；轴方向变化计入DeltaH。"
+        },
+        {
+          "mechanism": "低速→驻车→动态回退",
+          "trace": "驻车冲量摩擦圆加制动区间，包含初始Iw*omega；.1进入/.2退出，无交集回动态。",
+          "counterexample": "omega .2/rho .3/I1/dt .1/Tb1时允许jx[1/3,1]不含0，不能直接锁轮；新检查先FAIL后PASS。"
+        }
+      ],
+      "conclusion": "最新全文逐项反证，发现的机制连接实际修正；解释性结论来自正文状态/公式/接口追踪，测试仅核对对应可执行关系。"
+    },
+    {
+      "path": "知识库/21_游戏网络/世界分区与AOI.md",
+      "content_sha256": "1563b9ac22ac55e4c73d6676a48f08e4e04b43813e5c3653d3934438c2290258",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        {
+          "mechanism": "候选→迟滞→复制",
+          "trace": "负坐标floor/圆精筛/同步桶位置，R10+h2保留11，可靠控制序号/实例代数/g隔离重传旧包。",
+          "counterexample": "新生成未确认不可应用依赖更新；墓碑有限寿命通过新复制会话与完整集收敛。"
+        },
+        {
+          "mechanism": "冻结→Ready→CAS",
+          "trace": "冻结和快照持久同提交，Ready不授予运行权，source/m/version匹配才B8；Aborted阻迟到准备。",
+          "counterexample": "已提交m迟到重试先读迁移记录并返回Committed，不冻结B；实码Committed同所有权事务落库。"
+        },
+        {
+          "mechanism": "权威→业务写入",
+          "trace": "同库所有权记录与业务状态共同提交；etcd只路由镜像，不能先查后跨库写。",
+          "counterexample": "替代进程即使同名B也推进epoch9，旧B8不能复活写入。"
+        },
+        {
+          "mechanism": "输入→效果/结果→重试",
+          "trace": "activeInputSession、连续lastInput、摘要、原结果与状态同提交，跨服务出箱与接收效果共同去重。",
+          "counterexample": "101/102后重试101返回当时库存2，同seq异amount拒绝；异常回滚，真实提交前后强退检查。"
+        },
+        {
+          "mechanism": "路由→有界队列→重连",
+          "trace": "持久入队仅确认收到，权威提交才确认效果，按lastInput清理，满队列背压。",
+          "counterexample": "新输入会话需旧入队操作有结论并关闭屏障再重置序号，输入会话不同于连接/AOI会话。"
+        }
+      ],
+      "conclusion": "最新全文逐项反证，发现的机制连接实际修正；解释性结论来自正文状态/公式/接口追踪，测试仅核对对应可执行关系。"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "content_sha256": "8b981365103a777753a730efb448f7cee9608d28c4b9cd88894ec686034e28ee",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        {
+          "mechanism": "输入→计划→执行",
+          "trace": "批重命名选择GUID/版本生成同一变更预览，UI/CLI共享计划和执行器。",
+          "counterexample": "把开头任务提纲换为具体读者流程；隐藏Context不进入计算。"
+        },
+        {
+          "mechanism": "序列化→手势→撤销重做",
+          "trace": "1→2→3→9保持old1/new9，一次提交，Esc恢复且不入栈，预览字段独占。",
+          "counterexample": "创建/删除稳定ID，先恢复对象身份后层级与引用，不能复用已撤销ID或旧指针。"
+        },
+        {
+          "mechanism": "宿主映射→保存",
+          "trace": "Unity逐实际修改前记录；Unreal FScopedTransaction跨手势，Modify在前，属性通知/Actor集合变化/包Dirty与磁盘保存分别处理。",
+          "counterexample": "原Unreal只列Modify未完成映射，已核Epic API补齐；Cancel按初值恢复与外部补偿，不伪装跨资源数据库回滚。"
+        },
+        {
+          "mechanism": "补偿→批处理取消",
+          "trace": "仅成功操作反序恢复，恢复一次失败仍继续；A成功/B发布前后取消各有状态。",
+          "counterexample": "包内其他编辑存在时不能取消后无条件标干净；旧成功项重跑也核发布回执/代次。"
+        },
+        {
+          "mechanism": "发布→检查点→恢复",
+          "trace": "不可变版本先可读，输入/输出代次CAS与回执同提交，Succeeded可后记。",
+          "counterexample": "g10→发布11→人改12保留12冲突；内容ABA靠代次发现；未合作外部写者不能自动覆盖。"
+        },
+        {
+          "mechanism": "配置→运行时",
+          "trace": "工具规则/版本/参数入计划hash，厘米米迁移明确，运行时依赖闭包排除编辑器模块。",
+          "counterexample": "仅改命名或填默认字段不能证明隔离/正确迁移。"
+        }
+      ],
+      "conclusion": "最新全文逐项反证，发现的机制连接实际修正；解释性结论来自正文状态/公式/接口追踪，测试仅核对对应可执行关系。"
+    },
+    {
+      "path": "知识库/13_渲染架构/Deferred Rendering.md",
+      "content_sha256": "b402431be306717b93ce7d7f4b4a2ec0ce25b2f48d09396837149b2a4e4aaf27",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        {
+          "mechanism": "MRT写入→重建→统一空间",
+          "trace": "24B颜色+4B深度，Model背景先排除；UV左上/NDC Y上/设备Z0..1/逆投影w除法。",
+          "counterexample": "点C与轴A分别w1/w0入View，同相机旋转保持dot，避免VS法线配WS光。"
+        },
+        {
+          "mechanism": "解码→直接光→覆盖",
+          "trace": "自发光只初始化一次；BRDF含余弦不重乘；点光解析范围/全屏vs保守体积/锥体外接。",
+          "counterexample": "补本光球面距离r对应覆盖锥轴L=r，避免L任意过短漏光。"
+        },
+        {
+          "mechanism": "列表→消费→同步",
+          "trace": "tile offset/count数组，溢出回退全灯，Compute一次表面读后循环；透明不复用不透明深度裁剪列表。",
+          "counterexample": "资源写后读依赖分别覆盖GBuffer和灯列表，不能仅有先后调度。"
+        },
+        {
+          "mechanism": "透明→MSAA→颜色Resolve",
+          "trace": "透明Forward独立表面后向前预乘，逐样本GBuffer求值后HDR Resolve再tone map。",
+          "counterexample": "两相反法线平均无效、未覆盖背景样本仍分母4，排除伪表面。"
+        },
+        {
+          "mechanism": "子通道→片上附件",
+          "trace": "GBuffer与深度都input attachment输入，HDR输出，固定深度测试关闭，写到input-read依赖清楚。",
+          "counterexample": "补深度读取接口，避免只给FRAGMENT_SHADER/INPUT_READ依赖却暗用固定深度测试。"
+        },
+        {
+          "mechanism": "新材质→分派/成本",
+          "trace": "模型ID独立、参数布局/分支与buffer版本寿命一致，未知ID诊断；容量/往返/GPU阶段分开。",
+          "counterexample": "共享粗糙度字段不能被新模型任意重解释；逻辑GB/s不当实测带宽。"
+        }
+      ],
+      "conclusion": "最新全文逐项反证，发现的机制连接实际修正；解释性结论来自正文状态/公式/接口追踪，测试仅核对对应可执行关系。"
+    }
+  ],
+  "tests": {
+    "protocol": 15,
+    "video": 18,
+    "vehicle": 8,
+    "deferred": 8,
+    "result": "PASS",
+    "red_green": [
+      "协议四新反例与稳定Committed回执先失败后实现。",
+      "视频Q0足迹污染数例先输出0.27失败，再逐tap门控通过。",
+      "载具初始小非零轮速驻车区间先给错误对称界失败，再含Iw*omega通过。"
+    ],
+    "limits": "本地CPU/SQLite真实进程终止；未宣称模型加载、目标引擎或多机网络执行。"
+  },
+  "sources": "本次核读Epic官方IPropertyHandle UE5.6、当前FScopedTransaction/Modify/PreEditChange/UEditorEngine/UEditorActorSubsystem/MarkPackageDirty；不能访问的5.6专用页未记为已核读。"
+}

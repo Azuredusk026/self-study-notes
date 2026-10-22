@@ -22,9 +22,18 @@ CPU刚记录完一帧，就把上传缓冲拿去写下一帧，看似节省了�
 
 ```cpp
 Frame& frame = frames[frameSlot];
-if (fence->GetCompletedValue() < frame.completionValue) {
+UINT64 completed = fence->GetCompletedValue();
+if (completed == UINT64_MAX) {
+    HandleSubmissionFailure(DXGI_ERROR_DEVICE_REMOVED);
+    return;
+}
+if (completed < frame.completionValue) {
     fence->SetEventOnCompletion(frame.completionValue, completionEvent);
     WaitForSingleObject(completionEvent, INFINITE);
+    if (fence->GetCompletedValue() == UINT64_MAX) {
+        HandleSubmissionFailure(DXGI_ERROR_DEVICE_REMOVED);
+        return;
+    }
 }
 frame.allocator->Reset();
 commandList->Reset(frame.allocator.Get(), initialPipeline);
@@ -48,6 +57,8 @@ frame.completionValue = submittedValue;
 ### 提交失败与资源状态
 
 帧槽位在可复用、记录中、已提交三个状态间移动。记录或Close失败时，本次命令尚未进入队列，可以保留诊断并在清理未提交记录后重建；Execute之后即使后续Signal失败，也不能把槽位当成“未提交”立即覆盖，因为GPU可能已经消费命令。应用进入设备/提交故障处理，停止复用依赖该完成值的资源，确认队列或设备已终止后再销毁。示例调用序列在每一步成功的路径上成立，错误返回不产生虚假的GPU完成事实。
+
+`GetCompletedValue`在设备移除时返回UINT64_MAX，这不是“全部命令已经正常完成”的证明。若只比较数值大小，设备故障会被误判为可以重置所有帧槽位；示例在等待前后都先识别这个哨兵值并转入故障路径。实际宿主也检查SetEventOnCompletion的HRESULT、等待返回值及设备状态，只有正常完成才复用；示例中的这些调用以成功路径为前提。完成值计数不分配UINT64_MAX，并在接近回绕时排空与重建该计数纪元。
 
 正常路径可以提前给本帧预留唯一完成值，Signal成功后将它登记为槽位的回收条件；上传、描述符和allocator都挂到这个条件。多线程只读同一场景快照时，快照的CPU寿命至少覆盖所有记录任务，快照所引用的GPU资源则继续保留到队列完成。前者随线程结束回收，后者随完成值回收，这两个边界不能合并。
 
@@ -91,6 +102,8 @@ Unity `ScriptableRenderContext.Submit` 提交已组织的渲染工作，资源�
 示例状态：本页代码用于解释对应的数据和调用约束，完整资源创建、类型与调用环境由项目提供。除文中另列的实际实验外，本页未执行目标引擎编译、GPU捕获或性能计时。
 
 ## 参考资料
+
+- [Microsoft：ID3D12Fence::GetCompletedValue](https://learn.microsoft.com/en-us/windows/win32/api/d3d12/nf-d3d12-id3d12fence-getcompletedvalue)：2026-10-23核读设备移除返回UINT64_MAX的语义。
 
 - [D3D12 Command Queues and Lists](https://learn.microsoft.com/en-us/windows/win32/direct3d12/command-queues-and-command-lists)。
 - [Vulkan Command Buffers](https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html)，pending 状态与重用限制。

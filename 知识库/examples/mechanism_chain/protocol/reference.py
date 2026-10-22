@@ -1,4 +1,5 @@
 import os
+import hashlib
 import sqlite3
 import sys
 
@@ -13,7 +14,8 @@ class Store:
             items INTEGER, last_input INTEGER, frozen INTEGER, input_session TEXT);
           INSERT OR IGNORE INTO entity VALUES(42,'A',7,3,100,0,'session-1');
           CREATE TABLE IF NOT EXISTS migration(id TEXT PRIMARY KEY, owner TEXT, epoch INTEGER,
-            items INTEGER, last_input INTEGER);
+            items INTEGER, last_input INTEGER, input_session TEXT, status TEXT DEFAULT 'prepared');
+          CREATE TABLE IF NOT EXISTS input_result(session TEXT, seq INTEGER, digest TEXT, result INTEGER, PRIMARY KEY(session,seq));
           CREATE TABLE IF NOT EXISTS asset(id INTEGER PRIMARY KEY, generation INTEGER, data BLOB);
           INSERT OR IGNORE INTO asset VALUES(1,0,X'6f6c64');
           CREATE TABLE IF NOT EXISTS job(id TEXT PRIMARY KEY, expected_generation INTEGER,
@@ -35,36 +37,60 @@ class Store:
     def state(self):
         return self.db.execute('SELECT owner,epoch,items,last_input FROM entity WHERE id=42').fetchone()
 
-    def prepare(self, migration):
+    def prepare(self, migration, owner='A', epoch=7):
         with self.db:
-            self.db.execute('UPDATE entity SET frozen=1 WHERE id=42')
-            self.db.execute('INSERT OR IGNORE INTO migration SELECT ?,owner,epoch,items,last_input FROM entity WHERE id=42', (migration,))
+            self.db.execute('BEGIN IMMEDIATE')
+            prior = self.db.execute('SELECT owner,epoch,status FROM migration WHERE id=?', (migration,)).fetchone()
+            if prior is not None:
+                if prior[:2] != (owner, epoch):
+                    raise ValueError('migration identity reused with another source')
+                return prior[2]
+            changed = self.db.execute('UPDATE entity SET frozen=1 WHERE id=42 AND owner=? AND epoch=? AND frozen=0', (owner, epoch)).rowcount
+            if not changed:
+                return 'fenced'
+            self.db.execute('INSERT INTO migration(id,owner,epoch,items,last_input,input_session) SELECT ?,owner,epoch,items,last_input,input_session FROM entity WHERE id=42', (migration,))
+            return 'prepared'
 
     def transfer(self, old_owner, old_epoch, new_owner, migration):
         with self.db:
             cursor = self.db.execute('''UPDATE entity SET owner=?,epoch=epoch+1,frozen=0
               WHERE id=42 AND owner=? AND epoch=? AND frozen=1
               AND EXISTS(SELECT 1 FROM migration m WHERE m.id=? AND m.owner=entity.owner
-              AND m.epoch=entity.epoch AND m.items=entity.items AND m.last_input=entity.last_input)''',
+              AND m.epoch=entity.epoch AND m.items=entity.items AND m.last_input=entity.last_input AND m.input_session=entity.input_session)''',
               (new_owner, old_owner, old_epoch, migration))
-        return cursor.rowcount == 1
+            changed = cursor.rowcount == 1
+            if changed:
+                self.db.execute("UPDATE migration SET status='committed' WHERE id=?", (migration,))
+        return changed
 
-    def consume(self, owner, epoch, sequence, session="session-1"):
-        self.db.execute('BEGIN IMMEDIATE')
-        current_owner, current_epoch, items, last, frozen, active_session = self.db.execute('SELECT owner,epoch,items,last_input,frozen,input_session FROM entity WHERE id=42').fetchone()
-        if (owner, epoch) != (current_owner, current_epoch) or frozen:
-            result = 'fenced'
-        elif session != active_session:
-            result = 'session'
-        elif sequence <= last:
-            result = 'duplicate'
-        elif sequence != last + 1:
-            result = 'gap'
-        else:
-            self.db.execute('UPDATE entity SET items=?,last_input=? WHERE id=42', (max(0, items-1), sequence))
-            result = 'applied'
-        self.db.commit()
-        return result
+    def consume(self, owner, epoch, sequence, session="session-1", amount=1):
+        if not isinstance(amount, int) or amount < 0:
+            raise ValueError('amount must be nonnegative integer')
+        digest = hashlib.sha256(str(amount).encode('ascii')).hexdigest()
+        with self.db:
+            self.db.execute('BEGIN IMMEDIATE')
+            current_owner, current_epoch, items, last, frozen, active_session = self.db.execute('SELECT owner,epoch,items,last_input,frozen,input_session FROM entity WHERE id=42').fetchone()
+            value = None
+            if (owner, epoch) != (current_owner, current_epoch) or frozen:
+                status = 'fenced'
+            elif session != active_session:
+                status = 'session'
+            elif sequence <= last:
+                previous = self.db.execute('SELECT digest,result FROM input_result WHERE session=? AND seq=?', (session, sequence)).fetchone()
+                if previous is None:
+                    status = 'stale'
+                elif previous[0] != digest:
+                    status = 'payload'
+                else:
+                    status, value = 'duplicate', previous[1]
+            elif sequence != last + 1:
+                status = 'gap'
+            else:
+                value = items - amount if items >= amount else items
+                self.db.execute('UPDATE entity SET items=?,last_input=? WHERE id=42', (value, sequence))
+                self.db.execute('INSERT INTO input_result VALUES(?,?,?,?)', (session, sequence, digest, value))
+                status = 'applied'
+            return {'status':status, 'result':value}
 
     def plan_output(self, job, data):
         with self.db:
@@ -79,27 +105,29 @@ class Store:
             self.db.execute('UPDATE asset SET generation=generation+1,data=? WHERE id=1', (data,))
 
     def publish(self, job):
-        self.db.execute('BEGIN IMMEDIATE')
-        expected, desired = self.db.execute('SELECT expected_generation,desired FROM job WHERE id=?', (job,)).fetchone()
-        changed = self.db.execute('UPDATE asset SET generation=generation+1,data=? WHERE id=1 AND generation=?', (desired, expected)).rowcount
-        if changed:
-            self.db.execute('UPDATE job SET published_generation=? WHERE id=?', (expected+1, job))
-        self.db.commit()
-        return 'published' if changed else 'conflict'
+        with self.db:
+            self.db.execute('BEGIN IMMEDIATE')
+            expected, desired = self.db.execute('SELECT expected_generation,desired FROM job WHERE id=?', (job,)).fetchone()
+            changed = self.db.execute('UPDATE asset SET generation=generation+1,data=? WHERE id=1 AND generation=?', (desired, expected)).rowcount
+            if changed:
+                self.db.execute('UPDATE job SET published_generation=? WHERE id=?', (expected+1, job))
+            return 'published' if changed else 'conflict'
+
 
     def recover_output(self, job):
-        self.db.execute('BEGIN IMMEDIATE')
-        expected, desired, published, status = self.db.execute('SELECT expected_generation,desired,published_generation,status FROM job WHERE id=?', (job,)).fetchone()
-        generation, actual = self.output()
-        if published is not None and (generation, actual) == (published, desired):
-            result = 'succeeded'
-            self.db.execute('UPDATE job SET status=? WHERE id=?', (result, job))
-        elif published is None and generation == expected:
-            result = 'ready'
-        else:
-            result = 'conflict'
-        self.db.commit()
-        return result
+        with self.db:
+            self.db.execute('BEGIN IMMEDIATE')
+            expected, desired, published, status = self.db.execute('SELECT expected_generation,desired,published_generation,status FROM job WHERE id=?', (job,)).fetchone()
+            generation, actual = self.output()
+            if published is not None and (generation, actual) == (published, desired):
+                result = 'succeeded'
+                self.db.execute('UPDATE job SET status=? WHERE id=?', (result, job))
+            elif published is None and generation == expected:
+                result = 'ready'
+            else:
+                result = 'conflict'
+            return result
+
 
 
 class Gesture:
