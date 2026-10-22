@@ -1,0 +1,406 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "content_sha256": "ba158c74f95229edd49cadffe0d0ef067e7056e0c2da465a24bb5fa94302ceb2",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        "预处理/翻译单元/链接/加载阶段",
+        "头文件ODR与实例化",
+        "静态与动态库及ABI",
+        "虚分派/布局/复制移动/异常提交",
+        "结构版本协商",
+        "调用令牌、模块卸载与COM引用"
+      ],
+      "interfaces": [
+        "声明→符号定义→导出与加载",
+        "句柄创建→同模块销毁",
+        "Running检查与在途计数同一锁→Closing取消等待→对象销毁→卸载"
+      ],
+      "counterexamples": [
+        "跨翻译单元重复变量不能由包含保护解决",
+        "异常发生在旧缓冲已释放之后破坏强保证",
+        "检查Running后未计数即被卸载；新段落把两者合并并以释放锁的条件等待退出",
+        "QueryInterface取得的引用跨异步任务必须有独立所有权"
+      ],
+      "changed": true,
+      "author_status": "READY_FOR_INDEPENDENT_BODY_REVIEW",
+      "basis": "逐篇全文输入/主要机制/相邻机制交付与反例复读；未使用质量矩阵、既有验收报告或测试通过作为正文结论"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/内存布局与分配.md",
+      "content_sha256": "07e1971686b12fe7b285779b002056afc6732062e38e1607b7428e03be606391",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        "栈堆和地址/物理存储区分",
+        "碎片/线性栈池Buddy",
+        "AoS/SoA工作集",
+        "缓存组相联与写策略",
+        "对齐溢出边界",
+        "CPU/GPU批次寿命"
+      ],
+      "interfaces": [
+        "请求尺寸→对齐/容量检查→区间游标",
+        "槽位任务引用及各队列完成值→安全复用",
+        "Buddy偏移和阶→伙伴空闲表→递归合并"
+      ],
+      "counterexamples": [
+        "cursor13按16对齐得到16，20字节请求终点36",
+        "两个16空闲若非伙伴不可合成32",
+        "图形42已完成但复制16未达槽位17仍禁止清零",
+        "子任务先计数后父任务释放防止假零"
+      ],
+      "changed": true,
+      "author_status": "READY_FOR_INDEPENDENT_BODY_REVIEW",
+      "basis": "逐篇全文输入/主要机制/相邻机制交付与反例复读；未使用质量矩阵、既有验收报告或测试通过作为正文结论"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/文件IO.md",
+      "content_sha256": "4a50ef6f87a8c2854b6489995e4a5906d2e3755f6f956c4a3a0ec4451451566c",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        "页缓存/短读/长度验证",
+        "异步请求与取消终态",
+        "语言flush/文件fsync/名称替换",
+        "多文件版本发布与旧读者",
+        "解码所有权与资源代次"
+      ],
+      "interfaces": [
+        "完成字节→格式校验→私有解码→代次原子提交",
+        "取消→最终IO完成→解码读者退出→缓冲回收",
+        "版本清单固定一次→读取同版本文件→所有读者结束后删除旧版"
+      ],
+      "counterexamples": [
+        "8字节头按3+2读出后EOF必须截断",
+        "IO成功不代表旧场景仍接收资源",
+        "最终检查后取消的竞争由统一提交锁解决",
+        "每文件重读最新清单可拼出混合版本"
+      ],
+      "changed": true,
+      "author_status": "READY_FOR_INDEPENDENT_BODY_REVIEW",
+      "basis": "逐篇全文输入/主要机制/相邻机制交付与反例复读；未使用质量矩阵、既有验收报告或测试通过作为正文结论"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法与数据结构导读.md",
+      "content_sha256": "76401e70fa0b8dc72675a2fd9a677840a0541653c5e14f6f4b4d94b56594ce1a",
+      "full_body_read": true,
+      "boundary_action": "OVERVIEW",
+      "content_actions": [
+        "KEEP"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        "求解/容器/图/空间四条入口",
+        "工作负载与正文主归属关系"
+      ],
+      "interfaces": [
+        "依赖任务顺序→图搜索，ID记录查询→容器",
+        "位置候选→空间索引→全量扫描核覆盖→布局与测量"
+      ],
+      "counterexamples": [
+        "拓扑任务顺序与节点查找不是同一个正确性问题",
+        "近邻候选必须保守覆盖，布局微基准不能代替范围正确性"
+      ],
+      "changed": false,
+      "author_status": "READY_FOR_INDEPENDENT_BODY_REVIEW",
+      "basis": "逐篇全文输入/主要机制/相邻机制交付与反例复读；未使用质量矩阵、既有验收报告或测试通过作为正文结论"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/进程与调度.md",
+      "content_sha256": "ffe6c039607b1a6bff9a39b65f960862d5942089d309462c0ee39b20e10f699b",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        "系统调用与上下文切换",
+        "线程/进程/协程/Task关系",
+        "IPC相对偏移与同步",
+        "单调时间累计器",
+        "工具进程管道与退出协议"
+      ],
+      "interfaces": [
+        "可运行/阻塞→调度诊断",
+        "任务清单→并行排空双管道→有界帧解析→退出与哈希校验",
+        "截止→协作取消→进程组退出→管道EOF→工作目录复用"
+      ],
+      "counterexamples": [
+        "0.055秒以0.02执行两步余0.015",
+        "长暂停明确最多5步并丢完整旧步，权威Tick不得静默采用",
+        "父进程等退出同时子进程等管道空位导致死锁",
+        "单个父进程退出不能证明后代停止写文件"
+      ],
+      "changed": true,
+      "author_status": "READY_FOR_INDEPENDENT_BODY_REVIEW",
+      "basis": "逐篇全文输入/主要机制/相邻机制交付与反例复读；未使用质量矩阵、既有验收报告或测试通过作为正文结论"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+      "content_sha256": "77d8ef3f040a5e87db3361dd6dc47d8a2f88e0b472cd8750534df016a9fd4f01",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        "需求/规划/执行/门禁状态",
+        "任务产物版本与权限",
+        "单位布局与通路",
+        "幂等重试/补偿/恢复对账",
+        "并发单写/令牌/标记",
+        "审核与发布条件更新"
+      ],
+      "interfaces": [
+        "规划资产哈希→执行前核对→实际实例回读→门禁",
+        "稳定操作ID与参数→串行写权限→完整实例标记→结果登记",
+        "失败项与输入版本→有限返工→审核→批准哈希发布"
+      ],
+      "counterexamples": [
+        "两个执行者同时查询不存在会重复创建，用场景代次单写解决",
+        "实例挂入后标记未写的崩溃空隙，改为完整对象事务或完整场景快照",
+        "只检查模型布局而非实际实例不能验证执行",
+        "同一操作ID不同参数及人工修改版本都进入冲突"
+      ],
+      "changed": true,
+      "author_status": "READY_FOR_INDEPENDENT_BODY_REVIEW",
+      "basis": "逐篇全文输入/主要机制/相邻机制交付与反例复读；未使用质量矩阵、既有验收报告或测试通过作为正文结论"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Character Controller.md",
+      "content_sha256": "16c6492a5f35dc924cad15fb29e5b11d0baf08140f14b60476da081b522be975",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        "最早扫掠/安全间距/滑动",
+        "多平面活动约束",
+        "可站立坡面与跳跃",
+        "台阶三段候选",
+        "旋转平台与离台速度",
+        "穿透恢复和最终反馈"
+      ],
+      "interfaces": [
+        "平台携带→初始重叠恢复→输入重力→两种运动候选→单次提交",
+        "坡面判定→地面资格→贴地/跳跃",
+        "实际位移→导航进度与动画速度"
+      ],
+      "counterexamples": [
+        "台阶向上成功后水平失败不得留下被抬位置",
+        "多重MTD振荡4次后退最后安全位而非继续比例零扫掠",
+        "h0先判零再归一化防止陡坡规则产生NaN",
+        "平台位移与跳离初速度不能加两次"
+      ],
+      "changed": true,
+      "author_status": "READY_FOR_INDEPENDENT_BODY_REVIEW",
+      "basis": "逐篇全文输入/主要机制/相邻机制交付与反例复读；未使用质量矩阵、既有验收报告或测试通过作为正文结论"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+      "content_sha256": "ee58463643c4a51b0b3c641a7531744c543808d921c9f5f6d268d52880bc1da2",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        "骨骼/质心固定偏移",
+        "关节双局部参考系",
+        "线速度/短弧角速度",
+        "恢复根定位与局部捕获",
+        "表现混合与驱动控制权",
+        "物理写入门禁及中断"
+      ],
+      "interfaces": [
+        "动画采样→所有刚体/关节准备→统一启动态及停胶囊",
+        "物理姿态→起身根/胶囊可行性→局部捕获→混合",
+        "恢复受击→取消动作→当前显示骨骼重建→统一切物理"
+      ],
+      "counterexamples": [
+        "忽略骨骼到质心偏移导致表皮错位",
+        "四元数q与-q同旋转，直接相减不能给角速度",
+        "零混合权重在新根下仍需保持原世界姿态",
+        "半套动态与动画同时写会持续约束冲突"
+      ],
+      "changed": true,
+      "author_status": "READY_FOR_INDEPENDENT_BODY_REVIEW",
+      "basis": "逐篇全文输入/主要机制/相邻机制交付与反例复读；未使用质量矩阵、既有验收报告或测试通过作为正文结论"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/破坏系统.md",
+      "content_sha256": "8cf6d5eb1904552dcd9ec99ed091b2b66e0ab3f66c5754aed78cd7a1b795924a",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        "离线封闭碎块/黏结支撑",
+        "径向损伤",
+        "全图分量",
+        "质心/惯性/子形状空间",
+        "速度与冲量继承",
+        "候选图物理原子替换",
+        "预算代理/回收/网络事件"
+      ],
+      "interfaces": [
+        "伤害候选→分量→新簇质量/形状/速度→提交版本",
+        "准备失败→保留当前图和旧碰撞/事件未消耗",
+        "图/碰撞/节点归属/去重编号→一起提交→广播"
+      ],
+      "counterexamples": [
+        "替代边0—2存在时断1—2不会脱落",
+        "自身惯性相加漏平行轴",
+        "世界偏移错作簇局部导致二次旋转",
+        "准备物理失败却先公布拓扑会逻辑开门物理堵门",
+        "提前登记去重会使准备失败后重试被丢弃"
+      ],
+      "changed": true,
+      "author_status": "READY_FOR_INDEPENDENT_BODY_REVIEW",
+      "basis": "逐篇全文输入/主要机制/相邻机制交付与反例复读；未使用质量矩阵、既有验收报告或测试通过作为正文结论"
+    },
+    {
+      "path": "知识库/20_游戏AI/MCTS.md",
+      "content_sha256": "be9cce34d5cdf713b2abf7c4b3bca35fb263c1313ad10a02ee1378e31596c3ec",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        "状态/合法动作/收益",
+        "一次扩展与随机模拟",
+        "UCT对手符号",
+        "路径回传",
+        "最终访问决策",
+        "局面版本/换根/取消预算"
+      ],
+      "interfaces": [
+        "模拟终局根收益→全路径N/W→下一轮UCT",
+        "搜索局面版本→实际提交→子树复用及根视角转换"
+      ],
+      "counterexamples": [
+        "对手UCT符号与逐层回传翻转不可双重使用",
+        "换根玩家时仅改指针会把旧W当新视角，正文同步反转W及±1",
+        "只完成选择不能把默认0当平局回传",
+        "零完成迭代返回稳定编号合法备用动作"
+      ],
+      "changed": true,
+      "author_status": "READY_FOR_INDEPENDENT_BODY_REVIEW",
+      "basis": "逐篇全文输入/主要机制/相邻机制交付与反例复读；未使用质量矩阵、既有验收报告或测试通过作为正文结论"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI决策模型.md",
+      "content_sha256": "6014c6b9002dd8e6768628a18bc6b831dac376cf33f7a949975c427e1e387146",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        "Sense/Think/Act与BDI承诺",
+        "FSM/HFSM进出层级",
+        "行为树记忆顺序和中止",
+        "Utility乘法/归一化/迟滞",
+        "GOAP反向事实搜索",
+        "HTN分解状态/回退",
+        "只读感知快照与异步动作"
+      ],
+      "interfaces": [
+        "快照版本→决策→动作最新前提→请求代次",
+        "BT首次Enter→Running查询→一次Exit或中止",
+        "HTN临时状态效果→后续前提，分支失败回溯快照",
+        "真实动作结果→事实更新与重规划"
+      ],
+      "counterexamples": [
+        "BT只清索引会重复进入旧异步动作",
+        "GOAP末动作破坏另一目标不能直接满足",
+        "效用条件数不等用乘积会产生结构性偏差",
+        "HTN递归重复状态和任务列表需去重及深度上限",
+        "HFSM共享祖先不该重复退出进入"
+      ],
+      "changed": true,
+      "author_status": "READY_FOR_INDEPENDENT_BODY_REVIEW",
+      "basis": "逐篇全文输入/主要机制/相邻机制交付与反例复读；未使用质量矩阵、既有验收报告或测试通过作为正文结论"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI导航.md",
+      "content_sha256": "9dc4a0bdf26d02e6f9b912e400015ca1f7dd92c46c6a93892f5048cad89f0832",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        "可行走空间/体素单位/侵蚀",
+        "A*图搜索接口",
+        "门户走廊/漏斗符号与重启",
+        "有限时间二维速度障碍",
+        "ORCA责任与重叠恢复",
+        "多半平面及双圆求解/无解",
+        "到达/前视/实际反馈/版本"
+      ],
+      "interfaces": [
+        "米参数→保守网格取整→高度段邻接→多边形版本",
+        "A*多边形序列→门户有向端点→漏斗角点",
+        "首选速度→所有约束和可达圆→控制器→实际位置推进",
+        "导航更新→取消旧请求→代次匹配新路径"
+      ],
+      "counterexamples": [
+        "半径0.4/cs0.15取3格不能取2",
+        "漏斗改apex不回退门户索引会漏约束",
+        "v等截断圆心时径向归一化零，正文指定朝原点弧中点",
+        "一维+0.75/-0.75不替代二维圆弧/腿几何",
+        "单面顺序投影不证明全局可行，候选枚举共同筛选",
+        "安全速度求完再随意加速度限幅可退回禁区"
+      ],
+      "changed": true,
+      "author_status": "READY_FOR_INDEPENDENT_BODY_REVIEW",
+      "basis": "逐篇全文输入/主要机制/相邻机制交付与反例复读；未使用质量矩阵、既有验收报告或测试通过作为正文结论"
+    }
+  ],
+  "actual_regression": [
+    "revision_16_21/test_reference.py:17 pass",
+    "revision_16_21/test_review_reference.py:15 pass",
+    "retained_review/mcts/test_reference.py:2 pass",
+    "retained_review/destruction/test_reference.py:6 pass"
+  ],
+  "evidence_limits": "新增衔接规则主要为确定性机制与宿主提交协议，未增加引擎运行或真实故障注入声明；运行状态与正文推演分开记录。"
+}

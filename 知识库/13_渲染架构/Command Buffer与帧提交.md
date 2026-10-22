@@ -18,7 +18,7 @@ CPU刚记录完一帧，就把上传缓冲拿去写下一帧，看似节省了�
 
 ### D3D12 的安全复用
 
-以下是 D3D12 调用顺序轮廓，输入为一组帧资源。完成事件已创建，错误处理与交换链获取省略。`nextFence` 全局递增。
+以下是 D3D12 调用顺序轮廓，输入为一组帧资源。完成事件已创建，错误处理与交换链获取省略。`nextFence` 全局递增；`HandleSubmissionFailure`按下节规则停止正常帧循环并处理提交故障。
 
 ```cpp
 Frame& frame = frames[frameSlot];
@@ -32,13 +32,24 @@ RecordFrame(commandList.Get(), frame);
 commandList->Close();
 ID3D12CommandList* lists[] = {commandList.Get()};
 queue->ExecuteCommandLists(1, lists);
-frame.completionValue = nextFence++;
-queue->Signal(fence.Get(), frame.completionValue);
+const UINT64 submittedValue = nextFence++;
+HRESULT signalResult = queue->Signal(fence.Get(), submittedValue);
+if (FAILED(signalResult)) {
+    HandleSubmissionFailure(signalResult); // 停止复用，进入下节故障路径
+    return;
+}
+frame.completionValue = submittedValue;
 ```
 
 示例在同一队列提交后signal，完成值覆盖它之前的工作。多队列共同使用同一资源时，回收还要覆盖所有相关队列的最后访问。allocator重置会回收命令内存，所以它分配的命令都完成后才能重置。上传区间和描述符回收采用相同的完成条件。命令列表对象复用与 allocator 内存重置有不同限制，不能仅以对象名称判断。
 
 例如帧槽位 0 记录完成值 17，CPU 准备再次使用它时完成值只有 16，仍需等待。即使交换链本次返回图像索引 0，也不能把它当作完成 17 的证据。若资源又被复制队列使用到值 9，单看图形队列 17 也不够；可以保存各队列完成条件，或建立汇合依赖后使用一个覆盖全部工作的完成值。
+
+### 提交失败与资源状态
+
+帧槽位在可复用、记录中、已提交三个状态间移动。记录或Close失败时，本次命令尚未进入队列，可以保留诊断并在清理未提交记录后重建；Execute之后即使后续Signal失败，也不能把槽位当成“未提交”立即覆盖，因为GPU可能已经消费命令。应用进入设备/提交故障处理，停止复用依赖该完成值的资源，确认队列或设备已终止后再销毁。示例调用序列在每一步成功的路径上成立，错误返回不产生虚假的GPU完成事实。
+
+正常路径可以提前给本帧预留唯一完成值，Signal成功后将它登记为槽位的回收条件；上传、描述符和allocator都挂到这个条件。多线程只读同一场景快照时，快照的CPU寿命至少覆盖所有记录任务，快照所引用的GPU资源则继续保留到队列完成。前者随线程结束回收，后者随完成值回收，这两个边界不能合并。
 
 ## 记录与排队策略
 

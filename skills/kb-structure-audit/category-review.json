@@ -1967,7 +1967,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "05光照领域的方案关系导读；IBL积分和球谐表示链接各自主归属。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。",
-      "content_sha256": "c951ee04316e050e959cb448683cd73d6cb068b4f3502d9a7bdad96b5545f2ab",
+      "content_sha256": "b12cf2af945ecdd790de5fd78dafadde5c1f9686b8814de3c748411c3b1e622e",
       "related_topics": [
         "05_光照阴影与GI/Lightmap",
         "05_光照阴影与GI/Light Probe",
@@ -2218,7 +2218,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。",
-      "content_sha256": "c25c3a09bc0b53209fece956dfe88bb6a2f9be4d663a11c39800249f880ebe1d",
+      "content_sha256": "41b4a0e4cbd7957559dacc237002660de7954e63b0c2884d952eb57fe0ba6d55",
       "related_topics": [
         "04_光照模型与PBR/法线贴图",
         "04_光照模型与PBR/IBL",
@@ -2246,7 +2246,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。",
-      "content_sha256": "f80cfbc6855c6eb163043021e3df0df40a6460b83a50844f184b5b6b408aa248",
+      "content_sha256": "3eef24e2d962d155d01711005064c4fcb260c9185013a85791f93eb018a1dca8",
       "related_topics": [
         "02_GPU与光栅化管线/透明合成",
         "07_颜色与后处理/颜色空间",
@@ -2324,12 +2324,13 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "07仅组织后处理关系，具体实现与时域算法分别链接独立专题。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。",
-      "content_sha256": "8ca373236723b42d49ecf40d4a9164274d3fc060fb9f97df81e69c9c00d99acb",
+      "content_sha256": "73fc64ff047404450f75a773b392316c2f79f72c1e6f3348f57119cc4dd3ff8d",
       "related_topics": [
         "07_颜色与后处理/Tone Mapping",
         "07_颜色与后处理/Bloom",
         "07_颜色与后处理/屏幕空间AO",
         "07_颜色与后处理/景深与运动模糊",
+        "13_渲染架构/Render Graph",
         "07_颜色与后处理/颜色空间",
         "07_颜色与后处理/HDR与曝光",
         "02_GPU与光栅化管线/抗锯齿与时域重建",
@@ -2646,7 +2647,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "09组织动画职责，Gameplay请求与物理约束均链接主归属。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。",
-      "content_sha256": "3e23206796e95c55b10ed1b81b42c54d2016c59e13ef3fd7e4c861074b78f560",
+      "content_sha256": "abd38bca6e939261e4cd9d876481a40d68ac1ec0869450616b33f13258dd09a9",
       "related_topics": [
         "09_动画系统/骨骼动画与蒙皮",
         "09_动画系统/动画姿态混合",
@@ -2780,7 +2781,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "10组织效果组合；共用采样、合成和性能主问题分别进入06、02、14。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。",
-      "content_sha256": "bd3059cd7bf6f0be75b422823c0ce80d4e9b5db0dfd81cb12c4c086407467634",
+      "content_sha256": "8209fbda707a0f96c66cc11fdb779e9d346fb67145ef7794296839271d49d814",
       "related_topics": [
         "10_VFX与模拟/VFX纹理动画",
         "10_VFX与模拟/溶解材质",
@@ -2959,7 +2960,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "11作为风格化导读，Billboard与植被风动分别保持08和09主归属。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。",
-      "content_sha256": "746584f7f1bb5c4178a0c890e707bbaeb2d22ec1e849388c8ee078d9a2e926e9",
+      "content_sha256": "d228cbd5257abe805002b2b15e33b56cdc9cadd59ad9bb60c2bb72c4c842e0f4",
       "related_topics": [
         "11_NPR与风格化渲染/NPR材质与分层光照",
         "11_NPR与风格化渲染/描边",
@@ -3089,8 +3090,9 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属12_光线追踪；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "2e92bfe31e590230bb41c59a77d051908581feb80723ab4783a0825e338bdd6e",
+      "content_sha256": "ed25c618d9c5e8626d811b77cee20e24431d8d410fd11c4f4cb1e06d9bf80d2a",
       "related_topics": [
+        "12_光线追踪/实时光追采样",
         "01_数学与采样/Monte Carlo采样",
         "12_光线追踪/实时光追采样",
         "12_光线追踪/光追降噪"
@@ -3160,7 +3162,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属13_渲染架构；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "1a289eafb073e0a113f3525ece193e0bd086de92f15c29173831fa2faae1408f",
+      "content_sha256": "babf3cfc5851a837495c0ba6c85ffef1191441004bcc09e4c47dbd63e46b51c4",
       "related_topics": [
         "13_渲染架构/GPU同步与屏障",
         "02_GPU与光栅化管线/渲染帧流程",
@@ -3306,8 +3308,10 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属13_渲染架构；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "95dd24df060f60bea54e4c99cee02a6dd003c2372f7590a8ca80b4722bd00d25",
+      "content_sha256": "b2f0d4f812e2d983b7e1c95328b9866def2de0ba43b67c7b1dd3dba6fd108ee4",
       "related_topics": [
+        "13_渲染架构/GPU资源生命周期",
+        "13_渲染架构/GPU同步与屏障",
         "03_Shader编程/Shader接口与数据流",
         "13_渲染架构/GPU资源生命周期",
         "26_GPU驱动与虚拟几何/GPU-Driven Rendering",
@@ -3399,7 +3403,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "13组织执行架构职责；硬件执行与性能入口跨域链接。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。",
-      "content_sha256": "5ff38c184cac8e84451b5759453c2e8352dfef086edf529fdf0525f9b1c57e18",
+      "content_sha256": "19438daf4837cd356c1fb53b2363a1dd1b9d7b967e3500e1d998d76b630e05b7",
       "related_topics": [
         "13_渲染架构/Render Graph",
         "13_渲染架构/Render Pass与附件",
@@ -3422,7 +3426,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "13保持路径与光源组织关系，材质响应链接04，测量方法链接14。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。",
-      "content_sha256": "049117e9669f4856f3959b13ad5179b1e9d5e06dbd34d51bc94702a277f3edd9",
+      "content_sha256": "6faf0aef5c1af11dc24a682873e63e04b7e101a028e1da20388fb2741276b85b",
       "related_topics": [
         "13_渲染架构/Forward Rendering与Forward+",
         "13_渲染架构/Deferred Rendering",
@@ -3444,8 +3448,9 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属14_性能分析与优化；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "1818f8b8e8fd3a77541fa03e4f7879d2d0a82336317a03480617db20b2b326db",
+      "content_sha256": "28f29a47b6ff0fdd04cece06ff960df297e61d67dd7725f0579bbd8dd88d537d",
       "related_topics": [
+        "13_渲染架构/Pipeline State Object",
         "13_渲染架构/Pipeline State Object",
         "13_渲染架构/Pipeline State Object",
         "03_Shader编程/Shader Variant管理",
@@ -3483,7 +3488,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属14_性能分析与优化；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "b4d34d1ba8c0313ae3e09b3d6c896013020095becc58cd5870d102d66b128ab9",
+      "content_sha256": "14c504485acdd4ddb7ba386c71e3e96caf888837bd4e4f1548237d670b738144",
       "related_topics": [
         "14_性能分析与优化/帧瓶颈诊断",
         "14_性能分析与优化/移动端渲染优化",
@@ -3503,9 +3508,13 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属14_性能分析与优化；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "d9b9dc15c32d1b6d5185b5aedd45a278f6c8d451afdaa0b013313da2aac5dd33",
+      "content_sha256": "1559b340e8073fe0a8b5ce009670bf4c1b414dcbe030a902f85ec03a7826541d",
       "related_topics": [
         "02_GPU与光栅化管线/GPU执行与访存",
+        "13_渲染架构/GPU同步与屏障",
+        "03_Shader编程/GPU异步回读",
+        "06_纹理技术/Texture Streaming",
+        "13_渲染架构/GPU资源生命周期",
         "13_渲染架构/Draw Call与合批",
         "02_GPU与光栅化管线/光栅化可见性",
         "14_性能分析与优化/帧捕获与性能分析工具",
@@ -3522,7 +3531,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属14_性能分析与优化；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "ff66db2c69960fbd3c98731ccdf33457cd965e04f01bb5c69bff968788e34be6",
+      "content_sha256": "5fb1358dfb373e5eba4dd39100b29c00241e0e610bff85757e2435634898dd2e",
       "related_topics": [
         "14_性能分析与优化/帧捕获与性能分析工具",
         "02_GPU与光栅化管线/GPU执行与访存",
@@ -3601,7 +3610,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属15_资产与工具管线；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "b5fbada1e14e3d62a75ebcfcdf6c1b8c880916fd26a817a43b3ba816f5ef0f12",
+      "content_sha256": "5ac11de7e85c238b339ecf97f19294584935abef8d43388569d5d84ba396e70d",
       "related_topics": [
         "15_资产与工具管线/资产构建CI",
         "15_资产与工具管线/DCC资产交换"
@@ -3696,7 +3705,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“接口结构的版本协商”。",
-      "content_sha256": "548615ac1be2ee712326b36007befbe8bad2cf1135faca343d9d660abae2c43d",
+      "content_sha256": "ba158c74f95229edd49cadffe0d0ef067e7056e0c2da465a24bb5fa94302ceb2",
       "related_topics": [
         "16_编程与数据结构/对象生命周期",
         "16_编程与数据结构/对象生命周期",
@@ -3755,9 +3764,10 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“对齐与批次寿命”。",
-      "content_sha256": "7aa55a72fed72a09b917ab39a61d86524b1bbddb77f3fb8d5d9cf2bcfa041a9f",
+      "content_sha256": "da43ee22f7d5be8a1da3f6a374de014dec2d88b3fd750ddfbc6a35b690bfb2ff",
       "related_topics": [
         "16_编程与数据结构/对象池",
+        "13_渲染架构/GPU资源生命周期",
         "16_编程与数据结构/虚拟内存",
         "23_引擎运行系统/ECS与数据布局",
         "16_编程与数据结构/对象生命周期",
@@ -3851,7 +3861,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“读取与缓存”。",
-      "content_sha256": "611e036d41908d308b7cce106797e34ed148c0bc02a4a3786253131fee422569",
+      "content_sha256": "4a50ef6f87a8c2854b6489995e4a5906d2e3755f6f956c4a3a0ec4451451566c",
       "related_topics": [
         "15_资产与工具管线/资产构建与发布",
         "16_编程与数据结构/虚拟内存",
@@ -3985,9 +3995,10 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“等待队列与子进程输出”。",
-      "content_sha256": "83517b3fccc15514e0dd58628da32e744031f184253300be808143784f641f87",
+      "content_sha256": "ffe6c039607b1a6bff9a39b65f960862d5942089d309462c0ee39b20e10f699b",
       "related_topics": [
         "16_编程与数据结构/线程同步",
+        "21_游戏网络/对局服务器架构",
         "23_引擎运行系统/任务系统",
         "16_编程与数据结构/跨语言接口",
         "16_编程与数据结构/虚拟内存",
@@ -4005,7 +4016,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属17_AIGC与Agent管线；相关主题保留前置与后续专篇，新增机制落在“操作登记与恢复对账”。",
-      "content_sha256": "e9ab1ecc81d926cbfc4c078700e38da29cf342bc4d532493c8abb5b5805e7eb0",
+      "content_sha256": "0b07a11a4e24472b1bd30a3a49138c0e2962bbe3f8ca2f45cb53fc0de7486c97",
       "related_topics": [
         "15_资产与工具管线/资产构建与发布",
         "15_资产与工具管线/编辑器工具的事务与批处理",
@@ -4111,7 +4122,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属18_游戏物理与模拟；相关主题保留前置与后续专篇，新增机制落在“坡面、台阶与平台”。",
-      "content_sha256": "16209464dd08becd3a46ce54dfbd82b3da91f7888f3643c2fed2f7ac9dffeedd",
+      "content_sha256": "1b6623cb2c45fec8a655067d2cf12967ead83726a2f0c154d446b29e07f8951e",
       "related_topics": [
         "18_游戏物理与模拟/刚体物理求解",
         "19_Gameplay与游戏框架/输入与动作状态",
@@ -4131,7 +4142,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属18_游戏物理与模拟；相关主题保留前置与后续专篇，新增机制落在“骨骼与刚体的对应”。",
-      "content_sha256": "04980bab89aa11418eba031fa4154f7092c557ff9928645ea24e331a48a2fe0f",
+      "content_sha256": "014ceb048a517b4f9773e508ec0490b939ccbfafa21fd0038f86e0daba62e228",
       "related_topics": [
         "18_游戏物理与模拟/刚体物理求解",
         "09_动画系统/骨骼动画与蒙皮",
@@ -4195,7 +4206,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属18_游戏物理与模拟；相关主题保留前置与后续专篇，新增机制落在“支撑传播与连通分量”。",
-      "content_sha256": "3333ab7524efd39e9d2bd5a2c31f6edb8cf1414b28ffd2461136af6296cd942d",
+      "content_sha256": "5f8f5cc32242cc2bbbcb0ee4337d626ca5a2c86c723805dcef15ca2504da5ac9",
       "related_topics": [
         "18_游戏物理与模拟/刚体物理求解",
         "10_VFX与模拟/GPU粒子系统",
@@ -4285,7 +4296,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属20_游戏AI；相关主题保留前置与后续专篇，新增机制落在“四阶段与回报视角”。",
-      "content_sha256": "3d500b620efca068b5865c1dff221486919f3f3c0fef59a7989b4d2c80ddd75b",
+      "content_sha256": "6621c0c0f0e1d17694d69053e4508d5b66530d4725efe9440883c118099cbf7f",
       "related_topics": [
         "20_游戏AI/游戏AI决策模型",
         "16_编程与数据结构/图搜索",
@@ -4303,7 +4314,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属20_游戏AI；相关主题保留前置与后续专篇，新增机制落在“异步动作与规划冲突”。",
-      "content_sha256": "f300776b8ac1b84bc2aca128ff9e40f45ec24a096f1c53220d2d3883effa35c0",
+      "content_sha256": "6014c6b9002dd8e6768628a18bc6b831dac376cf33f7a949975c427e1e387146",
       "related_topics": [
         "19_Gameplay与游戏框架/玩法事件与脚本",
         "20_游戏AI/游戏AI导航",
@@ -4322,7 +4333,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属20_游戏AI；相关主题保留前置与后续专篇，新增机制落在“走廊版本与可执行性”。",
-      "content_sha256": "90bc03005edbfa58e85806c1acd9a5c41012f68328236785eb86fa4e2691a547",
+      "content_sha256": "9dc4a0bdf26d02e6f9b912e400015ca1f7dd92c46c6a93892f5048cad89f0832",
       "related_topics": [
         "16_编程与数据结构/图搜索#A* 主循环",
         "16_编程与数据结构/算法与数据结构导读",
@@ -4382,7 +4393,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“并发重试的事务边界”。",
-      "content_sha256": "8a62a96461d50b3f79f8360102244d03cff58eaeb4f661773f48cfebdb401937",
+      "content_sha256": "1a0418dd8eb82f30067899fa732d38fda114bba6f9b7acb1f6cb5e9319bb2122",
       "related_topics": [
         "21_游戏网络/对局服务器架构",
         "21_游戏网络/游戏网络传输",
@@ -4435,8 +4446,9 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“重放中的碰撞与序号”。",
-      "content_sha256": "29f0e321820f0575e35b585e701c522c6f4a24b2713e6b66ed6aa0fe1b577834",
+      "content_sha256": "f808523e01dc7a80804f35c1b9ae74e38d101e43337b65fe54d1e9cbf20596ee",
       "related_topics": [
+        "21_游戏网络/世界分区与AOI",
         "21_游戏网络/快照同步",
         "19_Gameplay与游戏框架/输入与动作状态",
         "21_游戏网络/回滚同步",
@@ -4453,8 +4465,9 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“所有权与持久化时序”。",
-      "content_sha256": "39f84067588aee9e6878e492cff77d743e4dc1c3b34caece77335d752ef56993",
+      "content_sha256": "80acbd6e9393a44ae89508e9fa4a2e4a89ef1a99a0db92e874b07bcf1d76017a",
       "related_topics": [
+        "21_游戏网络/世界分区与AOI",
         "21_游戏网络/世界分区与AOI",
         "21_游戏网络/RPC",
         "21_游戏网络/服务端反作弊校验"
@@ -4470,8 +4483,10 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“射击与显示时间”。",
-      "content_sha256": "53e779cfacb134fdbf9a78e79605a94ceece03d73c6a89b0b5ec30d602efbae7",
+      "content_sha256": "7e98eabdc00c96e86f84393363a55c1ecf98db9d831995799f5668646c659fe4",
       "related_topics": [
+        "21_游戏网络/客户端预测",
+        "21_游戏网络/对局服务器架构",
         "21_游戏网络/客户端预测",
         "21_游戏网络/游戏网络时钟",
         "21_游戏网络/快照同步",
@@ -4488,7 +4503,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“基线与离散状态”。",
-      "content_sha256": "f48858c03f1242fb002508405ea3ccc9ca1e20f8e86c6982b2248cc989b8ac42",
+      "content_sha256": "cfea48e83dfa65dd344a961c2896ba70b941cf7972643f810415cd1788fe6d62",
       "related_topics": [
         "21_游戏网络/客户端预测",
         "21_游戏网络/游戏网络传输",
@@ -4540,8 +4555,9 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“四个时间戳”。",
-      "content_sha256": "6a64af359661a66214c793cf71873a39961749735aaf6d3040ea618006f8beb6",
+      "content_sha256": "5e5eda27ef4b5aae3b5d2161e460754b87688566e10302d13f5f9ee16e65a3e2",
       "related_topics": [
+        "21_游戏网络/快照同步",
         "21_游戏网络/快照同步",
         "16_编程与数据结构/进程与调度",
         "21_游戏网络/游戏网络传输",
@@ -4710,7 +4726,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属保持23_引擎运行系统；相关主题承接其他主问题。",
-      "content_sha256": "512206722f4b15d772c4b354a5e5cc34d8ab19032733c34ac4989eba2fefed68",
+      "content_sha256": "30a02cdc1e541b8fe78e1b77cdd8c49aeb508256770fd4dac50df3996205bae6",
       "related_topics": [
         "16_编程与数据结构/对象生命周期",
         "23_引擎运行系统/引擎世界与对象模型",

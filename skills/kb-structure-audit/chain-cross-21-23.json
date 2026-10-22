@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/21_游戏网络/RPC.md",
+      "content_sha256": "1a0418dd8eb82f30067899fa732d38fda114bba6f9b7acb1f6cb5e9319bb2122",
+      "full_body_read": true,
+      "interfaces": [
+        "版本封套→白名单分发→请求表结束",
+        "身份权限→业务事务去重→余额和结果同事务",
+        "提交→outbox→接收幂等→确认及清理"
+      ],
+      "counterexamples": [
+        "客户端本地绝对deadline若直接比较服务器单调时刻，可能立即过期或永不过期；改为明确相对处理预算、本地等待与服务端订单有效期三个界限",
+        "提交后丢应答重试仍返回旧业务结果；账号与请求唯一键、载荷核对和事务覆盖一致",
+        "outbox先标完成会丢，后标允许重复由接收去重吸收"
+      ],
+      "changed_by_cross_review": true,
+      "independent_status": "PASS_AFTER_BODY_REVIEW_AND_REPAIR",
+      "basis": "独立全文逐机制及相邻交付复读；未读取作者报告判定正文通过"
+    },
+    {
+      "path": "知识库/21_游戏网络/客户端预测.md",
+      "content_sha256": "f808523e01dc7a80804f35c1b9ae74e38d101e43337b65fe54d1e9cbf20596ee",
+      "full_body_read": true,
+      "interfaces": [
+        "输入会话/序号→一固定步控制→服务端实际消费",
+        "同Tick完整状态/ACK→恢复→按新锚点映射待输入→外部平台依赖",
+        "重复模拟事件ID→确认或取消→逻辑与表现分离"
+      ],
+      "counterexamples": [
+        "同ACK新Tick仍要接受平台/外力更新，正文明确",
+        "中性输入推进后不能把未ACK数当Tick；tickAck+i是可重映射预测而不是客户端执行权限",
+        "旧预测纪元清队列不能取消已经提交的业务开火，正文与会话关闭屏障关联",
+        "移动碰撞重放后8+5−1应墙前停再退到9，不能加法到12"
+      ],
+      "changed_by_cross_review": false,
+      "independent_status": "PASS_AFTER_BODY_REVIEW_AND_REPAIR",
+      "basis": "独立全文逐机制及相邻交付复读；未读取作者报告判定正文通过"
+    },
+    {
+      "path": "知识库/21_游戏网络/对局服务器架构.md",
+      "content_sha256": "80acbd6e9393a44ae89508e9fa4a2e4a89ef1a99a0db92e874b07bcf1d76017a",
+      "full_body_read": true,
+      "interfaces": [
+        "分配ID→容量预留→进程启动→Ready→路由票据",
+        "权威epoch→耐久Tick事务及结果→异步幂等奖励",
+        "完整快照/日志引用→日志裁剪→新epoch恢复Ready"
+      ],
+      "counterexamples": [
+        "Ready检查通过后取消分配、再发布路由存在竞态，改同一事务Allocated→Ready及取消CAS顺序",
+        "快照文件写完但引用未提交时旧日志仍保留；引用提交后文件已持久可读",
+        "105结果提交但未广播崩溃后恢复返回旧结果，106未提交需重试",
+        "输入与外部决策日志保留确定重放状态，哈希失败走明确故障处理而非假恢复"
+      ],
+      "changed_by_cross_review": true,
+      "independent_status": "PASS_AFTER_BODY_REVIEW_AND_REPAIR",
+      "basis": "独立全文逐机制及相邻交付复读；未读取作者报告判定正文通过"
+    },
+    {
+      "path": "知识库/21_游戏网络/延迟补偿命中.md",
+      "content_sha256": "7e98eabdc00c96e86f84393363a55c1ecf98db9d831995799f5668646c659fe4",
+      "full_body_read": true,
+      "interfaces": [
+        "输入生成年龄→实际显示r校验→目标历史段",
+        "实际消费输入Tick移动阶段→权威射手枪口",
+        "历史最近命中→当前实例代数与存活→一次扣弹伤害耐久结果"
+      ],
+      "counterexamples": [
+        "独立单调播放r在恢复时不等于t_fire−目标D，改用请求记录实际r，限制画面年龄和连续呈现段",
+        "枪口按生成墙钟回退与服务端下一可执行Tick消费输入冲突，改消费步先移动再开火，作者确认协议一致",
+        "跨传送段或更近门遮挡要离散查询，不把仅目标回溯当完整历史",
+        "重生实例同ID不同代数不能接受旧命中；重复请求不得重查后改判"
+      ],
+      "changed_by_cross_review": true,
+      "independent_status": "PASS_AFTER_BODY_REVIEW_AND_REPAIR",
+      "basis": "独立全文逐机制及相邻交付复读；未读取作者报告判定正文通过"
+    },
+    {
+      "path": "知识库/21_游戏网络/快照同步.md",
+      "content_sha256": "cfea48e83dfa65dd344a961c2896ba70b941cf7972643f810415cd1788fe6d62",
+      "full_body_read": true,
+      "interfaces": [
+        "量化整数→已确认基线差量→恢复整数状态→ACK",
+        "到达右端间隔P95→目标D→单调播放r",
+        "基线窗口代次协商→拒绝旧代包→释放32槽",
+        "段ID→插值/有限外推/冻结→新锚点"
+      ],
+      "counterexamples": [
+        "迟到旧包连发不能证明右端持续供给，P95只统计推进最新服务器时间的样本",
+        "32槽若等在途寿命且继续收新基线会溢出，改窗口代次确认、旧包拒绝及满槽暂停确认",
+        "基线42缺失时43不确认，不能加在40号上",
+        "传送不能连续插值，renderTime不能随时钟矫正倒放"
+      ],
+      "changed_by_cross_review": true,
+      "independent_status": "PASS_AFTER_BODY_REVIEW_AND_REPAIR",
+      "basis": "独立全文逐机制及相邻交付复读；未读取作者报告判定正文通过"
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络时钟.md",
+      "content_sha256": "5e5eda27ef4b5aae3b5d2161e460754b87688566e10302d13f5f9ee16e65a3e2",
+      "full_body_read": true,
+      "interfaces": [
+        "四时间戳→RTT扣处理时间/偏移不对称限制",
+        "低RTT中点→长跨度拟合→物理频偏",
+        "旧映射now输出→连续锚点→相位速率及正斜率",
+        "服务器纪元与本地同步代次→Tick锚点"
+      ],
+      "counterexamples": [
+        "oldNow加负相位限幅仍在更新瞬间倒退，即使只有1毫秒；改Sref=oldNow，phaseRate只改变未来",
+        "aClock±200ppm与暂时phaseRate±0.01分开，最低速率0.9898>0",
+        "客户端相位恢复不能擅自改变服务器纪元，改本地同步代次及暂停依赖时间请求",
+        "固定不对称偏置无法由回归消除，正文仍保留"
+      ],
+      "changed_by_cross_review": true,
+      "independent_status": "PASS_AFTER_BODY_REVIEW_AND_REPAIR",
+      "basis": "独立全文逐机制及相邻交付复读；未读取作者报告判定正文通过"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/引擎渲染扩展导读.md",
+      "content_sha256": "65fd47526a3e17bd62999c843d573180472d96a06b0cb34ef93da3ab4c6ff712",
+      "full_body_read": true,
+      "interfaces": [
+        "资源和阶段需求→材质/网格/图通道选择",
+        "通用帧所有权→具体引擎接口→版本与验证"
+      ],
+      "counterexamples": [
+        "选中遮罩输出材质不能替代对象筛选与图资源依赖",
+        "资源创建却没有读取依赖可能被图剔除，导读定位到专篇而不虚构引擎已运行"
+      ],
+      "changed_by_cross_review": false,
+      "independent_status": "PASS_AFTER_BODY_REVIEW_AND_REPAIR",
+      "basis": "独立全文逐机制及相邻交付复读；未读取作者报告判定正文通过"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
+      "content_sha256": "30a02cdc1e541b8fe78e1b77cdd8c49aeb508256770fd4dac50df3996205bae6",
+      "full_body_read": true,
+      "interfaces": [
+        "GC可追踪边→强/弱/软所有权",
+        "NewObject/加载/SpawnActor→组件完成→BeginPlay",
+        "请求世界代数→GT采用强字段→释放本请求句柄",
+        "EndPlay业务退出→BeginDestroy线程释放→完成栅栏→最终销毁"
+      ],
+      "counterexamples": [
+        "普通C++宿主内TObjectPtr不会自动让宿主进GC图，Outer也不代替强引用",
+        "旧异步回调已排队时取消不一定阻止回调，弱宿主+请求/世界代数共同拒绝",
+        "旧回调只能释放自己句柄，不能清掉新请求句柄",
+        "可达对象可能已EndPlay，玩法状态与内存存活不同；渲染命令未完成不能立即释放"
+      ],
+      "changed_by_cross_review": false,
+      "independent_status": "PASS_AFTER_BODY_REVIEW_AND_REPAIR",
+      "basis": "独立全文逐机制及相邻交付复读；未读取作者报告判定正文通过"
+    }
+  ],
+  "actual_checks": [
+    "protocol/test_clock.py:4项先失败后实现并通过",
+    "protocol/test_protocol.py:15项通过；包括实际子进程退出、SQLite持久状态恢复"
+  ],
+  "remaining_runtime_evidence": "真实网络/引擎/视频运行未增加；本次结论来自正文可推演及反例修复，未以运行声明填补机制。"
+}

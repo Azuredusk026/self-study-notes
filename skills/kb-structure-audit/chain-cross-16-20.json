@@ -1,0 +1,207 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "content_sha256": "ba158c74f95229edd49cadffe0d0ef067e7056e0c2da465a24bb5fa94302ceb2",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "构建预处理/翻译单元/链接/加载阶段与缺符号归属连续。",
+        "ODR/布局/资源复制移动/异常保证→C ABI版本前缀/分配释放方成立。",
+        "同一同步门Closing与在途计数，回调注销不等于执行完毕，清理入口仍保模块加载。",
+        "COM成功QueryInterface独立引用与Apartment传递均有具体释放方；未找到新增主要断链。"
+      ],
+      "conclusion": "已按正文逐主要机制及相邻状态反证，发现的问题实际修正文；结论不由质量矩阵或样例通过推出。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/内存布局与分配.md",
+      "content_sha256": "da43ee22f7d5be8a1da3f6a374de014dec2d88b3fd750ddfbc6a35b690bfb2ff",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "栈堆/虚拟物理/碎片/Buddy/缓存冲突/线性对齐逐项推演，数例和失败输入成立。",
+        "发现槽位归零后可新领取、CPU先释放后GPU值才登记的空隙，补Open/Closing同门、提交值登记先于最后引用释放。",
+        "补同队列提交值原子max，防迟到的小值覆盖最后需要等的大值；41/17与42/16的原反例仍成立。"
+      ],
+      "conclusion": "已按正文逐主要机制及相邻状态反证，发现的问题实际修正文；结论不由质量矩阵或样例通过推出。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/文件IO.md",
+      "content_sha256": "4a50ef6f87a8c2854b6489995e4a5906d2e3755f6f956c4a3a0ec4451451566c",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "短读与EOF→格式上限→异步提交/取消/终态→解码所有权→提交代次检查完整。",
+        "实际发布在同一锁或主线程重新核对代次，取消不会在检查与发布间穿插。",
+        "多文件读者固定一次清单版本，旧目录等读者退出；未找到新增主要断链。"
+      ],
+      "conclusion": "已按正文逐主要机制及相邻状态反证，发现的问题实际修正文；结论不由质量矩阵或样例通过推出。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法与数据结构导读.md",
+      "content_sha256": "76401e70fa0b8dc72675a2fd9a677840a0541653c5e14f6f4b4d94b56594ce1a",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "全文读取：求解/容器/图/空间路线按工作负载分别进入，示例资产依赖与近邻查询具消费关系。",
+        "导读链接主归属且未把核心公式封装成空函数；按导读原职责保持正文。"
+      ],
+      "conclusion": "已按正文逐主要机制及相邻状态反证，发现的问题实际修正文；结论不由质量矩阵或样例通过推出。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/进程与调度.md",
+      "content_sha256": "ffe6c039607b1a6bff9a39b65f960862d5942089d309462c0ee39b20e10f699b",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "用户内核态与线程调度状态明确；异步不等并行，系统调用不等线程切换。",
+        "累计器0.055→两步余0.015，过载最多5步并区分权威规则。",
+        "子进程并行排空stdout/stderr、限制保留而非停止读取、结构帧短读与EOF、取消进程树及产物校验完整；未新增修订。"
+      ],
+      "conclusion": "已按正文逐主要机制及相邻状态反证，发现的问题实际修正文；结论不由质量矩阵或样例通过推出。"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+      "content_sha256": "0b07a11a4e24472b1bd30a3a49138c0e2962bbe3f8ca2f45cb53fc0de7486c97",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "任务解析/规划/执行/技术视觉批准/取消对账、源版本/真实变换验证、单写工具入口都已全文检查。",
+        "发现可变场景代次若进入稳定操作参数，会阻止接管后同op恢复，补授权封套与业务摘要分离。",
+        "保留同op异业务内容拒绝、完整宿主事务或隔离场景快照、资产标记对账、版本哈希批准与条件发布。"
+      ],
+      "conclusion": "已按正文逐主要机制及相邻状态反证，发现的问题实际修正文；结论不由质量矩阵或样例通过推出。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Character Controller.md",
+      "content_sha256": "1b6623cb2c45fec8a655067d2cf12967ead83726a2f0c154d446b29e07f8951e",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "扫掠skin比例→单面剩余→两面活动约束交线→第三平面检查→台阶候选完整提交成立。",
+        "坡度方向/平台旋转/携带扫掠/跳离速度与实际位移反馈链成立。",
+        "发现最近旧安全点可因动态墙失效，补在当前碰撞世界重查，旧点也无效时请求完整胶囊查询的恢复点。"
+      ],
+      "conclusion": "已按正文逐主要机制及相邻状态反证，发现的问题实际修正文；结论不由质量矩阵或样例通过推出。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+      "content_sha256": "014ceb048a517b4f9773e508ec0490b939ccbfafa21fd0038f86e0daba62e228",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "骨骼刚体偏移→世界速度/四元数短弧→同阶段切换控制权→捕获局部姿态→新根对齐与胶囊门禁完整。",
+        "发现恢复yaw的“选定朝向”缺数据来源，补起身资产标定骨盆局部站立前向→世界投影→Up构根，退化沿用倒地前水平前向。",
+        "纯表现与关节驱动控制权分离，受击取消起身重建姿态速度，并保持胶囊/肢体唯一阻挡。"
+      ],
+      "conclusion": "已按正文逐主要机制及相邻状态反证，发现的问题实际修正文；结论不由质量矩阵或样例通过推出。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/破坏系统.md",
+      "content_sha256": "5f8f5cc32242cc2bbbcb0ee4337d626ca5a2c86c723805dcef15ca2504da5ac9",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "离线几何与黏结→径向累积损伤→支撑传播→簇质量/惯性/局部凸包/速度→候选版本物理提交→权威事件/回收逐项推演。",
+        "候选拓扑/物理/事件共同提交已解释，失败事件不可提前去重；存在替代连接时不脱落的反例成立。",
+        "预算仍只有代理名称，补关键/装饰分量的确定排序和槽位预留，代理按节点集合匹配预制凸子形状，不可用整框凸包封通道。",
+        "明确代理减少形状不自动减少独立刚体数，5关键分量/4槽必须有界暂缓或拒绝并保留旧版本。"
+      ],
+      "conclusion": "已按正文逐主要机制及相邻状态反证，发现的问题实际修正文；结论不由质量矩阵或样例通过推出。"
+    },
+    {
+      "path": "知识库/20_游戏AI/MCTS.md",
+      "content_sha256": "6621c0c0f0e1d17694d69053e4508d5b66530d4725efe9440883c118099cbf7f",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "状态/合法动作/扩展/随机模拟/UCT对手符号/统一根收益回传/最终行动与预算/根复用均全文检查。",
+        "新根视角转换需同时反转W和行动者标记，机制正确；实际状态版本不符重建也成立。",
+        "发现复用后的N守恒仍按空根说明，补历史叶样本差、本轮N增量和不允许仅重置N保留W。",
+        "真实参考树120轮中子树根N116、子节点和115，验证差1；MCTS两项和破坏六项现有测试重跑通过，不据其判文章。"
+      ],
+      "conclusion": "已按正文逐主要机制及相邻状态反证，发现的问题实际修正文；结论不由质量矩阵或样例通过推出。"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI决策模型.md",
+      "content_sha256": "6014c6b9002dd8e6768628a18bc6b831dac376cf33f7a949975c427e1e387146",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "脚本/规则/BDI、FSM/HFSM生命周期与公共祖先、记忆/反应行为树、观察中止及叶实例状态都已逐项复读。",
+        "乘法/几何均值与必要门禁、迟滞/持续时间明确；GOAP回归负效果和HTN临时状态/分支回滚明确。",
+        "只读黑板快照→动作前置检查→真实结果更新事实，异步实例ID拒绝旧回调已连贯；未发现需新增修正文的主要机制。"
+      ],
+      "conclusion": "已按正文逐主要机制及相邻状态反证，发现的问题实际修正文；结论不由质量矩阵或样例通过推出。"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI导航.md",
+      "content_sha256": "9dc4a0bdf26d02e6f9b912e400015ca1f7dd92c46c6a93892f5048cad89f0832",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "可行走体素/净空/舍入→邻接/区域/凸多边形→A*完整主归属→门户漏斗索引回退→前视首选速度。",
+        "ORCA圆弧/两切线最近点、内外法线/责任半平面、重叠dt分支逐式核对；圆弧法线dot(n,p)<=-R及射线切点距离维度成立。",
+        "凸域候选覆盖内点/直线/圆弧/交点；加入第二加速度圆时补交点，空集走可达制动与控制器不声称安全。",
+        "控制器真实位移→门户进度/部分终点/阻塞→走廊版本及新路径代次成立，未发现需要新增修订的主要断链。"
+      ],
+      "conclusion": "已按正文逐主要机制及相邻状态反证，发现的问题实际修正文；结论不由质量矩阵或样例通过推出。"
+    }
+  ],
+  "verification": [
+    "MCTS实际子树计数116/115差1",
+    "MCTS参考2项PASS",
+    "破坏参考6项PASS",
+    "网络/物理旧reference17项PASS",
+    "review_reference15项PASS"
+  ]
+}

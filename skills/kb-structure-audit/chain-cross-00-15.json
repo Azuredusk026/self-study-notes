@@ -1,0 +1,189 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/00_知识库说明/技术中文写作规范.md",
+      "full_text_read": true,
+      "content_sha256": "2aa55f0268d4e7d2d8794b79f06b7356bf6edc34084d1ee050e39489166c6150",
+      "reader_trace": "因果、主语、过渡、正例与复读规则相连，规则并不把公式或数例数量当深度。",
+      "counterexample": "同位置不同拓扑的外扩方向不能只靠位置判断；规则示例及描边链接保留归属。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/00_知识库说明/知识地图.md",
+      "full_text_read": true,
+      "content_sha256": "7017f0e8c00c0e7c8b2581dd6a996c720150a40d2211203342fe31baefeb6ce1",
+      "reader_trace": "六条工程路线与27领域入口完整读取，前置到主归属再到下游的职责明确。",
+      "counterexample": "历史命中与整世界回滚目标不同，联机路线能分别定位。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/光栅化可见性.md",
+      "full_text_read": true,
+      "content_sha256": "e4711efe5fbded08da7f2bae1aa7dd73db879b366cd356a0e68337b806a07ca9",
+      "reader_trace": "覆盖→深度约定→深度生成与拒绝→模板区域选择，导读链接各主归属。",
+      "counterexample": "没有预通道仍可用先前绘制写下的深度，正文覆盖此输入。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/可见性与合成.md",
+      "full_text_read": true,
+      "content_sha256": "68bdc4f4b4c41a2220e8d58dca13e183b331851df80b37d2780eeb6a3f8db82e",
+      "reader_trace": "对象候选与样本合成分层，阴影视图和主相机可见性分别判断。",
+      "counterexample": "主相机不可见而阴影可见时不能沿主视图一起删掉。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
+      "full_text_read": true,
+      "content_sha256": "5f51c8f4aab99e75bc4b9491a16c2101b3149ea5724c3da110e502eb32ac6792",
+      "reader_trace": "CPU记录、GPU执行与呈现依赖沿同一时间线，入口分别承担实现。",
+      "counterexample": "CPU帧槽位/交换链索引不能当GPU完成，导读明确回到命令提交。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/GI方案选择.md",
+      "full_text_read": true,
+      "content_sha256": "b12cf2af945ecdd790de5fd78dafadde5c1f9686b8814de3c748411c3b1e622e",
+      "reader_trace": "表面纹理/空间探针/持续更新表示依据运动与入射光类型选择，组合关系明确。",
+      "counterexample": "静态场景中的运动角色仍选空间采样，不因场景静态直接读固定Lightmap。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/06_纹理技术/视差映射.md",
+      "full_text_read": true,
+      "content_sha256": "41b4a0e4cbd7957559dacc237002660de7954e63b0c2884d952eb57fe0ba6d55",
+      "reader_trace": "高度/深度约定→切线UV尺度→逐层残差→PomHit UV与depth→自阴影→偏移UV材质采样，真实GLSL接口已接通。",
+      "counterexample": "rayUV为0仍返回depth供光线步进；薄峰漏采样不因插值消除。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/07_颜色与后处理/Alpha表示.md",
+      "full_text_read": true,
+      "content_sha256": "3eef24e2d962d155d01711005064c4fcb260c9185013a85791f93eb018a1dca8",
+      "reader_trace": "线性预乘在过滤前→纹理视图解码→tint透明度同时缩Cp/Alpha→Over合成→显示编码，正文与主归属相接。",
+      "counterexample": "tintA=.5只改Alpha而不改预乘RGB会过亮；已给.25贡献数例。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/07_颜色与后处理/后处理链.md",
+      "full_text_read": true,
+      "content_sha256": "73fc64ff047404450f75a773b392316c2f79f72c1e6f3348f57119cc4dd3ff8d",
+      "reader_trace": "资源颜色域/曝光/分辨率/历史状态先定位，再选Bloom/AO/景深/色调映射的生产消费阶段。",
+      "counterexample": "显示编码后的信号不能直接使用场景HDR提取阈值。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/09_动画系统/角色动画导读.md",
+      "full_text_read": true,
+      "content_sha256": "abd38bca6e939261e4cd9d876481a40d68ac1ec0869450616b33f13258dd09a9",
+      "reader_trace": "姿态求值/混合/IK/蒙皮与面部布料毛发输入输出关系分别定位。",
+      "counterexample": "骨角误差小不证明长骨末端变形小，压缩沿最终变形验收。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/VFX效果组合.md",
+      "full_text_read": true,
+      "content_sha256": "8209fbda707a0f96c66cc11fdb779e9d346fb67145ef7794296839271d49d814",
+      "reader_trace": "时间纹理、覆盖、背景颜色偏移、深度淡化及粒子模拟明确分工，并链接实际空间和颜色契约。",
+      "counterexample": "深度淡化不解决背景颜色采样时机形成的反馈。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
+      "full_text_read": true,
+      "content_sha256": "d228cbd5257abe805002b2b15e33b56cdc9cadd59ad9bb60c2bb72c4c842e0f4",
+      "reader_trace": "形状尺度/色板/明暗/线条分别连接材质、描边与资产运动；组合按观察距离调整。",
+      "counterexample": "远景固定粗线盖主体时回轮廓尺度，而非继续增加纹理高频。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/描边.md",
+      "full_text_read": true,
+      "content_sha256": "123ab9a80c1fe11677f5cf40482eb0e8a8d33ef0f51b3e53fcdd82ba42a18199",
+      "reader_trace": "全文读取壳剔除深度、独立方向加权、数据通道与蒙皮、像素宽度、模板身份、屏幕深度/法线/ID和时域合成。主路线保持标杆职责。",
+      "counterexample": "共享二值模板遮罩会消除对象之间的边；ID颜色平均丢失类别，正文能推出失败。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/12_光线追踪/ReSTIR.md",
+      "full_text_read": true,
+      "content_sha256": "ed25c618d9c5e8626d811b77cee20e24431d8d410fd11c4f4cb1e06d9bf80d2a",
+      "reader_trace": "初始RIS→源W/M目标重评估→A/B/C/H冻结缓冲→支持D或来源h第二遍归一化→当前可见性，同一测度与历史上下文有明确交付。",
+      "counterexample": "当前{a,b}/源{a}朴素期望1.5；支持或连续h分摊恢复2。无代表源仍保留M与支持，动态面光参数测度单列。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/13_渲染架构/Command Buffer与帧提交.md",
+      "full_text_read": true,
+      "content_sha256": "babf3cfc5851a837495c0ba6c85ffef1191441004bcc09e4c47dbd63e46b51c4",
+      "reader_trace": "记录/执行/完成区分，帧槽位回收、CPU快照与GPU引用寿命、多线程依赖提交和失败状态相接。",
+      "counterexample": "Execute后Signal失败不意味着GPU没执行，不能恢复到可复用槽位。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/13_渲染架构/GPU资源绑定.md",
+      "full_text_read": true,
+      "content_sha256": "b2f0d4f812e2d983b7e1c95328b9866def2de0ba43b67c7b1dd3dba6fd108ee4",
+      "reader_trace": "材质布局/对齐/上传刷新/绑定基址动态偏移→索引发布→多队列完成回收形成闭环。",
+      "counterexample": "第二帧第3记录4864若重复基址会读8960；地址正确但漏刷新仍可能旧数据。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/13_渲染架构/渲染命令的组织方式.md",
+      "full_text_read": true,
+      "content_sha256": "19438daf4837cd356c1fb53b2363a1dd1b9d7b967e3500e1d998d76b630e05b7",
+      "reader_trace": "图编译、附件范围、命令记录、访问可见性与物理回收分别给明确阅读消费者。",
+      "counterexample": "Close完成不允许回收GPU仍在读的附件。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/13_渲染架构/渲染路径与光源组织.md",
+      "full_text_read": true,
+      "content_sha256": "6faf0aef5c1af11dc24a682873e63e04b7e101a028e1da20388fb2741276b85b",
+      "reader_trace": "着色求值时机和灯列表组织是两个独立选择轴，成本按实际组合核对。",
+      "counterexample": "透明较多与局部灯较多可用Forward+，Tiled并非Deferred独占。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/PSO首次使用卡顿.md",
+      "full_text_read": true,
+      "content_sha256": "28f29a47b6ff0fdd04cece06ff960df297e61d67dd7725f0579bbd8dd88d537d",
+      "reader_trace": "完整键→请求状态→封闭首屏必需集合→Ready发布/首用策略→缓存层/回收时间，失败不能当剩余数为零。",
+      "counterexample": "已完成但LRU删除后再次首用仍可能重建，四时刻区分原因。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/帧捕获与性能分析工具.md",
+      "full_text_read": true,
+      "content_sha256": "14c504485acdd4ddb7ba386c71e3e96caf888837bd4e4f1548237d670b738144",
+      "reader_trace": "长trace异常frameId→提交/GPU事件标记→同帧资源消费/像素历史→独立包计时；时钟域与工具插桩分开。",
+      "counterexample": "同名标记4与6毫秒先对事件集合和异步变化，不平均为5毫秒。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/帧瓶颈诊断.md",
+      "full_text_read": true,
+      "content_sha256": "1559b340e8073fe0a8b5ce009670bf4c1b414dcbe030a902f85ec03a7826541d",
+      "reader_trace": "有效工作/等待→隔离实验→像素/缓存/驻留资源账本→同步前驱与显存预算事件相连。",
+      "counterexample": "复制7毫秒已完成却等到11时查提交而非单凭图形空泡判断GPU算术慢。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/性能对照实验.md",
+      "full_text_read": true,
+      "content_sha256": "5fb1358dfb373e5eba4dd39100b29c00241e0e610bff85757e2435634898dd2e",
+      "reader_trace": "冻结条件→ABBA反向配对→依赖关键路径→可否定像素模型→相同路径重复测量，数例与测量分开。",
+      "counterexample": "ABBA两差统一A-B；模型拟合吻合不能单独证明带宽瓶颈。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/大型资产版本控制.md",
+      "full_text_read": true,
+      "content_sha256": "5ac11de7e85c238b339ecf97f19294584935abef8d43388569d5d84ba396e70d",
+      "reader_trace": "文件粒度/历史对象/锁/原子交付/构建审查/备份恢复与C-P-H-N-F身份链衔接完整。",
+      "counterexample": "锁证明编辑约定不证明服务端基线新鲜，A锁C遇D先保存副本再合并。",
+      "judgment": "直接正文逐机制与相邻接口推演；具体关系成立，不以矩阵或检查结果推断"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/21_游戏网络/RPC.md",
+      "content_sha256": "20ea8fb03206fa2ee07b34cef1b4d4929732b95c1d4c22a999ed2ea3dcaa9c04",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "封套→解析白名单→请求应答匹配→超时未知→相同业务ID重试；补截止时间与取消不撤销已提交效果。",
+        "原文同库去重和发件箱已完整复读，保持；补有限去重窗口与交易有效期衔接，防清理后旧ID重新执行。"
+      ],
+      "decision": "主要机制及相邻状态已逐项推演，独立交叉复读继续按正文反证，不以历史检查结果判通过。"
+    },
+    {
+      "path": "知识库/21_游戏网络/客户端预测.md",
+      "content_sha256": "f808523e01dc7a80804f35c1b9ae74e38d101e43337b65fe54d1e9cbf20596ee",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "输入帧重采样→输入会话/序号→完整模拟状态与ACK同边界→按锚点重放→外部平台Tick依赖→显示偏移。",
+        "原文墙面/回绕数例成立；补不是位移重放所需速度/模式/冷却/RNG状态、平台按Tick历史与未来依赖校正。",
+        "预测纪元不同于业务输入会话，不能清队列就撤销已入队交易。"
+      ],
+      "decision": "主要机制及相邻状态已逐项推演，独立交叉复读继续按正文反证，不以历史检查结果判通过。"
+    },
+    {
+      "path": "知识库/21_游戏网络/对局服务器架构.md",
+      "content_sha256": "76f03dd922c491e2039eab38a94d3a8f97be85721d2f0064aca78e4d0787b004",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "稳定分配ID与原子容量预留→启动→Ready发布→席位票据→路由→同库权威栅栏。",
+        "原文结果ID幂等保持；补运行中快照/日志共同边界、日志清理顺序、替代epoch、输入重放和事件发件箱。",
+        "快照100/日志105/106未提交反例明确恢复边界，不能由路由重建热状态。"
+      ],
+      "decision": "主要机制及相邻状态已逐项推演，独立交叉复读继续按正文反证，不以历史检查结果判通过。"
+    },
+    {
+      "path": "知识库/21_游戏网络/延迟补偿命中.md",
+      "content_sha256": "cf758e56a7cf239dacb6570d1880282dfcfecdb3630684857e97755bcb5e60a0",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "射手生成时刻枪口与远端插值时刻目标分开，门/平台统一查询目标显示时刻；补离散事件有效时间。",
+        "原文球交点/窗口/代数/作用域恢复成立；补最近遮挡交点、稳定平局、当前目标存活政策、射击去重与状态提交。"
+      ],
+      "decision": "主要机制及相邻状态已逐项推演，独立交叉复读继续按正文反证，不以历史检查结果判通过。"
+    },
+    {
+      "path": "知识库/21_游戏网络/快照同步.md",
+      "content_sha256": "63498c0394c573e92abc4e60713c073d69c9f29bc75fe60680fbe38662a07ba0",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "量化→已确认基线→有界保留/协商停止引用→缺基线不ACK→完整快照恢复→显示插值。",
+        "补64样本到达间隔P95自适应公式、受限播放率、100ms外推、长断裂冻结/重建，明确时钟与播放时间衔接。",
+        "传送段与代数界限保留，不能把跨段当连续轨迹。"
+      ],
+      "decision": "主要机制及相邻状态已逐项推演，独立交叉复读继续按正文反证，不以历史检查结果判通过。"
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络时钟.md",
+      "content_sha256": "b8e2a71399c0ea1b5ed21cff081eba56baeaa93d7a68bc110921b3ac931d586a",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "四时间戳剥离服务器等待→低RTT相位样本→跨时间锚点最小二乘频率→速率限制连续映射→Tick锚点。",
+        "补100ppm/100秒漂移反例；a不再交给未展开的工程拟合；定义16锚点/5秒跨度/200ppm边界与异常重同步。",
+        "路径不对称仍误差，固定步物理不消费时钟校正量。"
+      ],
+      "decision": "主要机制及相邻状态已逐项推演，独立交叉复读继续按正文反证，不以历史检查结果判通过。"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/引擎渲染扩展导读.md",
+      "content_sha256": "65fd47526a3e17bd62999c843d573180472d96a06b0cb34ef93da3ab4c6ff712",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "全文原样保持。材质遮罩/对象筛选/图读写分别有作用，具体描边路线从需求到独立输出再交回颜色链成立。",
+        "色调映射前后选择对应曝光语义，未声明依赖剔除有具体诊断，指向各实现主归属准确；导读没有承诺实现被抽象函数遮蔽的算法。"
+      ],
+      "decision": "主要机制及相邻状态已逐项推演，独立交叉复读继续按正文反证，不以历史检查结果判通过。"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
+      "content_sha256": "30a02cdc1e541b8fe78e1b77cdd8c49aeb508256770fd4dac50df3996205bae6",
+      "full_body_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "可达图/反射宿主/强弱软引用→NewObject与SpawnActor/加载入口→初始化/BeginPlay→EndPlay→底层销毁就绪。",
+        "补PostLoad与生成入口互斥、延迟构造与FinishSpawning、流式重入保留成员的玩法代数。",
+        "补异步请求Pending/Installed/Failed/Cancelled状态、旧回调只释放自身句柄、强字段接管先于释放。",
+        "补渲染线程释放完成信号和IsReadyForFinishDestroy职责，GC循环与TStrong外部根区分。"
+      ],
+      "decision": "主要机制及相邻状态已逐项推演，独立交叉复读继续按正文反证，不以历史检查结果判通过。"
+    }
+  ],
+  "verification": "本轮再次执行revision_16_21的17项及review_reference的15项测试；只支持现有样例行为，新增协议/频率/调度规则主要由正文公式与反例追踪，不宣称实服或引擎执行。"
+}
