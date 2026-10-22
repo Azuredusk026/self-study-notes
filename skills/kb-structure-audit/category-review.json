@@ -3178,15 +3178,21 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属13_渲染架构；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "3a5e137ec1a080ef0b2c0d9259314b87ce1f48ef883e872e0c60b103c3695c01",
+      "content_sha256": "befe6f0ad00cd2c655793c747a3d6f70c036244ccb7bd287addfa1b5ac6598c5",
       "related_topics": [
+        "13_渲染架构/GBuffer布局",
+        "02_GPU与光栅化管线/深度缓冲与位置重建",
+        "04_光照模型与PBR/BRDF与微表面模型",
+        "05_光照阴影与GI/直接光照",
         "13_渲染架构/Tiled与Clustered光源剔除",
+        "02_GPU与光栅化管线/透明合成",
+        "22_渲染引擎实现/引擎渲染扩展导读",
         "02_GPU与光栅化管线/渲染帧流程",
         "05_光照阴影与GI/直接光照",
         "13_渲染架构/GBuffer布局",
-        "13_渲染架构/渲染命令的组织方式",
-        "14_性能分析与优化/帧瓶颈诊断",
-        "13_渲染架构/渲染路径与光源组织"
+        "13_渲染架构/Tiled与Clustered光源剔除",
+        "13_渲染架构/渲染路径与光源组织",
+        "14_性能分析与优化/帧瓶颈诊断"
       ],
       "historical_content_sha256": "823a1e9c964035a6ed6f787f8bde4e145280bcff6f477ed1d96b0997e48bbd3d"
     },
@@ -3631,7 +3637,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属15_资产与工具管线；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "d0a792913ebf20550863731b0624e19a63303137b22ef93c99ed4b285ab7707e",
+      "content_sha256": "afb4266f85caa17b60333c8e6ce8abefdff48fd61c85cb4be4f5001ce20990f3",
       "related_topics": [
         "15_资产与工具管线/资产构建与发布",
         "15_资产与工具管线/资产构建与发布",
@@ -4089,7 +4095,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属17_AIGC与Agent管线；相关主题保留前置与后续专篇，新增机制落在“坐标换算与遮挡拒绝”。",
-      "content_sha256": "34e7f125aa1df67b232daec36c907bfb81c20c710943f71fa595e5eee625a0de",
+      "content_sha256": "24c5ed251bdeae3d2e6bc50afcf7ebdf088aab3e8275307cab417ee1db26302f",
       "related_topics": [
         "17_AIGC与Agent管线/ComfyUI工作流",
         "02_GPU与光栅化管线/抗锯齿与时域重建"
@@ -4209,8 +4215,9 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属18_游戏物理与模拟；相关主题保留前置与后续专篇，新增机制落在“悬挂到接触力”。",
-      "content_sha256": "975212fc778c171b54ae9efbf3998dc8d687809ff2524f0485abb831f3462495",
+      "content_sha256": "575a38cc1793602af42e7c76ab99a8cb6e42459472a75a313eed24f3c09e5a3a",
       "related_topics": [
+        "18_游戏物理与模拟/刚体物理求解",
         "18_游戏物理与模拟/刚体物理求解",
         "19_Gameplay与游戏框架/输入与动作状态",
         "18_游戏物理与模拟/Character Controller",
@@ -4392,8 +4399,9 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“复制迟滞与权威交接”。",
-      "content_sha256": "a8149ed51654a8ab201d4831a508cd4e25b1190d4c6287ba78952155d047572b",
+      "content_sha256": "d57c380de74ccb336c304cf70e45b0034e96e831956f9aceb531a744cdb429ed",
       "related_topics": [
+        "21_游戏网络/对局服务器架构",
         "21_游戏网络/对局服务器架构",
         "16_编程与数据结构/空间索引",
         "21_游戏网络/服务端反作弊校验"

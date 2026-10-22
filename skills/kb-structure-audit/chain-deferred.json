@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/13_渲染架构/Deferred Rendering.md",
+      "content_sha256": "befe6f0ad00cd2c655793c747a3d6f70c036244ccb7bd287addfa1b5ac6598c5",
+      "read_scope": "全文直接复读，正文主要机制逐项推演；未用矩阵或旧报告判断",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "mechanisms": [
+        {
+          "section": "几何写入与附件布局",
+          "trace": "最近可见表面→四附件与Model背景标记→同布局解码",
+          "counterexample": "存储法线(0.5,0.5,1)直接使用会偏向(1,1,2)；数值纹理sRGB解码破坏方向",
+          "decision": "正文完整"
+        },
+        {
+          "section": "深度重建与统一空间",
+          "trace": "左上UV与[0,1]设备深度→逆投影→齐次除法→VS位置→同空间光和法线",
+          "counterexample": "只旋转法线使原本1的NdotL变0；漏除w导致深度缩放错误",
+          "decision": "正文完整"
+        },
+        {
+          "section": "材质解码与直接光照",
+          "trace": "ID分类→表面/BRDF输入→有限范围距离衰减→直接响应乘可见性→加自发光一次",
+          "counterexample": "逐灯自发光会随灯数变亮；重复NdotL破坏响应；点源中心无方向",
+          "decision": "主归属公式完整，本页接口齐全"
+        },
+        {
+          "section": "全屏光照与光体积、聚光灯外接锥体",
+          "trace": "保守网格候选→场景解析球/锥判断→HDR加法",
+          "counterexample": "内接低面球漏覆盖；近裁剪/相机内部回退全屏保持解析判断；N边锥补偿cos(pi/N)",
+          "decision": "正文完整"
+        },
+        {
+          "section": "Tiled Deferred列表消费",
+          "trace": "像素(35,20)→Tile(2,1)→头索引10→(offset6,count2)→灯3与8→解析复检",
+          "counterexample": "溢出截断漏灯；仅不透明深度列表不能保证透明表面",
+          "decision": "构建归属完整引用，本页消费与同步契约齐全"
+        },
+        {
+          "section": "透明层的可见性与顺序",
+          "trace": "不透明HDR和深度→透明自己的表面求值→后向前预乘合成→色调映射",
+          "counterexample": "蓝背景上绿/红各0.5得到(0.5,0.25,0.25)，反序得到(0.25,0.5,0.25)",
+          "decision": "正文完整"
+        },
+        {
+          "section": "MSAA表面与颜色Resolve",
+          "trace": "逐样本覆盖/深度/材质→按样本位置重建和光照→逐样本透明→线性HDR平均→色调映射",
+          "counterexample": "正反法线平均为零；四样本[1,1,0,0]需除4保留背景，不除2",
+          "decision": "正文完整"
+        },
+        {
+          "section": "移动端片上附件与依赖",
+          "trace": "子通道颜色深度写→阶段/访问依赖→只读input attachment→HDR存储，内部临时附件丢弃",
+          "counterexample": "下一阶段需要法线却结束丢弃则失去数据；Compute/邻域采样与当前片元input attachment不同",
+          "decision": "正文完整且条件明确"
+        },
+        {
+          "section": "自定义着色模型的写入与分派",
+          "trace": "模型ID及参数写入→按模型解码→ID0 GGX/ID1无光照→未知ID诊断",
+          "counterexample": "只改写入不改求值仍按旧BRDF；ID平均成另一模型；独立Forward重复贡献",
+          "decision": "正文完整"
+        },
+        {
+          "section": "带宽与工作量",
+          "trace": "24+4 B/pixel→1080p 58.06MB容量→一写一读116.12MB→60Hz 6.97GB/s逻辑模型",
+          "counterexample": "逻辑带宽不能代替缓存/压缩/片上驻留后的外存实测",
+          "decision": "正文完整"
+        }
+      ],
+      "evidence": {
+        "cpu": "8手算反例先8 FAIL后8 PASS",
+        "shader": "GBufferPS ps_6_0，LightingCS cs_6_0实际编译通过",
+        "runtime": "未执行目标引擎/GPU；不作为正文达标理由"
+      },
+      "sources": [
+        {
+          "url": "https://docs.vulkan.org/spec/latest/chapters/renderpass.html",
+          "location": "VkSubpassDependency、attachment layouts、framebuffer-space dependencies",
+          "verdict": "依据支持"
+        },
+        {
+          "url": "https://docs.vulkan.org/samples/latest/samples/performance/subpasses/README.html",
+          "location": "Subpasses与Transient attachments",
+          "verdict": "条件结论"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/sm5-object-texture2dms-load",
+          "location": "Load int2/sampleindex",
+          "verdict": "依据支持"
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "args": [
+        "C:\\Users\\23587\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "知识库\\examples\\mechanism_chain\\deferred\\test_reference.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_average_normals_before_shading_creates_false_surface (__main__.Contracts.test_average_normals_before_shading_creates_false_surface) ... ok\ntest_depth_reconstruction_uses_top_left_pixel_coordinates (__main__.Contracts.test_depth_reconstruction_uses_top_left_pixel_coordinates) ... ok\ntest_discrete_models_dispatch_before_shading (__main__.Contracts.test_discrete_models_dispatch_before_shading) ... ok\ntest_light_translation_does_not_translate_normal (__main__.Contracts.test_light_translation_does_not_translate_normal) ... ok\ntest_position_divides_homogeneous_w (__main__.Contracts.test_position_divides_homogeneous_w) ... ok\ntest_same_rotation_preserves_lambert_but_mixed_space_does_not (__main__.Contracts.test_same_rotation_preserves_lambert_but_mixed_space_does_not) ... ok\ntest_transparent_order_changes_result (__main__.Contracts.test_transparent_order_changes_result) ... ok\ntest_uncovered_msaa_samples_keep_background (__main__.Contracts.test_uncovered_msaa_samples_keep_background) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "args": [
+        "dxc",
+        "-T",
+        "ps_6_0",
+        "-E",
+        "GBufferPS",
+        "知识库\\examples\\mechanism_chain\\deferred\\Deferred.hlsl",
+        "-Fo",
+        "C:\\Users\\23587\\AppData\\Local\\Temp\\kb-chain-GBufferPS.dxil"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "dxc",
+        "-T",
+        "cs_6_0",
+        "-E",
+        "LightingCS",
+        "知识库\\examples\\mechanism_chain\\deferred\\Deferred.hlsl",
+        "-Fo",
+        "C:\\Users\\23587\\AppData\\Local\\Temp\\kb-chain-LightingCS.dxil"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

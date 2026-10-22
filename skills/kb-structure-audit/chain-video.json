@@ -1,0 +1,81 @@
+{
+  "articles": [
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+      "content_sha256": "fc8f3cd5b016462b13b013e50ca316d3dec1fb0a8cd213d4e35b715426918702",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "title_review": "PASS",
+      "benchmark": "描边全文复读；参照数据变化驱动问题推进、具体计算与失效追踪，而非覆盖量或测试数量",
+      "mechanisms": [
+        {
+          "name": "帧输入与历史提交",
+          "trace": "R_t先存在，H_(t-1)只读；显露区取R_t，整条生成与校正后保存H_t",
+          "counterexample": "当前生成图初始化当前生成形成循环；保存失败推进历史造成下一帧缺失，正文分别指定R_t与保存后提交"
+        },
+        {
+          "name": "几何对应和拒绝",
+          "trace": "像素反投影视射线→线性D缩放→撤销当前对象相机→历史变换→预期深度及q→ID/深度/置信/法线拒绝",
+          "counterexample": "墙面历史查询命中柱子；前后相机空间直接比深度；天空平移，分别由同空间深度与无限远方向处理"
+        },
+        {
+          "name": "法线输送",
+          "trace": "撤销前相机和对象旋转→当前对象相机旋转→角度门限→加权后归一化",
+          "counterexample": "相机旋转产生伪表面变化；相反向量混合零长度"
+        },
+        {
+          "name": "像素遮罩与编码",
+          "trace": "M在像素域构造A，显露区R；整张VAE均值编码和scaling_factor；颜色传递明确",
+          "counterexample": "平均降采样一处显露仍复用历史；保守块掩码和扩大边缘无法保证带注意力VAE局部独立；采用像素域投影且不声称特征无全局耦合"
+        },
+        {
+          "name": "条件与起始噪声",
+          "trace": "固定镜头逆深度→ControlNet残差；提示词双批次→CFG；50步末尾30步，k580加噪",
+          "counterexample": "每帧归一化深度漂移；strength错当训练步号；epsilon与v预测公式混用"
+        },
+        {
+          "name": "逐步生成和颜色约束",
+          "trace": "UNet预测噪声→反推干净z→解码线性图→M历史投影→整图编码→下一alpha噪声级重建→最终解码投影",
+          "counterexample": "无噪声历史塞入带噪潜变量；按当前alpha重建下一步；高历史权重锁住错误，正文要求撤去不可信M"
+        },
+        {
+          "name": "关键帧双向传播",
+          "trace": "独立方向缓存与对应流→时间乘置信→零和回退→整对象冲突门限→混合或选路",
+          "counterexample": "右向简单反转前向流；融合回写造成循环；像素择路切碎面部，正文禁止循环并按对象选择"
+        },
+        {
+          "name": "曝光及下一帧",
+          "trace": "稳定对象区域→亮度log比中位数→绝对与逐帧增益限制→内容轮廓检查→Q连乘门限→保存历史",
+          "counterexample": "真实闪光被校正；单异常点污染平均；0.9连续传播过第三次门限，应在0.729候选拒绝"
+        }
+      ],
+      "interfaces": [
+        "R/H→反向对应：相同尺寸、坐标、相机对象变换与帧号",
+        "拒绝→编码：M是像素二值，W线性颜色，显露R不依赖生成",
+        "编码→加噪：VAE均值与scale、4通道8倍缩放，起始时标与alpha一致",
+        "条件→UNet：深度RGB、CFG双批次和残差注入位置",
+        "去噪→投影：干净估计先解码为线性颜色再用M",
+        "投影→下一步：整图重编码与下一alpha；η=0",
+        "生成→曝光：稳定像素与真实渲染变化分别处理",
+        "曝光→历史：最终颜色与原始几何、Q、模型版本同帧保存，双向结果不互相消费"
+      ],
+      "actual_checks": [
+        "2026-10-23 Python 3.11 CPU新数例8项通过，先观察8项失败后实现",
+        "既有retained_review/video测试3项通过"
+      ],
+      "evidence_limits": [
+        "模型权重未加载；未输出视频；逐步循环为公开接口与明确数学定义的机制片段，不声称真实视频质量已验收"
+      ],
+      "primary_sources": [
+        "Diffusers v0.35.1 pipeline_controlnet_img2img.py 条件残差和双批次",
+        "Diffusers v0.35.1 scheduling_ddim.py alpha与时间表",
+        "lllyasviel/sd-controlnet-depth README 条件黑远白近"
+      ],
+      "author_status": "READY_FOR_INDEPENDENT_BODY_REVIEW"
+    }
+  ]
+}

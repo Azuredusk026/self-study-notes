@@ -1,0 +1,72 @@
+[
+  {
+    "command": [
+      "python",
+      "-B",
+      "知识库/examples/mechanism_chain/vehicle/test_reference.py"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nOK\n"
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "知识库/examples/mechanism_chain/video/test_reference.py"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.000s\n\nOK\n"
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "知识库/examples/mechanism_chain/deferred/test_reference.py"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "test_average_normals_before_shading_creates_false_surface (__main__.Contracts.test_average_normals_before_shading_creates_false_surface) ... ok\ntest_depth_reconstruction_uses_top_left_pixel_coordinates (__main__.Contracts.test_depth_reconstruction_uses_top_left_pixel_coordinates) ... ok\ntest_discrete_models_dispatch_before_shading (__main__.Contracts.test_discrete_models_dispatch_before_shading) ... ok\ntest_light_translation_does_not_translate_normal (__main__.Contracts.test_light_translation_does_not_translate_normal) ... ok\ntest_position_divides_homogeneous_w (__main__.Contracts.test_position_divides_homogeneous_w) ... ok\ntest_same_rotation_preserves_lambert_but_mixed_space_does_not (__main__.Contracts.test_same_rotation_preserves_lambert_but_mixed_space_does_not) ... ok\ntest_transparent_order_changes_result (__main__.Contracts.test_transparent_order_changes_result) ... ok\ntest_uncovered_msaa_samples_keep_background (__main__.Contracts.test_uncovered_msaa_samples_keep_background) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.000s\n\nOK\n"
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "知识库/examples/mechanism_chain/protocol/test_protocol.py"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "test_cancel_does_not_add_undo_record (__main__.ProtocolTests.test_cancel_does_not_add_undo_record) ... ok\ntest_crash_after_commit_replay_does_not_repeat_effect (__main__.ProtocolTests.test_crash_after_commit_replay_does_not_repeat_effect) ... ok\ntest_crash_before_commit_does_not_consume_or_apply (__main__.ProtocolTests.test_crash_before_commit_does_not_consume_or_apply) ... ok\ntest_drag_keeps_first_old_and_last_new (__main__.ProtocolTests.test_drag_keeps_first_old_and_last_new) ... ok\ntest_fencing_and_gap_reject_without_effect (__main__.ProtocolTests.test_fencing_and_gap_reject_without_effect) ... ok\ntest_generation_cas_preserves_external_edit_after_publish (__main__.ProtocolTests.test_generation_cas_preserves_external_edit_after_publish) ... ok\ntest_new_session_does_not_treat_sequence_one_as_old_duplicate (__main__.ProtocolTests.test_new_session_does_not_treat_sequence_one_as_old_duplicate) ... ok\ntest_only_prepared_snapshot_can_change_owner (__main__.ProtocolTests.test_only_prepared_snapshot_can_change_owner) ... ok\ntest_output_aba_still_conflicts (__main__.ProtocolTests.test_output_aba_still_conflicts) ... ok\ntest_pending_queue_prevents_session_reset (__main__.ProtocolTests.test_pending_queue_prevents_session_reset) ... ok\ntest_recovery_completes_publish_without_republishing (__main__.ProtocolTests.test_recovery_completes_publish_without_republishing) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.487s\n\nOK\n"
+  },
+  {
+    "command": [
+      "dxc",
+      "-T",
+      "ps_6_0",
+      "-E",
+      "GBufferPS",
+      "知识库/examples/mechanism_chain/deferred/Deferred.hlsl",
+      "-Fo",
+      "C:\\Users\\23587\\AppData\\Local\\Temp\\kb-chain-p1-shaders-_b83ossk\\GBufferPS.dxil"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "dxc",
+      "-T",
+      "cs_6_0",
+      "-E",
+      "LightingCS",
+      "知识库/examples/mechanism_chain/deferred/Deferred.hlsl",
+      "-Fo",
+      "C:\\Users\\23587\\AppData\\Local\\Temp\\kb-chain-p1-shaders-_b83ossk\\LightingCS.dxil"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

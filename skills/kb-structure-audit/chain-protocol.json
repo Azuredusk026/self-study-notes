@@ -1,0 +1,135 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/21_游戏网络/世界分区与AOI.md",
+      "content_sha256": "d57c380de74ccb336c304cf70e45b0034e96e831956f9aceb531a744cdb429ed",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "title_review": "KEEP",
+      "full_body_read": true,
+      "mechanisms": [
+        {
+          "mechanism": "网格候选与并发更新",
+          "trace": "位置−0.1落入−1号格；圆外包围盒角落被距离精筛；同一快照发布桶与位置。",
+          "counterexample": "只更新位置未移桶会漏查，正文规定锁或完整快照。"
+        },
+        {
+          "mechanism": "迟滞与权限",
+          "trace": "11→9→11→12.1米形成未加入→加入→保留→移除；并集后做权限过滤。",
+          "counterexample": "只查进入半径会提前删除；空间相关不授权私有状态。"
+        },
+        {
+          "mechanism": "生成更新移除与带宽",
+          "trace": "控制10生成g4→11移除g4→12生成g5；只连续应用控制流，非可靠更新核对实例/g/快照。",
+          "counterexample": "12先到等待11，g4旧包不能覆盖g5；日志到上限换会话及完整集合。"
+        },
+        {
+          "mechanism": "冻结与目标准备",
+          "trace": "Frozen与lastInput100及模式/哈希快照共同持久化，B的Ready引用该快照。",
+          "counterexample": "准备回执丢失按m去重；撤销CAS同时写Aborted使迟到目标无法接管。"
+        },
+        {
+          "mechanism": "所有权与栅栏",
+          "trace": "同一数据库事务核对A7/Frozen/m/version/Ready才改B8；业务写入核对同一记录。",
+          "counterexample": "独立etcd先查再写存在竞态，正文明确同库权威及路由镜像边界。"
+        },
+        {
+          "mechanism": "输入效果和消费序号",
+          "trace": "库存3、seq100原子转为库存2、seq101；结果与发件箱一起提交。",
+          "counterexample": "提交前强退回到3/100，提交后强退重试保留2/101；下游eventId去重须与下游效果共同提交。"
+        },
+        {
+          "mechanism": "路由有界重放",
+          "trace": "网关持久入队后确认收到，业务提交后确认结果，依lastInput清理，满队列背压。",
+          "counterexample": "通知丢失重查仲裁，seq102先到等待101，不能发送一次后直接清理。"
+        },
+        {
+          "mechanism": "替代进程恢复",
+          "trace": "提交前仍A7 Frozen可继续或条件撤销；提交后替代实例先推进epoch9再加载最新提交状态。",
+          "counterexample": "同名B替代进程不得共用8，避免网络隔离旧B复活。"
+        }
+      ],
+      "conclusion": "正文已展开本页主要状态与相邻提交边界；交由独立复读者再按反例核对，结论不由测试数量给出。"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "content_sha256": "afb4266f85caa17b60333c8e6ce8abefdff48fd61c85cb4be4f5001ce20990f3",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "title_review": "KEEP",
+      "full_body_read": true,
+      "mechanisms": [
+        {
+          "mechanism": "入口与计划",
+          "trace": "UI及CLI传入稳定身份和同一配置，后台冻结输入，主线程按版本执行。",
+          "counterexample": "隐藏选择上下文和分析后继续拖动会使计划失效，正文给显式参数/恢复上下文/版本拒绝。"
+        },
+        {
+          "mechanism": "序列化与手势",
+          "trace": "1→2→3→9始终保存old1，松开保存new9；undo1/redo9；Esc恢复初值无记录。",
+          "counterexample": "每帧覆盖old只退至3；字段由手势独占，多目标失败恢复已触及值。"
+        },
+        {
+          "mechanism": "创建删除与引用",
+          "trace": "预分配稳定ID，保存子树/父顺序/外部引用，先恢复身份再层级和引用。",
+          "counterexample": "redo新建ID破坏引用；旧宿主指针销毁后必须重新解析。"
+        },
+        {
+          "mechanism": "宿主撤销衔接",
+          "trace": "Unity每次修改前RecordObject，跨帧手势进入同组；Prefab覆盖和对象专用撤销分别记录。",
+          "counterexample": "松开后才RecordObject已丢失预览前值；字段API不覆盖层级/销毁。"
+        },
+        {
+          "mechanism": "补偿与幂等",
+          "trace": "仅成功子操作入applied；后续前提失败反序恢复；单次恢复失败仍继续。",
+          "counterexample": "恢复失败保留状态而非清空列表；交换名经临时名，预先规划完整映射。"
+        },
+        {
+          "mechanism": "条件发布与恢复",
+          "trace": "输入哈希和输出代次共同前提，不可变输出先准备，CAS发布指针与回执，后记Succeeded。",
+          "counterexample": "g10发布11后用户改12，恢复Conflict保留12；内容往返哈希相同仍因代次拒绝。"
+        },
+        {
+          "mechanism": "多文件与撤销发布",
+          "trace": "独立版本目录+单指针切换，撤销仅在当前为本批次时切至旧内容的新代次。",
+          "counterexample": "逐文件替换暴露混合状态；回退旧代次使失效计划重获资格。"
+        },
+        {
+          "mechanism": "取消错误和线程",
+          "trace": "A完成/B发布前取消保存A，B发布后取消先记录B回执，后台分析与主线程修改分离。",
+          "counterexample": "取消不等于整批回滚；超时重试同时查输入/代次/回执。"
+        },
+        {
+          "mechanism": "配置与运行时隔离",
+          "trace": "规则/版本/参数进入计划哈希，厘米迁移成米再验证，运行时按依赖闭包排除编辑器模块。",
+          "counterexample": "仅补默认值会缩小100倍；Editor命名不能证明依赖隔离。"
+        }
+      ],
+      "conclusion": "正文已展开本页主要状态与相邻提交边界；交由独立复读者再按反例核对，结论不由测试数量给出。"
+    }
+  ],
+  "implementation": "知识库/examples/mechanism_chain/protocol/reference.py",
+  "tests": {
+    "command": "python -B 知识库/examples/mechanism_chain/protocol/test_protocol.py",
+    "count": 11,
+    "result": "PASS",
+    "red": "9项未实现行为断言失败后实现；取消测试首次意外通过，补充预览态断言后确认失败。",
+    "actual": "真实SQLite数据库；两项子进程os._exit(19)分别在事务提交前与提交后终止；重开库核对库存/序号。 新会话重置与旧会话拒绝；drained参数是已完成队列关闭屏障的输入，不代表测试部署了网关队列。",
+    "boundaries": "非分布式服务或编辑器集成实测，可靠控制流/发件箱/创建删除的完整协议按正文状态推演，非实际部署结果。"
+  },
+  "additional_adversarial_repairs": [
+    "独立etcd仲裁与业务库先查后写的跨域竞态：以同库记录作为权威，etcd为路由镜像。",
+    "同名B替代进程复用epoch使隔离旧B可继续写：新实例先推进epoch。",
+    "发布后外部编辑和ABA：代次与回执共同判断，冲突保留输出。",
+    "会话切换与序号重置：activeInputSession和lastInput共同保存，关闭旧会话屏障后切换，迁移携带会话。"
+  ]
+}

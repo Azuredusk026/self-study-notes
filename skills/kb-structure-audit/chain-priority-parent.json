@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/13_渲染架构/Deferred Rendering.md",
+      "full_text_read": true,
+      "content_sha256": "befe6f0ad00cd2c655793c747a3d6f70c036244ccb7bd287addfa1b5ac6598c5",
+      "observations": [
+        "全文追踪四附件与背景身份、VS重建和灯空间转换、单次自发光与逐灯响应、球锥保守覆盖、Tile消费与溢出、透明顺序、逐样本求值和HDR Resolve、子通道依赖、模型dispatch及字节成本。",
+        "相机旋转必须同时变换光与法线，背景先排除；不同表面法线平均不可求值；透明灯列表须覆盖透明深度。",
+        "发现透明排序与OIT旧双链，作者已改为当前透明合成。核心BRDF主归属已实际核对EvaluateDirectResponse存在，本页调用明确余弦不重复。"
+      ],
+      "judgment": "主要机制与相邻消费关系已按正文推演，判据不是实验数量或未运行声明"
+    },
+    {
+      "path": "知识库/21_游戏网络/世界分区与AOI.md",
+      "full_text_read": true,
+      "content_sha256": "d57c380de74ccb336c304cf70e45b0034e96e831956f9aceb531a744cdb429ed",
+      "observations": [
+        "全文追踪网格桶与位置同版、空间并集与权限过滤、复制代数控制流、持久冻结/Ready、同库条件交接、输入效果与序号、持久路由队列、epoch恢复。",
+        "新输入会话seq1不可沿用旧lastInput100；已要求activeInputSession与关闭屏障一起持久保存，重连仍沿用旧会话。",
+        "旧权威校验和业务写入必须同一事务；独立先查etcd再写业务不能阻止竞态；替代B实例必须推进epoch。"
+      ],
+      "judgment": "主要机制与相邻消费关系已按正文推演，判据不是实验数量或未运行声明"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "full_text_read": true,
+      "content_sha256": "afb4266f85caa17b60333c8e6ce8abefdff48fd61c85cb4be4f5001ce20990f3",
+      "observations": [
+        "全文追踪不可变旧新值、手势锁与首末值、提交/取消/Undo/Redo、创建删除身份与两遍引用恢复、失败补偿、后台计划版本、条件发布、回执与检查点、取消与配置迁移。",
+        "发布11后人工改12，恢复Running只报冲突，不覆盖；内容哈希往返相同仍由代次拒绝。",
+        "拖动1/2/3/9始终old1 new9；取消无撤销记录，宿主Undo在实际修改前登记并合并事务组。"
+      ],
+      "judgment": "主要机制与相邻消费关系已按正文推演，判据不是实验数量或未运行声明"
+    }
+  ]
+}

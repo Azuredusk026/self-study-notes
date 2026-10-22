@@ -3241,7 +3241,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "Latent 与噪声一致性",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "潜变量坐标与生成",
+      "current_heading": "历史图与潜变量",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "c2b765b8ed9f58a8e5116e24e0b790bd684184cfab1fe2e11cc885da66527db5"
@@ -3295,7 +3295,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "曝光与颜色稳定",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "颜色与验收",
+      "current_heading": "曝光与历史推进",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "f7fdfa0fc82e593c023e5c3e912dd74d11589b7bd3dd764ad45c8e67243ae1aa"
@@ -3304,7 +3304,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "时序质量指标",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "颜色与验收",
+      "current_heading": "曝光与历史推进",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "c7ba76075742c047fd43828f8cbf92e39b75ddcabc7ac21d6d3ff9aac49f0642"
@@ -3565,7 +3565,7 @@
       "source": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
       "heading": "载具",
       "target": "知识库/18_游戏物理与模拟/载具物理.md",
-      "current_heading": "车轮接触与滑移",
+      "current_heading": "接触速度与轮胎力",
       "decision": "独立主归属或明确合并",
       "reason": "扫掠角色、骨架刚体切换、柔软约束、断裂连接与轮胎动力学有独立求解和验证。",
       "source_hash": "c494baea5bb994ef5acc4eb16cc5a34d611c6cb7cbb7dd0d3e976699f3280c23"
@@ -3691,7 +3691,7 @@
       "source": "知识库/21_游戏网络/服务器架构、分区与反作弊.md",
       "heading": "AOI 与世界分区",
       "target": "知识库/21_游戏网络/世界分区与AOI.md",
-      "current_heading": "AOI 与世界分区",
+      "current_heading": "分区权威与相邻代理",
       "decision": "独立主归属或明确合并",
       "reason": "服务路由存储、空间复制迁移与异常校验分别有独立故障模型。",
       "source_hash": "34bf9cbf028729d574db0906533a605b0eac9e656e54d6a6abf7bececc4b6d10"
@@ -3745,7 +3745,7 @@
       "source": "知识库/21_游戏网络/服务器架构、分区与反作弊.md",
       "heading": "基于网格的 AOI 查询",
       "target": "知识库/21_游戏网络/世界分区与AOI.md",
-      "current_heading": "基于网格的 AOI 查询",
+      "current_heading": "网格查询",
       "decision": "独立主归属或明确合并",
       "reason": "服务路由存储、空间复制迁移与异常校验分别有独立故障模型。",
       "source_hash": "68165d791649a2b3f993b0be5dfd2617973aa98828908aea66d95f844c497eec"
