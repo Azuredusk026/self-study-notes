@@ -4,11 +4,11 @@
 
 ## 反射积分
 
-### 先区分几个量
+### 辐射量与单位
 
-- Radiant Flux：单位时间传输的总辐射能量。
-- Irradiance：单位面积接收到的通量，单位方向积分后落到表面。
-- Radiance：沿某方向、单位投影面积、单位立体角传输的光量。渲染方程主要用它。
+- Radiant Flux：单位时间传输的总辐射能量，单位 W。
+- Irradiance：单位面积接收到的通量，单位 W/m²；它已经对入射方向积分。
+- Radiance：沿某方向、单位投影面积、单位立体角传输的通量，单位 W/(m²·sr)。渲染方程主要用它。
 
 在工程中经常统称“光强”或“亮度”，但推导和单位换算时不能混用。
 
@@ -98,7 +98,15 @@ $$
 
 #### D：Normal Distribution Function
 
-描述有多少微表面法线接近半角向量。实时 PBR 常用 GGX/Trowbridge-Reitz，因为它的长尾高光比较符合真实粗糙表面。
+$D(\mathbf H)$ 描述半角方向附近的微表面面积密度。它满足 $\int D(\mathbf H)(\mathbf N\cdot\mathbf H)d\omega_H=1$，因此可用于采样的密度是 $D\,N\cdot H$；单独的 $D$ 不是归一化概率密度。
+
+各向同性 GGX 使用
+
+$$
+D(\mu,\alpha)=\frac{\alpha^2}{\pi[\mu^2(\alpha^2-1)+1]^2},\qquad \mu=\mathbf N\cdot\mathbf H.
+$$
+
+实时 PBR 常用 GGX/Trowbridge-Reitz，因为它的长尾高光比较符合真实粗糙表面。
 
 Roughness 改变分布宽度。Roughness 越低，分布越集中，高光更尖。
 
@@ -116,39 +124,69 @@ $F_0$ 是正视角反射率。掠射角通常趋近更强反射。
 
 描述微表面之间的 Masking 和 Shadowing。一些面朝观察者的微表面可能被其他微表面挡住，或收不到光。
 
-常见实现使用 Smith 方法，把视线和光线方向的遮蔽组合起来。
+本文采用可分离 Smith 近似 $G=G_1(N\cdot V)G_1(N\cdot L)$，其中
+
+$$
+G_1(\mu)=\frac{2\mu}{\mu+\sqrt{\alpha^2+(1-\alpha^2)\mu^2}}.
+$$
+
+它分别估计观察方向与入射方向可见的微面比例。高度相关 Smith 会联合考虑两种遮蔽，不能只替换函数名而沿用同一份积分表。分母中的 $4(N\cdot L)(N\cdot V)$ 来自微面反射方向到宏观表面方向的测度和投影换算；它不是控制高光强度的经验项。
 
 #### 代码中的组合顺序
 
-下面的 HLSL 片段把 D、F、G 和能量分配组合成单个直接光 BRDF。三个辅助函数分别对应上面的 GGX 分布、Schlick Fresnel 和 Smith 几何项：
+以下 HLSL 机制函数展开 GGX、可分离 Smith 与 Schlick。`N`、`V`、`L` 是同一空间的单位向量，后两者从表面指向观察者和光源。颜色已在线性空间，`metallic`、`roughness`、`F0` 和 `baseColor` 均在 $[0,1]$。函数返回含入射余弦的响应，调用端乘光源贡献、可见性和距离衰减，不能再乘一次 `NoL`。
 
 ```hlsl
-float3 EvaluateDirectBRDF(
+static const float PI = 3.14159265359;
+
+float DistributionGGX(float NoH, float alpha)
+{
+    float a2 = alpha * alpha;
+    float denominator = NoH * NoH * (a2 - 1.0) + 1.0;
+    return a2 / (PI * denominator * denominator);
+}
+
+float SmithG1(float cosine, float alpha)
+{
+    float a2 = alpha * alpha;
+    return 2.0 * cosine /
+        (cosine + sqrt(a2 + (1.0 - a2) * cosine * cosine));
+}
+
+float3 FresnelSchlick(float VoH, float3 F0)
+{
+    float f = pow(1.0 - VoH, 5.0);
+    return F0 + (1.0 - F0) * f;
+}
+
+float3 EvaluateDirectResponse(
     float3 N, float3 V, float3 L,
     float3 baseColor, float metallic, float roughness, float3 F0)
 {
+    float NoL = dot(N, L);
+    float NoV = dot(N, V);
+    if (NoL <= 0.0 || NoV <= 0.0) return 0.0;
     float3 H = normalize(V + L);
-    float NoL = saturate(dot(N, L));
-    float NoV = saturate(dot(N, V));
     float NoH = saturate(dot(N, H));
     float VoH = saturate(dot(V, H));
     float alpha = max(roughness * roughness, 0.002);
-
     float D = DistributionGGX(NoH, alpha);
-    float G = GeometrySmith(NoV, NoL, alpha);
+    float G = SmithG1(NoV, alpha) * SmithG1(NoL, alpha);
     float3 F = FresnelSchlick(VoH, F0);
-    float3 specular = D * G * F / max(4.0 * NoV * NoL, 1e-4);
-
+    // 合并 BRDF 与 NoL，避免先除再乘 NoL。
+    float3 specularResponse = D * G * F / (4.0 * NoV);
     float3 diffuseWeight = (1.0 - F) * (1.0 - metallic);
-    return (diffuseWeight * baseColor / PI + specular) * NoL;
+    return diffuseWeight * baseColor * NoL / PI + specularResponse;
 }
 ```
 
-光源 Radiance、距离衰减、阴影和曝光位于函数外。`roughness` 的最小值防止分布退化成数值奇点，具体阈值应与引擎材质和 IBL 预过滤保持一致。
+两个方向都在上半球时，`V+L` 非零。`alpha` 下限把理想镜面替换为有限宽度波瓣，属于明确的数值近似；材质端与 IBL 烘焙端要采用相同映射。极小值计算需使用足够精度，不能直接假定半精度稳定。
+
+这里的 $(1-F)$ 是简化的漫反射衰减，不能凭这个逐方向权重断言整个组合严格守恒；半球能量与材料参数的关系见 [[04_光照模型与PBR/PBR材质]]。
 
 ## 参数与能量
 
-### 为什么 Roughness 不能直接当高光指数
+### 粗糙度映射
 
 不同 BRDF 对 Roughness 的映射不同。引擎还可能使用 $\alpha=roughness^2$ 让美术控制更线性。
 
@@ -166,13 +204,15 @@ float3 EvaluateDirectBRDF(
 
 实时引擎常用近似或查表，不会逐次追踪所有微表面反弹。
 
-## 如何验证材质模型
+## 验证方法
 
 - 使用灰球、金属球和不同 Roughness 阶梯图。
 - 固定曝光和环境，避免自动曝光掩盖能量问题。
 - 检查 $N\cdot L$、$N\cdot V$、D、F、G 的单独可视化。
 - 对比直接光和 IBL 中的 Roughness 响应是否连续。
-- 用白炉测试（White Furnace Test）检查能量是否异常增加或丢失。
+- 白炉测试（White Furnace Test）将所有入射方向设为单位辐射亮度，数值积分 $E(V)=\int f_r(L,V)(N\cdot L)d\omega_L$。对纯反射、无吸收且包含多次散射的模型，$E$ 应为 1；单次微表面模型允许 $E<1$，不能把这种模型误差误判为程序错误。
+
+本页的 [数值检查](../examples/revision/test_lighting.py) 验证 NDF 投影面积归一化、交换光线与视线的互易性、背面返回零以及白炉能量。对于 $\alpha=1$、$N=V$、$F_0=1$，本文模型给出 $E=\int_0^1\mu/(1+\mu)d\mu=1-\ln2\approx0.30685$；这个解析值能识别余弦或分母被重复使用的问题。运行 `python -B 知识库/examples/revision/test_lighting.py`。
 
 ## 相关主题
 
@@ -188,5 +228,5 @@ float3 EvaluateDirectBRDF(
 
 - Bruce Walter et al., *Microfacet Models for Refraction through Rough Surfaces*.
 - Brian Karis, *Real Shading in Unreal Engine 4*.
-- Google Filament, *Physically Based Rendering in Filament*.
+- [Google Filament：Specular BRDF、Energy loss in specular reflectance](https://google.github.io/filament/main/filament.html#materialsystem/specularbrdf)，核对 GGX、Smith、Schlick 与白炉定义。
 - LearnOpenGL, `src/6.pbr/1.1.lighting` and `1.2.lighting_textured`.

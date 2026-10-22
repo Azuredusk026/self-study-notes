@@ -84,6 +84,21 @@
       "pages": 184,
       "errors": 0,
       "scope": "独立暂存快照静态一致性"
+    },
+    {
+      "phase": "P1-lighting",
+      "command": "python -B 知识库/examples/revision/test_lighting.py",
+      "passed": true,
+      "tests": 7,
+      "scope": "GGX/白炉/LUT/RNM/扩散剖面/投影半径"
+    },
+    {
+      "phase": "P1-lighting",
+      "command": "python -B 知识库/examples/revision/compile_lighting.py",
+      "passed": true,
+      "dxc_entries": 3,
+      "glsl_link_cases": 1,
+      "scope": "正文BRDF、法线、IBL函数与天空折射片段"
     }
   ]
 }

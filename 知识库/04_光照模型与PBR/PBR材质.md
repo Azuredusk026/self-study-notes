@@ -1,6 +1,6 @@
 # PBR材质
 
-同一材质换了环境以后金属感消失，可能是参数语义、颜色导入或光照输入发生变化。PBR把这些参数与能量关系联系起来，让变化有明确原因。我们从非金属和金属的响应开始，再检查粗糙度、遮罩与纹理，最后用固定曝光的标定场景验证。
+同一材质换了环境以后金属感消失，可能是参数语义、颜色导入或光照输入发生变化。PBR把这些参数与能量关系联系起来，让变化有明确原因。材质的反射类型决定 Base Color 和镜面参数的含义，颜色导入、遮罩打包与标定场景共同约束这些数据的使用。
 
 ## 反射语义
 
@@ -26,27 +26,26 @@ Base Color 主要描述漫反射颜色。正视角镜面反射率 $F_0$ 通常�
 
 剩余能量进入表面并形成漫反射或更复杂的次表面传输。
 
-#### F0 从哪里来
+#### 正入射反射率
 
-$F_0$ 不是任意调出来的参数，它由折射率决定。非金属用标量折射率 $n$：
+对于无吸收电介质，入射介质与透射介质的折射率分别为 $\eta_i$、$\eta_t$，垂直入射时
 
 $$
-F_0=\left(\frac{n-1}{n+1}\right)^2
+F_0=\left(\frac{\eta_t-\eta_i}{\eta_t+\eta_i}\right)^2.
 $$
 
-常见材料的对应关系：水 $n\approx1.33$ 得 $F_0\approx0.02$，玻璃 $n\approx1.5$ 得 $0.04$，皮肤 $n\approx1.4$ 得 $0.028$，多数电介质落在 0.02 到 0.06 之间。这就是“默认 0.04”的来历——它是玻璃与常见塑料附近的取值。
+空气中取 $\eta_i\approx1$，若材料 $\eta_t=1.5$，则 $F_0=0.04$。这个算例解释常见默认值，但默认值不代表所有电介质；高折射率材料需要自己的参数。
 
-金属的折射率是复数，虚部为消光系数，$F_0$ 因此带颜色，且需要按 RGB 三个波长分别查表。铜的偏红、金的偏黄都来自各自的测量值。
-
+金属使用包含消光系数的复折射率。光谱反射率经过光源光谱、色匹配函数和工作色域转换后才能得到 RGB；RGB 三通道并不是三个固定波长的测量值。
 这条关系的实用价值在于校验：美术给的材质 $F_0$ 若明显超出已知材料的物理范围，通常是数据错误或工作流混淆，例如把高光强度当成了 $F_0$。
 
 #### 金属
 
 金属几乎没有普通漫反射。Base Color 用来描述有色镜面反射，$F_0$ 可以是彩色。
 
-Metallic 通常应接近 0 或 1。中间值主要用于抗锯齿、脏污混合或复合材质边界，不表示一种自然的“半金属原子”。
+Metallic 通常应接近 0 或 1。中间值主要用于抗锯齿、脏污混合或复合材质边界，表达像素覆盖的有效混合，而不是一种独立的均匀材料分类。
 
-### 漫反射和镜面反射如何分配
+### 漫反射与镜面反射分配
 
 简化实时模型常写成：
 
@@ -54,18 +53,20 @@ $$
 k_s=F,\qquad k_d=(1-k_s)(1-metallic)
 $$
 
-$k_s$ 是镜面部分，$k_d$ 是漫反射部分。Fresnel 增强时，漫反射相应减少，避免两部分相加超过入射能量。
+$F$ 是当前微面入射角的 Fresnel 反射率，$k_d$ 用它衰减漫反射。它体现反射和透入表面的竞争关系，但不是完整半球能量的精确分配。
 
-#### 能量守恒从哪来
+#### 半球能量约束
 
-这个分配公式的依据是半球积分。表面反射的总能量不能超出入射能量，写出来是：
+固定一个入射方向 $\omega_i$，把所有出射方向的反射能量相加，必须满足
 
 $$
-\int_{\Omega} f_r(\omega_i,\omega_o)\,(\mathbf{n}\cdot\omega_i)\,d\omega_i\leq 1
+E(\omega_i)=\int_{\Omega}f_r(\omega_i,\omega_o)
+(\mathbf N\cdot\omega_o)d\omega_o\le1.
 $$
 
-对每个出射方向 $\omega_o$ 都要成立。镜面反射率先从半球中拿走份额 $F$，剩下的 $1-F$ 才轮到漫反射——这就是 $k_d$ 里那个 $(1-k_s)$ 的来源，不是调出来的经验系数。
+$E$ 是方向到半球的反射率。满足互易性时，也可固定出射方向、对入射方向积分进行白炉检查。Lambert 的 $f_d=\rho/\pi$ 给出 $E=\rho$，因为余弦半球积分等于 $\pi$。
 
+微表面模型的 $E$ 还依赖粗糙度、视角、遮蔽和多次散射，不能用某一对方向的 $F(V\cdot H)$ 替代。$(1-F)$ 因而是便于实时计算的局部分配近似；严格的层模型需要处理光透入、内部散射和再次穿出界面的能量，或根据半球积分建立补偿表。
 严格地说，微表面模型还存在多次散射能量损失：粗糙表面上光在微面之间多次反弹，单次散射近似会丢掉这部分能量，表现为高粗糙度材质整体偏暗。主流引擎用补偿项（Kulla-Conty 一类）把损失的能量加回去。如果自己的实现里粗糙材质比参考渲染明显偏暗，先查这一项。
 
 ## 纹理参数
@@ -89,7 +90,7 @@ Roughness 描述微表面法线分布的宽度，不是“高光强度”。
 
 - 低 Roughness：高光集中，反射清晰；
 - 高 Roughness：高光展开，反射模糊；
-- 总反射能量不应仅因高光变宽就凭空消失。
+- 积分后的能量由整个反射模型决定，需区分波瓣变宽与单次散射损失。
 
 把 Roughness 调高后画面变暗，可能来自 NDF、几何项、IBL 预过滤、单次散射能量损失或曝光，而不是 Roughness 本来就代表更少反射。
 
@@ -163,27 +164,27 @@ HDR Emissive 应在线性空间保存和计算。最终画面亮度还会受曝�
 
 - 用灰球与镜面球对比参考实现，球面是最敏感的材质标定工具。
 - 把 Metallic 在 0 与 1 之间扫一遍，中间值区域不应出现大面积异常发亮或发暗。
-- 单独输出 $k_d$ 与 $k_s$，确认掠射角处漫反射趋近于零。
+- 单独输出 $k_d$ 与 $F$，在微面入射角趋于掠射时检查其变化；宏观 $N\cdot V$ 不能替代 $V\cdot H$。
 - 高粗糙度材质对比有无多次散射补偿的版本，整体亮度应有可察觉差异。
 - 换 HDRI 环境重测：只在单一灯光下好看的材质，参数多半不可靠。
-- 用折射率反查 $F_0$，超出 0.02 到 0.06 范围的非金属材质要给出依据。
+- 用资产采用的折射率或测量数据反查 $F_0$，记录入射介质、色域和近似条件。
 - 检查 sRGB 标记：Base Color 走 sRGB，其余数据纹理不走，反了会整体偏亮或偏灰。
 
 ### 漫反射与镜面能量分配
 
-输入颜色已经从 sRGB 解码到线性空间，`metallic` 和 `roughness` 位于 $[0,1]$。下面只展示能量分配，实际 BRDF 还需要 NDF、Geometry 和光照积分：
+下列 HLSL 调用片段使用 [[04_光照模型与PBR/BRDF与微表面模型]] 中展开的 `EvaluateDirectResponse`。输入颜色已在线性空间，方向已归一化，`incidentContribution` 包含光源强度与距离衰减，`visibility` 为 $[0,1]$ 的可见性。
 
 ```hlsl
-float3 F0 = lerp(0.04.xxx, baseColor, metallic);
-float3 F = FresnelSchlick(saturate(dot(H, V)), F0);
-float3 kSpecular = F;
-float3 kDiffuse = (1.0 - kSpecular) * (1.0 - metallic);
-float3 diffuse = kDiffuse * baseColor / PI;
-float3 specular = EvaluateMicrofacetSpecular(N, V, L, F0, roughness);
-float3 result = (diffuse + specular) * radiance * saturate(dot(N, L));
+float3 dielectricF0 = 0.04.xxx; // 本资产约定 etaIncident=1，etaTransmitted=1.5
+float3 F0 = lerp(dielectricF0, baseColor, metallic);
+float3 response = EvaluateDirectResponse(
+    N, V, L, baseColor, metallic, roughness, F0);
+float3 result = response * incidentContribution * visibility;
 ```
 
-金属把 Base Color 用作 $F_0$，漫反射权重收敛到零；电介质保留漫反射，并由 Fresnel 把掠射角能量移向镜面。把 `kDiffuse` 固定为 1 会重复计算镜面反射已经占用的能量，常表现为材质整体过亮。
+`metallic=1` 时，漫反射权重归零，Base Color 控制镜面颜色；`metallic=0` 时，Base Color 控制漫反射，镜面正入射值由电介质参数控制。函数已经乘过入射余弦。仅看最终画面很难判断重复乘法，验证时应同时保存参数值、直接光响应和白炉积分值。
+
+本页的数值依据与 BRDF 共用 [光照模型检查](../examples/revision/test_lighting.py)。它检验所声明的单次散射模型，不代表完整材质、资产导入或目标引擎已运行。
 
 ## 相关主题
 
@@ -197,6 +198,6 @@ float3 result = (diffuse + specular) * radiance * saturate(dot(N, L));
 
 ## 参考资料
 
-- Google Filament, *Material System* and *Physically Based Rendering in Filament*.
+- [Google Filament：Material system](https://google.github.io/filament/main/filament.html#materialsystem)，核对材料参数及能量损失。
 - Adobe Substance 3D, *PBR Guide*.
 - Epic Games, *Physically Based Materials*.

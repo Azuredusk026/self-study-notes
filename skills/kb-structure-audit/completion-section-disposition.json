@@ -697,7 +697,7 @@
       "source": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
       "heading": "为什么切线需要统一生成规则",
       "target": "知识库/04_光照模型与PBR/法线贴图.md",
-      "current_heading": "为什么切线需要统一生成规则",
+      "current_heading": "切线生成规则",
       "decision": "独立主归属或明确合并",
       "reason": "贴图方向还原、环境方向寻址和BRDF预积分是不同输入与实现。",
       "source_hash": "90f489e1058c2bd3a5be6cd0dbab7f58cbdf941c8c6ebe10a0bfa97c65883619"
@@ -715,7 +715,7 @@
       "source": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
       "heading": "从纹理到世界法线",
       "target": "知识库/04_光照模型与PBR/法线贴图.md",
-      "current_heading": "从纹理到世界法线",
+      "current_heading": "世界法线重建",
       "decision": "独立主归属或明确合并",
       "reason": "贴图方向还原、环境方向寻址和BRDF预积分是不同输入与实现。",
       "source_hash": "0c88fb74451388d10f425a9ba929fdefbe9b93db50b0c91d6592064d774ac1d9"
@@ -733,7 +733,7 @@
       "source": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
       "heading": "更均匀的方案",
       "target": "知识库/04_光照模型与PBR/法线贴图.md",
-      "current_heading": "更均匀的方案",
+      "current_heading": "方向编码选择",
       "decision": "独立主归属或明确合并",
       "reason": "贴图方向还原、环境方向寻址和BRDF预积分是不同输入与实现。",
       "source_hash": "5e02e19b08d753f2135f7924952a6d6d13cdfa0c2c9e918444dbefc0ee173e20"
@@ -751,7 +751,7 @@
       "source": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
       "heading": "多张法线如何混合",
       "target": "知识库/04_光照模型与PBR/法线贴图.md",
-      "current_heading": "多张法线如何混合",
+      "current_heading": "细节法线混合",
       "decision": "独立主归属或明确合并",
       "reason": "贴图方向还原、环境方向寻址和BRDF预积分是不同输入与实现。",
       "source_hash": "b791a91f7c5cb4e9e2f21acd67038481a040d0015404083602bb9d8e4c33bd1e"
