@@ -42,3 +42,5 @@ Git 仓库发布 README、`知识库/`、`skills/` 与 `AGENTS.md`。本机课�
 项目技能位于 `skills/`，负责粒度、写作、事实和技术图代码。描边是已认可的文风示范，提供机制、最小样例与分层验证状态。标题审查按实施规范选择读者习惯的主概念。
 
 最终迁移覆盖原始113页，当前184页包含179篇主题与导读以及5篇说明。全部边界与标题已确定，执行和实际验证见 [最终报告](skills/kb-structure-audit/references/batch-final-report.md)。
+
+本轮内容复读与验收见 [逐篇修订记录](skills/kb-structure-audit/references/revision-report.md)，各页状态保存在质量矩阵的 `revision_review` 字段。
