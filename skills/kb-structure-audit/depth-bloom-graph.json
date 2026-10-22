@@ -112,5 +112,15 @@
     "无GPU纹理结果与捕获",
     "无设备性能测量",
     "模型常量保持不等同于有限钳位图像能量严格守恒"
-  ]
+  ],
+  "regression_fix": {
+    "command": [
+      "python",
+      "-B",
+      "知识库/examples/revision/compile_post.py"
+    ],
+    "returncode": 0,
+    "stdout": "{\"passed\": true, \"dxc_entries\": [\"srgb\", \"exposure\", \"bloom\", \"ssao\", \"coc_motion\"], \"scope\": \"�����߱��룬δִ��GPU\"}\n",
+    "stderr": ""
+  }
 }

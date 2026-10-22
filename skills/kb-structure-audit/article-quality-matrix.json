@@ -19,11 +19,11 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "定向检索→文章阅读→知识补充→来源与代码→边界→作者工作流。 定位：定向检索；文章阅读；知识补充；主归属确认；关系与细节；内容与证据类型；来源优先级；代码示例；全库示例覆盖检查；不确定内容；双链使用；文章边界；引擎实现的证据；模块完成检查；作者工作流；技术图与图片资产；复现与检查状态。"
+        "basis": "当前标题与章节：定向检索；文章阅读；知识补充；主归属确认；关系与细节；内容与证据类型；来源优先级；代码示例；全库示例覆盖检查；不确定内容；双链使用；文章边界；引擎实现的证据；模块完成检查；作者工作流；技术图与图片资产；复现与检查状态。独立全文判断见depth-independent-support.json"
       },
       "Depth": {
         "status": "通过",
-        "basis": "“代码示例”要求主问题中的错误处理、资源管理、同步展开；完整样例、机制片段和伪代码的上下文规则均保留。"
+        "basis": "作者具体机制：全文规则可执行；补正文输入与单条件改变的两次推演判据，示例和实现边界不降级。。独立全文复读：阅读加入手算输入与改变单条件失败两次推演，代码不能抽象掉主问题，资料核读/实验/编译/引擎边界可执行；保留。。定位与操作见depth-independent-support.json"
       },
       "Implementation": {
         "status": "通过",
@@ -35,7 +35,7 @@
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "本次独立全文复读：逐段检查自然中文与现行规则；00领域的作者入口职责明确，资产与矩阵链接实际存在。"
+        "basis": "作者具体机制：全文规则可执行；补正文输入与单条件改变的两次推演判据，示例和实现边界不降级。。独立全文复读：阅读加入手算输入与改变单条件失败两次推演，代码不能抽象掉主问题，资料核读/实验/编译/引擎边界可执行；保留。。定位与操作见depth-independent-support.json"
       },
       "Title": {
         "status": "通过",
@@ -64,6 +64,7 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
+      "DEEPEN",
       "RESTRUCTURE",
       "REWRITE"
     ],
@@ -88,7 +89,7 @@
       "### 技术图与图片资产",
       "### 复现与检查状态"
     ],
-    "final_sha256": "8298d96dbc8061c9e9943c3bde85370f56eedeae9f0b1ad9432ae06bf75dadd0",
+    "final_sha256": "3c4bba08349bdd68869552ac9d2a99349a7363c024b4cabb0112df9915a52bf6",
     "article_type": "SUPPORT",
     "canonical_concept": "学习与维护方法",
     "final_sources": [
@@ -99,7 +100,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "8298d96dbc8061c9e9943c3bde85370f56eedeae9f0b1ad9432ae06bf75dadd0",
+    "reviewed_content_sha256": "3c4bba08349bdd68869552ac9d2a99349a7363c024b4cabb0112df9915a52bf6",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -114,6 +115,59 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "P5-depth",
+      "scope": "全文、入口、术语、规则、章节与导读关系",
+      "author_record": "revision-support-overviews.json",
+      "author_sha256": "4d5fbe22b4d3542a055656e9f585537f3ad6264be4fb72d3435e592a2e7fae86",
+      "content_sha256": "3c4bba08349bdd68869552ac9d2a99349a7363c024b4cabb0112df9915a52bf6",
+      "findings": [
+        "9处标题调整为客观内容名称。",
+        "补主问题算法与错误处理不能隐藏在抽象函数后的说明；区分机制片段与完整样例。",
+        "明确资产登记实际路径，并链接范围与证据报告、逐篇质量矩阵；保留现行验收层级。"
+      ],
+      "independent_review": "PASS",
+      "runtime": {
+        "navigation": "PASS",
+        "title_and_heading": "PASS",
+        "map_coverage": "NOT_APPLICABLE",
+        "standalone_code": "NOT_APPLICABLE",
+        "engine_runtime": "NOT_APPLICABLE",
+        "gpu_capture": "NOT_APPLICABLE",
+        "performance": "NOT_APPLICABLE",
+        "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
+      },
+      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+      "independent_record": "depth-independent-support.json",
+      "independent_source_sha256": "3c4bba08349bdd68869552ac9d2a99349a7363c024b4cabb0112df9915a52bf6",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "“代码示例”要求主问题中的错误处理、资源管理、同步展开；完整样例、机制片段和伪代码的上下文规则均保留。",
+        "“内容与证据类型”修正为已实际核读并定位版本/条件；“引擎实现的证据”“复现与检查状态”继续区分规范、数学、编译、运行、捕获与性能。",
+        "逐段检查自然中文与现行规则；00领域的作者入口职责明确，资产与矩阵链接实际存在。"
+      ]
+    },
+    "prior_revision_reviews": [
+      {
+        "date": "2026-10-22",
+        "status": "PENDING",
+        "scope": "全文、代码、来源、验证、标题与关联",
+        "findings": []
+      }
+    ],
+    "historical_reviewed_content_sha256": "4509364d4def32133d4da314acd73d2db168237f4e02f3796f3ea0866428fd08",
+    "historical_content_commit": "9160f31",
+    "depth_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "author_record": "depth-support-review.json",
+      "independent_record": "depth-independent-support.json",
+      "content_sha256": "3c4bba08349bdd68869552ac9d2a99349a7363c024b4cabb0112df9915a52bf6",
+      "reader_trace": "全文规则可执行；补正文输入与单条件改变的两次推演判据，示例和实现边界不降级。",
+      "independent_basis": "阅读加入手算输入与改变单条件失败两次推演，代码不能抽象掉主问题，资料核读/实验/编译/引擎边界可执行；保留。"
+    },
+    "depth_baseline_review": {
       "date": "2026-10-22",
       "status": "REVIEWED",
       "phase": "P4",
@@ -146,21 +200,6 @@
         "“内容与证据类型”修正为已实际核读并定位版本/条件；“引擎实现的证据”“复现与检查状态”继续区分规范、数学、编译、运行、捕获与性能。",
         "逐段检查自然中文与现行规则；00领域的作者入口职责明确，资产与矩阵链接实际存在。"
       ]
-    },
-    "prior_revision_reviews": [
-      {
-        "date": "2026-10-22",
-        "status": "PENDING",
-        "scope": "全文、代码、来源、验证、标题与关联",
-        "findings": []
-      }
-    ],
-    "historical_reviewed_content_sha256": "4509364d4def32133d4da314acd73d2db168237f4e02f3796f3ea0866428fd08",
-    "historical_content_commit": "9160f31",
-    "depth_review": {
-      "date": "2026-10-23",
-      "status": "PENDING",
-      "criterion": "正文可独立推演输入、中间状态、实现及失效；旧矩阵状态不替代本轮复读"
     }
   },
   {
@@ -183,11 +222,11 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "因果推进→句子段落→来源与项目正例→写作复读。 定位：用因果推进解释；句子与段落；自然过渡；写成定稿；来源正例；项目文章正例；正文写法示例；写作复读；相关主题。"
+        "basis": "当前标题与章节：用因果推进解释；句子与段落；自然过渡；写成定稿；来源正例；项目文章正例；正文写法示例；写作复读；相关主题。独立全文判断见depth-independent-support.json"
       },
       "Depth": {
         "status": "通过",
-        "basis": "“因果推进”“自然过渡”解释对象、动作与剩余问题；正例用于学推理，没有固定套用描边章节。"
+        "basis": "作者具体机制：全文已读；问题推进、轻重、自然过渡和描边正例职责准确，保留，不能把段落长度或数例计数当验收。。独立全文复读：裂缝→统一方向→保护着色法线解释因果，提供段落/过渡具体正例；反例引文属于规则示范，非正文套话缺陷；保留。。定位与操作见depth-independent-support.json"
       },
       "Implementation": {
         "status": "通过",
@@ -199,7 +238,7 @@
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "本次独立全文复读：全部句段及复读判据已读；词频/句长只提供候选，KEEP文章仍需复读；外部风格示例与技术证据职责分开。"
+        "basis": "作者具体机制：全文已读；问题推进、轻重、自然过渡和描边正例职责准确，保留，不能把段落长度或数例计数当验收。。独立全文复读：裂缝→统一方向→保护着色法线解释因果，提供段落/过渡具体正例；反例引文属于规则示范，非正文套话缺陷；保留。。定位与操作见depth-independent-support.json"
       },
       "Title": {
         "status": "通过",
@@ -270,6 +309,58 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": null,
     "revision_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "P5-depth",
+      "scope": "全文、入口、术语、规则、章节与导读关系",
+      "author_record": "revision-support-overviews.json",
+      "author_sha256": "6afdf0a6bf0c1715c2bca1935b7a728fcc010e96f52d814c8ef6c2bc6873385c",
+      "content_sha256": "2aa55f0268d4e7d2d8794b79f06b7356bf6edc34084d1ee050e39489166c6150",
+      "findings": [
+        "全文核读并保留现行写作标准与全部正例。",
+        "表头“为什么有效”改为客观的“表达作用”。"
+      ],
+      "independent_review": "PASS",
+      "runtime": {
+        "navigation": "PASS",
+        "title_and_heading": "PASS",
+        "map_coverage": "NOT_APPLICABLE",
+        "standalone_code": "NOT_APPLICABLE",
+        "engine_runtime": "NOT_APPLICABLE",
+        "gpu_capture": "NOT_APPLICABLE",
+        "performance": "NOT_APPLICABLE",
+        "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
+      },
+      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+      "independent_record": "depth-independent-support.json",
+      "independent_source_sha256": "2aa55f0268d4e7d2d8794b79f06b7356bf6edc34084d1ee050e39489166c6150",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "“因果推进”“自然过渡”解释对象、动作与剩余问题；正例用于学推理，没有固定套用描边章节。",
+        "两段项目正例与描边当前第44、95行逐字一致；遮罩相减方向、剔除与深度限制正确。知乎三段引文继承用户指定正例，403取回失败不记本轮外部核读。",
+        "全部句段及复读判据已读；词频/句长只提供候选，KEEP文章仍需复读；外部风格示例与技术证据职责分开。"
+      ]
+    },
+    "prior_revision_reviews": [
+      {
+        "date": "2026-10-22",
+        "status": "PENDING",
+        "scope": "全文、代码、来源、验证、标题与关联",
+        "findings": []
+      }
+    ],
+    "historical_reviewed_content_sha256": "3f6ce2b344c2258a075b96d3e4b495655bc792d5b1174972b9489f15c84b810a",
+    "historical_content_commit": "9160f31",
+    "depth_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "author_record": "depth-support-review.json",
+      "independent_record": "depth-independent-support.json",
+      "content_sha256": "2aa55f0268d4e7d2d8794b79f06b7356bf6edc34084d1ee050e39489166c6150",
+      "reader_trace": "全文已读；问题推进、轻重、自然过渡和描边正例职责准确，保留，不能把段落长度或数例计数当验收。",
+      "independent_basis": "裂缝→统一方向→保护着色法线解释因果，提供段落/过渡具体正例；反例引文属于规则示范，非正文套话缺陷；保留。"
+    },
+    "depth_baseline_review": {
       "date": "2026-10-22",
       "status": "REVIEWED",
       "phase": "P4",
@@ -301,21 +392,6 @@
         "两段项目正例与描边当前第44、95行逐字一致；遮罩相减方向、剔除与深度限制正确。知乎三段引文继承用户指定正例，403取回失败不记本轮外部核读。",
         "全部句段及复读判据已读；词频/句长只提供候选，KEEP文章仍需复读；外部风格示例与技术证据职责分开。"
       ]
-    },
-    "prior_revision_reviews": [
-      {
-        "date": "2026-10-22",
-        "status": "PENDING",
-        "scope": "全文、代码、来源、验证、标题与关联",
-        "findings": []
-      }
-    ],
-    "historical_reviewed_content_sha256": "3f6ce2b344c2258a075b96d3e4b495655bc792d5b1174972b9489f15c84b810a",
-    "historical_content_commit": "9160f31",
-    "depth_review": {
-      "date": "2026-10-23",
-      "status": "PENDING",
-      "criterion": "正文可独立推演输入、中间状态、实现及失效；旧矩阵状态不替代本轮复读"
     }
   },
   {
@@ -338,11 +414,11 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "主叫法、英文或全称、别名与说明三列表；保持单一索引职责。 定位：术语定义表。"
+        "basis": "当前标题与章节：。独立全文判断见depth-independent-support.json"
       },
       "Depth": {
         "status": "通过",
-        "basis": "160项逐项全文复读；设备深度的投影前提、Phong切平面投影、ECS多个存储块、内存别名完成条件等均明确。"
+        "basis": "作者具体机制：全文160项读过；定义与检索职责，Face SDF未被误释为空间距离，主称/关联与当前专题匹配；机制由主篇展开。。独立全文复读：逐行复读数据/法线/屏障/帧/网络含义；修Signed Distance Field主叫法有符号距离场，Tile Memory范围扩到分块渲染并补驻留条件，避免与TBDR唯一绑定。。定位与操作见depth-independent-support.json"
       },
       "Implementation": {
         "status": "不适用",
@@ -354,7 +430,7 @@
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "本次独立全文复读：术语仅负责短定义和检索；PCF、PCSS、设备深度、时域上采样与Render Graph主叫法一致，完整算法留在主篇。"
+        "basis": "作者具体机制：全文160项读过；定义与检索职责，Face SDF未被误释为空间距离，主称/关联与当前专题匹配；机制由主篇展开。。独立全文复读：逐行复读数据/法线/屏障/帧/网络含义；修Signed Distance Field主叫法有符号距离场，Tile Memory范围扩到分块渲染并补驻留条件，避免与TBDR唯一绑定。。定位与操作见depth-independent-support.json"
       },
       "Title": {
         "status": "通过",
@@ -382,6 +458,7 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
+      "DEEPEN",
       "FACT-CHECK",
       "REWRITE"
     ],
@@ -389,7 +466,7 @@
     "changes": [
       "# 术语表"
     ],
-    "final_sha256": "fcb40197b0b13baa8c0a3033a6fec55d7257b38ecd16772c9eb8c42ce501df75",
+    "final_sha256": "b461a9fe29f6fa0a55e590ddaa33fe36d5b0db3b65f686cfada0e2b70b05ac3d",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "SUPPORT",
     "canonical_concept": "术语表",
@@ -401,7 +478,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "fcb40197b0b13baa8c0a3033a6fec55d7257b38ecd16772c9eb8c42ce501df75",
+    "reviewed_content_sha256": "b461a9fe29f6fa0a55e590ddaa33fe36d5b0db3b65f686cfada0e2b70b05ac3d",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -416,6 +493,59 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "P5-depth",
+      "scope": "全文、入口、术语、规则、章节与导读关系",
+      "author_record": "revision-support-overviews.json",
+      "author_sha256": "7d3ed5e88b4c1d935721a92348e1f1f11a2a4f213aa5d92bdd4d70ff73ec6eca",
+      "content_sha256": "b461a9fe29f6fa0a55e590ddaa33fe36d5b0db3b65f686cfada0e2b70b05ac3d",
+      "findings": [
+        "修正35项定义或条件，覆盖深度、时域处理、细分、拓扑、绘制、资源、ECS和网络。",
+        "主叫法采用设备深度、时域上采样、PCF、PCSS；Render Graph保持约定。",
+        "添加容易误解条目的机制主归属链接，性能结论限定条件。"
+      ],
+      "independent_review": "PASS",
+      "runtime": {
+        "navigation": "PASS",
+        "title_and_heading": "PASS",
+        "map_coverage": "NOT_APPLICABLE",
+        "standalone_code": "NOT_APPLICABLE",
+        "engine_runtime": "NOT_APPLICABLE",
+        "gpu_capture": "NOT_APPLICABLE",
+        "performance": "NOT_APPLICABLE",
+        "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
+      },
+      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+      "independent_record": "depth-independent-support.json",
+      "independent_source_sha256": "b461a9fe29f6fa0a55e590ddaa33fe36d5b0db3b65f686cfada0e2b70b05ac3d",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "160项逐项全文复读；设备深度的投影前提、Phong切平面投影、ECS多个存储块、内存别名完成条件等均明确。",
+        "对照主篇深度映射、历史矫正、PCF/PCSS、Phong细分、代理法线、原型、中止语义及历史命中；作者D3D/Salvi外部核读明确继承。",
+        "术语仅负责短定义和检索；PCF、PCSS、设备深度、时域上采样与Render Graph主叫法一致，完整算法留在主篇。"
+      ]
+    },
+    "prior_revision_reviews": [
+      {
+        "date": "2026-10-22",
+        "status": "PENDING",
+        "scope": "全文、代码、来源、验证、标题与关联",
+        "findings": []
+      }
+    ],
+    "historical_reviewed_content_sha256": "e89244c9a204500ce628f2c3b88908e93d49282b1beda90164846b9d73ef665b",
+    "historical_content_commit": "9160f31",
+    "depth_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "author_record": "depth-support-review.json",
+      "independent_record": "depth-independent-support.json",
+      "content_sha256": "b461a9fe29f6fa0a55e590ddaa33fe36d5b0db3b65f686cfada0e2b70b05ac3d",
+      "reader_trace": "全文160项读过；定义与检索职责，Face SDF未被误释为空间距离，主称/关联与当前专题匹配；机制由主篇展开。",
+      "independent_basis": "逐行复读数据/法线/屏障/帧/网络含义；修Signed Distance Field主叫法有符号距离场，Tile Memory范围扩到分块渲染并补驻留条件，避免与TBDR唯一绑定。"
+    },
+    "depth_baseline_review": {
       "date": "2026-10-22",
       "status": "REVIEWED",
       "phase": "P4",
@@ -448,21 +578,6 @@
         "对照主篇深度映射、历史矫正、PCF/PCSS、Phong细分、代理法线、原型、中止语义及历史命中；作者D3D/Salvi外部核读明确继承。",
         "术语仅负责短定义和检索；PCF、PCSS、设备深度、时域上采样与Render Graph主叫法一致，完整算法留在主篇。"
       ]
-    },
-    "prior_revision_reviews": [
-      {
-        "date": "2026-10-22",
-        "status": "PENDING",
-        "scope": "全文、代码、来源、验证、标题与关联",
-        "findings": []
-      }
-    ],
-    "historical_reviewed_content_sha256": "e89244c9a204500ce628f2c3b88908e93d49282b1beda90164846b9d73ef665b",
-    "historical_content_commit": "9160f31",
-    "depth_review": {
-      "date": "2026-10-23",
-      "status": "PENDING",
-      "criterion": "正文可独立推演输入、中间状态、实现及失效；旧矩阵状态不替代本轮复读"
     }
   },
   {
@@ -483,11 +598,11 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "工程路线→领域入口；每个编号领域列出实际页面。 定位：工程路线；建立可扩展渲染器；诊断渲染画面；制作可复用角色；建立资产生产流程；实现联机响应；选择数据与算法；领域入口；00_知识库说明；01_数学与采样；02_GPU与光栅化管线；03_Shader编程；04_光照模型与PBR；05_光照阴影与GI；06_纹理技术；07_颜色与后处理；08_几何与网格；09_动画系统；10_VFX与模拟；11_NPR与风格化渲染；12_光线追踪；13_渲染架构；14_性能分析与优化；15_资产与工具管线；16_编程与数据结构；17_AIGC与Agent管线；18_游戏物理与模拟；19_Gameplay与游戏框架；20_游戏AI；21_游戏网络；22_渲染引擎实现；23_引擎运行系统；24_游戏音频；25_UI与文本；26_GPU驱动与虚拟几何。"
+        "basis": "当前标题与章节：工程路线；建立可扩展渲染器；诊断渲染画面；制作可复用角色；建立资产生产流程；实现联机响应；选择数据与算法；领域入口；00_知识库说明；01_数学与采样；02_GPU与光栅化管线；03_Shader编程；04_光照模型与PBR；05_光照阴影与GI；06_纹理技术；07_颜色与后处理；08_几何与网格；09_动画系统；10_VFX与模拟；11_NPR与风格化渲染；12_光线追踪；13_渲染架构；14_性能分析与优化；15_资产与工具管线；16_编程与数据结构；17_AIGC与Agent管线；18_游戏物理与模拟；19_Gameplay与游戏框架；20_游戏AI；21_游戏网络；22_渲染引擎实现；23_引擎运行系统；24_游戏音频；25_UI与文本；26_GPU驱动与虚拟几何。独立全文判断见depth-independent-support.json"
       },
       "Depth": {
         "status": "通过",
-        "basis": "全文检查六条工程路线、27个领域使命和全部页面列表；路线连接生产、消费和验证。"
+        "basis": "作者具体机制：全文全部入口和路线读过；27领域184页集合，路径按数据依赖组织，导航职责无需复制算法。。独立全文复读：完整184页存在且每页有领域入口；六条工程路线按时间/数据依赖连接；链接导航不假装机制教学。。定位与操作见depth-independent-support.json"
       },
       "Implementation": {
         "status": "不适用",
@@ -499,7 +614,7 @@
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "本次独立全文复读：02三项及14领域更名同步；领域主问题清楚，没有把通用机制和引擎接口混成同一主归属。"
+        "basis": "作者具体机制：全文全部入口和路线读过；27领域184页集合，路径按数据依赖组织，导航职责无需复制算法。。独立全文复读：完整184页存在且每页有领域入口；六条工程路线按时间/数据依赖连接；链接导航不假装机制教学。。定位与操作见depth-independent-support.json"
       },
       "Title": {
         "status": "通过",
@@ -596,6 +711,59 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "P5-depth",
+      "scope": "全文、入口、术语、规则、章节与导读关系",
+      "author_record": "revision-support-overviews.json",
+      "author_sha256": "aa2b227812ad201114e18f7a110694527819a5bad36894726b4d7516da1f4ab4",
+      "content_sha256": "7017f0e8c00c0e7c8b2581dd6a996c720150a40d2211203342fe31baefeb6ce1",
+      "findings": [
+        "同步渲染帧流程、光栅化可见性、可见性与合成三项新标题。",
+        "同步帧瓶颈诊断和PSO首次使用卡顿入口。",
+        "核对全部184页覆盖与现行领域归属。"
+      ],
+      "independent_review": "PASS",
+      "runtime": {
+        "navigation": "PASS",
+        "title_and_heading": "PASS",
+        "map_coverage": "184/184",
+        "standalone_code": "NOT_APPLICABLE",
+        "engine_runtime": "NOT_APPLICABLE",
+        "gpu_capture": "NOT_APPLICABLE",
+        "performance": "NOT_APPLICABLE",
+        "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
+      },
+      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+      "independent_record": "depth-independent-support.json",
+      "independent_source_sha256": "7017f0e8c00c0e7c8b2581dd6a996c720150a40d2211203342fe31baefeb6ce1",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "全文检查六条工程路线、27个领域使命和全部页面列表；路线连接生产、消费和验证。",
+        "领域入口184个唯一链接与实际184个文件集合相等，无缺页、多余或重复；167专题+12导读+5说明。",
+        "02三项及14领域更名同步；领域主问题清楚，没有把通用机制和引擎接口混成同一主归属。"
+      ]
+    },
+    "prior_revision_reviews": [
+      {
+        "date": "2026-10-22",
+        "status": "PENDING",
+        "scope": "全文、代码、来源、验证、标题与关联",
+        "findings": []
+      }
+    ],
+    "historical_reviewed_content_sha256": "0c4d44ad0f1ac6c30138c01f8687536635db694de2da4a9eaa4c0ae176568042",
+    "historical_content_commit": "9160f31",
+    "depth_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "author_record": "depth-support-review.json",
+      "independent_record": "depth-independent-support.json",
+      "content_sha256": "7017f0e8c00c0e7c8b2581dd6a996c720150a40d2211203342fe31baefeb6ce1",
+      "reader_trace": "全文全部入口和路线读过；27领域184页集合，路径按数据依赖组织，导航职责无需复制算法。",
+      "independent_basis": "完整184页存在且每页有领域入口；六条工程路线按时间/数据依赖连接；链接导航不假装机制教学。"
+    },
+    "depth_baseline_review": {
       "date": "2026-10-22",
       "status": "REVIEWED",
       "phase": "P4",
@@ -628,21 +796,6 @@
         "领域入口184个唯一链接与实际184个文件集合相等，无缺页、多余或重复；167专题+12导读+5说明。",
         "02三项及14领域更名同步；领域主问题清楚，没有把通用机制和引擎接口混成同一主归属。"
       ]
-    },
-    "prior_revision_reviews": [
-      {
-        "date": "2026-10-22",
-        "status": "PENDING",
-        "scope": "全文、代码、来源、验证、标题与关联",
-        "findings": []
-      }
-    ],
-    "historical_reviewed_content_sha256": "0c4d44ad0f1ac6c30138c01f8687536635db694de2da4a9eaa4c0ae176568042",
-    "historical_content_commit": "9160f31",
-    "depth_review": {
-      "date": "2026-10-23",
-      "status": "PENDING",
-      "criterion": "正文可独立推演输入、中间状态、实现及失效；旧矩阵状态不替代本轮复读"
     }
   },
   {
@@ -665,11 +818,11 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "文章决策→标题→一级目录→质量矩阵→代码图像事实→阶段与标杆。 定位：文章决策；标题与命名规范；按文章职责选择标题；使用读者习惯的术语；候选与最终选择；文件与引用同步；一级目录分类规范；根据语义判断归属；数量只触发复查；通用概念与引擎实现；审查、方案与采用；质量矩阵；代码、图像与事实；阶段与标杆；相关主题。"
+        "basis": "当前标题与章节：文章决策；标题与命名规范；按文章职责选择标题；使用读者习惯的术语；候选与最终选择；文件与引用同步；一级目录分类规范；根据语义判断归属；数量只触发复查；通用概念与引擎实现；审查、方案与采用；质量矩阵；代码、图像与事实；阶段与标杆；相关主题。独立全文判断见depth-independent-support.json"
       },
       "Depth": {
         "status": "通过",
-        "basis": "全文检查九维、标题候选、KEEP复读、语义归属及阶段完成要求；与提交前三规范diff核对，验收标准没有降低。"
+        "basis": "作者具体机制：全文已读；标题边界与职责规则保留，新增先读正文、逐主要机制输入到输出及失败验收，再记录矩阵。。独立全文复读：正文推演判据先于维度状态，导读与术语按职责分验；命名/分类/边界分别有动作与证据，可指导逐篇修订；保留。。定位与操作见depth-independent-support.json"
       },
       "Implementation": {
         "status": "通过",
@@ -681,7 +834,7 @@
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "本次独立全文复读：规则、命名、分类与技术证据各自记录；当前矩阵和历史迁移报告区分，标题均为内容或操作名称。"
+        "basis": "作者具体机制：全文已读；标题边界与职责规则保留，新增先读正文、逐主要机制输入到输出及失败验收，再记录矩阵。。独立全文复读：正文推演判据先于维度状态，导读与术语按职责分验；命名/分类/边界分别有动作与证据，可指导逐篇修订；保留。。定位与操作见depth-independent-support.json"
       },
       "Title": {
         "status": "通过",
@@ -710,6 +863,7 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
+      "DEEPEN",
       "RESTRUCTURE",
       "REWRITE"
     ],
@@ -732,7 +886,7 @@
       "## 阶段与标杆",
       "## 相关主题"
     ],
-    "final_sha256": "1f1c41e3e9fa31fae6e5eceddfd0448a317c2f274386754574713cebfb372c8a",
+    "final_sha256": "8f12d8d8c31cd90baa2d5a2150f1c7c5faacd76ec3a10b943278711de1d75ea4",
     "article_type": "SUPPORT",
     "canonical_concept": "知识库实施规范",
     "final_sources": [
@@ -743,7 +897,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "1f1c41e3e9fa31fae6e5eceddfd0448a317c2f274386754574713cebfb372c8a",
+    "reviewed_content_sha256": "8f12d8d8c31cd90baa2d5a2150f1c7c5faacd76ec3a10b943278711de1d75ea4",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -758,6 +912,59 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": null,
     "revision_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "P5-depth",
+      "scope": "全文、入口、术语、规则、章节与导读关系",
+      "author_record": "revision-support-overviews.json",
+      "author_sha256": "810759b652d7f7382875212ed5b19c34a0fabc9262dd14ae803d9b365a4dcb79",
+      "content_sha256": "8f12d8d8c31cd90baa2d5a2150f1c7c5faacd76ec3a10b943278711de1d75ea4",
+      "findings": [
+        "保留现行验收门槛与各阶段条件。",
+        "澄清视觉维度的无图适用性依据表述。",
+        "分别链接迁移记录、当前范围与证据报告、逐篇质量矩阵，避免把迁移完成等同于正文验收。"
+      ],
+      "independent_review": "PASS",
+      "runtime": {
+        "navigation": "PASS",
+        "title_and_heading": "PASS",
+        "map_coverage": "NOT_APPLICABLE",
+        "standalone_code": "NOT_APPLICABLE",
+        "engine_runtime": "NOT_APPLICABLE",
+        "gpu_capture": "NOT_APPLICABLE",
+        "performance": "NOT_APPLICABLE",
+        "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
+      },
+      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+      "independent_record": "depth-independent-support.json",
+      "independent_source_sha256": "8f12d8d8c31cd90baa2d5a2150f1c7c5faacd76ec3a10b943278711de1d75ea4",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "全文检查九维、标题候选、KEEP复读、语义归属及阶段完成要求；与提交前三规范diff核对，验收标准没有降低。",
+        "“阶段与标杆”15项CPU检查对应最终测试记录中的真实命令、returncode0和checks15；本轮只审阅记录，目标引擎/跨队列/GPU性能仍另验。",
+        "规则、命名、分类与技术证据各自记录；当前矩阵和历史迁移报告区分，标题均为内容或操作名称。"
+      ]
+    },
+    "prior_revision_reviews": [
+      {
+        "date": "2026-10-22",
+        "status": "PENDING",
+        "scope": "全文、代码、来源、验证、标题与关联",
+        "findings": []
+      }
+    ],
+    "historical_reviewed_content_sha256": "355364e96113ee024abab9803e94480d3b97734b63b31e4b54522fd773781f68",
+    "historical_content_commit": "9160f31",
+    "depth_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "author_record": "depth-support-review.json",
+      "independent_record": "depth-independent-support.json",
+      "content_sha256": "8f12d8d8c31cd90baa2d5a2150f1c7c5faacd76ec3a10b943278711de1d75ea4",
+      "reader_trace": "全文已读；标题边界与职责规则保留，新增先读正文、逐主要机制输入到输出及失败验收，再记录矩阵。",
+      "independent_basis": "正文推演判据先于维度状态，导读与术语按职责分验；命名/分类/边界分别有动作与证据，可指导逐篇修订；保留。"
+    },
+    "depth_baseline_review": {
       "date": "2026-10-22",
       "status": "REVIEWED",
       "phase": "P4",
@@ -790,21 +997,6 @@
         "“阶段与标杆”15项CPU检查对应最终测试记录中的真实命令、returncode0和checks15；本轮只审阅记录，目标引擎/跨队列/GPU性能仍另验。",
         "规则、命名、分类与技术证据各自记录；当前矩阵和历史迁移报告区分，标题均为内容或操作名称。"
       ]
-    },
-    "prior_revision_reviews": [
-      {
-        "date": "2026-10-22",
-        "status": "PENDING",
-        "scope": "全文、代码、来源、验证、标题与关联",
-        "findings": []
-      }
-    ],
-    "historical_reviewed_content_sha256": "355364e96113ee024abab9803e94480d3b97734b63b31e4b54522fd773781f68",
-    "historical_content_commit": "9160f31",
-    "depth_review": {
-      "date": "2026-10-23",
-      "status": "PENDING",
-      "criterion": "正文可独立推演输入、中间状态、实现及失效；旧矩阵状态不替代本轮复读"
     }
   },
   {
@@ -16170,11 +16362,11 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：轮廓信号；几何壳描边；法线外扩与背面绘制；硬边裂缝与独立方向；权重累加完成后再归一化；数据通道与蒙皮；像素线宽；深度与模板控制；深度偏移改变可见性；模板记录本体覆盖；显式轮廓几何；结构线与表面边缘；手绘线、SDF与顶点权重；法线与视线夹角；屏幕空间描边；深度不连续；法线不连续；对象遮罩与ID；时域合成位置；方案选择与工程代价；最小实现与验证；本机参考实验；Unity 6 URP接入路线；故障与回归；证据范围；相关主题；参考资料。独立全文判断见depth-independent-09-15.json"
+        "basis": "当前标题与章节：轮廓信号；几何壳描边；法线外扩与背面绘制；硬边裂缝与独立方向；权重累加完成后再归一化；数据通道与蒙皮；像素线宽；深度与模板控制；深度偏移改变可见性；模板记录本体覆盖；显式轮廓几何；结构线与表面边缘；手绘线、SDF与顶点权重；法线与视线夹角；屏幕空间描边；深度不连续；法线不连续；对象遮罩与ID；时域合成位置；方案选择与工程代价；最小实现与验证；本机参考实验；Unity 6 URP接入路线；故障与回归；证据范围；相关主题；参考资料。独立全文判断见depth-independent-support.json"
       },
       "Depth": {
         "status": "通过",
-        "basis": "独立全文复读：本轮基准全文复读：裂缝方向→独立通道→蒙皮/LOD→像素宽度、遮罩身份与资源链保持完整；无需按字节扩写。。定位与操作见depth-independent-09-15.json"
+        "basis": "作者具体机制：全文作为基准复读；硬边→独立方向→权重/蒙皮→像素位移→可见性自然推进；已执行CPU与GPU未验明确，作为本轮比较基准保留。。独立全文复读：整篇按信号→壳方向→接缝法线→像素宽度→深度模板→资产结构线→屏幕差分→遮罩→时域推进；5x5膨胀到7x7留下24像素可复算，独立方向、联合模板、ID过滤和深度误判均有失败来源。未执行Unity的披露保留。。定位与操作见depth-independent-support.json"
       },
       "Implementation": {
         "status": "通过",
@@ -16186,7 +16378,7 @@
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "独立全文复读：本轮基准全文复读：裂缝方向→独立通道→蒙皮/LOD→像素宽度、遮罩身份与资源链保持完整；无需按字节扩写。。定位与操作见depth-independent-09-15.json"
+        "basis": "作者具体机制：全文作为基准复读；硬边→独立方向→权重/蒙皮→像素位移→可见性自然推进；已执行CPU与GPU未验明确，作为本轮比较基准保留。。独立全文复读：整篇按信号→壳方向→接缝法线→像素宽度→深度模板→资产结构线→屏幕差分→遮罩→时域推进；5x5膨胀到7x7留下24像素可复算，独立方向、联合模板、ID过滤和深度误判均有失败来源。未执行Unity的披露保留。。定位与操作见depth-independent-support.json"
       },
       "Title": {
         "status": "通过",
@@ -16282,11 +16474,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "P2-animation-depth",
+      "phase": "P5-depth",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "f02e219d37bbade640da336c6d98d44527ac805fb6a950fbda73c4de209da30c",
-      "independent_record": "depth-independent-09-15.json",
+      "independent_record": "depth-independent-support.json",
       "independent_source_sha256": "123ab9a80c1fe11677f5cf40482eb0e8a8d33ef0f51b3e53fcdd82ba42a18199",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "123ab9a80c1fe11677f5cf40482eb0e8a8d33ef0f51b3e53fcdd82ba42a18199",
@@ -16317,11 +16509,11 @@
     "depth_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "author_record": "depth-09-15.json",
-      "independent_record": "depth-independent-09-15.json",
+      "author_record": "depth-support-review.json",
+      "independent_record": "depth-independent-support.json",
       "content_sha256": "123ab9a80c1fe11677f5cf40482eb0e8a8d33ef0f51b3e53fcdd82ba42a18199",
-      "reader_trace": "",
-      "independent_basis": "本轮基准全文复读：裂缝方向→独立通道→蒙皮/LOD→像素宽度、遮罩身份与资源链保持完整；无需按字节扩写。"
+      "reader_trace": "全文作为基准复读；硬边→独立方向→权重/蒙皮→像素位移→可见性自然推进；已执行CPU与GPU未验明确，作为本轮比较基准保留。",
+      "independent_basis": "整篇按信号→壳方向→接缝法线→像素宽度→深度模板→资产结构线→屏幕差分→遮罩→时域推进；5x5膨胀到7x7留下24像素可复算，独立方向、联合模板、ID过滤和深度误判均有失败来源。未执行Unity的披露保留。"
     },
     "depth_baseline_review": {
       "date": "2026-10-22",
@@ -32006,11 +32198,11 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：专题入口；接入边界；版本与验证；相关主题；参考资料。独立全文判断见depth-independent-22-26.json"
+        "basis": "当前标题与章节：专题入口；接入边界；版本与验证；相关主题；参考资料。独立全文判断见depth-independent-support.json"
       },
       "Depth": {
         "status": "通过",
-        "basis": "独立全文复读：选中遮罩把材质、网格筛选、图消费者拆开，入口职责明确，保持导读。；按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准。定位与操作见depth-independent-22-26.json"
+        "basis": "作者具体机制：全文读；选中遮罩→网格筛选→图通道→合成关系能指导选择，URP/RDG/MeshPass入口与实际主篇匹配。。独立全文复读：遮罩材质、网格筛选、图读写三职责分开，先帧组织后版本API的入口自然；已核读接口与运行状态分验。。定位与操作见depth-independent-support.json"
       },
       "Implementation": {
         "status": "不适用",
@@ -32022,7 +32214,7 @@
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "独立全文复读：选中遮罩把材质、网格筛选、图消费者拆开，入口职责明确，保持导读。；按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准。定位与操作见depth-independent-22-26.json"
+        "basis": "作者具体机制：全文读；选中遮罩→网格筛选→图通道→合成关系能指导选择，URP/RDG/MeshPass入口与实际主篇匹配。。独立全文复读：遮罩材质、网格筛选、图读写三职责分开，先帧组织后版本API的入口自然；已核读接口与运行状态分验。。定位与操作见depth-independent-support.json"
       },
       "Title": {
         "status": "通过",
@@ -32091,7 +32283,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "P4-depth",
+      "phase": "P5-depth",
       "scope": "全文、入口、术语、规则、章节与导读关系",
       "author_record": "revision-support-overviews.json",
       "author_sha256": "f8128341fc4831116ac7d811b8cc6c89a226bede0da7f854863d2825c4e2219d",
@@ -32113,8 +32305,8 @@
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
       "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
-      "independent_record": "depth-independent-22-26.json",
-      "independent_source_sha256": "f8128341fc4831116ac7d811b8cc6c89a226bede0da7f854863d2825c4e2219d",
+      "independent_record": "depth-independent-support.json",
+      "independent_source_sha256": "c069920b5940e6c0999d40874b8d04e258acfe1ccd5cdcf3ae1ff0ad59a90949",
       "independent_review_date": "2026-10-23",
       "independent_judgment": [
         "对象遮罩由材质输出、网格筛选和图资源读写共同完成；全屏通道与网格接口边界清楚。",
@@ -32155,11 +32347,11 @@
     "depth_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "author_record": "depth-22-26.json",
-      "independent_record": "depth-independent-22-26.json",
+      "author_record": "depth-support-review.json",
+      "independent_record": "depth-independent-support.json",
       "content_sha256": "c069920b5940e6c0999d40874b8d04e258acfe1ccd5cdcf3ae1ff0ad59a90949",
-      "reader_trace": "",
-      "independent_basis": "选中遮罩把材质、网格筛选、图消费者拆开，入口职责明确，保持导读。；按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+      "reader_trace": "全文读；选中遮罩→网格筛选→图通道→合成关系能指导选择，URP/RDG/MeshPass入口与实际主篇匹配。",
+      "independent_basis": "遮罩材质、网格筛选、图读写三职责分开，先帧组织后版本API的入口自然；已核读接口与运行状态分验。"
     },
     "depth_baseline_review": {
       "date": "2026-10-22",

@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-23",
+  "review_basis": "作者规则按可执行性、导航按真实依赖、术语按定义和检索、描边按机制推演分别复核",
+  "articles": [
+    {
+      "path": "README.md",
+      "full_text_read": true,
+      "role_observation": "179主题=167专题+12导读，另5说明共184；入口、发布范围及六类证据分别登记真实；新增机制复读报告提供实际审查入口。",
+      "sha256": "e63d4c8fa0db376794c59fb8e14307b4f0d0e4c05a539c1b7ade037cd79141b6",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/00_知识库说明/学习与维护方法.md",
+      "full_text_read": true,
+      "role_observation": "阅读加入手算输入与改变单条件失败两次推演，代码不能抽象掉主问题，资料核读/实验/编译/引擎边界可执行；保留。",
+      "sha256": "3c4bba08349bdd68869552ac9d2a99349a7363c024b4cabb0112df9915a52bf6",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/00_知识库说明/技术中文写作规范.md",
+      "full_text_read": true,
+      "role_observation": "裂缝→统一方向→保护着色法线解释因果，提供段落/过渡具体正例；反例引文属于规则示范，非正文套话缺陷；保留。",
+      "sha256": "2aa55f0268d4e7d2d8794b79f06b7356bf6edc34084d1ee050e39489166c6150",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/00_知识库说明/术语表.md",
+      "full_text_read": true,
+      "role_observation": "逐行复读数据/法线/屏障/帧/网络含义；修Signed Distance Field主叫法有符号距离场，Tile Memory范围扩到分块渲染并补驻留条件，避免与TBDR唯一绑定。",
+      "sha256": "b461a9fe29f6fa0a55e590ddaa33fe36d5b0db3b65f686cfada0e2b70b05ac3d",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/00_知识库说明/知识地图.md",
+      "full_text_read": true,
+      "role_observation": "完整184页存在且每页有领域入口；六条工程路线按时间/数据依赖连接；链接导航不假装机制教学。",
+      "sha256": "7017f0e8c00c0e7c8b2581dd6a996c720150a40d2211203342fe31baefeb6ce1",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/00_知识库说明/知识库实施规范.md",
+      "full_text_read": true,
+      "role_observation": "正文推演判据先于维度状态，导读与术语按职责分验；命名/分类/边界分别有动作与证据，可指导逐篇修订；保留。",
+      "sha256": "8f12d8d8c31cd90baa2d5a2150f1c7c5faacd76ec3a10b943278711de1d75ea4",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/引擎渲染扩展导读.md",
+      "full_text_read": true,
+      "role_observation": "遮罩材质、网格筛选、图读写三职责分开，先帧组织后版本API的入口自然；已核读接口与运行状态分验。",
+      "sha256": "c069920b5940e6c0999d40874b8d04e258acfe1ccd5cdcf3ae1ff0ad59a90949",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/描边.md",
+      "full_text_read": true,
+      "role_observation": "整篇按信号→壳方向→接缝法线→像素宽度→深度模板→资产结构线→屏幕差分→遮罩→时域推进；5x5膨胀到7x7留下24像素可复算，独立方向、联合模板、ID过滤和深度误判均有失败来源。未执行Unity的披露保留。",
+      "sha256": "123ab9a80c1fe11677f5cf40482eb0e8a8d33ef0f51b3e53fcdd82ba42a18199",
+      "unresolved": []
+    }
+  ],
+  "count": 8,
+  "map_check": {
+    "page_count": 184,
+    "missing": [],
+    "bad": []
+  }
+}

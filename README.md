@@ -42,3 +42,5 @@ Git 仓库发布 README、`知识库/`、`skills/` 与 `AGENTS.md`。知识库�
 项目技能位于 `skills/`，分别维护粒度、写作、事实与技术图代码。文章按主问题和行业习惯命名，正文深度由机制、实现和证据共同判断。
 
 [范围与证据报告](skills/kb-structure-audit/references/revision-report.md)记录全文复读和验收范围；[逐篇质量矩阵](skills/kb-structure-audit/article-quality-matrix.json)记录九个维度的状态、依据及 `revision_review`。规范核对、数学实验、代码编译、引擎运行、帧捕获和性能测量分别登记，阅读结论时以该项实际证据为准。
+
+[机制深度复读记录](skills/kb-structure-audit/references/depth-review-report.md)记录按正文独立推演要求进行的逐篇审查、问题与修订，进度和实际证据分别登记。

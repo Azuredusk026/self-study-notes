@@ -1,0 +1,346 @@
+{
+  "date": "2026-10-23",
+  "started_at": "2026-10-23T01:50:37.766255+08:00",
+  "python": "3.11.9",
+  "scope": "当前正文抽取代码、CPU机制、真实Git暂存区、.NET9宿主、离线着色器编译；无Unity/Unreal运行、GPU画面或性能结果",
+  "runs": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/rendergraph/reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"checks\": 15, \"blur_plan\": {\"order\": [\"Downsample\", \"Blur\", \"Compose\"], \"culled\": [], \"edges\": [[\"Downsample\", \"Blur\", \"RAW\"], [\"Blur\", \"Compose\", \"RAW\"]], \"intervals\": {\"Scene\": [0, 2], \"Half\": [0, 1], \"Blurred\": [1, 2], \"Output\": [2, 3]}}, \"culled_plan\": {\"order\": [\"Compose\"], \"culled\": [\"Downsample\", \"Blur\"], \"edges\": [], \"intervals\": {\"Scene\": [0, 0], \"Output\": [0, 1]}}, \"version_plan\": {\"order\": [\"A\", \"B\", \"C\", \"D\"], \"culled\": [], \"edges\": [[\"A\", \"B\", \"RAW\"], [\"A\", \"C\", \"WAW\"], [\"B\", \"C\", \"WAR\"], [\"C\", \"D\", \"RAW\"]], \"intervals\": {\"X\": [0, 3], \"BResult\": [1, 4], \"DResult\": [3, 4]}}, \"scope\": \"single serial physical resource per name; no GPU barrier emission or engine integration\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/outline/reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"cases\": {\"smooth_order_independence\": 6, \"weighted_direction\": 1, \"pixel_width_sizes_distances_directions\": 27, \"mask_boundary_checks\": 5, \"relative_depth\": 2, \"stencil_mask_vs_id\": 2}, \"total\": 43, \"scope\": \"CPU reference algorithms and numeric checks; no GPU execution\", \"unity_shader\": \"not compiled or run in Unity\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/gbuffer/reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"cases\": 264, \"scope\": \"R8_UNORM CPU round trip; GPU/half precision and filtering not validated\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanisms/reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"checks\": {\"block_mip_budget\": 4, \"circle_box_resolution\": 15, \"parallel_slab_and_intervals\": 5, \"gerstner_analytic_derivatives\": 30, \"normalized_diffusion_energy\": 3, \"temporal_weights_and_reinhard\": 6, \"tcp_fragmentation\": 20}, \"total\": 83, \"taa_effective_samples\": {\"5\": 2.171823277349955, \"10\": 5.132772068820294, \"15\": 9.783598442618132}, \"scope\": \"CPU mathematical and framing models; no engine, network socket, or GPU execution\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanisms/completion_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"checks\": {\"cdf_zero_intervals\": 16, \"periodic_stripe_integral\": 24, \"exclusive_scan_compaction\": 6, \"ordered_alpha_equivalence\": 30, \"prediction_replay\": 10, \"probe_trilinear_weights\": 3}, \"total\": 89, \"scope\": \"CPU models of CDF, stripe integral, scan, Alpha, replay and Probe weights; no engine or GPU execution\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanisms/compile_completion.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"probes\": [{\"entry\": \"CopyKernel\", \"target\": \"cs_6_0\", \"passed\": true, \"scope\": \"DXC fragment compile only\"}, {\"entry\": \"StripePS\", \"target\": \"ps_6_0\", \"passed\": true, \"scope\": \"DXC fragment compile only\"}, {\"entry\": \"GlyphPS\", \"target\": \"ps_6_0\", \"passed\": true, \"scope\": \"DXC fragment compile only\"}, {\"entry\": \"MorphPS\", \"target\": \"ps_6_0\", \"passed\": true, \"scope\": \"DXC fragment compile only\"}], \"total\": 4, \"runtime\": \"UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanisms/verify_event_queue.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"checks\": 4, \"scope\": \"C# article fragment with mock handlers on .NET 9; no Unity runtime\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_math.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_raster.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_shader.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_lighting.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.319s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_gi.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.029s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_post.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/compile_shader.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"checks\": [\n    \"ScanGroups cs_6_0 compilation\",\n    \"Min/max reduction cs_6_0 compilation with guarded loads and distinct padding\",\n    \"CopyKernel cs_6_0 compilation\",\n    \"PerView vs_6_0 compilation; five offsets and 96-byte size\",\n    \"GLSL 330 VertexData matched block links with different instance names\",\n    \"GLSL mismatched block member type correctly rejected\"\n  ],\n  \"scope\": \"Compilation, reflection and offline linking; no GPU execution\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/compile_lighting.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"dxc_entries\": [\"brdf\", \"normal\", \"ibl\", \"skin_lut\", \"skin_radius\", \"skin_rejection\"], \"glsl_link\": \"sky/refraction\", \"scope\": \"离线编译与链接，未执行GPU\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/compile_gi.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"dxc_entries\": [\"probe\", \"reflection\", \"ltc\", \"pcf\"], \"glsl_entries\": [\"cascade\", \"point\"], \"scope\": \"离线编译；无GPU执行\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/compile_post.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"dxc_entries\": [\"srgb\", \"exposure\", \"bloom\", \"ssao\", \"coc_motion\"], \"scope\": \"仅离线编译，未执行GPU\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision_06_08/verify.py"
+      ],
+      "returncode": 0,
+      "stdout": "CPU reference tests: PASS\npom.frag: PASS\ndomain.hlsl: PASS\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision_09_15/verify.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"cpu_tests\": 14, \"git_index_tests\": 5, \"shader_probes\": 9, \"scope\": \"CPU algebra tests and extracted HLSL fragment compilation; engine, GPU execution, capture and performance UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision_16_21/test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_clock_asymmetric_bias (__main__.Network.test_clock_asymmetric_bias) ... ok\ntest_clock_excludes_server_processing (__main__.Network.test_clock_excludes_server_processing) ... ok\ntest_history_rejects_extrapolation (__main__.Network.test_history_rejects_extrapolation) ... ok\ntest_ray_hits_nearest_forward_surface (__main__.Network.test_ray_hits_nearest_forward_surface) ... ok\ntest_reconcile_replays_collision (__main__.Network.test_reconcile_replays_collision) ... ok\ntest_rollback_corrects_state_and_rebuilds_events (__main__.Network.test_rollback_corrects_state_and_rebuilds_events) ... ok\ntest_rpc_failure_rolls_back_balance (__main__.Network.test_rpc_failure_rolls_back_balance) ... ok\ntest_rpc_retry_and_payload_conflict (__main__.Network.test_rpc_retry_and_payload_conflict) ... ok\ntest_wrapped_sequence (__main__.Network.test_wrapped_sequence) ... ok\ntest_fracture_support_disconnect (__main__.Physics.test_fracture_support_disconnect) ... ok\ntest_slide_retains_tangent (__main__.Physics.test_slide_retains_tangent) ... ok\ntest_tire_shared_force_budget (__main__.Physics.test_tire_shared_force_budget) ... ok\ntest_xpbd_coincident_rejected (__main__.Physics.test_xpbd_coincident_rejected) ... ok\ntest_xpbd_compliance_and_accumulation (__main__.Physics.test_xpbd_compliance_and_accumulation) ... ok\ntest_xpbd_pinned_particle (__main__.Physics.test_xpbd_pinned_particle) ... ok\ntest_atomic_publish_failure_preserves_destination (__main__.Storage.test_atomic_publish_failure_preserves_destination) ... ok\ntest_atomic_publish_roundtrip (__main__.Storage.test_atomic_publish_roundtrip) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 0.050s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision_16_21/test_review_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_alignment_addition_overflows (__main__.Arena.test_alignment_addition_overflows) ... ok\ntest_alignment_and_exact_fit (__main__.Arena.test_alignment_and_exact_fit) ... ok\ntest_alignment_crosses_capacity (__main__.Arena.test_alignment_crosses_capacity) ... ok\ntest_invalid_alignment (__main__.Arena.test_invalid_alignment) ... ok\ntest_size_cannot_wrap (__main__.Arena.test_size_cannot_wrap) ... ok\ntest_goap_reestablishes_deleted_fact_later (__main__.Search.test_goap_reestablishes_deleted_fact_later) ... ok\ntest_goap_rejects_goal_destroying_action (__main__.Search.test_goap_rejects_goal_destroying_action) ... ok\ntest_goap_zero_cost_cycle_terminates (__main__.Search.test_goap_zero_cost_cycle_terminates) ... ok\ntest_uct_explores_unvisited (__main__.Search.test_uct_explores_unvisited) ... ok\ntest_uct_opponent_minimizes_root_value (__main__.Search.test_uct_opponent_minimizes_root_value) ... ok\ntest_uct_root_maximizes (__main__.Search.test_uct_root_maximizes) ... ok\ntest_reversed_ack_is_rejected (__main__.SnapshotVersion.test_reversed_ack_is_rejected) ... ok\ntest_same_ack_newer_state_is_accepted (__main__.SnapshotVersion.test_same_ack_newer_state_is_accepted) ... ok\ntest_stale_state_is_rejected (__main__.SnapshotVersion.test_stale_state_is_rejected) ... ok\ntest_wrapped_ack_is_accepted (__main__.SnapshotVersion.test_wrapped_ack_is_accepted) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision_22_26/verify.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"record_date\": \"2026-10-22\", \"python\": \"3.11.9\", \"cpu_tests\": 21, \"cpu_passed\": true, \"probes\": [{\"entry\": \"GlyphPS\", \"profile\": \"ps_6_0\", \"passed\": true, \"scope\": \"HLSL compilation only\"}, {\"entry\": \"MainCS\", \"profile\": \"cs_6_0\", \"passed\": true, \"scope\": \"HLSL compilation only\"}], \"dxc_version\": \"dxcompiler.dll: 1.10(5347-fe261573)(1.9.0.5347) - 1.9.0.5347 (fe2615732)\", \"engine_compile\": \"UNVERIFIED\", \"engine_runtime\": \"UNVERIFIED\", \"gpu_capture\": \"UNVERIFIED\", \"performance\": \"UNVERIFIED\"}\n",
+      "stderr": "test_audio_empty (test_reference.ReferenceTests.test_audio_empty) ... ok\ntest_audio_single_sample_target (test_reference.ReferenceTests.test_audio_single_sample_target) ... ok\ntest_audio_sum_remains_float_and_ramps (test_reference.ReferenceTests.test_audio_sum_remains_float_and_ramps) ... ok\ntest_batches_preserve_painter_order (test_reference.ReferenceTests.test_batches_preserve_painter_order) ... ok\ntest_cut_children_cover_parent (test_reference.ReferenceTests.test_cut_children_cover_parent) ... ok\ntest_cut_missing_sibling_keeps_parent (test_reference.ReferenceTests.test_cut_missing_sibling_keeps_parent) ... ok\ntest_cut_threshold_equality (test_reference.ReferenceTests.test_cut_threshold_equality) ... ok\ntest_cycle_is_rejected (test_reference.ReferenceTests.test_cycle_is_rejected) ... ok\ntest_diamond_dependency (test_reference.ReferenceTests.test_diamond_dependency) ... ok\ntest_ecs_remove_last (test_reference.ReferenceTests.test_ecs_remove_last) ... ok\ntest_ecs_swap_updates_moved_entity (test_reference.ReferenceTests.test_ecs_swap_updates_moved_entity) ... ok\ntest_empty_clip_skipped (test_reference.ReferenceTests.test_empty_clip_skipped) ... ok\ntest_empty_draw_list (test_reference.ReferenceTests.test_empty_draw_list) ... ok\ntest_forward_hiz_all_samples_covered (test_reference.ReferenceTests.test_forward_hiz_all_samples_covered) ... ok\ntest_glyph_offset_and_bearing (test_reference.ReferenceTests.test_glyph_offset_and_bearing) ... ok\ntest_hiz_background_prevents_rejection (test_reference.ReferenceTests.test_hiz_background_prevents_rejection) ... ok\ntest_hiz_equal_is_visible (test_reference.ReferenceTests.test_hiz_equal_is_visible) ... ok\ntest_nested_clipping (test_reference.ReferenceTests.test_nested_clipping) ... ok\ntest_reverse_hiz_all_samples_covered (test_reference.ReferenceTests.test_reverse_hiz_all_samples_covered) ... ok\ntest_unknown_dependency_rejected (test_reference.ReferenceTests.test_unknown_dependency_rejected) ... ok\ntest_zero_advance_mark_has_separate_position (test_reference.ReferenceTests.test_zero_advance_mark_has_separate_position) ... ok\n\n----------------------------------------------------------------------\nRan 21 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanism_depth/bloom/test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanism_depth/ecs/test_ecs.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_actual_addresses_and_float32_round_trip (__main__.EcsTests.test_actual_addresses_and_float32_round_trip) ... ok\ntest_cache_coverage_distinguishes_stride_and_columns (__main__.EcsTests.test_cache_coverage_distinguishes_stride_and_columns) ... ok\ntest_integrate_updates_only_matching_active_entities (__main__.EcsTests.test_integrate_updates_only_matching_active_entities) ... ok\ntest_invalid_input_does_not_remove_source (__main__.EcsTests.test_invalid_input_does_not_remove_source) ... ok\ntest_iteration_rejects_structure_and_allows_later_flush (__main__.EcsTests.test_iteration_rejects_structure_and_allows_later_flush) ... ok\ntest_layout_fits_maximal_capacity_with_padding (__main__.EcsTests.test_layout_fits_maximal_capacity_with_padding) ... ok\ntest_move_first_row_repairs_swapped_entity_and_copies_all_columns (__main__.EcsTests.test_move_first_row_repairs_swapped_entity_and_copies_all_columns) ... ok\ntest_query_cache_sees_new_archetype_and_new_chunk (__main__.EcsTests.test_query_cache_sees_new_archetype_and_new_chunk) ... ok\ntest_query_matches_superset_and_rejects_missing_or_tagged (__main__.EcsTests.test_query_matches_superset_and_rejects_missing_or_tagged) ... ok\ntest_remove_component_and_last_row_path (__main__.EcsTests.test_remove_component_and_last_row_path) ... ok\ntest_repeated_migrations_match_entity_keyed_oracle (__main__.EcsTests.test_repeated_migrations_match_entity_keyed_oracle) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.076s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanism_depth/face_sdf/test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanism_depth/rendergraph/test_schedule.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanism_depth/threading/test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanism_depth/water_atmosphere/test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.003s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "skills/kb-structure-audit/scripts/test_revision_validate.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.060s\n\nOK\n"
+    },
+    {
+      "command": [
+        "dxc",
+        "-T",
+        "vs_6_0",
+        "-E",
+        "OutlineVS",
+        "知识库/examples/outline/CompileProbe.hlsl",
+        "-Fo",
+        "C:\\Users\\23587\\AppData\\Local\\Temp\\kb-final-compile-2p01pyyi\\OutlineVS.dxil"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "dxc",
+        "-T",
+        "ps_6_0",
+        "-E",
+        "OutlinePS",
+        "知识库/examples/outline/CompileProbe.hlsl",
+        "-Fo",
+        "C:\\Users\\23587\\AppData\\Local\\Temp\\kb-final-compile-2p01pyyi\\OutlinePS.dxil"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "dxc",
+        "-T",
+        "ps_6_0",
+        "-E",
+        "ProbePS",
+        "知识库/examples/gbuffer/Packing.hlsl",
+        "-Fo",
+        "C:\\Users\\23587\\AppData\\Local\\Temp\\kb-final-compile-2p01pyyi\\ProbePS.dxil"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "finished_at": "2026-10-23T01:51:11.459462+08:00",
+  "passed": true,
+  "command_count": 32
+}
