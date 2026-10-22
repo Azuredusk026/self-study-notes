@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-23",
+  "purpose": "额外反证式三篇抽查，不替代逐篇全库复读",
+  "articles": [
+    {
+      "path": "知识库/16_编程与数据结构/CSharp运行模型.md",
+      "selection_reason": "原页覆盖IL/AOT/值/装箱/委托/异步/LINQ，但具体例集中在尾部",
+      "full_text_read": true,
+      "counterexample_gap": "async只有状态机一句，无法推演挂起/恢复/资源仍借用；值复制和流边界后置混排",
+      "action": "按编译程序集→值引用→异步状态→读取释放重组；副本归值节、AOT归构建、流语义归代码；异步保存状态与finally释放流程、阻塞等待死锁和未await提前释放分别解释",
+      "final_sha256": "bd5e1a228048a9b2dba4b8ebfba417835edb40961cb47d2d480f83f865a58391",
+      "remaining_limits": "正文语义/协议展开；未声称完整运行时、ComfyUI模型或真实Socket实测"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
+      "selection_reason": "正式生产工作流页宽泛且旧版只有队列段局部深入",
+      "full_text_read": true,
+      "counterexample_gap": "前半多组版本/参数/元数据/风险清单，后置提交确认；读者不能沿一份job看到状态与产物",
+      "action": "全文重写为图语义→固定依赖→提交完成→清单→取消容量；job17/Q断连不重提、批量2只产1保持部分失败、未知响应登记对账、取消后终态再清理均沿实际状态推进",
+      "final_sha256": "db17e14add9f238d6f9975e56d092fd72c7d421fc5a8e2a83a7c0e41f596357a",
+      "remaining_limits": "正文语义/协议展开；未声称完整运行时、ComfyUI模型或真实Socket实测"
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络传输.md",
+      "selection_reason": "端点/TCP/UDP/序列化范围宽，已有深度集中分帧代码",
+      "full_text_read": true,
+      "counterexample_gap": "分帧实现挂在诊断下；TCP累计ACK仅术语，无法推演丢段与队头阻塞",
+      "action": "分帧归入传输主章、DNS记录列表改语义段；字节100/104丢段与ACK100保持追踪；8字节头分5/5/14接收逐次说明缓冲及消费",
+      "final_sha256": "3b83ed903afd9794c65b8a8e6c384d8372f08758f35417df56ba862a88bbf55d",
+      "remaining_limits": "正文语义/协议展开；未声称完整运行时、ComfyUI模型或真实Socket实测"
+    }
+  ],
+  "source_checks": [
+    "Microsoft异步编程状态机及Task语义",
+    "ComfyUI自托管/prompt/history/ws路由",
+    "RFC9293字节序号与累计ACK"
+  ],
+  "tests": "正文重排和机制协议，无新增可运行算法；diff --check通过",
+  "parent_final_review": [
+    {
+      "path": "知识库/16_编程与数据结构/CSharp运行模型.md",
+      "full_text_review": true,
+      "observation": "父全文复读：同步完成与挂起分支、上下文阻塞、finally释放、结构体两份值均有明确因果；整体按编译→值/引用→异步→释放组织。",
+      "current_sha256": "bd5e1a228048a9b2dba4b8ebfba417835edb40961cb47d2d480f83f865a58391",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
+      "full_text_review": true,
+      "observation": "父全文复读：工作流槽位引用→job17/Q→断线恢复→批量2仅1文件拒绝→取消终态清理构成完整协议；未连接服务明确。",
+      "current_sha256": "db17e14add9f238d6f9975e56d092fd72c7d421fc5a8e2a83a7c0e41f596357a",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络传输.md",
+      "full_text_review": true,
+      "observation": "父全文复读：100/104字节空洞与累计ACK100/108、5/5/14接收过程可推演；8字节实际头和2字节参考模型边界清楚；删除与网络无关GPU验证套话。",
+      "current_sha256": "3036a5f2add016fde97ff5ab431d6ebd2460bc1f9943b030031d793f0d83095f",
+      "unresolved": []
+    }
+  ]
+}
