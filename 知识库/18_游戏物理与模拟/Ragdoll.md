@@ -1,31 +1,43 @@
 # Ragdoll
 
-角色受击倒下，直接开启刚体会让身体从绑定姿态跳走。Ragdoll先把物理骨架对齐当前动画，再继承线角速度；恢复时对齐根与骨盆，按权重交回动画控制。
+动画把骨骼摆到当前姿态，物理系统却可能还停在绑定姿态。直接开启动态刚体时，两份状态发生冲突，角色会突然跳动。Ragdoll的切换先建立骨骼与刚体的空间对应，再把速度和控制权交给物理求解器。
 
-## Ragdoll 与动画混合
+## 骨骼与刚体的对应
 
-Ragdoll 用刚体和关节近似骨骼。动画切入物理时要先把刚体对齐到当前 Pose，并从骨骼运动估计初速度。物理回到动画时不能瞬间夺回全部控制权，通常先选择骨盆或根节点对齐，再按权重混合到可恢复姿势。
+骨骼原点常在关节，刚体质心则在肢体中间。记W为世界空间、B为骨骼空间、C为刚体局部空间，$T_{XY}$将Y空间的坐标变到X空间。这里的变换只含旋转和平移，骨骼缩放须先烘焙到刚体几何或单独处理。离线保存刚体在骨骼中的固定变换 $T_{BC}$，采用列向量时，当前刚体世界变换为 $T_{WC}=T_{WB}T_{BC}$。回写动画时用 $T_{WB}=T_{WC}T_{BC}^{-1}$ 恢复骨骼世界变换，再相对父骨骼求局部变换。忽略这个偏移会让碰撞体与皮肤错位。
 
-关节角度、质量分布和碰撞层比增加求解迭代更重要。相邻骨骼互相碰撞、细长肢体惯性不合理和初始穿透，都会造成“抖成一团”。
+关节的两个局部锚点分别属于相邻刚体。约束比较它们变到世界空间后的位置和轴向；肘关节只开放合理自由度，角度范围使用引擎规定单位。相邻碰撞体若在初始姿态互相穿透，接触与关节会给出冲突修正，因此先检查资产几何与碰撞过滤，再增加迭代次数。
 
-切入布娃娃的标准顺序：按当前动画 Pose 摆放刚体、从最近两帧骨骼位移估计线速度与角速度、切换为动态模拟。切回动画时先让根节点对齐到动画根的运动方向，再按关节权重从物理姿势混合到目标姿势，权重曲线持续几百毫秒。混合期间保持关节约束参与求解，否则肢体会被权重拉成不可能姿势。
+## 继承线速度与角速度
 
-## 切换轮廓
+使用最近两个正时间间隔采样的刚体质心位置，线速度为 $(p_1-p_0)/\Delta t$。旋转用归一化四元数计算世界空间增量 $q_d=q_1q_0^{-1}$，将其符号调整到标量部分非负，选择短弧。
 
-伪代码输入当前与前帧姿态，速度除以实际正时间步。
+令增量四元数为 $(w,\mathbf{v})$，角度 $\theta=2\operatorname{atan2}(|\mathbf{v}|,w)$，角速度为 $\boldsymbol\omega=\theta\mathbf{v}/(|\mathbf{v}|\Delta t)$，单位弧度/秒；向量部分接近零时取零。这是假定相邻采样间旋转不足半周的短弧估计；快速旋转超过半周时需要更密采样或直接继承动画系统的角速度。直接把四元数四个分量相减除时间，得不到角速度。
 
 ```text
-AlignBodiesToPose(currentPose)
-velocity = (currentPosition-previousPosition)/dt
-angularVelocity = RotationDelta(previousRotation,currentRotation)/dt
-EnableDynamicsWithInheritedVelocity()
+bodyPose[i] = boneWorld[i] * bodyInBone[i]
+linearVelocity[i] = (bodyCenterNow[i]-bodyCenterBefore[i]) / dt
+delta = normalize(rotationNow[i] * inverse(rotationBefore[i]))
+if delta.w < 0: delta = -delta
+angularVelocity[i] = axis(delta) * shortAngle(delta) / dt
+enable dynamics after every body and joint has been initialized
 ```
+
+这是世界空间机制伪代码；`axis`与`shortAngle`按上面的公式求值。若角色刚传送，有限差分会给出极大速度，切换记录必须区分连续动画与离散传送。还要约束最大继承速度，并保存限幅原因。
+
+## 恢复动画
+
+物理平稳后先根据骨盆朝向选择仰卧或俯卧起身动作，再把角色根放到可站立地面，使起身动画的骨盆与当前物理骨盆接近。保存当前物理姿态，以局部平移插值和四元数插值逐渐过渡到起身动画。
+
+纯表现混合只改变渲染骨骼，物理碰撞体按恢复策略切为运动学或退出；这种方式不保证混合骨架满足动态关节。需要身体在恢复中继续受力时，使用关节驱动追踪动画目标，并限制驱动力矩。两条路径拥有不同的控制权，不能同时让动画直接改动态刚体位置、求解器又计算它的约束。
 
 ## 验证方法
 
-切入瞬间比较位置和速度，切回检查骨盆、关节约束与挂点。质量差、初始穿透与相邻自碰撞逐项关闭定位，恢复权重时长按项目动作测试。
+在跑步、旋转、跳跃和传送后切入，比较切换前后碰撞体位置、质心速度及角速度。切回时检查骨盆、脚底和附着物是否连续。分别关闭相邻自碰撞、修改质量比例与关节限位定位爆炸；性能记录活动刚体数、接触数和约束迭代。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+## 实现与证据
+
+正文为变换与速度推导、引擎接入伪代码。已核对PhysX关节的双局部参考系与弧度约定；尚未建立Ragdoll资产或运行切换场景，动画和物理混合效果待引擎验收。
 
 ## 相关主题
 
@@ -38,8 +50,4 @@ EnableDynamicsWithInheritedVelocity()
 
 ## 参考资料
 
-- Matthias Müller et al., *Position Based Dynamics*（PBD 原始论文）.
-- Miles Macklin et al., *XPBD: Position-Based Simulation of Compliant Constrained Dynamics*（Compliance 形式化的来源）.
-- Erin Catto, *Soft Constraints* 与 *Solver* 系列 GDC 讲义（约束求解的工程推导）.
-- Hans Pacejka, *Tire and Vehicle Dynamics*（滑移率、侧偏角与魔术公式）.
-- NVIDIA PhysX Character Controller 与 Vehicle 文档；Unreal Chaos 布料与破坏文档.
+- [PhysX5.4.1 Joints](https://nvidia-omniverse.github.io/PhysX/physx/5.4.1/docs/Joints.html)：Joint Basics与D6 Joint：双局部约束参考系、角度及驱动；2026-10-22核读。

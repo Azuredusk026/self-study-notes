@@ -4,7 +4,7 @@
 
 ## 版本与证据范围
 
-本篇按 UE5 官方 Renderer、RDG 与 Mesh Drawing Pipeline 文档中的稳定概念组织。具体方法签名、源码行号、GPUScene 和 Nanite 路径以项目 checkout 为准。文档核对日期为 2026-10-04，未将未运行的示例标记为引擎实验。
+本篇按 UE5.4 官方 Renderer、RDG 与 Mesh Drawing Pipeline 文档中的稳定概念组织。具体方法签名、源码行号、GPUScene 和 Nanite 路径以项目 checkout 为准。文档核对日期为 2026-10-22，未将未运行的示例标记为引擎实验。
 
 ## 数据与线程边界
 
@@ -19,6 +19,21 @@ GPU 队列：执行与完成
 ```
 
 SceneProxy 是渲染侧表示，不能假设它是游戏组件的实时可变镜像。更新按引擎跨线程消息与资源生命周期完成。RHI 线程是软件任务分工，实际后端队列由平台能力决定。
+
+## 状态快照与延迟销毁
+
+假设游戏线程把对象颜色从红色改为蓝色。渲染命令应携带蓝色这个值，渲染侧再写入自己的场景表示；若命令只保存组件指针，并在稍后读取其颜色，这时组件可能又变成绿色，甚至已经销毁。按值提交让本次更新对应一个确定状态，对象所有权则保证命令执行期间目标代理仍有效。
+
+```text
+游戏线程：构造更新包 {proxyId, generation, color, transform}
+提交队列：按引擎契约传递更新包并保留所需资源
+渲染侧：校验代理身份 → 应用快照 → 构建本帧命令
+销毁侧：停止新更新 → 注销代理 → 等待对应渲染工作完成 → 释放资源
+```
+
+这是所有权伪代码，`generation`用于说明防止槽位复用，不宣称UE内部每种代理都采用同一字段。UE5.4官方[Threaded Rendering](https://dev.epicgames.com/documentation/en-us/unreal-engine/threaded-rendering-in-unreal-engine?application_version=5.4)的线程数据结构与资源释放章节支持线程分属及延迟释放原则。CPU渲染任务结束与GPU使用资源结束是两种事件，涉及GPU资源回收时还要满足后端完成条件。
+
+排查一帧滞后时记录游戏状态版本、代理应用版本与捕获帧号。版本连续而固定落后一帧可能是流水化结果；更新丢号或销毁后继续消费则是所有权问题。每帧强制等待渲染线程会压缩流水线，先用这些记录确认需求，再决定是否存在必须等待的边界。
 
 ## 网格与全屏功能
 
@@ -112,7 +127,7 @@ GPU Simulation 适合大量粒子，但：
 
 ## 参考资料
 
-- [Unreal RDG](https://dev.epicgames.com/documentation/en-us/unreal-engine/render-dependency-graph-in-unreal-engine)。
-- [Unreal Mesh Drawing Pipeline](https://dev.epicgames.com/documentation/en-us/unreal-engine/mesh-drawing-pipeline-in-unreal-engine)。
+- [Unreal RDG](https://dev.epicgames.com/documentation/en-us/unreal-engine/render-dependency-graph-in-unreal-engine?application_version=5.4)，Shader Parameter Structs与Resource Lifetimes。
+- [Unreal Mesh Drawing Pipeline](https://dev.epicgames.com/documentation/en-us/unreal-engine/mesh-drawing-pipeline-in-unreal-engine?application_version=5.4)，Cached and Dynamic Mesh Batches与FMeshPassProcessor。
 - Epic Games，Shader Development、Unreal Insights 与 Graphics Programming 官方文档。
 - 源码定位：`Renderer/Private`、`RenderGraphBuilder.h`、`RHICommandList.h`、`MeshPassProcessor.h`。

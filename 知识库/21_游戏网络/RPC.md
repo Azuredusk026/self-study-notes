@@ -2,11 +2,11 @@
 
 服务端执行了请求，响应却丢了，客户端无法由超时判断是否成功。RPC需要请求ID、权限和幂等边界，重试查询已有结果，避免一次加金币变成两次。
 
-## RPC
+## 请求与执行语义
 
-RPC 由 IDL/Schema 描述可调用消息，生成或手写 Stub 负责序列化、发送和分发。网络 RPC 不具有本地调用的可靠语义：它可能延迟、超时、重复执行，也可能在响应回来前连接断开。
+RPC 由 IDL/结构约束描述可调用消息，生成或手写 Stub 负责序列化、发送和分发。网络 RPC 不具有本地调用的可靠语义：它可能延迟、超时、重复执行，也可能在响应回来前连接断开。
 
-每个请求应有 Request ID、权限上下文和超时。自动重试只适合幂等操作，或服务端用唯一事务号去重。`SetName(A)` 可以设计成幂等，`AddGold(100)` 若重复执行就会出错。关键交易最好表达为“提交事务 X”，并保存处理结果。
+每个请求应有请求ID、权限上下文和超时。自动重试只适合幂等操作，或服务端用唯一事务号去重。`SetName(A)` 可以设计成幂等，`AddGold(100)` 若重复执行就会出错。关键交易最好表达为“提交事务 X”，并保存处理结果。
 
 客户端 RPC 只是请求，服务端必须重新验证位置、冷却、资源和身份。函数名叫 `ServerDealDamage` 并不会让传入伤害可信。
 
@@ -18,7 +18,7 @@ Mirror 等引擎网络库把 RPC、对象生成和 SyncVar 封装为组件接口
 
 ## 安全边界
 
-握手阶段验证版本与身份，传输层按需要使用成熟的加密和认证协议。不要自创密码学。解析器限制包大小、频率和嵌套深度，网关按连接与账号做 Rate Limit。错误日志避免回显令牌和敏感载荷。
+握手阶段验证版本与身份，传输层按需要使用成熟的加密和认证协议。不要自创密码学。解析器限制包大小、频率和嵌套深度，网关按连接与账号做限流。错误日志避免回显令牌和敏感载荷。
 
 UDP 需要额外防止地址伪造与放大攻击。建立会话前不要对小请求返回巨大数据，关键消息带会话验证信息。断线重连时旧连接和重放包也必须失效。
 
@@ -28,18 +28,36 @@ UDP 需要额外防止地址伪造与放大攻击。建立会话前不要对小�
 
 ```text
 validate session, schema and permission
-if transaction already committed: return stored result
-begin transaction
+begin serialized write transaction
+if transaction already committed: validate payload; return stored result
 apply validated state change
 store result under transactionId
 commit
 ```
 
+## 并发重试的事务边界
+
+在事务外查询“请求是否执行过”，两个并发重试可能同时查到空，然后各自增加一次余额。去重检查和状态写入必须由同一原子边界保护。单数据库实现可以用 `(accountId,requestId)` 唯一键，并在写事务内读取记录、修改状态和写入结果。
+
+```sql
+BEGIN IMMEDIATE;
+-- 在本写事务内查询requests；存在时核对载荷并返回保存结果。
+-- 不存在时更新balance，并INSERT requests(account,id,payload,result)。
+COMMIT;
+```
+
+这是 SQLite 事务机制片段。`BEGIN IMMEDIATE` 取得写事务资格，其他写者按超时策略等待或失败重试。[完整实验](../examples/revision_16_21/reference.py)的 `credit` 在同一事务内更新余额与结果；同ID不同金额拒绝，避免错误复用请求号。测试在更新后、记录前注入异常，重试仍只增加一次。
+
+数据库提交与向外部服务发消息属于两个副作用。把待发送消息写进同一数据库事务的发件箱，再由发送器重试；接收方仍按消息ID幂等处理。事务不能自动把外部HTTP请求纳入原子提交。去重记录的保留时间也要覆盖允许重试的最长时间，过期会话的旧ID不能再次成为新操作。
+
 ## 验证方法
 
 在执行前后和响应前注入断线，重试应返回同一结果。测试权限、版本、非法长度及重复事务；TLS保护传输，不替代业务验证。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+
+## 实现与证据
+
+2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页运行真实 SQLite 文件事务，覆盖重复ID、载荷冲突与提交前异常；没有进行多机消息投递或服务进程崩溃实验。
 
 ## 相关主题
 
@@ -49,7 +67,4 @@ commit
 
 ## 参考资料
 
-- Glenn Fiedler, *Networking for Game Programmers*.
-- IETF TCP, UDP and QUIC RFCs.
-- Valve, *Source Multiplayer Networking*.
-- Cloudflare Learning Center and IETF DNS RFCs.
+- [SQLite Transaction](https://www.sqlite.org/lang_transaction.html)：2.1单写事务、2.2 BEGIN IMMEDIATE；2026-10-22核读。

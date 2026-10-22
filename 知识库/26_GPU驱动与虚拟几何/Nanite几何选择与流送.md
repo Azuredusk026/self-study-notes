@@ -1,69 +1,81 @@
 # Nanite几何选择与流送
 
-相机靠近一面高密度石墙，只需要增加当前可见区域的几何细节，远处部分仍可保持粗层。Nanite 用预处理层级做这份选择，再把所需细节作为 Page 流送。理解它时要把构建、屏幕误差、驻留和缺页回退连起来：选出的细节既要覆盖表面，也必须已经可供 GPU 使用。
+相机靠近一面高密度石墙，需要增加当前可见区域的几何细节，远处部分仍可保持粗层。Nanite 用预处理层级做这份选择，再把所需细节作为页面流送。理解它时要把构建、屏幕误差、驻留和缺页回退连起来：选出的细节既要覆盖表面，也必须已经可供 GPU 使用。
 
-## Nanite 解决的问题
+## 版本与证据范围
 
-Nanite 是 Unreal 的虚拟化几何系统。核心思想是把高密度三角形预处理成 Cluster 层级，根据当前视点选择满足 Screen-space Error 的局部几何，并按需流送所需 Page。
+层级构建和流送依据Epic的2021年Nanite公开演讲，功能约束采用UE5.4官方Nanite文档；2026-10-22核读。演讲描述当时实现，本文参考算法只模拟覆盖关系，不作为UE5.4或更新版本源码的逐行实现。
 
-它不是“没有面数限制”，也不是运行时自动把任意几何变成无限细节。磁盘、内存、流送、材质、变形和像素预算仍然存在。
+## Nanite的几何预算
 
-## Cluster Group 与简化层级
+Nanite 是 Unreal 的虚拟化几何系统。核心思想是把高密度三角形预处理成 Cluster 层级，根据当前视点选择满足 屏幕空间误差 的局部几何，并按需流送所需 Page。
 
-朴素方案若独立简化每个 Cluster，要么边界裂开，要么永久锁住边界导致高层 LOD 仍保留大量三角形。
+可用细节受导入几何、磁盘、内存、流送、材质和像素预算共同约束。相机靠近时能够请求更细数据，前提是这些细节已由构建阶段生成。
 
-Nanite 的公开设计以 Cluster Group 为简化单元：
+## 簇组与简化层级
 
-1. 把一组 Cluster 合成 Group；
-2. 锁住 Group 外边界；
-3. 对 Group 内部整体简化；
+朴素方案若独立简化每个簇，要么边界裂开，要么永久锁住边界导致高层 LOD 仍保留大量三角形。
+
+Nanite 的公开设计以 簇组 为简化单元：
+
+1. 把一组簇合成簇组；
+2. 锁住 簇组外边界；
+3. 对 簇组内部整体简化；
 4. 把简化结果重新聚类；
 5. 在更高层重复。
 
-不同层的 Group Boundary 会变化，父子关系不必是一对一树，可形成局部多对多的 DAG。这样能在保持某次简化边界水密的同时，避免同一边永久被锁住。
+不同层的 组边界 会变化，父子关系不必是一对一树，可形成局部多对多的 DAG。这样能在保持某次简化边界水密的同时，避免同一边永久被锁住。
 
-具体 Cluster 数量、三角形上限和内部布局会随引擎版本变化，理解时应关注职责，不把示例数字当接口保证。
+具体簇数量、三角形上限和内部布局会随引擎版本变化，理解时应关注职责，不把示例数字当接口保证。
 
-## Screen-space Error 与 Cut
+## 屏幕误差与层级切面
 
-每个节点记录简化误差和 Bounds。运行时把 Object-space Error 投影到屏幕，判断该节点是否足够精细。
+每个节点记录简化误差和包围范围。对透视相机，一个便于理解的近似是`errorPixels ≈ errorWorld * H / (2*z*tan(fovY/2))`：`H`为像素高度，`z`为正的视空间距离，`fovY`为竖直视场角。这个公式假定误差相对距离很小；保守实现要用误差包围体、最近距离与近裁剪条件，不能仅用中心点距离作为保证。
 
-选择出的节点集合形成层级上的 Cut：既覆盖需要绘制的表面，又避免父子同时重复绘制。为了并行决定可见性，Error 传播必须满足层级一致性和单调关系。
+选择出的节点集合形成层级切面（Cut）：覆盖需要绘制的表面，并避免父子重复绘制。设屏幕阈值为τ，公开演讲中的局部选择条件为`parentError > τ && clusterError <= τ`。父级误差大到不能使用，当前簇又足够精细时，选择就在两者之间切开。
 
-相邻区域可选不同细节层，产生 View-dependent LOD。过渡稳定性依赖误差度量、边界构造、时间滞后和像素覆盖，不等于完全没有 Popping。
+该条件要求沿层级从粗到细误差不增加。如果父误差为2、子误差为4，阈值为3，父级已经满足而子级反而不满足，局部判断可能产生空洞或重叠。构建时不仅使误差单调，还需要让用于投影误差的包围范围满足相应关系，才能保持不同视点下的选择一致。公开演讲第65—70页区分了LOD关系DAG与用于加速候选查询的包围层级。
 
-## Nanite 的 Culling 与 Raster
+相邻区域可选不同细节层，产生 视点相关LOD。过渡稳定性依赖误差度量、边界构造、时间滞后和像素覆盖，不等于完全没有 突跳。
 
-运行时先用层级 Bounds 减少需要检查的 Cluster，再做 Instance/Cluster Frustum、Backface 与 Occlusion Culling。
+## Nanite剔除与光栅化
+
+运行时先用层级包围体 减少需要检查的 Cluster，再做 实例与簇的视锥、背面和遮挡剔除。
 
 大三角形适合硬件 Rasterizer。极小三角形在固定 Rasterizer 中会受 Quad/Setup 效率影响，Compute Software Raster 可能更合适。实现可以按投影三角形尺寸选择路径，最终写入统一 Visibility/Depth 表示。
 
-这不是“软件光栅永远更快”。性能取决于三角形尺寸、覆盖、原子写、硬件和实现。
+路径成本取决于三角形尺寸、覆盖、原子写、硬件和具体实现；选择阈值需要在目标设备上测量。
 
-## Page Streaming 与虚拟化
+## 页面流送与虚拟化
 
-精细 Cluster 数据按 Page 存储。粗层级常驻，细节按 View Request 流送。请求从 GPU 可见性产生，经 CPU/IO 调度加载到 GPU Page Pool。
+精细簇数据按页面存储。粗层级常驻，细节按 视图请求 流送。请求从 GPU 可见性产生，经 CPU/IO 调度加载到 GPU 页面池。
 
 需要处理：
 
-- Page Residency 和 Eviction；
+- 页面驻留与逐出；
 - 请求去重与优先级；
-- Camera Teleport 的峰值；
+- 相机瞬移 的峰值；
 - 缺页时回退父级；
 - 压缩与 GPU 解码；
 - 多视图、阴影和反射带来的额外需求。
 
-Page Pool 有固定驻留预算，新增请求会与已有内容竞争。粗层常驻让缺页时仍有可绘制结果，细层则按优先级进入预算。
+页面池 有固定驻留预算，新增请求会与已有内容竞争。粗层常驻让缺页时仍有可绘制结果，细层则按优先级进入预算。
 
-几何 Page 可以对父级或相邻层级做增量编码，只保存可重建的差值，再使用 LZ 等无损压缩降低磁盘和传输体积。压缩率、随机访问粒度和解压吞吐需要一起设计：Page 太大增加无效传输，Page 太小会放大请求、元数据和 IO 开销。
+2021年公开实现用当前页或父页引用消除重复顶点，并对磁盘数据使用适合字节压缩的编码；GPU转码在安装时还原渲染表示。压缩率、随机访问粒度和解压吞吐需要一起设计：页面太大增加无效传输，页面太小会放大请求、元数据和 IO 开销。
 
-DirectStorage 一类直接存储路径减少传统逐文件 CPU IO 和中间复制，让批量请求、GPU 可用压缩数据与上传队列更紧密地衔接。它不会消除资产调度问题，仍需要优先级、反馈延迟、驻留预算和缺页时的父级回退。
+页面完成读取以后还需要安装、转码并修补GPU侧索引。2021年公开实现把磁盘表示与渲染内存表示分开：前者针对压缩体积，后者针对随机访问和快速解码。父页面引用必须在子页面解码以前可用。具体存储API和解压路径属于目标平台实现，不能从“GPU转码”推定一定使用DirectStorage。
+
+### 组完整性与缺页回退
+
+细簇与父簇可能交叠，替换单位因此是完整组。假设父级覆盖左、右两部分，左子簇已驻留、右子簇未驻留：只画左子簇并隐藏父级会漏掉右半；同时画左子簇和完整父级又会重复覆盖左半。合法选择是暂时画父级，并请求右子簇所在页面，等整组可用后一起替换。
+
+2021年演讲第122—127页据此要求流送切面也保持合法，页面安装和逐出都可能改变组完整性。请求队列还会更新已经驻留页面的优先级，避免把当前仍重要的数据当作冷数据逐出。相机瞬移先改变请求集合，细节到达仍有反馈、IO和安装延迟，粗层回退承担这段时间的表面覆盖。
 
 ## 材质、透明与动态几何
 
-高密度 Visibility Pipeline 对不透明/Masked 几何最自然。透明排序、像素深度偏移、任意顶点位移和复杂 Deformation 会破坏预计算 Bounds、层级与可见性假设。
+高密度 可见性管线 对不透明/Masked 几何最自然。透明排序、像素深度偏移、任意顶点位移和复杂变形 会破坏预计算包围体、层级与可见性假设。
 
-Nanite 的具体支持范围会随 Unreal 版本扩展。笔记应按当前官方文档核对，不把早期限制或新实验特性写成永久结论。
+UE5.4文档的Materials节支持Opaque与Masked，并规定不支持的混合类型有替代材质和日志提示；Geometry节把WPO列为有限支持，要求控制位移范围，骨骼动画与Morph Target另列为不支持。这里是5.4文档范围，其他版本按对应文档与项目验证，不能沿用为永久限制。
 
 传统 LOD、Skeletal Mesh、Impostor 和普通 Raster Pipeline 仍然需要，与虚拟化几何混合存在。
 
@@ -91,9 +103,13 @@ Select(node, view):
 ## 验证方法
 
 - 使用 Nanite 可视化查看层级选择、实例与 cluster 数量。
-- 固定镜头记录 streaming 请求，再瞬移检查粗层回退和细节恢复。
+- 固定镜头记录 流送请求，再瞬移检查粗层回退和细节恢复。
 - 对 Masked、位移、动态几何和阴影分别按目标 UE 版本验证。
-- 记录 GPU culling、raster、材质和 page pool 成本。
+- 记录 GPU剔除、光栅化、材质和页面池 成本。
+
+## 参考实验与证据
+
+[CPU参考模型](../examples/revision_22_26/reference.py)的`select_cut`用树模拟完整组替换：子项全驻留时取子项，缺一项时保留父项并发出请求，阈值相等时保留当前项。2026-10-22执行`python 知识库/examples/revision_22_26/test_reference.py`，21项通过，其中3项属于切面覆盖。真实DAG、多视图、误差传播、压缩页安装与Nanite运行均未包含，完整引擎运行和GPU性能为UNVERIFIED。
 
 ## 相关主题
 
@@ -107,7 +123,5 @@ Select(node, view):
 
 ## 参考资料
 
-- Epic Games, *A Deep Dive into Nanite Virtualized Geometry* and current Nanite documentation.
-- Burns and Hunt, *The Visibility Buffer: A Cache-Friendly Approach to Deferred Shading*.
-- NVIDIA and Microsoft Mesh Shader specifications and programming guides.
-- Haar and Aaltonen, *GPU-Driven Rendering Pipelines* technical presentations.
+- Brian Karis、Rune Stubbe、Graham Wihlidal，[Nanite: A Deep Dive](https://advances.realtimerendering.com/s2021/Karis_Nanite_SIGGRAPH_Advances_2021_final.pdf)，SIGGRAPH 2021。PDF第30页流送切面，第34—35页交替组边界，第65—70页单调误差与局部LOD选择，第122—127页组完整性与请求，第129、138、140页双表示、GPU转码和父页引用；2026-10-22读取原PDF对应页。
+- Epic Games，[UE5.4 Nanite Virtualized Geometry](https://dev.epicgames.com/documentation/en-us/unreal-engine/nanite-virtualized-geometry-in-unreal-engine?application_version=5.4)，Supported Features、Nanite Stats Command、Controlling Nanite Streaming Pool Size；2026-10-22核读。功能限制、观察入口和预算范围由此核对。

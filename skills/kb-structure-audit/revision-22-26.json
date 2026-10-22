@@ -1,0 +1,1693 @@
+{
+  "date": "2026-10-22",
+  "scope": "知识库22—26全部17页",
+  "baseline": "描边机制推理与技术中文写作规范",
+  "articles": [
+    {
+      "path": "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
+      "primary_question": "相机配置与渲染管线如何共同确定一帧资源和通道",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "版本与证据",
+        "资产与相机渲染",
+        "URP 前向与延迟路径",
+        "HDRP 的扩展边界",
+        "相机堆栈与分辨率",
+        "设置与构建",
+        "颜色输入的生产与消费",
+        "验证方法",
+        "Unity Built-in Pipeline",
+        "Unity Shader 与渲染层",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "补不透明颜色输入的生产者、后缓冲限制和恒等拷贝诊断；合并重复HDRP节",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "相机配置与渲染管线如何共同确定一帧资源和通道；主机制见“颜色输入的生产与消费”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：版本与证据 → 资产与相机渲染 → URP 前向与延迟路径 → HDRP 的扩展边界 → 相机堆栈与分辨率 → 设置与构建；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "补不透明颜色输入的生产者、后缓冲限制和恒等拷贝诊断；合并重复HDRP节"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "调用链、相机/输入/输出/提交观察表；Unity 6000.0与URP17运行待验证；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”含1条本轮核读定位；调用链、相机/输入/输出/提交观察表；Unity 6000.0与URP17运行待验证"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“颜色输入的生产与消费”具体完成：补不透明颜色输入的生产者、后缓冲限制和恒等拷贝诊断；合并重复HDRP节"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“Unity渲染帧组织”“Unity相机与渲染资源”“Unity渲染管线组织”；保留当前标题，其范围覆盖相机配置与渲染管线如何共同确定一帧资源和通道；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留22_渲染引擎实现主归属；相机配置与渲染管线如何共同确定一帧资源和通道由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“颜色输入的生产与消费”使用公式、伪代码或数值例直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "Unity渲染帧组织",
+        "Unity相机与渲染资源",
+        "Unity渲染管线组织"
+      ],
+      "title_mapping": {
+        "old": "Unity渲染帧组织",
+        "new": "Unity渲染帧组织"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-write-render-pass.html",
+          "locator": "`UseTexture`、`SetRenderAttachment`与执行回调；2026-10-22核读。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        }
+      ],
+      "verification": {
+        "scope": "调用链、相机/输入/输出/提交观察表；Unity 6000.0与URP17运行待验证",
+        "cpu_command": null,
+        "shader_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_sha256": "1e210aa34d687eefd690b314a39d35b3515fb0308b4dc5ba795099268a3cfa06"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unreal RDG Pass实现.md",
+      "primary_question": "RDG参数、输出消费者与执行生命周期如何构成有效通道",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "适用范围",
+        "计算通道示例",
+        "参数布局与线程覆盖",
+        "参数、引用与执行回调",
+        "导入与导出",
+        "光栅通道",
+        "成本和故障",
+        "验证方法",
+        "编译证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "补RDG参数宏、8×8线程HLSL与17×9尾部覆盖，说明提取时机",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "RDG参数、输出消费者与执行生命周期如何构成有效通道；主机制见“参数布局与线程覆盖”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：适用范围 → 计算通道示例 → 参数布局与线程覆盖 → 参数、引用与执行回调 → 导入与导出 → 光栅通道；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "补RDG参数宏、8×8线程HLSL与17×9尾部覆盖，说明提取时机"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "MainCS cs_6_0 DXC编译通过；UE模块绑定与实际dispatch待验证；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”含0条本轮核读定位；MainCS cs_6_0 DXC编译通过；UE模块绑定与实际dispatch待验证"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“参数布局与线程覆盖”具体完成：补RDG参数宏、8×8线程HLSL与17×9尾部覆盖，说明提取时机"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“Unreal RDG Pass实现”“Unreal RDG通道接入”“RDG资源声明与执行”；保留当前标题，其范围覆盖RDG参数、输出消费者与执行生命周期如何构成有效通道；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留22_渲染引擎实现主归属；RDG参数、输出消费者与执行生命周期如何构成有效通道由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“参数布局与线程覆盖”使用公式、伪代码或数值例直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "Unreal RDG Pass实现",
+        "Unreal RDG通道接入",
+        "RDG资源声明与执行"
+      ],
+      "title_mapping": {
+        "old": "Unreal RDG Pass实现",
+        "new": "Unreal RDG Pass实现"
+      },
+      "category_review": "PASS",
+      "source_checks": [],
+      "verification": {
+        "scope": "MainCS cs_6_0 DXC编译通过；UE模块绑定与实际dispatch待验证",
+        "cpu_command": null,
+        "shader_command": "python 知识库/examples/revision_22_26/verify.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_sha256": "cb086cc7d4cf4cb34d8a7174ae60e2e537f0b3e85414a95dfed2d548ddd6b10e"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
+      "primary_question": "游戏状态如何跨线程进入Unreal渲染帧",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "版本与证据范围",
+        "数据与线程边界",
+        "状态快照与延迟销毁",
+        "网格与全屏功能",
+        "Shader 与参数",
+        "自定义功能的定位",
+        "配置与观测",
+        "验证方法",
+        "Unreal Material",
+        "Custom Depth 和 Stencil",
+        "Post Process Material",
+        "Niagara",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "用红蓝绿颜色状态解释按值传递；区分渲染任务与GPU完成",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "游戏状态如何跨线程进入Unreal渲染帧；主机制见“状态快照与延迟销毁”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：版本与证据范围 → 数据与线程边界 → 状态快照与延迟销毁 → 网格与全屏功能 → Shader 与参数 → 自定义功能的定位；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "用红蓝绿颜色状态解释按值传递；区分渲染任务与GPU完成"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "更新包伪代码及帧号/代理版本检查；UE5.4运行待验证；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”含0条本轮核读定位；更新包伪代码及帧号/代理版本检查；UE5.4运行待验证"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“状态快照与延迟销毁”具体完成：用红蓝绿颜色状态解释按值传递；区分渲染任务与GPU完成"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“Unreal渲染帧组织”“Unreal场景与渲染线程”“Unreal渲染数据流程”；保留当前标题，其范围覆盖游戏状态如何跨线程进入Unreal渲染帧；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留22_渲染引擎实现主归属；游戏状态如何跨线程进入Unreal渲染帧由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“状态快照与延迟销毁”使用公式、伪代码或数值例直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "Unreal渲染帧组织",
+        "Unreal场景与渲染线程",
+        "Unreal渲染数据流程"
+      ],
+      "title_mapping": {
+        "old": "Unreal渲染帧组织",
+        "new": "Unreal渲染帧组织"
+      },
+      "category_review": "PASS",
+      "source_checks": [],
+      "verification": {
+        "scope": "更新包伪代码及帧号/代理版本检查；UE5.4运行待验证",
+        "cpu_command": null,
+        "shader_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_sha256": "dfef3e7d9e5630f541e46f4ac5d9ddf47b86281828397c566e0ef101614e2d83"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unreal自定义Mesh Pass.md",
+      "primary_question": "网格处理器如何筛选、绑定并缓存专用绘制命令",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "版本与证据范围",
+        "组件与绘制命令",
+        "FPrimitiveSceneProxy",
+        "FMeshBatch",
+        "FMeshDrawCommand",
+        "排序键",
+        "Vertex Factory",
+        "三套顶点流",
+        "顶点属性契约",
+        "初始化与引用寿命",
+        "Manual Vertex Fetch",
+        "材质数据与附件边界",
+        "自定义 Mesh Pass",
+        "与 RDG 的配合",
+        "实现层次的选择",
+        "材质与通道的职责",
+        "引擎改动的工程管理",
+        "处理器的可验收路径",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "以选中不透明遮罩展开筛选、排列缺失与深度语义；修正缓存、顶点契约及材质路径边界",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "网格处理器如何筛选、绑定并缓存专用绘制命令；主机制见“处理器的可验收路径”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：版本与证据范围 → 组件与绘制命令 → FPrimitiveSceneProxy → FMeshBatch → FMeshDrawCommand → 排序键；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "以选中不透明遮罩展开筛选、排列缺失与深度语义；修正缓存、顶点契约及材质路径边界"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "API中立布局和处理器伪代码；UE5.4完整补丁编译待验证；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”含2条本轮核读定位；API中立布局和处理器伪代码；UE5.4完整补丁编译待验证"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“处理器的可验收路径”具体完成：以选中不透明遮罩展开筛选、排列缺失与深度语义；修正缓存、顶点契约及材质路径边界"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“Unreal自定义Mesh Pass”“Unreal网格绘制通道”“Unreal网格处理器”；保留当前标题，其范围覆盖网格处理器如何筛选、绑定并缓存专用绘制命令；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留22_渲染引擎实现主归属；网格处理器如何筛选、绑定并缓存专用绘制命令由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“处理器的可验收路径”使用公式、伪代码或数值例直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "Unreal自定义Mesh Pass",
+        "Unreal网格绘制通道",
+        "Unreal网格处理器"
+      ],
+      "title_mapping": {
+        "old": "Unreal自定义Mesh Pass",
+        "new": "Unreal自定义Mesh Pass"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/mesh-drawing-pipeline-in-unreal-engine?application_version=5.4",
+          "locator": "Cached and Dynamic Mesh Batches、FMeshPassProcessor、Shader Bindings、Cached Mesh Draw Commands；2026-10-22核读。支持缓存与处理器职责，具体源码签名另验。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        },
+        {
+          "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/render-dependency-graph-in-unreal-engine?application_version=5.4",
+          "locator": "Shader Parameter Structs、Resource Lifetimes和Raster Passes；2026-10-22核读。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        }
+      ],
+      "verification": {
+        "scope": "API中立布局和处理器伪代码；UE5.4完整补丁编译待验证",
+        "cpu_command": null,
+        "shader_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_sha256": "5e313d07146682b254ea31376145368f66b326e48ed1a8809e87c93d8ee4800b"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md",
+      "primary_question": "URP图通道如何声明读写并把输出交给后续相机通道",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "适用环境",
+        "记录、执行与输出交接",
+        "最小材质 Blit",
+        "资源描述与最小复现条件",
+        "常见错误",
+        "Frame Debugger 与图查看器",
+        "验证方法",
+        "Feature与相机入口",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "展开A读B写与cameraColor交接；限定单相机单采样复现，说明MSAA/XR扩展条件",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "URP图通道如何声明读写并把输出交给后续相机通道；主机制见“资源描述与最小复现条件”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：适用环境 → 记录、执行与输出交接 → 最小材质 Blit → 资源描述与最小复现条件 → 常见错误 → Frame Debugger 与图查看器；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "展开A读B写与cameraColor交接；限定单相机单采样复现，说明MSAA/XR扩展条件"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "RecordRenderGraph方法片段和Feature入队；Unity完整编译与运行待验证；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”含1条本轮核读定位；RecordRenderGraph方法片段和Feature入队；Unity完整编译与运行待验证"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“资源描述与最小复现条件”具体完成：展开A读B写与cameraColor交接；限定单相机单采样复现，说明MSAA/XR扩展条件"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“URP Render Graph自定义Pass”“URP图通道接入”“URP相机颜色通道”；保留当前标题，其范围覆盖URP图通道如何声明读写并把输出交给后续相机通道；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留22_渲染引擎实现主归属；URP图通道如何声明读写并把输出交给后续相机通道由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“资源描述与最小复现条件”使用公式、伪代码或数值例直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "URP Render Graph自定义Pass",
+        "URP图通道接入",
+        "URP相机颜色通道"
+      ],
+      "title_mapping": {
+        "old": "URP Render Graph自定义Pass",
+        "new": "URP Render Graph自定义Pass"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-blit.html#avoid-blitting-back",
+          "locator": "图内句柄表示这一帧的逻辑资源。相机颜色原先指向A，通道读取A、完整写B，然后把`cameraColor`设为B，后续消费者才沿B建立依赖。A与B是两份资源，输出交接不要求把B再复制回A。输出交接方式在[Blit文档的Avoid blitting back节](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-blit.html#avoid-blitting-back)有明确示例；2026-10-22核读。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        }
+      ],
+      "verification": {
+        "scope": "RecordRenderGraph方法片段和Feature入队；Unity完整编译与运行待验证",
+        "cpu_command": null,
+        "shader_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_sha256": "e3625062a86a75d8bf7aae482b7bd2a4a9863f9202ba51c7fc993f51adaf524e"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/引擎渲染扩展导读.md",
+      "primary_question": "根据效果所需数据选择引擎扩展入口",
+      "boundary_action": "OVERVIEW",
+      "content_actions": [
+        "REWRITE",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "按问题进入专题",
+        "接入边界",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "以选中描边的遮罩、筛选和合成为例连接材质、网格与图通道",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "根据效果所需数据选择引擎扩展入口；主机制见“接入边界”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：按问题进入专题 → 接入边界 → 相关主题 → 参考资料；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "不适用",
+          "basis": "以选中描边的遮罩、筛选和合成为例连接材质、网格与图通道"
+        },
+        "Implementation": {
+          "status": "不适用",
+          "basis": "导读只组织路线；无独立运行算法；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "按入口关系逐项对照所链接五篇专篇；不宣称独立实验"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“接入边界”具体完成：以选中描边的遮罩、筛选和合成为例连接材质、网格与图通道"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“引擎渲染扩展导读”“渲染功能接入路线”“Unity与Unreal渲染扩展”；保留当前标题，其范围覆盖根据效果所需数据选择引擎扩展入口；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留22_渲染引擎实现主归属；根据效果所需数据选择引擎扩展入口由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“接入边界”使用路线表与接入例子直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "引擎渲染扩展导读",
+        "渲染功能接入路线",
+        "Unity与Unreal渲染扩展"
+      ],
+      "title_mapping": {
+        "old": "引擎渲染扩展导读",
+        "new": "引擎渲染扩展导读"
+      },
+      "category_review": "PASS",
+      "source_checks": [],
+      "verification": {
+        "scope": "导读只组织路线；无独立运行算法",
+        "cpu_command": null,
+        "shader_command": null,
+        "engine_compile": "NOT_APPLICABLE",
+        "engine_runtime": "NOT_APPLICABLE",
+        "gpu_capture": "NOT_APPLICABLE",
+        "performance": "NOT_APPLICABLE"
+      },
+      "final_sha256": "2c45e3ffef25d380ce8ea0a4a3174f56f9fb3d3773316c5b8d216f5e64bd910a"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/ECS与数据布局.md",
+      "primary_question": "组件布局如何支持批量访问并维持搬迁后的身份",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "访问模式与存储布局",
+        "ECS 的三个角色",
+        "Archetype 与查询",
+        "ECS的适用条件",
+        "结构搬迁与句柄稳定性",
+        "批量更新",
+        "验证方法",
+        "参考实验与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "用4/7/9实体示例展开末行填空、位置回写和迭代引用失效；修正实体数量绝对判据",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "组件布局如何支持批量访问并维持搬迁后的身份；主机制见“结构搬迁与句柄稳定性”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：访问模式与存储布局 → ECS 的三个角色 → Archetype 与查询 → ECS的适用条件 → 结构搬迁与句柄稳定性 → 批量更新；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "用4/7/9实体示例展开末行填空、位置回写和迭代引用失效；修正实体数量绝对判据"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "move_row的2项CPU检查通过；实际组件构造、缓存与并行未覆盖；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”含1条本轮核读定位；move_row的2项CPU检查通过；实际组件构造、缓存与并行未覆盖"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“结构搬迁与句柄稳定性”具体完成：用4/7/9实体示例展开末行填空、位置回写和迭代引用失效；修正实体数量绝对判据"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“ECS与数据布局”“ECS组件存储”“实体存储与结构变化”；保留当前标题，其范围覆盖组件布局如何支持批量访问并维持搬迁后的身份；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留23_引擎运行系统主归属；组件布局如何支持批量访问并维持搬迁后的身份由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“结构搬迁与句柄稳定性”使用公式、伪代码或数值例直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "ECS与数据布局",
+        "ECS组件存储",
+        "实体存储与结构变化"
+      ],
+      "title_mapping": {
+        "old": "ECS与数据布局",
+        "new": "ECS与数据布局"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://docs.unity3d.com/Packages/com.unity.entities@1.0/manual/concepts-structural-changes.html",
+          "locator": "Add or remove components、Sync points；2026-10-22核读。支持搬迁、末行填空和引用失效，具体实现按目标包版本验证。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        }
+      ],
+      "verification": {
+        "scope": "move_row的2项CPU检查通过；实际组件构造、缓存与并行未覆盖",
+        "cpu_command": "python 知识库/examples/revision_22_26/test_reference.py",
+        "shader_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_sha256": "779947cad563229906598564ce2d6ed415fc3b51c7375198699481c9e2c06d88"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/Unity对象生命周期.md",
+      "primary_question": "托管包装与原生对象如何影响销毁和有效性判断",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "版本与对象身份",
+        "Unity Object的两层身份",
+        "Instantiate 的成本",
+        "Destroy 的成本",
+        "销毁后的有效性检查",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "替换串入的UE/C++引用，补跨帧Destroy协程和池复用请求身份",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "托管包装与原生对象如何影响销毁和有效性判断；主机制见“销毁后的有效性检查”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：版本与对象身份 → Unity Object的两层身份 → Instantiate 的成本 → Destroy 的成本 → 销毁后的有效性检查 → 验证方法；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "替换串入的UE/C++引用，补跨帧Destroy协程和池复用请求身份"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "C#协程机制片段有true/false预期；Unity 6000.0编译与运行待验证；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”含2条本轮核读定位；C#协程机制片段有true/false预期；Unity 6000.0编译与运行待验证"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“销毁后的有效性检查”具体完成：替换串入的UE/C++引用，补跨帧Destroy协程和池复用请求身份"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“Unity对象生命周期”“Unity对象销毁与引用”“Unity原生对象与托管引用”；保留当前标题，其范围覆盖托管包装与原生对象如何影响销毁和有效性判断；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留23_引擎运行系统主归属；托管包装与原生对象如何影响销毁和有效性判断由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“销毁后的有效性检查”使用公式、伪代码或数值例直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "Unity对象生命周期",
+        "Unity对象销毁与引用",
+        "Unity原生对象与托管引用"
+      ],
+      "title_mapping": {
+        "old": "Unity对象生命周期",
+        "new": "Unity对象生命周期"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Object-operator_eq.html",
+          "locator": "Description中的托管与原生对象检查；2026-10-22核读。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        },
+        {
+          "url": "https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Object.Destroy.html",
+          "locator": "Description中的销毁时机、组件与子对象行为；2026-10-22核读。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        }
+      ],
+      "verification": {
+        "scope": "C#协程机制片段有true/false预期；Unity 6000.0编译与运行待验证",
+        "cpu_command": null,
+        "shader_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_sha256": "07ebbed21bbdeeccccb7ed5a7bd366c05dd30781a5f38028b24274fb45379ec1"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
+      "primary_question": "可追踪引用和写屏障如何维护UObject可达性",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "版本与GC模型",
+        "标记—清除",
+        "可追踪引用",
+        "与智能指针的分工",
+        "强引用、弱引用与软引用",
+        "增量标记与写屏障",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "明确宿主可达性、Outer边界与TStrongObjectPtr；解释增量扫描中新引用的写屏障",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "可追踪引用和写屏障如何维护UObject可达性；主机制见“强引用、弱引用与软引用”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：版本与GC模型 → 标记—清除 → 可追踪引用 → 与智能指针的分工 → 强引用、弱引用与软引用 → 增量标记与写屏障；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "明确宿主可达性、Outer边界与TStrongObjectPtr；解释增量扫描中新引用的写屏障"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "UE5.6成员创建/清空片段和强弱引用GC实验步骤；运行待验证；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”含2条本轮核读定位；UE5.6成员创建/清空片段和强弱引用GC实验步骤；运行待验证"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“强引用、弱引用与软引用”具体完成：明确宿主可达性、Outer边界与TStrongObjectPtr；解释增量扫描中新引用的写屏障"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“Unreal对象生命周期”“UObject可达性与回收”“Unreal对象引用管理”；保留当前标题，其范围覆盖可追踪引用和写屏障如何维护UObject可达性；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留23_引擎运行系统主归属；可追踪引用和写屏障如何维护UObject可达性由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“强引用、弱引用与软引用”使用公式、伪代码或数值例直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "Unreal对象生命周期",
+        "UObject可达性与回收",
+        "Unreal对象引用管理"
+      ],
+      "title_mapping": {
+        "old": "Unreal对象生命周期",
+        "new": "Unreal对象生命周期"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/object-pointers-in-unreal-engine?application_version=5.6",
+          "locator": "指针对照表、TObjectPtr、TWeakObjectPtr、TSoftObjectPtr与TStrongObjectPtr；2026-10-22核读。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        },
+        {
+          "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/incremental-garbage-collection-in-unreal-engine?application_version=5.6",
+          "locator": "Incremental Reachability Analysis、Enable Incremental Reachability Analysis；2026-10-22核读。支持写屏障及实验状态，不证明本项目已经执行引擎GC实验。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        }
+      ],
+      "verification": {
+        "scope": "UE5.6成员创建/清空片段和强弱引用GC实验步骤；运行待验证",
+        "cpu_command": null,
+        "shader_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_sha256": "1b70b9c990489c75cd6fd8b31269c196dc1474c845f270efcf1f4d4e3bdfa4d1"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/任务系统.md",
+      "primary_question": "数据依赖如何变成就绪任务并保证发布顺序",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "任务图",
+        "就绪计数与完成传播",
+        "同步与内存顺序",
+        "显式任务依赖",
+        "验证方法",
+        "参考实验与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "用A/B/C/D菱形图展开入度、原子归零与取消；去除错误的ECS来源",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "数据依赖如何变成就绪任务并保证发布顺序；主机制见“就绪计数与完成传播”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：任务图 → 就绪计数与完成传播 → 同步与内存顺序 → 显式任务依赖 → 验证方法 → 参考实验与证据；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "用A/B/C/D菱形图展开入度、原子归零与取消；去除错误的ECS来源"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "ready_order的3项CPU检查通过；并发队列与C++内存序未覆盖；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”含1条本轮核读定位；ready_order的3项CPU检查通过；并发队列与C++内存序未覆盖"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“就绪计数与完成传播”具体完成：用A/B/C/D菱形图展开入度、原子归零与取消；去除错误的ECS来源"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“任务系统”“任务依赖与调度”“任务图执行”；保留当前标题，其范围覆盖数据依赖如何变成就绪任务并保证发布顺序；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留23_引擎运行系统主归属；数据依赖如何变成就绪任务并保证发布顺序由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“就绪计数与完成传播”使用公式、伪代码或数值例直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "任务系统",
+        "任务依赖与调度",
+        "任务图执行"
+      ],
+      "title_mapping": {
+        "old": "任务系统",
+        "new": "任务系统"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://taskflow.github.io/taskflow/index.html",
+          "locator": "Start Your First Taskflow Program与Run a Taskflow through an Executor，`precede`建立任务边、Executor执行图；2026-10-22核读。本文计数模型为独立参考推导。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        }
+      ],
+      "verification": {
+        "scope": "ready_order的3项CPU检查通过；并发队列与C++内存序未覆盖",
+        "cpu_command": "python 知识库/examples/revision_22_26/test_reference.py",
+        "shader_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_sha256": "3912ba805e8e9224bd61a7e14f200caff7bcfc8e2e46c9c7a57e69cafce9bb96"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/引擎世界与对象模型.md",
+      "primary_question": "世界如何维护对象身份、层级和跨系统所有权",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "分层与依赖方向",
+        "反射与代码生成",
+        "Entity、Component 与世界",
+        "Transform 层级和 Scene Graph",
+        "身份复用与对象失效",
+        "Tick 与阶段",
+        "线程与快照",
+        "验证",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "补index/generation校验、并发校验后销毁边界和退役流程；交代矩阵代码前提",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "世界如何维护对象身份、层级和跨系统所有权；主机制见“身份复用与对象失效”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：分层与依赖方向 → 反射与代码生成 → Entity、Component 与世界 → Transform 层级和 Scene Graph → 身份复用与对象失效 → Tick 与阶段；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "补index/generation校验、并发校验后销毁边界和退役流程；交代矩阵代码前提"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "句柄解析伪代码与父子矩阵公式；完整世界实现待验证；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”含1条本轮核读定位；句柄解析伪代码与父子矩阵公式；完整世界实现待验证"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“身份复用与对象失效”具体完成：补index/generation校验、并发校验后销毁边界和退役流程；交代矩阵代码前提"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“引擎世界与对象模型”“世界对象与层级”“引擎对象组织”；保留当前标题，其范围覆盖世界如何维护对象身份、层级和跨系统所有权；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留23_引擎运行系统主归属；世界如何维护对象身份、层级和跨系统所有权由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“身份复用与对象失效”使用公式、伪代码或数值例直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "引擎世界与对象模型",
+        "世界对象与层级",
+        "引擎对象组织"
+      ],
+      "title_mapping": {
+        "old": "引擎世界与对象模型",
+        "new": "引擎世界与对象模型"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Transform.SetParent.html",
+          "locator": "`worldPositionStays`的语义；2026-10-22核读。本文矩阵关系为列向量约定下的独立推导。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        }
+      ],
+      "verification": {
+        "scope": "句柄解析伪代码与父子矩阵公式；完整世界实现待验证",
+        "cpu_command": null,
+        "shader_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_sha256": "a9176f86ebf7feaf0fb6ed92e06304c4c2ec53adacb1eb6a69e8cea197e9ce45"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/资源依赖与异步加载.md",
+      "primary_question": "共享资源如何按依赖完成加载、取消和安全发布",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "依赖与分包",
+        "资源依赖图",
+        "依赖图构建",
+        "分包的生命周期边界",
+        "共享依赖",
+        "错误情况",
+        "公共 Bundle",
+        "加载框架与对象管理",
+        "Unity AssetBundle",
+        "Addressables的所有权",
+        "异步阶段与运行时发布",
+        "异步加载阶段",
+        "加载瀑布的定量看法",
+        "预加载和时间窗口",
+        "引用计数",
+        "版本和热更新",
+        "请求取消与最终发布",
+        "分包检查",
+        "验证方法",
+        "异步加载状态机",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "区分完成依赖环和对象引用环，展开A/B共享请求取消、句柄转换和GPU退役",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "共享资源如何按依赖完成加载、取消和安全发布；主机制见“请求取消与最终发布”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：依赖与分包 → 资源依赖图 → 依赖图构建 → 分包的生命周期边界 → 共享依赖 → 错误情况；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "区分完成依赖环和对象引用环，展开A/B共享请求取消、句柄转换和GPU退役"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "串行发布状态机及四种取消时序；完整加载器和断网实测待验证；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”含2条本轮核读定位；串行发布状态机及四种取消时序；完整加载器和断网实测待验证"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“请求取消与最终发布”具体完成：区分完成依赖环和对象引用环，展开A/B共享请求取消、句柄转换和GPU退役"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“资源依赖与异步加载”“资源加载与所有权”“异步资源发布”；保留当前标题，其范围覆盖共享资源如何按依赖完成加载、取消和安全发布；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留23_引擎运行系统主归属；共享资源如何按依赖完成加载、取消和安全发布由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“请求取消与最终发布”使用公式、伪代码或数值例直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "资源依赖与异步加载",
+        "资源加载与所有权",
+        "异步资源发布"
+      ],
+      "title_mapping": {
+        "old": "资源依赖与异步加载",
+        "new": "资源依赖与异步加载"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://docs.unity3d.com/6000.0/Documentation/ScriptReference/AssetBundle.Unload.html",
+          "locator": "`unloadAllLoadedObjects`及已加载对象行为；2026-10-22核读。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        },
+        {
+          "url": "https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/MemoryManagement.html",
+          "locator": "Memory leaks与Memory clearance；2026-10-22核读。加载与释放计数、Bundle驻留的依据。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        }
+      ],
+      "verification": {
+        "scope": "串行发布状态机及四种取消时序；完整加载器和断网实测待验证",
+        "cpu_command": null,
+        "shader_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_sha256": "60df14129ec7c1468e36bd444fe222647b81f4251c4fa0c792903019195190cc"
+    },
+    {
+      "path": "知识库/24_游戏音频/游戏音频系统.md",
+      "primary_question": "音频样本如何按时混入总线并持续交付设备",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "样本交付与实时预算",
+        "回调的实时预算",
+        "数字音频基础",
+        "空间化与混音",
+        "Voice 与空间化",
+        "Mixer 与资源系统",
+        "调试",
+        "验证方法",
+        "线性增益与连续混合",
+        "流送欠载",
+        "参考实验与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "展开dB转换、增益斜坡、浮点叠加顺序和流送欠载补齐；替换泛中间件来源",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "音频样本如何按时混入总线并持续交付设备；主机制见“线性增益与连续混合”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：样本交付与实时预算 → 回调的实时预算 → 数字音频基础 → 空间化与混音 → Voice 与空间化 → Mixer 与资源系统；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "展开dB转换、增益斜坡、浮点叠加顺序和流送欠载补齐；替换泛中间件来源"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "mix_mono的3项CPU检查通过；C++编译、设备回放与实时压力未覆盖；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”含1条本轮核读定位；mix_mono的3项CPU检查通过；C++编译、设备回放与实时压力未覆盖"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“线性增益与连续混合”具体完成：展开dB转换、增益斜坡、浮点叠加顺序和流送欠载补齐；替换泛中间件来源"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“游戏音频系统”“游戏音频混音与流送”“音频回调与混音”；保留当前标题，其范围覆盖音频样本如何按时混入总线并持续交付设备；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留24_游戏音频主归属；音频样本如何按时混入总线并持续交付设备由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“线性增益与连续混合”使用公式、伪代码或数值例直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "游戏音频系统",
+        "游戏音频混音与流送",
+        "音频回调与混音"
+      ],
+      "title_mapping": {
+        "old": "游戏音频系统",
+        "new": "游戏音频系统"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://portaudio.com/docs/v19-doxydocs/writing_a_callback.html",
+          "locator": "实时回调禁止无界耗时调用与完整输出缓冲的示例；2026-10-22核读。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        }
+      ],
+      "verification": {
+        "scope": "mix_mono的3项CPU检查通过；C++编译、设备回放与实时压力未覆盖",
+        "cpu_command": "python 知识库/examples/revision_22_26/test_reference.py",
+        "shader_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_sha256": "2ceaf7380ecb72c0a44c76056a64fddd4684d40e967fadcb9e571e3f2d1e4a4f"
+    },
+    {
+      "path": "知识库/25_UI与文本/UI绘制.md",
+      "primary_question": "布局和裁剪如何生成保持混合顺序的绘制批次",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "控件树与绘制列表",
+        "控件提交与裁剪",
+        "裁剪、遮罩和九宫格",
+        "批处理和网格生成",
+        "高 DPI、本地化和输入",
+        "裁剪交集与保序合批",
+        "验证方法",
+        "参考实验与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "补矩形交集数值、A/B/A顺序、索引容量和帧缓冲坐标；更换错配字体参考",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "布局和裁剪如何生成保持混合顺序的绘制批次；主机制见“裁剪交集与保序合批”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：控件树与绘制列表 → 控件提交与裁剪 → 裁剪、遮罩和九宫格 → 批处理和网格生成 → 高 DPI、本地化和输入 → 裁剪交集与保序合批；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "补矩形交集数值、A/B/A顺序、索引容量和帧缓冲坐标；更换错配字体参考"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "clipped/batch_keys共4项CPU检查通过；完整布局、命中与GPU上传待验证；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”含1条本轮核读定位；clipped/batch_keys共4项CPU检查通过；完整布局、命中与GPU上传待验证"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“裁剪交集与保序合批”具体完成：补矩形交集数值、A/B/A顺序、索引容量和帧缓冲坐标；更换错配字体参考"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“UI绘制”“UI裁剪与合批”“界面绘制列表”；保留当前标题，其范围覆盖布局和裁剪如何生成保持混合顺序的绘制批次；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留25_UI与文本主归属；布局和裁剪如何生成保持混合顺序的绘制批次由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“裁剪交集与保序合批”使用公式、伪代码或数值例直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "UI绘制",
+        "UI裁剪与合批",
+        "界面绘制列表"
+      ],
+      "title_mapping": {
+        "old": "UI绘制",
+        "new": "UI绘制"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://github.com/ocornut/imgui/blob/v1.91.9b/backends/imgui_impl_opengl3.cpp",
+          "locator": "`ImGui_ImplOpenGL3_RenderDrawData`中的裁剪坐标转换、空矩形检查、纹理绑定与索引偏移；2026-10-22核读。该源码说明一种真实后端，不代表所有UI框架使用相同布局模型。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        }
+      ],
+      "verification": {
+        "scope": "clipped/batch_keys共4项CPU检查通过；完整布局、命中与GPU上传待验证",
+        "cpu_command": "python 知识库/examples/revision_22_26/test_reference.py",
+        "shader_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_sha256": "4f6bcf40dd6eaf7c2b88c1aae27a79f0f62b576c8c7814eea776d6d34a206314"
+    },
+    {
+      "path": "知识库/25_UI与文本/文字渲染.md",
+      "primary_question": "塑形结果如何变为正确定位和采样的字形",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "字符串与字形位置",
+        "字符、码点和字形",
+        "字形度量",
+        "塑形位置与位图矩形",
+        "字形的采样表示",
+        "位图字体与字形图集",
+        "SDF 和 MSDF",
+        "颜色和混合",
+        "验证方法",
+        "参考实验与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "给出屏幕y向下与字体y向上的坐标公式及数值例；说明簇映射与回退重塑形",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "塑形结果如何变为正确定位和采样的字形；主机制见“塑形位置与位图矩形”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：字符串与字形位置 → 字符、码点和字形 → 字形度量 → 塑形位置与位图矩形 → 字形的采样表示 → 位图字体与字形图集；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "给出屏幕y向下与字体y向上的坐标公式及数值例；说明簇映射与回退重塑形"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "glyph_quad 2项CPU检查及GlyphPS ps_6_0编译通过；真实字体和GPU输出未覆盖；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”含3条本轮核读定位；glyph_quad 2项CPU检查及GlyphPS ps_6_0编译通过；真实字体和GPU输出未覆盖"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“塑形位置与位图矩形”具体完成：给出屏幕y向下与字体y向上的坐标公式及数值例；说明簇映射与回退重塑形"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“文字渲染”“字形塑形与绘制”“文字布局与字形采样”；保留当前标题，其范围覆盖塑形结果如何变为正确定位和采样的字形；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留25_UI与文本主归属；塑形结果如何变为正确定位和采样的字形由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“塑形位置与位图矩形”使用公式、伪代码或数值例直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "文字渲染",
+        "字形塑形与绘制",
+        "文字布局与字形采样"
+      ],
+      "title_mapping": {
+        "old": "文字渲染",
+        "new": "文字渲染"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://freetype.org/freetype2/docs/glyphs/glyphs-3.html",
+          "locator": "Baseline, pens and layouts与Typographic metrics and bounding boxes；2026-10-22核读，支持基线、bearing和advance的区分。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        },
+        {
+          "url": "https://harfbuzz.github.io/shaping-and-shape-plans.html",
+          "locator": "Shaping and buffer output；2026-10-22核读，支持字形替换和定位由塑形器处理。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        },
+        {
+          "url": "https://github.com/Chlumsky/msdfgen",
+          "locator": "Using a multi-channel distance field一节；2026-10-22核读，支持RGB距离中值与距离范围的还原约定。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        }
+      ],
+      "verification": {
+        "scope": "glyph_quad 2项CPU检查及GlyphPS ps_6_0编译通过；真实字体和GPU输出未覆盖",
+        "cpu_command": "python 知识库/examples/revision_22_26/test_reference.py",
+        "shader_command": "python 知识库/examples/revision_22_26/verify.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_sha256": "d2b3705a3f8ad3a76aa34e75c63cd15a5bc878a278feb75cc94e1db7aafe86dd"
+    },
+    {
+      "path": "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
+      "primary_question": "GPU如何把场景数据变成保守可见集和间接绘制参数",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "专题阅读",
+        "CPU-Driven 的扩展瓶颈",
+        "场景数据",
+        "场景更新与剔除批次",
+        "可见工作集",
+        "视锥与屏幕误差",
+        "背面锥剔除",
+        "Hi-Z遮挡剔除",
+        "可见列表与绘制参数",
+        "列表压紧与前缀和",
+        "Indirect Draw",
+        "绘制参数与两类消费者",
+        "材质分类与排序",
+        "细粒度几何处理",
+        "Cluster 与 Meshlet",
+        "Mesh Shader",
+        "Visibility Buffer",
+        "验证方法",
+        "GPU 剔除与间接绘制列表",
+        "参考实验与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "展开正反Z保守归约、背景反例、前缀和、参数与列表双屏障；去除未核读引擎内部回调断言",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "GPU如何把场景数据变成保守可见集和间接绘制参数；主机制见“绘制参数与两类消费者”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：专题阅读 → CPU-Driven 的扩展瓶颈 → 场景数据 → 场景更新与剔除批次 → 可见工作集 → 视锥与屏幕误差；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "展开正反Z保守归约、背景反例、前缀和、参数与列表双屏障；去除未核读引擎内部回调断言"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "occluded 4项CPU检查通过；GPU投影、原子、屏障与绘制未执行；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”含2条本轮核读定位；occluded 4项CPU检查通过；GPU投影、原子、屏障与绘制未执行"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“绘制参数与两类消费者”具体完成：展开正反Z保守归约、背景反例、前缀和、参数与列表双屏障；去除未核读引擎内部回调断言"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“GPU-Driven Rendering”“GPU驱动绘制”“GPU可见集与间接绘制”；保留当前标题，其范围覆盖GPU如何把场景数据变成保守可见集和间接绘制参数；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留26_GPU驱动与虚拟几何主归属；GPU如何把场景数据变成保守可见集和间接绘制参数由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“绘制参数与两类消费者”使用公式、伪代码或数值例直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "GPU-Driven Rendering",
+        "GPU驱动绘制",
+        "GPU可见集与间接绘制"
+      ],
+      "title_mapping": {
+        "old": "GPU-Driven Rendering",
+        "new": "GPU-Driven Rendering"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://docs.vulkan.org/refpages/latest/refpages/source/VkDrawIndexedIndirectCommand.html",
+          "locator": "Members与Valid Usage；2026-10-22核读。五个参数及实例起点能力限制由此核对。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        },
+        {
+          "url": "https://advances.realtimerendering.com/s2021/Karis_Nanite_SIGGRAPH_Advances_2021_final.pdf",
+          "locator": "PDF第75页Two-Pass Occlusion Culling；2026-10-22核读，说明历史HZB后的当前帧复查。正反Z标量关系由本页推导和参考实验支持。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        }
+      ],
+      "verification": {
+        "scope": "occluded 4项CPU检查通过；GPU投影、原子、屏障与绘制未执行",
+        "cpu_command": "python 知识库/examples/revision_22_26/test_reference.py",
+        "shader_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_sha256": "e74f19645ae1e69b0f8e082edcdcebb2bd2bb6a222264580ad210459dec989af"
+    },
+    {
+      "path": "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md",
+      "primary_question": "层级误差与页面驻留如何共同保持完整几何覆盖",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "版本与证据范围",
+        "Nanite的几何预算",
+        "簇组与简化层级",
+        "屏幕误差与层级切面",
+        "Nanite剔除与光栅化",
+        "页面流送与虚拟化",
+        "组完整性与缺页回退",
+        "材质、透明与动态几何",
+        "层级选择的算法轮廓",
+        "验证方法",
+        "参考实验与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "核读2021原PDF展开局部切面条件与组完整性；区分双表示与平台IO实现",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "层级误差与页面驻留如何共同保持完整几何覆盖；主机制见“组完整性与缺页回退”"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文标题依次展开：版本与证据范围 → Nanite的几何预算 → 簇组与简化层级 → 屏幕误差与层级切面 → Nanite剔除与光栅化 → 页面流送与虚拟化；相关主题承接独立主归属"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "核读2021原PDF展开局部切面条件与组完整性；区分双表示与平台IO实现"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "select_cut 3项CPU检查通过；真实DAG、转码、UE5.4运行未覆盖；本维度按文章机制片段与复现路径验收，目标运行状态另列"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”含2条本轮核读定位；select_cut 3项CPU检查通过；真实DAG、转码、UE5.4运行未覆盖"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "全文按描边的因果推进复读；“组完整性与缺页回退”具体完成：核读2021原PDF展开局部切面条件与组完整性；区分双表示与平台IO实现"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "候选“Nanite几何选择与流送”“Nanite层级与驻留”“Nanite几何流送”；保留当前标题，其范围覆盖层级误差与页面驻留如何共同保持完整几何覆盖；疑问式子标题已统一内容名称"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留26_GPU驱动与虚拟几何主归属；层级误差与页面驻留如何共同保持完整几何覆盖由本页展开，通用前提通过相关主题引用"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“组完整性与缺页回退”使用公式、伪代码或数值例直接表达数据关系；本轮没有新增外部图片或结果图，未声称图像证据"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "Nanite几何选择与流送",
+        "Nanite层级与驻留",
+        "Nanite几何流送"
+      ],
+      "title_mapping": {
+        "old": "Nanite几何选择与流送",
+        "new": "Nanite几何选择与流送"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://advances.realtimerendering.com/s2021/Karis_Nanite_SIGGRAPH_Advances_2021_final.pdf",
+          "locator": "SIGGRAPH 2021。PDF第30页流送切面，第34—35页交替组边界，第65—70页单调误差与局部LOD选择，第122—127页组完整性与请求，第129、138、140页双表示、GPU转码和父页引用；2026-10-22读取原PDF对应页。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        },
+        {
+          "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/nanite-virtualized-geometry-in-unreal-engine?application_version=5.4",
+          "locator": "Supported Features、Nanite Stats Command、Controlling Nanite Streaming Pool Size；2026-10-22核读。功能限制、观察入口和预算范围由此核对。",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "本条定位的机制或接口；不表示工程运行"
+        }
+      ],
+      "verification": {
+        "scope": "select_cut 3项CPU检查通过；真实DAG、转码、UE5.4运行未覆盖",
+        "cpu_command": "python 知识库/examples/revision_22_26/test_reference.py",
+        "shader_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_sha256": "e2224c5f849d8090ce1c0ad09a9614bcf2132e3d3d676bc9a5d1531eb7c325b8"
+    }
+  ],
+  "verification_results": "知识库/examples/revision_22_26/results.json",
+  "image_assets_added": []
+}

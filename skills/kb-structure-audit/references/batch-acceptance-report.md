@@ -291,8 +291,8 @@ AI决策与导航整理世界表示、搜索、局部控制和计划家族，约
 | [GPU同步与屏障](../../../知识库/13_渲染架构/GPU同步与屏障.md) | Batch3-P0-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [GPU资源绑定](../../../知识库/13_渲染架构/GPU资源绑定.md) | Batch3-P0-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [帧捕获与性能分析工具](../../../知识库/14_性能分析与优化/帧捕获与性能分析工具.md) | Batch4-P1-B | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
-| [PSO首次使用为什么卡顿](../../../知识库/14_性能分析与优化/PSO首次使用为什么卡顿.md) | Batch3-P0-A | FACT-CHECK / REWRITE | PASS | KEEP |
-| [帧瓶颈怎么判断](../../../知识库/14_性能分析与优化/帧瓶颈怎么判断.md) | Batch4-P1-B | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
+| [PSO首次使用为什么卡顿](../../../知识库/14_性能分析与优化/PSO首次使用卡顿.md) | Batch3-P0-A | FACT-CHECK / REWRITE | PASS | KEEP |
+| [帧瓶颈怎么判断](../../../知识库/14_性能分析与优化/帧瓶颈诊断.md) | Batch4-P1-B | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [性能对照实验](../../../知识库/14_性能分析与优化/性能对照实验.md) | Batch4-P1-B | FACT-CHECK / REWRITE | PASS | KEEP |
 | [移动端渲染优化](../../../知识库/14_性能分析与优化/移动端渲染优化.md) | Batch4-P1-B | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [DCC资产交换](../../../知识库/15_资产与工具管线/DCC资产交换.md) | Batch4-P2-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |

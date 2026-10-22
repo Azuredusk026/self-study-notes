@@ -135,6 +135,32 @@
       "cpu_tests": 14,
       "git_index_tests": 5,
       "dxc_entries": 9
+    },
+    {
+      "phase": "P3",
+      "command": "python -B 知识库/examples/revision_16_21/test_reference.py",
+      "passed": true,
+      "tests": 17
+    },
+    {
+      "phase": "P3",
+      "command": "python -B 知识库/examples/revision_16_21/test_review_reference.py",
+      "passed": true,
+      "tests": 15
+    },
+    {
+      "phase": "P3",
+      "command": "python -B 知识库/examples/revision_16_21/verify_event_queue.py",
+      "passed": true,
+      "tests": 4,
+      "scope": ".NET9主机抽取C#片段；无Unity运行时"
+    },
+    {
+      "phase": "P3",
+      "command": "python -B 知识库/examples/revision_22_26/verify.py",
+      "passed": true,
+      "cpu_tests": 21,
+      "dxc_entries": 2
     }
   ]
 }

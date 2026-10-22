@@ -1,329 +1,105 @@
 # Agent资产管线
 
-模型可以从需求中找出一批候选资产，但“候选合理”与“已经正确写入场景”是两项判断。Agent 管线把推理、工具执行和验证连接成有状态的任务：模型提出计划，工具按约定修改，检查器记录结果，调度器再决定继续、修复或交付。任务事实保存在记录中，中断后也能据此恢复。
+模型从需求中找出候选资产，工具把资产写入场景，验证器判断结果是否符合要求。三者处理不同的信息：模型处理语义与候选，工具执行明确的状态变化，验证器读取实际产物。任务记录连接这些步骤，中断以后据此恢复。
 
-## 任务怎样有状态地推进
+## 任务状态与产物
 
-### 适合 Agent 的任务
+### 状态推进
 
-适合：
-
-- 读取需求并生成候选 Plan；
-- 从批准资产库检索与标注；
-- 批量调用已有 DCC/引擎工具；
-- 汇总 Validator 结果；
-- 生成 Caption、Tag、命名或报告初稿；
-- 根据明确规则修复低风险问题；
-- 对失败项分类并安排重试。
-
-不应让 Agent 单独决定：
-
-- 来源/授权不明内容进入正式资产；
-- 删除或覆盖大量源文件；
-- 修改质量门禁以通过检查；
-- 视觉方向和关键 Hero Asset 最终批准；
-- 使用未批准的外部服务、模型或数据。
-
-模型适合处理模糊语义，确定性脚本适合执行规则。二者应组合，而不是互相替代。
-
-### 状态机
-
-明确状态比“Agent 记得自己做到哪里”可靠：
+任务从接收需求进入解析、规划、计划校验、执行、技术验证和视觉审核。每次转换记录前置条件、输入、输出和责任方。执行失败进入返工或失败状态，取消进入终态；只有对应产物通过门禁，才能进入批准状态。
 
 ```text
-Received
- -> Parsed
- -> Planned
- -> PlanValidated
- -> Executing
- -> TechnicalValidation
- -> VisualReview
- -> Approved / Rework / Failed / Cancelled
+Received -> Parsed -> Planned -> PlanValidated -> Executing
+         -> TechnicalValidation -> VisualReview -> Approved
+Any active stage -> Rework / Failed / Cancelled
 ```
 
-每次 Transition 有前置条件、输入、输出和责任。状态保存在数据库/Manifest，不只存在对话 Context。
+这是流程状态定义。调度器将当前状态与输入输出ID持久化，模型上下文只用于重建推理所需的信息。若资产已经生成但状态记录丢失，恢复时通过操作ID与产物清单对账，而不是重新生成一份。
 
-长任务中断后从持久化状态恢复。模型 Context 可以重新构建，资产事实不能依赖聊天历史。
+### 任务与产物记录
 
-### Job 与 Artifact
+任务记录保存需求、目标平台、约束、工作流版本、工具权限、当前阶段、尝试次数、输入输出ID、验证结果和成本。产物记录保存稳定ID、内容哈希、来源与许可、派生关系、模型与工具版本、提示词、随机种子、编辑历史和发布状态。
 
-Job Record：
+这条派生链让维护者能回答“哪个输入产生了这个模型”“换一个依赖会影响哪些下游资产”。文件名相同而哈希不同，就是不同内容；人工调整形成新版本，并标记覆盖字段，后续重跑据此保留已批准修改。
 
-- Job/Task/Project ID；
-- Request、约束、Target Platform；
-- Workflow/Agent/Prompt Version；
-- Tool Permission；
-- Current State/Attempt；
-- Input/Output Artifact ID；
-- Validation/Review；
-- Cost、时间和 Owner。
+## 推理与工具接口
 
-Artifact Record：
+### 角色与数据契约
 
-- Stable ID/Version/Hash；
-- Parent/Derived-from；
-- Source/License/Consent；
-- Generator Model/Tool；
-- Prompt/Seed/Workflow；
-- DCC/Edit/Import History；
-- Publish State。
+需求解析角色输出尺寸、风格、预算和格式，缺失与冲突单独记录。规划角色把需求分解成功能区、通道和约束；资产选择角色在批准目录内筛选候选；执行角色只应用已校验的目标布局。验证角色读取结果与既定规则，输出具体失败位置和返工建议。
 
-这条链就是数据血缘（Data Lineage）。它支持复现、撤回、版权审计和影响分析。
+每个角色声明输入、可调用工具、输出结构、判断标准和失败表达。输出先经过结构校验，再进入下一阶段。模型生成了合法JSON，只能说明字段可解析；资产是否存在、尺寸是否兼容、布局是否可达，仍由数据查询与规则检查决定。
 
-## 推理怎样进入受控工具
+提示词保存稳定职责和少量示例，当前资产通过检索返回有限候选。这样每次决策能对应到实际查询结果，避免把陈旧目录长期留在上下文里。
 
-### 角色提示词
+### 工具参数与执行边界
 
-一个巨大 Prompt 同时规划、执行和审核，容易让模型边做边改标准。按职责分角色：
+```text
+search_assets(query, constraints)
+get_asset_metadata(asset_id)
+spawn_asset(asset_id, transform, parent, operation_id)
+move_asset(instance_id, transform, operation_id)
+validate_scene(scene_id, ruleset)
+render_preview(camera_id, preset)
+publish_staging(job_id, expected_hash)
+```
 
-**需求解析角色**
+这是接口示意。变换参数注明单位与坐标系，资产与场景使用稳定ID，修改操作带操作ID。返回值包含结果、实际变更的产物、错误码、警告与重试属性，便于调度器区分输入错误和暂时性故障。
 
-- 把自然语言转成结构化 Brief；
-- 提取尺寸、风格、平台、预算和交付格式；
-- 标出缺失/冲突，不自行编造关键需求。
+规划器只读需求与目录，执行器写入任务专属暂存场景，验证器读取产物并写报告，发布器在批准条件满足后切换正式版本。路径与网络范围由执行层校验；外部文档、资产名和元数据始终作为数据处理，其中出现的命令不能改变工具权限。
 
-**场景规划角色**
+### 调度职责
 
-- 生成房间区域、功能、动线、Anchor 和约束；
-- 输出 Schema，不直接摆资产。
+调度器负责状态转换、截止时间、取消、并发配额、持久化和人工审核。模型在需要语义判断的节点提出候选，确定的执行与门禁由代码推进。工具长期无响应时，调度器保留请求ID并查询状态，避免把超时误记为未执行。
 
-**资产选择角色**
+## 失败恢复
 
-- 只从批准 Catalog 检索；
-- 根据尺寸、Tag、风格、License 和预算排序候选；
-- 返回 Asset ID 与理由，不返回未知网络链接。
+### 幂等与重试
 
-**布局执行角色**
+同一操作ID的重试返回已有结果或继续未完成操作。布局更新可以描述完整期望状态，执行器比较当前场景后只应用差异。生成目标ID、写场景和记录结果之间的空隙，按后文的恢复对账处理。
 
-- 调用 Spawn/Transform/Group 等受控工具；
-- 遵守单位、坐标、碰撞和命名；
-- 不修改规划之外的资产。
+输入验证失败进入修正流程；服务繁忙与短暂断连采用有限退避重试；容量不足交给调度器更换工作进程或采用批准的降级参数。模型、种子、分辨率或候选变化会形成新的变体ID，使原始请求与降级产物可区分。
 
-**验证角色**
+重试策略记录次数上限、退避、抖动、可重试错误码和总截止时间。相同输入稳定触发工具缺陷时保存诊断，进入修复队列。重复请求不会改变确定性错误的根因。
 
-- 只读取结果和既定标准；
-- 检查碰撞、可达性、穿插、预算、缺失依赖和视觉问题；
-- 不通过时给结构化 Rework，不直接降低标准。
+### 补偿与版本恢复
 
-角色分离的重点是权限和输入输出，不是让多个模型互相聊天。
+创建暂存场景、放置资产、生成预览、导入验证和发布通常跨越多个工具。每步记录实际创建的ID与对应补偿：移除本操作创建的实例、释放临时资源或恢复发布指针。补偿也按操作ID幂等执行，且核对对象版本，避免删除后来被其他任务修改的内容。
 
-### Prompt Contract
-
-每个角色提示词应包含：
-
-- Role/Responsibility；
-- Allowed Inputs/Tools；
-- Forbidden Action；
-- Output JSON Schema；
-- Decision Criteria；
-- Failure/Uncertainty 表达；
-- 少量有效示例；
-- Prompt Version。
-
-输出必须经 Schema Validator。无法解析时要求同一角色修正格式，不把残缺文本交给下游猜。
-
-Prompt 中不要混入会随任务变化的巨大资产清单。通过检索工具按 Query 返回有限候选，减少 Context 和陈旧数据。
-
-### 工具接口
-
-工具应小而确定：
-
-- `search_assets(query, constraints)`；
-- `get_asset_metadata(asset_id)`；
-- `spawn_asset(asset_id, transform, parent)`；
-- `move_asset(instance_id, transform)`；
-- `validate_scene(scene_id, ruleset)`；
-- `render_preview(camera_id, preset)`；
-- `publish_staging(job_id)`。
-
-参数使用 Stable ID、结构化 Transform 和单位，不让模型拼任意脚本字符串。
-
-返回值包含 Result、Changed Artifact、Warnings、Error Code 和 Retryability。工具只做一个职责，便于权限、测试和幂等。
-
-### 权限
-
-按最小权限授予：
-
-- Planner 只读需求和 Catalog；
-- Executor 只写 Job Staging Scene；
-- Validator 只读结果并写报告；
-- Publisher 只有在门禁通过且人类批准后才能切换正式版本。
-
-文件系统限定项目 Staging；网络使用域名/API 白名单；Secret 不进入 Prompt/Log。删除、覆盖、发布和外部上传属于高风险动作，应由确定性 Policy Gate 控制。
-
-### Orchestrator
-
-Orchestrator 负责：
-
-- 状态转换；
-- 选择角色和工具；
-- Timeout/Retry/Cancel；
-- 并发与配额；
-- Artifact/Log 持久化；
-- Human Review；
-- 最终发布/回滚。
-
-不要让 LLM 自己决定所有调度。确定的流程用代码/Workflow Engine，模型只处理需要推理的节点。
-
-## 失败后怎样恢复
-
-### 幂等
-
-工具接收 `operation_id`。同一 ID 重试时返回已有结果，不重复 Spawn 或发布。
-
-Create 操作先生成 Stable Target ID；写入 Staging；成功后记录 Operation Result。网络超时后客户端可查询状态，而不是直接再发一次创建。
-
-布局更新可使用 Desired State：Agent 输出完整目标布局或 Patch，Executor 比较当前状态后只应用差异。这样重跑不会叠出两套家具。
-
-### 错误分类
-
-- Validation Error：输入/资产不符合规则，修正后重试；
-- Transient Tool Error：服务忙、网络短断，指数退避有限重试；
-- Capacity Error：VRAM/磁盘/配额不足，换 Worker 或降批准参数；
-- Model Output Error：Schema 不合法或缺字段，重新生成；
-- Policy Error：权限、License 或来源问题，不自动绕过；
-- Deterministic Tool Bug：相同输入稳定失败，停止并上报；
-- Partial Write：执行补偿/回滚，再决定重试。
-
-“失败就再问一次模型”会重复确定性错误并增加成本。
-
-### Retry 与 Backoff
-
-Retry Policy 记录 Max Attempt、Backoff、Jitter、可重试 Error Code 和总 Deadline。
-
-每次重试复用同一 Operation ID，并保存 Attempt。若改变 Model、Prompt、Seed、Resolution 或资产候选，这已经是新 Variation，不是相同任务重试。
-
-超过阈值进入 Dead-letter/Rework Queue，保留输入和诊断供人处理。
-
-### Compensation 与回滚
-
-跨工具操作通常没有分布式原子事务。使用 Saga/Compensation：
-
-1. 创建 Staging Scene；
-2. Spawn Asset；
-3. 生成 Lighting/Preview；
-4. Import/Validate；
-5. 发布。
-
-每步记录补偿：删除 Staging Instance、释放临时资源、恢复旧 Publish Pointer。补偿也要幂等。
-
-源文件修改优先生成新版本，不原地覆盖。Git/Perforce 历史是恢复手段，但不能代替当前任务的明确回滚。
+源文件保存为新版本，正式入口通过版本指针切换。版本库提供历史恢复，任务记录则说明本次操作究竟影响了哪些对象，两份记录共同定位失败范围。
 
 ## 室内场景的结构化规划
 
-Agent 驱动房间搭建可使用中间 Schema：
-
 ```text
-Room
-  zones[]
-  anchors[]
-  pathways[]
-  placements[]
-  lighting_intent
-  constraints
+Room { zones, anchors, pathways, placements, lightingIntent, constraints }
+Placement { assetId, transform, parentId, operationId }
 ```
 
-先生成房间功能区和通道，再检索匹配尺寸的资产，最后求解 Placement。不要让模型只凭文本直接输出几十个世界坐标。
+先确定房间功能区和通道净空，再查询尺寸合适的资产，最后求解位置与朝向。验证器用包围体或精确碰撞检查穿插，用导航数据检查可达性，再检查门窗净空、墙地锚点、功能距离与渲染预算。模型读取失败位置和原因，重新提出有限候选。
 
-Placement Validator 检查：
+例如餐桌摆放满足几何不相交，却挡住门到座位的通路，碰撞检查可以通过，导航检查仍应拒绝。把两项规则分别记录，才能让返工针对通道，而不是反复缩小所有家具。
 
-- Bounds/SAT 穿插；
-- 门窗和主通道净空；
-- Navmesh/可达性；
-- 墙面/地面 Anchor；
-- 视线、功能距离和朝向；
-- 重复资产与风格 Tag；
-- Draw/Light/Texture 预算。
+## 资产验收与发布
 
-几何规则由确定性工具执行。模型可以解释失败并提出候选调整。
+技术门禁检查文件、依赖、坐标、单位、枢轴、网格、材质、纹理、LOD和碰撞，再检查目标平台内存、绘制、着色器与加载预算。DCC导入、引擎构建和实际运行分别保存结果；规则集有独立版本，例外由规定的审核者批准。
 
-## 结果怎样进入正式资产
+视觉审核同时显示需求、固定相机预览、来源、工具版本、技术报告和不确定项。确定性验证负责可测规则，模型评分可辅助语义分类，关键视觉方向和正式发布按项目审核权限确认。
 
-### 技术质量门禁
+日志保存每次工具调用、状态变化、重试、补偿和批准记录。密钥与个人信息在写日志前脱敏；完整提示词和私有输入保存在对应访问范围内。
 
-进入正式库前检查：
+评估使用固定历史任务与失败集，同时记录检索准确率、布局通过率、人工返工率、工具恢复成功率、预算漏检、平均成本及人工修改保留率。生成数量增加而正式通过率下降，意味着系统把成本转移给了人工审核。
 
-- 文件/Schema/依赖完整；
-- 坐标、单位、Pivot、Bounds；
-- Mesh、Material、Texture、LOD、Collision；
-- 命名、目录和 Stable ID；
-- 平台内存、Draw、Shader 和加载预算；
-- License、来源和敏感信息；
-- DCC/Engine Import 与 Cook；
-- Manifest 和数据血缘完整。
+## 操作登记与恢复对账
 
-规则使用稳定 ID、Severity 和例外机制。Agent 不能修改 Ruleset 或批准自己的例外。
+工具返回超时以后，调度器只知道没有收到结果，不知道场景是否已经写入。创建操作先生成稳定目标ID与操作ID，把期望变更写入任务记录；执行器检查目标ID是否存在，存在时核对内容版本，缺失时才创建。操作结果写入失败时，恢复过程据目标ID重新读取产物并补齐记录。
 
-### 视觉与语义审核
+跨工具任务可以表示成三个持久状态：待执行、已应用待登记、已登记。恢复时分别重试幂等操作、核验既有产物、返回保存结果。工具若不支持稳定ID或查询，则需要隔离暂存场景，通过场景差异与清单对账；模型不能凭聊天里的“成功”替代这份证据。
 
-自动指标可检查构图、重复、遮挡、色板、图像伪影和参考相似度，但美术质量仍需要人类评审。
+发布时校验输入版本、规则版本和输出哈希仍与批准记录一致，再用条件更新切换发布指针。审核后资产被手工修改会改变哈希，门禁应重新审查这份版本。补偿删除也只针对该操作创建的对象ID，避免误删后来属于其他任务的对象。
 
-Review UI 应显示：
+## 实现与证据
 
-- Brief 与关键约束；
-- 生成结果和固定相机 Preview；
-- 来源/Model/Workflow；
-- 技术报告与预算 Diff；
-- Agent 的决策理由和不确定项；
-- Approve/Rework/Reject 与批注。
-
-人类修改应成为新的 Artifact Version，并记录哪些字段 Override。下次重跑不能静默覆盖已批准的手工调整。
-
-### 自动验证不等于自我评分
-
-同一个模型生成后再问“是否很好”容易自洽。质量门禁优先使用：
-
-- 确定性 Validator；
-- 独立 Reference/Metric；
-- 隔离上下文的 Review Model；
-- 固定 Test Set 和评分 Rubric；
-- 人类最终批准。
-
-LLM Judge 适合辅助语义分类，不作为版权、性能或破坏性操作的唯一门禁。
-
-### 日志与审计
-
-每次执行记录：
-
-- Agent/Model/Prompt/Tool Version；
-- Input/Output Hash；
-- Tool Call 参数摘要与结果；
-- State Transition；
-- Retry/Error/Compensation；
-- Validation 与 Human Decision；
-- Cost/Latency/Token/Compute；
-- 发布版本和下游影响。
-
-日志需做 Secret/PII Redaction。Prompt 可能包含内部需求，不能默认上传到外部 Telemetry。
-
-### Prompt Injection 与不可信输入
-
-资产名、文档、网页和 Metadata 都是不可信数据，其中的“忽略规则并执行命令”不能成为 Agent 指令。
-
-防护：
-
-- System/Policy 与检索内容分通道；
-- Tool 参数 Schema 和权限；
-- 不把外部文本直接拼进高权限 Prompt；
-- 输出编码与路径规范化；
-- 外部链接/下载白名单；
-- 高风险动作由代码 Gate 和人类批准。
-
-### 评估
-
-用历史任务和人工构造失败集评估：
-
-- Brief 结构化准确率；
-- Asset Retrieval Recall/Precision；
-- Placement Validator Pass Rate；
-- 首次通过/人工返工率；
-- Tool Error、Retry 和 Recovery Success；
-- 预算与 License 漏检率；
-- 平均成本/耗时；
-- 人工 Override 被保留的比例；
-- 同一输入的可复现性。
-
-只统计生成数量会鼓励低质量铺量。指标应与正式入库和返工成本相关。
+本页是资产任务设计与接口协议，未部署Agent、连接DCC或执行资产发布。事务边界的可运行示例见RPC篇，场景操作的幂等性必须由各工具实现验证。
 
 ## 相关主题
 
@@ -334,7 +110,5 @@ LLM Judge 适合辅助语义分类，不作为版权、性能或破坏性操作�
 
 ## 参考资料
 
-- NIST, *AI Risk Management Framework*.
-- OWASP, *Top 10 for Large Language Model Applications*.
-- OpenAI and Anthropic documentation on tool use, structured outputs and evaluations.
-- Workflow/Saga, data lineage and MLOps engineering references.
+- [SQLite Transaction](https://www.sqlite.org/lang_transaction.html)：本地操作登记的事务边界。
+- [etcd API guarantees](https://etcd.io/docs/v3.5/learning/api_guarantees/)：条件事务与发布指针仲裁；场景工具不由数据库自动获得原子性。

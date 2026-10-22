@@ -4,7 +4,7 @@
 
 ## 适用范围
 
-采用 UE5 RDG 官方文档的参数和 AddPass 模型，核对日期为 2026-10-04。示例为 Renderer 内部通道片段，Shader 类型注册、模块依赖和实际组数由项目提供。完整编译需对应版本源码环境。
+采用 UE5.4 RDG 官方文档的参数和 AddPass 模型，核对日期为 2026-10-22。示例为 Renderer 内部通道片段，Shader 类型注册、模块依赖和实际组数由项目提供。完整编译需对应版本源码环境。
 
 ## 计算通道示例
 
@@ -26,6 +26,41 @@ FComputeShaderUtils::AddPass(
 ```
 
 输出参数需使用 RDG UAV 宏声明，输入使用对应纹理或 SRV 宏。宏中的资源类型决定图看到的访问；把资源藏在不受图跟踪的全局状态里，可能使依赖和回收判断错误。
+
+## 参数布局与线程覆盖
+
+以下是UE5.4风格的参数结构片段，放在`FGlobalShader`派生类型中。输入为单采样二维纹理，输出为支持UAV的浮点RGBA纹理；`Extent`使用像素单位，二者尺寸一致。模块、生成Shader类型与虚拟Shader路径注册仍由宿主提供。
+
+```cpp
+BEGIN_SHADER_PARAMETER_STRUCT(FParameters, )
+    SHADER_PARAMETER(FIntPoint, Extent)
+    SHADER_PARAMETER_RDG_TEXTURE(Texture2D, InputTexture)
+    SHADER_PARAMETER_RDG_TEXTURE_UAV(RWTexture2D<float4>, OutputTexture)
+END_SHADER_PARAMETER_STRUCT()
+// 每组8×8线程，向上取整覆盖完整纹理。
+parameters->Extent = outputTexture->Desc.Extent;
+FIntVector groupCount = FComputeShaderUtils::GetGroupCount(
+    parameters->Extent, FIntPoint(8, 8));
+```
+
+与之对应的HLSL机制片段直接展开一次读写。它假设输入含有效颜色，输出每个像素只有一个写者，坐标不涉及滤波和UV缩放：
+
+```hlsl
+Texture2D<float4> InputTexture;
+RWTexture2D<float4> OutputTexture;
+int2 Extent;
+[numthreads(8, 8, 1)]
+void MainCS(uint3 tid : SV_DispatchThreadID)
+{
+    if (any(tid.xy >= uint2(Extent))) return;
+    float4 value = InputTexture.Load(int3(tid.xy, 0));
+    OutputTexture[tid.xy] = float4(value.rgb * 0.5, value.a);
+}
+```
+
+宽度为17时，需要3组线程，最后一组只有一个有效横坐标。没有边界判断就会访问目标外区域；组数向下取整则会漏掉最后一列。先用17×9输入验证边缘，再用逐像素编号图检查映射，能把dispatch范围错误与颜色算法错误分开。
+
+这里把RGB乘0.5只是便于辨认输出的数值操作，尚未定义曝光与色调映射阶段。真正的相机效果要把输出交给后续颜色通道，离线测试则用`QueueTextureExtraction`保存结果；提取指针的存储位置必须活到图执行完毕。
 
 ## 参数、引用与执行回调
 
@@ -59,6 +94,10 @@ Raster 通道参数声明颜色与深度附件及 load/store，回调设置 view
 - 在图外提取历史，连续切换相机尺寸并检查重建。
 - 查看 UAV 写后读、资源格式、group count 与边界裁剪。
 
+## 编译证据
+
+2026-10-22运行[verify.py](../examples/revision_22_26/verify.py)，从本页提取`MainCS`，DXC以`cs_6_0`编译通过；[结果记录](../examples/revision_22_26/results.json)包含工具版本。命令为`python 知识库/examples/revision_22_26/verify.py`。此检查只证明HLSL语法与入口可编译，UE参数绑定、模块编译、dispatch与输出消费尚未运行（UNVERIFIED）。
+
 ## 相关主题
 
 - [[22_渲染引擎实现/Unreal渲染帧组织]]
@@ -67,5 +106,5 @@ Raster 通道参数声明颜色与深度附件及 load/store，回调设置 view
 
 ## 参考资料
 
-- [Epic Render Dependency Graph](https://dev.epicgames.com/documentation/en-us/unreal-engine/render-dependency-graph-in-unreal-engine)，参数、通道、外部资源与调试。
+- [Epic Render Dependency Graph](https://dev.epicgames.com/documentation/en-us/unreal-engine/render-dependency-graph-in-unreal-engine?application_version=5.4)，Shader Parameter Structs、Resource Lifetimes和External Resources章节，参数、通道、外部资源与调试。
 - UE5 源码：`RenderGraphBuilder.h`、`RenderGraphResources.h`、`RenderGraphUtils.h`；使用项目相同版本核对。

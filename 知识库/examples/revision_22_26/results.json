@@ -1,0 +1,25 @@
+{
+  "record_date": "2026-10-22",
+  "python": "3.11.9",
+  "cpu_tests": 21,
+  "cpu_passed": true,
+  "probes": [
+    {
+      "entry": "GlyphPS",
+      "profile": "ps_6_0",
+      "passed": true,
+      "scope": "HLSL compilation only"
+    },
+    {
+      "entry": "MainCS",
+      "profile": "cs_6_0",
+      "passed": true,
+      "scope": "HLSL compilation only"
+    }
+  ],
+  "dxc_version": "dxcompiler.dll: 1.10(5347-fe261573)(1.9.0.5347) - 1.9.0.5347 (fe2615732)",
+  "engine_compile": "UNVERIFIED",
+  "engine_runtime": "UNVERIFIED",
+  "gpu_capture": "UNVERIFIED",
+  "performance": "UNVERIFIED"
+}

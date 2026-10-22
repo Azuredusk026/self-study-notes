@@ -1,12 +1,12 @@
 # Unity渲染帧组织
 
-同一个Renderer Feature在不同相机上出现两次，或者读不到预期颜色，先追踪实际renderer与相机角色。SRP提供组织入口，URP/HDRP各有资源与通道约束。沿管线资产、相机数据、剔除、绘制与提交查源码，比只按类名猜执行位置更可靠。
+同一个Renderer Feature在不同相机上出现两次，或者读不到预期颜色，先追踪实际渲染器与相机角色。SRP提供组织入口，URP/HDRP各有资源与通道约束。沿管线资产、相机数据、剔除、绘制与提交查源码，比只按类名猜执行位置更可靠。
 
 ## 版本与证据
 
-本篇采用 Unity 6.0（6000.0）文档与 URP 17 接口范围。Graphics 仓库的开发分支只用于查找类型；复现时将包版本与项目 manifest 锁定，再查看相同版本源码。核对日期为 2026-10-04，接口与官方文档已核对，本文示例为调用流程轮廓。
+本篇采用 Unity 6.0（6000.0）文档与 URP 17 接口范围。Graphics 仓库的开发分支只用于查找类型；复现时将包版本与项目 manifest 锁定，再查看相同版本源码。核对日期为 2026-10-22，Render Graph资源声明已按官方文档核对，本文示例为调用流程轮廓。
 
-## 从资产到相机渲染
+## 资产与相机渲染
 
 ```text
 RenderPipelineAsset.CreatePipeline
@@ -39,7 +39,7 @@ Custom Pass 前后读取的 scene color 可能分别处于不同曝光或后处�
 
 Base/Overlay、反射、预览和 Scene View 相机可能重复触发 feature。每个通道应明确接受哪些相机，历史按相机或视图保存。XR 单通道实例化还要求正确的数组切片和屏幕坐标宏。
 
-RTHandle 的分配尺寸与当前 viewport 可能不同。采样需使用对应缩放和 Blitter 路径。动态分辨率改变逻辑输出，历史是否重建由算法与资源描述决定；TAA 和超分的分辨率边界要同时检查。
+RTHandle 的分配尺寸与当前视口 可能不同。采样需使用对应缩放和 Blitter 路径。动态分辨率改变逻辑输出，历史是否重建由算法与资源描述决定；TAA 和超分的分辨率边界要同时检查。
 
 ## 设置与构建
 
@@ -52,6 +52,21 @@ RTHandle 的分配尺寸与当前 viewport 可能不同。采样需使用对应�
 | 关键字与 stripping | 可用变体和首次使用 | 构建日志、真机材质及 PSO 记录 |
 
 Shader 关键字、剥离与预热的通用机制见编译专题。设置索引保留版本与实际作用，项目级建议需来自目标场景的实验。
+
+## 颜色输入的生产与消费
+
+假设通道放在不透明绘制之后、透明绘制之前，效果要读取已经画好的不透明颜色。渲染器必须先生产可采样输入，再执行该通道；如果此时颜色仍是交换链后缓冲，绑定一个普通纹理采样器不能凭空得到可采样颜色。应在所用URP接口中声明颜色需求，并用Frame Debugger确认实际拷贝或中间目标。
+
+相同请求放在后处理之后时，输入可能已经过色调映射，屏幕上的0.5与线性HDR场景中的0.5含义不同。因此先做恒等拷贝：输出应与关闭效果一致，再添加曝光或颜色运算。恒等拷贝就变暗时，检查注入点、纹理色彩格式和采样/写入转换，而不是调整效果强度。
+
+| 观察对象 | 需要记录的值 | 可解释的错误 |
+|---|---|---|
+| 相机 | 实例ID、类型、Base/Overlay角色 | 同一效果重复运行或历史串相机 |
+| 输入 | 颜色句柄、尺寸、样本数、切片 | 黑屏、拉伸、XR单眼缺失 |
+| 输出 | 附件、消费者、清除与覆盖范围 | 通道剔除或未写区域闪烁 |
+| 提交 | 图事件与GPU完成事件 | 资源过早复用与等待 |
+
+这张表是通道数据契约，不假定所有Unity管线共用一套资源。HDRP使用其Custom Pass注入点，Built-in使用相机事件，URP使用Renderer与Render Graph入口。
 
 ## 验证方法
 
@@ -71,10 +86,6 @@ Development 构建用于定位，发布配置用于最终成本测量。记录�
 - Surface Shader 和多 Pass ShaderLab。
 
 这些入口适用于 Built-in 管线。URP/HDRP 使用各自扩展接口，接入前确认当前管线。GrabPass 尤其容易产生昂贵的屏幕拷贝。
-
-## HDRP Custom Pass
-
-HDRP 提供 Custom Pass Injection Point 和专用 Buffer 接口。它的材质、Custom Buffer 和曝光体系与 URP 不同，不能直接移植 Renderer Feature。
 
 ## Unity Shader 与渲染层
 
@@ -96,5 +107,5 @@ HDRP 提供 Custom Pass Injection Point 和专用 Buffer 接口。它的材质�
 
 - [Unity 6 URP](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/urp-introduction.html)，管线配置与资源。
 - [Unity ScriptableRenderContext](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Rendering.ScriptableRenderContext.html)。
-- [UnityCsReference](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Export/RenderPipeline/ScriptableRenderContext.cs)，剔除与提交入口。
+- [Unity 6000.0 Render Graph通道声明](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-write-render-pass.html)，`UseTexture`、`SetRenderAttachment`与执行回调；2026-10-22核读。
 - Unity Graphics 包源码：`UniversalRenderPipeline.cs`、`UniversalRenderer.cs`、`ScriptableRenderer.cs`。

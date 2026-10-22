@@ -1,0 +1,1507 @@
+{
+  "date": "2026-10-22",
+  "scope": "16—21全部45篇独立全文复核",
+  "status": "ready_for_parent_acceptance",
+  "articles": [
+    {
+      "path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "input_sha256": "ef64e2b805ec769b3fcdcf27e9738b03b1abe6263b5675c42452946492c0579f",
+      "full_text_review": true,
+      "findings": [
+        "修正异常保证分类、显式实例化例外和移动后状态的适用范围。"
+      ],
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/cpp/cpp/how-to-design-for-exception-safety?view=msvc-170",
+          "locator": "The three exception guarantees",
+          "date": "2026-10-22"
+        },
+        {
+          "url": "https://eel.is/c++draft/temp.explicit",
+          "locator": "13.9.3 paragraphs 1–6",
+          "date": "2026-10-22"
+        }
+      ],
+      "language_edits": [
+        "生成 Object。链接器解析跨文件符号、Library 和最终地址。 → 生成目标文件。链接器解析跨文件符号、库依赖和最终地址。",
+        "语法/Type 错误 → 语法或类型错误",
+        "定义/Library → 定义或库",
+        "减少不必要 Include → 减少不必要的头文件包含",
+        "在 Link 时把所需 Object 合入目标 → 在链接时把所需目标文件合入最终产物",
+        "Library 卸载 → 库卸载",
+        "指针 + Length → 指针与长度",
+        "Opaque 句柄 → 不透明句柄",
+        "显式版本/Size → 显式版本与结构大小",
+        "结构体的 Padding → 结构体的填充字节"
+      ],
+      "review_sections": [
+        "C++工程边界",
+        "C++构建与模块边界",
+        "C++ 构建链",
+        "头文件与翻译单元",
+        "静态与动态库",
+        "ABI 与 C接口",
+        "Win32 与 COM 边界",
+        "类型布局与资源语义",
+        "C++ 类型与布局",
+        "C++ 对象模型与虚函数",
+        "复制、移动与异常安全",
+        "所有权与模块接口",
+        "C ABI契约",
+        "接口结构的版本协商",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "08ecd9cc511736e9dc251a56f48527505bf725da3f8b12da5f005cdbbcb6dca8",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/CSharp运行模型.md",
+      "input_sha256": "3f7f7f0ef8818e27561bc83b8a67507a7b584a136ab264d30ad677989c29de52",
+      "full_text_review": true,
+      "findings": [
+        "纠正class分类的模糊表述和读取片段方位。"
+      ],
+      "sources": [],
+      "language_edits": [
+        "需要 Link 配置、显式引用和设备构建测试 → 需要链接器配置、显式引用和设备构建测试",
+        "Unity 程序集 Definition → Unity程序集定义（Assembly Definition）",
+        "运行时/编辑器/Test 依赖 → 运行时、编辑器与测试依赖",
+        "Native 缓冲 → 原生缓冲"
+      ],
+      "review_sections": [
+        "CSharp运行模型",
+        "编译与运行时对象",
+        "C# 的运行模型",
+        "程序集与模块边界",
+        "C# 的值与引用",
+        "C# 委托、事件与资源释放",
+        "C# 泛型、LINQ 与相等性",
+        "显式资源释放",
+        "复制、装箱与流读取边界",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "467a9c85f48548ee822cbbaf1d25f245d85520d2b7f87bca2f3a3de885c20a7f",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/Python宿主集成.md",
+      "input_sha256": "b60385b538cd281784b4a46713caaf04160053213013b60bcf2d1df2c8038117",
+      "full_text_review": true,
+      "findings": [
+        "修复计算着色器术语错误，明确现有探针未输出包路径。"
+      ],
+      "sources": [],
+      "review_sections": [
+        "Python宿主集成",
+        "宿主环境与接口",
+        "Python 环境",
+        "宿主上下文与数据接口",
+        "GIL 与并发",
+        "环境探针",
+        "宿主状态与后台结果",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "6181296c01786abd8db3a58f8f9076d3739d4ef5cb64d5bea2de995797018fdc",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/内存布局与分配.md",
+      "input_sha256": "9072767e1c3c51008285c9becfbdc3b711a99915b073436b31f2c4d04c6cda93",
+      "full_text_review": true,
+      "findings": [
+        "修复aligned超过capacity时无符号减法下溢；展开不溢出的完整检查顺序。"
+      ],
+      "sources": [],
+      "language_edits": [
+        "嵌在堆 Object → 嵌在堆对象",
+        "GPU Resource → GPU资源",
+        "Unified Memory → 统一内存",
+        "Device-local Resource → 设备本地资源",
+        "缓存 Coherence、Tile Memory → 缓存一致性、片上瓦片内存",
+        "Arena/Linear 分配器 → 线性分配器",
+        "同一 Arena → 同一分配区"
+      ],
+      "review_sections": [
+        "内存布局与分配",
+        "栈与堆",
+        "虚拟地址与物理存储",
+        "分配器与碎片",
+        "数据局部性",
+        "缓存映射与写策略",
+        "帧分配器",
+        "对齐与批次寿命",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "ecb568086d5266ee00370e1555562bca77d66f91dcb1ffca37c682bcefd74fb8",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/图搜索.md",
+      "input_sha256": "4815eb3be2b0de77055ffb15ef27dc75554e7a88dda2c7de8c95611ce58e7bea",
+      "full_text_review": true,
+      "findings": [
+        "将负环破坏有限最短距离的范围限定为源可达且环可达的目标。"
+      ],
+      "sources": [],
+      "review_sections": [
+        "图搜索",
+        "图表示",
+        "拓扑排序",
+        "Dijkstra",
+        "A*",
+        "A* 主循环",
+        "松弛与过期堆记录",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "ac6c7298d360640f9fba18da6059b3c1ba80bfd537a11d96e78dec96a5e11b4b",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/容器选择.md",
+      "input_sha256": "5c940bff303b5721705773c78cd4a9074992bb7d07e5785b849396e0ab6776c3",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [],
+      "language_edits": [
+        "Index $O(1)$ → 按下标访问为 $O(1)$",
+        "哈希与 Equality → 哈希与相等性判断",
+        "Mutable 键 → 可变键",
+        "定位 Bucket，再在 Bucket 内用 Equality 找键 → 定位桶，再在桶内通过相等性判断找键",
+        "重建 Bucket 分布 → 重建桶分布",
+        "少量 Bucket → 少量桶"
+      ],
+      "review_sections": [
+        "容器选择",
+        "操作决定容器",
+        "工作负载",
+        "数组、列表与双端队列",
+        "`std::vector` 的容量与失效",
+        "栈、队列与优先队列",
+        "哈希表",
+        "树结构",
+        "红黑树与有序关联容器",
+        "容器工作负载",
+        "操作序列与引用稳定性",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "8a782d52e9a6c3306fec18585d5fa308b8341216e3277173b53254d6a8bccf56",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/对象池.md",
+      "input_sha256": "f1b0c50e42ceb5b4cab90b22709c7965142a9fed4fd2c40c921aed8188e73afa",
+      "full_text_review": true,
+      "findings": [
+        "修正非激活实例的Awake触发时机。"
+      ],
+      "sources": [
+        {
+          "url": "https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.Awake.html",
+          "locator": "Description与inactive GameObject示例",
+          "date": "2026-10-22"
+        }
+      ],
+      "review_sections": [
+        "对象池",
+        "对象复用",
+        "容量与驻留成本",
+        "租用与生命周期回调",
+        "槽位复用条件",
+        "租用状态机",
+        "释放中的任务竞争",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "2b1d15732b7dabc485855c2b54eab94f2e22de288d61a48f8e393a896fec1482",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/对象生命周期.md",
+      "input_sha256": "87082b74fcb2200a00f2921dd02c838bde5d03c4a0830795d7c7842cdd794efe",
+      "full_text_review": true,
+      "findings": [
+        "分开取消与等待完成，纠正RenderTexture不采用Dispose的释放接口。"
+      ],
+      "sources": [
+        {
+          "url": "https://docs.unity3d.com/6000.0/Documentation/ScriptReference/RenderTexture.Release.html",
+          "locator": "Description",
+          "date": "2026-10-22"
+        }
+      ],
+      "review_sections": [
+        "对象生命周期",
+        "所有权",
+        "托管堆与垃圾回收",
+        "常见 C# 隐式分配",
+        "原生容器与固定地址",
+        "资源引用与泄漏",
+        "生命周期契约",
+        "拥有、共享与借用",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "d7911754e5937adcdd11d428673bd6848354fe8afaf0fa3d68a7e63843af7e23",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/文件IO.md",
+      "input_sha256": "52caa93f715b03db9f723dc9bea4baa3217dc12e24238792f86f0758caa9c0f6",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [],
+      "review_sections": [
+        "文件IO",
+        "读取与缓存",
+        "异步请求与缓冲寿命",
+        "临时文件与发布",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "全文检查了短读、临时文件原子替换、flush/fsync与断电耐久性的边界；原17项实验中的两个文件用例实际复跑通过。",
+      "outcome": "retained_after_full_read",
+      "final_sha256": "52caa93f715b03db9f723dc9bea4baa3217dc12e24238792f86f0758caa9c0f6",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/空间索引.md",
+      "input_sha256": "74c72592f0427263e2ee1b5abb02eef274649fe8685afd1584c1c131cec54fdd",
+      "full_text_review": true,
+      "findings": [
+        "移除与本页通用空间索引主机制无关的导航参考，修正文句重复。"
+      ],
+      "sources": [],
+      "review_sections": [
+        "空间索引",
+        "空间候选筛选",
+        "粗筛与精确查询",
+        "均匀网格与空间哈希",
+        "四叉树与八叉树",
+        "BVH",
+        "KD-Tree与空间分割",
+        "语义层级与空间索引",
+        "复杂度与数据局部性",
+        "候选查询",
+        "网格范围与更新",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "1f29f10caba00924671873f593bb04c427eb8b112cd1a330a2d5885749cafab5",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法与数据结构导读.md",
+      "input_sha256": "7c2c7a739efbcab9d529bc84748b39ef89031af17381f4587f7e5ff00a03062b",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [],
+      "review_sections": [
+        "算法与数据结构导读",
+        "按问题进入专题",
+        "阅读与选择",
+        "选择示例",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "全文读取导读的归属与链接；只导航到独立机制页，符合导读不重复核心实现的范围。",
+      "outcome": "retained_after_full_read",
+      "final_sha256": "7c2c7a739efbcab9d529bc84748b39ef89031af17381f4587f7e5ff00a03062b",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法设计.md",
+      "input_sha256": "1bc91615e7900a35aeb5a95f589064b282c6016350327fb957ceaf22984a889c",
+      "full_text_review": true,
+      "findings": [
+        "区分复杂度上界O与比较模型最坏情况下界Omega；使用现行定稿表述。"
+      ],
+      "sources": [],
+      "review_sections": [
+        "算法设计",
+        "状态与求解策略",
+        "渐进复杂度",
+        "递归与枚举",
+        "排序与分治",
+        "动态规划",
+        "贪心算法",
+        "字符串匹配与 KMP",
+        "状态转移示意",
+        "状态定义与反例",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "b8e768b9bfe6bf7a7c7b6742fd48954bbe7a5811e747f7d71630dc7bb87bc696",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/线程同步.md",
+      "input_sha256": "396a459ff2656bba2fdc18c06cc6832a8587d0e1d9afa2df2be52baaf406b1b3",
+      "full_text_review": true,
+      "findings": [
+        "补足数据竞争至少一个非原子操作及寿命冲突条件，避免把relaxed原子访问误判为语言数据竞争。"
+      ],
+      "sources": [
+        {
+          "url": "https://eel.is/c++draft/intro.races",
+          "locator": "conflict与data race定义、relaxed operations注释",
+          "date": "2026-10-22"
+        }
+      ],
+      "language_edits": [
+        "Spin 浪费 CPU → 自旋浪费CPU时间",
+        "比 Mutex 快 → 比互斥锁快",
+        "记录 Lock Graph → 记录锁依赖图"
+      ],
+      "review_sections": [
+        "线程同步",
+        "锁与等待原语",
+        "原子操作与内存顺序",
+        "数据竞争与死锁",
+        "条件变量的谓词等待",
+        "并发错误定位",
+        "通知、发布与回收",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "819d1b47cc86668ae0aab87820058f86e6ccd7c7fe3ee4182e7ad25a2d65bd7e",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/虚拟内存.md",
+      "input_sha256": "eb6cfdc2610ec9ca18fa766cb9e0aea6caf2e3c530faea81c07c151a0f02f47b",
+      "full_text_review": true,
+      "findings": [
+        "区分概念地址范围和稀疏映射，限定栈增长机制的平台前提。"
+      ],
+      "sources": [],
+      "review_sections": [
+        "虚拟内存",
+        "虚拟内存、页表与 TLB",
+        "栈、堆与内存映射",
+        "按页提交",
+        "保留、提交与驻留",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "687c14c11afb4c9581621be7ef26f73f83499587577c54a2b20eb3c6514affe6",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/跨语言接口.md",
+      "input_sha256": "708d353ea9cc6d977a5c3570ce54db65d4044a30ff1e6fcca549422b122132cb",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [],
+      "language_edits": [
+        "C# P/Invoke 调 C ABI Native DLL → C#通过P/Invoke调用暴露C ABI的原生动态库",
+        "pybind11/CPython Extension 暴露 C++ 给 Python → pybind11或CPython扩展将C++接口暴露给Python",
+        "Embedded Interpreter 在 Host 内执行脚本 → 宿主内嵌解释器执行脚本",
+        "Project-relative Asset Path → 项目相对资产路径",
+        "Absolute Local Path → 本机绝对路径",
+        "Display Path → 显示路径"
+      ],
+      "review_sections": [
+        "跨语言接口",
+        "互操作边界",
+        "跨语言边界",
+        "错误转换",
+        "配置与路径",
+        "批量调用契约",
+        "字节与缓冲所有权",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "5418349911425456671d9b47398b865925d6f71e9f7601d4b0f1992f890a3548",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/进程与调度.md",
+      "input_sha256": "0be492a4ff26819870a4083f22ab510a1ae98910643dcf5c488aca6fdbc924f3",
+      "full_text_review": true,
+      "findings": [
+        "区分时区表示与底层墙钟调整，避免对所有休眠API作错误最短时间保证。"
+      ],
+      "sources": [
+        {
+          "url": "https://docs.python.org/3/library/time.html",
+          "locator": "time.monotonic、time.sleep与时区定义",
+          "date": "2026-10-22"
+        }
+      ],
+      "review_sections": [
+        "进程与调度",
+        "用户态、内核态与系统调用",
+        "进程与线程",
+        "调度与上下文切换",
+        "进程间通信",
+        "时间与计时器",
+        "工具进程协议",
+        "等待队列与子进程输出",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "1626f08e59d698c6773d950b50196e55d6bdbbd0d9c3ef861f6e7753de8d9f05",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+      "input_sha256": "e9af4532e29291c4b9d8f03901e3a8e1e83827016b4ba0ab918dac901876bd78",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [],
+      "review_sections": [
+        "Agent资产管线",
+        "任务状态与产物",
+        "状态推进",
+        "任务与产物记录",
+        "推理与工具接口",
+        "角色与数据契约",
+        "工具参数与执行边界",
+        "调度职责",
+        "失败恢复",
+        "幂等与重试",
+        "补偿与版本恢复",
+        "室内场景的结构化规划",
+        "资产验收与发布",
+        "操作登记与恢复对账",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "全文检查稳定目标ID、操作ID、超时不确定性、已应用待登记恢复、发布哈希与条件切换，设计协议和未部署状态一致。",
+      "outcome": "retained_after_full_read",
+      "final_sha256": "e9af4532e29291c4b9d8f03901e3a8e1e83827016b4ba0ab918dac901876bd78",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
+      "input_sha256": "2b6d341dc30b2e19499f7b020ecab7a2384c640820a370a07d2b5b7536d7cd97",
+      "full_text_review": true,
+      "findings": [
+        "将单帧重跑限定于独立帧工作流，避免破坏时序模型状态。"
+      ],
+      "sources": [],
+      "review_sections": [
+        "ComfyUI工作流",
+        "可复现执行",
+        "基础图",
+        "工作流与依赖",
+        "模型与路径",
+        "参数接口",
+        "队列与批处理",
+        "自定义节点风险",
+        "输出与元数据",
+        "失败恢复",
+        "提交、完成与产物确认",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "ed574247bd6d774db37b70d977dc297bea67589540cf91127ce580bbfc83757b",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/LoRA训练.md",
+      "input_sha256": "4cc2cdb6b3d700a5d33bcdb1be080bd3a053588f3b9f1e83913de432d47c5f68",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2106.09685v2",
+          "locator": "§4.1 equation3, A Gaussian/B zero initialization and alpha/r",
+          "date": "2026-10-22"
+        }
+      ],
+      "language_edits": [
+        "图像描述描述图像内容 → 图像描述记录内容",
+        "Trigger/建议权重 → 触发词与建议权重",
+        "验证 Grid → 验证图表",
+        "数据manifest → 数据清单"
+      ],
+      "review_sections": [
+        "LoRA训练",
+        "低秩适配与训练数据",
+        "LoRA",
+        "LoRA 数据",
+        "图像描述与标签",
+        "训练与过拟合",
+        "资产化",
+        "基线评估",
+        "数据与隐私",
+        "低秩增量",
+        "矩阵维数与训练更新",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "d2cab3fb90e71878c0fdcae12a0048f34163d53592882c93e3cbec13add966b5",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/扩散模型.md",
+      "input_sha256": "6c14b86d15bab8d97ead24fb3fed2b94ba25b4c6b5d8256aa7e29f5aa63fad81",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2006.11239v2",
+          "locator": "§3.2 equation11 and Algorithm2, t>1 noise rule",
+          "date": "2026-10-22"
+        }
+      ],
+      "language_edits": [
+        "潜变量 Diffusion 使用 VAE → 潜空间扩散使用VAE",
+        "使用的 Encoder、分词器 → 使用的编码器、分词器",
+        "Attention 的成本 → 注意力计算的成本"
+      ],
+      "review_sections": [
+        "扩散模型",
+        "加噪与去噪",
+        "前向加噪",
+        "反向采样",
+        "潜空间扩散",
+        "U-Net 与其他去噪网络",
+        "文本条件与 CLIP",
+        "Classifier-Free Guidance",
+        "种子与可复现性",
+        "文生图、图生图与局部重绘",
+        "推理精度与显存",
+        "去噪循环",
+        "噪声预测与单步更新",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "52ee98d6da732fa41de237f599cf035ab8e9d7fb598272d9cad8b99c8dedada5",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/生成条件控制.md",
+      "input_sha256": "82eb95881f4efff6086fe9c187f0ac3e3adfd810a8075a430ae4f17aad34ebcf",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2302.05543v3",
+          "locator": "§3.1 equations2–3 zero convolutions",
+          "date": "2026-10-22"
+        }
+      ],
+      "language_edits": [
+        "姿态或Edge → 姿态或边缘图",
+        "把 Edge、深度、法线、姿态、Segmentation → 把边缘图、深度、法线、姿态、分割图",
+        "权重、Start/末尾步数 → 权重、起始与结束步数",
+        "额外 Attention/条件 → 额外注意力分支或条件",
+        "Text、多个 → 文本、多个"
+      ],
+      "review_sections": [
+        "生成条件控制",
+        "ControlNet",
+        "IP-Adapter",
+        "条件接口",
+        "控制分支与注意力",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "f920022f3f2a4b8b672a6962e9bbc5dba26ef90e3ef7d44d59aa61f706f5e3c2",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+      "input_sha256": "4d2973877344a896d1fca6bc2fda130a9a3322f2aaedf5815226a7e76f58c421",
+      "full_text_review": true,
+      "findings": [
+        "补充运动物体法线的姿态输送，区分相机换基与真实表面旋转，删除无依据的约束强弱排序。"
+      ],
+      "sources": [],
+      "language_edits": [
+        "姿态/Edge ControlNet → 姿态或边缘ControlNet",
+        "按 Motion/光流 → 按运动信息或光流",
+        "潜变量 Scale → 潜变量尺度",
+        "关键帧/Propagation 关系 → 关键帧与传播关系",
+        "Camera/视空间 → 相机视空间",
+        "按 Motion 重投影 → 按运动信息重投影",
+        "Object/实例 ID → 对象或实例ID",
+        "Object ID → 对象ID",
+        "分辨率、Crop → 分辨率、裁剪",
+        "Warping 错误 → 重投影误差",
+        "Temporal LPIPS/特征 Distance → 时序LPIPS或特征距离",
+        "法线 Angular 错误 → 法线角度误差"
+      ],
+      "review_sections": [
+        "视频生成时序一致性",
+        "跨帧内容对应",
+        "逐帧差异",
+        "约束分层",
+        "光流重投影",
+        "潜变量与噪声一致性",
+        "关键帧与传播",
+        "技术通道的一致性",
+        "时序法线生成",
+        "法线时间过滤",
+        "多通道一致性",
+        "曝光与颜色稳定",
+        "时序质量指标",
+        "历史法线过滤",
+        "坐标换算与遮挡拒绝",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "a86f23346844ffe56ac9a7f076889d6db5a3cd311a9d09d8de6cf048af27fe63",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Character Controller.md",
+      "input_sha256": "40ea9b61178c4bee76ed6619c9751b801c1f811a82075e81f168d704d0da276b",
+      "full_text_review": true,
+      "findings": [
+        "统一标题，注明安全间距在简化单面模型中的保守位移损失。"
+      ],
+      "sources": [],
+      "review_sections": [
+        "Character Controller",
+        "扫掠与滑动",
+        "扫掠与滑动循环",
+        "坡面、台阶与平台",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "778c423b819e4b18c49070612a07602aa9015bf076cf8691612795465792c566",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+      "input_sha256": "efa280d5045f01055c8664e6e876fffd837fb919bef69aa0c2929ecfa625bcf7",
+      "full_text_review": true,
+      "findings": [
+        "限定刚体变换无非均匀缩放，补角速度短弧采样的混叠边界。"
+      ],
+      "sources": [],
+      "review_sections": [
+        "Ragdoll",
+        "骨骼与刚体的对应",
+        "继承线速度与角速度",
+        "恢复动画",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "ad5ebfd4a3ed5664e27da0c61e435700620111a5d4473a60d7e38fe4510eacc1",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/XPBD.md",
+      "input_sha256": "530b70c7f13ecc7292cbdcf5a2380c0cb5cab412f846a041c7bcae818f96589f",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [
+        {
+          "url": "https://mmacklin.com/xpbd.pdf",
+          "locator": "Algorithm1 multipliers reset and §4.1 equation18",
+          "date": "2026-10-22"
+        }
+      ],
+      "review_sections": [
+        "XPBD",
+        "布料与 XPBD",
+        "XPBD 距离约束",
+        "乘子的量纲与完整时间步",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "全文重算约束符号、量纲和1.5米算例，核对每步清零/步内累计与原论文；Python3项检查实际通过，C++重合跳过与Python拒绝差异明示。",
+      "outcome": "retained_after_full_read",
+      "final_sha256": "530b70c7f13ecc7292cbdcf5a2380c0cb5cab412f846a041c7bcae818f96589f",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/刚体物理求解.md",
+      "input_sha256": "cf67e0d4a61a16f00a6ee11bb69ebc8a8f0beec2ff41edb8761b127c6505a0eb",
+      "full_text_review": true,
+      "findings": [
+        "展开圆心在盒内时最近出射面计算；修正PBD动量误述、固定步长绝对化，并补冲量符号/零分母/世界惯量前提。"
+      ],
+      "sources": [
+        {
+          "url": "https://matthias-research.github.io/pages/publications/posBasedDyn.pdf",
+          "locator": "§3.3 conservation of linear and angular momentum, equations1–2",
+          "date": "2026-10-22"
+        },
+        {
+          "url": "https://box2d.org/files/ErinCatto_SequentialImpulses_GDC2006.pdf",
+          "locator": "Contact impulse与Accumulated impulses",
+          "date": "2026-10-22"
+        }
+      ],
+      "review_sections": [
+        "刚体物理求解",
+        "刚体状态与积分",
+        "积分稳定性",
+        "固定时间步与累加器",
+        "接触生成",
+        "碰撞检测",
+        "精确碰撞检测的两类主力算法",
+        "2D 圆与 AABB",
+        "接触响应",
+        "冲量与约束",
+        "穿透修正的三种取向",
+        "查询、层与事件",
+        "确定性与验证",
+        "法向有效质量与累计冲量",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "59182a4c2586042a80db708e09da9db2e1cd211075df2efa5c23f72cda0dd9fb",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/破坏系统.md",
+      "input_sha256": "4f0d66f613f1d4da412303c9ff10d7bfe814ce64c7f6b1c4b52b289c743bf731",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [],
+      "review_sections": [
+        "破坏系统",
+        "预切分与连接图",
+        "激活流程",
+        "支撑传播与连通分量",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "全文核对无向连接图、支撑集合、桥边断裂、v+omega×r及有限碎片预算；unsupported实验只证明简化连通而非结构承载。",
+      "outcome": "retained_after_full_read",
+      "final_sha256": "4f0d66f613f1d4da412303c9ff10d7bfe814ce64c7f6b1c4b52b289c743bf731",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/载具物理.md",
+      "input_sha256": "c96ffb6893d31232bdd882575f213137fcafb913cd6794ba1cfab3e598e46db0",
+      "full_text_review": true,
+      "findings": [
+        "将附着极限改为共享预算条件，补运动地面的相对速度和制动扭矩方向。"
+      ],
+      "sources": [],
+      "review_sections": [
+        "载具物理",
+        "车轮接触与滑移",
+        "轮胎力预算",
+        "悬挂到接触力",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "c0346911da7bd8b005cb3180dc0a5fc4b1add26fff2dd617ba29ca99bd5f7a4b",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/19_Gameplay与游戏框架/玩法事件与脚本.md",
+      "input_sha256": "297e2d93e69d1523918c4ea20b61f820833f554bc03a211f533967ae6dfa0173",
+      "full_text_review": true,
+      "findings": [
+        "修正订阅快照是每事件而非整轮的语义，补日志错误边界，修复3C和Release术语。"
+      ],
+      "sources": [],
+      "language_edits": [
+        "Immediate、Pre-Tick 或 Post-Tick 的处理时机 → 立即派发、Tick前或Tick后等处理时机",
+        "Immediate 事件 → 立即派发的事件",
+        "Queued 事件 → 排队事件",
+        "必要字段的 Snapshot → 必要字段的快照",
+        "稳定 Pin 类型 → 稳定引脚类型"
+      ],
+      "review_sections": [
+        "玩法事件与脚本",
+        "事件系统",
+        "事件与命令的区分",
+        "脚本系统",
+        "可视化脚本",
+        "3C",
+        "组织与验证",
+        "事实负载与订阅寿命",
+        "验证方法",
+        "延迟派发事件",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "c82c78980cfcfd6a6959f692d45152307d319dcd0272b8d38ef49a88e3327652",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/19_Gameplay与游戏框架/输入与动作状态.md",
+      "input_sha256": "44060853fc992934f6593936dc0cdbfe59c5648b0bf1eca987c1c0ba82fab066",
+      "full_text_review": true,
+      "findings": [
+        "修复变换措辞与叙事标题，保留输入消费、地面资格和步长机制。"
+      ],
+      "sources": [],
+      "review_sections": [
+        "输入与动作状态",
+        "输入与动作规则",
+        "设备输入与语义命令",
+        "输入缓冲与土狼时间",
+        "请求层与行为层",
+        "移动与状态解耦",
+        "分层框架",
+        "模拟与显示",
+        "2D 精灵的变换与投影",
+        "最小游戏循环",
+        "数据驱动与调试",
+        "跳跃许可与输入消费",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "34b44bdec27a98618012e4e6913c626f78f602fa65f9876559b5405174acd255",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/20_游戏AI/MCTS.md",
+      "input_sha256": "8486a0be5912f48ac20bb79bfbc70b2178f0bff01b1a7d22713c108ebffd6291",
+      "full_text_review": true,
+      "findings": [
+        "使UCT代码与根视角回传一致，显式处理对手收益符号和机会节点范围。"
+      ],
+      "sources": [],
+      "review_sections": [
+        "MCTS",
+        "树搜索与探索",
+        "MCTS 的 UCT 选择",
+        "四阶段与回报视角",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "295086fa139219c0b3d94c4b6e8b58b347f53317da71b079253335240a5599a8",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI决策模型.md",
+      "input_sha256": "dcc3c0cecb4e141053ad5f0f9408d0aaabe96a59ecd1a7b001b14da312200de0",
+      "full_text_review": true,
+      "findings": [
+        "按官方定义限定Observer Aborts，补回归规划负效果冲突/矛盾/重复状态控制，区分记忆型和反应式顺序节点。"
+      ],
+      "sources": [
+        {
+          "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-behavior-tree-node-reference-decorators",
+          "locator": "Blackboard / Observer Aborts, UE5.8页面",
+          "date": "2026-10-22"
+        }
+      ],
+      "language_edits": [
+        "Script-based AI → 脚本式AI",
+        "Rule-based AI → 规则式AI",
+        "通过 Curve 映射 → 通过曲线映射"
+      ],
+      "review_sections": [
+        "游戏AI决策模型",
+        "反应式行为组合",
+        "FSM 与 HFSM",
+        "行为树",
+        "中止语义",
+        "Utility AI",
+        "效用的组合与迟滞",
+        "目标规划",
+        "GOAP",
+        "规划的反向搜索",
+        "HTN",
+        "模型选择",
+        "异步动作与规划冲突",
+        "验证方法",
+        "顺序节点执行",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "8c11c2aebd5bfe12f482cb1c2cf8e4b3b043f4be4f0667594485b33aae3ebb6a",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI导航.md",
+      "input_sha256": "fe538c259388f11d043338ce983204d9cb134dc0eeeb401a38fc9b2af1c32218",
+      "full_text_review": true,
+      "findings": [
+        "补启发式单位和低成本连接前提、到达控制参数范围，修正漏斗验收只测点的不足。"
+      ],
+      "sources": [
+        {
+          "url": "https://recastnav.com/structrcConfig.html",
+          "locator": "cs/ch/walkableClimb/walkableRadius",
+          "date": "2026-10-22"
+        }
+      ],
+      "language_edits": [
+        "规则 Grid → 规则网格",
+        "Manhattan 距离 → 曼哈顿距离",
+        "提取为 Contour → 提取为轮廓",
+        "Tile 局部重建 → 瓦片局部重建"
+      ],
+      "review_sections": [
+        "游戏AI导航",
+        "可行走空间",
+        "可行走空间表示",
+        "路径与移动执行",
+        "A* 与启发函数",
+        "搜索实现与导航约束",
+        "NavMesh 生成",
+        "路径走廊与漏斗",
+        "转向控制与跟随",
+        "局部避障",
+        "调试与边界",
+        "到达行为",
+        "走廊版本与可执行性",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "2d28e10ec7a8fd30de5d314000298ff3fe260d2105efc723869a465ceeaddb03",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏强化学习.md",
+      "input_sha256": "009b73606484672cf3deaa48bb581e12790a574a1f3c1ac6a9e3add47ad6b500",
+      "full_text_review": true,
+      "findings": [
+        "修正奖励漏洞例子与奖励项的因果，令部署伪代码实际包含合法动作掩码。"
+      ],
+      "sources": [],
+      "review_sections": [
+        "游戏强化学习",
+        "状态、策略与价值",
+        "强化学习管线",
+        "神经网络与学习方式",
+        "混合架构",
+        "部署边界",
+        "更新目标与终止语义",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "90ce9c0d501fcdeb910ddbbf4149b4382992d87f42036a87b6859e54bdf5ab67",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/20_游戏AI/群体战术信息.md",
+      "input_sha256": "9fd03a96e2a9f2a7a91f53fdf1d56db4992a139911f1b1917569dd10ccf4dad2",
+      "full_text_review": true,
+      "findings": [
+        "统一概述伪代码与后文先扩散衰减再注入源的时序。"
+      ],
+      "sources": [],
+      "review_sections": [
+        "群体战术信息",
+        "群体与战术信息",
+        "感知预算与信息抽象",
+        "影响场更新",
+        "扩散、注入与记忆",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "b49b6dfed8c83f809b8eac451edaf7d9f2f0ae2acf543c600ea4930a056bafc1",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/21_游戏网络/RPC.md",
+      "input_sha256": "b2157b0bac43567fbeb84af6ad66db8417b16de436f2c6b947613bc884286413",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [],
+      "review_sections": [
+        "RPC",
+        "请求与执行语义",
+        "安全边界",
+        "幂等请求",
+        "并发重试的事务边界",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "全文检查请求ID与载荷冲突、SQLite单写事务、状态与结果共同提交和发件箱边界；两项真实文件事务用例通过，未混同多机投递。",
+      "outcome": "retained_after_full_read",
+      "final_sha256": "b2157b0bac43567fbeb84af6ad66db8417b16de436f2c6b947613bc884286413",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/21_游戏网络/世界分区与AOI.md",
+      "input_sha256": "1bdc2703a85fb7b0500f1e12cd71fb09d0fb2ae4e61d9b1c2e8b893bedea3ab1",
+      "full_text_review": true,
+      "findings": [
+        "补AOI迟滞维护必须覆盖退出半径的前提，并明确点实体/输出容器契约。"
+      ],
+      "sources": [],
+      "language_edits": [
+        "生成实例/Despawn 语义 → 生成与移除语义",
+        "按 Grid、四叉树 → 按网格、四叉树"
+      ],
+      "review_sections": [
+        "世界分区与AOI",
+        "AOI 与世界分区",
+        "基于网格的 AOI 查询",
+        "复制迟滞与权威交接",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "8ebe1cc1a51926cbd056b2d73f18b9f68b7de695c9466ce4747250997cc27ec2",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/21_游戏网络/回滚同步.md",
+      "input_sha256": "2ee17906c1d2315810681fc2aad31d49aebf60693a6ca9c04af453f2b0e54ecf",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [],
+      "review_sections": [
+        "回滚同步",
+        "三类同步思路",
+        "断线、重连与回放",
+        "回滚流程",
+        "快照边界与副作用",
+        "验证方法",
+        "保存与重放的范围",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "全文重算步前快照[0,1,2]与迟到第1步=-1，检查重模拟半开区间及表现旧事件撤销；整数模型事件重建测试通过。",
+      "outcome": "retained_after_full_read",
+      "final_sha256": "2ee17906c1d2315810681fc2aad31d49aebf60693a6ca9c04af453f2b0e54ecf",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/21_游戏网络/客户端预测.md",
+      "input_sha256": "e9e65578fc0e4f6038526023d5e6b97d2cfb0c6aa40742ab7dd91220fdcacb75",
+      "full_text_review": true,
+      "findings": [
+        "区分输入ACK与快照版本，允许同ACK的新权威状态，避免丢失外力/平台更新。"
+      ],
+      "sources": [],
+      "review_sections": [
+        "客户端预测",
+        "客户端预测与校正",
+        "权威边界",
+        "校正循环",
+        "重放中的碰撞与序号",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "1497161da5007edcb596e78e10f2a5d9bffd54cfc7bfc9b8f6418330715baf45",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/21_游戏网络/对局服务器架构.md",
+      "input_sha256": "f669c47eede926787ad9ddd572b0fe938732b6323bff348a88de64df3458f24c",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [],
+      "review_sections": [
+        "对局服务器架构",
+        "会话与服务职责",
+        "发现、负载与实例",
+        "存储与一致性",
+        "安全与可观测性",
+        "故障与测试",
+        "会话路由",
+        "所有权与持久化时序",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "全文检查路由粘性、epoch拒绝旧权威、结果ID耐久提交及延迟预算；未部署声明准确，不添加无目标环境的容量结论。",
+      "outcome": "retained_after_full_read",
+      "final_sha256": "f669c47eede926787ad9ddd572b0fe938732b6323bff348a88de64df3458f24c",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/21_游戏网络/延迟补偿命中.md",
+      "input_sha256": "f63be6f7072aee778ca3b06abb89c53a7ea24902823c9c89529086863e518d0b",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [],
+      "review_sections": [
+        "延迟补偿命中",
+        "射击与显示时间",
+        "历史碰撞体",
+        "最小射线查询",
+        "命中提交与验证",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "全文重算9.820秒查询时刻与球体射线4米，检查单位方向、inside返回0、动态遮挡时间政策及历史窗口拒绝；模型用例通过。",
+      "outcome": "retained_after_full_read",
+      "final_sha256": "f63be6f7072aee778ca3b06abb89c53a7ea24902823c9c89529086863e518d0b",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/21_游戏网络/快照同步.md",
+      "input_sha256": "9a172d9e779fa68af49b4b72975ddb7290764f7d15de3e14d76efaa5ea888955",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [],
+      "review_sections": [
+        "快照同步",
+        "压缩与基线",
+        "远端实体插值",
+        "插值缓冲的取时刻",
+        "快照插值",
+        "基线与离散状态",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "全文检查差量基线确认、同段插值、传送身份段与缓冲耗尽；1.02秒=0.4米手算成立，历史插值模型通过，网络基线恢复未运行。",
+      "outcome": "retained_after_full_read",
+      "final_sha256": "9a172d9e779fa68af49b4b72975ddb7290764f7d15de3e14d76efaa5ea888955",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/21_游戏网络/服务端反作弊校验.md",
+      "input_sha256": "2a3a1ffa81279276cdddbf52c00dbebd765e83c931d7fa73c9e1b54108dd1aa2",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [],
+      "review_sections": [
+        "服务端反作弊校验",
+        "反作弊分层",
+        "位移校验",
+        "输入时长与运动能力",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "全文核对速度限制只作必要条件筛选、服务器Tick控制时长、平台能力记录及碰撞验证；未将单次超阈值误作作弊证明。",
+      "outcome": "retained_after_full_read",
+      "final_sha256": "2a3a1ffa81279276cdddbf52c00dbebd765e83c931d7fa73c9e1b54108dd1aa2",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络传输.md",
+      "input_sha256": "c2f3f714570c0444cc6dc3298ed436a7b4a068347537cced3047baa111157ce7",
+      "full_text_review": true,
+      "findings": [
+        "修复DNS术语污染和默认网关过度简化；代码使用固定线头与加法溢出检查。"
+      ],
+      "sources": [],
+      "language_edits": [
+        "DNS Server → DNS服务器",
+        "IP Fragmentation → IP分片",
+        "Network 性能分析器 → 网络性能分析器",
+        "快速重传和 Recovery → 快速重传和恢复"
+      ],
+      "review_sections": [
+        "游戏网络传输",
+        "端点与连接建立",
+        "分层、地址与端点",
+        "DNS",
+        "传输与消息边界",
+        "TCP 与 UDP",
+        "TCP 连接与可靠性",
+        "数据包与序列化",
+        "诊断",
+        "TCP 字节流分帧",
+        "消息年龄与队列",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "逐段复读正文、公式、实现片段、输入契约、失败与成本以及证据范围；具体缺口与修改见findings和language_edits。",
+      "outcome": "corrected",
+      "final_sha256": "20e8468bbe952e1841825aba21f817d0f35c7d5a546dc2c1972fc93004716387",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络时钟.md",
+      "input_sha256": "f1ab5abb4ebd056038592e8186ade68fca45c62d97573feecfdbf3b802c0458e",
+      "full_text_review": true,
+      "findings": [],
+      "sources": [
+        {
+          "url": "https://www.rfc-editor.org/rfc/rfc5905",
+          "locator": "§8 timestamp relationship and §8 offset/delay definitions",
+          "date": "2026-10-22"
+        }
+      ],
+      "review_sections": [
+        "游戏网络时钟",
+        "四个时间戳",
+        "平滑偏移与模拟步长",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "review_observation": "全文重算四时间戳、处理等待扣除及非对称偏差50毫秒，检查短窗等速假设、频漂线性模型与纪元重建；两项数值实验通过。",
+      "outcome": "retained_after_full_read",
+      "final_sha256": "f1ab5abb4ebd056038592e8186ade68fca45c62d97573feecfdbf3b802c0458e",
+      "runtime_boundary": "目标引擎、真实网络/模型推理、GPU捕获与性能仅按本页已存在实际记录；未运行者保持UNVERIFIED。",
+      "title_review": "H1与文件名一致，客观主题名称；标题映射见单独记录。"
+    }
+  ],
+  "commands": [
+    {
+      "command": "python 知识库/examples/revision_16_21/test_reference.py",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_clock_asymmetric_bias (__main__.Network.test_clock_asymmetric_bias) ... ok\ntest_clock_excludes_server_processing (__main__.Network.test_clock_excludes_server_processing) ... ok\ntest_history_rejects_extrapolation (__main__.Network.test_history_rejects_extrapolation) ... ok\ntest_ray_hits_nearest_forward_surface (__main__.Network.test_ray_hits_nearest_forward_surface) ... ok\ntest_reconcile_replays_collision (__main__.Network.test_reconcile_replays_collision) ... ok\ntest_rollback_corrects_state_and_rebuilds_events (__main__.Network.test_rollback_corrects_state_and_rebuilds_events) ... ok\ntest_rpc_failure_rolls_back_balance (__main__.Network.test_rpc_failure_rolls_back_balance) ... ok\ntest_rpc_retry_and_payload_conflict (__main__.Network.test_rpc_retry_and_payload_conflict) ... ok\ntest_wrapped_sequence (__main__.Network.test_wrapped_sequence) ... ok\ntest_fracture_support_disconnect (__main__.Physics.test_fracture_support_disconnect) ... ok\ntest_slide_retains_tangent (__main__.Physics.test_slide_retains_tangent) ... ok\ntest_tire_shared_force_budget (__main__.Physics.test_tire_shared_force_budget) ... ok\ntest_xpbd_coincident_rejected (__main__.Physics.test_xpbd_coincident_rejected) ... ok\ntest_xpbd_compliance_and_accumulation (__main__.Physics.test_xpbd_compliance_and_accumulation) ... ok\ntest_xpbd_pinned_particle (__main__.Physics.test_xpbd_pinned_particle) ... ok\ntest_atomic_publish_failure_preserves_destination (__main__.Storage.test_atomic_publish_failure_preserves_destination) ... ok\ntest_atomic_publish_roundtrip (__main__.Storage.test_atomic_publish_roundtrip) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 0.066s\n\nOK\n"
+    },
+    {
+      "command": "python 知识库/examples/revision_16_21/test_review_reference.py",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_alignment_addition_overflows (__main__.Arena.test_alignment_addition_overflows) ... ok\ntest_alignment_and_exact_fit (__main__.Arena.test_alignment_and_exact_fit) ... ok\ntest_alignment_crosses_capacity (__main__.Arena.test_alignment_crosses_capacity) ... ok\ntest_invalid_alignment (__main__.Arena.test_invalid_alignment) ... ok\ntest_size_cannot_wrap (__main__.Arena.test_size_cannot_wrap) ... ok\ntest_goap_reestablishes_deleted_fact_later (__main__.Search.test_goap_reestablishes_deleted_fact_later) ... ok\ntest_goap_rejects_goal_destroying_action (__main__.Search.test_goap_rejects_goal_destroying_action) ... ok\ntest_goap_zero_cost_cycle_terminates (__main__.Search.test_goap_zero_cost_cycle_terminates) ... ok\ntest_uct_explores_unvisited (__main__.Search.test_uct_explores_unvisited) ... ok\ntest_uct_opponent_minimizes_root_value (__main__.Search.test_uct_opponent_minimizes_root_value) ... ok\ntest_uct_root_maximizes (__main__.Search.test_uct_root_maximizes) ... ok\ntest_reversed_ack_is_rejected (__main__.SnapshotVersion.test_reversed_ack_is_rejected) ... ok\ntest_same_ack_newer_state_is_accepted (__main__.SnapshotVersion.test_same_ack_newer_state_is_accepted) ... ok\ntest_stale_state_is_rejected (__main__.SnapshotVersion.test_stale_state_is_rejected) ... ok\ntest_wrapped_ack_is_accepted (__main__.SnapshotVersion.test_wrapped_ack_is_accepted) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": "python 知识库/examples/mechanisms/reference.py",
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"checks\": {\"block_mip_budget\": 4, \"circle_box_resolution\": 15, \"parallel_slab_and_intervals\": 5, \"gerstner_analytic_derivatives\": 30, \"normalized_diffusion_energy\": 3, \"temporal_weights_and_reinhard\": 6, \"tcp_fragmentation\": 20}, \"total\": 83, \"taa_effective_samples\": {\"5\": 2.171823277349955, \"10\": 5.132772068820294, \"15\": 9.783598442618132}, \"scope\": \"CPU mathematical and framing models; no engine, network socket, or GPU execution\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python 知识库/examples/mechanisms/verify_event_queue.py",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"D:\\Assigment\\HIT\\Note\\知识库\\examples\\mechanisms\\verify_event_queue.py\", line 113, in <module>\n    print(json.dumps(verify()))\n                     ^^^^^^^^\n  File \"D:\\Assigment\\HIT\\Note\\知识库\\examples\\mechanisms\\verify_event_queue.py\", line 106, in verify\n    raise RuntimeError(result.stdout + result.stderr)\nRuntimeError: C:\\Program Files\\dotnet\\sdk\\9.0.319\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets(166,5): error NETSDK1045: 当前 .NET SDK 不支持面向 .NET 10.0。请面向 .NET 9.0 或更低版本，或者使用支持 .NET 10.0 的 .NET SDK 版本。从 https://aka.ms/dotnet/download 下载 .NET SDK [D:\\Assigment\\HIT\\Note\\知识库\\examples\\mechanisms\\build\\event-queue\\EventQueue.csproj]\n\n生成失败。请修复生成错误并重新运行。\n\n"
+    },
+    {
+      "command": "python 知识库/examples/revision_16_21/verify_event_queue.py",
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"checks\": 4, \"scope\": \"C# article fragment with mock handlers on .NET 9; no Unity runtime\"}\n",
+      "stderr": ""
+    }
+  ],
+  "title_mappings": [
+    {
+      "path": "知识库/18_游戏物理与模拟/Character Controller.md",
+      "old": "扫掠-Slide 循环",
+      "new": "扫掠与滑动循环"
+    },
+    {
+      "path": "知识库/19_Gameplay与游戏框架/输入与动作状态.md",
+      "old": "从设备到命令",
+      "new": "设备输入与语义命令"
+    }
+  ],
+  "new_artifacts": [
+    "知识库/examples/revision_16_21/review_reference.py",
+    "知识库/examples/revision_16_21/test_review_reference.py",
+    "知识库/examples/revision_16_21/verify_event_queue.py",
+    "知识库/examples/revision_16_21/independent-results.json"
+  ],
+  "test_driven_steps": [
+    {
+      "command": "python 知识库/examples/revision_16_21/test_review_reference.py",
+      "phase": "allocator RED",
+      "exit_code": 1,
+      "output": "ModuleNotFoundError: No module named review_reference"
+    },
+    {
+      "command": "python 知识库/examples/revision_16_21/test_review_reference.py",
+      "phase": "allocator GREEN",
+      "exit_code": 0,
+      "output": "Ran 5 tests; OK"
+    },
+    {
+      "command": "python 知识库/examples/revision_16_21/test_review_reference.py",
+      "phase": "snapshot/search RED",
+      "exit_code": 1,
+      "output": "ImportError: cannot import name accept_snapshot"
+    },
+    {
+      "command": "python 知识库/examples/revision_16_21/test_review_reference.py",
+      "phase": "snapshot/search GREEN",
+      "exit_code": 0,
+      "output": "Ran 15 tests; OK"
+    }
+  ],
+  "known_environment_difference": "默认.NET SDK9.0.319无法编译既有net10.0宿主，NETSDK1045已保存。独立宿主在net9.0提取同一正文并执行4项通过；未声称当前机器完成net10.0编译。",
+  "static_check": {
+    "pages": 45,
+    "issues": []
+  },
+  "summary": {
+    "full_read": 45,
+    "corrected": 33,
+    "retained_after_full_read": 12,
+    "original_cpu_tests": 17,
+    "additional_cpu_tests": 15,
+    "csharp_fragment_checks": 4,
+    "legacy_cpu_tests": 83,
+    "target_runtime": "UNVERIFIED where page has no actual runtime evidence"
+  }
+}

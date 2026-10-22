@@ -589,7 +589,7 @@
       "source": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
       "heading": "Indirect Argument Generation",
       "target": "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
-      "current_heading": "Indirect Draw",
+      "current_heading": "间接绘制",
       "decision": "既有主归属合并或条件修正",
       "reason": "调度模型、并行集合算法与回读状态机分别维护；多级深度生成归入深度可见性优化，灯光位掩码归入簇光照。",
       "source_hash": "7fd76e3b03b0aa5f91f7421bf703a6b72db43d5e2184cbca723384c541217762"
@@ -2218,7 +2218,7 @@
       "source": "知识库/25_UI与文本/UI、字体与文本渲染.md",
       "heading": "从 UI 树到绘制列表",
       "target": "知识库/25_UI与文本/UI绘制.md",
-      "current_heading": "从 UI 树到绘制列表",
+      "current_heading": "控件树与绘制列表",
       "decision": "独立主归属或明确合并",
       "reason": "控件布局提交与Unicode塑形/字形采样是不同数据流。",
       "source_hash": "bf91f209f0d1ecb6d7acc2c4dd00703ade5efc549023d09c75cbf5c0297b052e"
@@ -2227,7 +2227,7 @@
       "source": "知识库/25_UI与文本/UI、字体与文本渲染.md",
       "heading": "从字符串到字形位置",
       "target": "知识库/25_UI与文本/文字渲染.md",
-      "current_heading": "从字符串到字形位置",
+      "current_heading": "字符串与字形位置",
       "decision": "独立主归属或明确合并",
       "reason": "控件布局提交与Unicode塑形/字形采样是不同数据流。",
       "source_hash": "97166db35ffa079a30632559e80c377492df28506fda629d978d65c697e22190"
@@ -2254,7 +2254,7 @@
       "source": "知识库/25_UI与文本/UI、字体与文本渲染.md",
       "heading": "字形怎样变成可采样数据",
       "target": "知识库/25_UI与文本/文字渲染.md",
-      "current_heading": "字形怎样变成可采样数据",
+      "current_heading": "字形的采样表示",
       "decision": "独立主归属或明确合并",
       "reason": "控件布局提交与Unicode塑形/字形采样是不同数据流。",
       "source_hash": "f88f26687a2146d5a8060c19211f2092c03c4cffdd04fd904e07f2cfcdecf884"
@@ -2263,7 +2263,7 @@
       "source": "知识库/25_UI与文本/UI、字体与文本渲染.md",
       "heading": "位图字体和 Glyph Atlas",
       "target": "知识库/25_UI与文本/文字渲染.md",
-      "current_heading": "位图字体和 Glyph Atlas",
+      "current_heading": "位图字体与字形图集",
       "decision": "独立主归属或明确合并",
       "reason": "控件布局提交与Unicode塑形/字形采样是不同数据流。",
       "source_hash": "10d5c7613d11e9841190e394d0064f0eb8531222821d539ee7462f9c8a647add"
@@ -2290,7 +2290,7 @@
       "source": "知识库/25_UI与文本/UI、字体与文本渲染.md",
       "heading": "控件怎样提交到屏幕",
       "target": "知识库/25_UI与文本/UI绘制.md",
-      "current_heading": "控件怎样提交到屏幕",
+      "current_heading": "控件提交与裁剪",
       "decision": "独立主归属或明确合并",
       "reason": "控件布局提交与Unicode塑形/字形采样是不同数据流。",
       "source_hash": "d061656fa0833538d6fddaf348ef0e708e4365cb2065af1226f3ccfd421bb107"
@@ -2326,7 +2326,7 @@
       "source": "知识库/23_引擎运行系统/数据导向设计与任务系统.md",
       "heading": "从访问模式开始",
       "target": "知识库/23_引擎运行系统/ECS与数据布局.md",
-      "current_heading": "从访问模式开始",
+      "current_heading": "访问模式与存储布局",
       "decision": "独立主归属或明确合并",
       "reason": "组件数据组织与CPU任务调度可以独立采用，主模型不同。",
       "source_hash": "a716257c6fa4c7d46cf1e4065acd5f8746dca6a4e2169bb6eaf9bc3169d87b16"
@@ -2353,7 +2353,7 @@
       "source": "知识库/23_引擎运行系统/数据导向设计与任务系统.md",
       "heading": "什么时候不该用 ECS",
       "target": "知识库/23_引擎运行系统/ECS与数据布局.md",
-      "current_heading": "什么时候不该用 ECS",
+      "current_heading": "ECS的适用条件",
       "decision": "独立主归属或明确合并",
       "reason": "组件数据组织与CPU任务调度可以独立采用，主模型不同。",
       "source_hash": "75f9c6ace6c669dd1aa6d01d3ad1277472de4d0b32e37b9f5604a971c661d619"
@@ -2578,7 +2578,7 @@
       "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
       "heading": "C++ 从源码到模块边界",
       "target": "知识库/16_编程与数据结构/C++工程边界.md",
-      "current_heading": "C++ 从源码到模块边界",
+      "current_heading": "C++构建与模块边界",
       "decision": "独立主归属或明确合并",
       "reason": "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。",
       "source_hash": "321e9df997f767b14bb095b390485711d757e8643d57ea6275220a48d65e1560"
@@ -2596,7 +2596,7 @@
       "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
       "heading": "Header 与 Translation Unit",
       "target": "知识库/16_编程与数据结构/C++工程边界.md",
-      "current_heading": "Header 与 Translation Unit",
+      "current_heading": "头文件与翻译单元",
       "decision": "独立主归属或明确合并",
       "reason": "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。",
       "source_hash": "709bc40310be95d8c0643a8b8e1a7746a9479c37d0cf0517cbab3ce954992599"
@@ -2605,7 +2605,7 @@
       "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
       "heading": "Static 与 Dynamic Library",
       "target": "知识库/16_编程与数据结构/C++工程边界.md",
-      "current_heading": "Static 与 Dynamic Library",
+      "current_heading": "静态与动态库",
       "decision": "独立主归属或明确合并",
       "reason": "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。",
       "source_hash": "e66354822f1b3e41fe22c116b9857712d964aa969d1dbf4f150e9a6d795143ae"
@@ -2614,7 +2614,7 @@
       "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
       "heading": "ABI 与 C Interface",
       "target": "知识库/16_编程与数据结构/C++工程边界.md",
-      "current_heading": "ABI 与 C Interface",
+      "current_heading": "ABI 与 C接口",
       "decision": "独立主归属或明确合并",
       "reason": "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。",
       "source_hash": "b554f6b6774509077c05f2481780d6855e48dbe3942ffde86c013bf87295be8d"
@@ -2632,7 +2632,7 @@
       "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
       "heading": "C++ 类型与资源怎样工作",
       "target": "知识库/16_编程与数据结构/C++工程边界.md",
-      "current_heading": "C++ 类型与资源怎样工作",
+      "current_heading": "类型布局与资源语义",
       "decision": "独立主归属或明确合并",
       "reason": "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。",
       "source_hash": "e71a005afd838604e4423f268cbdce8932f48f2d724b8cb3f82f1fa7d0161562"
@@ -2659,7 +2659,7 @@
       "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
       "heading": "C++ 所有权",
       "target": "知识库/16_编程与数据结构/对象生命周期.md",
-      "current_heading": "Ownership",
+      "current_heading": "所有权",
       "decision": "既有主归属合并或条件修正",
       "reason": "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。",
       "source_hash": "e3b98abedc4c0f5658c2c39f54a4054a3cbba24f825c4f9e83c4b5c4c717a0df"
@@ -2668,7 +2668,7 @@
       "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
       "heading": "Copy、Move 与异常安全",
       "target": "知识库/16_编程与数据结构/C++工程边界.md",
-      "current_heading": "Copy、Move 与异常安全",
+      "current_heading": "复制、移动与异常安全",
       "decision": "独立主归属或明确合并",
       "reason": "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。",
       "source_hash": "0ceede4afb44c6131dca1b69d10ff20d0aeb012316de57405ac1280940415241"
@@ -2677,7 +2677,7 @@
       "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
       "heading": "C# 怎样编译并管理对象",
       "target": "知识库/16_编程与数据结构/CSharp运行模型.md",
-      "current_heading": "C# 怎样编译并管理对象",
+      "current_heading": "编译与运行时对象",
       "decision": "独立主归属或明确合并",
       "reason": "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。",
       "source_hash": "8c7f542b350411b7680b0b5ce51d4bbe33ec6c17868d71b17690cf36c011c654"
@@ -2695,7 +2695,7 @@
       "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
       "heading": "Assembly 与模块边界",
       "target": "知识库/16_编程与数据结构/CSharp运行模型.md",
-      "current_heading": "Assembly 与模块边界",
+      "current_heading": "程序集与模块边界",
       "decision": "独立主归属或明确合并",
       "reason": "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。",
       "source_hash": "2369136dac7c3143ec38769adf6dce1413037d7449d8631072eaa97092b02c08"
@@ -2731,7 +2731,7 @@
       "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
       "heading": "Python 怎样接入制作环境",
       "target": "知识库/16_编程与数据结构/Python宿主集成.md",
-      "current_heading": "Python 怎样接入制作环境",
+      "current_heading": "宿主环境与接口",
       "decision": "独立主归属或明确合并",
       "reason": "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。",
       "source_hash": "e27d63f5f07c6483fb6de492568a4aba7861d3cb8218c40538f896c371eb439c"
@@ -2749,7 +2749,7 @@
       "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
       "heading": "Python 的 Context 与数据 API",
       "target": "知识库/16_编程与数据结构/Python宿主集成.md",
-      "current_heading": "Python 的 Context 与数据 API",
+      "current_heading": "宿主上下文与数据接口",
       "decision": "独立主归属或明确合并",
       "reason": "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。",
       "source_hash": "f1d35911af97740a27e55fa6fcb032e2da3eda53e9093270c2e94e164b4aa77c"
@@ -2767,7 +2767,7 @@
       "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
       "heading": "跨语言接口怎样落地",
       "target": "知识库/16_编程与数据结构/跨语言接口.md",
-      "current_heading": "跨语言接口怎样落地",
+      "current_heading": "互操作边界",
       "decision": "独立主归属或明确合并",
       "reason": "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。",
       "source_hash": "ba67b76f6db09d5a58d97bb8fe610572e800bc99fefaf685cc291dbe6a2f865b"
@@ -2785,7 +2785,7 @@
       "source": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
       "heading": "Error Handling",
       "target": "知识库/16_编程与数据结构/跨语言接口.md",
-      "current_heading": "Error Handling",
+      "current_heading": "错误转换",
       "decision": "独立主归属或明确合并",
       "reason": "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。",
       "source_hash": "db2b07add73dcc6be0230f764109ee566a9e6b0607bbcdb5b3a4ce0c2fb7e186"
@@ -2812,7 +2812,7 @@
       "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
       "heading": "Stack 与 Heap",
       "target": "知识库/16_编程与数据结构/内存布局与分配.md",
-      "current_heading": "Stack 与 Heap",
+      "current_heading": "栈与堆",
       "decision": "独立主归属或明确合并",
       "reason": "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。",
       "source_hash": "c6a189cc4dd393da76a65bad3103dc94bf05e2213b1db6bc4e4343b40a16580d"
@@ -2821,7 +2821,7 @@
       "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
       "heading": "Virtual、Physical 与 GPU Memory",
       "target": "知识库/16_编程与数据结构/内存布局与分配.md",
-      "current_heading": "Virtual、Physical 与 GPU Memory",
+      "current_heading": "虚拟地址与物理存储",
       "decision": "独立主归属或明确合并",
       "reason": "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。",
       "source_hash": "df6a4d6df0231331e57a0ce3a560206b960691c36dc219fbcf20dc3601dddf03"
@@ -2839,7 +2839,7 @@
       "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
       "heading": "Ownership",
       "target": "知识库/16_编程与数据结构/对象生命周期.md",
-      "current_heading": "Ownership",
+      "current_heading": "所有权",
       "decision": "独立主归属或明确合并",
       "reason": "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。",
       "source_hash": "e9b8b91330b67fbe92260fa5d1b90d1969837f5816da55419ba15df4d4f95cef"
@@ -2848,7 +2848,7 @@
       "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
       "heading": "Managed Heap 与 GC",
       "target": "知识库/16_编程与数据结构/对象生命周期.md",
-      "current_heading": "Managed Heap 与 GC",
+      "current_heading": "托管堆与垃圾回收",
       "decision": "独立主归属或明确合并",
       "reason": "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。",
       "source_hash": "da1f3efe788df6dfc89e89acd65a1ba034ba693aab96de3c09ce2c4d0e59b83a"
@@ -2866,7 +2866,7 @@
       "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
       "heading": "Native Container 与 Pinning",
       "target": "知识库/16_编程与数据结构/对象生命周期.md",
-      "current_heading": "Native Container 与 Pinning",
+      "current_heading": "原生容器与固定地址",
       "decision": "独立主归属或明确合并",
       "reason": "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。",
       "source_hash": "72bc67104346b2f223e604f6cea591184749e00bf26de3864281bb9fe2362b51"
@@ -2875,7 +2875,7 @@
       "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
       "heading": "Data Locality",
       "target": "知识库/16_编程与数据结构/内存布局与分配.md",
-      "current_heading": "Data Locality",
+      "current_heading": "数据局部性",
       "decision": "独立主归属或明确合并",
       "reason": "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。",
       "source_hash": "c8a93c27143a55a9946fb88915143f7bdb1226b3dfe0e8002f70b71649675b43"
@@ -2884,7 +2884,7 @@
       "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
       "heading": "Cache 映射与写策略",
       "target": "知识库/16_编程与数据结构/内存布局与分配.md",
-      "current_heading": "Cache 映射与写策略",
+      "current_heading": "缓存映射与写策略",
       "decision": "独立主归属或明确合并",
       "reason": "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。",
       "source_hash": "e3fdd2806ed40bcad8744c38d84f1626dfeb2efdc1704a70e87de95437582290"
@@ -2893,7 +2893,7 @@
       "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
       "heading": "Unreal 的 UObject 生命周期",
       "target": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
-      "current_heading": "Unreal 的 UObject 生命周期",
+      "current_heading": "版本与GC模型",
       "decision": "独立主归属或明确合并",
       "reason": "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。",
       "source_hash": "dd3e8610b82c7a3cda91f6840f81e35bb343c2167feec0036c6b6540fcc01258"
@@ -2911,7 +2911,7 @@
       "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
       "heading": "什么算作引用",
       "target": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
-      "current_heading": "什么算作引用",
+      "current_heading": "可追踪引用",
       "decision": "独立主归属或明确合并",
       "reason": "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。",
       "source_hash": "9b0f3b0a249a78bceab5467e9909f7018ee461bdb4c0f44dda54e9d153a9c3a3"
@@ -2938,7 +2938,7 @@
       "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
       "heading": "Unity Object 的两层身份",
       "target": "知识库/23_引擎运行系统/Unity对象生命周期.md",
-      "current_heading": "Unity Object 的两层身份",
+      "current_heading": "Unity Object的两层身份",
       "decision": "独立主归属或明确合并",
       "reason": "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。",
       "source_hash": "3f6071d166f99b02be2c628b01e1f54450c65b407f5686203e70b7b637510fc4"
@@ -2965,7 +2965,7 @@
       "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
       "heading": "对象池解决什么",
       "target": "知识库/16_编程与数据结构/对象池.md",
-      "current_heading": "对象池解决什么",
+      "current_heading": "对象复用",
       "decision": "独立主归属或明确合并",
       "reason": "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。",
       "source_hash": "ec3e486ebc325145af6b9cc3679a2e6a7aa782877a6551ff432908db8084b161"
@@ -2974,7 +2974,7 @@
       "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
       "heading": "Pool 的代价",
       "target": "知识库/16_编程与数据结构/对象池.md",
-      "current_heading": "Pool 的代价",
+      "current_heading": "容量与驻留成本",
       "decision": "独立主归属或明确合并",
       "reason": "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。",
       "source_hash": "e6ba959a7b01a1a12c249e534d9a705c23a45bebaf3f0e1608938ac0cdd90eb9"
@@ -2983,7 +2983,7 @@
       "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
       "heading": "Pool 与生命周期回调",
       "target": "知识库/16_编程与数据结构/对象池.md",
-      "current_heading": "Pool 与生命周期回调",
+      "current_heading": "租用与生命周期回调",
       "decision": "独立主归属或明确合并",
       "reason": "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。",
       "source_hash": "68937de634ae1ec6549774df292e4a591b770a8614f446835d60e79bfcbc5330"
@@ -3001,7 +3001,7 @@
       "source": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
       "heading": "复用以前先确认旧使用者已退出",
       "target": "知识库/16_编程与数据结构/对象池.md",
-      "current_heading": "复用以前先确认旧使用者已退出",
+      "current_heading": "槽位复用条件",
       "decision": "独立主归属或明确合并",
       "reason": "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。",
       "source_hash": "ccefcf0d3f3ac9fb6f865a981abaa8bc7208b715e40126c17832162d58cbf02e"
@@ -3046,7 +3046,7 @@
       "source": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
       "heading": "Stack、Heap 与内存映射",
       "target": "知识库/16_编程与数据结构/虚拟内存.md",
-      "current_heading": "Stack、Heap 与内存映射",
+      "current_heading": "栈、堆与内存映射",
       "decision": "独立主归属或明确合并",
       "reason": "调度隔离、页表映射、内存同步与文件系统服务有独立模型。",
       "source_hash": "45a6f614d1a73feb28f546e993d95a997177298e04de7fff8a1a5bfde51e7057"
@@ -3091,7 +3091,7 @@
       "source": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
       "heading": "文件系统与 IO",
       "target": "知识库/16_编程与数据结构/文件IO.md",
-      "current_heading": "文件系统与 IO",
+      "current_heading": "读取与缓存",
       "decision": "独立主归属或明确合并",
       "reason": "调度隔离、页表映射、内存同步与文件系统服务有独立模型。",
       "source_hash": "ae6506c7b470fc1fe02c69901cf942f98f7833d7c0271fd51dd9935c2f60df21"
@@ -3118,7 +3118,7 @@
       "source": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
       "heading": "并发错误怎样缩小范围",
       "target": "知识库/16_编程与数据结构/线程同步.md",
-      "current_heading": "并发错误怎样缩小范围",
+      "current_heading": "并发错误定位",
       "decision": "独立主归属或明确合并",
       "reason": "调度隔离、页表映射、内存同步与文件系统服务有独立模型。",
       "source_hash": "192d46460741398446ba01c40b45285bd301022199ca3ad27c31dbe2200d2a68"
@@ -3127,7 +3127,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "工作流怎样可重复执行",
       "target": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
-      "current_heading": "工作流怎样可重复执行",
+      "current_heading": "可复现执行",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "d4515e2f3f4e8ee995c4fde178ba35af68cd327e45f3a2cbeae5e7d17e984562"
@@ -3145,7 +3145,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "Workflow 是管线资产",
       "target": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
-      "current_heading": "Workflow 是管线资产",
+      "current_heading": "工作流与依赖",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "0a9228f050ecb8ea9987646ba725c3574a7492514807857fd47c5bdddc883bac"
@@ -3163,7 +3163,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "Parameter Group",
       "target": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
-      "current_heading": "Parameter Group",
+      "current_heading": "参数接口",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "1bbcb8eead49ccfa3f79989c6df921056e9f36ad866007e87c9b4b6f1d5fb329"
@@ -3172,7 +3172,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "Queue 与批处理",
       "target": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
-      "current_heading": "Queue 与批处理",
+      "current_heading": "队列与批处理",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "c42cbcf4b702317c2b9bac882088a40e1cb4a633c6e7ca4cec6c26cd0909f4b2"
@@ -3181,7 +3181,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "Custom Node 风险",
       "target": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
-      "current_heading": "Custom Node 风险",
+      "current_heading": "自定义节点风险",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "76ce68ab974c6f2916f05208b4c790691882dcea78f3a16115ca5bdcdfab7e7a"
@@ -3190,7 +3190,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "输出与 Metadata",
       "target": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
-      "current_heading": "输出与 Metadata",
+      "current_heading": "输出与元数据",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "0334a60f05ed6aaf847b89dba28fa3ef4e8ba854cccd62875a88af8989d12f37"
@@ -3199,7 +3199,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "视频怎样追踪同一份内容",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "视频怎样追踪同一份内容",
+      "current_heading": "跨帧内容对应",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "3aac6b4368cfe1bf904ad357e15624cf5e4a76406749104dedd59f20c0ff1cca"
@@ -3208,7 +3208,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "时序一致性为什么难",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "时序一致性为什么难",
+      "current_heading": "逐帧差异",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "8182c5ffb9de2b56179485ee06d417b8051a8e537044ffcca5624b6fba8f5d7b"
@@ -3226,7 +3226,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "Optical Flow Warp",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "Optical Flow Warp",
+      "current_heading": "光流重投影",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "e6ca88039b9fefc3e7cdd1786888416d59605dcb91b9c51629a1bc0376ec9559"
@@ -3235,7 +3235,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "Latent 与噪声一致性",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "Latent 与噪声一致性",
+      "current_heading": "潜变量与噪声一致性",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "c2b765b8ed9f58a8e5116e24e0b790bd684184cfab1fe2e11cc885da66527db5"
@@ -3244,7 +3244,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "Keyframe 与传播",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "Keyframe 与传播",
+      "current_heading": "关键帧与传播",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "9b1b15af1fcb796fc30451a861a721448fcb23d216845f23c9c3637603330ed2"
@@ -3253,7 +3253,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "技术通道怎样保持一致",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "技术通道怎样保持一致",
+      "current_heading": "技术通道的一致性",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "dd0e8d7a6074397a64d2c1353102868036d092cd56a5342ed28bbc87f5c6a007"
@@ -3271,7 +3271,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "Normal Temporal Filter",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "Normal Temporal Filter",
+      "current_heading": "法线时间过滤",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "bb6bd2d919ac49e0f95e938262aa602ebf45b8563bc64aa832527b256197f107"
@@ -3316,7 +3316,7 @@
       "source": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
       "heading": "噪声怎样变成图像",
       "target": "知识库/17_AIGC与Agent管线/扩散模型.md",
-      "current_heading": "噪声怎样变成图像",
+      "current_heading": "加噪与去噪",
       "decision": "独立主归属或明确合并",
       "reason": "去噪模型、结构参考控制与参数适配训练分别维护。",
       "source_hash": "606b22dd15c95e060c5cb128f63b4f7565a50aaddf8680551f51dac1cf514346"
@@ -3325,7 +3325,7 @@
       "source": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
       "heading": "Forward Diffusion",
       "target": "知识库/17_AIGC与Agent管线/扩散模型.md",
-      "current_heading": "Forward Diffusion",
+      "current_heading": "前向加噪",
       "decision": "独立主归属或明确合并",
       "reason": "去噪模型、结构参考控制与参数适配训练分别维护。",
       "source_hash": "a64f03698cedc23ce3698090183b7c27a7372aef66a32822802bb6144c07a3c0"
@@ -3334,7 +3334,7 @@
       "source": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
       "heading": "Reverse Process",
       "target": "知识库/17_AIGC与Agent管线/扩散模型.md",
-      "current_heading": "Reverse Process",
+      "current_heading": "反向采样",
       "decision": "独立主归属或明确合并",
       "reason": "去噪模型、结构参考控制与参数适配训练分别维护。",
       "source_hash": "2f8a270570460ebf979969ddd403603d9ab577f8b77aa77ac0fb9fcdb93ec29c"
@@ -3343,7 +3343,7 @@
       "source": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
       "heading": "Latent Diffusion",
       "target": "知识库/17_AIGC与Agent管线/扩散模型.md",
-      "current_heading": "Latent Diffusion",
+      "current_heading": "潜空间扩散",
       "decision": "独立主归属或明确合并",
       "reason": "去噪模型、结构参考控制与参数适配训练分别维护。",
       "source_hash": "d8491fecc4de86328392067dd7bb517c724399d960d142a181519fdd03107879"
@@ -3388,7 +3388,7 @@
       "source": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
       "heading": "Seed 与可复现性",
       "target": "知识库/17_AIGC与Agent管线/扩散模型.md",
-      "current_heading": "Seed 与可复现性",
+      "current_heading": "种子与可复现性",
       "decision": "独立主归属或明确合并",
       "reason": "去噪模型、结构参考控制与参数适配训练分别维护。",
       "source_hash": "4ce94339ea3283f4774c66ba288340762b8f23862bd8bc95369901898a8573cb"
@@ -3397,7 +3397,7 @@
       "source": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
       "heading": "Text-to-Image、Img2Img 与 Inpainting",
       "target": "知识库/17_AIGC与Agent管线/扩散模型.md",
-      "current_heading": "Text-to-Image、Img2Img 与 Inpainting",
+      "current_heading": "文生图、图生图与局部重绘",
       "decision": "独立主归属或明确合并",
       "reason": "去噪模型、结构参考控制与参数适配训练分别维护。",
       "source_hash": "9e4d7c7e30fbe19e2874ccf0663178c340817cb331c05cde085599292aba1dc7"
@@ -3424,7 +3424,7 @@
       "source": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
       "heading": "适配器怎样学习目标概念",
       "target": "知识库/17_AIGC与Agent管线/LoRA训练.md",
-      "current_heading": "适配器怎样学习目标概念",
+      "current_heading": "低秩适配与训练数据",
       "decision": "独立主归属或明确合并",
       "reason": "去噪模型、结构参考控制与参数适配训练分别维护。",
       "source_hash": "bce9f0f1a897bb7c40602fe59e32909080973a68e09c552ec4068c66b5d556cf"
@@ -3451,7 +3451,7 @@
       "source": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
       "heading": "Caption 与 Tag",
       "target": "知识库/17_AIGC与Agent管线/LoRA训练.md",
-      "current_heading": "Caption 与 Tag",
+      "current_heading": "图像描述与标签",
       "decision": "独立主归属或明确合并",
       "reason": "去噪模型、结构参考控制与参数适配训练分别维护。",
       "source_hash": "1a0ade747c3c77c556a023c11791dc037a6f4bededd45609cd5fbbd2abd81daf"
@@ -3523,7 +3523,7 @@
       "source": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
       "heading": "Sweep-Slide 循环",
       "target": "知识库/18_游戏物理与模拟/Character Controller.md",
-      "current_heading": "Sweep-Slide 循环",
+      "current_heading": "扫掠与滑动循环",
       "decision": "独立主归属或明确合并",
       "reason": "扫掠角色、骨架刚体切换、柔软约束、断裂连接与轮胎动力学有独立求解和验证。",
       "source_hash": "e375d1243e0a523b5b945382dc190fc93a2a9da146e2a7246b6b6852f667f7f5"
@@ -3532,7 +3532,7 @@
       "source": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
       "heading": "Ragdoll 与动画混合",
       "target": "知识库/18_游戏物理与模拟/Ragdoll.md",
-      "current_heading": "Ragdoll 与动画混合",
+      "current_heading": "骨骼与刚体的对应",
       "decision": "独立主归属或明确合并",
       "reason": "扫掠角色、骨架刚体切换、柔软约束、断裂连接与轮胎动力学有独立求解和验证。",
       "source_hash": "bfa35f3125612480207beb2197a7da696544ca309ac829557174868455ac0ce1"
@@ -3550,7 +3550,7 @@
       "source": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
       "heading": "破坏",
       "target": "知识库/18_游戏物理与模拟/破坏系统.md",
-      "current_heading": "破坏",
+      "current_heading": "预切分与连接图",
       "decision": "独立主归属或明确合并",
       "reason": "扫掠角色、骨架刚体切换、柔软约束、断裂连接与轮胎动力学有独立求解和验证。",
       "source_hash": "2b0d7948b6abbc7bef8eb059e5df705d72f09b36f8c896c4f5abc8c7d5ebcd3a"
@@ -3559,7 +3559,7 @@
       "source": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
       "heading": "载具",
       "target": "知识库/18_游戏物理与模拟/载具物理.md",
-      "current_heading": "载具",
+      "current_heading": "车轮接触与滑移",
       "decision": "独立主归属或明确合并",
       "reason": "扫掠角色、骨架刚体切换、柔软约束、断裂连接与轮胎动力学有独立求解和验证。",
       "source_hash": "c494baea5bb994ef5acc4eb16cc5a34d611c6cb7cbb7dd0d3e976699f3280c23"
@@ -3604,7 +3604,7 @@
       "source": "知识库/20_游戏AI/群体、学习与高级决策.md",
       "heading": "MCTS",
       "target": "知识库/20_游戏AI/MCTS.md",
-      "current_heading": "MCTS",
+      "current_heading": "树搜索与探索",
       "decision": "独立主归属或明确合并",
       "reason": "群体空间信息、树搜索与策略训练采用不同状态和评估方式。",
       "source_hash": "7190a308fbe469477e4f9731903e81fc11e83f7ae68a63376e78e7dbc1a0f4e7"
@@ -3613,7 +3613,7 @@
       "source": "知识库/20_游戏AI/群体、学习与高级决策.md",
       "heading": "MDP、Policy 与 Value",
       "target": "知识库/20_游戏AI/游戏强化学习.md",
-      "current_heading": "MDP、Policy 与 Value",
+      "current_heading": "状态、策略与价值",
       "decision": "独立主归属或明确合并",
       "reason": "群体空间信息、树搜索与策略训练采用不同状态和评估方式。",
       "source_hash": "dfe0feba16cccf713a34fba39c4a589e759d7a352694227b86be0f1ee8133768"
@@ -3847,7 +3847,7 @@
       "source": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
       "heading": "端点怎样建立通信",
       "target": "知识库/21_游戏网络/游戏网络传输.md",
-      "current_heading": "端点怎样建立通信",
+      "current_heading": "端点与连接建立",
       "decision": "独立主归属或明确合并",
       "reason": "消息传输、时钟估计与远程事务有独立协议和正确性条件。",
       "source_hash": "c89c8d118d2d14a6b2d34ea3764467434fd64c5114bef9a3a035f5d83f1ddf39"
@@ -3874,7 +3874,7 @@
       "source": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
       "heading": "消息怎样在链路上传输",
       "target": "知识库/21_游戏网络/游戏网络传输.md",
-      "current_heading": "消息怎样在链路上传输",
+      "current_heading": "传输与消息边界",
       "decision": "独立主归属或明确合并",
       "reason": "消息传输、时钟估计与远程事务有独立协议和正确性条件。",
       "source_hash": "4e71e8b32d2dec105a7a75d9688f814726fc5fc2fed3e2d968c62febcb5a7c70"
@@ -3919,7 +3919,7 @@
       "source": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
       "heading": "RTT 与时钟偏移",
       "target": "知识库/21_游戏网络/游戏网络时钟.md",
-      "current_heading": "RTT 与时钟偏移",
+      "current_heading": "四个时间戳",
       "decision": "独立主归属或明确合并",
       "reason": "消息传输、时钟估计与远程事务有独立协议和正确性条件。",
       "source_hash": "3d929e86360fa390598a4cccc485b09d45712496ff276b4feee27145207317a9"
@@ -3928,7 +3928,7 @@
       "source": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
       "heading": "RPC",
       "target": "知识库/21_游戏网络/RPC.md",
-      "current_heading": "RPC",
+      "current_heading": "请求与执行语义",
       "decision": "独立主归属或明确合并",
       "reason": "消息传输、时钟估计与远程事务有独立协议和正确性条件。",
       "source_hash": "e59718016b5da187c2b79a81e4ab5c50e0997d73e75c35ace384a6c8ada662e3"
@@ -4108,7 +4108,7 @@
       "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
       "heading": "问题怎样化成可求解状态",
       "target": "知识库/16_编程与数据结构/算法设计.md",
-      "current_heading": "问题怎样化成可求解状态",
+      "current_heading": "状态与求解策略",
       "decision": "独立主归属或明确合并",
       "reason": "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。",
       "source_hash": "e9323f357aed82c7c5986e56eafcb19d67eb985867eab2575aaa4a3169263767"
@@ -4171,7 +4171,7 @@
       "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
       "heading": "先定义操作",
       "target": "知识库/16_编程与数据结构/容器选择.md",
-      "current_heading": "先定义操作",
+      "current_heading": "工作负载",
       "decision": "独立主归属或明确合并",
       "reason": "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。",
       "source_hash": "e5420a91f79269b49afa236892640750f205ea3db7297f3f9a1525ecab8e1b82"
@@ -4180,7 +4180,7 @@
       "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
       "heading": "Array、List 与 Deque",
       "target": "知识库/16_编程与数据结构/容器选择.md",
-      "current_heading": "Array、List 与 Deque",
+      "current_heading": "数组、列表与双端队列",
       "decision": "独立主归属或明确合并",
       "reason": "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。",
       "source_hash": "f75189a28185bb7decf73a0249ca2072e53a6e2b0e777ba05796830ab82c176a"
@@ -4198,7 +4198,7 @@
       "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
       "heading": "Stack、Queue 与 Priority Queue",
       "target": "知识库/16_编程与数据结构/容器选择.md",
-      "current_heading": "Stack、Queue 与 Priority Queue",
+      "current_heading": "栈、队列与优先队列",
       "decision": "独立主归属或明确合并",
       "reason": "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。",
       "source_hash": "2dfb1101b9d8f2ea4e5768d25db07d19f1e88024b18940a070a1318546f6b668"
@@ -4207,7 +4207,7 @@
       "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
       "heading": "Hash Table",
       "target": "知识库/16_编程与数据结构/容器选择.md",
-      "current_heading": "Hash Table",
+      "current_heading": "哈希表",
       "decision": "独立主归属或明确合并",
       "reason": "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。",
       "source_hash": "3cec4895a62d0dea6fce15ef773f555cc0c1bfa3309c1fe73cf0567b4a904109"
@@ -4216,7 +4216,7 @@
       "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
       "heading": "Tree",
       "target": "知识库/16_编程与数据结构/容器选择.md",
-      "current_heading": "Tree",
+      "current_heading": "树结构",
       "decision": "独立主归属或明确合并",
       "reason": "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。",
       "source_hash": "91252b95e389840ecac7607aa266ee9ae2cd2504b279d33d448fa52a00c99777"
@@ -4243,7 +4243,7 @@
       "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
       "heading": "Graph",
       "target": "知识库/16_编程与数据结构/图搜索.md",
-      "current_heading": "Graph",
+      "current_heading": "图表示",
       "decision": "独立主归属或明确合并",
       "reason": "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。",
       "source_hash": "f21763a33da1c38d59462d948053825ddb9c66dfa2b75e3c74e7a11cb0c6fa72"
@@ -4252,7 +4252,7 @@
       "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
       "heading": "Topological Sort",
       "target": "知识库/16_编程与数据结构/图搜索.md",
-      "current_heading": "Topological Sort",
+      "current_heading": "拓扑排序",
       "decision": "独立主归属或明确合并",
       "reason": "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。",
       "source_hash": "152677414f7f817c8d015c63e7f6028b3f8d7eccb5e9d2251b792204c61b50f6"
@@ -4288,7 +4288,7 @@
       "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
       "heading": "空间查询怎样缩小候选",
       "target": "知识库/16_编程与数据结构/空间索引.md",
-      "current_heading": "空间查询怎样缩小候选",
+      "current_heading": "空间候选筛选",
       "decision": "独立主归属或明确合并",
       "reason": "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。",
       "source_hash": "1019e80df55f49dc1af3427961231e387eb30d56fc2b1b46347fdb4207d64a5a"
@@ -4297,7 +4297,7 @@
       "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
       "heading": "空间查询为什么需要结构",
       "target": "知识库/16_编程与数据结构/空间索引.md",
-      "current_heading": "空间查询为什么需要结构",
+      "current_heading": "粗筛与精确查询",
       "decision": "独立主归属或明确合并",
       "reason": "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。",
       "source_hash": "3f5b92a2fd7a75c48b31c0d0cc39e431c9a97116614619767e0d1360c0ad35ff"
@@ -4306,7 +4306,7 @@
       "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
       "heading": "Uniform Grid 与 Spatial Hash",
       "target": "知识库/16_编程与数据结构/空间索引.md",
-      "current_heading": "Uniform Grid 与 Spatial Hash",
+      "current_heading": "均匀网格与空间哈希",
       "decision": "独立主归属或明确合并",
       "reason": "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。",
       "source_hash": "05905abfd8ec454e81033d6ce0c42f29a09301e141b1460f037923ea3b8ef295"
@@ -4315,7 +4315,7 @@
       "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
       "heading": "Quadtree 与 Octree",
       "target": "知识库/16_编程与数据结构/空间索引.md",
-      "current_heading": "Quadtree 与 Octree",
+      "current_heading": "四叉树与八叉树",
       "decision": "独立主归属或明确合并",
       "reason": "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。",
       "source_hash": "a29adced18482bf3b9beeacc8401ce2d9ed96e74d7871f85fb92cc8f7f2f1895"
@@ -4333,7 +4333,7 @@
       "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
       "heading": "KD-Tree 与空间分割",
       "target": "知识库/16_编程与数据结构/空间索引.md",
-      "current_heading": "KD-Tree 与空间分割",
+      "current_heading": "KD-Tree与空间分割",
       "decision": "独立主归属或明确合并",
       "reason": "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。",
       "source_hash": "005bb155185953597f28f193e8ac4007f935f8bb6ffdc1a91ce59d6f9fa8aa1c"
@@ -4342,7 +4342,7 @@
       "source": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
       "heading": "Scene Graph 不是空间索引",
       "target": "知识库/16_编程与数据结构/空间索引.md",
-      "current_heading": "Scene Graph 不是空间索引",
+      "current_heading": "语义层级与空间索引",
       "decision": "独立主归属或明确合并",
       "reason": "原页职责是选择路线，完整算法、容器、图与空间查询分别独立维护。",
       "source_hash": "2c86d3880defaeaf62485dff617b77a21daecbce3858a739aadda31995f1d6b4"
@@ -4666,7 +4666,7 @@
       "source": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
       "heading": "HDRP Custom Pass",
       "target": "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
-      "current_heading": "HDRP Custom Pass",
+      "current_heading": "HDRP 的扩展边界",
       "decision": "独立主归属或明确合并",
       "reason": "按版本化实现路线组织，原接口正文合入引擎专篇。",
       "source_hash": "8ec2e42f0b8ea641fd5392adf62e01a369dcb2782814faa4a7b185a5817d0eda"

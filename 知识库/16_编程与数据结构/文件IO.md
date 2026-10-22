@@ -1,32 +1,45 @@
 # 文件IO
 
-第一次读慢、第二次读快，可能只是命中系统页缓存。文件IO先区分冷暖缓存与顺序随机访问，异步请求再安排完成与缓冲寿命。写临时文件再替换目标时，原子可见和持久化也有不同保证。
+第一次读取很慢，第二次很快，可能只是数据进入了系统页缓存。文件IO需要同时处理数据从哪里来、请求何时完成、结果何时对读者可见。异步与缓存改变等待方式，文件替换则改变发布边界，三者需要分别验证。
 
-## 文件系统与 IO
+## 读取与缓存
 
-文件系统按路径解析目录项，再通过文件元数据定位数据块。Page Cache 会缓存最近读写的数据，因此一次读很快可能只是命中缓存。性能测试要区分冷缓存、热缓存、顺序读、随机读和存储设备队列深度。
+文件系统先解析路径和文件元数据，再定位数据块。缓冲读取可能命中页缓存，冷读取则需要设备访问；顺序读取容易合并和预取，随机小读取会增加寻址、请求与元数据成本。比较流送性能时固定文件集、请求尺寸和并发深度，并分别记录首次读取与重复读取。
 
-Buffered IO 经过系统缓存，Direct IO 绕过部分缓存并要求更严格的对齐和块大小。Asynchronous IO 让线程提交请求后继续工作，完成事件由系统通知；它适合资产流送，但仍需要请求合并、优先级、取消和目标 Buffer 生命周期管理。
+一次读取可能只返回请求的一部分。协议文件先循环读取固定头，检查长度与版本，再按上限分配负载；读取到零表示到达末尾。文件在读取期间被截断时，短读是实际状态，不能把未填满缓冲的剩余字节当成有效内容。
 
-原子替换常先写临时文件、Flush 并关闭，再 Rename/Replace 正式路径。`Flush` 的语义受系统和设备缓存影响，需要持久化保证时应使用平台明确提供的同步接口。
+直接IO可绕过部分系统缓存，但对齐、块大小与平台支持另有要求；内存映射把读取延后到缺页处理，仍然消耗设备与页缓存资源。选型应同时统计吞吐、尾延迟、驻留内存和应用解码时间。
 
-## 临时文件发布
+## 异步请求与缓冲寿命
 
-伪代码要求临时文件与目标位于支持原子替换的同一文件系统，持久化保证按平台接口实现。
+请求拥有文件句柄、偏移、目标缓冲和完成状态。提交后缓冲进入使用中，完成通知确认结果字节数后才可交给解码器。发出取消只是要求系统停止工作，完成可能返回成功、取消或其他错误；Windows `CancelIoEx` 也不保证请求一定取消。只有收到最终完成，才能复用请求结构和缓冲。
 
 ```text
-write temporary file
-flush according to durability requirement
-close and validate content
-replace destination atomically where supported
-sync containing metadata if required by platform
+allocate request and destination buffer
+submit read(offset, size, buffer)
+if owner cancels: request cancellation
+wait for terminal completion status
+if success: validate actual bytes, then decode
+release request and buffer after all consumers finish
 ```
+
+这是请求生命周期伪代码。高频创建小请求会增加调度与系统调用成本，可合并相邻区间，并对紧急资产设置预算内的优先级。取消后立即把同一缓冲交给新请求，会让迟到完成覆盖新数据。
+
+## 临时文件与发布
+
+直接覆盖正式文件时，读者可能读到半份结果。先在同一目录创建唯一临时文件，写完、刷新、关闭并校验，再替换正式路径。替换成功时名称指向完整新文件；正在持有旧文件句柄的读者如何继续读取，由平台共享与重命名语义决定。
+
+Python标准库最小实现见[reference.py](../examples/revision_16_21/reference.py)的 `publish`：`tempfile.mkstemp`创建临时文件，`flush`把语言缓冲交给系统，`os.fsync`请求同步文件，`os.replace`提交名称替换，异常路径清理临时文件。输入是目标路径与完整字节内容，输出是成功或异常；并发发布同一目标时仍需额外锁或版本比较，避免最后写者覆盖他人的更新。
+
+原子可见只约束读者看到哪个版本；掉电持久性还涉及目录项、文件系统和设备缓存。部分POSIX环境需要同步父目录，Windows共享模式和文件系统也会影响替换。这个跨平台样例没有宣称掉电后一定保留新文件，多文件资产发布应以一个版本清单或指针作为最终提交点。
 
 ## 验证方法
 
-分别测冷暖缓存、顺序随机与限速设备。故障注入到写入、flush和replace边界，检查正式版本仍是完整旧版或新版。取消异步IO后缓冲活到请求实际完成。
+在写入、刷新、替换前后分别注入失败，检查正式路径始终保存完整版本，并检查临时文件清理。异步IO测试取消与完成竞争，确认缓冲只释放一次。冷缓存测试必须记录实际缓存控制方法，重复读取速度不能作为设备带宽。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+## 实现与证据
+
+2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页运行临时目录里的真实文件写入、替换与替换前异常，验证最终内容和临时文件清理；未执行断电、网络文件系统或异步驱动取消测试。
 
 ## 相关主题
 
@@ -37,7 +50,5 @@ sync containing metadata if required by platform
 
 ## 参考资料
 
-- Silberschatz et al., *Operating System Concepts*.
-- Tanenbaum and Bos, *Modern Operating Systems*.
-- C++ Reference, *Memory model* and *Atomic operations*.
-- Microsoft Learn, Windows processes, threads, virtual memory and asynchronous I/O.
+- [Python3.11 os](https://docs.python.org/3.11/library/os.html)：os.fsync与os.replace；2026-10-22核读。
+- [Microsoft：Canceling Pending I/O Operations](https://learn.microsoft.com/en-us/windows/win32/fileio/canceling-pending-i-o-operations)：取消请求与最终完成状态；2026-10-22核读。

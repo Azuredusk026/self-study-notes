@@ -1,0 +1,4497 @@
+{
+  "date": "2026-10-22",
+  "scope": "16—21全部45篇",
+  "baseline": "描边的机制推理与当前中文定稿规范",
+  "articles": [
+    {
+      "path": "知识库/21_游戏网络/游戏网络时钟.md",
+      "primary_question": "两端时钟的起点不同。客户端在本地第10秒收到“服务器第35秒”的快照，单看两个数字无法判断快照在网络上走了多久。网络时钟先估计两个时间轴的偏移，再把服务器时间换成模拟 Tick；测量的误差决定这份估计能用于多精细的判定。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "四个时间戳",
+        "平滑偏移与模拟步长",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“四个时间戳”：一次探测记录客户端发送时刻 $t_0$、服务器接收时刻 $t_1$、服务器发送时刻 $t_2$、客户端接收时刻 $t_3$。每一端在自己的单调时间轴上计时，单位都是秒。服务器处理耗时是 $t_2-t_1$，从整个往返时间里减掉它，才能估计链路往返延迟：",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "两端时钟的起点不同。客户端在本地第10秒收到“服务器第35秒”的快照，单看两个数字无法判断快照在网络上走了多久。网络时钟先估计两个时间轴的偏移，再把服务器时间换成模拟 Tick；测量的误差决定这份估计能用于多精细的判定。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：四个时间戳 → 平滑偏移与模拟步长 → 验证方法 → 实现与证据 → 相关主题 → 参考资料；“四个时间戳”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "一次探测记录客户端发送时刻 $t_0$、服务器接收时刻 $t_1$、服务器发送时刻 $t_2$、客户端接收时刻 $t_3$。每一端在自己的单调时间轴上计时，单位都是秒。服务器处理耗时是 $t_2-t_1$，从整个往返时间里减掉它，才能估计链路往返延迟："
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页对应两个时钟测试；未接入真实时钟同步服务，网络时延与漂移采用数值输入。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页对应两个时钟测试；未接入真实时钟同步服务，网络时延与漂移采用数值输入。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“四个时间戳”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“游戏网络时钟”覆盖本页主问题；客观子标题：四个时间戳、平滑偏移与模拟步长、验证方法、实现与证据。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“四个时间戳”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“四个时间戳”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "游戏网络时钟"
+      ],
+      "title_mapping": {
+        "old": "游戏网络时钟",
+        "new": "游戏网络时钟"
+      },
+      "removed_or_renamed_headings": [
+        "RTT 与时钟偏移",
+        "偏移样本"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://www.rfc-editor.org/rfc/rfc5905",
+          "locator": "第8节四时间戳公式、第10节时钟过滤；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页对应两个时钟测试；未接入真实时钟同步服务，网络时延与漂移采用数值输入。",
+        "cpu_command": "python 知识库/examples/revision_16_21/test_reference.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "f1ab5abb4ebd056038592e8186ade68fca45c62d97573feecfdbf3b802c0458e"
+    },
+    {
+      "path": "知识库/21_游戏网络/延迟补偿命中.md",
+      "primary_question": "射手看到目标还在门外，服务器收到射击时，目标已经走进门里。两端看到的是不同时间的目标。延迟补偿让服务器在有限历史窗口内查询射手所见的碰撞状态，再把命中结果应用到当前权威状态。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "射击与显示时间",
+        "历史碰撞体",
+        "最小射线查询",
+        "命中提交与验证",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“射击与显示时间”：客户端预测本地角色，远端角色却在历史快照间插值。因此射击请求至少要关联输入序号、射击朝向和该帧使用的远端显示时间。服务器利用已建立的时钟映射估计射击生成时刻，再减去协议允许的插值延迟，得到目标查询时刻：",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "射手看到目标还在门外，服务器收到射击时，目标已经走进门里。两端看到的是不同时间的目标。延迟补偿让服务器在有限历史窗口内查询射手所见的碰撞状态，再把命中结果应用到当前权威状态。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：射击与显示时间 → 历史碰撞体 → 最小射线查询 → 命中提交与验证 → 实现与证据 → 相关主题；“射击与显示时间”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "客户端预测本地角色，远端角色却在历史快照间插值。因此射击请求至少要关联输入序号、射击朝向和该帧使用的远端显示时间。服务器利用已建立的时钟映射估计射击生成时刻，再减去协议允许的插值延迟，得到目标查询时刻："
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页验证历史线性插值的窗口拒绝及球形射线正反向求交；尚未运行骨骼碰撞场景、真实网络故障或公平性测试。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页验证历史线性插值的窗口拒绝及球形射线正反向求交；尚未运行骨骼碰撞场景、真实网络故障或公平性测试。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“射击与显示时间”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“延迟补偿命中”覆盖本页主问题；客观子标题：射击与显示时间、历史碰撞体、最小射线查询、命中提交与验证。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“射击与显示时间”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“射击与显示时间”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "延迟补偿命中"
+      ],
+      "title_mapping": {
+        "old": "延迟补偿命中",
+        "new": "延迟补偿命中"
+      },
+      "removed_or_renamed_headings": [
+        "历史查询",
+        "验证方法"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://www.gabrielgambetta.com/lag-compensation.html",
+          "locator": "Lag Compensation节的历史视图与掩体取舍；2026-10-22核读，公式与球体实验为本页推导",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页验证历史线性插值的窗口拒绝及球形射线正反向求交；尚未运行骨骼碰撞场景、真实网络故障或公平性测试。",
+        "cpu_command": "python 知识库/examples/revision_16_21/test_reference.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "f63be6f7072aee778ca3b06abb89c53a7ea24902823c9c89529086863e518d0b"
+    },
+    {
+      "path": "知识库/21_游戏网络/客户端预测.md",
+      "primary_question": "本地玩家等待往返确认才移动，会直接感到延迟。客户端预测先执行输入，服务器确认后恢复权威状态并重放剩余命令。逻辑修正立即生效，显示偏移再平滑，不能只线性插值权威碰撞位置。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "客户端预测与校正",
+        "权威边界",
+        "校正循环",
+        "重放中的碰撞与序号",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“重放中的碰撞与序号”：权威状态必须与确认序号成对使用。假设服务器确认到65535号输入时角色位于8米，客户端还保存0号向前5米和1号向后1米的命令，前方10米处有墙。重放0号先在墙前停到10米，再重放1号得到9米。把未确认位移直接求和会得到12米，因此重放必须执行同一移动与碰撞规则。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "本地玩家等待往返确认才移动，会直接感到延迟。客户端预测先执行输入，服务器确认后恢复权威状态并重放剩余命令。逻辑修正立即生效，显示偏移再平滑，不能只线性插值权威碰撞位置。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：客户端预测与校正 → 权威边界 → 校正循环 → 重放中的碰撞与序号 → 验证方法 → 实现与证据；“重放中的碰撞与序号”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "权威状态必须与确认序号成对使用。假设服务器确认到65535号输入时角色位于8米，客户端还保存0号向前5米和1号向后1米的命令，前方10米处有墙。重放0号先在墙前停到10米，再重放1号得到9米。把未确认位移直接求和会得到12米，因此重放必须执行同一移动与碰撞规则。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页验证序号回绕及包含墙面钳制的输入重放；旧 completion_reference.py 只验证加法分段关系。真实移动平台与碰撞引擎的重放尚未运行。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页验证序号回绕及包含墙面钳制的输入重放；旧 completion_reference.py 只验证加法分段关系。真实移动平台与碰撞引擎的重放尚未运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“重放中的碰撞与序号”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“客户端预测”覆盖本页主问题；客观子标题：客户端预测与校正、权威边界、校正循环、重放中的碰撞与序号。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“重放中的碰撞与序号”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“重放中的碰撞与序号”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "客户端预测"
+      ],
+      "title_mapping": {
+        "old": "客户端预测",
+        "new": "客户端预测"
+      },
+      "removed_or_renamed_headings": [],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://www.gabrielgambetta.com/client-side-prediction-server-reconciliation.html",
+          "locator": "Server reconciliation节：状态与已确认输入、未确认输入重放；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页验证序号回绕及包含墙面钳制的输入重放；旧 completion_reference.py 只验证加法分段关系。真实移动平台与碰撞引擎的重放尚未运行。",
+        "cpu_command": "python 知识库/examples/revision_16_21/test_reference.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "e9e65578fc0e4f6038526023d5e6b97d2cfb0c6aa40742ab7dd91220fdcacb75"
+    },
+    {
+      "path": "知识库/21_游戏网络/回滚同步.md",
+      "primary_question": "格斗输入晚到几帧，系统可以暂时预测，再回到历史状态重算。回滚同步需要可恢复的完整模拟状态、确定输入顺序和受控副作用。固定时间步只是条件之一，跨平台数值与容器顺序仍要验证。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "三类同步思路",
+        "断线、重连与回放",
+        "回滚流程",
+        "快照边界与副作用",
+        "验证方法",
+        "保存与重放的范围",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“快照边界与副作用”：令 `snapshot[t]` 表示执行第t步输入之前的状态。预测输入为 `[+1,+1,+1]` 时，步前状态是 `[0,1,2]`，当前结果为3。第1步真实输入迟到且为-1，恢复 `snapshot[1]=1`，执行-1得到0，再执行第2步的+1，当前结果变成1。若错误恢复到第1步之后的快照，真实输入会叠加到已经消费预测输入的状态上。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "格斗输入晚到几帧，系统可以暂时预测，再回到历史状态重算。回滚同步需要可恢复的完整模拟状态、确定输入顺序和受控副作用。固定时间步只是条件之一，跨平台数值与容器顺序仍要验证。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：三类同步思路 → 断线、重连与回放 → 回滚流程 → 快照边界与副作用 → 验证方法 → 保存与重放的范围；“快照边界与副作用”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "令 `snapshot[t]` 表示执行第t步输入之前的状态。预测输入为 `[+1,+1,+1]` 时，步前状态是 `[0,1,2]`，当前结果为3。第1步真实输入迟到且为-1，恢复 `snapshot[1]=1`，执行-1得到0，再执行第2步的+1，当前结果变成1。若错误恢复到第1步之后的快照，真实输入会叠加到已经消费预测输入的状态上。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页的确定性整数模型检查步前恢复和事件序列重建；跨平台浮点、完整物理状态和音频撤销未运行。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页的确定性整数模型检查步前恢复和事件序列重建；跨平台浮点、完整物理状态和音频撤销未运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“快照边界与副作用”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“回滚同步”覆盖本页主问题；客观子标题：三类同步思路、断线、重连与回放、回滚流程、快照边界与副作用。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“快照边界与副作用”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“快照边界与副作用”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "回滚同步"
+      ],
+      "title_mapping": {
+        "old": "回滚同步",
+        "new": "回滚同步"
+      },
+      "removed_or_renamed_headings": [],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://github.com/pond3r/ggpo",
+          "locator": "README与save_game_state、load_game_state、advance_frame回调契约；代码入口供接入复核",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页的确定性整数模型检查步前恢复和事件序列重建；跨平台浮点、完整物理状态和音频撤销未运行。",
+        "cpu_command": "python 知识库/examples/revision_16_21/test_reference.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "2ee17906c1d2315810681fc2aad31d49aebf60693a6ca9c04af453f2b0e54ecf"
+    },
+    {
+      "path": "知识库/21_游戏网络/快照同步.md",
+      "primary_question": "远端输入尚未到达，本地通常只能显示已收到的状态。快照同步保留一段历史，在两个确定快照之间插值；压缩只相对接收端已确认基线，丢失时用完整状态恢复。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "压缩与基线",
+        "远端实体插值",
+        "插值缓冲的取时刻",
+        "快照插值",
+        "基线与离散状态",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“基线与离散状态”：差量快照必须指明基线ID。服务器发送“相对42号快照，实体7移动了0.2米”，接收端只有40号时无法得到正确位置；把差量加在40号上会产生持续偏差。因此先确认基线存在，再应用差量并确认新快照。基线丢失时请求完整快照，确认窗口外的基线才允许释放。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "远端输入尚未到达，本地通常只能显示已收到的状态。快照同步保留一段历史，在两个确定快照之间插值；压缩只相对接收端已确认基线，丢失时用完整状态恢复。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：压缩与基线 → 远端实体插值 → 插值缓冲的取时刻 → 快照插值 → 基线与离散状态 → 验证方法；“基线与离散状态”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "差量快照必须指明基线ID。服务器发送“相对42号快照，实体7移动了0.2米”，接收端只有40号时无法得到正确位置；把差量加在40号上会产生持续偏差。因此先确认基线存在，再应用差量并确认新快照。基线丢失时请求完整快照，确认窗口外的基线才允许释放。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页共用历史插值的区间检查；压缩格式、基线恢复协议和真实到达抖动仍是接入验收项。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页共用历史插值的区间检查；压缩格式、基线恢复协议和真实到达抖动仍是接入验收项。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“基线与离散状态”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“快照同步”覆盖本页主问题；客观子标题：压缩与基线、远端实体插值、插值缓冲的取时刻、快照插值。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“基线与离散状态”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“基线与离散状态”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "快照同步"
+      ],
+      "title_mapping": {
+        "old": "快照同步",
+        "new": "快照同步"
+      },
+      "removed_or_renamed_headings": [],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://gafferongames.com/post/snapshot_interpolation/",
+          "locator": "Jitter and Hitches、Interpolation Buffer；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页共用历史插值的区间检查；压缩格式、基线恢复协议和真实到达抖动仍是接入验收项。",
+        "cpu_command": "python 知识库/examples/revision_16_21/test_reference.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "9a172d9e779fa68af49b4b72975ddb7290764f7d15de3e14d76efaa5ea888955"
+    },
+    {
+      "path": "知识库/21_游戏网络/RPC.md",
+      "primary_question": "服务端执行了请求，响应却丢了，客户端无法由超时判断是否成功。RPC需要请求ID、权限和幂等边界，重试查询已有结果，避免一次加金币变成两次。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "请求与执行语义",
+        "安全边界",
+        "幂等请求",
+        "并发重试的事务边界",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“并发重试的事务边界”：在事务外查询“请求是否执行过”，两个并发重试可能同时查到空，然后各自增加一次余额。去重检查和状态写入必须由同一原子边界保护。单数据库实现可以用 `(accountId,requestId)` 唯一键，并在写事务内读取记录、修改状态和写入结果。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "服务端执行了请求，响应却丢了，客户端无法由超时判断是否成功。RPC需要请求ID、权限和幂等边界，重试查询已有结果，避免一次加金币变成两次。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：请求与执行语义 → 安全边界 → 幂等请求 → 并发重试的事务边界 → 验证方法 → 实现与证据；“并发重试的事务边界”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "在事务外查询“请求是否执行过”，两个并发重试可能同时查到空，然后各自增加一次余额。去重检查和状态写入必须由同一原子边界保护。单数据库实现可以用 `(accountId,requestId)` 唯一键，并在写事务内读取记录、修改状态和写入结果。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页运行真实 SQLite 文件事务，覆盖重复ID、载荷冲突与提交前异常；没有进行多机消息投递或服务进程崩溃实验。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页运行真实 SQLite 文件事务，覆盖重复ID、载荷冲突与提交前异常；没有进行多机消息投递或服务进程崩溃实验。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“并发重试的事务边界”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“RPC”覆盖本页主问题；客观子标题：请求与执行语义、安全边界、幂等请求、并发重试的事务边界。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“并发重试的事务边界”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“并发重试的事务边界”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "RPC"
+      ],
+      "title_mapping": {
+        "old": "RPC",
+        "new": "RPC"
+      },
+      "removed_or_renamed_headings": [
+        "RPC"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://www.sqlite.org/lang_transaction.html",
+          "locator": "2.1单写事务、2.2 BEGIN IMMEDIATE；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页运行真实 SQLite 文件事务，覆盖重复ID、载荷冲突与提交前异常；没有进行多机消息投递或服务进程崩溃实验。",
+        "cpu_command": "python 知识库/examples/revision_16_21/test_reference.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "b2157b0bac43567fbeb84af6ad66db8417b16de436f2c6b947613bc884286413"
+    },
+    {
+      "path": "知识库/21_游戏网络/世界分区与AOI.md",
+      "primary_question": "玩家只需要附近和玩法相关对象，完整世界复制会耗尽带宽。AOI用空间与关系筛选，跨服务器移动再交接状态和路由。复制范围与权威迁移是两个层次，边界切换都需要稳定身份。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "AOI 与世界分区",
+        "基于网格的 AOI 查询",
+        "复制迟滞与权威交接",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“复制迟滞与权威交接”：进入半径取R，退出半径取R+h，其中h是正的迟滞宽度。实体首次进入R时发送完整生成状态，随后增量更新；已经在集合中的实体只有超过R+h才离开。客户端按实体ID与代数处理生成和销毁，这样边界附近的小幅移动不会反复创建对象。空间查询只提供候选，队伍、任务和观战关系还会加入非空间相关实体。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "玩家只需要附近和玩法相关对象，完整世界复制会耗尽带宽。AOI用空间与关系筛选，跨服务器移动再交接状态和路由。复制范围与权威迁移是两个层次，边界切换都需要稳定身份。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：AOI 与世界分区 → 基于网格的 AOI 查询 → 复制迟滞与权威交接 → 验证方法 → 实现与证据 → 相关主题；“复制迟滞与权威交接”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "进入半径取R，退出半径取R+h，其中h是正的迟滞宽度。实体首次进入R时发送完整生成状态，随后增量更新；已经在集合中的实体只有超过R+h才离开。客户端按实体ID与代数处理生成和销毁，这样边界附近的小幅移动不会反复创建对象。空间查询只提供候选，队伍、任务和观战关系还会加入非空间相关实体。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "正文网格代码是依赖容器与向量库的C++机制片段。已复读负坐标取整、候选精筛与所有权超时流程；尚未运行多服迁移、并发查询和AOI带宽压测。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。正文网格代码是依赖容器与向量库的C++机制片段。已复读负坐标取整、候选精筛与所有权超时流程；尚未运行多服迁移、并发查询和AOI带宽压测。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“复制迟滞与权威交接”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“世界分区与AOI”覆盖本页主问题；客观子标题：AOI 与世界分区、基于网格的 AOI 查询、复制迟滞与权威交接、验证方法。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“复制迟滞与权威交接”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“复制迟滞与权威交接”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "世界分区与AOI"
+      ],
+      "title_mapping": {
+        "old": "世界分区与AOI",
+        "new": "世界分区与AOI"
+      },
+      "removed_or_renamed_headings": [],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://etcd.io/docs/v3.5/learning/api_guarantees/",
+          "locator": "事务与线性一致性用于所有权记录的实现依据；AOI迟滞为本文设计模型",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "正文网格代码是依赖容器与向量库的C++机制片段。已复读负坐标取整、候选精筛与所有权超时流程；尚未运行多服迁移、并发查询和AOI带宽压测。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "1bdc2703a85fb7b0500f1e12cd71fb09d0fb2ae4e61d9b1c2e8b893bedea3ab1"
+    },
+    {
+      "path": "知识库/21_游戏网络/对局服务器架构.md",
+      "primary_question": "同一场对局的消息不能随机分给多台服务器。对局架构先确定权威实例，再安排会话路由与持久化边界。实时热状态与交易状态有不同延迟和一致性要求，故障恢复必须保持单一所有者。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "会话与服务职责",
+        "发现、负载与实例",
+        "存储与一致性",
+        "安全与可观测性",
+        "故障与测试",
+        "会话路由",
+        "所有权与持久化时序",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“所有权与持久化时序”：对局实例拿到 `matchId` 以后，还要证明自己是当前所有者。路由记录保存实例ID与递增epoch，玩家命令关联会话与对局；实例拒绝过期epoch，持久化端也检查它。只在网关换路由不能阻止旧实例在网络分区后继续写入结果。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "同一场对局的消息不能随机分给多台服务器。对局架构先确定权威实例，再安排会话路由与持久化边界。实时热状态与交易状态有不同延迟和一致性要求，故障恢复必须保持单一所有者。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：会话与服务职责 → 发现、负载与实例 → 存储与一致性 → 安全与可观测性 → 故障与测试 → 会话路由；“所有权与持久化时序”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "对局实例拿到 `matchId` 以后，还要证明自己是当前所有者。路由记录保存实例ID与递增epoch，玩家命令关联会话与对局；实例拒绝过期epoch，持久化端也检查它。只在网关换路由不能阻止旧实例在网络分区后继续写入结果。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "会话路由为设计伪代码。本页给出epoch与结果ID的不变量，尚未部署网关、实例仲裁与持久化服务；服务故障和容量数字均待目标环境测量。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。会话路由为设计伪代码。本页给出epoch与结果ID的不变量，尚未部署网关、实例仲裁与持久化服务；服务故障和容量数字均待目标环境测量。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“所有权与持久化时序”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“对局服务器架构”覆盖本页主问题；客观子标题：会话与服务职责、发现、负载与实例、存储与一致性、安全与可观测性。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“所有权与持久化时序”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“所有权与持久化时序”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "对局服务器架构"
+      ],
+      "title_mapping": {
+        "old": "对局服务器架构",
+        "new": "对局服务器架构"
+      },
+      "removed_or_renamed_headings": [],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://etcd.io/docs/v3.5/learning/api_guarantees/",
+          "locator": "线性一致读与事务；用于所有权仲裁边界",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        },
+        {
+          "url": "https://www.sqlite.org/lang_transaction.html",
+          "locator": "单库事务边界；跨服务提交不由它自动保证",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "会话路由为设计伪代码。本页给出epoch与结果ID的不变量，尚未部署网关、实例仲裁与持久化服务；服务故障和容量数字均待目标环境测量。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "f669c47eede926787ad9ddd572b0fe938732b6323bff348a88de64df3458f24c"
+    },
+    {
+      "path": "知识库/21_游戏网络/服务端反作弊校验.md",
+      "primary_question": "客户端请求可能带合法身份，却仍给出不可能位移或伤害。服务端校验先用权威Tick和能力约束解释请求，再记录偏差与上下文。协议认证、行为统计和处罚规则分别承担职责。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "反作弊分层",
+        "位移校验",
+        "输入时长与运动能力",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“输入时长与运动能力”：服务器按已接纳的Tick消费输入，每个Tick最多接受协议允许的命令。客户端即使在同一帧发来十条“前进0.1秒”，也不能因此获得1秒运动预算；真实模拟时长由服务器调度决定。位移、冷却和资源校验因而共享同一时间基准。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "客户端请求可能带合法身份，却仍给出不可能位移或伤害。服务端校验先用权威Tick和能力约束解释请求，再记录偏差与上下文。协议认证、行为统计和处罚规则分别承担职责。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：反作弊分层 → 位移校验 → 输入时长与运动能力 → 验证方法 → 实现与证据 → 相关主题；“输入时长与运动能力”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "服务器按已接纳的Tick消费输入，每个Tick最多接受协议允许的命令。客户端即使在同一帧发来十条“前进0.1秒”，也不能因此获得1秒运动预算；真实模拟时长由服务器调度决定。位移、冷却和资源校验因而共享同一时间基准。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "正文位移式是必要条件的筛选模型，未运行实际反作弊系统。本页没有给出跨项目通用容差或误报率；验收需要合法轨迹集与异常轨迹集。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。正文位移式是必要条件的筛选模型，未运行实际反作弊系统。本页没有给出跨项目通用容差或误报率；验收需要合法轨迹集与异常轨迹集。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“输入时长与运动能力”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“服务端反作弊校验”覆盖本页主问题；客观子标题：反作弊分层、位移校验、输入时长与运动能力、验证方法。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“输入时长与运动能力”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“输入时长与运动能力”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "服务端反作弊校验"
+      ],
+      "title_mapping": {
+        "old": "服务端反作弊校验",
+        "new": "服务端反作弊校验"
+      },
+      "removed_or_renamed_headings": [],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://www.gabrielgambetta.com/client-server-game-architecture.html",
+          "locator": "Authoritative servers：客户端请求与服务端状态的边界",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "正文位移式是必要条件的筛选模型，未运行实际反作弊系统。本页没有给出跨项目通用容差或误报率；验收需要合法轨迹集与异常轨迹集。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "2a3a1ffa81279276cdddbf52c00dbebd765e83c931d7fa73c9e1b54108dd1aa2"
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络传输.md",
+      "primary_question": "一次send并不对应一次recv，UDP也不保证消息到达。游戏网络传输先定位端点，再根据消息有效期选择可靠性、顺序与拥塞策略。序列化长度与分帧保证接收端能安全识别完整消息。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "端点与连接建立",
+        "分层、地址与端点",
+        "DNS",
+        "传输与消息边界",
+        "TCP 与 UDP",
+        "TCP 连接与可靠性",
+        "数据包与序列化",
+        "诊断",
+        "TCP 字节流分帧",
+        "消息年龄与队列",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“消息年龄与队列”：可靠发送队列里的旧快照，即使最终送达，也可能已经没有显示价值。每条消息同时记录生成Tick、有效期限和可靠性类别：库存请求保留事务ID等待结果，高频位置可让新状态覆盖尚未发送的旧状态。拥塞时先减少可替代状态的频率与精度，避免可靠队列积压进一步推高延迟。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "一次send并不对应一次recv，UDP也不保证消息到达。游戏网络传输先定位端点，再根据消息有效期选择可靠性、顺序与拥塞策略。序列化长度与分帧保证接收端能安全识别完整消息。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：端点与连接建立 → 分层、地址与端点 → DNS → 传输与消息边界 → TCP 与 UDP → TCP 连接与可靠性；“消息年龄与队列”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "可靠发送队列里的旧快照，即使最终送达，也可能已经没有显示价值。每条消息同时记录生成Tick、有效期限和可靠性类别：库存请求保留事务ID等待结果，高频位置可让新状态覆盖尚未发送的旧状态。拥塞时先减少可替代状态的频率与精度，避免可靠队列积压进一步推高延迟。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "现有 [reference.py](../examples/mechanisms/reference.py)提供2字节头的随机分帧模型。正文网络代码是机制片段，真实Socket、拥塞与链路故障需在目标传输栈测量；CPU分帧不证明这些结果。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。现有 [reference.py](../examples/mechanisms/reference.py)提供2字节头的随机分帧模型。正文网络代码是机制片段，真实Socket、拥塞与链路故障需在目标传输栈测量；CPU分帧不证明这些结果。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“消息年龄与队列”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“游戏网络传输”覆盖本页主问题；客观子标题：端点与连接建立、分层、地址与端点、DNS、传输与消息边界。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属21_游戏网络；相关主题保留前置与后续专篇，新增机制落在“消息年龄与队列”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“消息年龄与队列”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "游戏网络传输"
+      ],
+      "title_mapping": {
+        "old": "游戏网络传输",
+        "new": "游戏网络传输"
+      },
+      "removed_or_renamed_headings": [
+        "端点怎样建立通信",
+        "消息怎样在链路上传输"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://www.rfc-editor.org/rfc/rfc9293",
+          "locator": "TCP字节流、可靠交付与状态机；固定线上头是应用协议",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        },
+        {
+          "url": "https://www.rfc-editor.org/rfc/rfc8085",
+          "locator": "3.1拥塞控制、3.2消息大小；UDP应用责任",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "现有 [reference.py](../examples/mechanisms/reference.py)提供2字节头的随机分帧模型。正文网络代码是机制片段，真实Socket、拥塞与链路故障需在目标传输栈测量；CPU分帧不证明这些结果。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "c2f3f714570c0444cc6dc3298ed436a7b4a068347537cced3047baa111157ce7"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/XPBD.md",
+      "primary_question": "增加普通PBD迭代次数，布料会变硬，参数难以跨时间步保持一致。XPBD把柔顺度与累计乘子加入约束更新，让柔软度有明确量纲。迭代顺序和有限预算仍影响收敛。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "布料与 XPBD",
+        "XPBD 距离约束",
+        "乘子的量纲与完整时间步",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“乘子的量纲与完整时间步”：对长度约束 $C=|x_1-x_0|-L$，位置使用米，逆质量使用千克的倒数，柔顺度 $\\alpha$ 使用米/牛顿。于是 $\\alpha/\\Delta t^2$ 与逆质量具有相同量纲，累计乘子 $\\lambda$ 的量纲为千克·米，$\\lambda/\\Delta t^2$ 才对应约束力尺度。把“刚度滑杆”直接填进柔顺度字段会颠倒软硬关系。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "增加普通PBD迭代次数，布料会变硬，参数难以跨时间步保持一致。XPBD把柔顺度与累计乘子加入约束更新，让柔软度有明确量纲。迭代顺序和有限预算仍影响收敛。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：布料与 XPBD → XPBD 距离约束 → 乘子的量纲与完整时间步 → 验证方法 → 实现与证据 → 相关主题；“乘子的量纲与完整时间步”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "对长度约束 $C=|x_1-x_0|-L$，位置使用米，逆质量使用千克的倒数，柔顺度 $\\alpha$ 使用米/牛顿。于是 $\\alpha/\\Delta t^2$ 与逆质量具有相同量纲，累计乘子 $\\lambda$ 的量纲为千克·米，$\\lambda/\\Delta t^2$ 才对应约束力尺度。把“刚度滑杆”直接填进柔顺度字段会颠倒软硬关系。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页检查固定端、柔顺度与同一步乘子累计，重合输入在Python实验中明确拒绝；C++片段采用跳过策略。完整布料碰撞与引擎求解尚未运行。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页检查固定端、柔顺度与同一步乘子累计，重合输入在Python实验中明确拒绝；C++片段采用跳过策略。完整布料碰撞与引擎求解尚未运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“乘子的量纲与完整时间步”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“XPBD”覆盖本页主问题；客观子标题：布料与 XPBD、XPBD 距离约束、乘子的量纲与完整时间步、验证方法。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属18_游戏物理与模拟；相关主题保留前置与后续专篇，新增机制落在“乘子的量纲与完整时间步”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“乘子的量纲与完整时间步”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "XPBD"
+      ],
+      "title_mapping": {
+        "old": "XPBD",
+        "new": "XPBD"
+      },
+      "removed_or_renamed_headings": [],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://mmacklin.com/xpbd.pdf",
+          "locator": "第3节公式与Algorithm 1；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页检查固定端、柔顺度与同一步乘子累计，重合输入在Python实验中明确拒绝；C++片段采用跳过策略。完整布料碰撞与引擎求解尚未运行。",
+        "cpu_command": "python 知识库/examples/revision_16_21/test_reference.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "530b70c7f13ecc7292cbdcf5a2380c0cb5cab412f846a041c7bcae818f96589f"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/破坏系统.md",
+      "primary_question": "一个物体碎开，不只是生成很多刚体。破坏系统先保存碎块连接和支撑，再让冲击改变连接，失去支撑的连通块进入动态模拟。碎片生命周期与权威事件决定它能否用于玩法。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "预切分与连接图",
+        "激活流程",
+        "支撑传播与连通分量",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“支撑传播与连通分量”：把碎块表示成节点，仍有效的黏结表示成无向边。外力造成的伤害更新边的剩余强度，降到零的边被移除。支撑状态随后沿有效边传播：一个分量中只要有固定支撑节点，该分量就仍连接地基；没有任何支撑的分量转成动态簇。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "一个物体碎开，不只是生成很多刚体。破坏系统先保存碎块连接和支撑，再让冲击改变连接，失去支撑的连通块进入动态模拟。碎片生命周期与权威事件决定它能否用于玩法。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：预切分与连接图 → 激活流程 → 支撑传播与连通分量 → 验证方法 → 实现与证据 → 相关主题；“支撑传播与连通分量”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "把碎块表示成节点，仍有效的黏结表示成无向边。外力造成的伤害更新边的剩余强度，降到零的边被移除。支撑状态随后沿有效边传播：一个分量中只要有固定支撑节点，该分量就仍连接地基；没有任何支撑的分量转成动态簇。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页检查断裂图的支撑分量；断面资产、刚体激活与Chaos运行未执行。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页检查断裂图的支撑分量；断面资产、刚体激活与Chaos运行未执行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“支撑传播与连通分量”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“破坏系统”覆盖本页主问题；客观子标题：预切分与连接图、激活流程、支撑传播与连通分量、验证方法。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属18_游戏物理与模拟；相关主题保留前置与后续专篇，新增机制落在“支撑传播与连通分量”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“支撑传播与连通分量”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "破坏系统"
+      ],
+      "title_mapping": {
+        "old": "破坏系统",
+        "new": "破坏系统"
+      },
+      "removed_or_renamed_headings": [
+        "破坏"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/cluster-geometry-collections-user-guide-in-unreal-engine",
+          "locator": "层次聚簇与分级断裂；2026-10-22页面标示UE5.8，本文图算法是独立简化模型",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页检查断裂图的支撑分量；断面资产、刚体激活与Chaos运行未执行。",
+        "cpu_command": "python 知识库/examples/revision_16_21/test_reference.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "4f0d66f613f1d4da412303c9ff10d7bfe814ce64c7f6b1c4b52b289c743bf731"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/载具物理.md",
+      "primary_question": "直接给车体设置速度，转向和制动缺少轮胎负载反馈。载具物理先从轮地接触得到悬挂与法向载荷，再根据滑移求纵横向力，共享摩擦预算。街机控制作为单独规则叠加。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "车轮接触与滑移",
+        "轮胎力预算",
+        "悬挂到接触力",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“悬挂到接触力”：轮子接地以后，先在悬挂轴上求压缩量x和压缩速度。以压缩为正、弹簧系数k使用牛顿/米、阻尼c使用牛顿·秒/米，简化支撑力为 `max(0,k*x+c*dx/dt)`。轮子离地时法向载荷为零，轮胎就没有地面摩擦预算；悬挂方向与地面法线不一致时还要按接触几何换算载荷。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "直接给车体设置速度，转向和制动缺少轮胎负载反馈。载具物理先从轮地接触得到悬挂与法向载荷，再根据滑移求纵横向力，共享摩擦预算。街机控制作为单独规则叠加。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：车轮接触与滑移 → 轮胎力预算 → 悬挂到接触力 → 验证方法 → 实现与证据 → 相关主题；“悬挂到接触力”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "轮子接地以后，先在悬挂轴上求压缩量x和压缩速度。以压缩为正、弹簧系数k使用牛顿/米、阻尼c使用牛顿·秒/米，简化支撑力为 `max(0,k*x+c*dx/dt)`。轮子离地时法向载荷为零，轮胎就没有地面摩擦预算；悬挂方向与地面法线不一致时还要按接触几何换算载荷。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页检查联合力限幅与离地零载荷；悬挂、轮速积分和实际驾驶性能未运行。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页检查联合力限幅与离地零载荷；悬挂、轮速积分和实际驾驶性能未运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“悬挂到接触力”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“载具物理”覆盖本页主问题；客观子标题：车轮接触与滑移、轮胎力预算、悬挂到接触力、验证方法。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属18_游戏物理与模拟；相关主题保留前置与后续专篇，新增机制落在“悬挂到接触力”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“悬挂到接触力”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "载具物理"
+      ],
+      "title_mapping": {
+        "old": "载具物理",
+        "new": "载具物理"
+      },
+      "removed_or_renamed_headings": [
+        "载具"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://nvidia-omniverse.github.io/PhysX/physx/5.4.1/docs/Vehicles.html",
+          "locator": "Mechanical Model：查询、悬挂、轮载与轮胎力；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页检查联合力限幅与离地零载荷；悬挂、轮速积分和实际驾驶性能未运行。",
+        "cpu_command": "python 知识库/examples/revision_16_21/test_reference.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "c96ffb6893d31232bdd882575f213137fcafb913cd6794ba1cfab3e598e46db0"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Character Controller.md",
+      "primary_question": "把玩家当普通刚体推，接触响应未必符合操作意图。Character Controller以胶囊扫掠寻找最早碰撞，再沿接触面滑动；台阶、坡面和移动平台分别定义规则。位移和碰撞的单位必须一致。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "扫掠与滑动",
+        "扫掠-Slide 循环",
+        "坡面、台阶与平台",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“坡面、台阶与平台”：地面法线n和单位向上轴u的点积给出坡度余弦。设最大可站立角为θ，`dot(n,u)>=cos(theta)` 才把接触记成可站立地面。垂直墙不能仅因胶囊接触就恢复跳跃资格；陡坡的横向滑动与重力滑落由玩法规则分别处理。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "把玩家当普通刚体推，接触响应未必符合操作意图。Character Controller以胶囊扫掠寻找最早碰撞，再沿接触面滑动；台阶、坡面和移动平台分别定义规则。位移和碰撞的单位必须一致。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：扫掠与滑动 → 扫掠-Slide 循环 → 坡面、台阶与平台 → 验证方法 → 实现与证据 → 相关主题；“坡面、台阶与平台”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "地面法线n和单位向上轴u的点积给出坡度余弦。设最大可站立角为θ，`dot(n,u)>=cos(theta)` 才把接触记成可站立地面。垂直墙不能仅因胶囊接触就恢复跳跃资格；陡坡的横向滑动与重力滑落由玩法规则分别处理。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页只检查单面滑动保留切向和离开分量。胶囊扫掠、台阶与旋转平台依赖宿主物理查询，尚未接入运行。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页只检查单面滑动保留切向和离开分量。胶囊扫掠、台阶与旋转平台依赖宿主物理查询，尚未接入运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“坡面、台阶与平台”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“Character Controller”覆盖本页主问题；客观子标题：扫掠与滑动、扫掠-Slide 循环、坡面、台阶与平台、验证方法。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属18_游戏物理与模拟；相关主题保留前置与后续专篇，新增机制落在“坡面、台阶与平台”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“坡面、台阶与平台”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "Character Controller"
+      ],
+      "title_mapping": {
+        "old": "Character Controller",
+        "new": "Character Controller"
+      },
+      "removed_or_renamed_headings": [
+        "Character Controller",
+        "Sweep-Slide 循环"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://nvidia-omniverse.github.io/PhysX/physx/5.4.1/docs/CharacterControllers.html",
+          "locator": "Kinematic Character Controller、Auto Stepping、Walkable Parts；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页只检查单面滑动保留切向和离开分量。胶囊扫掠、台阶与旋转平台依赖宿主物理查询，尚未接入运行。",
+        "cpu_command": "python 知识库/examples/revision_16_21/test_reference.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "40ea9b61178c4bee76ed6619c9751b801c1f811a82075e81f168d704d0da276b"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+      "primary_question": "动画把骨骼摆到当前姿态，物理系统却可能还停在绑定姿态。直接开启动态刚体时，两份状态发生冲突，角色会突然跳动。Ragdoll的切换先建立骨骼与刚体的空间对应，再把速度和控制权交给物理求解器。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "骨骼与刚体的对应",
+        "继承线速度与角速度",
+        "恢复动画",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“骨骼与刚体的对应”：骨骼原点常在关节，刚体质心则在肢体中间。记W为世界空间、B为骨骼空间、C为刚体局部空间，$T_{XY}$将Y空间的坐标变到X空间。离线保存刚体在骨骼中的固定变换 $T_{BC}$，采用列向量时，当前刚体世界变换为 $T_{WC}=T_{WB}T_{BC}$。回写动画时用 $T_{WB}=T_{WC}T_{BC}^{-1}$ 恢复骨骼世界变换，再相对父骨骼求局部变换。忽略这个偏移会让碰撞体与皮肤错位。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "动画把骨骼摆到当前姿态，物理系统却可能还停在绑定姿态。直接开启动态刚体时，两份状态发生冲突，角色会突然跳动。Ragdoll的切换先建立骨骼与刚体的空间对应，再把速度和控制权交给物理求解器。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：骨骼与刚体的对应 → 继承线速度与角速度 → 恢复动画 → 验证方法 → 实现与证据 → 相关主题；“骨骼与刚体的对应”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "骨骼原点常在关节，刚体质心则在肢体中间。记W为世界空间、B为骨骼空间、C为刚体局部空间，$T_{XY}$将Y空间的坐标变到X空间。离线保存刚体在骨骼中的固定变换 $T_{BC}$，采用列向量时，当前刚体世界变换为 $T_{WC}=T_{WB}T_{BC}$。回写动画时用 $T_{WB}=T_{WC}T_{BC}^{-1}$ 恢复骨骼世界变换，再相对父骨骼求局部变换。忽略这个偏移会让碰撞体与皮肤错位。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "正文为变换与速度推导、引擎接入伪代码。已核对PhysX关节的双局部参考系与弧度约定；尚未建立Ragdoll资产或运行切换场景，动画和物理混合效果待引擎验收。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。正文为变换与速度推导、引擎接入伪代码。已核对PhysX关节的双局部参考系与弧度约定；尚未建立Ragdoll资产或运行切换场景，动画和物理混合效果待引擎验收。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“骨骼与刚体的对应”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“Ragdoll”覆盖本页主问题；客观子标题：骨骼与刚体的对应、继承线速度与角速度、恢复动画、验证方法。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属18_游戏物理与模拟；相关主题保留前置与后续专篇，新增机制落在“骨骼与刚体的对应”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“骨骼与刚体的对应”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "Ragdoll"
+      ],
+      "title_mapping": {
+        "old": "Ragdoll",
+        "new": "Ragdoll"
+      },
+      "removed_or_renamed_headings": [
+        "Ragdoll 与动画混合",
+        "切换轮廓"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://nvidia-omniverse.github.io/PhysX/physx/5.4.1/docs/Joints.html",
+          "locator": "Joint Basics与D6 Joint：双局部约束参考系、角度及驱动；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "正文为变换与速度推导、引擎接入伪代码。已核对PhysX关节的双局部参考系与弧度约定；尚未建立Ragdoll资产或运行切换场景，动画和物理混合效果待引擎验收。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "efa280d5045f01055c8664e6e876fffd837fb919bef69aa0c2929ecfa625bcf7"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/刚体物理求解.md",
+      "primary_question": "实时物理不是逐帧“算出真实世界”。它在固定时间步内完成积分、碰撞检测和约束求解，并接受可控误差。稳定性、可重复性和玩法手感通常比绝对物理精度更重要。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "刚体状态与积分",
+        "积分稳定性",
+        "固定时间步与累加器",
+        "接触生成",
+        "碰撞检测",
+        "精确碰撞检测的两类主力算法",
+        "2D 圆与 AABB",
+        "接触响应",
+        "冲量与约束",
+        "穿透修正的三种取向",
+        "查询、层与事件",
+        "确定性与验证",
+        "法向有效质量与累计冲量",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“法向有效质量与累计冲量”：以法线n从刚体A指向B为约定，接触相对速度为 `vRel=(vB+omegaB×rB)-(vA+omegaA×rA)`，法向速度 `vn=dot(vRel,n)` 为负表示靠近。单位法向冲量既改变平移，也在偏离质心的位置产生转动，因而分母包含转动惯量：",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "实时物理不是逐帧“算出真实世界”。它在固定时间步内完成积分、碰撞检测和约束求解，并接受可控误差。稳定性、可重复性和玩法手感通常比绝对物理精度更重要。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：刚体状态与积分 → 积分稳定性 → 固定时间步与累加器 → 接触生成 → 碰撞检测 → 精确碰撞检测的两类主力算法；“法向有效质量与累计冲量”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "以法线n从刚体A指向B为约定，接触相对速度为 `vRel=(vB+omegaB×rB)-(vA+omegaA×rA)`，法向速度 `vn=dot(vRel,n)` 为负表示靠近。单位法向冲量既改变平移，也在偏离质心的位置产生转动，因而分母包含转动惯量："
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "现有 [reference.py](../examples/mechanisms/reference.py)只验证圆盒分离的15组输入。法向有效质量与累计冲量是求解推导，未运行完整刚体求解器、跨平台确定性与性能场景。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。现有 [reference.py](../examples/mechanisms/reference.py)只验证圆盒分离的15组输入。法向有效质量与累计冲量是求解推导，未运行完整刚体求解器、跨平台确定性与性能场景。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“法向有效质量与累计冲量”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“刚体物理求解”覆盖本页主问题；客观子标题：刚体状态与积分、积分稳定性、固定时间步与累加器、接触生成。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属18_游戏物理与模拟；相关主题保留前置与后续专篇，新增机制落在“法向有效质量与累计冲量”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“法向有效质量与累计冲量”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "刚体物理求解"
+      ],
+      "title_mapping": {
+        "old": "刚体物理求解",
+        "new": "刚体物理求解"
+      },
+      "removed_or_renamed_headings": [
+        "为什么半隐式比显式稳定",
+        "接触怎样生成",
+        "Narrow Phase 的两类主力算法",
+        "接触怎样改变运动"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://box2d.org/files/ErinCatto_SequentialImpulses_GDC2006.pdf",
+          "locator": "接触约束、累计冲量夹取与热启动",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        },
+        {
+          "url": "https://nvidia-omniverse.github.io/PhysX/physx/5.4.1/docs/Joints.html",
+          "locator": "约束局部参考系与求解边界",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "现有 [reference.py](../examples/mechanisms/reference.py)只验证圆盒分离的15组输入。法向有效质量与累计冲量是求解推导，未运行完整刚体求解器、跨平台确定性与性能场景。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "cf67e0d4a61a16f00a6ee11bb69ebc8a8f0beec2ff41edb8761b127c6505a0eb"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/文件IO.md",
+      "primary_question": "第一次读取很慢，第二次很快，可能只是数据进入了系统页缓存。文件IO需要同时处理数据从哪里来、请求何时完成、结果何时对读者可见。异步与缓存改变等待方式，文件替换则改变发布边界，三者需要分别验证。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "读取与缓存",
+        "异步请求与缓冲寿命",
+        "临时文件与发布",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“读取与缓存”：文件系统先解析路径和文件元数据，再定位数据块。缓冲读取可能命中页缓存，冷读取则需要设备访问；顺序读取容易合并和预取，随机小读取会增加寻址、请求与元数据成本。比较流送性能时固定文件集、请求尺寸和并发深度，并分别记录首次读取与重复读取。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "第一次读取很慢，第二次很快，可能只是数据进入了系统页缓存。文件IO需要同时处理数据从哪里来、请求何时完成、结果何时对读者可见。异步与缓存改变等待方式，文件替换则改变发布边界，三者需要分别验证。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：读取与缓存 → 异步请求与缓冲寿命 → 临时文件与发布 → 验证方法 → 实现与证据 → 相关主题；“读取与缓存”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "文件系统先解析路径和文件元数据，再定位数据块。缓冲读取可能命中页缓存，冷读取则需要设备访问；顺序读取容易合并和预取，随机小读取会增加寻址、请求与元数据成本。比较流送性能时固定文件集、请求尺寸和并发深度，并分别记录首次读取与重复读取。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页运行临时目录里的真实文件写入、替换与替换前异常，验证最终内容和临时文件清理；未执行断电、网络文件系统或异步驱动取消测试。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页运行临时目录里的真实文件写入、替换与替换前异常，验证最终内容和临时文件清理；未执行断电、网络文件系统或异步驱动取消测试。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“读取与缓存”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“文件IO”覆盖本页主问题；客观子标题：读取与缓存、异步请求与缓冲寿命、临时文件与发布、验证方法。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“读取与缓存”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“读取与缓存”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "文件IO"
+      ],
+      "title_mapping": {
+        "old": "文件IO",
+        "new": "文件IO"
+      },
+      "removed_or_renamed_headings": [
+        "文件系统与 IO",
+        "临时文件发布"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://docs.python.org/3.11/library/os.html",
+          "locator": "os.fsync与os.replace；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/windows/win32/fileio/canceling-pending-i-o-operations",
+          "locator": "取消请求与最终完成状态；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页运行临时目录里的真实文件写入、替换与替换前异常，验证最终内容和临时文件清理；未执行断电、网络文件系统或异步驱动取消测试。",
+        "cpu_command": "python 知识库/examples/revision_16_21/test_reference.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "52caa93f715b03db9f723dc9bea4baa3217dc12e24238792f86f0758caa9c0f6"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/对象生命周期.md",
+      "primary_question": "对象从场景消失，资源却可能仍被事件、任务或缓存引用。对象生命周期先确定拥有者与借用关系，再区分GC可达性和确定性释放。引用链解释为何仍活着，完成条件解释何时允许回收。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "所有权",
+        "托管堆与垃圾回收",
+        "常见 C# 隐式分配",
+        "原生容器与固定地址",
+        "资源引用与泄漏",
+        "生命周期契约",
+        "拥有、共享与借用",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“拥有、共享与借用”：唯一所有者负责销毁，借用者只在约定期间访问。C++的 `unique_ptr` 用移动交接唯一所有权，`shared_ptr` 让多个所有者共享控制块，最后一个强引用离开时销毁对象。互相持有强引用形成环时，两边计数都不会归零；非拥有关系用 `weak_ptr`，访问时通过 `lock()`临时取得有效强引用。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "对象从场景消失，资源却可能仍被事件、任务或缓存引用。对象生命周期先确定拥有者与借用关系，再区分GC可达性和确定性释放。引用链解释为何仍活着，完成条件解释何时允许回收。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：所有权 → 托管堆与垃圾回收 → 常见 C# 隐式分配 → 原生容器与固定地址 → 资源引用与泄漏 → 生命周期契约；“拥有、共享与借用”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "唯一所有者负责销毁，借用者只在约定期间访问。C++的 `unique_ptr` 用移动交接唯一所有权，`shared_ptr` 让多个所有者共享控制块，最后一个强引用离开时销毁对象。互相持有强引用形成环时，两边计数都不会归零；非拥有关系用 `weak_ptr`，访问时通过 `lock()`临时取得有效强引用。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "正文生命周期为设计契约，未运行内存快照或GC实验。GPU完成条件的实现归属见GPU资源生命周期；引擎对象规则分别链接Unity与Unreal专篇。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。正文生命周期为设计契约，未运行内存快照或GC实验。GPU完成条件的实现归属见GPU资源生命周期；引擎对象规则分别链接Unity与Unreal专篇。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“拥有、共享与借用”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“对象生命周期”覆盖本页主问题；客观子标题：所有权、托管堆与垃圾回收、常见 C# 隐式分配、原生容器与固定地址。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“拥有、共享与借用”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“拥有、共享与借用”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "对象生命周期"
+      ],
+      "title_mapping": {
+        "old": "对象生命周期",
+        "new": "对象生命周期"
+      },
+      "removed_or_renamed_headings": [
+        "Ownership",
+        "Managed Heap 与 GC",
+        "Native Container 与 Pinning"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines",
+          "locator": "R.1、R.20、R.21、R.24：RAII、智能指针与引用环",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals",
+          "locator": "根引用、可达性与非托管资源",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "正文生命周期为设计契约，未运行内存快照或GC实验。GPU完成条件的实现归属见GPU资源生命周期；引擎对象规则分别链接Unity与Unreal专篇。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "87082b74fcb2200a00f2921dd02c838bde5d03c4a0830795d7c7842cdd794efe"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/对象池.md",
+      "primary_question": "弹丸反复创建销毁，可以改成租用已有实例，但上一轮速度、任务和事件必须先清理。对象池管理的是取得与释放契约，槽位复用之前还要确认旧使用者退出。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "对象复用",
+        "容量与驻留成本",
+        "租用与生命周期回调",
+        "槽位复用条件",
+        "租用状态机",
+        "释放中的任务竞争",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“释放中的任务竞争”：一次租用可用 `(slot,generation)` 标识。假设槽位7的第12代弹丸结束，槽位随后发给第13代；旧命中回调带第12代句柄，查询时发现代数不同，便拒绝修改新弹丸。但代数检查必须与实际访问处于同一保护范围，否则检查后槽位仍可能被并发回收。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "弹丸反复创建销毁，可以改成租用已有实例，但上一轮速度、任务和事件必须先清理。对象池管理的是取得与释放契约，槽位复用之前还要确认旧使用者退出。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：对象复用 → 容量与驻留成本 → 租用与生命周期回调 → 槽位复用条件 → 租用状态机 → 释放中的任务竞争；“释放中的任务竞争”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "一次租用可用 `(slot,generation)` 标识。假设槽位7的第12代弹丸结束，槽位随后发给第13代；旧命中回调带第12代句柄，查询时发现代数不同，便拒绝修改新弹丸。但代数检查必须与实际访问处于同一保护范围，否则检查后槽位仍可能被并发回收。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "正文为对象池状态契约与伪代码。已检查陈旧代数、重复归还与等待条件；未运行Unity激活回调或池化性能测量。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。正文为对象池状态契约与伪代码。已检查陈旧代数、重复归还与等待条件；未运行Unity激活回调或池化性能测量。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“释放中的任务竞争”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“对象池”覆盖本页主问题；客观子标题：对象复用、容量与驻留成本、租用与生命周期回调、槽位复用条件。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“释放中的任务竞争”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“释放中的任务竞争”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "对象池"
+      ],
+      "title_mapping": {
+        "old": "对象池",
+        "new": "对象池"
+      },
+      "removed_or_renamed_headings": [
+        "对象池解决什么",
+        "Pool 的代价",
+        "Pool 与生命周期回调",
+        "复用以前先确认旧使用者已退出"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Pool.ObjectPool_1.html",
+          "locator": "池接口、取回与释放回调；具体生命周期由项目契约定义",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "正文为对象池状态契约与伪代码。已检查陈旧代数、重复归还与等待条件；未运行Unity激活回调或池化性能测量。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "f1b0c50e42ceb5b4cab90b22709c7965142a9fed4fd2c40c921aed8188e73afa"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/进程与调度.md",
+      "primary_question": "后台任务可以不阻塞界面，却未必同时占用多个核心。进程提供地址与故障隔离，线程由OS调度，协程与Task再在其上组织工作。系统调用、等待和切换各自影响延迟。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "用户态、内核态与系统调用",
+        "进程与线程",
+        "调度与上下文切换",
+        "进程间通信",
+        "时间与计时器",
+        "工具进程协议",
+        "等待队列与子进程输出",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“等待队列与子进程输出”：线程正在运行、可运行却没得到CPU、正在等待外部条件，是三种不同状态。主线程卡顿时若大部分时间在等待，增加它的优先级不会让磁盘更快；若任务已经就绪却排队，则要检查CPU占用、优先级和线程池饱和。性能时间线需要把运行与等待拆开。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "后台任务可以不阻塞界面，却未必同时占用多个核心。进程提供地址与故障隔离，线程由OS调度，协程与Task再在其上组织工作。系统调用、等待和切换各自影响延迟。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：用户态、内核态与系统调用 → 进程与线程 → 调度与上下文切换 → 进程间通信 → 时间与计时器 → 工具进程协议；“等待队列与子进程输出”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "线程正在运行、可运行却没得到CPU、正在等待外部条件，是三种不同状态。主线程卡顿时若大部分时间在等待，增加它的优先级不会让磁盘更快；若任务已经就绪却排队，则要检查CPU占用、优先级和线程池饱和。性能时间线需要把运行与等待拆开。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "正文工具进程是协议伪代码，未启动实际DCC或测量调度延迟。时间线诊断按Running/Ready/Blocked区分，平台测量工具与目标进程需一起记录。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。正文工具进程是协议伪代码，未启动实际DCC或测量调度延迟。时间线诊断按Running/Ready/Blocked区分，平台测量工具与目标进程需一起记录。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“等待队列与子进程输出”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“进程与调度”覆盖本页主问题；客观子标题：用户态、内核态与系统调用、进程与线程、调度与上下文切换、进程间通信。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“等待队列与子进程输出”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“等待队列与子进程输出”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "进程与调度"
+      ],
+      "title_mapping": {
+        "old": "进程与调度",
+        "new": "进程与调度"
+      },
+      "removed_or_renamed_headings": [],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://docs.python.org/3.11/library/subprocess.html",
+          "locator": "Popen.wait的管道死锁警告、communicate与超时处理",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/processes-and-threads",
+          "locator": "进程、线程与调度对象",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "正文工具进程是协议伪代码，未启动实际DCC或测量调度延迟。时间线诊断按Running/Ready/Blocked区分，平台测量工具与目标进程需一起记录。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "0be492a4ff26819870a4083f22ab510a1ae98910643dcf5c488aca6fdbc924f3"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/空间索引.md",
+      "primary_question": "所有对象两两比较会快速增长，空间索引先排除不可能相交区域。Grid、树与BVH保存不同分布，构建、更新和查询要一起比较。场景图表达语义父子，不能替代空间索引。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "空间候选筛选",
+        "粗筛与精确查询",
+        "均匀网格与空间哈希",
+        "四叉树与八叉树",
+        "BVH",
+        "KD-Tree与空间分割",
+        "语义层级与空间索引",
+        "复杂度与数据局部性",
+        "候选查询",
+        "网格范围与更新",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“网格范围与更新”：边长h为正的格子用 `floor(position/h)` 求整数坐标。位置-0.1、h=1应进入-1格；向零截断会误放到0格。包围盒覆盖区间先约定闭区间或半开区间，遍历候选格后再做精确相交，结果按稳定对象ID去重。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "所有对象两两比较会快速增长，空间索引先排除不可能相交区域。Grid、树与BVH保存不同分布，构建、更新和查询要一起比较。场景图表达语义父子，不能替代空间索引。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：空间候选筛选 → 粗筛与精确查询 → 均匀网格与空间哈希 → 四叉树与八叉树 → BVH → KD-Tree与空间分割；“网格范围与更新”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "边长h为正的格子用 `floor(position/h)` 求整数坐标。位置-0.1、h=1应进入-1格；向零截断会误放到0格。包围盒覆盖区间先约定闭区间或半开区间，遍历候选格后再做精确相交，结果按稳定对象ID去重。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "网格更新与BVH祖先包含关系为机制说明，未运行空间索引实现。验证入口按全量扫描作独立正确性参照，不能仅检查返回数量。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。网格更新与BVH祖先包含关系为机制说明，未运行空间索引实现。验证入口按全量扫描作独立正确性参照，不能仅检查返回数量。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“网格范围与更新”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“空间索引”覆盖本页主问题；客观子标题：空间候选筛选、粗筛与精确查询、均匀网格与空间哈希、四叉树与八叉树。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“网格范围与更新”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“网格范围与更新”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "空间索引"
+      ],
+      "title_mapping": {
+        "old": "空间索引",
+        "new": "空间索引"
+      },
+      "removed_or_renamed_headings": [
+        "空间查询怎样缩小候选",
+        "空间查询为什么需要结构",
+        "Uniform Grid 与 Spatial Hash",
+        "Quadtree 与 Octree",
+        "KD-Tree 与空间分割",
+        "Scene Graph 不是空间索引"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://recastnav.com/group__recast.html",
+          "locator": "网格化、区域与可行走空间处理入口",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        },
+        {
+          "url": "https://pbr-book.org/4ed/Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies",
+          "locator": "包围体包含、构建与遍历",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "网格更新与BVH祖先包含关系为机制说明，未运行空间索引实现。验证入口按全量扫描作独立正确性参照，不能仅检查返回数量。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "74c72592f0427263e2ee1b5abb02eef274649fe8685afd1584c1c131cec54fdd"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/跨语言接口.md",
+      "primary_question": "一侧分配内存，另一侧用不同运行库释放，接口即使能链接也会崩溃。跨语言通信先固定字节表示、版本、所有权和错误传播，再选择C ABI、绑定库、协议或CLI。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "互操作边界",
+        "跨语言边界",
+        "错误转换",
+        "配置与路径",
+        "批量调用契约",
+        "字节与缓冲所有权",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“字节与缓冲所有权”：一个可跨模块的字符串接口可表示为UTF-8字节指针和字节长度。长度计字节，不能把中文字符个数当缓冲大小；嵌入零字节是否允许也写入契约。接收侧在调用结束前复制需要长期保存的数据，或明确取得独占所有权。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "一侧分配内存，另一侧用不同运行库释放，接口即使能链接也会崩溃。跨语言通信先固定字节表示、版本、所有权和错误传播，再选择C ABI、绑定库、协议或CLI。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：互操作边界 → 跨语言边界 → 错误转换 → 配置与路径 → 批量调用契约 → 字节与缓冲所有权；“字节与缓冲所有权”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "一个可跨模块的字符串接口可表示为UTF-8字节指针和字节长度。长度计字节，不能把中文字符个数当缓冲大小；嵌入零字节是否允许也写入契约。接收侧在调用结束前复制需要长期保存的数据，或明确取得独占所有权。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "正文描述C ABI与进程协议的接口契约，未编译双语言绑定。验证应覆盖UTF-8多字节、容量不足、取消和模块卸载，而不只检查链接成功。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。正文描述C ABI与进程协议的接口契约，未编译双语言绑定。验证应覆盖UTF-8多字节、容量不足、取消和模块卸载，而不只检查链接成功。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“字节与缓冲所有权”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“跨语言接口”覆盖本页主问题；客观子标题：互操作边界、跨语言边界、错误转换、配置与路径。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“字节与缓冲所有权”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“字节与缓冲所有权”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "跨语言接口"
+      ],
+      "title_mapping": {
+        "old": "跨语言接口",
+        "new": "跨语言接口"
+      },
+      "removed_or_renamed_headings": [
+        "跨语言接口怎样落地",
+        "Error Handling"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/native-interop/best-practices",
+          "locator": "参数布局、字符串与SafeHandle",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        },
+        {
+          "url": "https://docs.python.org/3.11/extending/index.html",
+          "locator": "扩展、嵌入与引用所有权",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "正文描述C ABI与进程协议的接口契约，未编译双语言绑定。验证应覆盖UTF-8多字节、容量不足、取消和模块卸载，而不只检查链接成功。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "708d353ea9cc6d977a5c3570ce54db65d4044a30ff1e6fcca549422b122132cb"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/内存布局与分配.md",
+      "primary_question": "总字节数一样，连续数组和分散对象的访问成本仍可能不同。内存布局先看工作集与访问顺序，分配器再按寿命和尺寸组织复用。虚拟地址、物理页和GPU资源也不能混为同一种预算。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "栈与堆",
+        "虚拟地址与物理存储",
+        "分配器与碎片",
+        "数据局部性",
+        "缓存映射与写策略",
+        "帧分配器",
+        "对齐与批次寿命",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“对齐与批次寿命”：线性分配器用游标推进，但地址对齐要以实际基址为准。若基址已满足最大对齐，对正的二次幂a可取 `aligned=(cursor+a-1)&~(a-1)`。先检查 `cursor<=MAX-(a-1)`，再检查 `size<=capacity-aligned`，才能避免加法回绕让超大请求误判为可用。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "总字节数一样，连续数组和分散对象的访问成本仍可能不同。内存布局先看工作集与访问顺序，分配器再按寿命和尺寸组织复用。虚拟地址、物理页和GPU资源也不能混为同一种预算。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：栈与堆 → 虚拟地址与物理存储 → 分配器与碎片 → 数据局部性 → 缓存映射与写策略 → 帧分配器；“对齐与批次寿命”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "线性分配器用游标推进，但地址对齐要以实际基址为准。若基址已满足最大对齐，对正的二次幂a可取 `aligned=(cursor+a-1)&~(a-1)`。先检查 `cursor<=MAX-(a-1)`，再检查 `size<=capacity-aligned`，才能避免加法回绕让超大请求误判为可用。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "分配器为整数关系与寿命伪代码，未实现平台分配器或测量缓存命中。字节算例用于审查对齐范围，性能结论保留工作负载条件。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。分配器为整数关系与寿命伪代码，未实现平台分配器或测量缓存命中。字节算例用于审查对齐范围，性能结论保留工作负载条件。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“对齐与批次寿命”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“内存布局与分配”覆盖本页主问题；客观子标题：栈与堆、虚拟地址与物理存储、分配器与碎片、数据局部性。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“对齐与批次寿命”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“对齐与批次寿命”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "内存布局与分配"
+      ],
+      "title_mapping": {
+        "old": "内存布局与分配",
+        "new": "内存布局与分配"
+      },
+      "removed_or_renamed_headings": [
+        "Stack 与 Heap",
+        "Virtual、Physical 与 GPU Memory",
+        "Data Locality",
+        "Cache 映射与写策略"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines",
+          "locator": "R资源管理与Per性能规则",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc",
+          "locator": "MEM_RESERVE、MEM_COMMIT及按页分配",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "分配器为整数关系与寿命伪代码，未实现平台分配器或测量缓存命中。字节算例用于审查对齐范围，性能结论保留工作负载条件。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "9072767e1c3c51008285c9becfbdc3b711a99915b073436b31f2c4d04c6cda93"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/容器选择.md",
+      "primary_question": "链表插入是常数时间，找到那个节点却可能遍历整表。容器选择先列出主要操作与引用稳定性，再比较数组、哈希和有序树。实际缓存和分配常常决定理论复杂度能否兑现。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "操作决定容器",
+        "工作负载",
+        "数组、列表与双端队列",
+        "`std::vector` 的容量与失效",
+        "栈、队列与优先队列",
+        "哈希表",
+        "树结构",
+        "红黑树与有序关联容器",
+        "容器工作负载",
+        "操作序列与引用稳定性",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“操作序列与引用稳定性”：假设编辑器每次载入一万条资产，随后执行一千次按名称查找和十次有序范围显示，更新很少。排序数组先付一次排序成本，查找用二分，范围结果连续读取；哈希表精确查找方便，但范围显示还需排序副本。有序树把排序成本分摊到插入，却增加节点与指针访问。三个候选都应回放同一条操作序列。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "链表插入是常数时间，找到那个节点却可能遍历整表。容器选择先列出主要操作与引用稳定性，再比较数组、哈希和有序树。实际缓存和分配常常决定理论复杂度能否兑现。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：操作决定容器 → 工作负载 → 数组、列表与双端队列 → `std::vector` 的容量与失效 → 栈、队列与优先队列 → 哈希表；“操作序列与引用稳定性”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "假设编辑器每次载入一万条资产，随后执行一千次按名称查找和十次有序范围显示，更新很少。排序数组先付一次排序成本，查找用二分，范围结果连续读取；哈希表精确查找方便，但范围显示还需排序副本。有序树把排序成本分摊到插入，却增加节点与指针访问。三个候选都应回放同一条操作序列。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "正文选择依据与工作负载结构已复读。vector容量语义核对标准草案；未运行容器性能基准，文中没有实际平台速度排名。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。正文选择依据与工作负载结构已复读。vector容量语义核对标准草案；未运行容器性能基准，文中没有实际平台速度排名。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“操作序列与引用稳定性”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“容器选择”覆盖本页主问题；客观子标题：操作决定容器、工作负载、数组、列表与双端队列、`std::vector` 的容量与失效。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“操作序列与引用稳定性”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“操作序列与引用稳定性”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "容器选择"
+      ],
+      "title_mapping": {
+        "old": "容器选择",
+        "new": "容器选择"
+      },
+      "removed_or_renamed_headings": [
+        "先定义操作",
+        "Array、List 与 Deque",
+        "Stack、Queue 与 Priority Queue",
+        "Hash Table",
+        "Tree"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://eel.is/c++draft/vector.capacity",
+          "locator": "reserve、capacity、shrink_to_fit及引用失效；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        },
+        {
+          "url": "https://eel.is/c++draft/associative.reqmts",
+          "locator": "有序关联容器的操作与复杂度",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "正文选择依据与工作负载结构已复读。vector容量语义核对标准草案；未运行容器性能基准，文中没有实际平台速度排名。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "5c940bff303b5721705773c78cd4a9074992bb7d07e5785b849396e0ab6776c3"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法设计.md",
+      "primary_question": "先建一个二维数组，不会自动得到动态规划。算法设计先定义状态、选择和重复子问题，再比较递归、分治、贪心与缓存。复杂度解释规模增长，实际布局和常数决定工程成本。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "状态与求解策略",
+        "渐进复杂度",
+        "递归与枚举",
+        "排序与分治",
+        "动态规划",
+        "贪心算法",
+        "字符串匹配与 KMP",
+        "状态转移示意",
+        "状态定义与反例",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“状态定义与反例”：最长公共子序列的状态只保存两个前缀已经匹配的最大长度。对“AB”和“ACB”，比较最后字符B相同后，问题退到“A”和“AC”，长度再加1；字符不同则必须舍弃其中一侧的末字符，取两个子问题的较大值。按前缀长度递增填表，保证每个依赖先于消费者。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "先建一个二维数组，不会自动得到动态规划。算法设计先定义状态、选择和重复子问题，再比较递归、分治、贪心与缓存。复杂度解释规模增长，实际布局和常数决定工程成本。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：状态与求解策略 → 渐进复杂度 → 递归与枚举 → 排序与分治 → 动态规划 → 贪心算法；“状态定义与反例”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "最长公共子序列的状态只保存两个前缀已经匹配的最大长度。对“AB”和“ACB”，比较最后字符B相同后，问题退到“A”和“AC”，长度再加1；字符不同则必须舍弃其中一侧的末字符，取两个子问题的较大值。按前缀长度递增填表，保证每个依赖先于消费者。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "正文LCS为数学伪代码，新增手工追踪例与带收益反例；尚未运行算法实现。复杂度按明确状态与操作推导，工程耗时待实际数据测量。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。正文LCS为数学伪代码，新增手工追踪例与带收益反例；尚未运行算法实现。复杂度按明确状态与操作推导，工程耗时待实际数据测量。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“状态定义与反例”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“算法设计”覆盖本页主问题；客观子标题：状态与求解策略、渐进复杂度、递归与枚举、排序与分治。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“状态定义与反例”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“状态定义与反例”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "算法设计"
+      ],
+      "title_mapping": {
+        "old": "算法设计",
+        "new": "算法设计"
+      },
+      "removed_or_renamed_headings": [
+        "问题怎样化成可求解状态"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/",
+          "locator": "动态规划、最短路与复杂度讲义入口",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "正文LCS为数学伪代码，新增手工追踪例与带收益反例；尚未运行算法实现。复杂度按明确状态与操作推导，工程耗时待实际数据测量。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "1bc91615e7900a35aeb5a95f589064b282c6016350327fb957ceaf22984a889c"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/图搜索.md",
+      "primary_question": "任务依赖要先于消费者，导航路线则要成本更低，两者都用图但目标不同。图搜索先固定边语义，再选择拓扑、最短路或启发式。环、负权和过期堆条目改变算法前提。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "图表示",
+        "拓扑排序",
+        "Dijkstra",
+        "A*",
+        "A* 主循环",
+        "松弛与过期堆记录",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“松弛与过期堆记录”：从A到B有直接边成本10，另有A到C成本1、C到B成本1。最初把B的10入堆，扩展C后发现B成本2，再压入一条B的2。弹出2后确定更优路径，后来弹出的10通过 `entry.cost != bestCost[node]` 被跳过。堆中保存历史候选，成本表保存当前最优，两者职责不同。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "任务依赖要先于消费者，导航路线则要成本更低，两者都用图但目标不同。图搜索先固定边语义，再选择拓扑、最短路或启发式。环、负权和过期堆条目改变算法前提。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：图表示 → 拓扑排序 → Dijkstra → A* → A* 主循环 → 松弛与过期堆记录；“松弛与过期堆记录”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "从A到B有直接边成本10，另有A到C成本1、C到B成本1。最初把B的10入堆，扩展C后发现B成本2，再压入一条B的2。弹出2后确定更优路径，后来弹出的10通过 `entry.cost != bestCost[node]` 被跳过。堆中保存历史候选，成本表保存当前最优，两者职责不同。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "A*主循环是依赖图、堆与成本表的C++伪代码；新增三节点算例与重开条件。尚未运行独立搜索实现，最优性需按本文前提与Dijkstra对照。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。A*主循环是依赖图、堆与成本表的C++伪代码；新增三节点算例与重开条件。尚未运行独立搜索实现，最优性需按本文前提与Dijkstra对照。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“松弛与过期堆记录”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“图搜索”覆盖本页主问题；客观子标题：图表示、拓扑排序、Dijkstra、A*。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“松弛与过期堆记录”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“松弛与过期堆记录”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "图搜索"
+      ],
+      "title_mapping": {
+        "old": "图搜索",
+        "new": "图搜索"
+      },
+      "removed_or_renamed_headings": [
+        "Graph",
+        "Topological Sort"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/",
+          "locator": "最短路、Dijkstra与Bellman-Ford讲义",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "A*主循环是依赖图、堆与成本表的C++伪代码；新增三节点算例与重开条件。尚未运行独立搜索实现，最优性需按本文前提与Dijkstra对照。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "4815eb3be2b0de77055ffb15ef27dc75554e7a88dda2c7de8c95611ce58e7bea"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/线程同步.md",
+      "primary_question": "消费者醒来，队列仍可能为空，因为通知不是对状态的永久承诺。线程同步先保护共享谓词，再使用锁、条件变量或原子发布建立访问关系。原子更新不自动保护整个对象寿命。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "锁与等待原语",
+        "原子操作与内存顺序",
+        "数据竞争与死锁",
+        "条件变量的谓词等待",
+        "并发错误定位",
+        "通知、发布与回收",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“通知、发布与回收”：生产者先在队列锁内加入任务，解锁后通知。消费者若先检查到空，在 `wait` 中释放锁并等待；若生产者先入队，消费者拿到锁后直接看到非空。正确性依赖共享谓词与同一把锁，通知只促使重新检查，不能作为“必有一个任务”的计数。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "消费者醒来，队列仍可能为空，因为通知不是对状态的永久承诺。线程同步先保护共享谓词，再使用锁、条件变量或原子发布建立访问关系。原子更新不自动保护整个对象寿命。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：锁与等待原语 → 原子操作与内存顺序 → 数据竞争与死锁 → 条件变量的谓词等待 → 并发错误定位 → 通知、发布与回收；“通知、发布与回收”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "生产者先在队列锁内加入任务，解锁后通知。消费者若先检查到空，在 `wait` 中释放锁并等待；若生产者先入队，消费者拿到锁后直接看到非空。正确性依赖共享谓词与同一把锁，通知只促使重新检查，不能作为“必有一个任务”的计数。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "条件变量代码是C++17机制片段，已核对等待谓词与内存模型；未执行竞态检测、压力测试或真实线程实验。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。条件变量代码是C++17机制片段，已核对等待谓词与内存模型；未执行竞态检测、压力测试或真实线程实验。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“通知、发布与回收”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“线程同步”覆盖本页主问题；客观子标题：锁与等待原语、原子操作与内存顺序、数据竞争与死锁、条件变量的谓词等待。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“通知、发布与回收”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“通知、发布与回收”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "线程同步"
+      ],
+      "title_mapping": {
+        "old": "线程同步",
+        "new": "线程同步"
+      },
+      "removed_or_renamed_headings": [
+        "并发错误怎样缩小范围"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://eel.is/c++draft/intro.races",
+          "locator": "冲突访问、同步与happens-before；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        },
+        {
+          "url": "https://eel.is/c++draft/thread.condition.condvar",
+          "locator": "wait的解锁、等待与重新加锁",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "条件变量代码是C++17机制片段，已核对等待谓词与内存模型；未执行竞态检测、压力测试或真实线程实验。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "396a459ff2656bba2fdc18c06cc6832a8587d0e1d9afa2df2be52baaf406b1b3"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/虚拟内存.md",
+      "primary_question": "申请很大地址区间，不一定立刻占用同样多物理内存。虚拟内存把地址与物理页分开，首次访问可能触发缺页，随机工作集又会增加TLB开销。Reserve、Commit和驻留要分别观测。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "虚拟内存、页表与 TLB",
+        "栈、堆与内存映射",
+        "按页提交",
+        "保留、提交与驻留",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“保留、提交与驻留”：Windows `VirtualAlloc` 的MEM_RESERVE保留虚拟地址，MEM_COMMIT为页承诺存储；首次访问仍可能触发物理页建立。先保留1GiB地址再提交其中4MiB，并不意味着工作集立即增加1GiB。Linux的映射与过量承诺策略使用不同接口和保证，不能把Windows术语直接当跨平台契约。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "申请很大地址区间，不一定立刻占用同样多物理内存。虚拟内存把地址与物理页分开，首次访问可能触发缺页，随机工作集又会增加TLB开销。Reserve、Commit和驻留要分别观测。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：虚拟内存、页表与 TLB → 栈、堆与内存映射 → 按页提交 → 保留、提交与驻留 → 验证方法 → 实现与证据；“保留、提交与驻留”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "Windows `VirtualAlloc` 的MEM_RESERVE保留虚拟地址，MEM_COMMIT为页承诺存储；首次访问仍可能触发物理页建立。先保留1GiB地址再提交其中4MiB，并不意味着工作集立即增加1GiB。Linux的映射与过量承诺策略使用不同接口和保证，不能把Windows术语直接当跨平台契约。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "页范围为推导与平台API语义说明。已核读VirtualAlloc，未在本机执行大块保留、页提交或驻留测量；Linux语义只作为需独立后端的边界。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。页范围为推导与平台API语义说明。已核读VirtualAlloc，未在本机执行大块保留、页提交或驻留测量；Linux语义只作为需独立后端的边界。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“保留、提交与驻留”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“虚拟内存”覆盖本页主问题；客观子标题：虚拟内存、页表与 TLB、栈、堆与内存映射、按页提交、保留、提交与驻留。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“保留、提交与驻留”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“保留、提交与驻留”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "虚拟内存"
+      ],
+      "title_mapping": {
+        "old": "虚拟内存",
+        "new": "虚拟内存"
+      },
+      "removed_or_renamed_headings": [
+        "Stack、Heap 与内存映射"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc",
+          "locator": "MEM_RESERVE与MEM_COMMIT；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "页范围为推导与平台API语义说明。已核读VirtualAlloc，未在本机执行大块保留、页提交或驻留测量；Linux语义只作为需独立后端的边界。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "eb6cfdc2610ec9ca18fa766cb9e0aea6caf2e3c530faea81c07c151a0f02f47b"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "primary_question": "头文件能编译，插件加载却仍可能失败，因为链接符号、对象布局和分配器跨越了不同边界。C++工程先区分编译、链接与运行加载，再固定ABI、类型布局和资源释放方。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "C++构建与模块边界",
+        "C++ 构建链",
+        "头文件与翻译单元",
+        "静态与动态库",
+        "ABI 与 C接口",
+        "Win32 与 COM 边界",
+        "类型布局与资源语义",
+        "C++ 类型与布局",
+        "C++ 对象模型与虚函数",
+        "复制、移动与异常安全",
+        "所有权与模块接口",
+        "C ABI契约",
+        "接口结构的版本协商",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“接口结构的版本协商”：插件读取结构前先验证指针、版本和size。size允许调用方传入较长的新结构，旧插件只读取自己认识的前缀；传入比必需前缀更短的结构则拒绝。字段增加在尾部才能维持这种前缀约定，改变原字段类型、对齐或含义需要升级不兼容版本。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "头文件能编译，插件加载却仍可能失败，因为链接符号、对象布局和分配器跨越了不同边界。C++工程先区分编译、链接与运行加载，再固定ABI、类型布局和资源释放方。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：C++构建与模块边界 → C++ 构建链 → 头文件与翻译单元 → 静态与动态库 → ABI 与 C接口 → Win32 与 COM 边界；“接口结构的版本协商”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "插件读取结构前先验证指针、版本和size。size允许调用方传入较长的新结构，旧插件只读取自己认识的前缀；传入比必需前缀更短的结构则拒绝。字段增加在尾部才能维持这种前缀约定，改变原字段类型、对齐或含义需要升级不兼容版本。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "C ABI声明是接口片段，未编译动态库与加载宿主。版本前缀、错误输出和卸载顺序已在正文明确，实际工具链ABI仍需构建验证。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。C ABI声明是接口片段，未编译动态库与加载宿主。版本前缀、错误输出和卸载顺序已在正文明确，实际工具链ABI仍需构建验证。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“接口结构的版本协商”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“C++工程边界”覆盖本页主问题；客观子标题：C++构建与模块边界、C++ 构建链、头文件与翻译单元、静态与动态库。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“接口结构的版本协商”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“接口结构的版本协商”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "C++工程边界"
+      ],
+      "title_mapping": {
+        "old": "C++工程边界",
+        "new": "C++工程边界"
+      },
+      "removed_or_renamed_headings": [
+        "C++ 从源码到模块边界",
+        "Header 与 Translation Unit",
+        "Static 与 Dynamic Library",
+        "ABI 与 C Interface",
+        "C++ 类型与资源怎样工作",
+        "Copy、Move 与异常安全"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines",
+          "locator": "I.26、C.35与R资源管理",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/windows/win32/dlls/dynamic-link-libraries",
+          "locator": "模块加载与导出边界",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "C ABI声明是接口片段，未编译动态库与加载宿主。版本前缀、错误输出和卸载顺序已在正文明确，实际工具链ABI仍需构建验证。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "ef64e2b805ec769b3fcdcf27e9738b03b1abe6263b5675c42452946492c0579f"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/CSharp运行模型.md",
+      "primary_question": "编辑器能通过反射创建类型，AOT构建却可能缺少实例或被剥离。C#运行模型先看IL如何变成本机代码，再看值类型复制、装箱、委托可达性与异步状态机。托管回收和原生资源释放有不同职责。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "编译与运行时对象",
+        "C# 的运行模型",
+        "程序集与模块边界",
+        "C# 的值与引用",
+        "C# 委托、事件与资源释放",
+        "C# 泛型、LINQ 与相等性",
+        "显式资源释放",
+        "复制、装箱与流读取边界",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“复制、装箱与流读取边界”：把可变struct从列表索引器取出时得到一个值。修改这个局部副本不会自动写回列表，需要显式赋回，或选择提供引用语义的访问接口。装箱则把值复制进一个独立托管对象，随后修改原值不会改变已装箱副本。检查这两类错误时先追踪“哪一份数据被写入”，再讨论分配成本。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "编辑器能通过反射创建类型，AOT构建却可能缺少实例或被剥离。C#运行模型先看IL如何变成本机代码，再看值类型复制、装箱、委托可达性与异步状态机。托管回收和原生资源释放有不同职责。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：编译与运行时对象 → C# 的运行模型 → 程序集与模块边界 → C# 的值与引用 → C# 委托、事件与资源释放 → C# 泛型、LINQ 与相等性；“复制、装箱与流读取边界”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "把可变struct从列表索引器取出时得到一个值。修改这个局部副本不会自动写回列表，需要显式赋回，或选择提供引用语义的访问接口。装箱则把值复制进一个独立托管对象，随后修改原值不会改变已装箱副本。检查这两类错误时先追踪“哪一份数据被写入”，再讨论分配成本。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "正文C#读取片段要求.NET7+，未编译该片段或构建Unity IL2CPP。值复制、装箱与AOT分别给出验证目标，不能由编辑器运行替代设备构建。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。正文C#读取片段要求.NET7+，未编译该片段或构建Unity IL2CPP。值复制、装箱与AOT分别给出验证目标，不能由编辑器运行替代设备构建。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“复制、装箱与流读取边界”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“CSharp运行模型”覆盖本页主问题；客观子标题：编译与运行时对象、C# 的运行模型、程序集与模块边界、C# 的值与引用。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“复制、装箱与流读取边界”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“复制、装箱与流读取边界”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "CSharp运行模型"
+      ],
+      "title_mapping": {
+        "old": "CSharp运行模型",
+        "new": "CSharp运行模型"
+      },
+      "removed_or_renamed_headings": [
+        "C# 怎样编译并管理对象",
+        "Assembly 与模块边界"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/boxing-and-unboxing",
+          "locator": "装箱复制与拆箱类型",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/dotnet/api/system.io.stream.readexactly",
+          "locator": "完整读取与EndOfStreamException；目标运行时需核对API可用性",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "正文C#读取片段要求.NET7+，未编译该片段或构建Unity IL2CPP。值复制、装箱与AOT分别给出验证目标，不能由编辑器运行替代设备构建。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "3f7f7f0ef8818e27561bc83b8a67507a7b584a136ab264d30ad677989c29de52"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/Python宿主集成.md",
+      "primary_question": "系统Python能导入的包，在DCC里不一定可用。宿主固定解释器、ABI与UI绑定，工具首先匹配这套环境，再决定后台计算和主线程对象操作的边界。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "宿主环境与接口",
+        "Python 环境",
+        "宿主上下文与数据接口",
+        "GIL 与并发",
+        "环境探针",
+        "宿主状态与后台结果",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“宿主状态与后台结果”：后台任务只处理可序列化的纯数据，提交时记录场景版本与目标对象ID。任务完成后回到宿主允许的线程，再检查场景版本和对象是否仍有效；用户已经关闭文件或删除对象时丢弃过期结果。把宿主对象直接捕获到线程闭包里，会把寿命和线程限制一起带到后台。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "系统Python能导入的包，在DCC里不一定可用。宿主固定解释器、ABI与UI绑定，工具首先匹配这套环境，再决定后台计算和主线程对象操作的边界。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：宿主环境与接口 → Python 环境 → 宿主上下文与数据接口 → GIL 与并发 → 环境探针 → 宿主状态与后台结果；“宿主状态与后台结果”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "后台任务只处理可序列化的纯数据，提交时记录场景版本与目标对象ID。任务完成后回到宿主允许的线程，再检查场景版本和对象是否仍有效；用户已经关闭文件或删除对象时丢弃过期结果。把宿主对象直接捕获到线程闭包里，会把寿命和线程限制一起带到后台。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "环境探针为完整标准库代码；本批机制实验在Python3.11运行，未在Maya或Blender宿主执行。PEP703核读只支持可选自由线程机制，具体DCC线程行为由宿主验收。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。环境探针为完整标准库代码；本批机制实验在Python3.11运行，未在Maya或Blender宿主执行。PEP703核读只支持可选自由线程机制，具体DCC线程行为由宿主验收。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“宿主状态与后台结果”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“Python宿主集成”覆盖本页主问题；客观子标题：宿主环境与接口、Python 环境、宿主上下文与数据接口、GIL 与并发。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“宿主状态与后台结果”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“宿主状态与后台结果”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "Python宿主集成"
+      ],
+      "title_mapping": {
+        "old": "Python宿主集成",
+        "new": "Python宿主集成"
+      },
+      "removed_or_renamed_headings": [
+        "Python 怎样接入制作环境",
+        "Python 的 Context 与数据 API"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://peps.python.org/pep-0703/",
+          "locator": "Build Configuration Changes与扩展兼容；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        },
+        {
+          "url": "https://docs.python.org/3.11/extending/index.html",
+          "locator": "嵌入解释器与扩展接口",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "环境探针为完整标准库代码；本批机制实验在Python3.11运行，未在Maya或Blender宿主执行。PEP703核读只支持可选自由线程机制，具体DCC线程行为由宿主验收。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "b60385b538cd281784b4a46713caaf04160053213013b60bcf2d1df2c8038117"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法与数据结构导读.md",
+      "primary_question": "算法先决定状态怎样推进，数据结构决定这些状态怎样保存与查询。工程中先写工作负载，再在求解、容器、图和空间索引四条路线里选择。",
+      "boundary_action": "OVERVIEW",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "按问题进入专题",
+        "阅读与选择",
+        "选择示例",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“选择示例”：资产构建器要决定任务顺序时，先进入图搜索，明确依赖边与环诊断；随后在容器选择里决定节点ID到记录的查找结构。角色附近对象查询先进入空间索引，用全量扫描验证候选覆盖，再依据内存布局调整热数据。这些路线共享数据，但各自有独立的正确性条件。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "算法先决定状态怎样推进，数据结构决定这些状态怎样保存与查询。工程中先写工作负载，再在求解、容器、图和空间索引四条路线里选择。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：按问题进入专题 → 阅读与选择 → 选择示例 → 实现与证据 → 相关主题 → 参考资料；“选择示例”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "资产构建器要决定任务顺序时，先进入图搜索，明确依赖边与环诊断；随后在容器选择里决定节点ID到记录的查找结构。角色附近对象查询先进入空间索引，用全量扫描验证候选覆盖，再依据内存布局调整热数据。这些路线共享数据，但各自有独立的正确性条件。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "本页承担导航职责，逐条核对四个专题主问题及双链。代码、技术断言与运行证据由对应专篇维护。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。本页承担导航职责，逐条核对四个专题主问题及双链。代码、技术断言与运行证据由对应专篇维护。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“选择示例”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“算法与数据结构导读”覆盖本页主问题；客观子标题：按问题进入专题、阅读与选择、选择示例、实现与证据。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属16_编程与数据结构；相关主题保留前置与后续专篇，新增机制落在“选择示例”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“选择示例”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "算法与数据结构导读"
+      ],
+      "title_mapping": {
+        "old": "算法与数据结构导读",
+        "new": "算法与数据结构导读"
+      },
+      "removed_or_renamed_headings": [],
+      "category_review": "PASS",
+      "source_checks": [],
+      "verification": {
+        "scope": "本页承担导航职责，逐条核对四个专题主问题及双链。代码、技术断言与运行证据由对应专篇维护。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "7c2c7a739efbcab9d529bc84748b39ef89031af17381f4587f7e5ff00a03062b"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/扩散模型.md",
+      "primary_question": "随机噪声没有清晰对象，去噪网络却能在条件引导下逐步生成结构。扩散模型根据时间或噪声等级预测状态变化，采样器按训练参数化推进。VAE、条件编码和数值精度共同决定最终图像。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "加噪与去噪",
+        "前向加噪",
+        "反向采样",
+        "潜空间扩散",
+        "U-Net 与其他去噪网络",
+        "文本条件与 CLIP",
+        "Classifier-Free Guidance",
+        "种子与可复现性",
+        "文生图、图生图与局部重绘",
+        "推理精度与显存",
+        "去噪循环",
+        "噪声预测与单步更新",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“噪声预测与单步更新”：先固定DDPM的噪声预测参数化。记每一步噪声方差为 $\\beta_t$，$\\alpha_t=1-\\beta_t$，$\\bar\\alpha_t=\\prod_{s=1}^{t}\\alpha_s$。网络输出 $\\epsilon_\\theta(x_t,t,c)$ 后，可估计干净样本：",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "随机噪声没有清晰对象，去噪网络却能在条件引导下逐步生成结构。扩散模型根据时间或噪声等级预测状态变化，采样器按训练参数化推进。VAE、条件编码和数值精度共同决定最终图像。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：加噪与去噪 → 前向加噪 → 反向采样 → 潜空间扩散 → U-Net 与其他去噪网络 → 文本条件与 CLIP；“噪声预测与单步更新”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "先固定DDPM的噪声预测参数化。记每一步噪声方差为 $\\beta_t$，$\\alpha_t=1-\\beta_t$，$\\bar\\alpha_t=\\prod_{s=1}^{t}\\alpha_s$。网络输出 $\\epsilon_\\theta(x_t,t,c)$ 后，可估计干净样本："
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "DDPM公式按原论文第3节与Algorithm 2核读，本文循环是机制伪代码。未加载模型、生成图像或测量显存，模型效果与性能不作通过登记。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。DDPM公式按原论文第3节与Algorithm 2核读，本文循环是机制伪代码。未加载模型、生成图像或测量显存，模型效果与性能不作通过登记。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“噪声预测与单步更新”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“扩散模型”覆盖本页主问题；客观子标题：加噪与去噪、前向加噪、反向采样、潜空间扩散。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属17_AIGC与Agent管线；相关主题保留前置与后续专篇，新增机制落在“噪声预测与单步更新”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“噪声预测与单步更新”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "扩散模型"
+      ],
+      "title_mapping": {
+        "old": "扩散模型",
+        "new": "扩散模型"
+      },
+      "removed_or_renamed_headings": [
+        "噪声怎样变成图像",
+        "Forward Diffusion",
+        "Reverse Process",
+        "Latent Diffusion",
+        "Seed 与可复现性",
+        "Text-to-Image、Img2Img 与 Inpainting"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://arxiv.org/html/2006.11239v2",
+          "locator": "第3.2节、公式11与Algorithm 2；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        },
+        {
+          "url": "https://arxiv.org/abs/2112.10752",
+          "locator": "潜空间模型与条件注入的原论文入口",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "DDPM公式按原论文第3节与Algorithm 2核读，本文循环是机制伪代码。未加载模型、生成图像或测量显存，模型效果与性能不作通过登记。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "6c14b86d15bab8d97ead24fb3fed2b94ba25b4c6b5d8256aa7e29f5aa63fad81"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/生成条件控制.md",
+      "primary_question": "文字能描述人物，却很难精确固定每个关节和轮廓。结构控制把深度、姿态或Edge直接送入匹配分支，参考条件提供外观特征。控制权重不能修复错误预处理，输入语义要先核对。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "ControlNet",
+        "IP-Adapter",
+        "条件接口",
+        "控制分支与注意力",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“控制分支与注意力”：ControlNet复制可训练分支，并通过零初始化卷积把残差送回冻结网络。训练开始时残差为零，原网络输出得到保留；随着控制分支与零卷积学习，空间条件逐步影响各层特征。这条残差路径解释了为何“边缘图”能约束空间布局，也解释了它必须匹配基础网络的层级与通道。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "文字能描述人物，却很难精确固定每个关节和轮廓。结构控制把深度、姿态或Edge直接送入匹配分支，参考条件提供外观特征。控制权重不能修复错误预处理，输入语义要先核对。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：ControlNet → IP-Adapter → 条件接口 → 控制分支与注意力 → 验证方法 → 实现与证据；“控制分支与注意力”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "ControlNet复制可训练分支，并通过零初始化卷积把残差送回冻结网络。训练开始时残差为零，原网络输出得到保留；随着控制分支与零卷积学习，空间条件逐步影响各层特征。这条残差路径解释了为何“边缘图”能约束空间布局，也解释了它必须匹配基础网络的层级与通道。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "ControlNet第3.1节与IP-Adapter第3.2.2节支持分支机制；预处理和采样为管线伪代码，未运行模型消融实验或验证特定权重组合。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。ControlNet第3.1节与IP-Adapter第3.2.2节支持分支机制；预处理和采样为管线伪代码，未运行模型消融实验或验证特定权重组合。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“控制分支与注意力”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“生成条件控制”覆盖本页主问题；客观子标题：ControlNet、IP-Adapter、条件接口、控制分支与注意力。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属17_AIGC与Agent管线；相关主题保留前置与后续专篇，新增机制落在“控制分支与注意力”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“控制分支与注意力”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "生成条件控制"
+      ],
+      "title_mapping": {
+        "old": "生成条件控制",
+        "new": "生成条件控制"
+      },
+      "removed_or_renamed_headings": [],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://arxiv.org/html/2302.05543v3",
+          "locator": "第3.1节零卷积与锁定分支；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        },
+        {
+          "url": "https://arxiv.org/html/2308.06721v1",
+          "locator": "第3.2.2节解耦交叉注意力；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "ControlNet第3.1节与IP-Adapter第3.2.2节支持分支机制；预处理和采样为管线伪代码，未运行模型消融实验或验证特定权重组合。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "82eb95881f4efff6086fe9c187f0ac3e3adfd810a8075a430ae4f17aad34ebcf"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/LoRA训练.md",
+      "primary_question": "少量角色图可以教会模型身份，也可能把背景和姿势一起记住。LoRA固定基础权重，学习低秩增量；训练数据和图像描述先区分目标与可变因素，验证集再检查未见视角与组合条件。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "低秩适配与训练数据",
+        "LoRA",
+        "LoRA 数据",
+        "图像描述与标签",
+        "训练与过拟合",
+        "资产化",
+        "基线评估",
+        "数据与隐私",
+        "低秩增量",
+        "矩阵维数与训练更新",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“矩阵维数与训练更新”：设基础权重W形状为d×k，输入x为k维，选择秩r后，A为r×k，B为d×r。可训练参数量是r(k+d)，而全量矩阵是dk。训练时冻结W，只让损失通过B(Ax)更新A与B；减少的是可训练权重与相关优化器状态，基础权重和前向激活仍需要内存。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "少量角色图可以教会模型身份，也可能把背景和姿势一起记住。LoRA固定基础权重，学习低秩增量；训练数据和图像描述先区分目标与可变因素，验证集再检查未见视角与组合条件。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：低秩适配与训练数据 → LoRA → LoRA 数据 → 图像描述与标签 → 训练与过拟合 → 资产化；“矩阵维数与训练更新”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "设基础权重W形状为d×k，输入x为k维，选择秩r后，A为r×k，B为d×r。可训练参数量是r(k+d)，而全量矩阵是dk。训练时冻结W，只让损失通过B(Ax)更新A与B；减少的是可训练权重与相关优化器状态，基础权重和前向激活仍需要内存。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "LoRA矩阵与初始化依据原论文第4.1节；扩散训练流程为应用推导。未训练适配器、读取私有训练集或生成验证网格，效果与显存收益需实际记录。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。LoRA矩阵与初始化依据原论文第4.1节；扩散训练流程为应用推导。未训练适配器、读取私有训练集或生成验证网格，效果与显存收益需实际记录。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“矩阵维数与训练更新”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“LoRA训练”覆盖本页主问题；客观子标题：低秩适配与训练数据、LoRA、LoRA 数据、图像描述与标签。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属17_AIGC与Agent管线；相关主题保留前置与后续专篇，新增机制落在“矩阵维数与训练更新”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“矩阵维数与训练更新”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "LoRA训练"
+      ],
+      "title_mapping": {
+        "old": "LoRA训练",
+        "new": "LoRA训练"
+      },
+      "removed_or_renamed_headings": [
+        "适配器怎样学习目标概念",
+        "Caption 与 Tag"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://arxiv.org/html/2106.09685v2",
+          "locator": "第4.1节低秩更新、参数与初始化；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        },
+        {
+          "url": "https://arxiv.org/html/2006.11239v2",
+          "locator": "Algorithm 1的噪声训练目标",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "LoRA矩阵与初始化依据原论文第4.1节；扩散训练流程为应用推导。未训练适配器、读取私有训练集或生成验证网格，效果与显存收益需实际记录。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "4cc2cdb6b3d700a5d33bcdb1be080bd3a053588f3b9f1e83913de432d47c5f68"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+      "primary_question": "逐帧生成每张图都清楚，播放时却可能闪烁。视频一致性需要追踪同一内容的运动，把可靠历史映射到当前，再为新显露区域重新生成。光流、潜变量与技术通道的坐标约定先对齐，才能谈时间滤波。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "跨帧内容对应",
+        "逐帧差异",
+        "约束分层",
+        "光流重投影",
+        "潜变量与噪声一致性",
+        "关键帧与传播",
+        "技术通道的一致性",
+        "时序法线生成",
+        "法线时间过滤",
+        "多通道一致性",
+        "曝光与颜色稳定",
+        "时序质量指标",
+        "历史法线过滤",
+        "坐标换算与遮挡拒绝",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“坐标换算与遮挡拒绝”：反向光流若以原图像素为单位，转换到UV需除以原图宽高。潜变量宽高分别缩小s倍时，对应位移也缩小s倍；直接把像素位移加到latent索引会把运动放大。裁剪、缩放与填充还会改变坐标原点，需把整条预处理变换应用到位置和位移。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "逐帧生成每张图都清楚，播放时却可能闪烁。视频一致性需要追踪同一内容的运动，把可靠历史映射到当前，再为新显露区域重新生成。光流、潜变量与技术通道的坐标约定先对齐，才能谈时间滤波。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：跨帧内容对应 → 逐帧差异 → 约束分层 → 光流重投影 → 潜变量与噪声一致性 → 关键帧与传播；“坐标换算与遮挡拒绝”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "反向光流若以原图像素为单位，转换到UV需除以原图宽高。潜变量宽高分别缩小s倍时，对应位移也缩小s倍；直接把像素位移加到latent索引会把运动放大。裁剪、缩放与填充还会改变坐标原点，需把整条预处理变换应用到位置和位移。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "本页光流与法线公式是坐标推导；TokenFlow引用支持扩散特征对应传播，不证明本页的全部过滤策略。未生成视频或测量时序指标。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。本页光流与法线公式是坐标推导；TokenFlow引用支持扩散特征对应传播，不证明本页的全部过滤策略。未生成视频或测量时序指标。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“坐标换算与遮挡拒绝”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“视频生成时序一致性”覆盖本页主问题；客观子标题：跨帧内容对应、逐帧差异、约束分层、光流重投影。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属17_AIGC与Agent管线；相关主题保留前置与后续专篇，新增机制落在“坐标换算与遮挡拒绝”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“坐标换算与遮挡拒绝”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "视频生成时序一致性"
+      ],
+      "title_mapping": {
+        "old": "视频生成时序一致性",
+        "new": "视频生成时序一致性"
+      },
+      "removed_or_renamed_headings": [
+        "视频怎样追踪同一份内容",
+        "时序一致性为什么难",
+        "Optical Flow Warp",
+        "Latent 与噪声一致性",
+        "Keyframe 与传播",
+        "技术通道怎样保持一致",
+        "Normal Temporal Filter"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://arxiv.org/abs/2307.10373",
+          "locator": "原论文：按帧间对应传播扩散特征；2026-10-22核读摘要",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        },
+        {
+          "url": "https://arxiv.org/abs/2306.07954",
+          "locator": "视频重绘与时域约束原论文入口",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "本页光流与法线公式是坐标推导；TokenFlow引用支持扩散特征对应传播，不证明本页的全部过滤策略。未生成视频或测量时序指标。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "4d2973877344a896d1fca6bc2fda130a9a3322f2aaedf5815226a7e76f58c421"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
+      "primary_question": "节点图能连通，只证明接口类型可接，不能证明模型和潜变量语义匹配。ComfyUI工作流把模型、节点版本、参数与输入一起固定，再由队列保存执行和产物状态。失败恢复依赖这份记录。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "可复现执行",
+        "基础图",
+        "工作流与依赖",
+        "模型与路径",
+        "参数接口",
+        "队列与批处理",
+        "自定义节点风险",
+        "输出与元数据",
+        "失败恢复",
+        "提交、完成与产物确认",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“提交、完成与产物确认”：自托管服务的 `/prompt` 接收API格式的执行图，校验成功后返回 `prompt_id` 和队列信息。编辑器保存的可视化工作流JSON还包含布局等信息，自动提交时确认导出的是API执行格式。节点ID作为键，输入引用由上游节点ID和输出槽连接，不能只按截图顺序重建。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "节点图能连通，只证明接口类型可接，不能证明模型和潜变量语义匹配。ComfyUI工作流把模型、节点版本、参数与输入一起固定，再由队列保存执行和产物状态。失败恢复依赖这份记录。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：可复现执行 → 基础图 → 工作流与依赖 → 模型与路径 → 参数接口 → 队列与批处理；“提交、完成与产物确认”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "自托管服务的 `/prompt` 接收API格式的执行图，校验成功后返回 `prompt_id` 和队列信息。编辑器保存的可视化工作流JSON还包含布局等信息，自动提交时确认导出的是API执行格式。节点ID作为键，输入引用由上游节点ID和输出槽连接，不能只按截图顺序重建。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "2026-10-22核读自托管路由文档的/prompt、/history与/ws；没有连接本机ComfyUI实例或运行生成任务。具体节点与模型兼容性由锁定提交的工作流验证。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。2026-10-22核读自托管路由文档的/prompt、/history与/ws；没有连接本机ComfyUI实例或运行生成任务。具体节点与模型兼容性由锁定提交的工作流验证。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“提交、完成与产物确认”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“ComfyUI工作流”覆盖本页主问题；客观子标题：可复现执行、基础图、工作流与依赖、模型与路径。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属17_AIGC与Agent管线；相关主题保留前置与后续专篇，新增机制落在“提交、完成与产物确认”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“提交、完成与产物确认”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "ComfyUI工作流"
+      ],
+      "title_mapping": {
+        "old": "ComfyUI工作流",
+        "new": "ComfyUI工作流"
+      },
+      "removed_or_renamed_headings": [
+        "工作流怎样可重复执行",
+        "Workflow 是管线资产",
+        "Parameter Group",
+        "Queue 与批处理",
+        "Custom Node 风险",
+        "输出与 Metadata"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://docs.comfy.org/development/comfyui-server/comms_routes",
+          "locator": "Routes、Core API Routes、WebSocket Communication；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        }
+      ],
+      "verification": {
+        "scope": "2026-10-22核读自托管路由文档的/prompt、/history与/ws；没有连接本机ComfyUI实例或运行生成任务。具体节点与模型兼容性由锁定提交的工作流验证。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "2b6d341dc30b2e19499f7b020ecab7a2384c640820a370a07d2b5b7536d7cd97"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+      "primary_question": "模型从需求中找出候选资产，工具把资产写入场景，验证器判断结果是否符合要求。三者处理不同的信息：模型处理语义与候选，工具执行明确的状态变化，验证器读取实际产物。任务记录连接这些步骤，中断以后据此恢复。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "任务状态与产物",
+        "状态推进",
+        "任务与产物记录",
+        "推理与工具接口",
+        "角色与数据契约",
+        "工具参数与执行边界",
+        "调度职责",
+        "失败恢复",
+        "幂等与重试",
+        "补偿与版本恢复",
+        "室内场景的结构化规划",
+        "资产验收与发布",
+        "操作登记与恢复对账",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“操作登记与恢复对账”：工具返回超时以后，调度器只知道没有收到结果，不知道场景是否已经写入。创建操作先生成稳定目标ID与操作ID，把期望变更写入任务记录；执行器检查目标ID是否存在，存在时核对内容版本，缺失时才创建。操作结果写入失败时，恢复过程据目标ID重新读取产物并补齐记录。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "模型从需求中找出候选资产，工具把资产写入场景，验证器判断结果是否符合要求。三者处理不同的信息：模型处理语义与候选，工具执行明确的状态变化，验证器读取实际产物。任务记录连接这些步骤，中断以后据此恢复。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：任务状态与产物 → 状态推进 → 任务与产物记录 → 推理与工具接口 → 角色与数据契约 → 工具参数与执行边界；“操作登记与恢复对账”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "工具返回超时以后，调度器只知道没有收到结果，不知道场景是否已经写入。创建操作先生成稳定目标ID与操作ID，把期望变更写入任务记录；执行器检查目标ID是否存在，存在时核对内容版本，缺失时才创建。操作结果写入失败时，恢复过程据目标ID重新读取产物并补齐记录。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "本页是资产任务设计与接口协议，未部署Agent、连接DCC或执行资产发布。事务边界的可运行示例见RPC篇，场景操作的幂等性必须由各工具实现验证。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。本页是资产任务设计与接口协议，未部署Agent、连接DCC或执行资产发布。事务边界的可运行示例见RPC篇，场景操作的幂等性必须由各工具实现验证。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“操作登记与恢复对账”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“Agent资产管线”覆盖本页主问题；客观子标题：任务状态与产物、状态推进、任务与产物记录、推理与工具接口。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属17_AIGC与Agent管线；相关主题保留前置与后续专篇，新增机制落在“操作登记与恢复对账”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“操作登记与恢复对账”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "Agent资产管线"
+      ],
+      "title_mapping": {
+        "old": "Agent资产管线",
+        "new": "Agent资产管线"
+      },
+      "removed_or_renamed_headings": [
+        "任务怎样有状态地推进",
+        "适合 Agent 的任务",
+        "状态机",
+        "Job 与 Artifact",
+        "推理怎样进入受控工具",
+        "角色提示词",
+        "Prompt Contract",
+        "工具接口",
+        "权限",
+        "Orchestrator",
+        "失败后怎样恢复",
+        "幂等",
+        "错误分类",
+        "Retry 与 Backoff",
+        "Compensation 与回滚",
+        "结果怎样进入正式资产",
+        "技术质量门禁",
+        "视觉与语义审核",
+        "自动验证不等于自我评分",
+        "日志与审计",
+        "Prompt Injection 与不可信输入",
+        "评估"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://www.sqlite.org/lang_transaction.html",
+          "locator": "本地操作登记的事务边界",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        },
+        {
+          "url": "https://etcd.io/docs/v3.5/learning/api_guarantees/",
+          "locator": "条件事务与发布指针仲裁；场景工具不由数据库自动获得原子性",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "本页是资产任务设计与接口协议，未部署Agent、连接DCC或执行资产发布。事务边界的可运行示例见RPC篇，场景操作的幂等性必须由各工具实现验证。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "e9af4532e29291c4b9d8f03901e3a8e1e83827016b4ba0ab918dac901876bd78"
+    },
+    {
+      "path": "知识库/19_Gameplay与游戏框架/输入与动作状态.md",
+      "primary_question": "动作游戏框架要把设备输入、玩家意图、动作规则、移动和表现拆开。直接在更新中读取按键并播放动画，短期很快，加入 AI、回放、网络和连招后会立刻失控。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "输入与动作规则",
+        "从设备到命令",
+        "输入缓冲与土狼时间",
+        "请求层与行为层",
+        "移动与状态解耦",
+        "分层框架",
+        "模拟与显示",
+        "2D 精灵的变换与投影",
+        "最小游戏循环",
+        "数据驱动与调试",
+        "跳跃许可与输入消费",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“跳跃许可与输入消费”：输入缓冲保存一次按下事件，土狼时间保存最近一次有效地面接触，两者同时满足才可能起跳。但起跳以后，最近接地时间仍在窗口内；若又收到第二次按下，仅消费输入无法防止再次使用同一份地面资格。因此角色还要保存本次离地是否已消费跳跃许可，重新有效着地后才恢复。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "动作游戏框架要把设备输入、玩家意图、动作规则、移动和表现拆开。直接在更新中读取按键并播放动画，短期很快，加入 AI、回放、网络和连招后会立刻失控。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：输入与动作规则 → 从设备到命令 → 输入缓冲与土狼时间 → 请求层与行为层 → 移动与状态解耦 → 分层框架；“跳跃许可与输入消费”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "输入缓冲保存一次按下事件，土狼时间保存最近一次有效地面接触，两者同时满足才可能起跳。但起跳以后，最近接地时间仍在窗口内；若又收到第二次按下，仅消费输入无法防止再次使用同一份地面资格。因此角色还要保存本次离地是否已消费跳跃许可，重新有效着地后才恢复。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "正文跳跃和循环为C++机制片段；新增地面许可消耗边界与手工时间线。未运行角色控制器，窗口数值是说明例子而非通用推荐。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。正文跳跃和循环为C++机制片段；新增地面许可消耗边界与手工时间线。未运行角色控制器，窗口数值是说明例子而非通用推荐。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“跳跃许可与输入消费”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“输入与动作状态”覆盖本页主问题；客观子标题：输入与动作规则、从设备到命令、输入缓冲与土狼时间、请求层与行为层。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属19_Gameplay与游戏框架；相关主题保留前置与后续专篇，新增机制落在“跳跃许可与输入消费”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“跳跃许可与输入消费”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "输入与动作状态"
+      ],
+      "title_mapping": {
+        "old": "输入与动作状态",
+        "new": "输入与动作状态"
+      },
+      "removed_or_renamed_headings": [
+        "意图怎样成为合法动作",
+        "状态怎样进入显示帧",
+        "2D Sprite 的变换与投影"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://gameprogrammingpatterns.com/command.html",
+          "locator": "命令对象与输入抽象",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        },
+        {
+          "url": "https://docs.unity3d.com/Packages/com.unity.inputsystem@1.11/manual/Actions.html",
+          "locator": "动作阶段与输入处理时机；项目逻辑Tick需独立定义",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "正文跳跃和循环为C++机制片段；新增地面许可消耗边界与手工时间线。未运行角色控制器，窗口数值是说明例子而非通用推荐。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "44060853fc992934f6593936dc0cdbfe59c5648b0bf1eca987c1c0ba82fab066"
+    },
+    {
+      "path": "知识库/19_Gameplay与游戏框架/玩法事件与脚本.md",
+      "primary_question": "一次拾取发生以后，库存、音效和任务系统都要知道，但它们不应各自再执行一次拾取规则。玩法层先由明确的处理者改变状态，再广播结果；脚本与可视化图组合这条流程，事件队列则决定结果在什么时候对其他系统可见。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "事件系统",
+        "事件与命令的区分",
+        "脚本系统",
+        "可视化脚本",
+        "3C",
+        "组织与验证",
+        "事实负载与订阅寿命",
+        "验证方法",
+        "延迟派发事件",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“事实负载与订阅寿命”：拾取事件写入物品ID、拾取者ID、数量和发生Tick，订阅者据此播放反馈。若只保存一个可变对象引用，排队到下一阶段时对象可能已经被复用或销毁，读到的便不是事件发生时的事实。必要字段复制成值，需追踪对象时使用ID与代数。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "一次拾取发生以后，库存、音效和任务系统都要知道，但它们不应各自再执行一次拾取规则。玩法层先由明确的处理者改变状态，再广播结果；脚本与可视化图组合这条流程，事件队列则决定结果在什么时候对其他系统可见。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：事件系统 → 事件与命令的区分 → 脚本系统 → 可视化脚本 → 3C → 组织与验证；“事实负载与订阅寿命”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "拾取事件写入物品ID、拾取者ID、数量和发生Tick，订阅者据此播放反馈。若只保存一个可变对象引用，排队到下一阶段时对象可能已经被复用或销毁，读到的便不是事件发生时的事实。必要字段复制成值，需追踪对象时使用ID与代数。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "现有 verify_event_queue.py 提供.NET编译运行宿主，覆盖下一轮派发、重入保护与异常隔离。新增订阅快照语义按代码逐步核对；多线程与场景卸载未由该实验覆盖。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。现有 verify_event_queue.py 提供.NET编译运行宿主，覆盖下一轮派发、重入保护与异常隔离。新增订阅快照语义按代码逐步核对；多线程与场景卸载未由该实验覆盖。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“事实负载与订阅寿命”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“玩法事件与脚本”覆盖本页主问题；客观子标题：事件系统、事件与命令的区分、脚本系统、可视化脚本。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属19_Gameplay与游戏框架；相关主题保留前置与后续专篇，新增机制落在“事实负载与订阅寿命”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“事实负载与订阅寿命”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "玩法事件与脚本"
+      ],
+      "title_mapping": {
+        "old": "玩法事件与脚本",
+        "new": "玩法事件与脚本"
+      },
+      "removed_or_renamed_headings": [],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://gameprogrammingpatterns.com/event-queue.html",
+          "locator": "排队事件、时序与负载寿命",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/events/",
+          "locator": "订阅与发布边界",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "现有 verify_event_queue.py 提供.NET编译运行宿主，覆盖下一轮派发、重入保护与异常隔离。新增订阅快照语义按代码逐步核对；多线程与场景卸载未由该实验覆盖。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "297e2d93e69d1523918c4ea20b61f820833f554bc03a211f533967ae6dfa0173"
+    },
+    {
+      "path": "知识库/20_游戏AI/群体战术信息.md",
+      "primary_question": "每个NPC都扫描全场景，成本会随群体增长，而且容易读到不该知道的真实位置。群体战术信息先按感知权限收集带时效事实，再把威胁与控制写入空间场，供导航和决策查询。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "群体与战术信息",
+        "感知预算与信息抽象",
+        "影响场更新",
+        "扩散、注入与记忆",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“扩散、注入与记忆”：传播半径与时间记忆需要分开。对规则网格，每轮把本格和邻居加权平均，权重和为1，再乘时间衰减系数，最后加入本轮允许感知的源。关闭源后场会衰减；持续源不断注入时可能达到平衡值，不能把源幅度误当最终场的峰值。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "每个NPC都扫描全场景，成本会随群体增长，而且容易读到不该知道的真实位置。群体战术信息先按感知权限收集带时效事实，再把威胁与控制写入空间场，供导航和决策查询。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：群体与战术信息 → 感知预算与信息抽象 → 影响场更新 → 扩散、注入与记忆 → 验证方法 → 实现与证据；“扩散、注入与记忆”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "传播半径与时间记忆需要分开。对规则网格，每轮把本格和邻居加权平均，权重和为1，再乘时间衰减系数，最后加入本轮允许感知的源。关闭源后场会衰减；持续源不断注入时可能达到平衡值，不能把源幅度误当最终场的峰值。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "影响场为本文双缓冲设计模型，未执行群体模拟。关闭源、边界、隔墙和更新时间列为验证输入；不沿用无关强化学习论文证明本算法。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。影响场为本文双缓冲设计模型，未执行群体模拟。关闭源、边界、隔墙和更新时间列为验证输入；不沿用无关强化学习论文证明本算法。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“扩散、注入与记忆”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“群体战术信息”覆盖本页主问题；客观子标题：群体与战术信息、感知预算与信息抽象、影响场更新、扩散、注入与记忆。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属20_游戏AI；相关主题保留前置与后续专篇，新增机制落在“扩散、注入与记忆”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“扩散、注入与记忆”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "群体战术信息"
+      ],
+      "title_mapping": {
+        "old": "群体战术信息",
+        "new": "群体战术信息"
+      },
+      "removed_or_renamed_headings": [],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://www.red3d.com/cwr/steer/gdc99/",
+          "locator": "局部群体行为与导航组合；影响场更新为本文明确参数的推导",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "影响场为本文双缓冲设计模型，未执行群体模拟。关闭源、边界、隔墙和更新时间列为验证输入；不沿用无关强化学习论文证明本算法。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "9fd03a96e2a9f2a7a91f53fdf1d56db4992a139911f1b1917569dd10ccf4dad2"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏强化学习.md",
+      "primary_question": "训练回报增加，角色可能只是学会刷一个错误指标。游戏强化学习先定义上线可用观测与合法动作，再让奖励反映真实目标。策略训练、推理部署和权威规则校验是不同阶段。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "状态、策略与价值",
+        "强化学习管线",
+        "神经网络与学习方式",
+        "混合架构",
+        "部署边界",
+        "更新目标与终止语义",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“更新目标与终止语义”：用表格Q学习可以明确一次更新的数据关系：在状态s选动作a，环境返回奖励r和下一状态s'，目标为 `r+gamma*max(Q[s',a'])`，再以学习率η向目标移动。真正终止时没有下一步回报，目标只剩r；因训练时长上限截断且状态仍可继续时，是否保留自举项由任务定义区分。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "训练回报增加，角色可能只是学会刷一个错误指标。游戏强化学习先定义上线可用观测与合法动作，再让奖励反映真实目标。策略训练、推理部署和权威规则校验是不同阶段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：状态、策略与价值 → 强化学习管线 → 神经网络与学习方式 → 混合架构 → 部署边界 → 更新目标与终止语义；“更新目标与终止语义”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "用表格Q学习可以明确一次更新的数据关系：在状态s选动作a，环境返回奖励r和下一状态s'，目标为 `r+gamma*max(Q[s',a'])`，再以学习率η向目标移动。真正终止时没有下一步回报，目标只剩r；因训练时长上限截断且状态仍可继续时，是否保留自举项由任务定义区分。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "Q学习更新为经典有限MDP机制，未训练策略或测量设备推理。目标任务的奖励与合法动作必须由项目环境验证，文中案例不构成模型效果证据。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。Q学习更新为经典有限MDP机制，未训练策略或测量设备推理。目标任务的奖励与合法动作必须由项目环境验证，文中案例不构成模型效果证据。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“更新目标与终止语义”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“游戏强化学习”覆盖本页主问题；客观子标题：状态、策略与价值、强化学习管线、神经网络与学习方式、混合架构。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属20_游戏AI；相关主题保留前置与后续专篇，新增机制落在“更新目标与终止语义”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“更新目标与终止语义”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "游戏强化学习"
+      ],
+      "title_mapping": {
+        "old": "游戏强化学习",
+        "new": "游戏强化学习"
+      },
+      "removed_or_renamed_headings": [
+        "MDP、Policy 与 Value"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "http://incompleteideas.net/book/the-book-2nd.html",
+          "locator": "第6章Q-learning及终止状态；原作者公开书页入口",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "Q学习更新为经典有限MDP机制，未训练策略或测量设备推理。目标任务的奖励与合法动作必须由项目环境验证，文中案例不构成模型效果证据。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "009b73606484672cf3deaa48bb581e12790a574a1f3c1ac6a9e3add47ad6b500"
+    },
+    {
+      "path": "知识库/20_游戏AI/MCTS.md",
+      "primary_question": "候选动作很多，写固定评分可能难以覆盖长远后果。MCTS反复选择、扩展、模拟并回传，让预算集中到有希望或尚不确定的分支。回报视角和状态复制成本决定搜索能否可靠运行。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "树搜索与探索",
+        "MCTS 的 UCT 选择",
+        "四阶段与回报视角",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“四阶段与回报视角”：固定一次迭代：从根复制状态，按UCT走到仍有未尝试动作的节点；选一个合法动作建立子节点；用模拟策略推进到终局或深度上限；把终局收益或叶估值回传到沿途节点。终局节点无需继续扩展，深度上限的估值与真实胜负要使用同一量纲。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "候选动作很多，写固定评分可能难以覆盖长远后果。MCTS反复选择、扩展、模拟并回传，让预算集中到有希望或尚不确定的分支。回报视角和状态复制成本决定搜索能否可靠运行。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：树搜索与探索 → MCTS 的 UCT 选择 → 四阶段与回报视角 → 验证方法 → 实现与证据 → 相关主题；“四阶段与回报视角”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "固定一次迭代：从根复制状态，按UCT走到仍有未尝试动作的节点；选一个合法动作建立子节点；用模拟策略推进到终局或深度上限；把终局收益或叶估值回传到沿途节点。终局节点无需继续扩展，深度上限的估值与真实胜负要使用同一量纲。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "UCT为C++选择片段，四阶段是搜索协议。已明确回报与对手视角，未运行完整游戏模拟器或预算质量曲线。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。UCT为C++选择片段，四阶段是搜索协议。已明确回报与对手视角，未运行完整游戏模拟器或预算质量曲线。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“四阶段与回报视角”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“MCTS”覆盖本页主问题；客观子标题：树搜索与探索、MCTS 的 UCT 选择、四阶段与回报视角、验证方法。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属20_游戏AI；相关主题保留前置与后续专篇，新增机制落在“四阶段与回报视角”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“四阶段与回报视角”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "MCTS"
+      ],
+      "title_mapping": {
+        "old": "MCTS",
+        "new": "MCTS"
+      },
+      "removed_or_renamed_headings": [
+        "MCTS"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://www.cs.utexas.edu/~shivaram/readings/b2hd-KocsisSzepesvari2006.html",
+          "locator": "UCT原论文书目信息与论文入口",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        },
+        {
+          "url": "https://repository.essex.ac.uk/4117/",
+          "locator": "选择、扩展、模拟、回传与变体综述",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "UCT为C++选择片段，四阶段是搜索协议。已明确回报与对手视角，未运行完整游戏模拟器或预算质量曲线。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "8486a0be5912f48ac20bb79bfbc70b2178f0bff01b1a7d22713c108ebffd6291"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI导航.md",
+      "primary_question": "游戏 AI 的移动是一条连续链路：先把世界变成可搜索的数据，再求出全局路线，最后让角色在局部范围内避障并跟随；一次 `FindPath` 只覆盖其中一环。每一层解决的问题不同。全局寻路不该处理每一帧的角色碰撞，局部避障也无法替代对死路和楼层连接的判断。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "可行走空间",
+        "可行走空间表示",
+        "路径与移动执行",
+        "A* 与启发函数",
+        "搜索实现与导航约束",
+        "NavMesh 生成",
+        "路径走廊与漏斗",
+        "转向控制与跟随",
+        "局部避障",
+        "调试与边界",
+        "到达行为",
+        "走廊版本与可执行性",
+        "验证方法",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“走廊版本与可执行性”：全局路径绑定导航数据版本。门关闭或地块重建后，原走廊可能引用失效多边形，跟随器先检查当前段仍有效，再决定局部修复或重新寻路。寻路返回部分路径时，也要把终点状态传给行为层，避免角色抵达不可达边缘后被当成任务完成。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "游戏 AI 的移动是一条连续链路：先把世界变成可搜索的数据，再求出全局路线，最后让角色在局部范围内避障并跟随；一次 `FindPath` 只覆盖其中一环。每一层解决的问题不同。全局寻路不该处理每一帧的角色碰撞，局部避障也无法替代对死路和楼层连接的判断。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：可行走空间 → 可行走空间表示 → 路径与移动执行 → A* 与启发函数 → 搜索实现与导航约束 → NavMesh 生成；“走廊版本与可执行性”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "全局路径绑定导航数据版本。门关闭或地块重建后，原走廊可能引用失效多边形，跟随器先检查当前段仍有效，再决定局部修复或重新寻路。寻路返回部分路径时，也要把终点状态传给行为层，避免角色抵达不可达边缘后被当成任务完成。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "导航生成与ORCA职责按来源核读，正文跟随为C++机制片段。尚未烘焙测试关卡、运行漏斗或群体避障；A*主算法验证归属图搜索。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。导航生成与ORCA职责按来源核读，正文跟随为C++机制片段。尚未烘焙测试关卡、运行漏斗或群体避障；A*主算法验证归属图搜索。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“走廊版本与可执行性”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“游戏AI导航”覆盖本页主问题；客观子标题：可行走空间、可行走空间表示、路径与移动执行、A* 与启发函数。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属20_游戏AI；相关主题保留前置与后续专篇，新增机制落在“走廊版本与可执行性”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“走廊版本与可执行性”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "游戏AI导航"
+      ],
+      "title_mapping": {
+        "old": "游戏AI导航",
+        "new": "游戏AI导航"
+      },
+      "removed_or_renamed_headings": [
+        "世界怎样成为搜索数据",
+        "搜索结果怎样变成移动",
+        "路径走廊与 Funnel",
+        "Steering 与跟随"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://recastnav.com/group__recast.html",
+          "locator": "体素化、侵蚀、区域与多边形生成；2026-10-22核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "该定位中的机制；不等于实际引擎/服务运行"
+        },
+        {
+          "url": "https://digestingduck.blogspot.com/2010/03/simple-stupid-funnel-algorithm.html",
+          "locator": "原作者门户漏斗算法",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        },
+        {
+          "url": "https://gamma-web.iacs.umd.edu/ORCA/",
+          "locator": "Reciprocal n-body Collision Avoidance原项目页",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "导航生成与ORCA职责按来源核读，正文跟随为C++机制片段。尚未烘焙测试关卡、运行漏斗或群体避障；A*主算法验证归属图搜索。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "fe538c259388f11d043338ce983204d9cb134dc0eeeb401a38fc9b2af1c32218"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI决策模型.md",
+      "primary_question": "决策系统把感知到的信息变成可执行意图。最基础的循环是 Sense-Think-Act：感知层更新可用事实，决策层选择目标或动作，执行层向移动、动画和技能系统发请求。三层分开后，行为逻辑不必直接读场景里的所有对象，也不必亲自修改角色位移。",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "full_text_review": true,
+      "review_sections": [
+        "反应式行为组合",
+        "FSM 与 HFSM",
+        "行为树",
+        "中止语义",
+        "Utility AI",
+        "效用的组合与迟滞",
+        "目标规划",
+        "GOAP",
+        "规划的反向搜索",
+        "HTN",
+        "模型选择",
+        "异步动作与规划冲突",
+        "验证方法",
+        "顺序节点执行",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "revisions": "新增或重写“异步动作与规划冲突”：每次动作进入时生成实例ID，移动完成回调携带这份ID。行为树中止后递增或注销当前实例，迟到回调先核对ID，再修改黑板。否则旧追击请求完成时可能把新攻击状态标成成功。退出负责释放外部请求，复位索引只是节点内部清理。",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "决策系统把感知到的信息变成可执行意图。最基础的循环是 Sense-Think-Act：感知层更新可用事实，决策层选择目标或动作，执行层向移动、动画和技能系统发请求。三层分开后，行为逻辑不必直接读场景里的所有对象，也不必亲自修改角色位移。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "全文复读；主要章节：反应式行为组合 → FSM 与 HFSM → 行为树 → 中止语义 → Utility AI → 效用的组合与迟滞；“异步动作与规划冲突”补足数据推进关系。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "每次动作进入时生成实例ID，移动完成回调携带这份ID。行为树中止后递增或注销当前实例，迟到回调先核对ID，再修改黑板。否则旧追击请求完成时可能把新攻击状态标成成功。退出负责释放外部请求，复位索引只是节点内部清理。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "行为树、效用和GOAP代码均为机制片段。已复读取消、代数、回归冲突和权重语义；未运行完整NPC框架、异步动作或规划搜索实验。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。行为树、效用和GOAP代码均为机制片段。已复读取消、代数、回归冲突和权重语义；未运行完整NPC框架、异步动作或规划搜索实验。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读首段、机制、代码、限制与来源；“异步动作与规划冲突”以具体数据推进因果，术语按中文语义与代码标识符分别表达。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“游戏AI决策模型”覆盖本页主问题；客观子标题：反应式行为组合、FSM 与 HFSM、行为树、中止语义。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "主归属20_游戏AI；相关主题保留前置与后续专篇，新增机制落在“异步动作与规划冲突”。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“异步动作与规划冲突”使用数值关系、时间顺序或伪代码解释；没有新增结果图片，未声称图像或捕获证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "游戏AI决策模型"
+      ],
+      "title_mapping": {
+        "old": "游戏AI决策模型",
+        "new": "游戏AI决策模型"
+      },
+      "removed_or_renamed_headings": [
+        "反应式行为怎样组合",
+        "Behavior Tree",
+        "目标怎样分解成计划",
+        "怎么选",
+        "Sequence 节点的 Tick"
+      ],
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-behavior-tree-node-reference-decorators",
+          "locator": "Observer Aborts的Self与Lower Priority语义；具体实现随引擎版本核对",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        },
+        {
+          "url": "https://www.gamedevs.org/uploads/three-states-plan-ai-of-fear.pdf",
+          "locator": "GOAP动作前提与效果原始实践",
+          "checked_on": null,
+          "verdict": "原始资料入口",
+          "scope": "已提供精确文档或作者资料入口；本轮未取得完整正文核读，正文按限定范围与独立推导表达"
+        }
+      ],
+      "verification": {
+        "scope": "行为树、效用和GOAP代码均为机制片段。已复读取消、代数、回归冲突和权重语义；未运行完整NPC框架、异步动作或规划搜索实验。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "final_body_sha256": "dcc3c0cecb4e141053ad5f0f9408d0aaabe96a59ecd1a7b001b14da312200de0"
+    }
+  ],
+  "runtime": "3.11.9",
+  "test_result": "17项通过；先运行占位实现观察17项失败，再实现并通过",
+  "new_assets": []
+}

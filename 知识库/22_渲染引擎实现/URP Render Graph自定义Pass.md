@@ -4,7 +4,7 @@
 
 ## 适用环境
 
-接口范围为 Unity 6.0 / URP 17 的 Render Graph 路径，核对日期 2026-10-04。以下代码为自定义 `ScriptableRenderPass` 内的方法片段，使用官方记录模式；类壳、材质资产和 feature 入队代码由项目提供。完整Unity工程编译与运行为UNVERIFIED。
+接口范围为 Unity 6.0 / URP 17 的 Render Graph 路径，核对日期 2026-10-22。以下代码为自定义 `ScriptableRenderPass` 内的方法片段，使用官方记录模式；类壳、材质资产和 feature 入队代码由项目提供。完整Unity工程编译与运行为UNVERIFIED。
 
 ## 记录、执行与输出交接
 
@@ -55,6 +55,16 @@ public override void RecordRenderGraph(RenderGraph graph, ContextContainer frame
 `PassData` 包含 `TextureHandle source` 与 `Material material`，`m_material` 是该通道已创建并持有的材质字段。方法省略命名空间，主要来自 Rendering、RenderGraphModule 与 Universal。材质需兼容 URP Blitter 和 XR 采样路径。完整覆盖才允许不清除目标，片元丢弃或局部 viewport 时应处理未写区域。
 
 颜色格式与样本数继承输入，MSAA 输入是否可以直接采样需按资源状态和算法确认。回调中的缩放向量示例适用于完整区域；RTHandle 缩放、XR 和动态尺寸用官方 Blitter 约定核对。
+
+## 资源描述与最小复现条件
+
+先在单相机、非XR、关闭MSAA和动态分辨率的Unity 6000.0 / URP17项目中接入。选择`BeforeRenderingPostProcessing`作为测试事件，给通道声明颜色需求，确保`isActiveTargetBackBuffer`为false；若仍为true，检查Renderer的中间纹理配置。返回分支只是防止错误采样，它也意味着本帧没有运行效果，诊断日志必须能区分这两种情况。
+
+`TextureDesc`复制输入的尺寸和格式，但普通`Texture2D`采样示例只适用于单采样源。开启MSAA时先确认输入已经resolve，再建立单采样目标；直接把多采样附件当作普通采样纹理会违反数据类型约定。XR增加数组切片，动态分辨率增加有效viewport与分配尺寸的差异，扩展时按所用包的Blitter采样宏与缩放规则分别验证。
+
+图内句柄表示这一帧的逻辑资源。相机颜色原先指向A，通道读取A、完整写B，然后把`cameraColor`设为B，后续消费者才沿B建立依赖。A与B是两份资源，输出交接不要求把B再复制回A。输出交接方式在[Blit文档的Avoid blitting back节](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-blit.html#avoid-blitting-back)有明确示例；2026-10-22核读。
+
+验收时先用恒等材质让B等于A，再去掉`cameraColor`交接观察剔除，最后恢复交接并加入效果。这样分别验证采样、图依赖和材质算法，而不会把三类问题混在一张黑图中。
 
 ## 常见错误
 

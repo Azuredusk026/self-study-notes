@@ -1,16 +1,18 @@
 # Unreal自定义Mesh Pass
 
-在 Unreal 中加一种渲染效果，选择面很宽：改材质、加后处理、扩 GBuffer、加 Shading Model、加独立 Pass。选错层次的代价很高——做得太浅，效果无法参与光照与阴影；做得太深，每次引擎升级都要重新合并改动。
+一个效果需要筛选特定网格、选择着色器并写入独立附件时，Mesh Pass把这些规则集中成一组绘制。文章沿组件、网格描述、处理器和绘制命令展开，说明哪些状态能缓存、哪些数据必须在本帧更新。
 
-判断依据是效果需要进入哪些阶段、需要读写哪些数据，而不是“改底层更专业”。理解这条决策需要先看清网格数据如何走到 GPU。
+## 版本与证据范围
 
-## 从组件到绘制命令
+接口模型依据UE5.4官方Mesh Drawing Pipeline与RDG文档，2026-10-22核读。下文代码为机制片段，具体处理器签名、Vertex Factory字段与渲染器调度位置必须在项目相同版本源码中核对。完整引擎编译、运行、GPU捕获及性能为UNVERIFIED；不把示意代码作为可直接应用的引擎补丁。
 
-Unreal 的网格绘制是一条逐级降维的转换链，每一级都在剥离状态、逼近硬件命令：
+## 组件与绘制命令
+
+组件状态经过逐层转换，形成能交给RHI的绘制描述：
 
 ```text
 UPrimitiveComponent        游戏线程，可变状态
-  → FPrimitiveSceneProxy   渲染线程镜像
+  → FPrimitiveSceneProxy   渲染侧表示
   → FMeshBatch             解耦 Pass 与 Proxy 的中间描述
   → FMeshDrawCommand       无状态，可排序、缓存、合并
   → RHICommandList         图形 API 命令
@@ -22,7 +24,7 @@ Proxy 是组件在渲染线程的镜像。游戏线程随时改变组件属性�
 
 它通过两个回调向渲染器提交几何：`DrawStaticElements` 用于静态、可长期缓存的网格；`GetDynamicMeshElements` 用于每帧重新收集的动态网格。
 
-场景渲染器先做可见性剔除，再调用 `GatherDynamicMeshElements` 遍历可见 Proxy。各 Proxy 子类在 `GetDynamicMeshElements` 中构造 `FMeshBatch` 并投递给 `FMeshElementCollector`。Collector 由 `FSceneRenderer` 创建，两者一一对应。
+场景渲染器先做可见性剔除，再调用 `GatherDynamicMeshElements` 遍历可见 Proxy。各 Proxy 子类在 `GetDynamicMeshElements` 中构造 `FMeshBatch` 并投递给 `FMeshElementCollector`。收集器保存这次收集所需的临时网格，具体分配和并行任务归属以项目源码为准。
 
 ### FMeshBatch
 
@@ -44,9 +46,9 @@ Pass 类型在 `MeshPassProcessor.h` 的 `EMeshPass` 枚举中集中声明。枚
 
 MeshDrawCommand 使用对应通道的排序键组织绘制。具体位字段与优先级随通道和引擎版本变化，应核对 `FMeshDrawCommandSortKey` 和处理器生成逻辑。不能从一个通道推定全部绘制都按同一字段顺序排序。
 
-高位字段决定粗粒度顺序，低位字段让状态相同的命令彼此相邻，从而被合并成更少的绘制。半透明 Pass 的排序键需要把深度编码进去，因为混合结果依赖顺序。
+高位字段决定粗粒度顺序，低位字段可让状态相近的命令彼此相邻。实际合并还要求Shader绑定、绘制参数和实例化条件兼容；排在一起只是机会，不保证合并。半透明 Pass 的排序键需要把深度编码进去，因为混合结果依赖顺序。
 
-排序键设计直接影响合批效率。相同材质的物体在场景中散布时，按状态排序能显著减少 SetPass；但对半透明而言，正确顺序优先于合批。
+排序键设计直接影响合批效率。相同材质的物体在场景中散布时，按状态排序可以减少状态切换，收益由实际命令序列确认；但对半透明而言，正确顺序优先于合批。
 
 ## Vertex Factory
 
@@ -66,84 +68,40 @@ Vertex Factory 回答一个问题：顶点数据以什么布局存在，Shader �
 
 不透明且没有位移的深度绘制可以使用仅位置流。Masked 材质还要 UV 和 Alpha 测试，世界位置偏移也需要对应输入，处理器应按材质与 Vertex Factory 能力选择精简流。这是引擎层面对深度 Pass 的针对性优化。
 
-### 顶点元素顺序必须与 Shader 对应
+### 顶点属性契约
 
-`GetVertexElements` 按属性槽位依次添加顶点元素，`FLocalVertexFactory` 的约定是位置占 ATTRIBUTE0、切线基占 ATTRIBUTE1 与 2、顶点色占 ATTRIBUTE3：
+顶点声明把缓冲中的字节解释为位置、法线和UV。每个元素必须同时给出缓冲流、字节偏移、步长、格式与Shader属性槽位。`FLocalVertexFactory`的具体槽位由该版本的`.ush`输入与C++声明共同约定；自定义工厂沿同一契约建立自己的输入。
 
-```cpp
-if (Data.PositionComponent.VertexBuffer != nullptr)
-{
-    Elements.Add(AccessStreamComponent(Data.PositionComponent, 0, InOutStreams));
-}
-for (int32 AxisIndex = 0; AxisIndex < 2; AxisIndex++)
-{
-    if (Data.TangentBasisComponents[AxisIndex].VertexBuffer != nullptr)
-    {
-        Elements.Add(AccessStreamComponent(
-            Data.TangentBasisComponents[AxisIndex],
-            TangentBasisAttributes[AxisIndex], InOutStreams));
-    }
-}
-if (Data.ColorComponent.VertexBuffer)
-{
-    Elements.Add(AccessStreamComponent(Data.ColorComponent, 3, InOutStreams));
-    OutColorStreamIndex = Elements.Last().StreamIndex;
-}
-InitDeclaration(Elements);
+下面是API中立布局示例，位置和法线为三个32位浮点数，UV为两个32位浮点数，总步长32字节：
+
+```text
+stream 0, stride 32 bytes
+position: offset 0,  float3, attribute 0
+normal:   offset 12, float3, attribute 1
+uv:       offset 24, float2, attribute 2
 ```
 
-这里的顺序必须与 `.ush` 中输入结构的语义槽位一一对应。顺序错位不会报编译错误，表现为顶点属性被解释成错误的数据——常见现象是模型撕裂、UV 错乱或顶点色变成法线数据。用 RenderDoc 查看 Input Assembler 的顶点布局是最直接的排查方式。
+这个示例描述一份自定义数据，不声称它就是`FLocalVertexFactory`的实际布局。若把法线偏移写成16，Shader会把法线后两项和UV第一项拼成一个向量；资源绑定本身仍合法，模型却会出现错误光照。用纯轴向法线和规则UV网格输入，检查顶点输入及顶点Shader输出，能够直接定位字节解释错误。
 
-沿用引擎颜色流时使用对应的 `VET_Color` 与 Shader 解码约定。自定义格式也能传颜色，但归一化与通道顺序必须匹配，跨 API 用纯红、绿、蓝样本核对。
+### 初始化与引用寿命
 
-### 初始化顺序
+Vertex Factory创建声明之前，缓冲和数据描述必须已经建立。初始化读取尚未填充的描述，会生成空绑定；缓存绘制命令引用的缓冲如果提前释放，则会在后续帧使用失效资源。建立、更新、注销和释放都要落在目标版本允许的渲染线程或命令入口。
 
-Proxy 在 `CreateRenderThreadResources` 中填好 `FDataType` 后，必须先 `SetData` 再 `InitResource`：
-
-```cpp
-FXXXVertexFactory::FDataType Data;
-InitVertexFactoryComponents(/* ... */, Data /* ... */);
-VertexFactory.SetData(RHICmdList, Data);  // 必须在前
-VertexFactory.InitResource(RHICmdList);
-```
-
-`InitRHI` 会读取 Data 的内容来填充 Uniform Buffer 并创建顶点声明，顺序颠倒会得到空绑定。
+更新常量缓冲中的内容可以保留原绑定；替换缓冲对象或材质Shader会改变缓存命令引用的对象，必须触发相应缓存失效。判断“只改一个参数”是否安全，要看参数改变的是已绑定内存的值，还是绑定对象本身。
 
 ### Manual Vertex Fetch
 
-平台支持时，Vertex Factory 会定义 `MANUAL_VERTEX_FETCH`，顶点数据通过 SRV 由 Shader 主动读取，而非经由固定的 Input Assembler 阶段。这对 GPU-Driven 路径和需要随机访问顶点的场景是必要的。
+平台支持时，Vertex Factory 会定义 `MANUAL_VERTEX_FETCH`，顶点数据通过 SRV 由 Shader 主动读取，而非经由固定的 Input Assembler 阶段。这能支持GPU根据索引随机读取顶点；是否采用它由Vertex Factory和平台路径决定。
 
 由此产生了两条数据通路，扩展 Vertex Factory 时两条都要覆盖，否则会出现“在部分平台正常、另一些平台数据全零”的现象。
 
-## 扩展 GBuffer
+## 材质数据与附件边界
 
-需要为自定义光照携带额外的逐像素数据时，扩展 GBuffer 是直接的做法。它同时涉及 C++ 的布局声明与 HLSL 的编解码，两侧必须严格一致。
+独立Mesh Pass可以把选中对象的遮罩写入单独纹理，后续全屏通道再消费它。这种需求只涉及本通道的输出格式。若数据需要参与已有延迟光照，就要检查GBuffer编解码和所有消费者，问题的维护范围会扩大到材质系统。
 
-关键改动集中在三处：`GBufferInfo.h/.cpp` 声明新的 Slot 与格式，`ShaderGenerationUtil.cpp` 添加对应的写入配置，以及 `.ush` 中的打包与解包函数。任一侧遗漏都会让数据看似写入却读不出来——用 RenderDoc 直接查看该 Render Target 的内容是判断卡在哪一侧的最快方法。
+以1920×1080、单采样RGBA8附件为例，逻辑存储量为`1920×1080×4 = 8,294,400`字节，约7.91 MiB。实际分配还受对齐、压缩、分块与别名影响；读写带宽也不能仅用这份容量代替。多增加一个附件，会影响写入、后续读取与可能的片上驻留，需结合目标后端捕获验证。
 
-代价是实打实的：每增加一张 RGBA8 的全屏 Target，1080p 下约增加 8 MB 显存与相应的每帧读写带宽。移动端尤其敏感。
-
-### Shading Model 数量上限
-
-Unreal 默认的 Shading Model 上限是 16。这个数字不是随意规定的——ShadingModelID 存储在 GBufferB 的 Alpha 通道低 4 位，$2^4=16$ 就是硬上限。
-
-下面列出位宽扩展涉及的六类位置，属于 UE5.4 传统 GBuffer 路径的调查清单，完整补丁还要覆盖材质编译、其他编码路径及消费者：
-
-| 位置 | 改动 |
-|---|---|
-| `GBufferInfo.cpp` | GBufferB 格式由 RGBA8 改为 RGBA16 |
-| `GBufferInfo.h` | 新增 8 位的 `EGBufferCompression` 类型 |
-| `ShaderGenerationUtil.cpp` | 为新压缩类型添加配置项 |
-| `GBufferInfo.cpp` | ShadingModelID 占 8 位，`SelectiveOutputMask` 起始位由 4 改为 8 |
-| `EngineTypes.h` | 数量上限警告由 16 改为 256 |
-| `DeferredShadingCommon.ush` | 掩码由 `0xF` 改为 `0xFF`，编解码由 `0xFF` 改为 `0xFFFF`，BasePass 中的移位由 4 改为 8 |
-
-只改 C++ 侧的典型症状是：引擎里能选到新 Shading Model，但 ID 读出来不对、分支不生效——因为编解码仍按 4 位掩码截断。
-
-这条改动链清楚地显示了 GBuffer 布局的牵连范围：一个位宽变更会波及格式、压缩配置、相邻字段偏移、掩码和移位五类代码。
-
-> [!warning] 待补充
-> 上述改动基于 Unreal Engine 5.4。GBuffer 布局与 `GBufferInfo` 的组织在 UE5 各版本间有过调整，Substrate 材质系统启用后的路径更是完全不同。移植到其他版本前需要核对对应版本的源码。
+Shading Model ID的位宽属于具体材质路径的编码约定。扩展前逐项查明写入格式、字段掩码、相邻位偏移、解码分支和平台消费者，再用ID往返测试确认。UE5不同版本、传统GBuffer与Substrate使用的表示存在差异；仅修改枚举数量不能证明新ID可以正确传输。布局的通用机制见[[13_渲染架构/GBuffer布局]]。
 
 ## 自定义 Mesh Pass
 
@@ -157,7 +115,7 @@ Unreal 默认的 Shading Model 上限是 16。这个数字不是随意规定的�
 
 新 Pass 的资源应当通过 Render Dependency Graph 声明。RDG 依据声明的读写关系自动插入 Barrier、管理 Transient 资源、剔除无人消费的 Pass。
 
-手工管理资源生命周期会与图系统冲突：手动创建的资源不参与别名复用，手动插入的 Barrier 可能与 RDG 生成的重复或矛盾。修改引擎渲染代码前，先确认目标代码路径是否仍走 RDG。
+跨帧资源可以由外部所有者创建，再通过RDG的注册入口导入；图在声明的使用范围内追踪访问和转换，外部所有者负责图外寿命。导入资源通常不能像图内临时资源一样自由缩短分配寿命。真正需要避免的是未向图声明的读写，以及绕过图状态追踪的手工屏障：前者会让依赖和剔除失真，后者可能与图生成的转换冲突。接入通道时，先确认资源的所有者、导入方式与最终访问状态。
 
 没有可观察输出或外部副作用的通道可以被 RDG 剔除。记录代码已经运行，执行回调却可能被省略。捕获中找不到通道时，检查后续消费者、外部资源及导出声明。
 
@@ -165,35 +123,22 @@ Unreal 默认的 Shading Model 上限是 16。这个数字不是随意规定的�
 
 | 层次 | 能参与 | 升级成本 | 适用 |
 |---|---|---|---|
-| 材质 / Unlit | 自身着色 | 无 | 原型、局部风格化 |
+| 材质 / Unlit | 自身着色 | 受材质接口变化影响 | 原型、局部风格化 |
 | Post Process Material | 屏幕空间后处理 | 低 | 描边、屏幕效果 |
 | Custom Depth / Stencil | 对象分类与遮罩 | 低 | 选中高亮、遮挡显示 |
 | 扩展 GBuffer | 延迟光照的额外数据 | 中 | 自定义光照参数 |
 | 自定义 Shading Model | 完整光照管线 | 高 | 皮肤、卡通等专用光照 |
 | 自定义 Mesh Pass | 独立绘制批次 | 高 | 专用 Buffer、特殊状态 |
 
-越往下能力越强，与引擎版本的耦合也越深。自定义 Shading Model 与 Mesh Pass 都需要修改引擎源码，每次升级都要重新合并；材质与后处理层的方案则可以完全留在项目内。
+各层修改的是不同契约。新增内置`EMeshPass`并接入核心调度涉及引擎源码；通过现有动态绘制入口组织通道，修改范围主要落在提交入口，能力与缓存方式以该版本接口为准。材质与后处理通常由项目资产维护。选择时先列出所需输入、输出附件和绘制对象，再确定需要触及哪一层。
 
 需要修改光照模型时，可由自定义 Shading Model 处理主体着色，用 GBuffer 携带附加参数。描边等屏幕效果可以单独放在后处理。选择依据是各部分需要的数据与执行阶段。
 
-### 延迟路径对风格化渲染的约束
+### 材质与通道的职责
 
-风格化渲染与延迟渲染在设计哲学上存在冲突，这个冲突值得单独说明，因为它决定了架构选型。
+屏幕描边读取深度和法线时，后处理入口已经具备主要输入。需要独立对象遮罩时，先建立对象绘制通道，再把遮罩交给全屏合成。若效果改变每个表面的光照响应，则要检查材质与光照阶段是否能传递所需参数。
 
-卡通渲染本质是各类技巧的堆叠：有的项目只需指定亮暗两色，有的用一维 Ramp 控制过渡，有的用二维 Ramp 让不同部位有不同过渡曲线，再加上描边、面部 SDF、鼻尖高光、各类头发高光与边缘光。
-
-延迟渲染要求所有材质把数据写进统一的 GBuffer，再由统一的光照阶段消费。要让一个固定的 GBuffer 同时支持这些做法，它会迅速膨胀到无法承受——而且仍然无法覆盖尚未出现的新技巧。
-
-一种解法是按光源类型拆分职责：
-
-- **主光的着色交给材质**，走前向路径。主光决定大明暗，是风格差异最集中的地方，交给材质图意味着项目可以自由决定着色方式，不必把代码写死在引擎里；
-- **多光源仍走延迟**。附加光的计算不会有太多花样，且前向路径下多光源代价高，延迟更合适。
-
-关键在于让材质能够访问光照相关数据。做法是在 Light Pass 之后插入一个专用 Pass，把阴影等信息传递进去，材质图便可读取这些数据完成主光着色。
-
-这与“在自发光里做卡渲”的区别正在于此：后者完全脱离光照管线，拿不到阴影与多光源；该组合路径是否保留这些能力，取决于阴影、多光源与历史资源的接入实现。
-
-扩展层次按输入、输出和执行时机选择，各部分落在能够表达其需求的接口上。
+风格化主光与附加光可以采用不同模型，但这是一项项目管线设计：必须交代主光阴影的生产者、材质读取方式、附加光累积和曝光阶段。延迟路径是否合适取决于所需参数能否被当前布局表达，以及修改后的带宽和维护成本；风格化本身不决定必须使用前向或延迟。
 
 ## 引擎改动的工程管理
 
@@ -203,6 +148,27 @@ Unreal 默认的 Shading Model 上限是 16。这个数字不是随意规定的�
 - 记录改动清单，标明每处改动的目的与对应的引擎版本；
 - 新增 Shading Model 时同步检查所有分支该 ID 的代码路径，遗漏处会走到默认分支；
 - 开启 `r.ShaderDevelopmentMode=1` 便于 Shader 调试，但不要带进发布配置。
+
+## 处理器的可验收路径
+
+以“只画不透明选中对象到遮罩”为例，处理器先读取项目持有的选择标志，再检查材质混合模式。通过筛选的MeshBatch才进入Shader选择，Shader再与该批次的Vertex Factory配对。以下伪代码展开决策；`BuildMeshDrawCommands`对应UE处理器接口，参数细节由目标版本提供。
+
+```text
+AddMeshBatch(batch, primitive):
+    if primitive.selectionFlag == false: return
+    if batch.material.blendMode != Opaque: return
+    shaderPair = permutation[batch.vertexFactoryType, MaskPass]
+    if shaderPair missing: report material/factory/platform; return
+    state = {depthTest: sceneDepthConvention, depthWrite: false,
+             blend: replace, rasterCull: materialCullMode}
+    bindings = {view: currentView, geometry: batch.buffers,
+                primitive: primitive.uniforms}
+    BuildMeshDrawCommands(batch, shaderPair, state, bindings)
+```
+
+通道绑定的遮罩必须先清零，否则未覆盖像素可能保留其他内容。使用场景深度测试得到可见部分遮罩；要显示被遮挡对象，则另定义深度规则。这个选择改变的是效果含义，不能仅靠关闭深度测试修复所有“缺失”。
+
+缓存命令还要求`selectionFlag`变化能触发重建，或把选择信息放在可更新的实例数据并在Shader中处理。前者增加CPU重建，后者可能提交最终不产生有效像素的网格。固定同一选中集合比较处理器输入数、命令数与实际Draw，才能量化两者成本。
 
 ## 验证方法
 
@@ -226,7 +192,6 @@ Unreal 默认的 Shading Model 上限是 16。这个数字不是随意规定的�
 
 ## 参考资料
 
-- Epic Games, *Mesh Drawing Pipeline* documentation.
-- Unreal Engine source, `MeshPassProcessor.h`, `MeshBatch.h`, `LocalVertexFactory.cpp`, `GBufferInfo.cpp`, `DeferredShadingCommon.ush`.
-- Epic Games, *Render Dependency Graph* documentation.
-- 向往, Unreal Engine 渲染系统源码剖析系列。
+- Epic Games，[UE5.4 Mesh Drawing Pipeline](https://dev.epicgames.com/documentation/en-us/unreal-engine/mesh-drawing-pipeline-in-unreal-engine?application_version=5.4)，Cached and Dynamic Mesh Batches、FMeshPassProcessor、Shader Bindings、Cached Mesh Draw Commands；2026-10-22核读。支持缓存与处理器职责，具体源码签名另验。
+- Epic Games，[UE5.4 Render Dependency Graph](https://dev.epicgames.com/documentation/en-us/unreal-engine/render-dependency-graph-in-unreal-engine?application_version=5.4)，Shader Parameter Structs、Resource Lifetimes和Raster Passes；2026-10-22核读。
+- 源码复现入口：项目checkout的`MeshPassProcessor.h`、`MeshBatch.h`、所用Vertex Factory及目标PassProcessor。本文未对一个完整引擎checkout执行补丁与编译。

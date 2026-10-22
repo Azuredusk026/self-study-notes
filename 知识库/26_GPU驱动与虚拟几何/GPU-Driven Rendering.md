@@ -6,177 +6,192 @@ GPU-Driven Rendering 把可见性、LOD、实例列表和绘制参数尽量留�
 
 - [[26_GPU驱动与虚拟几何/Nanite几何选择与流送]]：Nanite 将高密度几何预处理为层级与分页数据，运行时按屏幕误差选择几何并流送细节。
 
-## CPU-Driven 的扩展瓶颈
+## CPU提交与批次规模
 
 传统流程由 CPU：
 
-1. 遍历 Scene Object；
-2. 做 Frustum/Occlusion/LOD；
+1. 遍历场景对象；
+2. 做视锥和遮挡剔除，选择LOD；
 3. 按材质和深度排序；
 4. 设置资源与状态；
-5. 发出 Draw Call。
+5. 发出绘制命令。
 
-对象数量很大时，即使每个 Mesh 很简单，Render Thread、Driver 和状态管理也可能成为瓶颈。合批能减少 Draw，但会降低剔除粒度并增加资源组织复杂度。
+对象数量很大时，即使每个网格都很简单，渲染线程、驱动和状态管理也可能成为瓶颈。合批能减少绘制命令，但若多个对象共用一个可见性判断，就会降低剔除粒度；保持独立剔除又需要更细致的实例数据组织。
 
-GPU-Driven 让 CPU 主要提交场景 Buffer、相机和少量 Dispatch/Indirect Draw。GPU 并行生成本帧可见工作集。
+GPU驱动流程让CPU提交场景缓冲、相机和少量计算调度与间接绘制。GPU并行生成本帧可见工作集，后续绘制直接读取这个结果。省下的是逐对象提交和结果读回，剔除、压紧与同步则成为GPU上的新增工作。
 
 ## 场景数据
 
-常见 Buffer：
+场景缓冲保存：
 
-- Instance Transform、Previous Transform、Bounds；
-- Mesh/LOD/Material ID；
-- Vertex/Index 或 Cluster Data；
-- Visibility/LOD History；
-- Draw/Dispatch Argument；
-- Visible Instance/Cluster List。
+- 实例的当前变换、上一帧变换和包围体；
+- 网格、LOD和材质标识；
+- 顶点、索引或几何簇数据；
+- 可见性与LOD历史；
+- 绘制和计算调度参数；
+- 可见实例或几何簇列表。
 
-数据应使用稳定 ID。GPU Buffer 的 Slot 不应直接等同 Gameplay 对象地址，删除和新增需要 Free List、Generation 或其他生命周期机制。
+每个场景条目使用稳定标识，缓冲槽位由空闲列表和代数管理。玩法对象地址属于CPU地址空间，不能直接承担GPU索引和跨帧身份的职责。
 
-### 引擎中的场景 Buffer
+### 场景更新与剔除批次
 
-Unreal 的 GPUScene 是这类结构的具体实现。它把参与 GPUScene 路径的图元与实例数据维护在 GPU 侧的持久 Buffer 中，每帧只上传变化的部分——增量更新而非全量重传，这是场景规模能够扩展的前提。
+持久场景缓冲允许上传变化的实例区间，避免静止对象每帧重复传输。删除实例时先标记失效，待所有在途帧不再引用该槽位后才复用；否则上一帧的可见索引可能突然指向新对象。更新频繁的世界仍可能产生大量上传，增量更新的收益取决于变化比例和区间碎片。
 
-与之配套的是延迟剔除（Deferred Culling）。流程是先注册、后收集、再统一剔除：
+多个通道需要相同的实例数据时，可以先收集剔除请求，再按兼容的视图、几何布局与输出格式集中执行。视图不同会改变视锥与屏幕误差，不能只因为使用同一个Shader就共享可见结果。Unreal GPUScene是引擎侧场景数据入口之一，具体缓冲和延迟剔除回调属于版本源码，本页仅解释这类组织方式的通用契约。
 
-1. 帧初始化时创建剔除上下文并注册回调；
-2. 各个 Pass 构建渲染命令时，把收集到的动态网格加入待剔除批次；
-3. 收集完成后触发回调，更新 Compute Shader 所需的 Buffer；
-4. 执行剔除 Pass，输出可见实例列表与 Indirect 绘制参数。
+## 可见工作集
 
-“先收集后剔除”正是“延迟”一词的含义。这样做的好处是把兼容的剔除工作集中成批次，减少 GPU 的启动开销与同步点。
+### 视锥与屏幕误差
 
-需要区分两个同名概念：这里的实例剔除作用于普通图元的实例列表，与 Nanite 内部的 Cluster 级剔除是不同层级的机制，两者可以并存。
+计算着色器先测试包围球或轴对齐包围盒与视锥是否相交，再根据距离、投影尺寸或屏幕空间误差选择LOD。
 
-## 哪些实例进入工作集
+LOD选择通常为进入和退出设置不同阈值，形成滞回区间，避免对象在边界附近来回切换。若精细LOD尚未驻留，就选择已经可用的粗层并发出请求，让本帧绘制继续执行。
 
-### Frustum 与 Distance/Screen Error
+### 背面锥剔除
 
-Compute Culling 先用 Sphere/AABB 对 View Frustum。再根据距离、Projected Size 或 Screen-space Error 选择 LOD。
+一簇三角形可以预计算法线锥（Normal Cone），用锥轴和最大偏转角包住各面的法线。如果从相机方向判断，整个锥内的法线都背向视线，就能在光栅化前拒绝这簇三角形。透视视线在簇内会变化，保守测试还需要包围体和相机距离。
 
-LOD 选择应有 Hysteresis，避免阈值附近来回切换。若精细 LOD 尚未流送，可回退到可用父级，不应等待 GPU/IO 同步。
+双面材质需要两侧可见，负缩放会翻转绕序，变形可能改变预计算法线范围。构建工具需要记录剔除适用条件，运行时根据实例变换和变形范围决定是否启用；条件不满足时保留几何。
 
-### Backface Cone Culling
+### Hi-Z遮挡剔除
 
-一个 Cluster 可预计算 Normal Cone：Axis 和最大偏转角。如果从相机看，整个 Cone 都背向视线，就能在光栅化前剔除整个 Cluster。
+深度金字塔的每级保存一块区域的保守深度。把包围体投影到屏幕后，选择对应的层级，并比较对象最近可能深度与所覆盖区域的Hi-Z值。
 
-双面材质、负缩放、变形和非流形几何会让 Cone 假设失效。工具应按资产标记是否允许此剔除。
+设正向深度近端为0、远端为1。一个投影矩形里的所有像素都比对象最近深度更近，才能确信对象被完全遮住；因此每级保存子区域的最大深度，只有`objectNearest > tileMax + epsilon`才拒绝。反向Z近端为1、远端为0，对应保存最小深度，并检查`objectNearest < tileMin - epsilon`。
 
-### Hi-Z Occlusion
+例如正向深度区域为`[0.2,0.7]`，对象最近深度0.6不能拒绝，因为深度0.7处仍可能看见它；最近深度0.9才满足完整遮挡。区域含背景1时，保守最大值为1，阻止误剔除。反向Z用背景0和最小值得到同样结论。`epsilon`按深度精度与投影误差设置，比较时偏向保留。
 
-Depth Pyramid 每级保存一块区域的保守深度。把 Bounds 投影到屏幕后，选择覆盖范围对应的 Mip，并比较最近可能深度与 Hi-Z。
+测试矩形要覆盖包围体投影的全部范围。选择某一级后，枚举或保守覆盖所有相交texel并归约，不能只采中心。包围体穿过近裁剪面时，直接投影角点可能产生无界或翻转矩形，应保留可见或先进行保守裁剪。
 
-Reversed-Z 下 Pyramid 取 Min/Max 的方向与普通 Depth 不同。必须按深度约定推导，不能照抄比较符号。
+上一帧Hi-Z保存的是历史视图。相机移动、遮挡物移走或对象新出现时，历史遮挡关系可能已经失效。可采用以下保守措施：
 
-使用上一帧 Hi-Z 没有当前帧完整深度，快速相机移动或新出现遮挡会产生误判。保守方案：
-
-- 扩张 Bounds；
+- 按运动范围扩张包围体；
 - 仅剔除有历史稳定遮挡的对象；
 - 先绘制上一帧可见集，生成当前深度；
 - 再测试不确定对象并补绘；
-- 对新实例和相机 Cut 强制可见。
+- 对新实例和相机切换强制可见。
 
-Occlusion False Positive 会让物体消失，不能以错误剔除换性能。
+误判为遮挡会让物体从画面中消失。验证首先检查这种错误拒绝，再统计省下的工作量。
 
 Hi-Z 也常称 HZB（Hierarchical Z-Buffer）。两者都指深度的分层降采样结构；归约使用最大值还是最小值取决于正向或反向 Z 以及遮挡测试定义。
 
-## 可见列表怎样变成绘制
+## 可见列表与绘制参数
 
-### Compaction 与 Prefix Sum
+### 列表压紧与前缀和
 
-每个线程判断可见后，需要把结果紧凑写入 Visible List。可以使用 Atomic Append，简单但高密度时有竞争；也可先写 0/1 Flag，通过 Prefix Sum 得到输出 Offset，再 Scatter。
+每个线程判断可见后，需要把结果紧凑写入可见列表。原子追加通过共享计数器取得槽位，流程简单，但大量线程同时追加时会争用计数器。另一种方法先写0/1标记，再计算前缀和得到输出偏移，最后按偏移散写。
 
-Prefix Sum 通常分组内 Scan、Group Sum Scan、最终 Offset Add。它是 GPU Culling、粒子系统和 Cluster Pipeline 的基础并行原语。
+例如可见标记为`[1,0,1,1]`，排他前缀和为`[0,1,1,2]`。仅在标记为1的位置写入，因此实例0、2、3分别进入输出槽0、1、2，总数等于最后的前缀值加最后标记。分组实现先求组内前缀和与组总数，再对组总数扫描，最后把组偏移加到组内偏移。
 
-### Indirect Draw
+原子追加不保证跨工作组的顺序，前缀扫描可保持输入顺序。后续需要透明排序时，稳定压紧仍不能替代按视图深度排序；它只避免压紧自己引入额外乱序。
 
-GPU 把可见数量和参数写入 Indirect Argument Buffer，随后执行 `DrawIndexedIndirect`、`ExecuteIndirect` 或对应 API。CPU 不读取数量，避免同步。
+### 间接绘制
 
-若每个 Mesh/Material 仍要一条 Indirect Draw，提交数量只是从对象级降到批次级。Multi-draw、Bindless Resource、Mesh Shader 或统一 Visibility Pass 可以继续减少批次。
+GPU把可见数量和绘制参数写入间接参数缓冲，随后执行`DrawIndexedIndirect`、`ExecuteIndirect`或对应API。命令处理阶段直接读取缓冲中的参数，CPU因此无需为获得可见数量而等待GPU。
 
-Indirect Argument 从 UAV 写入到 Indirect Read 需要 Barrier。计数溢出和 Buffer 容量不足必须有可观察错误。
+若每种网格和材质组合仍要一条间接命令，提交数量就取决于批次数量。多重间接绘制允许一次调用消费多条命令；无绑定资源（Bindless）则让Shader按索引选择资源，减少因绑定差异产生的批次。两者解决的是不同层面的开销。
 
-### Material 与排序
+间接参数从Shader写入切换为命令读取，需要相应屏障。计数溢出和缓冲容量不足也必须产生可观察的诊断，否则渲染错误可能只在场景规模扩大后出现。
 
-可见几何需要按 Pipeline/Material 分类。常用：
+### 绘制参数与两类消费者
 
-- 每材质独立 Bin 和 Counter；
-- 对 Material Key 做 Radix Sort；
-- Visibility Buffer 先写 Primitive ID，后续统一 Shading；
-- Bindless Descriptor 让 Shader 根据 Material ID 访问资源。
+单网格批次的索引参数可写成`{indexCount, visibleCount, firstIndex, vertexOffset, firstInstance}`。GPU生成的`visibleCount`对应实例数，索引数量仍来自该网格。顶点阶段按实例索引读取`VisibleInstances`，再查真正的场景变换；如果把压紧后的槽位直接当场景ID，对象位置就会错乱。
 
-Bindless 降低绑定次数，却提高随机访问和资源生命周期要求。同一 Wave 中材质差异大也会产生 Divergence。
+写完参数以后存在两类读取：间接命令阶段读取参数缓冲，顶点或网格阶段读取可见列表。以Vulkan同步2术语表示，Compute Shader写入需要分别对`DRAW_INDIRECT / INDIRECT_COMMAND_READ`和实际Shader阶段的`SHADER_READ`建立可见性。只给参数缓冲屏障，不能保证列表已经可读；跨队列时还涉及信号、等待与必要的所有权转移。
 
-## 细粒度几何怎样处理
+计数超过容量时，截断到容量能防止越界，却会丢对象。正确性路径应按已知场景上界预分配，或在溢出时改用保守的未剔除批次并发出诊断，再扩容后恢复。测试必须同时观察“是否越界”和“画面是否完整”。
 
-### Cluster 与 Meshlet
+### 材质分类与排序
 
-Cluster/Meshlet 把 Mesh 切成几十到几百个三角形的小块，并限制唯一顶点数。每块保存 Bounds、Normal Cone、Material Range 和局部索引。
+可见几何需要按管线与材质组织。常见方式包括：
+
+- 每种材质使用独立分桶和计数器；
+- 对材质键做基数排序；
+- 可见性缓冲先记录图元标识，后续集中执行材质着色；
+- 无绑定描述符允许Shader根据材质标识访问资源。
+
+无绑定访问降低了绑定次数，也让资源索引的有效期成为显式契约。随机读取增加缓存压力，同一线程束中材质差异大时，不同分支还会降低执行效率。
+
+## 细粒度几何处理
+
+### 几何簇与网格簇
+
+几何簇（Cluster）和网格簇（Meshlet）把网格分成小块，并限制三角形与唯一顶点数量。每块保存包围体、法线锥、材质范围和局部索引。具体术语和上限由构建器与消费管线约定。
 
 收益：
 
-- 比 Instance 更细的 Frustum/Backface/Occlusion Culling；
-- 数据块适合 Cache 和并行处理；
-- 可作为 Mesh Shader Work Unit；
+- 在实例内部继续进行视锥、背面和遮挡剔除；
+- 将工作划成适合缓存和并行处理的数据块；
+- 可作为网格着色器的工作单元；
 - 可独立选择 LOD 和流送。
 
-Cluster 太小会增加元数据和调度；太大则剔除不精细。最佳大小取决于硬件、几何和工作负载，不是固定 64/128 就通用。
+簇太小会增加元数据和调度，太大则减少细粒度剔除的收益。最佳大小取决于硬件、几何和工作负载，需要同时测量构建数据体积和运行开销。
 
 ### Mesh Shader
 
-现代 Mesh Pipeline 常由 Task/Amplification Shader 产生工作组，再由 Mesh Shader 输出一组顶点和 Primitive。它能在 GPU 内完成 Cluster Culling、LOD 与解码，减少传统 Vertex/Geometry 阶段限制。
+网格着色管线可先由Task Shader或Amplification Shader产生工作组，再由Mesh Shader输出一组顶点和图元。前一级是否存在取决于API和具体管线。簇剔除、LOD选择与解码可以放在这些阶段内，几何数据由Shader主动读取。
 
-Mesh Shader 不是软件光栅化。它最终仍把 Primitive 交给硬件 Rasterizer。Compute Shader 自行覆盖像素、写 Visibility/Depth 才属于 Software Rasterization。
+Mesh Shader输出的图元仍交给硬件光栅器处理。软件光栅化则由计算着色器自行计算像素覆盖，并写入可见性与深度；两条路径需要分别评估成本。
 
-平台不支持 Mesh Shader 时，可使用 Compute Culling + Indirect Indexed Draw 作为回退。
+平台不支持Mesh Shader时，可使用计算着色器剔除，再通过间接索引绘制消费结果。
 
-### Visibility Buffer
+### 可见性缓冲
 
-Visibility Pass 只写 Instance/Primitive/Triangle ID 和 Barycentric 等最小数据。后续 Compute/Pixel Shading 根据 ID 读取顶点与材质，重建属性并着色。
+可见性通道写入足以定位表面的一组数据，例如实例与三角形标识，必要时还保存重心坐标。后续计算或像素着色根据标识读取顶点与材质，重建表面属性并着色。具体保存哪些字段，取决于重建成本、精度和缓冲格式。
 
 优势：
 
-- 几何可见性阶段 Shader 很轻；
+- 几何可见性阶段可以使用较简单的Shader；
 - 被覆盖的几何不重复执行完整材质；
-- 材质计算可按 Tile/Material 分类；
-- 适合微三角形与 GPU-Driven 列表。
+- 材质计算可按屏幕块或材质分类；
+- 能与微三角形和GPU生成的可见列表配合。
 
 代价：
 
-- 需要随机读取 Index/Vertex/Material；
-- 属性导数、Texture LOD 和 MSAA 处理更复杂；
+- 需要随机读取索引、顶点和材质；
+- 属性导数、纹理LOD和MSAA处理更复杂；
 - 透明材质仍需其他路径；
-- ID 格式和内存带宽需要设计。
+- 标识编码和缓冲带宽需要单独预算。
 
 ## 验证方法
 
-- 统计输入 Instance/Cluster、各级 Culling 后数量和最终 Draw/Dispatch。
-- 输出 Frustum、Backface、Occlusion、LOD Reject Reason。
-- 测试 Camera Cut、快速移动、新生对象和遮挡物移动。
-- 检查 Indirect Args、Barrier、Visible List 容量和溢出处理。
-- 比较 CPU Render Thread、GPU Cull、Raster、Shade 和 Streaming 时间。
-- 在不同三角形屏幕尺寸下区分 Setup、Coverage、Pixel 与 Atomic 成本。
-- 对缺页回退、LOD Popping、裂缝、Masked Material 和 Motion Vector 做回归。
+- 统计输入实例与簇数量、各级剔除后的数量和最终绘制或计算调度规模。
+- 输出视锥、背面、遮挡和LOD的拒绝原因。
+- 测试相机切换、快速移动、新生对象和遮挡物移走。
+- 检查间接参数、屏障、可见列表容量和溢出处理。
+- 分别记录CPU渲染线程，以及GPU剔除、光栅化、着色与流送的时间。
+- 改变三角形的屏幕尺寸，区分图元建立、覆盖计算、像素着色和原子写入成本。
+- 对缺页回退、LOD突跳、裂缝、遮罩材质和运动向量做回归。
 
-### GPU 剔除与间接绘制列表
+### 遮挡归约与列表发布
 
-输入是实例 Bounds 与 Hi-Z，输出是紧凑可见实例索引。计数器和输出容量在 Dispatch 前准备好：
+遮挡判断的核心输入是保守投影矩形、对象最近深度和对应Hi-Z层，输出是能否确信对象完全被遮住。以下伪代码假定投影矩形已经裁到视口内，采用左上闭、右下开的像素边界；穿近裁剪面的对象由调用方直接保留。选定层级的每个纹素覆盖`2^mip`个基础像素，层内深度已经按前述正反Z规则归约。
 
-```hlsl
-[numthreads(64, 1, 1)]
-void CullInstances(uint id : SV_DispatchThreadID)
-{
-    if (id >= instanceCount) return;
-    Bounds b = InstanceBounds[id];
-    if (!IntersectsFrustum(b, viewFrustum)) return;
-    if (IsOccludedByHiZ(b, hiZTexture)) return;
-    uint dst;
-    InterlockedAdd(VisibleCount[0], 1, dst);
-    if (dst < visibleCapacity) VisibleInstances[dst] = id;
-}
+```text
+IsFullyOccluded(pixelRect, nearestDepth, mip, reverseZ):
+    scale = 2^mip
+    first = floor(pixelRect.min / scale)
+    end = ceil(pixelRect.max / scale)
+    first、end分别夹到这一层的有效纹素边界
+    if first.x >= end.x or first.y >= end.y: return false
+    limit = 1 if reverseZ else 0
+    for y from first.y to end.y - 1:
+        for x from first.x to end.x - 1:
+            d = HiZ[mip][x, y]       // 点读取，不做双线性过滤
+            limit = min(limit, d) if reverseZ else max(limit, d)
+    return nearestDepth < limit - epsilon if reverseZ
+           else nearestDepth > limit + epsilon
 ```
 
-剔除前要保证 Hi-Z 对应当前约定的深度方向，并在写入可见列表后建立到 Indirect Draw 读取的同步。原子追加适合最小实现，大规模场景可用 Prefix Sum 做稳定压紧。验证时关闭各项剔除分别比较计数，并把 Bounds、Mip 选择和被拒绝原因可视化；这里的原子计数在容量溢出后仍会增长，因此最终绘制计数必须限制到已写入容量，并报告溢出。生产系统还要准备保守回退，避免缺失对象。仅在写数组时判断 `dst < visibleCapacity` 并不能修复间接绘制读取越界。
+向下取整起点、向上取整终点保证所有相交纹素都参与。较粗层可能连带覆盖矩形以外的像素，这只会减弱剔除，不应增加错误拒绝。Hi-Z生成器必须保证层级覆盖与边界一致；非二次幂尺寸可补齐到规定大小并用背景深度填充，或逐层保守处理边缘，不能在降采样时漏掉最后一行或一列。
+
+确认可见后，线程用原子加取得可见列表槽位，槽位小于容量才写入实例标识。原子计数在容量耗尽后仍会增长，因此提交间接绘制以前还要限制最终计数并报告溢出。只对数组写入做边界判断，仍可能让间接绘制读取超出已写入的范围。生产系统需要前述保守回退，才能同时保证内存安全和画面完整。
+
+发布参数和列表以后，分别建立到间接命令读取与Shader读取的同步。验证时逐项关闭剔除，比较计数和最终画面，并可视化投影矩形、选定层级和拒绝原因，才能区分投影错误、深度方向错误与容量丢失。
+
+## 参考实验与证据
+
+[CPU参考模型](../examples/revision_22_26/reference.py)的`occluded`检查正反Z、背景保留、深度相等和完整区域归约。2026-10-22执行`python 知识库/examples/revision_22_26/test_reference.py`，21项通过，其中4项属于遮挡关系。它仅在已经收集完整深度样本、`epsilon=0`的条件下验证标量比较，不覆盖投影矩形、层级坐标、GPU原子、跨队列屏障或绘制输出。正文使用机制伪代码，GPU编译、运行与性能为UNVERIFIED。
 
 ## 相关主题
 
@@ -188,7 +203,6 @@ void CullInstances(uint id : SV_DispatchThreadID)
 
 ## 参考资料
 
-- Epic Games, *A Deep Dive into Nanite Virtualized Geometry* and current Nanite documentation.
-- Burns and Hunt, *The Visibility Buffer: A Cache-Friendly Approach to Deferred Shading*.
-- NVIDIA and Microsoft Mesh Shader specifications and programming guides.
-- Haar and Aaltonen, *GPU-Driven Rendering Pipelines* technical presentations.
+- Khronos，[VkDrawIndexedIndirectCommand](https://docs.vulkan.org/refpages/latest/refpages/source/VkDrawIndexedIndirectCommand.html)，Members与Valid Usage；2026-10-22核读。五个参数及实例起点能力限制由此核对。
+- Brian Karis、Rune Stubbe、Graham Wihlidal，[Nanite: A Deep Dive](https://advances.realtimerendering.com/s2021/Karis_Nanite_SIGGRAPH_Advances_2021_final.pdf)，PDF第75页Two-Pass Occlusion Culling；2026-10-22核读，说明历史HZB后的当前帧复查。正反Z标量关系由本页推导和参考实验支持。
+- 通用同步语义见[[13_渲染架构/GPU同步与屏障]]；Nanite的组层级和流送条件见[[26_GPU驱动与虚拟几何/Nanite几何选择与流送]]。
