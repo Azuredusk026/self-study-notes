@@ -42,3 +42,22 @@ class ReadbackModel:
     def invalidate(self):
         self.epoch+=1
         self.latest=None
+
+
+def blocked_minmax(values):
+    """64 个元素一组的树形归约；空输入由宿主直接返回，无需调度。"""
+    if not values:
+        return None
+    group_results=[]
+    for begin in range(0,len(values),64):
+        group=values[begin:begin+64]
+        minima=list(group)+[float('inf')]*(64-len(group))
+        maxima=list(group)+[float('-inf')]*(64-len(group))
+        offset=32
+        while offset:
+            for lane in range(offset):
+                minima[lane]=min(minima[lane],minima[lane+offset])
+                maxima[lane]=max(maxima[lane],maxima[lane+offset])
+            offset//=2
+        group_results.append((minima[0],maxima[0]))
+    return min(p[0] for p in group_results),max(p[1] for p in group_results)

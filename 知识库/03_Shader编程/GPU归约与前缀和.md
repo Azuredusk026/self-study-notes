@@ -21,7 +21,9 @@ groupshared float s_Min[64];
 groupshared float s_Max[64];
 
 // 阶段一：每线程读一个元素写入共享内存
-s_Min[idx] = value;  s_Max[idx] = value;
+float infinity = asfloat(0x7F800000u);
+s_Min[idx] = valid ? value : infinity;
+s_Max[idx] = valid ? value : -infinity;
 GroupMemoryBarrierWithGroupSync();
 
 // 阶段二：树形折半，log2(64) = 6 轮
@@ -38,10 +40,12 @@ for (int offset = 32; offset > 0; offset /= 2)
 if (idx == 0) _TileResults[groupIndex] = float2(s_Min[0], s_Max[0]);
 ```
 
+这段 HLSL 机制片段中，`idx` 是 `SV_GroupIndex`，`groupIndex` 是一维调度的 `SV_GroupID.x`，两者不能互换。每组固定 64 个线程，`valid` 表示全局索引小于输入元素数，`value` 只在有效索引处读取，输入值约定有限且不含 NaN。`_TileResults` 至少分配调度组数个元素。空输入由宿主直接返回空结果。越界线程仍参加屏障，最小值归约以正无穷填充，最大值归约以负无穷填充；不能用零同时填充两种归约。
+
 三个容易出错的地方：
 
 - **每轮都要同步**。少一个 Barrier 就是竞态，表现为结果随机波动且难以复现；
-- **Barrier 只在组内有效**。跨组无法同步，因此单次 Dispatch 只能把数据归约到“每组一个值”；
+- **组屏障只在组内有效**。本方案在一次 Dispatch 中输出每组一个值，再由后续 Dispatch 归约组结果。全局原子操作或其他单次调度算法需要额外的发布与进展证明，不能靠组屏障获得跨组同步；
 - **收尾靠多次 Dispatch**。第一次把每个 Tile 归约成一个值，之后反复对上一轮结果归约，直到剩下一个。CPU 侧循环 Dispatch 直到计数为 1。
 
 层级深度生成也可以复用组内归约，具体多级写入见 [[02_GPU与光栅化管线/基于深度的可见性优化]]。
@@ -111,7 +115,7 @@ void ScanGroups(uint3 group : SV_GroupID, uint lane : SV_GroupIndex)
 
 空数组、全零、全一与不能整除组大小的输入分别比较总数和偏移。保留元素的输出偏移应唯一且稳定，组和回加后不能遗漏块边界。整数累计还要检查溢出与输出容量。
 
-实现状态：[shader_models.py](../examples/revision/shader_models.py)用分块上扫/下扫与独立顺序和对照，[test_shader.py](../examples/revision/test_shader.py)覆盖空数组、部分组、多个组及稳定压紧。ScanGroups通过本文提取的DXC探针检查，完整多Dispatch调度及GPU竞态尚未运行。
+实现状态：[shader_models.py](../examples/revision/shader_models.py)用分块上扫/下扫与独立顺序和对照，[test_shader.py](../examples/revision/test_shader.py)覆盖空数组、部分组、多个组及稳定压紧，也用全正与全负输入检查最小值/最大值的填充。ScanGroups与补齐入口的最小值/最大值归约片段通过本文提取的DXC探针检查，完整多Dispatch调度及GPU竞态尚未运行。
 
 本机CPU验证：排他前缀和与压紧由 [completion_reference.py](../examples/mechanisms/completion_reference.py) 检查，运行 `python 知识库/examples/mechanisms/completion_reference.py`。这些检查验证CPU模型，不包含GPU执行。
 

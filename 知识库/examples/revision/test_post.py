@@ -1,5 +1,6 @@
 import math
 import unittest
+import post_models
 from post_models import srgb_decode,srgb_encode,premult_filter,adapt_exposure,reexpose,coc_radius,ssao_weight,soft_bloom,combine_scales,luminance_reinhard
 
 class PostTests(unittest.TestCase):
@@ -42,5 +43,38 @@ class PostTests(unittest.TestCase):
         self.assertAlmostEqual(mapped[0]/mapped[1],5)
         self.assertTrue(mapped[0]>1) # 保持色比并不保证逐通道落在显示色域。
         self.assertEqual(luminance_reinhard((0,0,0)),(0,0,0))
+
+    def test_exposure_rejects_nonfinite_parameters(self):
+        for previous,current in ((float('nan'),2),(.5,float('inf'))):
+            with self.subTest(previous=previous,current=current),self.assertRaises(ValueError):
+                reexpose(10,previous,current)
+        for args in ((1,16,float('nan'),1),(1,float('inf'),1,1),(1,16,1,float('inf'))):
+            with self.subTest(args=args),self.assertRaises(ValueError):adapt_exposure(*args)
+
+    def test_coc_unit_conversion_and_invalid_parameters(self):
+        self.assertAlmostEqual(coc_radius(1000,2000,50,2,36,1920),coc_radius(1,2,.05,2,.036,1920))
+        for args in ((1,2,0,2,.036,1920),(1,2,.05,2,.036,0),(1,2,float('nan'),2,.036,1920)):
+            with self.subTest(args=args),self.assertRaises(ValueError):coc_radius(*args)
+
+    def test_ssao_length_scale_invariance(self):
+        args=(-2,-2.2,-2.1,.5,.01)
+        self.assertAlmostEqual(ssao_weight(*args),ssao_weight(*(x*1e-6 for x in args)))
+
+    def test_bloom_preexposure_scale_invariance(self):
+        scale=1e-8
+        original=soft_bloom((1,1,1),1,.5)
+        scaled=soft_bloom((scale,scale,scale),scale,.5*scale)
+        for expected,actual in zip(original,scaled):
+            self.assertAlmostEqual(actual,expected*scale,delta=1e-20)
+        with self.assertRaises(ValueError):soft_bloom((0,0,0),0,1)
+
+    def test_motion_gather_recovers_translated_bright_point(self):
+        # A point moves from u=.5 to .6. A trailing half-frame shutter covers [.55,.6].
+        # At target .575, the midpoint sample must read the current point at .6.
+        sample=post_models.motion_blur_uv((.575,.4),(-.1,0),1/120,1/60,0,1)
+        self.assertAlmostEqual(sample[0],.6);self.assertEqual(sample[1],.4)
+        self.assertAlmostEqual(.575+(-.1)*.5*.5,.55) # The opposite sign samples empty space.
+        self.assertEqual(post_models.motion_blur_uv((.575,.4),(-.1,0),0,1/60,0,1),(.575,.4))
+        with self.assertRaises(ValueError):post_models.motion_blur_uv((.5,.4),(-.1,0),.01,0,0,1)
 
 if __name__=='__main__':unittest.main()

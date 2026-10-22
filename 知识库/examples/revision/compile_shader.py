@@ -24,6 +24,21 @@ def main():
         run([DXC,'-T','cs_6_0','-E','ScanGroups',str(source),'-Fo',str(folder/'scan.dxil')])
         outputs.append('ScanGroups cs_6_0 compilation')
 
+        reduction=re.findall(r'```hlsl\n(.*?)```',scan_text,re.S)[0]
+        declarations,body=reduction.split('// 阶段一',1)
+        reduction=('StructuredBuffer<float> Input:register(t0); RWStructuredBuffer<float2> _TileResults:register(u0); cbuffer Params:register(b0){uint Count;}\n'
+            +declarations+'\n[numthreads(64,1,1)] void Reduce(uint3 id:SV_DispatchThreadID,uint3 group:SV_GroupID,uint idx:SV_GroupIndex){\n'
+            'uint groupIndex=group.x; bool valid=id.x<Count; float value=valid?Input[id.x]:0;\n// 阶段一'+body+'\n}')
+        source=folder/'reduction.hlsl';source.write_text(reduction,encoding='utf-8')
+        run([DXC,'-T','cs_6_0','-E','Reduce',str(source),'-Fo',str(folder/'reduction.dxil')])
+        outputs.append('Min/max reduction cs_6_0 compilation with guarded loads and distinct padding')
+
+        copy_text=(DOMAIN/'Compute Shader.md').read_text(encoding='utf-8')
+        copy=next(code for code in re.findall(r'```hlsl\n(.*?)```',copy_text,re.S) if 'void CopyKernel' in code)
+        source=folder/'copy.hlsl';source.write_text(copy,encoding='utf-8')
+        run([DXC,'-T','cs_6_0','-E','CopyKernel',str(source),'-Fo',str(folder/'copy.dxil')])
+        outputs.append('CopyKernel cs_6_0 compilation')
+
         interface_text=(DOMAIN/'Shader接口与数据流.md').read_text(encoding='utf-8')
         per_view=next(code for code in re.findall(r'```hlsl\n(.*?)```',interface_text,re.S) if 'cbuffer PerView' in code)
         source=folder/'layout.hlsl'

@@ -180,6 +180,42 @@
       "command": "python -B 知识库/examples/revision/test_math.py",
       "passed": true,
       "tests": 5
+    },
+    {
+      "phase": "P5-independent",
+      "command": "python -B 知识库/examples/revision/test_shader.py",
+      "passed": true,
+      "tests": 6
+    },
+    {
+      "phase": "P5-independent",
+      "command": "python -B 知识库/examples/revision/test_lighting.py",
+      "passed": true,
+      "tests": 11
+    },
+    {
+      "phase": "P5-independent",
+      "command": "python -B 知识库/examples/revision/test_gi.py",
+      "passed": true,
+      "tests": 10
+    },
+    {
+      "phase": "P5-independent",
+      "command": "python -B 知识库/examples/revision/test_post.py",
+      "passed": true,
+      "tests": 12
+    },
+    {
+      "phase": "P5-independent",
+      "commands": [
+        "compile_shader.py",
+        "compile_lighting.py",
+        "compile_gi.py",
+        "compile_post.py"
+      ],
+      "passed": true,
+      "dxc_entries": 19,
+      "scope": "另含GLSL正反接口、天空折射链接和阴影查询离线编译"
     }
   ]
 }

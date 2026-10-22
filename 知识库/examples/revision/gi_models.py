@@ -57,3 +57,12 @@ def pcss_radius_uv(light_full_width,blocker_distance,receiver_distance,projected
     if blocker_distance<=0 or projected_full_width<=0:raise ValueError('距离和投影覆盖必须为正')
     penumbra_full_width=light_full_width*max(0,receiver_distance-blocker_distance)/blocker_distance
     return penumbra_full_width/(2*projected_full_width)
+
+
+def blend_probe_radiance(colors, weights, global_color):
+    """线性颜色的一个通道；RGB 对三个通道分别使用同一组权重。"""
+    if len(colors)!=len(weights) or any(not math.isfinite(w) or w<0 for w in weights):
+        raise ValueError('颜色与权重数量相等，权重有限且非负')
+    total=sum(weights)
+    global_weight=max(1-total,0)
+    return (sum(w*c for w,c in zip(weights,colors))+global_weight*global_color)/max(total,1)

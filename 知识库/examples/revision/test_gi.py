@@ -1,6 +1,6 @@
 import math
 import unittest
-from gi_models import probe_weights, box_direction, moment_visibility, history_update, polygon_cosine, clip_horizon, pcss_radius_uv
+from gi_models import probe_weights, box_direction, moment_visibility, history_update, polygon_cosine, clip_horizon, pcss_radius_uv, blend_probe_radiance
 
 class GITests(unittest.TestCase):
     def test_probe_reproduces_affine_field(self):
@@ -50,5 +50,20 @@ class GITests(unittest.TestCase):
         self.assertEqual(pcss_radius_uv(.2,2,2,10),0)
         self.assertAlmostEqual(pcss_radius_uv(.2,2,4,10),.01)
         self.assertAlmostEqual(pcss_radius_uv(.2,2,4,20),.005)
+
+class ProbeBlendTests(unittest.TestCase):
+    def test_constant_environment_preserved(self):
+        for weights in ([], [.2], [.4,.3], [1,1]):
+            self.assertAlmostEqual(blend_probe_radiance([4]*len(weights),weights,4),4)
+
+    def test_single_probe_fades_to_global(self):
+        self.assertEqual(blend_probe_radiance([10],[0],2),2)
+        self.assertAlmostEqual(blend_probe_radiance([10],[.25],2),4)
+        self.assertAlmostEqual(blend_probe_radiance([10],[1e-6],2),2+8e-6)
+
+    def test_overlapping_probes_normalize(self):
+        self.assertAlmostEqual(blend_probe_radiance([2,6],[1,1],100),4)
+        with self.assertRaises(ValueError): blend_probe_radiance([1],[-.1],0)
+        with self.assertRaises(ValueError): blend_probe_radiance([1],[],0)
 
 if __name__=='__main__':unittest.main()

@@ -3326,39 +3326,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何按线程索引安全调度设备端数据计算"
+        "basis": "主问题仍为Compute Shader；最小 Dispatch；资源访问与同步；寄存器分配围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "线程定位与协作；资源访问与同步；编译与执行的代价；验证方法；相关主题；参考资料"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "加入组坐标、局部坐标和一维索引数值例；原子更新与内存发布分开；纠正spill对驻留的单向推断。"
+        "basis": "区分线程网格尺寸与总数，调度向上取整避免加法溢出。核对原地更新的共享缓存路径、跨组依赖及合法 UAV 读取；绑定规则独立于算法无竞态证明。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "CopyKernel既有DXC探针通过，纹理尺寸、UAV类型和参数布局明确；实际GPU运行未验证。"
+        "basis": "CopyKernel cs_6_0 离线编译；组索引算例人工复算。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "GroupMemoryBarrierWithGroupSync和CUDA13.4占用率段已核读。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "按线程定位、共享访问、阶段依赖组织，疑问标题改为客观名称。"
+        "basis": "修正线程计数、无溢出上取整、SRV/UAV 前提及运行时/编辑器集成范围；两处叙述式标题改为客观名称。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "Compute Shader定位当前主问题，小标题按机制或操作命名。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "03领域维护Shader接口、编译与并行计算；资源同步和引擎接入由相关专篇承接。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页使用坐标算例、流程或代码表达状态变化，无新增结果图片。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -3405,7 +3405,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "d37f38cd5ed2be646ff3eba3f4bc83c79c9750e83a508fbad6988f06c59e54f7",
+    "final_sha256": "8ba1609f6ccf068011f5c19defee8ddc223d819aa9d1fc79b7c1cf48c6b6f5a4",
     "content_commit": "6de6394",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -3439,15 +3439,18 @@
       "phase": "P1-shader",
       "scope": "全文、代码、来源、验证与标题",
       "findings": [
-        "加入组坐标、局部坐标和一维索引数值例；原子更新与内存发布分开；纠正spill对驻留的单向推断。",
-        "按线程定位、共享访问、阶段依赖组织，疑问标题改为客观名称。"
+        "修正线程计数、无溢出上取整、SRV/UAV 前提及运行时/编辑器集成范围；两处叙述式标题改为客观名称。"
       ],
-      "content_sha256": "d37f38cd5ed2be646ff3eba3f4bc83c79c9750e83a508fbad6988f06c59e54f7",
+      "content_sha256": "8ba1609f6ccf068011f5c19defee8ddc223d819aa9d1fc79b7c1cf48c6b6f5a4",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "d37f38cd5ed2be646ff3eba3f4bc83c79c9750e83a508fbad6988f06c59e54f7",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "2eb64b08fb64b7ece887ac62c4ba4d0f86e148638a17de5c0ee7609caaebb5d6"
     }
   },
   {
@@ -3466,39 +3469,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何把设备端结果交给CPU并控制延迟与寿命"
+        "basis": "主问题仍为GPU异步回读；异步回读与延迟数据；请求完成与发布围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "异步回读与延迟数据；请求完成与发布；验证方法；相关主题；参考资料"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "补空闲/在途/完成状态、乱序结果发布、代次取消与物理回收，明确结果一帧寿命。"
+        "basis": "全文检查请求环、序号与场景代次。过期结果不发布，但完成前仍占请求槽；错误请求释放槽且保留最近成功值。GetData 生命周期与业务消费分开说明。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "CPU模型通过容量、乱序、失败、失效回收检查；实际Unity回调未运行。"
+        "basis": "test_shader.py 的乱序/满环与失效两项 CPU 检查。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Unity6000.0 AsyncGPUReadbackRequest Description核读done/hasError与single-frame结果寿命。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "按生产、完成、发布和消费区分数据年龄，删除无实验链接的套话。"
+        "basis": "保留：请求生命周期、乱序完成、容量背压与取消边界自洽。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "GPU异步回读定位当前主问题，小标题按机制或操作命名。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "03领域维护Shader接口、编译与并行计算；资源同步和引擎接入由相关专篇承接。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页使用坐标算例、流程或代码表达状态变化，无新增结果图片。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -3560,15 +3563,18 @@
       "phase": "P1-shader",
       "scope": "全文、代码、来源、验证与标题",
       "findings": [
-        "补空闲/在途/完成状态、乱序结果发布、代次取消与物理回收，明确结果一帧寿命。",
-        "按生产、完成、发布和消费区分数据年龄，删除无实验链接的套话。"
+        "保留：请求生命周期、乱序完成、容量背压与取消边界自洽。"
       ],
       "content_sha256": "ac19550d910c43d4eb366dfb3ad5b557e9c553eeb0f42a685446db257fc9ce66",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "ac19550d910c43d4eb366dfb3ad5b557e9c553eeb0f42a685446db257fc9ce66",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "457da9a9272c0f0e2418c37581d71183b3d4867fbee8f1c917d7a20f82815488"
     }
   },
   {
@@ -3587,39 +3593,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何把并行元素合成统计量或唯一输出偏移"
+        "basis": "主问题仍为GPU归约与前缀和；归约的标准范式；组内上扫与下扫围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "输出语义；归约的标准范式；排他前缀和；验证方法；相关主题；参考资料"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "展开组内上扫/下扫HLSL入口、根清零、尾组填零和组和递归回加，区分0/1压紧和多项计数。"
+        "basis": "逐轮检查树形索引和均匀屏障，分块扫描回加完整；每个无效元素必须分别给最小值和最大值正确中性值。单组结果限制仅属于所示组屏障方案。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "分块CPU模型与顺序求和对照7种尺寸，稳定压紧检查通过；ScanGroups cs_6_0编译通过，GPU调度未运行。"
+        "basis": "test_shader.py 的 4 项归约/扫描检查；Reduce 和 ScanGroups cs_6_0 编译。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "GPU Gems3第39章§39.2.2/§39.2.4和Microsoft组屏障规则核读。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "从子树之前的总量解释下扫，数字例与代码对应，删除误入网络的验证描述。"
+        "basis": "展开 idx/groupIndex/valid 契约并在实际代码中分开填充正负无穷；新增分组 min/max CPU 参考与两项边界检查，限定单次 Dispatch 结论。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "GPU归约与前缀和定位当前主问题，小标题按机制或操作命名。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "03领域维护Shader接口、编译与并行计算；资源同步和引擎接入由相关专篇承接。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页使用坐标算例、流程或代码表达状态变化，无新增结果图片。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -3651,7 +3657,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "6848d472ec84a96f480255c5d2e928f5f5562fcc0af03c68f259b6fff3973557",
+    "final_sha256": "4d7d7c4030e3dd70c8c3cd1e879475ee48bfc12d4d99f1139a22920db4c2c5e4",
     "content_commit": "6de6394",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -3685,15 +3691,18 @@
       "phase": "P1-shader",
       "scope": "全文、代码、来源、验证与标题",
       "findings": [
-        "展开组内上扫/下扫HLSL入口、根清零、尾组填零和组和递归回加，区分0/1压紧和多项计数。",
-        "从子树之前的总量解释下扫，数字例与代码对应，删除误入网络的验证描述。"
+        "展开 idx/groupIndex/valid 契约并在实际代码中分开填充正负无穷；新增分组 min/max CPU 参考与两项边界检查，限定单次 Dispatch 结论。"
       ],
-      "content_sha256": "6848d472ec84a96f480255c5d2e928f5f5562fcc0af03c68f259b6fff3973557",
+      "content_sha256": "4d7d7c4030e3dd70c8c3cd1e879475ee48bfc12d4d99f1139a22920db4c2c5e4",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "6848d472ec84a96f480255c5d2e928f5f5562fcc0af03c68f259b6fff3973557",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "acb8d5567ddecc41c1c16cdd6b88eb468d6c83f411327a18a444ab43593f96d0"
     }
   },
   {
@@ -3711,39 +3720,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何控制Shader编译组合并验证构建覆盖"
+        "basis": "主问题仍为Shader Variant管理；Unreal 的变体构成；内存与包体构成；组合覆盖的集合检查围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "从源码到 GPU 程序；Variant 和 Permutation；Unity 中的 `multi_compile`；Unity 中的 `shader_feature`；动态分支与编译变体；Unreal 的变体构成"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "收窄Unreal组合、Ubershader、Library常驻等断言；用6候选/4必需集合展开保留覆盖与剥离理由。"
+        "basis": "复读各平台候选组合、运行时采样覆盖与集合反例。动态参数与静态材质参数必须分开，Usage 只是允许候选而非固定乘数；缺失变体可能回退，不能以无粉色断言完整。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "UnityEditor片段显式标注构建配置与本地关键字，未执行引擎构建；样例所需组合可独立枚举。"
+        "basis": "四组合覆盖例可枚举；Unity/Unreal 构建及预热未执行。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Unity6000.0 variants/stripping核读程序维度、缺失回退和Editor回调；未声称核读Unreal私有源码。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "统一客观标题，职责段服务于构建追溯，避免只凭无粉色或预热宣告通过。"
+        "basis": "修正静态材质参数遗漏、Usage 倍增、压缩收益和 PSO LRU 的绝对表述；同步 PSO 新标题反链。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "Shader Variant管理定位当前主问题，小标题按机制或操作命名。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "03领域维护Shader接口、编译与并行计算；资源同步和引擎接入由相关专篇承接。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页使用坐标算例、流程或代码表达状态变化，无新增结果图片。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -3784,7 +3793,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "6f2d0bb5d932101858cab7e0df48be35859360b75a582b5688d0d695b8bfa373",
+    "final_sha256": "790f72cb9a2c3be204ec9414c8b7f02e57f1b8cdc8a4b94dd59e98def253fdcf",
     "content_commit": "6de6394",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -3817,15 +3826,18 @@
       "phase": "P1-shader",
       "scope": "全文、代码、来源、验证与标题",
       "findings": [
-        "收窄Unreal组合、Ubershader、Library常驻等断言；用6候选/4必需集合展开保留覆盖与剥离理由。",
-        "统一客观标题，职责段服务于构建追溯，避免只凭无粉色或预热宣告通过。"
+        "修正静态材质参数遗漏、Usage 倍增、压缩收益和 PSO LRU 的绝对表述；同步 PSO 新标题反链。"
       ],
-      "content_sha256": "6f2d0bb5d932101858cab7e0df48be35859360b75a582b5688d0d695b8bfa373",
+      "content_sha256": "790f72cb9a2c3be204ec9414c8b7f02e57f1b8cdc8a4b94dd59e98def253fdcf",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "6f2d0bb5d932101858cab7e0df48be35859360b75a582b5688d0d695b8bfa373",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "cc74a991a728bf8f037b1fc7d5db94b8227a83a9e5bd3ec44f44813b694a13d2"
     }
   },
   {
@@ -3843,39 +3855,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何使Shader阶段接口与资源布局一致"
+        "basis": "主问题仍为Shader接口与数据流；对齐示例；GLSL 接口块与片元内建输入围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "接口与布局；资源访问；阶段数据；数值与控制流；调试方法；相关主题"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "纠正GLSL块名与实例名区别、sRGB解码顺序；给出96字节常量布局和字段偏移，区分row_major与mul。"
+        "basis": "全文核对 96 字节常量布局的五个偏移、矩阵存储和乘法约定。接口块按成员匹配，两个实例名可以不同；sRGB 解码与过滤位置明确。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "DXC反射验证5字段偏移及总大小；GLSL330正确接口离线链接通过，字段类型不匹配被拒绝；CPU上传和GPU未运行。"
+        "basis": "PerView 五个偏移和总大小反射检查；GLSL 正例链接通过、错误成员类型被拒绝。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Microsoft HLSL packing rules与Khronos Interface Blocks源规范核读。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "以绑定与布局契约推动排查，给出每段代码完整或片段的具体范围。"
+        "basis": "保留：数据布局和跨阶段接口机制有可编译反例，未把离线链接等同 GPU 执行。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "Shader接口与数据流定位当前主问题，小标题按机制或操作命名。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "03领域维护Shader接口、编译与并行计算；资源同步和引擎接入由相关专篇承接。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页使用坐标算例、流程或代码表达状态变化，无新增结果图片。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -3951,15 +3963,18 @@
       "phase": "P1-shader",
       "scope": "全文、代码、来源、验证与标题",
       "findings": [
-        "纠正GLSL块名与实例名区别、sRGB解码顺序；给出96字节常量布局和字段偏移，区分row_major与mul。",
-        "以绑定与布局契约推动排查，给出每段代码完整或片段的具体范围。"
+        "保留：数据布局和跨阶段接口机制有可编译反例，未把离线链接等同 GPU 执行。"
       ],
       "content_sha256": "321217a8c9d93978955360f58c81f6c6120599f6100cc092b94722f20a434cfd",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "321217a8c9d93978955360f58c81f6c6120599f6100cc092b94722f20a434cfd",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "7e371eb51de951211f9a9274cdf94a9dd771024a2b67965b9038f53b37d9e320"
     }
   },
   {
@@ -3977,39 +3992,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何从反射约束得到直接光照BRDF"
+        "basis": "主问题仍为BRDF与微表面模型；微表面分解；参数与能量；验证方法围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "反射积分；表面反射模型；物理约束；微表面分解；参数与能量；验证方法"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "展开GGX、可分离Smith和Schlick，说明NDF投影面积、余弦及微面测度；用解析白炉值识别重复因子。"
+        "basis": "逐式核算 GGX NDF 的投影面积、Smith G1、Fresnel 和 4NoVNoL 分母；上下半球条件明确。α=1、N=V、F0=1 白炉积分为 1-ln2，单次散射能量损失有适用边界。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "7项光照数值检查中的NDF、互易性、背面和白炉检查通过；正文函数DXC ps_6_0编译通过。"
+        "basis": "test_lighting.py 的 NDF、互易性、背面和白炉检查；BRDF HLSL 编译。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Filament Specular BRDF与Energy loss原文已核读；模型明确采用可分离Smith，未混入高度相关LUT。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "按辐射量、模型约束、微表面分解、参数与验证推理，移除疑问式标题。"
+        "basis": "保留：核心公式、完整求值函数与独立解析基准相互一致。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "BRDF与微表面模型定位主概念；子标题按机制与操作命名。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "04领域以表面反射和环境积分为主归属；局部Probe、纹理过滤及GBuffer编码分别链接对应专篇。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "方程、明确坐标和数值例说明主要计算，无新增图像结果证据。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -4087,15 +4102,18 @@
       "phase": "P1-lighting",
       "scope": "全文、公式、代码、来源、标题和验证",
       "findings": [
-        "展开GGX、可分离Smith和Schlick，说明NDF投影面积、余弦及微面测度；用解析白炉值识别重复因子。",
-        "按辐射量、模型约束、微表面分解、参数与验证推理，移除疑问式标题。"
+        "保留：核心公式、完整求值函数与独立解析基准相互一致。"
       ],
       "content_sha256": "f58030fc2f65c18504c2e31c5aa3fde86668c7fba92fbe8942fd04ee9975c399",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "f58030fc2f65c18504c2e31c5aa3fde86668c7fba92fbe8942fd04ee9975c399",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "787dcc5e6585ec7cb0419ee7fe4b3191f9b2bbaa20cb7598372da7b4be96bc0f"
     }
   },
   {
@@ -4114,39 +4132,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何按方向寻址六面环境并正确绘制天空背景"
+        "basis": "主问题仍为Cubemap环境采样；Cubemap、Skybox 与环境映射；验证方法围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "Cubemap、Skybox 与环境映射；验证方法；相关主题；参考资料"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "补面内坐标数值例、天空深度/剔除状态、折射介质法线与全反射回退、分帧捕获原子发布。"
+        "basis": "全文核对 +X 方向算例、常规 Z 天空盒远深度、折射率比及全反射回退。动态捕获的双缓冲发布能区分六面完成与预过滤完成。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文GLSL补入口后离线链接通过；实际六面上传、接缝与动态捕获未运行。"
+        "basis": "GLSL 330 天空盒/折射片段编译链接；六面图像未执行。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Khronos refract参考实现、LearnOpenGL作者天空源码与Filament方向约定核读。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "以方向和资源发布契约解释接缝，删除与本页无关的法线混合文献。"
+        "basis": "将排除 Probe 自己改成按用途排除捕获宿主的可绘制表面，避免把无几何的组件当作渲染体。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "Cubemap环境采样定位主概念；子标题按机制与操作命名。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "04领域以表面反射和环境积分为主归属；局部Probe、纹理过滤及GBuffer编码分别链接对应专篇。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "方程、明确坐标和数值例说明主要计算，无新增图像结果证据。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -4174,7 +4192,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "ef04451ccead20f90a90315938b8bab14716cddfd7daf96a2ed9d24856f9683c",
+    "final_sha256": "579a5a91d48672106d61360aecdb4505811b334bdca9ad3d5cd9a3d67a194380",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -4208,15 +4226,18 @@
       "phase": "P1-lighting",
       "scope": "全文、公式、代码、来源、标题和验证",
       "findings": [
-        "补面内坐标数值例、天空深度/剔除状态、折射介质法线与全反射回退、分帧捕获原子发布。",
-        "以方向和资源发布契约解释接缝，删除与本页无关的法线混合文献。"
+        "将排除 Probe 自己改成按用途排除捕获宿主的可绘制表面，避免把无几何的组件当作渲染体。"
       ],
-      "content_sha256": "ef04451ccead20f90a90315938b8bab14716cddfd7daf96a2ed9d24856f9683c",
+      "content_sha256": "579a5a91d48672106d61360aecdb4505811b334bdca9ad3d5cd9a3d67a194380",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "ef04451ccead20f90a90315938b8bab14716cddfd7daf96a2ed9d24856f9683c",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "8d87b993540668576a514e117706172a75857be7bdde641f9ceaee454b9e8ab3"
     }
   },
   {
@@ -4235,39 +4256,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何预积分环境光并求漫反射与粗糙镜面响应"
+        "basis": "主问题仍为IBL；半向量采样与积分权重；BRDF 积分表；Split-sum求值围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "Image-Based Lighting；Diffuse Irradiance；Specular Prefilter；Split-sum 的限制；Probe 和 Reflection Capture；Split-sum求值"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "补辐照度pi约定、GGX半向量采样和方向PDF、LUT两项推导、无效样本计数与源mip立体角关系。"
+        "basis": "逐式检查 pH=DNoH、pL=pH/(4VoH)、无效样本计入分母和 LUT 的 GVoH/(NoVNoH) 权重。源 mip 立体角与运行时 LUT 纹素中心映射匹配。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "32768样本LUT和独立白炉解析积分对照通过；正文运行时查询DXC ps_6_0编译通过。"
+        "basis": "LUT A+B 与独立积分及 1-ln2 对照；IBL 求值 HLSL 编译。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Filament IBL重要性采样及立体角段核读；Karis原PDF抓取受体积限制，仅保留原始资料入口不计作本次已核读。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "各近似与烘焙约定就地说明，LUT端点与纹素中心分清，移除无关文献。"
+        "basis": "烘焙端明确采用与 BRDF 相同的 α=max(roughness²,0.002)，消除低粗糙度映射不一致。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "IBL定位主概念；子标题按机制与操作命名。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "04领域以表面反射和环境积分为主归属；局部Probe、纹理过滤及GBuffer编码分别链接对应专篇。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "方程、明确坐标和数值例说明主要计算，无新增图像结果证据。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -4300,7 +4321,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "14db8e8c8c760574af6ab41e16e9732a0f10a495d03f416e9f061d14bdba90d1",
+    "final_sha256": "1ffab9cab1ce860c53ce10a95e7b74c4c496cfbc7e090de81125478fea8437dc",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -4334,15 +4355,18 @@
       "phase": "P1-lighting",
       "scope": "全文、公式、代码、来源、标题和验证",
       "findings": [
-        "补辐照度pi约定、GGX半向量采样和方向PDF、LUT两项推导、无效样本计数与源mip立体角关系。",
-        "各近似与烘焙约定就地说明，LUT端点与纹素中心分清，移除无关文献。"
+        "烘焙端明确采用与 BRDF 相同的 α=max(roughness²,0.002)，消除低粗糙度映射不一致。"
       ],
-      "content_sha256": "14db8e8c8c760574af6ab41e16e9732a0f10a495d03f416e9f061d14bdba90d1",
+      "content_sha256": "1ffab9cab1ce860c53ce10a95e7b74c4c496cfbc7e090de81125478fea8437dc",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "14db8e8c8c760574af6ab41e16e9732a0f10a495d03f416e9f061d14bdba90d1",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "efd1f63a35a371e15898a4df07760dd93630cf24383b615dc00a5fef27ada042"
     }
   },
   {
@@ -4360,39 +4384,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何用PBR参数保持材质响应和能量约束"
+        "basis": "主问题仍为PBR材质；半球能量约束；纹理参数；验证方法围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "反射语义；纹理参数；资产与标定；验证方法；相关主题；参考资料"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "纠正Fresnel等同半球反射率的推导，展开方向到半球积分；补折射率两侧介质和金属光谱转RGB。"
+        "basis": "核对 metalness 的反射分配、反照率/辐照度及纹理颜色空间。局部 1-F 是近似，不代表完整层间传输；多散射差异依赖 F0 和照明。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "调用已展开且编译通过的EvaluateDirectResponse，明确余弦只乘一次；完整资产导入未运行。"
+        "basis": "共用所声明单次散射模型的 CPU 检查；资产导入与完整材质未运行。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Filament材料与能量章节核读；默认F0由eta=1/1.5直接算得，不使用无来源的通用材质范围。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "参数语义与标定闭合，局部分配明确为近似，标题采用反射率和半球约束等概念名称。"
+        "basis": "将球面最敏感与亮度必有可察觉差异改成可执行的标定方法及材料依赖范围。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "PBR材质定位主概念；子标题按机制与操作命名。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "04领域以表面反射和环境积分为主归属；局部Probe、纹理过滤及GBuffer编码分别链接对应专篇。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "方程、明确坐标和数值例说明主要计算，无新增图像结果证据。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -4438,7 +4462,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "38b7e45b0da4523a44c57d59bde151675013b37b6e65dc4d3fcf7011baf63549",
+    "final_sha256": "7ee452d2e7e17c60d633b13b95a88a23e78d30546d3617f1cabd15936ebd021d",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -4471,15 +4495,18 @@
       "phase": "P1-lighting",
       "scope": "全文、公式、代码、来源、标题和验证",
       "findings": [
-        "纠正Fresnel等同半球反射率的推导，展开方向到半球积分；补折射率两侧介质和金属光谱转RGB。",
-        "参数语义与标定闭合，局部分配明确为近似，标题采用反射率和半球约束等概念名称。"
+        "将球面最敏感与亮度必有可察觉差异改成可执行的标定方法及材料依赖范围。"
       ],
-      "content_sha256": "38b7e45b0da4523a44c57d59bde151675013b37b6e65dc4d3fcf7011baf63549",
+      "content_sha256": "7ee452d2e7e17c60d633b13b95a88a23e78d30546d3617f1cabd15936ebd021d",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "38b7e45b0da4523a44c57d59bde151675013b37b6e65dc4d3fcf7011baf63549",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "09944a4c105d97098872bac7c1712ce2e40bbe43f9874beef7b37c8e21f2add3"
     }
   },
   {
@@ -4498,39 +4525,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何把纹理方向恢复成一致的着色法线"
+        "basis": "主问题仍为法线贴图；世界法线重建；两通道编码的精度陷阱；细节法线混合围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "方向基底；方向解码与合成；验证方法；相关主题；参考资料"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "补BC5_UNORM/SNORM差别、负缩放手性、矩阵存储与乘法区别；展开RNM与负Z限制。"
+        "basis": "复算切线变换、逆转置法线、负行列式手性与 Gram-Schmidt；BC5_UNORM/SNORM 解码不同，RNM 前提与半球边界已写明。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "独立旋转矩阵核对RNM和两种恒等输入通过，解码/混合两函数随ps_6_0入口编译通过；网格导入未测。"
+        "basis": "RNM 对照绕 Y 轴独立旋转与恒等输入；完整法线函数 HLSL 编译。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "MikkTSpace接口与插值逆变换注释、Hill RNM公式4及奇点原文核读。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "沿方向基底、解码和合成组织，误差明确发生于切平面附近，区分本例正交基与烘焙一致性。"
+        "basis": "将八面体编码普遍采用的泛化改成可选的完整球面编码用途。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "法线贴图定位主概念；子标题按机制与操作命名。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "04领域以表面反射和环境积分为主归属；局部Probe、纹理过滤及GBuffer编码分别链接对应专篇。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "方程、明确坐标和数值例说明主要计算，无新增图像结果证据。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -4568,7 +4595,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "c648d7fe88bd1c5ea35f796944e5230ef3efdb8163a927d2a64d24dd78552af0",
+    "final_sha256": "f3529ae630040b53cc2a28ecb49c740d67ec03b1532267f134d771cbcc3b709b",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -4602,15 +4629,18 @@
       "phase": "P1-lighting",
       "scope": "全文、公式、代码、来源、标题和验证",
       "findings": [
-        "补BC5_UNORM/SNORM差别、负缩放手性、矩阵存储与乘法区别；展开RNM与负Z限制。",
-        "沿方向基底、解码和合成组织，误差明确发生于切平面附近，区分本例正交基与烘焙一致性。"
+        "将八面体编码普遍采用的泛化改成可选的完整球面编码用途。"
       ],
-      "content_sha256": "c648d7fe88bd1c5ea35f796944e5230ef3efdb8163a927d2a64d24dd78552af0",
+      "content_sha256": "f3529ae630040b53cc2a28ecb49c740d67ec03b1532267f134d771cbcc3b709b",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "c648d7fe88bd1c5ea35f796944e5230ef3efdb8163a927d2a64d24dd78552af0",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "e305132c62009c039f00832417299b472c902a08c23aef4745dd1f5d119493d7"
     }
   },
   {
@@ -4628,39 +4658,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何以实时预算近似皮肤次表面散射"
+        "basis": "主问题仍为皮肤次表面散射；扩散剖面；局部圆弧上的查表生成；管线集成围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "扩散剖面；三类实时方案；预积分次表面散射；屏幕空间次表面散射；皮肤的其他分层；验证方法"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "展开归一化剖面圆环积分、中心有限能量、LUT无量纲曲率、透视像素半径和卷积有效权重。"
+        "basis": "逐式核对圆环能量与中心奇点，补齐表面圆弧法线旋转、无量纲曲率和高斯积分。明确一维演示模型与二维剖面/完整 BSSRDF 的边界，RGB 表以固定相对尺度生成。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "新增3尺度圆环可加性与距离翻倍测试通过，既有83机制检查通过；Unity片段和GPU卷积未运行。"
+        "basis": "test_lighting.py 11 项中含 4 项预积分边界；三个皮肤 HLSL 片段补齐宿主后编译。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Christensen作者页CDF与参数化、Separable SSS论文作者页及2012代码核读，公开演示与2015方案分开。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "删除未核实HDRP颜色过滤断言，区分计算通道与模板测试；双波瓣权重与红色AO近似注明。"
+        "basis": "修正剖面的面密度单位和波长绝对表述；新增预积分推导、完整采样循环、四项 TDD；区分光栅模板与计算分类验证。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "皮肤次表面散射定位主概念；子标题按机制与操作命名。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "04领域以表面反射和环境积分为主归属；局部Probe、纹理过滤及GBuffer编码分别链接对应专篇。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "方程、明确坐标和数值例说明主要计算，无新增图像结果证据。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -4697,7 +4727,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "0a9c3d17e6bc49dcab448593f4c4861ad7c0783bb0b2e56d14968382c48c7094",
+    "final_sha256": "00806f88ff604590f053e295dd6e40f036da6afeaba2eb7b4263ffafe5f0f8e4",
     "content_commit": "8045bc0",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -4730,15 +4760,18 @@
       "phase": "P1-lighting",
       "scope": "全文、公式、代码、来源、标题和验证",
       "findings": [
-        "展开归一化剖面圆环积分、中心有限能量、LUT无量纲曲率、透视像素半径和卷积有效权重。",
-        "删除未核实HDRP颜色过滤断言，区分计算通道与模板测试；双波瓣权重与红色AO近似注明。"
+        "修正剖面的面密度单位和波长绝对表述；新增预积分推导、完整采样循环、四项 TDD；区分光栅模板与计算分类验证。"
       ],
-      "content_sha256": "0a9c3d17e6bc49dcab448593f4c4861ad7c0783bb0b2e56d14968382c48c7094",
+      "content_sha256": "00806f88ff604590f053e295dd6e40f036da6afeaba2eb7b4263ffafe5f0f8e4",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "0a9c3d17e6bc49dcab448593f4c4861ad7c0783bb0b2e56d14968382c48c7094",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "5c8f87b5b3103d0d37fe51005999d360b10e9cf6d9bad5f9f52d0f13f9ea7e32"
     }
   },
   {
@@ -4866,39 +4899,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何让动态物体插值空间中的低频间接光"
+        "basis": "主问题仍为Light Probe；低频光照表示；存储与运行时读取；三线性 Probe 插值围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "Light Probe；三线性 Probe 插值；验证方法；相关主题；参考资料"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "展开八角权重、27分量缓冲布局、边界策略、系数/辐照度单位与可见性重归一化。"
+        "basis": "全文核对规则网格坐标裁剪、8 角权重与 9 组 float3 数据布局。插值系数要求同基底、同坐标及同卷积约定；插值本身不能解决跨墙遮挡。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "CPU仿射场重建、角点与权重和检查通过；HLSL结构化缓冲插值ps_6_0编译通过。"
+        "basis": "仿射场重建和权重边界 CPU 检查；InterpolateProbes HLSL 编译。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "SH主归属公式与DDGI作者算法说明核读；内存108字节由27个float计算。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "以空间权重和系数契约解释连续性，删除把高频误差必归因SH阶数的断言。"
+        "basis": "明确 l=0,1,2 共 9 个基函数、RGB 共 27 个系数的来源，H2 改为低频光照表示。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "Light Probe表达主问题，次级标题采用内容名称。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "05领域区分光源、可见性与缓存；BRDF、SH、IBL及图集机制链接现有主归属。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "以空间算例、积分公式和完整算法解释主机制，无新增图像或结果截图。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -4928,7 +4961,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "09c974f6933678509b17fa9771638fbb64efa4c46a7d03ca3f2c31088475890f",
+    "final_sha256": "8575a25f4a5d2069f3521225a30003e19422e5c6f711fc9f270a6e988a274869",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -4962,15 +4995,18 @@
       "phase": "P1-gi",
       "scope": "全文、代码、公式、证据、验证与标题",
       "findings": [
-        "展开八角权重、27分量缓冲布局、边界策略、系数/辐照度单位与可见性重归一化。",
-        "以空间权重和系数契约解释连续性，删除把高频误差必归因SH阶数的断言。"
+        "明确 l=0,1,2 共 9 个基函数、RGB 共 27 个系数的来源，H2 改为低频光照表示。"
       ],
-      "content_sha256": "09c974f6933678509b17fa9771638fbb64efa4c46a7d03ca3f2c31088475890f",
+      "content_sha256": "8575a25f4a5d2069f3521225a30003e19422e5c6f711fc9f270a6e988a274869",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "09c974f6933678509b17fa9771638fbb64efa4c46a7d03ca3f2c31088475890f",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "b0f39f1b5b6a2af14f134260d4467fad4b5b6d5fad65dd813c5bba139c62247a"
     }
   },
   {
@@ -4989,39 +5025,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何把静态表面的光照预计算为可稳定采样的纹理"
+        "basis": "主问题仍为Lightmap；运行时查询；烘焙边界与失效围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "静态表面光照表示；运行时查询；烘焙边界与失效；验证方法；相关主题；参考资料"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "区分辐照度与出射颜色、方向压缩的局限、UV保护边与mip、烘焙输入及直接光双算。"
+        "basis": "全文检查 UV 图集映射与 mip 留边因果。运行时示例明确输入为未乘反照率的线性辐照度，因此 rho/π 只有一处；RGBM 和方向性编码另需解码。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "明确线性浮点辐照度采样片段和256/2048图集算例；未执行场景烘焙与引擎导入。"
+        "basis": "运行时查询片段与 rho/π 关系人工核对；烘焙与引擎运行 UNVERIFIED。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Unity6000.0 Directional Mode正文核读两纹理语义及额外成本。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "按表示、查询、烘焙失效推进，删除与本文不相关的Lumen/RTXGI引用。"
+        "basis": "保留：主问题边界、查询输入单位和烘焙缓存失效条件明确，未冒称资产实测。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "Lightmap表达主问题，次级标题采用内容名称。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "05领域区分光源、可见性与缓存；BRDF、SH、IBL及图集机制链接现有主归属。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "以空间算例、积分公式和完整算法解释主机制，无新增图像或结果截图。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -5086,15 +5122,18 @@
       "phase": "P1-gi",
       "scope": "全文、代码、公式、证据、验证与标题",
       "findings": [
-        "区分辐照度与出射颜色、方向压缩的局限、UV保护边与mip、烘焙输入及直接光双算。",
-        "按表示、查询、烘焙失效推进，删除与本文不相关的Lumen/RTXGI引用。"
+        "保留：主问题边界、查询输入单位和烘焙缓存失效条件明确，未冒称资产实测。"
       ],
       "content_sha256": "30df52bc6f451a176f58a7ef3740243909abc2dc95e3d5151537934a6bdbb7fb",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "30df52bc6f451a176f58a7ef3740243909abc2dc95e3d5151537934a6bdbb7fb",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "3e32bd771d88e636d7a3412f88319b5b1b15352a5e6a0bd0ea2542311710773e"
     }
   },
   {
@@ -5113,39 +5152,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何捕获并混合局部环境反射"
+        "basis": "主问题仍为Reflection Probe；局部反射查询；探针混合与更新围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "Reflection Probe；局部反射查询；探针混合与更新；验证方法；相关主题；参考资料"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "展开盒内射线出口、平行轴和零方向处理、有限墙面视差算例及先查询后混合。"
+        "basis": "逐轴验证盒出口求交、平行轴与零方向回退。相对权重归一化在单探针时抵消渐变，必须给全局环境保留剩余权重才能连续淡出。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "CPU检查中心恒等、偏移位置、平行轴、盒外及零方向；正文函数ps_6_0编译通过。"
+        "basis": "盒投影 1 项及混合 3 项 CPU 检查；BoxProjectedDirection HLSL 编译。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Unity6000.0 Box projection官方段落核读；求交公式与现有slab方法独立对照。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "从捕获位置差异解释方向重建；近场、粗糙度和混合有效范围就地限定。"
+        "basis": "加入全局余权重公式及三个 TDD；明确单位反射方向和每探针先查询再混合，H2 改为局部反射数据。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "Reflection Probe表达主问题，次级标题采用内容名称。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "05领域区分光源、可见性与缓存；BRDF、SH、IBL及图集机制链接现有主归属。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "以空间算例、积分公式和完整算法解释主机制，无新增图像或结果截图。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -5174,7 +5213,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "a4f3b75d65befa3eeb4bd94e2aafb94d34cbb7bb8d94e13ec62a80370369570e",
+    "final_sha256": "be74ae062bc5e5990058a8271b1e133f068684b0ec757818938a66e4570cbdde",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -5208,15 +5247,18 @@
       "phase": "P1-gi",
       "scope": "全文、代码、公式、证据、验证与标题",
       "findings": [
-        "展开盒内射线出口、平行轴和零方向处理、有限墙面视差算例及先查询后混合。",
-        "从捕获位置差异解释方向重建；近场、粗糙度和混合有效范围就地限定。"
+        "加入全局余权重公式及三个 TDD；明确单位反射方向和每探针先查询再混合，H2 改为局部反射数据。"
       ],
-      "content_sha256": "a4f3b75d65befa3eeb4bd94e2aafb94d34cbb7bb8d94e13ec62a80370369570e",
+      "content_sha256": "be74ae062bc5e5990058a8271b1e133f068684b0ec757818938a66e4570cbdde",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "a4f3b75d65befa3eeb4bd94e2aafb94d34cbb7bb8d94e13ec62a80370369570e",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "5084764f63dcdc8e4fcb050c7558e402e15728ad5036ca6b75af4843b8db7668"
     }
   },
   {
@@ -5234,39 +5276,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何生成、过滤和调试光源可见性"
+        "basis": "主问题仍为Shadow Map；处理边界过渡；平面投影阴影；点光源阴影围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "Shadow Map 流程；过滤离散可见性；Shadow Acne；阴影资源与投影方案；常见伪影定位；验证方法"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "明确PCF查询足迹、常规/反向Z、半影全宽到UV半径、固定世界基底吸附、矩上界及点阴影返回语义。"
+        "basis": "逐段复读 PCF、PCSS、CSM、VSM 与点光深度约定。半影完整宽度/半径换算正确；CSM 的两层查询要求矩阵覆盖混合带，Cubemap 各面上方向不能统一为同向量。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "CPU验证PCSS宽度半径和方差边界；正文PCF ps_6_0编译通过，级联矩阵宿主和GPU结果未运行。"
+        "basis": "PCSS 尺度与矩上界 CPU 检查；PCF HLSL、SelectCascade 和 PointShadow GLSL 编译。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Microsoft CSM和GPU Gems3第8章§8.4/§8.6核读；NVIDIA旧PCSS独立PDF超时不计已读。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "移除疑问标题和过深标题，推导细节在对应半影章节连续叙述，区别比较过滤与原始深度过滤。"
+        "basis": "补常规 Z 前提、混合带矩阵覆盖、各面上方向；修正平面投影无 Bias 与必然低成本断言，补 GLSL 编译证据。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "Shadow Map表达主问题，次级标题采用内容名称。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "05领域区分光源、可见性与缓存；BRDF、SH、IBL及图集机制链接现有主归属。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "以空间算例、积分公式和完整算法解释主机制，无新增图像或结果截图。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -5320,7 +5362,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "e710b1bb248c3e6f983e2fa05f3e44cba662551b16985b0537dacdf066b9517f",
+    "final_sha256": "a209eff9c432eb53e369676f522b20b8c136d6ef32b781eb7127ae3535535b89",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -5353,15 +5395,18 @@
       "phase": "P1-gi",
       "scope": "全文、代码、公式、证据、验证与标题",
       "findings": [
-        "明确PCF查询足迹、常规/反向Z、半影全宽到UV半径、固定世界基底吸附、矩上界及点阴影返回语义。",
-        "移除疑问标题和过深标题，推导细节在对应半影章节连续叙述，区别比较过滤与原始深度过滤。"
+        "补常规 Z 前提、混合带矩阵覆盖、各面上方向；修正平面投影无 Bias 与必然低成本断言，补 GLSL 编译证据。"
       ],
-      "content_sha256": "e710b1bb248c3e6f983e2fa05f3e44cba662551b16985b0537dacdf066b9517f",
+      "content_sha256": "a209eff9c432eb53e369676f522b20b8c136d6ef32b781eb7127ae3535535b89",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "e710b1bb248c3e6f983e2fa05f3e44cba662551b16985b0537dacdf066b9517f",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "b0daaf12ed227918ff5240cd1d3941d2e182d4af863fd734531d9ed0c811a7c0"
     }
   },
   {
@@ -5380,39 +5425,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何在场景变化后更新间接光表示"
+        "basis": "主问题仍为动态GI；可见性与历史更新围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "可更新的场景表示；方案适用条件；验证方法；相关主题；参考资料"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "展开距离两矩可见性上界、二点深度漏光算例、时间滞后闭式解及滚动槽位代次重置。"
+        "basis": "全文核对距离一二阶矩的概率上界及漏光二点反例。历史公式按实际更新次数计算，稀疏更新的 10 次不能等同 10 帧；失效历史直接重置。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "CPU核对矩上界0.8与实际0.5差异、10次更新1-0.9^10与失效重置；未执行场景追踪。"
+        "basis": "矩上界 .8 对实际 .5 反例，历史 1-.9^10 与重置 CPU 检查。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "RTXGI Irradiance.hlsl 120—172行、DDGI作者页及Unreal5.6 Lumen Technical Details已核读。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "保留同题方案比较，以完整DDGI更新链补主机制；Lumen行为注明版本和运行边界。"
+        "basis": "保留：探针、体素等方案的表示/更新边界明确，伪代码展开可见性和历史关键机制。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "动态GI表达主问题，次级标题采用内容名称。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "05领域区分光源、可见性与缓存；BRDF、SH、IBL及图集机制链接现有主归属。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "以空间算例、积分公式和完整算法解释主机制，无新增图像或结果截图。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -5480,15 +5525,18 @@
       "phase": "P1-gi",
       "scope": "全文、代码、公式、证据、验证与标题",
       "findings": [
-        "展开距离两矩可见性上界、二点深度漏光算例、时间滞后闭式解及滚动槽位代次重置。",
-        "保留同题方案比较，以完整DDGI更新链补主机制；Lumen行为注明版本和运行边界。"
+        "保留：探针、体素等方案的表示/更新边界明确，伪代码展开可见性和历史关键机制。"
       ],
       "content_sha256": "c54fd5625d6dc5801bcdbf820ac316ab9723954e247d0dce593ba5b7be44a9b7",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "c54fd5625d6dc5801bcdbf820ac316ab9723954e247d0dce593ba5b7be44a9b7",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "b3cd44e74a241d29328dbc9f9271d603a097c12793d0ede6b8cf5e21c39db364"
     }
   },
   {
@@ -5507,39 +5555,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何评估不同光源在表面的直接贡献"
+        "basis": "主问题仍为直接光照；LTC 的执行过程；Horizon Clipping 与 LUT 边界围绕其输入、机制与边界展开。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "光源模型；单位与空间分布；表面求值与光源组织；验证方法；相关主题；参考资料"
+        "basis": "全文按 review_sections 逐节读取；无本轮新增的重复主问题或导读扩写。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "展开点光通量到光强、聚光锥权重、LTC矩阵布局、地平线裁剪和球面边积分，消除抽象核心函数。"
+        "basis": "逐行检查单平面裁剪、球面边积分和 1/(2π) 因子，并用面积域独立积分对照；双面结果与单面宿主剔除分开，退化方向有说明。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "CPU边积分与独立矩形面积积分对照、尺度及裁剪测试通过；正文LTC ps_6_0编译通过。"
+        "basis": "LTC 独立面积积分、统一缩放与地平面裁剪 CPU 检查；HLSL 编译。目标引擎、GPU 输出与性能范围独立记录。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Heitz论文作者页和ltc_quad.fs矩阵/幅度/裁剪代码核读。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "光源单位、传播与表面响应区分，LTC积分中已含的余弦和距离不再重复乘。"
+        "basis": "明确输入为按边界排列的非退化共面凸四边形，证明裁剪数组最多 5 个点；编译探针保持该输入前提。正文使用现行规则及输入—操作—结果推理。"
       },
       "Title": {
         "status": "通过",
-        "basis": "直接光照表达主问题，次级标题采用内容名称。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "05领域区分光源、可见性与缓存；BRDF、SH、IBL及图集机制链接现有主归属。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "以空间算例、积分公式和完整算法解释主机制，无新增图像或结果截图。"
+        "basis": "本轮机制由公式、代码、表格与数值反例表达，未新增或引用未经验证的画面证据。"
       }
     },
     "batch_migration_authorized": true,
@@ -5580,7 +5628,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "d67c0a20c487c46298226125383cf25ee4a4f12a696e681978ce28d2f8b51d4b",
+    "final_sha256": "4aad75772cc951bc0fc9cb2b8e887e77b61631ad64aaabf71b53c83ad584097b",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -5613,15 +5661,18 @@
       "phase": "P1-gi",
       "scope": "全文、代码、公式、证据、验证与标题",
       "findings": [
-        "展开点光通量到光强、聚光锥权重、LTC矩阵布局、地平线裁剪和球面边积分，消除抽象核心函数。",
-        "光源单位、传播与表面响应区分，LTC积分中已含的余弦和距离不再重复乘。"
+        "明确输入为按边界排列的非退化共面凸四边形，证明裁剪数组最多 5 个点；编译探针保持该输入前提。"
       ],
-      "content_sha256": "d67c0a20c487c46298226125383cf25ee4a4f12a696e681978ce28d2f8b51d4b",
+      "content_sha256": "4aad75772cc951bc0fc9cb2b8e887e77b61631ad64aaabf71b53c83ad584097b",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "d67c0a20c487c46298226125383cf25ee4a4f12a696e681978ce28d2f8b51d4b",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-03-05.json",
+      "independent_source_sha256": "b638ec8103340a6c25ff2b697e6ee380ce4b58eb3d9c43476f571972c3e2daa3"
     }
   },
   {
@@ -6549,19 +6600,19 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "补齐非预乘/预乘空缺段落、两纹素黑边算例、先预乘后过滤及Alpha独立混合因子。"
+        "basis": "红色不透明与黑色透明的两纹素例，Straight结果0.25与预乘结果0.5可直接复算。；先预乘再过滤与先过滤再乘的公式不同；RGB、Alpha混合因子分别定义。；线性RGB预乘、存储编码与零Alpha不可恢复边界清楚；未声称GPU混合验证。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "CPU检查两纹素线性预乘过滤贡献，GPU混合与资产导入未运行。"
+        "basis": "CPU检查：test_alpha_filtering；独立着色器编译：NOT_APPLICABLE；目标引擎/GPU画面/捕获/性能未执行。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "W3C预乘插值规则与透明合成主归属公式核对。"
+        "basis": "§13.4 Interpolating with Alpha，仅支持预乘插值规则；线性光合成依据本页与透明合成数学；原资料与计算实验分别记录。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "按资源表示、过滤顺序和UI链路解释，去除空公式引导与警告式标题。"
+        "basis": "逐节复读；机制输入、因果、实现与边界对应，修订直接陈述现行规则。"
       },
       "Title": {
         "status": "通过",
@@ -6652,7 +6703,11 @@
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "f80cfbc6855c6eb163043021e3df0df40a6460b83a50844f184b5b6b408aa248",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-07.json",
+      "independent_source_sha256": "35b2cebdcaeba08937d5076b862c0aede884d6c02f5bb42e788b1fdafdc6e7eb"
     }
   },
   {
@@ -6679,19 +6734,19 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "展开软阈值二次过渡、多尺度归一化、加法和能量分配区别及纹理读写调度。"
+        "basis": "软阈值上下端函数值/导数正确，输入有限非负且半宽0≤k≤T；零输入有直接返回。；颜色、T、k共同乘预曝光尺度；移除正亮度分母固定1e-6后，1e-8尺度下仍保持相同比例。；2×2盒核限定偶数尺寸中心对齐；多尺度递归与光学能量混合区分；来源文字已在基线明确为曝光关联自发光。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "CPU检查黑输入、软阈值中点和不同层数常量保持；正文两函数DXC编译通过。"
+        "basis": "CPU检查：test_bloom_knee_and_constant_energy、test_bloom_preexposure_scale_invariance；独立着色器编译：bloom；目标引擎/GPU画面/捕获/性能未执行。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Filament Bloom曝光相对输入核读；多尺度模型的权重关系由公式直接验证。"
+        "basis": "§8.1.5 Bloom讨论曝光相对自发光；不作为本页归一化滤波算法的直接实现证据；原资料与计算实验分别记录。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "阈值和输入处于同一曝光尺度，降低分辨率的过滤边界明确；无实测性能断言。"
+        "basis": "逐节复读；机制输入、因果、实现与边界对应，修订直接陈述现行规则。"
       },
       "Title": {
         "status": "通过",
@@ -6735,7 +6790,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "53ba7268c2b1f37e41bf082f96d6b058c50bc2c4579da10b7d403021faddb617",
+    "final_sha256": "e6abed97fc335d867293fec9398691e51b0e2d7e0100fcfdd7910263daee3c9c",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -6772,12 +6827,16 @@
         "展开软阈值二次过渡、多尺度归一化、加法和能量分配区别及纹理读写调度。",
         "阈值和输入处于同一曝光尺度，降低分辨率的过滤边界明确；无实测性能断言。"
       ],
-      "content_sha256": "53ba7268c2b1f37e41bf082f96d6b058c50bc2c4579da10b7d403021faddb617",
+      "content_sha256": "e6abed97fc335d867293fec9398691e51b0e2d7e0100fcfdd7910263daee3c9c",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "53ba7268c2b1f37e41bf082f96d6b058c50bc2c4579da10b7d403021faddb617",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-07.json",
+      "independent_source_sha256": "e6abed97fc335d867293fec9398691e51b0e2d7e0100fcfdd7910263daee3c9c"
     }
   },
   {
@@ -6804,19 +6863,19 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "展开对数测光、秒单位适应、预曝光历史与显示尺度公式，替换抽象曝光接口。"
+        "basis": "EV与Shader倍率区别、对数测光、时间常数单位及两个半步等价关系成立。；历史乘p_current/p_previous，显示乘e_current/p_current，20→10→40→5例一致。；CPU实现拒绝非有限倍率和时间；HLSL片段仍由宿主执行前置校验，未将CPU拒绝声明为GPU执行。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "CPU检查时间步长不变性、比例与无效曝光拒绝；正文两个换算函数DXC编译通过。"
+        "basis": "CPU检查：test_exposure_time_and_history、test_exposure_rejects_nonfinite_parameters；独立着色器编译：exposure；目标引擎/GPU画面/捕获/性能未执行。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Unreal5.6 Auto Exposure的Basic/Histogram/Pre-Exposure段核读。"
+        "basis": "UE5.6；Histogram and Basic Algorithm、Manual Algorithm、Pre-Exposure，前帧曝光应用于写入场景颜色之前；原资料与计算实验分别记录。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "区分当前缓冲倍率与其估计来源，以20/10/40/5算例贯通存储和显示。"
+        "basis": "逐节复读；机制输入、因果、实现与边界对应，修订直接陈述现行规则。"
       },
       "Title": {
         "status": "通过",
@@ -6863,7 +6922,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "71c1eb8ed484c7d8c38f320dc01af2a76fd27b43528dfa14443f6aa0103e44f9",
+    "final_sha256": "0132abd09f4c52b0b267d0b564541a9ae8b36ab99909742e29ddf2ebbe08fc43",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -6900,12 +6959,16 @@
         "展开对数测光、秒单位适应、预曝光历史与显示尺度公式，替换抽象曝光接口。",
         "区分当前缓冲倍率与其估计来源，以20/10/40/5算例贯通存储和显示。"
       ],
-      "content_sha256": "71c1eb8ed484c7d8c38f320dc01af2a76fd27b43528dfa14443f6aa0103e44f9",
+      "content_sha256": "0132abd09f4c52b0b267d0b564541a9ae8b36ab99909742e29ddf2ebbe08fc43",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "71c1eb8ed484c7d8c38f320dc01af2a76fd27b43528dfa14443f6aa0103e44f9",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-07.json",
+      "independent_source_sha256": "0132abd09f4c52b0b267d0b564541a9ae8b36ab99909742e29ddf2ebbe08fc43"
     }
   },
   {
@@ -6932,19 +6995,19 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "用导数与数值说明Reinhard，比较逐通道与亮度缩放，补LUT端点、整形域和色域边界。"
+        "basis": "非负Reinhard单调性、极值和导数正确；逐通道与按亮度映射的色比区别明确。；按亮度缩放不保证逐通道≤1，正文饱和色反例与CPU一致。；N点LUT参数坐标映射到首尾纹素中心正确；完整ACES、色域映射和输出编码未混同。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "CPU反例证明保持RGB比不保证通道有界；既有Reinhard检查通过，完整LUT/显示未运行。"
+        "basis": "CPU检查：test_luminance_mapping_chromatic_ratio；独立着色器编译：NOT_APPLICABLE；目标引擎/GPU画面/捕获/性能未执行。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "公开W3C颜色变换与Filament成像链路核对，Reinhard公式直接推导。"
+        "basis": "Imaging pipeline及Filmic post-processing，支持链路职责；本文Reinhard具体关系独立推导；§19原色、XYZ与传递函数；原资料与计算实验分别记录。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "按动态范围、颜色比例与查表契约叙述，删除与本页无关SSAO引用。"
+        "basis": "逐节复读；机制输入、因果、实现与边界对应，修订直接陈述现行规则。"
       },
       "Title": {
         "status": "通过",
@@ -7030,7 +7093,11 @@
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "c49a1618edfe254b5ade0d8dd1c30077bc3b077e5e74493a1edeae3a6e63cc27",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-07.json",
+      "independent_source_sha256": "c6717728cc63f7f002ea18c9ebbeabc0708929aab55738ebbba3381cdf23e377"
     }
   },
   {
@@ -7166,19 +7233,19 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "补实现缺失的裁剪/越屏/背景拒绝和稳定TBN，解释右手深度比较与缺失样本偏差。"
+        "basis": "负Z观察空间的前后比较方向正确，矩阵乘法中的TBN行基底和Projection列向量用法一致。；UV上原点、0≤clip.z≤w、W有效标志和缺失样本分母明确。；相对Radius的数值下限保证全长度缩放不改变权重；核的局部单位半球范围明确。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "CPU检查遮挡方向和深度距离权重，完整正文函数DXC编译通过；GPU画面未运行。"
+        "basis": "CPU检查：test_ssao_right_handed_depth、test_ssao_length_scale_invariance；独立着色器编译：ssao；目标引擎/GPU画面/捕获/性能未执行。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "LearnOpenGL作者9.ssao.fs全文核读；本文明确增加的D3D投影/UV及有效标记约定。"
+        "basis": "main函数半球采样、视空间z比较和smoothstep距离权重；原例无本文裁剪/有效标记与退化基底保护；原资料与计算实验分别记录。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "把验证要求落实到代码，分清环境可见性、直接光与自发光归属。"
+        "basis": "逐节复读；机制输入、因果、实现与边界对应，修订直接陈述现行规则。"
       },
       "Title": {
         "status": "通过",
@@ -7219,7 +7286,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "38b8cb1bd084c9f91202e98b54d337b229ad61c5e676050e7490534c407f2e04",
+    "final_sha256": "5368aec5da16de9f6b12f7d4986cdbccdb019653ddf2f30f91bc6afe426fa4e9",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -7256,12 +7323,16 @@
         "补实现缺失的裁剪/越屏/背景拒绝和稳定TBN，解释右手深度比较与缺失样本偏差。",
         "把验证要求落实到代码，分清环境可见性、直接光与自发光归属。"
       ],
-      "content_sha256": "38b8cb1bd084c9f91202e98b54d337b229ad61c5e676050e7490534c407f2e04",
+      "content_sha256": "5368aec5da16de9f6b12f7d4986cdbccdb019653ddf2f30f91bc6afe426fa4e9",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "38b8cb1bd084c9f91202e98b54d337b229ad61c5e676050e7490534c407f2e04",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-07.json",
+      "independent_source_sha256": "5368aec5da16de9f6b12f7d4986cdbccdb019653ddf2f30f91bc6afe426fa4e9"
     }
   },
   {
@@ -7288,19 +7359,19 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "补薄透镜CoC半径公式、近远符号/长度单位、邻居覆盖、快门与帧位移换算及资源顺序。"
+        "basis": "薄透镜CoC为带符号半径，统一长度单位下毫米/米结果一致；z明确为线性轴向深度。；v=prev-current时，表面过去位置为p+λv，当前图gather位置为u−λv；平移亮点0.5→0.6的半快门覆盖[0.55,0.6]，目标0.575读取当前0.6。；MotionGatherUV正文、CPU与编译宿主对应；零快门、正帧间隔、采样数及宿主范围明确。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "CPU检查焦面、符号、17.09像素算例与光圈比例，正文CoC函数DXC编译通过；分层GPU采样未运行。"
+        "basis": "CPU检查：test_coc_units_and_focus、test_coc_unit_conversion_and_invalid_parameters、test_motion_gather_recovers_translated_bright_point；独立着色器编译：coc_motion；目标引擎/GPU画面/捕获/性能未执行。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "GPU Gems3第28章§28.3/28.4和第27章运动模糊正文核读。"
+        "basis": "§27.2—27.3，原例current-prev速度与正向gather；本页采用相反速度定义，方向独立推导；§28.3薄透镜、§28.4前景CoC覆盖及近景模糊限制；原资料与计算实验分别记录。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "用两个不同的覆盖来源组织主问题，替换隐藏全部计算的三行伪代码，明确单层缺失信息。"
+        "basis": "逐节复读；机制输入、因果、实现与边界对应，修订直接陈述现行规则。"
       },
       "Title": {
         "status": "通过",
@@ -7343,7 +7414,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "ad65c468b02a56f52c2dca93e53ba1555cafe8638666848ad5c8e4e1adedbec9",
+    "final_sha256": "29d95f8c5215315aace3659cf5fad719b3e12f6f36ff56f5feb2a71a1f525aa9",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -7380,12 +7451,16 @@
         "补薄透镜CoC半径公式、近远符号/长度单位、邻居覆盖、快门与帧位移换算及资源顺序。",
         "用两个不同的覆盖来源组织主问题，替换隐藏全部计算的三行伪代码，明确单层缺失信息。"
       ],
-      "content_sha256": "ad65c468b02a56f52c2dca93e53ba1555cafe8638666848ad5c8e4e1adedbec9",
+      "content_sha256": "29d95f8c5215315aace3659cf5fad719b3e12f6f36ff56f5feb2a71a1f525aa9",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "ad65c468b02a56f52c2dca93e53ba1555cafe8638666848ad5c8e4e1adedbec9",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-07.json",
+      "independent_source_sha256": "29d95f8c5215315aace3659cf5fad719b3e12f6f36ff56f5feb2a71a1f525aa9"
     }
   },
   {
@@ -7412,19 +7487,19 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "展开编码逆函数、黑白混合数值反例、原色与传递函数差别和资源转换顺序。"
+        "basis": "sRGB分段阈值与W3C公开公式一致；0.5解码约0.214，线性0.5编码约0.735。；原色变换和传递函数分开；sRGB视图自动解码不与手动转换叠加。；HLSL标量函数输入限定[0,1]，实际DXC编译；资源视图和显示链运行未冒充已验。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "sRGB阈值往返及0.5数值通过CPU检查，正文两函数通过DXC编译。"
+        "basis": "CPU检查：test_srgb_roundtrip_and_midgray；独立着色器编译：srgb；目标引擎/GPU画面/捕获/性能未执行。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "W3C CSS Color4转换代码和XYZ矩阵核读；IEC全文未取得，不计已核读。"
+        "basis": "2026-10-20 Candidate Recommendation Draft；§10.2 sRGB与§19转换代码；原资料与计算实验分别记录。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "使用完整中文说明数值与显示关系，删除颜色运算必然变暗的泛化及跨页重复衰减推导。"
+        "basis": "逐节复读；机制输入、因果、实现与边界对应，修订直接陈述现行规则。"
       },
       "Title": {
         "status": "通过",
@@ -7515,7 +7590,11 @@
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+      "first_review_sha256": "a839be78dd37cdd143a6600f4460f6badc07525fc2ecf2d80a9e3d7cbbe2c7b6",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-07.json",
+      "independent_source_sha256": "d6ad8b536a1ea4365706c43a0d9e3315c98b8ab50c37386285639580f1566fbc"
     }
   },
   {

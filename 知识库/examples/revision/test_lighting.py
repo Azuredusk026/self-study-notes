@@ -1,7 +1,7 @@
 """PBR、环境积分与次表面散射的数值边界检查。"""
 import math
 import unittest
-from lighting_models import ggx_d, specular, integrate_lut, rnm, annulus_energy, projected_radius
+from lighting_models import ggx_d, specular, integrate_lut, rnm, annulus_energy, projected_radius, preintegrated_diffuse
 
 
 class LightingTests(unittest.TestCase):
@@ -53,6 +53,30 @@ class LightingTests(unittest.TestCase):
         self.assertAlmostEqual(r, 5.4)
         self.assertAlmostEqual(projected_radius(.01, 2, math.pi/2, 1080), r/2)
 
+
+class PreintegrationTests(unittest.TestCase):
+    def test_flat_profile_recovers_lambert(self):
+        for mu in (-1, -.5, 0, .25, 1):
+            self.assertAlmostEqual(preintegrated_diffuse(mu, 0), max(mu, 0))
+
+    def test_horizon_and_radius(self):
+        self.assertEqual(preintegrated_diffuse(0, 0), 0)
+        self.assertGreater(preintegrated_diffuse(0, .2), preintegrated_diffuse(0, .1))
+        self.assertGreater(preintegrated_diffuse(0, .1), 0)
+
+    def test_normal_incidence_matches_gaussian_characteristic(self):
+        # q=.2 在截断区间上余弦为正；完整高斯的解析值为 exp(-q²/2)。
+        self.assertAlmostEqual(preintegrated_diffuse(1, .2), math.exp(-.2**2/2), delta=1e-4)
+
+    def test_bounds_convergence_and_invalid_input(self):
+        for mu in (-1, -.2, 0, .7, 1):
+            value=preintegrated_diffuse(mu, .25)
+            self.assertGreaterEqual(value, 0)
+            self.assertLessEqual(value, 1)
+            self.assertAlmostEqual(value, preintegrated_diffuse(mu, .25, 4096), delta=1e-6)
+        for mu, q in ((1.1,.2),(0,-.1),(float('nan'),.1)):
+            with self.assertRaises(ValueError): preintegrated_diffuse(mu,q)
+        with self.assertRaises(ValueError): preintegrated_diffuse(0,.1,0)
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,7 +1,17 @@
 import unittest
-from shader_models import blocked_scan, ReadbackModel
+from shader_models import blocked_scan, ReadbackModel, blocked_minmax
 
 class ShaderModels(unittest.TestCase):
+    def test_minmax_partial_signed_groups(self):
+        for count in (1,63,64,65,130,257):
+            for sign in (-1,1):
+                values=[sign*(1+(i*13)%37) for i in range(count)]
+                self.assertEqual(blocked_minmax(values),(min(values),max(values)))
+
+    def test_minmax_empty_and_single(self):
+        self.assertIsNone(blocked_minmax([]))
+        self.assertEqual(blocked_minmax([7]),(7,7))
+
     def test_scan_across_partial_groups(self):
         for count in (0,1,63,64,65,130,257):
             values=[(i*7)%5 for i in range(count)]

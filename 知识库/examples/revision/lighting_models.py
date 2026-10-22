@@ -72,3 +72,20 @@ def annulus_energy(r0, r1, d, albedo):
 
 def projected_radius(radius_m, depth_m, vertical_fov, height_px):
     return radius_m * height_px/(2*math.tan(vertical_fov/2)*depth_m)
+
+
+def preintegrated_diffuse(mu, q, samples=2048):
+    """圆弧截面上一维高斯卷积，q=曲率×高斯标准差；积分截断到±4σ。"""
+    if not math.isfinite(mu) or not math.isfinite(q) or not -1 <= mu <= 1 or q < 0:
+        raise ValueError('需要有限的 mu∈[-1,1] 与 q≥0')
+    if not isinstance(samples, int) or samples <= 0:
+        raise ValueError('采样数必须为正整数')
+    transverse=math.sqrt(max(0,1-mu*mu))
+    accumulated=weight_sum=0.0
+    for i in range(samples):
+        u=-4+8*(i+.5)/samples
+        weight=math.exp(-.5*u*u)
+        normal_dot_light=mu*math.cos(q*u)+transverse*math.sin(q*u)
+        accumulated+=weight*max(normal_dot_light,0)
+        weight_sum+=weight
+    return accumulated/weight_sum

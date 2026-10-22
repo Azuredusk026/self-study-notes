@@ -1,0 +1,434 @@
+{
+  "date": "2026-10-22",
+  "scope": "07_颜色与后处理7篇技术文章；后处理链导读留父任务",
+  "baseline_commit": "8b6e8cd",
+  "method": "独立全文读取七篇和三份样例，核算公式、核读一手来源、写失败回归后修复；最后检查差异、样例编译与静态引用。",
+  "articles": [
+    {
+      "path": "知识库/07_颜色与后处理/Alpha表示.md",
+      "full_text_review": true,
+      "reviewed_sections": [
+        "覆盖与合成",
+        "Alpha通道语义",
+        "线性混合",
+        "两种颜色表示",
+        "Straight Alpha",
+        "Premultiplied Alpha",
+        "UI颜色链路",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "baseline_commit": "8b6e8cd",
+      "initial_sha256": "35b2cebdcaeba08937d5076b862c0aede884d6c02f5bb42e788b1fdafdc6e7eb",
+      "final_sha256": "35b2cebdcaeba08937d5076b862c0aede884d6c02f5bb42e788b1fdafdc6e7eb",
+      "changed": false,
+      "independent_result": "PASS_WITH_RUNTIME_LIMITS",
+      "pass_basis": [
+        "红色不透明与黑色透明的两纹素例，Straight结果0.25与预乘结果0.5可直接复算。",
+        "先预乘再过滤与先过滤再乘的公式不同；RGB、Alpha混合因子分别定义。",
+        "线性RGB预乘、存储编码与零Alpha不可恢复边界清楚；未声称GPU混合验证。"
+      ],
+      "changes": [],
+      "source_checks": [
+        {
+          "url": "https://www.w3.org/TR/css-color-4/#interpolation-alpha",
+          "locator": "§13.4 Interpolating with Alpha，仅支持预乘插值规则；线性光合成依据本页与透明合成数学",
+          "checked_on": "2026-10-22",
+          "status": "READ"
+        }
+      ],
+      "title_review": "KEEP：H1为客观主题名称，无文件改名。",
+      "writing_review": "逐节复读；机制输入、因果、实现与边界对应，修订直接陈述现行规则。",
+      "cpu_tests": "test_alpha_filtering",
+      "shader_compile": "NOT_APPLICABLE",
+      "actual_runtime": {
+        "engine": "UNVERIFIED",
+        "gpu_image": "UNVERIFIED",
+        "capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "static_issues": []
+    },
+    {
+      "path": "知识库/07_颜色与后处理/Bloom.md",
+      "full_text_review": true,
+      "reviewed_sections": [
+        "Bloom 的完整流程",
+        "1. 高亮提取",
+        "2. 降采样",
+        "3. Blur",
+        "4. Upsample 和合并",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "baseline_commit": "8b6e8cd",
+      "initial_sha256": "261e4e687360ee12aca1aae6baab0286e33a259a5eacf5e6bf2fd8de8db671fa",
+      "final_sha256": "e6abed97fc335d867293fec9398691e51b0e2d7e0100fcfdd7910263daee3c9c",
+      "changed": true,
+      "independent_result": "PASS_WITH_RUNTIME_LIMITS",
+      "pass_basis": [
+        "软阈值上下端函数值/导数正确，输入有限非负且半宽0≤k≤T；零输入有直接返回。",
+        "颜色、T、k共同乘预曝光尺度；移除正亮度分母固定1e-6后，1e-8尺度下仍保持相同比例。",
+        "2×2盒核限定偶数尺寸中心对齐；多尺度递归与光学能量混合区分；来源文字已在基线明确为曝光关联自发光。"
+      ],
+      "changes": [
+        "补过渡半宽随预曝光缩放。",
+        "正输入按自身亮度归一化，零输入独立分支；CPU与正文HLSL同步。",
+        "明确0≤k≤T的提取模型，防止k>T在黑色邻域引入额外增亮；CPU拒绝越界。"
+      ],
+      "source_checks": [
+        {
+          "url": "https://google.github.io/filament/main/filament.html#imagingpipeline/physicallybasedcamera/bloom",
+          "locator": "§8.1.5 Bloom讨论曝光相对自发光；不作为本页归一化滤波算法的直接实现证据",
+          "checked_on": "2026-10-22",
+          "status": "READ"
+        }
+      ],
+      "title_review": "KEEP：H1为客观主题名称，无文件改名。",
+      "writing_review": "逐节复读；机制输入、因果、实现与边界对应，修订直接陈述现行规则。",
+      "cpu_tests": "test_bloom_knee_and_constant_energy、test_bloom_preexposure_scale_invariance",
+      "shader_compile": "bloom",
+      "actual_runtime": {
+        "engine": "UNVERIFIED",
+        "gpu_image": "UNVERIFIED",
+        "capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "static_issues": []
+    },
+    {
+      "path": "知识库/07_颜色与后处理/HDR与曝光.md",
+      "full_text_review": true,
+      "reviewed_sections": [
+        "场景亮度",
+        "HDR Buffer",
+        "Exposure",
+        "测光与时间适应",
+        "Pre-Exposure",
+        "历史曝光换算",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "baseline_commit": "8b6e8cd",
+      "initial_sha256": "98e143e362564547b92dcb533a8b93560a651d2564a911439b6fd27936372663",
+      "final_sha256": "0132abd09f4c52b0b267d0b564541a9ae8b36ab99909742e29ddf2ebbe08fc43",
+      "changed": true,
+      "independent_result": "PASS_WITH_RUNTIME_LIMITS",
+      "pass_basis": [
+        "EV与Shader倍率区别、对数测光、时间常数单位及两个半步等价关系成立。",
+        "历史乘p_current/p_previous，显示乘e_current/p_current，20→10→40→5例一致。",
+        "CPU实现拒绝非有限倍率和时间；HLSL片段仍由宿主执行前置校验，未将CPU拒绝声明为GPU执行。"
+      ],
+      "changes": [
+        "补post_models适应和历史换算的isfinite拒绝；正文验证范围明确零值与非有限倍率。"
+      ],
+      "source_checks": [
+        {
+          "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/auto-exposure-in-unreal-engine?application_version=5.6",
+          "locator": "UE5.6；Histogram and Basic Algorithm、Manual Algorithm、Pre-Exposure，前帧曝光应用于写入场景颜色之前",
+          "checked_on": "2026-10-22",
+          "status": "READ"
+        }
+      ],
+      "title_review": "KEEP：H1为客观主题名称，无文件改名。",
+      "writing_review": "逐节复读；机制输入、因果、实现与边界对应，修订直接陈述现行规则。",
+      "cpu_tests": "test_exposure_time_and_history、test_exposure_rejects_nonfinite_parameters",
+      "shader_compile": "exposure",
+      "actual_runtime": {
+        "engine": "UNVERIFIED",
+        "gpu_image": "UNVERIFIED",
+        "capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "static_issues": []
+    },
+    {
+      "path": "知识库/07_颜色与后处理/Tone Mapping.md",
+      "full_text_review": true,
+      "reviewed_sections": [
+        "Tone Mapping",
+        "Reinhard",
+        "Filmic Curve",
+        "亮度与颜色比例",
+        "Color Grading 和 LUT",
+        "最小映射",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "baseline_commit": "8b6e8cd",
+      "initial_sha256": "c6717728cc63f7f002ea18c9ebbeabc0708929aab55738ebbba3381cdf23e377",
+      "final_sha256": "c6717728cc63f7f002ea18c9ebbeabc0708929aab55738ebbba3381cdf23e377",
+      "changed": false,
+      "independent_result": "PASS_WITH_RUNTIME_LIMITS",
+      "pass_basis": [
+        "非负Reinhard单调性、极值和导数正确；逐通道与按亮度映射的色比区别明确。",
+        "按亮度缩放不保证逐通道≤1，正文饱和色反例与CPU一致。",
+        "N点LUT参数坐标映射到首尾纹素中心正确；完整ACES、色域映射和输出编码未混同。"
+      ],
+      "changes": [],
+      "source_checks": [
+        {
+          "url": "https://google.github.io/filament/main/filament.html#imagingpipeline",
+          "locator": "Imaging pipeline及Filmic post-processing，支持链路职责；本文Reinhard具体关系独立推导",
+          "checked_on": "2026-10-22",
+          "status": "READ"
+        },
+        {
+          "url": "https://www.w3.org/TR/css-color-4/#color-conversion-code",
+          "locator": "§19原色、XYZ与传递函数",
+          "checked_on": "2026-10-22",
+          "status": "READ"
+        }
+      ],
+      "title_review": "KEEP：H1为客观主题名称，无文件改名。",
+      "writing_review": "逐节复读；机制输入、因果、实现与边界对应，修订直接陈述现行规则。",
+      "cpu_tests": "test_luminance_mapping_chromatic_ratio",
+      "shader_compile": "NOT_APPLICABLE",
+      "actual_runtime": {
+        "engine": "UNVERIFIED",
+        "gpu_image": "UNVERIFIED",
+        "capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "static_issues": []
+    },
+    {
+      "path": "知识库/07_颜色与后处理/屏幕空间AO.md",
+      "full_text_review": true,
+      "reviewed_sections": [
+        "Screen-space Ambient Occlusion",
+        "SSAO 的采样数据流",
+        "边界过滤与合成",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "baseline_commit": "8b6e8cd",
+      "initial_sha256": "fd4e977fd910d305b45734327c1d648e390a87130de2a79bc6b654769c610b9a",
+      "final_sha256": "5368aec5da16de9f6b12f7d4986cdbccdb019653ddf2f30f91bc6afe426fa4e9",
+      "changed": true,
+      "independent_result": "PASS_WITH_RUNTIME_LIMITS",
+      "pass_basis": [
+        "负Z观察空间的前后比较方向正确，矩阵乘法中的TBN行基底和Projection列向量用法一致。",
+        "UV上原点、0≤clip.z≤w、W有效标志和缺失样本分母明确。",
+        "相对Radius的数值下限保证全长度缩放不改变权重；核的局部单位半球范围明确。"
+      ],
+      "changes": [
+        "固定1e-4距离下限改为Radius*1e-4，正文与CPU同步。",
+        "补Kernel长度≤1、Z≥0及长度单位缩放说明。"
+      ],
+      "source_checks": [
+        {
+          "url": "https://raw.githubusercontent.com/JoeyDeVries/LearnOpenGL/master/src/5.advanced_lighting/9.ssao/9.ssao.fs",
+          "locator": "main函数半球采样、视空间z比较和smoothstep距离权重；原例无本文裁剪/有效标记与退化基底保护",
+          "checked_on": "2026-10-22",
+          "status": "READ"
+        }
+      ],
+      "title_review": "KEEP：H1为客观主题名称，无文件改名。",
+      "writing_review": "逐节复读；机制输入、因果、实现与边界对应，修订直接陈述现行规则。",
+      "cpu_tests": "test_ssao_right_handed_depth、test_ssao_length_scale_invariance",
+      "shader_compile": "ssao",
+      "actual_runtime": {
+        "engine": "UNVERIFIED",
+        "gpu_image": "UNVERIFIED",
+        "capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "static_issues": []
+    },
+    {
+      "path": "知识库/07_颜色与后处理/景深与运动模糊.md",
+      "full_text_review": true,
+      "reviewed_sections": [
+        "Depth of Field",
+        "薄透镜与像素半径",
+        "前后景覆盖",
+        "Motion Blur",
+        "快门时间与速度单位",
+        "Lens Effect",
+        "资源与调度",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "baseline_commit": "8b6e8cd",
+      "initial_sha256": "9dd393ddc35b100ce163dfb2a760270fc3df0a324f8de9be697b351302b111a7",
+      "final_sha256": "29d95f8c5215315aace3659cf5fad719b3e12f6f36ff56f5feb2a71a1f525aa9",
+      "changed": true,
+      "independent_result": "PASS_WITH_RUNTIME_LIMITS",
+      "pass_basis": [
+        "薄透镜CoC为带符号半径，统一长度单位下毫米/米结果一致；z明确为线性轴向深度。",
+        "v=prev-current时，表面过去位置为p+λv，当前图gather位置为u−λv；平移亮点0.5→0.6的半快门覆盖[0.55,0.6]，目标0.575读取当前0.6。",
+        "MotionGatherUV正文、CPU与编译宿主对应；零快门、正帧间隔、采样数及宿主范围明确。"
+      ],
+      "changes": [
+        "纠正尾随快门的gather符号并补独立亮点平移推导。",
+        "新增HLSL MotionGatherUV与CPU motion_blur_uv；编译入口coc_motion实际调用两者。",
+        "明确线性轴向深度、有限正焦距/传感器/输出尺寸；CPU拒绝非法参数。"
+      ],
+      "source_checks": [
+        {
+          "url": "https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-27-motion-blur-post-processing-effect",
+          "locator": "§27.2—27.3，原例current-prev速度与正向gather；本页采用相反速度定义，方向独立推导",
+          "checked_on": "2026-10-22",
+          "status": "READ"
+        },
+        {
+          "url": "https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-28-practical-post-process-depth-field",
+          "locator": "§28.3薄透镜、§28.4前景CoC覆盖及近景模糊限制",
+          "checked_on": "2026-10-22",
+          "status": "READ"
+        }
+      ],
+      "title_review": "KEEP：H1为客观主题名称，无文件改名。",
+      "writing_review": "逐节复读；机制输入、因果、实现与边界对应，修订直接陈述现行规则。",
+      "cpu_tests": "test_coc_units_and_focus、test_coc_unit_conversion_and_invalid_parameters、test_motion_gather_recovers_translated_bright_point",
+      "shader_compile": "coc_motion",
+      "actual_runtime": {
+        "engine": "UNVERIFIED",
+        "gpu_image": "UNVERIFIED",
+        "capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "static_issues": []
+    },
+    {
+      "path": "知识库/07_颜色与后处理/颜色空间.md",
+      "full_text_review": true,
+      "reviewed_sections": [
+        "颜色编码",
+        "线性光照计算",
+        "sRGB传递函数",
+        "编码、原色与输出",
+        "纹理编码选择",
+        "常用 sRGB",
+        "常用 Linear/Data",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "baseline_commit": "8b6e8cd",
+      "initial_sha256": "d6ad8b536a1ea4365706c43a0d9e3315c98b8ab50c37386285639580f1566fbc",
+      "final_sha256": "d6ad8b536a1ea4365706c43a0d9e3315c98b8ab50c37386285639580f1566fbc",
+      "changed": false,
+      "independent_result": "PASS_WITH_RUNTIME_LIMITS",
+      "pass_basis": [
+        "sRGB分段阈值与W3C公开公式一致；0.5解码约0.214，线性0.5编码约0.735。",
+        "原色变换和传递函数分开；sRGB视图自动解码不与手动转换叠加。",
+        "HLSL标量函数输入限定[0,1]，实际DXC编译；资源视图和显示链运行未冒充已验。"
+      ],
+      "changes": [],
+      "source_checks": [
+        {
+          "url": "https://www.w3.org/TR/css-color-4/",
+          "locator": "2026-10-20 Candidate Recommendation Draft；§10.2 sRGB与§19转换代码",
+          "checked_on": "2026-10-22",
+          "status": "READ"
+        }
+      ],
+      "title_review": "KEEP：H1为客观主题名称，无文件改名。",
+      "writing_review": "逐节复读；机制输入、因果、实现与边界对应，修订直接陈述现行规则。",
+      "cpu_tests": "test_srgb_roundtrip_and_midgray",
+      "shader_compile": "srgb",
+      "actual_runtime": {
+        "engine": "UNVERIFIED",
+        "gpu_image": "UNVERIFIED",
+        "capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "static_issues": []
+    }
+  ],
+  "findings": [
+    {
+      "id": "POST-01",
+      "severity": "P1",
+      "page": "景深与运动模糊",
+      "issue": "prev-current速度下gather使用加号，尾随模糊方向相反。",
+      "resolution": "从过去点位置推导当前图读取u−λv；用亮点0.5→0.6证明曝光覆盖和0.575目标查询。",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "POST-02",
+      "severity": "P2",
+      "page": "屏幕空间AO",
+      "issue": "固定绝对深度下限破坏长度单位缩放不变性。",
+      "reproduction": "全部长度乘1e-6时，同一权重由1降为0.00007475。",
+      "resolution": "下限改为Radius*1e-4并增加同尺度回归。",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "POST-03",
+      "severity": "P2",
+      "page": "Bloom",
+      "issue": "未明确knee共同预曝光，固定亮度分母下限破坏极小尺度比例。",
+      "reproduction": "p=1e-8时输出1.25e-11，而应为1.25e-9。",
+      "resolution": "T和k均同比换算；零输入独立分支，正输入按实际亮度归一化；约束0≤k≤T使提取量不超过输入。",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "POST-04",
+      "severity": "P2",
+      "page": "HDR与曝光",
+      "issue": "参考代码声称拒绝无效倍率，却接受NaN/Infinity。",
+      "resolution": "曝光、历史与时间参数加入isfinite边界回归。",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "POST-05",
+      "severity": "P2",
+      "page": "景深与运动模糊",
+      "issue": "CoC代码接受零焦距/零图宽/非有限参数，正文未明确线性轴向深度。",
+      "resolution": "输入前提与CPU拒绝一致；同一几何采用毫米/米得到相同半径。",
+      "status": "RESOLVED"
+    }
+  ],
+  "verification": {
+    "tdd_initial": "新增5个测试方法后，12测试出现10个子测试失败和1个缺失函数错误；Bloom域补测另见一次预期失败；修复后全部通过。",
+    "cpu": {
+      "command": "python -B 知识库/examples/revision/test_post.py",
+      "tests": 12,
+      "status": "PASS",
+      "output": "............\r\n----------------------------------------------------------------------\r\nRan 12 tests in 0.002s\r\n\r\nOK\r\n"
+    },
+    "shader": {
+      "command": "DXC_PATH=C:/VulkanSDK/1.4.350.0/Bin/dxc.exe; python -B 知识库/examples/revision/compile_post.py",
+      "status": "PASS",
+      "entries": [
+        "srgb",
+        "exposure",
+        "bloom",
+        "ssao",
+        "coc_motion"
+      ],
+      "output": "{\"passed\": true, \"dxc_entries\": [\"srgb\", \"exposure\", \"bloom\", \"ssao\", \"coc_motion\"], \"scope\": \"仅离线编译，未执行GPU\"}\r\n"
+    },
+    "static": "7篇围栏、控制字符、Markdown本地链接、双链均通过；diff --check未发现错误。",
+    "limits": "仅CPU数学与离线HLSL编译；无GPU采样、纹理链、显示设备、时域覆盖或性能证据。"
+  },
+  "implementation_hashes": [
+    {
+      "path": "知识库/examples/revision/post_models.py",
+      "initial_sha256": "891872c82c3deeb3d1e914260fd0040e3f875721f4c815ecd2eca245a4c74b9c",
+      "final_sha256": "029c0ea2dbbd0c4f2a63bf0701b580b77f2603855aaac7f9030cdd9bf52e89c6"
+    },
+    {
+      "path": "知识库/examples/revision/test_post.py",
+      "initial_sha256": "170499bad38e24875b70aa6dc4b813638a6978faa5eb7c45efb8af1768ef34bc",
+      "final_sha256": "788e4c71942dc22678f668565833d87144a0c7d2004fd6d74f50b615eae23947"
+    },
+    {
+      "path": "知识库/examples/revision/compile_post.py",
+      "initial_sha256": "24fa52b347045c128147f77892e638dee966bc40bfa3e1c18cbefe72da687c07",
+      "final_sha256": "9135d658f5b198d8e6f9e14414c00c7c3253420463709bc60b44cf8d6ffa9fcf"
+    }
+  ],
+  "global_registry_changed": false,
+  "git_commits_created": false,
+  "assets_added": []
+}

@@ -1,0 +1,105 @@
+{
+  "date": "2026-10-22",
+  "python": "3.11.9",
+  "compiler_path": "C:\\VulkanSDK\\1.4.350.0\\Bin",
+  "tdd_red": [
+    {
+      "test": "test_lighting.py",
+      "expected_failure": "ImportError: cannot import name preintegrated_diffuse",
+      "observed": true
+    },
+    {
+      "test": "test_gi.py",
+      "expected_failure": "ImportError: cannot import name blend_probe_radiance",
+      "observed": true
+    },
+    {
+      "test": "test_shader.py",
+      "expected_failure": "ImportError: cannot import name blocked_minmax",
+      "observed": true
+    }
+  ],
+  "commands": [
+    {
+      "command": [
+        "C:\\VulkanSDK\\1.4.350.0\\Bin\\dxc.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "dxcompiler.dll: 1.10(5347-fe261573)(1.9.0.5347) - 1.9.0.5347 (fe2615732)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\VulkanSDK\\1.4.350.0\\Bin\\glslangValidator.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Glslang Version: 11:16.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 16.2.0\nGLSL Version: 4.60 glslang Khronos. 16.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\23587\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "知识库/examples/revision/test_shader.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\23587\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "知识库/examples/revision/test_lighting.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.247s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\23587\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "知识库/examples/revision/test_gi.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.021s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\23587\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "知识库/examples/revision/compile_shader.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"checks\": [\n    \"ScanGroups cs_6_0 compilation\",\n    \"Min/max reduction cs_6_0 compilation with guarded loads and distinct padding\",\n    \"CopyKernel cs_6_0 compilation\",\n    \"PerView vs_6_0 compilation; five offsets and 96-byte size\",\n    \"GLSL 330 VertexData matched block links with different instance names\",\n    \"GLSL mismatched block member type correctly rejected\"\n  ],\n  \"scope\": \"Compilation, reflection and offline linking; no GPU execution\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\23587\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "知识库/examples/revision/compile_lighting.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"passed\": true, \"dxc_entries\": [\"brdf\", \"normal\", \"ibl\", \"skin_lut\", \"skin_radius\", \"skin_rejection\"], \"glsl_link\": \"sky/refraction\", \"scope\": \"离线编译与链接，未执行GPU\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\23587\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "知识库/examples/revision/compile_gi.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"passed\": true, \"dxc_entries\": [\"probe\", \"reflection\", \"ltc\", \"pcf\"], \"glsl_entries\": [\"cascade\", \"point\"], \"scope\": \"离线编译；无GPU执行\"}\n",
+      "stderr": ""
+    }
+  ],
+  "all_passed": true,
+  "cpu_test_count": 27,
+  "new_cpu_test_count": 9
+}

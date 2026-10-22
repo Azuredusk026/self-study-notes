@@ -8,11 +8,13 @@
 
 HLSL 用 `[numthreads(x,y,z)]` 声明每个 Thread Group 的线程数。CPU 调用 `Dispatch(gx,gy,gz)` 提交 Group 数量。
 
-总线程数是：
+全局线程网格的三个维度是：
 
 $$
 (gx\cdot x,\ gy\cdot y,\ gz\cdot z)
 $$
+
+线程总数是这三个维度的乘积。
 
 常见系统值：
 
@@ -58,12 +60,12 @@ void CopyKernel(uint3 id : SV_DispatchThreadID)
 ```
 
 ```cpp
-uint groupsX = (width + 7) / 8;
-uint groupsY = (height + 7) / 8;
+uint groupsX = width / 8 + (width % 8 != 0);
+uint groupsY = height / 8 + (height % 8 != 0);
 commandList.Dispatch(groupsX, groupsY, 1);
 ```
 
-此HLSL Kernel的输入纹理尺寸至少为OutputSize，输出必须支持对应float4的UAV访问，CPU上传b0的16字节参数。输入和输出使用不同资源，避免同一次 Dispatch 中相邻线程读到正在被改写的数据。若算法需要原地更新，必须证明每个线程只依赖自己的旧值，或拆分阶段并建立 Barrier。
+此HLSL Kernel的输入纹理尺寸至少为OutputSize，输出必须支持对应float4的UAV访问，CPU上传b0的16字节参数。输入和输出使用不同资源，避免同一次 Dispatch 中相邻线程读到正在被改写的数据。上取整使用商和余数，避免 `width + 7` 的整数溢出；提交前还要检查 API 的组数上限。逐线程原地更新时，应保证每个线程只访问自己拥有且尚未改写的值，并使用支持读取的合法 UAV 视图及资源格式。同一重叠子资源同时绑定为 SRV 与 UAV 还有独立的 API 限制，这份算法证明不能代替绑定规则。涉及相邻线程旧值时，可以先把本组所需旧值完整加载到共享存储，经组屏障后再写回，前提是没有跨组读写重叠；存在跨组依赖时，应使用分开的输入输出，或按依赖拆阶段并建立资源屏障。
 
 ### Thread Group
 
@@ -198,13 +200,13 @@ Wave Intrinsic 可以直接做 Lane 间求和、投票、广播和前缀操作�
 
 寄存器活跃区间与分支执行都可能限制吞吐，影响程度按设备与工作负载比较。
 
-#### 寄存器是静态分配的
+#### 寄存器分配
 
 编译器根据活跃区间、分支和目标寄存器规则分配空间。未执行分支仍可能影响分配，但不能把源码中最大局部变量数直接当成寄存器数；检查编译产物、Spill与GPU时间。
 
 静态变体可以让编译器移除未使用路径，可能减少寄存器和指令需求。运行时分支仍可能影响寄存器分配，但具体结果取决于活跃区间和编译器优化。应比较编译产物、寄存器占用和 GPU 时间，再决定哪些功能需要静态切分。
 
-#### 分支本身有代价
+#### 分支执行成本
 
 轻量分支可能被编译器转成选择指令，重量分支则可能通过跳过昂贵路径降低成本。结果由目标编译器、指令和执行条件决定，不能只按设备新旧给出统一结论。
 
@@ -214,11 +216,13 @@ Wave Intrinsic 可以直接做 Lane 间求和、投票、广播和前缀操作�
 
 同一套逻辑常需要多个变体：首级与后续级采样来源不同、输出到 Buffer 还是 Texture、是否启用某项功能。编译期Kernel变体可以移除不需要的路径，运行时分支则减少变体管理。比较编译产物与执行成本后选择，不能仅凭代码形式判断。
 
-输出目标保留两条路径有实际意义：不同移动 GPU 上 Buffer 与 Texture 的回读性能差异很大，保留开关便于按机型选择。
+输出目标保留两条路径有实际意义：Buffer 与 Texture 的回读路径可能随 GPU、驱动和格式变化，保留开关便于按机型测量并选择。
 
 ### 运行时与编辑器工具的差异
 
 同样是 Compute Shader，两种场景的工程要求差别很大：
+
+下表列出采用 Render Graph 的运行时管线与独立编辑器工具的一种接入方式。调度框架由工程选择，编辑器也可以使用 Render Graph。
 
 | | 运行时管线 | 编辑器工具 |
 |---|---|---|
@@ -250,4 +254,6 @@ Wave Intrinsic 可以直接做 Lane 间求和、投票、广播和前缀操作�
 
 - [Microsoft GroupMemoryBarrierWithGroupSync](https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/groupmemorybarrierwithgroupsync)：2026-10-22核读组内共享访问完成与发散分支未定义行为。
 - [CUDA Best Practices 13.4 §11.1](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy)：核读寄存器分配粒度及占用率约束，具体CUDA参数不直接套用于所有Shader后端。
+- [Microsoft：Typed UAV loads](https://learn.microsoft.com/en-us/windows/win32/direct3d12/typed-unordered-access-view-loads)，按格式查询 UAV 读取支持。
+- [Microsoft：Resource barriers](https://learn.microsoft.com/en-us/windows/win32/direct3d12/using-resource-barriers-to-synchronize-resource-states-in-direct3d-12)，Read/write resource state restrictions 小节规定读写状态与只读状态的组合限制。
 - DXC语法探针入口见正文编译记录。

@@ -23,6 +23,19 @@ def main():
         'normal': '\n'.join(blocks('法线贴图','hlsl')) + '\nfloat4 Main(float4 p:SV_Position):SV_Target { float3 n=DecodeNormalWS(frac(p.xy),float3(0,0,1),float4(1,0,0,1)); return float4(BlendNormalRNM(n,normalize(float3(.2,.1,1))),1); }',
         'ibl': 'TextureCube<float4> Prefiltered:register(t0); Texture2D<float2> BrdfLut:register(t1); SamplerState LinearClamp:register(s0);\nfloat4 Main(float4 p:SV_Position):SV_Target { float3 N=float3(0,0,1), V=normalize(float3(p.xy,1)), F0=.04.xxx; float roughness=.5,maxMip=7; float2 lutSize=float2(128,128);\n' + blocks('IBL','hlsl')[0] + '\nreturn float4(specular,1); }'
     }
+    skin = blocks('皮肤次表面散射', 'hlsl')
+    cases['skin_lut'] = ('Texture2D<float4> _PreintegratedLUT:register(t0); SamplerState sampler_LUT:register(s0);\n'
+        '#define SAMPLE_TEXTURE2D(t,s,uv) t.Sample(s,uv)\n'
+        'float4 Main(float4 p:SV_Position):SV_Target { '
+        'float3 normalWS=normalize(float3(p.xy,1)),geomNormalWS=float3(0,0,1),lightDirWS=geomNormalWS; '
+        'float _NormalSmoothFactor=.5,curvature=2,_ProfileDistance=.01,_MaxDimensionlessCurvature=.25; '
+        'float2 _LutSize=float2(64,32);\n'+skin[0]+'\nreturn float4(sssDiffuse,1); }')
+    cases['skin_radius'] = ('float4 Main(float4 p:SV_Position):SV_Target { '
+        'float targetHeight=1080,targetWidth=1920,verticalFovRadians=1.5707963,radiusMeters=.01,viewDepthMeters=max(p.z,.1); '
+        'float2 blurDirection=float2(1,0);\n'+skin[1]+'\nreturn float4(stepUV,radiusPixels,1); }')
+    cases['skin_rejection'] = ('float4 Main(float4 p:SV_Position):SV_Target { '
+        'float sampleLinearDepth=p.z,centerLinearDepth=1,_DepthFalloff=10; float3 sampleColor=p.xyz,centerColor=1.0.xxx;\n'
+        +skin[2]+'\nreturn float4(sampleColor,1); }')
     with tempfile.TemporaryDirectory(prefix='kb-lighting-') as temporary:
         folder = Path(temporary)
         for name, code in cases.items():

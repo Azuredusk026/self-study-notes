@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-22",
+  "purpose": "现有事件队列验证入口复用四项.NET 9宿主检查",
+  "environment": {
+    "sdk": "9.0.319",
+    "installed_sdks": [
+      "9.0.319"
+    ]
+  },
+  "root_cause": "旧入口重复维护宿主，目标net10.0超出本机SDK支持；它只覆盖三项契约，缺少现行文章的订阅快照检查。",
+  "fix": "mechanisms/verify_event_queue.py仅用绝对路径加载revision_16_21/verify_event_queue.py并调用verify；编译宿主和四项断言只保留一处。",
+  "runs": [
+    {
+      "command": "python -B 知识库/examples/mechanisms/verify_event_queue.py",
+      "stage": "before",
+      "chunk_id": "83fd5e",
+      "wall_time_seconds": 1.2589966000000001,
+      "exit_code": 1,
+      "original_token_count": 214,
+      "output": "Traceback (most recent call last):\r\n  File \"D:\\Assigment\\HIT\\Note\\知识库\\examples\\mechanisms\\verify_event_queue.py\", line 113, in <module>\r\n    print(json.dumps(verify()))\r\n                     ^^^^^^^^\r\n  File \"D:\\Assigment\\HIT\\Note\\知识库\\examples\\mechanisms\\verify_event_queue.py\", line 106, in verify\r\n    raise RuntimeError(result.stdout + result.stderr)\r\nRuntimeError: C:\\Program Files\\dotnet\\sdk\\9.0.319\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets(166,5): error NETSDK1045: 当前 .NET SDK 不支持面向 .NET 10.0。请面向 .NET 9.0 或更低版本，或者使用支持 .NET 10.0 的 .NET SDK 版本。从 https://aka.ms/dotnet/download 下载 .NET SDK [D:\\Assigment\\HIT\\Note\\知识库\\examples\\mechanisms\\build\\event-queue\\EventQueue.csproj]\r\n\r\n生成失败。请修复生成错误并重新运行。\r\n\r\n"
+    },
+    {
+      "command": "python -B 知识库/examples/mechanisms/verify_event_queue.py",
+      "stage": "after",
+      "chunk_id": "6673b0",
+      "wall_time_seconds": 7.5006489,
+      "exit_code": 0,
+      "original_token_count": 28,
+      "output": "{\"passed\": true, \"checks\": 4, \"scope\": \"C# article fragment with mock handlers on .NET 9; no Unity runtime\"}\r\n"
+    },
+    {
+      "command": "python -B D:/Assigment/HIT/Note/知识库/examples/mechanisms/verify_event_queue.py",
+      "cwd": "C:/Users/23587/AppData/Local/Temp",
+      "stage": "after_different_cwd",
+      "chunk_id": "82441b",
+      "wall_time_seconds": 4.7083514,
+      "exit_code": 0,
+      "original_token_count": 28,
+      "output": "{\"passed\": true, \"checks\": 4, \"scope\": \"C# article fragment with mock handlers on .NET 9; no Unity runtime\"}\r\n"
+    }
+  ],
+  "checks": [
+    "下一轮派发",
+    "重入保护",
+    "处理器异常隔离",
+    "按事件建立订阅快照"
+  ],
+  "sha256": {
+    "知识库/examples/mechanisms/verify_event_queue.py": "4f64ebf167f3b49401972a886777aaa3039478f6921c5d0da196789cfa99db11",
+    "知识库/examples/revision_16_21/verify_event_queue.py": "e368837f9932ba532bc92762725a56810300023874b6cd9cde7c5cf5b96225c4",
+    "知识库/19_Gameplay与游戏框架/玩法事件与脚本.md": "c82c78980cfcfd6a6959f692d45152307d319dcd0272b8d38ef49a88e3327652"
+  },
+  "canonical_result": "知识库/examples/revision_16_21/build/event-queue/result.json",
+  "scope": "从当前文章提取C#片段并使用最小处理器表/日志宿主进行.NET 9 Release编译运行；Unity、多线程和场景卸载未验证。",
+  "article_modified": false,
+  "global_registry_modified": false
+}

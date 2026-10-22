@@ -10,25 +10,26 @@ Bloom 模拟强光在镜头、传感器和视觉系统中向周围扩散。它�
 
 根据亮度或颜色阈值提取高亮。Soft Knee 在阈值附近平滑过渡，避免亮度稍微变化时 Bloom 突然出现。
 
-也可以让全部线性HDR颜色参与扩散，保留弱光贡献。带阈值的方案需要明确阈值是在场景尺度还是曝光尺度定义：若输入已乘预曝光 $p$，场景阈值 $T$ 也应换成 $pT$，否则曝光变化会改变入选的光源。
+也可以让全部线性HDR颜色参与扩散，保留弱光贡献。带阈值的方案需要明确阈值是在场景尺度还是曝光尺度定义：若输入已乘预曝光 $p$，场景阈值 $T$ 和过渡半宽 $k$ 也应分别换成 $pT$ 与 $pk$，否则曝光变化会改变入选的光源。
 
-下面的HLSL函数用最大RGB分量定义亮度 $b$，保持提取后的RGB比例。阈值 $T\ge0$，过渡半宽 $k\ge0$，均与输入处于同一线性尺度。在 $[T-k,T+k]$ 内构造二次过渡，$k=0$ 时退化为硬阈值。
+下面的HLSL函数输入有限、非负的线性RGB，用最大RGB分量定义亮度 $b$，保持提取后的RGB比例。阈值 $T\ge0$，过渡半宽 $0\le k\le T$，均与输入处于同一线性尺度。在 $[T-k,T+k]$ 内构造二次过渡，$k=0$ 时退化为硬阈值。
 
 ```hlsl
 float3 ExtractBloom(float3 color, float threshold, float knee)
 {
     float brightness=max(color.r,max(color.g,color.b));
+    if (brightness<=0.0) return float3(0,0,0);
     float soft=0.0;
     if (knee>0.0) {
         float q=clamp(brightness-threshold+knee,0.0,2.0*knee);
         soft=q*q/(4.0*knee);
     }
     float contribution=max(max(brightness-threshold,soft),0.0);
-    return color*(contribution/max(brightness,1e-6));
+    return color*(contribution/brightness);
 }
 ```
 
-在上边界 $b=T+k$，二次项的值为 $k$、导数为1，正好接上线性项 $b-T$；下边界处值与导数都为0。这保证了阈值附近的连续性。它是美术提取模型，并非镜头散射的光学定律。
+在上边界 $b=T+k$，二次项的值为 $k$、导数为1，正好接上线性项 $b-T$；下边界处值与导数都为0。半宽不超过阈值，使曲线从非负亮度开始过渡，并保持提取量不超过输入亮度。零输入直接返回黑色；正输入使用自身亮度作为除数，颜色、阈值和半宽同时缩放时，输出随同一倍率缩放。固定的绝对亮度下限会破坏极低预曝光尺度下的这个关系。它是美术提取模型，并非镜头散射的光学定律。
 
 ### 2. 降采样
 
@@ -69,7 +70,7 @@ float3 DownsampleBloom(float2 uv, float2 sourceTexelSize)
 
 固定曝光，用超过1的亮点检查高亮提取、每级mip和合成结果。逐级关闭上采样贡献，核对光晕尺度与总亮度；动态分辨率时按源纹素尺度调整滤波。
 
-[test_post.py](../examples/revision/test_post.py) 检查零输入、软阈值中点及不同层数的常量保持；正文提取和降采样函数通过DXC编译。GPU纹理链、滤波伪影和性能尚未测量。
+[test_post.py](../examples/revision/test_post.py) 检查零输入、软阈值中点、预曝光尺度不变性及不同层数的常量保持；正文提取和降采样函数通过DXC编译。GPU纹理链、滤波伪影和性能尚未测量。
 
 ## 相关主题
 

@@ -634,7 +634,7 @@
       "source": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
       "heading": "寄存器是静态分配的",
       "target": "知识库/03_Shader编程/Compute Shader.md",
-      "current_heading": "寄存器是静态分配的",
+      "current_heading": "寄存器分配",
       "decision": "独立主归属或明确合并",
       "reason": "调度模型、并行集合算法与回读状态机分别维护；多级深度生成归入深度可见性优化，灯光位掩码归入簇光照。",
       "source_hash": "bf31198c1c3faccd39b57a8b99b8fe17084f12a0e38de9974e5c0e35bfe59a4a"
@@ -643,7 +643,7 @@
       "source": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
       "heading": "分支本身有代价",
       "target": "知识库/03_Shader编程/Compute Shader.md",
-      "current_heading": "分支本身有代价",
+      "current_heading": "分支执行成本",
       "decision": "独立主归属或明确合并",
       "reason": "调度模型、并行集合算法与回读状态机分别维护；多级深度生成归入深度可见性优化，灯光位掩码归入簇光照。",
       "source_hash": "8b46bbe3f4194dcdbcfd2d552438f3c6af28fa45e507350349533e952388d46e"
@@ -850,7 +850,7 @@
       "source": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
       "heading": "Light Probe",
       "target": "知识库/05_光照阴影与GI/Light Probe.md",
-      "current_heading": "Light Probe",
+      "current_heading": "低频光照表示",
       "decision": "独立主归属或明确合并",
       "reason": "静态烘焙、漫反射探针、反射捕获和动态更新各有独立资产与验证；原页成为GI方案导读。",
       "source_hash": "61e4581f03e278f5c365a1422ca6902b013c3f4e520998a2a0b45f354825132d"
@@ -877,7 +877,7 @@
       "source": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
       "heading": "Reflection Probe",
       "target": "知识库/05_光照阴影与GI/Reflection Probe.md",
-      "current_heading": "Reflection Probe",
+      "current_heading": "局部反射数据",
       "decision": "独立主归属或明确合并",
       "reason": "静态烘焙、漫反射探针、反射捕获和动态更新各有独立资产与验证；原页成为GI方案导读。",
       "source_hash": "c7b556267a28c7551f28a2652e77238bd4ac7a807932880f2400a74f6a778f02"
