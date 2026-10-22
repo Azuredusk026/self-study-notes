@@ -6,7 +6,7 @@
 
 几何阶段的输出默认只能继续进入光栅化。如果想要的只是“处理后的顶点流”——供后续绘制、粒子状态更新或调试——其他路径可以在Compute中写缓冲，或者用CPU处理；Stream Output提供图形前端结果的直接捕获。
 
-流输出（Direct3D 称 Stream Output，OpenGL 称 Transform Feedback）提供直接路径：声明要捕获的输出语义与写入布局，几何阶段结束后顶点属性按序写入缓冲区。
+流输出（Direct3D 称 Stream Output，OpenGL 称 Transform Feedback）提供直接路径：声明要捕获的输出语义与写入布局，顶点处理结果按序写入缓冲区。在 D3D11 中，启用 Geometry Shader 时捕获其输出；省略 Geometry Shader 时可捕获 Vertex Shader 的输出。捕获本身不要求程序生成新图元。
 
 Direct3D 用声明表描述捕获项：
 
@@ -20,7 +20,7 @@ D3D11_SO_DECLARATION_ENTRY decl[] = {
 
 本例捕获4+3+2个32位分量，每条记录为36字节。创建Geometry Shader的流输出声明时，输出槽0的stride应为36；复用为顶点输入时，位置、法线和UV的偏移依次为0、16、28字节。声明描述的是选中字段的输出布局，不能直接采用含额外填充的CPU结构体大小。
 
-OpenGL 用 `glTransformFeedbackVaryings` 指定变量名列表，配合 `GL_INTERLEAVED_ATTRIBS`（交错写入同一缓冲）或 `GL_SEPARATE_ATTRIBS`（分缓冲写入）；GLSL 还可以用 `xfb_buffer`、`xfb_offset`、`xfb_stride` 布局限定符直接描述写入布局。
+OpenGL 用 `glTransformFeedbackVaryings` 在链接程序前指定变量名列表，配合 `GL_INTERLEAVED_ATTRIBS`（交错写入同一缓冲）或 `GL_SEPARATE_ATTRIBS`（分缓冲写入）。支持 OpenGL 4.4 或 `ARB_enhanced_layouts` 扩展时，GLSL 还可用 `xfb_buffer`、`xfb_offset`、`xfb_stride` 布局限定符描述写入布局；接入时先核对版本与扩展。
 
 ### 输出数量与顺序
 
@@ -60,5 +60,6 @@ drawCapturedGeometry()
 
 ## 参考资料
 
+- [Khronos ARB_enhanced_layouts](https://github.com/KhronosGroup/OpenGL-Registry/blob/main/extensions/ARB/ARB_enhanced_layouts.txt)：2026-10-22核读Overview第5项及Transform Feedback布局条款；显式xfb限定符的能力范围与字节偏移定义。
 - [Microsoft Stream-Output Stage](https://learn.microsoft.com/en-us/windows/win32/direct3d11/d3d10-graphics-programming-guide-output-stream-stage)：2026-10-22核读条带转列表、完整图元写入、DrawAuto与绑定要求。
 - [D3D11_SO_DECLARATION_ENTRY](https://learn.microsoft.com/en-us/windows/win32/api/d3d11/ns-d3d11-d3d11_so_declaration_entry)：声明字段顺序，既有2026-10-07核读记录。

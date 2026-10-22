@@ -617,23 +617,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "补正采样支撑域、有限方差条件及舍入到CDF总和的边界；给出[0,1,0,3,0]选择例。"
+        "basis": "复算f/p估计量、余弦半球PDF与离散概率质量；CDF严格大于查找跳过零权重，u上界及零总权重分支明确。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "draw_cdf的空输入、非法权重、零权重区间、最末浮点样本检查通过；C++宿主片段未编译。"
+        "basis": "C++宿主片段与Python运行模型分开；CDF极值和零区间由test_math及completion_reference检查。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "PBRT4 §2.3的SampleDiscrete和up==sumWeights分支核读；对应Python边界模型通过。"
+        "basis": "PBRT4 §2.3的SampleDiscrete和up==sumWeights分支核读；对应Python边界模型通过。 独立来源定位：pbrt-cdf；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "从期望抵消解释权重，再用具体区间推动边界处理，删除无关球谐来源。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "Monte Carlo采样定位现有主概念，正文小标题使用客观内容名称。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -641,7 +641,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页公式、数值例与代码已呈现运算关系，无新增结果图片。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -720,7 +720,11 @@
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "0275c71ff29ac885b241735217006c94a913c660b0219de26243000d881cc528",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "9a44ea503279d00ccfed6b4e9d9c610703a30c495fd4d843a3ad5877caa39de4"
     }
   },
   {
@@ -746,23 +750,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "补旋转矩阵det=+1、Gram–Schmidt退化条件、Slerp半角解析例；限定Squad连续性前提。"
+        "basis": "核对q与-q等价、半角、左右乘角速度空间、Nlerp/Slerp与Gram-Schmidt非退化前提。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "SlerpShortest与Gram–Schmidt按宿主片段说明；给出90度旋转中点解析预期，完整C++运行待验证。"
+        "basis": "SlerpShortest点积负号、近同向退化和单位输入契约明确；Unity欧拉次序与6000.0文档一致。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Unity6000.0旋转文档核读其坐标与内部存储约定；一般推导按本文数学约定，非Unity实现证明。"
+        "basis": "Unity6000.0旋转文档核读其坐标与内部存储约定；一般推导按本文数学约定，非Unity实现证明。 独立来源定位：unity-rotation；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "用零向量、镜像和半角说明可观察错误，疑问标题采用概念名称。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "旋转表示与插值定位现有主概念，正文小标题使用客观内容名称。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -770,7 +774,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页公式、数值例与代码已呈现运算关系，无新增结果图片。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -857,7 +861,11 @@
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "8acf4d9c1d6e930c1e7d3e195f7c9a3e43514afa004d27afe4debd1ba9b344b5",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "040e8df8779f48a54c692d88dbcc39442e0d48060ec339eed804bc0ccc979df1"
     }
   },
   {
@@ -884,23 +892,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "展开九项实基、立体角积分、余弦卷积频带权重和Lambert出射；给出常量与线性环境解析值。"
+        "basis": "逐项核对九实基的归一化、排列及pi、2pi/3、pi/4卷积系数；常量L=2和L=1+wz解析例独立复算。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "math_models.sh_irradiance对常量、线性环境的5个方向检查通过；输入限定九系数及单位方向。"
+        "basis": "test_math常量辐照度2pi与方向项2pi/3通过；九系数、单位方向前提明确。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Ramamoorthi原始prefilter.c的updatecoeffs核读；卷积结果由解析环境测试支持，PDF取回失败未记为核读。"
+        "basis": "Ramamoorthi原始prefilter.c的updatecoeffs核读；卷积结果由解析环境测试支持，PDF取回失败未记为核读。 独立来源定位：；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "把基底顺序、采样测度和重复卷积的后果接成数据链，代码与公式采用同一顺序。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "球谐光照定位现有主概念，正文小标题使用客观内容名称。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -908,7 +916,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页公式、数值例与代码已呈现运算关系，无新增结果图片。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -982,7 +990,11 @@
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "7881917325acfaab712d4a87c1e7b5aba8e9a6cdf1122c9b61e40cbe2c2a387f",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "485853fb7e21ebe9623940ce0d72a873a30d7145be039326e8fe70c5ede96026"
     }
   },
   {
@@ -1009,23 +1021,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "展开一维格点点积、五次平滑、负坐标floor和二维/三维邻角；限定频谱与方向性断言。"
+        "basis": "核对floor格点、梯度点积、五次插值与FBM频率幅度；一维模型的整数值和边界连续性通过。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "gradient_noise的整数格点、双侧接缝和固定种子CPU检查通过；未测二维频谱。"
+        "basis": "math_models的独立哈希与Perlin参考置换表区别明确；FBM为机制伪代码。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Perlin作者Improved Noise实现noise/fade/grad核读；教学模型使用独立哈希。"
+        "basis": "Perlin作者Improved Noise实现noise/fade/grad核读；教学模型使用独立哈希。 独立来源定位：perlin；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "用x=2.25引入局部坐标和梯度，再解释接缝平滑与远景足迹，保留按用途比较噪声。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "程序噪声定位现有主概念，正文小标题使用客观内容名称。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -1033,7 +1045,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页公式、数值例与代码已呈现运算关系，无新增结果图片。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -1068,7 +1080,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "f7f1344d561d2caea1857319972312780d7633e7ead4444a51efd51f05b8067c",
+    "final_sha256": "e0b73b2962a94aa12cb8ce4d0b44bb7f92f5d17b5328918695dc51363ba51457",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -1105,12 +1117,16 @@
         "展开一维格点点积、五次平滑、负坐标floor和二维/三维邻角；限定频谱与方向性断言。",
         "用x=2.25引入局部坐标和梯度，再解释接缝平滑与远景足迹，保留按用途比较噪声。"
       ],
-      "content_sha256": "f7f1344d561d2caea1857319972312780d7633e7ead4444a51efd51f05b8067c",
+      "content_sha256": "e0b73b2962a94aa12cb8ce4d0b44bb7f92f5d17b5328918695dc51363ba51457",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "f7f1344d561d2caea1857319972312780d7633e7ead4444a51efd51f05b8067c",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "5be8919efbd720d9eedc3ae9ee6aa75a6ff7736d399d8b3d8e6f9df18699ddd8"
     }
   },
   {
@@ -1136,23 +1152,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "用nᵀt=0推导逆转置，并计算非均匀缩放下普通变换点积3、逆转置点积0。"
+        "basis": "沿t点积n=0独立推导逆转置；非均匀缩放例的错误点积和正确垂直关系可直接复算。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "HLSL顶点片段明确缺失类型、绑定和常量缓冲；解析计算可独立复核，未声明编译。"
+        "basis": "点w=1与向量w=0、列向量MVP、矩阵存储与乘法分开；逆转置要求可逆线性部分。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "PBRT4 §3.9变换与齐次表示核读；法线约束在正文给出代数推导和数值反例。"
+        "basis": "PBRT4 §3.9变换与齐次表示核读；法线约束在正文给出代数推导和数值反例。 独立来源定位：；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "按点、方向、法线的语义逐层说明；标题陈述内容，矩阵等价式显式区分行列向量。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "空间变换定位现有主概念，正文小标题使用客观内容名称。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -1160,7 +1176,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页公式、数值例与代码已呈现运算关系，无新增结果图片。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -1241,7 +1257,11 @@
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "cdf5a85e6107715e4619ca083534b5b9154cc562c651b3bd53e4c40ea73b244a",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "82aae2ee62bf4bada0c3b398458cbb7a4a10b8086cbe6fe7788e2ebc0641c880"
     }
   },
   {
@@ -1268,23 +1288,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "区分采样混叠与重建核误差，删除由放大模糊直接推定原因的表述；保留周期积分实现。"
+        "basis": "核对频谱复制与带限前提；条纹原函数对负坐标仍适用，区间积分除以足迹宽度。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "completion_reference周期积分24项随89项回归通过；StripePS随4项DXC探针编译通过，GPU未运行。"
+        "basis": "HLSL片段明确像素导数足迹；completion_reference的24个条纹积分检查通过。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "PBRT4 §8.1核读采样、重建与频域关系；CPU积分和DXC分别支持数值模型与语法。"
+        "basis": "PBRT4 §8.1核读采样、重建与频域关系；CPU积分和DXC分别支持数值模型与语法。 独立来源定位：pbrt-sampling；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "删除设问式提示块，用过滤条件解释模糊与稳定性的取舍；验证表述对应条纹模型。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "采样与混叠定位现有主概念，正文小标题使用客观内容名称。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -1292,7 +1312,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页公式、数值例与代码已呈现运算关系，无新增结果图片。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -1328,7 +1348,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "ddac18a79a70807a51df28489e2639e1248da1d3cd0198bc38fd0e39d1550cbc",
+    "final_sha256": "99997aed10d839e71c6399013f17b873fa4b2c3b9639ce415f576f689eefe8d7",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -1365,12 +1385,16 @@
         "区分采样混叠与重建核误差，删除由放大模糊直接推定原因的表述；保留周期积分实现。",
         "删除设问式提示块，用过滤条件解释模糊与稳定性的取舍；验证表述对应条纹模型。"
       ],
-      "content_sha256": "ddac18a79a70807a51df28489e2639e1248da1d3cd0198bc38fd0e39d1550cbc",
+      "content_sha256": "99997aed10d839e71c6399013f17b873fa4b2c3b9639ce415f576f689eefe8d7",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "ddac18a79a70807a51df28489e2639e1248da1d3cd0198bc38fd0e39d1550cbc",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "30702bb45a373634c56a3113e4ce8119f89208f3385c26ccca304ff638fa7c29"
     }
   },
   {
@@ -1397,23 +1421,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "用32线程地址段和寄存器驻留上界展开访问合并与占用率；说明粒度假设。"
+        "basis": "复算32线程顺序float读取的4个32字节段、跨步读取32段，以及寄存器理想计数上限；实际分配粒度另限定。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "Python逻辑流量算式独立执行；硬件计数器、GPU计时未执行。"
+        "basis": "逻辑流量33.1776MB每帧、1.990656GB/s按读写公式复算；未冒充显存总线实测。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "CUDA Best Practices 13.4 §10.2.1与§11.1核读，CUDA示例的架构条件独立保留。"
+        "basis": "CUDA Best Practices 13.4 §10.2.1与§11.1核读，CUDA示例的架构条件独立保留。 独立来源定位：cuda；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "保留线程、地址、计数器的推理链，替换不适用的宿主代码套话。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "GPU执行与访存对应现有主概念，正文标题按机制和操作命名。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -1421,7 +1445,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -1452,7 +1476,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "088a9f021eb9ac817a2fd9aec10f8548da845206e7b2143893e3aa54c5b25ae9",
+    "final_sha256": "dc018b8716236d9d0bbda09cf1d92ca9932966e7ccbfd73e2adf9c96a63d2879",
     "content_commit": "6de6394",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -1488,12 +1512,17 @@
         "用32线程地址段和寄存器驻留上界展开访问合并与占用率；说明粒度假设。",
         "保留线程、地址、计数器的推理链，替换不适用的宿主代码套话。"
       ],
-      "content_sha256": "088a9f021eb9ac817a2fd9aec10f8548da845206e7b2143893e3aa54c5b25ae9",
+      "content_sha256": "dc018b8716236d9d0bbda09cf1d92ca9932966e7ccbfd73e2adf9c96a63d2879",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "088a9f021eb9ac817a2fd9aec10f8548da845206e7b2143893e3aa54c5b25ae9",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "3b8d035e67279206d3ea292fe81f0f8bdac33770c1338b5bf8a559c1b443487e",
+      "integration_changes": "同步已采用标题反链；原复核哈希保留"
     }
   },
   {
@@ -1520,23 +1549,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "补线框距离发射与noperspective条件、跨近平面限制、广告牌退化方向；修正细分阶段和条带性能。"
+        "basis": "核对输入拓扑与可变输出、billboard退化方向、屏幕距离noperspective及裁剪前提；曲线段数输出不超过64。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "HLSL/GLSL片段明确类型、矩阵和宿主遗漏；未执行完整GS编译与放大率计时。"
+        "basis": "补齐P0—P3视空间、长度单位、距离和段数范围；bezier3展开为完整三次多项式。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Microsoft Geometry Shader Stage及HLSL Append核读输入、拓扑、显式采样与输出关系。"
+        "basis": "Microsoft Geometry Shader Stage及HLSL Append核读输入、拓扑、显式采样与输出关系。 独立来源定位：gs-limit；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "硬件资源预留用条件表述，保留按图元上下文组织应用的主线。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "Geometry Shader对应现有主概念，正文标题按机制和操作命名。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -1544,7 +1573,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -1581,7 +1610,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "54dc9ed74657dd3d2d7b0f102744bc8f05654b8b5fc4be717d04431eface8710",
+    "final_sha256": "29f6f29b32af9220525a9bbc312aca7f7829e6ad4c5cf0ccf68ef9977f0ca580",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -1618,12 +1647,16 @@
         "补线框距离发射与noperspective条件、跨近平面限制、广告牌退化方向；修正细分阶段和条带性能。",
         "硬件资源预留用条件表述，保留按图元上下文组织应用的主线。"
       ],
-      "content_sha256": "54dc9ed74657dd3d2d7b0f102744bc8f05654b8b5fc4be717d04431eface8710",
+      "content_sha256": "29f6f29b32af9220525a9bbc312aca7f7829e6ad4c5cf0ccf68ef9977f0ca580",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "54dc9ed74657dd3d2d7b0f102744bc8f05654b8b5fc4be717d04431eface8710",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "a44aea0edeb9723b02a15124207ab454efc33ecc952567ac9fa3f36ec1c503d7"
     }
   },
   {
@@ -1650,23 +1683,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "展开VAO捕获ARRAY_BUFFER的时机，给出切换绑定后仍读取原缓冲的例子。"
+        "basis": "复核glVertexAttribPointer保存当时ARRAY_BUFFER关联，之后绑定切换不改VAO属性；EBO绑定属于VAO。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "版本与属性绑定为OpenGL 3.3+上下文片段，函数加载、上传、实际绘制明确未执行。"
+        "basis": "查询与回调依赖有效上下文及函数加载；对象释放、缓冲覆盖、跨上下文同步分开。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Khronos glVertexAttribPointer Description核读绑定捕获；非本主题来源删除。"
+        "basis": "Khronos glVertexAttribPointer Description核读绑定捕获；非本主题来源删除。 独立来源定位：gl-objects；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "用对象、绑定点、容器连接解释状态错误，并给出具体查询字段。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "OpenGL对象与状态对应现有主概念，正文标题按机制和操作命名。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -1674,7 +1707,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -1704,7 +1737,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "3415086acc8ea82e4eb793f82204e59e8e06f406d28abd138ba5bc47d0fa3182",
+    "final_sha256": "86aa2ef56c2f0593319e074fcd9d47620cb279413554759f85abbed60e155385",
     "content_commit": "8045bc0",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -1741,12 +1774,16 @@
         "展开VAO捕获ARRAY_BUFFER的时机，给出切换绑定后仍读取原缓冲的例子。",
         "用对象、绑定点、容器连接解释状态错误，并给出具体查询字段。"
       ],
-      "content_sha256": "3415086acc8ea82e4eb793f82204e59e8e06f406d28abd138ba5bc47d0fa3182",
+      "content_sha256": "86aa2ef56c2f0593319e074fcd9d47620cb279413554759f85abbed60e155385",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "3415086acc8ea82e4eb793f82204e59e8e06f406d28abd138ba5bc47d0fa3182",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "c874d7d6fad90d629841e195f548cb114e788ff40a8ecc529f5859393519c2f2"
     }
   },
   {
@@ -1772,23 +1809,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "修正GreaterEqual方向，读掩码同时作用两侧，展开三分支与写掩码隔离。"
+        "basis": "按OpenGL ref op stencil方向复算分类，零值命中特别说明；写掩码遍历全部256旧值保留其他位。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "test_raster枚举256个旧值验证位保留；OpenGL独立演示通道补清除、宿主与状态前提。"
+        "basis": "两遍Draw顺序、清除、写掩码及dpfail/dppass输入明确；遮挡内区反例能诊断错误轮廓。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Khronos glStencilFunc mask/GL_GEQUAL和glStencilOp三分支/Replace核读。"
+        "basis": "Khronos glStencilFunc mask/GL_GEQUAL和glStencilOp三分支/Replace核读。 独立来源定位：gl-stencil；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "把无来源真实案例改为有前提的分类方案，说明全位清除与共享位分配的边界。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "Stencil与对象遮罩对应现有主概念，正文标题按机制和操作命名。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -1796,7 +1833,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -1826,7 +1863,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "c9eaa4baa291644c7b6c05341eb11cd696175873a4c2ee6556e6ea4be655dce0",
+    "final_sha256": "85ff4d8e14f7021150827df976eae289e0d06a1276771bcc12d551b3a570aff9",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -1862,12 +1899,17 @@
         "修正GreaterEqual方向，读掩码同时作用两侧，展开三分支与写掩码隔离。",
         "把无来源真实案例改为有前提的分类方案，说明全位清除与共享位分配的边界。"
       ],
-      "content_sha256": "c9eaa4baa291644c7b6c05341eb11cd696175873a4c2ee6556e6ea4be655dce0",
+      "content_sha256": "85ff4d8e14f7021150827df976eae289e0d06a1276771bcc12d551b3a570aff9",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "c9eaa4baa291644c7b6c05341eb11cd696175873a4c2ee6556e6ea4be655dce0",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "1d3e28d1cb180393f46b233632edceee4370b55e971d001ef36c1f78105b0227",
+      "integration_changes": "同步已采用标题反链；原复核哈希保留"
     }
   },
   {
@@ -1894,23 +1936,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "算出36字节字段布局和四顶点条带展开六条记录的容量，区分D3D11计数与D3D12状态。"
+        "basis": "复算9分量36字节stride及0/16/28偏移；四顶点三角形带在D3D11捕获六记录216字节。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "声明表与宿主伪代码保留明确状态，捕获运行未执行，验收检查SO统计和容量。"
+        "basis": "声明C++与调度伪代码区分；输出容量、资源绑定与DrawAuto计数契约说明。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Microsoft Stream-Output Stage核读完整图元、条带展开、DrawAuto和绑定要求。"
+        "basis": "Microsoft Stream-Output Stage核读完整图元、条带展开、DrawAuto和绑定要求。 独立来源定位：d3d-so,gl-xfb；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "用数量与顺序解释成本，删除未经硬件证实的强制排队及通用性能断言。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "Stream Output对应现有主概念，正文标题按机制和操作命名。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -1918,7 +1960,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -1949,7 +1991,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "5cb9b54ea8701bfc4ee0c7c18478e2c5146b0a0dd4b3289f86efd000eba95592",
+    "final_sha256": "db38fa97f99da5ada7d16d5c8b900cd071c39b5f8178d4544d0b00f6b0374e17",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -1986,12 +2028,16 @@
         "算出36字节字段布局和四顶点条带展开六条记录的容量，区分D3D11计数与D3D12状态。",
         "用数量与顺序解释成本，删除未经硬件证实的强制排队及通用性能断言。"
       ],
-      "content_sha256": "5cb9b54ea8701bfc4ee0c7c18478e2c5146b0a0dd4b3289f86efd000eba95592",
+      "content_sha256": "db38fa97f99da5ada7d16d5c8b900cd071c39b5f8178d4544d0b00f6b0374e17",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "5cb9b54ea8701bfc4ee0c7c18478e2c5146b0a0dd4b3289f86efd000eba95592",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "788ab10a4a4a0f029bc076ff5a76715ec42d11b13514cead16bf08aa31f6b458"
     }
   },
   {
@@ -2127,23 +2173,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "展开有向边函数、重心权重和w不同的中点反例1/3，补退化条件。"
+        "basis": "共享边规则、lambda归一化和属性除w再归一化因果完整；屏幕中点属性1/3的反例通过。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "test_raster检查相同w退化与透视中点；HLSL、覆盖和导数GPU执行未验证。"
+        "basis": "CPU例覆盖等w退化为线性；HLSL以已裁剪的有效三角形为前提，完整覆盖器另验。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "D3D11 Rasterization Rules核读共享边与MSAA；透视关系由CPU模型复核。"
+        "basis": "D3D11 Rasterization Rules核读共享边与MSAA；透视关系由CPU模型复核。 独立来源定位：d3d-raster；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "从覆盖推到属性插值，客观标题取代设问标题，删除深度主题串引。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "光栅化与属性插值对应现有主概念，正文标题按机制和操作命名。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -2151,7 +2197,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -2183,7 +2229,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "671143c057a99e1825ff327607acad6dbccf011a11dce0d0fe932a6b8f36ab1e",
+    "final_sha256": "4b837ac902e14fe0dfc8c51f1f217bdd90de50b2af7b4119d57fa24a3071a1c8",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -2219,12 +2265,17 @@
         "展开有向边函数、重心权重和w不同的中点反例1/3，补退化条件。",
         "从覆盖推到属性插值，客观标题取代设问标题，删除深度主题串引。"
       ],
-      "content_sha256": "671143c057a99e1825ff327607acad6dbccf011a11dce0d0fe932a6b8f36ab1e",
+      "content_sha256": "4b837ac902e14fe0dfc8c51f1f217bdd90de50b2af7b4119d57fa24a3071a1c8",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "671143c057a99e1825ff327607acad6dbccf011a11dce0d0fe932a6b8f36ab1e",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "21afdfedbef142830a952a0a5687c25a20c6b1ffa939d84800d741cfc76e53b1",
+      "integration_changes": "同步已采用标题反链；原复核哈希保留"
     }
   },
   {
@@ -2470,23 +2521,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "纠正AABB对平面归一化的要求，区分球半径与投影半径，并计算贴边保留例。"
+        "basis": "独立由线性函数极值核对AABB投影半径，接触边界保留；球测试法线归一化前提与背面绕序分别检查。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "test_raster将投影半径与八角点枚举对照，检查平面尺度；引擎剔除未运行。"
+        "basis": "CPU八角点枚举、平面缩放与贴边例通过；动态边界和保守遮挡条件有解释。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "线性支持函数推导与独立角点枚举支持AABB条件；硬件覆盖另引API规则。"
+        "basis": "线性支持函数推导与独立角点枚举支持AABB条件；硬件覆盖另引API规则。 独立来源定位：d3d-raster；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "按包围体数据说明误剔除，避免把坐标手性直接等同于法线方向。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "可见性剔除对应现有主概念，正文标题按机制和操作命名。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -2494,7 +2545,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -2563,7 +2614,11 @@
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "969916b9729b6fbc4950039c84ce20478285d3c66749498d1c144a358b26f729",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "f05466d4ade74c483c83c9396899f3f6abee81766d0fa245dfe6e9684e5ee47e"
     }
   },
   {
@@ -2589,23 +2644,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "纠正预通道只着色一次与Alpha Test天然禁用的绝对断言，补全局调度、覆盖一致和局部mip级数。"
+        "basis": "区分提前测试与提前写入，预通道要求位移和Alpha覆盖一致；普通Z取max、反向Z取min保证遮挡保守性。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "归约为HLSL片段，明确同步、尺寸、UAV契约；GPU预通道与层级运行未执行。"
+        "basis": "检查8x8组内2x2归约索引与跨轮barrier前提；片段没有伪装为完整mip实现。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "D3D11覆盖与辅助调用规则核读；最远深度归约按全区域遮挡条件推导。"
+        "basis": "D3D11覆盖与辅助调用规则核读；最远深度归约按全区域遮挡条件推导。 独立来源定位：；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "比较几何重复与片元节省，删除无范围合批和固定四通道配方。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "基于深度的可见性优化对应现有主概念，正文标题按机制和操作命名。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -2613,7 +2668,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -2647,7 +2702,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "f24c7f66cda0b6d1eafbe29dc12621539eec814749c39f33e9cfb1a3c6765101",
+    "final_sha256": "0441b9343a491cf13b91c0c2430b0aa6d2ae0b3354b12e88d0842f04aeee5923",
     "content_commit": "6de6394",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -2684,12 +2739,17 @@
         "纠正预通道只着色一次与Alpha Test天然禁用的绝对断言，补全局调度、覆盖一致和局部mip级数。",
         "比较几何重复与片元节省，删除无范围合批和固定四通道配方。"
       ],
-      "content_sha256": "f24c7f66cda0b6d1eafbe29dc12621539eec814749c39f33e9cfb1a3c6765101",
+      "content_sha256": "0441b9343a491cf13b91c0c2430b0aa6d2ae0b3354b12e88d0842f04aeee5923",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "f24c7f66cda0b6d1eafbe29dc12621539eec814749c39f33e9cfb1a3c6765101",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "6998851f065ee3082b69c0a20f0a295eb8f700a06b0e73d751f811a55188c9db",
+      "integration_changes": "同步已采用标题反链；原复核哈希保留"
     }
   },
   {
@@ -2715,23 +2775,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "按齐次w表达抖动；展开EMA等效样本初始化与方差范围；修正颜色盒除零和运动对应限制。"
+        "basis": "核对抖动乘w、EMA首帧初始化和等效样本数、历史颜色盒、运动UV符号与重投影深度坐标。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "test_raster检查颜色盒内外及退化情况；既有reference.py检查EMA，完整TAA工程与画质未运行。"
+        "basis": "新增motion_uv不同w及上下原点测试；颜色盒和EMA既有测试复跑通过；每个HLSL片段的输入与工程边界保留。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Salvi2016第12—24、38—45页核读；MSAA样本规则来自Microsoft；数学例由CPU复算。"
+        "basis": "Salvi2016第12—24、38—45页核读；MSAA样本规则来自Microsoft；数学例由CPU复算。 独立来源定位：taa-salvi,taa-mjp,d3d-raster；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "统一客观章节名，保留累积和校验的机制链，收窄全来源、成本恒定等笼统表述。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "抗锯齿与时域重建对应现有主概念，正文标题按机制和操作命名。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -2739,7 +2799,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -2807,7 +2867,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "bdab3ec5174e242903620ca690667ed76abbfd63a61502800d575a63b7ba085a",
+    "final_sha256": "02e9c6e7a0285606bf1bd04cb223fb6886e536651867ee4c3dfca1663cb174c7",
     "content_commit": "8045bc0",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -2843,12 +2903,16 @@
         "按齐次w表达抖动；展开EMA等效样本初始化与方差范围；修正颜色盒除零和运动对应限制。",
         "统一客观章节名，保留累积和校验的机制链，收窄全来源、成本恒定等笼统表述。"
       ],
-      "content_sha256": "bdab3ec5174e242903620ca690667ed76abbfd63a61502800d575a63b7ba085a",
+      "content_sha256": "02e9c6e7a0285606bf1bd04cb223fb6886e536651867ee4c3dfca1663cb174c7",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "bdab3ec5174e242903620ca690667ed76abbfd63a61502800d575a63b7ba085a",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "990d2f320528ac6bb7334497b81ee71555489d01138af92e4f0b42bc1f6c0d14"
     }
   },
   {
@@ -2875,23 +2939,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "区分在途帧与图像索引，解释提交fence不能证明呈现信号量已消费。"
+        "basis": "60Hz FIFO时间线与排队延迟分开；提交fence不能保证呈现等待信号量已消费，按交换链图像管理规则正确。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "给出60Hz FIFO模型及信号量寿命伪代码，明确获取失败与fence重置；显示测量未执行。"
+        "basis": "核对Vulkan Guide acquire返回并等待后才复用对应图像呈现信号量的前提。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Vulkan Guide Swapchain Semaphore Reuse的Problem/Solution核读。"
+        "basis": "Vulkan Guide Swapchain Semaphore Reuse的Problem/Solution核读。 独立来源定位：vulkan-present；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "以时间线和资源归属解释延迟，删除仅称有对应实验却无链接的状态句。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "显示呈现对应现有主概念，正文标题按机制和操作命名。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -2899,7 +2963,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -2931,7 +2995,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "26664d39b03008620c120c749c4d0cc3939db44b18be2b96c5a0986e500e34cf",
+    "final_sha256": "ce7e184d8bcd5cbd019b6680ce5eb9ad7297777cd48623e7b3c6e283e2efa6ce",
     "content_commit": "8045bc0",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -2968,12 +3032,16 @@
         "区分在途帧与图像索引，解释提交fence不能证明呈现信号量已消费。",
         "以时间线和资源归属解释延迟，删除仅称有对应实验却无链接的状态句。"
       ],
-      "content_sha256": "26664d39b03008620c120c749c4d0cc3939db44b18be2b96c5a0986e500e34cf",
+      "content_sha256": "ce7e184d8bcd5cbd019b6680ce5eb9ad7297777cd48623e7b3c6e283e2efa6ce",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "26664d39b03008620c120c749c4d0cc3939db44b18be2b96c5a0986e500e34cf",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "929128127954162c9606a197900eb8ef615b92b84a23abae44d960e1803ac280"
     }
   },
   {
@@ -2999,23 +3067,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "补轴向深度逆函数与射线Z归一化，修正深度资源归属、拷贝路径和MSAA条件。"
+        "basis": "从近远边界独立复算a+b/z和逆函数；正Z轴向距离、UV方向、原始深度及逆VP契约清楚。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "test_raster检查两种深度方向的往返与单调性；HLSL逆VP宿主和实际精度测量未运行。"
+        "basis": "test_raster正反深度近中远往返通过；射线归一化方式区分单位长度与Z分量为1。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Nathan Reed Why 1/z及Graphing depth maps核读，有限远平面模型独立复算。"
+        "basis": "Nathan Reed Why 1/z及Graphing depth maps核读，有限远平面模型独立复算。 独立来源定位：depth；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "合并重复Reversed-Z段，移除动机替代推导的说法，章节按映射、资源、重建组织。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "深度缓冲与位置重建对应现有主概念，正文标题按机制和操作命名。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -3023,7 +3091,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -3059,7 +3127,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "7537ec86b35c5493ffda6271f5a84c540a29d8c308616d74c4bb6bd1a2aa085a",
+    "final_sha256": "b122f67575c1f068be0f785cf369a5a7985b5a68183d20d375597038d1cba132",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -3095,12 +3163,17 @@
         "补轴向深度逆函数与射线Z归一化，修正深度资源归属、拷贝路径和MSAA条件。",
         "合并重复Reversed-Z段，移除动机替代推导的说法，章节按映射、资源、重建组织。"
       ],
-      "content_sha256": "7537ec86b35c5493ffda6271f5a84c540a29d8c308616d74c4bb6bd1a2aa085a",
+      "content_sha256": "b122f67575c1f068be0f785cf369a5a7985b5a68183d20d375597038d1cba132",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "7537ec86b35c5493ffda6271f5a84c540a29d8c308616d74c4bb6bd1a2aa085a",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "fd14b27b905710a757ba7c532dfcbd90814d59b4aef5e188aa4c42ffd5af5686",
+      "integration_changes": "同步已采用标题反链；原复核哈希保留"
     }
   },
   {
@@ -3126,23 +3199,23 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "补加权OIT清除与混合配置、空像素合成；深度剥离采用双图交替；限定离线索引排序误差。"
+        "basis": "复核线性Alpha次序、加权累积和透射率；红蓝双层明确加权结果与排序结果差异。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "completion_reference.py的89项中包含前后向Alpha合成；OIT图像及容量未在GPU执行。"
+        "basis": "新增OIT空背景、单层、顺序交换与近似差异测试；剥离深度副本和真实测试附件分开。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "McGuire2015 Algorithm Overview与3D Transparency Pass核读，PDF获取失败未当作全文证据。"
+        "basis": "McGuire2015 Algorithm Overview与3D Transparency Pass核读，PDF获取失败未当作全文证据。 独立来源定位：oit；完整来源与核读范围见独立报告。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "透明排序改为客观标题，去除无依据的方向数质量保证和误入的网络验证描述。"
+        "basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。"
       },
       "Title": {
         "status": "通过",
-        "basis": "透明合成对应现有主概念，正文标题按机制和操作命名。"
+        "basis": "H1直接命名技术问题，机制小节采用内容名称。"
       },
       "Information Architecture": {
         "status": "通过",
@@ -3150,7 +3223,7 @@
       },
       "Visuals": {
         "status": "不适用",
-        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
+        "basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -3189,7 +3262,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "9d13570614747e6882d8d5d09ca438996d3907417a99f2150aad5a4dce8ddd09",
+    "final_sha256": "02808cb029cfd3647ec7b661796570287ca8d463e1c678f12e32dd8879b26234",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -3225,12 +3298,16 @@
         "补加权OIT清除与混合配置、空像素合成；深度剥离采用双图交替；限定离线索引排序误差。",
         "透明排序改为客观标题，去除无依据的方向数质量保证和误入的网络验证描述。"
       ],
-      "content_sha256": "9d13570614747e6882d8d5d09ca438996d3907417a99f2150aad5a4dce8ddd09",
+      "content_sha256": "02808cb029cfd3647ec7b661796570287ca8d463e1c678f12e32dd8879b26234",
       "runtime": {
         "engine": "UNVERIFIED",
         "gpu": "UNVERIFIED"
       },
-      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
+      "acceptance": "全文与声明范围独立复核通过；目标引擎运行按实际状态登记",
+      "first_review_sha256": "9d13570614747e6882d8d5d09ca438996d3907417a99f2150aad5a4dce8ddd09",
+      "independent_review": "PASS",
+      "independent_record": "revision-independent-01-02.json",
+      "independent_source_sha256": "f1fb897f1f0ad9a7805d1d226f1b0332f1ec9729adb9f2329dd7dcb460368972"
     }
   },
   {
@@ -5559,43 +5636,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "整mip纹理在需求、预算和上传延迟之间的驻留决策；全文已复核，定位“预算分配”。"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整标题树与正文一致，机制与实现顺序见“预算分配”及相邻章节。"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整复读并核算rho=qW/P、UV乘4对应LOD增加2级、22字节优先级算例；desired/target/resident及上传发布/回收的状态区别清楚。CPU预算与LOD回归通过，保留。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整复读并核算rho=qW/P、UV乘4对应LOD增加2级、22字节优先级算例；desired/target/resident及上传发布/回收的状态区别清楚。CPU预算与LOD回归通过，保留。 本轮验证仅CPU模型与两个独立着色器编译，宿主和GPU执行未验证。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "逐段复读具体输入、计算因果和失效条件；完整复读并核算rho=qW/P、UV乘4对应LOD增加2级、22字节优先级算例；desired/target/resident及上传发布/回收的状态区别清楚。CPU预算与LOD回归通过，保留。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "H1“Texture Streaming”与文件一致；各级标题客观，无新增标题映射。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "复核正文数值例、公式、代码与表格；无需新增结果图，未声称设备画面。"
       }
     },
     "batch_migration_authorized": true,
@@ -5611,9 +5688,10 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
-      "REWRITE",
+      "DEEPEN",
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
     "changes": [
@@ -5626,7 +5704,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "38b4393c523384b7cee3d3f3f6509a707d6e38ae47329a88ea8ebe2caf547c86",
+    "final_sha256": "24a6618fcbf0f351fc5bf2f94c981e4faa72d0a3299cd5a1f9e98999c99f54bc",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -5656,9 +5734,39 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-texture-geometry",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-06-08.json",
+      "author_sha256": "24a6618fcbf0f351fc5bf2f94c981e4faa72d0a3299cd5a1f9e98999c99f54bc",
+      "independent_record": "revision-independent-06-08.json",
+      "independent_source_sha256": "24a6618fcbf0f351fc5bf2f94c981e4faa72d0a3299cd5a1f9e98999c99f54bc",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "24a6618fcbf0f351fc5bf2f94c981e4faa72d0a3299cd5a1f9e98999c99f54bc",
+      "independent_review": "PASS",
+      "findings": "完整复读并核算rho=qW/P、UV乘4对应LOD增加2级、22字节优先级算例；desired/target/resident及上传发布/回收的状态区别清楚。CPU预算与LOD回归通过，保留。",
+      "runtime": {
+        "source_scope": {
+          "scope": "stream_targets；fallback超预算、优先级和达到目标停止；texture_lod的UV四倍回归",
+          "cpu_status": "PASS",
+          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+          "shader_compile": "NOT_APPLICABLE",
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "visual_result": "UNVERIFIED",
+          "performance": "UNVERIFIED",
+          "limitations": "IO、GPU驻留与引擎调度未执行",
+          "results": "知识库/examples/revision_06_08/results.json"
+        },
+        "results": "知识库/examples/revision_06_08/results.json",
+        "new_tests": [],
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
     }
   },
   {
@@ -5673,43 +5781,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "虚拟页查询、缺页回退与物理缓存采样的地址机制；全文已复核，定位“逻辑页与物理槽”。"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整标题树与正文一致，机制与实现顺序见“逻辑页与物理槽”及相邻章节。"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "页首纹素中心、祖先UV重算与槽位版本寿命成立；补根页仍含B×B纹素及尾部mip的模型边界，核读UE5.6最粗层截断。新增拒绝非2的幂网格和超模型层级的2项TDD检查。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "页首纹素中心、祖先UV重算与槽位版本寿命成立；补根页仍含B×B纹素及尾部mip的模型边界，核读UE5.6最粗层截断。新增拒绝非2的幂网格和超模型层级的2项TDD检查。 本轮验证仅CPU模型与两个独立着色器编译，宿主和GPU执行未验证。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "逐段复读具体输入、计算因果和失效条件；页首纹素中心、祖先UV重算与槽位版本寿命成立；补根页仍含B×B纹素及尾部mip的模型边界，核读UE5.6最粗层截断。新增拒绝非2的幂网格和超模型层级的2项TDD检查。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "H1“Virtual Texture”与文件一致；各级标题客观，无新增标题映射。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "复核正文数值例、公式、代码与表格；无需新增结果图，未声称设备画面。"
       }
     },
     "batch_migration_authorized": true,
@@ -5725,9 +5833,10 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
-      "REWRITE",
+      "DEEPEN",
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
     "changes": [
@@ -5741,7 +5850,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "cd4c2e721a2e90c3f8f8a4a553d811b999328cbca01340920de67d5dcd1d6dcf",
+    "final_sha256": "4dfe6a70184188c5a3c6782a75b9a92e85f123968866c5ef626b5f4e89bfe60c",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -5771,9 +5880,42 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-texture-geometry",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-06-08.json",
+      "author_sha256": "8bf0d3b1b582d762f51bfea4f46437161ca04d3ab4ed03e59a388004ac8e0990",
+      "independent_record": "revision-independent-06-08.json",
+      "independent_source_sha256": "ad210f04570cf6e368591f4f418550bb23b8af5814580cc97cfb16c6de290f11",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "4dfe6a70184188c5a3c6782a75b9a92e85f123968866c5ef626b5f4e89bfe60c",
+      "independent_review": "PASS",
+      "findings": "页首纹素中心、祖先UV重算与槽位版本寿命成立；补根页仍含B×B纹素及尾部mip的模型边界，核读UE5.6最粗层截断。新增拒绝非2的幂网格和超模型层级的2项TDD检查。",
+      "runtime": {
+        "source_scope": {
+          "scope": "vt_address；页首中心、祖先重新映射、缺失根页拒绝",
+          "cpu_status": "PASS",
+          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+          "shader_compile": "NOT_APPLICABLE",
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "visual_result": "UNVERIFIED",
+          "performance": "UNVERIFIED",
+          "limitations": "GPU反馈、页表纹理、跨页过滤、RVT更新与性能未执行",
+          "results": "知识库/examples/revision_06_08/results.json"
+        },
+        "results": "知识库/examples/revision_06_08/results.json",
+        "new_tests": [
+          "test_virtual_non_power_of_two_grid_rejected",
+          "test_virtual_tail_outside_model_is_explicit"
+        ],
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
     }
   },
   {
@@ -5788,43 +5930,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "固定块压缩的字节预算与数据误差；全文已复核，定位“块存储预算”。"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整标题树与正文一致，机制与实现顺序见“块存储预算”及相邻章节。"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "核对BC块字节、ASTC128位与3.56bpp、非方形mip尾和4/3推导；BC5正半球解码条件明确。已有699064字节预算回归通过，保留。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "核对BC块字节、ASTC128位与3.56bpp、非方形mip尾和4/3推导；BC5正半球解码条件明确。已有699064字节预算回归通过，保留。 本轮验证仅CPU模型与两个独立着色器编译，宿主和GPU执行未验证。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "逐段复读具体输入、计算因果和失效条件；核对BC块字节、ASTC128位与3.56bpp、非方形mip尾和4/3推导；BC5正半球解码条件明确。已有699064字节预算回归通过，保留。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "H1“纹理压缩格式”与文件一致；各级标题客观，无新增标题映射。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "复核正文数值例、公式、代码与表格；无需新增结果图，未声称设备画面。"
       }
     },
     "batch_migration_authorized": true,
@@ -5840,6 +5982,8 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
+      "DEEPEN",
+      "FACT-CHECK",
       "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
@@ -5857,7 +6001,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "a2b7404878740168331e191bba59f0ff29b2b6ee35c4441e11647d88aa5d07d8",
+    "final_sha256": "2684d6fc50b22e7537e1019dee94be9856a637256c0a0a72a94f8cbf09248e2e",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -5886,9 +6030,39 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-texture-geometry",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-06-08.json",
+      "author_sha256": "2684d6fc50b22e7537e1019dee94be9856a637256c0a0a72a94f8cbf09248e2e",
+      "independent_record": "revision-independent-06-08.json",
+      "independent_source_sha256": "2684d6fc50b22e7537e1019dee94be9856a637256c0a0a72a94f8cbf09248e2e",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "2684d6fc50b22e7537e1019dee94be9856a637256c0a0a72a94f8cbf09248e2e",
+      "independent_review": "PASS",
+      "findings": "核对BC块字节、ASTC128位与3.56bpp、非方形mip尾和4/3推导；BC5正半球解码条件明确。已有699064字节预算回归通过，保留。",
+      "runtime": {
+        "source_scope": {
+          "scope": "mip_bytes；5×3块载荷、1024² BC1=699064字节、8×1尾部",
+          "cpu_status": "PASS",
+          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+          "shader_compile": "NOT_APPLICABLE",
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "visual_result": "UNVERIFIED",
+          "performance": "UNVERIFIED",
+          "limitations": "未运行编码器或设备格式支持与解码画面检查",
+          "results": "知识库/examples/revision_06_08/results.json"
+        },
+        "results": "知识库/examples/revision_06_08/results.json",
+        "new_tests": [],
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
     }
   },
   {
@@ -5903,43 +6077,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "子图坐标与过滤足迹的隔离；全文已复核，定位“逐级隔离”。"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整标题树与正文一致，机制与实现顺序见“逐级隔离”及相邻章节。"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "补局部UV范围；逐级独立重排与固定归一化布局分开，前者必须按级查矩形并显式混合；纠正远处串色几乎全因Padding的泛化。中心到中心7纹素跨度计算成立。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "补局部UV范围；逐级独立重排与固定归一化布局分开，前者必须按级查矩形并显式混合；纠正远处串色几乎全因Padding的泛化。中心到中心7纹素跨度计算成立。 本轮验证仅CPU模型与两个独立着色器编译，宿主和GPU执行未验证。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "逐段复读具体输入、计算因果和失效条件；补局部UV范围；逐级独立重排与固定归一化布局分开，前者必须按级查矩形并显式混合；纠正远处串色几乎全因Padding的泛化。中心到中心7纹素跨度计算成立。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "H1“纹理图集”与文件一致；各级标题客观，无新增标题映射。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "复核正文数值例、公式、代码与表格；无需新增结果图，未声称设备画面。"
       }
     },
     "batch_migration_authorized": true,
@@ -5955,9 +6129,10 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
-      "REWRITE",
+      "DEEPEN",
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
     "changes": [
@@ -5975,7 +6150,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "fa8989d08fc9fd6b6f6b9536ae75d2e6e127c0a79e817919ead3b35692bf2191",
+    "final_sha256": "14228614d38b177b65fd2b5853fa7c89e764675b5d01b2ec01dc4f6c587e9b39",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -6005,9 +6180,39 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-texture-geometry",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-06-08.json",
+      "author_sha256": "425136c8c9acfc032c1a4ad9ecf343d3465e633cfa076819517d42f68726c7b5",
+      "independent_record": "revision-independent-06-08.json",
+      "independent_source_sha256": "6e50df23867456fba6bf881da92caf682daeec5cd5a94230e20d97ed766fa7fa",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "14228614d38b177b65fd2b5853fa7c89e764675b5d01b2ec01dc4f6c587e9b39",
+      "independent_review": "PASS",
+      "findings": "补局部UV范围；逐级独立重排与固定归一化布局分开，前者必须按级查矩形并显式混合；纠正远处串色几乎全因Padding的泛化。中心到中心7纹素跨度计算成立。",
+      "runtime": {
+        "source_scope": {
+          "scope": "bilinear的中心语义；AtlasUv是HLSL机制片段，数值例可复算",
+          "cpu_status": "PASS",
+          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+          "shader_compile": "NOT_APPLICABLE",
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "visual_result": "UNVERIFIED",
+          "performance": "UNVERIFIED",
+          "limitations": "图集构建器、逐级隔离和真实GPU过滤未执行",
+          "results": "知识库/examples/revision_06_08/results.json"
+        },
+        "results": "知识库/examples/revision_06_08/results.json",
+        "new_tests": [],
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
     }
   },
   {
@@ -6022,43 +6227,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "纹理采样足迹决定层级与过滤的计算；全文已复核，定位“LOD估计”。"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整标题树与正文一致，机制与实现顺序见“LOD估计”及相邻章节。"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整复读双线性纹素中心、Clamp、纹素单位导数、各向异性和数据语义；复算2×2中心为3、非方纹理LOD2及8×1尾部15纹素，CPU检查通过，保留。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整复读双线性纹素中心、Clamp、纹素单位导数、各向异性和数据语义；复算2×2中心为3、非方纹理LOD2及8×1尾部15纹素，CPU检查通过，保留。 本轮验证仅CPU模型与两个独立着色器编译，宿主和GPU执行未验证。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "逐段复读具体输入、计算因果和失效条件；完整复读双线性纹素中心、Clamp、纹素单位导数、各向异性和数据语义；复算2×2中心为3、非方纹理LOD2及8×1尾部15纹素，CPU检查通过，保留。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "H1“纹理采样与过滤”与文件一致；各级标题客观，无新增标题映射。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "复核正文数值例、公式、代码与表格；无需新增结果图，未声称设备画面。"
       }
     },
     "batch_migration_authorized": true,
@@ -6077,6 +6282,8 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
+      "DEEPEN",
+      "FACT-CHECK",
       "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
@@ -6105,7 +6312,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "c68dcd35f5027f111c966c8b1ed02a4cef8647fe3e488359ac4f04c4bf135b19",
+    "final_sha256": "d598cf2a11f6b37f9f01534622ac63f41140ad49af57a4cc95b21362b1e51091",
     "content_commit": "6de6394",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -6134,9 +6341,39 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-texture-geometry",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-06-08.json",
+      "author_sha256": "d598cf2a11f6b37f9f01534622ac63f41140ad49af57a4cc95b21362b1e51091",
+      "independent_record": "revision-independent-06-08.json",
+      "independent_source_sha256": "d598cf2a11f6b37f9f01534622ac63f41140ad49af57a4cc95b21362b1e51091",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "d598cf2a11f6b37f9f01534622ac63f41140ad49af57a4cc95b21362b1e51091",
+      "independent_review": "PASS",
+      "findings": "完整复读双线性纹素中心、Clamp、纹素单位导数、各向异性和数据语义；复算2×2中心为3、非方纹理LOD2及8×1尾部15纹素，CPU检查通过，保留。",
+      "runtime": {
+        "source_scope": {
+          "scope": "texture_lod、bilinear、mip_bytes；纹素单位、中心、Clamp、细长尾部",
+          "cpu_status": "PASS",
+          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+          "shader_compile": "NOT_APPLICABLE",
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "visual_result": "UNVERIFIED",
+          "performance": "UNVERIFIED",
+          "limitations": "硬件各向异性分布、实际精度和画面未执行",
+          "results": "知识库/examples/revision_06_08/results.json"
+        },
+        "results": "知识库/examples/revision_06_08/results.json",
+        "new_tests": [],
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
     }
   },
   {
@@ -6150,43 +6387,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "切线空间视线与高度场首次交点的重建；全文已复核，定位“视差遮蔽映射”。"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整标题树与正文一致，机制与实现顺序见“视差遮蔽映射”及相邻章节。"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整核对向内深度、视向减号与H/L单位、首次正负残差区间及线性重建；CPU模型和pom.frag均与正文一致，明确保留高度场漏交和原导数近似，编译通过。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整核对向内深度、视向减号与H/L单位、首次正负残差区间及线性重建；CPU模型和pom.frag均与正文一致，明确保留高度场漏交和原导数近似，编译通过。 本轮验证仅CPU模型与两个独立着色器编译，宿主和GPU执行未验证。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "逐段复读具体输入、计算因果和失效条件；完整核对向内深度、视向减号与H/L单位、首次正负残差区间及线性重建；CPU模型和pom.frag均与正文一致，明确保留高度场漏交和原导数近似，编译通过。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "H1“视差映射”与文件一致；各级标题客观，无新增标题映射。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "复核正文数值例、公式、代码与表格；无需新增结果图，未声称设备画面。"
       }
     },
     "batch_migration_authorized": true,
@@ -6204,6 +6441,8 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
+      "DEEPEN",
+      "FACT-CHECK",
       "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
@@ -6222,7 +6461,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "223fd3936b0b7e701fe09c36026fb3a4ba61bab5c7b1b674eafaae82b9f01ecc",
+    "final_sha256": "da2d37581e8e24f5ff6d95a9faaca8149912e15c2ccf3af6daf65dcd368e2751",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -6251,9 +6490,39 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-texture-geometry",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-06-08.json",
+      "author_sha256": "da2d37581e8e24f5ff6d95a9faaca8149912e15c2ccf3af6daf65dcd368e2751",
+      "independent_record": "revision-independent-06-08.json",
+      "independent_source_sha256": "da2d37581e8e24f5ff6d95a9faaca8149912e15c2ccf3af6daf65dcd368e2751",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "da2d37581e8e24f5ff6d95a9faaca8149912e15c2ccf3af6daf65dcd368e2751",
+      "independent_review": "PASS",
+      "findings": "完整核对向内深度、视向减号与H/L单位、首次正负残差区间及线性重建；CPU模型和pom.frag均与正文一致，明确保留高度场漏交和原导数近似，编译通过。",
+      "runtime": {
+        "source_scope": {
+          "scope": "pom_line：顶层、常值及线性高度场解析交点；pom.frag GLSL4.50 SPIR-V编译",
+          "cpu_status": "PASS",
+          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+          "shader_compile": "PASS",
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "visual_result": "UNVERIFIED",
+          "performance": "UNVERIFIED",
+          "limitations": "未创建纹理/宿主管线；画面、过滤、自阴影和GPU成本未执行",
+          "results": "知识库/examples/revision_06_08/results.json"
+        },
+        "results": "知识库/examples/revision_06_08/results.json",
+        "new_tests": [],
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
     }
   },
   {
@@ -7260,43 +7529,43 @@
       "REWRITE"
     ],
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "面片坐标架、脚底锚点与深度的约束；全文已复核，定位“球面与轴约束”。"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整标题树与正文一致，机制与实现顺序见“球面与轴约束”及相邻章节。"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "坐标架和脚底锚点计算成立；补正上方固定备用方向仅避免零向量，不能保证角度连续，保持上一朝向与滞回须按对象和视图存状态。CPU正交回退通过。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "坐标架和脚底锚点计算成立；补正上方固定备用方向仅避免零向量，不能保证角度连续，保持上一朝向与滞回须按对象和视图存状态。CPU正交回退通过。 本轮验证仅CPU模型与两个独立着色器编译，宿主和GPU执行未验证。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "逐段复读具体输入、计算因果和失效条件；坐标架和脚底锚点计算成立；补正上方固定备用方向仅避免零向量，不能保证角度连续，保持上一朝向与滞回须按对象和视图存状态。CPU正交回退通过。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "H1“Billboard”与文件一致；各级标题客观，无新增标题映射。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "复核正文数值例、公式、代码与表格；无需新增结果图，未声称设备画面。"
       }
     },
     "batch_migration_authorized": true,
@@ -7316,6 +7585,8 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
+      "DEEPEN",
+      "FACT-CHECK",
       "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
@@ -7331,7 +7602,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "3762968f2c53dff265ea0872933466e54ec853c1a8e1e42ab4ac333c847b3523",
+    "final_sha256": "f6b0631ea9864152f2b66db48d4ff36bb57bfdd579732a491ebd731beac409bc",
     "content_commit": "6de6394",
     "article_type": "ARTICLE",
     "canonical_concept": "Billboard",
@@ -7359,9 +7630,39 @@
     "historical_basis": null,
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-texture-geometry",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-06-08.json",
+      "author_sha256": "67ff163b9dfeaa5e34aaa84090f0af371da0b4ffa7614420e0007b8349d5002c",
+      "independent_record": "revision-independent-06-08.json",
+      "independent_source_sha256": "29a6ce51c623eedbee41b31167f83975ae486383789aa5989f415287408c71db",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "f6b0631ea9864152f2b66db48d4ff36bb57bfdd579732a491ebd731beac409bc",
+      "independent_review": "PASS",
+      "findings": "坐标架和脚底锚点计算成立；补正上方固定备用方向仅避免零向量，不能保证角度连续，保持上一朝向与滞回须按对象和视图存状态。CPU正交回退通过。",
+      "runtime": {
+        "source_scope": {
+          "scope": "billboard_right：正常视向和正上方退化，备用向量与Up正交",
+          "cpu_status": "PASS",
+          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+          "shader_compile": "NOT_APPLICABLE",
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "visual_result": "UNVERIFIED",
+          "performance": "UNVERIFIED",
+          "limitations": "HLSL宿主、Impostor烘焙、阴影和GPU画面未执行",
+          "results": "知识库/examples/revision_06_08/results.json"
+        },
+        "results": "知识库/examples/revision_06_08/results.json",
+        "new_tests": [],
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
     }
   },
   {
@@ -7376,43 +7677,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "二维高度样本到地形位置、法线与相邻块的一致性；全文已复核，定位“GPU 细分地形”。"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整标题树与正文一致，机制与实现顺序见“GPU 细分地形”及相邻章节。"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "核对Nx-1端点间距、中心纹素映射、米制梯度与量化步长；细分不会自动降低高度带宽，补实际采样次数/mip/缓存条件。解析斜坡CPU回归通过。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "核对Nx-1端点间距、中心纹素映射、米制梯度与量化步长；细分不会自动降低高度带宽，补实际采样次数/mip/缓存条件。解析斜坡CPU回归通过。 本轮验证仅CPU模型与两个独立着色器编译，宿主和GPU执行未验证。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "逐段复读具体输入、计算因果和失效条件；核对Nx-1端点间距、中心纹素映射、米制梯度与量化步长；细分不会自动降低高度带宽，补实际采样次数/mip/缓存条件。解析斜坡CPU回归通过。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "H1“Heightfield地形”与文件一致；各级标题客观，无新增标题映射。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "复核正文数值例、公式、代码与表格；无需新增结果图，未声称设备画面。"
       }
     },
     "batch_migration_authorized": true,
@@ -7428,9 +7729,10 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
-      "REWRITE",
+      "DEEPEN",
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
     "changes": [
@@ -7444,7 +7746,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "84f724ff6af202b9a7a26964ddab46d3c5f6e5426aeda54315aa98095fe3138c",
+    "final_sha256": "4a864d69a2f12b97022e683bad1af7cd0ae36d53d0137d92f6357389b582a080",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -7474,9 +7776,39 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-texture-geometry",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-06-08.json",
+      "author_sha256": "cc027c3d63c20f9114faa57fa5a9f7876a48923828b85a8a38a516d4bf98344a",
+      "independent_record": "revision-independent-06-08.json",
+      "independent_source_sha256": "606b7513ced791a16e1ac7a40867e09b9c31640fbf2c4dd4861bed582ff30291",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "4a864d69a2f12b97022e683bad1af7cd0ae36d53d0137d92f6357389b582a080",
+      "independent_review": "PASS",
+      "findings": "核对Nx-1端点间距、中心纹素映射、米制梯度与量化步长；细分不会自动降低高度带宽，补实际采样次数/mip/缓存条件。解析斜坡CPU回归通过。",
+      "runtime": {
+        "source_scope": {
+          "scope": "height_normal：h=2x+3z且dx不等于dz的解析法线",
+          "cpu_status": "PASS",
+          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+          "shader_compile": "NOT_APPLICABLE",
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "visual_result": "UNVERIFIED",
+          "performance": "UNVERIFIED",
+          "limitations": "Houdini生成、Tile导出、地形工程和GPU细分未执行",
+          "results": "知识库/examples/revision_06_08/results.json"
+        },
+        "results": "知识库/examples/revision_06_08/results.json",
+        "new_tests": [],
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
     }
   },
   {
@@ -7491,43 +7823,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "屏幕贡献与滞回边界的LOD选择；全文已复核，定位“带滞回的 LOD 选择”。"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整标题树与正文一致，机制与实现顺序见“带滞回的 LOD 选择”及相邻章节。"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "重算屏幕比例与像素误差，检查轴向深度而非欧氏距离、双向滞回和多级瞬移；核读Unity6屏幕高度比例及双层淡化，CPU边界回归通过，保留。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "重算屏幕比例与像素误差，检查轴向深度而非欧氏距离、双向滞回和多级瞬移；核读Unity6屏幕高度比例及双层淡化，CPU边界回归通过，保留。 本轮验证仅CPU模型与两个独立着色器编译，宿主和GPU执行未验证。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "逐段复读具体输入、计算因果和失效条件；重算屏幕比例与像素误差，检查轴向深度而非欧氏距离、双向滞回和多级瞬移；核读Unity6屏幕高度比例及双层淡化，CPU边界回归通过，保留。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "H1“LOD选择”与文件一致；各级标题客观，无新增标题映射。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "复核正文数值例、公式、代码与表格；无需新增结果图，未声称设备画面。"
       }
     },
     "batch_migration_authorized": true,
@@ -7543,9 +7875,10 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
-      "REWRITE",
+      "DEEPEN",
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
     "changes": [
@@ -7560,7 +7893,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "597e8d432caddc86c69982fe3dfca10c128c67121caba8d5053417badc8e2094",
+    "final_sha256": "894a037988ef6009fa049a10f031d8e876b91d5d5d5875c24aa39b96c7b75869",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -7590,9 +7923,39 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-texture-geometry",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-06-08.json",
+      "author_sha256": "894a037988ef6009fa049a10f031d8e876b91d5d5d5875c24aa39b96c7b75869",
+      "independent_record": "revision-independent-06-08.json",
+      "independent_source_sha256": "894a037988ef6009fa049a10f031d8e876b91d5d5d5875c24aa39b96c7b75869",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "894a037988ef6009fa049a10f031d8e876b91d5d5d5875c24aa39b96c7b75869",
+      "independent_review": "PASS",
+      "findings": "重算屏幕比例与像素误差，检查轴向深度而非欧氏距离、双向滞回和多级瞬移；核读Unity6屏幕高度比例及双层淡化，CPU边界回归通过，保留。",
+      "runtime": {
+        "source_scope": {
+          "scope": "select_lod：.18/.22双边界和跨多级跳变",
+          "cpu_status": "PASS",
+          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+          "shader_compile": "NOT_APPLICABLE",
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "visual_result": "UNVERIFIED",
+          "performance": "UNVERIFIED",
+          "limitations": "C++片段、引擎LOD、流送与交叉淡化成本未执行",
+          "results": "知识库/examples/revision_06_08/results.json"
+        },
+        "results": "知识库/examples/revision_06_08/results.json",
+        "new_tests": [],
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
     }
   },
   {
@@ -7606,43 +7969,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "参数域采样生成、曲面求值与几何位移；全文已复核，定位“控制点与 Patch”。"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整标题树与正文一致，机制与实现顺序见“控制点与 Patch”及相邻章节。"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "参数域与控制点数量解耦，输出数量为着色器固定声明；内部因子描述采样密度，删除Domain必最昂贵与位移轮廓必正确等推断。Phong投影和位移单位复核，CPU及ds_6_0通过。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "参数域与控制点数量解耦，输出数量为着色器固定声明；内部因子描述采样密度，删除Domain必最昂贵与位移轮廓必正确等推断。Phong投影和位移单位复核，CPU及ds_6_0通过。 本轮验证仅CPU模型与两个独立着色器编译，宿主和GPU执行未验证。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "逐段复读具体输入、计算因果和失效条件；参数域与控制点数量解耦，输出数量为着色器固定声明；内部因子描述采样密度，删除Domain必最昂贵与位移轮廓必正确等推断。Phong投影和位移单位复核，CPU及ds_6_0通过。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "H1“Tessellation与位移”与文件一致；各级标题客观，无新增标题映射。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "复核正文数值例、公式、代码与表格；无需新增结果图，未声称设备画面。"
       }
     },
     "batch_migration_authorized": true,
@@ -7658,6 +8021,8 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
+      "DEEPEN",
+      "FACT-CHECK",
       "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
@@ -7678,7 +8043,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "7d762856cc255bf8087d347a00e3989702bd9fa4af9df5ee022be947a5a3149c",
+    "final_sha256": "b93558d159af33dc47661df78a8320301b764e00d0b87086af0a960ee2d1cf3e",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -7708,9 +8073,39 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-texture-geometry",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-06-08.json",
+      "author_sha256": "7fa295dab1ed800e84ae56c5a984c5a3a47db9ac8146b383e600c927676b69d4",
+      "independent_record": "revision-independent-06-08.json",
+      "independent_source_sha256": "29a89696e2b9314255aa5ed892be36eb9fe83ae9d64a32b1849f9bcf8a2ef420",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "b93558d159af33dc47661df78a8320301b764e00d0b87086af0a960ee2d1cf3e",
+      "independent_review": "PASS",
+      "findings": "参数域与控制点数量解耦，输出数量为着色器固定声明；内部因子描述采样密度，删除Domain必最昂贵与位移轮廓必正确等推断。Phong投影和位移单位复核，CPU及ds_6_0通过。",
+      "runtime": {
+        "source_scope": {
+          "scope": "phong_point：顶点保持、共面和弯曲；domain.hlsl DSMain ds_6_0编译",
+          "cpu_status": "PASS",
+          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+          "shader_compile": "PASS",
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "visual_result": "UNVERIFIED",
+          "performance": "UNVERIFIED",
+          "limitations": "缺Hull与绘制宿主；Unity运行、GPU拓扑/裂缝与性能未执行",
+          "results": "知识库/examples/revision_06_08/results.json"
+        },
+        "results": "知识库/examples/revision_06_08/results.json",
+        "new_tests": [],
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
     }
   },
   {
@@ -7725,43 +8120,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "从树冠代理构造可写回资产的着色法线；全文已复核，定位“椭球代理的法线场”。"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整标题树与正文一致，机制与实现顺序见“椭球代理的法线场”及相邻章节。"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "重算椭球梯度、中心回退、代理球覆盖和双步同步平滑；法线恢复M转置以及改法线后的切线正交约束成立。CPU椭球与平滑检查通过，保留。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "重算椭球梯度、中心回退、代理球覆盖和双步同步平滑；法线恢复M转置以及改法线后的切线正交约束成立。CPU椭球与平滑检查通过，保留。 本轮验证仅CPU模型与两个独立着色器编译，宿主和GPU执行未验证。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "逐段复读具体输入、计算因果和失效条件；重算椭球梯度、中心回退、代理球覆盖和双步同步平滑；法线恢复M转置以及改法线后的切线正交约束成立。CPU椭球与平滑检查通过，保留。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "H1“植被包裹法线”与文件一致；各级标题客观，无新增标题映射。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "复核正文数值例、公式、代码与表格；无需新增结果图，未声称设备画面。"
       }
     },
     "batch_migration_authorized": true,
@@ -7777,9 +8172,10 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
-      "REWRITE",
+      "DEEPEN",
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "DEEPEN"
+      "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
     "changes": [
@@ -7792,7 +8188,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "90eacc88c67155b18f321b4da98a448783ab977c68af7c9482059856b65a25e3",
+    "final_sha256": "cfb990f3657ff888055a7c1e79b876bd58778ccb441edc65ccf876da0dbf0773",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -7822,9 +8218,39 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-texture-geometry",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-06-08.json",
+      "author_sha256": "cfb990f3657ff888055a7c1e79b876bd58778ccb441edc65ccf876da0dbf0773",
+      "independent_record": "revision-independent-06-08.json",
+      "independent_source_sha256": "cfb990f3657ff888055a7c1e79b876bd58778ccb441edc65ccf876da0dbf0773",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "cfb990f3657ff888055a7c1e79b876bd58778ccb441edc65ccf876da0dbf0773",
+      "independent_review": "PASS",
+      "findings": "重算椭球梯度、中心回退、代理球覆盖和双步同步平滑；法线恢复M转置以及改法线后的切线正交约束成立。CPU椭球与平滑检查通过，保留。",
+      "runtime": {
+        "source_scope": {
+          "scope": "ellipsoid_normal、smooth_step：非球形梯度、中心回退、同步邻域和固定边界",
+          "cpu_status": "PASS",
+          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+          "shader_compile": "NOT_APPLICABLE",
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "visual_result": "UNVERIFIED",
+          "performance": "UNVERIFIED",
+          "limitations": "代理球壳、最近面查询、资产写回及引擎光照未执行",
+          "results": "知识库/examples/revision_06_08/results.json"
+        },
+        "results": "知识库/examples/revision_06_08/results.json",
+        "new_tests": [],
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
     }
   },
   {
@@ -7838,43 +8264,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "面角属性转GPU记录及其访问和简化约束；全文已复核，定位“Buffer 更新、映射与复制”。"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整标题树与正文一致，机制与实现顺序见“Buffer 更新、映射与复制”及相邻章节。"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整核对面角展开、20字节记录、LRU模型与QEM奇异回退；修正UNSYNCHRONIZED映射中的等待解释，明确重叠可直接产生未定义结果，不能以无等待证明安全。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "完整核对面角展开、20字节记录、LRU模型与QEM奇异回退；修正UNSYNCHRONIZED映射中的等待解释，明确重叠可直接产生未定义结果，不能以无等待证明安全。 本轮验证仅CPU模型与两个独立着色器编译，宿主和GPU执行未验证。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "逐段复读具体输入、计算因果和失效条件；完整核对面角展开、20字节记录、LRU模型与QEM奇异回退；修正UNSYNCHRONIZED映射中的等待解释，明确重叠可直接产生未定义结果，不能以无等待证明安全。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "H1“网格数据与GPU访问”与文件一致；各级标题客观，无新增标题映射。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "复核正文数值例、公式、代码与表格；无需新增结果图，未声称设备画面。"
       }
     },
     "batch_migration_authorized": true,
@@ -7890,6 +8316,8 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
+      "DEEPEN",
+      "FACT-CHECK",
       "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
@@ -7910,7 +8338,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "fa7f26e65f98ae01afeb1dd1db3636cb1a7862945e4c0c5fa31a7a8fab3b429c",
+    "final_sha256": "44b3496d51cbde407f1624f5d213e148bf2fbbed95687c1711e58950583537da",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -7939,9 +8367,39 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-texture-geometry",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-06-08.json",
+      "author_sha256": "2c39ca3cb013643ac318d62b76555f7406deb436c87ab6d9316627ff3ae8ed96",
+      "independent_record": "revision-independent-06-08.json",
+      "independent_source_sha256": "65dd8b427a9a14218f9e096026dd5752462654ab5996c0afdcc56f0910897e6d",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "44b3496d51cbde407f1624f5d213e148bf2fbbed95687c1711e58950583537da",
+      "independent_review": "PASS",
+      "findings": "完整核对面角展开、20字节记录、LRU模型与QEM奇异回退；修正UNSYNCHRONIZED映射中的等待解释，明确重叠可直接产生未定义结果，不能以无等待证明安全。",
+      "runtime": {
+        "source_scope": {
+          "scope": "flatten_corners、cache_misses、quadric_error：UV缝、4miss/2tri、两平面误差5",
+          "cpu_status": "PASS",
+          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+          "shader_compile": "NOT_APPLICABLE",
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "visual_result": "UNVERIFIED",
+          "performance": "UNVERIFIED",
+          "limitations": "未执行全简化器、C++编译、OpenGL映射或真实缓存测量",
+          "results": "知识库/examples/revision_06_08/results.json"
+        },
+        "results": "知识库/examples/revision_06_08/results.json",
+        "new_tests": [],
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
     }
   },
   {

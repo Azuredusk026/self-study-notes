@@ -1,0 +1,1375 @@
+{
+  "date": "2026-10-22",
+  "scope": "06_纹理技术6篇与08_几何与网格6篇，共12篇",
+  "baseline": "描边的机制推理、实现上下文、自然技术中文；四项目技能与三规范",
+  "articles": [
+    {
+      "path": "知识库/06_纹理技术/Texture Streaming.md",
+      "primary_question": "整mip纹理在需求、预算和上传延迟之间的驻留决策",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "full_text_review": true,
+      "final_full_text_review": true,
+      "review_sections": [
+        "需求层级与实际驻留",
+        "需求估计误差",
+        "预算分配",
+        "上传发布与回收",
+        "验证与诊断",
+        "相关主题",
+        "参考资料"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "revisions": "完整重写需求/target/resident三个状态；展开逐纹理优先级预算，给出22字节算例；纠正UV乘4导致mip编号加2的方向；补版本去重、完成值、暂存峰值和淘汰等待",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "主问题：整mip纹理在需求、预算和上传延迟之间的驻留决策；主要计算见“预算分配”。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "逐节全文复读；“预算分配”承接输入约定，验证与相关主题说明边界。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "“预算分配”及相邻章节：完整重写需求/target/resident三个状态；展开逐纹理优先级预算，给出22字节算例；纠正UV乘4导致mip编号加2的方向；补版本去重、完成值、暂存峰值和淘汰等待。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "stream_targets；fallback超预算、优先级和达到目标停止；texture_lod的UV四倍回归；正文注明输入、输出、单位/空间与工程遗漏。IO、GPU驻留与引擎调度未执行。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "参考资料含本轮核读版本与定位；数值推导和CPU结果独立记录，未把独立编译等同引擎运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读并按因果推进；“预算分配”用数据变化解释计算与失败，保留已有清楚段落。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "保留“Texture Streaming”，它直接指向主概念；候选“纹理mip流送”未扩大范围；子标题采用客观内容名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留06_纹理技术主归属；通用空间、法线、资源寿命通过相关主题链接；本页不重复完整引擎宿主。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“预算分配”以公式、代码和具体数值表达计算；未采用外部图片或生成结果图，也未声称画面证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "Texture Streaming",
+        "纹理mip流送"
+      ],
+      "title_mapping": {
+        "old": "Texture Streaming",
+        "new": "Texture Streaming"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/TextureStreaming-introduction.html",
+          "locator": "Unity6000.0；How mipmap streaming works与限制，按网格UV/相机合并需求及内存预算",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        },
+        {
+          "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/streaming-virtual-texturing-in-unreal-engine?application_version=5.6",
+          "locator": "UE5.6；整mip与tile粒度、Performance and Cost、Tile Border、Reactive streaming",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        }
+      ],
+      "verification": {
+        "scope": "stream_targets；fallback超预算、优先级和达到目标停止；texture_lod的UV四倍回归",
+        "cpu_status": "PASS",
+        "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+        "shader_compile": "NOT_APPLICABLE",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "visual_result": "UNVERIFIED",
+        "performance": "UNVERIFIED",
+        "limitations": "IO、GPU驻留与引擎调度未执行",
+        "results": "知识库/examples/revision_06_08/results.json"
+      },
+      "sha256": "24a6618fcbf0f351fc5bf2f94c981e4faa72d0a3299cd5a1f9e98999c99f54bc"
+    },
+    {
+      "path": "知识库/06_纹理技术/Virtual Texture.md",
+      "primary_question": "虚拟页查询、缺页回退与物理缓存采样的地址机制",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "full_text_review": true,
+      "final_full_text_review": true,
+      "review_sections": [
+        "逻辑页与物理槽",
+        "缺页回退",
+        "过滤与页边框",
+        "槽位发布与回收",
+        "运行时虚拟纹理",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "revisions": "完整重写页/槽布局；展开页内坐标与物理UV；祖先回退重新计算局部坐标；给出7.5/12中心值；补逻辑邻边框、显式梯度、双mip查询、槽位版本寿命",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "主问题：虚拟页查询、缺页回退与物理缓存采样的地址机制；主要计算见“逻辑页与物理槽”。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "逐节全文复读；“逻辑页与物理槽”承接输入约定，验证与相关主题说明边界。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "“逻辑页与物理槽”及相邻章节：完整重写页/槽布局；展开页内坐标与物理UV；祖先回退重新计算局部坐标；给出7.5/12中心值；补逻辑邻边框、显式梯度、双mip查询、槽位版本寿命。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "vt_address；页首中心、祖先重新映射、缺失根页拒绝；正文注明输入、输出、单位/空间与工程遗漏。GPU反馈、页表纹理、跨页过滤、RVT更新与性能未执行。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "参考资料含本轮核读版本与定位；数值推导和CPU结果独立记录，未把独立编译等同引擎运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读并按因果推进；“逻辑页与物理槽”用数据变化解释计算与失败，保留已有清楚段落。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "保留“Virtual Texture”，它直接指向主概念；候选“虚拟纹理页映射”未扩大范围；子标题采用客观内容名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留06_纹理技术主归属；通用空间、法线、资源寿命通过相关主题链接；本页不重复完整引擎宿主。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“逻辑页与物理槽”以公式、代码和具体数值表达计算；未采用外部图片或生成结果图，也未声称画面证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "Virtual Texture",
+        "虚拟纹理页映射"
+      ],
+      "title_mapping": {
+        "old": "Virtual Texture",
+        "new": "Virtual Texture"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/streaming-virtual-texturing-in-unreal-engine?application_version=5.6",
+          "locator": "UE5.6；整mip与tile粒度、Performance and Cost、Tile Border、Reactive streaming",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        },
+        {
+          "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/runtime-virtual-texturing-in-unreal-engine?application_version=5.6",
+          "locator": "UE5.6；运行时生成/缓存材质页及消费关系",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        }
+      ],
+      "verification": {
+        "scope": "vt_address；页首中心、祖先重新映射、缺失根页拒绝",
+        "cpu_status": "PASS",
+        "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+        "shader_compile": "NOT_APPLICABLE",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "visual_result": "UNVERIFIED",
+        "performance": "UNVERIFIED",
+        "limitations": "GPU反馈、页表纹理、跨页过滤、RVT更新与性能未执行",
+        "results": "知识库/examples/revision_06_08/results.json"
+      },
+      "sha256": "8bf0d3b1b582d762f51bfea4f46437161ca04d3ab4ed03e59a388004ac8e0990"
+    },
+    {
+      "path": "知识库/06_纹理技术/纹理采样与过滤.md",
+      "primary_question": "纹理采样足迹决定层级与过滤的计算",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "REWRITE"
+      ],
+      "full_text_review": true,
+      "final_full_text_review": true,
+      "review_sections": [
+        "专题阅读",
+        "Texture、Texel 和 UV",
+        "Point Sampling",
+        "Bilinear Filtering",
+        "Mipmap",
+        "LOD估计",
+        "Trilinear Filtering",
+        "Anisotropic Filtering",
+        "Magnification 和 Minification",
+        "Address Mode",
+        "Repeat/Wrap",
+        "Clamp",
+        "Mirror",
+        "Border",
+        "数据语义与mip生成",
+        "Normal Map",
+        "Alpha Test",
+        "SDF",
+        "ORM/Mask",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "revisions": "展开uv*size-0.5的双线性计算与2×2例；LOD导数先转纹素单位；连续UV求导后Wrap；限定4/3与SM6.6 Compute导数条件；保留数据语义过滤限制",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "主问题：纹理采样足迹决定层级与过滤的计算；主要计算见“LOD估计”。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "逐节全文复读；“LOD估计”承接输入约定，验证与相关主题说明边界。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "“LOD估计”及相邻章节：展开uv*size-0.5的双线性计算与2×2例；LOD导数先转纹素单位；连续UV求导后Wrap；限定4/3与SM6.6 Compute导数条件；保留数据语义过滤限制。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "texture_lod、bilinear、mip_bytes；纹素单位、中心、Clamp、细长尾部；正文注明输入、输出、单位/空间与工程遗漏。硬件各向异性分布、实际精度和画面未执行。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "参考资料含本轮核读版本与定位；数值推导和CPU结果独立记录，未把独立编译等同引擎运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读并按因果推进；“LOD估计”用数据变化解释计算与失败，保留已有清楚段落。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "保留“纹理采样与过滤”，它直接指向主概念；候选“纹理足迹与过滤”未扩大范围；子标题采用客观内容名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留06_纹理技术主归属；通用空间、法线、资源寿命通过相关主题链接；本页不重复完整引擎宿主。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“LOD估计”以公式、代码和具体数值表达计算；未采用外部图片或生成结果图，也未声称画面证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "纹理采样与过滤",
+        "纹理足迹与过滤"
+      ],
+      "title_mapping": {
+        "old": "纹理采样与过滤",
+        "new": "纹理采样与过滤"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://registry.khronos.org/OpenGL/specs/gl/glspec46.core.pdf",
+          "locator": "OpenGL4.6 Core，2022-05-05；8.14.1 LOD、8.14.2寻址和线性取样、8.14.3 mip、8.15放大",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        },
+        {
+          "url": "https://microsoft.github.io/DirectX-Specs/d3d/HLSL_SM_6_6_Derivatives.html",
+          "locator": "HLSL SM6.6；Thread Groups and Quads、Texture Sample Methods",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        }
+      ],
+      "verification": {
+        "scope": "texture_lod、bilinear、mip_bytes；纹素单位、中心、Clamp、细长尾部",
+        "cpu_status": "PASS",
+        "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+        "shader_compile": "NOT_APPLICABLE",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "visual_result": "UNVERIFIED",
+        "performance": "UNVERIFIED",
+        "limitations": "硬件各向异性分布、实际精度和画面未执行",
+        "results": "知识库/examples/revision_06_08/results.json"
+      },
+      "sha256": "d598cf2a11f6b37f9f01534622ac63f41140ad49af57a4cc95b21362b1e51091"
+    },
+    {
+      "path": "知识库/06_纹理技术/纹理压缩格式.md",
+      "primary_question": "固定块压缩的字节预算与数据误差",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "REWRITE"
+      ],
+      "full_text_review": true,
+      "final_full_text_review": true,
+      "review_sections": [
+        "GPU 纹理压缩",
+        "BC 格式",
+        "移动端格式",
+        "ETC2/EAC",
+        "ASTC",
+        "PVRTC",
+        "压缩格式选择",
+        "块存储预算",
+        "端点与索引的误差来源",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "revisions": "补BC5正半球与UNORM/SNORM解码；ASTC固定128位和不同bpp；小mip向上整块；载荷计算与API创建限制分开；展开BC1端点索引和BC7位预算",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "主问题：固定块压缩的字节预算与数据误差；主要计算见“块存储预算”。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "逐节全文复读；“块存储预算”承接输入约定，验证与相关主题说明边界。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "“块存储预算”及相邻章节：补BC5正半球与UNORM/SNORM解码；ASTC固定128位和不同bpp；小mip向上整块；载荷计算与API创建限制分开；展开BC1端点索引和BC7位预算。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "mip_bytes；5×3块载荷、1024² BC1=699064字节、8×1尾部；正文注明输入、输出、单位/空间与工程遗漏。未运行编码器或设备格式支持与解码画面检查。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "参考资料含本轮核读版本与定位；数值推导和CPU结果独立记录，未把独立编译等同引擎运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读并按因果推进；“块存储预算”用数据变化解释计算与失败，保留已有清楚段落。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "保留“纹理压缩格式”，它直接指向主概念；候选“GPU纹理块压缩”未扩大范围；子标题采用客观内容名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留06_纹理技术主归属；通用空间、法线、资源寿命通过相关主题链接；本页不重复完整引擎宿主。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“块存储预算”以公式、代码和具体数值表达计算；未采用外部图片或生成结果图，也未声称画面证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "纹理压缩格式",
+        "GPU纹理块压缩"
+      ],
+      "title_mapping": {
+        "old": "纹理压缩格式",
+        "new": "纹理压缩格式"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://learn.microsoft.com/en-us/windows/win32/direct3d10/d3d10-graphics-programming-guide-resources-block-compression",
+          "locator": "D3D10；BC1、BC4、BC5、Virtual Size versus Physical Size；创建限制与载荷计算分开",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/windows/win32/direct3d11/bc7-format",
+          "locator": "D3D11 BC7；128bit、八个模式、分区与端点位预算",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        },
+        {
+          "url": "https://github.com/KhronosGroup/DataFormat/blob/main/astc.txt",
+          "locator": "ASTC规范源；Basic Concepts的128bit块与LDR/HDR profile",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        }
+      ],
+      "verification": {
+        "scope": "mip_bytes；5×3块载荷、1024² BC1=699064字节、8×1尾部",
+        "cpu_status": "PASS",
+        "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+        "shader_compile": "NOT_APPLICABLE",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "visual_result": "UNVERIFIED",
+        "performance": "UNVERIFIED",
+        "limitations": "未运行编码器或设备格式支持与解码画面检查",
+        "results": "知识库/examples/revision_06_08/results.json"
+      },
+      "sha256": "2684d6fc50b22e7537e1019dee94be9856a637256c0a0a72a94f8cbf09248e2e"
+    },
+    {
+      "path": "知识库/06_纹理技术/纹理图集.md",
+      "primary_question": "子图坐标与过滤足迹的隔离",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "REWRITE"
+      ],
+      "full_text_review": true,
+      "final_full_text_review": true,
+      "review_sections": [
+        "表面坐标与共享纹理",
+        "UV Layout",
+        "Texel Density",
+        "Padding 和 Bleeding",
+        "间距的定量估算",
+        "Texture Atlas",
+        "Trim Sheet",
+        "Texture Array",
+        "图集 UV 变换",
+        "逐级隔离",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "revisions": "明确半纹素公式映射首尾中心并给出64宽图集算例；修正mip间距说法；展开独立子图逐级mip和边缘扩展；平铺导数与最终粗层的隔离限制；修复官方数组来源失效链接",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "主问题：子图坐标与过滤足迹的隔离；主要计算见“图集 UV 变换”。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "逐节全文复读；“图集 UV 变换”承接输入约定，验证与相关主题说明边界。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "“图集 UV 变换”及相邻章节：明确半纹素公式映射首尾中心并给出64宽图集算例；修正mip间距说法；展开独立子图逐级mip和边缘扩展；平铺导数与最终粗层的隔离限制；修复官方数组来源失效链接。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "bilinear的中心语义；AtlasUv是HLSL机制片段，数值例可复算；正文注明输入、输出、单位/空间与工程遗漏。图集构建器、逐级隔离和真实GPU过滤未执行。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "参考资料含本轮核读版本与定位；数值推导和CPU结果独立记录，未把独立编译等同引擎运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读并按因果推进；“图集 UV 变换”用数据变化解释计算与失败，保留已有清楚段落。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "保留“纹理图集”，它直接指向主概念；候选“图集坐标与边距”未扩大范围；子标题采用客观内容名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留06_纹理技术主归属；通用空间、法线、资源寿命通过相关主题链接；本页不重复完整引擎宿主。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“图集 UV 变换”以公式、代码和具体数值表达计算；未采用外部图片或生成结果图，也未声称画面证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "纹理图集",
+        "图集坐标与边距"
+      ],
+      "title_mapping": {
+        "old": "纹理图集",
+        "new": "纹理图集"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://registry.khronos.org/OpenGL/specs/gl/glspec46.core.pdf",
+          "locator": "OpenGL4.6 Core，2022-05-05；8.14.1 LOD、8.14.2寻址和线性取样、8.14.3 mip、8.15放大",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-resources-textures-intro",
+          "locator": "D3D11；1D Texture Arrays与2D Textures and 2D Texture Arrays，同格式/尺寸/mip数量",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        }
+      ],
+      "verification": {
+        "scope": "bilinear的中心语义；AtlasUv是HLSL机制片段，数值例可复算",
+        "cpu_status": "PASS",
+        "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+        "shader_compile": "NOT_APPLICABLE",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "visual_result": "UNVERIFIED",
+        "performance": "UNVERIFIED",
+        "limitations": "图集构建器、逐级隔离和真实GPU过滤未执行",
+        "results": "知识库/examples/revision_06_08/results.json"
+      },
+      "sha256": "425136c8c9acfc032c1a4ad9ecf343d3465e633cfa076819517d42f68726c7b5"
+    },
+    {
+      "path": "知识库/06_纹理技术/视差映射.md",
+      "primary_question": "切线空间视线与高度场首次交点的重建",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "REWRITE"
+      ],
+      "full_text_review": true,
+      "final_full_text_review": true,
+      "review_sections": [
+        "高度图、深度图和法线贴图",
+        "切线空间与UV尺度",
+        "沿视线寻找高度层交点",
+        "基础视差映射",
+        "Offset Limiting",
+        "陡峭视差映射",
+        "视差遮蔽映射",
+        "UV 导数和 Mipmap",
+        "边界和局限",
+        "最小验证",
+        "相关主题",
+        "参考资料"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "revisions": "补世界厚度到UV的度量；POM使用有限整数循环、起点零深度早返、残差变号和明确线性比例；textureGrad使用一致控制流中的原UV导数；补漏检与足迹近似；修复帧诊断引用",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "主问题：切线空间视线与高度场首次交点的重建；主要计算见“视差遮蔽映射”。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "逐节全文复读；“视差遮蔽映射”承接输入约定，验证与相关主题说明边界。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "“视差遮蔽映射”及相邻章节：补世界厚度到UV的度量；POM使用有限整数循环、起点零深度早返、残差变号和明确线性比例；textureGrad使用一致控制流中的原UV导数；补漏检与足迹近似；修复帧诊断引用。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "pom_line：顶层、常值及线性高度场解析交点；pom.frag GLSL4.50 SPIR-V编译；正文注明输入、输出、单位/空间与工程遗漏。未创建纹理/宿主管线；画面、过滤、自阴影和GPU成本未执行。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "参考资料含本轮核读版本与定位；数值推导和CPU结果独立记录，未把独立编译等同引擎运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读并按因果推进；“视差遮蔽映射”用数据变化解释计算与失败，保留已有清楚段落。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "保留“视差映射”，它直接指向主概念；候选“POM高度场求交”未扩大范围；子标题采用客观内容名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留06_纹理技术主归属；通用空间、法线、资源寿命通过相关主题链接；本页不重复完整引擎宿主。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“视差遮蔽映射”以公式、代码和具体数值表达计算；未采用外部图片或生成结果图，也未声称画面证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "视差映射",
+        "POM高度场求交"
+      ],
+      "title_mapping": {
+        "old": "视差映射",
+        "new": "视差映射"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://advances.realtimerendering.com/s2006/Tatarchuk-POM.pdf",
+          "locator": "SIGGRAPH2006；PDF第29—33页线性步进及分段线性交点，另核读采样数随视角调整",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        },
+        {
+          "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.pdf",
+          "locator": "GLSL4.60.8；textureGrad函数表与8.9.3 Explicit Gradients；示例实际目标为4.50",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        }
+      ],
+      "verification": {
+        "scope": "pom_line：顶层、常值及线性高度场解析交点；pom.frag GLSL4.50 SPIR-V编译",
+        "cpu_status": "PASS",
+        "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+        "shader_compile": "PASS",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "visual_result": "UNVERIFIED",
+        "performance": "UNVERIFIED",
+        "limitations": "未创建纹理/宿主管线；画面、过滤、自阴影和GPU成本未执行",
+        "results": "知识库/examples/revision_06_08/results.json"
+      },
+      "sha256": "da2d37581e8e24f5ff6d95a9faaca8149912e15c2ccf3af6daf65dcd368e2751"
+    },
+    {
+      "path": "知识库/08_几何与网格/LOD选择.md",
+      "primary_question": "屏幕贡献与滞回边界的LOD选择",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "REWRITE"
+      ],
+      "full_text_review": true,
+      "final_full_text_review": true,
+      "review_sections": [
+        "以屏幕占比决定 LOD",
+        "LOD的简化对象",
+        "切换、Cross Fade 与 Hysteresis",
+        "几何与材质细节同步",
+        "LOD预算",
+        "带滞回的 LOD 选择",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "revisions": "推导投影高度及像素误差；轴向深度与欧氏距离区分；屏幕比例与分辨率区分；展开双向循环阈值和瞬移；修正随机删植被的稳定性说法",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "主问题：屏幕贡献与滞回边界的LOD选择；主要计算见“带滞回的 LOD 选择”。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "逐节全文复读；“带滞回的 LOD 选择”承接输入约定，验证与相关主题说明边界。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "“带滞回的 LOD 选择”及相邻章节：推导投影高度及像素误差；轴向深度与欧氏距离区分；屏幕比例与分辨率区分；展开双向循环阈值和瞬移；修正随机删植被的稳定性说法。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "select_lod：.18/.22双边界和跨多级跳变；正文注明输入、输出、单位/空间与工程遗漏。C++片段、引擎LOD、流送与交叉淡化成本未执行。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "参考资料含本轮核读版本与定位；数值推导和CPU结果独立记录，未把独立编译等同引擎运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读并按因果推进；“带滞回的 LOD 选择”用数据变化解释计算与失败，保留已有清楚段落。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "保留“LOD选择”，它直接指向主概念；候选“屏幕误差与LOD选择”未扩大范围；子标题采用客观内容名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留08_几何与网格主归属；通用空间、法线、资源寿命通过相关主题链接；本页不重复完整引擎宿主。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“带滞回的 LOD 选择”以公式、代码和具体数值表达计算；未采用外部图片或生成结果图，也未声称画面证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "LOD选择",
+        "屏幕误差与LOD选择"
+      ],
+      "title_mapping": {
+        "old": "LOD选择",
+        "new": "LOD选择"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/class-LODGroup.html",
+          "locator": "Unity6000.0；LOD Group selection bar和Transitioning between LOD levels，屏幕高度比例及双层绘制",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        }
+      ],
+      "verification": {
+        "scope": "select_lod：.18/.22双边界和跨多级跳变",
+        "cpu_status": "PASS",
+        "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+        "shader_compile": "NOT_APPLICABLE",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "visual_result": "UNVERIFIED",
+        "performance": "UNVERIFIED",
+        "limitations": "C++片段、引擎LOD、流送与交叉淡化成本未执行",
+        "results": "知识库/examples/revision_06_08/results.json"
+      },
+      "sha256": "894a037988ef6009fa049a10f031d8e876b91d5d5d5875c24aa39b96c7b75869"
+    },
+    {
+      "path": "知识库/08_几何与网格/Billboard.md",
+      "primary_question": "面片坐标架、脚底锚点与深度的约束",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "REWRITE"
+      ],
+      "full_text_review": true,
+      "final_full_text_review": true,
+      "review_sections": [
+        "朝向与坐标架",
+        "球面与轴约束",
+        "生成阶段",
+        "锚点与场景深度",
+        "脚底保持固定",
+        "多视角Impostor",
+        "验证与代价",
+        "相关主题",
+        "参考资料"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "revisions": "区分屏幕对齐和逐物体球面朝向；正上方备用Right先投影归一化；明确世界空间与单位；补绕序和多视图诊断",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "主问题：面片坐标架、脚底锚点与深度的约束；主要计算见“球面与轴约束”。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "逐节全文复读；“球面与轴约束”承接输入约定，验证与相关主题说明边界。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "“球面与轴约束”及相邻章节：区分屏幕对齐和逐物体球面朝向；正上方备用Right先投影归一化；明确世界空间与单位；补绕序和多视图诊断。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "billboard_right：正常视向和正上方退化，备用向量与Up正交；正文注明输入、输出、单位/空间与工程遗漏。HLSL宿主、Impostor烘焙、阴影和GPU画面未执行。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "参考资料含本轮核读版本与定位；数值推导和CPU结果独立记录，未把独立编译等同引擎运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读并按因果推进；“球面与轴约束”用数据变化解释计算与失败，保留已有清楚段落。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "保留“Billboard”，它直接指向主概念；候选“Billboard坐标架”未扩大范围；子标题采用客观内容名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留08_几何与网格主归属；通用空间、法线、资源寿命通过相关主题链接；本页不重复完整引擎宿主。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“球面与轴约束”以公式、代码和具体数值表达计算；未采用外部图片或生成结果图，也未声称画面证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "Billboard",
+        "Billboard坐标架"
+      ],
+      "title_mapping": {
+        "old": "Billboard",
+        "new": "Billboard"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/impostor-baker-plugin-in-unreal-engine?application_version=5.6",
+          "locator": "UE5.6；Full Sphere/Upper Hemisphere/Traditional Billboards的方向表示",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        }
+      ],
+      "verification": {
+        "scope": "billboard_right：正常视向和正上方退化，备用向量与Up正交",
+        "cpu_status": "PASS",
+        "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+        "shader_compile": "NOT_APPLICABLE",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "visual_result": "UNVERIFIED",
+        "performance": "UNVERIFIED",
+        "limitations": "HLSL宿主、Impostor烘焙、阴影和GPU画面未执行",
+        "results": "知识库/examples/revision_06_08/results.json"
+      },
+      "sha256": "67ff163b9dfeaa5e34aaa84090f0af371da0b4ffa7614420e0007b8349d5002c"
+    },
+    {
+      "path": "知识库/08_几何与网格/Heightfield地形.md",
+      "primary_question": "二维高度样本到地形位置、法线与相邻块的一致性",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "REWRITE"
+      ],
+      "full_text_review": true,
+      "final_full_text_review": true,
+      "review_sections": [
+        "地形的基本表示",
+        "采样位置与世界法线",
+        "GPU 细分地形",
+        "地形材质分层",
+        "Houdini HeightField 流程",
+        "材质权重求值",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "revisions": "展开N-1采样间距、UNORM量化和纹素中心映射；中央差分除世界dx/dz；共享边法线读取邻块一圈；展开材质权重和零输入回退；共享位移LOD条件",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "主问题：二维高度样本到地形位置、法线与相邻块的一致性；主要计算见“采样位置与世界法线”。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "逐节全文复读；“采样位置与世界法线”承接输入约定，验证与相关主题说明边界。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "“采样位置与世界法线”及相邻章节：展开N-1采样间距、UNORM量化和纹素中心映射；中央差分除世界dx/dz；共享边法线读取邻块一圈；展开材质权重和零输入回退；共享位移LOD条件。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "height_normal：h=2x+3z且dx不等于dz的解析法线；正文注明输入、输出、单位/空间与工程遗漏。Houdini生成、Tile导出、地形工程和GPU细分未执行。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "参考资料含本轮核读版本与定位；数值推导和CPU结果独立记录，未把独立编译等同引擎运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读并按因果推进；“采样位置与世界法线”用数据变化解释计算与失败，保留已有清楚段落。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "保留“Heightfield地形”，它直接指向主概念；候选“高度场采样与地形”未扩大范围；子标题采用客观内容名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留08_几何与网格主归属；通用空间、法线、资源寿命通过相关主题链接；本页不重复完整引擎宿主。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“采样位置与世界法线”以公式、代码和具体数值表达计算；未采用外部图片或生成结果图，也未声称画面证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "Heightfield地形",
+        "高度场采样与地形"
+      ],
+      "title_mapping": {
+        "old": "Heightfield地形",
+        "new": "Heightfield地形"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://www.sidefx.com/docs/houdini/heightfields/index.html",
+          "locator": "Houdini22.0；Overview、Limitations，二维高度场及多层表示",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/windows/win32/direct3d11/direct3d-11-advanced-stages-tessellation",
+          "locator": "D3D11；Hull、Tessellator、Domain阶段与分割模式范围",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        }
+      ],
+      "verification": {
+        "scope": "height_normal：h=2x+3z且dx不等于dz的解析法线",
+        "cpu_status": "PASS",
+        "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+        "shader_compile": "NOT_APPLICABLE",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "visual_result": "UNVERIFIED",
+        "performance": "UNVERIFIED",
+        "limitations": "Houdini生成、Tile导出、地形工程和GPU细分未执行",
+        "results": "知识库/examples/revision_06_08/results.json"
+      },
+      "sha256": "cc027c3d63c20f9114faa57fa5a9f7876a48923828b85a8a38a516d4bf98344a"
+    },
+    {
+      "path": "知识库/08_几何与网格/Tessellation与位移.md",
+      "primary_question": "参数域采样生成、曲面求值与几何位移",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "REWRITE"
+      ],
+      "full_text_review": true,
+      "final_full_text_review": true,
+      "review_sections": [
+        "管线位置",
+        "控制点与 Patch",
+        "细分因子",
+        "分割模式",
+        "参数域坐标",
+        "Domain Shader 的插值与位移",
+        "Unity URP 中的写法",
+        "几何生成与采样成本",
+        "与其他 LOD 方案的关系",
+        "验证方法",
+        "Phong细分曲面",
+        "参数点生成的API约定",
+        "相关主题",
+        "参考资料"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "revisions": "修正分割上限、共享边属性/高度mip条件、对象单位与行向量；Unity特性要求区分；展开真正的切平面投影Phong公式并证明顶点/平面保持；移除固定法线偏移冒充Phong的内容；零位移验证限定线性曲面",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "主问题：参数域采样生成、曲面求值与几何位移；主要计算见“Phong细分曲面”。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "逐节全文复读；“Phong细分曲面”承接输入约定，验证与相关主题说明边界。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "“Phong细分曲面”及相邻章节：修正分割上限、共享边属性/高度mip条件、对象单位与行向量；Unity特性要求区分；展开真正的切平面投影Phong公式并证明顶点/平面保持；移除固定法线偏移冒充Phong的内容；零位移验证限定线性曲面。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "phong_point：顶点保持、共面和弯曲；domain.hlsl DSMain ds_6_0编译；正文注明输入、输出、单位/空间与工程遗漏。缺Hull与绘制宿主；Unity运行、GPU拓扑/裂缝与性能未执行。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "参考资料含本轮核读版本与定位；数值推导和CPU结果独立记录，未把独立编译等同引擎运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读并按因果推进；“Phong细分曲面”用数据变化解释计算与失败，保留已有清楚段落。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "保留“Tessellation与位移”，它直接指向主概念；候选“硬件细分与曲面位移”未扩大范围；子标题采用客观内容名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留08_几何与网格主归属；通用空间、法线、资源寿命通过相关主题链接；本页不重复完整引擎宿主。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“Phong细分曲面”以公式、代码和具体数值表达计算；未采用外部图片或生成结果图，也未声称画面证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "Tessellation与位移",
+        "硬件细分与曲面位移"
+      ],
+      "title_mapping": {
+        "old": "Tessellation与位移",
+        "new": "Tessellation与位移"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://perso.telecom-paristech.fr/boubek/papers/PhongTessellation/PhongTessellation.pdf",
+          "locator": "2008论文第3节，公式(3)—(4)；作者页读取不稳定，实际全文通过JHU同论文镜像核读第2—3页",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行",
+          "checked_mirror": "https://www.cs.jhu.edu/~misha/ReadingSeminar/Papers/Boubekeur08.pdf"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/windows/win32/direct3d11/direct3d-11-advanced-stages-tessellation",
+          "locator": "D3D11；Hull、Tessellator、Domain阶段与分割模式范围",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        },
+        {
+          "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/SL-Pragma-require.html",
+          "locator": "Unity6000.0；tesshw仅硬件特性，tessellation为hull/domain阶段特性",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        }
+      ],
+      "verification": {
+        "scope": "phong_point：顶点保持、共面和弯曲；domain.hlsl DSMain ds_6_0编译",
+        "cpu_status": "PASS",
+        "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+        "shader_compile": "PASS",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "visual_result": "UNVERIFIED",
+        "performance": "UNVERIFIED",
+        "limitations": "缺Hull与绘制宿主；Unity运行、GPU拓扑/裂缝与性能未执行",
+        "results": "知识库/examples/revision_06_08/results.json"
+      },
+      "sha256": "7fa295dab1ed800e84ae56c5a984c5a3a47db9ac8146b383e600c927676b69d4"
+    },
+    {
+      "path": "知识库/08_几何与网格/网格数据与GPU访问.md",
+      "primary_question": "面角属性转GPU记录及其访问和简化约束",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "REWRITE"
+      ],
+      "full_text_review": true,
+      "final_full_text_review": true,
+      "review_sections": [
+        "Point、Vertex 与 Primitive",
+        "面角属性展开",
+        "Vertex Buffer 与 Index Buffer",
+        "顶点布局",
+        "布局偏移检查",
+        "Buffer 更新、映射与复制",
+        "Post-transform Vertex Cache",
+        "法线、硬边与 UV 缝",
+        "网格简化",
+        "折叠点求解",
+        "Retopology 与 Baking",
+        "Bounds、Submesh 与碰撞",
+        "程序化几何的属性契约",
+        "检查方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "revisions": "展开完整属性键去重；材质边界与顶点复制区分；明确压缩格式解码和16位重启值；映射/解除映射失败分支；LRU示例与真实GPU边界；QEM展开Ax=-b与奇异反例；修复帧诊断引用",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "主问题：面角属性转GPU记录及其访问和简化约束；主要计算见“面角属性展开”。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "逐节全文复读；“面角属性展开”承接输入约定，验证与相关主题说明边界。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "“面角属性展开”及相邻章节：展开完整属性键去重；材质边界与顶点复制区分；明确压缩格式解码和16位重启值；映射/解除映射失败分支；LRU示例与真实GPU边界；QEM展开Ax=-b与奇异反例；修复帧诊断引用。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "flatten_corners、cache_misses、quadric_error：UV缝、4miss/2tri、两平面误差5；正文注明输入、输出、单位/空间与工程遗漏。未执行全简化器、C++编译、OpenGL映射或真实缓存测量。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "参考资料含本轮核读版本与定位；数值推导和CPU结果独立记录，未把独立编译等同引擎运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读并按因果推进；“面角属性展开”用数据变化解释计算与失败，保留已有清楚段落。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "保留“网格数据与GPU访问”，它直接指向主概念；候选“网格属性与GPU布局”未扩大范围；子标题采用客观内容名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留08_几何与网格主归属；通用空间、法线、资源寿命通过相关主题链接；本页不重复完整引擎宿主。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“面角属性展开”以公式、代码和具体数值表达计算；未采用外部图片或生成结果图，也未声称画面证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "网格数据与GPU访问",
+        "网格属性与GPU布局"
+      ],
+      "title_mapping": {
+        "old": "网格数据与GPU访问",
+        "new": "网格数据与GPU访问"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://www.sidefx.com/docs/houdini/model/attributes.html",
+          "locator": "Houdini22.0；Geometry components与Attribute precedence",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        },
+        {
+          "url": "https://www.cs.cmu.edu/~garland/Papers/quadrics.pdf",
+          "locator": "1997论文第4节、公式(1)，矩阵求解、奇异时线段与端点/中点回退",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        },
+        {
+          "url": "https://github.com/KhronosGroup/OpenGL-Refpages/blob/main/gl4/glMapBufferRange.xml",
+          "locator": "OpenGL4参考页源；GL_MAP_UNSYNCHRONIZED_BIT、GL_MAP_INVALIDATE_RANGE_BIT及NULL错误返回",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        }
+      ],
+      "verification": {
+        "scope": "flatten_corners、cache_misses、quadric_error：UV缝、4miss/2tri、两平面误差5",
+        "cpu_status": "PASS",
+        "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+        "shader_compile": "NOT_APPLICABLE",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "visual_result": "UNVERIFIED",
+        "performance": "UNVERIFIED",
+        "limitations": "未执行全简化器、C++编译、OpenGL映射或真实缓存测量",
+        "results": "知识库/examples/revision_06_08/results.json"
+      },
+      "sha256": "2c39ca3cb013643ac318d62b76555f7406deb436c87ab6d9316627ff3ae8ed96"
+    },
+    {
+      "path": "知识库/08_几何与网格/植被包裹法线.md",
+      "primary_question": "从树冠代理构造可写回资产的着色法线",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "REWRITE"
+      ],
+      "full_text_review": true,
+      "final_full_text_review": true,
+      "review_sections": [
+        "植被的包裹法线",
+        "椭球代理的法线场",
+        "代理网格生成",
+        "生成流程",
+        "法线空间与切线",
+        "写回资产",
+        "边界",
+        "验证方法",
+        "相关主题",
+        "参考资料"
+      ],
+      "writing_review": "通过",
+      "writing_review_date": "2026-10-22",
+      "revisions": "补椭球梯度与中心备用方向；球壳半径覆盖全部三顶点；射线未命中/自交边界；Taubin两次快照求值；最近顶点和最近三角面的区别；M转置反求对象法线与切线重建",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "主问题：从树冠代理构造可写回资产的着色法线；主要计算见“椭球代理的法线场”。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "逐节全文复读；“椭球代理的法线场”承接输入约定，验证与相关主题说明边界。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "“椭球代理的法线场”及相邻章节：补椭球梯度与中心备用方向；球壳半径覆盖全部三顶点；射线未命中/自交边界；Taubin两次快照求值；最近顶点和最近三角面的区别；M转置反求对象法线与切线重建。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "ellipsoid_normal、smooth_step：非球形梯度、中心回退、同步邻域和固定边界；正文注明输入、输出、单位/空间与工程遗漏。代理球壳、最近面查询、资产写回及引擎光照未执行。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "参考资料含本轮核读版本与定位；数值推导和CPU结果独立记录，未把独立编译等同引擎运行。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "逐段复读并按因果推进；“椭球代理的法线场”用数据变化解释计算与失败，保留已有清楚段落。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "保留“植被包裹法线”，它直接指向主概念；候选“树冠代理与包裹法线”未扩大范围；子标题采用客观内容名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "保留08_几何与网格主归属；通用空间、法线、资源寿命通过相关主题链接；本页不重复完整引擎宿主。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "“椭球代理的法线场”以公式、代码和具体数值表达计算；未采用外部图片或生成结果图，也未声称画面证据。"
+        }
+      },
+      "title_review": "PASS",
+      "title_candidates": [
+        "植被包裹法线",
+        "树冠代理与包裹法线"
+      ],
+      "title_mapping": {
+        "old": "植被包裹法线",
+        "new": "植被包裹法线"
+      },
+      "category_review": "PASS",
+      "source_checks": [
+        {
+          "url": "https://www.cs.jhu.edu/~misha/ReadingSeminar/Papers/Taubin95.pdf",
+          "locator": "SIGGRAPH1995原论文，第2节、图1和式(6)，两次全顶点平滑与邻接加权差分；实际下载PDF抽取核读",
+          "checked_on": "2026-10-22",
+          "verdict": "依据支持",
+          "scope": "所列版本和机制；不表示工程或GPU运行"
+        }
+      ],
+      "verification": {
+        "scope": "ellipsoid_normal、smooth_step：非球形梯度、中心回退、同步邻域和固定边界",
+        "cpu_status": "PASS",
+        "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+        "shader_compile": "NOT_APPLICABLE",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "visual_result": "UNVERIFIED",
+        "performance": "UNVERIFIED",
+        "limitations": "代理球壳、最近面查询、资产写回及引擎光照未执行",
+        "results": "知识库/examples/revision_06_08/results.json"
+      },
+      "sha256": "cfb990f3657ff888055a7c1e79b876bd58778ccb441edc65ccf876da0dbf0773"
+    }
+  ],
+  "verification_summary": {
+    "command": "python -B 知识库/examples/revision_06_08/verify.py",
+    "cpu_tests": 15,
+    "cpu_status": "PASS",
+    "shader_compilation": [
+      "pom.frag GLSL4.50 → SPIR-V PASS",
+      "domain.hlsl DSMain ds_6_0 → DXIL PASS"
+    ],
+    "tdd": "先编写15项测试，初始因reference模块缺失失败，再实现模型后全部通过；最终增加UV四倍LOD断言并重新通过。",
+    "diff_check": "git diff --check -- 知识库/06_纹理技术 知识库/08_几何与网格 无空白错误；Git仅提示平台换行规则。",
+    "static_checks": "12篇代码围栏平衡；无意外控制字符；本地样例链接存在；两处帧瓶颈引用已同步为父批次的新标题。",
+    "runtime_limits": "本轮未创建引擎工程或执行GPU绘制、捕获和性能测量，全部保持UNVERIFIED。"
+  },
+  "assets_added": [],
+  "title_mapping": [
+    {
+      "old": "Texture Streaming",
+      "new": "Texture Streaming"
+    },
+    {
+      "old": "Virtual Texture",
+      "new": "Virtual Texture"
+    },
+    {
+      "old": "纹理采样与过滤",
+      "new": "纹理采样与过滤"
+    },
+    {
+      "old": "纹理压缩格式",
+      "new": "纹理压缩格式"
+    },
+    {
+      "old": "纹理图集",
+      "new": "纹理图集"
+    },
+    {
+      "old": "视差映射",
+      "new": "视差映射"
+    },
+    {
+      "old": "LOD选择",
+      "new": "LOD选择"
+    },
+    {
+      "old": "Billboard",
+      "new": "Billboard"
+    },
+    {
+      "old": "Heightfield地形",
+      "new": "Heightfield地形"
+    },
+    {
+      "old": "Tessellation与位移",
+      "new": "Tessellation与位移"
+    },
+    {
+      "old": "网格数据与GPU访问",
+      "new": "网格数据与GPU访问"
+    },
+    {
+      "old": "植被包裹法线",
+      "new": "植被包裹法线"
+    }
+  ],
+  "owned_files": [
+    "知识库/06_纹理技术/Texture Streaming.md",
+    "知识库/06_纹理技术/Virtual Texture.md",
+    "知识库/06_纹理技术/纹理采样与过滤.md",
+    "知识库/06_纹理技术/纹理压缩格式.md",
+    "知识库/06_纹理技术/纹理图集.md",
+    "知识库/06_纹理技术/视差映射.md",
+    "知识库/08_几何与网格/LOD选择.md",
+    "知识库/08_几何与网格/Billboard.md",
+    "知识库/08_几何与网格/Heightfield地形.md",
+    "知识库/08_几何与网格/Tessellation与位移.md",
+    "知识库/08_几何与网格/网格数据与GPU访问.md",
+    "知识库/08_几何与网格/植被包裹法线.md",
+    "知识库/examples/revision_06_08/domain.hlsl",
+    "知识库/examples/revision_06_08/pom.frag",
+    "知识库/examples/revision_06_08/reference.py",
+    "知识库/examples/revision_06_08/results.json",
+    "知识库/examples/revision_06_08/test_reference.py",
+    "知识库/examples/revision_06_08/verify.py"
+  ],
+  "global_registry_changed": false,
+  "git_commits_created": false
+}

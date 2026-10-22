@@ -11,9 +11,25 @@
 - **Primitive** 表示三角形、多边形或曲线段，可保存材质 ID、组和面属性；
 - **Detail** 是整份几何只有一份的数据，例如导出设置或管线元数据。
 
-GPU Vertex Buffer 通常没有 Houdini 这种分层。导出器要把所需属性摊平成顶点记录。只要同一个位置对应的法线、切线、UV 或颜色不同，就必须复制顶点。
+GPU Vertex Buffer 通常没有 Houdini 这种分层。导出器要把所需属性摊平成顶点记录。在传统单索引顶点输入中，同一位置对应的法线、切线、UV或颜色不同，就需要不同顶点记录。Vertex Pulling可分别索引属性，属于另一种数据布局。材质边界若只拆Draw且顶点属性相同，并不必然复制顶点。
 
 因此 DCC 显示的点数不等于引擎顶点数。检查资源预算时应看导入后的 Vertex Count，而不是只看建模软件里的面数。
+
+### 面角属性展开
+
+导出器按图元的每个面角读取最终属性，构造完整键 `(position, normal, tangent, uv, color, skin...)`。哈希表中已有相同键时复用索引，否则追加顶点记录。只以位置作为键会把UV缝和硬边错误焊接；对浮点使用容差合并则可能改变遮罩、蒙皮或边界，应先定义允许误差再量化。
+
+```text
+vertices = []; indices = []; lookup = {}
+for corner in triangleCorners:
+    key = 完整的已转换、已编码顶点属性
+    if key not in lookup:
+        lookup[key] = len(vertices)
+        vertices.append(key)
+    indices.append(lookup[key])
+```
+
+空间转换和编码应先统一。例如导出后UV不同的两个角，即使位置相同也保留两条记录；同一顶点被重复引用则共享索引。CPU实现`flatten_corners`以精确属性键处理这两种情况，工程中还需保留材质分组和拓扑映射。
 
 ## Vertex Buffer 与 Index Buffer
 
@@ -21,7 +37,7 @@ Vertex Buffer 以固定步长保存 Position、Normal、Tangent、UV、Color、B
 
 没有索引时，两个共享边的三角形需要提交 6 个顶点。使用索引后，矩形通常只需要 4 个顶点和 6 个索引。复用能减少顶点数据和 Vertex Shader 重复执行，但前提是两个面角的全部顶点属性一致。
 
-16 位索引能表示最多 65536 个不同索引值，占用和读取带宽更小。更大的网格需要 32 位索引或拆成多个 Section。拆分也会影响 Draw Call、剔除粒度和材质批次。
+16位索引有65536个编码值；启用使用固定最大值的Primitive Restart时，保留编码不能再作为普通顶点索引。实际可访问范围还取决于Base Vertex及API约束。16位存储通常占用更小。更大的网格需要 32 位索引或拆成多个 Section。拆分也会影响 Draw Call、剔除粒度和材质批次。
 
 ## 顶点布局
 
@@ -54,7 +70,7 @@ static_assert(offsetof(VertexGPU, uvHalf) == 16);
 static_assert(sizeof(VertexGPU) == 20);
 ```
 
-API 侧还要使用与压缩数据匹配的顶点格式。只让结构体大小正确，不能保证 Shader 对每个字段的格式解释正确。
+这段C++需要`<cstdint>`和`<cstddef>`；布局断言通过仍要由API配置相同格式。以R10G10B10A2_UNORM为例，xyz读取为[0,1]后再映射到[-1,1]并归一化，不能当成直接存储的有符号法线；UV应按R16G16_FLOAT读取。API侧还要使用与压缩数据匹配的顶点格式。只让结构体大小正确，不能保证 Shader 对每个字段的格式解释正确。
 
 ## Buffer 更新、映射与复制
 
@@ -73,17 +89,21 @@ void* dst = glMapBufferRange(
     GL_MAP_WRITE_BIT |
     GL_MAP_INVALIDATE_RANGE_BIT |
     GL_MAP_UNSYNCHRONIZED_BIT);
+if (dst == nullptr) { /* 记录映射失败并终止本次上传 */ return; }
 std::memcpy(dst, source, byteCount);
-glUnmapBuffer(GL_ARRAY_BUFFER);
+if (glUnmapBuffer(GL_ARRAY_BUFFER) == GL_FALSE) {
+    /* 数据已损坏，重新建立有效内容后再提交绘制 */
+    return;
+}
 ```
 
-`GL_MAP_UNSYNCHRONIZED_BIT` 表示应用保证这段存储不被 GPU 使用；它不会替应用解决冲突。安全做法是为飞行帧划分独立区间，并用 Fence 确认区间可以复用。若调试器中出现映射调用长时间等待，通常是 CPU 正在覆盖 GPU 尚未读完的数据。使用模式提示描述预期访问，真正的分配位置和重命名策略由实现决定，不能仅凭 `STATIC` 或 `DYNAMIC` 推断性能。
+`GL_MAP_UNSYNCHRONIZED_BIT` 表示应用保证这段存储不被 GPU 使用；它不会替应用解决冲突。安全做法是为飞行帧划分独立区间，并用 Fence 确认区间可以复用。在采用隐式同步的更新路径中，映射长时间等待可能来自CPU申请的区域仍被GPU占用；本片段请求不做这项同步，重叠使用时可能直接损坏结果，不能用“没有等待”证明安全。使用模式提示描述预期访问，真正的分配位置和重命名策略由实现决定，不能仅凭 `STATIC` 或 `DYNAMIC` 推断性能。
 
 ## Post-transform Vertex Cache
 
 GPU 处理一个索引后，会短暂缓存 Vertex Shader 输出。如果后续三角形很快再次引用这个索引，就能复用结果。
 
-三角形顺序不影响最终拓扑，却会影响缓存命中。网格优化工具会重排三角形和顶点，使空间相邻的三角形在索引序列中也尽量相邻。常见观察指标是 ACMR，即平均每个三角形需要多少次新顶点变换。
+三角形重排保留拓扑，却会影响缓存命中。对透明混合、Primitive ID或原子副作用敏感的路径，还必须保留相应语义。网格优化工具会重排三角形和顶点，使空间相邻的三角形在索引序列中也尽量相邻。常见观察指标是ACMR，即每个三角形的新顶点变换次数。用容量3的LRU教学缓存处理索引[0,1,2,2,1,3]时有4次未命中、2个三角形，ACMR=2。真实GPU的复用机制与容量由硬件决定，软件LRU只能比较局部性，不能冒充计数器。
 
 顶点缓存优化与像素 Overdraw 的目标可能冲突：
 
@@ -112,6 +132,14 @@ E(\mathbf{v}) = \mathbf{v}^{T}\left(\sum_i \mathbf{K}_i\right)\mathbf{v}
 $$
 
 其中齐次位置 $\mathbf{v}=(x,y,z,1)^T$，$\mathbf{K}_i=\mathbf{p}_i\mathbf{p}_i^T$，$\mathbf{p}_i$ 是相邻平面的归一化平面方程。优先折叠误差较小的边，可以逐步得到低模。
+
+### 折叠点求解
+
+将合并后的4×4对称矩阵Q分成左上3×3矩阵A、末列前三项b和末项c，误差可写成 `E(x)=xᵀAx+2bᵀx+c`。梯度为 `2Ax+2b`，因此可逆时求解 `Ax=-b`。矩阵奇异或病态时，可分别计算边的两个端点及中点误差，选择最低者；这只是候选退化方案，不能保证连续域最优。
+
+例如只有平面x=1与z=2，点(2,3,4)的误差为1²+2²=5，y没有约束，因此A必然奇异。实现应识别这种平坦方向，避免把不稳定逆矩阵产生的远点写入网格。平面法线归一化后误差单位是长度平方；面积加权时还要明确额外权重。
+
+每次折叠更新邻接面和边候选，并拒绝面翻转、退化、非流形或被保护边界破坏。优先队列中的旧候选需要版本验证，不能在邻域变化后直接复用旧误差。
 
 实际工具还要保护：
 
@@ -152,7 +180,7 @@ Bounds 是剔除、LOD、流送和空间查询的基础。静态网格通常可�
 
 ## 程序化几何的属性契约
 
-Houdini 节点网络的优势在于几何与属性经过可重复的数据流，“节点比代码直观”只是表面。一个可交付的 HDA 应明确：
+Houdini节点网络以几何与属性构成可重复的数据流。可交付的HDA应明确：
 
 - 输入几何、曲线和参数的单位与坐标系；
 - 必需属性及其 Point/Vertex/Primitive/Detail 归属；
@@ -170,6 +198,8 @@ Houdini 节点网络的优势在于几何与属性经过可重复的数据流，
 - 检查简化前后的剪影、法线、UV、蒙皮和碰撞，不只比较面数。
 - 用固定摄像机捕获不同 LOD，做差分图和 GPU 时间对照。
 
+CPU参考`flatten_corners`、`cache_misses`和`quadric_error`分别检查UV缝拆分、LRU计数与平面平方误差，见 [reference.py](../examples/revision_06_08/reference.py)，运行 `python -B 知识库/examples/revision_06_08/test_reference.py`。这些模型未执行网格简化器、C++布局编译、OpenGL映射或GPU捕获。
+
 ## 相关主题
 
 - [[04_光照模型与PBR/法线贴图]]、[[04_光照模型与PBR/IBL]]、[[04_光照模型与PBR/Cubemap环境采样]]
@@ -179,7 +209,7 @@ Houdini 节点网络的优势在于几何与属性经过可重复的数据流，
 
 ## 参考资料
 
-- Microsoft Learn, *Introduction to buffers in Direct3D 11*.
-- Hoppe, *New Quadric Metric for Simplifying Meshes with Appearance Attributes*.
-- Mikkelsen, *MikkTSpace*.
-- Houdini Documentation, *Geometry attributes* and *Houdini Engine for Unity*.
+- [SideFX，Geometry attributes](https://www.sidefx.com/docs/houdini/model/attributes.html)：2026-10-22核读Houdini22.0的Geometry components和Attribute precedence。
+- [Garland与Heckbert，Surface Simplification Using Quadric Error Metrics](https://www.cs.cmu.edu/~garland/Papers/quadrics.pdf)：2026-10-22核读1997论文第4节、公式(1)及奇异矩阵回退；本文两平面反例独立复算。
+- [Khronos glMapBufferRange](https://github.com/KhronosGroup/OpenGL-Refpages/blob/main/gl4/glMapBufferRange.xml)：写入、Invalidate与Unsynchronized的调用约束；应用负责避免重叠GPU使用。
+- [MikkTSpace源代码](https://github.com/mmikk/MikkTSpace)：切线空间生成实现入口，具体导出器应固定采用版本。

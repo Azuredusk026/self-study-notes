@@ -161,6 +161,25 @@
       "passed": true,
       "cpu_tests": 21,
       "dxc_entries": 2
+    },
+    {
+      "phase": "P1-texture-geometry",
+      "command": "python -B 知识库/examples/revision_06_08/verify.py",
+      "passed": true,
+      "cpu_tests": 17,
+      "shader_entries": 2
+    },
+    {
+      "phase": "P1-independent",
+      "command": "python -B 知识库/examples/revision/test_raster.py",
+      "passed": true,
+      "tests": 8
+    },
+    {
+      "phase": "P1-independent",
+      "command": "python -B 知识库/examples/revision/test_math.py",
+      "passed": true,
+      "tests": 5
     }
   ]
 }

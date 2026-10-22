@@ -16,6 +16,20 @@ Heightfield 用二维标量网格表示高度，天然适合连续地表、分�
 
 规则网格可按 Chunk 或 Quadtree 管理。远处使用更低采样密度，边界通过 Stitching、Skirt 或约束相邻层级差来避免裂缝。
 
+## 采样位置与世界法线
+
+一个包含N_x×N_z个端点样本的网格、水平尺寸L_x×L_z米，样本间距为 `dx=L_x/(N_x-1)`、`dz=L_z/(N_z-1)`，两个样本数至少为2。第(i,j)个顶点为 `(origin.x+i*dx, baseHeight+h[i,j]*heightRange, origin.z+j*dz)`。heightRange以米计，输入h在[0,1]，按线性数据读取。对于b位UNORM高度，量化步长约为 `heightRange/(2^b-1)`；高度范围100米时8位约0.392米，16位约1.53毫米。
+
+在样本之间可用[[06_纹理技术/纹理采样与过滤]]的双线性模型求值。几何端点与纹素中心的映射需要一致：网格UV=i/(N-1)，对应高度纹素中心的UV为 `(i+0.5)/N`；导入接口若已完成转换，应使用其约定。
+
+将采样高度解码成米后，内部点用中心差分：
+
+$$h_x=\frac{h_{i+1,j}-h_{i-1,j}}{2dx},\quad h_z=\frac{h_{i,j+1}-h_{i,j-1}}{2dz},\quad n=normalize(-h_x,1,-h_z).$$
+
+这个式子来自两个切向量(1,h_x,0)、(0,h_z,1)的叉积，并选择朝上的方向。h=2x+3z时，无论采样间距是否相同，都应得到normalize(-2,1,-3)。省掉dx/dz会让地形缩放改变坡度。
+
+相邻Tile共享边高度必须一致，边界法线还需要邻Tile的一圈高度；只对各块自身Clamp会得到不同的边缘导数。缺邻居时采用明确的单边差分或粗层回退，待邻块到达后更新接缝法线。
+
 ## GPU 细分地形
 
 GPU Tessellation 可以让每个地形 Patch 根据屏幕贡献生成不同密度的三角形。细分控制阶段确定边和内部因子。固定细分器生成参数坐标，求值阶段据此采样高度图并计算顶点位置。Direct3D 对应 Hull/Domain，OpenGL 对应 Tessellation Control/Evaluation。
@@ -23,11 +37,11 @@ GPU Tessellation 可以让每个地形 Patch 根据屏幕贡献生成不同密�
 细分因子适合由边的屏幕像素长度或位移误差决定。只按 Patch 中心到相机的距离会让同一共享边的两侧得到不同因子，产生裂缝。稳定方案包括：
 
 - 共享边只使用两个端点或同一边界球计算因子；
-- 相邻 Patch 约束到兼容层级；
+- 相邻Patch约束到兼容层级，并保证共享边位移、纹理LOD和求值一致；
 - 使用 Fractional Even/Odd Partitioning 缓和因子变化；
 - 最终边界增加 Skirt 处理地形 Tile 接缝。
 
-细分增加的是当前帧生成和处理的图元，不会降低高度纹理带宽。因子过高会把瓶颈推到 Tessellator、Vertex/Domain Shader 或光栅化。近处需要真实轮廓时细分有效；远处地形仍应依赖 Chunk LOD、Mipmap 和流送。
+细分增加的是当前帧生成和处理的图元，不会自动降低高度纹理带宽，实际采样量还取决于生成点数、mip和缓存复用。因子过高会把瓶颈推到 Tessellator、Vertex/Domain Shader 或光栅化。近处需要真实轮廓时细分有效；远处地形仍应依赖 Chunk LOD、Mipmap 和流送。
 
 ## 地形材质分层
 
@@ -57,7 +71,7 @@ $$
 
 Erode 可能依赖时间迭代。只保存最终 Height 图片无法恢复中间侵蚀层，因此 `.hip`、参数、随机种子和导出 manifest 都属于可复现资产。
 
-## 高度与材质求值
+## 材质权重求值
 
 机制伪代码输入[0,1]高度与非负层权重，输出约定世界长度的地表位置和材质混合。
 
@@ -66,14 +80,17 @@ y = baseHeight + sampleHeight(uv) * heightRange
 weights = max(layerWeights, 0)
 if sum(weights) == 0: weights = fallbackLayer
 weights /= sum(weights)
-material = BlendLayers(weights, layerMaterials)
+baseColor = sum(weights[i] * linearBaseColor[i])
+normal = normalize(sum(weights[i] * normalInSameSpace[i]))
 ```
+
+此混合假定颜色已在线性空间，法线位于同一空间且加权和非零。零法线和需要稳定备用方向；粗糙度等BRDF参数的线性混合是一种材质选择，不能等同于精确混合两个BRDF。fallbackLayer应为有效的一热权重。
 
 ## 验证方法
 
 相邻Tile边界逐点比较高度、材质权重与法线。测试最低高度精度、斜坡三向采样与缺块回退，显示层权重和检查零权重区域。硬件细分因子机制引用Tessellation与位移。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+CPU参考`height_normal`使用不同世界间距复算解析斜坡，见 [reference.py](../examples/revision_06_08/reference.py)，运行 `python -B 知识库/examples/revision_06_08/test_reference.py`。未执行Houdini生成、Tile导出、引擎地形或GPU细分；这些状态为UNVERIFIED。
 
 ## 相关主题
 
@@ -86,11 +103,6 @@ material = BlendLayers(weights, layerMaterials)
 
 ## 参考资料
 
-- Paul Merrell, *Model Synthesis* and SideFX WFC dungeon generator tutorial.
-- Gabriel Taubin, *A Signal Processing Approach to Fair Surface Design*, SIGGRAPH.
-
-- Unity Manual, *LOD Group* and *Terrain Data*.
-- Houdini Documentation, *HeightField*, *PDG* and *Houdini Engine for Unity*.
-- Lindstrom and Turk, *Fast and Memory Efficient Polygonal Simplification*.
-- meshoptimizer documentation, *Vertex cache optimization*.
-- LearnOpenGL, `src/8.guest/2021/3.tessellation`.
+- [SideFX，Heightfields and terrains](https://www.sidefx.com/docs/houdini/heightfields/index.html)：2026-10-22核读Houdini22.0的Overview与Limitations，高度层及二维表示限制。
+- [Microsoft，Tessellation Stages](https://learn.microsoft.com/en-us/windows/win32/direct3d11/direct3d-11-advanced-stages-tessellation)：固定参数域生成与Domain求值。
+- 世界采样间距、量化步长与高度梯度法线由本文公式推导，CPU解析斜坡提供独立检查。

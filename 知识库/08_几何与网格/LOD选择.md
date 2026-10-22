@@ -4,17 +4,19 @@
 
 ## 以屏幕占比决定 LOD
 
-只按世界距离切换会忽略物体大小、FOV 和分辨率。引擎通常根据包围体投影到屏幕的比例选择 LOD。大物体在相同距离下会比小物体更晚降级。
+只按世界距离切换会忽略物体大小和FOV。屏幕比例本身不随分辨率改变；换算成像素误差时才需要输出尺寸。引擎通常根据包围体投影到屏幕的比例选择 LOD。大物体在相同距离下会比小物体更晚降级。
 
 透视投影下，物体的近似屏幕高度与下面的比例相关：
 
 $$
-s \propto \frac{h}{d\tan(\theta/2)}
+s \approx \frac{h}{2z\tan(\theta/2)}
 $$
 
-$h$ 是物体世界高度，$d$ 是相机距离，$\theta$ 是垂直 FOV。实际引擎还会使用包围球、投影矩阵和平台缩放，因此阈值应在目标设备实测。
+h是近似平行于屏幕竖轴的世界高度，z是正的视空间轴向深度，二者同单位；θ为垂直FOV。物体深度跨度相对z很小时可用这个近似。高度2米、z=10米、FOV=90度时，屏幕比例为0.1；1080像素高的输出约占108像素。离轴物体不能直接用到相机的欧氏距离替换z。
 
-## LOD 减什么
+若离线简化误差上界为e米，可估计屏幕误差 `e_px ≈ e*H/(2*z*tan(θ/2))`，H为输出像素高度。它把物体尺寸进一步转成该级损失是否可见。包围体跨越近平面、巨大深度跨度或相机进入物体时，应使用保守投影或强制细节层。
+
+## LOD的简化对象
 
 LOD 不只调整三角形：
 
@@ -25,7 +27,7 @@ LOD 不只调整三角形：
 - 切换较便宜的 Shader、阴影或透明策略；
 - 在远处换成 Impostor/Billboard，最后完全剔除。
 
-植被远景应优先保留主干和树冠轮廓。随机裁掉末级小枝比整体 Decimate 更稳定。裁叶后可略微放大保留叶簇，补偿视觉密度。
+植被远景应优先保留主干和树冠轮廓。可按枝干层级裁减末级小枝，再与整体简化比较轮廓和时域稳定性；随机删除并不保证更稳定。裁叶后可略微放大保留叶簇，补偿视觉密度。
 
 ## 切换、Cross Fade 与 Hysteresis
 
@@ -35,7 +37,7 @@ Cross Fade 在过渡区同时绘制两级，通过 Dither 或 Alpha 混合切换
 
 Hysteresis 为进入和退出阈值留出差值，避免摄像机在边界附近时来回切换。相机快速移动时还要考虑资源是否已经流送完成。
 
-## Geometry LOD 与 Mipmap 要同步
+## 几何与材质细节同步
 
 几何变少时，材质细节也应随之预过滤。否则远距离会出现：
 
@@ -46,7 +48,7 @@ Hysteresis 为进入和退出阈值留出差值，避免摄像机在边界附近
 
 植被可使用 Alpha-to-Coverage、保 Alpha Coverage 的 Mip 生成或远景专用贴图。阈值补偿需要检查不同背景和 MSAA 设置，不能只在一张截图上调好。
 
-## LOD 预算来自画面与平台
+## LOD预算
 
 阈值不应写成所有资产共用的固定距离。可以先按类别设预算，再由捕获验证：
 
@@ -60,7 +62,7 @@ Hysteresis 为进入和退出阈值留出差值，避免摄像机在边界附近
 
 ## 带滞回的 LOD 选择
 
-输入 `screenFraction` 是对象投影尺寸占屏幕高度的比例，阈值按从高细节到低细节排列。滞回让进入和退出使用不同边界：
+以下C++宿主片段输入有限非负screenFraction，阈值严格降序，长度M表示M+1个LOD；currentLod位于[0,M]，hysteresis非负且小于最小阈值。滞回让进入和退出使用不同边界：
 
 ```cpp
 int SelectLod(float screenFraction, int currentLod,
@@ -75,13 +77,13 @@ int SelectLod(float screenFraction, int currentLod,
 }
 ```
 
-阈值单位必须与 `screenFraction` 一致。滞回区间过大，会让对象长时间停留在不合适的 LOD；没有滞回时，相机在阈值附近抖动会造成频繁切换。验证应记录每秒 LOD 切换次数，并用缓慢往返相机检查进入与退出边界。
+例如阈值0.20、滞回0.02，从LOD0下降要低于0.18，从LOD1返回要高于0.22。0.19与0.21都保持当前层。相机瞬移可一次跨越多个阈值，因此使用循环而非单次判断。阈值单位必须与screenFraction一致。滞回区间过大，会让对象长时间停留在不合适的 LOD；没有滞回时，相机在阈值附近抖动会造成频繁切换。验证应记录每秒 LOD 切换次数，并用缓慢往返相机检查进入与退出边界。
 
 ## 验证方法
 
 固定FOV与分辨率往返经过阈值，记录切换次数、轮廓差和双绘制成本。远景法线、Alpha覆盖与材质mip同时检查；流送未完成时回退已驻留层。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+CPU参考`select_lod`覆盖滞回双向边界与跨多级跳变，见 [reference.py](../examples/revision_06_08/reference.py)，运行 `python -B 知识库/examples/revision_06_08/test_reference.py`。C++片段未独立编译，真实LOD画面、资源流送与交叉淡化成本为UNVERIFIED。
 
 ## 相关主题
 
@@ -94,11 +96,5 @@ int SelectLod(float screenFraction, int currentLod,
 
 ## 参考资料
 
-- Paul Merrell, *Model Synthesis* and SideFX WFC dungeon generator tutorial.
-- Gabriel Taubin, *A Signal Processing Approach to Fair Surface Design*, SIGGRAPH.
-
-- Unity Manual, *LOD Group* and *Terrain Data*.
-- Houdini Documentation, *HeightField*, *PDG* and *Houdini Engine for Unity*.
-- Lindstrom and Turk, *Fast and Memory Efficient Polygonal Simplification*.
-- meshoptimizer documentation, *Vertex cache optimization*.
-- LearnOpenGL, `src/8.guest/2021/3.tessellation`.
+- [Unity 6.0，LOD Group](https://docs.unity3d.com/6000.0/Documentation/Manual/class-LODGroup.html)：2026-10-22核读LOD Group selection bar与Transitioning between LOD levels，屏幕高度比例和双层绘制。
+- 本文投影比例由透视投影推导，滞回模型由CPU边界例验证；简化误差来源见[[08_几何与网格/网格数据与GPU访问]]。

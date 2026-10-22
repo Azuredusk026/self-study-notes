@@ -1,63 +1,60 @@
 # Texture Streaming
 
-相机走近物体，Shader想读取高清mip，内存里却还只有粗层。Texture Streaming把需要层级和实际驻留分开记录，再按优先级加载。它要解决的是带宽、反馈延迟和预算竞争，UV本身正确仍可能出现低清停留。
+相机走近物体，着色器需要更细的mip，而上传可能还没有结束。纹理流送因此要分别记录采样需求、预算目标和实际驻留状态。只有理解这三个状态的差距，才能区分低清来自估计错误、预算不足还是加载延迟。
 
-## 纹理驻留
+## 需求层级与实际驻留
 
-### Texture Streaming
+mip编号0表示基级，编号越大越粗。本文把“驻留mip”定义为可采样的最细层r，r之后的粗层连续保留；这是一种按完整mip流送的模型。按页处理的系统见[[06_纹理技术/Virtual Texture]]。
 
-纹理流送根据相机、Bounds、UV 密度和预算，只保留当前需要的高 Mip。远处使用低 Mip，接近时逐步加载高 Mip。
+设一段表面的世界长度为L米，UV跨度为q，纹理横向宽度为W纹素，这段表面投影为P像素，则每屏幕像素约覆盖 `rho = q*W/P` 个纹素，需求层级约为 `log2(rho)`。例如1024纹素覆盖256屏幕像素，需求为mip2。实现可向更细一侧取整并限制到有效范围；三线性过滤还要使相邻层可用。
 
-核心状态：
+L可以通过投影估计P，也可由几何UV密度估计q/L。各向异性、透视变化和不可见区域让对象级估计偏保守。像素反馈能更贴近实际采样，却增加读回和调度延迟。需求来自多个对象或相机时，按所需最细层合并，再参与预算分配。
 
-- Desired Mip：根据屏幕覆盖希望使用的层级；
-- Resident Mip：当前内存里已有的层级；
-- Streaming Budget：允许纹理占用的总内存；
-- Priority：关键资源在压力下的保留权重。
+### 需求估计误差
 
-如果加载速度追不上相机移动，会看到低清停留或 Mip Pop。盲目把所有纹理设为 Never Stream 会把问题转成显存溢出。
+材质把UV乘4，同一屏幕区域会容纳更多次平铺，每像素覆盖的源纹素数也乘4，需求编号增加2级，即使用更粗mip。UV缩小到四分之一则需要更细2级。密度估计错误可能浪费驻留内存，也可能选出过粗层；各相机需求合并错误还可能让主视图被次视图降级。动态图集、粒子和程序UV需要显式提供密度或请求层级，不能仅由Bounds推断。
 
-### Streaming 估算为什么会错
+## 预算分配
 
-- Shader 对 UV 做了缩放或程序化变换；
-- 同一纹理在不同对象上使用不同密度；
-- 粒子、Decal 和 UI 没有可靠 Bounds；
-- 相机 FOV 或动态分辨率变化；
-- 运行时生成材质没有正确登记依赖。
+令第k级的实际块载荷为B[k]，从r级开始驻留的载荷是 `S(r)=sum(B[r:])`。提升一层需要额外B[r-1]字节。块数按纹理尺寸向上取整，细长纹理和小mip都应逐级计算，见[[06_纹理技术/纹理压缩格式]]。
 
-引擎通常提供 Streaming Debug View，需要检查实际 Desired/Resident Mip。
-
-## 驻留调度
-
-这是CPU调度伪代码，mip编号越小分辨率越高。大小从格式与完整块预算计算。
+一个可解释的优先级调度器先为所有纹理保留最粗回退层，再按优先级分配更细层：
 
 ```text
-for texture in visibleTextures:
-    desired = EstimateMip(texture, camera, uvDensity)
-    if desired < residentMip:
-        enqueue missing levels with priority
-while projectedResidentBytes > budget:
-    evict least-important detail levels
-publish new resident view only after upload completion
+target[i] = lastMip[i]
+used = sum(bytes[i][target[i]])
+若 used > budget：报告回退资源本身超出预算
+按 priority 降序、资源ID升序遍历纹理 i：
+    当 target[i] > desired[i]：
+        added = bytes[i][target[i]-1]
+        若 used + added > budget：结束当前纹理提升
+        target[i] -= 1
+        used += added
 ```
 
-丢弃高mip不改变资源身份，视图与GPU完成值仍由资源系统维护。频繁升降会造成IO抖动，可用滞回和请求去重。
+这是明确偏向高优先级资源的教学策略。它可能让低优先级资源长期停在粗层；实际产品还可加入等待时间、可见面积和每字节画质收益。两张纹理每级成本均为[64,16,4,1]字节、总预算22字节时，高优先级纹理能驻留1—3级共21字节，另一张仅保留3级1字节。
 
-## 验证方法
+## 上传发布与回收
 
-记录Desired与Resident差距，相机快速移动和预算耗尽时观察缺失时长。测试UV缩放、动态材质与多个相机，确认估计与实际采样密度一致。
+预算目标不是立即可用的资源。请求应按“资源、mip、内容版本”去重，读取与解码完成后提交上传。GPU完成上传并满足采样访问状态后，才发布能访问新层的视图或页映射。发布前仍采样旧的有效层。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+降低目标层级时，先让未来绘制停止访问被淘汰层，再等待已提交的GPU使用结束，随后释放对应物理存储。只提高Sampler的最小LOD并不自动释放显存；普通资源重建、可驻留资源和稀疏绑定各有不同回收接口。
+
+预算还要扣除上传暂存、等待回收的旧资源及同时在途的请求。如果旧纹理与新纹理短时并存，只统计目标载荷会低估峰值。升降级使用不同阈值或延时，能避免相机在边界徘徊时反复读盘。
+
+## 验证与诊断
+
+同时显示desired、target、resident三个层级。desired过粗先查UV密度与投影；target比desired粗先查预算竞争；resident比target粗再查IO、解码、上传完成值和发布状态。瞬移、多个相机、动态材质与预算耗尽分别测试，并记录低清持续帧数。
+
+[reference.py](../examples/revision_06_08/reference.py)的`stream_targets`实现上述预算分配，运行 `python -B 知识库/examples/revision_06_08/test_reference.py` 检查回退超预算、优先级分配与达到目标后的停止。模型未创建纹理或执行IO；引擎运行与GPU驻留测量为UNVERIFIED。
 
 ## 相关主题
 
 - [[23_引擎运行系统/资源依赖与异步加载]]
-- [[06_纹理技术/纹理压缩格式]]
-- [[06_纹理技术/纹理图集]]
-- [[06_纹理技术/Virtual Texture]]
+- [[06_纹理技术/纹理压缩格式]]、[[06_纹理技术/Virtual Texture]]
+- [[13_渲染架构/GPU资源生命周期]]
 
 ## 参考资料
 
-- id Software, *MegaTexture* references.
-- Microsoft Learn, *Sampler Feedback and Tiled Resources*.
-- Unity and Unreal documentation on Texture Streaming and Virtual Texturing.
+- [Unity 6.0，Mipmap streaming](https://docs.unity3d.com/6000.0/Documentation/Manual/TextureStreaming-introduction.html)：2026-10-22核读纹理内存预算、所需层级与流送限制；本文优先级算法是独立教学模型，并非Unity内部实现。
+- [Epic，Streaming Virtual Texturing，UE5.6](https://dev.epicgames.com/documentation/en-us/unreal-engine/streaming-virtual-texturing-in-unreal-engine?application_version=5.6)：传统整mip流送与基于可见页反馈的粒度区别。

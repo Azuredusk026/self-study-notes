@@ -1,0 +1,88 @@
+{
+  "recorded_at": "2026-10-22T15:32:27.761229+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "versions": {
+    "glslangValidator.exe": {
+      "label": "version",
+      "command": [
+        "C:\\VulkanSDK\\1.4.350.0\\Bin\\glslangValidator.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Glslang Version: 11:16.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 16.2.0\nGLSL Version: 4.60 glslang Khronos. 16.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n",
+      "stderr": ""
+    },
+    "dxc.exe": {
+      "label": "version",
+      "command": [
+        "C:\\VulkanSDK\\1.4.350.0\\Bin\\dxc.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "dxcompiler.dll: 1.10(5347-fe261573)(1.9.0.5347) - 1.9.0.5347 (fe2615732)\n",
+      "stderr": ""
+    }
+  },
+  "checks": [
+    {
+      "label": "CPU reference tests",
+      "command": [
+        "C:\\Users\\23587\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "test_reference.py"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ".................\n----------------------------------------------------------------------\nRan 17 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "pom.frag",
+      "command": [
+        "C:\\VulkanSDK\\1.4.350.0\\Bin\\glslangValidator.exe",
+        "-V",
+        "-S",
+        "frag",
+        "pom.frag",
+        "-o",
+        "C:\\Users\\23587\\AppData\\Local\\Temp\\kb-texture-geometry-ipwdx0vs\\pom.frag.spv"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "pom.frag\n",
+      "stderr": "",
+      "artifact_bytes": 4088
+    },
+    {
+      "label": "domain.hlsl",
+      "command": [
+        "C:\\VulkanSDK\\1.4.350.0\\Bin\\dxc.exe",
+        "-T",
+        "ds_6_0",
+        "-E",
+        "DSMain",
+        "domain.hlsl",
+        "-Fo",
+        "C:\\Users\\23587\\AppData\\Local\\Temp\\kb-texture-geometry-ipwdx0vs\\domain.hlsl.dxil"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "artifact_bytes": 6348
+    }
+  ],
+  "source_sha256": {
+    "domain.hlsl": "3766bd3467f4bbbfd476ef36dbe529076ed53d11798eba05634300b51c4e0ac7",
+    "pom.frag": "c9c9cd0c0325b036a6b228368747d632caf005a668b691ce60ed96e930ff0157",
+    "reference.py": "c3417cbebd5bfd776a2abcf34aa421d353437dde54dc7ed184874f82badebd56",
+    "test_reference.py": "917b9701e8683089b19ab7a95f9b2aed859e08b82f5662ed28ca60b9a2691568",
+    "verify.py": "f78734e3fb55e1e0fd15d0f861d466a3980d240505d7aa3f5950f7ba7377ea75"
+  },
+  "engine_runtime": "UNVERIFIED",
+  "gpu_capture": "UNVERIFIED",
+  "visual_result": "UNVERIFIED",
+  "performance": "UNVERIFIED"
+}

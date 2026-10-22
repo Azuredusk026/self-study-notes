@@ -1,0 +1,697 @@
+{
+  "schema_version": 1,
+  "reviewer": "review_22_26",
+  "date": "2026-10-22",
+  "scope": {
+    "domains": [
+      "01_数学与采样",
+      "02_GPU与光栅化管线"
+    ],
+    "article_count": 21,
+    "full_text_read_count": 21,
+    "changed_article_count": 11,
+    "baseline": "父代理3753e27及此前阶段提交后的正文；本记录仅描述独立交叉审阅。"
+  },
+  "status": "CONTENT_REVIEW_COMPLETE_PARENT_TITLE_INTEGRATION_PENDING",
+  "sources": {
+    "pbrt-cdf": {
+      "url": "https://pbr-book.org/4ed/Monte_Carlo_Integration/Sampling_Using_the_Inversion_Method",
+      "locator": "4ed §2.3.1 SampleDiscrete，严格上界与NextFloatDown",
+      "checked_at": "2026-10-22",
+      "kind": "primary"
+    },
+    "pbrt-sampling": {
+      "url": "https://pbr-book.org/4ed/Sampling_and_Reconstruction/Sampling_Theory",
+      "locator": "4ed §8.1.2—8.1.3，频谱复制与严格带限条件",
+      "checked_at": "2026-10-22",
+      "kind": "primary"
+    },
+    "perlin": {
+      "url": "https://cs.nyu.edu/~perlin/noise/",
+      "locator": "ImprovedNoise.noise/fade/grad，2002作者参考实现",
+      "checked_at": "2026-10-22",
+      "kind": "primary"
+    },
+    "unity-rotation": {
+      "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/QuaternionAndEulerRotationsInUnity.html",
+      "locator": "Unity 6000.0，Euler angles的z-x-y外旋",
+      "checked_at": "2026-10-22",
+      "kind": "primary"
+    },
+    "cuda": {
+      "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html",
+      "locator": "13.4 §10.2.1.1—2及11.1.1，CC6.0+访存例与寄存器分配粒度",
+      "checked_at": "2026-10-22",
+      "kind": "primary"
+    },
+    "gs-limit": {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dcl-maxoutputvertexcount",
+      "locator": "SM4最大1024个32位输出值；字节笔误不采用",
+      "checked_at": "2026-10-22",
+      "kind": "primary"
+    },
+    "gl-objects": {
+      "url": "https://registry.khronos.org/OpenGL/specs/gl/glspec46.core.pdf",
+      "locator": "OpenGL4.6 Core，2.6.9—11，印刷页31—32的非共享容器",
+      "checked_at": "2026-10-22",
+      "kind": "primary"
+    },
+    "gl-stencil": {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Refpages/main/gl4/glStencilOp.xml",
+      "locator": "Parameters dpfail/dppass与Description Replace；gl4参考",
+      "checked_at": "2026-10-22",
+      "kind": "primary"
+    },
+    "d3d-so": {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/direct3d11/d3d10-graphics-programming-guide-output-stream-stage",
+      "locator": "D3D11首页目的、strip转list、完整图元与DrawAuto",
+      "checked_at": "2026-10-22",
+      "kind": "primary"
+    },
+    "gl-xfb": {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/extensions/ARB/ARB_enhanced_layouts.txt",
+      "locator": "Revision28 Overview第5项：xfb_buffer/offset/stride",
+      "checked_at": "2026-10-22",
+      "kind": "primary"
+    },
+    "d3d-raster": {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage-rules",
+      "locator": "Triangle Rasterization Rules及Multisample Anti-Aliasing Rasterization Rules",
+      "checked_at": "2026-10-22",
+      "kind": "primary"
+    },
+    "taa-salvi": {
+      "url": "https://developer.download.nvidia.com/gameworks/events/GDC2016/msalvi_temporal_supersampling.pdf",
+      "locator": "GDC2016，第12—24页EMA、凸包和AABB历史矫正",
+      "checked_at": "2026-10-22",
+      "kind": "primary"
+    },
+    "taa-mjp": {
+      "url": "https://gist.github.com/TheRealMJP/c83b8c0f46b63f3a88a5986f4fa982b1",
+      "locator": "Tex2DCatmullRom.hlsl的w0—w3/w12与9个SampleLevel，以及作者2016-09-21说明5次版本省略四角",
+      "checked_at": "2026-10-22",
+      "kind": "primary"
+    },
+    "vulkan-present": {
+      "url": "https://docs.vulkan.org/guide/latest/swapchain_semaphore_reuse.html",
+      "locator": "Problem Statement与Discussion of Solution；2026-10-22访问的latest",
+      "checked_at": "2026-10-22",
+      "kind": "primary"
+    },
+    "depth": {
+      "url": "https://developer.nvidia.com/blog/visualizing-depth-precision/",
+      "locator": "Graphing depth maps及reversed-Z讨论；量化分布与有限测例范围",
+      "checked_at": "2026-10-22",
+      "kind": "primary"
+    },
+    "oit": {
+      "url": "https://casual-effects.blogspot.com/2015/03/implemented-weighted-blended-order.html",
+      "locator": "作者2015-03-26，3D Transparency Pass目标表和2D Compositing Pass",
+      "checked_at": "2026-10-22",
+      "kind": "primary"
+    }
+  },
+  "verification": [
+    {
+      "command": "python -B 知识库/examples/revision/test_math.py",
+      "result": "PASS",
+      "tests": 5,
+      "runtime": "Python3.11.9"
+    },
+    {
+      "command": "python -B 知识库/examples/revision/test_raster.py",
+      "result": "PASS",
+      "tests": 8,
+      "tdd": "新增测试先失败于motion_uv缺失；实现后8项通过。新增3项覆盖透视运动、OIT空/单层和顺序独立但近似。"
+    },
+    {
+      "command": "python -B 知识库/examples/mechanisms/completion_reference.py",
+      "result": "PASS",
+      "checks": 89,
+      "relevant_checks": "CDF16、条纹24、有序Alpha等价30；其他检查只作共享模型回归，不归功于本次修改。"
+    },
+    {
+      "command": "python -B 知识库/examples/mechanisms/reference.py",
+      "result": "PASS",
+      "checks": 83,
+      "relevant_checks": "TAA等效样本和Reinhard6；其他检查只作共享模型回归。"
+    },
+    {
+      "command": "git diff --check -- 知识库/01_数学与采样 知识库/02_GPU与光栅化管线 知识库/examples/revision/raster_models.py 知识库/examples/revision/test_raster.py",
+      "result": "PASS",
+      "notes": "仅LF将在Git操作时转换CRLF提示，无空白错误。"
+    }
+  ],
+  "remaining_integration": [
+    "三篇02导读的标题/文件/引用由父代理统一更新。",
+    "最终质量矩阵及hash在父代理整合或改名后重算。",
+    "未将CPU模型通过扩展为引擎运行、GPU捕获、画质或性能通过。"
+  ],
+  "articles": [
+    {
+      "path": "知识库/01_数学与采样/Monte Carlo采样.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "9a44ea503279d00ccfed6b4e9d9c610703a30c495fd4d843a3ad5877caa39de4",
+      "reviewed_line_count": 116,
+      "content_status": "PASS",
+      "technical_basis": "复算f/p估计量、余弦半球PDF与离散概率质量；CDF严格大于查找跳过零权重，u上界及零总权重分支明确。",
+      "implementation_basis": "C++宿主片段与Python运行模型分开；CDF极值和零区间由test_math及completion_reference检查。",
+      "section_locators": [
+        "积分估计",
+        "概率密度与概率质量",
+        "CDF边界与重用"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [
+        "pbrt-cdf"
+      ],
+      "issues_fixed": [],
+      "remaining_limits": "完整积分器、方差收敛测量和C++编译未执行。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/01_数学与采样/采样与混叠.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "30702bb45a373634c56a3113e4ce8119f89208f3385c26ccca304ff638fa7c29",
+      "reviewed_line_count": 124,
+      "content_status": "PASS_AFTER_FIX",
+      "technical_basis": "核对频谱复制与带限前提；条纹原函数对负坐标仍适用，区间积分除以足迹宽度。",
+      "implementation_basis": "HLSL片段明确像素导数足迹；completion_reference的24个条纹积分检查通过。",
+      "section_locators": [
+        "混叠的频域机制",
+        "程序条纹的足迹积分"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [
+        "pbrt-sampling"
+      ],
+      "issues_fixed": [
+        "把超过奈奎斯特频率必然出错的绝对表述改为带限重建条件，区分稳定平均贡献与保留高频形状。"
+      ],
+      "remaining_limits": "GPU导数与真实图像的混叠、重建误差未测量。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/01_数学与采样/程序噪声.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "5be8919efbd720d9eedc3ae9ee6aa75a6ff7736d399d8b3d8e6f9df18699ddd8",
+      "reviewed_line_count": 87,
+      "content_status": "PASS_AFTER_FIX",
+      "technical_basis": "核对floor格点、梯度点积、五次插值与FBM频率幅度；一维模型的整数值和边界连续性通过。",
+      "implementation_basis": "math_models的独立哈希与Perlin参考置换表区别明确；FBM为机制伪代码。",
+      "section_locators": [
+        "频谱形态对比",
+        "格点梯度与连续插值",
+        "最小多尺度求值"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [
+        "perlin"
+      ],
+      "issues_fixed": [
+        "白噪声改为理想功率谱密度平坦，有限样本有频谱波动；空间沙粒与逐帧重新采样的闪烁分开。"
+      ],
+      "remaining_limits": "二维频谱、GPU精度与动画未运行。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/01_数学与采样/球谐光照.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "485853fb7e21ebe9623940ce0d72a873a30d7145be039326e8fe70c5ede96026",
+      "reviewed_line_count": 84,
+      "content_status": "PASS",
+      "technical_basis": "逐项核对九实基的归一化、排列及pi、2pi/3、pi/4卷积系数；常量L=2和L=1+wz解析例独立复算。",
+      "implementation_basis": "test_math常量辐照度2pi与方向项2pi/3通过；九系数、单位方向前提明确。",
+      "section_locators": [
+        "正交投影",
+        "九项实基与光照求值"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [],
+      "issues_fixed": [],
+      "remaining_limits": "本次Stanford prefilter.c访问两次超时，未把既有核读记录当成本次读取；解析式和CPU复算通过。GPU探针格式仍未验证。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/01_数学与采样/空间变换.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "82aae2ee62bf4bada0c3b398458cbb7a4a10b8086cbe6fe7788e2ebc0641c880",
+      "reviewed_line_count": 210,
+      "content_status": "PASS",
+      "technical_basis": "沿t点积n=0独立推导逆转置；非均匀缩放例的错误点积和正确垂直关系可直接复算。",
+      "implementation_basis": "点w=1与向量w=0、列向量MVP、矩阵存储与乘法分开；逆转置要求可逆线性部分。",
+      "section_locators": [
+        "坐标变换链",
+        "存储布局与乘法约定",
+        "垂直关系的保持"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [],
+      "issues_fixed": [],
+      "remaining_limits": "正文HLSL为宿主片段，未编译运行；数值关系由本文代数复核。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/01_数学与采样/旋转表示与插值.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "040e8df8779f48a54c692d88dbcc39442e0d48060ec339eed804bc0ccc979df1",
+      "reviewed_line_count": 199,
+      "content_status": "PASS",
+      "technical_basis": "核对q与-q等价、半角、左右乘角速度空间、Nlerp/Slerp与Gram-Schmidt非退化前提。",
+      "implementation_basis": "SlerpShortest点积负号、近同向退化和单位输入契约明确；Unity欧拉次序与6000.0文档一致。",
+      "section_locators": [
+        "万向节锁的本质",
+        "角速度积分",
+        "最短弧四元数插值"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [
+        "unity-rotation"
+      ],
+      "issues_fixed": [],
+      "remaining_limits": "C++依赖宿主类型，未编译；动画路径视觉与长期积分漂移未执行。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/GPU执行与访存.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "3b8d035e67279206d3ea292fe81f0f8bdac33770c1338b5bf8a559c1b443487e",
+      "reviewed_line_count": 77,
+      "content_status": "PASS",
+      "technical_basis": "复算32线程顺序float读取的4个32字节段、跨步读取32段，以及寄存器理想计数上限；实际分配粒度另限定。",
+      "implementation_basis": "逻辑流量33.1776MB每帧、1.990656GB/s按读写公式复算；未冒充显存总线实测。",
+      "section_locators": [
+        "缓存与访问模式",
+        "逻辑流量估算",
+        "控制变量实验"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [
+        "cuda"
+      ],
+      "issues_fixed": [],
+      "remaining_limits": "无目标GPU计数器、缓存命中率或性能捕获。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/Geometry Shader.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "a44aea0edeb9723b02a15124207ab454efc33ecc952567ac9fa3f36ec1c503d7",
+      "reviewed_line_count": 200,
+      "content_status": "PASS_AFTER_FIX",
+      "technical_basis": "核对输入拓扑与可变输出、billboard退化方向、屏幕距离noperspective及裁剪前提；曲线段数输出不超过64。",
+      "implementation_basis": "补齐P0—P3视空间、长度单位、距离和段数范围；bezier3展开为完整三次多项式。",
+      "section_locators": [
+        "几何着色器的编程模型",
+        "线框渲染",
+        "视距驱动的曲线细分"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [
+        "gs-limit"
+      ],
+      "issues_fixed": [
+        "补曲线求值计算和接口前提，距离仅作启发式并引出投影误差。",
+        "地面钳制限定高度场及水平平面，说明顶点约束不能保证三角形不穿透。"
+      ],
+      "remaining_limits": "着色器片段未在本次编译或运行；曲线与草地画面仍待目标工程。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/OpenGL对象与状态.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "c874d7d6fad90d629841e195f548cb114e788ff40a8ecc529f5859393519c2f2",
+      "reviewed_line_count": 60,
+      "content_status": "PASS_AFTER_FIX",
+      "technical_basis": "复核glVertexAttribPointer保存当时ARRAY_BUFFER关联，之后绑定切换不改VAO属性；EBO绑定属于VAO。",
+      "implementation_basis": "查询与回调依赖有效上下文及函数加载；对象释放、缓冲覆盖、跨上下文同步分开。",
+      "section_locators": [
+        "OpenGL状态机与对象",
+        "顶点数组的绑定捕获"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [
+        "gl-objects"
+      ],
+      "issues_fixed": [
+        "明确缓冲纹理可共享，VAO/FBO等核心容器不共享，必须由所属上下文管理。"
+      ],
+      "remaining_limits": "未创建OpenGL上下文或查询实际属性绑定。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/Stencil与对象遮罩.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "1d3e28d1cb180393f46b233632edceee4370b55e971d001ef36c1f78105b0227",
+      "reviewed_line_count": 116,
+      "content_status": "PASS_AFTER_FIX",
+      "technical_basis": "按OpenGL ref op stencil方向复算分类，零值命中特别说明；写掩码遍历全部256旧值保留其他位。",
+      "implementation_basis": "两遍Draw顺序、清除、写掩码及dpfail/dppass输入明确；遮挡内区反例能诊断错误轮廓。",
+      "section_locators": [
+        "位分配与数值顺序",
+        "位宽紧张下的取舍",
+        "模板描边的执行顺序"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [
+        "gl-stencil"
+      ],
+      "issues_fixed": [
+        "纠正关闭第二遍深度测试必然产生完整轮廓的说法：遮挡原物体内部会被填充。",
+        "补完整原物体遮罩再相减的透视轮廓路径，清理全附件时显式关闭Scissor。"
+      ],
+      "remaining_limits": "OpenGL两遍绘制与墙体遮挡图像未执行。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/Stream Output.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "788ab10a4a4a0f029bc076ff5a76715ec42d11b13514cead16bf08aa31f6b458",
+      "reviewed_line_count": 65,
+      "content_status": "PASS_AFTER_FIX",
+      "technical_basis": "复算9分量36字节stride及0/16/28偏移；四顶点三角形带在D3D11捕获六记录216字节。",
+      "implementation_basis": "声明C++与调度伪代码区分；输出容量、资源绑定与DrawAuto计数契约说明。",
+      "section_locators": [
+        "流输出声明",
+        "输出数量与顺序",
+        "输出契约"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [
+        "d3d-so",
+        "gl-xfb"
+      ],
+      "issues_fixed": [
+        "补GS未启用时可捕获VS结果。",
+        "补OpenGL varying需链接前配置及显式xfb布局需4.4或扩展。"
+      ],
+      "remaining_limits": "未创建设备、执行捕获或读回；容量不足行为仍待运行。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/光栅化与属性插值.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "21afdfedbef142830a952a0a5687c25a20c6b1ffa939d84800d741cfc76e53b1",
+      "reviewed_line_count": 87,
+      "content_status": "PASS",
+      "technical_basis": "共享边规则、lambda归一化和属性除w再归一化因果完整；屏幕中点属性1/3的反例通过。",
+      "implementation_basis": "CPU例覆盖等w退化为线性；HLSL以已裁剪的有效三角形为前提，完整覆盖器另验。",
+      "section_locators": [
+        "三角形覆盖",
+        "重心坐标",
+        "透视插值的计算轮廓"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [
+        "d3d-raster"
+      ],
+      "issues_fixed": [],
+      "remaining_limits": "GPU覆盖、helper导数以及跨近平面裁剪未运行。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/可见性剔除.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "f05466d4ade74c483c83c9396899f3f6abee81766d0fa245dfe6e9684e5ee47e",
+      "reviewed_line_count": 89,
+      "content_status": "PASS",
+      "technical_basis": "独立由线性函数极值核对AABB投影半径，接触边界保留；球测试法线归一化前提与背面绕序分别检查。",
+      "implementation_basis": "CPU八角点枚举、平面缩放与贴边例通过；动态边界和保守遮挡条件有解释。",
+      "section_locators": [
+        "视锥剔除",
+        "保守边界的数值检查",
+        "验证方法"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [
+        "d3d-raster"
+      ],
+      "issues_fixed": [],
+      "remaining_limits": "引擎剔除与GPU遮挡历史未运行。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/基于深度的可见性优化.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "6998851f065ee3082b69c0a20f0a295eb8f700a06b0e73d751f811a55188c9db",
+      "reviewed_line_count": 142,
+      "content_status": "PASS_AFTER_FIX",
+      "technical_basis": "区分提前测试与提前写入，预通道要求位移和Alpha覆盖一致；普通Z取max、反向Z取min保证遮挡保守性。",
+      "implementation_basis": "检查8x8组内2x2归约索引与跨轮barrier前提；片段没有伪装为完整mip实现。",
+      "section_locators": [
+        "Early-Z",
+        "Depth Prepass",
+        "Hi-Z"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [],
+      "issues_fixed": [
+        "移除无版本源码支持的Unity排序具体行为，保留可测量的排序成本关系。",
+        "收紧预通道收益与移动分块架构隐面消除的泛化陈述。"
+      ],
+      "remaining_limits": "本次未运行Hi-Z着色器，非2幂尺寸、mip选择和遮挡时序仍需工程验证。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "990d2f320528ac6bb7334497b81ee71555489d01138af92e4f0b42bc1f6c0d14",
+      "reviewed_line_count": 461,
+      "content_status": "PASS_AFTER_FIX",
+      "technical_basis": "核对抖动乘w、EMA首帧初始化和等效样本数、历史颜色盒、运动UV符号与重投影深度坐标。",
+      "implementation_basis": "新增motion_uv不同w及上下原点测试；颜色盒和EMA既有测试复跑通过；每个HLSL片段的输入与工程边界保留。",
+      "section_locators": [
+        "空间采样方案",
+        "历史累积与重投影",
+        "历史校验",
+        "高频细节的稳定性"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [
+        "taa-salvi",
+        "taa-mjp",
+        "d3d-raster"
+      ],
+      "issues_fixed": [
+        "修正裁剪位置直接作差生成速度，补分别透视除法及-0.25数例。",
+        "区分5次近似与完整Catmull-Rom核，补MJP原始实现来源。",
+        "同空间比较历史深度，几何数据按类型过滤，Clamp可能落在面边角。",
+        "收紧单向量适用性、等权最优前提和锐化能力，声明运动系数示例单位。",
+        "去掉重复空间方案标题层，改用纹理采样偏置内容标题。"
+      ],
+      "remaining_limits": "没有完整TAA工程、真实跨帧捕获、锐化及超分画质测试。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/显示呈现.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "929128127954162c9606a197900eb8ef615b92b84a23abae44d960e1803ac280",
+      "reviewed_line_count": 57,
+      "content_status": "PASS_AFTER_FIX",
+      "technical_basis": "60Hz FIFO时间线与排队延迟分开；提交fence不能保证呈现等待信号量已消费，按交换链图像管理规则正确。",
+      "implementation_basis": "核对Vulkan Guide acquire返回并等待后才复用对应图像呈现信号量的前提。",
+      "section_locators": [
+        "Swapchain与显示呈现",
+        "呈现时间线",
+        "队列与缓冲的区别"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [
+        "vulkan-present"
+      ],
+      "issues_fixed": [
+        "明确避免撕裂来自同步呈现模式；Present本身是排队调用，不保证消除撕裂。"
+      ],
+      "remaining_limits": "无交换链工程、显示测量或输入延迟实测。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/深度缓冲与位置重建.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "fd14b27b905710a757ba7c532dfcbd90814d59b4aef5e188aa4c42ffd5af5686",
+      "reviewed_line_count": 136,
+      "content_status": "PASS_AFTER_FIX",
+      "technical_basis": "从近远边界独立复算a+b/z和逆函数；正Z轴向距离、UV方向、原始深度及逆VP契约清楚。",
+      "implementation_basis": "test_raster正反深度近中远往返通过；射线归一化方式区分单位长度与Z分量为1。",
+      "section_locators": [
+        "投影深度的推导",
+        "Reversed-Z与浮点精度",
+        "深度缓冲与深度纹理",
+        "轴向深度的往返检查"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [
+        "depth"
+      ],
+      "issues_fixed": [
+        "修正深度纹理与Depth Write无关的表述，按主通道复制或独立预通道检查真正写入。",
+        "区分反向浮点近似相对精度与绝对误差，D24单纯反转不改善量化。"
+      ],
+      "remaining_limits": "未运行目标引擎重建或浮点附件量化实验；CPU双精度往返不能代表D24/D32实测。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/透明合成.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "f1fb897f1f0ad9a7805d1d226f1b0332f1ec9729adb9f2329dd7dcb460368972",
+      "reviewed_line_count": 209,
+      "content_status": "PASS_AFTER_FIX",
+      "technical_basis": "复核线性Alpha次序、加权累积和透射率；红蓝双层明确加权结果与排序结果差异。",
+      "implementation_basis": "新增OIT空背景、单层、顺序交换与近似差异测试；剥离深度副本和真实测试附件分开。",
+      "section_locators": [
+        "Weighted Blended OIT",
+        "Depth Peeling",
+        "固定深度法"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PASS",
+      "title_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "source_ids": [
+        "oit"
+      ],
+      "issues_fixed": [
+        "修正累积目标直接输出未预乘C的描述，明确输出C*alpha*w及alpha*w。",
+        "补剥离相同深度、容差与截断限制，纠正无条件逐像素精确。",
+        "固定深度法给出正Cutoff并去除分母epsilon造成阈值Alpha不等于1的问题，明确核心不透明近似。"
+      ],
+      "remaining_limits": "CPU模型不模拟GPU附件溢出、混合精度、OIT节点或真实透明场景。",
+      "runtime_status": "UNVERIFIED_ENGINE_GPU",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "0ef9a85cf75d4f8aa18686ca454c0ed2539c4b7c6a9c5410e452084792fd3e71",
+      "reviewed_line_count": 27,
+      "content_status": "PASS",
+      "technical_basis": "导读将变换、光栅化、GPU执行、提交和呈现按不同主问题分派，正文没有重复展开专篇实现。",
+      "implementation_basis": "导航关系是本页产出，实现在各专题；主次归属与链接语义复读一致。",
+      "section_locators": [
+        "按问题进入专题",
+        "阅读与选择"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PENDING_PARENT_RENAME",
+      "title_basis": "导读三页按父代理统一命名和引用登记。",
+      "source_ids": [],
+      "issues_fixed": [],
+      "remaining_limits": "标题与文件名由父代理统一修改，引用同步属于全库整合。",
+      "runtime_status": "NOT_APPLICABLE_GUIDE",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/光栅化可见性导读.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "8229c5ff4c78f3979f5bb4a49a3c9895d58e1c52dabf096cfb2f451a49ffc321",
+      "reviewed_line_count": 23,
+      "content_status": "PASS",
+      "technical_basis": "导读将属性插值、深度、剔除、模板及抗锯齿分派到独立主问题，入口有清楚症状与目标。",
+      "implementation_basis": "仅保留导航和归属，技术验证由对应专篇承接。",
+      "section_locators": [
+        "按问题进入专题",
+        "相关主题"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PENDING_PARENT_RENAME",
+      "title_basis": "导读三页按父代理统一命名和引用登记。",
+      "source_ids": [],
+      "issues_fixed": [],
+      "remaining_limits": "标题与文件名由父代理统一修改，引用同步属于全库整合。",
+      "runtime_status": "NOT_APPLICABLE_GUIDE",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/可见性与合成导读.md",
+      "full_text_review": true,
+      "review_method": "独立逐篇全文复读、推导/输入输出/来源/标题与自然中文检查；扫描仅用于定位和记录哈希。",
+      "final_sha256": "51d98f6dec82aa11587fa26045aaba027398edf2024c1e2f108b4d24bb439d86",
+      "reviewed_line_count": 19,
+      "content_status": "PASS",
+      "technical_basis": "可见性判定与透明合成分别进入专篇，导读关系不冒充新算法。",
+      "implementation_basis": "表格为导航映射，来源与实验在目标专篇，范围可独立辨识。",
+      "section_locators": [
+        "按问题进入专题",
+        "相关主题"
+      ],
+      "writing_basis": "复读叙述因果与术语，保留以机制和失败条件推进的定稿；修改内容直接陈述现行边界。",
+      "title_status": "PENDING_PARENT_RENAME",
+      "title_basis": "导读三页按父代理统一命名和引用登记。",
+      "source_ids": [],
+      "issues_fixed": [],
+      "remaining_limits": "标题与文件名由父代理统一修改，引用同步属于全库整合。",
+      "runtime_status": "NOT_APPLICABLE_GUIDE",
+      "visual_basis": "本次未新增或改动图像资产；保留公式、表格、代码和已有结构表达，不把模型结果标为截图。"
+    }
+  ]
+}

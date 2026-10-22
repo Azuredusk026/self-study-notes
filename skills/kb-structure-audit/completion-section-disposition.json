@@ -1030,7 +1030,7 @@
       "source": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
       "heading": "纹理驻留",
       "target": "知识库/06_纹理技术/Texture Streaming.md",
-      "current_heading": "纹理驻留",
+      "current_heading": "需求层级与实际驻留",
       "decision": "独立主归属或明确合并",
       "reason": "UV子图组织、mip驻留和页表虚拟化具有不同资源模型。",
       "source_hash": "4ae120dd1151da7cb511bc1fac1cc834bc306545fa98a66a0c1c7e82a79c0ce1"
@@ -1039,7 +1039,7 @@
       "source": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
       "heading": "Texture Streaming",
       "target": "知识库/06_纹理技术/Texture Streaming.md",
-      "current_heading": "Texture Streaming",
+      "current_heading": "需求估计误差",
       "decision": "独立主归属或明确合并",
       "reason": "UV子图组织、mip驻留和页表虚拟化具有不同资源模型。",
       "source_hash": "59ab117df56b3c4a7504d059b1678a118a9197277e6b7aac047c9beb4a43ea94"
@@ -1048,7 +1048,7 @@
       "source": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
       "heading": "Streaming 估算为什么会错",
       "target": "知识库/06_纹理技术/Texture Streaming.md",
-      "current_heading": "Streaming 估算为什么会错",
+      "current_heading": "预算分配",
       "decision": "独立主归属或明确合并",
       "reason": "UV子图组织、mip驻留和页表虚拟化具有不同资源模型。",
       "source_hash": "68a3fdc0ce1597a7f8c1e22612c558a1bbca04123629067860ecb2643825fab9"
@@ -1057,7 +1057,7 @@
       "source": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
       "heading": "虚拟分页",
       "target": "知识库/06_纹理技术/Virtual Texture.md",
-      "current_heading": "虚拟分页",
+      "current_heading": "逻辑页与物理槽",
       "decision": "独立主归属或明确合并",
       "reason": "UV子图组织、mip驻留和页表虚拟化具有不同资源模型。",
       "source_hash": "0099d50d1424fdf02dd1130a8debdc90529956982037d2e916e95fb058004bee"
@@ -1066,7 +1066,7 @@
       "source": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
       "heading": "Virtual Texture",
       "target": "知识库/06_纹理技术/Virtual Texture.md",
-      "current_heading": "Virtual Texture",
+      "current_heading": "缺页回退",
       "decision": "独立主归属或明确合并",
       "reason": "UV子图组织、mip驻留和页表虚拟化具有不同资源模型。",
       "source_hash": "d0628f74e7f1da512078fa435b0ce9d07af2df5e06e26eaa657390b982a494a9"
@@ -1075,7 +1075,7 @@
       "source": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
       "heading": "页表与页边框",
       "target": "知识库/06_纹理技术/Virtual Texture.md",
-      "current_heading": "页表与页边框",
+      "current_heading": "过滤与页边框",
       "decision": "独立主归属或明确合并",
       "reason": "UV子图组织、mip驻留和页表虚拟化具有不同资源模型。",
       "source_hash": "d3ab4358dabda799a95e141af56db8ed5deebae83f76938a7367062c84b52b8b"
@@ -1084,7 +1084,7 @@
       "source": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
       "heading": "Runtime Virtual Texture",
       "target": "知识库/06_纹理技术/Virtual Texture.md",
-      "current_heading": "Runtime Virtual Texture",
+      "current_heading": "槽位发布与回收",
       "decision": "独立主归属或明确合并",
       "reason": "UV子图组织、mip驻留和页表虚拟化具有不同资源模型。",
       "source_hash": "ff1ae902befe094ee1eed2e05a6450fe0e2ba590807fbfde25eff2fabf7b10c9"
@@ -1426,7 +1426,7 @@
       "source": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
       "heading": "LOD 减什么",
       "target": "知识库/08_几何与网格/LOD选择.md",
-      "current_heading": "LOD 减什么",
+      "current_heading": "LOD的简化对象",
       "decision": "独立主归属或明确合并",
       "reason": "屏幕密度选择、地形表示、规则生成、植被着色方向与约束求解各自有独立模型。",
       "source_hash": "557435e131f39988c2e51345aa05d7e41c3f349a8af2463873fff0b484235360"
@@ -1444,7 +1444,7 @@
       "source": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
       "heading": "Geometry LOD 与 Mipmap 要同步",
       "target": "知识库/08_几何与网格/LOD选择.md",
-      "current_heading": "Geometry LOD 与 Mipmap 要同步",
+      "current_heading": "几何与材质细节同步",
       "decision": "独立主归属或明确合并",
       "reason": "屏幕密度选择、地形表示、规则生成、植被着色方向与约束求解各自有独立模型。",
       "source_hash": "b696ac499e53efdd369a2df2c9977d2ff902f10d48a3afd741db39b0d942a418"
@@ -1579,7 +1579,7 @@
       "source": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
       "heading": "LOD 预算来自画面与平台",
       "target": "知识库/08_几何与网格/LOD选择.md",
-      "current_heading": "LOD 预算来自画面与平台",
+      "current_heading": "LOD预算",
       "decision": "独立主归属或明确合并",
       "reason": "屏幕密度选择、地形表示、规则生成、植被着色方向与约束求解各自有独立模型。",
       "source_hash": "00183fa261958f6fb3a22277b6138ec1ab08d43f2408dbd26670a16ea0655ecc"

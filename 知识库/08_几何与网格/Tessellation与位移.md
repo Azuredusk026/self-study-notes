@@ -16,9 +16,9 @@ Tessellator 本身不可编程。它只知道参数域坐标，不知道模型�
 
 启用细分后，Vertex Shader 的职责变成处理控制点。典型位移实现将位置保留在模型或世界空间，由求值阶段计算最终裁剪位置。API 不强制顶点阶段采用这一空间，所有阶段的数据约定需保持一致。
 
-Patch 的控制点数量由 API 声明。三角形是三控制点 Patch，四边形是四控制点。控制点数量可以更多，用于表达 Bezier 曲面等高阶曲面：控制点越多，可表达的自由度越高。
+Patch 的控制点数量由 API 声明。线性三角面常用三个控制点，双线性四边形常用四个；三角或四边参数域本身不限定控制点数。Bezier 等高阶曲面可以使用更多控制点，由求值函数解释其几何含义。
 
-Hull Shader 的输出控制点数量不必等于输入数量，允许在此阶段新增或丢弃控制点。
+Hull Shader 的输出控制点数量不必等于输入数量，但两者都由管线与着色器声明固定；这允许把一种控制网转换成另一种，不能逐 Patch 任意改变输出数量。
 
 ## 细分因子
 
@@ -29,12 +29,12 @@ Hull Shader 分为两部分。Patch Constant Function 每个 Patch 执行一次�
 | Domain | `SV_TessFactor` | `SV_InsideTessFactor` |
 |---|---|---|
 | `quad` | 长度 4，四条边各分几段 | 长度 2，内部横向与纵向各分几段 |
-| `tri` | 长度 3，三条边各分几段 | 长度 1，控制内部环数 |
+| `tri` | 长度 3，三条边各分几段 | 长度 1，控制内部采样密度 |
 | `isoline` | 长度 2，线段数量与每段细分数 | 忽略 |
 
-`tri` 内部点的生成方式是对每个顶点分割邻边，在分割点作垂线求交点。理解这一点才能解释为什么三角形内部细分呈同心环状，而不是均匀网格。
+tri的内部因子控制内部采样密度，边因子独立控制边界采样。应用消费规范提供的重心坐标，不应把特定内部生成示意当作跨API的通用算法；参数域拓扑见后文。
 
-Direct3D 11 细分因子的上限为 64；OpenGL 支持细分的核心实现保证最大等级至少为 64，实际查询 `GL_MAX_TESS_GEN_LEVEL`。`maxtessfactor` 属性把 Shader 实际使用的上限告知驱动，硬件可能据此优化。
+Direct3D11的integer与fractional_even有效上限为64，fractional_odd为63；OpenGL 支持细分的核心实现保证最大等级至少为 64，实际查询 `GL_MAX_TESS_GEN_LEVEL`。`maxtessfactor` 属性把 Shader 实际使用的上限告知驱动，硬件可能据此优化。
 
 ## 分割模式
 
@@ -46,7 +46,7 @@ Direct3D 11 细分因子的上限为 64；OpenGL 支持细分的核心实现保�
 
 fractional 模式能缓和细分因子变化时的顶点插入。整数模式会改变离散段数，若要平滑过渡还需形变或交叉淡化。是否可见取决于位移和投影大小。
 
-相邻 Patch 的共享边必须计算出完全相同的边细分因子，否则会出现裂缝（Crack）。因子应当由共享边的两个端点唯一决定，例如取两端点世界位置的中点计算屏幕尺寸，而不能使用 Patch 中心或面法线——后者在两侧 Patch 上取值不同。
+相邻Patch共享边要使用兼容的分割模式与相同边因子。边界位置的计算顺序、UV、法线和位移mip也要一致，否则因子相同仍可能出现裂缝。因子应当由共享边的两个端点唯一决定，例如用共享端点投影后的像素边长除以目标段长，而不能使用 Patch 中心或面法线——后者在两侧 Patch 上取值不同。
 
 ## 参数域坐标
 
@@ -55,11 +55,11 @@ Tessellator 把新顶点以参数坐标交给 Domain Shader，形式随 Domain �
 - `quad` 与 `isoline`：二维 UV 坐标；
 - `tri`：三维重心坐标 $(u,v,w)$，满足 $u+v+w=1$。
 
-Domain Shader 对每个新顶点执行一次，用这些参数坐标在控制点之间插值。这里通常是细分管线中计算量最大的部分：所有顶点属性都要重新求值，并完成到 Clip Space 的变换。
+Domain Shader 对每个新顶点执行一次，用这些参数坐标在控制点之间插值。它的调用次数随生成点数增加，所需顶点属性也在此求值，并完成到裁剪空间的变换。实际瓶颈还可能来自细分单元、纹理访问或后续光栅化，应分别计时。
 
 ### Domain Shader 的插值与位移
 
-下面是 `tri` Domain 的最小实现。输入是 Hull Shader 输出的三个控制点与重心坐标，输出 Clip Space 位置。高度图采样必须使用 `SampleLevel` 指定 mip，因为顶点阶段没有屏幕导数：
+下面是tri Domain的HLSL宿主片段。控制点位置和单位法线在对象空间，位移强度采用对象长度单位；法线插值和要求非零。输入gWorld与gViewProj采用行向量乘法，输出裁剪坐标。高度图按线性数据读取，Domain阶段使用SampleLevel显式指定mip：
 
 ```hlsl
 [domain("tri")]
@@ -77,7 +77,7 @@ DomainOut DS(PatchTess patchTess,
                 + tri[1].UV * bary.y
                 + tri[2].UV * bary.z;
 
-    float h = gHeight.SampleLevel(gSampler, uv, 0).r;
+    float h = gHeight.SampleLevel(gSampler, uv, gHeightMip).r;
     posL += nrmL * ((h - gDisplaceBias) * gDisplaceScale);
 
     DomainOut dout;
@@ -86,33 +86,30 @@ DomainOut DS(PatchTess patchTess,
 }
 ```
 
-去掉位移那一行，输出结果与不做细分完全一致——细分本身只增加顶点，不改变形状。形状变化来自 Domain Shader 对位置的修改，或来自 Bezier 等高阶曲面求值。
+在控制点形成平面三角形、属性线性插值且没有其他变形时，去掉位移会回到原三角形表面；浮点与光栅化差异仍可能改变少量像素。形状变化来自 Domain Shader 对位置的修改，或来自 Bezier 等高阶曲面求值。
 
-位移方向用插值法线时，法线必须在插值后重新归一化。`gDisplaceBias` 是高度图单位下的零位面，先减偏置再乘强度。这样强度归零时位移也归零。验证方法是把 `gDisplaceScale` 设为 0，画面应当与细分关闭时完全一致；若有差异，说明插值或偏置有误。
+位移方向用插值法线时，法线必须在插值后重新归一化。`gDisplaceBias` 是高度图单位下的零位面，先减偏置再乘强度。这样强度归零时位移也归零。验证方法是把 `gDisplaceScale` 设为 0，几何位置应回到未位移的线性表面。选择gHeightMip时还要保证共享边读取同一高度信号；始终采mip0可能放大远景高频几何。阴影和深度预通道应使用一致位移，并扩展剔除Bounds。
 
 ## Unity URP 中的写法
 
-URP 用 `#pragma` 声明各阶段入口，这里示例使用 Shader Target 4.6，实际需要的特性和平台支持应按当前 Unity 文档核对：
+Unity6.0允许通过hull/domain入口声明细分阶段，并要求对应GPU特性。下列只是阶段入口示意，URP的Pass标签、光照、阴影和顶点结构仍需与目标包匹配：
 
 ```hlsl
-#pragma target 4.6
-#pragma vertex   TessVert
-#pragma hull     Hull
-#pragma domain   Domain
+#pragma require tessellation tesshw
+#pragma vertex TessVert
+#pragma hull Hull
+#pragma domain Domain
 #pragma fragment Frag
 ```
 
-控制点结构中的位置语义必须写成 `INTERNALTESSPOS` 而非 `POSITION`，否则编译器报位置语义重用错误。这是 Unity 侧的约定，不是硬件限制。
+顶点阶段输出的是控制点，Domain阶段才写最终SV_POSITION。某些Unity示例使用INTERNALTESSPOS标记控制点位置；它属于相应生成代码的接口约定，不能据此要求所有手写URP管线都替换POSITION。平台能力应结合目标图形API、编译目标和运行设备检查。本页未创建Unity工程，独立DXC编译结果不能视为URP接入通过。
 
-> [!warning] 待补充
-> 细分在 Unity 中的平台支持随图形 API 变化。Metal 不支持 `isoline` Domain，部分移动 GPU 对细分的硬件支持有限或性能极差。目标平台清单需按项目实测确认，不能假设桌面端结论成立。
-
-## 成本转移到哪里
+## 几何生成与采样成本
 
 细分把成本从内存与带宽转移到 GPU 几何阶段：
 
-- 顶点着色工作量按细分因子平方增长，`tri` 与 `quad` 皆然；
-- Domain Shader 中的纹理采样发生在顶点频率，没有 Quad 导数，必须显式指定 mip；
+- 均匀提高二维tri/quad内外因子时，Domain求值和输出图元数量近似平方增长；原Vertex Shader仍按输入控制点运行；
+- Domain Shader按生成的域点采样，通常需要显式LOD；采样次数随生成点数增加；
 - 细分产生的大量小三角形会降低光栅化效率。亚像素三角形可能造成较多辅助调用和较低 Quad 利用率，具体比例取决于覆盖和硬件；
 - 硬件细分单元在部分 GPU 上是独立的有限吞吐单元，可能成为新瓶颈。
 
@@ -120,35 +117,38 @@ URP 用 `#pragma` 声明各阶段入口，这里示例使用 Shader Target 4.6�
 
 ## 与其他 LOD 方案的关系
 
-离散 LOD 切换整套网格，切换瞬间有跳变但运行时成本可预测。细分提供连续过渡，代价是每帧几何阶段开销。Nanite 等虚拟化几何方案则在 Cluster 层级做选择，绕开了固定细分单元。
+离散 LOD 切换整套网格，切换瞬间有跳变但运行时成本可预测。细分结合分数分割和一致的曲面求值可以缓和过渡，代价是每帧几何阶段开销。Nanite 等虚拟化几何方案则在 Cluster 层级做选择，绕开了固定细分单元。
 
-位移贴图与视差映射解决相似的视觉问题。视差只改变采样 UV，不产生真实几何，轮廓和自阴影仍是平的；位移改变真实顶点位置，轮廓正确，但成本高得多。
+位移贴图与视差映射解决相似的视觉问题。视差只改变采样 UV，不产生真实几何，几何轮廓保持原网格，自阴影需要另加高度场光线查询；位移改变真实顶点位置，轮廓逼近程度取决于几何采样密度和高度信号，成本则取决于生成点数、着色和覆盖。
 
 ## 验证方法
 
 - 线框模式下拉近拉远相机，观察细分因子是否连续变化，`integer` 模式应能看到整排新顶点突现。
-- 检查相邻 Patch 边界是否出现裂缝，这几乎总是边因子计算不一致导致。
+- 检查相邻 Patch 边界是否出现裂缝，同时检查因子、分割模式、边端点、位移UV与mip是否一致。
 - 在帧捕获中查看 Domain Shader 调用次数与输出图元数，确认与预期细分因子相符。
-- 把位移强度归零，画面应与关闭细分一致。
-- 统计输出三角形的平均屏幕面积，小于一个像素说明细分过度。
+- 在线性三角面求值模式中把位移强度归零，检查生成点仍落在原三角面；采用Phong或其他曲面求值时，先把曲面混合强度也归零。
+- 统计输出三角形的平均屏幕面积；大量亚像素三角形提示检查细分是否过密，再结合轮廓与位移误差决定能否减少。
 
 
 ## Phong细分曲面
 
-线性插值只能让细分点落在原三角形平面内，几何形状没有变化。Phong 细分沿插值法线把细分点向外偏移，用低模平面逼近圆润表面：
+线性重心插值得到点q，只增加采样密度。Phong细分将q分别投影到三个顶点的切平面，然后混合三个投影结果。对位置p_i与单位法线n_i：
+
+$$q=\sum_i b_i p_i,\quad \pi_i(q)=q-[(q-p_i)\cdot n_i]n_i,$$
+
+$$p_{phong}=\sum_i b_i\pi_i(q),\quad p=(1-\alpha)q+\alpha p_{phong}.$$
+
+b是重心坐标，α在[0,1]，所有位置和法线处于同一对象空间。每次投影减去沿法线的有符号距离，结果落在对应顶点切平面。α=0回到线性表面；α=1使用完整投影混合。位于某个顶点时，对应权重为1且投影距离为0，因此顶点保持不动；三个法线一致且垂直于原三角形时，整片三角形保持不动。沿插值法线加固定长度不具有这两个性质。
 
 ```hlsl
-float3 posOS = patch[0].positionOS * bary.x
-             + patch[1].positionOS * bary.y
-             + patch[2].positionOS * bary.z;
-float3 normalOS = normalize(patch[0].normalOS * bary.x
-                          + patch[1].normalOS * bary.y
-                          + patch[2].normalOS * bary.z);
-posOS += normalOS * phongStrength;   // 强度为 0 时退化为线性插值
+float3 q = bary.x*p0 + bary.y*p1 + bary.z*p2;
+float3 a = q - dot(q-p0, n0)*n0;
+float3 b = q - dot(q-p1, n1)*n1;
+float3 c = q - dot(q-p2, n2)*n2;
+float3 position = lerp(q, bary.x*a + bary.y*b + bary.z*c, strength);
 ```
 
-它不需要额外的控制点或曲率数据，适合给低模加圆润感。偏移量与真实曲率无关，强度过大在凹陷区域会产生外翻。
-
+曲面由顶点切平面近似，不保证恢复原高模，也不保证凹区无折叠。共享边上的两端法线一致时，两侧投影计算能对应；硬边使用不同法线则需要边界约束。完整Domain入口见 [domain.hlsl](../examples/revision_06_08/domain.hlsl)，包含显式高度mip与对象空间位移。
 
 ## 参数点生成的API约定
 
@@ -167,12 +167,10 @@ OpenGL的equal、fractional_even与fractional_odd分别向对应整数段数约�
 - [[26_GPU驱动与虚拟几何/GPU-Driven Rendering]]
 - [[10_VFX与模拟/水面与海洋渲染]]
 
-示例状态：本页代码用于解释对应的数据和调用约束，完整资源创建、类型与调用环境由项目提供。除文中另列的实际实验外，本页未执行目标引擎编译、GPU捕获或性能计时。
+本机检查：CPU模型`phong_point`验证顶点保持、共面保持和非平坦法线导致的曲面变化。`domain.hlsl`的DSMain已通过DXC ds_6_0编译，尚缺Hull、资源与绘制宿主；完整细分流水线、Unity运行、GPU画面和性能为UNVERIFIED。运行入口见 [verify.py](../examples/revision_06_08/verify.py)。
 
 ## 参考资料
 
-- Frank Luna, *Introduction to 3D Game Programming with DirectX 12*, Tessellation Stages.
-- Khronos OpenGL Wiki, *Tessellation*.
-- Microsoft Learn, *Tessellation Overview* and HLSL Hull/Domain Shader attributes.
-- Nathan Reed, *Tessellation Modes Quick Reference*.
-- Unity Manual, URP shader stage pragmas and shader target levels.
+- [Boubekeur与Alexa，Phong Tessellation](https://perso.telecom-paristech.fr/boubek/papers/PhongTessellation/PhongTessellation.pdf)：2008论文第3节、公式(3)—(4)，切平面正交投影与重心混合；2026-10-22核读。
+- [Microsoft，Tessellation Stages](https://learn.microsoft.com/en-us/windows/win32/direct3d11/direct3d-11-advanced-stages-tessellation)：Hull/Tessellator/Domain职责和分割范围。
+- [Unity6.0，GPU feature requirements](https://docs.unity3d.com/6000.0/Documentation/Manual/SL-Pragma-require.html)：2026-10-22核读tessellation与tesshw能力要求；本页未执行URP集成。

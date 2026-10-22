@@ -6,7 +6,7 @@ OpenGL对象名称不是内存地址，绑定又改变当前上下文。绘制�
 
 OpenGL 上下文保存当前程序、Vertex Array、Framebuffer、纹理单元、深度测试和混合等状态。`glBind*`、`glUseProgram` 与 `glEnable` 修改当前上下文，后续 Draw 会读取当时的状态组合。对象句柄只是当前上下文可识别的整数名称，不是 CPU 指针，也不代表对象已经绑定。
 
-对象的常见生命周期是 `glGen*` 或 `glCreate*` 取得名称，绑定或直接状态访问完成初始化，Draw 使用对象，最后在拥有共享关系的上下文中删除。应用可以按 OpenGL 删除语义释放名称，驱动管理尚未完成工作的底层引用；缓冲区内容的覆盖和跨上下文访问仍要正确同步。显式 API 的资源销毁则由应用跟踪 GPU 完成。
+对象的常见生命周期是 `glGen*` 或 `glCreate*` 取得名称，绑定或直接状态访问完成初始化，再供 Draw 使用。删除操作需要能识别该对象的当前上下文：缓冲和纹理可由共享组内上下文使用；核心规范中的 VAO、FBO 等容器对象不共享，必须由所属上下文管理。应用按 OpenGL 删除语义释放名称，驱动管理尚未完成工作的底层引用；缓冲区内容覆盖和跨上下文访问仍要正确同步。显式 API 的资源销毁则由应用跟踪 GPU 完成。
 
 Core Profile 提供当前核心规范中的接口。固定管线矩阵、立即模式等兼容接口属于 Compatibility Profile。窗口库创建上下文后应查询实际版本和扩展，不能把头文件中存在的函数当成运行环境一定支持：
 
@@ -55,5 +55,6 @@ glBindBuffer(GL_ARRAY_BUFFER, otherBuffer);
 
 ## 参考资料
 
+- [OpenGL 4.6 Core规范](https://registry.khronos.org/OpenGL/specs/gl/glspec46.core.pdf)：2026-10-22核读2.6.9—2.6.11的容器对象定义，FBO、VAO与Transform Feedback对象均不共享；范围限定核心规范。
 - [Khronos glVertexAttribPointer规范源文件](https://github.com/KhronosGroup/OpenGL-Refpages/blob/main/gl4/glVertexAttribPointer.xml)：2026-10-22核读Description中的GL_ARRAY_BUFFER_BINDING捕获及vertex array state段，限定传统属性指针接口。
 - [Khronos glDebugMessageCallback](https://registry.khronos.org/OpenGL-Refpages/gl4/html/glDebugMessageCallback.xhtml)：调试回调接口入口，本轮未运行上下文验证。
