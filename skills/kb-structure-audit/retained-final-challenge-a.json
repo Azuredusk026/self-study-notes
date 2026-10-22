@@ -1,0 +1,193 @@
+{
+  "date": "2026-10-23",
+  "method": "每页选择不同于作者主算例的反例输入，按正文现行规则手工推导；没有把未运行目标环境标为实测",
+  "articles": [
+    {
+      "path": "知识库/00_知识库说明/技术中文写作规范.md",
+      "new_counterexample_input": "同位置两顶点来自相交而不相连表面",
+      "expected_result": "不能仅按位置焊接",
+      "text_derivation": "规范以因果和主语要求追踪归属；正例的独立方向应保留拓扑条件",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "2aa55f0268d4e7d2d8794b79f06b7356bf6edc34084d1ee050e39489166c6150"
+    },
+    {
+      "path": "知识库/00_知识库说明/知识地图.md",
+      "new_counterexample_input": "用户只想判断迟到输入后的历史命中，不想重算整个世界",
+      "expected_result": "选延迟补偿命中而非回滚同步",
+      "text_derivation": "工程路线明确历史命中与迟到输入重算分开",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "7017f0e8c00c0e7c8b2581dd6a996c720150a40d2211203342fe31baefeb6ce1"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/光栅化可见性.md",
+      "new_counterexample_input": "没有深度预通道，但先绘制墙再绘制墙后物体",
+      "expected_result": "后物体仍可利用已有深度被拒绝",
+      "text_derivation": "生成与使用分开且正文显式覆盖该输入",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "e4711efe5fbded08da7f2bae1aa7dd73db879b366cd356a0e68337b806a07ca9"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/可见性与合成.md",
+      "new_counterexample_input": "相机看不见物体，但物体阴影落入画面",
+      "expected_result": "不能按主视角剔除阴影绘制",
+      "text_derivation": "导读要求阴影视图分别判断",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "68bdc4f4b4c41a2220e8d58dca13e183b331851df80b37d2780eeb6a3f8db82e"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
+      "new_counterexample_input": "CPU已录完第8帧，GPU还在第6帧，Present阻塞",
+      "expected_result": "先查呈现/积压和完成值，不归因为第8帧算法工作",
+      "text_derivation": "阅读路线区分记录与GPU处理，Present等待回到显示专题",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "5f51c8f4aab99e75bc4b9491a16c2101b3149ea5724c3da110e502eb32ac6792"
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/GI方案选择.md",
+      "new_counterexample_input": "场景静态但角色运动且需要低频间接漫反射",
+      "expected_result": "角色选Light Probe，可与静态Lightmap并用",
+      "text_derivation": "表面存储与空间采样两职责允许组合",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "c951ee04316e050e959cb448683cd73d6cb068b4f3502d9a7bdad96b5545f2ab"
+    },
+    {
+      "path": "知识库/07_颜色与后处理/Alpha表示.md",
+      "new_counterexample_input": "透明红与不透明蓝各半过滤，背景黑",
+      "expected_result": "预乘贡献为蓝.5，透明红不得污染",
+      "text_derivation": "先预乘透明红为零，再过滤；后乘错误会引入红.25",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "f80cfbc6855c6eb163043021e3df0df40a6460b83a50844f184b5b6b408aa248"
+    },
+    {
+      "path": "知识库/07_颜色与后处理/后处理链.md",
+      "new_counterexample_input": "希望把已显示编码颜色作为Bloom提取输入",
+      "expected_result": "先核对数值域，不能套HDR阈值",
+      "text_derivation": "资源与顺序说明ToneMapping改变含义，各效果依颜色契约定位",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "8ca373236723b42d49ecf40d4a9164274d3fc060fb9f97df81e69c9c00d99acb"
+    },
+    {
+      "path": "知识库/09_动画系统/角色动画导读.md",
+      "new_counterexample_input": "压缩后骨角误差小但长手臂末端明显偏移",
+      "expected_result": "按最终变形误差验收而非仅骨角",
+      "text_derivation": "导读明确压缩以最终变形误差判断",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "3e23206796e95c55b10ed1b81b42c54d2016c59e13ef3fd7e4c861074b78f560"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/VFX效果组合.md",
+      "new_counterexample_input": "扰动与软粒子共用深度但颜色捕获在扰动后",
+      "expected_result": "先检查背景生产时机，不能靠深度淡化修复反馈",
+      "text_derivation": "组合路线分别约束深度空间和背景颜色时机",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "bd3059cd7bf6f0be75b422823c0ce80d4e9b5db0dfd81cb12c4c086407467634"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
+      "new_counterexample_input": "远景人物轮廓盖住主体，近景却正常",
+      "expected_result": "先调整距离下的轮廓尺度再增高频细节",
+      "text_derivation": "导读把观察距离、信息量与描边专篇连接",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "746584f7f1bb5c4178a0c890e707bbaeb2d22ec1e849388c8ee078d9a2e926e9"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/描边.md",
+      "new_counterexample_input": "宽度3像素，render scale从1变为.5且最终显示尺寸不变",
+      "expected_result": "同3渲染像素变成6显示像素，需按显示目标换算",
+      "text_derivation": "像素线宽明确目标尺寸和后续升采样；非均匀壳覆盖另限",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "123ab9a80c1fe11677f5cf40482eb0e8a8d33ef0f51b3e53fcdd82ba42a18199"
+    },
+    {
+      "path": "知识库/13_渲染架构/Command Buffer与帧提交.md",
+      "new_counterexample_input": "图形完成21，复制最后访问11但只完成10",
+      "expected_result": "不得回收共享上传区间",
+      "text_derivation": "多队列所有最后访问条件或汇合依赖必须覆盖",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "1a289eafb073e0a113f3525ece193e0bd086de92f15c29173831fa2faae1408f"
+    },
+    {
+      "path": "知识库/13_渲染架构/Deferred Rendering.md",
+      "new_counterexample_input": "相机已进入点光球，正面体积被裁掉",
+      "expected_result": "全屏回退并解析范围测试，避免漏光",
+      "text_derivation": "光体积节明确保守方案，模板优化不作为必需黑箱",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "3a5e137ec1a080ef0b2c0d9259314b87ce1f48ef883e872e0c60b103c3695c01"
+    },
+    {
+      "path": "知识库/13_渲染架构/GPU资源绑定.md",
+      "new_counterexample_input": "记录80/对齐64，描述符基址512，动态也加512",
+      "expected_result": "步长128，帧基址被重复计入，读取错误位置",
+      "text_derivation": "动态偏移与基偏移相加及frameBase重复反例直接可推",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "95dd24df060f60bea54e4c99cee02a6dd003c2372f7590a8ca80b4722bd00d25"
+    },
+    {
+      "path": "知识库/13_渲染架构/渲染命令的组织方式.md",
+      "new_counterexample_input": "CPU已Close命令列表但GPU仍读取临时附件",
+      "expected_result": "不能因列表关闭就释放物理资源",
+      "text_derivation": "导读将命令记录完成和资源回收分主归属",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "5ff38c184cac8e84451b5759453c2e8352dfef086edf529fdf0525f9b1c57e18"
+    },
+    {
+      "path": "知识库/13_渲染架构/渲染路径与光源组织.md",
+      "new_counterexample_input": "透明很多但局部灯也很多",
+      "expected_result": "可选Forward+，Tiled不是Deferred专属",
+      "text_derivation": "求值时机与列表组织分离，可组合后再测成本",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "049117e9669f4856f3959b13ad5179b1e9d5e06dbd34d51bc94702a277f3edd9"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/PSO首次使用卡顿.md",
+      "new_counterexample_input": "组合键已完成但首次使用仍卡且没有对象回收事件",
+      "expected_result": "继续查驱动工作或资源加载，不把覆盖不足当唯一原因",
+      "text_derivation": "复现验收按请求/完成/回收/首用逐假设定位",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "1818f8b8e8fd3a77541fa03e4f7879d2d0a82336317a03480617db20b2b326db"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/帧捕获与性能分析工具.md",
+      "new_counterexample_input": "两个工具分别测3ms和5ms但捕获改变了异步调度",
+      "expected_result": "不能平均取4ms，先对齐构建/执行路径/捕获条件",
+      "text_derivation": "不同结果冲突节和计时/捕获证据分工可得",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "b4d34d1ba8c0313ae3e09b3d6c896013020095becc58cd5870d102d66b128ab9"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/帧瓶颈诊断.md",
+      "new_counterexample_input": "分辨率减半GPU时间不降，寄存器变少也不快",
+      "expected_result": "原像素/占用率假设未获支持，检查关键路径或带宽饱和",
+      "text_derivation": "实验表与驻留账本说明各非充分条件",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "d9b9dc15c32d1b6d5185b5aedd45a278f6c8d451afdaa0b013313da2aac5dd33"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/性能对照实验.md",
+      "new_counterexample_input": "T(.75)实测3.4而模型预测2.6875，路径确认相同",
+      "expected_result": "否定简单固定+像素线性模型，不能宣布带宽受限",
+      "text_derivation": "模型节明确路径相同仍偏离说明模型不足",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "ff66db2c69960fbd3c98731ccdf33457cd965e04f01bb5c69bff968788e34be6"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/大型资产版本控制.md",
+      "new_counterexample_input": "Git提交与指针恢复成功，但LFS对象长度符合而哈希不同",
+      "expected_result": "检出输入未到位，禁止当成可构建备份",
+      "text_derivation": "C/P/H/N/F链要求长度和SHA共同一致",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "b5fbada1e14e3d62a75ebcfcdf6c1b8c880916fd26a817a43b3ba816f5ef0f12"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "new_counterexample_input": "取消发生在B发布完成但Succeeded尚未写入，重启输出哈希匹配",
+      "expected_result": "补记B成功并停后续项，不能再追加修改B",
+      "text_derivation": "检查点崩溃与取消两节顺序一致，可由正式输出哈希恢复",
+      "result": "DERIVABLE_WITH_STATED_SCOPE",
+      "content_sha256": "d0a792913ebf20550863731b0624e19a63303137b22ef93c99ed4b285ab7707e"
+    }
+  ],
+  "remaining_limits": [
+    "实际GPU/引擎/编辑器故障注入/服务恢复未运行；正文的可推演与工程实证分开"
+  ]
+}

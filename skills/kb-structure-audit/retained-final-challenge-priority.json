@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-23",
+  "method": "重新直接全文读取，逐主要机制构造反例；本审核者是ReSTIR/POM本轮作者，视频/MCTS/破坏非作者，不将自身复核称独立作者审查",
+  "articles": [
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+      "full_text_read": true,
+      "challenge_checks": [
+        "位置：当前100反向流-8查历史92；不能取当前定义域前向流负值，身份/混合足迹另拒绝",
+        "深度：expected来自前帧姿态/相机，2m对1m差1超过.02，当前深度不能直比",
+        "法线：相机和刚体四次旋转顺序成立；原.8点积不通过cos30却参与混合，实际改为.96点积例(.28,.96)，输出(.212,.977)，另明确.8拒绝",
+        "零向量：相反输入先角拒绝，退化归一化仍回当前；几何法线与着色法线不能混用",
+        "潜变量：中心映射x=8(l+.5)-.5推出l+B/8，l20 B-8→19；不同预处理需仿射位置与向量区分",
+        "生成：有效M才历史初始化，显露M0当前新噪声；相关噪声方差边界明确",
+        "关键帧：.6/.4乘1/.5归一.75/.25，冲突只选一份；补写总权重零先回退，再归一化，不能0除或冲突选无效帧",
+        "颜色与指标：曝光统计排除真实照明/显露；全部拒绝或拖影都不能由低误差判成功"
+      ],
+      "result": "PASS_WITH_DECLARED_SCOPE",
+      "content_sha256": "dcf838d609a74dad07a7d11f3829464ab39372b67390190d1b2917075df50a7a"
+    },
+    {
+      "path": "知识库/20_游戏AI/MCTS.md",
+      "full_text_read": true,
+      "challenge_checks": [
+        "状态(4,+1)合法拿1/2，零石胜者=-next，根视角符号一致",
+        "扩展每轮最多一次，随机rollout仅策略样本，撤销/复制防污染",
+        "UCT父行动者s正负，探索项恒正；回传不翻号，避免双重翻转",
+        "三轮示例N/W变化成立，120轮数据不推广任意状态质量",
+        "终局根反证没有子访问，实际限定子次数守恒于非终局根并要求行动返回无合法动作",
+        "最终最多访问与UCT探索角色分开，机会节点按概率、隐藏信息不能读暗牌"
+      ],
+      "result": "PASS_WITH_DECLARED_SCOPE",
+      "content_sha256": "9a4fda4c478a579669ed8451325654c05daecb9c463cfc807dd31c604dfbc9cf"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/破坏系统.md",
+      "full_text_read": true,
+      "challenge_checks": [
+        "资产封闭体/凸包/密度与惯性同碎块ID；退化薄片先拒绝",
+        "伤害权1/.5、D6分4/2，强10/4两次到2/0，超额耗散不再分配",
+        "支撑替代边0-2仍连通，断边数不等新刚体数，动态图不能沿用固定支撑",
+        "质量1/3质心1.5，I_z=11/3，必须转自身张量再平行轴",
+        "旋转簇子位置R_c转置乘世界偏移，90°世界X变局部-Y；世界偏移直接存会多转",
+        "速度继承v0+omega叉偏移，例Y1+3=4，碰撞已计入冲量时不能再加同J",
+        "安全提交先准备后替换，失败旧表示保持；双碰撞/空档均有反例",
+        "预算代理保门洞，回收需退出碰撞，槽代数拒绝迟到写，重放事件ID防重复损伤"
+      ],
+      "result": "PASS_WITH_DECLARED_SCOPE",
+      "content_sha256": "38853bbc4ec5eec0bda1794b9530d34e413b89571f68de74d1b5c3de8c7179fb"
+    },
+    {
+      "path": "知识库/06_纹理技术/视差映射.md",
+      "full_text_read": true,
+      "challenge_checks": [
+        "深度白黑与TS Vz正契约、H/L尺度一致，单采样D(u)=u错位例成立",
+        "离散首交叉残差符号和插值.1/-.15→.4成立，窄峰可漏不得宣称严格求交",
+        "正视rayUV0无法由UV反求深度，当前正文已补同时插值tHit，顶层tHit0",
+        "自阴影tHit=.6,q=.2射线.4与D.3/.5判定成立；首步q=tHit/N具体化并补tHit0免循环，避免文字偏移与代码不一致",
+        "光方向正Lz且朝外，UV沿正光向，独立面片越界结束；薄凸起采样漏检明确",
+        "显式原梯度只稳LOD不含变换导数，mip消峰与轮廓不变限制保留"
+      ],
+      "result": "PASS_WITH_DECLARED_SCOPE",
+      "content_sha256": "187d920f90b476192dd40ccc6d6d4cdfde884245c4f3810963aea7b0e5ed3d09"
+    },
+    {
+      "path": "知识库/12_光线追踪/ReSTIR.md",
+      "full_text_read": true,
+      "challenge_checks": [
+        "RIS替换w/S与最终W明确，零权重计M，全零无样本；同测度避免几何密度混淆",
+        "合并目标重算，两个源W2目标4/1权8/2，输出期望7",
+        "A当前→B时域→C空间→H历史，B只读C只写且写后读同步，原地双像素污染反例完整",
+        "K2限历史100→40，权16/40且随机.6<40/56替换，W4/3；空间权56+16与M44给9/22",
+        "截断W保持仅S/M同比缩放，相关性和动态有偏风险未假称消除",
+        "支持失配源仅a 当前a/b等权混合期望1.5对积分2；列表/提议支持/严格正目标契约不明回退当前",
+        "单个代表不能证明支持，背面目标零时一般修正未实现，未宣称完整ReSTIR无偏",
+        "当前可见性移动墙重算，性能只给分阶段测量方法无虚构数值"
+      ],
+      "result": "PASS_WITH_DECLARED_SCOPE",
+      "content_sha256": "633e18ed50071e7d3e40deff15b93494b1809fcbd2978322696136e5d3b1ffd2"
+    }
+  ],
+  "actual_fixes": [
+    "视频法线数例与角度拒绝阈值相容",
+    "视频关键帧零总权重先回退",
+    "MCTS终局根子访问守恒限定",
+    "POM自阴影首步与tHit零处理明确"
+  ],
+  "commands": [
+    {
+      "command": "python -B 知识库/examples/retained_review/video/test_reference.py",
+      "tests": 3,
+      "exit_code": 0
+    },
+    {
+      "command": "python -B 知识库/examples/retained_review/mcts/test_reference.py",
+      "tests": 2,
+      "exit_code": 0
+    },
+    {
+      "command": "python -B 知识库/examples/retained_review/destruction/test_reference.py",
+      "tests": 6,
+      "exit_code": 0
+    },
+    {
+      "command": "python -B 知识库/examples/retained_review/pom/check.py",
+      "assertions": 9,
+      "exit_code": 0
+    },
+    {
+      "command": "python -B 知识库/examples/retained_review/restir/check.py",
+      "assertions": 9,
+      "exit_code": 0
+    }
+  ],
+  "unverified": [
+    "实际视频生成和质量测量",
+    "目标游戏/物理引擎运行",
+    "GPU画面与捕获",
+    "网络重放/故障",
+    "性能"
+  ],
+  "acceptance": "正文各主机制可按输入追到输出及失败；所列未实测边界不由局部模型测试替代"
+}

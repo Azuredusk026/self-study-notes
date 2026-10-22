@@ -1,0 +1,206 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "full_text_read": true,
+      "sha256": "b80b2a122e6946ade35b4430cd43299d636650b2b3c3b1290cc5d250bc842a06",
+      "challenge_input": "新调用方size比旧版必需前缀少4字节，version相同",
+      "expected_output": "拒绝，不能先解引用尾字段再检查",
+      "text_derivation": "接口结构版本协商先检查size再读字段，能导出拒绝。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/内存布局与分配.md",
+      "full_text_read": true,
+      "sha256": "08c6235597f56113fe57594e971ebdf54d8b74a750aa821cb880f197cb27ff58",
+      "challenge_input": "游标MAX-1、对齐4、请求0",
+      "expected_output": "对齐加法溢出先拒绝，零请求也不能绕过检查",
+      "text_derivation": "伪代码cursor>MAX-(alignment-1)先于对齐运算，导出拒绝。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/文件IO.md",
+      "full_text_read": true,
+      "sha256": "541dab5c67214ef5d7644c5558b085803e0572ce645eb42376fab5df37bfc585",
+      "challenge_input": "取消发出后旧请求仍成功返回，而新请求想复用同缓冲",
+      "expected_output": "先等旧请求最终完成且消费者结束，才可复用；取消不等于完成",
+      "text_derivation": "生命周期节明确成功/取消/其他最终状态分支及迟到覆盖，能导出。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法与数据结构导读.md",
+      "full_text_read": true,
+      "sha256": "85edff608e76872ff8e1ec87eca12582ddc302fec059cffe49e2b00aaf8bd2df",
+      "challenge_input": "查询最近角色但还要求跨楼层墙体不可达排除",
+      "expected_output": "空间索引给候选，图可达/导航再筛选，不能仅最近距离判可达",
+      "text_derivation": "导读分别把近邻与可达导向不同主归属，可据工作负载组合，按导航职责成立。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/进程与调度.md",
+      "full_text_read": true,
+      "sha256": "623a9d046277a09f277fccf2095e2e62d5aa40c8efea5f4b70bd083dba0545bb",
+      "challenge_input": "子进程stderr已满、stdout没输出，父进程仅持续读stdout",
+      "expected_output": "同时排空两管道，否则stderr阻塞让子进程不能退出",
+      "text_derivation": "正文明确持续排空stdout和stderr，存储上限不停止读取，能否定错误父进程。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+      "full_text_read": true,
+      "sha256": "4be6f3822dffc710c842aa655bc856bd95e7d319d5f2564d41fbe977b0788111",
+      "challenge_input": "审批哈希H后人工改为H2，发布请求仍带H",
+      "expected_output": "拒绝切换，重新审查H2，不能把H批准套给H2",
+      "text_derivation": "发布条件核对输入/规则/输出哈希，明确手改重新审查，能导出。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Character Controller.md",
+      "full_text_read": true,
+      "sha256": "059a713dcf9a435a10c77408a054867be9492a53ab66a88d35fafc3b8a5c16e6",
+      "challenge_input": "曾碰x/y两墙后候选位移(1,1,0)，两法线为正X/正Y",
+      "expected_output": "保持(1,1,0)，不能沿Z交线投成零",
+      "text_derivation": "修订后先判离开两面，活动约束才交线；正文可导出。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+      "full_text_read": true,
+      "sha256": "a5c6bff39e2c172dc8a25db9412c8752da58ac9b0295f4c182150cb949dcd563",
+      "challenge_input": "骨盆倾倒90度、胶囊需竖直，落点调整根向右0.2米",
+      "expected_output": "根仅yaw，根内捕获骨骼减去这0.2，权重0的骨盆世界位置保持",
+      "text_derivation": "根平移解算后相对新根重算捕获姿态，能导出位置与姿态连续。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/载具物理.md",
+      "full_text_read": true,
+      "sha256": "1d69450826618061e76970188888f5e014ae4f5cf716b4d521c120b47fcc3cc9",
+      "challenge_input": "静止坡面轮速0、车速0，重力存在",
+      "expected_output": "本教学滑移零、轮胎力零，不保证驻车；需要独立驻车约束",
+      "text_derivation": "低速规则明确vMin、零驱动和无静摩擦保持，能推演此限制而非假保稳定。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI决策模型.md",
+      "full_text_read": true,
+      "sha256": "f6d3e96276fdfd614384a7dbdfad4b4030f8799adf75d2877f654696221fb3df",
+      "challenge_input": "HTN前往动作失败，后续搜寻前提依赖到达",
+      "expected_output": "终止该计划并重选，不能继续搜寻；迟到前往结果不改新动作",
+      "text_derivation": "HTN临时状态及失败节结合动作实例ID能导出。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI导航.md",
+      "full_text_read": true,
+      "sha256": "b18cae747a386dd1dc6a52f5c6e54b5b6d2ca0f20d8dc89cf98e3c722c08ab79",
+      "challenge_input": "邻居不承担责任，本角色只分摊一半避让，预测碰撞窗口仍2秒",
+      "expected_output": "不得声称安全；需承担剩余修正或碰撞控制/降速",
+      "text_derivation": "局部直线例明确不互惠失去保证、多约束复查及实际扫掠职责，能导出。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/21_游戏网络/RPC.md",
+      "full_text_read": true,
+      "sha256": "23f134a3f17b33e12c6b5479533a3a3f7e71e0456271e62b283f2946beb4ac33",
+      "challenge_input": "成就服务已处理消息17但确认丢失，发送方重发",
+      "expected_output": "余额不重加、成就效果不重做，返回原结果再完成outbox",
+      "text_derivation": "发件箱分支要求接收记录和成就同事务，能推演一次业务效果。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/21_游戏网络/世界分区与AOI.md",
+      "full_text_read": true,
+      "sha256": "0965a5675826a973e67e8c3e75bface00adc74c790c1ea5fe90200718e0895e0",
+      "challenge_input": "B取得epoch8后崩溃且A只见超时",
+      "expected_output": "A不能恢复7，需要仲裁后恢复B或创建9",
+      "text_derivation": "交接事件明确此分支、仲裁不可达冻结，能阻断双主。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/21_游戏网络/客户端预测.md",
+      "full_text_read": true,
+      "sha256": "3855855d0b57200428e8dfdb0679c2c46c453fd8f45e7fb9cebd50af6c93af10",
+      "challenge_input": "ACK不变但快照Tick变新且平台推玩家1米",
+      "expected_output": "接受新权威快照，重放未确认输入，不以ACK相同丢弃",
+      "text_derivation": "输入与快照时序分开，正文直接导出。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/21_游戏网络/对局服务器架构.md",
+      "full_text_read": true,
+      "sha256": "79154d517d2946a9485c41895954f811b21d187b724268b4bdeeac6290d3da82",
+      "challenge_input": "耐久r42成功，广播前崩溃，客户端重连",
+      "expected_output": "查询r42同结果，重发奖励按ID去重",
+      "text_derivation": "结果提交/恢复明确此崩溃点，不依赖客户端胜利动画。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/21_游戏网络/延迟补偿命中.md",
+      "full_text_read": true,
+      "sha256": "96e24f8aa63109a7f9908afa4122afe96de13a671f6b1d47bfab691707919fbe",
+      "challenge_input": "查询时目标ID相同但已销毁重建为新代数",
+      "expected_output": "历史命中旧代数不能伤害当前新对象",
+      "text_derivation": "历史记录代数、作用域恢复与当前提交均校验身份，可导出拒绝。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/21_游戏网络/快照同步.md",
+      "full_text_read": true,
+      "sha256": "bb88fac9a256f292ffd48b79a8bd3bcf73bbd23aebffefe5a6c4526337651bd5",
+      "challenge_input": "差量43声明基线42，但接收者只有40，随后完整44到达",
+      "expected_output": "不确认43；接受44确认，再允许以44为新基线",
+      "text_derivation": "接收顺序完整展开，不能把43差量加在40。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络时钟.md",
+      "full_text_read": true,
+      "sha256": "0d44aa515850a1bd31f7964800e8dfe6964c950b365815db18fe58ea2fa4800d",
+      "challenge_input": "新服务器纪元Tick600与旧纪元Tick700比较",
+      "expected_output": "先换纪元清历史，不能按整数认为600更旧",
+      "text_derivation": "Tick换算与纪元段明确禁止跨纪元比较，能导出重建锚点。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
+      "full_text_read": true,
+      "sha256": "e4630ca1297409197a6e3ef573ef419d26a39754bfa95b28e89d3b47b346c7bc",
+      "challenge_input": "软加载完成时玩家已换选择且宿主仍存活",
+      "expected_output": "旧请求代数拒绝安装，即使弱宿主有效",
+      "text_derivation": "加载完成节同时检查弱引用与代数，排除只看存活的错误方案。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/引擎渲染扩展导读.md",
+      "full_text_read": true,
+      "sha256": "97b390b913b1675b637deb0ae93da31a5c516b768c826c759564bf441953afb2",
+      "challenge_input": "遮罩生产通道存在但没有声明合成读取",
+      "expected_output": "图可能剔除生产；进入URP/RDG资源读声明定位",
+      "text_derivation": "导读提供具体症状和对应主归属，不冒充接口代码。",
+      "result": "SUPPORTED_WITH_STATED_SCOPE",
+      "execution": "手工反证推演；未执行多服、引擎、网络或真实异步故障实验。"
+    }
+  ],
+  "acceptance_boundary": "逐篇正文是否给出可推演规则与失败边界，非目标工程运行完成证明"
+}
