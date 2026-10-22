@@ -184,7 +184,7 @@
       "source": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
       "heading": "均匀半球和余弦加权半球",
       "target": "知识库/01_数学与采样/Monte Carlo采样.md",
-      "current_heading": "均匀半球和余弦加权半球",
+      "current_heading": "均匀半球与余弦加权采样",
       "decision": "独立主归属或明确合并",
       "reason": "随机积分与球面函数压缩有独立表示、误差及验证，SH不承担采样方法的主归属。",
       "source_hash": "ac1be9f3089a6a0a42e08b32106579b20cf9107fabbd15624d2d8eda76ba76a3"
@@ -760,7 +760,7 @@
       "source": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
       "heading": "Cubemap、Skybox 与环境映射",
       "target": "知识库/04_光照模型与PBR/Cubemap环境采样.md",
-      "current_heading": "Cubemap、Skybox 与环境映射",
+      "current_heading": "六面方向与采样地址",
       "decision": "独立主归属或明确合并",
       "reason": "贴图方向还原、环境方向寻址和BRDF预积分是不同输入与实现。",
       "source_hash": "0a45bd53758c9ab752cbcc48b770efed99461d3c697318c2ce9363853e208894"
@@ -886,7 +886,7 @@
       "source": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
       "heading": "场景变化后怎样更新",
       "target": "知识库/05_光照阴影与GI/动态GI.md",
-      "current_heading": "可更新的场景表示",
+      "current_heading": "动态探针更新",
       "decision": "独立主归属或明确合并",
       "reason": "静态烘焙、漫反射探针、反射捕获和动态更新各有独立资产与验证；原页成为GI方案导读。",
       "source_hash": "2daa9273c871fb8b9dfab6377ee90e611b162f0f9c2d8aaf1ac7d47ccc6fe787"
@@ -895,7 +895,7 @@
       "source": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
       "heading": "Screen-space GI",
       "target": "知识库/05_光照阴影与GI/动态GI.md",
-      "current_heading": "Screen-space GI",
+      "current_heading": "屏幕空间追踪",
       "decision": "独立主归属或明确合并",
       "reason": "静态烘焙、漫反射探针、反射捕获和动态更新各有独立资产与验证；原页成为GI方案导读。",
       "source_hash": "8cd2e640af2bc9b39673269944ff671f492bc207e7bbe64a36f63f589a9e71b3"
@@ -904,7 +904,7 @@
       "source": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
       "heading": "Voxel GI",
       "target": "知识库/05_光照阴影与GI/动态GI.md",
-      "current_heading": "Voxel GI",
+      "current_heading": "体素锥追踪",
       "decision": "独立主归属或明确合并",
       "reason": "静态烘焙、漫反射探针、反射捕获和动态更新各有独立资产与验证；原页成为GI方案导读。",
       "source_hash": "7a696e1f3bc99977cb44a4f642022125ec8966064a2f0e07b382d2b785189878"
@@ -913,7 +913,7 @@
       "source": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
       "heading": "Distance Field GI",
       "target": "知识库/05_光照阴影与GI/动态GI.md",
-      "current_heading": "Distance Field GI",
+      "current_heading": "距离场追踪",
       "decision": "独立主归属或明确合并",
       "reason": "静态烘焙、漫反射探针、反射捕获和动态更新各有独立资产与验证；原页成为GI方案导读。",
       "source_hash": "76ef728bd68989364fe73fddb1166a4d635cf893d4c1c2439f1bd5c65e563c20"
@@ -922,7 +922,7 @@
       "source": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
       "heading": "Probe-based Dynamic GI",
       "target": "知识库/05_光照阴影与GI/动态GI.md",
-      "current_heading": "Probe-based Dynamic GI",
+      "current_heading": "动态探针更新",
       "decision": "独立主归属或明确合并",
       "reason": "静态烘焙、漫反射探针、反射捕获和动态更新各有独立资产与验证；原页成为GI方案导读。",
       "source_hash": "2e1088d4b3a28d69e98330008b051195feb74ef8150c12287df3d5448797114b"
@@ -931,7 +931,7 @@
       "source": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
       "heading": "Lumen 的理解框架",
       "target": "知识库/05_光照阴影与GI/动态GI.md",
-      "current_heading": "Lumen 的理解框架",
+      "current_heading": "Lumen的场景表示与回退",
       "decision": "独立主归属或明确合并",
       "reason": "静态烘焙、漫反射探针、反射捕获和动态更新各有独立资产与验证；原页成为GI方案导读。",
       "source_hash": "848c70b5acdd0adc8e1957ea75dd8d68970e340fab30154d113a2d61a7cf3a62"
@@ -967,7 +967,7 @@
       "source": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
       "heading": "UV Layout",
       "target": "知识库/06_纹理技术/纹理图集.md",
-      "current_heading": "UV Layout",
+      "current_heading": "UV展开",
       "decision": "独立主归属或明确合并",
       "reason": "UV子图组织、mip驻留和页表虚拟化具有不同资源模型。",
       "source_hash": "1c96d8c1f7ce42550a06e09c6b350c35f13ee96389c54e25aa526e8aaf945078"
@@ -976,7 +976,7 @@
       "source": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
       "heading": "Texel Density",
       "target": "知识库/06_纹理技术/纹理图集.md",
-      "current_heading": "Texel Density",
+      "current_heading": "纹素密度",
       "decision": "独立主归属或明确合并",
       "reason": "UV子图组织、mip驻留和页表虚拟化具有不同资源模型。",
       "source_hash": "3ca8b6d59c8212abf554eeb15b57b743299e9397b9d1b1a7faa9b8fc3589820d"
@@ -985,7 +985,7 @@
       "source": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
       "heading": "Padding 和 Bleeding",
       "target": "知识库/06_纹理技术/纹理图集.md",
-      "current_heading": "Padding 和 Bleeding",
+      "current_heading": "边距与串色",
       "decision": "独立主归属或明确合并",
       "reason": "UV子图组织、mip驻留和页表虚拟化具有不同资源模型。",
       "source_hash": "eb00858be381fb7661009ceaf072a6615ae256d8adebb1c3251ebe678188aa89"

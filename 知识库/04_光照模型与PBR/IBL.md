@@ -44,6 +44,22 @@ Roughness 高时使用更模糊的 Mip。这不是普通图片缩小，而是按
 - LUT 烘焙参数位于纹素中心，却在运行时按端点格点解释，会产生半纹素偏移；地址映射必须与烘焙约定相同；
 - 低分辨率预过滤图会让强小光源在相邻 Mip 间突然消失。
 
+### 运行时的分离求值
+
+HLSL机制片段中，N、V与环境方向同在世界空间，粗糙度到mip的映射与烘焙端一致。颜色使用线性HDR。
+
+```hlsl
+float3 R = reflect(-V, N);
+float3 environment = Prefiltered.SampleLevel(LinearClamp, R, roughness * maxMip).rgb;
+float2 parameter = float2(saturate(dot(N,V)), roughness);
+// 本片段的 LUT 在每个纹素中心按 parameter=(index+0.5)/size 烘焙。
+float2 lutUV = clamp(parameter, 0.5 / lutSize, 1.0 - 0.5 / lutSize);
+float2 terms = BrdfLut.SampleLevel(LinearClamp, lutUV, 0).rg;
+float3 specular = environment * (F0 * terms.x + terms.y);
+```
+
+`lutSize` 是 LUT 的二维纹素数，`maxMip=mipCount-1`。本片段的每个环境 mip 对应均匀分布的感知粗糙度；使用其他烘焙分布时应换成对应映射。资源为线性 HDR Cubemap 与双通道线性 LUT，可见性未包含，漫反射另从辐照度求值。Split-sum是分离近似，高频环境和局部遮挡仍有误差。
+
 ### 半向量采样与积分权重
 
 取法线 $N=(0,0,1)$，两维均匀样本为 $u_1,u_2$，以 $\alpha=\max(roughness^2,0.002)$ 表示 GGX 宽度，与 BRDF 篇的有限波瓣下限一致。按 NDF 采样半向量时
@@ -91,22 +107,6 @@ Reflection Probe 保存某个位置周围的环境。物体远离 Probe 中心�
 - Box Projection/Parallax Correction；
 - 屏幕空间反射补局部细节；
 - 光追反射处理动态和离屏信息。
-
-## Split-sum求值
-
-HLSL机制片段中，N、V与环境方向同在世界空间，粗糙度到mip的映射与烘焙端一致。颜色使用线性HDR。
-
-```hlsl
-float3 R = reflect(-V, N);
-float3 environment = Prefiltered.SampleLevel(LinearClamp, R, roughness * maxMip).rgb;
-float2 parameter = float2(saturate(dot(N,V)), roughness);
-// 本片段的 LUT 在每个纹素中心按 parameter=(index+0.5)/size 烘焙。
-float2 lutUV = clamp(parameter, 0.5 / lutSize, 1.0 - 0.5 / lutSize);
-float2 terms = BrdfLut.SampleLevel(LinearClamp, lutUV, 0).rg;
-float3 specular = environment * (F0 * terms.x + terms.y);
-```
-
-`lutSize` 是 LUT 的二维纹素数，`maxMip=mipCount-1`。本片段的每个环境 mip 对应均匀分布的感知粗糙度；使用其他烘焙分布时应换成对应映射。资源为线性 HDR Cubemap 与双通道线性 LUT，可见性未包含，漫反射另从辐照度求值。Split-sum是分离近似，高频环境和局部遮挡仍有误差。
 
 ## 验证方法
 

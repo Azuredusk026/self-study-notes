@@ -1,0 +1,377 @@
+{
+  "date": "2026-10-23",
+  "review_method": "直接读取正文，逐篇检查输入、中间状态、输出与失效；矩阵未用作通过依据",
+  "articles": [
+    {
+      "path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "full_text_read": true,
+      "independent_observation": "ABI前缀、输出置空与卸载顺序可推演；宽页仍按构建/类型/接口归组，跨语言实现有主归属链接，普通虚函数条目保持规则用途。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "4935eecdf95abcfbfd01d07cba55d3dd34140f6b88a52f782952a725eee8b63b",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/16_编程与数据结构/CSharp运行模型.md",
+      "full_text_read": true,
+      "independent_observation": "struct列表10→副本0→赋回0与装箱独立值讲清；ReadExactly异常仍using释放，AOT可达问题与运行API版本分开。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "09ae9da1d9c0814e0ea15130b54b419baace732373979994d7beb4b80cd0ded2",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/16_编程与数据结构/Python宿主集成.md",
+      "full_text_read": true,
+      "independent_observation": "重写版先导入路径/ABI再批量快照、后台版本核对，scene7 mesh12旧结果被拒绝；线程与取消解释自然衔接。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "1ff04d17a5b3b0fcb7e9584259d522b2009d349c488a337e8a98a96551697c6f",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/16_编程与数据结构/内存布局与分配.md",
+      "full_text_read": true,
+      "independent_observation": "游标13对齐16返回[16,36)支撑伪代码，CPU结束不能推出异步借用结束；缓存与分配器分类属于同一数据布局主问题。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "8dfa96807822c498056dbd8fab6ea356fbb19749bef89e26c3bc81acdf75d386",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/16_编程与数据结构/图搜索.md",
+      "full_text_read": true,
+      "independent_observation": "A→B10/A→C→B2过期条目与不一致h重开形成因果；原环诊断和A*尾章混排，已归到各主章。",
+      "action": "松弛/过期记录合回A*，Kahn环诊断合回拓扑，消除混合补充尾章",
+      "current_sha256": "20240786dc98f928356261938be64d3a892080027f04fcfe3451969dee641dd2",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/16_编程与数据结构/容器选择.md",
+      "full_text_read": true,
+      "independent_observation": "一万资产操作序列能比较数组/哈希/树；4桶1/5碰撞与键变动具体，容量失效有解释，规则清单服务接口约束。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "d6444e64ee0eb3eac92c7ca2a38a3f4bed1e5f7f56c0a5035243e041ea35d55e",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/16_编程与数据结构/对象池.md",
+      "full_text_read": true,
+      "independent_observation": "原文两个章节重复12/13代与完整释放，已合并并补可执行状态转换层面的伪代码；代数检查与借用保护分别解释。",
+      "action": "合并重复租用代数与回收解释；新增锁内状态跃迁、借用资格、重复释放拒绝与清理失败停Retiring的机制伪代码",
+      "current_sha256": "61b4c39d597a53393a95d4830d22e5a741218b63b9e70603a4f061bd1b68068e",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/16_编程与数据结构/对象生命周期.md",
+      "full_text_read": true,
+      "independent_observation": "纹理三资源三完成边界、GC根可达与取消非完成贯穿全文，Stopping重复关闭等待同终态，达到清楚的协议解释。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "e95ba2ba901db828960b448f831bca386ec48d9c5f4b79ca70e99ea2e304496f",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/16_编程与数据结构/文件IO.md",
+      "full_text_read": true,
+      "independent_observation": "短读→缓冲借用→取消终态→临时替换自然推进；原子可见不等于掉电持久明确。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "d102eafa4f1e29a8f0b6c87d6a9aa76604fbb152966e78931547138f705aed26",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/16_编程与数据结构/空间索引.md",
+      "full_text_read": true,
+      "independent_observation": "负坐标、跨格、旧桶删除和BVH祖先包含有效，但尾章重复；合回后同一数据例随更新推进。",
+      "action": "负坐标/旧桶清理合回网格，祖先包含关系合回BVH",
+      "current_sha256": "487c9f4287a06167e9ee32e4c777d2351200fa4e97c861458c96d1ba647d9462",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法与数据结构导读.md",
+      "full_text_read": true,
+      "independent_observation": "职责是选择路线，资产依赖先图后容器、附近查询先空间索引，导读无需重复算法实现。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "76401e70fa0b8dc72675a2fd9a677840a0541653c5e14f6f4b4d94b56594ce1a",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法设计.md",
+      "full_text_read": true,
+      "independent_observation": "LCS重复解释后置、状态代码再尾置割裂，已移回DP；KMP ABABAC失配保留B的全过程有效。",
+      "action": "LCS解释/代码合回DP、贪心反例合回贪心，清除重复后置章",
+      "current_sha256": "035e772cad66ed6f41f9c7180f85e4d50d2dbfecbbd5fb6b188e50bda4abdbba",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/16_编程与数据结构/虚拟内存.md",
+      "full_text_read": true,
+      "independent_observation": "reserve/commit/驻留与TLB/缺页分清，跨页共享数例发现1096算错已修，页引用与异步结束共同控制decommit。",
+      "action": "纠正B在第0页占1096字节而非1000字节",
+      "current_sha256": "f243415a018bd178bd93ac61bf33ab6258a8a3a580276df0bd4510ba24eb080b",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/16_编程与数据结构/跨语言接口.md",
+      "full_text_read": true,
+      "independent_observation": "中A四字节与零结尾五字节、固定结果句柄查询容量、取消后等待借用归还连成完整链，未编双语言诚实披露。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "2681234dd7d5e60a8dd64e82938f559ccfb2d7bcff112176846b11a19e434ea2",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/16_编程与数据结构/进程与调度.md",
+      "full_text_read": true,
+      "independent_observation": "Running/Ready/Blocked用于区分等待来源；stdout满与父等待退出形成等待环，排空两管道解决机制展开。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "ef8565a56bdda52e322719744b5551fdaeae26b201a36784ba5a380e0434441f",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+      "full_text_read": true,
+      "independent_observation": "任务记录与执行对象分开；超时后稳定目标ID对账，批准哈希失效需复核；接口协议而非部署证据。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "16038dd3ad8142ee07a3ccd8a3c4a68dc0aeafb641836d4f9c3f2908193b6f9e",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
+      "full_text_read": true,
+      "independent_observation": "图连通与语义匹配分开，prompt_id→history→输出校验完整；响应丢失与取消状态边界具体。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "6ee614267794d53a22d96d92bc1c6748eb04ec582df02d611dfe95797ad1fdff",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/LoRA训练.md",
+      "full_text_read": true,
+      "independent_observation": "1024/r8的16384参数与增量秩上界解释充分，A随机B零为何能启动有因果；训练步骤与部署边界清楚。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "a1a467fce89388d99cfb1162a430cb913def014caee5dff54a59dafe1bfe6147",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/扩散模型.md",
+      "full_text_read": true,
+      "independent_observation": "前向系数.64输入2.2恢复2，不能直接减1；单步DDPM公式及方差/参数化假设明确，宽架构概览由机制公式支撑。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "7769b8b3d4a664cd14f6409a63b27c1758f0d73cde4ffac0de4c4aa6c95ad820",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/生成条件控制.md",
+      "full_text_read": true,
+      "independent_observation": "重写版零残差h2-.4*.5=1.8，解耦注意力两个softmax，结构/外观冲突有定位路径，较作者早稿更连贯。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "09cf1733d4eb37c5a02f838f0ba88f328a2fbfcf2979a96333da6a1adc65c457",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+      "full_text_read": true,
+      "independent_observation": "反向流定义、原图/latent缩放、历史视法线转当前再处理刚体旋转清楚；新显露区域拒绝与全拒假低误差解释成立。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "440cd37fcf120055a7c05fcae21ae746a9ac59e421816cc404490cc6eca7ce69",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Character Controller.md",
+      "full_text_read": true,
+      "independent_observation": "skin长度除位移长度得到比例，剩余投影与多面约束边界明确；三段台阶/旋转平台有实现动作。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "4f53458ead22ff23ea42a417ac952ba1f414438d370959fe948d58a83ba930c7",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+      "full_text_read": true,
+      "independent_observation": "骨到质心偏移乘法、短弧角速度、动画恢复控制权连贯；传送导致极大速度的失败与回退可独立推演。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "33b3891c0d299ed27e53c85f4f0bb3737668bd0b34805e0f9001e9ba295f2900",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/XPBD.md",
+      "full_text_read": true,
+      "independent_observation": "一端固定2→1.5米与下一迭代平衡具体，lambda每步清零明确；跨步长动态误差结论已修。",
+      "action": "收紧跨步长绳长误差相近断言，区别同材料柔顺度与动态有限步长误差",
+      "current_sha256": "396f8d4ad894b9567fe779345740bca634613bad62c647544c4d74caef469420",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/刚体物理求解.md",
+      "full_text_read": true,
+      "independent_observation": "圆盒内点退化回退、有效质量含转动项、累计非负冲量可逐步追踪；丢时间表述已明确权威策略。",
+      "action": "最大步数后的积压/丢时间两策略明确，权威联网不得静默丢Tick",
+      "current_sha256": "902bb9bb6dff3c97bbf3ee13562b49cf204aab5644bd83d50765a494ed428b6c",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/破坏系统.md",
+      "full_text_read": true,
+      "independent_observation": "0—1—2和3—4支撑图、断1—2激活2，连接遍历与速度继承展开，模型不计算应力明确。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "63e9a4498b368952baf18c56a15e02de1b080d726b8febddd19958a7adf02112",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/载具物理.md",
+      "full_text_read": true,
+      "independent_observation": "悬挂压缩→相对接地点速度→轮速反扭矩→共享2500N圆预算，低速和反向制动原因完整。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "02e886b9ea061fb1429bae0623f41dd5c42568d249fdc1f3d639c500796a112e",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/19_Gameplay与游戏框架/玩法事件与脚本.md",
+      "full_text_read": true,
+      "independent_observation": "双队列下一轮、每事件订阅快照、回调注销仍执行边界明确；负载寿命移回事件节，3C约束脚本调用职责。",
+      "action": "事实负载与订阅寿命合回事件机制；3C明确为脚本调用接口权限范围",
+      "current_sha256": "2f4a7f1814b3bf754cd7694185be1a5169ffeac711d8d8d63bf522bc4e764ae3",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/19_Gameplay与游戏框架/输入与动作状态.md",
+      "full_text_read": true,
+      "independent_observation": "跳跃50ms再20ms许可消耗例有效；渲染矩阵离题已归并，后置许可解释合入，模拟时序主线恢复。",
+      "action": "跳跃许可解释合回输入缓冲；2D精灵矩阵归并空间变换并保留独有实现/失效，原处保留屏幕输入语义转换入口",
+      "current_sha256": "ab3c7c59524f9c1a80797785ad0df9b747c90dae31ac29151e693981bf97eb70",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/20_游戏AI/MCTS.md",
+      "full_text_read": true,
+      "independent_observation": "根玩家收益固定、对手利用项反号，四阶段与固定迭代确定性讲清；机会节点不套对手极小化明确。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "5fd347ae2fce14ce0aa8054ff5ba1b03b089d9b980f69fdde8f0548581449cbb",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI决策模型.md",
+      "full_text_read": true,
+      "independent_observation": "记忆型顺序节点Running索引、取消外部请求、GOAP负效果与Utility条件数差异具体；比较页多方案有同一决策主问题。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "f4c04b8973d3d93641283bcbc21bde762aad22b4b25bce43d6f44042f5751266",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI导航.md",
+      "full_text_read": true,
+      "independent_observation": "表示→搜索→门户漏斗→运动控制完整，仍需真实漏斗/ORCA接入；停止距离v²/2a把几何可达与运动可达分开。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "fc69673b30ec13fe5f36bd330a6be9216b09727d3268b128aa9430fc76b3d4d6",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏强化学习.md",
+      "full_text_read": true,
+      "independent_observation": "Q2奖励1下一Q4→3.3，终止→1.5可算；重复终止句已删、更新机制前移，奖励钻漏洞与部署规则分开。",
+      "action": "Q目标与终止移到基础定义之后，删重复终止句",
+      "current_sha256": "f16879a8131748f8b6468defb9044cbba876743b0bcbc28f0793c20a832c3ed4",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/20_游戏AI/群体战术信息.md",
+      "full_text_read": true,
+      "independent_observation": "重写版[0,8,0]双缓冲得[2,2,2]，原地变不对称；半衰期与每轮源2平衡4分开，完整可推演。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "516eb8fbff74ef1d692ad77bca36c964ef5618b3bad68a14fcdb3154f629d5a3",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/21_游戏网络/RPC.md",
+      "full_text_read": true,
+      "independent_observation": "并发检查和余额/结果同SQLite事务；提交后响应丢失重试同结果，外部HTTP需outbox，失败边界展开。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "56259a722661bc3cb4154feb45b7a6034b366be2ec38f17a8b47233b0daec788",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/21_游戏网络/世界分区与AOI.md",
+      "full_text_read": true,
+      "independent_observation": "R/R+h查询迟滞与候选范围一致，epoch条件更新阻旧写，回执丢失不能源自行恢复，所有权不变量明确。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "dc4fcdda14df947cd35640f68dd5b3eb74b145da5d42a29d470d87413ae9a61d",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/21_游戏网络/回滚同步.md",
+      "full_text_read": true,
+      "independent_observation": "步前snapshot[1]=1恢复后结果1，快照区间半开；事件集合需撤销旧预测而非只去重讲清。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "f7566d2dc140b0274c46ca43902f8dbdd0e382aea60ef5b6dd78d679bcfd06c2",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/21_游戏网络/客户端预测.md",
+      "full_text_read": true,
+      "independent_observation": "回绕65535→0/1且墙10重放得9，直接求和12错误；同ACK新Tick合法与外部平台历史边界充分。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "8c8bcc8ee34805d1a58e14ac8961e092de4284b8fc8669abf9ee608022185502",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/21_游戏网络/对局服务器架构.md",
+      "full_text_read": true,
+      "independent_observation": "MatchId/epoch路由与持久化端防旧写、结果ID耐久后通知形成链；尚未部署故障注入范围明确。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "cdbe7b37b8424a61588b625bca368c1ff92f4332d3e4cd88b04613626a9ddd75",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/21_游戏网络/延迟补偿命中.md",
+      "full_text_read": true,
+      "independent_observation": "10/9.920/.1得到9.820且不再重复扣单程；历史碰撞按段及当前伤害一次提交清楚。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "4d5cb35e029fe59e02852e8a261065af5c6294d162c70ee548f9cbeb1427acfa",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/21_游戏网络/快照同步.md",
+      "full_text_read": true,
+      "independent_observation": "1秒0米/1.05秒1米，1.02得.4；差量基线42缺失不能套40，运动段ID阻止跨传送插值。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "dd2c4aadabcf5fd191654655b6d2ff3523bd29760ccfe0de3a18392d0d40e898",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/21_游戏网络/服务端反作弊校验.md",
+      "full_text_read": true,
+      "independent_observation": "0.05秒/6米每秒容差.1预算.33，重复十输入不增时长，确认冲刺2米才2.33；距离非碰撞充分条件。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "0be2a8ab35df283f5bc7214b15b7231b7c00bede78d8d8bc884212d176ec75b8",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络传输.md",
+      "full_text_read": true,
+      "independent_observation": "8字节应用分帧逐字段与溢出检查完整，旧2字节模型不冒充正文覆盖；广泛网络概览保留但端点/消息/队列主线清晰。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "8514519a3f83608d1ab7c4f8acde78367855dfb9cf2b99dc41f08d232828a08c",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络时钟.md",
+      "full_text_read": true,
+      "independent_observation": "四时间戳扣服务器处理，0/.4与5.1/5.3求offset5和RTT.2；不对称误差不可识别已界定。",
+      "action": "保留已成立的机制解释与证据边界",
+      "current_sha256": "386599c86952a14194a59fb3435a8b2ef769a0ecee9c8833b94ca86539cf213b",
+      "unresolved": []
+    },
+    {
+      "path": "知识库/16_编程与数据结构/线程同步.md",
+      "full_text_read": true,
+      "independent_observation": "队列A的双消费者交错→检查入睡原子交接→关闭谓词排空→发布与回收，完整叙述；C++未运行与Python串行模型边界明确",
+      "action": "保留",
+      "current_sha256": "fdb2b07994660a6a26b227b3ecade4e57d13a07336e6ce9c42b207bbe06cbdea",
+      "unresolved": []
+    }
+  ],
+  "article_count": 45,
+  "tests": [
+    "python -B 知识库/examples/revision_16_21/test_reference.py : 17 PASS",
+    "python -B 知识库/examples/revision_16_21/test_review_reference.py : 15 PASS"
+  ],
+  "migration": {
+    "source": "知识库/19_Gameplay与游戏框架/输入与动作状态.md#2D 精灵的变换与投影",
+    "target": "知识库/01_数学与采样/空间变换.md#二维精灵的枢轴与投影",
+    "preserved": "单位Quad、像素position/size、归一化pivot、完整矩阵、非方图90度旋转与窗口缩放的失效诊断"
+  },
+  "remaining_limits": "实机、引擎、并发、网络与模型训练未执行项由正文明确记录；独立复核不将机制协议误记完整宿主实现"
+}

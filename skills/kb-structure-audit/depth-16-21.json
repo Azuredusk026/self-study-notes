@@ -1,0 +1,401 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "sha256": "08ecd9cc511736e9dc251a56f48527505bf725da3f8b12da5f005cdbbcb6dca8",
+      "full_reread": true,
+      "mechanism_observation": "前缀结构size版本、输出句柄置空、异常边界与卸载后虚表失效可逐步追踪",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/CSharp运行模型.md",
+      "sha256": "66c712ba3de740a7b602bec7c29b99ac743d9a3ad02809f3f92b6888aa2a2995",
+      "full_reread": true,
+      "mechanism_observation": "加入list结构体10到0副本追踪；ReadExactly异常、长度转换与AOT边界明确",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/Python宿主集成.md",
+      "sha256": "efd6d4e4c1e16f85ea6925ae0bc9009d933db62bad31bd0febe22d60a2855a0b",
+      "full_reread": true,
+      "mechanism_observation": "全文按解释器定位、扩展ABI、显式上下文、版本快照写回和关闭取消重写；对象42版本7/12逐步推演。",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验",
+      "strict_second_review": "全文按解释器定位、扩展ABI、显式上下文、版本快照写回和关闭取消重写；对象42版本7/12逐步推演。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/内存布局与分配.md",
+      "sha256": "ecb568086d5266ee00370e1555562bca77d66f91dcb1ffca37c682bcefd74fb8",
+      "full_reread": true,
+      "mechanism_observation": "游标13对齐16返回[16,36)，溢出检查逐步展开；GPU异步寿命限制重置",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/图搜索.md",
+      "sha256": "ac6c7298d360640f9fba18da6059b3c1ba80bfd537a11d96e78dec96a5e11b4b",
+      "full_reread": true,
+      "mechanism_observation": "A→B10与A→C→B2实例解释重复堆和过期记录；不一致启发重开条件明确",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/容器选择.md",
+      "sha256": "0fc4c147a4c9073f4f8cec5ab1b185c323da72bacc0406127057bbdcb25e9662",
+      "full_reread": true,
+      "mechanism_observation": "新增4桶下1/5碰撞、键1变2漏查、扩8桶再定位，支撑哈希三条约束",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/对象池.md",
+      "sha256": "0fe84c47e2e552fdcec02479e56a3faa66fc119c92bff5fb12228a1071861a10",
+      "full_reread": true,
+      "mechanism_observation": "重组租用状态机，按停止入口、取消、等待、复用推进；12/13代回调展示身份与访问寿命两条件",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/对象生命周期.md",
+      "sha256": "05d01991842f710688ae5e0f90c5a3a1f4b8035e196cf593287d74924753c221",
+      "full_reread": true,
+      "mechanism_observation": "全文按加载器三份完成条件、所有权、事件可达链、停止协议和分配诊断重写，清除分类清单与重复释放段。",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验",
+      "strict_second_review": "全文按加载器三份完成条件、所有权、事件可达链、停止协议和分配诊断重写，清除分类清单与重复释放段。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/文件IO.md",
+      "sha256": "52caa93f715b03db9f723dc9bea4baa3217dc12e24238792f86f0758caa9c0f6",
+      "full_reread": true,
+      "mechanism_observation": "从短读到终态缓冲寿命，再到临时文件发布；明确原子可见与掉电持久化",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/空间索引.md",
+      "sha256": "8d26838f49ef00bafa8ecab0bb70670ed1672ed0f1a16bfef8280ff734a71e19",
+      "full_reread": true,
+      "mechanism_observation": "加入A[-0.2,1.2]跨格、查询去重和移动2米旧桶更新；闭边界明确保守覆盖",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法与数据结构导读.md",
+      "sha256": "85edff608e76872ff8e1ec87eca12582ddc302fec059cffe49e2b00aaf8bd2df",
+      "full_reread": true,
+      "mechanism_observation": "导读保持入口职责，资产构建与邻域查询分别指向主机制文章",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法设计.md",
+      "sha256": "c35d9a37df58e61bdda8b092a0d3ae3e51309dd039e8aa6c6a9a1baaf4da121f",
+      "full_reread": true,
+      "mechanism_observation": "新增ABABAC前缀表与失配5退3再匹配4；LCS状态与带收益贪心反例保持",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/虚拟内存.md",
+      "sha256": "cb186eeff441372ae2ce6ce4c4b642b88d1be0048aaf8b9456ff082e44234437",
+      "full_reread": true,
+      "mechanism_observation": "新增4096页上A/B共享的撤销反例，解释页覆盖与有效子分配计数",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/跨语言接口.md",
+      "sha256": "5c5e1178222711cf971651f52fc1a8822f856c4c9651082aca8e1522b375cf0e",
+      "full_reread": true,
+      "mechanism_observation": "全文按UTF8缓冲、两阶段固定结果句柄、错误输出、异步借用与模块卸载重写，核心接口展开。",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验",
+      "strict_second_review": "全文按UTF8缓冲、两阶段固定结果句柄、错误输出、异步借用与模块卸载重写，核心接口展开。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/进程与调度.md",
+      "sha256": "1626f08e59d698c6773d950b50196e55d6bdbbd0d9c3ef861f6e7753de8d9f05",
+      "full_reread": true,
+      "mechanism_observation": "管道写满形成父等退出、子等空位等待环；说明持续排空、超时与进程树收尾",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+      "sha256": "e9af4532e29291c4b9d8f03901e3a8e1e83827016b4ba0ab918dac901876bd78",
+      "full_reread": true,
+      "mechanism_observation": "稳定目标ID与待登记状态重建提交空隙；家具挡通路反例区分几何和导航",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
+      "sha256": "ed574247bd6d774db37b70d977dc297bea67589540cf91127ce580bbfc83757b",
+      "full_reread": true,
+      "mechanism_observation": "prompt_id提交、WS断线、历史及文件核验形成恢复链；未执行不可计失败",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/LoRA训练.md",
+      "sha256": "6c6c69af71a0f1f0f995b905601d0ecad309100b2deba096bdebb6a4433040b3",
+      "full_reread": true,
+      "mechanism_observation": "新增1024×1024秩8参数量与输入映射，解释秩容量和基础权重内存仍存在",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/扩散模型.md",
+      "sha256": "32392c4af056f1d9050e0dc4e44d83fbaf6e7c95827ebe412e00dba07ab33e1e",
+      "full_reread": true,
+      "mechanism_observation": "新增干净2噪声1累计0.64前向2.2、逆推2与错误直减1.2，参数化差异具体化",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/生成条件控制.md",
+      "sha256": "7c23da169e91f822f2c23b854399fe7989765307e9adab6dc819c213930222a8",
+      "full_reread": true,
+      "mechanism_observation": "全文沿结构残差与独立注意力两条输入重写，给残差2到1.8/1.2数例、softmax维数、条件竞争诊断。",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验",
+      "strict_second_review": "全文沿结构残差与独立注意力两条输入重写，给残差2到1.8/1.2数例、softmax维数、条件竞争诊断。"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+      "sha256": "a86f23346844ffe56ac9a7f076889d6db5a3cd311a9d09d8de6cf048af27fe63",
+      "full_reread": true,
+      "mechanism_observation": "反向流坐标、latent缩放、视法线输送和显露拒绝明确；效果另验",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Character Controller.md",
+      "sha256": "778c423b819e4b18c49070612a07602aa9015bf076cf8691612795465792c566",
+      "full_reread": true,
+      "mechanism_observation": "skin长度转比例、单面剩余投影、旋转平台局部脚点变换与多面限制明确",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+      "sha256": "ad5ebfd4a3ed5664e27da0c61e435700620111a5d4473a60d7e38fe4510eacc1",
+      "full_reread": true,
+      "mechanism_observation": "骨骼到质心固定偏移、短弧角速度、传送切换、控制权恢复完整",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/XPBD.md",
+      "sha256": "530b70c7f13ecc7292cbdcf5a2380c0cb5cab412f846a041c7bcae818f96589f",
+      "full_reread": true,
+      "mechanism_observation": "固定端2米到1.5米、同一步累计乘子平衡数值足以复算，清零边界明确",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/刚体物理求解.md",
+      "sha256": "93bec7397c6b675bb5cc50df4350463300aa205c0d0cfef86d5c14c83c791dd1",
+      "full_reread": true,
+      "mechanism_observation": "有效质量与累计冲量移回响应章节；积分、圆盒退化与接触动力学顺序连贯",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/破坏系统.md",
+      "sha256": "4f0d66f613f1d4da412303c9ff10d7bfe814ce64c7f6b1c4b52b289c743bf731",
+      "full_reread": true,
+      "mechanism_observation": "0—1—2与3—4图断桥追踪支撑，速度v+omega叉r与预算代理明确",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/载具物理.md",
+      "sha256": "c0346911da7bd8b005cb3180dc0a5fc4b1add26fff2dd617ba29ca99bd5f7a4b",
+      "full_reread": true,
+      "mechanism_observation": "轮接触相对速度、轮速反作用、(4000,3000)联合缩到(2000,1500)完整",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/19_Gameplay与游戏框架/玩法事件与脚本.md",
+      "sha256": "912d0e4ae415cba9f4bcfc1533454fdad34c995d46238681019843a4273c0118",
+      "full_reread": true,
+      "mechanism_observation": "延迟队列实现移到验证之前，订阅快照与回调发布下一轮有实际宿主证据",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/19_Gameplay与游戏框架/输入与动作状态.md",
+      "sha256": "34b44bdec27a98618012e4e6913c626f78f602fa65f9876559b5405174acd255",
+      "full_reread": true,
+      "mechanism_observation": "50毫秒土狼窗口和重复20毫秒输入许可消耗说明；显示与逻辑Tick分离",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/20_游戏AI/MCTS.md",
+      "sha256": "295086fa139219c0b3d94c4b6e8b58b347f53317da71b079253335240a5599a8",
+      "full_reread": true,
+      "mechanism_observation": "根视角利用项对手取负，未访优先与机会节点概率采样；固定迭代预算解释",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI决策模型.md",
+      "sha256": "8c11c2aebd5bfe12f482cb1c2cf8e4b3b043f4be4f0667594485b33aae3ebb6a",
+      "full_reread": true,
+      "mechanism_observation": "异步动作实例ID、目标冲突及乘性0.8数量偏差具体；Running与中止展开",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI导航.md",
+      "sha256": "2d28e10ec7a8fd30de5d314000298ff3fe260d2105efc723869a465ceeaddb03",
+      "full_reread": true,
+      "mechanism_observation": "侵蚀、漏斗交叉、停止距离及部分走廊版本分别有输入/失效解释",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏强化学习.md",
+      "sha256": "0c4b21acce617d81bfcf579ca721da426753dca0586eaa7673fec79d127ed7ff",
+      "full_reread": true,
+      "mechanism_observation": "新增Q=2目标4.6更新3.3与终止更新1.5，终止自举错误可复算",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/20_游戏AI/群体战术信息.md",
+      "sha256": "23e2b1e199d814dedc220e98a454074ab5848268bd7dc348d2bed41e4a260588",
+      "full_reread": true,
+      "mechanism_observation": "全文按事实来源、双缓冲、时间衰减/源注入和查询重写，持续源2/3/3.5到4解释平衡与单位。",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验",
+      "strict_second_review": "全文按事实来源、双缓冲、时间衰减/源注入和查询重写，持续源2/3/3.5到4解释平衡与单位。"
+    },
+    {
+      "path": "知识库/21_游戏网络/RPC.md",
+      "sha256": "b2157b0bac43567fbeb84af6ad66db8417b16de436f2c6b947613bc884286413",
+      "full_reread": true,
+      "mechanism_observation": "并发查空重复加钱由同事务唯一键解决；载荷冲突与更新后异常回滚实际模型",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/21_游戏网络/世界分区与AOI.md",
+      "sha256": "8ebe1cc1a51926cbd056b2d73f18b9f68b7de695c9466ce4747250997cc27ec2",
+      "full_reread": true,
+      "mechanism_observation": "R与R+h候选范围、仲裁回执丢失不能源服恢复、旧epoch写拒绝可追踪",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/21_游戏网络/回滚同步.md",
+      "sha256": "b02925bf70a5a0b16ce9f67738acd65281ec4256412f87775abd16961fd0dd41",
+      "full_reread": true,
+      "mechanism_observation": "删除重复保存范围章节；snapshot步前恢复与事件集合撤销已明确",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/21_游戏网络/客户端预测.md",
+      "sha256": "1497161da5007edcb596e78e10f2a5d9bffd54cfc7bfc9b8f6418330715baf45",
+      "full_reread": true,
+      "mechanism_observation": "65535回绕与碰撞到墙后重放后退得9米，不能线性求和；同ACK新Tick保留",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/21_游戏网络/对局服务器架构.md",
+      "sha256": "f669c47eede926787ad9ddd572b0fe938732b6323bff348a88de64df3458f24c",
+      "full_reread": true,
+      "mechanism_observation": "epoch在持久化端栅栏拒绝旧主，结果ID耐久提交再通知的故障次序完整",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/21_游戏网络/延迟补偿命中.md",
+      "sha256": "f63be6f7072aee778ca3b06abb89c53a7ea24902823c9c89529086863e518d0b",
+      "full_reread": true,
+      "mechanism_observation": "9.920减0.100得9.820避免重复减延迟，球求交4米与混合时间门解释",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/21_游戏网络/快照同步.md",
+      "sha256": "9a172d9e779fa68af49b4b72975ddb7290764f7d15de3e14d76efaa5ea888955",
+      "full_reread": true,
+      "mechanism_observation": "1.00/1.05秒插值1.02得0.4米；42基线缺失拒绝，段ID排除传送插值",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/21_游戏网络/服务端反作弊校验.md",
+      "sha256": "4f2dae246cfdb0dc242edc9d5878d9be824a8590bfccaa2c390074458f71ed0f",
+      "full_reread": true,
+      "mechanism_observation": "新增0.05秒6米秒速预算0.33米，重复输入不加时，合法冲刺2.33米且仍需碰撞",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络传输.md",
+      "sha256": "20e8468bbe952e1841825aba21f817d0f35c7d5a546dc2c1972fc93004716387",
+      "full_reread": true,
+      "mechanism_observation": "8字节线上头与size_t溢出检查清楚；传输/业务预算分别限制，分帧实验2字节差异披露",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络时钟.md",
+      "sha256": "f1ab5abb4ebd056038592e8186ade68fca45c62d97573feecfdbf3b802c0458e",
+      "full_reread": true,
+      "mechanism_observation": "四时间戳0/0.4与5.1/5.3算5秒偏移；非对称50毫秒偏差",
+      "judgement": "正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验"
+    }
+  ],
+  "independent_pilot_review": [
+    {
+      "path": "知识库\\16_编程与数据结构\\线程同步.md",
+      "sha256": "0709facb34fdde72b1e03ebdeeace2a3f0c1636bbc2c853ace32bd7f7740d998",
+      "full_reread": true,
+      "observation": "两消费者单任务、close谓词排空与一次性release/acquire推演完整；C++真实线程未验披露准确"
+    },
+    {
+      "path": "知识库\\23_引擎运行系统\\ECS与数据布局.md",
+      "sha256": "41b64353b7dbb094b4e0d6fdb7cad0d335ab1086138c89d753493ac7fb390499",
+      "full_reread": true,
+      "observation": "122容量地址与123越界算式成立，迁移填洞位置表、查询新块与输入失败保留源明确；真实CPU缓存性能另验"
+    },
+    {
+      "path": "知识库\\11_NPR与风格化渲染\\Face SDF.md",
+      "sha256": "7b18cd60a390729b42531cf879d4740126049d4f5e99892dbbb836ffcb505798",
+      "full_reread": true,
+      "observation": "角度场单调编码、端点限制、竖直双分支导数、Mip非线性比较具体；新片段编译与资产运行按作者证据另验"
+    }
+  ],
+  "runs": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision_16_21/test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_clock_asymmetric_bias (__main__.Network.test_clock_asymmetric_bias) ... ok\ntest_clock_excludes_server_processing (__main__.Network.test_clock_excludes_server_processing) ... ok\ntest_history_rejects_extrapolation (__main__.Network.test_history_rejects_extrapolation) ... ok\ntest_ray_hits_nearest_forward_surface (__main__.Network.test_ray_hits_nearest_forward_surface) ... ok\ntest_reconcile_replays_collision (__main__.Network.test_reconcile_replays_collision) ... ok\ntest_rollback_corrects_state_and_rebuilds_events (__main__.Network.test_rollback_corrects_state_and_rebuilds_events) ... ok\ntest_rpc_failure_rolls_back_balance (__main__.Network.test_rpc_failure_rolls_back_balance) ... ok\ntest_rpc_retry_and_payload_conflict (__main__.Network.test_rpc_retry_and_payload_conflict) ... ok\ntest_wrapped_sequence (__main__.Network.test_wrapped_sequence) ... ok\ntest_fracture_support_disconnect (__main__.Physics.test_fracture_support_disconnect) ... ok\ntest_slide_retains_tangent (__main__.Physics.test_slide_retains_tangent) ... ok\ntest_tire_shared_force_budget (__main__.Physics.test_tire_shared_force_budget) ... ok\ntest_xpbd_coincident_rejected (__main__.Physics.test_xpbd_coincident_rejected) ... ok\ntest_xpbd_compliance_and_accumulation (__main__.Physics.test_xpbd_compliance_and_accumulation) ... ok\ntest_xpbd_pinned_particle (__main__.Physics.test_xpbd_pinned_particle) ... ok\ntest_atomic_publish_failure_preserves_destination (__main__.Storage.test_atomic_publish_failure_preserves_destination) ... ok\ntest_atomic_publish_roundtrip (__main__.Storage.test_atomic_publish_roundtrip) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 0.064s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision_16_21/test_review_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_alignment_addition_overflows (__main__.Arena.test_alignment_addition_overflows) ... ok\ntest_alignment_and_exact_fit (__main__.Arena.test_alignment_and_exact_fit) ... ok\ntest_alignment_crosses_capacity (__main__.Arena.test_alignment_crosses_capacity) ... ok\ntest_invalid_alignment (__main__.Arena.test_invalid_alignment) ... ok\ntest_size_cannot_wrap (__main__.Arena.test_size_cannot_wrap) ... ok\ntest_goap_reestablishes_deleted_fact_later (__main__.Search.test_goap_reestablishes_deleted_fact_later) ... ok\ntest_goap_rejects_goal_destroying_action (__main__.Search.test_goap_rejects_goal_destroying_action) ... ok\ntest_goap_zero_cost_cycle_terminates (__main__.Search.test_goap_zero_cost_cycle_terminates) ... ok\ntest_uct_explores_unvisited (__main__.Search.test_uct_explores_unvisited) ... ok\ntest_uct_opponent_minimizes_root_value (__main__.Search.test_uct_opponent_minimizes_root_value) ... ok\ntest_uct_root_maximizes (__main__.Search.test_uct_root_maximizes) ... ok\ntest_reversed_ack_is_rejected (__main__.SnapshotVersion.test_reversed_ack_is_rejected) ... ok\ntest_same_ack_newer_state_is_accepted (__main__.SnapshotVersion.test_same_ack_newer_state_is_accepted) ... ok\ntest_stale_state_is_rejected (__main__.SnapshotVersion.test_stale_state_is_rejected) ... ok\ntest_wrapped_ack_is_accepted (__main__.SnapshotVersion.test_wrapped_ack_is_accepted) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision_16_21/verify_event_queue.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"checks\": 4, \"scope\": \"C# article fragment with mock handlers on .NET 9; no Unity runtime\"}\n",
+      "stderr": ""
+    }
+  ],
+  "limitations": [
+    "逐页判断依据为实际正文推演，现有测试仅复验其原定CPU/宿主范围",
+    "未部署多服、运行DCC或训练生成模型",
+    "未执行完整物理和群体导航引擎场景",
+    "概览方案保留原题范围；独立主机制以本页展开或明确主归属链接提供"
+  ],
+  "manual_numeric_recalculation": {
+    "passed": true,
+    "checks": {
+      "utf8": true,
+      "shared_pages": true,
+      "diffusion": true,
+      "lora": true,
+      "q_learning": true,
+      "q_terminal": true,
+      "anti_cheat": true,
+      "influence": true
+    },
+    "scope": "正文手工算例独立算术复算；不证明实装或设备性能"
+  },
+  "strict_second_review": {
+    "rewritten": [
+      "对象生命周期",
+      "跨语言接口",
+      "Python宿主集成",
+      "生成条件控制",
+      "群体战术信息"
+    ],
+    "basis": "逐页再次追踪核心机制，不以已添加数例作为全文质量依据",
+    "independent_review_handoff": "ecs_face独立复核16—21，Gameplay两页已发现范围漂移待其修订"
+  }
+}

@@ -42,6 +42,12 @@ glBindBuffer(GL_ARRAY_BUFFER, otherBuffer);
 
 这段C++调用片段省略上下文、函数加载和数据上传。排查时查询属性0的`GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING`，再查stride、offset和使能位；仅查询当前ARRAY_BUFFER会看见otherBuffer，却不能解释绘制真正读取的资源。索引缓冲绑定则属于VAO状态，切换VAO时必须一并检查。
 
+### 状态归属的逐项检查
+
+先绑定VAO A、ARRAY_BUFFER P，调用属性指针建立A.attribute0→P；再绑定VAO B、ARRAY_BUFFER Q，建立B.attribute0→Q。切回A时，顶点输入仍是P，但当前全局ARRAY_BUFFER绑定可以仍是Q。接着执行针对ARRAY_BUFFER的更新会操作Q，绘制却从P取顶点。
+
+这解释了“上传函数成功、画面却没变化”：写入对象与绘制对象并非同一个。把每条操作记录为“修改哪个绑定点、哪个容器保存连接、Draw最终读取谁”，比只打印最后一个句柄更有用。删除及共享上下文另需遵守本节前述生命周期规则；不要通过删除重建来掩盖状态归属错误。
+
 ## 验证方法
 
 查询真实版本与扩展，检查函数加载、共享上下文和第一条异常绘制前的状态。删除名称语义由驱动管理未完成引用，覆盖缓冲内容仍需同步。

@@ -78,6 +78,12 @@ static_assert(sizeof(PerViewConstants) % 16 == 0);
 
 本例32位float和4×4矩阵下，偏移依次为0、64、76、80、88字节，总大小96字节。`static_assert`仅检查16的倍数并不足够，还要用offsetof和Shader反射核对每个字段。row_major说明缓冲中的矩阵排列；`mul`的操作数顺序另行决定向量变换约定。GLSL 的 `std140`、HLSL `cbuffer` 与结构化 Buffer 使用的布局规则也不能混用。
 
+### 字节错位的定位
+
+若CPU省掉Exposure字段，把RenderSize写在偏移76，而Shader仍按偏移80读取，CPU上传宽1920、高1080时，Shader的Exposure会把宽度当曝光，RenderSize.x会读到高度，RenderSize.y则来自后续字段。两端字段名称都正确，96字节总大小也可能因尾部填充保持正确，画面仍会异常。
+
+先在CPU把每个字段填成易区分的值，再查看捕获中的原始字节与Shader反射偏移。对应PerView布局，CameraPosition从64开始占12字节、Exposure在76、RenderSize在80，逐字段核对可以直接定位第一处偏移。修正结构体后再检查绑定槽与上传时机；仅改Shader变量名不会改变字节含义。
+
 ## 资源访问
 
 ### 资源视图与访问权限

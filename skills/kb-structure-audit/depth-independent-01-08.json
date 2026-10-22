@@ -1,0 +1,529 @@
+{
+  "date": "2026-10-23",
+  "scope": "58页全文（Bloom已有独立试点）",
+  "articles": [
+    {
+      "path": "知识库/01_数学与采样/Monte Carlo采样.md",
+      "sha256": "f99581183d2fa68c30542642ea39d3d2dc8cf3132c273d550376b5237362ca52",
+      "full_reread": true,
+      "observation": "半球生成、密度变换、MIS两策略不再除2、CDF零区间已展开；低差异概述属于补充选择，核心估计可推演。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/01_数学与采样/旋转表示与插值.md",
+      "sha256": "a77c946af53060118ce4046a57c4a576465ed6e8ca361ba40162d4c93cc2341c",
+      "full_reread": true,
+      "observation": "yaw-roll矩阵退化与半角Slerp一致；Slerp完整代码从验证后归回实现边界前，避免推理后置。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/01_数学与采样/球谐光照.md",
+      "sha256": "fa2132910f1919473df5ec299ce59cf1b89fc4973eead2be646136b0a21693d5",
+      "full_reread": true,
+      "observation": "九项实基、余弦band缩放、常量2π和经纬行sr可独立复算，方向/测度错误有明确表现。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/01_数学与采样/程序噪声.md",
+      "sha256": "afcbabd5dd18c9f749ec9b24e83d2428273ca3391d339eef6787e5fc73d58721",
+      "full_reread": true,
+      "observation": "原Simplex缺口已由作者替换三角定位、三个角位移与有限支撑核；独立复核p=(.2,.1)三底数与梯度尺度约定，主机制不再只列名称。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/01_数学与采样/空间变换.md",
+      "sha256": "213f7d9fa571639439f27a720c3c8e6639bdd8df38d04c99e92abd69efc06573",
+      "full_reread": true,
+      "observation": "点(1,0,0)到UV(0.6,0.5)逐空间追踪；逆转置以点积0证明；精灵矩阵后置段移到验证前。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/01_数学与采样/采样与混叠.md",
+      "sha256": "949583b296ee5e0f05d34104a1fb2438dad9458026b08659e543583ef33a5ccd",
+      "full_reread": true,
+      "observation": "0.75/0.25整数采样歧义与盒核0.3001残留解释清楚；条纹积分展开回绕，大足迹不是只改smoothstep。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/Geometry Shader.md",
+      "sha256": "2f997113fad5656813465ad65fd19ae45956ff32a8cf328cfbff43bdd8f33950",
+      "full_reread": true,
+      "observation": "线框三高度2.4/4/3与noperspective能复算；曲线求值、广告牌退化和草放大成本均展开。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/GPU执行与访存.md",
+      "sha256": "725f77fd3b6f31c231a3e0c64de9f7c6416eb2d69d8411097b5cba5f4140cc14",
+      "full_reread": true,
+      "observation": "32线程连续4事务/跨步32事务与64/65寄存器离散上限有明确假设；性能结论保持目标计数器。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/OpenGL对象与状态.md",
+      "sha256": "3bbf5dc6ceb37638f23ce141ea57e10962bd7fc8fc436539fba23dd1e8eb9d4b",
+      "full_reread": true,
+      "observation": "VAO A/B→P/Q记录连接与全局绑定不同，解释上传Q绘制P，核心状态归属完整。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/Stencil与对象遮罩.md",
+      "sha256": "8e3d27bf260ab85f97743a9c362bc11dba5df0ceb4d94f1624bf1e8e0488708f",
+      "full_reread": true,
+      "observation": "readMask比较语义、0x15→0x25写位、遮挡内区填满和连续对象联合边界均有反例。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/Stream Output.md",
+      "sha256": "c997e9b32081ab4b429e985c42bc833f037100ec32017e27a03cbe9ab6e54397",
+      "full_reread": true,
+      "observation": "36字节捕获条带展开6记录216字节，对比144容量失败；D3D11取消绑定不当跨API屏障。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/光栅化与属性插值.md",
+      "sha256": "31d78509c80c92410ebc94f195c81029e8623616ecc5329299bd64ee1e386bd9",
+      "full_reread": true,
+      "observation": "共享边C→A和A→C半开规则、透视1/3与Quad导数数例能逐步检验。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/光栅化可见性.md",
+      "sha256": "30c7efc797be9135dd64d4ecb2023eb4ad9cf3000b5f14bb3f0affbefa725db9",
+      "full_reread": true,
+      "observation": "导读准确区分预通道生成与已有深度消费，正常无预通道拒绝关系完整。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/可见性与合成.md",
+      "sha256": "97876cdca7bdd701c2727cb1c6c4c465eaa4a4bc7a2ad0e1c75931a8e192ad1d",
+      "full_reread": true,
+      "observation": "导读区分最近不透明与透明多层贡献，入口关系恰当。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/可见性剔除.md",
+      "sha256": "87df2a67c6ec8ebf3c0c3eb04597bc4dc1a3973e3cea107fcef5ad683961c7d4",
+      "full_reread": true,
+      "observation": "球法线尺度与AABB支持半径差异、贴边保留实例完整；遮挡主机制明确转主归属。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/基于深度的可见性优化.md",
+      "sha256": "5bbb26dd0de97a458b3d8468ae4652c9be388b0946e34cd8281ae564eb74f856",
+      "full_reread": true,
+      "observation": "预通道全局顺序/Equal覆盖、背景1的max归约和完整矩形枚举、8×8局部级数与跨组限制明确。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+      "sha256": "8bc77bb7ed3e589c6a9430a9af331a52398c85fe8b7455c7d2443bcb00c546ab",
+      "full_reread": true,
+      "observation": "发现FXAA仅定义、任意随机效果TAA积分泛化和移动端MSAA成本重复无条件结论；展开边缘检测/方向/错向失效并限制历史对应与设备条件。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/显示呈现.md",
+      "sha256": "68614109d281f9937213d1fff9cbe8522cd40910799789ace378e53b1c6b14c0",
+      "full_reread": true,
+      "observation": "5/13/21完成FIFO扫描开始及二进制信号量按图像索引寿命具体；未冒充整屏延迟。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/深度缓冲与位置重建.md",
+      "sha256": "3514044d1902c6531c6db856bcb4b35d8041ed6d63679f5f1b08c053c7bba267",
+      "full_reread": true,
+      "observation": "有限投影逆函数与离轴(3,0,4)射线长度反例完整；反向浮点与D24条件区分。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
+      "sha256": "5bd88d61ad648b8048f1461b980d29a15317460f5d7ad0dba359e4870ce24950",
+      "full_reread": true,
+      "observation": "导读分别连接命令、覆盖、附件、呈现，跨帧结束语义清楚。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/透明合成.md",
+      "sha256": "8bcc54799ed3cf15a3fa1c1c0e4de27d7a2cf8795c680fdf0a15e44e09019d6f",
+      "full_reread": true,
+      "observation": "PPLL发布、加权红蓝差异、Depth Peeling资源深度附件等展开；删极小代价解决绝大部分问题泛化，换为资产约束推理。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/03_Shader编程/Compute Shader.md",
+      "sha256": "2e1fd53a1aaa978a4cf45185f086c1852552191d5fb181ad86496ea2ec860df7",
+      "full_reread": true,
+      "observation": "索引19/12与组35区分、shared块/halo和API阶段同步展开；占用率不当性能标记。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/03_Shader编程/GPU异步回读.md",
+      "sha256": "e7673695eb1b47e1d28e43d4d59bfabf3a135be5881463e864c7b2b1214c38f3",
+      "full_reread": true,
+      "observation": "10/11/12满槽与12先完成、代次失效回收明确，结果发布与物理复用条件分离。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/03_Shader编程/GPU归约与前缀和.md",
+      "sha256": "3175bd9efa26213971a6964ae5a1ad39ba5d4f13948da38a501d12aa2fc3dac6",
+      "full_reread": true,
+      "observation": "64线程上扫下扫完整，七项跨组0/3基址与压紧5项可推演；越界线程参与barrier。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/03_Shader编程/Shader Variant管理.md",
+      "sha256": "bc197cffd8db041deb9fa806ca18f2f6ef94b0549ca5fb8cc7198725031766af",
+      "full_reread": true,
+      "observation": "六组合所需四项R子集S及剧情关键字完整路径，变体保留/PSO准备区分；宽清单作为参数覆盖可保留。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/03_Shader编程/Shader接口与数据流.md",
+      "sha256": "ab6b8723278f3eab8e891b7ef19471c318e9fde48a5e9c95aa525c02d5df394f",
+      "full_reread": true,
+      "observation": "96字节逐字段错位导致Exposure读宽度、GLSL接口块链接语义和sRGB过滤次序具体。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/04_光照模型与PBR/BRDF与微表面模型.md",
+      "sha256": "d07cf4e4e8765f6f3b8604cabb600d2ae746bc24c9d9a41a0b66e74b4d3c2968",
+      "full_reread": true,
+      "observation": "D投影面积PDF、Smith/Schlick组合及1-ln2白炉解析值有独立反证，模型能量局限明确。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/04_光照模型与PBR/Cubemap环境采样.md",
+      "sha256": "91e11057cdd706d63a75e1b4ac0d677e9217952785737768dc61bafa271b3fce",
+      "full_reread": true,
+      "observation": "(2,0,-1)方向到面UV、天空xyww和折射全反射回退完整；六面前后台发布说明时间差。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/04_光照模型与PBR/IBL.md",
+      "sha256": "342ac434cf66ff0afd2bdd85ff5975d88e26203864809aad210464a557d30af3",
+      "full_reread": true,
+      "observation": "半向量PDF到光线雅可比、LUT A/B、mip立体角来源齐全；预过滤归一化不冒充完整积分。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/04_光照模型与PBR/PBR材质.md",
+      "sha256": "6951c97a714f938363135b3f914e898fa2751dfc7003bfaf1e0d611501e94b10",
+      "full_reread": true,
+      "observation": "0.5 sRGB→0.214与误读roughness平方误差具体；调用段从验证后移入验证之前。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/04_光照模型与PBR/法线贴图.md",
+      "sha256": "f6ac8d9a9c8681e7a7c7893b77cc1a223f9b5ff3efbfdb447a02d9786a3c7af9",
+      "full_reread": true,
+      "observation": "TBN行构造、手性两次翻转、BC5半球与RNM核心公式已展开，GPU网格验证边界清楚。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/04_光照模型与PBR/皮肤次表面散射.md",
+      "sha256": "462d77e2fd7dae213897106c81b97cc9fd22a4934def8f8f8673d385ac262c79",
+      "full_reread": true,
+      "observation": "发现三方案表中UV方案与Transmission缺实现；作者补UV度量51.2/10.24、跨缝邻域及2mm指数透射；我改旧Transmission段指向主节。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/GI方案选择.md",
+      "sha256": "3dcbae9f5a9b4c48b99d25b9d445addfc65be69073d8b602facd4619f4aa4bef",
+      "full_reread": true,
+      "observation": "导读按变化范围、静态表面/空间探针/反射/更新入口组织，不承担重复技术实现。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/Light Probe.md",
+      "sha256": "adee4786d6a56fdfdc91b72edb5be34f2d3b1a5c87f51ed0eba03eb79eb85000",
+      "full_reread": true,
+      "observation": "八角具体权重、z0系数2/z1系数6→5及去墙后重新归一化2完整。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/Lightmap.md",
+      "sha256": "8a360bb1952a130126286fc8b44e376f509f9939c9365001636b04e65d288dce",
+      "full_reread": true,
+      "observation": "scaleBias、Padding与5+3重复直接光得到4/π反例，编码/方向压缩局限清楚。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/Reflection Probe.md",
+      "sha256": "8877a9d1ac33e9ca862a908898852d21ef78c331e225b1fdfacf749ca99a0fe2",
+      "full_reread": true,
+      "observation": "盒内出口平行轴避零、单探针0.25混全局而非归一化跳变具体。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/Shadow Map.md",
+      "sha256": "32d38ead6780c0599332682f294bb323433085f43a9badbba34ae2ab966a6ae2",
+      "full_reread": true,
+      "observation": "PCF比较后过滤、PCSS深度测度、CSM覆盖/吸附和双VSM区分齐全；点光返回阴影与PCF可见性反向已明示。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/动态GI.md",
+      "sha256": "a560bd22360011a84153c3b445dc6226ca20f0456fe83e2a50293d9aefae80d8",
+      "full_reread": true,
+      "observation": "屏幕/体素/距离场与探针矩主要机制齐全；Lumen原并列清单改为屏幕失败→世界追踪→命中照明缓存→时域的故障链，限定5.6概念职责。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/直接光照.md",
+      "sha256": "bbafaaefa40e8d27697ab17fa4e028a3fafdd2bd66975b50f43455b973152043",
+      "full_reread": true,
+      "observation": "LTC局部基、矩阵、地平线裁剪和边积分完整；光通量1000到19.89lux与锥角单位可推演。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/06_纹理技术/Texture Streaming.md",
+      "sha256": "1bbfa679330ce01f5536b791c1887d81b8ad45e949135e42f35d3ecfcc7862f6",
+      "full_reread": true,
+      "observation": "desired/target/resident三状态、两纹理22预算及重建50峰值完整，UV4倍需求粗2级正确。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/06_纹理技术/Virtual Texture.md",
+      "sha256": "fdaca9b698aa6c632b4b1f455ab066ce5ba9aaf8f288f973598ca77ae0fde565",
+      "full_reread": true,
+      "observation": "物理7.5/12中心、祖先重新计算局部UV、版本7/8/9槽回收与mip尾部边界展开。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/06_纹理技术/纹理压缩格式.md",
+      "sha256": "4f18f692e8ce43d1a040fed89a60b4de625f75939d79ad48050b54c5e5d74300",
+      "full_reread": true,
+      "observation": "BC1两端红蓝调色板不可能重建绿、块预算及mip完整块明确；格式表为选择参考。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/06_纹理技术/纹理图集.md",
+      "sha256": "a3772f040eaa3098f3d15a174bdf736a21e5230273316f589ec0d357ee3e96de",
+      "full_reread": true,
+      "observation": "首尾中心16.5/64至23.5/64与逐mip隔离固定布局、宽核Padding条件清楚。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/06_纹理技术/纹理采样与过滤.md",
+      "sha256": "be4ddc59b09c38e3902be52c94a3fe0f014efdc17c20b823382c9247607bbcbc",
+      "full_reread": true,
+      "observation": "UV中心双线性、1024×512导数LOD2、16×2各向异性足迹与Alpha统计限制具体。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/06_纹理技术/视差映射.md",
+      "sha256": "46a0b357f6d118ea585e6c8989eed78dfa0541dc48352bed2d090a184b0b20f1",
+      "full_reread": true,
+      "observation": "D0.3/u0.6/ray0.2交点0.54，残差区间与textureGrad、物理尺度H/L展开。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/07_颜色与后处理/Alpha表示.md",
+      "sha256": "35b2cebdcaeba08937d5076b862c0aede884d6c02f5bb42e788b1fdafdc6e7eb",
+      "full_reread": true,
+      "observation": "两纹素0.25对0.5贡献解释先预乘再过滤，Alpha分离混合因子清楚。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/07_颜色与后处理/HDR与曝光.md",
+      "sha256": "605b7f0797237f6ee39d2b6597198d4256b6286f0f6447632b101dba4487a7f6",
+      "full_reread": true,
+      "observation": "对数均值、log曝光1到4半步2与历史10→40→5完整；自动测光输入尺度明确。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/07_颜色与后处理/Tone Mapping.md",
+      "sha256": "a9b2dd5263fd1ebaccbe99cba8a009ce7c92108659bee522a9fc6ad2218b4928",
+      "full_reread": true,
+      "observation": "逐通道10/2/1比例改变、亮度统一缩放出色域与LUT逆整形链完整。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/07_颜色与后处理/后处理链.md",
+      "sha256": "4a9fc81a3ca124c1128e139d81dbbbd443db3e42e66ec319896a7db6d0f09aa2",
+      "full_reread": true,
+      "observation": "导读按颜色尺度、资源生产和顺序契约连接，避免固定流程冒充通用规则。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/07_颜色与后处理/屏幕空间AO.md",
+      "sha256": "b5e03d696cb142efab1fa9f586700b4ba70662c589709cf8632ecf364a299df9",
+      "full_reread": true,
+      "observation": "负Z比较-4.7/-4.8+Bias与平面反例、无效样本总分母偏亮解释齐全。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/07_颜色与后处理/景深与运动模糊.md",
+      "sha256": "67e991885c7c3af16d671bb9da36380315e8d31edd4d40805df4d9417bf65154",
+      "full_reread": true,
+      "observation": "近景0.25预乘覆盖与运动v=-0.1收集方向实例完整；Lens附加仅约定主流程。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/07_颜色与后处理/颜色空间.md",
+      "sha256": "028c8f268698ef477246ecf8923976cd489610a266cec7d9fdb1a010004161ac",
+      "full_reread": true,
+      "observation": "0.5/0.214/0.735与线性原色XYZ红亮度0.0455明确；传递与原色分离。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/08_几何与网格/Billboard.md",
+      "sha256": "886b3d9531258f2afd6149458181024261ae613ab987e25bb4be7ca829cb96b0",
+      "full_reread": true,
+      "observation": "脚底锚点、退化Right投影与60度8视图1/3混合、对应表面不等价解释清楚。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/08_几何与网格/Heightfield地形.md",
+      "sha256": "659b6aa2aa5fe8319f5b6fa3aef0f1516cdb2f2fdcd209617d2f7034b8add109",
+      "full_reread": true,
+      "observation": "端点间距、100米8/16量化、坡度dx/dz、细中点T裂缝与Skirt代价展开。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/08_几何与网格/LOD选择.md",
+      "sha256": "fa3feba082c1830d40098e95c421fc82b344724fe3d0acd46e90f66c8d6a941d",
+      "full_reread": true,
+      "observation": "108像素投影、互补noise阈值、0.18/0.22滞回与多级跳变完整。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/08_几何与网格/Tessellation与位移.md",
+      "sha256": "8dee11a5bf940dbc38f6a51792608aa0d8c80a76513a5990646ccfea4ff153a4",
+      "full_reread": true,
+      "observation": "共享边同因子之外UV/mip一致、Domain位移、Phong切平面及参数域边界展开。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/08_几何与网格/植被包裹法线.md",
+      "sha256": "083857ab1f04ec10636e7538da385e3cfa96b49655cb84b497b51bcc6a0b51cc",
+      "full_reread": true,
+      "observation": "椭球梯度、最长边半径漏第三点、Taubin双快照、最近面法线权重与M转置逆映射完整。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    },
+    {
+      "path": "知识库/08_几何与网格/网格数据与GPU访问.md",
+      "sha256": "684cdaff253c85b2e229d1ace416af4865422db288ba3c3e10b57473124e2750",
+      "full_reread": true,
+      "observation": "面角完整键、20字节布局、映射在途安全、LRU4miss和QEM奇异反例均展开。",
+      "judgement": "从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录"
+    }
+  ],
+  "pending": [],
+  "limitations": [
+    "不以质量矩阵或数量标记替代正文判断",
+    "引擎运行、GPU画面与性能未新增验证"
+  ],
+  "runs": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_math.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_raster.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_shader.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_lighting.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.272s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_gi.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.031s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_post.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/compile_shader.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"checks\": [\n    \"ScanGroups cs_6_0 compilation\",\n    \"Min/max reduction cs_6_0 compilation with guarded loads and distinct padding\",\n    \"CopyKernel cs_6_0 compilation\",\n    \"PerView vs_6_0 compilation; five offsets and 96-byte size\",\n    \"GLSL 330 VertexData matched block links with different instance names\",\n    \"GLSL mismatched block member type correctly rejected\"\n  ],\n  \"scope\": \"Compilation, reflection and offline linking; no GPU execution\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/compile_lighting.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"dxc_entries\": [\"brdf\", \"normal\", \"ibl\", \"skin_lut\", \"skin_radius\", \"skin_rejection\"], \"glsl_link\": \"sky/refraction\", \"scope\": \"���߱��������ӣ�δִ��GPU\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/compile_gi.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"dxc_entries\": [\"probe\", \"reflection\", \"ltc\", \"pcf\"], \"glsl_entries\": [\"cascade\", \"point\"], \"scope\": \"���߱��룻��GPUִ��\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/compile_post.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"dxc_entries\": [\"srgb\", \"exposure\", \"bloom\", \"ssao\", \"coc_motion\"], \"scope\": \"�����߱��룬δִ��GPU\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision_06_08/verify.py"
+      ],
+      "returncode": 0,
+      "stdout": "CPU reference tests: PASS\npom.frag: PASS\ndomain.hlsl: PASS\n",
+      "stderr": ""
+    }
+  ]
+}

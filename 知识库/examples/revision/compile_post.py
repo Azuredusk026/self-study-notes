@@ -15,7 +15,7 @@ cbuffer Parameters:register(b0) { float4x4 Projection; float3 Kernel[64]; float2
     cases={
         'srgb':snippets('颜色空间')+'\nfloat4 Main(float4 p:SV_Position):SV_Target { return float4(DecodeSRGB(frac(p.x)),EncodeSRGB(frac(p.y)),0,1); }',
         'exposure':snippets('HDR与曝光')+'\nfloat4 Main(float4 p:SV_Position):SV_Target { return float4(ExposureForDisplay(HistoryInCurrentScale(p.xyz,.5,2),2,.25),1); }',
-        'bloom':declarations+snippets('Bloom')+'\nfloat4 Main(float4 p:SV_Position):SV_Target { return float4(ExtractBloom(DownsampleBloom(p.xy/1024.0,1.0/2048.0),1,.5),1); }',
+        'bloom':declarations+snippets('Bloom')+'\nfloat4 Main(float4 p:SV_Position):SV_Target { return float4(ExtractBloom(TentUpsample(p.xy/1024.0,float2(1.0/2048.0,1.0/2048.0)),1,.5),1); }',
         'ssao':ao_declarations+snippets('屏幕空间AO')+'\nfloat4 Main(float4 p:SV_Position):SV_Target { return ComputeSSAO(p.xy/1024.0,float3(0,0,-2),float3(0,0,1)).xxxx; }',
         'coc_motion':snippets('景深与运动模糊')+'\nfloat4 Main(float4 p:SV_Position):SV_Target { float2 uv=MotionGatherUV(p.xy/1024.0,float2(-.1,0),1.0/120,1.0/60,0,1); return float4(uv,CoCRadiusPixels(max(p.x,.1),2,.05,2,.036,1920),1); }'
     }
