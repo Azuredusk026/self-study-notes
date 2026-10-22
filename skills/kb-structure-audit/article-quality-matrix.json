@@ -6268,43 +6268,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何在纹理过滤与混合中保持覆盖颜色一致"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "覆盖与合成；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "补齐非预乘/预乘空缺段落、两纹素黑边算例、先预乘后过滤及Alpha独立混合因子。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "CPU检查两纹素线性预乘过滤贡献，GPU混合与资产导入未运行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "W3C预乘插值规则与透明合成主归属公式核对。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "按资源表示、过滤顺序和UI链路解释，去除空公式引导与警告式标题。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Alpha表示定位当前概念与操作，子标题避免疑问句。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "通过数值反例、公式与代码说明变化；无新增图像结果或截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -6341,7 +6341,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "9a11d6aa15920ccc50d71293a3ef86b5349e65c658798f304735c35ee055f3b8",
+    "final_sha256": "f80cfbc6855c6eb163043021e3df0df40a6460b83a50844f184b5b6b408aa248",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -6371,9 +6371,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-post",
+      "scope": "全文、公式、代码、证据、验证与标题",
+      "findings": [
+        "补齐非预乘/预乘空缺段落、两纹素黑边算例、先预乘后过滤及Alpha独立混合因子。",
+        "按资源表示、过滤顺序和UI链路解释，去除空公式引导与警告式标题。"
+      ],
+      "content_sha256": "f80cfbc6855c6eb163043021e3df0df40a6460b83a50844f184b5b6b408aa248",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -6388,43 +6398,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何通过多尺度滤波合成光晕"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Bloom 的完整流程；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "展开软阈值二次过渡、多尺度归一化、加法和能量分配区别及纹理读写调度。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "CPU检查黑输入、软阈值中点和不同层数常量保持；正文两函数DXC编译通过。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Filament Bloom曝光相对输入核读；多尺度模型的权重关系由公式直接验证。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "阈值和输入处于同一曝光尺度，降低分辨率的过滤边界明确；无实测性能断言。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Bloom定位当前概念与操作，子标题避免疑问句。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "通过数值反例、公式与代码说明变化；无新增图像结果或截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -6456,7 +6466,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "b3cc23740e4fa0fd57ad4b935d77029c4e0a8ae7ab2ae6dcd5b7e495ecb72bbe",
+    "final_sha256": "53ba7268c2b1f37e41bf082f96d6b058c50bc2c4579da10b7d403021faddb617",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -6486,9 +6496,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-post",
+      "scope": "全文、公式、代码、证据、验证与标题",
+      "findings": [
+        "展开软阈值二次过渡、多尺度归一化、加法和能量分配区别及纹理读写调度。",
+        "阈值和输入处于同一曝光尺度，降低分辨率的过滤边界明确；无实测性能断言。"
+      ],
+      "content_sha256": "53ba7268c2b1f37e41bf082f96d6b058c50bc2c4579da10b7d403021faddb617",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -6503,43 +6523,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何保存场景亮度并让不同帧的曝光数据可比较"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "场景亮度；历史曝光换算；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "展开对数测光、秒单位适应、预曝光历史与显示尺度公式，替换抽象曝光接口。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "CPU检查时间步长不变性、比例与无效曝光拒绝；正文两个换算函数DXC编译通过。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Unreal5.6 Auto Exposure的Basic/Histogram/Pre-Exposure段核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "区分当前缓冲倍率与其估计来源，以20/10/40/5算例贯通存储和显示。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "HDR与曝光定位当前概念与操作，子标题避免疑问句。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "通过数值反例、公式与代码说明变化；无新增图像结果或截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -6574,7 +6594,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "2282be503ac805bafb6442b76a5f001c27164037700ac7b5297700e6e2971223",
+    "final_sha256": "71c1eb8ed484c7d8c38f320dc01af2a76fd27b43528dfa14443f6aa0103e44f9",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -6604,9 +6624,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-post",
+      "scope": "全文、公式、代码、证据、验证与标题",
+      "findings": [
+        "展开对数测光、秒单位适应、预曝光历史与显示尺度公式，替换抽象曝光接口。",
+        "区分当前缓冲倍率与其估计来源，以20/10/40/5算例贯通存储和显示。"
+      ],
+      "content_sha256": "71c1eb8ed484c7d8c38f320dc01af2a76fd27b43528dfa14443f6aa0103e44f9",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -6621,43 +6651,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何把场景HDR亮度映射到显示范围"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Tone Mapping；Color Grading 和 LUT；最小映射；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "用导数与数值说明Reinhard，比较逐通道与亮度缩放，补LUT端点、整形域和色域边界。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "CPU反例证明保持RGB比不保证通道有界；既有Reinhard检查通过，完整LUT/显示未运行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "公开W3C颜色变换与Filament成像链路核对，Reinhard公式直接推导。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "按动态范围、颜色比例与查表契约叙述，删除与本页无关SSAO引用。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Tone Mapping定位当前概念与操作，子标题避免疑问句。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "通过数值反例、公式与代码说明变化；无新增图像结果或截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -6689,7 +6719,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "5e0093846137587fe1ba6a64a016e6094579305e0b010553fe58e672266c4ee7",
+    "final_sha256": "c49a1618edfe254b5ade0d8dd1c30077bc3b077e5e74493a1edeae3a6e63cc27",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -6719,9 +6749,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-post",
+      "scope": "全文、公式、代码、证据、验证与标题",
+      "findings": [
+        "用导数与数值说明Reinhard，比较逐通道与亮度缩放，补LUT端点、整形域和色域边界。",
+        "按动态范围、颜色比例与查表契约叙述，删除与本页无关SSAO引用。"
+      ],
+      "content_sha256": "c49a1618edfe254b5ade0d8dd1c30077bc3b077e5e74493a1edeae3a6e63cc27",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -6845,43 +6885,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何从可见深度估计局部环境遮挡"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Screen-space Ambient Occlusion；边界过滤与合成；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "补实现缺失的裁剪/越屏/背景拒绝和稳定TBN，解释右手深度比较与缺失样本偏差。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "CPU检查遮挡方向和深度距离权重，完整正文函数DXC编译通过；GPU画面未运行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "LearnOpenGL作者9.ssao.fs全文核读；本文明确增加的D3D投影/UV及有效标记约定。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "把验证要求落实到代码，分清环境可见性、直接光与自发光归属。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "屏幕空间AO定位当前概念与操作，子标题避免疑问句。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "通过数值反例、公式与代码说明变化；无新增图像结果或截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -6910,7 +6950,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "36c7c23f4ed0ef919c96d71216345c548a2e7eabae263b146c10407c0a8b9f78",
+    "final_sha256": "38b8cb1bd084c9f91202e98b54d337b229ad61c5e676050e7490534c407f2e04",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -6940,9 +6980,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-post",
+      "scope": "全文、公式、代码、证据、验证与标题",
+      "findings": [
+        "补实现缺失的裁剪/越屏/背景拒绝和稳定TBN，解释右手深度比较与缺失样本偏差。",
+        "把验证要求落实到代码，分清环境可见性、直接光与自发光归属。"
+      ],
+      "content_sha256": "38b8cb1bd084c9f91202e98b54d337b229ad61c5e676050e7490534c407f2e04",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -6957,43 +7007,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何根据离焦与曝光时间扩展像素覆盖"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Depth of Field；Motion Blur；Lens Effect；资源与调度；验证方法；相关主题"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "补薄透镜CoC半径公式、近远符号/长度单位、邻居覆盖、快门与帧位移换算及资源顺序。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "CPU检查焦面、符号、17.09像素算例与光圈比例，正文CoC函数DXC编译通过；分层GPU采样未运行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "GPU Gems3第28章§28.3/28.4和第27章运动模糊正文核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "用两个不同的覆盖来源组织主问题，替换隐藏全部计算的三行伪代码，明确单层缺失信息。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "景深与运动模糊定位当前概念与操作，子标题避免疑问句。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "通过数值反例、公式与代码说明变化；无新增图像结果或截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -7024,7 +7074,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "390e9fd34d4948e511d741c4b0c3755110b28dcb1cc1666ff4183ed52ca664fa",
+    "final_sha256": "ad65c468b02a56f52c2dca93e53ba1555cafe8638666848ad5c8e4e1adedbec9",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -7054,9 +7104,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-post",
+      "scope": "全文、公式、代码、证据、验证与标题",
+      "findings": [
+        "补薄透镜CoC半径公式、近远符号/长度单位、邻居覆盖、快门与帧位移换算及资源顺序。",
+        "用两个不同的覆盖来源组织主问题，替换隐藏全部计算的三行伪代码，明确单层缺失信息。"
+      ],
+      "content_sha256": "ad65c468b02a56f52c2dca93e53ba1555cafe8638666848ad5c8e4e1adedbec9",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -7071,43 +7131,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何在编码与线性光计算之间正确转换"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "颜色编码；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "展开编码逆函数、黑白混合数值反例、原色与传递函数差别和资源转换顺序。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "sRGB阈值往返及0.5数值通过CPU检查，正文两函数通过DXC编译。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "W3C CSS Color4转换代码和XYZ矩阵核读；IEC全文未取得，不计已核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "使用完整中文说明数值与显示关系，删除颜色运算必然变暗的泛化及跨页重复衰减推导。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "颜色空间定位当前概念与操作，子标题避免疑问句。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "通过数值反例、公式与代码说明变化；无新增图像结果或截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -7144,7 +7204,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "f3cadb1c6e8fec6a2bb30309bdf12d6a361eacfa196a82b9c237e1c6b8fd1730",
+    "final_sha256": "a839be78dd37cdd143a6600f4460f6badc07525fc2ecf2d80a9e3d7cbbe2c7b6",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -7174,9 +7234,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-post",
+      "scope": "全文、公式、代码、证据、验证与标题",
+      "findings": [
+        "展开编码逆函数、黑白混合数值反例、原色与传递函数差别和资源转换顺序。",
+        "使用完整中文说明数值与显示关系，删除颜色运算必然变暗的泛化及跨页重复衰减推导。"
+      ],
+      "content_sha256": "a839be78dd37cdd143a6600f4460f6badc07525fc2ecf2d80a9e3d7cbbe2c7b6",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {

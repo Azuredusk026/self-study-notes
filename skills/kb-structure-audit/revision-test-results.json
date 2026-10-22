@@ -113,6 +113,20 @@
       "passed": true,
       "dxc_entries": 4,
       "scope": "正文探针插值、盒投影、LTC、PCF"
+    },
+    {
+      "phase": "P1-post",
+      "command": "python -B 知识库/examples/revision/test_post.py",
+      "passed": true,
+      "tests": 7,
+      "scope": "sRGB/Alpha/曝光/Tone Mapping/Bloom/SSAO/CoC数学关系"
+    },
+    {
+      "phase": "P1-post",
+      "command": "python -B 知识库/examples/revision/compile_post.py",
+      "passed": true,
+      "dxc_entries": 5,
+      "scope": "正文sRGB、曝光、Bloom、SSAO、CoC"
     }
   ]
 }

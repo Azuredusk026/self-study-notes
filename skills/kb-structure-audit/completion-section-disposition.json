@@ -1264,7 +1264,7 @@
       "source": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
       "heading": "为什么光照要在线性空间计算",
       "target": "知识库/07_颜色与后处理/颜色空间.md",
-      "current_heading": "为什么光照要在线性空间计算",
+      "current_heading": "线性光照计算",
       "decision": "独立主归属或明确合并",
       "reason": "颜色编码、覆盖表示与场景曝光是三份不同的数据契约。",
       "source_hash": "405a798970e27d6f978a07332e4c0f3ab2c71372fc31e7ccaf44c2410b410d89"
@@ -1273,7 +1273,7 @@
       "source": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
       "heading": "sRGB 不是单纯 Gamma 2.2",
       "target": "知识库/07_颜色与后处理/颜色空间.md",
-      "current_heading": "sRGB 不是单纯 Gamma 2.2",
+      "current_heading": "sRGB传递函数",
       "decision": "独立主归属或明确合并",
       "reason": "颜色编码、覆盖表示与场景曝光是三份不同的数据契约。",
       "source_hash": "ac5ad93c41f0e5dcf28cc30f8f94bd11bc46d0594df1c39f8e399f6323962216"
@@ -1282,7 +1282,7 @@
       "source": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
       "heading": "线性空间与距离衰减",
       "target": "知识库/07_颜色与后处理/颜色空间.md",
-      "current_heading": "线性空间与距离衰减",
+      "current_heading": "编码、原色与输出",
       "decision": "独立主归属或明确合并",
       "reason": "颜色编码、覆盖表示与场景曝光是三份不同的数据契约。",
       "source_hash": "0b5e139df621b01df278cd96b9274c61507b01f8f6a7806f2f62aa2b0ec161cb"
@@ -1291,7 +1291,7 @@
       "source": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
       "heading": "哪些纹理使用 sRGB",
       "target": "知识库/07_颜色与后处理/颜色空间.md",
-      "current_heading": "哪些纹理使用 sRGB",
+      "current_heading": "纹理编码选择",
       "decision": "独立主归属或明确合并",
       "reason": "颜色编码、覆盖表示与场景曝光是三份不同的数据契约。",
       "source_hash": "f575540c881c9a5f8df5df99277a5110fcc13f5aa615ad0ff8a0579697a6acb8"
@@ -1327,7 +1327,7 @@
       "source": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
       "heading": "Alpha 通道怎么处理",
       "target": "知识库/07_颜色与后处理/Alpha表示.md",
-      "current_heading": "Alpha 通道怎么处理",
+      "current_heading": "Alpha通道语义",
       "decision": "独立主归属或明确合并",
       "reason": "颜色编码、覆盖表示与场景曝光是三份不同的数据契约。",
       "source_hash": "bee5803ac340f0778834b8a4f4cf8e6e1b72ef7ff837fc33a5251cf2b0efbd8f"
@@ -1336,7 +1336,7 @@
       "source": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
       "heading": "Alpha Blend 应在线性空间进行",
       "target": "知识库/07_颜色与后处理/Alpha表示.md",
-      "current_heading": "Alpha Blend 应在线性空间进行",
+      "current_heading": "线性混合",
       "decision": "独立主归属或明确合并",
       "reason": "颜色编码、覆盖表示与场景曝光是三份不同的数据契约。",
       "source_hash": "faeef25fc2d959ccb9943f31815b46dd7e711198839085e5d91f449a14b01e91"
@@ -1372,7 +1372,7 @@
       "source": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
       "heading": "UI 在线性项目中为什么容易出问题",
       "target": "知识库/07_颜色与后处理/Alpha表示.md",
-      "current_heading": "UI 在线性项目中为什么容易出问题",
+      "current_heading": "UI颜色链路",
       "decision": "独立主归属或明确合并",
       "reason": "颜色编码、覆盖表示与场景曝光是三份不同的数据契约。",
       "source_hash": "cd97d954eda1b8337f4f984f070086f933f1de05a6b13141c291487711c56616"
