@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-23",
+  "reviewer": "bloom_graph",
+  "basis": "逐篇全文复读，以描边的输入—计算—失效推演为准；非矩阵判定",
+  "articles": [
+    {
+      "path": "知识库/10_VFX与模拟/水面与海洋渲染.md",
+      "sha256": "0fe7dd6d492ce4868aa2a33f6ee065f16267336675ed2224cfe14cf3b68ad2da",
+      "full_reread": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "title_review": "KEEP",
+      "before_gap": "FFT海面仅三段概述，无法从随机场独立得到动画/法线",
+      "action": "替换为波谱方差与固定随机种子、共轭时间演化、数组负索引/Nyquist/归一化、二维蝶形、位移谱导数与水平雅可比；四点单波算例同时追高度、斜率和翻折。原网格/Gerstner/着色主体保留并全文复读。",
+      "mechanism_judgment": "主要计算可由正文给定输入推到中间状态和输出；失效由归一化/采样/边界/依赖等具体条件解释。工程运行与数值误差的限制单列。"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/大气散射.md",
+      "sha256": "d821c0aed4ed4d5b898c35da0e0bd9ae294554f3eddc5b43f67ed8f3ab217e44",
+      "full_reread": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "title_review": "KEEP",
+      "before_gap": "大气仅列四种LUT，主要计算藏在积分与查表名词内",
+      "action": "全文按球壳区间、两条光路、相函数、精确均匀分段、透射坐标与逆映射、有限路径比值、天空方向表、高阶方向递推、空气透视及依赖重建组织。明确HG近似、均匀天空方向模型及未执行高阶范围。",
+      "mechanism_judgment": "主要计算可由正文给定输入推到中间状态和输出；失效由归一化/采样/边界/依赖等具体条件解释。工程运行与数值误差的限制单列。"
+    }
+  ],
+  "commands": [
+    {
+      "command": "python 知识库/examples/mechanism_depth/water_atmosphere/test_reference.py",
+      "result": "11项通过：共轭、四点傅里叶和、谱导数、均匀透射、散射分段、零消光、LUT映射往返、HG方向、指数密度解析对照、9×5 LUT生成/节点查询、地表遮挡"
+    },
+    {
+      "command": "git diff --check",
+      "result": "通过；仅共享文件行尾警告"
+    }
+  ],
+  "source_reads": [
+    {
+      "url": "https://people.computing.clemson.edu/~jtessen/reports/papers_files/coursenotes2004.pdf",
+      "location": "Tessendorf §4.3–4.4，式36–44及水平雅可比",
+      "actual": "Invoke-WebRequest取得PDF，pymupdf提取原文；网页工具超时，pdftotext未安装，已用pymupdf完成核读"
+    },
+    {
+      "url": "https://ebruneton.github.io/precomputed_atmospheric_scattering/atmosphere/functions.glsl.html",
+      "location": "Transmittance computation/precomputation/lookup，single scattering相函数与积分，multiple scattering定义",
+      "actual": "网页原始作者实现核读；HG与作者Cornette–Shanks差别在正文声明"
+    }
+  ],
+  "limits": [
+    "CPU傅里叶模型直接求和，没有GPU FFT蝶形运行证据",
+    "CPU大气验证单波段球对称消光与LUT坐标，未执行完整RGB天空缓存、高阶散射与引擎GPU",
+    "LUT节点测试检验生成/查表契约，尚未量化各方向插值误差与生产分辨率"
+  ]
+}

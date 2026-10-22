@@ -66,6 +66,39 @@ $$
 
 AABB 求交便宜、合并容易，适合 BVH 节点。物体旋转后 World AABB 会变松，但遍历仍简单。
 
+#### AABB求交实现
+
+射线与盒子处于同一空间，`boxMin`、`boxMax` 定义轴对齐边界。逐轴区间相交得到进入和离开距离：
+
+```hlsl
+bool IntersectAabb(float3 origin, float3 direction,
+                   float3 boxMin, float3 boxMax,
+                   out float tEnter, out float tExit)
+{
+    tEnter = -3.402823466e+38F;
+    tExit = 3.402823466e+38F;
+    [unroll] for (uint axis = 0; axis < 3; ++axis)
+    {
+        if (direction[axis] == 0.0)
+        {
+            if (origin[axis] < boxMin[axis] || origin[axis] > boxMax[axis])
+                return false;
+            continue;
+        }
+        float a = (boxMin[axis] - origin[axis]) / direction[axis];
+        float b = (boxMax[axis] - origin[axis]) / direction[axis];
+        tEnter = max(tEnter, min(a, b));
+        tExit = min(tExit, max(a, b));
+        if (tExit < max(tEnter, 0.0)) return false;
+    }
+    return true;
+}
+```
+
+输入必须有限，盒子满足 `boxMin <= boxMax`，方向至少一维非零。片段对平行轴单独判断：原点在该轴区间外就拒绝，在区间内则不收紧参数区间。显式分支避免盒面起点产生 `0 * infinity`。这里只把精确零方向视为平行；极小非零方向的除法仍可能溢出，生产遍历需结合有效查询区间、场景尺度和浮点误差选择保守策略。BVH 遍历使用 `tEnter` 做近节点优先，并用当前最近命中距离裁剪远节点。用从盒内出发、平行盒面和负方向三组射线测试区间符号。
+
+本机机制检查：5组 CPU 用例覆盖平行轴、盒面起点、盒内起点和正负方向，使用显式平行轴分支。检查代码见 [reference.py](../examples/mechanisms/reference.py)，运行 `python 知识库/examples/mechanisms/reference.py`。正文 HLSL 也由 [独立检查脚本](../examples/revision_09_15/README.md) 抽取并按 `ps_6_0` 编译。编译只验证类型与语法，引擎画面、GPU运行、捕获与性能另外验证。
+
 ### OBB
 
 有向包围盒更贴合旋转物体，但直接求交更贵。常见做法是用 OBB 的逆变换把射线变到包围盒局部空间，再做 AABB 平板测试。
@@ -121,6 +154,8 @@ LBVH 用 Morton 编码把空间位置编码排序，再并行生成层级。它�
 3. 命中叶节点，做精确图元 Test；
 4. 更新当前最近 $t$，后续更远节点可以裁掉。
 
+例如根有左右两子盒，进入参数分别为2和8，先访问左盒并在t=5命中三角形。最近距离随即收紧为5，右盒最早也要到8才进入，整棵右子树可跳过。若左盒内图元实际未命中，当前上界没有收紧，仍需访问右盒；包围盒命中只是候选，不是表面结果。
+
 最近命中查询宜优先访问进入距离更近的子节点。任意命中或遮挡查询找到第一个有效遮挡就可以退出。
 
 实现可使用显式栈、跳转或父节点指针的无栈遍历，或宽 BVH 一次测试多个子节点。GPU 上还要考虑 Wave 内射线访问不同节点造成的执行分歧。
@@ -173,7 +208,7 @@ DXR/Vulkan RT 常见着色器阶段：
 
 内联射线查询在普通 Compute/像素着色器中主动遍历，控制流更直接，适合阴影/AO 等简单查询。完整管线更适合复杂 Hit 着色器和递归材质，但调度成本更高。
 
-实例射线转换时保留参数 t 可以简化最近命中比较：把原点乘逆变换，把方向乘逆线性变换，但不归一化新方向，则 `localOrigin + t*localDirection` 仍对应原世界射线同一个 t。若归一化局部方向，需要同时缩放查询区间和返回参数。非均匀缩放实例最容易暴露漏做这一步的错误。
+实例射线转换时保留参数 t 可以简化最近命中比较：把原点乘逆变换，把方向乘逆线性变换，但不归一化新方向，则 `localOrigin + t*localDirection` 仍对应原世界射线同一个 t。例如实例X轴缩放2倍，世界射线起点x=0、方向x=1，局部方向变成0.5，局部平面x=2仍在世界t=4处命中。若把局部方向重新归一化为1，局部求交返回2，必须换回世界参数4后才能与其他实例比较。若归一化局部方向，需要同时缩放查询区间和返回参数。非均匀缩放实例最容易暴露漏做这一步的错误。
 
 ## 验证方法
 
@@ -183,39 +218,6 @@ DXR/Vulkan RT 常见着色器阶段：
 - 比较 Median、SAH、LBVH 的构建时间、内存、节点 Visit 与射线时间。
 - 分开统计 BLAS/TLAS 构建、更新、Trace 和着色器成本。
 - 对 Alpha Test、负缩放实例、蒙皮网格和起点 Bias 做回归。
-
-### AABB Slab 求交
-
-射线与盒子处于同一空间，`boxMin`、`boxMax` 定义轴对齐边界。逐轴区间相交得到进入和离开距离：
-
-```hlsl
-bool IntersectAabb(float3 origin, float3 direction,
-                   float3 boxMin, float3 boxMax,
-                   out float tEnter, out float tExit)
-{
-    tEnter = -3.402823466e+38F;
-    tExit = 3.402823466e+38F;
-    [unroll] for (uint axis = 0; axis < 3; ++axis)
-    {
-        if (direction[axis] == 0.0)
-        {
-            if (origin[axis] < boxMin[axis] || origin[axis] > boxMax[axis])
-                return false;
-            continue;
-        }
-        float a = (boxMin[axis] - origin[axis]) / direction[axis];
-        float b = (boxMax[axis] - origin[axis]) / direction[axis];
-        tEnter = max(tEnter, min(a, b));
-        tExit = min(tExit, max(a, b));
-        if (tExit < max(tEnter, 0.0)) return false;
-    }
-    return true;
-}
-```
-
-输入必须有限，盒子满足 `boxMin <= boxMax`，方向至少一维非零。片段对平行轴单独判断：原点在该轴区间外就拒绝，在区间内则不收紧参数区间。显式分支避免盒面起点产生 `0 * infinity`。这里只把精确零方向视为平行；极小非零方向的除法仍可能溢出，生产遍历需结合有效查询区间、场景尺度和浮点误差选择保守策略。BVH 遍历使用 `tEnter` 做近节点优先，并用当前最近命中距离裁剪远节点。用从盒内出发、平行盒面和负方向三组射线测试区间符号。
-
-本机机制检查：5组 CPU 用例覆盖平行轴、盒面起点、盒内起点和正负方向，使用显式平行轴分支。检查代码见 [reference.py](../examples/mechanisms/reference.py)，运行 `python 知识库/examples/mechanisms/reference.py`。正文 HLSL 也由 [独立检查脚本](../examples/revision_09_15/README.md) 抽取并按 `ps_6_0` 编译。编译只验证类型与语法，引擎画面、GPU运行、捕获与性能另外验证。
 
 ## 相关主题
 

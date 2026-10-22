@@ -48,6 +48,8 @@ uint restoredId = byteValue / 32u;
 float restoredMask = (byteValue % 32u) / 31.0;
 ```
 
+取类别5、遮罩0.5，低5位舍入得到16，打包字节为`5*32+16=176`，写入值176/255。点读恢复176后，类别为5，遮罩为16/31≈0.516。遮罩误差来自量化，但类别保持精确；若与类别0的像素线性混合，恢复字节可能落入另一类别区间，错误就变成光照模型跳变。
+
 这里的0.5是恢复整数时的半步偏移，量化误差由字段位宽决定。不能把打包值当颜色线性过滤：相邻类别混合会生成第三个类别。MSAA resolve、贴花和后处理都要保持这个字段契约。示例使用float计算，半精度行为在目标编译器和GPU上另测。
 
 [reference.py](../examples/gbuffer/reference.py)遍历8种类别与32级遮罩，并检查端点和过滤反例，264项CPU检查通过。该结果支持R8_UNORM点读模型，不支持任意精度与过滤方式。5位遮罩误差上限约为1/(2×31)，是否满足AO或阴影用途由画面对照决定。
@@ -157,20 +159,6 @@ Subpass 之间的关系必须显式声明：后一个 Subpass 读取哪些附件
 
 输入附件在着色器中是独立的资源类型，读取时不经过采样器，只能取当前片元位置的值。这是 input attachment 接口的局部读取语义，适合片上保留附件。具体是否驻留 Tile 内存由实现决定，普通邻域采样需要对应的纹理读取路径。
 
-### 移动端的真实收益边界
-
-Subpass 常被当作移动端延迟渲染的万能解，实际收益取决于几个条件，不满足时优势会大幅缩水：
-
-**附件预算影响片上驻留**。格式、样本数、附件数量和设备的Tile组织都会影响片上压力。驱动如何拆分或溢出并不统一，用平台计数器和捕获核对结果，不能只按一个固定KB上限推断。
-
-**中间不能插入需要完整画面的操作**。屏幕空间反射、屏幕空间阴影、任何需要采样邻域或整屏的效果都会打断 Subpass 链。真实管线中这类需求很常见，能够合并的往往只是链条的一段。
-
-**驱动实现质量参差**。同样的声明在不同厂商、不同驱动版本上未必都能合并。是否真正生效必须用帧捕获或厂商工具确认，不能只看代码写法。
-
-**与 MSAA 的交互复杂**。多采样附件占用的 Tile 内存成倍增加，更容易超标；Resolve 时机也会影响能否合并。
-
-因此“用了 Subpass 所以移动端更快”是一个需要验证的假设，而非结论。收益成立时非常可观，但前置条件不少。
-
 ### 动态渲染与局部读取
 
 Vulkan 1.3 的动态渲染在录制时指定附件，省去预先创建部分 Render Pass 和 Framebuffer 对象。需要在同一渲染范围内读取附件时，另核对动态渲染局部读取能力、扩展或相应核心版本，以及实际的依赖声明。
@@ -233,5 +221,4 @@ half4 DecalBlendManually(half4 dst, half4 src)
 
 - [Khronos Vulkan Samples：Subpasses](https://docs.vulkan.org/samples/latest/samples/performance/subpasses/README.html)：Tile 存储预算、子通道合并条件与计数器验证；是否驻留需按设备检查。
 
-- [Khronos：Subpasses](https://docs.vulkan.org/samples/latest/samples/performance/subpasses/README.html)：GBuffer 示例、附件合并及平台相关带宽条件。
 - [Khronos：Render Pass](https://docs.vulkan.org/spec/latest/chapters/renderpass.html)：附件加载/存储与动态渲染；具体支持由设备扩展和特性确定。

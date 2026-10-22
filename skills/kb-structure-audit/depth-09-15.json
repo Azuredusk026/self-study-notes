@@ -1,0 +1,782 @@
+{
+  "date": "2026-10-23",
+  "status": "REVIEWED",
+  "completed_domains": [
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15"
+  ],
+  "pending_domains": [],
+  "pages": [
+    {
+      "path": "知识库/09_动画系统/IK.md",
+      "full_text_read": true,
+      "issue": "双骨几何与提示退化有实现，约束来源缺数例",
+      "action": "补三角不等式动机与1米双段肘坐标及3米不可达",
+      "reader_trace": "根角余弦0.5，肘(0.5,sqrt3/2,0)；域外剩余1米不能靠增加迭代解决",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "2f95323a1f676169b396c69afcf6e69255c1fe1d1649d2e22fe9f2eaef977f14",
+      "verification": "本文代数算例手工复算；没有据此声称目标引擎运行或性能通过"
+    },
+    {
+      "path": "知识库/09_动画系统/动画压缩.md",
+      "full_text_read": true,
+      "issue": "关键帧抽取只陈述原则，量化缺少重建关系",
+      "action": "重写恒定轨道与抽帧段，展开0.3米超限例、检查区间内部及四元数重建",
+      "reader_trace": "0/0.5/1秒与0/0.8/1米，中点删去误差0.3米；只验端点会漏错",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "5d5ea0c8874e87a4200f9bd46fb9e65d14e6e9250ec8449f7e1137f9ccdcc31e",
+      "verification": "本文代数算例手工复算；没有据此声称目标引擎运行或性能通过"
+    },
+    {
+      "path": "知识库/09_动画系统/动画姿态混合.md",
+      "full_text_read": true,
+      "issue": "状态机问题列表与多次淡入淡出叙述压缩，Blend Space缺算例",
+      "action": "把打断列表改为阈值往复因果；补相位抵消和二维重心数例；求值标题去重复",
+      "reader_trace": "脚+0.3/-0.3半权重回零；参数(0.2,0.3)对应权重(0.5,0.2,0.3)",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "8cf12823ee4b3d23feffa78321ada435996231bbca7b5e189c3c43cbc4586028",
+      "verification": "本文代数算例手工复算；没有据此声称目标引擎运行或性能通过"
+    },
+    {
+      "path": "知识库/09_动画系统/动画重定向.md",
+      "full_text_read": true,
+      "issue": "共轭公式已有推导，缺可直接预测的轴例",
+      "action": "补C绕Z90度将源X30度映为目标Y30度，保留参考姿态/根与接触段",
+      "reader_trace": "复制增量仍绕X，轴映射后绕Y；单位增量仍保持目标参考",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "eff1665cf67309bf3977b6964b4e3df09ab42160ab85fe4c30d0657fdfa061a6",
+      "verification": "本文代数算例手工复算；没有据此声称目标引擎运行或性能通过"
+    },
+    {
+      "path": "知识库/09_动画系统/植被风动.md",
+      "full_text_read": true,
+      "issue": "锚点和导数清楚，但当前/上一帧失败缺数值",
+      "action": "补0.1米位移与重复当前时间造成零速度",
+      "reader_trace": "根权重0固定，叶权重0.5移0.1米；运动向量漏变形出现拖影",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "0dc05f34b58e4e545657c2c91dd6818d03eed87c6de74665c65db425b12ba6e9",
+      "verification": "本文代数算例手工复算；没有据此声称目标引擎运行或性能通过"
+    },
+    {
+      "path": "知识库/09_动画系统/毛发表示与模拟.md",
+      "full_text_read": true,
+      "issue": "弧长公式与标架完整，缺采样密度错误的直观例",
+      "action": "补0/0.2/1米引导线的s=0.5映射与索引错误",
+      "reader_trace": "弧长插值0.375得到0.5米，按序号误落0.2米",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "a03bf5ada8d2b23dc5270e06938e2641ced0d0f04597346ead4b08c7a4da6393",
+      "verification": "本文代数算例手工复算；没有据此声称目标引擎运行或性能通过"
+    },
+    {
+      "path": "知识库/09_动画系统/角色动画导读.md",
+      "full_text_read": true,
+      "issue": "入口与顺序明确，职责为关系路线",
+      "action": "全文复读保留，专题机制由专页承担",
+      "reader_trace": "局部姿态到IK到变形顺序；不同空间结果必须在接入前对齐",
+      "boundary_action": "OVERVIEW",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "3e23206796e95c55b10ed1b81b42c54d2016c59e13ef3fd7e4c861074b78f560",
+      "verification": "本文代数算例手工复算；没有据此声称目标引擎运行或性能通过"
+    },
+    {
+      "path": "知识库/09_动画系统/角色布料.md",
+      "full_text_read": true,
+      "issue": "已有完整重心坐标算例、离线裁剪边界与翻面原因",
+      "action": "全文复读保留；代理映射与通用XPBD分工有效",
+      "reader_trace": "权重0.2/0.3/0.5映到(0.3,0.5,0.01)，翻面偏移换边；退化需回退",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "19c343161373987a9e43d53a7eeabce56ccdddf12605397c740e8d0516b38205",
+      "verification": "本文代数算例手工复算；没有据此声称目标引擎运行或性能通过"
+    },
+    {
+      "path": "知识库/09_动画系统/面部动画.md",
+      "full_text_read": true,
+      "issue": "组合修形只说联合驱动，差值缺具体来由",
+      "action": "补两个目标求值和联合目标相减得到修形，保留拓扑/空间顺序",
+      "reader_trace": "张嘴1微笑0.5得(0.005,-0.0075,0)，目标差决定修形",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "35fcd1a51a57b9ce46d899cfacb7a8f9f848de7102a284d723aebe593b2bff2a",
+      "verification": "本文代数算例手工复算；没有据此声称目标引擎运行或性能通过"
+    },
+    {
+      "path": "知识库/09_动画系统/骨骼动画与蒙皮.md",
+      "full_text_read": true,
+      "issue": "逆绑定公式完整但缺可手算的实际顶点例",
+      "action": "补绑定2/顶点3/当前5得到6，遗漏逆绑定得到8，保留蒙皮与提交完整机制",
+      "reader_trace": "绑定姿态回3，当前回6，逆绑定遗漏能直接定位双重偏移",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "320b0efd99a2bc96abad6c13648845862b3e0fccfa20e40de483e48d3fa63b6b",
+      "verification": "本文代数算例手工复算；没有据此声称目标引擎运行或性能通过"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/Froxel体积雾.md",
+      "full_text_read": true,
+      "chapter_basis": "两段(2,.5)/(4,.25)合成(4,.125)，背景8得5，交换结果不同",
+      "reader_trace": "两段(2,.5)/(4,.25)合成(4,.125)，背景8得5，交换结果不同",
+      "action": "补前缀顺序与背景合成手算",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "d70e9880a4d64eb7b897137211ee5e1f8227f7523ba7dff541539a6555959218",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/GPU粒子系统.md",
+      "full_text_read": true,
+      "chapter_basis": "容量4，0死亡并回收再发射，存活/空闲分别唯一",
+      "reader_trace": "容量4，0死亡并回收再发射，存活/空闲分别唯一",
+      "action": "补池状态逐项流转及重复归还失败",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "509c843aedeab461f96dadf85015a5538ea146ae75ce51b3864f88d2db551315",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/VFX效果组合.md",
+      "full_text_read": true,
+      "chapter_basis": "时间/覆盖/场景交界分别取信号再组合",
+      "reader_trace": "时间/覆盖/场景交界分别取信号再组合",
+      "action": "导读保留专题映射与组合契约",
+      "boundary_action": "OVERVIEW",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "bd3059cd7bf6f0be75b422823c0ce80d4e9b5db0dfd81cb12c4c086407467634",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/VFX纹理动画.md",
+      "full_text_read": true,
+      "chapter_basis": "时间.25两权重.5，回绕第一相位权重0另一相位1",
+      "reader_trace": "时间.25两权重.5，回绕第一相位权重0另一相位1",
+      "action": "补周期交接的可手算值",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "4bbc96c8fd44a252bc2084032b95d9d8acdf5096ed7eb7d039b30022469a1bdb",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/体积云.md",
+      "full_text_read": true,
+      "chapter_basis": "5米消光0.2得T0.368和L1.264，拆段一致，太阳路径另算",
+      "reader_trace": "5米消光0.2得T0.368和L1.264，拆段一致，太阳路径另算",
+      "action": "补最小步进省略自遮挡的影响例",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "140a1e98e48ee30a1bef70597a9c1795b9a1a3340f0099a4490e92531688d462",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/大气散射.md",
+      "full_text_read": true,
+      "chapter_basis": "十米均匀介质分为两段，透射相乘保持0.368",
+      "reader_trace": "十米均匀介质分为两段，透射相乘保持0.368",
+      "action": "补距离/消光/分段关系数例",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "c09f8a179f25eb1f567d1a3ab39884aa5fad19577f8854a0c0bc9a1f462c0d1c",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/屏幕扰动.md",
+      "full_text_read": true,
+      "chapter_basis": "5米扰动面拒绝3米栏杆，8米背景保留",
+      "reader_trace": "5米扰动面拒绝3米栏杆，8米背景保留",
+      "action": "补深度判据与曲面假设失效数例",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "29baba9526f5617681ad43b0dbf855604cef93a8b06a84e6e2f1d40b04f1e983",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/水面与海洋渲染.md",
+      "full_text_read": true,
+      "chapter_basis": "原平面累位移与导数，J=1-QAk sin相位检验翻折",
+      "reader_trace": "原平面累位移与导数，J=1-QAk sin相位检验翻折",
+      "action": "保留已有完整网格/位移/法线/复用推演",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "737955786fa2c97e9738da98eae10b9bdb10419cee723cf3a4b296ace1088f92",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/溶解材质.md",
+      "full_text_read": true,
+      "chapter_basis": "噪声0.55、阈值0.5得coverage0.84375，clip仍二值",
+      "reader_trace": "噪声0.55、阈值0.5得coverage0.84375，clip仍二值",
+      "action": "补连续覆盖与实际写入区别",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "a6a2f304271ab2e4461591fe97803279896654ab0d5987e964239a3db07e47cf",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/软粒子.md",
+      "full_text_read": true,
+      "chapter_basis": "墙5米粒子4.9米得到0.5，近距0.2米独立淡出0.5",
+      "reader_trace": "墙5米粒子4.9米得到0.5，近距0.2米独立淡出0.5",
+      "action": "删不属于深度交界的Fresnel块，换近距淡出计算",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "66abddd7537062f912e03d33a64d931e909870fbaf6fecbceb046af15cf33c29",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/Face SDF.md",
+      "full_text_read": true,
+      "chapter_basis": "0.625熄灭角、非单调拒绝、0.148错误缩放、独立竖直导数",
+      "reader_trace": "0.625熄灭角、非单调拒绝、0.148错误缩放、独立竖直导数",
+      "action": "本轮五篇详见depth-ecs-face.json；继续修独立verticalWidth与CPU固定宽度验证边界",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "e810e6267baf49dd765b63946bd1ff96163fb30bce09ae7f0c3485819c1d398e",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
+      "full_text_read": true,
+      "chapter_basis": "色板/层级/线条到各机制入口",
+      "reader_trace": "色板/层级/线条到各机制入口",
+      "action": "导读保留对应路线与组合判断",
+      "boundary_action": "OVERVIEW",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "746584f7f1bb5c4178a0c890e707bbaeb2d22ec1e849388c8ee078d9a2e926e9",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/NPR材质与分层光照.md",
+      "full_text_read": true,
+      "chapter_basis": "阈值两过渡u/v构造非负和为1的三层权重",
+      "reader_trace": "阈值两过渡u/v构造非负和为1的三层权重",
+      "action": "补权重构造，纠正编辑法线与GBuffer关系、收紧三角锯齿断言，参数归属去设问",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "4eb600f6a895ba6a72fa7fd38008d0904fbcf5b1475785306ba87eb662846d4a",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/角色阴影.md",
+      "full_text_read": true,
+      "chapter_basis": "Q5米、头发4.8米、ID匹配才判遮挡，仍可能假阳性",
+      "reader_trace": "Q5米、头发4.8米、ID匹配才判遮挡，仍可能假阳性",
+      "action": "补单步候选与实际光线段不同的失败例",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "ed7b319af3e8af571a4493d480d559ec49f7587929fb30cbc47474728efeb76c",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/风格化头发高光.md",
+      "full_text_read": true,
+      "chapter_basis": "shift1使sinTH为sqrt(.5)，指数8得1/16",
+      "reader_trace": "shift1使sinTH为sqrt(.5)，指数8得1/16",
+      "action": "补偏移与宽度的独立影响、L+V零向量回退",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "52532e714c22b451bfdfea99ce56321b77a759771a487dff0b9eb6723f9cc93e",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/风格化眼睛.md",
+      "full_text_read": true,
+      "chapter_basis": "1毫米深度/10毫米平面，斜视.6/.8得UV偏移-.075",
+      "reader_trace": "1毫米深度/10毫米平面，斜视.6/.8得UV偏移-.075",
+      "action": "补空间长度到UV与反号数例",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "4ea0fbbe892d552d8a7e7ac780cec9e6ca3026547e3243ce147daeef368f50a9",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/12_光线追踪/ReSTIR.md",
+      "full_text_read": true,
+      "chapter_basis": "两源W2、目标4/1得权8/2，输出期望7",
+      "reader_trace": "两源W2、目标4/1得权8/2，输出期望7",
+      "action": "保留已有离散期望、目标重评估和时空支持边界",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "588a85ca77840bd6a879f2fe9150ee134a1bb50f2a1e2d4559a406f8cad2b36f",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/12_光线追踪/光线求交与BVH.md",
+      "full_text_read": true,
+      "chapter_basis": "先近盒2，命中5后剪远盒8；局部方向.5保持世界t4",
+      "reader_trace": "先近盒2，命中5后剪远盒8；局部方向.5保持世界t4",
+      "action": "补遍历收紧及实例归一化误比较两例",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "0cb69cba585a79e497d0db99c757c261dfa6a0b6cad929fd29ff0e41f2c791c8",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/12_光线追踪/光追降噪.md",
+      "full_text_read": true,
+      "chapter_basis": "历史3样本均值2加当前6得3；深度拒背景100后邻域得2",
+      "reader_trace": "历史3样本均值2加当前6得3；深度拒背景100后邻域得2",
+      "action": "补历史计数与空间归一化，替换重复泛述",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "23dea1dfa2d88f1507b0a0693538c1546bdaa67c87c26816f5512a2c472c33cb",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/12_光线追踪/实时光追采样.md",
+      "full_text_read": true,
+      "chapter_basis": "面积密度.25、r2、余弦.5转pω2，再乘选灯.1为.2",
+      "reader_trace": "面积密度.25、r2、余弦.5转pω2，再乘选灯.1为.2",
+      "action": "补联合概率漏除导致十倍误差",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "6da82a4ea8a0cc744cb0f8f1590907c65c54de4eea2a9e159f5d8cd74cf3eba8",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/13_渲染架构/Command Buffer与帧提交.md",
+      "full_text_read": true,
+      "chapter_basis": "槽0待17但完成16，交换链索引0无关；复制队列9另验",
+      "reader_trace": "槽0待17但完成16，交换链索引0无关；复制队列9另验",
+      "action": "保留已有跨队列完成值与allocator复用例",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "6834b78e91600958ef6dbd384cbfb5c12f92269dba540f345591551e74951a3c",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/13_渲染架构/Deferred Rendering.md",
+      "full_text_read": true,
+      "chapter_basis": "球网格限制覆盖后重建位置查半径，体内全屏回退；锥外接1/cos修正",
+      "reader_trace": "球网格限制覆盖后重建位置查半径，体内全屏回退；锥外接1/cos修正",
+      "action": "保留已有独立几何范围、模板和近面机制",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "f8bcd34917a0427ccf04c9b0048dbf775eaef3da95aa808838a94a527c0ad6d6",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/13_渲染架构/Draw Call与合批.md",
+      "full_text_read": true,
+      "chapter_basis": "1000实例仍约10万顶点，可见100与粗剔除差异",
+      "reader_trace": "1000实例仍约10万顶点，可见100与粗剔除差异",
+      "action": "补Draw与实际GPU工作成本反例，合批条件标题改中断条件",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "37fd1922eec5dafda4ade8568fed615168ea34e5341a4d7cf8a731b5cf26eb91",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/13_渲染架构/Forward Rendering与Forward+.md",
+      "full_text_read": true,
+      "chapter_basis": "range(5,2)读取索引5/6后得到灯3/9",
+      "reader_trace": "range(5,2)读取索引5/6后得到灯3/9",
+      "action": "补两级索引寻址与漏灯定位",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "8c1a0fee21490073a0b6b02e2338e80ead68e7d405cb041926e2d1e869df8ff7",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/13_渲染架构/GBuffer布局.md",
+      "full_text_read": true,
+      "chapter_basis": "类别5遮罩.5，字节176恢复5和16/31",
+      "reader_trace": "类别5遮罩.5，字节176恢复5和16/31",
+      "action": "补精确分类/有损遮罩与线性过滤失效",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "106bc1a0e13270e220b95dc093981bf7bd8594274955875d7733bc8b45e45c83",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/13_渲染架构/GPU同步与屏障.md",
+      "full_text_read": true,
+      "chapter_basis": "计算帧42，缺依赖顶点读41；间接参数另消费者",
+      "reader_trace": "计算帧42，缺依赖顶点读41；间接参数另消费者",
+      "action": "补具体读旧帧与目标阶段覆盖",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "0003f43d2cb47fc6858939388fd6ed9096282c3c09c4a1248a563eb9961d6a72",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/13_渲染架构/GPU资源生命周期.md",
+      "full_text_read": true,
+      "chapter_basis": "1024环的[0,512)提交7，完成6禁止新[0,256)",
+      "reader_trace": "1024环的[0,512)提交7，完成6禁止新[0,256)",
+      "action": "补环回保留/提交/完成的具体冲突",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "c015f78b6a3af02d665bffa327720d6ca462d8b52793137d6434dd042de5ffe9",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/13_渲染架构/GPU资源绑定.md",
+      "full_text_read": true,
+      "chapter_basis": "80字节记录按256对齐，第3条偏768；帧基址避免加两次",
+      "reader_trace": "80字节记录按256对齐，第3条偏768；帧基址避免加两次",
+      "action": "保留已有数值寻址与描述符延迟回收解释",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "577baefe61d9b42fcd82ac0efa1e8bf17258633e73d3154f729ce6567e96bbf0",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/13_渲染架构/Pipeline State Object.md",
+      "full_text_read": true,
+      "chapter_basis": "同S/V但RGBA8x1与RGBA16Fx4需不同键，动态视口另设",
+      "reader_trace": "同S/V但RGBA8x1与RGBA16Fx4需不同键，动态视口另设",
+      "action": "补状态遗漏缓存碰撞例",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "344adb42a7fccd38cc3ac317eadd79539c6c20dc6a15d06256521e1066cc4b8c",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/13_渲染架构/Render Pass与附件.md",
+      "full_text_read": true,
+      "chapter_basis": "全屏三角形被scissor限制，未写区域仍未初始化",
+      "reader_trace": "全屏三角形被scissor限制，未写区域仍未初始化",
+      "action": "保留已有洋红色诊断与load/store消费者推理",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "597fd7a1be1684a4d7aab7647ea7ab94d91301ec32209dd0aadd1227ffa02df2",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/13_渲染架构/Tiled与Clustered光源剔除.md",
+      "full_text_read": true,
+      "chapter_basis": "计数[2,0,3]前缀[0,2,2]，填充新灯越界",
+      "reader_trace": "计数[2,0,3]前缀[0,2,2]，填充新灯越界",
+      "action": "补两阶段一致快照与容量寻址",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "dadc1152eb21fb14a1ee90a1a58ec32d3109d22cf5b807b980126f560f6898b0",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/13_渲染架构/渲染命令的组织方式.md",
+      "full_text_read": true,
+      "chapter_basis": "图编译→附件执行范围→命令提交→完成回收",
+      "reader_trace": "图编译→附件执行范围→命令提交→完成回收",
+      "action": "保留导读层次对应",
+      "boundary_action": "OVERVIEW",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "5ff38c184cac8e84451b5759453c2e8352dfef086edf529fdf0525f9b1c57e18",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/13_渲染架构/渲染路径与光源组织.md",
+      "full_text_read": true,
+      "chapter_basis": "着色时机与候选组织是两个维度，可组合",
+      "reader_trace": "着色时机与候选组织是两个维度，可组合",
+      "action": "保留导读主问题与专题入口",
+      "boundary_action": "OVERVIEW",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "049117e9669f4856f3959b13ad5179b1e9d5e06dbd34d51bc94702a277f3edd9",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/PSO首次使用卡顿.md",
+      "full_text_read": true,
+      "chapter_basis": "请求未出现是覆盖，已请求未完成是时机，已完成仍卡另查",
+      "reader_trace": "请求未出现是覆盖，已请求未完成是时机，已完成仍卡另查",
+      "action": "保留已有缓存层次、收集/计时分离与归零边界",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "7c41386004deafe12f5cf64e9c28850f522eab765959a61c6bafc6a62870babc",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/VFX性能.md",
+      "full_text_read": true,
+      "chapter_basis": "模拟1+像素4，半尺寸理想像素1，总2再加上采样",
+      "reader_trace": "模拟1+像素4，半尺寸理想像素1，总2再加上采样",
+      "action": "保留已有局部成本与整帧预算算例",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "9ad2e79ed3a18fda7971f67b53a7815337df960a2171e1efe45542defea1a756",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/帧捕获与性能分析工具.md",
+      "full_text_read": true,
+      "chapter_basis": "先找首异常输出沿写入与输入追，计时再判断关键路径",
+      "reader_trace": "先找首异常输出沿写入与输入追，计时再判断关键路径",
+      "action": "保留工具分工、采集边界与具体假设格式",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "72925f5267ec1ef4fe03779ea5e056a97325184318c43928ae6b5b12813863e6",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/帧瓶颈诊断.md",
+      "full_text_read": true,
+      "chapter_basis": "CPU6/GPU12稳态12，60Hz呈现16.67；降低GPU到10未必升FPS",
+      "reader_trace": "CPU6/GPU12稳态12，60Hz呈现16.67；降低GPU到10未必升FPS",
+      "action": "保留已有时间重叠、等待与带宽计算",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "06f1c6007e10afba83c35d18eb3f3d05c2e6890d05758be2427b044cf3103b17",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/性能对照实验.md",
+      "full_text_read": true,
+      "chapter_basis": "ABBA窗口减热漂移，缩放实验检查路径相同",
+      "reader_trace": "ABBA窗口减热漂移，缩放实验检查路径相同",
+      "action": "保留已有实验控制与证据定义",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "ed58b80bb2af302f270805aa3956d43b4091b365d1ce1a04e86e2185770c4957",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/移动端渲染优化.md",
+      "full_text_read": true,
+      "chapter_basis": "四RGBA8附件1080p读写66.4MB，片上驻留条件决定外流量",
+      "reader_trace": "四RGBA8附件1080p读写66.4MB，片上驻留条件决定外流量",
+      "action": "重写基线/单变量/统计为连续推理，补字节预算，修VRS层级与无前文时域指代",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "0f98bd8cc143886c45472f793c0d0aacdfa7e01fa10605e4249280d0e0fa60c6",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/DCC资产交换.md",
+      "full_text_read": true,
+      "chapter_basis": "p目标=Cp源，M目标=CM源C逆；只换几何导致动画错轴",
+      "reader_trace": "p目标=Cp源，M目标=CM源C逆；只换几何导致动画错轴",
+      "action": "补坐标/层级共轭与单位方向区别",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "c48eb21aa7659df5bf773f7cce2babe9d8918c9c4c7abb5bfe9e4675e51c6225",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/WFC.md",
+      "full_text_read": true,
+      "chapter_basis": "左{A,B}允许右{X}/{Y}，右{X,Y,Z}缩{X,Y}，确定A再缩X",
+      "reader_trace": "左{A,B}允许右{X}/{Y}，右{X,Y,Z}缩{X,Y}，确定A再缩X",
+      "action": "补并集而非交集的错误定位与传播链",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "94728e3e29e69ac9c3325f926c45ea5f32ff88233fd8d722c674c169ac9bbb9a",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/大型资产版本控制.md",
+      "full_text_read": true,
+      "chapter_basis": "指针sha256/size与工作区真实内容一致才能构建",
+      "reader_trace": "指针sha256/size与工作区真实内容一致才能构建",
+      "action": "保留已有两层存储、锁/分支/恢复边界",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "00e9de9ddcec6c11ccabf0539cf7dfb153fdd8bcc33bc36d5260d31873b97af2",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/程序化资产生成.md",
+      "full_text_read": true,
+      "chapter_basis": "A/B/C独立随机流，剔B不改变C，覆盖按ID重应用",
+      "reader_trace": "A/B/C独立随机流，剔B不改变C，覆盖按ID重应用",
+      "action": "补共享流错误与稳定候选作用",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "ceae172ad8e769090078d7aa3a1fae972dbf2ecf467511364c8c54ba55991759",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "full_text_read": true,
+      "chapter_basis": "A→临时/B→A/临时→B失败反序补偿，失败补偿继续",
+      "reader_trace": "A→临时/B→A/临时→B失败反序补偿，失败补偿继续",
+      "action": "保留已有事务代码、前置失败与恢复边界；外围清单作为接口契约",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "1f980155469638bd60b3295184bdd5e8c9af3cfbda154af4453c2c1701629baf",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/资产构建CI.md",
+      "full_text_read": true,
+      "chapter_basis": "暂存应指针，导入工作区应真资产；依赖闭包边语义分开",
+      "reader_trace": "暂存应指针，导入工作区应真资产；依赖闭包边语义分开",
+      "action": "保留已有实际Bash与五项Git检查、完整指针边界",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "KEEP"
+      ],
+      "content_sha256": "8862c4ae34d149162ec72ff38d6cdc59d9b39072fa165a3e5391c32717a6cc35",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/资产构建与发布.md",
+      "full_text_read": true,
+      "chapter_basis": "T变影响压缩与包，M若只存ID不必重编译；12→14后旧13拒绝",
+      "reader_trace": "T变影响压缩与包，M若只存ID不必重编译；12→14后旧13拒绝",
+      "action": "补依赖边语义示例，保留已有CAS发布完整机制",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE"
+      ],
+      "content_sha256": "391da4dc83d226eb6a01566d7ddc3f875a692c07bc0b29096ff85c7ffdba09af",
+      "verification": "新增算例为正文定义模型的独立代数推演；既有14项参考检查本轮执行通过；具体未运行GPU/引擎边界保留"
+    }
+  ],
+  "article_count": 56,
+  "limitations": "这是作者全文复读记录，需独立读者复核，不宣称全部页面技术深度绝对等同；引擎与GPU未实测项保持状态"
+}

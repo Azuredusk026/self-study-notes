@@ -15,6 +15,27 @@
 
 第二步是关键。有了透射加权的前缀结果，着色时只需按像素深度采样一次三维纹理就能拿到总散射量，复杂度 $O(1)$，不必沿视线逐步进行光线步进。
 
+### 透射加权的前缀合成
+
+每段保存局部散射 `segmentRadiance` 与段透射 `segmentT`。输入为沿同一视线排列的切片，输出累计散射和透射。两者可以写入同一个 RGBA 资源。
+
+```hlsl
+float3 accumulatedRadiance = 0.0;
+float accumulatedT = 1.0;
+for (uint slice = 0; slice < sliceCount; ++slice)
+{
+    float4 segment = LoadSegment(uint3(pixel, slice));
+    accumulatedRadiance += accumulatedT * segment.rgb;
+    accumulatedT *= segment.a;
+    StorePrefix(uint3(pixel, slice),
+        float4(accumulatedRadiance, accumulatedT));
+}
+```
+
+设第一段为`(L=2,T=0.5)`，第二段为`(L=4,T=0.25)`，前缀得到`(4,0.125)`。背景颜色8经这两段后是`4+0.125*8=5`；直接把散射相加会误得7。交换顺序则得到`(4.5,0.125)`，说明并行扫描可以重新分组，却必须保持由近到远的顺序。
+
+切片长度需要参与局部段积分。合成不透明表面时使用 `radiance + transmittance * surfaceColor`。并行前缀算法可利用段合成的结合律，但线程局部的多切片循环还需处理分段前缀，不能只拼接各线程的局部累积。
+
 ### 沿深度复用
 
 一个线程可以负责同一 XY 列中的一段连续深度切片。第 z 组的范围为 `[z*slicesPerThread, min((z+1)*slicesPerThread, depthCount))`，派发边缘先检查 XY 索引。已知前一格的远端射线距离，即可复用为后一格的近端距离，再由两者之差计算本段长度。
@@ -50,25 +71,6 @@ if (all(reprojUVW >= 0.0) && all(reprojUVW <= 1.0))
 是否划算取决于三维纹理的带宽成本与并行度损失的相对大小，需要在目标平台实测。这类“多趟换并行度”的权衡在 Compute 管线中很常见。
 
 对两段 `(L1,T1)`、`(L2,T2)`，按近到远合成为 `(L1+T1*L2,T1*T2)`。交换两段会改变颜色贡献，结合三段却与分组方式无关，因此可以做保序并行扫描。示例中局部散射保存的是本段已经积分的辐亮度；若存的是每米源项，必须先乘相应积分因子，不能直接进入前缀合成。
-
-## 透射加权的前缀合成
-
-每段保存局部散射 `segmentRadiance` 与段透射 `segmentT`。输入为沿同一视线排列的切片，输出累计散射和透射。两者可以写入同一个 RGBA 资源。
-
-```hlsl
-float3 accumulatedRadiance = 0.0;
-float accumulatedT = 1.0;
-for (uint slice = 0; slice < sliceCount; ++slice)
-{
-    float4 segment = LoadSegment(uint3(pixel, slice));
-    accumulatedRadiance += accumulatedT * segment.rgb;
-    accumulatedT *= segment.a;
-    StorePrefix(uint3(pixel, slice),
-        float4(accumulatedRadiance, accumulatedT));
-}
-```
-
-切片长度需要参与局部段积分。合成不透明表面时使用 `radiance + transmittance * surfaceColor`。并行前缀算法可利用段合成的结合律，但线程局部的多切片循环还需处理分段前缀，不能只拼接各线程的局部累积。
 
 ## 验证方法
 

@@ -616,7 +616,7 @@
       "source": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
       "heading": "位掩码表达集合",
       "target": "知识库/13_渲染架构/Tiled与Clustered光源剔除.md",
-      "current_heading": "灯光集合的位掩码",
+      "current_heading": "灯光集合的位掩码实现",
       "decision": "独立主归属或明确合并",
       "reason": "调度模型、并行集合算法与回读状态机分别维护；多级深度生成归入深度可见性优化，灯光位掩码归入簇光照。",
       "source_hash": "0f312a52212d90c96561e38dfaa6f2ca1c9c72c41518fb14972f237f05ff3850"
@@ -1732,7 +1732,7 @@
       "source": "知识库/09_动画系统/动画状态、混合与IK.md",
       "heading": "Crossfade 的局部姿态混合",
       "target": "知识库/09_动画系统/动画姿态混合.md",
-      "current_heading": "交叉淡入淡出的局部姿态混合",
+      "current_heading": "局部姿态求值",
       "decision": "独立主归属或明确合并",
       "reason": "姿态合成、末端反求与跨骨架映射是独立输入和求解。",
       "source_hash": "f528b5ea543cd6826f0101f5b136d568f520246784f815f01236736f4dc0756e"
@@ -1840,7 +1840,7 @@
       "source": "知识库/10_VFX与模拟/大气散射、天空与体积云.md",
       "heading": "消光、透射与入射散射",
       "target": "知识库/10_VFX与模拟/大气散射.md",
-      "current_heading": "消光、透射与入射散射",
+      "current_heading": "单次散射积分",
       "decision": "独立主归属或明确合并",
       "reason": "行星尺度LUT与局部云密度步进有不同输入和更新条件。",
       "source_hash": "d4c914fa9a5363a944772c76067e64eb1aa7a115f9f422db80669edbac7a66ab"
@@ -1849,10 +1849,13 @@
       "source": "知识库/10_VFX与模拟/大气散射、天空与体积云.md",
       "heading": "实时大气",
       "target": "知识库/10_VFX与模拟/大气散射.md",
-      "current_heading": "实时大气",
+      "current_heading": "散射缓存与运行合成",
       "decision": "独立主归属或明确合并",
       "reason": "行星尺度LUT与局部云密度步进有不同输入和更新条件。",
-      "source_hash": "2643151da048ab0830cec215bc7dc4e59ef9ce1ec29ad95d8112e2b1133d27c0"
+      "source_hash": "2643151da048ab0830cec215bc7dc4e59ef9ce1ec29ad95d8112e2b1133d27c0",
+      "additional_current_headings": [
+        "透射查找表"
+      ]
     },
     {
       "source": "知识库/10_VFX与模拟/大气散射、天空与体积云.md",
@@ -2209,7 +2212,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "带拒绝条件的时域积累",
       "target": "知识库/12_光线追踪/光追降噪.md",
-      "current_heading": "带拒绝条件的时域积累",
+      "current_heading": "时域积累的读取与拒绝",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "f6fd4e62cff97553e7535b7953aae9da01ca78c9e20d06c0ae9a1eb4dd1b8be7"

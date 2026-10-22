@@ -35,6 +35,29 @@ $$
 - 超大灯会进入很多 Cluster；
 - 列表溢出必须有明确行为。
 
+### 灯光集合的位掩码实现
+
+当集合元素数量不超过 32 时，一个 `uint` 就能表达任意子集，交集是一条与指令，遍历用 `firstbitlow` 逐位取出。
+
+这在光照剔除中很典型：把屏幕切成 Tile、视锥深度切成 Bin，分别预计算各自影响的灯光集合，着色时两个掩码求交即可：
+
+```hlsl
+RWTexture2D<uint> _XYLightMaskMap; // 资源格式为 R32_UINT
+
+// 下列主体位于每个 Tile 对应的计算着色器调用中。
+uint tileLightMask = 0u;
+for (uint j = 0; j < lightCount; ++j)
+{
+    if (ConservativeSphereFrustumTest(tileFrustum, lights[j]))
+        tileLightMask |= (1u << j);
+}
+_XYLightMaskMap[globalId.xy] = tileLightMask;
+```
+
+一个 Tile 的灯光列表被压成四字节。超过 32 盏灯时用多个 `uint` 扩展，求交仍是几条指令。
+
+这类 Kernel 常有共享计算的机会：$4\times4$ 个 Tile 需要 $5\times5$ 个角点，若工作组有 16 个线程，可让线程 i 依次处理索引 `i, i+16` 中小于 25 的角点，再执行工作组内存同步屏障。25 个角点全部就绪后，每个线程读取自己 Tile 的四角，避免相邻 Tile 重复计算。
+
 ## 簇索引与列表构建
 
 透视相机可以用对数深度切片，输入是正的线性视空间距离和相机 near/far。均匀屏幕分块决定 XY，深度切片决定 Z，三者组成列表索引。
@@ -57,6 +80,8 @@ uint ClusterIndex(uint2 pixel, float viewDistance)
 
 前提是 `nearPlane > 0`、`farPlane > nearPlane`、分块和切片数量非零。构建端与读取端使用相同的索引规则。灯光与簇相交测试要保守，列表溢出要有显式回退。只有不透明深度范围的分块列表可能漏掉透明表面的灯，需要单独处理其范围。
 
+例如三个簇的候选数为[2,0,3]，独占前缀和得到起点[0,2,2]，总索引数为5。第三簇写区间[2,5)，第二簇为空，不占位置。若第三簇计数后场景又新增灯，填充端写4项就越过预分配范围；计数和填充必须使用同一冻结光源快照，或重新分配。
+
 两阶段列表构建可以先计数，再做前缀和分配区间，最后写灯索引。固定上限方案更简单，但灯光集中时容易溢出。算法选择应记录最大列表长度、构建时间和内存峰值。
 
 球形点光源的保守测试可以逐平面执行。平面法线指向簇内部且已归一化，球心 c 的有符号距离为 `dot(n,c)+d`；任一平面的距离小于 `-radius` 就可拒绝，全部通过则保留候选。通过只表示未被平面排除，允许边角假阳性。聚光灯可以先用保守包围球，再做可选锥体测试。
@@ -69,29 +94,6 @@ uint ClusterIndex(uint2 pixel, float viewDistance)
 - 测试近远平面和对数切片边界，排除漏灯。
 - 记录列表构建、原子竞争、溢出回退和最终着色时间。
 
-
-## 灯光集合的位掩码
-
-当集合元素数量不超过 32 时，一个 `uint` 就能表达任意子集，交集是一条与指令，遍历用 `firstbitlow` 逐位取出。
-
-这在光照剔除中很典型：把屏幕切成 Tile、视锥深度切成 Bin，分别预计算各自影响的灯光集合，着色时两个掩码求交即可：
-
-```hlsl
-RWTexture2D<uint> _XYLightMaskMap; // 资源格式为 R32_UINT
-
-// 下列主体位于每个 Tile 对应的计算着色器调用中。
-uint tileLightMask = 0u;
-for (uint j = 0; j < lightCount; ++j)
-{
-    if (ConservativeSphereFrustumTest(tileFrustum, lights[j]))
-        tileLightMask |= (1u << j);
-}
-_XYLightMaskMap[globalId.xy] = tileLightMask;
-```
-
-一个 Tile 的灯光列表被压成四字节。超过 32 盏灯时用多个 `uint` 扩展，求交仍是几条指令。
-
-这类 Kernel 常有共享计算的机会：$4\times4$ 个 Tile 需要 $5\times5$ 个角点，若工作组有 16 个线程，可让线程 i 依次处理索引 `i, i+16` 中小于 25 的角点，再执行工作组内存同步屏障。25 个角点全部就绪后，每个线程读取自己 Tile 的四角，避免相邻 Tile 重复计算。
 
 ## 相关主题
 

@@ -60,7 +60,24 @@ Ramp 用明暗坐标采样一维或二维 LUT。与写死 `step` 相比，它能
 - 阶梯边界需要 Point/Linear 与抗锯齿策略配合；
 - 压缩会在硬边产生色块和泄漏。
 
+### Ramp 分层采样
+
+输入法线和光方向处于同一空间。`halfLambert` 把 $N\cdot L$ 映射到 $[0,1]$，材质行选择一条 Ramp：
+
+```hlsl
+float ndotl = dot(normalize(normalWS), normalize(lightDirWS));
+float halfLambert = ndotl * 0.5 + 0.5;
+float2 rampUv = float2(saturate(halfLambert), materialRowUv);
+float3 ramp = LightRamp.SampleLevel(PointClamp, rampUv, 0).rgb;
+float3 shadow = lerp(shadowTint, float3(1.0, 1.0, 1.0), visibility);
+float3 litColor = baseColor * ramp * shadow;
+```
+
+点采样适合保留硬分层，线性采样适合平滑过渡；两者都要关闭不期望的 Mip 混合或准备专用 Ramp Mip。把场景阴影直接乘黑会丢掉阴影层的艺术控制，示例用 `shadowTint` 保留色相。验证时分别显示 `halfLambert`、Ramp 和可见性，避免把法线、Ramp 与阴影贴图问题混在一起。
+
 ### 分层颜色
+
+设两个明暗边界分别为a、b，且a<b。先计算`u=smoothstep(a-wa,a+wa,x)`、`v=smoothstep(b-wb,b+wb,x)`，并选择宽度使整个区间内u>=v。二级阴影权重是`1-u`，一级阴影为`u-v`，亮部为v，三者均非负且和为一。若两个阈值顺序或软带宽度使u<v，中间层会出现负权重，结果可能越出色板范围。
 
 一种常见结构是把基础色拆为亮部、一级阴影和二级阴影：
 
@@ -141,7 +158,7 @@ MatCap 用观察空间法线映射二维材质球，适合提供固定高光、�
 
 ### 参数归属
 
-这是工程设计上一个容易被忽略却影响深远的决策：一个风格化参数，应该存在 GBuffer 里（属于物体），还是存在光源上（属于光照）？
+同一个物体受到两盏灯照射时，过渡宽度由存储位置决定控制粒度。保存到GBuffer的宽度随像素材质变化，保存在光源的数据则随灯变化。
 
 以明暗过渡的软硬度为例：
 
@@ -166,11 +183,11 @@ float toonNoL = smoothness > 0.0
 
 对光照做硬二值化时，明暗交界线常出现锯齿状的不规则边缘。原因有两层：
 
-其一，模型本质是多边形，法线在三角形内插值，有限面数无法表现连续曲面，阈值恰好落在插值区间时边界就会沿着三角形边呈锯齿状。
+其一，插值法线在三角形内部平滑变化，相邻三角形的变化率却未必连续。硬阈值提取等值线以后，边界在三角形连接处可能改变曲率；像素覆盖不足又会增加屏幕锯齿。这两份误差分别来自几何/法线近似与光栅采样，需要分开检查。
 
 其二，更根本的是——画师绘制光照时按画面好看来画，很多理想的明暗分布与三维结构本就不对应。这不是精度问题，无法靠提高面数解决。
 
-主流应对是修改法线：调整法线朝向、用简模法线替换高模法线，让明暗边界服从美术意图而非几何结构。这是资产侧的工作，引擎传入 GBuffer 的法线不需改动。
+一种资产侧处理是修改法线：调整法线朝向、用简模法线替换高模法线，让明暗边界服从美术意图而非几何结构。编辑后的法线需经导入、变换并写入实际着色输入；延迟路径的GBuffer必须保存着色器真正要使用的方向。
 
 引擎侧也可以提供运行时的法线调整手段，代价是可控性不如离线编辑，且难以处理复杂造型。两者通常并存：主要角色走离线法线编辑，次要角色用运行时近似。
 
@@ -202,21 +219,6 @@ float toonNoL = smoothness > 0.0
 - 在不同 FOV、距离、HDR 曝光和色调映射下比较色块。
 - 检查主光切换、多光源重叠、光照探针和实时阴影组合。
 - 用灰球、标准角色和场景资产共享一套 Profile 做风格回归。
-
-### Ramp 分层采样
-
-输入法线和光方向处于同一空间。`halfLambert` 把 $N\cdot L$ 映射到 $[0,1]$，材质行选择一条 Ramp：
-
-```hlsl
-float ndotl = dot(normalize(normalWS), normalize(lightDirWS));
-float halfLambert = ndotl * 0.5 + 0.5;
-float2 rampUv = float2(saturate(halfLambert), materialRowUv);
-float3 ramp = LightRamp.SampleLevel(PointClamp, rampUv, 0).rgb;
-float3 shadow = lerp(shadowTint, float3(1.0, 1.0, 1.0), visibility);
-float3 litColor = baseColor * ramp * shadow;
-```
-
-点采样适合保留硬分层，线性采样适合平滑过渡；两者都要关闭不期望的 Mip 混合或准备专用 Ramp Mip。把场景阴影直接乘黑会丢掉阴影层的艺术控制，示例用 `shadowTint` 保留色相。验证时分别显示 `halfLambert`、Ramp 和可见性，避免把法线、Ramp 与阴影贴图问题混在一起。
 
 2026-10-22 执行 [编译检查](../examples/revision_09_15/verify.py)，DXC 将明暗坐标和平面 Ramp 采样两个片段编译为 `ps_6_0`，结果通过。该结果只验证带最小输入声明的 HLSL 片段，完整材质、资产绑定、引擎运行与 GPU 性能仍未验证。
 
