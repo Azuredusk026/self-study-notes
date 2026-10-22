@@ -2185,7 +2185,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "ReSTIR 的可见性问题",
       "target": "知识库/12_光线追踪/ReSTIR.md",
-      "current_heading": "时域与空间候选",
+      "current_heading": "一帧的时空复用",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "bd2539027781509c7141780a25e956306b4c8ee3255d1845be6595132c4af898"
@@ -3205,7 +3205,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "视频怎样追踪同一份内容",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "跨帧内容对应",
+      "current_heading": "历史位置与可见性",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "3aac6b4368cfe1bf904ad357e15624cf5e4a76406749104dedd59f20c0ff1cca"
@@ -3214,7 +3214,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "时序一致性为什么难",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "逐帧差异",
+      "current_heading": "历史位置与可见性",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "8182c5ffb9de2b56179485ee06d417b8051a8e537044ffcca5624b6fba8f5d7b"
@@ -3223,7 +3223,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "约束分层",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "约束分层",
+      "current_heading": "法线与当前结构",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "9ad1668653d62177e8318e8874512e7dcc3d005a5936db9c74b6a36f76411084"
@@ -3232,7 +3232,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "Optical Flow Warp",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "光流重投影",
+      "current_heading": "当前像素查询历史",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "e6ca88039b9fefc3e7cdd1786888416d59605dcb91b9c51629a1bc0376ec9559"
@@ -3241,7 +3241,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "Latent 与噪声一致性",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "潜变量与噪声一致性",
+      "current_heading": "潜变量坐标与生成",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "c2b765b8ed9f58a8e5116e24e0b790bd684184cfab1fe2e11cc885da66527db5"
@@ -3250,7 +3250,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "Keyframe 与传播",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "关键帧与传播",
+      "current_heading": "关键帧与传播冲突",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "9b1b15af1fcb796fc30451a861a721448fcb23d216845f23c9c3637603330ed2"
@@ -3259,7 +3259,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "技术通道怎样保持一致",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "技术通道的一致性",
+      "current_heading": "法线与当前结构",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "dd0e8d7a6074397a64d2c1353102868036d092cd56a5342ed28bbc87f5c6a007"
@@ -3268,7 +3268,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "时序法线生成",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "时序法线生成",
+      "current_heading": "法线与当前结构",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "a5dbe0eb42232caa8a5ccecbf0a1d0854251b61c308962dac0046e988a60a67b"
@@ -3277,7 +3277,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "Normal Temporal Filter",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "法线时间过滤",
+      "current_heading": "法线与当前结构",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "bb6bd2d919ac49e0f95e938262aa602ebf45b8563bc64aa832527b256197f107"
@@ -3286,7 +3286,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "多通道一致性",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "多通道一致性",
+      "current_heading": "法线与当前结构",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "67b022a5fa5a1aea820502aa538ecb0bc5fd2393bbad27bc86072e0bd426edb2"
@@ -3295,7 +3295,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "曝光与颜色稳定",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "曝光与颜色稳定",
+      "current_heading": "颜色与验收",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "f7fdfa0fc82e593c023e5c3e912dd74d11589b7bd3dd764ad45c8e67243ae1aa"
@@ -3304,7 +3304,7 @@
       "source": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
       "heading": "时序质量指标",
       "target": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "current_heading": "时序质量指标",
+      "current_heading": "颜色与验收",
       "decision": "独立主归属或明确合并",
       "reason": "节点运行资产与跨帧内容对应关系是不同主问题。",
       "source_hash": "c7ba76075742c047fd43828f8cbf92e39b75ddcabc7ac21d6d3ff9aac49f0642"
@@ -3556,7 +3556,7 @@
       "source": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
       "heading": "破坏",
       "target": "知识库/18_游戏物理与模拟/破坏系统.md",
-      "current_heading": "预切分与连接图",
+      "current_heading": "碎块资产与连接",
       "decision": "独立主归属或明确合并",
       "reason": "扫掠角色、骨架刚体切换、柔软约束、断裂连接与轮胎动力学有独立求解和验证。",
       "source_hash": "2b0d7948b6abbc7bef8eb059e5df705d72f09b36f8c896c4f5abc8c7d5ebcd3a"
@@ -3610,7 +3610,7 @@
       "source": "知识库/20_游戏AI/群体、学习与高级决策.md",
       "heading": "MCTS",
       "target": "知识库/20_游戏AI/MCTS.md",
-      "current_heading": "树搜索与探索",
+      "current_heading": "完整迭代与回传",
       "decision": "独立主归属或明确合并",
       "reason": "群体空间信息、树搜索与策略训练采用不同状态和评估方式。",
       "source_hash": "7190a308fbe469477e4f9731903e81fc11e83f7ae68a63376e78e7dbc1a0f4e7"
@@ -3655,7 +3655,7 @@
       "source": "知识库/20_游戏AI/群体、学习与高级决策.md",
       "heading": "MCTS 的 UCT 选择",
       "target": "知识库/20_游戏AI/MCTS.md",
-      "current_heading": "MCTS 的 UCT 选择",
+      "current_heading": "UCT选择",
       "decision": "独立主归属或明确合并",
       "reason": "群体空间信息、树搜索与策略训练采用不同状态和评估方式。",
       "source_hash": "49d4925def9490721867a8892b09aa3d5ae668c325085d08d03d288080f530bf"

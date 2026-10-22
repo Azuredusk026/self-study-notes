@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-23",
+  "baseline": "描边：问题推进及逐机制推演，非单段深入",
+  "articles": [
+    {
+      "path": "知识库/20_游戏AI/MCTS.md",
+      "full_text_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "KEEP",
+      "content_sha256": "9c341a9aeb9fedcf75a076afcf52306ccfa6fb001e58feee04cff40dd0c44070",
+      "mechanism_reviews": [
+        {
+          "section": "状态与动作",
+          "independent_derivation": "4颗根玩家拿1，生成(3,-1)；终局收益为下一行动者负号",
+          "counterexample": "修改状态未撤销会污染后续试局"
+        },
+        {
+          "section": "扩展与模拟",
+          "independent_derivation": "首两轮路径1与2的终局+1/-1逐个写回根和子节点",
+          "counterexample": "随机模拟不等于最优对弈"
+        },
+        {
+          "section": "UCT选择",
+          "independent_derivation": "N=2、子访问各1计算得探索1.177，根偏动作1；对手取负利用项",
+          "counterexample": "混用逐层翻转会二次翻号"
+        },
+        {
+          "section": "完整迭代与回传",
+          "independent_derivation": "代码完整合法动作/新状态/扩展/选择/模拟/回传；访问守恒",
+          "counterexample": "终局无扩展，深度估值须同量纲"
+        },
+        {
+          "section": "最终决策与预算",
+          "independent_derivation": "116/4访问选择动作1，分离探索分数与行动规则",
+          "counterexample": "时间预算不保证固定种子复放；机会/暗牌改变模型"
+        }
+      ],
+      "evidence_limits": [
+        "微型完全信息游戏实际运行",
+        "大型棋盘、暗牌、实时预算曲线未运行"
+      ],
+      "writing_review": "沿单一具体对象连续推进，删除重复提纲；每个主机制有输入、中间状态、输出及反例。"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+      "full_text_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "KEEP",
+      "content_sha256": "f3a40f0a556038f556f6b474509542dc6b76bbc22d99c466e8726060da62d7c0",
+      "mechanism_reviews": [
+        {
+          "section": "历史位置与可见性",
+          "independent_derivation": "100加反向流-8查询92；2米预期历史遇1米柱子拒绝；5类分支展开",
+          "counterexample": "ID离散，插值足迹跨对象拒绝"
+        },
+        {
+          "section": "法线与当前结构",
+          "independent_derivation": "Rt Ot Oprev逆 Rprev逆按顺序输送；数值混合和零长度回退",
+          "counterexample": "刚体公式不适用缺失蒙皮形变"
+        },
+        {
+          "section": "潜变量坐标与生成",
+          "independent_derivation": "像素中心变换推导lh=l+B/8；20-8/8=19；初始化遮罩和加噪上下文",
+          "counterexample": "潜变量平移近似、调度器噪声需模型定义；未跑扩散"
+        },
+        {
+          "section": "关键帧与传播冲突",
+          "independent_derivation": "第4帧时间/置信度权重.75/.25得到12.5；轮廓冲突选高权重一侧",
+          "counterexample": "都无效重新生成；灯光变化可误触发冲突"
+        },
+        {
+          "section": "颜色与验收",
+          "independent_derivation": "稳定有效区统计排除真实闪光，四种场景以及误差/拒绝联合观察",
+          "counterexample": "视频与指标未执行，仅局部CPU计算"
+        }
+      ],
+      "evidence_limits": [
+        "CPU局部计算实际运行",
+        "视频生成、光流估计、模型接口与时序质量未运行"
+      ],
+      "writing_review": "沿单一具体对象连续推进，删除重复提纲；每个主机制有输入、中间状态、输出及反例。"
+    }
+  ],
+  "test_first": {
+    "mcts": "两项先因search缺失断言失败，随后实现完整搜索并通过",
+    "video": "两项先因valid/latent_query缺失断言失败，随后实现局部公式并通过"
+  },
+  "tests": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/retained_review/mcts/test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.002s\r\n\r\nOK\r\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/retained_review/video/test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.000s\r\n\r\nOK\r\n"
+    }
+  ],
+  "sources_read": [
+    {
+      "url": "https://repository.essex.ac.uk/4117/",
+      "scope": "摘要与书目；本页微型游戏为独立实现"
+    },
+    {
+      "url": "https://arxiv.org/abs/2307.10373v3",
+      "scope": "摘要，扩散特征对应传播"
+    },
+    {
+      "url": "https://arxiv.org/abs/2306.07954v2",
+      "scope": "摘要，关键帧重绘/时域传播/混合"
+    }
+  ]
+}

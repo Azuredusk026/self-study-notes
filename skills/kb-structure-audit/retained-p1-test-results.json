@@ -1,0 +1,52 @@
+[
+  {
+    "command": [
+      "python",
+      "-B",
+      "知识库\\examples\\retained_review\\destruction\\test_reference.py"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.000s\n\nOK\n"
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "知识库\\examples\\retained_review\\mcts\\test_reference.py"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.002s\n\nOK\n"
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "知识库\\examples\\retained_review\\video\\test_reference.py"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "知识库\\examples\\retained_review\\restir\\check.py"
+    ],
+    "returncode": 0,
+    "stdout": "PASS: ReSTIR计数、归一化、空间合并和支持反例，9项断言\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "知识库\\examples\\retained_review\\pom\\check.py"
+    ],
+    "returncode": 0,
+    "stdout": "PASS: POM交点、插值、自阴影和漏检反例，9项断言\n",
+    "stderr": ""
+  }
+]

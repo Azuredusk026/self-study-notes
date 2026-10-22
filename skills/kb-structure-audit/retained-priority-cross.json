@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-23",
+  "independent_full_text_review": true,
+  "articles": [
+    {
+      "path": "知识库/18_游戏物理与模拟/破坏系统.md",
+      "full_text_read": true,
+      "mechanism_counterchecks": [
+        "径向权重1/.5分配6得4/2，两次事件得2/0；弱边过量损伤明确耗散",
+        "0—1—2切1—2分离2；新增0—2反例仍支撑",
+        "质量4、质心1.5、Izz=11/3；角速度2令新Y速度4",
+        "安全点表示替换和权威重复事件拒绝可手工推演，尚无引擎实证"
+      ],
+      "fix": "修正子形状世界偏移漏乘簇逆旋转，增加90度反例",
+      "sha256": "38853bbc4ec5eec0bda1794b9530d34e413b89571f68de74d1b5c3de8c7179fb",
+      "acceptance": "正文教学模型可逐步推演，目标工程未运行范围保持明确"
+    },
+    {
+      "path": "知识库/12_光线追踪/ReSTIR.md",
+      "full_text_read": true,
+      "mechanism_counterchecks": [
+        "RIS条件期望逐项抵消target与权重",
+        "两点合并8/2概率与2.5/25贡献期望7",
+        "当前16历史40合并56，M42，选b乘数4/3；空间72/44归一化9/22",
+        "支持域缺b使期望1.5；共同正支持保守回退",
+        "A/B/C只读写分离避免顺序污染；当前可见性防历史漏光"
+      ],
+      "fix": "将随机数0.8错误替换示例改为0.6并加入.8不能替换的反证检查",
+      "sha256": "633e18ed50071e7d3e40deff15b93494b1809fcbd2978322696136e5d3b1ffd2",
+      "acceptance": "正文教学模型可逐步推演，目标工程未运行范围保持明确"
+    },
+    {
+      "path": "知识库/06_纹理技术/视差映射.md",
+      "full_text_read": true,
+      "mechanism_counterchecks": [
+        "D(u)=u真实t=.5/u=.5而单次u=.48",
+        "残差.1/-.15得到插值.4；恒深.3得u=.54",
+        "自阴影.4>.31遮挡；薄峰在.29—.31被.2/.4步漏检",
+        "梯度源于一致控制流，明确近似足迹与越界策略"
+      ],
+      "fix": "补POM同时返回tHit；正视rayUV=0时不能从UV反求深度",
+      "sha256": "a8bae976d3ef68961f1bbfeb6d4067a7a8b1057e404697420d9f8bff0778d9a9",
+      "acceptance": "正文教学模型可逐步推演，目标工程未运行范围保持明确"
+    }
+  ],
+  "tests": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/retained_review/destruction/test_reference.py"
+      ],
+      "returncode": 0,
+      "output": "......\r\n----------------------------------------------------------------------\r\nRan 6 tests in 0.000s\r\n\r\nOK\r\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/retained_review/restir/check.py"
+      ],
+      "returncode": 0,
+      "output": "PASS: ReSTIR��������һ�����ռ�ϲ���֧�ַ�����9�����\r\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/retained_review/pom/check.py"
+      ],
+      "returncode": 0,
+      "output": "PASS: POM���㡢��ֵ������Ӱ��©�췴����9�����\r\n"
+    }
+  ],
+  "unverified": [
+    "完整三维惯性/物理事务/网络重放/预算代理未接引擎",
+    "ReSTIR完整无偏时空变体与GPU图像未运行",
+    "POM纹理采样画面和性能未运行"
+  ]
+}

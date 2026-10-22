@@ -1,0 +1,170 @@
+{
+  "date": "2026-10-23",
+  "benchmark": "描边：因果推进、输入中间结果输出连续，逐机制失效反推",
+  "articles": [
+    {
+      "path": "知识库/12_光线追踪/ReSTIR.md",
+      "full_text_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "title_review": "PASS",
+      "content_sha256": "c4c9208da1749518517060e11885eccb9735874526cb64d7916069d5b9eef486",
+      "mechanisms": [
+        {
+          "mechanism": "单像素RIS",
+          "input": "二点贡献2和5、目标4和1",
+          "intermediate": "权重8和2，选择概率0.8和0.2",
+          "output": "加权期望7",
+          "counterexample": "直接输出代表颜色会偏亮"
+        },
+        {
+          "mechanism": "池合并",
+          "input": "源W、M和代表",
+          "intermediate": "目标像素重算目标，再计算目标·W·M",
+          "output": "S/[总M·选中目标]",
+          "counterexample": "沿用源目标导致选择分布错误"
+        },
+        {
+          "mechanism": "时域对应",
+          "input": "当前表面、运动、历史池与光源版本",
+          "intermediate": "逐项拒绝后重建光源点",
+          "output": "接受历史或退回A",
+          "counterexample": "索引仍有效却指向另一盏灯"
+        },
+        {
+          "mechanism": "历史截断",
+          "input": "K=2、历史M=100",
+          "intermediate": "m=40；W保持，流式S按0.4缩放",
+          "output": "B.W=4/3",
+          "counterexample": "只改M不改流式S将放大2.5倍"
+        },
+        {
+          "mechanism": "空间缓冲",
+          "input": "冻结B以及邻居M2、W2、目标4",
+          "intermediate": "权重56+16，总M44",
+          "output": "选a时W=9/22，写C",
+          "counterexample": "原地读写把自身候选间接合回并依赖执行顺序"
+        },
+        {
+          "mechanism": "可见性",
+          "input": "当前代表及移动墙",
+          "intermediate": "在当前帧重新发阴影射线",
+          "output": "墙后直射为0",
+          "counterexample": "沿用历史可见1会漏阴影"
+        },
+        {
+          "mechanism": "支持域",
+          "input": "当前覆盖a/b，历史只a",
+          "intermediate": "两估计等权合并",
+          "output": "期望1.5而正确积分2",
+          "counterexample": "支持版本不明即回退当前池；此文不实现完整支持修正"
+        }
+      ],
+      "writing_review": "沿主要计算关系复读，核心数例与实际步骤相邻，未以单个测试代替全文判断",
+      "unverified": [
+        "目标引擎运行",
+        "GPU图像与捕获",
+        "性能"
+      ]
+    },
+    {
+      "path": "知识库/06_纹理技术/视差映射.md",
+      "full_text_read": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "title_review": "PASS",
+      "content_sha256": "c54d31dab3415aead1594597674da08724ab28668fa4ef6d0373ce7a84912165",
+      "mechanisms": [
+        {
+          "mechanism": "参数化",
+          "input": "TBN、正Vz、物理H和UV米尺度",
+          "intermediate": "计算两轴H/L与射线偏移",
+          "output": "向内深度与UV方向一致",
+          "counterexample": "白黑反转或单位混用产生凹凸翻转"
+        },
+        {
+          "mechanism": "单次采样",
+          "input": "D(u)=u，u0=.6，ray=.2",
+          "intermediate": "起点采样深度.6",
+          "output": "错误u=.48；真实t=.5/u=.5",
+          "counterexample": "一次采样没有重新评价沿途深度"
+        },
+        {
+          "mechanism": "逐层交叉",
+          "input": "有限深度[0,1]和层数N",
+          "intermediate": "残差由正变为非正",
+          "output": "首次采样交叉区间",
+          "counterexample": "高频表面可在间隔内漏掉首交点"
+        },
+        {
+          "mechanism": "线性重建",
+          "input": "残差.1与-.15",
+          "intermediate": "解(1-w)before+w error=0",
+          "output": "w=.4",
+          "counterexample": "中点残差-.025，非线性场仍近似"
+        },
+        {
+          "mechanism": "自阴影",
+          "input": "tHit=.6，q=.2，bias=.01",
+          "intermediate": "光线深度.4与表面D比较",
+          "output": "D=.3遮挡，D=.5继续",
+          "counterexample": "薄凸起落采样间隔可漏；大bias漏浅凸起"
+        },
+        {
+          "mechanism": "导数与远景",
+          "input": "一致流原始UV梯度",
+          "intermediate": "显式梯度用于循环纹理采样",
+          "output": "稳定层级但足迹仍近似",
+          "counterexample": "平均mip消峰，掠射变形仍需渐隐"
+        },
+        {
+          "mechanism": "边界与几何",
+          "input": "独立面片或平铺材质",
+          "intermediate": "越界策略和深度/轮廓分开判断",
+          "output": "只改变局部采样位置",
+          "counterexample": "Clamp延展边缘不能当真实阻挡物"
+        }
+      ],
+      "writing_review": "沿主要计算关系复读，核心数例与实际步骤相邻，未以单个测试代替全文判断",
+      "unverified": [
+        "目标引擎运行",
+        "GPU图像与捕获",
+        "性能"
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "command": "python -B 知识库/examples/retained_review/pom/check.py",
+      "exit_code": 0,
+      "assertions": 9
+    },
+    {
+      "command": "python -B 知识库/examples/retained_review/restir/check.py",
+      "exit_code": 0,
+      "assertions": 7
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://advances.realtimerendering.com/s2006/Tatarchuk-POM.pdf",
+      "read": "第36—38页光线高度场自阴影，沿光射线检查阻挡；本页硬阴影为独立简化推导"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/NVIDIA-RTX/RTXDI-Library/main/Include/Rtxdi/DI/Reservoir.hlsli",
+      "read": "字段M、targetPdf、weightSum流式/完成语义与可见性复用代价；没有复制实现"
+    },
+    {
+      "url": "https://research.nvidia.com/labs/rtr/publication/bitterli2020spatiotemporal/",
+      "read": "原论文页面区分有偏与无偏估计；PDF工具取回失败，完整支持修正不登记本轮核读或实现"
+    }
+  ]
+}
