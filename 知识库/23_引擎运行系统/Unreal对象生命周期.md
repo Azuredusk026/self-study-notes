@@ -72,6 +72,12 @@ GC把可达性扫描分散到多帧以后，游戏逻辑可能在两段扫描之
 
 因此使用增量可达性分析时，需要按目标版本要求迁移可追踪字段并检查显式引用收集。把字段类型改完只完成了接口准备，帧预算是否满足、写屏障是否覆盖项目自定义引用，还要用实际GC压力场景确认。保持对象存活也不意味着它的任意字段可以跨线程无锁访问，数据竞争仍由线程所有权控制。
 
+## 加载完成与销毁状态
+
+软引用只保存资产定位信息。教学流程先保留TSoftObjectPtr路径，发起异步加载并保存请求句柄；回调在游戏线程检查宿主弱引用和本次请求代数。若玩家已切换选择，请求代数落后，即使资产加载成功也不安装。接受结果时写入存活宿主的UPROPERTY TObjectPtr强字段，随后按加载系统契约释放请求句柄。否则只拿到临时裸指针，后续GC仍可能回收资产。句柄保持与取消行为按所用StreamableManager接口核对，本文没有执行该异步工程片段。
+
+可达也不等于可继续执行玩法。Actor收到Destroy后先进入玩法退出流程，EndPlay用于解绑事件、停止计时器和取消异步工作，底层内存由后续生命周期处理。异步回调除弱引用有效性外，还要检查本任务仍允许在当前世界和玩法状态执行。直接delete UObject绕过引擎生命周期；在GC阶段做跨世界玩法操作也容易访问已经退出的对象。BeginDestroy等底层清理与EndPlay职责不同，具体资源释放时序应由派生类型和目标版本接口决定。
+
 ## 验证方法
 
 构造持有、释放与弱引用用例，强制GC后检查可达对象和销毁状态。UE5版本可支持增量可达性分析，标记不能写成永久单帧保证；阶段配置、TObjectPtr写屏障与引用收集按目标版本源码检查，实际运行UNVERIFIED。
@@ -85,6 +91,9 @@ GC把可达性扫描分散到多帧以后，游戏逻辑可能在两段扫描之
 - [[16_编程与数据结构/对象池]]
 
 ## 参考资料
+
+- Epic Games，[UE5.6 Actor Lifecycle](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-actor-lifecycle?application_version=5.6)：2026-10-23核读EndPlay与GC阶段职责。
+- Epic Games，[UE5.6 Asynchronous Asset Loading](https://dev.epicgames.com/documentation/en-us/unreal-engine/asynchronous-asset-loading-in-unreal-engine?application_version=5.6)：2026-10-23核读软引用与StreamableManager持有；请求代数为本文教学策略。
 
 - Epic Games，[UE5.6 Unreal Smart Pointer Library](https://dev.epicgames.com/documentation/en-us/unreal-engine/smart-pointers-in-unreal-engine?application_version=5.6)，Smart Pointer Types；2026-10-22核读。Shared/Weak与Unique的所有权差异及UObject适用边界由此核对。
 

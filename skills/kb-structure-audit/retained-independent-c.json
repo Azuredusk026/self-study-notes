@@ -1,0 +1,157 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "full_text_read": true,
+      "independent_review": "PASS_WITH_SCOPE",
+      "mechanism_counterchecks": [
+        "头文件重复定义：a/b编译各成功但强符号重复，extern单定义与inline条件区分",
+        "ABI前缀：短size拒绝、长size只读前缀；输出参数自身为空时不可先写",
+        "资源转移：临时构造失败保原值，交换不抛才有强保证",
+        "卸载反证：注销后的在途回调仍能执行模块代码，必须等待退出；实际修正顺序",
+        "布局/虚调用：标准行为与常见虚表分开，切片与虚析构边界清楚"
+      ],
+      "actual_fixes": [
+        "创建函数先把输出句柄置空，参数校验通过后再构造对象 → 创建函数先检查输出句柄指针本身非空，再把它指向的句柄槽置空，参数校验通过后才构造对象",
+        "卸载顺序是停止入口、等待调用结束、销毁存活对象、注销回调、最后卸载模块。 → 卸载先停止新入口并撤销会继续调入模块的回调注册，再等待正在执行的调用与后台任务结束，销毁存活对象，最后卸载模块。注销不能证明旧回调已结束，还要等对应执行者退出；对象销毁期间需要的模块函数仍保持加载。"
+      ],
+      "content_sha256": "b80b2a122e6946ade35b4430cd43299d636650b2b3c3b1290cc5d250bc842a06",
+      "scope": "正文推演；目标C++插件、物理引擎、真实异步IO及Agent工具链运行未验，不能凭本文复读声称运行通过"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/内存布局与分配.md",
+      "full_text_read": true,
+      "independent_review": "PASS_WITH_SCOPE",
+      "mechanism_counterchecks": [
+        "64字节例空闲16+32不能满足40，外部碎片成立",
+        "Buddy只同阶伙伴合并，栈不能释放仍活跃的下层",
+        "缓存0/256同组，2路第三热行才冲突；不误推实际CPU耗时",
+        "对齐13→16、20字节到36；MAX-(a-1)与capacity-offset检查阻止回绕",
+        "重置要求GPU/后台读者完成，CPU帧结束不足；AoS/SoA收益取决字段工作集"
+      ],
+      "actual_fixes": [],
+      "content_sha256": "08c6235597f56113fe57594e971ebdf54d8b74a750aa821cb880f197cb27ff58",
+      "scope": "正文推演；目标C++插件、物理引擎、真实异步IO及Agent工具链运行未验，不能凭本文复读声称运行通过"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/文件IO.md",
+      "full_text_read": true,
+      "independent_review": "PASS_WITH_SCOPE",
+      "mechanism_counterchecks": [
+        "短读3+2后EOF不足8，拒绝解析残字节",
+        "取消/完成双状态：系统成功不能重新安装业务已取消结果，实际补写",
+        "原子替换与持久性分开，fsync文件不自动保证目录项掉电持久",
+        "并发发布还需版本比较；网络FS/驱动取消保留未验"
+      ],
+      "actual_fixes": [
+        "if success: validate actual bytes, then decode → if success and owner still wants result: validate actual bytes, then decode",
+        "取消后立即把同一缓冲交给新请求，会让迟到完成覆盖新数据。 → 取消后立即把同一缓冲交给新请求，会让迟到完成覆盖新数据。系统返回成功也不代表业务仍需要结果：所有者取消后可以丢弃成功负载，等最终完成并确认所有消费者退出再回收。业务取消与系统完成分别记状态，才能避免取消后又把已退出场景的资产装回去。"
+      ],
+      "content_sha256": "541dab5c67214ef5d7644c5558b085803e0572ce645eb42376fab5df37bfc585",
+      "scope": "正文推演；目标C++插件、物理引擎、真实异步IO及Agent工具链运行未验，不能凭本文复读声称运行通过"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法与数据结构导读.md",
+      "full_text_read": true,
+      "independent_review": "PASS_WITH_SCOPE",
+      "mechanism_counterchecks": [
+        "职责为按负载路由，构建依赖→图搜索且环诊断，近邻→空间索引并用全量验证",
+        "没有把导读当实现教程通过；正文入口均说明正确性职责与测量范围"
+      ],
+      "actual_fixes": [],
+      "content_sha256": "85edff608e76872ff8e1ec87eca12582ddc302fec059cffe49e2b00aaf8bd2df",
+      "scope": "正文推演；目标C++插件、物理引擎、真实异步IO及Agent工具链运行未验，不能凭本文复读声称运行通过"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/进程与调度.md",
+      "full_text_read": true,
+      "independent_review": "PASS_WITH_SCOPE",
+      "mechanism_counterchecks": [
+        "系统调用可原线程返回，并不必然调度；Running/Ready/Blocked诊断差别明确",
+        "偏移32对应两基址地址，同步发布另归线程同步",
+        "累计器.055两步余.015，再.01一步余.005成立；长暂停须追帧上限",
+        "子进程等待前同步读单管可能死锁，双流持续排空、日志限存不停止读取；取消树后才复用目录"
+      ],
+      "actual_fixes": [],
+      "content_sha256": "623a9d046277a09f277fccf2095e2e62d5aa40c8efea5f4b70bd083dba0545bb",
+      "scope": "正文推演；目标C++插件、物理引擎、真实异步IO及Agent工具链运行未验，不能凭本文复读声称运行通过"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+      "full_text_read": true,
+      "independent_review": "PASS_WITH_SCOPE",
+      "mechanism_counterchecks": [
+        "结构JSON不保证资产存在，实际实例而非计划数据供验证",
+        "操作ID/稳定目标查询对账，使场景已写记录未写可恢复",
+        "取消直接终态存在迟到成功漏洞，实际改为停止派发→等待/对账→补偿→终态",
+        "4x3房间桌半宽.8中心.5越墙.3推演成立；版本哈希防尺寸改变",
+        "批准后条件切指针与哈希核对，补偿核对对象版本防删除后来修改"
+      ],
+      "actual_fixes": [
+        "取消进入终态；只有对应产物通过门禁，才能进入批准状态。 → 取消先停止派发新操作，等待已发工具返回终态或完成对账，再按登记补偿已应用的变更，最后进入取消终态；只有对应产物通过门禁，才能进入批准状态。"
+      ],
+      "content_sha256": "4be6f3822dffc710c842aa655bc856bd95e7d319d5f2564d41fbe977b0788111",
+      "scope": "正文推演；目标C++插件、物理引擎、真实异步IO及Agent工具链运行未验，不能凭本文复读声称运行通过"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Character Controller.md",
+      "full_text_read": true,
+      "independent_review": "PASS_WITH_SCOPE",
+      "mechanism_counterchecks": [
+        "扫掠fraction减skin/距离，量纲成立；remaining按hit比例保守缩短有明确限制",
+        "两面活动约束更新已修，离面保留/单面复查/交线/平行/第三面停止逐分支成立",
+        "坡度dot阈值不把墙当地面，台阶三次胶囊查询与失败退滑动明确",
+        "旋转平台脚点(1,0,0)→(0,0,-1)，位移(-1,0,-1)成立；跳跃g正与手感规则区分"
+      ],
+      "actual_fixes": [],
+      "content_sha256": "059a713dcf9a435a10c77408a054867be9492a53ab66a88d35fafc3b8a5c16e6",
+      "scope": "正文推演；目标C++插件、物理引擎、真实异步IO及Agent工具链运行未验，不能凭本文复读声称运行通过"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+      "full_text_read": true,
+      "independent_review": "PASS_WITH_SCOPE",
+      "mechanism_counterchecks": [
+        "T_WC=T_WB T_BC及逆变换方向成立，刚体/骨骼不同原点解释清楚",
+        "四元数世界增量q1 q0^-1短弧，半周混叠和传送限速边界完整",
+        "根只yaw并由骨盆位置回推，不继承倒地横滚；地面调整后捕获姿态转新根以零权重连续",
+        "纯表现切运动学与驱动力矩两路径控制权明确，不把插值冒充物理解算"
+      ],
+      "actual_fixes": [],
+      "content_sha256": "a5c6bff39e2c172dc8a25db9412c8752da58ac9b0295f4c182150cb949dcd563",
+      "scope": "正文推演；目标C++插件、物理引擎、真实异步IO及Agent工具链运行未验，不能凭本文复读声称运行通过"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/载具物理.md",
+      "full_text_read": true,
+      "independent_review": "PASS_WITH_SCOPE",
+      "mechanism_counterchecks": [
+        "支撑压缩正kx+c dxdt，离地零预算，接触相对速度含地面速度",
+        "低速最新vMin规则分母不为零且有静摩擦缺失披露，驱动轮速下一子步牵引成立",
+        "轮速反作用与制动方向需防跨零，联合力4000/3000→2000/1500满足2500预算",
+        "Ackermann2.5/1.6/5角30.8/23.3成立；开放差速平均力矩限教学模型"
+      ],
+      "actual_fixes": [],
+      "content_sha256": "1d69450826618061e76970188888f5e014ae4f5cf716b4d521c120b47fcc3cc9",
+      "scope": "正文推演；目标C++插件、物理引擎、真实异步IO及Agent工具链运行未验，不能凭本文复读声称运行通过"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI决策模型.md",
+      "full_text_read": true,
+      "independent_review": "PASS_WITH_SCOPE",
+      "mechanism_counterchecks": [
+        "行为树选择节点遇Running应停，不可继续挑另一个成功子节点，实际澄清",
+        "记忆顺序索引Running保留，Failure/Success复位，中止清外部请求；实现移到行为树段",
+        "GOAP负效果冲目标拒绝，回归时不要求起始已满足所有前提，可先破坏后重建；规范键集合与非负代价条件明确",
+        "Utility0.8^3=.512条件数偏差与几何平均应用边界成立；HTN临时状态推进，BDI时效和意图重考虑明确"
+      ],
+      "actual_fixes": [
+        "顺序节点要求子节点依次成功，选择节点选择第一个可成功的分支 → 顺序节点依次执行子节点，遇Failure停止、遇Running保留运行分支；选择节点依次尝试，遇Failure继续，遇Success或Running停止"
+      ],
+      "content_sha256": "f6d3e96276fdfd614384a7dbdfad4b4030f8799adf75d2877f654696221fb3df",
+      "scope": "正文推演；目标C++插件、物理引擎、真实异步IO及Agent工具链运行未验，不能凭本文复读声称运行通过"
+    }
+  ],
+  "method": "直接复读全部10篇，先逐机制输入/中间结果/输出，构造取消迟到、在途回调、Running选择等反证，再修正文。未以作者basis或矩阵作结论。"
+}

@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/20_游戏AI/游戏AI导航.md",
+      "full_text_read": true,
+      "sha256": "b18cae747a386dd1dc6a52f5c6e54b5b6d2ca0f20d8dc89cf98e3c722c08ab79",
+      "counterexample_review": "重算半径合计1、距离4、相对速度2得1.5秒；漏斗斜率区间及停止距离成立。反证显示安全速度示例未展开互惠分摊，补2秒闭合上限1.5及双方各0.25修正、半平面投影和多约束复查限制；角色半径、A*重开、走廊版本、到达控制逐段复读。",
+      "result": "REVISED",
+      "runtime_scope": "正文独立推演；未新增网络多服或引擎实测声称"
+    },
+    {
+      "path": "知识库/21_游戏网络/RPC.md",
+      "full_text_read": true,
+      "sha256": "23f134a3f17b33e12c6b5479533a3a3f7e71e0456271e62b283f2946beb4ac33",
+      "counterexample_review": "逐项追踪事务外并发查空反例、同库原子去重、outbox提交/发送/确认三个崩溃点；先标记发送会丢失、后标记允许重复且接收幂等，结论成立。TLS与权限边界不替代业务验证。",
+      "result": "KEEP",
+      "runtime_scope": "正文独立推演；未新增网络多服或引擎实测声称"
+    },
+    {
+      "path": "知识库/21_游戏网络/世界分区与AOI.md",
+      "full_text_read": true,
+      "sha256": "0965a5675826a973e67e8c3e75bface00adc74c790c1ea5fe90200718e0895e0",
+      "counterexample_review": "负坐标floor、R/R+h集合维护重算；42号输入100冻结、101缓冲、epoch7到8条件更新，回执丢失不得恢复旧主。反证B取得8崩溃仍须新epoch或恢复B，正文处理完整。",
+      "result": "KEEP",
+      "runtime_scope": "正文独立推演；未新增网络多服或引擎实测声称"
+    },
+    {
+      "path": "知识库/21_游戏网络/客户端预测.md",
+      "full_text_read": true,
+      "sha256": "3855855d0b57200428e8dfdb0679c2c46c453fd8f45e7fb9cebd50af6c93af10",
+      "counterexample_review": "65535到0/1回绕，8+5墙钳10再-1为9；同ACK较新Tick可承载平台外力，独立时序判断合理。声音事件身份与输入上限避免重放副作用，显示半衰期公式成立。",
+      "result": "KEEP",
+      "runtime_scope": "正文独立推演；未新增网络多服或引擎实测声称"
+    },
+    {
+      "path": "知识库/21_游戏网络/对局服务器架构.md",
+      "full_text_read": true,
+      "sha256": "79154d517d2946a9485c41895954f811b21d187b724268b4bdeeac6290d3da82",
+      "counterexample_review": "r42提交前后崩溃分别无结果/同结果查询，奖励接收幂等；路由与持久化双侧epoch拒绝旧主。有无模拟日志分别恢复/终止，未把路由切换当热状态恢复。",
+      "result": "KEEP",
+      "runtime_scope": "正文独立推演；未新增网络多服或引擎实测声称"
+    },
+    {
+      "path": "知识库/21_游戏网络/延迟补偿命中.md",
+      "full_text_read": true,
+      "sha256": "96e24f8aa63109a7f9908afa4122afe96de13a671f6b1d47bfab691707919fbe",
+      "counterexample_review": "10/9.920/0.100重算9.820无重复扣延迟；9.80到9.84球心插值得9.82的(5,1,0)，半径.5与X射线不交；旧记录误命中反例成立。历史门、对象代数和当前提交逐项有处理。",
+      "result": "KEEP",
+      "runtime_scope": "正文独立推演；未新增网络多服或引擎实测声称"
+    },
+    {
+      "path": "知识库/21_游戏网络/快照同步.md",
+      "full_text_read": true,
+      "sha256": "bb88fac9a256f292ffd48b79a8bd3bcf73bbd23aebffefe5a6c4526337651bd5",
+      "counterexample_review": "区间200米/0.01得到20001值需15位、半步误差0.005；基线42整数量化10000加20得10020；缺基线不得确认43、完整44确认后切基线逻辑成立。跨段/零分母/显示时间倒退均有分支。",
+      "result": "KEEP",
+      "runtime_scope": "正文独立推演；未新增网络多服或引擎实测声称"
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络时钟.md",
+      "full_text_read": true,
+      "sha256": "0d44aa515850a1bd31f7964800e8dfe6964c950b365815db18fe58ea2fa4800d",
+      "counterexample_review": "四时间戳0/5.1/5.3/.4得偏移5与链路RTT.2；非对称150/50偏移高估.05成立；校正速率.01乘.1移动.001，10.05对应603并明确浮点边界。",
+      "result": "KEEP",
+      "runtime_scope": "正文独立推演；未新增网络多服或引擎实测声称"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/引擎渲染扩展导读.md",
+      "full_text_read": true,
+      "sha256": "97b390b913b1675b637deb0ae93da31a5c516b768c826c759564bf441953afb2",
+      "counterexample_review": "全文按导航职责：选中遮罩对象筛选、材质输出、图读写到独立颜色输出，版本/阶段/曝光问题进入具体主归属，不把导读当代码实现验收。",
+      "result": "KEEP",
+      "runtime_scope": "正文独立推演；未新增网络多服或引擎实测声称"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
+      "full_text_read": true,
+      "sha256": "e4630ca1297409197a6e3ef573ef419d26a39754bfa95b28e89d3b47b346c7bc",
+      "counterexample_review": "全文追踪宿主强边、清空边、GC后弱失效；Outer不替代强引用。扫描A后新增B写屏障反例成立；软加载回调代数及宿主弱引用后转强持有，EndPlay与GC分工明确。未声称目标运行。",
+      "result": "KEEP",
+      "runtime_scope": "正文独立推演；未新增网络多服或引擎实测声称"
+    }
+  ]
+}

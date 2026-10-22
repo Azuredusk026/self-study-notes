@@ -1,0 +1,160 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "full_text_read": true,
+      "decision": "REVISED",
+      "main_mechanisms_reviewed": [
+        "翻译单元重复定义与链接阶段",
+        "头文件声明/模板/显式实例化",
+        "动态库分配释放及卸载",
+        "C ABI前缀版本与输出句柄",
+        "布局/虚调用/切片",
+        "RAII临时构造后交换的强保证"
+      ],
+      "basis": "各列机制均沿全文逐项复读，新增数例/状态推进接在所属机制；未用单一深段或矩阵代替整篇判断。",
+      "content_sha256": "548615ac1be2ee712326b36007befbe8bad2cf1135faca343d9d660abae2c43d",
+      "evidence_scope": "手工推演；既有运行证据保持原范围，未新增引擎、GPU、动态库或真实异步IO运行声称。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/内存布局与分配.md",
+      "full_text_read": true,
+      "decision": "REVISED",
+      "main_mechanisms_reviewed": [
+        "栈堆及页映射链接虚拟内存",
+        "64字节分区外部/内部碎片",
+        "Buddy同阶伙伴与栈逆序释放",
+        "AoS/SoA工作集",
+        "4组64字节缓存冲突",
+        "游标13对齐16分配20与溢出/寿命"
+      ],
+      "basis": "各列机制均沿全文逐项复读，新增数例/状态推进接在所属机制；未用单一深段或矩阵代替整篇判断。",
+      "content_sha256": "7aa55a72fed72a09b917ab39a61d86524b1bbddb77f3fb8d5d9cf2bcfa041a9f",
+      "evidence_scope": "手工推演；既有运行证据保持原范围，未新增引擎、GPU、动态库或真实异步IO运行声称。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/文件IO.md",
+      "full_text_read": true,
+      "decision": "REVISED",
+      "main_mechanisms_reviewed": [
+        "8字节头短读3再2后EOF拒绝",
+        "缓存冷热与直接IO/映射约束",
+        "取消后最终完成才回收",
+        "临时写/刷新/替换及持久性界限"
+      ],
+      "basis": "各列机制均沿全文逐项复读，新增数例/状态推进接在所属机制；未用单一深段或矩阵代替整篇判断。",
+      "content_sha256": "611e036d41908d308b7cce106797e34ed148c0bc02a4a3786253131fee422569",
+      "evidence_scope": "手工推演；既有运行证据保持原范围，未新增引擎、GPU、动态库或真实异步IO运行声称。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法与数据结构导读.md",
+      "full_text_read": true,
+      "decision": "KEEP",
+      "main_mechanisms_reviewed": [
+        "工作负载分流求解/容器/图/空间",
+        "构建顺序与环诊断",
+        "近邻查询以全量扫描作参考"
+      ],
+      "basis": "各列机制均沿全文逐项复读，新增数例/状态推进接在所属机制；未用单一深段或矩阵代替整篇判断。",
+      "content_sha256": "76401e70fa0b8dc72675a2fd9a677840a0541653c5e14f6f4b4d94b56594ce1a",
+      "evidence_scope": "手工推演；既有运行证据保持原范围，未新增引擎、GPU、动态库或真实异步IO运行声称。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/进程与调度.md",
+      "full_text_read": true,
+      "decision": "REVISED",
+      "main_mechanisms_reviewed": [
+        "系统调用不等于切换",
+        "Running/Ready/Blocked诊断",
+        "协程仍需OS线程",
+        "共享内存基址不同用偏移与发布同步",
+        "0.055秒固定步累计器",
+        "双管道排空与取消进程树"
+      ],
+      "basis": "各列机制均沿全文逐项复读，新增数例/状态推进接在所属机制；未用单一深段或矩阵代替整篇判断。",
+      "content_sha256": "83517b3fccc15514e0dd58628da32e744031f184253300be808143784f641f87",
+      "evidence_scope": "手工推演；既有运行证据保持原范围，未新增引擎、GPU、动态库或真实异步IO运行声称。"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+      "full_text_read": true,
+      "decision": "REVISED",
+      "main_mechanisms_reviewed": [
+        "状态及产物派生链",
+        "模型输出结构和实际合法性分离",
+        "暂存工具权限与状态查询",
+        "幂等ID对账/补偿",
+        "4x3米房间桌宽1.6边界及导航",
+        "批准后哈希改变拒绝发布"
+      ],
+      "basis": "各列机制均沿全文逐项复读，新增数例/状态推进接在所属机制；未用单一深段或矩阵代替整篇判断。",
+      "content_sha256": "e9ab1ecc81d926cbfc4c078700e38da29cf342bc4d532493c8abb5b5805e7eb0",
+      "evidence_scope": "手工推演；既有运行证据保持原范围，未新增引擎、GPU、动态库或真实异步IO运行声称。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Character Controller.md",
+      "full_text_read": true,
+      "decision": "REVISED",
+      "main_mechanisms_reviewed": [
+        "扫掠fraction与skin长度换算",
+        "两法线交线及三面停止",
+        "坡度余弦与可站立资格",
+        "台阶上/前/下胶囊查询",
+        "旋转90度脚点位移",
+        "跳高与重力积分"
+      ],
+      "basis": "各列机制均沿全文逐项复读，新增数例/状态推进接在所属机制；未用单一深段或矩阵代替整篇判断。",
+      "content_sha256": "16209464dd08becd3a46ce54dfbd82b3da91f7888f3643c2fed2f7ac9dffeedd",
+      "evidence_scope": "手工推演；既有运行证据保持原范围，未新增引擎、GPU、动态库或真实异步IO运行声称。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+      "full_text_read": true,
+      "decision": "REVISED",
+      "main_mechanisms_reviewed": [
+        "骨骼刚体固定偏移双向换算",
+        "双局部锚点与冲突过滤",
+        "位置/四元数短弧速度",
+        "传送与半周混叠",
+        "起身根由骨盆反求/地面查询",
+        "局部姿态混合与驱动职责"
+      ],
+      "basis": "各列机制均沿全文逐项复读，新增数例/状态推进接在所属机制；未用单一深段或矩阵代替整篇判断。",
+      "content_sha256": "04980bab89aa11418eba031fa4154f7092c557ff9928645ea24e331a48a2fe0f",
+      "evidence_scope": "手工推演；既有运行证据保持原范围，未新增引擎、GPU、动态库或真实异步IO运行声称。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/载具物理.md",
+      "full_text_read": true,
+      "decision": "REVISED",
+      "main_mechanisms_reviewed": [
+        "压缩/阻尼到载荷",
+        "接触相对速度及侧偏",
+        "轮速反作用扭矩/低速边界",
+        "4000/3000摩擦圆2500输出2000/1500",
+        "轴距2.5轮距1.6半径5转角",
+        "驱动分配与离地轮速"
+      ],
+      "basis": "各列机制均沿全文逐项复读，新增数例/状态推进接在所属机制；未用单一深段或矩阵代替整篇判断。",
+      "content_sha256": "975212fc778c171b54ae9efbf3998dc8d687809ff2524f0485abb831f3462495",
+      "evidence_scope": "手工推演；既有运行证据保持原范围，未新增引擎、GPU、动态库或真实异步IO运行声称。"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI决策模型.md",
+      "full_text_read": true,
+      "decision": "REVISED",
+      "main_mechanisms_reviewed": [
+        "FSM退出/进入与迟到回调",
+        "记忆顺序Running索引/中止",
+        "Utility乘积与数量偏差/迟滞",
+        "GOAP反向回归负效果与矛盾",
+        "HTN临时状态及失败",
+        "BDI信念过期与意图重考虑"
+      ],
+      "basis": "各列机制均沿全文逐项复读，新增数例/状态推进接在所属机制；未用单一深段或矩阵代替整篇判断。",
+      "content_sha256": "f300776b8ac1b84bc2aca128ff9e40f45ec24a096f1c53220d2d3883effa35c0",
+      "evidence_scope": "手工推演；既有运行证据保持原范围，未新增引擎、GPU、动态库或真实异步IO运行声称。"
+    }
+  ]
+}

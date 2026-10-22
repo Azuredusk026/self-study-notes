@@ -10,6 +10,8 @@
 
 直接IO可绕过部分系统缓存，但对齐、块大小与平台支持另有要求；内存映射把读取延后到缺页处理，仍然消耗设备与页缓存资源。选型应同时统计吞吐、尾延迟、驻留内存和应用解码时间。
 
+例如协议头要求8字节，第一次返回3字节，下一次应从目标偏移3继续请求5字节；若第二次只返回2，就还差3。此时EOF必须报告截断，不能把缓冲中原有的3字节当作头部字段。头部解析得到负载长度后先与文件格式上限比较，再分配和循环读取；不可信长度直接作为分配尺寸会把损坏文件变成内存耗尽。
+
 ## 异步请求与缓冲寿命
 
 请求拥有文件句柄、偏移、目标缓冲和完成状态。提交后缓冲进入使用中，完成通知确认结果字节数后才可交给解码器。发出取消只是要求系统停止工作，完成可能返回成功、取消或其他错误；Windows `CancelIoEx` 也不保证请求一定取消。只有收到最终完成，才能复用请求结构和缓冲。
@@ -19,11 +21,11 @@ allocate request and destination buffer
 submit read(offset, size, buffer)
 if owner cancels: request cancellation
 wait for terminal completion status
-if success: validate actual bytes, then decode
+if success and owner still wants result: validate actual bytes, then decode
 release request and buffer after all consumers finish
 ```
 
-这是请求生命周期伪代码。高频创建小请求会增加调度与系统调用成本，可合并相邻区间，并对紧急资产设置预算内的优先级。取消后立即把同一缓冲交给新请求，会让迟到完成覆盖新数据。
+这是请求生命周期伪代码。高频创建小请求会增加调度与系统调用成本，可合并相邻区间，并对紧急资产设置预算内的优先级。取消后立即把同一缓冲交给新请求，会让迟到完成覆盖新数据。系统返回成功也不代表业务仍需要结果：所有者取消后可以丢弃成功负载，等最终完成并确认所有消费者退出再回收。业务取消与系统完成分别记状态，才能避免取消后又把已退出场景的资产装回去。
 
 ## 临时文件与发布
 
