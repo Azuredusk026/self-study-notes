@@ -51,7 +51,7 @@ Unity/Unreal 可能在构建时完成大部分编译，但驱动仍可能在运�
 
 不同 Unity 版本还区分 Local/Global Keyword、`shader_feature_local` 等形式。使用前应按项目版本核对官方文档。
 
-## 动态分支还是变体
+## 动态分支与编译变体
 
 | 选择 | 优点 | 代价 |
 |---|---|---|
@@ -61,7 +61,7 @@ Unity/Unreal 可能在构建时完成大部分编译，但驱动仍可能在运�
 
 决定时要看条件是否在 Draw 内一致、两边代码多重、切换频率和平台瓶颈。没有一种方案永远更快。
 
-这两端之间还有 Ubershader：每个材质只保留一个包含全部功能的程序，运行时用 Uniform 开关控制行为。它的内存与包体最小，代价是大量分支阻碍编译优化、运行效率下降，并且更难调试。全量缓存变体与 Ubershader 是两个极端，实际项目通常落在中间，按功能的稳定性与切换频率分别选择。
+Ubershader通常指承载大量材质功能的统一Shader设计，具体实现既可生成静态变体，也可用Uniform控制动态路径。统一源码不等于只有一个编译程序，更不能据此断言包体最小。应分别统计程序数量、单程序大小、寄存器和运行成本。
 
 ## Unreal 的变体构成
 
@@ -75,35 +75,33 @@ Unreal 不用 Keyword 字符串描述变体，而是把它拆成几个正交维�
   × (ShaderType 数 × 其静态开关组合)
 ```
 
-这是理论上限而非精确值——部分项互相依赖，只有实际被引用的材质实例才产生变体，Shader Library 还会去重编译结果相同的 Shader。但它清楚地说明了问题性质：**这是连乘，任何一项增长都会放大全局**。
+这是理论上限而非精确值——部分项互相依赖，材质依赖、引擎全局Shader和编译筛选共同决定哪些组合产生程序，Shader Library 还会去重编译结果相同的 Shader。但它清楚地说明了问题性质：**这是连乘，任何一项增长都会放大全局**。
 
 各维度的含义：
 
-- **ShaderPlatform**：ES3.1、Vulkan、Metal 等。Cook 时为所有支持平台各生成一份，运行时由 RHI 决定用哪一份；
-- **材质静态开关与质量级别**：美术在材质图中设置，Cook 时展开所有组合；
-- **VertexFactory**：决定顶点数据如何进入 Shader。静态开关不同的 VF 在 C++ 层面视为不同 VF；
+- **ShaderPlatform**：引擎的目标着色平台枚举，综合图形后端与目标能力。Cook 时为所有支持平台各生成一份，运行时由 RHI 决定用哪一份；
+- **材质静态开关与质量级别**：美术在材质图中设置，Cook时按实际材质静态参数集合与编译策略生成所需组合；
+- **VertexFactory**：决定顶点数据如何进入 Shader。VF类型与其编译条件共同影响可用Shader组合；
 - **ShaderType**：Base Pass、Shadow Depth 等不同 Pass 使用不同 Shader 类，同样支持静态开关。
 
 **会**产生新变体的改动：平台变化、材质图结构变化、网格类型变化、绘制 Pass 变化、静态开关变化。
 
 **不会**产生新变体的改动：材质参数值、Uniform 值、网格数据本身。
 
-这条界线很实用——美术调整材质参数不增加变体，但勾选一个静态开关会让该母材质的变体数翻倍。
+这条界线很实用——美术调整材质参数不增加变体，但引入一个两种状态都需使用的独立静态维度，可能使相关组合翻倍；只使用其中一种状态或存在互斥条件时应按实际集合计数。
 
-### 内存与包体分别占在哪
+### 内存与包体构成
 
 两者的构成不同，优化手段也不同：
 
 | 占用项 | 性质 | 说明 |
 |---|---|---|
-| ShaderMap 与 FShader 对象 | 常驻内存 | 序列化时为每个 Shader 创建对象，构成基础开销 |
-| Shader 源码 / 字节码 | 内存 + 包体 | Shared/Native 模式下存于 Shader Library，按需异步请求 |
-| 反射信息映射表 | 常驻内存 | Native 模式下引擎无法读取平台中间格式，需单独序列化绑定信息，启动时全量读入 |
-| PSO | RHI 层内存 | 驱动侧的已编译对象，由 LRU 限制总量 |
+| ShaderMap 与Shader元数据 | CPU内存 | 按加载范围、对象数量和序列化结构测量 |
+| Shader字节码与压缩库 | 包体及加载内存 | 格式与解压驻留依赖平台和构建配置 |
+| 反射与资源绑定信息 | CPU内存 | 使用生成映射还是运行时反射由后端决定 |
+| PSO及驱动对象 | CPU/驱动内存 | 缓存创建、保留和淘汰策略分别统计 |
 
-包体侧主要是 Shader 字节码体积：OpenGL 保存源码，Vulkan 保存 SPIR-V，Metal 在 Native 模式下保存编译后的中间格式。
-
-大型移动项目中，进入包体的 Shader 可达数百 MB，内存占用数十至上百 MB。包体影响安装转化率，内存影响 OOM 崩溃率，两者都是可以量化的业务指标。
+报告应分开记录磁盘压缩字节、解压后字节、当前驻留Shader和PSO数量。某个平台的Native Library行为、常驻范围或LRU配置，需要标出引擎版本和源码位置后才能作为该工程结论。
 
 ### 四个优化方向
 
@@ -112,9 +110,9 @@ Unreal 不用 Keyword 字符串描述变体，而是把它拆成几个正交维�
 3. **按机型分包**：提前判断各机型实际需要的 Shader 集合，分包下发，同时减小包体与内存；
 4. **按需加载与剔除**：按平台、材质级别、画质、场景分别剔除，并调节 PSO 的 LRU 参数。
 
-前两项在构建期生效，后两项在运行期生效。四者可以叠加。
+变体削减、压缩与内容分包主要在构建期规划；运行时再按加载策略和缓存预算消费结果。四者需要共同覆盖实际玩法组合。
 
-## 收集不能只扫描当前场景
+## 变体收集范围
 
 扫描当前打开场景的材质，只能覆盖静态可见的一部分。还可能遗漏：
 
@@ -161,6 +159,7 @@ Warmup 的作用是提前触发部分 Shader/平台对象准备，减少第一�
 Unity 在构建期通过 `IPreprocessShaders` 回调逐 Pass 提供变体列表，允许实现方删除条目：
 
 ```csharp
+// Unity Editor接口片段；项目提供已验证的targetFeatureDisabled配置
 class VariantStripper : IPreprocessShaders
 {
     public int callbackOrder => 0;
@@ -168,22 +167,30 @@ class VariantStripper : IPreprocessShaders
     public void OnProcessShader(Shader shader, ShaderSnippetData snippet,
                                 IList<ShaderCompilerData> data)
     {
-        var keyword = new ShaderKeyword("_EXPENSIVE_FEATURE");
+        var keyword = new ShaderKeyword(shader, "_EXPENSIVE_FEATURE");
         for (int i = data.Count - 1; i >= 0; i--)
         {
             if (!data[i].shaderKeywordSet.IsEnabled(keyword)) continue;
-            if (targetIsMobile)
+            if (targetFeatureDisabled)
                 data.RemoveAt(i);
         }
     }
 }
 ```
 
-回调按 Shader 与 Pass 分批调用，`data` 是可变列表，移除即代表该变体不进入构建。倒序遍历是必要的，正序删除会跳过元素。
+`targetFeatureDisabled`由构建配置提供，含义是本次目标内容的全部运行路径均禁用此功能，不能只用“移动平台”作为删除理由。关键字构造须匹配Shader本地或全局声明；本例采用Shader本地关键字。
 
-剥离必须给出理由而非“没见过就删”。安全的判据是平台能力、质量档位、功能开关的互斥关系这类可静态证明的约束。删错的表现是运行时找不到变体，画面显示为粉色材质或直接不绘制，而且往往只在特定机型的特定场景复现。
+回调按 Shader 与 Pass 分批调用，`data` 是可变列表，移除即代表该变体不进入构建。倒序删除可以避免索引移动导致漏检；正序实现则必须相应调整索引。
+
+剥离必须给出理由而非“没见过就删”。安全的判据是平台能力、质量档位、功能开关的互斥关系这类可静态证明的约束。删错的表现是运行时找不到变体，可能回退到相似变体而显示错误，也可能出现错误Shader或不绘制，而且往往只在特定机型的特定场景复现。
 
 验证方法是记录剥离前后的数量与每条规则的命中数，并在真机构建中跑一遍关键场景，检查是否出现粉色材质与首次加载卡顿。
+
+### 组合覆盖的集合检查
+
+设一个Pass有阴影开关和三种雾模式，候选组合为 $2\times3=6$。目标内容允许三种雾模式，但仅在无雾时允许关闭阴影，所需集合就是四项：`(关,无雾)`与`(开,无雾/线性雾/指数雾)`。剥离后的集合S必须包含所需集合R，即 $R\subseteq S$；记录R中每项来自哪个材质或运行开关，比单看“剩余4项”更可靠。
+
+实际键还要包含Shader、Pass、阶段、平台、质量档位和规范化关键字集合。将缺失集合 $R-S$ 作为构建失败项，将多余集合 $S-R$ 作为可继续分析的体积项。后者可能包含未被采集覆盖的合法路径，应先核查来源。
 
 ## 变体预算和报表
 
@@ -198,23 +205,15 @@ class VariantStripper : IPreprocessShaders
 
 只看总变体数不够。少数超大 Shader、常用但预热遗漏的变体，往往比很多从不加载的小 Shader 更危险。
 
-## 个人贡献怎么描述
+## 构建职责
 
-需要区分：
-
-- 使用公司已有收集插件；
-- 编写剥离规则；
-- 设计 Keyword 和 Shader 架构；
-- 建立构建报表；
-- 负责真机验证和回归。
-
-这些工作都有效，但所有权和技术深度不同。文档和简历应准确说明自己负责的部分。
+功能所有者登记允许的关键字组合，内容构建收集材质与资源依赖，剥离规则输出每项删除理由，运行验证覆盖场景和首次使用路径。每个报表条目关联Shader、Pass、目标配置和规则版本，出现缺失时才能追溯到具体输入与判定。
 
 ## 验证方法
 
-- 构建后用变体报表确认总数在预算内，并与上一版本对比增量；突增要能定位到具体 Shader 和 Keyword 组合。
-- 对启用剥离规则的构建在真机跑核心场景，确认没有粉色材质或运行时编译卡顿；Unity 漏变体会静默丢失，Unreal 会在日志报 missing shader。
-- 用 ShaderVariantCollection 预热后在首场景计时，确认 PSO 编译卡顿消失；变体集合本身要用真实玩法路径采集，只扫当前场景会漏。
+- 构建后用变体报表确认总数在预算内，按Shader和Keyword定位超出预算的组合。
+- 对启用剥离规则的构建在真机跑核心场景，确认没有粉色材质或运行时编译卡顿；同时检查实际选中的关键字和变体，Unity可能选择相似变体，不能只以无粉色为通过。
+- 用 ShaderVariantCollection 预热后在首场景计时，分别观察变体准备与PSO创建的耗时；变体集合本身要用真实玩法路径采集，只扫当前场景会漏。
 - 修改剥离逻辑后跑全量构建并对日志做 diff，确认被剥掉的都是目标变体而非误伤。
 - 切换 Keyword 的材质在编辑器与真机各跑一次，确认两端状态一致；常见错误是编辑器用全局开关而构建端走材质本地关键字。
 
@@ -227,12 +226,10 @@ class VariantStripper : IPreprocessShaders
 - [[14_性能分析与优化/PSO首次使用为什么卡顿]]
 - [[22_渲染引擎实现/Unreal自定义Mesh Pass]]
 
-示例状态：本页代码用于解释对应的数据和调用约束，完整资源创建、类型与调用环境由项目提供。除文中另列的实际实验外，本页未执行目标引擎编译、GPU捕获或性能计时。
+实现状态：C#展示Unity Editor剥离接口及本地关键字判定，项目补齐命名空间、构建配置与规则报表。集合覆盖示例给出可直接枚举的四项预期；Unity/Unreal构建、预热与PSO运行未执行。
 
 ## 参考资料
 
-- Unity Manual, *Shader variants and keywords*.
-- Unity Manual, *Shader variant stripping*.
-- Unity Scripting API, `IPreprocessShaders` and `ShaderVariantCollection`.
-- Epic Games, *Shader Development* and *Mesh Drawing Pipeline* documentation.
-- Unreal Engine source, `FMaterialShaderMap`, `FShaderLibrary` serialization paths.
+- [Unity 6000.0 Introduction to shader variants](https://docs.unity3d.com/6000.0/Documentation/Manual/shader-variants.html)：2026-10-22核读程序、平台、关键字组合及Ubershader定义。
+- [Unity 6000.0 Strip shader variants](https://docs.unity3d.com/6000.0/Documentation/Manual/shader-variant-stripping.html)：核读缺失变体回退、shader_feature和Editor剥离接口。
+- Unreal的具体Shader Library驻留及序列化布局需以目标引擎源码核验，本文仅保留分维度预算模型。

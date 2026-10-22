@@ -3245,43 +3245,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何按线程索引安全调度设备端数据计算"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "线程定位与协作；资源访问与同步；编译与执行的代价；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "加入组坐标、局部坐标和一维索引数值例；原子更新与内存发布分开；纠正spill对驻留的单向推断。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "CopyKernel既有DXC探针通过，纹理尺寸、UAV类型和参数布局明确；实际GPU运行未验证。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "GroupMemoryBarrierWithGroupSync和CUDA13.4占用率段已核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "按线程定位、共享访问、阶段依赖组织，疑问标题改为客观名称。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Compute Shader定位当前主问题，小标题按机制或操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "03领域维护Shader接口、编译与并行计算；资源同步和引擎接入由相关专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页使用坐标算例、流程或代码表达状态变化，无新增结果图片。"
       }
     },
     "batch_migration_authorized": true,
@@ -3328,7 +3328,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "cd757610b75f411211de05fd86cb0271d580ff20f8dec97429184b4486592136",
+    "final_sha256": "d37f38cd5ed2be646ff3eba3f4bc83c79c9750e83a508fbad6988f06c59e54f7",
     "content_commit": "6de6394",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -3358,9 +3358,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-shader",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "加入组坐标、局部坐标和一维索引数值例；原子更新与内存发布分开；纠正spill对驻留的单向推断。",
+        "按线程定位、共享访问、阶段依赖组织，疑问标题改为客观名称。"
+      ],
+      "content_sha256": "d37f38cd5ed2be646ff3eba3f4bc83c79c9750e83a508fbad6988f06c59e54f7",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -3375,43 +3385,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何把设备端结果交给CPU并控制延迟与寿命"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "异步回读与延迟数据；请求完成与发布；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "补空闲/在途/完成状态、乱序结果发布、代次取消与物理回收，明确结果一帧寿命。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "CPU模型通过容量、乱序、失败、失效回收检查；实际Unity回调未运行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Unity6000.0 AsyncGPUReadbackRequest Description核读done/hasError与single-frame结果寿命。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "按生产、完成、发布和消费区分数据年龄，删除无实验链接的套话。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "GPU异步回读定位当前主问题，小标题按机制或操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "03领域维护Shader接口、编译与并行计算；资源同步和引擎接入由相关专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页使用坐标算例、流程或代码表达状态变化，无新增结果图片。"
       }
     },
     "batch_migration_authorized": true,
@@ -3439,7 +3449,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "89dbc0b6545d653f3d2a1c6f78d00b20830ff4c0bb42521ccf3f55f4bed2499e",
+    "final_sha256": "ac19550d910c43d4eb366dfb3ad5b557e9c553eeb0f42a685446db257fc9ce66",
     "content_commit": "6de6394",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -3469,9 +3479,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-shader",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "补空闲/在途/完成状态、乱序结果发布、代次取消与物理回收，明确结果一帧寿命。",
+        "按生产、完成、发布和消费区分数据年龄，删除无实验链接的套话。"
+      ],
+      "content_sha256": "ac19550d910c43d4eb366dfb3ad5b557e9c553eeb0f42a685446db257fc9ce66",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -3486,43 +3506,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何把并行元素合成统计量或唯一输出偏移"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "输出语义；归约的标准范式；排他前缀和；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "展开组内上扫/下扫HLSL入口、根清零、尾组填零和组和递归回加，区分0/1压紧和多项计数。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "分块CPU模型与顺序求和对照7种尺寸，稳定压紧检查通过；ScanGroups cs_6_0编译通过，GPU调度未运行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "GPU Gems3第39章§39.2.2/§39.2.4和Microsoft组屏障规则核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "从子树之前的总量解释下扫，数字例与代码对应，删除误入网络的验证描述。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "GPU归约与前缀和定位当前主问题，小标题按机制或操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "03领域维护Shader接口、编译与并行计算；资源同步和引擎接入由相关专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页使用坐标算例、流程或代码表达状态变化，无新增结果图片。"
       }
     },
     "batch_migration_authorized": true,
@@ -3554,7 +3574,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "afb5aa035651bb044c6650dd5b3c8c10f64c66e58a324c64e66ff29edca580e8",
+    "final_sha256": "6848d472ec84a96f480255c5d2e928f5f5562fcc0af03c68f259b6fff3973557",
     "content_commit": "6de6394",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -3584,9 +3604,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-shader",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "展开组内上扫/下扫HLSL入口、根清零、尾组填零和组和递归回加，区分0/1压紧和多项计数。",
+        "从子树之前的总量解释下扫，数字例与代码对应，删除误入网络的验证描述。"
+      ],
+      "content_sha256": "6848d472ec84a96f480255c5d2e928f5f5562fcc0af03c68f259b6fff3973557",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -3600,43 +3630,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何控制Shader编译组合并验证构建覆盖"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "从源码到 GPU 程序；Variant 和 Permutation；Unity 中的 `multi_compile`；Unity 中的 `shader_feature`；动态分支与编译变体；Unreal 的变体构成"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "收窄Unreal组合、Ubershader、Library常驻等断言；用6候选/4必需集合展开保留覆盖与剥离理由。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "UnityEditor片段显式标注构建配置与本地关键字，未执行引擎构建；样例所需组合可独立枚举。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Unity6000.0 variants/stripping核读程序维度、缺失回退和Editor回调；未声称核读Unreal私有源码。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "统一客观标题，职责段服务于构建追溯，避免只凭无粉色或预热宣告通过。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Shader Variant管理定位当前主问题，小标题按机制或操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "03领域维护Shader接口、编译与并行计算；资源同步和引擎接入由相关专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页使用坐标算例、流程或代码表达状态变化，无新增结果图片。"
       }
     },
     "batch_migration_authorized": true,
@@ -3677,7 +3707,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "75f9f6b1b4f197b71b102ced2209e82393e1de6f779909df2ead17eba4a6e4a6",
+    "final_sha256": "6f2d0bb5d932101858cab7e0df48be35859360b75a582b5688d0d695b8bfa373",
     "content_commit": "6de6394",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -3706,9 +3736,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-shader",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "收窄Unreal组合、Ubershader、Library常驻等断言；用6候选/4必需集合展开保留覆盖与剥离理由。",
+        "统一客观标题，职责段服务于构建追溯，避免只凭无粉色或预热宣告通过。"
+      ],
+      "content_sha256": "6f2d0bb5d932101858cab7e0df48be35859360b75a582b5688d0d695b8bfa373",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -3722,43 +3762,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何使Shader阶段接口与资源布局一致"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "接口与布局；资源访问；阶段数据；数值与控制流；调试方法；相关主题"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "纠正GLSL块名与实例名区别、sRGB解码顺序；给出96字节常量布局和字段偏移，区分row_major与mul。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "DXC反射验证5字段偏移及总大小；GLSL330正确接口离线链接通过，字段类型不匹配被拒绝；CPU上传和GPU未运行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Microsoft HLSL packing rules与Khronos Interface Blocks源规范核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "以绑定与布局契约推动排查，给出每段代码完整或片段的具体范围。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Shader接口与数据流定位当前主问题，小标题按机制或操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "03领域维护Shader接口、编译与并行计算；资源同步和引擎接入由相关专篇承接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页使用坐标算例、流程或代码表达状态变化，无新增结果图片。"
       }
     },
     "batch_migration_authorized": true,
@@ -3801,7 +3841,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "580f24d92c5de4fdb77bfdc3ce0317da128eb5d41a8809a0c7df20ef513d78d6",
+    "final_sha256": "321217a8c9d93978955360f58c81f6c6120599f6100cc092b94722f20a434cfd",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -3830,9 +3870,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-shader",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "纠正GLSL块名与实例名区别、sRGB解码顺序；给出96字节常量布局和字段偏移，区分row_major与mul。",
+        "以绑定与布局契约推动排查，给出每段代码完整或片段的具体范围。"
+      ],
+      "content_sha256": "321217a8c9d93978955360f58c81f6c6120599f6100cc092b94722f20a434cfd",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {

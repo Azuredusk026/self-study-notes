@@ -481,7 +481,7 @@
       "source": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
       "heading": "分支什么时候危险",
       "target": "知识库/03_Shader编程/Compute Shader.md",
-      "current_heading": "分支什么时候危险",
+      "current_heading": "分支与执行发散",
       "decision": "独立主归属或明确合并",
       "reason": "调度模型、并行集合算法与回读状态机分别维护；多级深度生成归入深度可见性优化，灯光位掩码归入簇光照。",
       "source_hash": "c8ef8192de4e6e60ffb606ffb12c85e8dd82931d86f7340e383a8116d64632a1"

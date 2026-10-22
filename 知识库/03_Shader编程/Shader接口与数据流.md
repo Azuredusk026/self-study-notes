@@ -34,11 +34,11 @@ Vertex Shader 通常读取：
 - 光源参数；
 - 材质参数。
 
-GPU 读取常量时偏好对齐后的连续布局。HLSL Constant Buffer 常以 16 字节寄存器组织，`float3` 后面不一定能按 CPU 结构体直觉紧密排列。CPU 结构、Shader 结构和 API 绑定必须使用同一布局。
+GPU 读取常量时偏好对齐后的连续布局。HLSL传统Constant Buffer按16字节向量边界装填，变量不能跨越该边界；`float3`后可接一个float填满16字节，而float2若放不下就从下一边界开始。CPU 结构、Shader 结构和 API 绑定必须使用同一布局。
 
 大量结构化数据可以使用 Structured Buffer、Byte Address Buffer 或 Storage Buffer。它们比普通常量灵活，但访问成本、缓存行为和平台支持不同。
 
-HLSL 用 `cbuffer` 声明常量缓冲区，并可用 `register(b0)` 指定绑定槽位。CPU 侧需要创建同样大小和布局的 Buffer，把数据写入后绑定到对应 Shader Stage。动态更新常见路径是 `Map/Unmap`：`WRITE_DISCARD` 取得一段可重新分配的写入区域，适合整块替换；`NO_OVERWRITE` 保证不会覆盖 GPU 尚未读取的区间，适合环形缓冲中的追加写入。两者都要求 CPU 明确管理正在飞行的帧和资源寿命。
+HLSL 用 `cbuffer` 声明常量缓冲区，并可用 `register(b0)` 指定绑定槽位。CPU 侧需要创建同样大小和布局的 Buffer，把数据写入后绑定到对应 Shader Stage。D3D11动态资源常用`Map/Unmap`：`WRITE_DISCARD` 取得一段可重新分配的写入区域，适合整块替换；`NO_OVERWRITE` 保证不会覆盖 GPU 尚未读取的区间，适合环形缓冲中的追加写入。NO_OVERWRITE在常量缓冲等用途上的支持受D3D11版本与能力标志限制。D3D12上传堆和Vulkan映射内存使用不同的接口；共同要求是避免覆盖GPU仍在读取的区间。
 
 常量应按更新频率分组，而不是把所有参数塞进一个大 Buffer：
 
@@ -56,7 +56,7 @@ HLSL 用 `cbuffer` 声明常量缓冲区，并可用 `register(b0)` 指定绑定
 ```hlsl
 cbuffer PerView : register(b1)
 {
-    float4x4 ViewProjection;
+    row_major float4x4 ViewProjection;
     float3 CameraPositionWS;
     float Exposure;
     float2 RenderSize;
@@ -76,7 +76,7 @@ struct alignas(16) PerViewConstants
 static_assert(sizeof(PerViewConstants) % 16 == 0);
 ```
 
-`static_assert` 只能检查总大小。实际还要检查每个字段偏移、矩阵行列主序和转置约定。GLSL 的 `std140`、HLSL `cbuffer` 与结构化 Buffer 使用的布局规则也不能混用。
+本例32位float和4×4矩阵下，偏移依次为0、64、76、80、88字节，总大小96字节。`static_assert`仅检查16的倍数并不足够，还要用offsetof和Shader反射核对每个字段。row_major说明缓冲中的矩阵排列；`mul`的操作数顺序另行决定向量变换约定。GLSL 的 `std140`、HLSL `cbuffer` 与结构化 Buffer 使用的布局规则也不能混用。
 
 ## 资源访问
 
@@ -89,7 +89,7 @@ static_assert(sizeof(PerViewConstants) % 16 == 0);
 - RTV（Render Target View）：作为颜色输出；
 - DSV（Depth Stencil View）：作为深度模板输出。
 
-视图决定格式解释、Mip、数组层和允许的访问方式，不等于复制一份资源。资源从 Render Target 写入转为 Shader 读取时，现代显式 API 还需要正确的 Resource State、Barrier 和同步范围。把仍在写的资源同时当作 SRV/UAV 读取，会形成读写冲突；调试时应同时检查视图、槽位和状态转换。
+视图决定格式解释、Mip、数组层和允许的访问方式，不等于复制一份资源。资源从 Render Target 写入转为 Shader 读取时，现代显式 API 还需要正确的 Resource State、Barrier 和同步范围。在缺少合法读写模型与同步时，对重叠子资源的并发读写会形成冲突；调试时应同时检查视图、槽位和状态转换。
 
 ### Texture 和 Sampler
 
@@ -102,9 +102,9 @@ Texture 保存数据。Sampler 描述如何读取：过滤、寻址、LOD 等。
 1. 计算坐标；
 2. 选择 Mip；
 3. 应用寻址；
-4. 读取一个或多个 Texel；
-5. 执行过滤；
-6. 必要时做格式解码，例如 sRGB 到 Linear。
+4. 读取并按资源格式解码Texel；
+5. 对sRGB颜色先转换到线性域，再执行所需过滤；
+6. 返回采样结果。
 
 因此“只采了一张纹理”并不等于只读一次显存。
 
@@ -129,7 +129,9 @@ System Value 表示管线提供的特殊数据，例如 Vertex ID、Instance ID�
 
 #### GLSL 接口块与片元内建输入
 
-接口块把跨阶段的多个字段组织在一起。生产者与消费者的块名可以不同，但字段的类型、顺序、数组大小和插值修饰必须满足链接规则。显式 `location` 能让接口契约更清楚：
+接口块把跨阶段的多个字段组织在一起。下例OpenGL按名称链接时，块名`VertexData`必须匹配；`vsOut`和`fsIn`是实例名，可以不同。成员名、类型、顺序、数组及限定符也须满足对应链接规则。显式 `location` 能让接口契约更清楚：
+
+该GLSL代码块并列展示两个阶段的片段，分别放入各自源文件；Vertex Shader还需main函数、变换矩阵及属性赋值。
 
 ```glsl
 // Vertex Shader
@@ -206,12 +208,10 @@ Shader Graph 是生成 Shader 代码的前端，不是另一种 GPU 管线。节
 - [[03_Shader编程/Compute Shader]]、[[03_Shader编程/GPU归约与前缀和]]、[[03_Shader编程/GPU异步回读]]
 - [[06_纹理技术/纹理采样与过滤]]
 
-示例与验证范围：代码按文中前提解释机制，完整类型、资源和项目状态需由接入工程补齐。完整目标引擎运行与GPU性能为UNVERIFIED；正文给出的机制与实际实验范围分别记录。
+实现与验证：[compile_shader.py](../examples/revision/compile_shader.py)从正文提取PerView，使用全部字段生成入口，经DXC编译并检查反射偏移0/64/76/80/88和大小96字节。GLSL 330的同名块和不同实例名通过离线链接，成员类型不匹配的反例被拒绝；CPU上传与实际OpenGL上下文仍未运行。
 
 ## 参考资料
 
-- Microsoft Learn, *HLSL Reference*.
-- Khronos, *OpenGL Shading Language Specification*.
-- Unity Manual, *Writing shaders*.
-- LearnOpenGL, `src/4.advanced_opengl/8.advanced_glsl_ubo`.
-- LearnOpenGL 中文镜像，*Advanced GLSL*。
+- [Microsoft HLSL常量装填规则](https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-packing-rules)：2026-10-22核读16字节跨界、结构及数组规则。
+- [Khronos GLSL规范源文件，Interface Blocks](https://github.com/KhronosGroup/GLSL/blob/main/chapters/variables.adoc)：2026-10-22核读块名匹配与实例名可不同的条款。
+- 矩阵与字段实际偏移由本库DXC反射探针检查，平台布局不得跨API推定。

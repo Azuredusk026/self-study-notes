@@ -54,6 +54,36 @@
       "pages": 184,
       "errors": 0,
       "scope": "暂存内容独立快照的静态链接、章节定位和登记一致性"
+    },
+    {
+      "phase": "P1-shader",
+      "command": "python -B 知识库/examples/revision/test_shader.py",
+      "passed": true,
+      "tests": 4,
+      "scope": "分块扫描、压紧、乱序与失效回读发布"
+    },
+    {
+      "phase": "P1-shader",
+      "command": "python -B 知识库/examples/revision/compile_shader.py",
+      "passed": true,
+      "dxc_entries": 2,
+      "glsl_link_cases": 2,
+      "scope": "ScanGroups、PerView反射、GLSL接口正反例"
+    },
+    {
+      "phase": "P1-shader",
+      "command": "python -B 知识库/examples/mechanisms/compile_completion.py",
+      "passed": true,
+      "probes": 4,
+      "scope": "现有正文HLSL回归"
+    },
+    {
+      "phase": "P1-shader",
+      "command": "python -B skills/kb-structure-audit/scripts/batch_validate.py <staged-snapshot>",
+      "passed": true,
+      "pages": 184,
+      "errors": 0,
+      "scope": "独立暂存快照静态一致性"
     }
   ]
 }

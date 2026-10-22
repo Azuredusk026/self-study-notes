@@ -2,7 +2,7 @@
 
 逐像素复制可以让每个线程写自己的位置，但共享结果需要明确同步范围。Compute Shader用Dispatch与线程组组织工作，我们先界定每个索引读写哪份数据，再让组内共享和API依赖分别处理不同层次的协作。
 
-## 线程怎样定位与协作
+## 线程定位与协作
 
 ### Dispatch 和线程索引
 
@@ -20,6 +20,8 @@ $$
 - Group Thread ID：线程在 Group 内的位置；
 - Dispatch Thread ID：整个 Dispatch 中的全局位置；
 - Group Index：把 Group 内三维索引压成一维。
+
+例如组大小为 $(8,8,1)$，组坐标为 $(2,1,0)$，组内坐标为 $(3,4,0)$，全局坐标就是 $(19,12,0)$。对应的组内一维索引为 $3+8\times4=35$，与全局纹理行跨度无关。把Group Index当作全局地址，会让不同组写入同一批像素。
 
 计算纹理时通常要做边界判断，因为 Dispatch 尺寸经常向上取整到 Group 大小。
 
@@ -61,7 +63,7 @@ uint groupsY = (height + 7) / 8;
 commandList.Dispatch(groupsX, groupsY, 1);
 ```
 
-输入和输出使用不同资源，避免同一次 Dispatch 中相邻线程读到正在被改写的数据。若算法需要原地更新，必须证明每个线程只依赖自己的旧值，或拆分阶段并建立 Barrier。
+此HLSL Kernel的输入纹理尺寸至少为OutputSize，输出必须支持对应float4的UAV访问，CPU上传b0的16字节参数。输入和输出使用不同资源，避免同一次 Dispatch 中相邻线程读到正在被改写的数据。若算法需要原地更新，必须证明每个线程只依赖自己的旧值，或拆分阶段并建立 Barrier。
 
 ### Thread Group
 
@@ -81,7 +83,7 @@ Wave 宽度可能是 32、64 或其他值，不能在跨平台 Shader 中写死�
 
 同一 Wave 通常按 SIMT 方式执行相同指令。遇到不同分支时，硬件可能分别执行各路径，再用 Mask 关闭不参与的 Lane。这就是 Branch Divergence。
 
-### 分支什么时候危险
+### 分支与执行发散
 
 按像素随机变化的条件容易让同一 Wave 发散。按整个 Dispatch、材质或大块 Tile 一致的条件可能不会严重发散。
 
@@ -93,7 +95,7 @@ Wave 宽度可能是 32、64 或其他值，不能在跨平台 Shader 中写死�
 - 发散持续多少条指令；
 - 分支后的内存访问是否仍连续。
 
-## 资源怎样读写与同步
+## 资源访问与同步
 
 ### `groupshared` 内存
 
@@ -131,7 +133,7 @@ UAV/Storage Resource 支持无序读写。多个线程写同一地址会产生 R
 - 使用前缀和分配唯一索引；
 - 拆分为多个阶段。
 
-原子操作保证更新不丢失，但大量线程竞争同一地址会串行化。
+对同一目标的原子更新可避免读改写丢失，但不能自动发布旁边的普通写入，也不替代阶段屏障。大量线程竞争同一地址还会限制吞吐。
 
 ### 资源类型与计数器
 
@@ -188,7 +190,7 @@ GPU 通过同时驻留多个 Wave 隐藏访存延迟。Occupancy 受以下资源
 
 Occupancy 高不等于一定快。算法可能受带宽、指令吞吐或同步限制。它只是分析维度之一。
 
-寄存器压力过高时，编译器可能把线程私有临时数据 Spill 到 Local Memory。这里的 Local 通常仍位于显存层级，不是低延迟的 `groupshared`。Spill 会增加访存并降低可驻留 Wave 数，应通过编译统计、ISA 和性能计数器确认。
+寄存器压力过高时，编译器可能把线程私有临时数据 Spill 到 Local Memory。这里的 Local 通常仍位于显存层级，不是低延迟的 `groupshared`。Spill增加访存；编译器也可能通过溢出来降低寄存器分配并提高驻留数。最终收益应结合编译统计、ISA和性能计数器确认。
 
 Wave Intrinsic 可以直接做 Lane 间求和、投票、广播和前缀操作，省去部分共享内存与 Barrier。它的作用范围是当前 Wave，不能假设整个 Group 只有一个 Wave；跨平台代码还要检查 Shader Model、Subgroup 支持和 Wave Size 约束。
 
@@ -227,13 +229,13 @@ Wave Intrinsic 可以直接做 Lane 间求和、投票、广播和前缀操作�
 
 编辑器工具中手动创建的 Buffer 必须显式释放，遗漏会造成显存泄漏，且在编辑器长时间运行下不断累积。
 
-编辑器工具还有一个验证优势：可以同时保留一份逻辑相同的 CPU 实现，直接比对两者结果。这是验证 Compute 逻辑正确性最可靠的方式，值得在开发期保留。
+编辑器工具还有一个验证优势：可以同时保留一份逻辑相同的 CPU 实现，直接比对两者结果。对照时采用独立的CPU算法，并明确浮点容差和归约顺序。它能发现数值差异，GPU竞态还需边界尺寸、重复运行及同步检查。
 
 ## 验证方法
 
 使用不能整除线程组的尺寸核对边界，用小输入比较CPU参考。共享内存barrier必须由组内一致路径到达；跨组阶段由额外Dispatch和API依赖协调。记录实际资源stride与编译后寄存器，不由源码变量数推测。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+实现状态：CopyKernel已由DXC编译探针检查，CPU调度为宿主片段；线程索引算例可直接复算。groupshared、原子发布与跨Dispatch依赖分别按其作用域解释，目标GPU输出及性能未运行。
 
 编译记录：[compile_completion.py](../examples/mechanisms/compile_completion.py)从正文片段补最小入口，以DXC编译CopyKernel通过。编译检查不包含完整引擎或GPU输出。
 
@@ -246,7 +248,6 @@ Wave Intrinsic 可以直接做 Lane 间求和、投票、广播和前缀操作�
 
 ## 参考资料
 
-- Microsoft Learn, *Compute Shader Overview* and *HLSL Shader Model 6 Wave Intrinsics*.
-- Khronos, *Vulkan Specification*, Compute Pipelines and Memory Model.
-- NVIDIA and AMD GPU architecture/performance guides.
-- LearnOpenGL, `src/8.guest/2022/5.computeshader_helloworld`.
+- [Microsoft GroupMemoryBarrierWithGroupSync](https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/groupmemorybarrierwithgroupsync)：2026-10-22核读组内共享访问完成与发散分支未定义行为。
+- [CUDA Best Practices 13.4 §11.1](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy)：核读寄存器分配粒度及占用率约束，具体CUDA参数不直接套用于所有Shader后端。
+- DXC语法探针入口见正文编译记录。
