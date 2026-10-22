@@ -162,7 +162,7 @@ OpenGL的equal、fractional_even与fractional_odd分别向对应整数段数约�
 
 - [[08_几何与网格/LOD选择]]、[[08_几何与网格/Heightfield地形]]、[[15_资产与工具管线/程序化资产生成]]、[[08_几何与网格/植被包裹法线]]、[[15_资产与工具管线/WFC]]
 - [[06_纹理技术/视差映射]]
-- [[02_GPU与光栅化管线/光栅化可见性导读]]
+- [[02_GPU与光栅化管线/光栅化可见性]]
 - [[02_GPU与光栅化管线/Geometry Shader]]、[[02_GPU与光栅化管线/Stream Output]]
 - [[26_GPU驱动与虚拟几何/GPU-Driven Rendering]]
 - [[10_VFX与模拟/水面与海洋渲染]]

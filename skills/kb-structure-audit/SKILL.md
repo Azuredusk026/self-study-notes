@@ -27,6 +27,8 @@ HTML报告验证使用 [verify_report.cjs](scripts/verify_report.cjs)。在技�
 
 全库工作状态见 [article-quality-matrix.json](article-quality-matrix.json)，只在全库计划或迁移进度任务中读取。新建、拆分和评审后同步路径、正文动作与质量状态。
 
+全文修订与独立复核记录见 [逐篇修订记录](references/revision-report.md)。运行 `python skills/kb-structure-audit/scripts/revision_validate.py <仓库根>`，核对每页复读状态、独立复核、九维依据和当前正文哈希；运行 `python skills/kb-structure-audit/scripts/test_revision_validate.py`，检查正文漂移、未完成复读和缺失依据等失败情形。工具只验证记录完整性，机制、写作和证据仍由全文复读判断。原始报告保存复读时文件字节哈希，当前矩阵使用UTF-8文本与LF换行的哈希，平台换行转换保持同一正文身份。
+
 当前标题方案见 [title-review.json](title-review.json)，命名迁移见 [rename-map.json](rename-map.json)。标题方案包含全文理解、不同候选与采用状态；映射连接历史审计中的原路径和当前页面，历史验证记录保持其原始含义。
 
 标题采用的覆盖度与执行记录见 [title-adoption-pilot.json](title-adoption-pilot.json)和 [采用报告](references/title-adoption-report.md)。领域方案与逐篇归属见 [分类报告](references/category-pattern-report.md)，审查结论与实际迁移分别记录。

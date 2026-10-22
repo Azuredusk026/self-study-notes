@@ -18,9 +18,11 @@
       "deferred_title": false,
       "primary_question": "作者如何组织、验证和维护文章",
       "content_actions": [
-        "KEEP"
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "4509364d4def32133d4da314acd73d2db168237f4e02f3796f3ea0866428fd08"
+      "final_sha256": "659f9c5ce2d38b820b8f73d440a69c58ccac63db5c4d9ea405dba84c2a4a4f3b",
+      "historical_final_sha256": "4509364d4def32133d4da314acd73d2db168237f4e02f3796f3ea0866428fd08"
     },
     {
       "current_path": "知识库/00_知识库说明/技术中文写作规范.md",
@@ -36,9 +38,11 @@
       "deferred_title": false,
       "primary_question": "技术中文写作规范",
       "content_actions": [
-        "KEEP"
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "3f6ce2b344c2258a075b96d3e4b495655bc792d5b1174972b9489f15c84b810a"
+      "final_sha256": "2aa55f0268d4e7d2d8794b79f06b7356bf6edc34084d1ee050e39489166c6150",
+      "historical_final_sha256": "3f6ce2b344c2258a075b96d3e4b495655bc792d5b1174972b9489f15c84b810a"
     },
     {
       "current_path": "知识库/00_知识库说明/术语表.md",
@@ -54,9 +58,11 @@
       "deferred_title": false,
       "primary_question": "读者如何统一技术叫法",
       "content_actions": [
-        "KEEP"
+        "FACT-CHECK",
+        "REWRITE"
       ],
-      "final_sha256": "e89244c9a204500ce628f2c3b88908e93d49282b1beda90164846b9d73ef665b"
+      "final_sha256": "fcb40197b0b13baa8c0a3033a6fec55d7257b38ecd16772c9eb8c42ce501df75",
+      "historical_final_sha256": "e89244c9a204500ce628f2c3b88908e93d49282b1beda90164846b9d73ef665b"
     },
     {
       "current_path": "知识库/00_知识库说明/知识地图.md",
@@ -72,9 +78,11 @@
       "deferred_title": false,
       "primary_question": "读者如何按问题找到学习路线",
       "content_actions": [
+        "RESTRUCTURE",
         "REWRITE"
       ],
-      "final_sha256": "0c4d44ad0f1ac6c30138c01f8687536635db694de2da4a9eaa4c0ae176568042"
+      "final_sha256": "7017f0e8c00c0e7c8b2581dd6a996c720150a40d2211203342fe31baefeb6ce1",
+      "historical_final_sha256": "0c4d44ad0f1ac6c30138c01f8687536635db694de2da4a9eaa4c0ae176568042"
     },
     {
       "current_path": "知识库/00_知识库说明/知识库实施规范.md",
@@ -90,9 +98,11 @@
       "deferred_title": false,
       "primary_question": "知识库实施规范",
       "content_actions": [
-        "KEEP"
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "355364e96113ee024abab9803e94480d3b97734b63b31e4b54522fd773781f68"
+      "final_sha256": "1f1c41e3e9fa31fae6e5eceddfd0448a317c2f274386754574713cebfb372c8a",
+      "historical_final_sha256": "355364e96113ee024abab9803e94480d3b97734b63b31e4b54522fd773781f68"
     },
     {
       "current_path": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
@@ -113,7 +123,8 @@
         "DEEPEN",
         "FACT-CHECK"
       ],
-      "final_sha256": "d3beaca1d243619b9852c718179fda64d4ce48413b0d6adfc4b7823bad3717a4"
+      "final_sha256": "0275c71ff29ac885b241735217006c94a913c660b0219de26243000d881cc528",
+      "historical_final_sha256": "d3beaca1d243619b9852c718179fda64d4ce48413b0d6adfc4b7823bad3717a4"
     },
     {
       "current_path": "知识库/01_数学与采样/旋转表示与插值.md",
@@ -131,7 +142,8 @@
       "content_actions": [
         "REWRITE"
       ],
-      "final_sha256": "716f91105a7070db1b5e96d337507c0d5a0850ba64eb48e803291c56d3a5fd37"
+      "final_sha256": "8acf4d9c1d6e930c1e7d3e195f7c9a3e43514afa004d27afe4debd1ba9b344b5",
+      "historical_final_sha256": "716f91105a7070db1b5e96d337507c0d5a0850ba64eb48e803291c56d3a5fd37"
     },
     {
       "current_path": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
@@ -151,7 +163,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "b34ac540e71342d9159f2460a41c9fbdd5c76e21eae9357933e24db6beb0bf73"
+      "final_sha256": "7881917325acfaab712d4a87c1e7b5aba8e9a6cdf1122c9b61e40cbe2c2a387f",
+      "historical_final_sha256": "b34ac540e71342d9159f2460a41c9fbdd5c76e21eae9357933e24db6beb0bf73"
     },
     {
       "current_path": "知识库/01_数学与采样/信号、频率与噪声.md",
@@ -171,7 +184,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "cb647ea7cf74124cdcfac094d430c4607a56476eba1bc0b3c032ade786b3450c"
+      "final_sha256": "e0b73b2962a94aa12cb8ce4d0b44bb7f92f5d17b5328918695dc51363ba51457",
+      "historical_final_sha256": "cb647ea7cf74124cdcfac094d430c4607a56476eba1bc0b3c032ade786b3450c"
     },
     {
       "current_path": "知识库/01_数学与采样/空间变换.md",
@@ -189,7 +203,8 @@
       "content_actions": [
         "REWRITE"
       ],
-      "final_sha256": "c585bf138e6ba31e1118f7666aae471fbbe1b2d7ac623184f3b02e8f28886b78"
+      "final_sha256": "60a556c182193e3eeafb171df25d97ed518030b016ba47299166890f22c4f950",
+      "historical_final_sha256": "c585bf138e6ba31e1118f7666aae471fbbe1b2d7ac623184f3b02e8f28886b78"
     },
     {
       "current_path": "知识库/01_数学与采样/信号、频率与噪声.md",
@@ -210,7 +225,8 @@
         "DEEPEN",
         "FACT-CHECK"
       ],
-      "final_sha256": "94f7b80f731c6c70ea78c886c12fbd182d06d64663b89d900015ce2978a65b69"
+      "final_sha256": "99997aed10d839e71c6399013f17b873fa4b2c3b9639ce415f576f689eefe8d7",
+      "historical_final_sha256": "94f7b80f731c6c70ea78c886c12fbd182d06d64663b89d900015ce2978a65b69"
     },
     {
       "current_path": "知识库/02_GPU与光栅化管线/GPU执行与访存.md",
@@ -228,7 +244,8 @@
       "content_actions": [
         "REWRITE"
       ],
-      "final_sha256": "a38b011b456135e4201c5ca2d88ff2e5c1060a9c17e9f07df54ee2e630028b05"
+      "final_sha256": "dc018b8716236d9d0bbda09cf1d92ca9932966e7ccbfd73e2adf9c96a63d2879",
+      "historical_final_sha256": "a38b011b456135e4201c5ca2d88ff2e5c1060a9c17e9f07df54ee2e630028b05"
     },
     {
       "current_path": "知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md",
@@ -249,10 +266,11 @@
         "DEEPEN",
         "FACT-CHECK"
       ],
-      "final_sha256": "3aebddad7663518623b964c7f7eae9630731eb0f7ee011768d025b30b3e33fc6"
+      "final_sha256": "29f6f29b32af9220525a9bbc312aca7f7829e6ad4c5cf0ccf68ef9977f0ca580",
+      "historical_final_sha256": "3aebddad7663518623b964c7f7eae9630731eb0f7ee011768d025b30b3e33fc6"
     },
     {
-      "current_path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "current_path": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
       "final_path": "知识库/02_GPU与光栅化管线/OpenGL对象与状态.md",
       "final_category": "02_GPU与光栅化管线",
       "final_filename": "OpenGL对象与状态.md",
@@ -269,7 +287,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "bfd389d021ab1e9f4b3b7a946ce18c474c139cdba74e9c58770507e067a110c3"
+      "final_sha256": "8c1946d583a47bf04272973393fd28cb5ebc0444324d62577e7dfc1781afb47c",
+      "historical_final_sha256": "bfd389d021ab1e9f4b3b7a946ce18c474c139cdba74e9c58770507e067a110c3"
     },
     {
       "current_path": "知识库/02_GPU与光栅化管线/Stencil与对象遮罩.md",
@@ -287,7 +306,8 @@
       "content_actions": [
         "REWRITE"
       ],
-      "final_sha256": "932839d958724a52820fdd9765cfd824882822eb57e020f7af5d51372e5937ab"
+      "final_sha256": "8080876f00afcc3ff1784127a99cec9a725ea4202eae1ac58c0b718e2009bce9",
+      "historical_final_sha256": "932839d958724a52820fdd9765cfd824882822eb57e020f7af5d51372e5937ab"
     },
     {
       "current_path": "知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md",
@@ -308,14 +328,15 @@
         "DEEPEN",
         "FACT-CHECK"
       ],
-      "final_sha256": "98c8e78871c135fac93fad46228e74b5f1e5474271ac704b2c519bbfac8050f1"
+      "final_sha256": "db38fa97f99da5ada7d16d5c8b900cd071c39b5f8178d4544d0b00f6b0374e17",
+      "historical_final_sha256": "98c8e78871c135fac93fad46228e74b5f1e5474271ac704b2c519bbfac8050f1"
     },
     {
-      "current_path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
-      "final_path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "current_path": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
+      "final_path": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
       "final_category": "02_GPU与光栅化管线",
-      "final_filename": "一帧如何到达屏幕.md",
-      "final_h1": "一帧如何到达屏幕",
+      "final_filename": "渲染帧流程.md",
+      "final_h1": "渲染帧流程",
       "title_review": "PASS",
       "title_decision": "ADOPT",
       "category_review": "PASS",
@@ -324,10 +345,11 @@
       "deferred_title": false,
       "primary_question": "这些专题如何按输入与工程问题衔接",
       "content_actions": [
-        "REWRITE",
-        "RESTRUCTURE"
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "c65ba8b25e8cfd3c0f73a32014fb3ddc654e13aabd4c4bfa4159531ccc7d8fc0"
+      "final_sha256": "5f51c8f4aab99e75bc4b9491a16c2101b3149ea5724c3da110e502eb32ac6792",
+      "historical_final_sha256": "c65ba8b25e8cfd3c0f73a32014fb3ddc654e13aabd4c4bfa4159531ccc7d8fc0"
     },
     {
       "current_path": "知识库/02_GPU与光栅化管线/光栅化与属性插值.md",
@@ -345,14 +367,15 @@
       "content_actions": [
         "REWRITE"
       ],
-      "final_sha256": "ba7a45c66559c07291875bbdcb2047c77b8c95a11081d4e7985dd72b9baf90b8"
+      "final_sha256": "afc48f12d03d22fa65dedb3f54c467dd4024c3306d6fd46a8f47da479f1ee4f6",
+      "historical_final_sha256": "ba7a45c66559c07291875bbdcb2047c77b8c95a11081d4e7985dd72b9baf90b8"
     },
     {
       "current_path": "知识库/02_GPU与光栅化管线/光栅化、插值与深度模板.md",
-      "final_path": "知识库/02_GPU与光栅化管线/光栅化可见性导读.md",
+      "final_path": "知识库/02_GPU与光栅化管线/光栅化可见性.md",
       "final_category": "02_GPU与光栅化管线",
-      "final_filename": "光栅化可见性导读.md",
-      "final_h1": "光栅化可见性导读",
+      "final_filename": "光栅化可见性.md",
+      "final_h1": "光栅化可见性",
       "title_review": "PASS",
       "title_decision": "ADOPT",
       "category_review": "PASS",
@@ -361,18 +384,19 @@
       "deferred_title": false,
       "primary_question": "这些专题如何按输入与工程问题衔接",
       "content_actions": [
-        "REWRITE",
-        "RESTRUCTURE"
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "0b95bc7843d85bd08fb7bbc64ef85f77ad67bcdc2d1ea75dad9b888e1c924e26",
-      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
+      "final_sha256": "f73f956b2b0803f29101d18d6c60add912b424bbdddebb9ade722c0622ad20a9",
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
+      "historical_final_sha256": "0b95bc7843d85bd08fb7bbc64ef85f77ad67bcdc2d1ea75dad9b888e1c924e26"
     },
     {
       "current_path": "知识库/02_GPU与光栅化管线/剔除、透明与混合.md",
-      "final_path": "知识库/02_GPU与光栅化管线/可见性与合成导读.md",
+      "final_path": "知识库/02_GPU与光栅化管线/可见性与合成.md",
       "final_category": "02_GPU与光栅化管线",
-      "final_filename": "可见性与合成导读.md",
-      "final_h1": "可见性与合成导读",
+      "final_filename": "可见性与合成.md",
+      "final_h1": "可见性与合成",
       "title_review": "PASS",
       "title_decision": "ADOPT",
       "category_review": "PASS",
@@ -381,11 +405,12 @@
       "deferred_title": false,
       "primary_question": "这些专题如何按输入与工程问题衔接",
       "content_actions": [
-        "REWRITE",
-        "RESTRUCTURE"
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "09b85918518a7ca91ce9f0bbfa7eab20b96fc8b683b01a9a55864afe76816cd5",
-      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
+      "final_sha256": "68bdc4f4b4c41a2220e8d58dca13e183b331851df80b37d2780eeb6a3f8db82e",
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
+      "historical_final_sha256": "09b85918518a7ca91ce9f0bbfa7eab20b96fc8b683b01a9a55864afe76816cd5"
     },
     {
       "current_path": "知识库/02_GPU与光栅化管线/可见性剔除.md",
@@ -403,7 +428,8 @@
       "content_actions": [
         "REWRITE"
       ],
-      "final_sha256": "4e4e9b056c6281ee428cf5e156624f66b82accfd3789d1f422bb1f043d57d6da"
+      "final_sha256": "6c4e07d5e8e2ace7454226e7817cf504d9f818d7bc0b5849d67eee01435b0f55",
+      "historical_final_sha256": "4e4e9b056c6281ee428cf5e156624f66b82accfd3789d1f422bb1f043d57d6da"
     },
     {
       "current_path": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
@@ -421,7 +447,8 @@
       "content_actions": [
         "REWRITE"
       ],
-      "final_sha256": "9f3d0d7c418fa645808b65f8e45e76cd370d1248b45d1d83d13ca661139e3590"
+      "final_sha256": "62e7b01b3f760f721c5342240bb82993cea10db0222a10652b826fa173cfaee6",
+      "historical_final_sha256": "9f3d0d7c418fa645808b65f8e45e76cd370d1248b45d1d83d13ca661139e3590"
     },
     {
       "current_path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
@@ -439,10 +466,11 @@
       "content_actions": [
         "REWRITE"
       ],
-      "final_sha256": "c394d9d1b44fe7b12aa5038d208d2f079e589bf5950bd497298b4abfdef7c275"
+      "final_sha256": "8fc6a7ebe5c8ca9736acb0f03cb576909fc05db08f6c129741bee41a51ad7644",
+      "historical_final_sha256": "c394d9d1b44fe7b12aa5038d208d2f079e589bf5950bd497298b4abfdef7c275"
     },
     {
-      "current_path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "current_path": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
       "final_path": "知识库/02_GPU与光栅化管线/显示呈现.md",
       "final_category": "02_GPU与光栅化管线",
       "final_filename": "显示呈现.md",
@@ -459,7 +487,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "fed893d2b10e7d59b5ca0fff555580e1a65ddefa7c55ba3555bb9d81fa0ffdb9"
+      "final_sha256": "ce7e184d8bcd5cbd019b6680ce5eb9ad7297777cd48623e7b3c6e283e2efa6ce",
+      "historical_final_sha256": "fed893d2b10e7d59b5ca0fff555580e1a65ddefa7c55ba3555bb9d81fa0ffdb9"
     },
     {
       "current_path": "知识库/02_GPU与光栅化管线/深度缓冲与位置重建.md",
@@ -477,7 +506,8 @@
       "content_actions": [
         "REWRITE"
       ],
-      "final_sha256": "817985712e552648ec5a1df699a7f2d2de0196f4e32726d5877f71624a20f39a"
+      "final_sha256": "1c584889523ea1a69db4205fb91834d1e1e5584d3ff034a7931e9b61104c2cb7",
+      "historical_final_sha256": "817985712e552648ec5a1df699a7f2d2de0196f4e32726d5877f71624a20f39a"
     },
     {
       "current_path": "知识库/02_GPU与光栅化管线/透明合成.md",
@@ -495,7 +525,8 @@
       "content_actions": [
         "REWRITE"
       ],
-      "final_sha256": "af83f228a8c14f6deaee3bbe04447f39e410158fd4fec9b4eb625b2d527f163f"
+      "final_sha256": "926a7a4305e3f47fe9ac11fbcd72b84b5a27617394724008e8bcad55d78c4071",
+      "historical_final_sha256": "af83f228a8c14f6deaee3bbe04447f39e410158fd4fec9b4eb625b2d527f163f"
     },
     {
       "current_path": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
@@ -515,7 +546,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "cd757610b75f411211de05fd86cb0271d580ff20f8dec97429184b4486592136"
+      "final_sha256": "8ba1609f6ccf068011f5c19defee8ddc223d819aa9d1fc79b7c1cf48c6b6f5a4",
+      "historical_final_sha256": "cd757610b75f411211de05fd86cb0271d580ff20f8dec97429184b4486592136"
     },
     {
       "current_path": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
@@ -535,7 +567,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "89dbc0b6545d653f3d2a1c6f78d00b20830ff4c0bb42521ccf3f55f4bed2499e"
+      "final_sha256": "ac19550d910c43d4eb366dfb3ad5b557e9c553eeb0f42a685446db257fc9ce66",
+      "historical_final_sha256": "89dbc0b6545d653f3d2a1c6f78d00b20830ff4c0bb42521ccf3f55f4bed2499e"
     },
     {
       "current_path": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
@@ -555,7 +588,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "afb5aa035651bb044c6650dd5b3c8c10f64c66e58a324c64e66ff29edca580e8"
+      "final_sha256": "4d7d7c4030e3dd70c8c3cd1e879475ee48bfc12d4d99f1139a22920db4c2c5e4",
+      "historical_final_sha256": "afb5aa035651bb044c6650dd5b3c8c10f64c66e58a324c64e66ff29edca580e8"
     },
     {
       "current_path": "知识库/03_Shader编程/Shader Variant管理.md",
@@ -573,7 +607,8 @@
       "content_actions": [
         "REWRITE"
       ],
-      "final_sha256": "75f9f6b1b4f197b71b102ced2209e82393e1de6f779909df2ead17eba4a6e4a6"
+      "final_sha256": "790f72cb9a2c3be204ec9414c8b7f02e57f1b8cdc8a4b94dd59e98def253fdcf",
+      "historical_final_sha256": "75f9f6b1b4f197b71b102ced2209e82393e1de6f779909df2ead17eba4a6e4a6"
     },
     {
       "current_path": "知识库/03_Shader编程/Shader接口与数据流.md",
@@ -591,7 +626,8 @@
       "content_actions": [
         "REWRITE"
       ],
-      "final_sha256": "580f24d92c5de4fdb77bfdc3ce0317da128eb5d41a8809a0c7df20ef513d78d6"
+      "final_sha256": "c06a324c812d20f9fcd69204cb6ff56f0790a6eb2f53560d41044cf400d00379",
+      "historical_final_sha256": "580f24d92c5de4fdb77bfdc3ce0317da128eb5d41a8809a0c7df20ef513d78d6"
     },
     {
       "current_path": "知识库/04_光照模型与PBR/BRDF与微表面模型.md",
@@ -609,7 +645,8 @@
       "content_actions": [
         "REWRITE"
       ],
-      "final_sha256": "fb5b6c1d666fe0321907ba2bc0cd236cf1fd3ad19ecfd6be011db3cc8cb4df5e"
+      "final_sha256": "f58030fc2f65c18504c2e31c5aa3fde86668c7fba92fbe8942fd04ee9975c399",
+      "historical_final_sha256": "fb5b6c1d666fe0321907ba2bc0cd236cf1fd3ad19ecfd6be011db3cc8cb4df5e"
     },
     {
       "current_path": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
@@ -629,7 +666,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "43f1482ec61fdce4b446dd460908834f4d1cefb43423b5fbd4269779ff4896d3"
+      "final_sha256": "579a5a91d48672106d61360aecdb4505811b334bdca9ad3d5cd9a3d67a194380",
+      "historical_final_sha256": "43f1482ec61fdce4b446dd460908834f4d1cefb43423b5fbd4269779ff4896d3"
     },
     {
       "current_path": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
@@ -649,7 +687,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "0c9e21faccbd9210985334309900952b2ed438807b376e11088b84a001441356"
+      "final_sha256": "1ffab9cab1ce860c53ce10a95e7b74c4c496cfbc7e090de81125478fea8437dc",
+      "historical_final_sha256": "0c9e21faccbd9210985334309900952b2ed438807b376e11088b84a001441356"
     },
     {
       "current_path": "知识库/04_光照模型与PBR/PBR材质.md",
@@ -667,7 +706,8 @@
       "content_actions": [
         "REWRITE"
       ],
-      "final_sha256": "46a0af10652abad92c6486d3a495a672d8e6636344ca3d501dfb52b216ffe570"
+      "final_sha256": "7ee452d2e7e17c60d633b13b95a88a23e78d30546d3617f1cabd15936ebd021d",
+      "historical_final_sha256": "46a0af10652abad92c6486d3a495a672d8e6636344ca3d501dfb52b216ffe570"
     },
     {
       "current_path": "知识库/04_光照模型与PBR/法线贴图、切线空间与IBL.md",
@@ -687,7 +727,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "76766607241eaf3f13f721383e33ab716bf9c94245e89af29b40cc6679ebf262"
+      "final_sha256": "f3529ae630040b53cc2a28ecb49c740d67ec03b1532267f134d771cbcc3b709b",
+      "historical_final_sha256": "76766607241eaf3f13f721383e33ab716bf9c94245e89af29b40cc6679ebf262"
     },
     {
       "current_path": "知识库/04_光照模型与PBR/皮肤次表面散射.md",
@@ -705,7 +746,8 @@
       "content_actions": [
         "REWRITE"
       ],
-      "final_sha256": "4dbbb900ab1004c0ee32f2a2a7c1f5ee95e641ada9c1522e8b4a366fb54003e4"
+      "final_sha256": "00806f88ff604590f053e295dd6e40f036da6afeaba2eb7b4263ffafe5f0f8e4",
+      "historical_final_sha256": "4dbbb900ab1004c0ee32f2a2a7c1f5ee95e641ada9c1522e8b4a366fb54003e4"
     },
     {
       "current_path": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
@@ -721,10 +763,11 @@
       "deferred_title": false,
       "primary_question": "这些专题如何按输入与工程问题衔接",
       "content_actions": [
-        "REWRITE",
-        "RESTRUCTURE"
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "d0151a6339430868920927c3e4613458f4dd41d1a0e5ae8a0e933554e15e9883"
+      "final_sha256": "c951ee04316e050e959cb448683cd73d6cb068b4f3502d9a7bdad96b5545f2ab",
+      "historical_final_sha256": "d0151a6339430868920927c3e4613458f4dd41d1a0e5ae8a0e933554e15e9883"
     },
     {
       "current_path": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
@@ -744,7 +787,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "78423a5108bc5686d88b0f15f937df414f9b3734f8fbc43622ee0d04ac0a5542"
+      "final_sha256": "8575a25f4a5d2069f3521225a30003e19422e5c6f711fc9f270a6e988a274869",
+      "historical_final_sha256": "78423a5108bc5686d88b0f15f937df414f9b3734f8fbc43622ee0d04ac0a5542"
     },
     {
       "current_path": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
@@ -764,7 +808,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "8337a78d35a7f94703cb70b8378c49ef1c806b5da309f201ebbf3d0e7b44061b"
+      "final_sha256": "30df52bc6f451a176f58a7ef3740243909abc2dc95e3d5151537934a6bdbb7fb",
+      "historical_final_sha256": "8337a78d35a7f94703cb70b8378c49ef1c806b5da309f201ebbf3d0e7b44061b"
     },
     {
       "current_path": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
@@ -784,7 +829,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "50ab10c207a24b4c7f7f5631e32186cc48b891a8405c904c57c4a1605aa8a691"
+      "final_sha256": "be74ae062bc5e5990058a8271b1e133f068684b0ec757818938a66e4570cbdde",
+      "historical_final_sha256": "50ab10c207a24b4c7f7f5631e32186cc48b891a8405c904c57c4a1605aa8a691"
     },
     {
       "current_path": "知识库/05_光照阴影与GI/Shadow Map.md",
@@ -802,7 +848,8 @@
       "content_actions": [
         "REWRITE"
       ],
-      "final_sha256": "c94919664a6d16c315c56afd9f02f908d15c94cc34511baa171dc27e79a16216"
+      "final_sha256": "c543ff03d755a0a33c1661dce531fb735d7802b268a5d2820aad744e8549d675",
+      "historical_final_sha256": "c94919664a6d16c315c56afd9f02f908d15c94cc34511baa171dc27e79a16216"
     },
     {
       "current_path": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
@@ -822,7 +869,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "079c18942082fde200a173493c33db1ad9d18e3fe4dbdcb67b9cce04c74bf829"
+      "final_sha256": "c54fd5625d6dc5801bcdbf820ac316ab9723954e247d0dce593ba5b7be44a9b7",
+      "historical_final_sha256": "079c18942082fde200a173493c33db1ad9d18e3fe4dbdcb67b9cce04c74bf829"
     },
     {
       "current_path": "知识库/05_光照阴影与GI/直接光照.md",
@@ -840,7 +888,8 @@
       "content_actions": [
         "KEEP"
       ],
-      "final_sha256": "261033f6564433f55aae75c606f59265a589f7d4c6462e61795d55be76dedb6b"
+      "final_sha256": "4aad75772cc951bc0fc9cb2b8e887e77b61631ad64aaabf71b53c83ad584097b",
+      "historical_final_sha256": "261033f6564433f55aae75c606f59265a589f7d4c6462e61795d55be76dedb6b"
     },
     {
       "current_path": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
@@ -856,11 +905,13 @@
       "deferred_title": false,
       "primary_question": "如何在内存预算内让所需mip及时驻留",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "38b4393c523384b7cee3d3f3f6509a707d6e38ae47329a88ea8ebe2caf547c86"
+      "final_sha256": "24a6618fcbf0f351fc5bf2f94c981e4faa72d0a3299cd5a1f9e98999c99f54bc",
+      "historical_final_sha256": "38b4393c523384b7cee3d3f3f6509a707d6e38ae47329a88ea8ebe2caf547c86"
     },
     {
       "current_path": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
@@ -876,11 +927,13 @@
       "deferred_title": false,
       "primary_question": "如何按页寻址超出驻留预算的纹理",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "cd4c2e721a2e90c3f8f8a4a553d811b999328cbca01340920de67d5dcd1d6dcf"
+      "final_sha256": "4dfe6a70184188c5a3c6782a75b9a92e85f123968866c5ef626b5f4e89bfe60c",
+      "historical_final_sha256": "cd4c2e721a2e90c3f8f8a4a553d811b999328cbca01340920de67d5dcd1d6dcf"
     },
     {
       "current_path": "知识库/06_纹理技术/纹理压缩格式.md",
@@ -896,9 +949,12 @@
       "deferred_title": false,
       "primary_question": "如何根据通道误差和平台支持选择压缩格式",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "a2b7404878740168331e191bba59f0ff29b2b6ee35c4441e11647d88aa5d07d8"
+      "final_sha256": "2684d6fc50b22e7537e1019dee94be9856a637256c0a0a72a94f8cbf09248e2e",
+      "historical_final_sha256": "a2b7404878740168331e191bba59f0ff29b2b6ee35c4441e11647d88aa5d07d8"
     },
     {
       "current_path": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
@@ -914,11 +970,13 @@
       "deferred_title": false,
       "primary_question": "如何用UV布局共享纹理并避免过滤串色",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "fa8989d08fc9fd6b6f6b9536ae75d2e6e127c0a79e817919ead3b35692bf2191"
+      "final_sha256": "14228614d38b177b65fd2b5853fa7c89e764675b5d01b2ec01dc4f6c587e9b39",
+      "historical_final_sha256": "fa8989d08fc9fd6b6f6b9536ae75d2e6e127c0a79e817919ead3b35692bf2191"
     },
     {
       "current_path": "知识库/06_纹理技术/纹理采样与过滤.md",
@@ -934,9 +992,12 @@
       "deferred_title": false,
       "primary_question": "如何从采样足迹选择Mip和过滤",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "c68dcd35f5027f111c966c8b1ed02a4cef8647fe3e488359ac4f04c4bf135b19"
+      "final_sha256": "d598cf2a11f6b37f9f01534622ac63f41140ad49af57a4cc95b21362b1e51091",
+      "historical_final_sha256": "c68dcd35f5027f111c966c8b1ed02a4cef8647fe3e488359ac4f04c4bf135b19"
     },
     {
       "current_path": "知识库/06_纹理技术/视差映射.md",
@@ -952,9 +1013,12 @@
       "deferred_title": false,
       "primary_question": "如何用高度场偏移采样以近似表面视差",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "223fd3936b0b7e701fe09c36026fb3a4ba61bab5c7b1b674eafaae82b9f01ecc"
+      "final_sha256": "4cc4245a613850cea3b8f9777de3ec303e73643815e68291d8d46978dc06fc92",
+      "historical_final_sha256": "223fd3936b0b7e701fe09c36026fb3a4ba61bab5c7b1b674eafaae82b9f01ecc"
     },
     {
       "current_path": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
@@ -974,7 +1038,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "9a11d6aa15920ccc50d71293a3ef86b5349e65c658798f304735c35ee055f3b8"
+      "final_sha256": "f80cfbc6855c6eb163043021e3df0df40a6460b83a50844f184b5b6b408aa248",
+      "historical_final_sha256": "9a11d6aa15920ccc50d71293a3ef86b5349e65c658798f304735c35ee055f3b8"
     },
     {
       "current_path": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
@@ -994,7 +1059,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "b3cc23740e4fa0fd57ad4b935d77029c4e0a8ae7ab2ae6dcd5b7e495ecb72bbe"
+      "final_sha256": "e6abed97fc335d867293fec9398691e51b0e2d7e0100fcfdd7910263daee3c9c",
+      "historical_final_sha256": "b3cc23740e4fa0fd57ad4b935d77029c4e0a8ae7ab2ae6dcd5b7e495ecb72bbe"
     },
     {
       "current_path": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
@@ -1014,7 +1080,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "2282be503ac805bafb6442b76a5f001c27164037700ac7b5297700e6e2971223"
+      "final_sha256": "0132abd09f4c52b0b267d0b564541a9ae8b36ab99909742e29ddf2ebbe08fc43",
+      "historical_final_sha256": "2282be503ac805bafb6442b76a5f001c27164037700ac7b5297700e6e2971223"
     },
     {
       "current_path": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
@@ -1034,7 +1101,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "5e0093846137587fe1ba6a64a016e6094579305e0b010553fe58e672266c4ee7"
+      "final_sha256": "c49a1618edfe254b5ade0d8dd1c30077bc3b077e5e74493a1edeae3a6e63cc27",
+      "historical_final_sha256": "5e0093846137587fe1ba6a64a016e6094579305e0b010553fe58e672266c4ee7"
     },
     {
       "current_path": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
@@ -1050,10 +1118,11 @@
       "deferred_title": false,
       "primary_question": "这些专题如何按输入与工程问题衔接",
       "content_actions": [
-        "REWRITE",
-        "RESTRUCTURE"
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "78b6b6cecd8cd61da43ba2df7fa86e4bdb40728aa63990500e56981585a6fce3"
+      "final_sha256": "8ca373236723b42d49ecf40d4a9164274d3fc060fb9f97df81e69c9c00d99acb",
+      "historical_final_sha256": "78b6b6cecd8cd61da43ba2df7fa86e4bdb40728aa63990500e56981585a6fce3"
     },
     {
       "current_path": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
@@ -1073,7 +1142,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "36c7c23f4ed0ef919c96d71216345c548a2e7eabae263b146c10407c0a8b9f78"
+      "final_sha256": "5368aec5da16de9f6b12f7d4986cdbccdb019653ddf2f30f91bc6afe426fa4e9",
+      "historical_final_sha256": "36c7c23f4ed0ef919c96d71216345c548a2e7eabae263b146c10407c0a8b9f78"
     },
     {
       "current_path": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
@@ -1093,7 +1163,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "390e9fd34d4948e511d741c4b0c3755110b28dcb1cc1666ff4183ed52ca664fa"
+      "final_sha256": "29d95f8c5215315aace3659cf5fad719b3e12f6f36ff56f5feb2a71a1f525aa9",
+      "historical_final_sha256": "390e9fd34d4948e511d741c4b0c3755110b28dcb1cc1666ff4183ed52ca664fa"
     },
     {
       "current_path": "知识库/07_颜色与后处理/颜色空间、Alpha、HDR与曝光.md",
@@ -1113,7 +1184,8 @@
         "RESTRUCTURE",
         "DEEPEN"
       ],
-      "final_sha256": "f3cadb1c6e8fec6a2bb30309bdf12d6a361eacfa196a82b9c237e1c6b8fd1730"
+      "final_sha256": "a839be78dd37cdd143a6600f4460f6badc07525fc2ecf2d80a9e3d7cbbe2c7b6",
+      "historical_final_sha256": "f3cadb1c6e8fec6a2bb30309bdf12d6a361eacfa196a82b9c237e1c6b8fd1730"
     },
     {
       "current_path": "知识库/08_几何与网格/Billboard.md",
@@ -1129,9 +1201,12 @@
       "deferred_title": false,
       "primary_question": "Billboard朝向、锚点与深度",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "3762968f2c53dff265ea0872933466e54ec853c1a8e1e42ab4ac333c847b3523"
+      "final_sha256": "f6b0631ea9864152f2b66db48d4ff36bb57bfdd579732a491ebd731beac409bc",
+      "historical_final_sha256": "3762968f2c53dff265ea0872933466e54ec853c1a8e1e42ab4ac333c847b3523"
     },
     {
       "current_path": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
@@ -1147,11 +1222,13 @@
       "deferred_title": false,
       "primary_question": "如何把高度场转换成连续的分块地形",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "84f724ff6af202b9a7a26964ddab46d3c5f6e5426aeda54315aa98095fe3138c"
+      "final_sha256": "4a864d69a2f12b97022e683bad1af7cd0ae36d53d0137d92f6357389b582a080",
+      "historical_final_sha256": "84f724ff6af202b9a7a26964ddab46d3c5f6e5426aeda54315aa98095fe3138c"
     },
     {
       "current_path": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
@@ -1167,11 +1244,13 @@
       "deferred_title": false,
       "primary_question": "如何按屏幕误差降低资产成本并稳定切换",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "597e8d432caddc86c69982fe3dfca10c128c67121caba8d5053417badc8e2094"
+      "final_sha256": "894a037988ef6009fa049a10f031d8e876b91d5d5d5875c24aa39b96c7b75869",
+      "historical_final_sha256": "597e8d432caddc86c69982fe3dfca10c128c67121caba8d5053417badc8e2094"
     },
     {
       "current_path": "知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md",
@@ -1187,9 +1266,12 @@
       "deferred_title": false,
       "primary_question": "如何选择图元生成、规则细分和几何结果捕获",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "7d762856cc255bf8087d347a00e3989702bd9fa4af9df5ee022be947a5a3149c"
+      "final_sha256": "61374c996ace6f407d9eca64fb0152f44adf933ca4e814f3c5adad0a5d40e3c0",
+      "historical_final_sha256": "7d762856cc255bf8087d347a00e3989702bd9fa4af9df5ee022be947a5a3149c"
     },
     {
       "current_path": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
@@ -1205,11 +1287,13 @@
       "deferred_title": false,
       "primary_question": "如何用代理体积给面片植被生成连贯受光方向",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "90eacc88c67155b18f321b4da98a448783ab977c68af7c9482059856b65a25e3"
+      "final_sha256": "cfb990f3657ff888055a7c1e79b876bd58778ccb441edc65ccf876da0dbf0773",
+      "historical_final_sha256": "90eacc88c67155b18f321b4da98a448783ab977c68af7c9482059856b65a25e3"
     },
     {
       "current_path": "知识库/08_几何与网格/网格数据与GPU访问.md",
@@ -1225,9 +1309,12 @@
       "deferred_title": false,
       "primary_question": "如何把资产拓扑组织成高效GPU网格",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "fa7f26e65f98ae01afeb1dd1db3636cb1a7862945e4c0c5fa31a7a8fab3b429c"
+      "final_sha256": "44b3496d51cbde407f1624f5d213e148bf2fbbed95687c1711e58950583537da",
+      "historical_final_sha256": "fa7f26e65f98ae01afeb1dd1db3636cb1a7862945e4c0c5fa31a7a8fab3b429c"
     },
     {
       "current_path": "知识库/09_动画系统/动画状态、混合与IK.md",
@@ -1243,11 +1330,13 @@
       "deferred_title": false,
       "primary_question": "如何在骨长约束下让关节链末端到达目标",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "352c7c780012f121c2d9f2426283c0a94d92ba3ded1acaede8e67d97538eeb3c"
+      "final_sha256": "63d2b59eab183e9d9832b9fd7357eab6e697e8614b101cd835311b1c02142d7d",
+      "historical_final_sha256": "352c7c780012f121c2d9f2426283c0a94d92ba3ded1acaede8e67d97538eeb3c"
     },
     {
       "current_path": "知识库/09_动画系统/动画压缩.md",
@@ -1263,9 +1352,12 @@
       "deferred_title": false,
       "primary_question": "如何压缩动画轨道并控制末端误差",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "a789d46359b374eef79fee318842a0dcac6d78c33dd8f50567115bb05f8f9bb2"
+      "final_sha256": "e0433736464701d381cbe5f4fc20a70d4f6b99214dc2e510f35aa00ef9a78abf",
+      "historical_final_sha256": "a789d46359b374eef79fee318842a0dcac6d78c33dd8f50567115bb05f8f9bb2"
     },
     {
       "current_path": "知识库/09_动画系统/动画状态、混合与IK.md",
@@ -1281,11 +1373,13 @@
       "deferred_title": false,
       "primary_question": "如何从动作状态与层权重生成连续局部姿态",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "5177dbed697e6265e97238f350410656e99498448e5467bea9d6c1b09eb0f960"
+      "final_sha256": "3dcdaacab60e507833413324b98df297d26a956f6362f205579d0edffe71976a",
+      "historical_final_sha256": "5177dbed697e6265e97238f350410656e99498448e5467bea9d6c1b09eb0f960"
     },
     {
       "current_path": "知识库/09_动画系统/动画状态、混合与IK.md",
@@ -1301,11 +1395,13 @@
       "deferred_title": false,
       "primary_question": "如何把源骨架动作映射到比例与轴向不同的目标骨架",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "504b4ea532886ad7ab12b22d28d7423c371de6ba30fd693be3a2c29f5486547c"
+      "final_sha256": "4f1669e133ad0a7a1d55175024247e8b772dec5392132602f1e82996a018c698",
+      "historical_final_sha256": "504b4ea532886ad7ab12b22d28d7423c371de6ba30fd693be3a2c29f5486547c"
     },
     {
       "current_path": "知识库/09_动画系统/植被风动.md",
@@ -1321,9 +1417,13 @@
       "deferred_title": false,
       "primary_question": "植被风动与顶点变形",
       "content_actions": [
-        "KEEP"
+        "DEEPEN",
+        "FACT-CHECK",
+        "KEEP",
+        "REWRITE"
       ],
-      "final_sha256": "7015802bb8e516a7eee3f7633883b91e3ff6bc84b1d81a11464953dc7cd86b27"
+      "final_sha256": "4ed25c8eeb96cd1655c0749e9a066853fefb06de36165876c03cf5f7ab992f41",
+      "historical_final_sha256": "7015802bb8e516a7eee3f7633883b91e3ff6bc84b1d81a11464953dc7cd86b27"
     },
     {
       "current_path": "知识库/09_动画系统/布料与毛发的表示、碰撞和LOD.md",
@@ -1339,11 +1439,13 @@
       "deferred_title": false,
       "primary_question": "如何用Cards或Guide驱动可分级的毛发表示",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "c063c0e576492058df26512e9a9b947efa323b5b1fd8904a53d765c0e7946a5d"
+      "final_sha256": "18f3216ebfb304d8e1f175fd053058f12ee2bb05e1dfb5d89132246883b103fe",
+      "historical_final_sha256": "c063c0e576492058df26512e9a9b947efa323b5b1fd8904a53d765c0e7946a5d"
     },
     {
       "current_path": "知识库/09_动画系统/动画压缩、面部、布料与毛发.md",
@@ -1359,11 +1461,12 @@
       "deferred_title": false,
       "primary_question": "这些专题如何按输入与工程问题衔接",
       "content_actions": [
-        "REWRITE",
-        "RESTRUCTURE"
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "0a8290f15312f178896d29ef11551906f61e99748669fdb99e47ac327b772ad0",
-      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
+      "final_sha256": "3e23206796e95c55b10ed1b81b42c54d2016c59e13ef3fd7e4c861074b78f560",
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
+      "historical_final_sha256": "0a8290f15312f178896d29ef11551906f61e99748669fdb99e47ac327b772ad0"
     },
     {
       "current_path": "知识库/09_动画系统/布料与毛发的表示、碰撞和LOD.md",
@@ -1379,11 +1482,13 @@
       "deferred_title": false,
       "primary_question": "如何用低模模拟代理驱动角色服装并控制穿透",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "df7c9a74d7e3e74aa7e2732a76373214e3f8ef1545235bc413cd14f71649c759"
+      "final_sha256": "19c343161373987a9e43d53a7eeabce56ccdddf12605397c740e8d0516b38205",
+      "historical_final_sha256": "df7c9a74d7e3e74aa7e2732a76373214e3f8ef1545235bc413cd14f71649c759"
     },
     {
       "current_path": "知识库/09_动画系统/面部动画.md",
@@ -1399,9 +1504,12 @@
       "deferred_title": false,
       "primary_question": "如何组合面部形状目标得到可用表情",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "545c2562b39d587727fdc67d57d5fb0b9acddc4b5bfc7779459bbd6c3fa3065a"
+      "final_sha256": "3f8120e36406fac8a8c826b5becdc5507c32904bd6e5f3600a6f4c8b81988ba8",
+      "historical_final_sha256": "545c2562b39d587727fdc67d57d5fb0b9acddc4b5bfc7779459bbd6c3fa3065a"
     },
     {
       "current_path": "知识库/09_动画系统/骨骼动画与蒙皮.md",
@@ -1417,9 +1525,13 @@
       "deferred_title": false,
       "primary_question": "如何从局部姿态得到蒙皮顶点",
       "content_actions": [
-        "KEEP"
+        "DEEPEN",
+        "FACT-CHECK",
+        "KEEP",
+        "REWRITE"
       ],
-      "final_sha256": "74740a47420ab78a00e0069926f8e0dd6e7267175e2fa05690fa2a7a81cf71fd"
+      "final_sha256": "4c913086214c712cd5236d821405af669af4469fa01012d1d09d071f0cb17873",
+      "historical_final_sha256": "74740a47420ab78a00e0069926f8e0dd6e7267175e2fa05690fa2a7a81cf71fd"
     },
     {
       "current_path": "知识库/10_VFX与模拟/Froxel体积雾.md",
@@ -1435,9 +1547,12 @@
       "deferred_title": false,
       "primary_question": "如何将视锥散射数据积分并时域稳定",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "a11756b91aa44007db21ec540b39bc7f7fe93ce9660d1aaf67eac1731700dd13"
+      "final_sha256": "f6a784502bf784ce00cca78f90e66b908ec255b3a11ba0e90073f63d477fd40f",
+      "historical_final_sha256": "a11756b91aa44007db21ec540b39bc7f7fe93ce9660d1aaf67eac1731700dd13"
     },
     {
       "current_path": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
@@ -1453,9 +1568,12 @@
       "deferred_title": false,
       "primary_question": "如何选用VFX材质机制并控制覆盖成本",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "f884fc6ad481c91313be52e2de331b209425dd63f420e5e36bbb5ae6c14e4f9d"
+      "final_sha256": "3328205fddbe10c778e2882b6a22437b2c24c9a1b1e051e15d8a12ad95e591b0",
+      "historical_final_sha256": "f884fc6ad481c91313be52e2de331b209425dd63f420e5e36bbb5ae6c14e4f9d"
     },
     {
       "current_path": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
@@ -1471,10 +1589,11 @@
       "deferred_title": false,
       "primary_question": "这些专题如何按输入与工程问题衔接",
       "content_actions": [
-        "REWRITE",
-        "RESTRUCTURE"
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "1ee01411db637ab058d623b040dff60856b7b340a59b3063e2b6cfbd7ed3d1f5"
+      "final_sha256": "bd3059cd7bf6f0be75b422823c0ce80d4e9b5db0dfd81cb12c4c086407467634",
+      "historical_final_sha256": "1ee01411db637ab058d623b040dff60856b7b340a59b3063e2b6cfbd7ed3d1f5"
     },
     {
       "current_path": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
@@ -1490,11 +1609,13 @@
       "deferred_title": false,
       "primary_question": "如何用帧序列与流向场控制表面动态",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "dfc6a3e09419b0afd5ba4738a965d160e6102ef1bc2769bd76783859bde5deaf"
+      "final_sha256": "b677f95c3721bc055a2d3b70d40a4d48ca8ff36f68386686be479c67f28c04a5",
+      "historical_final_sha256": "dfc6a3e09419b0afd5ba4738a965d160e6102ef1bc2769bd76783859bde5deaf"
     },
     {
       "current_path": "知识库/10_VFX与模拟/大气散射、天空与体积云.md",
@@ -1510,11 +1631,13 @@
       "deferred_title": false,
       "primary_question": "如何从密度场步进求云层散射并稳定重建",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "7df4971b5a3d2c1aafdd9c9e0e7872c7a495cb8e7d86fb1758b7b7eb54ef29c0"
+      "final_sha256": "40ee25bbab7ecee37f32454f2958ef33e561fdb4e70c94056ec78c592f224efe",
+      "historical_final_sha256": "7df4971b5a3d2c1aafdd9c9e0e7872c7a495cb8e7d86fb1758b7b7eb54ef29c0"
     },
     {
       "current_path": "知识库/10_VFX与模拟/大气散射、天空与体积云.md",
@@ -1530,11 +1653,13 @@
       "deferred_title": false,
       "primary_question": "如何用光学深度与查表计算天空和空气透视",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "ed1d2958828e5a6635868d9058deb67fb13979c2dd92a562560c4e850f05c783"
+      "final_sha256": "914b4e8d66b01caf3116c12e2352583632adf3d69f2d103f3d040b76427cc090",
+      "historical_final_sha256": "ed1d2958828e5a6635868d9058deb67fb13979c2dd92a562560c4e850f05c783"
     },
     {
       "current_path": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
@@ -1550,11 +1675,13 @@
       "deferred_title": false,
       "primary_question": "如何在已有场景颜色上采样视觉折射偏移",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "410d036780926b132f912d32a7e67d6ecd7c65d4255a42dd8d0ebd0505c681b1"
+      "final_sha256": "b03b5ec7b603c313201f491375fde8b4c1cf61a13b85bef20e4f81a3dcc7eaf8",
+      "historical_final_sha256": "410d036780926b132f912d32a7e67d6ecd7c65d4255a42dd8d0ebd0505c681b1"
     },
     {
       "current_path": "知识库/10_VFX与模拟/水面与海洋渲染.md",
@@ -1570,9 +1697,12 @@
       "deferred_title": false,
       "primary_question": "如何在预算内组合网格、波形和水面着色",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "844af312853049f5f5dbf58f872ebb146d03f8c5507a723580a782bc2388b2e3"
+      "final_sha256": "737955786fa2c97e9738da98eae10b9bdb10419cee723cf3a4b296ace1088f92",
+      "historical_final_sha256": "844af312853049f5f5dbf58f872ebb146d03f8c5507a723580a782bc2388b2e3"
     },
     {
       "current_path": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
@@ -1588,11 +1718,13 @@
       "deferred_title": false,
       "primary_question": "如何用标量阈值控制覆盖与发光边缘",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "bd4a43213d7bd25c1dd4ec2b18e21628d20ca3b3c0c7fee8fabe2d4e69faacd9"
+      "final_sha256": "46ac44f468cac83e880185f6b525c27074ec8e32f947e8cb1ae21dd54ef66328",
+      "historical_final_sha256": "bd4a43213d7bd25c1dd4ec2b18e21628d20ca3b3c0c7fee8fabe2d4e69faacd9"
     },
     {
       "current_path": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
@@ -1608,11 +1740,13 @@
       "deferred_title": false,
       "primary_question": "如何用线性深度差淡化粒子与几何交界",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "56789251fc85bd1f93233f46ab804201bbb9a900842af14b51a3b7ab5a0d1a4d"
+      "final_sha256": "e86104e452402057e9aa4ff3e60edd0f7bccce4a245ce101d01a8401ed82f838",
+      "historical_final_sha256": "56789251fc85bd1f93233f46ab804201bbb9a900842af14b51a3b7ab5a0d1a4d"
     },
     {
       "current_path": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
@@ -1628,11 +1762,13 @@
       "deferred_title": false,
       "primary_question": "如何用艺术阈值场控制角色脸部明暗",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "066a0491f850578833e310e65e5d95bbbbd44cf9ffc4a861fd92b68c97a2a47b"
+      "final_sha256": "386257df1585d031aef31b447e2c066c7e90a703c4600f0847674faf1f4955b3",
+      "historical_final_sha256": "066a0491f850578833e310e65e5d95bbbbd44cf9ffc4a861fd92b68c97a2a47b"
     },
     {
       "current_path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
@@ -1648,9 +1784,11 @@
       "deferred_title": false,
       "primary_question": "NPR与场景风格导读",
       "content_actions": [
+        "RESTRUCTURE",
         "REWRITE"
       ],
-      "final_sha256": "24240f8ada2079c05a511944a3f409f24c357206bde15f52c82bcd1064f75061"
+      "final_sha256": "746584f7f1bb5c4178a0c890e707bbaeb2d22ec1e849388c8ee078d9a2e926e9",
+      "historical_final_sha256": "24240f8ada2079c05a511944a3f409f24c357206bde15f52c82bcd1064f75061"
     },
     {
       "current_path": "知识库/11_NPR与风格化渲染/NPR材质与分层光照.md",
@@ -1666,9 +1804,12 @@
       "deferred_title": false,
       "primary_question": "如何把连续光照转为可控的风格化材质层",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "44395a48eb3dab6d908234023e63b967b8ceffb7be976c92c875cbed7566ae5e"
+      "final_sha256": "ed7a1500ad06d638400307f4c3b26e337fbe7da7c566cdc793243a6bb1c09061",
+      "historical_final_sha256": "44395a48eb3dab6d908234023e63b967b8ceffb7be976c92c875cbed7566ae5e"
     },
     {
       "current_path": "知识库/11_NPR与风格化渲染/描边.md",
@@ -1684,9 +1825,12 @@
       "deferred_title": false,
       "primary_question": "描边",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "b38d67ca1f6e2bd032bfabda54d213ce621ecf07294009cc9feed3b07ad52b37"
+      "final_sha256": "123ab9a80c1fe11677f5cf40482eb0e8a8d33ef0f51b3e53fcdd82ba42a18199",
+      "historical_final_sha256": "b38d67ca1f6e2bd032bfabda54d213ce621ecf07294009cc9feed3b07ad52b37"
     },
     {
       "current_path": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
@@ -1702,11 +1846,13 @@
       "deferred_title": false,
       "primary_question": "如何控制角色局部遮挡并保持风格化色块",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "fec6322560895c8a89aa810b826f79653455bc98a0153522a6734b507174891c"
+      "final_sha256": "64cd9bb171f44ba0abb7bb80c2640ca45d6e0dda30a6f5645cecb5223e34bc64",
+      "historical_final_sha256": "fec6322560895c8a89aa810b826f79653455bc98a0153522a6734b507174891c"
     },
     {
       "current_path": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
@@ -1722,11 +1868,13 @@
       "deferred_title": false,
       "primary_question": "如何沿发流生成可控且稳定的高光色带",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "a9eeae4a5b589e6bfa57cffdc1b0dd7c6d5fa326865338df5e8ace22f23282a9"
+      "final_sha256": "d57e62c2cc6e374ebf887c369ce8df71623889bd65e33c8023c32e78f8bd356c",
+      "historical_final_sha256": "a9eeae4a5b589e6bfa57cffdc1b0dd7c6d5fa326865338df5e8ace22f23282a9"
     },
     {
       "current_path": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
@@ -1742,11 +1890,13 @@
       "deferred_title": false,
       "primary_question": "如何用独立角膜与虹膜层表现眼球深度",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "3912961ea20a58c03f128af607dca25adf23237b247c6257551dbac4a06d0a5d"
+      "final_sha256": "05ad1dd9297db3caba96c4c575adb0996ca7ec15c04f25023d8fad554d921742",
+      "historical_final_sha256": "3912961ea20a58c03f128af607dca25adf23237b247c6257551dbac4a06d0a5d"
     },
     {
       "current_path": "知识库/12_光线追踪/实时光追、采样与降噪.md",
@@ -1762,11 +1912,13 @@
       "deferred_title": false,
       "primary_question": "如何用reservoir复用候选光照样本并校正权重",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "c4b63b36c373f563f23f792c68aa5914642c3e2f595968239a3d87e43a902358"
+      "final_sha256": "588a85ca77840bd6a879f2fe9150ee134a1bb50f2a1e2d4559a406f8cad2b36f",
+      "historical_final_sha256": "c4b63b36c373f563f23f792c68aa5914642c3e2f595968239a3d87e43a902358"
     },
     {
       "current_path": "知识库/12_光线追踪/光线求交与BVH.md",
@@ -1782,9 +1934,12 @@
       "deferred_title": false,
       "primary_question": "如何用层级结构减少光线求交工作",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "cb9866dc3f380cf44f408cb30cee03258822e6ed68ef067563ac1bda5e8edfdf"
+      "final_sha256": "994028363aca3b71ec522b172eadc9e2af09fe402a96fad765e04bdd302a18b9",
+      "historical_final_sha256": "cb9866dc3f380cf44f408cb30cee03258822e6ed68ef067563ac1bda5e8edfdf"
     },
     {
       "current_path": "知识库/12_光线追踪/实时光追、采样与降噪.md",
@@ -1800,12 +1955,13 @@
       "deferred_title": false,
       "primary_question": "如何利用几何与历史过滤低样本光照",
       "content_actions": [
-        "REWRITE",
-        "RESTRUCTURE",
         "DEEPEN",
-        "FACT-CHECK"
+        "FACT-CHECK",
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "81aae2dc57c29ae1d0b8143057008d4c753b8a67ea87012457e787917168cfda"
+      "final_sha256": "2e9c1e1c313bca2a8505c36295cf124095eae794e837008ef61f886cf8811d33",
+      "historical_final_sha256": "81aae2dc57c29ae1d0b8143057008d4c753b8a67ea87012457e787917168cfda"
     },
     {
       "current_path": "知识库/12_光线追踪/实时光追、采样与降噪.md",
@@ -1821,11 +1977,13 @@
       "deferred_title": false,
       "primary_question": "如何在有限射线预算内取得有效光照样本",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "f5f2fd6c79859d2b9c0950ce7e330631073ca51dd868445e6d00e52b3f648ccd"
+      "final_sha256": "ea5a5d12eeee5d5b65fe1bdfa6eccd201eae52855a473d0be8adedc267491e1e",
+      "historical_final_sha256": "f5f2fd6c79859d2b9c0950ce7e330631073ca51dd868445e6d00e52b3f648ccd"
     },
     {
       "current_path": "知识库/13_渲染架构/Command Buffer与帧提交.md",
@@ -1841,9 +1999,13 @@
       "deferred_title": false,
       "primary_question": "如何在提交与完成之间安全复用帧资源",
       "content_actions": [
-        "KEEP"
+        "DEEPEN",
+        "FACT-CHECK",
+        "KEEP",
+        "REWRITE"
       ],
-      "final_sha256": "ef03985e7942ff506d8bbbbc063bda56f657ed7199da9b7db68681ea7d8e5adf"
+      "final_sha256": "6834b78e91600958ef6dbd384cbfb5c12f92269dba540f345591551e74951a3c",
+      "historical_final_sha256": "ef03985e7942ff506d8bbbbc063bda56f657ed7199da9b7db68681ea7d8e5adf"
     },
     {
       "current_path": "知识库/13_渲染架构/Deferred Rendering.md",
@@ -1859,9 +2021,12 @@
       "deferred_title": false,
       "primary_question": "如何在延迟光照阶段消费表面与灯光数据",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "823a1e9c964035a6ed6f787f8bde4e145280bcff6f477ed1d96b0997e48bbd3d"
+      "final_sha256": "f8bcd34917a0427ccf04c9b0048dbf775eaef3da95aa808838a94a527c0ad6d6",
+      "historical_final_sha256": "823a1e9c964035a6ed6f787f8bde4e145280bcff6f477ed1d96b0997e48bbd3d"
     },
     {
       "current_path": "知识库/13_渲染架构/Draw Call与合批.md",
@@ -1877,9 +2042,12 @@
       "deferred_title": false,
       "primary_question": "如何选择和验证减少CPU绘制提交的路径",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "703bb40d60974ee7e22ccf95fed3ad251c03a311bef3f0d238a485fc43f41fba"
+      "final_sha256": "6d15b9703ee97a22ed9a261fd93ccf22537417bde9eeb948324fd9ff6d948914",
+      "historical_final_sha256": "703bb40d60974ee7e22ccf95fed3ad251c03a311bef3f0d238a485fc43f41fba"
     },
     {
       "current_path": "知识库/13_渲染架构/Forward Rendering与Forward+.md",
@@ -1895,9 +2063,12 @@
       "deferred_title": false,
       "primary_question": "如何在材质着色时消费全局或局部灯光",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "b82cea81429964b10e784ea643f4bac9a0831b1d8b5f49be1162536c07cf7d77"
+      "final_sha256": "aa5a5bf8f855c2606018852b32a89357d4832be640e80264f628c90b9db99c4c",
+      "historical_final_sha256": "b82cea81429964b10e784ea643f4bac9a0831b1d8b5f49be1162536c07cf7d77"
     },
     {
       "current_path": "知识库/13_渲染架构/GBuffer布局.md",
@@ -1913,9 +2084,12 @@
       "deferred_title": false,
       "primary_question": "如何在字节预算内编码可见表面属性",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "fdb25644a8d276935e179239ccf7d930879dba54690a698cb0ac94f67a34ffe0"
+      "final_sha256": "471ba968e8c5f62f74969391cba023c6082c69f58eb1d367df1d0634e41276e6",
+      "historical_final_sha256": "fdb25644a8d276935e179239ccf7d930879dba54690a698cb0ac94f67a34ffe0"
     },
     {
       "current_path": "知识库/13_渲染架构/GPU同步与屏障.md",
@@ -1931,9 +2105,12 @@
       "deferred_title": false,
       "primary_question": "如何令GPU资源访问顺序和可见性正确",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "042fdaf91237c2a8f7b49f610eb16c8f02dd27b418602b3663689066a0d55711"
+      "final_sha256": "653d4fffe0323e1294b4084c674f01cb95387c8c85b4f03597fc32b98fea8008",
+      "historical_final_sha256": "042fdaf91237c2a8f7b49f610eb16c8f02dd27b418602b3663689066a0d55711"
     },
     {
       "current_path": "知识库/13_渲染架构/GPU资源生命周期.md",
@@ -1949,9 +2126,12 @@
       "deferred_title": false,
       "primary_question": "如何按GPU完成值分配和回收资源内存",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "837898039461989ac87e62c67abe1fc84b0c80ad40233c9b2b720fbc3c0e27cd"
+      "final_sha256": "17896d213de4e69851ac0abb554fc2c97f2aa20841421400ba93fd7b1a38f228",
+      "historical_final_sha256": "837898039461989ac87e62c67abe1fc84b0c80ad40233c9b2b720fbc3c0e27cd"
     },
     {
       "current_path": "知识库/13_渲染架构/GPU资源绑定.md",
@@ -1967,9 +2147,13 @@
       "deferred_title": false,
       "primary_question": "如何使材质资源寻址和描述符寿命正确",
       "content_actions": [
-        "KEEP"
+        "DEEPEN",
+        "FACT-CHECK",
+        "KEEP",
+        "REWRITE"
       ],
-      "final_sha256": "d4bd25126146c8d0796aee695465f252ea1694eef4a38ed196709ff2dd0597b6"
+      "final_sha256": "577baefe61d9b42fcd82ac0efa1e8bf17258633e73d3154f729ce6567e96bbf0",
+      "historical_final_sha256": "d4bd25126146c8d0796aee695465f252ea1694eef4a38ed196709ff2dd0597b6"
     },
     {
       "current_path": "知识库/13_渲染架构/Pipeline State Object.md",
@@ -1985,9 +2169,13 @@
       "deferred_title": false,
       "primary_question": "如何组成和缓存合法的管线状态对象",
       "content_actions": [
-        "KEEP"
+        "DEEPEN",
+        "FACT-CHECK",
+        "KEEP",
+        "REWRITE"
       ],
-      "final_sha256": "ef63bfeeaa27e8d293ed60d95ecd63b144dadcf769e847995accbae85cb7c2a3"
+      "final_sha256": "b106ed72512fe8e9033c47ef25428440a20ead93a0d48e10cd76a950007d6075",
+      "historical_final_sha256": "ef63bfeeaa27e8d293ed60d95ecd63b144dadcf769e847995accbae85cb7c2a3"
     },
     {
       "current_path": "知识库/13_渲染架构/Render Graph.md",
@@ -2003,9 +2191,12 @@
       "deferred_title": false,
       "primary_question": "如何把资源声明编译为合法执行与分配计划",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "e6190658bb8b1f87628c519b5804b5fd8633bfb4a4ae7e2d674b97009786c476"
+      "final_sha256": "04d6d08e14bce6aaab191478c0ac01f3c3509e14aeba6451363c2aef3adcef3d",
+      "historical_final_sha256": "e6190658bb8b1f87628c519b5804b5fd8633bfb4a4ae7e2d674b97009786c476"
     },
     {
       "current_path": "知识库/13_渲染架构/Render Pass与附件.md",
@@ -2021,9 +2212,12 @@
       "deferred_title": false,
       "primary_question": "如何表达附件开始和结束时的内容需求",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "ae3467ad819d8cb43cfa7b6ba26acea63b0894b3f0012369a7c0938a8a6dc87c"
+      "final_sha256": "597fd7a1be1684a4d7aab7647ea7ab94d91301ec32209dd0aadd1227ffa02df2",
+      "historical_final_sha256": "ae3467ad819d8cb43cfa7b6ba26acea63b0894b3f0012369a7c0938a8a6dc87c"
     },
     {
       "current_path": "知识库/03_Shader编程/Compute Shader与GPU执行模型.md",
@@ -2039,9 +2233,12 @@
       "deferred_title": false,
       "primary_question": "如何按屏幕Tile与深度Cluster构建保守且有容量约束的光源列表",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "b470d6a8772c7889f7f57013742a04d4897ed70635a769bda7588d6f95f28a25"
+      "final_sha256": "ace3702b9bd8fb81ed5c59ebec89ed2878b668cfd3c5c7dc16435876d7df07fc",
+      "historical_final_sha256": "b470d6a8772c7889f7f57013742a04d4897ed70635a769bda7588d6f95f28a25"
     },
     {
       "current_path": "知识库/13_渲染架构/Render Pass、Command Buffer与Render Graph.md",
@@ -2057,11 +2254,12 @@
       "deferred_title": false,
       "primary_question": "这些专题如何按输入与工程问题衔接",
       "content_actions": [
-        "REWRITE",
-        "RESTRUCTURE"
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "4e242ce6988dfc34017809258150b65f5bfe3c76a0a9271f3624af85d31281e5",
-      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
+      "final_sha256": "5ff38c184cac8e84451b5759453c2e8352dfef086edf529fdf0525f9b1c57e18",
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
+      "historical_final_sha256": "4e242ce6988dfc34017809258150b65f5bfe3c76a0a9271f3624af85d31281e5"
     },
     {
       "current_path": "知识库/13_渲染架构/渲染路径与光源组织.md",
@@ -2077,11 +2275,12 @@
       "deferred_title": false,
       "primary_question": "这些专题如何按输入与工程问题衔接",
       "content_actions": [
-        "REWRITE",
-        "RESTRUCTURE"
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "44685d454dadccaf90117a814548aea4b4d380b249e8b1cc59f5ffe95ca9e588",
-      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
+      "final_sha256": "049117e9669f4856f3959b13ad5179b1e9d5e06dbd34d51bc94702a277f3edd9",
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
+      "historical_final_sha256": "44685d454dadccaf90117a814548aea4b4d380b249e8b1cc59f5ffe95ca9e588"
     },
     {
       "current_path": "知识库/14_性能分析与优化/PSO首次使用卡顿.md",
@@ -2097,9 +2296,12 @@
       "deferred_title": false,
       "primary_question": "如何减少运行时首次使用PSO的卡顿",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "3a50266b03dd1a5243e362f34cc89db714d95d224048a4c441e89b92869b71d8"
+      "final_sha256": "7c41386004deafe12f5cf64e9c28850f522eab765959a61c6bafc6a62870babc",
+      "historical_final_sha256": "3a50266b03dd1a5243e362f34cc89db714d95d224048a4c441e89b92869b71d8"
     },
     {
       "current_path": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
@@ -2115,11 +2317,13 @@
       "deferred_title": false,
       "primary_question": "如何按模拟排序与屏幕覆盖控制特效预算",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "6e35e2c555364e6a923e58b29f66248a76bd044f6ed79fdc16e56839aa9f631d"
+      "final_sha256": "9ad2e79ed3a18fda7971f67b53a7815337df960a2171e1efe45542defea1a756",
+      "historical_final_sha256": "6e35e2c555364e6a923e58b29f66248a76bd044f6ed79fdc16e56839aa9f631d"
     },
     {
       "current_path": "知识库/14_性能分析与优化/帧捕获与性能分析工具.md",
@@ -2135,9 +2339,12 @@
       "deferred_title": false,
       "primary_question": "如何用工具定位一帧的状态与成本来源",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "6942627cb50c2129dd0bdc178458b46b70b516a03eda2ac1bdb8bbab6cca56df"
+      "final_sha256": "72925f5267ec1ef4fe03779ea5e056a97325184318c43928ae6b5b12813863e6",
+      "historical_final_sha256": "6942627cb50c2129dd0bdc178458b46b70b516a03eda2ac1bdb8bbab6cca56df"
     },
     {
       "current_path": "知识库/14_性能分析与优化/帧瓶颈诊断.md",
@@ -2153,9 +2360,12 @@
       "deferred_title": false,
       "primary_question": "如何识别CPU/GPU关键路径及成本维度",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "0901c84329e72dc888131eb17d5fc48075c1cc3f6aa625a216ca39a451214ea4"
+      "final_sha256": "06f1c6007e10afba83c35d18eb3f3d05c2e6890d05758be2427b044cf3103b17",
+      "historical_final_sha256": "0901c84329e72dc888131eb17d5fc48075c1cc3f6aa625a216ca39a451214ea4"
     },
     {
       "current_path": "知识库/14_性能分析与优化/性能对照实验.md",
@@ -2171,9 +2381,13 @@
       "deferred_title": false,
       "primary_question": "如何设计可复查的性能实验",
       "content_actions": [
-        "KEEP"
+        "DEEPEN",
+        "FACT-CHECK",
+        "KEEP",
+        "REWRITE"
       ],
-      "final_sha256": "320723cc98b6030a4fc1726ece18b808f4f6f402b0fc76edaa1e38dc1052f567"
+      "final_sha256": "ed58b80bb2af302f270805aa3956d43b4091b365d1ce1a04e86e2185770c4957",
+      "historical_final_sha256": "320723cc98b6030a4fc1726ece18b808f4f6f402b0fc76edaa1e38dc1052f567"
     },
     {
       "current_path": "知识库/14_性能分析与优化/移动端渲染优化.md",
@@ -2189,9 +2403,13 @@
       "deferred_title": false,
       "primary_question": "如何按移动设备约束验证渲染优化",
       "content_actions": [
-        "KEEP"
+        "DEEPEN",
+        "FACT-CHECK",
+        "KEEP",
+        "REWRITE"
       ],
-      "final_sha256": "2ffa1d936c233b710c047e85fd48b3a4206e4d6a9711236b6ad8f0446d3f580b"
+      "final_sha256": "f2657b7cafc28eda8b393f71567380645e29431e2bd8781633287560eba7491e",
+      "historical_final_sha256": "2ffa1d936c233b710c047e85fd48b3a4206e4d6a9711236b6ad8f0446d3f580b"
     },
     {
       "current_path": "知识库/15_资产与工具管线/DCC资产交换.md",
@@ -2207,9 +2425,13 @@
       "deferred_title": false,
       "primary_question": "如何跨DCC和引擎保持资产语义",
       "content_actions": [
-        "KEEP"
+        "DEEPEN",
+        "FACT-CHECK",
+        "KEEP",
+        "REWRITE"
       ],
-      "final_sha256": "94d134aabbf841fe8fdc3066aa5899f7e29e4d07f1606adbd5318e53ace14695"
+      "final_sha256": "2557034ce6ec33ae9eaaa1674ed278413871cd406e7f3284176df1e97b2198e7",
+      "historical_final_sha256": "94d134aabbf841fe8fdc3066aa5899f7e29e4d07f1606adbd5318e53ace14695"
     },
     {
       "current_path": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
@@ -2225,11 +2447,13 @@
       "deferred_title": false,
       "primary_question": "如何通过局部兼容约束生成模块布局",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "30d8a4341793d263bbb5e9fa6aa80b6568ef40ec16280f088d7093618ec184af"
+      "final_sha256": "13a376a28e0065cf308c799f26f1c7927f017e771ee8a381ab36f92d51af51d2",
+      "historical_final_sha256": "30d8a4341793d263bbb5e9fa6aa80b6568ef40ec16280f088d7093618ec184af"
     },
     {
       "current_path": "知识库/15_资产与工具管线/版本控制、CI与大型资产协作.md",
@@ -2245,11 +2469,13 @@
       "deferred_title": false,
       "primary_question": "如何管理不可合并资产的历史锁与协作边界",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "ff28fa748e1c4f7003838618ca089f4dbe9ce680784ae82ce2d0cd15c6a147a1"
+      "final_sha256": "00e9de9ddcec6c11ccabf0539cf7dfb153fdd8bcc33bc36d5260d31873b97af2",
+      "historical_final_sha256": "ff28fa748e1c4f7003838618ca089f4dbe9ce680784ae82ce2d0cd15c6a147a1"
     },
     {
       "current_path": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
@@ -2265,11 +2491,13 @@
       "deferred_title": false,
       "primary_question": "如何用稳定规则生成并局部重建可交付资产",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "44a419536a16ba9d9f71f714e595949050f3a43c680948fde761172c6c234f01"
+      "final_sha256": "8bb8d7dfce954d18864cec674a9385639fb1e139b32e08d19a3d2c38ab61081e",
+      "historical_final_sha256": "44a419536a16ba9d9f71f714e595949050f3a43c680948fde761172c6c234f01"
     },
     {
       "current_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
@@ -2285,9 +2513,12 @@
       "deferred_title": false,
       "primary_question": "如何让编辑器操作可预览、撤销和批量恢复",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "1656f915fdb2871cd127333aa8758a571c61426517f8a1797d6ca0c19f7377cc"
+      "final_sha256": "1f980155469638bd60b3295184bdd5e8c9af3cfbda154af4453c2c1701629baf",
+      "historical_final_sha256": "1656f915fdb2871cd127333aa8758a571c61426517f8a1797d6ca0c19f7377cc"
     },
     {
       "current_path": "知识库/15_资产与工具管线/版本控制、CI与大型资产协作.md",
@@ -2303,11 +2534,13 @@
       "deferred_title": false,
       "primary_question": "如何从固定提交自动验证构建资产并复用缓存",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "bb3da01e747ee8e7b9e43f634a40385c64abcb8f9214ac6b2941796685236763"
+      "final_sha256": "8862c4ae34d149162ec72ff38d6cdc59d9b39072fa165a3e5391c32717a6cc35",
+      "historical_final_sha256": "bb3da01e747ee8e7b9e43f634a40385c64abcb8f9214ac6b2941796685236763"
     },
     {
       "current_path": "知识库/15_资产与工具管线/资产构建与发布.md",
@@ -2323,9 +2556,12 @@
       "deferred_title": false,
       "primary_question": "如何将制作输入变成可验证发布资产",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "54eb6487418489c5cec7298c3ce4dc0fcc187baab5cf9abf89e2e3e825909458"
+      "final_sha256": "8276659a007647d2a45f4aee571ef3da921948241e18d387e424764c8a7196d8",
+      "historical_final_sha256": "54eb6487418489c5cec7298c3ce4dc0fcc187baab5cf9abf89e2e3e825909458"
     },
     {
       "current_path": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
@@ -2341,11 +2577,13 @@
       "deferred_title": false,
       "primary_question": "如何从编译链接到插件ABI保持类型与资源契约",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "dbf8b38419fddf14d26b88870b562c0c7ea92f31ea18b9455a4ee4474dd32ba4"
+      "final_sha256": "4935eecdf95abcfbfd01d07cba55d3dd34140f6b88a52f782952a725eee8b63b",
+      "historical_final_sha256": "dbf8b38419fddf14d26b88870b562c0c7ea92f31ea18b9455a4ee4474dd32ba4"
     },
     {
       "current_path": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
@@ -2361,11 +2599,13 @@
       "deferred_title": false,
       "primary_question": "如何在JIT与AOT环境中管理类型调用与资源",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "c45b1c26a6ae7c051d97027e6e0fb642c4be1d61bc7a72b9b1d52be0bbe7d8a2"
+      "final_sha256": "7058815eee6280eb520a264283ebcdc2cde47c5c550c7c2cc8a28b07659db201",
+      "historical_final_sha256": "c45b1c26a6ae7c051d97027e6e0fb642c4be1d61bc7a72b9b1d52be0bbe7d8a2"
     },
     {
       "current_path": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
@@ -2381,11 +2621,13 @@
       "deferred_title": false,
       "primary_question": "如何在DCC嵌入解释器中固定依赖与线程边界",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "c119c53a23dd9f25882836b81c6cbc372e83bb83342b599288c6b12fa370579f"
+      "final_sha256": "a1233b9bd08759c557e1041ca0afa2a66e4c64da3888693704a010e6869f9cf0",
+      "historical_final_sha256": "c119c53a23dd9f25882836b81c6cbc372e83bb83342b599288c6b12fa370579f"
     },
     {
       "current_path": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
@@ -2401,11 +2643,13 @@
       "deferred_title": false,
       "primary_question": "如何按访问和寿命选择分配器及数据布局",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "759ecf229234d78867d1db9ab41b26af76b36ce3b5fd6a1421f3574b3f600131"
+      "final_sha256": "8dfa96807822c498056dbd8fab6ea356fbb19749bef89e26c3bc81acdf75d386",
+      "historical_final_sha256": "759ecf229234d78867d1db9ab41b26af76b36ce3b5fd6a1421f3574b3f600131"
     },
     {
       "current_path": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
@@ -2421,12 +2665,13 @@
       "deferred_title": false,
       "primary_question": "如何从依赖与路径图求可达顺序和最低成本",
       "content_actions": [
-        "REWRITE",
-        "RESTRUCTURE",
         "DEEPEN",
-        "FACT-CHECK"
+        "FACT-CHECK",
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "be21d8712c54952d5695ca38a0b31037ceb84641cb16906a3a1aa481d96af8a9"
+      "final_sha256": "19b06eef6fd020c611d4dd4ee49a2f69cda6d87fbc46536c4d168a0487e8a2cf",
+      "historical_final_sha256": "be21d8712c54952d5695ca38a0b31037ceb84641cb16906a3a1aa481d96af8a9"
     },
     {
       "current_path": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
@@ -2442,11 +2687,13 @@
       "deferred_title": false,
       "primary_question": "如何按查找更新顺序与稳定性选择数据结构",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "232ddc3de61d0fd2e10e5792ae8394dabe7a6a48ed2f247d6541d7f6d133cb49"
+      "final_sha256": "98658bd8a25bf9e954899cbb441c4bf5637225829468c948549a1cf3047b209c",
+      "historical_final_sha256": "232ddc3de61d0fd2e10e5792ae8394dabe7a6a48ed2f247d6541d7f6d133cb49"
     },
     {
       "current_path": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
@@ -2462,11 +2709,13 @@
       "deferred_title": false,
       "primary_question": "如何安全复用短生命周期对象并防止状态污染",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "c30e25e86285ea3a3013dc3fcc6421179505543090d01a355b0aed057af80b82"
+      "final_sha256": "a9b51ed445051535bbff2c51405901584cddf65bef39fea9dfa26e3ec27dabc3",
+      "historical_final_sha256": "c30e25e86285ea3a3013dc3fcc6421179505543090d01a355b0aed057af80b82"
     },
     {
       "current_path": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
@@ -2482,11 +2731,13 @@
       "deferred_title": false,
       "primary_question": "如何协调托管可达性与原生资源释放",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "d052d221c7a4f169fbb6f1c0003e7ad7352340dd67029c7ed3ff27ee4066c0bc"
+      "final_sha256": "cafc2cbdb8a230550cae535e5e0b36516d8e96b50b191adbf44f1e916d5211be",
+      "historical_final_sha256": "d052d221c7a4f169fbb6f1c0003e7ad7352340dd67029c7ed3ff27ee4066c0bc"
     },
     {
       "current_path": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
@@ -2502,11 +2753,13 @@
       "deferred_title": false,
       "primary_question": "如何在缓存与异步请求下读写并可靠发布文件",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "43b315b3e627c45bedf22ce16a55d7397559851cd3fcc1a373cfd53bcf6bc731"
+      "final_sha256": "d102eafa4f1e29a8f0b6c87d6a9aa76604fbb152966e78931547138f705aed26",
+      "historical_final_sha256": "43b315b3e627c45bedf22ce16a55d7397559851cd3fcc1a373cfd53bcf6bc731"
     },
     {
       "current_path": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
@@ -2522,11 +2775,13 @@
       "deferred_title": false,
       "primary_question": "如何用区域与包围体减少空间查询候选",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "69872c4eecb18174b24a8fa05b75eb3c8b46f915ebb323352fda9f3f87253b84"
+      "final_sha256": "12d001da5eb5dee8d0d56736f9d1f222b9bf3fa00152019a7de7c70b4dad551c",
+      "historical_final_sha256": "69872c4eecb18174b24a8fa05b75eb3c8b46f915ebb323352fda9f3f87253b84"
     },
     {
       "current_path": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
@@ -2542,10 +2797,11 @@
       "deferred_title": false,
       "primary_question": "这些专题如何按输入与工程问题衔接",
       "content_actions": [
-        "REWRITE",
-        "RESTRUCTURE"
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "fe18924b6e5608f28d84bde7bf069bad25a684c5802c0b1d79cdab7109cc281d"
+      "final_sha256": "76401e70fa0b8dc72675a2fd9a677840a0541653c5e14f6f4b4d94b56594ce1a",
+      "historical_final_sha256": "fe18924b6e5608f28d84bde7bf069bad25a684c5802c0b1d79cdab7109cc281d"
     },
     {
       "current_path": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
@@ -2561,11 +2817,13 @@
       "deferred_title": false,
       "primary_question": "如何从状态与操作推导合适的求解方法",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "f7a06f1a0f2cf22f498d1152c403e76dcb27de623ff8ed7b5f71a07bd1c874a0"
+      "final_sha256": "4a0fd38b02d6da5ff105b7a612e5e0c40323e851a39fefeae3870c5d7855a829",
+      "historical_final_sha256": "f7a06f1a0f2cf22f498d1152c403e76dcb27de623ff8ed7b5f71a07bd1c874a0"
     },
     {
       "current_path": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
@@ -2581,11 +2839,13 @@
       "deferred_title": false,
       "primary_question": "如何建立共享数据的互斥和发布顺序",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "1cb604ad8ae2d30fb7ea91cea1116263aecef60b6422fd87321c82fe4d3de98a"
+      "final_sha256": "9c45f2aecec05157a25ef191c974697f2a5827406528f958622869a639077109",
+      "historical_final_sha256": "1cb604ad8ae2d30fb7ea91cea1116263aecef60b6422fd87321c82fe4d3de98a"
     },
     {
       "current_path": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
@@ -2601,11 +2861,13 @@
       "deferred_title": false,
       "primary_question": "如何通过页表映射管理地址空间与工作集",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "5811b97a467f4b756407ed8e81048ed4b62da962c585ff1e0bdc9ee8a525294a"
+      "final_sha256": "78773e02321eda4efd1d1233fda11d16e7c7690963f2c18740d69faf1a91bf26",
+      "historical_final_sha256": "5811b97a467f4b756407ed8e81048ed4b62da962c585ff1e0bdc9ee8a525294a"
     },
     {
       "current_path": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
@@ -2621,11 +2883,13 @@
       "deferred_title": false,
       "primary_question": "如何跨ABI或进程传递数据所有权与错误",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "b9e18c3e95009a24fa9643d166782eed07d92c0306321bff64ef197e40e91362"
+      "final_sha256": "fc66262f7876e51620d71a3b5cbbe387b2fdb662f0a2a045f76dcf6ec6d2c0d2",
+      "historical_final_sha256": "b9e18c3e95009a24fa9643d166782eed07d92c0306321bff64ef197e40e91362"
     },
     {
       "current_path": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
@@ -2641,11 +2905,13 @@
       "deferred_title": false,
       "primary_question": "如何用线程和进程隔离并调度工作",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "9878a02f681b19ba51eb7d488cfaee1d219392a6d376dec83fceaa35d44531d8"
+      "final_sha256": "ef8565a56bdda52e322719744b5551fdaeae26b201a36784ba5a380e0434441f",
+      "historical_final_sha256": "9878a02f681b19ba51eb7d488cfaee1d219392a6d376dec83fceaa35d44531d8"
     },
     {
       "current_path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
@@ -2661,9 +2927,12 @@
       "deferred_title": false,
       "primary_question": "如何令Agent工具任务可追踪、幂等和验收",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "43c0d99da0caf1d6a215fd632d1484cc0fa1b88a369ffc77ff2e04f97e7fd36f"
+      "final_sha256": "16038dd3ad8142ee07a3ccd8a3c4a68dc0aeafb641836d4f9c3f2908193b6f9e",
+      "historical_final_sha256": "43c0d99da0caf1d6a215fd632d1484cc0fa1b88a369ffc77ff2e04f97e7fd36f"
     },
     {
       "current_path": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
@@ -2679,11 +2948,13 @@
       "deferred_title": false,
       "primary_question": "如何把生成节点与模型依赖组织成可复现任务",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "112639bd6eeb8e583dfce70cd639e2bf82719ab410e99051eb05e92d7cf16981"
+      "final_sha256": "6ee614267794d53a22d96d92bc1c6748eb04ec582df02d611dfe95797ad1fdff",
+      "historical_final_sha256": "112639bd6eeb8e583dfce70cd639e2bf82719ab410e99051eb05e92d7cf16981"
     },
     {
       "current_path": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
@@ -2699,11 +2970,13 @@
       "deferred_title": false,
       "primary_question": "如何用低秩增量学习目标概念并验证泛化",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "18e23068f7cf15708c132111ba775b0b2ed271cf08482da35b2baf8bf32ad4d4"
+      "final_sha256": "e267b1d18748c35516ffaf1ebfcacef0956e06562ebb5271c985a55561cbc8eb",
+      "historical_final_sha256": "18e23068f7cf15708c132111ba775b0b2ed271cf08482da35b2baf8bf32ad4d4"
     },
     {
       "current_path": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
@@ -2719,11 +2992,13 @@
       "deferred_title": false,
       "primary_question": "如何从噪声状态逐步生成图像表示",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "1fa860267c8dd509f1df65224f55b5f1c9a2ae77007be578e8781d9bf3c94f77"
+      "final_sha256": "9776679d825d98111a64f3622397041f2455b47c51b521e2b58e3acb3e7afdac",
+      "historical_final_sha256": "1fa860267c8dd509f1df65224f55b5f1c9a2ae77007be578e8781d9bf3c94f77"
     },
     {
       "current_path": "知识库/17_AIGC与Agent管线/扩散模型、条件控制与微调.md",
@@ -2739,11 +3014,13 @@
       "deferred_title": false,
       "primary_question": "如何用结构图与参考图约束扩散生成",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "0e89208e2fa22fc721e78f8de19cab5fb200e87aa3386e0941437ab3f1465d06"
+      "final_sha256": "6c5fa2dda9c0cc334a12c6816b05431861cdecbefe0d6e8becd285e364589095",
+      "historical_final_sha256": "0e89208e2fa22fc721e78f8de19cab5fb200e87aa3386e0941437ab3f1465d06"
     },
     {
       "current_path": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
@@ -2759,11 +3036,13 @@
       "deferred_title": false,
       "primary_question": "如何在运动与遮挡变化下复用生成特征",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "aaf058dc177ccf69b833447f77059066d8624dfa787a81de9be7a164f8e2ae0a"
+      "final_sha256": "440cd37fcf120055a7c05fcae21ae746a9ac59e421816cc404490cc6eca7ce69",
+      "historical_final_sha256": "aaf058dc177ccf69b833447f77059066d8624dfa787a81de9be7a164f8e2ae0a"
     },
     {
       "current_path": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
@@ -2779,11 +3058,13 @@
       "deferred_title": false,
       "primary_question": "如何用扫掠滑动生成可预测的角色位移",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "03ba247c493e6b5808a5e09f6250c8738f76da865fad98413f5699a254c9a21f"
+      "final_sha256": "4f53458ead22ff23ea42a417ac952ba1f414438d370959fe948d58a83ba930c7",
+      "historical_final_sha256": "03ba247c493e6b5808a5e09f6250c8738f76da865fad98413f5699a254c9a21f"
     },
     {
       "current_path": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
@@ -2799,11 +3080,13 @@
       "deferred_title": false,
       "primary_question": "如何在动画姿态与刚体骨架之间切换控制",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "44251ba9e9992ae6b8f574a630e53d5f1d3cd4b1d57e1efdfc6ec4c634189c3b"
+      "final_sha256": "33b3891c0d299ed27e53c85f4f0bb3737668bd0b34805e0f9001e9ba295f2900",
+      "historical_final_sha256": "44251ba9e9992ae6b8f574a630e53d5f1d3cd4b1d57e1efdfc6ec4c634189c3b"
     },
     {
       "current_path": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
@@ -2819,11 +3102,13 @@
       "deferred_title": false,
       "primary_question": "如何通过Compliance求解可控柔软约束",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "14c6e70acc7c209ffda708a69e70aef12670558ffdfc0050c82191eb90a2c629"
+      "final_sha256": "077dccff158413b8a4dcd3fb64686bbf8404de0f1e6f90d71775ddcaef5e80e7",
+      "historical_final_sha256": "14c6e70acc7c209ffda708a69e70aef12670558ffdfc0050c82191eb90a2c629"
     },
     {
       "current_path": "知识库/18_游戏物理与模拟/刚体物理求解.md",
@@ -2839,9 +3124,12 @@
       "deferred_title": false,
       "primary_question": "如何从状态积分和碰撞生成受约束运动",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "293ef685bddb1e5548c7942df95279e6e0b9c99880251dc74701cd22407d683b"
+      "final_sha256": "9aab46347db3158b6a4c7e414356918f1028fdad3ab2c0d2afb43123fb9db905",
+      "historical_final_sha256": "293ef685bddb1e5548c7942df95279e6e0b9c99880251dc74701cd22407d683b"
     },
     {
       "current_path": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
@@ -2857,11 +3145,13 @@
       "deferred_title": false,
       "primary_question": "如何用连接图控制碎片激活与预算",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "b831847e662bb0197ef4e9c603a0515f52088c6ede871eccd6167ceccf239aff"
+      "final_sha256": "63e9a4498b368952baf18c56a15e02de1b080d726b8febddd19958a7adf02112",
+      "historical_final_sha256": "b831847e662bb0197ef4e9c603a0515f52088c6ede871eccd6167ceccf239aff"
     },
     {
       "current_path": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
@@ -2877,11 +3167,13 @@
       "deferred_title": false,
       "primary_question": "如何把悬挂与轮胎滑移转换成车体力",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "ec08906c61c80be9c1f2a31d426592dd21f2521d82e623728bca0f2dc1fa72d9"
+      "final_sha256": "02e886b9ea061fb1429bae0623f41dd5c42568d249fdc1f3d639c500796a112e",
+      "historical_final_sha256": "ec08906c61c80be9c1f2a31d426592dd21f2521d82e623728bca0f2dc1fa72d9"
     },
     {
       "current_path": "知识库/19_Gameplay与游戏框架/玩法事件与脚本.md",
@@ -2897,9 +3189,13 @@
       "deferred_title": false,
       "primary_question": "如何解耦玩法规则与事件脚本执行",
       "content_actions": [
-        "KEEP"
+        "DEEPEN",
+        "FACT-CHECK",
+        "KEEP",
+        "REWRITE"
       ],
-      "final_sha256": "8d11e7a8e656f48ce940c161a5d06c4297f7caa462cdde425abc4489f5820129"
+      "final_sha256": "53ceba325ad93a79a20917d30fd0f0128d24bdd779b5da997b046645eb902523",
+      "historical_final_sha256": "8d11e7a8e656f48ce940c161a5d06c4297f7caa462cdde425abc4489f5820129"
     },
     {
       "current_path": "知识库/19_Gameplay与游戏框架/输入与动作状态.md",
@@ -2915,9 +3211,12 @@
       "deferred_title": false,
       "primary_question": "如何从输入请求推进角色动作并驱动表现",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "c6eafd7f4e95169c448516d649d62cf185e2c9fac1961fcc7a0789f13be7cbb2"
+      "final_sha256": "b7c12c2d730122abd7df40d686e0bffbd59e8375ceafe54fce80bb1f58c75a86",
+      "historical_final_sha256": "c6eafd7f4e95169c448516d649d62cf185e2c9fac1961fcc7a0789f13be7cbb2"
     },
     {
       "current_path": "知识库/20_游戏AI/群体、学习与高级决策.md",
@@ -2933,11 +3232,13 @@
       "deferred_title": false,
       "primary_question": "如何在有限预算内用模拟平衡探索与回报",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "1b767e6b17c80a7fda928bce07ed0f09259f9b8908e1274b6935fc562d5f141d"
+      "final_sha256": "5fd347ae2fce14ce0aa8054ff5ba1b03b089d9b980f69fdde8f0548581449cbb",
+      "historical_final_sha256": "1b767e6b17c80a7fda928bce07ed0f09259f9b8908e1274b6935fc562d5f141d"
     },
     {
       "current_path": "知识库/20_游戏AI/游戏AI决策模型.md",
@@ -2953,9 +3254,12 @@
       "deferred_title": false,
       "primary_question": "如何按决策问题选择行为组织模型",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "991aeb390c698a13e54b90587458f3f37ed3c1d7a88f3251b8dd01b04e0c33af"
+      "final_sha256": "f4c04b8973d3d93641283bcbc21bde762aad22b4b25bce43d6f44042f5751266",
+      "historical_final_sha256": "991aeb390c698a13e54b90587458f3f37ed3c1d7a88f3251b8dd01b04e0c33af"
     },
     {
       "current_path": "知识库/20_游戏AI/游戏AI导航.md",
@@ -2971,9 +3275,12 @@
       "deferred_title": false,
       "primary_question": "如何从可行走空间得到可执行路径与移动",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
         "REWRITE"
       ],
-      "final_sha256": "15e8b57cac03668790be50640e28f30c6c1a9e88d0f99aa908ae6d4dd85bdaed"
+      "final_sha256": "fc69673b30ec13fe5f36bd330a6be9216b09727d3268b128aa9430fc76b3d4d6",
+      "historical_final_sha256": "15e8b57cac03668790be50640e28f30c6c1a9e88d0f99aa908ae6d4dd85bdaed"
     },
     {
       "current_path": "知识库/20_游戏AI/群体、学习与高级决策.md",
@@ -2989,11 +3296,13 @@
       "deferred_title": false,
       "primary_question": "如何用观测动作与奖励训练可部署策略",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "3c11b016e5f8176cdec3242f735803b16cc9f0e659cc5b4932ad8537dc4720e7"
+      "final_sha256": "8c1d9bb38f57c334de9c01e48b81871614d1cecb35b1e061903d47f1ea65f640",
+      "historical_final_sha256": "3c11b016e5f8176cdec3242f735803b16cc9f0e659cc5b4932ad8537dc4720e7"
     },
     {
       "current_path": "知识库/20_游戏AI/群体、学习与高级决策.md",
@@ -3009,11 +3318,13 @@
       "deferred_title": false,
       "primary_question": "如何以感知与影响场支持群体协作决策",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "e59dcded4e9e17e28835bba53f3e09d41fea0bbc1abd017347b3076f6e21476a"
+      "final_sha256": "4ecf33b891d402fe4a7ac53c1e277b73be036e7a4074a4af8fbc8fa557e893e1",
+      "historical_final_sha256": "e59dcded4e9e17e28835bba53f3e09d41fea0bbc1abd017347b3076f6e21476a"
     },
     {
       "current_path": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
@@ -3029,11 +3340,13 @@
       "deferred_title": false,
       "primary_question": "如何把远程请求转成可校验可重试的事务",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "0ee880c288acc2626904cf2a41ee93241db1e1a4a80538547a9bdbb34349158d"
+      "final_sha256": "56259a722661bc3cb4154feb45b7a6034b366be2ec38f17a8b47233b0daec788",
+      "historical_final_sha256": "0ee880c288acc2626904cf2a41ee93241db1e1a4a80538547a9bdbb34349158d"
     },
     {
       "current_path": "知识库/21_游戏网络/服务器架构、分区与反作弊.md",
@@ -3049,11 +3362,13 @@
       "deferred_title": false,
       "primary_question": "如何筛选复制对象并交接跨区权威",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "b8c272bb9edb77ed968aadfe53fcfce02611a6aaf5f35c8914352a3d9e3f741f"
+      "final_sha256": "dc4fcdda14df947cd35640f68dd5b3eb74b145da5d42a29d470d87413ae9a61d",
+      "historical_final_sha256": "b8c272bb9edb77ed968aadfe53fcfce02611a6aaf5f35c8914352a3d9e3f741f"
     },
     {
       "current_path": "知识库/21_游戏网络/状态同步、预测与回滚.md",
@@ -3069,11 +3384,13 @@
       "deferred_title": false,
       "primary_question": "如何恢复历史Tick并重模拟迟到输入",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "fd5208daae5d34e308fa62846aa9513c85e4b4a26c401dd6891248485bd7a14e"
+      "final_sha256": "0432e87135ad93dbb59eb3b11bd233ed1620f8892aae532c3143dd88bae8cf21",
+      "historical_final_sha256": "fd5208daae5d34e308fa62846aa9513c85e4b4a26c401dd6891248485bd7a14e"
     },
     {
       "current_path": "知识库/21_游戏网络/状态同步、预测与回滚.md",
@@ -3089,11 +3406,13 @@
       "deferred_title": false,
       "primary_question": "如何用权威确认重放未确认输入并分离视觉误差",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "e33997f501e7127df897c850a03475c8a808efc61df5e9bf0f571e25260f5457"
+      "final_sha256": "8c8bcc8ee34805d1a58e14ac8961e092de4284b8fc8669abf9ee608022185502",
+      "historical_final_sha256": "e33997f501e7127df897c850a03475c8a808efc61df5e9bf0f571e25260f5457"
     },
     {
       "current_path": "知识库/21_游戏网络/服务器架构、分区与反作弊.md",
@@ -3109,11 +3428,13 @@
       "deferred_title": false,
       "primary_question": "如何组织权威实例路由存储与故障恢复",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "e1af77616c6b24894e468169c3b44d586c08ab028888b37cb6c8529b9d6b454a"
+      "final_sha256": "cdbe7b37b8424a61588b625bca368c1ff92f4332d3e4cd88b04613626a9ddd75",
+      "historical_final_sha256": "e1af77616c6b24894e468169c3b44d586c08ab028888b37cb6c8529b9d6b454a"
     },
     {
       "current_path": "知识库/21_游戏网络/状态同步、预测与回滚.md",
@@ -3129,11 +3450,13 @@
       "deferred_title": false,
       "primary_question": "如何按受控历史时刻回退碰撞体进行命中判断",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "cecd6efbb47d54e49cd280f67a75797ac440d71add8a1daf7b37d823555c7ca1"
+      "final_sha256": "4d5cb35e029fe59e02852e8a261065af5c6294d162c70ee548f9cbeb1427acfa",
+      "historical_final_sha256": "cecd6efbb47d54e49cd280f67a75797ac440d71add8a1daf7b37d823555c7ca1"
     },
     {
       "current_path": "知识库/21_游戏网络/状态同步、预测与回滚.md",
@@ -3149,11 +3472,13 @@
       "deferred_title": false,
       "primary_question": "如何用基线压缩与延后插值显示远端状态",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "c829e6333f306e0d0d9a6c76025c86c65253a6cb7a966f1fa69a9e1e3c5b3e62"
+      "final_sha256": "dd2c4aadabcf5fd191654655b6d2ff3523bd29760ccfe0de3a18392d0d40e898",
+      "historical_final_sha256": "c829e6333f306e0d0d9a6c76025c86c65253a6cb7a966f1fa69a9e1e3c5b3e62"
     },
     {
       "current_path": "知识库/21_游戏网络/服务器架构、分区与反作弊.md",
@@ -3169,11 +3494,13 @@
       "deferred_title": false,
       "primary_question": "如何验证客户端请求并记录可审计异常",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "25aacce589c820c1243871d3ef38dc91e37449bc45def501169f071d44e804c7"
+      "final_sha256": "961a326a9d01ecbb57175cd7d4a8a95f8ab74620da1fa2e51a4ba3b13970e7c7",
+      "historical_final_sha256": "25aacce589c820c1243871d3ef38dc91e37449bc45def501169f071d44e804c7"
     },
     {
       "current_path": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
@@ -3189,11 +3516,13 @@
       "deferred_title": false,
       "primary_question": "如何在乱序丢包与字节流下传送有边界的消息",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "bd200b979436f7f77c5cb0b6c8a0772a5ac58022f9f04d91f44fade19ebe1ac2"
+      "final_sha256": "8514519a3f83608d1ab7c4f8acde78367855dfb9cf2b99dc41f08d232828a08c",
+      "historical_final_sha256": "bd200b979436f7f77c5cb0b6c8a0772a5ac58022f9f04d91f44fade19ebe1ac2"
     },
     {
       "current_path": "知识库/21_游戏网络/网络协议、时钟与RPC.md",
@@ -3209,11 +3538,13 @@
       "deferred_title": false,
       "primary_question": "如何估计往返延迟与共同模拟时间",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "5ee3cf18677fbebea7203dc4c5d6f63d13145269de847de82bdcb7210d9634ad"
+      "final_sha256": "386599c86952a14194a59fb3435a8b2ef769a0ecee9c8833b94ca86539cf213b",
+      "historical_final_sha256": "5ee3cf18677fbebea7203dc4c5d6f63d13145269de847de82bdcb7210d9634ad"
     },
     {
       "current_path": "知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md",
@@ -3229,9 +3560,14 @@
       "deferred_title": false,
       "primary_question": "如何在Unity 6 URP记录并消费自定义通道",
       "content_actions": [
-        "KEEP"
+        "DEEPEN",
+        "FACT-CHECK",
+        "KEEP",
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "411241b60a8df40e54203a81a222732c2e4335df646181606f4a3457c9dec6d2"
+      "final_sha256": "2602cdb00de25a0f215041e6be2c302a452166e10ce0f788a51e1929a8457589",
+      "historical_final_sha256": "411241b60a8df40e54203a81a222732c2e4335df646181606f4a3457c9dec6d2"
     },
     {
       "current_path": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
@@ -3247,9 +3583,13 @@
       "deferred_title": false,
       "primary_question": "Unity如何按管线资产与相机配置组织剔除、通道、资源和提交",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE",
         "REWRITE"
       ],
-      "final_sha256": "acd48b79a05181720b5eb125ddf851c0b8cdeeacd179dee4ed701b53da0ef045"
+      "final_sha256": "e8370eacc5eba58e738e54550faf6b0aded43699328ae26c4ddb80c2d482d995",
+      "historical_final_sha256": "acd48b79a05181720b5eb125ddf851c0b8cdeeacd179dee4ed701b53da0ef045"
     },
     {
       "current_path": "知识库/22_渲染引擎实现/Unreal RDG Pass实现.md",
@@ -3265,9 +3605,14 @@
       "deferred_title": false,
       "primary_question": "如何用RDG参数表达资源依赖并执行通道",
       "content_actions": [
-        "KEEP"
+        "DEEPEN",
+        "FACT-CHECK",
+        "KEEP",
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "9eddb422401fb604cacdef163bd9334a2bf4ac96dc05881950eb14c02ecec56a"
+      "final_sha256": "ddd649483f97d136ed0e57880abb81d726b137fd11597d11eaf4673be7be72d8",
+      "historical_final_sha256": "9eddb422401fb604cacdef163bd9334a2bf4ac96dc05881950eb14c02ecec56a"
     },
     {
       "current_path": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
@@ -3283,9 +3628,13 @@
       "deferred_title": false,
       "primary_question": "Unreal如何把游戏线程场景更新转换为渲染线程、RDG、RHI与GPU帧工作",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE",
         "REWRITE"
       ],
-      "final_sha256": "c1c65dc6213eca3d18d6b1b2d115606ad8a2e008c4f8234aedf1fc250a3099a2"
+      "final_sha256": "512a878ab82ef6e6fb92cbdc83a75ba7b144aa8894ecbe2022eaffe537017d88",
+      "historical_final_sha256": "c1c65dc6213eca3d18d6b1b2d115606ad8a2e008c4f8234aedf1fc250a3099a2"
     },
     {
       "current_path": "知识库/22_渲染引擎实现/Unreal自定义Mesh Pass.md",
@@ -3301,9 +3650,13 @@
       "deferred_title": false,
       "primary_question": "如何把自定义网格效果接入Unreal绘制流程",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE",
         "REWRITE"
       ],
-      "final_sha256": "21fb9a86f5a23932afff015003a3cb9dd51ef9489c11df411ecce769bf143100"
+      "final_sha256": "0f74714268983b105d29c78fd005e6acc6e25f4ecc38350a8d2efafd2db6a94d",
+      "historical_final_sha256": "21fb9a86f5a23932afff015003a3cb9dd51ef9489c11df411ecce769bf143100"
     },
     {
       "current_path": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
@@ -3319,11 +3672,12 @@
       "deferred_title": false,
       "primary_question": "这些专题如何按输入与工程问题衔接",
       "content_actions": [
-        "REWRITE",
-        "RESTRUCTURE"
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "0f1ccdad48e76da5f4e7431dfa889820415dfcea888aafcddb7ff5eb8491c6c8",
-      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
+      "final_sha256": "c069920b5940e6c0999d40874b8d04e258acfe1ccd5cdcf3ae1ff0ad59a90949",
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
+      "historical_final_sha256": "0f1ccdad48e76da5f4e7431dfa889820415dfcea888aafcddb7ff5eb8491c6c8"
     },
     {
       "current_path": "知识库/23_引擎运行系统/数据导向设计与任务系统.md",
@@ -3339,11 +3693,13 @@
       "deferred_title": false,
       "primary_question": "如何按访问与查询模式组织大量实体数据",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "73108cf807636487b8a7d9308cfcbe44b6f73871ded6fb7d499871b422b85485"
+      "final_sha256": "7e7731461f889daa22a660407cc828f933ef781717d6422eddba590260926005",
+      "historical_final_sha256": "73108cf807636487b8a7d9308cfcbe44b6f73871ded6fb7d499871b422b85485"
     },
     {
       "current_path": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
@@ -3359,11 +3715,13 @@
       "deferred_title": false,
       "primary_question": "如何协调托管包装与Unity原生对象的创建销毁",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "62b2f94e67a247b9a155c12d226c85b37e9a6169a2c970422f87fcc76dbb4842"
+      "final_sha256": "1ffd84fc896444ad00d47a426f47b8561b009341ad4d66d9c9b153bc4f52fd3e",
+      "historical_final_sha256": "62b2f94e67a247b9a155c12d226c85b37e9a6169a2c970422f87fcc76dbb4842"
     },
     {
       "current_path": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
@@ -3379,12 +3737,13 @@
       "deferred_title": false,
       "primary_question": "如何让UObject引用被引擎GC识别",
       "content_actions": [
-        "REWRITE",
-        "RESTRUCTURE",
         "DEEPEN",
-        "FACT-CHECK"
+        "FACT-CHECK",
+        "RESTRUCTURE",
+        "REWRITE"
       ],
-      "final_sha256": "242ebd41eb1615ba4631e56f3e2fac2b394659bbca5d9ab771ac1f1be6e0221f"
+      "final_sha256": "e795f667cb7545fa12d45eba2bc06020af188e2a2137c00dba870423986e77b7",
+      "historical_final_sha256": "242ebd41eb1615ba4631e56f3e2fac2b394659bbca5d9ab771ac1f1be6e0221f"
     },
     {
       "current_path": "知识库/23_引擎运行系统/数据导向设计与任务系统.md",
@@ -3400,11 +3759,13 @@
       "deferred_title": false,
       "primary_question": "如何用显式依赖调度帧内CPU工作",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "78a48faa678b33338aa3d450abac45ef3bb3f157c38dc947f168f3d2716f2232"
+      "final_sha256": "f2e2aaf02fe0a2240792bf5bdf0a39077c0e98b4f5c57bf995211cd59a8d7348",
+      "historical_final_sha256": "78a48faa678b33338aa3d450abac45ef3bb3f157c38dc947f168f3d2716f2232"
     },
     {
       "current_path": "知识库/23_引擎运行系统/引擎世界与对象模型.md",
@@ -3420,9 +3781,13 @@
       "deferred_title": false,
       "primary_question": "如何定义引擎世界的依赖、所有权与更新阶段",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE",
         "REWRITE"
       ],
-      "final_sha256": "698383e8bdb97bf11d0cbf640866763d27a730466eb27d3a130449ec8a9c2393"
+      "final_sha256": "ca1e3ab31d34634f34f5c7e07015200dd53fcce3176b6045715d470459e4aac2",
+      "historical_final_sha256": "698383e8bdb97bf11d0cbf640866763d27a730466eb27d3a130449ec8a9c2393"
     },
     {
       "current_path": "知识库/23_引擎运行系统/资源依赖与异步加载.md",
@@ -3438,9 +3803,13 @@
       "deferred_title": false,
       "primary_question": "如何沿依赖加载资产并保持版本与所有权",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE",
         "REWRITE"
       ],
-      "final_sha256": "a8d703d6af88d83d045e54b3c155eebe7bb0f227a5619a7e3c0e42fb273e5a95"
+      "final_sha256": "dd53a6053c820b902c2472c0cd6c0fb5cf2171e24e596185ae750268baaa6330",
+      "historical_final_sha256": "a8d703d6af88d83d045e54b3c155eebe7bb0f227a5619a7e3c0e42fb273e5a95"
     },
     {
       "current_path": "知识库/24_游戏音频/游戏音频系统.md",
@@ -3456,9 +3825,13 @@
       "deferred_title": false,
       "primary_question": "如何在实时回调预算内混音并管理声音",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE",
         "REWRITE"
       ],
-      "final_sha256": "cc2944a357e6acb303cba4a1b05450115b994ea4d44252d4b816c599376d8a0a"
+      "final_sha256": "79c647d344b7d6286d223a20dfd6eb09fa1e72acdf201ebf516b52d8ee3c41ed",
+      "historical_final_sha256": "cc2944a357e6acb303cba4a1b05450115b994ea4d44252d4b816c599376d8a0a"
     },
     {
       "current_path": "知识库/25_UI与文本/UI、字体与文本渲染.md",
@@ -3474,11 +3847,13 @@
       "deferred_title": false,
       "primary_question": "如何把布局与裁剪转换成可批量提交的界面命令",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "3ac9f2b876a8d47df89c3fcd39aecca54a9bcc77ea78c344c41e30e14aeb315f"
+      "final_sha256": "1e08a152cc2477687ad390f7d5a28bcc62aa43c99b3cc406bbb7f6e2f98fc994",
+      "historical_final_sha256": "3ac9f2b876a8d47df89c3fcd39aecca54a9bcc77ea78c344c41e30e14aeb315f"
     },
     {
       "current_path": "知识库/25_UI与文本/UI、字体与文本渲染.md",
@@ -3494,11 +3869,13 @@
       "deferred_title": false,
       "primary_question": "如何把Unicode文本塑形成字形并恢复像素覆盖",
       "content_actions": [
-        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK",
         "RESTRUCTURE",
-        "DEEPEN"
+        "REWRITE"
       ],
-      "final_sha256": "90b65c509bf77007aaa957f0d50b991925de4bdd9611d8df603ea9550a34b512"
+      "final_sha256": "0e8f064fd649cc485254ce4f2324caa86e80bf87e55397babd2112dee991e331",
+      "historical_final_sha256": "90b65c509bf77007aaa957f0d50b991925de4bdd9611d8df603ea9550a34b512"
     },
     {
       "current_path": "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
@@ -3514,9 +3891,13 @@
       "deferred_title": false,
       "primary_question": "如何在GPU生成可见对象与间接绘制参数",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE",
         "REWRITE"
       ],
-      "final_sha256": "a2c362da7eec0a561aaa043cc821a202a4785cf1ec404c83b03f03249facd242"
+      "final_sha256": "836ad9895a36350b34d925e7ca25ff307731d8dbefadc8a0d313cd3b6bf22d7d",
+      "historical_final_sha256": "a2c362da7eec0a561aaa043cc821a202a4785cf1ec404c83b03f03249facd242"
     },
     {
       "current_path": "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md",
@@ -3532,9 +3913,13 @@
       "deferred_title": false,
       "primary_question": "如何按屏幕误差选择并流送Nanite几何",
       "content_actions": [
+        "DEEPEN",
+        "FACT-CHECK",
+        "RESTRUCTURE",
         "REWRITE"
       ],
-      "final_sha256": "52da2649331f18e00c3d9634bd28fb9a0c032005de5fb703f1d4e4fb0cffe47e"
+      "final_sha256": "96188e096c1e723b92cbf4dec0522029a6f9908640bc02752a2073ff3b5c5693",
+      "historical_final_sha256": "52da2649331f18e00c3d9634bd28fb9a0c032005de5fb703f1d4e4fb0cffe47e"
     }
   ],
   "original_records": [
@@ -3637,7 +4022,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
       "targets": [
-        "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md"
+        "知识库/02_GPU与光栅化管线/渲染帧流程.md"
       ],
       "products": [],
       "status": "COMPLETE"
@@ -3645,7 +4030,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/光栅化、插值与深度模板.md",
       "targets": [
-        "知识库/02_GPU与光栅化管线/光栅化可见性导读.md"
+        "知识库/02_GPU与光栅化管线/光栅化可见性.md"
       ],
       "products": [],
       "status": "COMPLETE"
@@ -3673,7 +4058,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/剔除、透明与混合.md",
       "targets": [
-        "知识库/02_GPU与光栅化管线/可见性与合成导读.md"
+        "知识库/02_GPU与光栅化管线/可见性与合成.md"
       ],
       "products": [],
       "status": "COMPLETE"
@@ -4621,5 +5006,6 @@
       "products": [],
       "status": "COMPLETE"
     }
-  ]
+  ],
+  "current_content_review": "2026-10-22；正文复读状态与证据见article-quality-matrix.revision_review"
 }

@@ -4377,7 +4377,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
       "heading": "CPU 端做什么",
-      "target": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "target": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
       "current_heading": null,
       "decision": "关系概要与重复机制归并",
       "reason": "一帧路线负责组织职责，OpenGL对象与显示机制移入专篇，完整阶段算法引用既有主归属。",
@@ -4395,7 +4395,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
       "heading": "GPU 为什么使用流水线",
-      "target": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "target": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
       "current_heading": null,
       "decision": "关系概要与重复机制归并",
       "reason": "一帧路线负责组织职责，OpenGL对象与显示机制移入专篇，完整阶段算法引用既有主归属。",
@@ -4404,7 +4404,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
       "heading": "图形管线的主要阶段",
-      "target": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "target": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
       "current_heading": null,
       "decision": "关系概要与重复机制归并",
       "reason": "一帧路线负责组织职责，OpenGL对象与显示机制移入专篇，完整阶段算法引用既有主归属。",
@@ -4413,7 +4413,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
       "heading": "Input Assembly",
-      "target": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "target": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
       "current_heading": null,
       "decision": "关系概要与重复机制归并",
       "reason": "一帧路线负责组织职责，OpenGL对象与显示机制移入专篇，完整阶段算法引用既有主归属。",
@@ -4422,7 +4422,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
       "heading": "Vertex Shader",
-      "target": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "target": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
       "current_heading": null,
       "decision": "关系概要与重复机制归并",
       "reason": "一帧路线负责组织职责，OpenGL对象与显示机制移入专篇，完整阶段算法引用既有主归属。",
@@ -4431,7 +4431,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
       "heading": "可选细分和几何阶段",
-      "target": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "target": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
       "current_heading": null,
       "decision": "关系概要与重复机制归并",
       "reason": "一帧路线负责组织职责，OpenGL对象与显示机制移入专篇，完整阶段算法引用既有主归属。",
@@ -4440,7 +4440,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
       "heading": "Primitive Assembly、Clipping 和 Viewport",
-      "target": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "target": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
       "current_heading": null,
       "decision": "关系概要与重复机制归并",
       "reason": "一帧路线负责组织职责，OpenGL对象与显示机制移入专篇，完整阶段算法引用既有主归属。",
@@ -4449,7 +4449,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
       "heading": "Rasterization",
-      "target": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "target": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
       "current_heading": null,
       "decision": "关系概要与重复机制归并",
       "reason": "一帧路线负责组织职责，OpenGL对象与显示机制移入专篇，完整阶段算法引用既有主归属。",
@@ -4458,7 +4458,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
       "heading": "Pixel/Fragment Shader",
-      "target": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "target": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
       "current_heading": null,
       "decision": "关系概要与重复机制归并",
       "reason": "一帧路线负责组织职责，OpenGL对象与显示机制移入专篇，完整阶段算法引用既有主归属。",
@@ -4467,7 +4467,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
       "heading": "Output Merger",
-      "target": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "target": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
       "current_heading": null,
       "decision": "关系概要与重复机制归并",
       "reason": "一帧路线负责组织职责，OpenGL对象与显示机制移入专篇，完整阶段算法引用既有主归属。",
@@ -4476,7 +4476,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
       "heading": "Render Target 和 Attachment",
-      "target": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "target": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
       "current_heading": null,
       "decision": "关系概要与重复机制归并",
       "reason": "一帧路线负责组织职责，OpenGL对象与显示机制移入专篇，完整阶段算法引用既有主归属。",
@@ -4485,7 +4485,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
       "heading": "Graphics、Compute 和 Copy Queue",
-      "target": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "target": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
       "current_heading": null,
       "decision": "关系概要与重复机制归并",
       "reason": "一帧路线负责组织职责，OpenGL对象与显示机制移入专篇，完整阶段算法引用既有主归属。",
@@ -4512,7 +4512,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
       "heading": "如何从帧捕获验证",
-      "target": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+      "target": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
       "current_heading": null,
       "decision": "关系概要与重复机制归并",
       "reason": "一帧路线负责组织职责，OpenGL对象与显示机制移入专篇，完整阶段算法引用既有主归属。",
@@ -4521,7 +4521,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/光栅化、插值与深度模板.md",
       "heading": "专题阅读",
-      "target": "知识库/02_GPU与光栅化管线/光栅化可见性导读.md",
+      "target": "知识库/02_GPU与光栅化管线/光栅化可见性.md",
       "current_heading": null,
       "decision": "关系概要与重复机制归并",
       "reason": "导航保留问题路线，标题以共同可见性职责命名。",
@@ -4530,7 +4530,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/剔除、透明与混合.md",
       "heading": "哪些结果值得保留",
-      "target": "知识库/02_GPU与光栅化管线/可见性与合成导读.md",
+      "target": "知识库/02_GPU与光栅化管线/可见性与合成.md",
       "current_heading": null,
       "decision": "关系概要与重复机制归并",
       "reason": "该页只负责两类职责关系。",
@@ -4539,7 +4539,7 @@
     {
       "source": "知识库/02_GPU与光栅化管线/剔除、透明与混合.md",
       "heading": "专题阅读",
-      "target": "知识库/02_GPU与光栅化管线/可见性与合成导读.md",
+      "target": "知识库/02_GPU与光栅化管线/可见性与合成.md",
       "current_heading": null,
       "decision": "关系概要与重复机制归并",
       "reason": "该页只负责两类职责关系。",

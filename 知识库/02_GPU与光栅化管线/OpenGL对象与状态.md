@@ -51,7 +51,7 @@ glBindBuffer(GL_ARRAY_BUFFER, otherBuffer);
 ## 相关主题
 
 - [[13_渲染架构/Render Pass与附件]]
-- [[02_GPU与光栅化管线/一帧如何到达屏幕]]
+- [[02_GPU与光栅化管线/渲染帧流程]]
 
 ## 参考资料
 

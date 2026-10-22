@@ -99,14 +99,14 @@ glDisable(GL_STENCIL_TEST);
 
 ## 相关主题
 
-- [[02_GPU与光栅化管线/一帧如何到达屏幕]]
-- [[02_GPU与光栅化管线/可见性与合成导读]]
+- [[02_GPU与光栅化管线/渲染帧流程]]
+- [[02_GPU与光栅化管线/可见性与合成]]
 - [[06_纹理技术/纹理采样与过滤]]
 - [[14_性能分析与优化/帧瓶颈诊断]]
 - [[13_渲染架构/Draw Call与合批]]
 - [[13_渲染架构/GBuffer布局]]
 
-- [[02_GPU与光栅化管线/光栅化可见性导读]]
+- [[02_GPU与光栅化管线/光栅化可见性]]
 
 实现与验证：[raster_models.py](../examples/revision/raster_models.py) 与 [test_raster.py](../examples/revision/test_raster.py)枚举256个原值检查写掩码隔离，并核对分类比较结果，运行 `python -B 知识库/examples/revision/test_raster.py`。OpenGL上下文与两遍描边未运行；模板图像需用目标工程捕获。
 

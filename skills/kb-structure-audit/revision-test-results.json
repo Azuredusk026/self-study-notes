@@ -216,6 +216,15 @@
       "passed": true,
       "dxc_entries": 19,
       "scope": "另含GLSL正反接口、天空折射链接和阴影查询离线编译"
+    },
+    {
+      "phase": "P4",
+      "command": "python -B skills/kb-structure-audit/scripts/batch_validate.py .",
+      "passed": true,
+      "pages": 184,
+      "original_pages": 113,
+      "historical_sections": 63,
+      "errors": []
     }
   ]
 }

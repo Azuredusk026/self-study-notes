@@ -213,11 +213,11 @@ AI决策与导航整理世界表示、搜索、局部控制和计划家族，约
 | [旋转表示与插值](../../../知识库/01_数学与采样/旋转表示与插值.md) | Batch4-P1-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [Monte Carlo采样](../../../知识库/01_数学与采样/Monte Carlo采样.md)、[球谐光照](../../../知识库/01_数学与采样/球谐光照.md) | Batch3-P0-B | FACT-CHECK / RESTRUCTURE / REWRITE | SPLIT | pending_split |
 | [GPU执行与访存](../../../知识库/02_GPU与光栅化管线/GPU执行与访存.md) | Batch3-P0-A | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
-| [一帧如何到达屏幕](../../../知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md) | Batch4-P1-B | FACT-CHECK / REWRITE | OVERVIEW | OVERVIEW |
-| [光栅化、插值与深度模板](../../../知识库/02_GPU与光栅化管线/光栅化可见性导读.md) | Batch4-P1-B | FACT-CHECK / REWRITE | OVERVIEW | OVERVIEW |
+| [一帧如何到达屏幕](../../../知识库/02_GPU与光栅化管线/渲染帧流程.md) | Batch4-P1-B | FACT-CHECK / REWRITE | OVERVIEW | OVERVIEW |
+| [光栅化、插值与深度模板](../../../知识库/02_GPU与光栅化管线/光栅化可见性.md) | Batch4-P1-B | FACT-CHECK / REWRITE | OVERVIEW | OVERVIEW |
 | [光栅化与属性插值](../../../知识库/02_GPU与光栅化管线/光栅化与属性插值.md) | Batch3-P0-B | FACT-CHECK / REWRITE | PASS | KEEP |
 | [Geometry Shader](../../../知识库/02_GPU与光栅化管线/Geometry Shader.md)、[Stream Output](../../../知识库/02_GPU与光栅化管线/Stream Output.md) | Batch3-P0-B | FACT-CHECK / REWRITE | SPLIT | pending_split |
-| [剔除、透明与混合](../../../知识库/02_GPU与光栅化管线/可见性与合成导读.md) | Batch4-P2-P3-B | FACT-CHECK / RESTRUCTURE / REWRITE | OVERVIEW | OVERVIEW |
+| [剔除、透明与混合](../../../知识库/02_GPU与光栅化管线/可见性与合成.md) | Batch4-P2-P3-B | FACT-CHECK / RESTRUCTURE / REWRITE | OVERVIEW | OVERVIEW |
 | [抗锯齿与时域重建](../../../知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md) | Batch4-P1-B | FACT-CHECK / RESTRUCTURE / REWRITE | PASS | KEEP |
 | [基于深度的可见性优化](../../../知识库/02_GPU与光栅化管线/基于深度的可见性优化.md) | Batch3-P0-B | FACT-CHECK / REWRITE | PASS | KEEP |
 | [Stencil与对象遮罩](../../../知识库/02_GPU与光栅化管线/Stencil与对象遮罩.md) | Batch3-P0-B | FACT-CHECK / REWRITE | PASS | KEEP |

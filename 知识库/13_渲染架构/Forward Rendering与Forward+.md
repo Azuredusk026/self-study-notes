@@ -64,7 +64,7 @@ float3 ShadeLocalLights(float3 positionWS, float3 normalWS, uint region)
 
 ## 相关主题
 
-- [[02_GPU与光栅化管线/一帧如何到达屏幕]]
+- [[02_GPU与光栅化管线/渲染帧流程]]
 - [[05_光照阴影与GI/直接光照]]
 - [[13_渲染架构/GBuffer布局]]
 - [[13_渲染架构/渲染命令的组织方式]]
