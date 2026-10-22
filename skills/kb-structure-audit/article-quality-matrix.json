@@ -4785,43 +4785,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何让动态物体插值空间中的低频间接光"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Light Probe；三线性 Probe 插值；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "展开八角权重、27分量缓冲布局、边界策略、系数/辐照度单位与可见性重归一化。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "CPU仿射场重建、角点与权重和检查通过；HLSL结构化缓冲插值ps_6_0编译通过。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "SH主归属公式与DDGI作者算法说明核读；内存108字节由27个float计算。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "以空间权重和系数契约解释连续性，删除把高频误差必归因SH阶数的断言。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Light Probe表达主问题，次级标题采用内容名称。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "05领域区分光源、可见性与缓存；BRDF、SH、IBL及图集机制链接现有主归属。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "以空间算例、积分公式和完整算法解释主机制，无新增图像或结果截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -4851,7 +4851,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "78423a5108bc5686d88b0f15f937df414f9b3734f8fbc43622ee0d04ac0a5542",
+    "final_sha256": "09c974f6933678509b17fa9771638fbb64efa4c46a7d03ca3f2c31088475890f",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -4881,9 +4881,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gi",
+      "scope": "全文、代码、公式、证据、验证与标题",
+      "findings": [
+        "展开八角权重、27分量缓冲布局、边界策略、系数/辐照度单位与可见性重归一化。",
+        "以空间权重和系数契约解释连续性，删除把高频误差必归因SH阶数的断言。"
+      ],
+      "content_sha256": "09c974f6933678509b17fa9771638fbb64efa4c46a7d03ca3f2c31088475890f",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -4898,43 +4908,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何把静态表面的光照预计算为可稳定采样的纹理"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "静态表面光照表示；运行时查询；烘焙边界与失效；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "区分辐照度与出射颜色、方向压缩的局限、UV保护边与mip、烘焙输入及直接光双算。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "明确线性浮点辐照度采样片段和256/2048图集算例；未执行场景烘焙与引擎导入。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Unity6000.0 Directional Mode正文核读两纹理语义及额外成本。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "按表示、查询、烘焙失效推进，删除与本文不相关的Lumen/RTXGI引用。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Lightmap表达主问题，次级标题采用内容名称。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "05领域区分光源、可见性与缓存；BRDF、SH、IBL及图集机制链接现有主归属。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "以空间算例、积分公式和完整算法解释主机制，无新增图像或结果截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -4965,7 +4975,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "8337a78d35a7f94703cb70b8378c49ef1c806b5da309f201ebbf3d0e7b44061b",
+    "final_sha256": "30df52bc6f451a176f58a7ef3740243909abc2dc95e3d5151537934a6bdbb7fb",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -4995,9 +5005,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gi",
+      "scope": "全文、代码、公式、证据、验证与标题",
+      "findings": [
+        "区分辐照度与出射颜色、方向压缩的局限、UV保护边与mip、烘焙输入及直接光双算。",
+        "按表示、查询、烘焙失效推进，删除与本文不相关的Lumen/RTXGI引用。"
+      ],
+      "content_sha256": "30df52bc6f451a176f58a7ef3740243909abc2dc95e3d5151537934a6bdbb7fb",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -5012,43 +5032,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何捕获并混合局部环境反射"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Reflection Probe；局部反射查询；探针混合与更新；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "展开盒内射线出口、平行轴和零方向处理、有限墙面视差算例及先查询后混合。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "CPU检查中心恒等、偏移位置、平行轴、盒外及零方向；正文函数ps_6_0编译通过。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Unity6000.0 Box projection官方段落核读；求交公式与现有slab方法独立对照。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "从捕获位置差异解释方向重建；近场、粗糙度和混合有效范围就地限定。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Reflection Probe表达主问题，次级标题采用内容名称。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "05领域区分光源、可见性与缓存；BRDF、SH、IBL及图集机制链接现有主归属。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "以空间算例、积分公式和完整算法解释主机制，无新增图像或结果截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -5077,7 +5097,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "50ab10c207a24b4c7f7f5631e32186cc48b891a8405c904c57c4a1605aa8a691",
+    "final_sha256": "a4f3b75d65befa3eeb4bd94e2aafb94d34cbb7bb8d94e13ec62a80370369570e",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -5107,9 +5127,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gi",
+      "scope": "全文、代码、公式、证据、验证与标题",
+      "findings": [
+        "展开盒内射线出口、平行轴和零方向处理、有限墙面视差算例及先查询后混合。",
+        "从捕获位置差异解释方向重建；近场、粗糙度和混合有效范围就地限定。"
+      ],
+      "content_sha256": "a4f3b75d65befa3eeb4bd94e2aafb94d34cbb7bb8d94e13ec62a80370369570e",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -5123,43 +5153,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何生成、过滤和调试光源可见性"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Shadow Map 流程；过滤离散可见性；Shadow Acne；阴影资源与投影方案；常见伪影定位；验证方法"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "明确PCF查询足迹、常规/反向Z、半影全宽到UV半径、固定世界基底吸附、矩上界及点阴影返回语义。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "CPU验证PCSS宽度半径和方差边界；正文PCF ps_6_0编译通过，级联矩阵宿主和GPU结果未运行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Microsoft CSM和GPU Gems3第8章§8.4/§8.6核读；NVIDIA旧PCSS独立PDF超时不计已读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "移除疑问标题和过深标题，推导细节在对应半影章节连续叙述，区别比较过滤与原始深度过滤。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Shadow Map表达主问题，次级标题采用内容名称。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "05领域区分光源、可见性与缓存；BRDF、SH、IBL及图集机制链接现有主归属。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "以空间算例、积分公式和完整算法解释主机制，无新增图像或结果截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -5213,7 +5243,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "c94919664a6d16c315c56afd9f02f908d15c94cc34511baa171dc27e79a16216",
+    "final_sha256": "e710b1bb248c3e6f983e2fa05f3e44cba662551b16985b0537dacdf066b9517f",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -5242,9 +5272,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gi",
+      "scope": "全文、代码、公式、证据、验证与标题",
+      "findings": [
+        "明确PCF查询足迹、常规/反向Z、半影全宽到UV半径、固定世界基底吸附、矩上界及点阴影返回语义。",
+        "移除疑问标题和过深标题，推导细节在对应半影章节连续叙述，区别比较过滤与原始深度过滤。"
+      ],
+      "content_sha256": "e710b1bb248c3e6f983e2fa05f3e44cba662551b16985b0537dacdf066b9517f",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -5259,43 +5299,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何在场景变化后更新间接光表示"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "可更新的场景表示；方案适用条件；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "展开距离两矩可见性上界、二点深度漏光算例、时间滞后闭式解及滚动槽位代次重置。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "CPU核对矩上界0.8与实际0.5差异、10次更新1-0.9^10与失效重置；未执行场景追踪。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "RTXGI Irradiance.hlsl 120—172行、DDGI作者页及Unreal5.6 Lumen Technical Details已核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "保留同题方案比较，以完整DDGI更新链补主机制；Lumen行为注明版本和运行边界。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "动态GI表达主问题，次级标题采用内容名称。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "05领域区分光源、可见性与缓存；BRDF、SH、IBL及图集机制链接现有主归属。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "以空间算例、积分公式和完整算法解释主机制，无新增图像或结果截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -5329,7 +5369,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "079c18942082fde200a173493c33db1ad9d18e3fe4dbdcb67b9cce04c74bf829",
+    "final_sha256": "c54fd5625d6dc5801bcdbf820ac316ab9723954e247d0dce593ba5b7be44a9b7",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -5359,9 +5399,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gi",
+      "scope": "全文、代码、公式、证据、验证与标题",
+      "findings": [
+        "展开距离两矩可见性上界、二点深度漏光算例、时间滞后闭式解及滚动槽位代次重置。",
+        "保留同题方案比较，以完整DDGI更新链补主机制；Lumen行为注明版本和运行边界。"
+      ],
+      "content_sha256": "c54fd5625d6dc5801bcdbf820ac316ab9723954e247d0dce593ba5b7be44a9b7",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -5376,43 +5426,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何评估不同光源在表面的直接贡献"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "光源模型；单位与空间分布；表面求值与光源组织；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "展开点光通量到光强、聚光锥权重、LTC矩阵布局、地平线裁剪和球面边积分，消除抽象核心函数。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "CPU边积分与独立矩形面积积分对照、尺度及裁剪测试通过；正文LTC ps_6_0编译通过。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Heitz论文作者页和ltc_quad.fs矩阵/幅度/裁剪代码核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "光源单位、传播与表面响应区分，LTC积分中已含的余弦和距离不再重复乘。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "直接光照表达主问题，次级标题采用内容名称。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "05领域区分光源、可见性与缓存；BRDF、SH、IBL及图集机制链接现有主归属。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "以空间算例、积分公式和完整算法解释主机制，无新增图像或结果截图。"
       }
     },
     "batch_migration_authorized": true,
@@ -5453,7 +5503,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "261033f6564433f55aae75c606f59265a589f7d4c6462e61795d55be76dedb6b",
+    "final_sha256": "d67c0a20c487c46298226125383cf25ee4a4f12a696e681978ce28d2f8b51d4b",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -5482,9 +5532,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gi",
+      "scope": "全文、代码、公式、证据、验证与标题",
+      "findings": [
+        "展开点光通量到光强、聚光锥权重、LTC矩阵布局、地平线裁剪和球面边积分，消除抽象核心函数。",
+        "光源单位、传播与表面响应区分，LTC积分中已含的余弦和距离不再重复乘。"
+      ],
+      "content_sha256": "d67c0a20c487c46298226125383cf25ee4a4f12a696e681978ce28d2f8b51d4b",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {

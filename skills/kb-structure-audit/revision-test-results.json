@@ -99,6 +99,20 @@
       "dxc_entries": 3,
       "glsl_link_cases": 1,
       "scope": "正文BRDF、法线、IBL函数与天空折射片段"
+    },
+    {
+      "phase": "P1-gi",
+      "command": "python -B 知识库/examples/revision/test_gi.py",
+      "passed": true,
+      "tests": 7,
+      "scope": "探针仿射场、盒投影、距离矩、时间更新、余弦边积分及PCSS"
+    },
+    {
+      "phase": "P1-gi",
+      "command": "python -B 知识库/examples/revision/compile_gi.py",
+      "passed": true,
+      "dxc_entries": 4,
+      "scope": "正文探针插值、盒投影、LTC、PCF"
     }
   ]
 }

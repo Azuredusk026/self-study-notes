@@ -2,11 +2,11 @@
 
 墙面和灯都不动时，运行时反复追踪间接光没有必要。Lightmap把表面光照烘进专用UV，采样时复用结果。它省下积分，却把质量要求转到UV覆盖、边距、方向编码和资产重烘焙上。
 
-## 静态表面怎样保存间接光
+## 静态表面光照表示
 
 ### Lightmap
 
-Lightmap 把静态表面的烘焙光照保存到纹理。运行时通过第二套 UV 采样。
+Lightmap 把静态表面的烘焙光照保存到纹理。运行时通过独立的光照 UV 采样。它常用第二套 UV 通道，具体通道编号由资产与Shader接口约定。
 
 它适合：
 
@@ -23,27 +23,35 @@ Lightmap 把静态表面的烘焙光照保存到纹理。运行时通过第二�
 
 ### Directional Lightmap
 
-普通 Lightmap 只保存最终颜色，无法对动态 Normal Map 做合理方向响应。Directional Lightmap 会额外保存主导光方向或方向性信息，运行时根据表面法线调整结果。
+非方向性 Lightmap 每个纹素保存烘焙法线下的光照量，编码可以是辐照度或已含材质项的颜色，不能由文件名判断。只有一个方向积分值时，运行时缺少随法线重新积分所需的方向信息。Directional Lightmap 会额外保存主导光方向或方向性信息，运行时根据表面法线调整结果。
 
-它提高动态细节表现，也增加纹理和 Shader 成本。
+例如 Unity 6000.0 的 Directional Mode 额外保存主导方向与该方向的贡献比例，运行时可据此调整法线贴图响应。两侧相反方向同时来光时，一个主导方向仍无法恢复完整分布；方向编码是压缩近似。额外纹理同时增加存储、读取和烘焙成本。
 
 ## 运行时查询
 
-HLSL机制片段使用不重叠的光照UV及图集scale/bias，DecodeLightmap与烘焙编码对应。
+以下HLSL机制片段约定纹理为线性浮点RGB辐照度，已包含间接可见性，未乘材质反照率，因而读取无需额外HDR解码。宿主提供 `Texture2D<float4> Lightmap`、线性采样器和当前物体的 `scaleBias`；采用RGBM等编码时，必须替换为该格式的解码函数。
 
 ```hlsl
 float2 uv = lightmapUV * scaleBias.xy + scaleBias.zw;
-float3 irradiance = DecodeLightmap(Lightmap.Sample(LinearClamp, uv));
+float3 irradiance = Lightmap.Sample(LinearClamp, uv).rgb;
 float3 diffuse = baseColor * irradiance / 3.14159265;
 ```
 
 若数据已保存漫反射出射颜色，就不能重复乘反照率或除π。方向性Lightmap另保存方向约束，用于法线响应。
 
+## 烘焙边界与失效
+
+光照 UV 的每个图表对应一块表面。图表边缘需向外扩张有效颜色，否则双线性和 mip 采样会混入邻图表。基础层留 $p$ 个纹素，缩到第 $m$ 级后只剩约 $p/2^m$ 个；允许访问的最粗 mip、压缩块大小和扩张方式应一起确定，具体隔离策略见 [[06_纹理技术/纹理图集]]。
+
+一个图表在2048图集中占256纹素宽，UV尺度是0.125；其左边缘在512处时偏移是0.25。运行时仍需区分内容区域与保护边，不能直接把包含边距的外框当成有效UV范围。
+
+烘焙清单至少记录几何变换、材质反照率、自发光、参与的光源、UV和光照编码。修改任一影响积分的输入都会使对应结果失效。烘焙若已包含直接光，运行时再叠同一盏直接光会双算；混合光照需明确哪些贡献由贴图、实时灯和阴影遮罩分别负责。
+
 ## 验证方法
 
 显示UV2与图集索引，检查重叠、Padding、纹素密度和最低mip。移动灯光或几何时标记烘焙失效，与未变化的参考场景比较接缝与能量。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+本页按明确的辐照度格式核对了UV地址和Lambert单位关系，引用的Unity方向格式已核读。实际场景烘焙、压缩误差、资源流送与目标引擎运行尚未验证。
 
 ## 相关主题
 
@@ -55,6 +63,4 @@ float3 diffuse = baseColor * irradiance / 3.14159265;
 
 ## 参考资料
 
-- Epic Games, *Lumen Global Illumination and Reflections*.
-- NVIDIA, *RTXGI / Dynamic Diffuse Global Illumination*.
-- Unity Manual, *Lightmapping and Light Probes*.
+- [Unity 6000.0：Store light direction with Directional Mode](https://docs.unity3d.com/6000.0/Documentation/Manual/LightmappingDirectional.html)，双纹理语义与运行成本。

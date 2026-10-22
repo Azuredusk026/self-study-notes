@@ -19,7 +19,7 @@
 
 ## 过滤离散可见性
 
-### 为什么不能直接双线性插值深度
+### 深度比较与过滤顺序
 
 假设一个采样落在遮挡物边缘，两侧深度分别属于近处遮挡物和远处背景。直接插值得到的是一个现实中不存在的中间深度。拿它与接收深度比较，会产生错误可见性。
 
@@ -69,7 +69,7 @@ float SampleShadowPCF(float3 shadowCoord, float bias)
 }
 ```
 
-这里返回的是受光比例。Comparison Function、反向 Z、Border Color 和深度格式都会影响结果，移植时需要一起核对。
+本段为HLSL机制函数，资源声明为 `Texture2D<float> ShadowMap` 与 `SamplerComparisonState ShadowSampler`。约定常规Z、清除深度1、比较 `LESS_EQUAL`，正bias从接收深度减去；反向Z需同步改变比较方向与偏置符号。线性比较采样的一次查询可比较相邻4个纹素，因此这里是9次查询，覆盖足迹会重叠，并非简单的9个独立点深度。光锥外、UV外和级联外的回退由调用端处理；边框颜色也要与受光约定一致。
 
 ### PCSS
 
@@ -93,7 +93,7 @@ $w_l$ 是光源尺寸。接收面离 Blocker 越远，半影越宽。
 
 具体公式需要根据光源投影和深度空间转换。不能直接把非线性 Shadow Depth 塞进比例式。
 
-##### 这个比例式从哪来
+**相似三角形推导。**
 
 它来自相似三角形，理解推导才能判断它何时失效。
 
@@ -115,7 +115,7 @@ $$
 
 两个直接推论：遮挡物贴近接收面时 $d_r\approx d_b$，半影趋近于零，这就是接触硬化；遮挡物贴近光源时 $d_b$ 很小，半影急剧放大。
 
-##### 三条前提
+**适用前提。**
 
 推导用到了三个假设，实际场景中都可能不成立：
 
@@ -125,17 +125,17 @@ $$
 
 **深度线性可比**。比例式中的 $z$ 必须是线性距离。Shadow Map 存的通常是非线性深度，反向 Z 下方向还相反。必须先转换到线性空间，否则半影宽度会出现随距离系统性偏大或偏小的错误。
 
-##### 从半影宽度到采样半径
+**采样半径换算。**
 
 $w_p$ 是世界空间的宽度，PCF 需要的是 Shadow Map 上的 UV 半径。转换依赖光源的投影方式：
 
 正交投影（方向光）下，整张 Shadow Map 覆盖固定的世界范围 $W$，转换是常数比例：
 
 $$
-r_{uv}=\frac{w_p}{W}
+r_{uv}=\frac{w_p}{2W}
 $$
 
-透视投影（点光、聚光）下，同样的世界宽度在不同深度对应不同的 UV 尺寸，需要按接收点深度换算。
+这里的 $w_l,w_p$ 都是完整宽度，采样半径取半宽；若实现把 `lightSize` 定义为半径，则必须整套改用半径约定。有限距离的透视光源在接收深度 $d_r$ 处横向覆盖宽度为 $W(d_r)=2d_r\tan(\theta_x/2)$，所以 $r_{uv}=w_p/[4d_r\tan(\theta_x/2)]$。方向光应先由角半径与遮挡间距估计世界半影，再使用正交覆盖换算。
 
 级联阴影中每一级的 $W$ 不同，同一个 $w_p$ 在各级对应的 UV 半径也不同。这是级联过渡处软硬程度突变的常见原因——必须逐级换算，不能全局共用一个系数。
 
@@ -160,7 +160,7 @@ PCSS 是 Contact-hardening Shadow 的近似。它仍会受到 Blocker Search 样
 
 Bias 太小会 Acne，太大会 Peter Panning，让阴影与物体脚底分离。Normal Bias 还可能让薄物体漏光或改变阴影形状。
 
-## 阴影资源如何分配
+## 阴影资源与投影方案
 
 ### CSM
 
@@ -290,7 +290,7 @@ $$
 s_{texel}=\frac{w}{R}
 $$
 
-将投影中心除以 $s_{texel}$、取整后再乘回去，就能让平移以整 Texel 发生。包围球通常更稳定，紧致 AABB 的分辨率利用率更高。工程实现需要在稳定性和有效分辨率之间取舍。
+应先在固定方向光基底下表达世界坐标，再将XY投影中心除以 $s_{texel}$、取整后乘回去。若先让光源View跟随中心平移、再对已经接近零的局部中心取整，就失去了固定的吸附基准。吸附还可能把覆盖范围推移半个纹素，包围范围应留出相应余量。包围球通常更稳定，紧致 AABB 的分辨率利用率更高。工程实现需要在稳定性和有效分辨率之间取舍。
 
 #### 8. 成本
 
@@ -319,7 +319,7 @@ Shadow Map 能处理多种接收面和自阴影，但也要生成并查询深度
 
 思路是：忽略自阴影，只求物体每个顶点沿光方向在地面上的投影位置，把网格压扁到平面上再用深色绘制一遍。
 
-设光方向单位向量为 $\mathbf{L}$，顶点位置为 $\mathbf{M}$，地面高度为 $h$。沿光线走到 $y=h$ 需要的参数是：
+设指向光源的单位向量为 $\mathbf{L}$，投影沿 $-\mathbf L$，顶点位置为 $\mathbf{M}$，地面高度为 $h$。沿光线走到 $y=h$ 需要的参数是：
 
 $$
 t=\frac{M_y-h}{L_y}
@@ -335,11 +335,11 @@ $$
 
 它的成本只是一次额外绘制，没有 Shadow Map 的分辨率、Bias 和采样开销。限制同样明确：只能投到一个平面上，地面起伏或有台阶时会穿帮；没有自阴影；多个投影重叠处颜色会叠加加深，需要用模板缓冲限制每像素只写一次。
 
-$L_y$ 接近零时 $t$ 趋于无穷，光线接近水平的情况必须单独处理。
+$L_y$ 接近零时 $t$ 趋于无穷；还需拒绝 $t<0$ 的反向投影。偏置、接收平面范围和模板位由宿主提供，额外绘制的实际成本仍取决于网格复杂度和覆盖面积。
 
 ### 方差阴影与虚拟阴影
 
-方差阴影贴图（Variance Shadow Map，VSM）保存深度的一阶、二阶矩，用切比雪夫不等式估计受光概率。矩数据可以线性过滤和预过滤，适合较软阴影，但数值误差与深度分布重叠会产生 Light Bleeding。EVSM 等变体通过指数变换增强分离度，同时更依赖精度和参数控制。
+方差阴影贴图（Variance Shadow Map，VSM）保存深度的一阶、二阶矩，用切比雪夫不等式估计受光概率。过滤后得到 $\mu=E[z]$ 与 $m_2=E[z^2]$，取 $\sigma^2=\max(m_2-\mu^2,\epsilon)$。当 $z_r\le\mu$ 时返回1，否则受光比例的上界为 $\sigma^2/[\sigma^2+(z_r-\mu)^2]$。这个上界可以超过真实可见比例，所以即使计算无误也可能漏光；压缩权重会减轻漏光，同时引入偏暗误差。矩数据可以线性过滤和预过滤，适合较软阴影，但数值精度仍需控制。EVSM 等变体通过指数变换增强分离度，同时更依赖精度和参数控制。
 
 虚拟阴影贴图（Virtual Shadow Map，也简称 VSM）把高分辨率阴影空间切成 Page，只分配和更新当前视图需要的区域。它依赖虚拟地址映射、Page Cache、接收者驱动请求和失效规则，目标是让大世界和高密度几何保持细致阴影。
 
@@ -358,14 +358,14 @@ float PointShadow(vec3 positionWS)
 {
     vec3 lightToPoint = positionWS - lightPositionWS;
     float receiverDistance = length(lightToPoint);
-    float blockerDistance = texture(pointShadowMap, lightToPoint).r
+    float blockerDistance = textureLod(pointShadowMap, lightToPoint, 0.0).r
                           * shadowFar;
     return receiverDistance - shadowBias > blockerDistance
          ? 1.0 : 0.0;
 }
 ```
 
-示例把线性距离除以 `shadowFar` 写入 Cubemap，因此读取后乘回同一值。若资源保存投影深度，必须先按投影公式还原，不能直接与欧氏距离比较。
+这段GLSL函数返回遮挡比例，1表示阴影，与前面PCF返回受光比例的含义相反。宿主提供 `samplerCube pointShadowMap`，采用点过滤和固定第0级；源深度线性过滤会重现PCF一节指出的错误。写入端把线性径向距离除以 `shadowFar`，读取后乘回同一值。光源位置的零方向、超出有效距离及近裁剪范围由调用端处理。若资源保存投影深度，必须先按投影公式还原，不能直接与欧氏距离比较。
 
 软化点光阴影时，可以在 `lightToPoint` 周围按一组球面方向偏移采样。采样半径应转换到世界空间或随接收距离调整。直接使用固定方向偏移会让近远处软化尺度不一致。
 
@@ -398,6 +398,8 @@ float PointShadow(vec3 positionWS)
 - 用平面、方块和可调面积光建立最小测试场景。
 - 在斜面、薄片、远距离和 Cascade 边界做压力测试。
 
+[test_gi.py](../examples/revision/test_gi.py) 检查半影完整宽度到采样半径的换算，并用二点深度分布展示方差上界的漏光。正文PCF完成DXC编译；级联矩阵宿主、实际深度生成与GPU图像尚未运行。
+
 ## 相关主题
 
 - [[02_GPU与光栅化管线/光栅化可见性导读]]
@@ -411,6 +413,7 @@ float PointShadow(vec3 positionWS)
 
 - Randima Fernando, *Percentage-Closer Soft Shadows*.
 - NVIDIA, *Integrating Realistic Soft Shadows into Your Game Engine*.
-- Microsoft Learn, *Cascaded Shadow Maps*.
+- [Microsoft Learn：Cascaded Shadow Maps](https://learn.microsoft.com/en-us/windows/win32/dxtecharts/cascaded-shadow-maps)，分层覆盖、固定尺度与纹素吸附。
+- [GPU Gems 3 第8章：Summed-Area Variance Shadow Maps](https://developer.nvidia.com/gpugems/gpugems3/part-ii-light-and-shadows/chapter-8-summed-area-variance-shadow-maps)，§8.4方差上界与§8.6 PCSS。
 - LearnOpenGL, `src/8.guest/2021/2.csm`.
 - LearnOpenGL, `src/5.advanced_lighting/3.2.1.point_shadows` and `3.2.2.point_shadows_soft`.

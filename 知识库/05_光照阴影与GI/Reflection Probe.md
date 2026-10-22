@@ -10,22 +10,48 @@ Reflection Probe 保存局部环境反射，通常是预过滤 Cubemap。它主�
 
 ## 局部反射查询
 
-这是模型伪代码，probeBox与方向位于同一世界空间；无有效探针时使用已定义的环境回退。
+捕获中心 $C$ 与着色点 $P$ 不同。直接以反射方向 $R$ 查询 Cubemap，隐含两条平行射线看见同一环境；室内墙面距离有限，这个假设会产生位置偏差。盒投影先求 $P+tR$ 与代表房间的盒边界交点 $Q$，再以 $Q-C$ 查询捕获图，使两次查询指向同一个近似墙面位置。
 
-```text
-reflection = reflect(-viewDirection, normal)
-hit = IntersectProbeBox(position, reflection)
-sampleDirection = normalize(hit - capturePosition)
-color = SamplePrefilteredCube(sampleDirection, roughness)
+以下 HLSL 机制函数用于轴对齐包围盒，位置均为世界坐标且单位一致。`P` 位于盒内，`R` 为非零方向；盒外查询返回失败，由调用端使用其他探针或全局环境。
+
+```hlsl
+bool BoxProjectedDirection(float3 P, float3 R, float3 boxMin,
+    float3 boxMax, float3 capturePosition, out float3 direction)
+{
+    direction = R;
+    if (any(P < boxMin) || any(P > boxMax) || dot(R,R) == 0.0)
+        return false;
+    float exitDistance = 3.402823466e+38F;
+    for (uint axis=0; axis<3; ++axis) {
+        if (R[axis] > 0.0)
+            exitDistance = min(exitDistance, (boxMax[axis]-P[axis])/R[axis]);
+        else if (R[axis] < 0.0)
+            exitDistance = min(exitDistance, (boxMin[axis]-P[axis])/R[axis]);
+    }
+    float3 toHit = P + exitDistance*R - capturePosition;
+    if (dot(toHit,toHit) == 0.0) return false;
+    direction = normalize(toHit);
+    return true;
+}
 ```
 
-盒投影假设环境接近包围盒表面，无法表达任意内部遮挡；不能把它当作真实反射光线追踪。
+射线从盒内出发，三个轴中最早到达的出向平面就是出口。某分量为零时，射线与对应平面平行，跳过该轴可避免 `0/0`。旋转盒需把位置和方向变到盒局部空间求交，再将交点变回环境采样空间。
+
+以边界为 $[-1,1]^3$、捕获中心为原点为例：着色点 $(0.5,0,0)$ 沿正Z反射，与墙相交于 $(0.5,0,1)$，故Cubemap方向中的 $x/z=0.5$；直接查询正Z会错失这段横向位置变化。
+
+## 探针混合与更新
+
+每个探针先用自己的盒和捕获中心完成查询，再混合得到的线性HDR颜色。把两个捕获方向平均后只采一次图，并不能表示两份环境。可用着色点到盒最近面的内部距离 $d$ 和正的混合宽度 $b$ 构造 $w=\mathrm{saturate}(d/b)$，多个探针以 $w_i/\sum w_i$ 混合；总权重为零时回退到全局环境。这个简单权重会在盒外立即归零，混合体积应留足重叠区域。
+
+捕获图应固定曝光或恢复为统一的场景线性值。移动物体和灯光可能使缓存过期，六面捕获与粗糙度预过滤的更新需要一并调度。详见 [[04_光照模型与PBR/Cubemap环境采样]] 和 [[04_光照模型与PBR/IBL]]。
+
+盒投影把环境近似为盒表面，不能表示盒内任意物体的深度和遮挡。粗糙反射还涉及一簇方向，单一投影方向只是近似；因此墙面视差改善不等于得到了真实反射追踪。
 
 ## 验证方法
 
 把镜面球从捕获中心移向墙面，比较未修正与盒投影。六面方向标签、混合边界和动态更新延迟分别检查，过滤与BRDF LUT约定见IBL。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+[test_gi.py](../examples/revision/test_gi.py) 检查捕获中心恒等情况、平行轴、偏移点与盒外/零方向回退；正文函数通过DXC编译。Cubemap内容与GPU画面尚未验证。
 
 ## 相关主题
 
@@ -37,6 +63,4 @@ color = SamplePrefilteredCube(sampleDirection, roughness)
 
 ## 参考资料
 
-- Epic Games, *Lumen Global Illumination and Reflections*.
-- NVIDIA, *RTXGI / Dynamic Diffuse Global Illumination*.
-- Unity Manual, *Lightmapping and Light Probes*.
+- [Unity 6000.0：Troubleshooting reflections，Box projection](https://docs.unity3d.com/6000.0/Documentation/Manual/AdvancedRefProbe.html)，有限距离环境与探针盒范围。
