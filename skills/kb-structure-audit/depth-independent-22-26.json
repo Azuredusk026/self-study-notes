@@ -1,0 +1,151 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
+      "sha256": "51dc5801b1baa710ac71e91d722ec0938ed1ed9ae0d0f1b074843d6c676fbc5b",
+      "full_reread": true,
+      "observation": "发现末尾Built-in/Shader清单游离于主线；改为Cull后队列与LightMode筛选链、入口与颜色生产关系，保留RTHandle0.8实例。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unreal RDG Pass实现.md",
+      "sha256": "5e9087fbcaa9e4805df91877e0ee209128b1f06c292183c57bf5ba18b049b72a",
+      "full_reread": true,
+      "observation": "17×9共384线程/153有效与局部捕获寿命可推演；图参数与真实引擎未验边界明确，无需堆示例。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
+      "sha256": "fb48e2f46024ba4110fb788fa2e4aa041e113865aa7368d8a8269b3df78fe44c",
+      "full_reread": true,
+      "observation": "原Niagara阶段定义脱离帧组织；替换为GPU回读请求ID/结果年龄/等待关键路径；遮罩清单改为深度比较与TAA网格定位。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unreal自定义Mesh Pass.md",
+      "sha256": "ba6d7da6cff584a5616ca77defe4cc8905d57b8ac795bdf3690acede81a0012a",
+      "full_reread": true,
+      "observation": "三批筛选、32字节顶点偏移、缓存绑定与选择变更均可追踪；枚举不决定调度、RDG输出消费者清楚。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md",
+      "sha256": "248b0cd7fd610500c956224a3677edee3682b2e3f79099ed658b74d000321572",
+      "full_reread": true,
+      "observation": "A读B写再交cameraColor形成消费者；Base/Overlay0.5两次得0.25；MSAA和XR扩展条件明确。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/引擎渲染扩展导读.md",
+      "sha256": "f8128341fc4831116ac7d811b8cc6c89a226bede0da7f854863d2825c4e2219d",
+      "full_reread": true,
+      "observation": "选中遮罩把材质、网格筛选、图消费者拆开，入口职责明确，保持导读。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/ECS与数据布局.md",
+      "sha256": "41b64353b7dbb094b4e0d6fdb7cad0d335ab1086138c89d753493ac7fb390499",
+      "full_reread": true,
+      "observation": "独立核算122容量与123越界；P/V/H复制填洞、位置表和异常输入先校验已展开，缓存性能另验。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/Unity对象生命周期.md",
+      "sha256": "d978ce4fc0c0a34cc5bd8b37b39862933982b8eba70ed0042fc832c0fbb617ce",
+      "full_reread": true,
+      "observation": "强包装引用与引擎null两身份、7/8代头像迟到回调明确；未运行协程保持披露。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
+      "sha256": "f145517b655c15612d5075a600956a151b6005e4dd9b94b5194dd9a71c1e3f36",
+      "full_reread": true,
+      "observation": "已扫描A新增指向未标记B解释写屏障；UPROPERTY宿主必须可达、Outer不代替强边说明准确。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/任务系统.md",
+      "sha256": "9f34a7f5b21cde02c6d8582c1562986bba68e68447ecc1fa39326191774a8220",
+      "full_reread": true,
+      "observation": "计数A0/B1/C1/D2完整传播，等待占满两工作者反例和长尾拆分说明；并发内存序明确另验。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/引擎世界与对象模型.md",
+      "sha256": "795c688901d2f943390d21749b45a2e52b7c5ba2babd5056ee0d26b0a7267692",
+      "full_reread": true,
+      "observation": "发现首段模块概念堆叠且Tick表后置；改为身份→层级→反射→跳跃阶段→快照→模块边界；保留代数/父10子2和字段版本推演。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/资源依赖与异步加载.md",
+      "sha256": "00c833e7948fbdef3c76071f8408d2498d74fd1305501eb3af939259a728046d",
+      "full_reread": true,
+      "observation": "发现分包/Addressables/预加载清单与取消主线脱节；改为A/B共T的下载卸载边界、目录固定版本和背压；保留票据转换与失败退役。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    },
+    {
+      "path": "知识库/24_游戏音频/游戏音频系统.md",
+      "sha256": "f401f014e736b57308d93df0ca9419a0e72f208a381cfd32cde2df5fcdd61140",
+      "full_reread": true,
+      "observation": "1024环缓冲W1500/R1200及300帧欠载填512模型、增益与声像公式具体，离线不证明实时。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    },
+    {
+      "path": "知识库/25_UI与文本/UI绘制.md",
+      "sha256": "19f2b5c1fa88bccd9bb9bcba531cab69da89d9c458676e9919b5ec26c7bff2c2",
+      "full_reread": true,
+      "observation": "九宫格160与窄30回退、裁剪交集与A/B/A保序展开；命中共享有效区域明确。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    },
+    {
+      "path": "知识库/25_UI与文本/文字渲染.md",
+      "sha256": "e3115f2f7a392599df5d4d93ade31693d9876ae53378dc04d432ccaab392b83a",
+      "full_reread": true,
+      "observation": "baseline(10,40)偏移与bearing得(13,29)完整；RGB中值0.6与红0.2反例揭示MSDF含义。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    },
+    {
+      "path": "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
+      "sha256": "d2aa2ad921810103f9713d0db7f4c4a1fc90062b4e5a589cf969fd5da06cd218",
+      "full_reread": true,
+      "observation": "完整投影矩形HiZ归约、容量计数和两类消费者屏障展开；压紧槽1查场景12、材质桶反例具体。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    },
+    {
+      "path": "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md",
+      "sha256": "3dda2ae861d8e56b6c7e502636585e7fe3a0d7776ebf1addf388afe6482409dc",
+      "full_reread": true,
+      "observation": "误差0.54/1.08像素与组不完整保留父级，磁盘/安装/渲染表示边界清楚；树参考不宣称DAG实装。",
+      "judgement": "按正文因果、可推演实现与失效解释核读，实际运行边界以页内记录为准"
+    }
+  ],
+  "runs": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision_22_26/verify.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"record_date\": \"2026-10-22\", \"python\": \"3.11.9\", \"cpu_tests\": 21, \"cpu_passed\": true, \"probes\": [{\"entry\": \"GlyphPS\", \"profile\": \"ps_6_0\", \"passed\": true, \"scope\": \"HLSL compilation only\"}, {\"entry\": \"MainCS\", \"profile\": \"cs_6_0\", \"passed\": true, \"scope\": \"HLSL compilation only\"}], \"dxc_version\": \"dxcompiler.dll: 1.10(5347-fe261573)(1.9.0.5347) - 1.9.0.5347 (fe2615732)\", \"engine_compile\": \"UNVERIFIED\", \"engine_runtime\": \"UNVERIFIED\", \"gpu_capture\": \"UNVERIFIED\", \"performance\": \"UNVERIFIED\"}\n",
+      "stderr": "test_audio_empty (test_reference.ReferenceTests.test_audio_empty) ... ok\ntest_audio_single_sample_target (test_reference.ReferenceTests.test_audio_single_sample_target) ... ok\ntest_audio_sum_remains_float_and_ramps (test_reference.ReferenceTests.test_audio_sum_remains_float_and_ramps) ... ok\ntest_batches_preserve_painter_order (test_reference.ReferenceTests.test_batches_preserve_painter_order) ... ok\ntest_cut_children_cover_parent (test_reference.ReferenceTests.test_cut_children_cover_parent) ... ok\ntest_cut_missing_sibling_keeps_parent (test_reference.ReferenceTests.test_cut_missing_sibling_keeps_parent) ... ok\ntest_cut_threshold_equality (test_reference.ReferenceTests.test_cut_threshold_equality) ... ok\ntest_cycle_is_rejected (test_reference.ReferenceTests.test_cycle_is_rejected) ... ok\ntest_diamond_dependency (test_reference.ReferenceTests.test_diamond_dependency) ... ok\ntest_ecs_remove_last (test_reference.ReferenceTests.test_ecs_remove_last) ... ok\ntest_ecs_swap_updates_moved_entity (test_reference.ReferenceTests.test_ecs_swap_updates_moved_entity) ... ok\ntest_empty_clip_skipped (test_reference.ReferenceTests.test_empty_clip_skipped) ... ok\ntest_empty_draw_list (test_reference.ReferenceTests.test_empty_draw_list) ... ok\ntest_forward_hiz_all_samples_covered (test_reference.ReferenceTests.test_forward_hiz_all_samples_covered) ... ok\ntest_glyph_offset_and_bearing (test_reference.ReferenceTests.test_glyph_offset_and_bearing) ... ok\ntest_hiz_background_prevents_rejection (test_reference.ReferenceTests.test_hiz_background_prevents_rejection) ... ok\ntest_hiz_equal_is_visible (test_reference.ReferenceTests.test_hiz_equal_is_visible) ... ok\ntest_nested_clipping (test_reference.ReferenceTests.test_nested_clipping) ... ok\ntest_reverse_hiz_all_samples_covered (test_reference.ReferenceTests.test_reverse_hiz_all_samples_covered) ... ok\ntest_unknown_dependency_rejected (test_reference.ReferenceTests.test_unknown_dependency_rejected) ... ok\ntest_zero_advance_mark_has_separate_position (test_reference.ReferenceTests.test_zero_advance_mark_has_separate_position) ... ok\n\n----------------------------------------------------------------------\nRan 21 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/compile_post.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"dxc_entries\": [\"srgb\", \"exposure\", \"bloom\", \"ssao\", \"coc_motion\"], \"scope\": \"�����߱��룬δִ��GPU\"}\n",
+      "stderr": ""
+    }
+  ],
+  "limitations": [
+    "未运行Unity/Unreal完整通道、资源加载和GC场景",
+    "CPU模型与HLSL编译未证明GPU输出及实时性能"
+  ],
+  "regression_fix": "compile_post.py仍提取当前正文全部HLSL，Bloom入口改调用当前TentUpsample；盒平均由独立标量图像链测试覆盖，未删除编译项目"
+}

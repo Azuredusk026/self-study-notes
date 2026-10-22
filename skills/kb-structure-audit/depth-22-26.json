@@ -1,0 +1,113 @@
+{
+  "date": "2026-10-23",
+  "scope": "15篇；ECS已在优先五篇，22导读由入口批次处理",
+  "status": "独立复读待执行",
+  "articles": [
+    {
+      "path": "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
+      "full_text_review": true,
+      "observations": "全文追踪管线资产→相机输入→颜色生产消费→HDRP与相机；把后置颜色解释移到URP，1536/1920=0.8有效视口例解释黑边与重复缩放。",
+      "sha256": "ea8432bbe35bafc3291a62c48a3a305e655aa42bbc791532dcc8c31a0cb17993",
+      "status": "AUTHOR_READ_INDEPENDENT_PENDING"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
+      "full_text_review": true,
+      "observations": "全文读；红蓝绿状态快照已可追踪。把Material/Stencil/Post/Niagara补充归回扩展选择章节，HDR4的阶段差异支撑输入选择。",
+      "sha256": "9da2a00bd6506a2c96ff795f25a5e4085267ecc2151beb63d9c68905c24a94e6",
+      "status": "AUTHOR_READ_INDEPENDENT_PENDING"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md",
+      "full_text_review": true,
+      "observations": "全文读并移动Feature到Blit以前，Game相机包含Overlay导致0.5重复成0.25；A→B交接和剔除例保留。",
+      "sha256": "d76b3d39ab79f63e2c135f0089eaee77df05f562bf0675c7cba8aeac1f2bd264",
+      "status": "AUTHOR_READ_INDEPENDENT_PENDING"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unreal RDG Pass实现.md",
+      "full_text_review": true,
+      "observations": "全文读；17×9共384线程153有效231退出，局部引用0/1/2时刻与相机覆写0.8具体失效，已有资源参数/消费者链保留。",
+      "sha256": "8e3aa1432021cb691f97a45bb228896f4fc8bf2ff9f421f56bf52611253a5d17",
+      "status": "AUTHOR_READ_INDEPENDENT_PENDING"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/Unreal自定义Mesh Pass.md",
+      "full_text_review": true,
+      "observations": "全文读，处理器筛选移到自定义主节；三批甲乙丙筛选只甲，再沿VF偏移与Shader配对查错。",
+      "sha256": "1ae115ed43f3243509baf9ef83cd889c9ac9d6e3327dc18061258e5f07e76769",
+      "status": "AUTHOR_READ_INDEPENDENT_PENDING"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/引擎世界与对象模型.md",
+      "full_text_review": true,
+      "observations": "全文读；反射字段17/type/value贯通序列化和面板；父平移10子2→12，再父20→22解释脏传播；新父5局部7保持12，代数{3,7}/{3,8}拒绝。",
+      "sha256": "61c2322643653b5f2ffdfa98844fd65732a48fac2a2ba6204d7c5d26563f2d5c",
+      "status": "AUTHOR_READ_INDEPENDENT_PENDING"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/Unity对象生命周期.md",
+      "full_text_review": true,
+      "observations": "全文读，Prefab复制/注册/回调过程解释Instantiate多项成本，借出7回调落到借出8的故障说明空值与代数各自职责。",
+      "sha256": "63e371e3bda2f120ef15d924572b60b8d23bf7ed9fac3690539501e4826619c7",
+      "status": "AUTHOR_READ_INDEPENDENT_PENDING"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
+      "full_text_review": true,
+      "observations": "全文读，宿主→UPROPERTY OwnedObject→目标的强引用图、清空边/弱观察、A已扫后新增B的写屏障机制已可推演，保留有效正文。",
+      "sha256": "e795f667cb7545fa12d45eba2bc06020af188e2a2137c00dba870423986e77b7",
+      "status": "AUTHOR_READ_INDEPENDENT_PENDING"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/任务系统.md",
+      "full_text_review": true,
+      "observations": "全文读，A/B/C/D入度传播已具体；新增双工作者父任务占满等待导致无环图仍停滞，1/1/8拆分与0.01粒度代价。",
+      "sha256": "2aaf5a02713e0eaba17a95418fe626f8547ab18facc66dee9a345317caf335b6",
+      "status": "AUTHOR_READ_INDEPENDENT_PENDING"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/资源依赖与异步加载.md",
+      "full_text_review": true,
+      "observations": "全文读，阶段伪代码移至发布取消前；A/B共享T票据→只B发布liveHandles1→释放0→GPU退役路径补足计数推演。",
+      "sha256": "3182030d43b81c0da31e3470db38ccac40f976e97a659e5ae0e6ff47b92a1c0d",
+      "status": "AUTHOR_READ_INDEPENDENT_PENDING"
+    },
+    {
+      "path": "知识库/24_游戏音频/游戏音频系统.md",
+      "full_text_review": true,
+      "observations": "全文读，把后置gain与欠载归回数字音频/交付主线；1024容量W1500 R1200的300帧与724空位、立体声帧同步、等功率pan左右端点。",
+      "sha256": "fefd4570b7ad0a2ba21d5d4ed46dbd466c6c4e4c666e0e1cd87ca66189f4a6ee",
+      "status": "AUTHOR_READ_INDEPENDENT_PENDING"
+    },
+    {
+      "path": "知识库/25_UI与文本/UI绘制.md",
+      "full_text_review": true,
+      "observations": "全文读，后置裁剪与保序算法移到对应主节；九宫格100→160和目标30边框各15，避免倒置中心，输入命中与裁剪一致。",
+      "sha256": "ac2cace12b4f17067916d30e1334af694dc570d2ff5113c65537e03d3eb7eeec",
+      "status": "AUTHOR_READ_INDEPENDENT_PENDING"
+    },
+    {
+      "path": "知识库/25_UI与文本/文字渲染.md",
+      "full_text_review": true,
+      "observations": "全文读，字形位置并入度量主节，26.6/64与基线13,29例保留，MSDF(0.2,0.7,0.6)中值0.6反例解释不能读红通道。",
+      "sha256": "ac7fb1e5a4239232b70003ec73721036596cf98a47ad46b9a9cb780404182cc3",
+      "status": "AUTHOR_READ_INDEPENDENT_PENDING"
+    },
+    {
+      "path": "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
+      "full_text_review": true,
+      "observations": "全文读，后置遮挡归约移至列表前；实例[10,12,13]寻址、A/B材质桶及透明乱序、重心UV(0.3,0.5)建立数据链。",
+      "sha256": "12ec6e6f76a8b9d1734312c108f100d162483a4f7dc6f609640c6b24bc615cc1",
+      "status": "AUTHOR_READ_INDEPENDENT_PENDING"
+    },
+    {
+      "path": "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md",
+      "full_text_review": true,
+      "observations": "全文读，误差0.01m距离10/5→0.54/1.08像素与保守距离说明，组完整性已有左右缺页反例，选择伪代码并入页面流送，清理断裂空格。",
+      "sha256": "7863a00f36c390fc214f40d9d6bbf1fba9d9459770a5666cd14bdd5ba2281e10",
+      "status": "AUTHOR_READ_INDEPENDENT_PENDING"
+    }
+  ],
+  "evidence": "既有来源记录继承；新增数值为明确模型下推导，未新增引擎运行证据"
+}

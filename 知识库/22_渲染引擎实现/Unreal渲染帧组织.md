@@ -61,6 +61,30 @@ Global Shader 适合独立的全屏或计算功能。Material Shader 与 VertexF
 
 这是接入步骤轮廓，具体入口可用范围需项目版本核对。不要把一种版本的类名当成所有 UE5 的统一配方。
 
+### 材质生成与绘制
+
+Material Graph 生成目标 Shading Model 和 Pass 所需 Shader。Material Domain、Blend Mode、Shading Model、Two Sided 等设置会影响生成哪些变体和管线路径。
+
+Unlit Material 只表示不走常规受光模型，不代表没有 Base Pass、Depth、Translucency 或后处理成本。
+
+### 对象遮罩与后处理
+
+Unreal 可以让选定对象写 Custom Depth/Stencil，再在 Post Process Material 中读取，用于描边、遮挡显示和分类效果。
+
+先确认选中对象是否写入Custom Depth，再用Stencil区分类别。若目标是只显示可见部分，把该对象深度与场景最近深度在相同投影约定下比较；若要透墙显示，则单独定义遮挡分支。透明是否参与写入由材质与版本配置核对。最后检查TAA前后位置及上采样分辨率，否则遮罩与颜色可能来自不同像素网格，静态正确、移动时却出现错边。
+
+### 后处理颜色阶段
+
+通过 Blendable Location 插入后处理。不同位置提供不同 Scene Color 状态：HDR、Tone Mapping 前后、Translucency 前后可能不同。
+
+例如场景线性值4在色调映射以后已被压到显示范围。在后处理材质里读取不同位置的Scene Color，再套同一亮度阈值，会选择不同的像素。先用恒等输出核对输入含义，再添加运算；若效果需要HDR亮度，应选择保留该信息的阶段，而不是在显示颜色上提高阈值。材质必须明确读取的Scene Texture是否在当前路径可用。
+
+### CPU反馈与GPU完成
+
+渲染功能若需要把GPU统计交回Gameplay，记录命令时还没有统计结果。读取必须等待对应GPU工作及回读传输完成，再以帧号或请求ID交付。游戏线程用当前帧状态解释迟到的上一帧计数，可能把已经删除对象的结果应用到新对象，因此交付还需核对对象身份与结果年龄。
+
+每帧同步等待回读会把GPU延迟直接加到游戏线程关键路径；可延迟消费的调试与统计应采用在途请求与完成查询。必须同帧获得的权威结果则需要重新评估是否适合由GPU异步功能产生。粒子内部模拟与透明成本由 [[10_VFX与模拟/GPU粒子系统]] 解释，本页关注帧之间的数据交接。
+
 ## 配置与观测
 
 | 配置或工具 | 用途 | 核验 |
@@ -81,41 +105,6 @@ Global Shader 适合独立的全屏或计算功能。Material Shader 与 VertexF
 - 捕获游戏线程、渲染线程与 GPU，判断卡顿是编译、记录、等待还是执行。
 - 升级引擎时重新检查类型注册、参数结构、消费者和平台实现。
 
-
-## Unreal Material
-
-Material Graph 生成目标 Shading Model 和 Pass 所需 Shader。Material Domain、Blend Mode、Shading Model、Two Sided 等设置会影响生成哪些变体和管线路径。
-
-Unlit Material 只表示不走常规受光模型，不代表没有 Base Pass、Depth、Translucency 或后处理成本。
-
-## Custom Depth 和 Stencil
-
-Unreal 可以让选定对象写 Custom Depth/Stencil，再在 Post Process Material 中读取，用于描边、遮挡显示和分类效果。
-
-需要处理：
-
-- Translucent 是否写 Custom Depth；
-- Stencil 位和项目分配；
-- TAA 前后执行位置；
-- 分辨率和 Upsampling；
-- 被遮挡和可见部分的深度比较。
-
-## Post Process Material
-
-通过 Blendable Location 插入后处理。不同位置提供不同 Scene Color 状态：HDR、Tone Mapping 前后、Translucency 前后可能不同。
-
-材质必须明确读取的 Scene Texture 是否在当前路径可用。
-
-## Niagara
-
-Niagara 是 Unreal 的数据驱动 VFX 系统，包含 System、Emitter、Particle 和 Render 阶段。Simulation 可以在 CPU 或 GPU。
-
-GPU Simulation 适合大量粒子，但：
-
-- 与 CPU Gameplay 交互受限；
-- GPU Readback 有延迟；
-- Collision、Sort 和透明 Overdraw 仍昂贵；
-- Data Interface 访问需要理解同步和资源生命周期。
 
 ## 相关主题
 

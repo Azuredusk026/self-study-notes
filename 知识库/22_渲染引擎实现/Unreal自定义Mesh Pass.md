@@ -111,6 +111,29 @@ Shading Model ID的位宽属于具体材质路径的编码约定。扩展前逐�
 
 处理器的筛选逻辑通常基于材质的 Shading Model、Blend Mode 或 Primitive 上的自定义标记。筛选条件写得过宽会让无关对象进入 Pass 造成浪费，过窄则效果缺失。
 
+### 处理器的可验收路径
+
+以“只画不透明选中对象到遮罩”为例，处理器先读取项目持有的选择标志，再检查材质混合模式。通过筛选的MeshBatch才进入Shader选择，Shader再与该批次的Vertex Factory配对。以下伪代码展开决策；`BuildMeshDrawCommands`对应UE处理器接口，参数细节由目标版本提供。
+
+```text
+AddMeshBatch(batch, primitive):
+    if primitive.selectionFlag == false: return
+    if batch.material.blendMode != Opaque: return
+    shaderPair = permutation[batch.vertexFactoryType, MaskPass]
+    if shaderPair missing: report material/factory/platform; return
+    state = {depthTest: sceneDepthConvention, depthWrite: false,
+             blend: replace, rasterCull: materialCullMode}
+    bindings = {view: currentView, geometry: batch.buffers,
+                primitive: primitive.uniforms}
+    BuildMeshDrawCommands(batch, shaderPair, state, bindings)
+```
+
+设输入为三个批次：甲是选中不透明网格，乙是不透明未选中网格，丙是选中透明网格。筛选后只有甲产生命令，乙在选择标志处退出，丙在混合模式处退出。若甲仍未显示，就沿Shader配对、顶点输入、深度测试和输出消费者继续查；此时增加筛选范围只会引入无关对象。
+
+通道绑定的遮罩必须先清零，否则未覆盖像素可能保留其他内容。使用场景深度测试得到可见部分遮罩；要显示被遮挡对象，则另定义深度规则。这个选择改变的是效果含义，不能仅靠关闭深度测试修复所有“缺失”。
+
+缓存命令还要求`selectionFlag`变化能触发重建，或把选择信息放在可更新的实例数据并在Shader中处理。前者增加CPU重建，后者可能提交最终不产生有效像素的网格。固定同一选中集合比较处理器输入数、命令数与实际Draw，才能量化两者成本。
+
 ### 与 RDG 的配合
 
 新 Pass 的资源应当通过 Render Dependency Graph 声明。RDG 依据声明的读写关系自动插入 Barrier、管理 Transient 资源、剔除无人消费的 Pass。
@@ -148,27 +171,6 @@ Shading Model ID的位宽属于具体材质路径的编码约定。扩展前逐�
 - 记录改动清单，标明每处改动的目的与对应的引擎版本；
 - 新增 Shading Model 时同步检查所有分支该 ID 的代码路径，遗漏处会走到默认分支；
 - 开启 `r.ShaderDevelopmentMode=1` 便于 Shader 调试，但不要带进发布配置。
-
-## 处理器的可验收路径
-
-以“只画不透明选中对象到遮罩”为例，处理器先读取项目持有的选择标志，再检查材质混合模式。通过筛选的MeshBatch才进入Shader选择，Shader再与该批次的Vertex Factory配对。以下伪代码展开决策；`BuildMeshDrawCommands`对应UE处理器接口，参数细节由目标版本提供。
-
-```text
-AddMeshBatch(batch, primitive):
-    if primitive.selectionFlag == false: return
-    if batch.material.blendMode != Opaque: return
-    shaderPair = permutation[batch.vertexFactoryType, MaskPass]
-    if shaderPair missing: report material/factory/platform; return
-    state = {depthTest: sceneDepthConvention, depthWrite: false,
-             blend: replace, rasterCull: materialCullMode}
-    bindings = {view: currentView, geometry: batch.buffers,
-                primitive: primitive.uniforms}
-    BuildMeshDrawCommands(batch, shaderPair, state, bindings)
-```
-
-通道绑定的遮罩必须先清零，否则未覆盖像素可能保留其他内容。使用场景深度测试得到可见部分遮罩；要显示被遮挡对象，则另定义深度规则。这个选择改变的是效果含义，不能仅靠关闭深度测试修复所有“缺失”。
-
-缓存命令还要求`selectionFlag`变化能触发重建，或把选择信息放在可更新的实例数据并在Shader中处理。前者增加CPU重建，后者可能提交最终不产生有效像素的网格。固定同一选中集合比较处理器输入数、命令数与实际Draw，才能量化两者成本。
 
 ## 验证方法
 

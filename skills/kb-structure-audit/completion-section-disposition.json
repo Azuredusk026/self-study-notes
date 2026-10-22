@@ -4633,7 +4633,7 @@
       "source": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
       "heading": "Unity Built-in Pipeline",
       "target": "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
-      "current_heading": "Unity Built-in Pipeline",
+      "current_heading": "绘制筛选与管线入口",
       "decision": "独立主归属或明确合并",
       "reason": "按版本化实现路线组织，原接口正文合入引擎专篇。",
       "source_hash": "0953ff1d929bea0fe1d6b23093928a58c1b0f7b7e87e9c299de6f758fcc9d31d"
@@ -4678,7 +4678,7 @@
       "source": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
       "heading": "Unity Shader 与渲染层",
       "target": "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
-      "current_heading": "Unity Shader 与渲染层",
+      "current_heading": "绘制筛选与管线入口",
       "decision": "独立主归属或明确合并",
       "reason": "按版本化实现路线组织，原接口正文合入引擎专篇。",
       "source_hash": "6fa9ea019400512c58541b5878e3039c67363398e17112d162b3092cbfa0ebe0"
@@ -4696,7 +4696,7 @@
       "source": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
       "heading": "Unreal Material",
       "target": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
-      "current_heading": "Unreal Material",
+      "current_heading": "材质生成与绘制",
       "decision": "独立主归属或明确合并",
       "reason": "按版本化实现路线组织，原接口正文合入引擎专篇。",
       "source_hash": "79fa738b39d13569d548df3dd10fbe1091293d3063a8b19adf3a7d9a5c4b64d6"
@@ -4705,7 +4705,7 @@
       "source": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
       "heading": "Custom Depth 和 Stencil",
       "target": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
-      "current_heading": "Custom Depth 和 Stencil",
+      "current_heading": "对象遮罩与后处理",
       "decision": "独立主归属或明确合并",
       "reason": "按版本化实现路线组织，原接口正文合入引擎专篇。",
       "source_hash": "eba0cd89ff66106b488df330ddf56d7e13aa193740ef390c8d976d81889b4729"
@@ -4714,7 +4714,7 @@
       "source": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
       "heading": "Post Process Material",
       "target": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
-      "current_heading": "Post Process Material",
+      "current_heading": "后处理颜色阶段",
       "decision": "独立主归属或明确合并",
       "reason": "按版本化实现路线组织，原接口正文合入引擎专篇。",
       "source_hash": "167175419a6be63886d092529468e30e5d0748685daff4cfdffcb80ffbd991bf"
@@ -4722,11 +4722,12 @@
     {
       "source": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",
       "heading": "Niagara",
-      "target": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
-      "current_heading": "Niagara",
+      "target": "知识库/10_VFX与模拟/GPU粒子系统.md",
+      "current_heading": "Niagara 与 VFX Graph 的架构",
       "decision": "独立主归属或明确合并",
       "reason": "按版本化实现路线组织，原接口正文合入引擎专篇。",
-      "source_hash": "f6923a72ea6056877bf4d3b96a86b55a7b9bbf46eba980a60d776a54e9e4c842"
+      "source_hash": "f6923a72ea6056877bf4d3b96a86b55a7b9bbf46eba980a60d776a54e9e4c842",
+      "depth_round_reason": "粒子模拟机制归入GPU粒子主归属，帧组织保留CPU/GPU反馈寿命"
     },
     {
       "source": "知识库/22_渲染引擎实现/Unity与Unreal渲染扩展入口.md",

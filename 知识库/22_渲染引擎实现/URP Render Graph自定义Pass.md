@@ -18,6 +18,33 @@ Renderer Feature.Create：建立材质和通道
 
 Feature 的 `Create` 可能因编辑器重建多次调用，需处理已有资源。长期对象在 Dispose 时释放；图内纹理由图管理。旧式 `Execute` 路径不能直接当成渲染图回调使用。
 
+## Feature与相机入口
+
+Unity 6.0 / URP17的Feature在Create建立Pass，在AddRenderPasses按相机类型入队。图路径把资源声明放在RecordRenderGraph，避免在Feature长期保存帧内TextureHandle。兼容路径的SetupRenderPasses与RTHandle访问按目标包接口核对。
+
+下面是Feature类中的C#方法片段，m_pass由Create初始化，输出是本相机Pass队列。它不包含完整类、资源释放或图声明，完整Unity编译运行为UNVERIFIED。
+
+```csharp
+/// <summary>Creates the pass owned by this feature.</summary>
+public override void Create()
+{
+    m_pass = new ColorEffectPass();
+}
+
+/// <summary>Queues the pass for game cameras.</summary>
+public override void AddRenderPasses(
+    ScriptableRenderer renderer, ref RenderingData renderingData)
+{
+    if (renderingData.cameraData.cameraType != CameraType.Game)
+    {
+        return;
+    }
+    renderer.EnqueuePass(m_pass);
+}
+```
+
+`CameraType.Game`筛选只回答是否为游戏相机，不能排除Overlay。若Base和Overlay都入队并各做一次强度0.5的颜色乘法，共享最终画面可能被处理成0.25；效果参数正确也会显得过暗。先明确设计为每个相机运行，还是仅在选定堆栈阶段运行，再按包版本提供的相机角色或最终解析标记筛选。记录相机ID、角色和输出颜色版本，才能把重复处理与材质公式错误分开。XR与动态分辨率由图资源描述接入。
+
 ## 最小材质 Blit
 
 输入是当前相机颜色，输出是图内的新颜色纹理。输出句柄交回相机资源，使后续通道消费它。所选注入点需位于可采样颜色可用的阶段。
@@ -86,33 +113,6 @@ Frame Debugger 展示绘制、附件和结果，图查看器展示逻辑通道�
 - 切换 MSAA、render scale 与 XR，查看实际尺寸、切片和 resolve。
 - 检查图内新纹理数量与峰值，确认没有每帧常驻资源泄漏。
 
-
-## Feature与相机入口
-
-Unity 6.0 / URP17的Feature在Create建立Pass，在AddRenderPasses按相机类型入队。图路径把资源声明放在RecordRenderGraph，避免在Feature长期保存帧内TextureHandle。兼容路径的SetupRenderPasses与RTHandle访问按目标包接口核对。
-
-下面是Feature类中的C#方法片段，m_pass由Create初始化，输出是本相机Pass队列。它不包含完整类、资源释放或图声明，完整Unity编译运行为UNVERIFIED。
-
-```csharp
-/// <summary>Creates the pass owned by this feature.</summary>
-public override void Create()
-{
-    m_pass = new ColorEffectPass();
-}
-
-/// <summary>Queues the pass for game cameras.</summary>
-public override void AddRenderPasses(
-    ScriptableRenderer renderer, ref RenderingData renderingData)
-{
-    if (renderingData.cameraData.cameraType != CameraType.Game)
-    {
-        return;
-    }
-    renderer.EnqueuePass(m_pass);
-}
-```
-
-多个相机、Overlay与Scene View可能改变入队次数。记录相机ID和通道名核对执行，XR与动态分辨率由图资源描述接入。
 
 ## 相关主题
 
