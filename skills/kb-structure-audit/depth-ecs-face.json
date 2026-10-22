@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-23",
+  "baseline": "知识库/11_NPR与风格化渲染/描边.md",
+  "pages": [
+    {
+      "path": "知识库/23_引擎运行系统/ECS与数据布局.md",
+      "content_sha256": "62832e7e6dda34ce17d3edb80d69f44a97bc27f3663515da79cae9e6b59c111c",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "title_review": {
+        "status": "PASS",
+        "basis": "主问题为数据布局/脸部角度场，现标题覆盖准确"
+      },
+      "changes": [
+        "全文围绕位置更新重写，删除重复Archetype介绍及泛ECS性能断言",
+        "用64实体AoS/SoA字节覆盖解释收益及单实体反例",
+        "推导4096字节块122/112行容量和实际列地址",
+        "查询子集、排除、原型缓存与新增块分开解释",
+        "搬迁追踪所有列、位置表、裸引用及迭代失效"
+      ],
+      "reader_predictions": [
+        "123行P/V布局越界4100字节",
+        "第123实体触发新块，缓存固定块会漏查",
+        "漏更新location[9]使填洞后地址不变量失败"
+      ],
+      "verification": {
+        "command": "python -B 知识库/examples/mechanism_depth/ecs/test_ecs.py",
+        "result": "11项先失败后通过；实际字节缓冲非引擎性能实验，未测CPU缓存事件/并发/对象析构"
+      },
+      "writing_basis": "按具体输入追踪数据变化；现象引出下一层机制，失败点与代码位置相连；逐段复读，不用矩阵状态代替判断"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/Face SDF.md",
+      "content_sha256": "7fb9a8b08969a397f8bc5181fadbea15110ec044f14f9c2ebb78eb568222e9ab",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "REWRITE",
+        "DEEPEN",
+        "FACT-CHECK"
+      ],
+      "title_review": {
+        "status": "PASS",
+        "basis": "主问题为数据布局/脸部角度场，现标题覆盖准确"
+      },
+      "changes": [
+        "保留并复读已有角度场制作与退化处理正文",
+        "补输入角度重建与制作模糊如何改变熄灭角",
+        "用非均匀缩放算出错误阈值0.148，对照旋转阈值0.25",
+        "用0.2/0.8场解释Mip平均与亮区覆盖不交换",
+        "核读fwidth定义与像素阶段约束，保留艺术模型边界"
+      ],
+      "reader_predictions": [
+        "非单调1/0/1输入被拒绝，增加纹理分辨率无助于表达",
+        "头顶任意方位趋向同一verticalLit",
+        "平均阈值后先比较可能全亮，实际细纹素覆盖仅一半"
+      ],
+      "verification": {
+        "command": "python -B 知识库/examples/mechanism_depth/face_sdf/test_reference.py",
+        "result": "5项通过；未制作角色资产及执行GPU/引擎画面测试"
+      },
+      "writing_basis": "按具体输入追踪数据变化；现象引出下一层机制，失败点与代码位置相连；逐段复读，不用矩阵状态代替判断"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://docs.unity3d.com/Packages/com.unity.entities@1.0/manual/concepts-structural-changes.html",
+      "version": "1.0.16",
+      "locator": "Add or remove components; Sync points",
+      "read": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-fwidth",
+      "locator": "definition and pixel shader support",
+      "read": true
+    }
+  ]
+}

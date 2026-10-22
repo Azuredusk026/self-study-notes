@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-23",
+  "path": "知识库/16_编程与数据结构/线程同步.md",
+  "baseline": "d6a35a0",
+  "full_text_read": true,
+  "problem": "原语定义堆叠、消费者片段缺生产与停止、release/acquire无具体读值路径",
+  "mechanism_trace": [
+    "同一任务被双消费者读取→锁住检查取出删除→锁外执行",
+    "空检查到睡眠间隙→wait原子解锁等待→唤醒重新检查",
+    "closed与jobs四状态→入队关闭持同锁→排空后退出与join寿命",
+    "payload42→release true→acquire读true→读取；旧false与多轮复用反例",
+    "双锁依赖环→统一获取顺序或缩短所有权"
+  ],
+  "changes": "以同一队列重建全文，补齐完整Queue类与调用者关闭/线程结束契约；原语选择依等待与数据关系解释",
+  "tests": {
+    "command": "python -B 知识库/examples/mechanism_depth/threading/test_reference.py",
+    "red": "5个行为断言失败",
+    "green": "5个通过",
+    "scope": "串行持锁点状态与限定发布关系分类；不是实际线程或C++弱内存模拟"
+  },
+  "sources": [
+    {
+      "url": "https://eel.is/c++draft/thread.condition.condvar",
+      "locator": "wait effects/谓词循环/notify_all",
+      "status": "READ"
+    },
+    {
+      "url": "https://eel.is/c++draft/atomics.order",
+      "locator": "段2 release sequence读取值同步",
+      "status": "READ"
+    },
+    {
+      "url": "https://eel.is/c++draft/thread.mutex.requirements",
+      "locator": "锁所有权与同步",
+      "status": "READ"
+    }
+  ],
+  "limits": [
+    "C++17样例未编译运行",
+    "未竞态检测或压力测试"
+  ],
+  "content_sha256": "fdb2b07994660a6a26b227b3ecade4e57d13a07336e6ce9c42b207bbe06cbdea",
+  "acceptance": "待独立正文复读"
+}

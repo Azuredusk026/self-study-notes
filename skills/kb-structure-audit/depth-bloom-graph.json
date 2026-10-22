@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-23",
+  "scope": "两篇全文复读；以读者独立推演输入、执行及失效为准",
+  "articles": [
+    {
+      "path": "知识库/07_颜色与后处理/Bloom.md",
+      "sha256": "8acb11b4c0ab172645a46810a1bf6c7a15dc4ceaf0636053444ff207edea0cc3",
+      "full_reread": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE",
+        "FACT-CHECK"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "保留阈值连续性与预曝光推导；全文以亮点如何扩散为主线",
+        "替换算法名罗列，展开降采样覆盖、帐篷9权重、双线性源坐标、RGB逐分量输入输出",
+        "展开三级权重与16亮点，从细核追到远晕，区分层数和scatter",
+        "解释奇数边缘、钳位守恒、时序、曝光及动态分辨率失效；读者可运行完整标量链"
+      ],
+      "acceptance": "正文可独立追踪示例中的输入、中间状态、输出与反例；目标GPU结果明确另验"
+    },
+    {
+      "path": "知识库/13_渲染架构/Render Graph.md",
+      "sha256": "e11affc8c2ceb84d3e16924622180eabeb624ee64965745bf1fbe0a7c207c48d",
+      "full_reread": true,
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "REWRITE",
+        "FACT-CHECK"
+      ],
+      "title_review": "PASS",
+      "observations": [
+        "全文复核声明、版本、剔除、区间的既有因果示例；保留具体版本反例",
+        "展开四通道串行11、并行8、批次信号12、竞争10时间线和等待来源",
+        "展开同附件A/B合并、邻域采样K打断条件、清除语义与每帧33.2MB理论数据量",
+        "区分CPU可计算调度与设备重叠，跨队列别名依赖真实完成关系"
+      ],
+      "acceptance": "正文可独立追踪示例中的输入、中间状态、输出与反例；目标GPU结果明确另验"
+    }
+  ],
+  "runs": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "知识库/examples/mechanism_depth/bloom",
+        "-p",
+        "test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.034s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "知识库/examples/mechanism_depth/rendergraph/test_schedule.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "知识库/examples/rendergraph/reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"checks\": 15, \"blur_plan\": {\"order\": [\"Downsample\", \"Blur\", \"Compose\"], \"culled\": [], \"edges\": [[\"Downsample\", \"Blur\", \"RAW\"], [\"Blur\", \"Compose\", \"RAW\"]], \"intervals\": {\"Scene\": [0, 2], \"Half\": [0, 1], \"Blurred\": [1, 2], \"Output\": [2, 3]}}, \"culled_plan\": {\"order\": [\"Compose\"], \"culled\": [\"Downsample\", \"Blur\"], \"edges\": [], \"intervals\": {\"Scene\": [0, 0], \"Output\": [0, 1]}}, \"version_plan\": {\"order\": [\"A\", \"B\", \"C\", \"D\"], \"culled\": [], \"edges\": [[\"A\", \"B\", \"RAW\"], [\"A\", \"C\", \"WAW\"], [\"B\", \"C\", \"WAR\"], [\"C\", \"D\", \"RAW\"]], \"intervals\": {\"X\": [0, 3], \"BResult\": [1, 4], \"DResult\": [3, 4]}}, \"scope\": \"single serial physical resource per name; no GPU barrier emission or engine integration\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "dxc",
+        "-T",
+        "ps_6_0",
+        "-E",
+        "Probe",
+        "知识库\\examples\\mechanism_depth\\bloom\\probe.hlsl",
+        "-Fo",
+        "C:\\Users\\23587\\AppData\\Local\\Temp\\kb-bloom-depth.dxil"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://google.github.io/filament/main/filament.html",
+      "locator": "8.1.5 Bloom与8.3 Filmic post-processing",
+      "judgement": "依据支持曝光相对自发光与线性空间处理；帐篷核和尺度权重为本文自定义可执行模型"
+    },
+    {
+      "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-introduction.html",
+      "locator": "How the render graph system optimizes rendering / Resources",
+      "judgement": "依据支持图同步、寿命和原生通道合并；时间数字为本文假设模型"
+    },
+    {
+      "url": "https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#renderpass-inputattachment",
+      "judgement": "工具因内容过大未取得，不计本轮已核读依据"
+    }
+  ],
+  "limitations": [
+    "未运行Unity或Unreal通道链",
+    "无GPU纹理结果与捕获",
+    "无设备性能测量",
+    "模型常量保持不等同于有限钳位图像能量严格守恒"
+  ]
+}

@@ -1138,7 +1138,7 @@
       "source": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
       "heading": "Bloom 的完整流程",
       "target": "知识库/07_颜色与后处理/Bloom.md",
-      "current_heading": "Bloom 的完整流程",
+      "current_heading": "多尺度扩散",
       "decision": "独立主归属或明确合并",
       "reason": "显示映射、光晕、遮挡与镜头覆盖各有不同输入与验证；原页成为后处理路线，雾机制引用既有Froxel。",
       "source_hash": "a3ce2cd432498371d856fb9db90846895e340a8ff83ad1b65cc52141c6fc462f"
@@ -1147,7 +1147,7 @@
       "source": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
       "heading": "1. 高亮提取",
       "target": "知识库/07_颜色与后处理/Bloom.md",
-      "current_heading": "1. 高亮提取",
+      "current_heading": "阈值与曝光",
       "decision": "独立主归属或明确合并",
       "reason": "显示映射、光晕、遮挡与镜头覆盖各有不同输入与验证；原页成为后处理路线，雾机制引用既有Froxel。",
       "source_hash": "266c9a08750cefa2f3f80117e9b13202e51350c23e8d14d4c308947de27d41ec"
@@ -1156,7 +1156,7 @@
       "source": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
       "heading": "2. 降采样",
       "target": "知识库/07_颜色与后处理/Bloom.md",
-      "current_heading": "2. 降采样",
+      "current_heading": "降采样与采样位置",
       "decision": "独立主归属或明确合并",
       "reason": "显示映射、光晕、遮挡与镜头覆盖各有不同输入与验证；原页成为后处理路线，雾机制引用既有Froxel。",
       "source_hash": "d72515cdef5d4472ccc2083159e8fe93270f148473ed7db43c91fdba9fc81834"
@@ -1165,7 +1165,7 @@
       "source": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
       "heading": "3. Blur",
       "target": "知识库/07_颜色与后处理/Bloom.md",
-      "current_heading": "3. Blur",
+      "current_heading": "上采样核与扩散半径",
       "decision": "独立主归属或明确合并",
       "reason": "显示映射、光晕、遮挡与镜头覆盖各有不同输入与验证；原页成为后处理路线，雾机制引用既有Froxel。",
       "source_hash": "54db43df6e14e6b8679d42859ed3509a70d4f32c6bb5223d808bdc345c84d838"
@@ -1174,7 +1174,7 @@
       "source": "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
       "heading": "4. Upsample 和合并",
       "target": "知识库/07_颜色与后处理/Bloom.md",
-      "current_heading": "4. Upsample 和合并",
+      "current_heading": "合成与资源执行",
       "decision": "独立主归属或明确合并",
       "reason": "显示映射、光晕、遮挡与镜头覆盖各有不同输入与验证；原页成为后处理路线，雾机制引用既有Froxel。",
       "source_hash": "afe007f0e4c535f0b26753a012cb619deb82cc9bfac0ca2e0723b05f0744089e"
@@ -2326,7 +2326,7 @@
       "source": "知识库/23_引擎运行系统/数据导向设计与任务系统.md",
       "heading": "从访问模式开始",
       "target": "知识库/23_引擎运行系统/ECS与数据布局.md",
-      "current_heading": "访问模式与存储布局",
+      "current_heading": "热点字段与缓存行",
       "decision": "独立主归属或明确合并",
       "reason": "组件数据组织与CPU任务调度可以独立采用，主模型不同。",
       "source_hash": "a716257c6fa4c7d46cf1e4065acd5f8746dca6a4e2169bb6eaf9bc3169d87b16"
@@ -2335,7 +2335,7 @@
       "source": "知识库/23_引擎运行系统/数据导向设计与任务系统.md",
       "heading": "ECS 的三个角色",
       "target": "知识库/23_引擎运行系统/ECS与数据布局.md",
-      "current_heading": "ECS 的三个角色",
+      "current_heading": "组件组合与分块布局",
       "decision": "独立主归属或明确合并",
       "reason": "组件数据组织与CPU任务调度可以独立采用，主模型不同。",
       "source_hash": "7900925c06f07d5b6361cab9fae296722a9eb453166be6c8c9b525ac1a3b3bd7"
@@ -2344,7 +2344,7 @@
       "source": "知识库/23_引擎运行系统/数据导向设计与任务系统.md",
       "heading": "Archetype 与查询",
       "target": "知识库/23_引擎运行系统/ECS与数据布局.md",
-      "current_heading": "Archetype 与查询",
+      "current_heading": "查询与批量更新",
       "decision": "独立主归属或明确合并",
       "reason": "组件数据组织与CPU任务调度可以独立采用，主模型不同。",
       "source_hash": "886dedbb3bf01c606db4441747673b6913cf9d069eee62da4dfcc610adb9684b"
@@ -2353,7 +2353,7 @@
       "source": "知识库/23_引擎运行系统/数据导向设计与任务系统.md",
       "heading": "什么时候不该用 ECS",
       "target": "知识库/23_引擎运行系统/ECS与数据布局.md",
-      "current_heading": "ECS的适用条件",
+      "current_heading": "布局收益与工作负载",
       "decision": "独立主归属或明确合并",
       "reason": "组件数据组织与CPU任务调度可以独立采用，主模型不同。",
       "source_hash": "75f9c6ace6c669dd1aa6d01d3ad1277472de4d0b32e37b9f5604a971c661d619"
@@ -3055,7 +3055,7 @@
       "source": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
       "heading": "锁与等待原语",
       "target": "知识库/16_编程与数据结构/线程同步.md",
-      "current_heading": "锁与等待原语",
+      "current_heading": "共享状态与互斥",
       "decision": "独立主归属或明确合并",
       "reason": "调度隔离、页表映射、内存同步与文件系统服务有独立模型。",
       "source_hash": "ea3abd34aaefc1af2af8de0bd4ddcee2392adae63d6a2741bf90f43b0969ebf1"
@@ -3064,7 +3064,7 @@
       "source": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
       "heading": "原子操作与内存顺序",
       "target": "知识库/16_编程与数据结构/线程同步.md",
-      "current_heading": "原子操作与内存顺序",
+      "current_heading": "原子发布与内存顺序",
       "decision": "独立主归属或明确合并",
       "reason": "调度隔离、页表映射、内存同步与文件系统服务有独立模型。",
       "source_hash": "dd1b7f4da94582f5da308a00e0c95c05a91c4a5b8cd6af5936831a5430a5f8a0"
@@ -3073,7 +3073,7 @@
       "source": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
       "heading": "数据竞争与死锁",
       "target": "知识库/16_编程与数据结构/线程同步.md",
-      "current_heading": "数据竞争与死锁",
+      "current_heading": "双锁死锁",
       "decision": "独立主归属或明确合并",
       "reason": "调度隔离、页表映射、内存同步与文件系统服务有独立模型。",
       "source_hash": "146bf3b02002f082832afe3dbd76557e64ecd5ae9e02bfa249eef42eb1c7b142"
@@ -3109,7 +3109,7 @@
       "source": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
       "heading": "条件变量的谓词等待",
       "target": "知识库/16_编程与数据结构/线程同步.md",
-      "current_heading": "条件变量的谓词等待",
+      "current_heading": "条件变量与等待谓词",
       "decision": "独立主归属或明确合并",
       "reason": "调度隔离、页表映射、内存同步与文件系统服务有独立模型。",
       "source_hash": "f578686a73a07ad0f96a1b946c62a34895b25943ae5d4a02c552121ba0fbc40f"
@@ -3118,7 +3118,7 @@
       "source": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
       "heading": "并发错误怎样缩小范围",
       "target": "知识库/16_编程与数据结构/线程同步.md",
-      "current_heading": "并发错误定位",
+      "current_heading": "推演与验证",
       "decision": "独立主归属或明确合并",
       "reason": "调度隔离、页表映射、内存同步与文件系统服务有独立模型。",
       "source_hash": "192d46460741398446ba01c40b45285bd301022199ca3ad27c31dbe2200d2a68"

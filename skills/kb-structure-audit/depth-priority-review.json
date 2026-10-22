@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-23",
+  "scope": "优先五篇的父任务全文复读",
+  "status": "五篇正文父任务复核完成；实验记录见各主题报告",
+  "articles": [
+    {
+      "path": "知识库/16_编程与数据结构/线程同步.md",
+      "sha256": "fdb2b07994660a6a26b227b3ecade4e57d13a07336e6ce9c42b207bbe06cbdea",
+      "full_text_review": true,
+      "judgment": "任务A双消费、等待空隙、四状态关闭与payload42交接可推演；已补完整Queue类型，实际线程未验。"
+    },
+    {
+      "path": "知识库/07_颜色与后处理/Bloom.md",
+      "sha256": "e4013fd06cb3d630bc04d2ab8690ab5a04cdec825d2c48c186381d86b42619fc",
+      "full_text_review": true,
+      "judgment": "盒式2×2→帐篷9权重→三级0.5/0.25/0.25→纹理提交；边界钳位与面积加权已区分。"
+    },
+    {
+      "path": "知识库/23_引擎运行系统/ECS与数据布局.md",
+      "sha256": "62832e7e6dda34ce17d3edb80d69f44a97bc27f3663515da79cae9e6b59c111c",
+      "full_text_review": true,
+      "judgment": "64实体64/24缓存行、122行块地址、查询子集、实体4迁出9填洞可逐步核算。"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/Face SDF.md",
+      "sha256": "e810e6267baf49dd765b63946bd1ff96163fb30bce09ae7f0c3485819c1d398e",
+      "full_text_review": true,
+      "judgment": "角度0.5/0.75编码0.625，非单调拒绝；父复核发现并修正顶光导数沿用问题，竖直分支独立宽度。"
+    },
+    {
+      "path": "知识库/13_渲染架构/Render Graph.md",
+      "sha256": "94e3ad42485212c1a44b067a19cd1bf45df65de9431a41a211d7944c7b509b67",
+      "full_text_review": true,
+      "judgment": "版本表剔除和寿命已有可推演链；新增8/11/12/10时间线、A/B附件与K邻域断开关系。"
+    }
+  ]
+}
