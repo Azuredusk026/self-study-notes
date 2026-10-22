@@ -1,0 +1,1882 @@
+{
+  "date": "2026-10-23",
+  "initial_read_date": "2026-10-22",
+  "reviewer": "review_22_26",
+  "status": "complete_with_explicit_evidence_limits",
+  "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+  "scope": "5说明+12导读+README共18页全部全文复读；两页正文修正。未再次全文复读全部167技术专题。",
+  "method": "先独立读全文并报告发现，待37bfd42作者快照提交后修正；源事实按本页职责检查，主篇采用相关段落、首段与标题树交叉核对；标准强度另以三规范diff审查。",
+  "hash_contract": "raw为文件原始字节SHA256；normalized为UTF-8-sig去可选BOM并统一CRLF/CR到LF后UTF-8 SHA256，不修剪其他空白。初读原字节与作者交接一致，归一化值与37bfd42 Git正文一致。",
+  "findings": [
+    {
+      "id": "SUPPORT-01",
+      "path": "知识库/00_知识库说明/学习与维护方法.md",
+      "locator": "内容与证据类型",
+      "problem": "“可以支持”未区分来源可能支持与已经完成核读。",
+      "fix": "明确实际核读与位置、版本和条件。",
+      "status": "fixed"
+    },
+    {
+      "id": "SUPPORT-02",
+      "path": "知识库/02_GPU与光栅化管线/光栅化可见性.md",
+      "locator": "阅读路线",
+      "problem": "已有深度被写成讨论预通道的前提，混淆生成与使用。",
+      "fix": "明确预通道生成、Early-Z/Hi-Z消费、普通先前绘制也可供深度。",
+      "status": "fixed"
+    },
+    {
+      "id": "SUPPORT-03",
+      "path": "skills/kb-structure-audit/revision-support-overviews.json",
+      "locator": "heading_mapping/review_sections",
+      "problem": "初读报告标题含CR导致同名REMOVE+ADD。",
+      "fix": "已由原作者修复并纳入37bfd42；当前报告无转义CR，独立报告按规范化行提取标题。",
+      "status": "fixed_by_author_before_baseline"
+    }
+  ],
+  "articles": [
+    {
+      "path": "知识库/00_知识库说明/学习与维护方法.md",
+      "article_type": "SUPPORT",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "学习与维护方法",
+        "定向检索",
+        "文章阅读",
+        "知识补充",
+        "主归属确认",
+        "关系与细节",
+        "内容与证据类型",
+        "来源优先级",
+        "代码示例",
+        "全库示例覆盖检查",
+        "不确定内容",
+        "双链使用",
+        "文章边界",
+        "引擎实现的证据",
+        "模块完成检查",
+        "作者工作流",
+        "技术图与图片资产",
+        "复现与检查状态"
+      ],
+      "independent_judgment": [
+        "“代码示例”要求主问题中的错误处理、资源管理、同步展开；完整样例、机制片段和伪代码的上下文规则均保留。",
+        "“内容与证据类型”修正为已实际核读并定位版本/条件；“引擎实现的证据”“复现与检查状态”继续区分规范、数学、编译、运行、捕获与性能。",
+        "逐段检查自然中文与现行规则；00领域的作者入口职责明确，资产与矩阵链接实际存在。"
+      ],
+      "changes": [
+        "已核验事实明确要求实际核读并记录具体位置、版本和适用条件。"
+      ],
+      "decision": "全文复读并修正",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "读者阅读、作者补充与维护知识文章的操作方法。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "定向检索→文章阅读→知识补充→来源与代码→边界→作者工作流。 定位：定向检索；文章阅读；知识补充；主归属确认；关系与细节；内容与证据类型；来源优先级；代码示例；全库示例覆盖检查；不确定内容；双链使用；文章边界；引擎实现的证据；模块完成检查；作者工作流；技术图与图片资产；复现与检查状态。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "“代码示例”要求主问题中的错误处理、资源管理、同步展开；完整样例、机制片段和伪代码的上下文规则均保留。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "“定向检索”提供可直接使用的Obsidian查询；“代码示例”“复现与检查状态”给出复现所需字段与登记入口，本页不新增引擎实现。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“内容与证据类型”修正为已实际核读并定位版本/条件；“引擎实现的证据”“复现与检查状态”继续区分规范、数学、编译、运行、捕获与性能。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：逐段检查自然中文与现行规则；00领域的作者入口职责明确，资产与矩阵链接实际存在。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“学习与维护方法”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "00_知识库说明负责阅读与维护规则；技术机制由专题承担。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和规则、清单或术语表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/00_知识库说明/学习与维护方法.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "学习与维护方法",
+        "to": "学习与维护方法",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "4d5fbe22b4d3542a055656e9f585537f3ad6264be4fb72d3435e592a2e7fae86",
+      "initial_normalized_sha256": "659f9c5ce2d38b820b8f73d440a69c58ccac63db5c4d9ea405dba84c2a4a4f3b",
+      "final_sha256": "170fe8edab86675973c7e138f35e21295096173d95d1d20d9ca0e0692808317a",
+      "final_normalized_sha256": "8298d96dbc8061c9e9943c3bde85370f56eedeae9f0b1ad9432ae06bf75dadd0",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    },
+    {
+      "path": "知识库/00_知识库说明/技术中文写作规范.md",
+      "article_type": "SUPPORT",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "技术中文写作规范",
+        "用因果推进解释",
+        "句子与段落",
+        "自然过渡",
+        "写成定稿",
+        "来源正例",
+        "项目文章正例",
+        "正文写法示例",
+        "写作复读",
+        "相关主题"
+      ],
+      "independent_judgment": [
+        "“因果推进”“自然过渡”解释对象、动作与剩余问题；正例用于学推理，没有固定套用描边章节。",
+        "两段项目正例与描边当前第44、95行逐字一致；遮罩相减方向、剔除与深度限制正确。知乎三段引文继承用户指定正例，403取回失败不记本轮外部核读。",
+        "全部句段及复读判据已读；词频/句长只提供候选，KEEP文章仍需复读；外部风格示例与技术证据职责分开。"
+      ],
+      "changes": [],
+      "decision": "全文复读后保留",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "技术文章的因果叙述、自然过渡与定稿语言。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "因果推进→句子段落→来源与项目正例→写作复读。 定位：用因果推进解释；句子与段落；自然过渡；写成定稿；来源正例；项目文章正例；正文写法示例；写作复读；相关主题。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "“因果推进”“自然过渡”解释对象、动作与剩余问题；正例用于学推理，没有固定套用描边章节。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "“正文写法示例”和“写作复读”提供可执行的逐段判断；本页不承载独立算法或运行工程。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "两段项目正例与描边当前第44、95行逐字一致；遮罩相减方向、剔除与深度限制正确。知乎三段引文继承用户指定正例，403取回失败不记本轮外部核读。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：全部句段及复读判据已读；词频/句长只提供候选，KEEP文章仍需复读；外部风格示例与技术证据职责分开。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“技术中文写作规范”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "00_知识库说明负责文风；实施规范负责范围、标题和九维验收，职责分离。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和规则、清单或术语表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/00_知识库说明/技术中文写作规范.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "技术中文写作规范",
+        "to": "技术中文写作规范",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "6afdf0a6bf0c1715c2bca1935b7a728fcc010e96f52d814c8ef6c2bc6873385c",
+      "initial_normalized_sha256": "2aa55f0268d4e7d2d8794b79f06b7356bf6edc34084d1ee050e39489166c6150",
+      "final_sha256": "6afdf0a6bf0c1715c2bca1935b7a728fcc010e96f52d814c8ef6c2bc6873385c",
+      "final_normalized_sha256": "2aa55f0268d4e7d2d8794b79f06b7356bf6edc34084d1ee050e39489166c6150",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    },
+    {
+      "path": "知识库/00_知识库说明/术语表.md",
+      "article_type": "SUPPORT",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "术语表"
+      ],
+      "independent_judgment": [
+        "160项逐项全文复读；设备深度的投影前提、Phong切平面投影、ECS多个存储块、内存别名完成条件等均明确。",
+        "对照主篇深度映射、历史矫正、PCF/PCSS、Phong细分、代理法线、原型、中止语义及历史命中；作者D3D/Salvi外部核读明确继承。",
+        "术语仅负责短定义和检索；PCF、PCSS、设备深度、时域上采样与Render Graph主叫法一致，完整算法留在主篇。"
+      ],
+      "changes": [],
+      "decision": "全文复读后保留",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "统一检索叫法和简短定义，链接完整机制的主归属。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "主叫法、英文或全称、别名与说明三列表；保持单一索引职责。 定位：术语定义表。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "160项逐项全文复读；设备深度的投影前提、Phong切平面投影、ECS多个存储块、内存别名完成条件等均明确。"
+        },
+        "Implementation": {
+          "status": "不适用",
+          "basis": "本页为术语或导航索引，代码与运行工程由链接的专题维护；本页检查入口路径和定义范围。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "对照主篇深度映射、历史矫正、PCF/PCSS、Phong细分、代理法线、原型、中止语义及历史命中；作者D3D/Salvi外部核读明确继承。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：术语仅负责短定义和检索；PCF、PCSS、设备深度、时域上采样与Render Graph主叫法一致，完整算法留在主篇。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“术语表”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "00索引只保存术语摘要；通过02、05、08、10、13、14、20、21、23的主归属承接机制。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和规则、清单或术语表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/00_知识库说明/术语表.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "术语表",
+        "to": "术语表",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "7d3ed5e88b4c1d935721a92348e1f1f11a2a4f213aa5d92bdd4d70ff73ec6eca",
+      "initial_normalized_sha256": "fcb40197b0b13baa8c0a3033a6fec55d7257b38ecd16772c9eb8c42ce501df75",
+      "final_sha256": "7d3ed5e88b4c1d935721a92348e1f1f11a2a4f213aa5d92bdd4d70ff73ec6eca",
+      "final_normalized_sha256": "fcb40197b0b13baa8c0a3033a6fec55d7257b38ecd16772c9eb8c42ce501df75",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    },
+    {
+      "path": "知识库/00_知识库说明/知识地图.md",
+      "article_type": "SUPPORT",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "知识地图",
+        "工程路线",
+        "建立可扩展渲染器",
+        "诊断渲染画面",
+        "制作可复用角色",
+        "建立资产生产流程",
+        "实现联机响应",
+        "选择数据与算法",
+        "领域入口",
+        "00_知识库说明",
+        "01_数学与采样",
+        "02_GPU与光栅化管线",
+        "03_Shader编程",
+        "04_光照模型与PBR",
+        "05_光照阴影与GI",
+        "06_纹理技术",
+        "07_颜色与后处理",
+        "08_几何与网格",
+        "09_动画系统",
+        "10_VFX与模拟",
+        "11_NPR与风格化渲染",
+        "12_光线追踪",
+        "13_渲染架构",
+        "14_性能分析与优化",
+        "15_资产与工具管线",
+        "16_编程与数据结构",
+        "17_AIGC与Agent管线",
+        "18_游戏物理与模拟",
+        "19_Gameplay与游戏框架",
+        "20_游戏AI",
+        "21_游戏网络",
+        "22_渲染引擎实现",
+        "23_引擎运行系统",
+        "24_游戏音频",
+        "25_UI与文本",
+        "26_GPU驱动与虚拟几何"
+      ],
+      "independent_judgment": [
+        "全文检查六条工程路线、27个领域使命和全部页面列表；路线连接生产、消费和验证。",
+        "领域入口184个唯一链接与实际184个文件集合相等，无缺页、多余或重复；167专题+12导读+5说明。",
+        "02三项及14领域更名同步；领域主问题清楚，没有把通用机制和引擎接口混成同一主归属。"
+      ],
+      "changes": [],
+      "decision": "全文复读后保留",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "27个领域与6条工程阅读路线的总入口。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "工程路线→领域入口；每个编号领域列出实际页面。 定位：工程路线；建立可扩展渲染器；诊断渲染画面；制作可复用角色；建立资产生产流程；实现联机响应；选择数据与算法；领域入口；00_知识库说明；01_数学与采样；02_GPU与光栅化管线；03_Shader编程；04_光照模型与PBR；05_光照阴影与GI；06_纹理技术；07_颜色与后处理；08_几何与网格；09_动画系统；10_VFX与模拟；11_NPR与风格化渲染；12_光线追踪；13_渲染架构；14_性能分析与优化；15_资产与工具管线；16_编程与数据结构；17_AIGC与Agent管线；18_游戏物理与模拟；19_Gameplay与游戏框架；20_游戏AI；21_游戏网络；22_渲染引擎实现；23_引擎运行系统；24_游戏音频；25_UI与文本；26_GPU驱动与虚拟几何。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "全文检查六条工程路线、27个领域使命和全部页面列表；路线连接生产、消费和验证。"
+        },
+        "Implementation": {
+          "status": "不适用",
+          "basis": "本页为术语或导航索引，代码与运行工程由链接的专题维护；本页检查入口路径和定义范围。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "领域入口184个唯一链接与实际184个文件集合相等，无缺页、多余或重复；167专题+12导读+5说明。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：02三项及14领域更名同步；领域主问题清楚，没有把通用机制和引擎接口混成同一主归属。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“知识地图”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "总入口覆盖00—26所有领域；路线表示关系，目录保持唯一主归属。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和规则、清单或术语表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/00_知识库说明/知识地图.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "知识地图",
+        "to": "知识地图",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "aa2b227812ad201114e18f7a110694527819a5bad36894726b4d7516da1f4ab4",
+      "initial_normalized_sha256": "7017f0e8c00c0e7c8b2581dd6a996c720150a40d2211203342fe31baefeb6ce1",
+      "final_sha256": "aa2b227812ad201114e18f7a110694527819a5bad36894726b4d7516da1f4ab4",
+      "final_normalized_sha256": "7017f0e8c00c0e7c8b2581dd6a996c720150a40d2211203342fe31baefeb6ce1",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    },
+    {
+      "path": "知识库/00_知识库说明/知识库实施规范.md",
+      "article_type": "SUPPORT",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "知识库实施规范",
+        "文章决策",
+        "标题与命名规范",
+        "按文章职责选择标题",
+        "使用读者习惯的术语",
+        "候选与最终选择",
+        "文件与引用同步",
+        "一级目录分类规范",
+        "根据语义判断归属",
+        "数量只触发复查",
+        "通用概念与引擎实现",
+        "审查、方案与采用",
+        "质量矩阵",
+        "代码、图像与事实",
+        "阶段与标杆",
+        "相关主题"
+      ],
+      "independent_judgment": [
+        "全文检查九维、标题候选、KEEP复读、语义归属及阶段完成要求；与提交前三规范diff核对，验收标准没有降低。",
+        "“阶段与标杆”15项CPU检查对应最终测试记录中的真实命令、returncode0和checks15；本轮只审阅记录，目标引擎/跨队列/GPU性能仍另验。",
+        "规则、命名、分类与技术证据各自记录；当前矩阵和历史迁移报告区分，标题均为内容或操作名称。"
+      ],
+      "changes": [],
+      "decision": "全文复读后保留",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "文章决策、命名、领域归属与九维验收规则。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "文章决策→标题→一级目录→质量矩阵→代码图像事实→阶段与标杆。 定位：文章决策；标题与命名规范；按文章职责选择标题；使用读者习惯的术语；候选与最终选择；文件与引用同步；一级目录分类规范；根据语义判断归属；数量只触发复查；通用概念与引擎实现；审查、方案与采用；质量矩阵；代码、图像与事实；阶段与标杆；相关主题。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "全文检查九维、标题候选、KEEP复读、语义归属及阶段完成要求；与提交前三规范diff核对，验收标准没有降低。"
+        },
+        "Implementation": {
+          "status": "通过",
+          "basis": "“文章决策”提供字段取值；“文件与引用同步”“质量矩阵”给具体维护动作和记录证据；本页不声明新增实验。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "“阶段与标杆”15项CPU检查对应最终测试记录中的真实命令、returncode0和checks15；本轮只审阅记录，目标引擎/跨队列/GPU性能仍另验。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：规则、命名、分类与技术证据各自记录；当前矩阵和历史迁移报告区分，标题均为内容或操作名称。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“知识库实施规范”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "00说明集中维护规则，提示词和机器登记位于skills，技术文章保持各自领域主归属。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和规则、清单或术语表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/00_知识库说明/知识库实施规范.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "知识库实施规范",
+        "to": "知识库实施规范",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "810759b652d7f7382875212ed5b19c34a0fabc9262dd14ae803d9b365a4dcb79",
+      "initial_normalized_sha256": "1f1c41e3e9fa31fae6e5eceddfd0448a317c2f274386754574713cebfb372c8a",
+      "final_sha256": "810759b652d7f7382875212ed5b19c34a0fabc9262dd14ae803d9b365a4dcb79",
+      "final_normalized_sha256": "1f1c41e3e9fa31fae6e5eceddfd0448a317c2f274386754574713cebfb372c8a",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
+      "article_type": "OVERVIEW",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "渲染帧流程",
+        "专题入口",
+        "阅读路线",
+        "相关主题",
+        "参考资料"
+      ],
+      "independent_judgment": [
+        "首段及阅读路线区分CPU记录、GPU执行、显示呈现及跨帧重叠；Present等待保留多个可能来源。",
+        "核对Command Buffer与帧提交“命令记录与完成”、显示呈现“CPU-GPU并行和帧延迟”；没有单凭Present归因或运行结果声明。",
+        "入口负责关系，13维护附件/命令，14维护诊断；四项专题表与标题范围匹配。"
+      ],
+      "changes": [],
+      "decision": "全文复读后保留",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "CPU记录、GPU执行与显示呈现的阶段关系和阅读路线。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "专题入口→阅读路线→前置与诊断依赖。 定位：专题入口；阅读路线；相关主题；参考资料。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "首段及阅读路线区分CPU记录、GPU执行、显示呈现及跨帧重叠；Present等待保留多个可能来源。"
+        },
+        "Implementation": {
+          "status": "不适用",
+          "basis": "本页为关系与路线导读，未定义独立可运行算法；“专题入口”和“参考资料”将实现、前提和证据连接到对应主专题。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "核对Command Buffer与帧提交“命令记录与完成”、显示呈现“CPU-GPU并行和帧延迟”；没有单凭Present归因或运行结果声明。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：入口负责关系，13维护附件/命令，14维护诊断；四项专题表与标题范围匹配。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“渲染帧流程”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "02负责GPU与呈现基础；命令、附件主实现明确链接13。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和关系入口表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/02_GPU与光栅化管线/渲染帧流程.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "渲染帧流程",
+        "to": "渲染帧流程",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "5bd88d61ad648b8048f1461b980d29a15317460f5d7ad0dba359e4870ce24950",
+      "initial_normalized_sha256": "5f51c8f4aab99e75bc4b9491a16c2101b3149ea5724c3da110e502eb32ac6792",
+      "final_sha256": "5bd88d61ad648b8048f1461b980d29a15317460f5d7ad0dba359e4870ce24950",
+      "final_normalized_sha256": "5f51c8f4aab99e75bc4b9491a16c2101b3149ea5724c3da110e502eb32ac6792",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/光栅化可见性.md",
+      "article_type": "OVERVIEW",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "光栅化可见性",
+        "专题入口",
+        "阅读路线",
+        "相关主题",
+        "参考资料"
+      ],
+      "independent_judgment": [
+        "“阅读路线”修正预通道生成深度、Early-Z/Hi-Z使用深度的关系；先前普通绘制也能供给深度。",
+        "具体核对基于深度的可见性优化“Early-Z”“Depth Prepass”“Hi-Z”；独立预通道不是提前拒绝的必要条件。",
+        "覆盖→深度约定→生成/消费→模板选择的因果完整；本页只保留关系路线，没有复制实现。"
+      ],
+      "changes": [
+        "区分预通道生成与提前拒绝/层级深度消费；普通先前绘制也可提供深度。"
+      ],
+      "decision": "全文复读并修正",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "覆盖、深度与模板之间的数据职责和学习顺序。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "专题入口→阅读路线→空间、接口与合成依赖。 定位：专题入口；阅读路线；相关主题；参考资料。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "“阅读路线”修正预通道生成深度、Early-Z/Hi-Z使用深度的关系；先前普通绘制也能供给深度。"
+        },
+        "Implementation": {
+          "status": "不适用",
+          "basis": "本页为关系与路线导读，未定义独立可运行算法；“专题入口”和“参考资料”将实现、前提和证据连接到对应主专题。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "具体核对基于深度的可见性优化“Early-Z”“Depth Prepass”“Hi-Z”；独立预通道不是提前拒绝的必要条件。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：覆盖→深度约定→生成/消费→模板选择的因果完整；本页只保留关系路线，没有复制实现。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“光栅化可见性”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "02的样本级可见性关系导读；对象剔除与颜色合成另有入口。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和关系入口表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/02_GPU与光栅化管线/光栅化可见性.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "光栅化可见性",
+        "to": "光栅化可见性",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "b0ced6f184cfd81e7ffe27edb466c087696d904fb656f4690eafcfe42ae99803",
+      "initial_normalized_sha256": "f73f956b2b0803f29101d18d6c60add912b424bbdddebb9ade722c0622ad20a9",
+      "final_sha256": "30c7efc797be9135dd64d4ecb2023eb4ad9cf3000b5f14bb3f0affbefa725db9",
+      "final_normalized_sha256": "e4711efe5fbded08da7f2bae1aa7dd73db879b366cd356a0e68337b806a07ca9",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/可见性与合成.md",
+      "article_type": "OVERVIEW",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "可见性与合成",
+        "专题入口",
+        "阅读路线",
+        "相关主题",
+        "参考资料"
+      ],
+      "independent_judgment": [
+        "常规不透明最近样本与透明多层颜色分开；相机和阴影视图分别判断候选。",
+        "对照剔除、透明合成主篇首段和章节；透明的遮挡/深度写入按合成模型确定，未泛化为所有透明都遮挡或都不写深度。",
+        "两个主要入口与Alpha、GPU参数前后置分工明确；自然中文直接陈述条件和作用。"
+      ],
+      "changes": [],
+      "decision": "全文复读后保留",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "对象候选筛选与多层颜色贡献的关系。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "专题入口→阅读路线→样本可见性、Alpha和GPU绘制依赖。 定位：专题入口；阅读路线；相关主题；参考资料。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "常规不透明最近样本与透明多层颜色分开；相机和阴影视图分别判断候选。"
+        },
+        "Implementation": {
+          "status": "不适用",
+          "basis": "本页为关系与路线导读，未定义独立可运行算法；“专题入口”和“参考资料”将实现、前提和证据连接到对应主专题。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "对照剔除、透明合成主篇首段和章节；透明的遮挡/深度写入按合成模型确定，未泛化为所有透明都遮挡或都不写深度。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：两个主要入口与Alpha、GPU参数前后置分工明确；自然中文直接陈述条件和作用。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“可见性与合成”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "02中连接剔除与合成两个主问题，细节仍由对应专篇独立维护。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和关系入口表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/02_GPU与光栅化管线/可见性与合成.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "可见性与合成",
+        "to": "可见性与合成",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "97876cdca7bdd701c2727cb1c6c4c465eaa4a4bc7a2ad0e1c75931a8e192ad1d",
+      "initial_normalized_sha256": "68bdc4f4b4c41a2220e8d58dca13e183b331851df80b37d2780eeb6a3f8db82e",
+      "final_sha256": "97876cdca7bdd701c2727cb1c6c4c465eaa4a4bc7a2ad0e1c75931a8e192ad1d",
+      "final_normalized_sha256": "68bdc4f4b4c41a2220e8d58dca13e183b331851df80b37d2780eeb6a3f8db82e",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    },
+    {
+      "path": "知识库/05_光照阴影与GI/GI方案选择.md",
+      "article_type": "OVERVIEW",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "GI方案选择",
+        "专题入口",
+        "阅读路线",
+        "相关主题",
+        "参考资料"
+      ],
+      "independent_judgment": [
+        "按场景变化、表示位置和更新频率选择；表面Lightmap与空间Probe可组合，漫反射/镜面分别观察。",
+        "核对四篇主篇首段/标题树：表面烘焙、低频SH、反射捕获、可更新场景表示与导读一致；固定曝光条件保留。",
+        "没有无条件性能排序；05方案、04IBL、01SH、07曝光各有主归属。"
+      ],
+      "changes": [],
+      "decision": "全文复读后保留",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "按场景变化、光照分量和预算选择间接光表示。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "需求入口→阅读路线→BRDF、IBL、曝光与SH依赖。 定位：专题入口；阅读路线；相关主题；参考资料。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "按场景变化、表示位置和更新频率选择；表面Lightmap与空间Probe可组合，漫反射/镜面分别观察。"
+        },
+        "Implementation": {
+          "status": "不适用",
+          "basis": "本页为关系与路线导读，未定义独立可运行算法；“专题入口”和“参考资料”将实现、前提和证据连接到对应主专题。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "核对四篇主篇首段/标题树：表面烘焙、低频SH、反射捕获、可更新场景表示与导读一致；固定曝光条件保留。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：没有无条件性能排序；05方案、04IBL、01SH、07曝光各有主归属。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“GI方案选择”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "05光照领域的方案关系导读；IBL积分和球谐表示链接各自主归属。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和关系入口表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/05_光照阴影与GI/GI方案选择.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "GI方案选择",
+        "to": "GI方案选择",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "3dcbae9f5a9b4c48b99d25b9d445addfc65be69073d8b602facd4619f4aa4bef",
+      "initial_normalized_sha256": "c951ee04316e050e959cb448683cd73d6cb068b4f3502d9a7bdad96b5545f2ab",
+      "final_sha256": "3dcbae9f5a9b4c48b99d25b9d445addfc65be69073d8b602facd4619f4aa4bef",
+      "final_normalized_sha256": "c951ee04316e050e959cb448683cd73d6cb068b4f3502d9a7bdad96b5545f2ab",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    },
+    {
+      "path": "知识库/07_颜色与后处理/后处理链.md",
+      "article_type": "OVERVIEW",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "后处理链",
+        "专题入口",
+        "资源与顺序",
+        "相关主题",
+        "参考资料"
+      ],
+      "independent_judgment": [
+        "数据的曝光、颜色空间、分辨率和时域状态先于效果位置；不规定所有引擎的统一顺序。",
+        "Bloom在HDR提取、AO关联相应光照、景深/运动模糊依赖深度速度，与已独立复核07技术页一致；捕获作为验证方法。",
+        "资源生产者和效果消费者连接清楚；02时域、13图调度与07效果分工合理。"
+      ],
+      "changes": [],
+      "decision": "全文复读后保留",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "按颜色、深度、速度与时域资源关系安排后处理。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "效果入口→资源与顺序→颜色、曝光、时域和图依赖。 定位：专题入口；资源与顺序；相关主题；参考资料。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "数据的曝光、颜色空间、分辨率和时域状态先于效果位置；不规定所有引擎的统一顺序。"
+        },
+        "Implementation": {
+          "status": "不适用",
+          "basis": "本页为关系与路线导读，未定义独立可运行算法；“专题入口”和“参考资料”将实现、前提和证据连接到对应主专题。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "Bloom在HDR提取、AO关联相应光照、景深/运动模糊依赖深度速度，与已独立复核07技术页一致；捕获作为验证方法。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：资源生产者和效果消费者连接清楚；02时域、13图调度与07效果分工合理。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“后处理链”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "07仅组织后处理关系，具体实现与时域算法分别链接独立专题。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和关系入口表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/07_颜色与后处理/后处理链.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "后处理链",
+        "to": "后处理链",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "4a9fc81a3ca124c1128e139d81dbbbd443db3e42e66ec319896a7db6d0f09aa2",
+      "initial_normalized_sha256": "8ca373236723b42d49ecf40d4a9164274d3fc060fb9f97df81e69c9c00d99acb",
+      "final_sha256": "4a9fc81a3ca124c1128e139d81dbbbd443db3e42e66ec319896a7db6d0f09aa2",
+      "final_normalized_sha256": "8ca373236723b42d49ecf40d4a9164274d3fc060fb9f97df81e69c9c00d99acb",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    },
+    {
+      "path": "知识库/09_动画系统/角色动画导读.md",
+      "article_type": "OVERVIEW",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "角色动画导读",
+        "专题入口",
+        "阅读路线",
+        "相关主题",
+        "参考资料"
+      ],
+      "independent_judgment": [
+        "八项入口覆盖蒙皮、混合、IK、重定向、压缩、面部、布料和毛发；依赖姿态和输出空间决定组合。",
+        "逐项核对09主篇首段/标题树；IK末端约束、重定向基底、最终变形误差、模拟代理和引导线职责匹配。",
+        "只给阅读路线与接入条件，不复制求解；01数学、19动作请求、18XPBD提供前置。"
+      ],
+      "changes": [],
+      "decision": "全文复读后保留",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "角色姿态、表面变形、资产复用与数据成本的关系。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "任务入口→阅读路线→空间、旋转、动作请求和约束依赖。 定位：专题入口；阅读路线；相关主题；参考资料。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "八项入口覆盖蒙皮、混合、IK、重定向、压缩、面部、布料和毛发；依赖姿态和输出空间决定组合。"
+        },
+        "Implementation": {
+          "status": "不适用",
+          "basis": "本页为关系与路线导读，未定义独立可运行算法；“专题入口”和“参考资料”将实现、前提和证据连接到对应主专题。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "逐项核对09主篇首段/标题树；IK末端约束、重定向基底、最终变形误差、模拟代理和引导线职责匹配。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：只给阅读路线与接入条件，不复制求解；01数学、19动作请求、18XPBD提供前置。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“角色动画导读”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "09组织动画职责，Gameplay请求与物理约束均链接主归属。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和关系入口表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/09_动画系统/角色动画导读.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "角色动画导读",
+        "to": "角色动画导读",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "e4d88658069a3fac67b019ab72377bfeaebf220374bbfe8a37ab5db1809b601c",
+      "initial_normalized_sha256": "3e23206796e95c55b10ed1b81b42c54d2016c59e13ef3fd7e4c861074b78f560",
+      "final_sha256": "e4d88658069a3fac67b019ab72377bfeaebf220374bbfe8a37ab5db1809b601c",
+      "final_normalized_sha256": "3e23206796e95c55b10ed1b81b42c54d2016c59e13ef3fd7e4c861074b78f560",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    },
+    {
+      "path": "知识库/10_VFX与模拟/VFX效果组合.md",
+      "article_type": "OVERVIEW",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "VFX效果组合",
+        "专题入口",
+        "阅读路线",
+        "相关主题",
+        "参考资料"
+      ],
+      "independent_judgment": [
+        "纹理动画包含帧选择和UV；溶解改变覆盖，扰动读背景，软粒子比较深度，GPU粒子管理状态。",
+        "核对对应主篇首段/章节；背景快照时机和深度空间一致性保留；性能按实际同屏负载而非单看粒子数。",
+        "输入→组合→验证关系顺畅；06采样、07Alpha、02透明/深度、14性能主归属明确。"
+      ],
+      "changes": [],
+      "decision": "全文复读后保留",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "按效果所需信号组合纹理、材质、粒子状态和场景数据。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "信号入口→阅读路线→采样、Alpha、透明和深度依赖。 定位：专题入口；阅读路线；相关主题；参考资料。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "纹理动画包含帧选择和UV；溶解改变覆盖，扰动读背景，软粒子比较深度，GPU粒子管理状态。"
+        },
+        "Implementation": {
+          "status": "不适用",
+          "basis": "本页为关系与路线导读，未定义独立可运行算法；“专题入口”和“参考资料”将实现、前提和证据连接到对应主专题。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "核对对应主篇首段/章节；背景快照时机和深度空间一致性保留；性能按实际同屏负载而非单看粒子数。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：输入→组合→验证关系顺畅；06采样、07Alpha、02透明/深度、14性能主归属明确。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“VFX效果组合”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "10组织效果组合；共用采样、合成和性能主问题分别进入06、02、14。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和关系入口表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/10_VFX与模拟/VFX效果组合.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "VFX效果组合",
+        "to": "VFX效果组合",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "333e4e16919f57a46ad34f0a7f557f97f7718c3ed60ea37dcea5778bdd1f52c3",
+      "initial_normalized_sha256": "bd3059cd7bf6f0be75b422823c0ce80d4e9b5db0dfd81cb12c4c086407467634",
+      "final_sha256": "333e4e16919f57a46ad34f0a7f557f97f7718c3ed60ea37dcea5778bdd1f52c3",
+      "final_normalized_sha256": "bd3059cd7bf6f0be75b422823c0ce80d4e9b5db0dfd81cb12c4c086407467634",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
+      "article_type": "OVERVIEW",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "NPR与场景风格导读",
+        "画面目标与机制",
+        "场景尺度与效果关系",
+        "阅读与验证路线",
+        "相关主题",
+        "参考资料"
+      ],
+      "independent_judgment": [
+        "画面形状尺度、纹理频率、线宽与观察距离相联系；效果输入和遮罩需分别显示。",
+        "实际核读Gooch1998作者页题名、作者和摘要，只支持技术插图光照模型入口；其他主篇首段与导航职责一致。",
+        "11维护材质/描边/角色，08维护Billboard，09维护风动；艺术目标与技术验证边界明确。"
+      ],
+      "changes": [],
+      "decision": "全文复读后保留",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "画面目标与风格化机制、场景关系及验证路线。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "画面目标→场景尺度关系→阅读验证→前置与来源。 定位：画面目标与机制；场景尺度与效果关系；阅读与验证路线；相关主题；参考资料。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "画面形状尺度、纹理频率、线宽与观察距离相联系；效果输入和遮罩需分别显示。"
+        },
+        "Implementation": {
+          "status": "不适用",
+          "basis": "本页为关系与路线导读，未定义独立可运行算法；“画面目标与机制”和“参考资料”将实现、前提和证据连接到对应主专题。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "实际核读Gooch1998作者页题名、作者和摘要，只支持技术插图光照模型入口；其他主篇首段与导航职责一致。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：11维护材质/描边/角色，08维护Billboard，09维护风动；艺术目标与技术验证边界明确。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“NPR与场景风格导读”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "11作为风格化导读，Billboard与植被风动分别保持08和09主归属。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和关系入口表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "NPR与场景风格导读",
+        "to": "NPR与场景风格导读",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "897fa8b5639d0847629f0a046e14cdf84c81517a06cd542a9fd1d61251fa60d8",
+      "initial_normalized_sha256": "746584f7f1bb5c4178a0c890e707bbaeb2d22ec1e849388c8ee078d9a2e926e9",
+      "final_sha256": "897fa8b5639d0847629f0a046e14cdf84c81517a06cd542a9fd1d61251fa60d8",
+      "final_normalized_sha256": "746584f7f1bb5c4178a0c890e707bbaeb2d22ec1e849388c8ee078d9a2e926e9",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    },
+    {
+      "path": "知识库/13_渲染架构/渲染命令的组织方式.md",
+      "article_type": "OVERVIEW",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "渲染命令的组织方式",
+        "专题入口",
+        "阅读路线",
+        "相关主题",
+        "参考资料"
+      ],
+      "independent_judgment": [
+        "Render Graph编译计划、Render Pass附件范围、Command Buffer记录各自分层；采用图是有条件的。",
+        "核对五篇主篇首段及相关章节；CPU记录结束不能推出GPU完成，资源回收依赖完成状态。",
+        "从单次绘制和跨效果调度给两条路线，没有重复同步与寿命算法。"
+      ],
+      "changes": [],
+      "decision": "全文复读后保留",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "图编译、附件、命令、同步与资源回收的职责关系。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "职责入口→单次绘制到跨效果的路线→执行、绑定和PSO依赖。 定位：专题入口；阅读路线；相关主题；参考资料。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "Render Graph编译计划、Render Pass附件范围、Command Buffer记录各自分层；采用图是有条件的。"
+        },
+        "Implementation": {
+          "status": "不适用",
+          "basis": "本页为关系与路线导读，未定义独立可运行算法；“专题入口”和“参考资料”将实现、前提和证据连接到对应主专题。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "核对五篇主篇首段及相关章节；CPU记录结束不能推出GPU完成，资源回收依赖完成状态。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：从单次绘制和跨效果调度给两条路线，没有重复同步与寿命算法。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“渲染命令的组织方式”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "13组织执行架构职责；硬件执行与性能入口跨域链接。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和关系入口表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/13_渲染架构/渲染命令的组织方式.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "渲染命令的组织方式",
+        "to": "渲染命令的组织方式",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "9c1a7cc7a9ca0e410ffb3ee9d4b6d5df0088c5776ff9db53e62dcd328177fb3f",
+      "initial_normalized_sha256": "5ff38c184cac8e84451b5759453c2e8352dfef086edf529fdf0525f9b1c57e18",
+      "final_sha256": "9c1a7cc7a9ca0e410ffb3ee9d4b6d5df0088c5776ff9db53e62dcd328177fb3f",
+      "final_normalized_sha256": "5ff38c184cac8e84451b5759453c2e8352dfef086edf529fdf0525f9b1c57e18",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    },
+    {
+      "path": "知识库/13_渲染架构/渲染路径与光源组织.md",
+      "article_type": "OVERVIEW",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "渲染路径与光源组织",
+        "专题入口",
+        "阅读路线",
+        "相关主题",
+        "参考资料"
+      ],
+      "independent_judgment": [
+        "Forward/Deferred决定求值时机，Tiled/Clustered决定局部灯列表；灯列表可服务不同路径。",
+        "对照三篇主文首段/标题树，固定场景、分辨率、灯分布后分别测列表、几何、照明和内存成本。",
+        "先分决策再比成本，保留透明与GBuffer等相关入口；没有由灯数直接推导性能。"
+      ],
+      "changes": [],
+      "decision": "全文复读后保留",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "着色时机与局部灯光列表组织两个维度的关系。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "组织问题入口→阅读与成本对照→BRDF、GBuffer和诊断依赖。 定位：专题入口；阅读路线；相关主题；参考资料。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "Forward/Deferred决定求值时机，Tiled/Clustered决定局部灯列表；灯列表可服务不同路径。"
+        },
+        "Implementation": {
+          "status": "不适用",
+          "basis": "本页为关系与路线导读，未定义独立可运行算法；“专题入口”和“参考资料”将实现、前提和证据连接到对应主专题。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "对照三篇主文首段/标题树，固定场景、分辨率、灯分布后分别测列表、几何、照明和内存成本。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：先分决策再比成本，保留透明与GBuffer等相关入口；没有由灯数直接推导性能。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“渲染路径与光源组织”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "13保持路径与光源组织关系，材质响应链接04，测量方法链接14。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和关系入口表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/13_渲染架构/渲染路径与光源组织.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "渲染路径与光源组织",
+        "to": "渲染路径与光源组织",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "cd999e4fde55715ef7a314908f06db72063965e2b3c6942fa66c93f43078c290",
+      "initial_normalized_sha256": "049117e9669f4856f3959b13ad5179b1e9d5e06dbd34d51bc94702a277f3edd9",
+      "final_sha256": "cd999e4fde55715ef7a314908f06db72063965e2b3c6942fa66c93f43078c290",
+      "final_normalized_sha256": "049117e9669f4856f3959b13ad5179b1e9d5e06dbd34d51bc94702a277f3edd9",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/算法与数据结构导读.md",
+      "article_type": "OVERVIEW",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "算法与数据结构导读",
+        "专题入口",
+        "阅读路线",
+        "选择示例",
+        "实现与证据",
+        "相关主题",
+        "参考资料"
+      ],
+      "independent_judgment": [
+        "按状态、容器、图和空间查询四条工作负载组织；资产顺序与容器查找、近邻粗筛与全量基线分开。",
+        "核对四篇主文首段/标题树，拓扑/环、引用稳定性与候选覆盖有对应机制；复杂度与测量分开。",
+        "示例说明跨专题协作但没有复制算法，内存/并发与性能链接作为必要延伸。"
+      ],
+      "changes": [],
+      "decision": "全文复读后保留",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "按工作负载选择求解方法、容器、图和空间索引。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "工作负载入口→阅读路线→选择示例→实现证据→跨主题依赖。 定位：专题入口；阅读路线；选择示例；实现与证据；相关主题；参考资料。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "按状态、容器、图和空间查询四条工作负载组织；资产顺序与容器查找、近邻粗筛与全量基线分开。"
+        },
+        "Implementation": {
+          "status": "不适用",
+          "basis": "本页为关系与路线导读，未定义独立可运行算法；“专题入口”和“参考资料”将实现、前提和证据连接到对应主专题。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "核对四篇主文首段/标题树，拓扑/环、引用稳定性与候选覆盖有对应机制；复杂度与测量分开。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：示例说明跨专题协作但没有复制算法，内存/并发与性能链接作为必要延伸。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“算法与数据结构导读”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "16导读连接独立算法职责，不重复容器、图搜索或空间索引实现。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和关系入口表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/16_编程与数据结构/算法与数据结构导读.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "算法与数据结构导读",
+        "to": "算法与数据结构导读",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "85edff608e76872ff8e1ec87eca12582ddc302fec059cffe49e2b00aaf8bd2df",
+      "initial_normalized_sha256": "76401e70fa0b8dc72675a2fd9a677840a0541653c5e14f6f4b4d94b56594ce1a",
+      "final_sha256": "85edff608e76872ff8e1ec87eca12582ddc302fec059cffe49e2b00aaf8bd2df",
+      "final_normalized_sha256": "76401e70fa0b8dc72675a2fd9a677840a0541653c5e14f6f4b4d94b56594ce1a",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    },
+    {
+      "path": "知识库/22_渲染引擎实现/引擎渲染扩展导读.md",
+      "article_type": "OVERVIEW",
+      "full_text_review": true,
+      "review_date": "2026-10-22",
+      "final_verification_date": "2026-10-23",
+      "review_sections": [
+        "引擎渲染扩展导读",
+        "专题入口",
+        "接入边界",
+        "版本与验证",
+        "相关主题",
+        "参考资料"
+      ],
+      "independent_judgment": [
+        "对象遮罩由材质输出、网格筛选和图资源读写共同完成；全屏通道与网格接口边界清楚。",
+        "逐项对照Unity6/URP17与UE5.4主篇版本及UNVERIFIED声明；API核读、模型测试、完整引擎运行和捕获分开。",
+        "22维护版本接口，13维护图与寿命，03维护数据流；先按资源需求再进入具体引擎。"
+      ],
+      "changes": [],
+      "decision": "全文复读后保留",
+      "quality_matrix": {
+        "Scope": {
+          "status": "通过",
+          "basis": "按资源、阶段和绘制职责选择Unity/Unreal渲染接入接口。 定位：首段。"
+        },
+        "Structure": {
+          "status": "通过",
+          "basis": "接入任务→遮罩合成边界→版本验证→通用架构依赖。 定位：专题入口；接入边界；版本与验证；相关主题；参考资料。"
+        },
+        "Depth": {
+          "status": "通过",
+          "basis": "对象遮罩由材质输出、网格筛选和图资源读写共同完成；全屏通道与网格接口边界清楚。"
+        },
+        "Implementation": {
+          "status": "不适用",
+          "basis": "本页为关系与路线导读，未定义独立可运行算法；“专题入口”和“参考资料”将实现、前提和证据连接到对应主专题。"
+        },
+        "Evidence": {
+          "status": "通过",
+          "basis": "逐项对照Unity6/URP17与UE5.4主篇版本及UNVERIFIED声明；API核读、模型测试、完整引擎运行和捕获分开。"
+        },
+        "Writing Style": {
+          "status": "通过",
+          "basis": "本次独立全文复读：22维护版本接口，13维护图与寿命，03维护数据流；先按资源需求再进入具体引擎。"
+        },
+        "Title": {
+          "status": "通过",
+          "basis": "H1“引擎渲染扩展导读”与文件名一致，覆盖主问题；全部围栏外标题为客观内容或操作名称。"
+        },
+        "Information Architecture": {
+          "status": "通过",
+          "basis": "22负责版本接口，13负责通用架构，03负责Shader数据流，11承接效果机制。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+        },
+        "Visuals": {
+          "status": "不适用",
+          "basis": "本页以短段落和关系入口表组织信息，未提出需要新图才能解释的空间、执行或结果关系；未新增图片或声称渲染结果。"
+        }
+      },
+      "quality_matrix_provenance": {
+        "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+        "locator": "知识库/22_渲染引擎实现/引擎渲染扩展导读.md",
+        "independently_rechecked": [
+          "Scope",
+          "Structure",
+          "Depth",
+          "Implementation",
+          "Evidence",
+          "Writing Style",
+          "Title",
+          "Information Architecture",
+          "Visuals"
+        ],
+        "overrides": [
+          "Depth",
+          "Evidence",
+          "Writing Style",
+          "Information Architecture"
+        ],
+        "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+      },
+      "title_mapping": {
+        "from": "引擎渲染扩展导读",
+        "to": "引擎渲染扩展导读",
+        "action": "KEEP"
+      },
+      "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+      "initial_sha256": "f8128341fc4831116ac7d811b8cc6c89a226bede0da7f854863d2825c4e2219d",
+      "initial_normalized_sha256": "c069920b5940e6c0999d40874b8d04e258acfe1ccd5cdcf3ae1ff0ad59a90949",
+      "final_sha256": "f8128341fc4831116ac7d811b8cc6c89a226bede0da7f854863d2825c4e2219d",
+      "final_normalized_sha256": "c069920b5940e6c0999d40874b8d04e258acfe1ccd5cdcf3ae1ff0ad59a90949",
+      "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+    }
+  ],
+  "readme": {
+    "path": "README.md",
+    "article_type": "README",
+    "full_text_review": true,
+    "review_date": "2026-10-22",
+    "final_verification_date": "2026-10-23",
+    "review_sections": [
+      "个人游戏开发知识库",
+      "入口",
+      "知识结构",
+      "阅读方式",
+      "仓库内容",
+      "作者标准与验收"
+    ],
+    "independent_judgment": [
+      "入口、结构、阅读、发布范围与验收用途全部全文复读；现行状态直接陈述。",
+      "实际文件/矩阵167+12+5=184；27个目录；发布范围与AGENTS一致，正式样例和资产随正文发布。",
+      "导读与专题职责、六类证据分别登记；根目录Markdown入口有效，未把内容验收等同全平台运行通过。"
+    ],
+    "changes": [],
+    "decision": "全文复读后保留",
+    "quality_matrix": {
+      "Scope": {
+        "status": "通过",
+        "basis": "首段、入口和仓库内容限定知识库用途与发布范围。"
+      },
+      "Structure": {
+        "status": "通过",
+        "basis": "入口→知识结构→阅读方式→仓库内容→作者标准与验收。"
+      },
+      "Depth": {
+        "status": "通过",
+        "basis": "入口、结构、阅读、发布范围与验收用途全部全文复读；现行状态直接陈述。"
+      },
+      "Implementation": {
+        "status": "不适用",
+        "basis": "仓库入口说明；提供Obsidian搜索命令，不承载技术实现。"
+      },
+      "Evidence": {
+        "status": "通过",
+        "basis": "实际文件/矩阵167+12+5=184；27个目录；发布范围与AGENTS一致，正式样例和资产随正文发布。"
+      },
+      "Writing Style": {
+        "status": "通过",
+        "basis": "本次独立全文复读：导读与专题职责、六类证据分别登记；根目录Markdown入口有效，未把内容验收等同全平台运行通过。"
+      },
+      "Title": {
+        "status": "通过",
+        "basis": "H1个人游戏开发知识库，H2均为客观内容名称。"
+      },
+      "Information Architecture": {
+        "status": "通过",
+        "basis": "根目录使用相对Markdown链接，知识地图负责编号领域与工程路线。 独立复核356个本地引用存在，地图集合与实际184页一致。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "短说明和入口列表足以表达仓库结构，无新图资产。"
+      }
+    },
+    "quality_matrix_provenance": {
+      "inherit_from": "skills/kb-structure-audit/revision-support-overviews.json",
+      "locator": "README.md",
+      "independently_rechecked": [
+        "Scope",
+        "Structure",
+        "Depth",
+        "Implementation",
+        "Evidence",
+        "Writing Style",
+        "Title",
+        "Information Architecture",
+        "Visuals"
+      ],
+      "overrides": [
+        "Depth",
+        "Evidence",
+        "Writing Style",
+        "Information Architecture"
+      ],
+      "basis": "全文复读确认其余五维的具体依据与当前正文相符；上列四维补充独立判断。不是由扫描自动通过。"
+    },
+    "title_mapping": {
+      "from": "个人游戏开发知识库",
+      "to": "个人游戏开发知识库",
+      "action": "KEEP"
+    },
+    "baseline_commit": "37bfd428abda14f853405334b2abff5b57179d3f",
+    "initial_sha256": "30ded55aa1ef92e29d5d1f249d9382093f5650c9ccb34ccc442b0a24f740aafc",
+    "initial_normalized_sha256": "00fd59731af779ab1a4b8be0a587d4792f3a6894c606d469c817f9e6f671aed6",
+    "final_sha256": "30ded55aa1ef92e29d5d1f249d9382093f5650c9ccb34ccc442b0a24f740aafc",
+    "final_normalized_sha256": "00fd59731af779ab1a4b8be0a587d4792f3a6894c606d469c817f9e6f671aed6",
+    "verification_scope": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。"
+  },
+  "source_checks": [
+    {
+      "date": "2026-10-22",
+      "status": "LOCAL_RULE_DIFF_READ",
+      "source": "三规范、AGENTS与四项目技能",
+      "locator": "核心代码、写作复读、九维、事实和阶段验收要求",
+      "scope": "与作者改动前diff及现行规则对照，未降低标准；图数量不作配额，必要解释仍需判断。"
+    },
+    {
+      "date": "2026-10-22",
+      "status": "EXACT_LOCAL_QUOTE_MATCH",
+      "source": "知识库/11_NPR与风格化渲染/描边.md",
+      "locator": "第44、95行",
+      "scope": "写作规范两段项目正例逐字一致；方向连续/着色冲突与固定像素宽度动机。"
+    },
+    {
+      "date": "2026-10-22",
+      "status": "FETCH_FAILED_403",
+      "url": "https://zhuanlan.zhihu.com/p/603649633",
+      "locator": "外部页面请求",
+      "scope": "既有用户指定三段写作引文；本轮不能重新核对远端逐字内容与作者资料。旧completion-url-check也为403，不计本轮外部核验。"
+    },
+    {
+      "date": "2026-10-22",
+      "status": "READ",
+      "url": "https://users.cs.northwestern.edu/~ago820/SIG98/abstract.html",
+      "locator": "页面行2—9题名、年份、作者、Abstract",
+      "scope": "支持NPR导读中技术插图光照论文入口，不作其他效果或性能证据。"
+    },
+    {
+      "date": "2026-10-22",
+      "status": "LOCAL_SECTION_READ",
+      "source": "知识库/02_GPU与光栅化管线/基于深度的可见性优化.md",
+      "locator": "Early-Z第5—23行；Depth Prepass第25—60行；Hi-Z第62行起",
+      "scope": "支持导读生成与消费关系修正；预通道并非提前拒绝的必要条件。"
+    },
+    {
+      "date": "2026-10-23",
+      "status": "LOCAL_SECTION_CROSSCHECK",
+      "source": "深度缓冲与位置重建、抗锯齿与时域重建、Shadow Map、Tessellation与位移、植被包裹法线、ECS与数据布局、游戏AI决策模型、延迟补偿命中、GPU同步与屏障、Render Pass与附件",
+      "locator": "深度映射/重建、历史校验、PCF/PCSS、Phong细分曲面、代理生成、Archetype查询、中止语义、历史命中、执行/内存依赖、附件契约",
+      "scope": "全文复读160项术语后，对高风险定义逐项核对具体主篇段落；未声称本轮重取160项全部外部规范。",
+      "initial_crosscheck_date": "2026-10-22"
+    },
+    {
+      "date": "2026-10-22",
+      "status": "INHERITED_SOURCE_RECORDS",
+      "source": "skills/kb-structure-audit/revision-support-overviews.json",
+      "locator": "source_checks",
+      "scope": "D3D拓扑与Salvi第18—24页READ继承作者；Phong论文第3节公式3—4继承此前revision-06-08核读并核对本地主篇；PCSS本轮取回失败保留，只作内部交叉检查。"
+    },
+    {
+      "date": "2026-10-22",
+      "status": "RECORD_READ_NOT_RERUN",
+      "source": "skills/kb-structure-audit/revision-final-test-results.json",
+      "locator": "runs: python -B 知识库/examples/rendergraph/reference.py",
+      "scope": "returncode0，passed=true、checks15；仅支持串行CPU参考编译器15项检查陈述。"
+    },
+    {
+      "date": "2026-10-22",
+      "status": "LOCAL_PRIMARY_SCOPE_READ",
+      "source": "各导读“专题入口”或“画面目标与机制”所链接主篇",
+      "locator": "首段与H2标题树；具体判断见每页independent_judgment",
+      "scope": "逐个核对职责/条件与导读一致；本次不冒充这些技术主篇的再次全文验收。"
+    },
+    {
+      "date": "2026-10-23",
+      "status": "ACTUAL_STATIC_CHECK",
+      "source": "当前矩阵、编号目录、知识地图和18页本地链接",
+      "locator": "文章类型计数、领域列表、围栏外标题、链接路径",
+      "scope": "184=167专题+12导读+5说明；27目录；356个本地链接和151标题核对；具体结果见static_checks。"
+    }
+  ],
+  "static_checks": {
+    "pages": 18,
+    "wiki_links": 338,
+    "local_markdown_links": 18,
+    "headings": 151,
+    "broken_links": [],
+    "H1_mismatch": [],
+    "question_headings": [],
+    "control_characters": [],
+    "trailing_whitespace": [],
+    "map_entries": 184,
+    "map_unique": 184,
+    "actual_pages": 184,
+    "map_missing": [],
+    "map_extra": [],
+    "map_duplicates": [],
+    "article_types": {
+      "SUPPORT": 5,
+      "ARTICLE": 167,
+      "OVERVIEW": 12
+    }
+  },
+  "standard_assessment": "没有降低机制深度、代码展开、证据分层、标题或写作标准；支持/导读页的Implementation和Visuals按职责判定，不能外推为技术专题免验。",
+  "technical_test_policy": "按父任务范围不重跑技术代码；审阅现有真实记录，未新增目标引擎/捕获/性能证据。",
+  "image_assets_added": [],
+  "limitations": [
+    "知乎引文页面403，外部逐字转录和作者信息未在本轮重新确认；保持既有用户指定风格正例身份。",
+    "术语外部来源部分继承作者及此前独立核读；具体状态如上，不把FETCH_FAILED提升为READ。",
+    "路径存在、标题和集合检查不能证明Obsidian实际点击、引擎运行或硬件性能；这些没有本轮新增证据。",
+    "所有技术主篇的UNVERIFIED范围继续保留；本报告只验收18个支持/导航入口。"
+  ],
+  "handoff": "两页正文与本报告完成后停止写入；全局登记与Git提交由父任务处理。",
+  "verification_runs": [
+    {
+      "date": "2026-10-23",
+      "check": "18页本地链接、标题、控制字符、地图集合",
+      "result": "PASS; 338 wiki + 18 Markdown; 151 headings; 184/184 map"
+    },
+    {
+      "date": "2026-10-23",
+      "check": "报告逐页原字节/归一化哈希及九维数量",
+      "result": "PASS; 18+18 hashes; 162 dimensions"
+    },
+    {
+      "date": "2026-10-23",
+      "command": "git diff --check -- 两页修改正文及独立报告",
+      "exit_code": 0,
+      "result": "no whitespace errors"
+    }
+  ]
+}

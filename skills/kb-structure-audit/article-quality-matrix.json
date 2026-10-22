@@ -23,7 +23,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "“代码示例”明确主问题中的错误分支、资源管理与同步需要展开；“复现与检查状态”把入口、数据、预期、失败判据及证据层级接成维护流程。"
+        "basis": "“代码示例”要求主问题中的错误处理、资源管理、同步展开；完整样例、机制片段和伪代码的上下文规则均保留。"
       },
       "Implementation": {
         "status": "通过",
@@ -31,11 +31,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "“来源优先级”“引擎实现的证据”与AGENTS及kb-authoring、kb-fact-check要求对照；规范、实验、编译、引擎运行和捕获仍分别登记。"
+        "basis": "“内容与证据类型”修正为已实际核读并定位版本/条件；“引擎实现的证据”“复现与检查状态”继续区分规范、数学、编译、运行、捕获与性能。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；现行规则、术语和入口以定稿陈述，疑问式标题及表头按内容名称修正；已批准标准保留。 定位：定向检索；文章阅读；知识补充；主归属确认；关系与细节；内容与证据类型；来源优先级；代码示例；全库示例覆盖检查；不确定内容；双链使用；文章边界；引擎实现的证据；模块完成检查；作者工作流；技术图与图片资产；复现与检查状态。"
+        "basis": "本次独立全文复读：逐段检查自然中文与现行规则；00领域的作者入口职责明确，资产与矩阵链接实际存在。"
       },
       "Title": {
         "status": "通过",
@@ -43,7 +43,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "00_知识库说明负责阅读与维护规则；技术机制由专题承担。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "00_知识库说明负责阅读与维护规则；技术机制由专题承担。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -88,7 +88,7 @@
       "### 技术图与图片资产",
       "### 复现与检查状态"
     ],
-    "final_sha256": "659f9c5ce2d38b820b8f73d440a69c58ccac63db5c4d9ea405dba84c2a4a4f3b",
+    "final_sha256": "8298d96dbc8061c9e9943c3bde85370f56eedeae9f0b1ad9432ae06bf75dadd0",
     "article_type": "SUPPORT",
     "canonical_concept": "学习与维护方法",
     "final_sources": [
@@ -99,7 +99,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "659f9c5ce2d38b820b8f73d440a69c58ccac63db5c4d9ea405dba84c2a4a4f3b",
+    "reviewed_content_sha256": "8298d96dbc8061c9e9943c3bde85370f56eedeae9f0b1ad9432ae06bf75dadd0",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -120,13 +120,13 @@
       "scope": "全文、入口、术语、规则、章节与导读关系",
       "author_record": "revision-support-overviews.json",
       "author_sha256": "4d5fbe22b4d3542a055656e9f585537f3ad6264be4fb72d3435e592a2e7fae86",
-      "content_sha256": "659f9c5ce2d38b820b8f73d440a69c58ccac63db5c4d9ea405dba84c2a4a4f3b",
+      "content_sha256": "8298d96dbc8061c9e9943c3bde85370f56eedeae9f0b1ad9432ae06bf75dadd0",
       "findings": [
         "9处标题调整为客观内容名称。",
         "补主问题算法与错误处理不能隐藏在抽象函数后的说明；区分机制片段与完整样例。",
         "明确资产登记实际路径，并链接范围与证据报告、逐篇质量矩阵；保留现行验收层级。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -137,7 +137,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "170fe8edab86675973c7e138f35e21295096173d95d1d20d9ca0e0692808317a",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "“代码示例”要求主问题中的错误处理、资源管理、同步展开；完整样例、机制片段和伪代码的上下文规则均保留。",
+        "“内容与证据类型”修正为已实际核读并定位版本/条件；“引擎实现的证据”“复现与检查状态”继续区分规范、数学、编译、运行、捕获与性能。",
+        "逐段检查自然中文与现行规则；00领域的作者入口职责明确，资产与矩阵链接实际存在。"
+      ]
     },
     "prior_revision_reviews": [
       {
@@ -174,7 +182,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "“项目文章正例”沿硬边裂缝、独立方向与固定像素宽度推进；“写作复读”明确机制解释与命令、定义的不同职责。完整保留已认可的文风标准。"
+        "basis": "“因果推进”“自然过渡”解释对象、动作与剩余问题；正例用于学推理，没有固定套用描边章节。"
       },
       "Implementation": {
         "status": "通过",
@@ -182,11 +190,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "“来源正例”区分用户指定引文的写作用途与技术核验；描边正例与本库标杆对应，未将引用文章当成引擎运行证据。"
+        "basis": "两段项目正例与描边当前第44、95行逐字一致；遮罩相减方向、剔除与深度限制正确。知乎三段引文继承用户指定正例，403取回失败不记本轮外部核读。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；现行规则、术语和入口以定稿陈述，疑问式标题及表头按内容名称修正；已批准标准保留。 定位：用因果推进解释；句子与段落；自然过渡；写成定稿；来源正例；项目文章正例；正文写法示例；写作复读；相关主题。"
+        "basis": "本次独立全文复读：全部句段及复读判据已读；词频/句长只提供候选，KEEP文章仍需复读；外部风格示例与技术证据职责分开。"
       },
       "Title": {
         "status": "通过",
@@ -194,7 +202,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "00_知识库说明负责文风；实施规范负责范围、标题和九维验收，职责分离。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "00_知识库说明负责文风；实施规范负责范围、标题和九维验收，职责分离。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -268,7 +276,7 @@
         "全文核读并保留现行写作标准与全部正例。",
         "表头“为什么有效”改为客观的“表达作用”。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -279,7 +287,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "6afdf0a6bf0c1715c2bca1935b7a728fcc010e96f52d814c8ef6c2bc6873385c",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "“因果推进”“自然过渡”解释对象、动作与剩余问题；正例用于学推理，没有固定套用描边章节。",
+        "两段项目正例与描边当前第44、95行逐字一致；遮罩相减方向、剔除与深度限制正确。知乎三段引文继承用户指定正例，403取回失败不记本轮外部核读。",
+        "全部句段及复读判据已读；词频/句长只提供候选，KEEP文章仍需复读；外部风格示例与技术证据职责分开。"
+      ]
     },
     "prior_revision_reviews": [
       {
@@ -316,7 +332,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "修正Phong细分为切平面投影与重心混合；区分设备深度的投影前提、邻域钳制与方差裁剪、Draw Call与队列提交；限定拓扑、别名、ECS、时域上采样等适用范围。"
+        "basis": "160项逐项全文复读；设备深度的投影前提、Phong切平面投影、ECS多个存储块、内存别名完成条件等均明确。"
       },
       "Implementation": {
         "status": "不适用",
@@ -324,11 +340,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Phong、包裹法线、ECS、行为树与网络术语对照已独立复核专题；本轮额外核读D3D拓扑官方说明与Salvi第18—24页。外部取回失败项单列，不记为本轮核读。"
+        "basis": "对照主篇深度映射、历史矫正、PCF/PCSS、Phong细分、代理法线、原型、中止语义及历史命中；作者D3D/Salvi外部核读明确继承。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；现行规则、术语和入口以定稿陈述，疑问式标题及表头按内容名称修正；已批准标准保留。 定位：术语定义表。"
+        "basis": "本次独立全文复读：术语仅负责短定义和检索；PCF、PCSS、设备深度、时域上采样与Render Graph主叫法一致，完整算法留在主篇。"
       },
       "Title": {
         "status": "通过",
@@ -336,7 +352,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "00索引只保存术语摘要；通过02、05、08、10、13、14、20、21、23的主归属承接机制。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "00索引只保存术语摘要；通过02、05、08、10、13、14、20、21、23的主归属承接机制。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -402,7 +418,7 @@
         "主叫法采用设备深度、时域上采样、PCF、PCSS；Render Graph保持约定。",
         "添加容易误解条目的机制主归属链接，性能结论限定条件。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -413,7 +429,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "7d3ed5e88b4c1d935721a92348e1f1f11a2a4f213aa5d92bdd4d70ff73ec6eca",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "160项逐项全文复读；设备深度的投影前提、Phong切平面投影、ECS多个存储块、内存别名完成条件等均明确。",
+        "对照主篇深度映射、历史矫正、PCF/PCSS、Phong细分、代理法线、原型、中止语义及历史命中；作者D3D/Salvi外部核读明确继承。",
+        "术语仅负责短定义和检索；PCF、PCSS、设备深度、时域上采样与Render Graph主叫法一致，完整算法留在主篇。"
+      ]
     },
     "prior_revision_reviews": [
       {
@@ -448,7 +472,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "阅读路线按任务依赖串联专题；领域列表不重复技术实现。全量集合核对得到184个唯一页面，与当前文件集合一致。"
+        "basis": "全文检查六条工程路线、27个领域使命和全部页面列表；路线连接生产、消费和验证。"
       },
       "Implementation": {
         "status": "不适用",
@@ -456,11 +480,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "实际文件清单与双链集合逐项比较，缺页0、多余0；14领域两项及02三项更名已同步。"
+        "basis": "领域入口184个唯一链接与实际184个文件集合相等，无缺页、多余或重复；167专题+12导读+5说明。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；现行规则、术语和入口以定稿陈述，疑问式标题及表头按内容名称修正；已批准标准保留。 定位：工程路线；建立可扩展渲染器；诊断渲染画面；制作可复用角色；建立资产生产流程；实现联机响应；选择数据与算法；领域入口；00_知识库说明；01_数学与采样；02_GPU与光栅化管线；03_Shader编程；04_光照模型与PBR；05_光照阴影与GI；06_纹理技术；07_颜色与后处理；08_几何与网格；09_动画系统；10_VFX与模拟；11_NPR与风格化渲染；12_光线追踪；13_渲染架构；14_性能分析与优化；15_资产与工具管线；16_编程与数据结构；17_AIGC与Agent管线；18_游戏物理与模拟；19_Gameplay与游戏框架；20_游戏AI；21_游戏网络；22_渲染引擎实现；23_引擎运行系统；24_游戏音频；25_UI与文本；26_GPU驱动与虚拟几何。"
+        "basis": "本次独立全文复读：02三项及14领域更名同步；领域主问题清楚，没有把通用机制和引擎接口混成同一主归属。"
       },
       "Title": {
         "status": "通过",
@@ -468,7 +492,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "总入口覆盖00—26所有领域；路线表示关系，目录保持唯一主归属。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "总入口覆盖00—26所有领域；路线表示关系，目录保持唯一主归属。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -569,7 +593,7 @@
         "同步帧瓶颈诊断和PSO首次使用卡顿入口。",
         "核对全部184页覆盖与现行领域归属。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -580,7 +604,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "aa2b227812ad201114e18f7a110694527819a5bad36894726b4d7516da1f4ab4",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "全文检查六条工程路线、27个领域使命和全部页面列表；路线连接生产、消费和验证。",
+        "领域入口184个唯一链接与实际184个文件集合相等，无缺页、多余或重复；167专题+12导读+5说明。",
+        "02三项及14领域更名同步；领域主问题清楚，没有把通用机制和引擎接口混成同一主归属。"
+      ]
     },
     "prior_revision_reviews": [
       {
@@ -617,7 +649,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐条核对边界与正文动作独立记录、标题覆盖、分类依赖、九维证据与实际运行状态，保留已批准标准和阶段完成条件。"
+        "basis": "全文检查九维、标题候选、KEEP复读、语义归属及阶段完成要求；与提交前三规范diff核对，验收标准没有降低。"
       },
       "Implementation": {
         "status": "通过",
@@ -625,11 +657,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "AGENTS与四个项目技能的职责保持一致；“阶段与标杆”保留Render Graph 15项CPU检查及目标引擎另验范围。"
+        "basis": "“阶段与标杆”15项CPU检查对应最终测试记录中的真实命令、returncode0和checks15；本轮只审阅记录，目标引擎/跨队列/GPU性能仍另验。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；现行规则、术语和入口以定稿陈述，疑问式标题及表头按内容名称修正；已批准标准保留。 定位：文章决策；标题与命名规范；按文章职责选择标题；使用读者习惯的术语；候选与最终选择；文件与引用同步；一级目录分类规范；根据语义判断归属；数量只触发复查；通用概念与引擎实现；审查、方案与采用；质量矩阵；代码、图像与事实；阶段与标杆；相关主题。"
+        "basis": "本次独立全文复读：规则、命名、分类与技术证据各自记录；当前矩阵和历史迁移报告区分，标题均为内容或操作名称。"
       },
       "Title": {
         "status": "通过",
@@ -637,7 +669,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "00说明集中维护规则，提示词和机器登记位于skills，技术文章保持各自领域主归属。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "00说明集中维护规则，提示词和机器登记位于skills，技术文章保持各自领域主归属。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -718,7 +750,7 @@
         "澄清视觉维度的无图适用性依据表述。",
         "分别链接迁移记录、当前范围与证据报告、逐篇质量矩阵，避免把迁移完成等同于正文验收。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -729,7 +761,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "810759b652d7f7382875212ed5b19c34a0fabc9262dd14ae803d9b365a4dcb79",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "全文检查九维、标题候选、KEEP复读、语义归属及阶段完成要求；与提交前三规范diff核对，验收标准没有降低。",
+        "“阶段与标杆”15项CPU检查对应最终测试记录中的真实命令、returncode0和checks15；本轮只审阅记录，目标引擎/跨队列/GPU性能仍另验。",
+        "规则、命名、分类与技术证据各自记录；当前矩阵和历史迁移报告区分，标题均为内容或操作名称。"
+      ]
     },
     "prior_revision_reviews": [
       {
@@ -2295,7 +2335,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "“阅读路线”说明跨帧重叠和记录结束不等于GPU完成；Present附近等待按实际时间线进入诊断。"
+        "basis": "首段及阅读路线区分CPU记录、GPU执行、显示呈现及跨帧重叠；Present等待保留多个可能来源。"
       },
       "Implementation": {
         "status": "不适用",
@@ -2303,11 +2343,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "对应Command Buffer、光栅化、Render Pass、显示呈现和帧瓶颈专题；导读只描述阶段关系，运行证据由专篇记录。"
+        "basis": "核对Command Buffer与帧提交“命令记录与完成”、显示呈现“CPU-GPU并行和帧延迟”；没有单凭Present归因或运行结果声明。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；表格描述需求与入口，段落按输入、职责和后续阅读推进；编辑过程表述移至本报告。 定位：专题入口；阅读路线；相关主题；参考资料。"
+        "basis": "本次独立全文复读：入口负责关系，13维护附件/命令，14维护诊断；四项专题表与标题范围匹配。"
       },
       "Title": {
         "status": "通过",
@@ -2315,7 +2355,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "02负责GPU与呈现基础；命令、附件主实现明确链接13。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "02负责GPU与呈现基础；命令、附件主实现明确链接13。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -2387,7 +2427,7 @@
         "沿记录、覆盖、附件与呈现明确阅读顺序和完成边界。",
         "相关主题改为坐标、GPU执行和诊断工具，去掉与入口表重复的列表。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -2398,7 +2438,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "5bd88d61ad648b8048f1461b980d29a15317460f5d7ad0dba359e4870ce24950",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "首段及阅读路线区分CPU记录、GPU执行、显示呈现及跨帧重叠；Present等待保留多个可能来源。",
+        "核对Command Buffer与帧提交“命令记录与完成”、显示呈现“CPU-GPU并行和帧延迟”；没有单凭Present归因或运行结果声明。",
+        "入口负责关系，13维护附件/命令，14维护诊断；四项专题表与标题范围匹配。"
+      ]
     },
     "prior_revision_reviews": [
       {
@@ -2588,7 +2636,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "“阅读路线”先确定样本覆盖和深度约定，再讨论遮挡优化；模板用于对象和区域选择并与深度测试关联。"
+        "basis": "“阅读路线”修正预通道生成深度、Early-Z/Hi-Z使用深度的关系；先前普通绘制也能供给深度。"
       },
       "Implementation": {
         "status": "不适用",
@@ -2596,11 +2644,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "入口分别指向光栅化、设备深度、可见性优化、模板专题；避免把深度比较一概写成最近层选择。"
+        "basis": "具体核对基于深度的可见性优化“Early-Z”“Depth Prepass”“Hi-Z”；独立预通道不是提前拒绝的必要条件。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；表格描述需求与入口，段落按输入、职责和后续阅读推进；编辑过程表述移至本报告。 定位：专题入口；阅读路线；相关主题；参考资料。"
+        "basis": "本次独立全文复读：覆盖→深度约定→生成/消费→模板选择的因果完整；本页只保留关系路线，没有复制实现。"
       },
       "Title": {
         "status": "通过",
@@ -2608,7 +2656,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "02的样本级可见性关系导读；对象剔除与颜色合成另有入口。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "02的样本级可见性关系导读；对象剔除与颜色合成另有入口。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -2638,7 +2686,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "f73f956b2b0803f29101d18d6c60add912b424bbdddebb9ade722c0622ad20a9",
+    "final_sha256": "e4711efe5fbded08da7f2bae1aa7dd73db879b366cd356a0e68337b806a07ca9",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "OVERVIEW",
     "canonical_concept": "光栅化可见性",
@@ -2650,7 +2698,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "f73f956b2b0803f29101d18d6c60add912b424bbdddebb9ade722c0622ad20a9",
+    "reviewed_content_sha256": "e4711efe5fbded08da7f2bae1aa7dd73db879b366cd356a0e68337b806a07ca9",
     "source_article_path": "知识库/02_GPU与光栅化管线/光栅化、插值与深度模板.md",
     "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
     "historical_quality_matrix": {
@@ -2673,13 +2721,13 @@
       "scope": "全文、入口、术语、规则、章节与导读关系",
       "author_record": "revision-support-overviews.json",
       "author_sha256": "b0ced6f184cfd81e7ffe27edb466c087696d904fb656f4690eafcfe42ae99803",
-      "content_sha256": "f73f956b2b0803f29101d18d6c60add912b424bbdddebb9ade722c0622ad20a9",
+      "content_sha256": "e4711efe5fbded08da7f2bae1aa7dd73db879b366cd356a0e68337b806a07ca9",
       "findings": [
         "物理更名光栅化可见性导读→光栅化可见性并同步H1。",
         "补覆盖、深度约定、遮挡优化与模板的阅读顺序。",
         "相关主题连接空间变换、阶段接口和可见性与合成。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -2690,7 +2738,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "30c7efc797be9135dd64d4ecb2023eb4ad9cf3000b5f14bb3f0affbefa725db9",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "“阅读路线”修正预通道生成深度、Early-Z/Hi-Z使用深度的关系；先前普通绘制也能供给深度。",
+        "具体核对基于深度的可见性优化“Early-Z”“Depth Prepass”“Hi-Z”；独立预通道不是提前拒绝的必要条件。",
+        "覆盖→深度约定→生成/消费→模板选择的因果完整；本页只保留关系路线，没有复制实现。"
+      ]
     },
     "prior_revision_reviews": [
       {
@@ -2727,7 +2783,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "“阅读路线”区分相机与阴影视图的剔除，先明确Alpha表示再选透明排序或OIT；不透明最近层陈述限定为常规每样本绘制。"
+        "basis": "常规不透明最近样本与透明多层颜色分开；相机和阴影视图分别判断候选。"
       },
       "Implementation": {
         "status": "不适用",
@@ -2735,11 +2791,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "对应可见性剔除、透明合成、Alpha表示和GPU-Driven Rendering；本页不引入独立剔除或合成算法。"
+        "basis": "对照剔除、透明合成主篇首段和章节；透明的遮挡/深度写入按合成模型确定，未泛化为所有透明都遮挡或都不写深度。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；表格描述需求与入口，段落按输入、职责和后续阅读推进；编辑过程表述移至本报告。 定位：专题入口；阅读路线；相关主题；参考资料。"
+        "basis": "本次独立全文复读：两个主要入口与Alpha、GPU参数前后置分工明确；自然中文直接陈述条件和作用。"
       },
       "Title": {
         "status": "通过",
@@ -2747,7 +2803,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "02中连接剔除与合成两个主问题，细节仍由对应专篇独立维护。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "02中连接剔除与合成两个主问题，细节仍由对应专篇独立维护。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -2818,7 +2874,7 @@
         "限定最近表面结论，补多视图候选与透明深度策略路线。",
         "添加Alpha表示和GPU驱动入口。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -2829,7 +2885,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "97876cdca7bdd701c2727cb1c6c4c465eaa4a4bc7a2ad0e1c75931a8e192ad1d",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "常规不透明最近样本与透明多层颜色分开；相机和阴影视图分别判断候选。",
+        "对照剔除、透明合成主篇首段和章节；透明的遮挡/深度写入按合成模型确定，未泛化为所有透明都遮挡或都不写深度。",
+        "两个主要入口与Alpha、GPU参数前后置分工明确；自然中文直接陈述条件和作用。"
+      ]
     },
     "prior_revision_reviews": [
       {
@@ -5302,7 +5366,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "“阅读路线”区分表面预计算、空间低频插值和间接镜面；动态更新按场景变化进入专篇，比较时固定曝光并分离漫反射与镜面。"
+        "basis": "按场景变化、表示位置和更新频率选择；表面Lightmap与空间Probe可组合，漫反射/镜面分别观察。"
       },
       "Implementation": {
         "status": "不适用",
@@ -5310,11 +5374,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Lightmap、Light Probe、Reflection Probe和动态GI的职责对照专题；未给无条件性能排序或单一推荐方案。"
+        "basis": "核对四篇主篇首段/标题树：表面烘焙、低频SH、反射捕获、可更新场景表示与导读一致；固定曝光条件保留。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；表格描述需求与入口，段落按输入、职责和后续阅读推进；编辑过程表述移至本报告。 定位：专题入口；阅读路线；相关主题；参考资料。"
+        "basis": "本次独立全文复读：没有无条件性能排序；05方案、04IBL、01SH、07曝光各有主归属。"
       },
       "Title": {
         "status": "通过",
@@ -5322,7 +5386,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "05光照领域的方案关系导读；IBL积分和球谐表示链接各自主归属。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "05光照领域的方案关系导读；IBL积分和球谐表示链接各自主归属。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -5393,7 +5457,7 @@
         "把固定技术序列改为按数据与更新需求选择的路线。",
         "相关主题补充材质响应、环境积分、曝光及SH。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -5404,7 +5468,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "3dcbae9f5a9b4c48b99d25b9d445addfc65be69073d8b602facd4619f4aa4bef",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "按场景变化、表示位置和更新频率选择；表面Lightmap与空间Probe可组合，漫反射/镜面分别观察。",
+        "核对四篇主篇首段/标题树：表面烘焙、低频SH、反射捕获、可更新场景表示与导读一致；固定曝光条件保留。",
+        "没有无条件性能排序；05方案、04IBL、01SH、07曝光各有主归属。"
+      ]
     },
     "prior_revision_reviews": [
       {
@@ -7721,7 +7793,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "“资源与顺序”说明Bloom的HDR信号、AO对应光照项、景深和模糊输入；Tone Mapping两侧需要各自颜色约定，实际顺序由路径与资源确定。"
+        "basis": "数据的曝光、颜色空间、分辨率和时域状态先于效果位置；不规定所有引擎的统一顺序。"
       },
       "Implementation": {
         "status": "不适用",
@@ -7729,11 +7801,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "对应四个后处理专篇及颜色/HDR/时域主题；删除可被读成固定全引擎链的最后Tone Mapping表述，捕获只是验证入口。"
+        "basis": "Bloom在HDR提取、AO关联相应光照、景深/运动模糊依赖深度速度，与已独立复核07技术页一致；捕获作为验证方法。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；表格描述需求与入口，段落按输入、职责和后续阅读推进；编辑过程表述移至本报告。 定位：专题入口；资源与顺序；相关主题；参考资料。"
+        "basis": "本次独立全文复读：资源生产者和效果消费者连接清楚；02时域、13图调度与07效果分工合理。"
       },
       "Title": {
         "status": "通过",
@@ -7741,7 +7813,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "07仅组织后处理关系，具体实现与时域算法分别链接独立专题。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "07仅组织后处理关系，具体实现与时域算法分别链接独立专题。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -7812,7 +7884,7 @@
         "明确分辨率、曝光和时域重建共同影响顺序。",
         "相关主题连接前置约定与Render Graph依赖。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -7823,7 +7895,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "4a9fc81a3ca124c1128e139d81dbbbd443db3e42e66ec319896a7db6d0f09aa2",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "数据的曝光、颜色空间、分辨率和时域状态先于效果位置；不规定所有引擎的统一顺序。",
+        "Bloom在HDR提取、AO关联相应光照、景深/运动模糊依赖深度速度，与已独立复核07技术页一致；捕获作为验证方法。",
+        "资源生产者和效果消费者连接清楚；02时域、13图调度与07效果分工合理。"
+      ]
     },
     "prior_revision_reviews": [
       {
@@ -10034,7 +10114,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "“阅读路线”连接骨架层级、混合、IK、重定向和压缩；面部、布料、毛发按姿态读写和空间安排，不把角色系统固定成单一顺序。"
+        "basis": "八项入口覆盖蒙皮、混合、IK、重定向、压缩、面部、布料和毛发；依赖姿态和输出空间决定组合。"
       },
       "Implementation": {
         "status": "不适用",
@@ -10042,11 +10122,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "核对09各专篇实际输入输出，加入缺失的IK和动画重定向；压缩质量以最终变形误差为入口。"
+        "basis": "逐项核对09主篇首段/标题树；IK末端约束、重定向基底、最终变形误差、模拟代理和引导线职责匹配。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；表格描述需求与入口，段落按输入、职责和后续阅读推进；编辑过程表述移至本报告。 定位：专题入口；阅读路线；相关主题；参考资料。"
+        "basis": "本次独立全文复读：只给阅读路线与接入条件，不复制求解；01数学、19动作请求、18XPBD提供前置。"
       },
       "Title": {
         "status": "通过",
@@ -10054,7 +10134,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "09组织动画职责，Gameplay请求与物理约束均链接主归属。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "09组织动画职责，Gameplay请求与物理约束均链接主归属。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -10125,7 +10205,7 @@
         "按数据依赖表述面部与二级运动，明确压缩也影响求值成本。",
         "相关主题连接空间、旋转、输入动作与XPBD。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -10136,7 +10216,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "e4d88658069a3fac67b019ab72377bfeaebf220374bbfe8a37ab5db1809b601c",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "八项入口覆盖蒙皮、混合、IK、重定向、压缩、面部、布料和毛发；依赖姿态和输出空间决定组合。",
+        "逐项核对09主篇首段/标题树；IK末端约束、重定向基底、最终变形误差、模拟代理和引导线职责匹配。",
+        "只给阅读路线与接入条件，不复制求解；01数学、19动作请求、18XPBD提供前置。"
+      ]
     },
     "prior_revision_reviews": [
       {
@@ -10959,7 +11047,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "“阅读路线”区分帧选择/UV、覆盖、背景采样、深度差与粒子状态；组合时检查时间空间和资源时机，再测实际负载。"
+        "basis": "纹理动画包含帧选择和UV；溶解改变覆盖，扰动读背景，软粒子比较深度，GPU粒子管理状态。"
       },
       "Implementation": {
         "status": "不适用",
@@ -10967,11 +11055,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "对应纹理动画、溶解、扰动、软粒子、GPU粒子及性能专题；纠正纹理动画仅改变UV的过窄概括。"
+        "basis": "核对对应主篇首段/章节；背景快照时机和深度空间一致性保留；性能按实际同屏负载而非单看粒子数。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；表格描述需求与入口，段落按输入、职责和后续阅读推进；编辑过程表述移至本报告。 定位：专题入口；阅读路线；相关主题；参考资料。"
+        "basis": "本次独立全文复读：输入→组合→验证关系顺畅；06采样、07Alpha、02透明/深度、14性能主归属明确。"
       },
       "Title": {
         "status": "通过",
@@ -10979,7 +11067,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "10组织效果组合；共用采样、合成和性能主问题分别进入06、02、14。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "10组织效果组合；共用采样、合成和性能主问题分别进入06、02、14。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -11050,7 +11138,7 @@
         "明确每类模块消费与输出的信号。",
         "以资源时机和输入检查组织组合验证，相关主题补必要前置。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -11061,7 +11149,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "333e4e16919f57a46ad34f0a7f557f97f7718c3ed60ea37dcea5778bdd1f52c3",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "纹理动画包含帧选择和UV；溶解改变覆盖，扰动读背景，软粒子比较深度，GPU粒子管理状态。",
+        "核对对应主篇首段/章节；背景快照时机和深度空间一致性保留；性能按实际同屏负载而非单看粒子数。",
+        "输入→组合→验证关系顺畅；06采样、07Alpha、02透明/深度、14性能主归属明确。"
+      ]
     },
     "prior_revision_reviews": [
       {
@@ -12289,7 +12385,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "“场景尺度与效果关系”把线宽、频率和阴影对比关联观察距离与专篇；角色场景按目标协调，避免把统一线宽当普遍约束。"
+        "basis": "画面形状尺度、纹理频率、线宽与观察距离相联系；效果输入和遮罩需分别显示。"
       },
       "Implementation": {
         "status": "不适用",
@@ -12297,11 +12393,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "本轮核读Gooch1998作者摘要，来源只作为技术插图光照模型入口；其他实现和性能记录由机制专篇承接。"
+        "basis": "实际核读Gooch1998作者页题名、作者和摘要，只支持技术插图光照模型入口；其他主篇首段与导航职责一致。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；表格描述需求与入口，段落按输入、职责和后续阅读推进；编辑过程表述移至本报告。 定位：画面目标与机制；场景尺度与效果关系；阅读与验证路线；相关主题；参考资料。"
+        "basis": "本次独立全文复读：11维护材质/描边/角色，08维护Billboard，09维护风动；艺术目标与技术验证边界明确。"
       },
       "Title": {
         "status": "通过",
@@ -12309,7 +12405,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "11作为风格化导读，Billboard与植被风动分别保持08和09主归属。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "11作为风格化导读，Billboard与植被风动分别保持08和09主归属。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -12380,7 +12476,7 @@
         "改写场景尺度段为关系与检查路线，限制单一审美规则。",
         "限定Gooch来源的光照模型范围。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -12391,7 +12487,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "897fa8b5639d0847629f0a046e14cdf84c81517a06cd542a9fd1d61251fa60d8",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "画面形状尺度、纹理频率、线宽与观察距离相联系；效果输入和遮罩需分别显示。",
+        "实际核读Gooch1998作者页题名、作者和摘要，只支持技术插图光照模型入口；其他主篇首段与导航职责一致。",
+        "11维护材质/描边/角色，08维护Billboard，09维护风动；艺术目标与技术验证边界明确。"
+      ]
     },
     "prior_revision_reviews": [
       {
@@ -15800,7 +15904,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "首段限定采用Render Graph的架构；“阅读路线”区分CPU记录和GPU完成、逻辑依赖与物理回收。"
+        "basis": "Render Graph编译计划、Render Pass附件范围、Command Buffer记录各自分层；采用图是有条件的。"
       },
       "Implementation": {
         "status": "不适用",
@@ -15808,11 +15912,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "对应13各实现专题；不把Render Graph视为所有引擎的必经阶段，也不把记录结束当完成证据。"
+        "basis": "核对五篇主篇首段及相关章节；CPU记录结束不能推出GPU完成，资源回收依赖完成状态。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；表格描述需求与入口，段落按输入、职责和后续阅读推进；编辑过程表述移至本报告。 定位：专题入口；阅读路线；相关主题；参考资料。"
+        "basis": "本次独立全文复读：从单次绘制和跨效果调度给两条路线，没有重复同步与寿命算法。"
       },
       "Title": {
         "status": "通过",
@@ -15820,7 +15924,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "13组织执行架构职责；硬件执行与性能入口跨域链接。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "13组织执行架构职责；硬件执行与性能入口跨域链接。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -15893,7 +15997,7 @@
         "补从命令提交到跨效果调度的阅读路线。",
         "相关主题链接GPU执行、资源绑定与PSO首次使用诊断。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -15904,7 +16008,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "9c1a7cc7a9ca0e410ffb3ee9d4b6d5df0088c5776ff9db53e62dcd328177fb3f",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "Render Graph编译计划、Render Pass附件范围、Command Buffer记录各自分层；采用图是有条件的。",
+        "核对五篇主篇首段及相关章节；CPU记录结束不能推出GPU完成，资源回收依赖完成状态。",
+        "从单次绘制和跨效果调度给两条路线，没有重复同步与寿命算法。"
+      ]
     },
     "prior_revision_reviews": [
       {
@@ -15968,7 +16080,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "“阅读路线”明确Tiled/Clustered可服务不同着色路径；固定场景条件后分别比较列表、几何、光照和内存成本。"
+        "basis": "Forward/Deferred决定求值时机，Tiled/Clustered决定局部灯列表；灯列表可服务不同路径。"
       },
       "Implementation": {
         "status": "不适用",
@@ -15976,11 +16088,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "对照Forward、Deferred和光源剔除专篇，未把灯列表技术等同某一种着色路径。"
+        "basis": "对照三篇主文首段/标题树，固定场景、分辨率、灯分布后分别测列表、几何、照明和内存成本。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；表格描述需求与入口，段落按输入、职责和后续阅读推进；编辑过程表述移至本报告。 定位：专题入口；阅读路线；相关主题；参考资料。"
+        "basis": "本次独立全文复读：先分决策再比成本，保留透明与GBuffer等相关入口；没有由灯数直接推导性能。"
       },
       "Title": {
         "status": "通过",
@@ -15988,7 +16100,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "13保持路径与光源组织关系，材质响应链接04，测量方法链接14。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "13保持路径与光源组织关系，材质响应链接04，测量方法链接14。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -16061,7 +16173,7 @@
         "按各阶段成本说明方案对照。",
         "相关主题改为BRDF、GBuffer布局、帧诊断和实验方法。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -16072,7 +16184,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "cd999e4fde55715ef7a314908f06db72063965e2b3c6942fa66c93f43078c290",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "Forward/Deferred决定求值时机，Tiled/Clustered决定局部灯列表；灯列表可服务不同路径。",
+        "对照三篇主文首段/标题树，固定场景、分辨率、灯分布后分别测列表、几何、照明和内存成本。",
+        "先分决策再比成本，保留透明与GBuffer等相关入口；没有由灯数直接推导性能。"
+      ]
     },
     "prior_revision_reviews": [
       {
@@ -19517,7 +19637,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "“选择示例”保留构建依赖与近邻查询两条真实组合路线；分别检查环、查找、候选覆盖和内存布局。"
+        "basis": "按状态、容器、图和空间查询四条工作负载组织；资产顺序与容器查找、近邻粗筛与全量基线分开。"
       },
       "Implementation": {
         "status": "不适用",
@@ -19525,11 +19645,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "四个主专题已全文复核；本页只提供入口，“实现与证据”要求按实际负载区分复杂度与测量。"
+        "basis": "核对四篇主文首段/标题树，拓扑/环、引用稳定性与候选覆盖有对应机制；复杂度与测量分开。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；表格描述需求与入口，段落按输入、职责和后续阅读推进；编辑过程表述移至本报告。 定位：专题入口；阅读路线；选择示例；实现与证据；相关主题；参考资料。"
+        "basis": "本次独立全文复读：示例说明跨专题协作但没有复制算法，内存/并发与性能链接作为必要延伸。"
       },
       "Title": {
         "status": "通过",
@@ -19537,7 +19657,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "16导读连接独立算法职责，不重复容器、图搜索或空间索引实现。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "16导读连接独立算法职责，不重复容器、图搜索或空间索引实现。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -19610,7 +19730,7 @@
         "删除“逐条核对”等编辑过程表述，以读者选择后的验证操作替代。",
         "相关主题连接内存布局、线程同步与对照实验。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -19621,7 +19741,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "85edff608e76872ff8e1ec87eca12582ddc302fec059cffe49e2b00aaf8bd2df",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "按状态、容器、图和空间查询四条工作负载组织；资产顺序与容器查找、近邻粗筛与全量基线分开。",
+        "核对四篇主文首段/标题树，拓扑/环、引用稳定性与候选覆盖有对应机制；复杂度与测量分开。",
+        "示例说明跨专题协作但没有复制算法，内存/并发与性能链接作为必要延伸。"
+      ]
     },
     "prior_revision_reviews": [
       {
@@ -25013,7 +25141,7 @@
       },
       "Depth": {
         "status": "通过",
-        "basis": "“接入边界”以选中遮罩和合成为例区分材质、筛选与图读写；“版本与验证”单列接口核读、模型、目标运行及捕获。"
+        "basis": "对象遮罩由材质输出、网格筛选和图资源读写共同完成；全屏通道与网格接口边界清楚。"
       },
       "Implementation": {
         "status": "不适用",
@@ -25021,11 +25149,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "22专篇版本接口与独立复核报告对照；未把官方接口核读或模型测试写成完整引擎运行。"
+        "basis": "逐项对照Unity6/URP17与UE5.4主篇版本及UNVERIFIED声明；API核读、模型测试、完整引擎运行和捕获分开。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文逐段复读；表格描述需求与入口，段落按输入、职责和后续阅读推进；编辑过程表述移至本报告。 定位：专题入口；接入边界；版本与验证；相关主题；参考资料。"
+        "basis": "本次独立全文复读：22维护版本接口，13维护图与寿命，03维护数据流；先按资源需求再进入具体引擎。"
       },
       "Title": {
         "status": "通过",
@@ -25033,7 +25161,7 @@
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "22负责版本接口，13负责通用架构，03负责Shader数据流，11承接效果机制。 本批双链与本地Markdown链接存在性检查通过。"
+        "basis": "22负责版本接口，13负责通用架构，03负责Shader数据流，11承接效果机制。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。"
       },
       "Visuals": {
         "status": "不适用",
@@ -25104,7 +25232,7 @@
         "按自定义网格筛选、顶点读取、绘制状态需求进入Mesh Pass，保留通用图概念主归属。",
         "相关主题链接图、寿命、Shader数据流与描边。"
       ],
-      "independent_review": "PENDING",
+      "independent_review": "PASS",
       "runtime": {
         "navigation": "PASS",
         "title_and_heading": "PASS",
@@ -25115,7 +25243,15 @@
         "performance": "NOT_APPLICABLE",
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
-      "acceptance": "首轮复读与静态结构完成；独立复核进行中"
+      "acceptance": "本页职责、文字、定义、导航与证据边界；关联技术专题的UNVERIFIED运行与性能不由本页提升。",
+      "independent_record": "revision-independent-support-overviews.json",
+      "independent_source_sha256": "f8128341fc4831116ac7d811b8cc6c89a226bede0da7f854863d2825c4e2219d",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "对象遮罩由材质输出、网格筛选和图资源读写共同完成；全屏通道与网格接口边界清楚。",
+        "逐项对照Unity6/URP17与UE5.4主篇版本及UNVERIFIED声明；API核读、模型测试、完整引擎运行和捕获分开。",
+        "22维护版本接口，13维护图与寿命，03维护数据流；先按资源需求再进入具体引擎。"
+      ]
     },
     "prior_revision_reviews": [
       {
