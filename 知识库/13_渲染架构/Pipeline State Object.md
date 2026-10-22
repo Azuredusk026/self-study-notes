@@ -1,6 +1,6 @@
 # Pipeline State Object
 
-同一个Shader先画普通颜色，再画不同格式的目标或开启MSAA，可能需要不同的Pipeline State Object。PSO把编译程序与固定状态组合起来，缓存遗漏往往来自把某个状态忘进了键。我们从一次绘制需要的完整组合开始，再看创建、缓存和最后使用完成的边界。
+同一个着色器先画普通颜色，再画不同格式的目标或开启MSAA，可能需要不同的管线状态对象。PSO把编译程序与固定状态组合起来，缓存遗漏往往来自把某个状态忘进了键。我们从一次绘制需要的完整组合开始，再看创建、缓存和最后使用完成的边界。
 
 ## 组合与缓存
 
@@ -8,7 +8,7 @@
 
 图形 PSO 通常涉及着色器阶段、资源布局、顶点输入、光栅化、深度模板、混合、附件格式与样本数。哪些状态固定在对象里、哪些可动态设置由 API 和启用特性决定。
 
-Vulkan pipeline layout 约束 descriptor 和 push constant 接口；D3D12 root signature 表达根参数。不能只用 Shader 名称作为缓存键。动态状态不一定进入相同的键，但设置责任仍在绘制路径。
+Vulkan pipeline layout 约束 descriptor 和 push constant 接口；D3D12 root signature 表达根参数。不能只用着色器名称作为缓存键。动态状态不一定进入相同的键，但设置责任仍在绘制路径。
 
 ### 缓存键
 
@@ -32,6 +32,8 @@ struct GraphicsPipelineKey
 
 缓存里的对象属于创建它的设备，另一设备不能仅凭相同键就复用。磁盘数据的兼容条件按API格式核对，驱动、设备、源码和编译选项都可能使它失效。编码键时逐字段写稳定值，结构padding和未初始化字节没有状态语义，不应参与哈希。
 
+缓存查询还需处理并发创建。两个线程同时查到未命中时，以同一规范化键登记一个进行中的请求，后续请求订阅其结果；创建失败时保存诊断并清理占位。只给最终对象表加锁，仍可能在锁外重复编译同一组合。测试应让多个线程同时请求同一键，检查实际创建次数和失败后的重试行为。
+
 ## 创建与消费
 
 ### 创建与使用
@@ -45,22 +47,22 @@ GPU 最后使用完成 → 可回收对象及相关布局
 
 创建可能涉及驱动编译，CPU 耗时和首次使用时的隐藏工作都需要观察。预热只覆盖列出的完整组合。材质变体、不同 render target 和 MSAA 档位可能生成采集时没有遇到的键。
 
-### 与 Shader 变体的关系
+### 与着色器变体的关系
 
-静态关键字改变编译结果，PSO 将结果与渲染状态组合。动态分支减少部分 Shader 组合，可能增加运行时着色成本。渲染状态通常不能简单转成材质 uniform；它们仍决定固定功能行为。
+静态关键字改变编译结果，PSO 将结果与渲染状态组合。动态分支减少部分着色器组合，可能增加运行时着色成本。渲染状态通常不能简单转成材质 uniform；它们仍决定固定功能行为。
 
 具体缓存收集、构建预编译与卡顿治理见性能专题。机制页负责对象与组合定义，性能页记录采集和测量。
 
 ## 验证方法
 
-- 保持 Shader 不变，只改变附件格式或样本数，确认缓存键与对象正确区分。
+- 保持着色器不变，只改变附件格式或样本数，确认缓存键与对象正确区分。
 - 记录创建线程、键、命中来源和耗时，定位首次进入场景的尖峰。
 - 清空缓存与预热缓存分别运行相同路线，对比首次使用和第二次使用。
 - 改编译版本，确认旧磁盘数据被识别为不兼容。
 
 ## 相关主题
 
-- [[14_性能分析与优化/PSO首次使用为什么卡顿]]
+- [[14_性能分析与优化/PSO首次使用卡顿]]
 - [[03_Shader编程/Shader Variant管理]]
 - [[13_渲染架构/GPU资源绑定]]
 
@@ -68,6 +70,4 @@ GPU 最后使用完成 → 可回收对象及相关布局
 
 ## 参考资料
 
-- [D3D12 Pipeline State](https://learn.microsoft.com/en-us/windows/win32/direct3d12/managing-graphics-pipeline-state-in-direct3d-12)。
-- [Vulkan Pipelines](https://docs.vulkan.org/spec/latest/chapters/pipelines.html)。
-- Epic Games，PSO Precaching 和 Shader Development 官方文档。
+- [Microsoft：Managing Graphics Pipeline State](https://learn.microsoft.com/en-us/windows/win32/direct3d12/managing-graphics-pipeline-state-in-direct3d-12)：PSO 包含状态与动态设置状态；本文缓存键和并发请求合并为引擎侧设计。

@@ -2,7 +2,7 @@
 
 延迟光照要从GBuffer取出表面参数。如果给每个参数单独分配通道，布局很快会变大；若过度压缩，法线、分类或遮罩的误差又会改变光照。我们先看字段由谁消费，再用编码和复用减少成本。
 
-## 先算带宽账
+## 附件带宽预算
 
 一张 1080p 的 RGBA8 纹理约 8 MB。几何阶段写一次、光照阶段读一次，每帧就是 16 MB 的流量；60 帧就是接近 1 GB/s。这是完整读写的逻辑字节量，不包含缓存、附件压缩和片上驻留；实际外部流量由平台测量。减少附件的收益取决于当前瓶颈。
 
@@ -30,7 +30,7 @@ float2 EncodeNormal(float3 normal)
 }
 ```
 
-完整编码/解码见 [Packing.hlsl](../examples/gbuffer/Packing.hlsl)。输入是非零单位法线，解码后归一化；下半球折叠保存符号。省下的一个通道可以安置 Smoothness 或 Metallic。8 位量化下八面体编码的角度误差通常在可接受范围内，但低粗糙度的镜面反射对法线精度敏感，需要实测确认——高光在光滑表面上出现阶梯状色带就是精度不足的典型信号。
+完整编码/解码见 [Packing.hlsl](../examples/gbuffer/Packing.hlsl)。输入是非零单位法线，解码后归一化；下半球折叠保存符号。省下的一个通道可以安置 Smoothness 或金属度。8 位量化下八面体编码的角度误差通常在可接受范围内，但低粗糙度的镜面反射对法线精度敏感，需要实测确认——高光在光滑表面上出现阶梯状色带就是精度不足的典型信号。
 
 存储格式必须是 UNorm 而非 SRGB。法线是数据不是颜色，走 sRGB 传递函数会引入非线性误差。
 
@@ -110,9 +110,9 @@ mainLight.shadowAttenuation = surfaceData.occlusion;
 
 前面所有压缩手段都在减少数据量。移动端还有一条更彻底的路径：减少GBuffer的外部内存往返。
 
-Tile-Based 架构的中间结果驻留在片上 Tile Memory 中，只在 Render Pass 结束时写回主存。如果几何阶段与光照阶段能合并成同一个 Render Pass 的多个 Subpass，GBuffer就有机会留在Tile Memory里，实际驻留由附件大小、设备和驱动决定。
+在附件容量与合并条件满足时，分块式 GPU 可让中间结果驻留在片上 Tile 内存；超出容量或执行范围被拆开时，也可能在中途溢出到外部内存。如果几何阶段与光照阶段能合并成同一个 Render Pass 的多个 Subpass，GBuffer就有机会留在Tile 内存里，实际驻留由附件大小、设备和驱动决定。
 
-Vulkan 的 Subpass 与 Metal 的 Framebuffer Fetch 提供这个能力。Shader 侧的表现是同一个 Attachment 既是输入又是输出：
+Vulkan 的 Subpass 与 Metal 的 Framebuffer Fetch 提供这个能力。着色器侧的表现是同一个附件既是输入又是输出：
 
 ```hlsl
 #if _FRAME_BUFFER_FETCH_ENABLED
@@ -124,18 +124,18 @@ Vulkan 的 Subpass 与 Metal 的 Framebuffer Fetch 提供这个能力。Shader �
 #endif
 ```
 
-局部附件读取可以减少外部读写，但仍有执行与片上访问成本。Shader签名是具体项目的表达示例，不能据此断言所有平台零成本。
+局部附件读取可以减少外部读写，但仍有执行与片上访问成本。着色器签名是具体项目的表达示例，不能据此断言所有平台零成本。
 
 约束也很明确：
 
 - 只能读取**当前像素位置**的数据，无法采样邻域。需要模糊、扩散的效果不能放进 Subpass 链；
 - 两个阶段必须在同一 Render Pass 内，中间不能插入需要完整画面的操作；
-- Tile Memory 容量有限，GBuffer 总字节数必须严格控制——这反过来加强了前面压缩手段的必要性；
-- Shader 需要维护两套签名，增加维护成本。
+- Tile 内存容量有限，GBuffer 总字节数必须严格控制——这反过来加强了前面压缩手段的必要性；
+- 着色器需要维护两套签名，增加维护成本。
 
 ### Load 与 Store 操作
 
-Subpass 的收益不只来自“数据留在片上”，还来自显式声明的 Load/Store 行为。每个 Attachment 在 Render Pass 开始与结束时各有一个操作：
+Subpass 的收益不只来自“数据留在片上”，还来自显式声明的 Load/Store 行为。每个附件在 Render Pass 开始与结束时各有一个操作：
 
 | 操作 | 含义 | 带宽 |
 |---|---|---|
@@ -147,15 +147,15 @@ Subpass 的收益不只来自“数据留在片上”，还来自显式声明的
 
 开始操作取决于是否完整写入或需要初始背景；结束操作取决于后续消费者。若同一渲染范围内光照已消费全部字段，范围外没有SSR、SSAO、贴花、调试或回读消费者，就可以丢弃对应附件。需要后续读取时保留STORE。
 
-这是移动端最容易被忽略、收益却极高的一处。默认配置往往是 `LOAD` + `STORE`，仅仅把 GBuffer 的 Store 改成 `DONT_CARE`，就能省下每帧数张全屏纹理的写带宽。深度附件同理：不需要在后续 Pass 采样时，应当丢弃。
+附件的初末操作应由真实消费者决定。对后续完全不用的 GBuffer 结果使用 `DONT_CARE`，可允许实现省去对应存储；节省量取决于分辨率、格式、压缩及驱动实际路径，需要捕获验证。深度附件同理：确认后续既不采样，也不继续做深度测试、复制或回读时，才允许丢弃。
 
 ### 依赖声明
 
-Subpass 之间的关系必须显式声明：后一个 Subpass 读取哪些 Attachment 作为 Input Attachment，以及两者之间的执行与内存依赖。
+Subpass 之间的关系必须显式声明：后一个 Subpass 读取哪些附件作为输入附件，以及两者之间的执行与内存依赖。
 
 依赖声明不准确有两种后果。声明过松会出现竞态——光照阶段可能读到尚未写完的 GBuffer；声明过严则会引入不必要的同步，抵消合并的收益。
 
-Input Attachment 在着色器中是独立的资源类型，读取时不经过采样器，只能取当前片元位置的值。这是 input attachment 接口的局部读取语义，适合片上保留附件。具体是否驻留 Tile Memory 由实现决定，普通邻域采样需要对应的纹理读取路径。
+输入附件在着色器中是独立的资源类型，读取时不经过采样器，只能取当前片元位置的值。这是 input attachment 接口的局部读取语义，适合片上保留附件。具体是否驻留 Tile 内存由实现决定，普通邻域采样需要对应的纹理读取路径。
 
 ### 移动端的真实收益边界
 
@@ -167,25 +167,21 @@ Subpass 常被当作移动端延迟渲染的万能解，实际收益取决于几
 
 **驱动实现质量参差**。同样的声明在不同厂商、不同驱动版本上未必都能合并。是否真正生效必须用帧捕获或厂商工具确认，不能只看代码写法。
 
-**与 MSAA 的交互复杂**。多采样 Attachment 占用的 Tile Memory 成倍增加，更容易超标；Resolve 时机也会影响能否合并。
+**与 MSAA 的交互复杂**。多采样附件占用的 Tile 内存成倍增加，更容易超标；Resolve 时机也会影响能否合并。
 
 因此“用了 Subpass 所以移动端更快”是一个需要验证的假设，而非结论。收益成立时非常可观，但前置条件不少。
 
-### 从 Subpass 到 Dynamic Rendering
+### 动态渲染与局部读取
 
-Vulkan 的 Render Pass 与 Subpass 对象需要提前声明完整的 Attachment 结构与依赖关系，样板代码多、与引擎的动态管线组织方式不契合，实践中被广泛认为难用。
+Vulkan 1.3 的动态渲染在录制时指定附件，省去预先创建部分 Render Pass 和 Framebuffer 对象。需要在同一渲染范围内读取附件时，另核对动态渲染局部读取能力、扩展或相应核心版本，以及实际的依赖声明。
 
-后续版本引入的 Dynamic Rendering 取消了预先声明的 Render Pass 对象，改为在录制命令时直接指定 Attachment。它大幅简化了 API 使用，但最初并不具备 Subpass 的核心能力——读取同一位置的前序输出。
-
-随后补充的 Local Read 一类扩展把这个能力带回了 Dynamic Rendering 路径，使得既能享受简化的 API，又能保留 Tile 内数据复用。
-
-对使用者的意义是：**“Subpass 被取代”这个说法需要分开看**。被取代的是笨重的 Render Pass 对象声明方式；而“同一 Render Pass 内多阶段共享 Tile Memory”这个底层能力并未消失，只是换了表达形式。判断某个 API 路径是否可用，应当确认目标版本与驱动对相应扩展的支持，而不是看名词的新旧。
+传统 input attachment 和局部读取都表达当前片元附近的受限附件消费，它们不等于普通任意纹理采样。接口是否合法由启用能力决定，能否减少外部流量由设备和驱动决定。捕获中确认附件与依赖，再用平台计数器验证收益。
 
 ## 特殊 Pass：贴花
 
 贴花是 GBuffer 阶段的一个特例。它不应改变深度，因此不输出深度；而它需要与已有 GBuffer 内容混合，而非覆盖。
 
-当 Alpha 通道已被占用（存放 Occlusion 与分类标记）时，硬件混合无法直接使用，需要把 Alpha 挪作混合权重并手动混合：
+当目标 Alpha 保存遮罩与分类时，RGB 仍可使用来源 Alpha 作为硬件混合权重，并通过独立混合或写掩码保留目标 Alpha，具体能力按 API 核对。若项目采用合法的附件读取路径手动合成，可写成：
 
 ```hlsl
 half4 DecalBlendManually(half4 dst, half4 src)
@@ -200,19 +196,19 @@ half4 DecalBlendManually(half4 dst, half4 src)
 
 移动端还有一层收益来自精度限定。`real`等别名由项目宏、包版本和编译目标定义，不是硬件通用类型规则。检查预处理结果后再确认实际使用half还是float。
 
-半精度在支持有效窄精度执行的目标上可能减少寄存器或ALU成本，对颜色、遮罩、法线这类值通常足够。但位置、深度、累加量需要全精度——半精度在大数值范围上的精度损失会直接表现为可见的跳变。
+半精度在支持有效窄精度执行的目标上可能减少寄存器或ALU成本，颜色、遮罩、法线等有界数值可先评估半精度误差；位置、深度和长期累加量对范围及舍入更敏感，应按误差预算选择精度。半精度在大数值范围上的精度损失可能表现为可见跳变。
 
 ## 字段预算与方案选择
 
 | 收益 | 代价 |
 |---|---|
-| 光照与几何解耦，多光源成本可控 | 半透明无法进 GBuffer，需单独前向通道 |
+| 光照与几何解耦，多光源成本可控 | 单层 GBuffer 无法完整表达多层透明，通常另设透明路径 |
 | 压到两张 GBuffer，带宽友好 | 属性精度受限，法线 16 位、AO 仅 5 位 |
-| 分类标记支持多种 BRDF | 光照 Shader 出现分支，需要压平 |
-| Subpass 让 GBuffer 不落显存 | Shader 维护两套签名，且无法采样邻域 |
+| 分类标记支持多种 BRDF | 光照着色器出现分支，需评估相邻像素分类与执行代价 |
+| 满足附件与设备条件时，Subpass 可减少 GBuffer 外存往返 | 着色器维护两套签名，且无法采样邻域 |
 | 通道二次复用省下整张 RT | 通道语义随阶段变化，阅读与调试成本高 |
 
-这些取舍没有普适答案。桌面端带宽充裕，过度压缩只会徒增复杂度与精度损失；移动端则可能必须付出全部这些代价才能达标。
+这些取舍没有普适答案。桌面与移动设备都应按实测瓶颈选择压缩程度。高分辨率、MSAA 和附件数量会改变带宽需求，压缩同时带来解码与精度成本。
 
 ## 验证方法
 
@@ -235,10 +231,7 @@ half4 DecalBlendManually(half4 dst, half4 src)
 
 ## 参考资料
 
-- Zina Cigolle et al., *A Survey of Efficient Representations for Independent Unit Vectors*.
-- Krzysztof Narkowicz, *Octahedron normal vector encoding*.
-- Arm, *Mali GPU Best Practices*, Transaction Elimination and Framebuffer Fetch.
-- Khronos, *Vulkan Specification*, Render Pass and Subpass Input Attachments.
-- Apple, *Metal Programming Guide*, Programmable Blending.
+- [Khronos Vulkan Samples：Subpasses](https://docs.vulkan.org/samples/latest/samples/performance/subpasses/README.html)：Tile 存储预算、子通道合并条件与计数器验证；是否驻留需按设备检查。
 
-核验范围：CPU打包参考检查和API中立HLSL编译已执行，完整GBuffer管线与目标GPU流量未运行验证。
+- [Khronos：Subpasses](https://docs.vulkan.org/samples/latest/samples/performance/subpasses/README.html)：GBuffer 示例、附件合并及平台相关带宽条件。
+- [Khronos：Render Pass](https://docs.vulkan.org/spec/latest/chapters/renderpass.html)：附件加载/存储与动态渲染；具体支持由设备扩展和特性确定。

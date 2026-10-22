@@ -1,20 +1,20 @@
 # DCC资产交换
 
-资产交换的目标是让几何、材质、骨骼、动画、单位和依赖在不同软件之间保持可解释，“文件能打开”只是最低要求。每经过一次 Export/Import，都会发生数据模型映射，也就多一次丢失语义的机会。
+资产交换的目标是让几何、材质、骨骼、动画、单位和依赖在不同软件之间保持可解释，“文件能打开”只是最低要求。每经过一次 Export/导入，都会发生数据模型映射，也就多一次丢失语义的机会。
 
 ## 制作源、交换格式与运行时格式
 
 三类数据职责不同：
 
-- **Authoring Source**：`.ma/.mb`、`.blend`、`.hip`、`.spp` 等，保留历史、节点、图层和制作信息；
+- **Authoring 源数据**：`.ma/.mb`、`.blend`、`.hip`、`.spp` 等，保留历史、节点、图层和制作信息；
 - **Interchange Format**：FBX、USD、glTF 等，在工具间传递约定范围的数据；
-- **Runtime Asset**：引擎 Cook 后的 Mesh、Texture、Animation、Material 和 Bundle，针对加载、内存和平台优化。
+- **运行时资产**：引擎 Cook 后的网格、纹理、Animation、材质和资源包，针对加载、内存和平台优化。
 
 FBX 适合作为交换边界，不适合直接作为游戏运行时格式。运行时通常需要预转换布局、压缩、分包、依赖和平台数据。
 
 制作源应保留以便返修，但构建机器不一定每次重新执行整个 DCC 历史。是否提交导出中间产物取决于团队能否稳定、快速、合法地在 CI 重建。
 
-## 交换前先固定数据契约
+## 交换数据契约
 
 ### DCC 的职责
 
@@ -24,130 +24,130 @@ FBX 适合作为交换边界，不适合直接作为游戏运行时格式。运�
 
 - 哪些对象进入导出集；
 - 名称、类型和稳定 ID；
-- 单位、轴向、Pivot 和 Transform；
-- Normal、Tangent、UV、Vertex Color；
-- Skeleton、Bind Pose、Animation Range；
+- 单位、轴向、枢轴和变换；
+- 法线、切线、UV、顶点色；
+- 骨架、绑定姿态、Animation Range；
 - 材质槽、贴图语义与颜色空间；
-- LOD、Collision、Socket 和 Metadata。
+- LOD、碰撞、Socket 和元数据。
 
 ### 坐标系
 
 交换前要明确：
 
 - Left-handed / Right-handed；
-- Up Axis 是 Y 还是 Z；
-- Forward Axis 的正负方向；
+- 向上轴是 Y 还是 Z；
+- 前向轴的正负方向；
 - 一单位表示米、厘米还是其他；
-- Matrix 使用行/列向量约定；
-- UV 原点和 Texture V 方向；
-- Triangle Winding 与 Front Face。
+- 矩阵使用行/列向量约定；
+- UV 原点和纹理 V 方向；
+- 三角形绕序与正面。
 
-轴转换不是只交换 Position 分量。Normal、Tangent、Animation、Camera、Light、Constraint 和 Negative Scale 都要按同一变换处理。
+轴转换不是只交换位置分量。法线、切线、Animation、相机、光源、约束和 Negative 缩放都要按同一变换处理。
 
-若坐标转换改变 Handedness，三角形 Winding 或 Tangent Sign 需要同步翻转。否则会出现背面剔除、Normal Map 方向和动画镜像错误。
+若坐标转换改变手性，三角形绕序与切线手性需要分别按目标约定转换。否则会出现背面剔除、法线贴图方向和动画镜像错误。
 
-### Transform 与 Pivot
+### 变换与枢轴
 
-Freeze/Apply Transform 会把 Object Transform 烘进几何，但也可能改变子层级、Rig 和动画语义。工具需要区分静态 Mesh、Skinned Mesh、Socket 和 Group Node，不能对全部对象执行同一清理命令。
+Freeze/Apply 变换会把对象变换烘进几何，但也可能改变子层级、Rig 和动画语义。工具需要区分静态网格、蒙皮网格、Socket 和组节点，不能对全部对象执行同一清理命令。
 
-Pivot 决定摆放、旋转、物理和工具交互。常见约定：
+枢轴决定摆放、旋转、物理和工具交互。常见约定：
 
 - 建筑模块使用网格角点或对齐基准；
 - 道具使用重心或接地点；
 - 角色 Root 在脚底中心；
 - 门、轮子等使用实际旋转轴；
-- 程序化资产输出稳定的 Pivot/Bounds。
+- 程序化资产输出稳定的枢轴/包围范围。
 
 导出前自动移动到原点再恢复场景是一种高风险操作。更稳妥的是在临时副本或导出矩阵中转换，保证失败也不污染源文件。
 
 ### 几何语义
 
-交换内容至少包括 Position、Index、Normal、Tangent、UV、Color、Material Slot 和 Skin Data。
+交换内容至少包括位置、索引、法线、切线、UV、颜色、材质槽和 Skin 数据。
 
-DCC 的一个 Point 可能因硬边、UV 缝或材质边界在引擎拆成多个 Vertex。导出前统计与导入后统计应分别记录，不能用源点数直接判断运行时预算。
+DCC 的一个 Point 可能因硬边、UV 缝或材质边界在引擎拆成多个顶点。导出前统计与导入后统计应分别记录，不能用源点数直接判断运行时预算。
 
-是否三角化需要明确。不同 DCC/Importer 对 N-gon 的三角化可能不同，导致 Normal、Bake 和 Morph Target 不一致。关键资产通常在受控步骤三角化，并保留可编辑源版本。
+是否三角化需要明确。不同 DCC/导入器对 N-gon 的三角化可能不同，导致法线、烘焙和形状目标不一致。关键资产通常在受控步骤三角化，并保留可编辑源版本。
 
-### Normal 与 Tangent
+### 法线与切线
 
-Normal 可以导入、重新计算或混合处理。Tangent 必须和 UV、Normal Map 编码及引擎切线基一致。
+法线可以导入、重新计算或混合处理。切线必须和 UV、法线贴图编码及引擎切线基一致。
 
-若烘焙器使用 MikkTSpace，而引擎重新生成另一套 Tangent，接缝处会产生误差。管线应记录：
+若烘焙器使用 MikkTSpace，而引擎重新生成另一套切线，接缝处会产生误差。管线应记录：
 
-- Normal 导入策略；
-- Tangent 生成器与版本；
-- DirectX/OpenGL Normal Map 的 Y 通道约定；
-- Hard Edge 与 UV Seam 规则；
-- 负缩放/镜像的 Tangent Handedness。
+- 法线导入策略；
+- 切线生成器与版本；
+- DirectX/OpenGL 法线贴图的 Y 通道约定；
+- 硬边与 UV 接缝规则；
+- 负缩放/镜像的切线手性。
 
 ### 骨骼与动画
 
-交换 Skeleton 时需要稳定 Joint Name、Parent、Bind Pose、Inverse Bind Matrix 和 Skin Weight。重名、额外 Group、Namespace 清理和非均匀 Scale 都可能破坏绑定。
+交换骨架时需要稳定关节 Name、Parent、绑定姿态、逆绑定矩阵和蒙皮权重。重名、额外组、命名空间清理和非均匀缩放都可能破坏绑定。
 
 动画导出应明确：
 
-- Frame Rate 与起止帧；
-- 是否 Bake Constraint/IK 到 Joint Track；
-- Root Motion 轨道；
-- Euler Filter 与 Quaternion 插值；
-- 是否包含 Scale；
-- Clip 划分、Event/Curve 的额外传递方式。
+- 帧率与起止帧；
+- 是否烘焙约束/IK 到关节轨道；
+- 根运动轨道；
+- Euler Filter 与四元数插值；
+- 是否包含缩放；
+- 动画片段划分、事件/曲线的额外传递方式。
 
-FBX 能保存动画曲线，但自定义 Rig Graph、控制器逻辑和 DCC Constraint 不会自动成为引擎运行时 Rig。交付前一般 Bake 到约定 Skeleton。
+FBX 能保存动画曲线，但自定义 Rig Graph、控制器逻辑和 DCC 约束不会自动成为引擎运行时 Rig。交付前一般烘焙到约定骨架。
 
-## 格式怎样表达制作数据
+## 格式与数据模型
 
 ### FBX
 
-FBX 生态广、DCC 与引擎支持成熟，适合 Mesh/Skeleton/Animation 交换。但它的数据模型和 SDK 复杂，不同软件版本与选项可能产生不同结果。
+FBX 生态广、DCC 与引擎支持成熟，适合网格/骨架/Animation 交换。但它的数据模型和 SDK 复杂，不同软件版本与选项可能产生不同结果。
 
 稳定 FBX 管线应固定：
 
-- Exporter/Importer 版本；
-- Binary/ASCII 与 FBX Version；
+- 导出器/导入器版本；
+- 二进制/ASCII 与 FBX 版本；
 - Axis/Unit Conversion；
-- Triangulate、Smoothing、Tangent；
-- Bake Animation 与 Sampling；
+- Triangulate、Smoothing、切线；
+- 动画烘焙与采样；
 - Embed Media 是否禁止；
 - 导出选择集和命名。
 
-不要让艺术家每次手工点一遍选项。工具应保存 Preset，导出后生成 Manifest，并在引擎侧验证实际结果。
+不要让艺术家每次手工点一遍选项。工具应保存 Preset，导出后生成清单，并在引擎侧验证实际结果。
 
 ### glTF
 
-glTF 面向高效传输和运行时场景表达，常见内容包括 Mesh、PBR Material、Texture、Skin、Animation、Camera 和 Node Hierarchy。`.glb` 可把 JSON 与 Buffer/Texture 打包为单文件。
+glTF 面向高效传输和运行时场景表达，常见内容包括网格、PBR 材质、纹理、Skin、Animation、相机和节点层级。`.glb` 可把 JSON 与缓冲/纹理打包为单文件。
 
-它的 Metallic-Roughness 材质语义较清楚，适合 Viewer、Web 和跨工具预览。但复杂 DCC 历史、项目自定义 Shader、完整 Rig 和引擎特性仍需要 Extension 或额外数据。
+它的金属度-粗糙度材质语义较清楚，适合 Viewer、Web 和跨工具预览。但复杂 DCC 历史、项目自定义着色器、完整 Rig 和引擎特性仍需要扩展或额外数据。
 
-使用 Extension 前要确认生产端、消费端和验证器都支持。文件符合 glTF Schema 不代表目标引擎正确实现该 Extension。
+使用扩展前要确认生产端、消费端和验证器都支持。文件符合 glTF 数据模式不代表目标引擎正确实现该扩展。
 
 ### USD
 
-OpenUSD 不只是一个“更大的 FBX”。它提供 Scene Description、Layer、Reference、Payload、Variant、Composition 和 Schema，用于大型内容协作与非破坏组合。
+OpenUSD 不只是一个“更大的 FBX”。它提供场景描述、层、Reference、Payload、Variant、Composition 和数据模式，用于大型内容协作与非破坏组合。
 
 典型价值：
 
-- Layout 引用 Modeling Asset，而不复制几何；
-- LookDev Layer 覆盖材质，不修改模型层；
+- 布局引用建模资产，而不复制几何；
+- LookDev 层覆盖材质，不修改模型层；
 - Variant Set 切换造型、LOD 或材质；
 - Payload 延迟加载重内容；
-- Namespace 和 Prim Path 提供稳定场景地址；
-- 多部门通过 Layer Stack 组合意见。
+- 命名空间和 Prim 路径提供稳定场景地址；
+- 多部门通过层栈组合意见。
 
-USD 的强项是场景组合与数据治理，不保证所有 DCC/引擎支持相同 Schema、MaterialX、Rig 或实时行为。项目需要定义支持子集和 Flatten/Cook 边界。
+USD 的强项是场景组合与数据治理，不保证所有 DCC/引擎支持相同数据模式、MaterialX、Rig 或实时行为。项目需要定义支持子集和 Flatten/Cook 边界。
 
 ### 材质与贴图
 
-DCC Shader Graph 很少能一比一转换成引擎 Shader。交换时传递有明确语义的参数和纹理，如基础色、法线、金属度、粗糙度、遮挡、自发光与透明度。引擎再按统一模板创建材质实例，避免把制作工具内部节点直接当成运行时接口。
+DCC 着色器图很少能一比一转换成引擎着色器。交换时传递有明确语义的参数和纹理，如基础色、法线、金属度、粗糙度、遮挡、自发光与透明度。引擎再按统一模板创建材质实例，避免把制作工具内部节点直接当成运行时接口。
 
 同时记录：
 
 - 颜色贴图使用 sRGB，数据贴图使用 Linear；
-- Normal Map 类型与通道；
+- 法线贴图类型与通道；
 - 通道打包布局；
-- UDIM、Texture Set 和 Tile 命名；
-- Relative Path/Asset ID，而不是某台机器绝对路径；
-- Source Texture 与平台压缩产物的关系。
+- UDIM、纹理集和 Tile 命名；
+- Relative 路径/资产 ID，而不是某台机器绝对路径；
+- 源数据纹理与平台压缩产物的关系。
 
 #### Assimp 场景遍历与纹理去重
 
@@ -169,90 +169,89 @@ void VisitNode(const aiScene& scene, const aiNode& node,
 
 矩阵乘法顺序取决于库与引擎的向量约定。导入后可用一个带父子旋转和非均匀缩放的测试层级核对结果。Assimp 材质纹理类型是来源格式的语义提示，例如 Diffuse、Normals、Metalness；它不保证与项目 PBR 槽位一一对应。导入层应建立明确映射，并保留无法识别的属性供诊断。
 
-同一纹理可能被多个 Mesh 和材质引用。去重键应使用规范化后的资源标识，例如模型目录加相对路径、内嵌纹理 ID 和颜色空间语义。只按文件名缓存会把不同目录的同名纹理合并；只按完整路径缓存又可能把同图的 Base Color 与 Linear 数据视图错误复用。验证时统计场景声明的纹理引用数、唯一资源数和实际 GPU 资源数。
+同一纹理可能被多个网格和材质引用。去重键应使用规范化后的资源标识，例如模型目录加相对路径、内嵌纹理 ID 和颜色空间语义。只按文件名缓存会把不同目录的同名纹理合并；只按完整路径缓存又可能把同图的基础色与 Linear 数据视图错误复用。验证时统计场景声明的纹理引用数、唯一资源数和实际 GPU 资源数。
 
 ### Houdini 的属性模型
 
-Houdini 与建模类 DCC 的根本差异在于它把几何当作**带属性的数据表**而非固定的网格对象。理解它的属性层级，是理解整条程序化管线的前提。
+Houdini 的程序化流程常把几何组织为带属性的数据：点、顶点、图元和整体各有对应的属性层级。读取和写入前先确定属性归属，才能避免同名属性落到错误层级。
 
 四个层级各有作用域：
 
 | 层级 | 作用域 | 典型属性 |
 |---|---|---|
 | Point | 单个点 | `P` 位置、`N` 法线、`Cd` 颜色、`pscale` 半径 |
-| Vertex | 图元上的一个角 | UV、可分裂的法线与颜色 |
-| Primitive | 单个面或曲线 | 材质名、分组标记 |
+| 顶点 | 图元上的一个角 | UV、可分裂的法线与颜色 |
+| 图元 | 单个面或曲线 | 材质名、分组标记 |
 | Detail | 整个几何体 | 全局参数、统计量 |
 
-Point 与 Vertex 的区别直接影响导出结果：Point 保存位置，也能保存法线、颜色等任意点属性。Vertex 表示图元上的角，能为共享同一 Point 的各个角保存不同 UV 与法线。硬边和 UV 接缝正是靠“多个 Vertex 共享一个 Point 但携带不同法线或 UV”来表达的。把 UV 放在 Point 层会丢失接缝信息。
+Point 与顶点的区别直接影响导出结果：Point 保存位置，也能保存法线、颜色等任意点属性。顶点表示图元上的角，能为共享同一 Point 的各个角保存不同 UV 与法线。硬边和 UV 接缝正是靠“多个顶点共享一个 Point 但携带不同法线或 UV”来表达的。把 UV 放在 Point 层会丢失接缝信息。
 
-属性可以在层级间提升或下降。从 Point 提升到 Primitive 需要一个聚合规则（取最大、平均等），这个过程是有损的。
+属性可以在层级间提升或下降。从 Point 提升到图元需要一个聚合规则（取最大、平均等），这个过程是有损的。
  
 几个约定俗成的属性名会被系统识别并影响行为：`P`、`N`、`Cd`、`pscale`、`orient`、`width`。`orient` 是四元数，类型为 float 且 size 为 4——手工创建时类型声明错误是常见问题。
 
 #### VEX
 
-VEX 是逐元素并行执行的表达式语言。写在 Wrangle 节点中的代码会对每个点、每个图元各执行一次，这个执行模型与 Compute Shader 的逐线程模型相通。
+VEX 是逐元素并行执行的表达式语言。写在 Wrangle 节点中的代码会对每个点、每个图元各执行一次，这个执行模型与计算着色器的逐线程模型相通。
 
 ```c
 // 按阈值分组，阈值由界面参数控制
 float t = chf("threshold");
-if (@a < t) {
-    @group_low = 1;
-} else {
-    @group_high = 1;
-}
+@group_low = (@a < t);
+@group_high = (@a >= t);
 ```
 
-`@` 前缀用于访问几何属性，只在 Wrangle 环境中有效，纯 VEX 代码不使用它。`chf` 读取节点浮点参数；Wrangle 的创建备用参数操作可根据通道引用生成控件，这是把程序化逻辑暴露成美术可调参数的标准做法。
+`@` 是支持属性绑定的代码上下文语法，常见于 Wrangle；普通 VEX 函数不能脱离宿主绑定规则直接读取任意几何属性。`chf` 读取节点浮点参数；Wrangle 的创建备用参数操作可根据通道引用生成控件，这是把程序化逻辑暴露成美术可调参数的标准做法。
 
 分组的写法值得单记：给 `@group_名称` 赋非零值即加入该组，赋零则移出。
 
 几个容易踩的语言细节：函数参数按引用传递；函数会被自动内联因而无法递归；不同维度的向量运算时，低维向量会被补齐为 `{0,0,0,1}` 形式，导致 `{1,2} + {1,2,3,4}` 得到 `{2,4,3,5}` 这类反直觉结果。
 
+这里同时给两个组赋值，保证阈值改变或上游已存在同名组时，元素会从旧组移出。只在某个分支写 1、另一组不写 0，会让多次操作残留双重归属。属性提升同样需要指定冲突规则：UV 从顶点角聚合到点时，同一位置的多个 UV 值必然被选取或平均，接缝信息因此可能丢失。
+
 #### HDA 与参数暴露
 
-Houdini Digital Asset 把一个节点网络封装成可复用资产，只暴露选定参数。它是 Houdini 与引擎之间的交付单元。
+Houdini 数字资产（HDA）把一个节点网络封装成可复用资产，只暴露选定参数。它是 Houdini 与引擎之间的交付单元。
 
 设计 HDA 时的核心判断是**暴露哪些参数**。暴露过少则美术无法调整，暴露过多则工具退化为难用的节点面板。合理的做法是暴露有美术含义的参数——楼层数、密度、风格档位——而非底层的节点属性。
 
 引擎侧的对接需要确认：单位与坐标系转换、材质与属性名的映射约定、生成结果是烘焙成静态资产还是保持实时求值、以及 HDA 版本与引擎插件版本的兼容关系。跨版本兼容是实践中最常见的问题来源，工具链版本应当与项目版本一同锁定。
 
-## 来源与版本怎样保留
+## 来源与版本
 
-### Metadata 与 Sidecar
+### 元数据与附属文件
 
-交换格式无法稳定表达的项目数据，可使用 Custom Property、USD Schema 或 Sidecar Manifest。Manifest 可保存：
+交换格式无法稳定表达的项目数据，可使用自定义属性、USD 数据模式或附属文件清单。清单可保存：
 
-- Asset ID、类型、版本；
-- Source/Exporter/Tool Version；
-- 输出文件和 Hash；
-- LOD/Collision/Material 映射；
+- 资产 ID、类型、版本；
+- 源数据/导出器/工具版本；
+- 输出文件和哈希；
+- LOD/碰撞/材质映射；
 - 依赖列表；
 - 作者、时间和发布状态。
 
-Metadata 名称与类型应有 Schema。随意塞字符串会把解析和兼容问题推迟到下游。
+元数据名称与类型应有数据模式。随意塞字符串会把解析和兼容问题推迟到下游。
 
-### Reference、Copy 与 Round-trip
+### 引用、复制与往返转换
 
 跨工具传递时先决定是引用还是复制。Reference 保留来源关系、文件小，但下游必须能解析路径、版本和权限；Copy/Snapshot 自包含，适合交付，却容易与原始资产分叉。
 
-不应默认承诺无损 Round-trip。FBX 从 Maya 导入 Blender、修改后再回 Maya，节点、Constraint、材质和切线可能已经改变。每类数据应指定维护源和发布方向。例如绑定由 DCC 工程维护，贴图由材质工具发布，引擎保存导入设置与运行时实例。修改应返回对应维护源，再生成派生产物。
+不应默认承诺无损往返转换。FBX 从 Maya 导入 Blender、修改后再回 Maya，节点、约束、材质和切线可能已经改变。每类数据应指定维护源和发布方向。例如绑定由 DCC 工程维护，贴图由材质工具发布，引擎保存导入设置与运行时实例。修改应返回对应维护源，再生成派生产物。
 
 确实需要双向编辑时，应使用稳定 ID 和明确冲突规则，而不是按对象名称猜映射。每次回写生成变更预览，区分新增、修改、删除和无法表达的数据。
 
 ### 版本兼容
 
-DCC Scene、Plugin 与交换格式都存在版本。新版本保存的源文件可能无法被旧构建机打开；Exporter 升级也可能改变三角化、动画采样或材质输出。
+DCC 场景、插件与交换格式都存在版本。新版本保存的源文件可能无法被旧构建机打开；导出器升级也可能改变三角化、动画采样或材质输出。
 
-项目应记录 DCC/Plugin 版本矩阵，并让 Launcher 或环境脚本启动正确版本。升级先在副本上用 Golden Asset 批量转换和回归，确认可回滚后再更新项目锁定版本。
+项目应记录 DCC/插件版本矩阵，并让 Launcher 或环境脚本启动正确版本。升级先在副本上用基准资产批量转换和回归，确认可回滚后再更新项目锁定版本。
 
 ## 验证方法
 
-- 建立 Golden Asset：带硬边、镜像 UV、负缩放、骨骼、动画、Morph、多个材质和 LOD。
-- 在 DCC 导出后与引擎导入后比较 Bounds、Vertex、Normal、UV、Bone、Clip 和 Material Slot。
-- 输出坐标轴、Tangent Frame、Skeleton 和 Root Motion 可视化。
-- 固定 DCC、Plugin、Exporter 和 Importer 版本，在升级前批量回归 Golden Asset。
+- 建立基准资产：带硬边、镜像 UV、负缩放、骨骼、动画、Morph、多个材质和 LOD。
+- 在 DCC 导出后与引擎导入后比较包围范围、顶点、法线、UV、骨骼、动画片段和材质槽。
+- 输出坐标轴、切线标架、骨架和根运动可视化。
+- 固定 DCC、插件、导出器和导入器版本，在升级前批量回归基准资产。
 - 对 FBX/glTF/USD 使用官方验证器或 SDK 读取测试，不只检查文件存在。
 
 ## 相关主题
@@ -263,9 +262,5 @@ DCC Scene、Plugin 与交换格式都存在版本。新版本保存的源文件�
 
 ## 参考资料
 
-- SideFX, *Houdini VEX language reference* and *Geometry attributes* documentation.
-
-- Autodesk, *FBX SDK Documentation*.
-- Khronos Group, *glTF 2.0 Specification*.
-- Alliance for OpenUSD, *OpenUSD Documentation*.
-- Autodesk Maya, Blender and SideFX Houdini scripting/export documentation.
+- [SideFX：Geometry attributes](https://www.sidefx.com/docs/houdini/model/attributes.html)：Point、Vertex、Primitive、Detail 属性层级。
+- [SideFX：VEX language reference](https://www.sidefx.com/docs/houdini/vex/lang.html)：VEX 类型、函数及参数规则；正文 @ 属性绑定针对支持该语法的节点上下文。

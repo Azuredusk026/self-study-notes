@@ -1498,7 +1498,7 @@
       "source": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
       "heading": "程序化不等于完全自动",
       "target": "知识库/15_资产与工具管线/程序化资产生成.md",
-      "current_heading": "程序化不等于完全自动",
+      "current_heading": "自动生成与局部控制",
       "decision": "独立主归属或明确合并",
       "reason": "屏幕密度选择、地形表示、规则生成、植被着色方向与约束求解各自有独立模型。",
       "source_hash": "c7ae82e7a811f54467ddfdb11c115911d3b6031aaca47a811c709c7a8f6cd2f1"
@@ -1597,7 +1597,7 @@
       "source": "知识库/09_动画系统/动画状态、混合与IK.md",
       "heading": "怎样生成基础姿态",
       "target": "知识库/09_动画系统/动画姿态混合.md",
-      "current_heading": "怎样生成基础姿态",
+      "current_heading": "基础姿态生成",
       "decision": "独立主归属或明确合并",
       "reason": "姿态合成、末端反求与跨骨架映射是独立输入和求解。",
       "source_hash": "70a7e13c7bc13113cfa668dfd71a9d9098c53fec717de8a9568a9c4ea6c42503"
@@ -1606,7 +1606,7 @@
       "source": "知识库/09_动画系统/动画状态、混合与IK.md",
       "heading": "Clip 采样",
       "target": "知识库/09_动画系统/动画姿态混合.md",
-      "current_heading": "Clip 采样",
+      "current_heading": "动画片段采样",
       "decision": "独立主归属或明确合并",
       "reason": "姿态合成、末端反求与跨骨架映射是独立输入和求解。",
       "source_hash": "4f00fd5f1956f796151b8fee2a5e4ee89cd6eee0d753254a2399277a3686d73b"
@@ -1615,7 +1615,7 @@
       "source": "知识库/09_动画系统/动画状态、混合与IK.md",
       "heading": "State Machine",
       "target": "知识库/09_动画系统/动画姿态混合.md",
-      "current_heading": "State Machine",
+      "current_heading": "状态机",
       "decision": "独立主归属或明确合并",
       "reason": "姿态合成、末端反求与跨骨架映射是独立输入和求解。",
       "source_hash": "fbea26579b7b9680ba4741f0f1a915b9b992cb894b7b717a1d97fe60c8ff9d8b"
@@ -1624,7 +1624,7 @@
       "source": "知识库/09_动画系统/动画状态、混合与IK.md",
       "heading": "Crossfade",
       "target": "知识库/09_动画系统/动画姿态混合.md",
-      "current_heading": "Crossfade",
+      "current_heading": "交叉淡入淡出",
       "decision": "独立主归属或明确合并",
       "reason": "姿态合成、末端反求与跨骨架映射是独立输入和求解。",
       "source_hash": "4bc8a012187f5b5d224d791d8762e3681e78dcf93efdca45a99f59dc7c747926"
@@ -1642,7 +1642,7 @@
       "source": "知识库/09_动画系统/动画状态、混合与IK.md",
       "heading": "Motion Matching",
       "target": "知识库/09_动画系统/动画姿态混合.md",
-      "current_heading": "Motion Matching",
+      "current_heading": "运动匹配",
       "decision": "独立主归属或明确合并",
       "reason": "姿态合成、末端反求与跨骨架映射是独立输入和求解。",
       "source_hash": "58207454c7c170c522e99986769c19dc754729218a564c9452777574a36dc914"
@@ -1651,7 +1651,7 @@
       "source": "知识库/09_动画系统/动画状态、混合与IK.md",
       "heading": "Additive Animation",
       "target": "知识库/09_动画系统/动画姿态混合.md",
-      "current_heading": "Additive Animation",
+      "current_heading": "加法动画",
       "decision": "独立主归属或明确合并",
       "reason": "姿态合成、末端反求与跨骨架映射是独立输入和求解。",
       "source_hash": "ae592a602a5414a41da7def261221a5d271e242c52cf5c48ac11be0992550828"
@@ -1660,7 +1660,7 @@
       "source": "知识库/09_动画系统/动画状态、混合与IK.md",
       "heading": "Layer 与 Bone Mask",
       "target": "知识库/09_动画系统/动画姿态混合.md",
-      "current_heading": "Layer 与 Bone Mask",
+      "current_heading": "分层与骨骼遮罩",
       "decision": "独立主归属或明确合并",
       "reason": "姿态合成、末端反求与跨骨架映射是独立输入和求解。",
       "source_hash": "37556f73a3e2a61a06bc87ee594be4a6bf763bc079d593cecee5de122464423c"
@@ -1669,7 +1669,7 @@
       "source": "知识库/09_动画系统/动画状态、混合与IK.md",
       "heading": "Root Motion",
       "target": "知识库/09_动画系统/动画姿态混合.md",
-      "current_heading": "Root Motion",
+      "current_heading": "根运动",
       "decision": "独立主归属或明确合并",
       "reason": "姿态合成、末端反求与跨骨架映射是独立输入和求解。",
       "source_hash": "e9f20c9461c0e88d8c253591609812f2f0d3cbfb3f4992cb70472f40a2c8758a"
@@ -1687,7 +1687,7 @@
       "source": "知识库/09_动画系统/动画状态、混合与IK.md",
       "heading": "让末端适应交互目标",
       "target": "知识库/09_动画系统/IK.md",
-      "current_heading": "让末端适应交互目标",
+      "current_heading": "末端目标约束",
       "decision": "独立主归属或明确合并",
       "reason": "姿态合成、末端反求与跨骨架映射是独立输入和求解。",
       "source_hash": "455167986e0fa9192247e229c25bed7074184e5e617883968636f5428eba487f"
@@ -1696,7 +1696,7 @@
       "source": "知识库/09_动画系统/动画状态、混合与IK.md",
       "heading": "Two Bone IK",
       "target": "知识库/09_动画系统/IK.md",
-      "current_heading": "Two Bone IK",
+      "current_heading": "双骨骼 IK",
       "decision": "独立主归属或明确合并",
       "reason": "姿态合成、末端反求与跨骨架映射是独立输入和求解。",
       "source_hash": "285183eef363e26b041cc8b62996c23e9df9d72740d267e93627a8bc9c784c4f"
@@ -1714,7 +1714,7 @@
       "source": "知识库/09_动画系统/动画状态、混合与IK.md",
       "heading": "Foot IK",
       "target": "知识库/09_动画系统/IK.md",
-      "current_heading": "Foot IK",
+      "current_heading": "足部 IK",
       "decision": "独立主归属或明确合并",
       "reason": "姿态合成、末端反求与跨骨架映射是独立输入和求解。",
       "source_hash": "f1a9788c066cd1ae80abf3063997c30f6d3450d252c3b699ebdcd4e60a17ab02"
@@ -1723,7 +1723,7 @@
       "source": "知识库/09_动画系统/动画状态、混合与IK.md",
       "heading": "Retargeting",
       "target": "知识库/09_动画系统/动画重定向.md",
-      "current_heading": "Retargeting",
+      "current_heading": "参考姿态与旋转映射",
       "decision": "独立主归属或明确合并",
       "reason": "姿态合成、末端反求与跨骨架映射是独立输入和求解。",
       "source_hash": "9f863ee6d14af652ee1fcee93ca7d1082cb66bc1780e53effffc9b67b5b05e3d"
@@ -1732,7 +1732,7 @@
       "source": "知识库/09_动画系统/动画状态、混合与IK.md",
       "heading": "Crossfade 的局部姿态混合",
       "target": "知识库/09_动画系统/动画姿态混合.md",
-      "current_heading": "Crossfade 的局部姿态混合",
+      "current_heading": "交叉淡入淡出的局部姿态混合",
       "decision": "独立主归属或明确合并",
       "reason": "姿态合成、末端反求与跨骨架映射是独立输入和求解。",
       "source_hash": "f528b5ea543cd6826f0101f5b136d568f520246784f815f01236736f4dc0756e"
@@ -1741,7 +1741,7 @@
       "source": "知识库/09_动画系统/布料与毛发的表示、碰撞和LOD.md",
       "heading": "布料怎样模拟并保持稳定",
       "target": "知识库/09_动画系统/角色布料.md",
-      "current_heading": "布料怎样模拟并保持稳定",
+      "current_heading": "布料模拟与稳定性",
       "decision": "独立主归属或明确合并",
       "reason": "服装三角代理与毛发Guide有不同数据、渲染与LOD模型。",
       "source_hash": "92b1cf97ece5bc4d187f8724e80377cce0a0a8061d12cc37af30058fcc3dd671"
@@ -1813,7 +1813,7 @@
       "source": "知识库/09_动画系统/布料与毛发的表示、碰撞和LOD.md",
       "heading": "毛发：Cards、Strands 与 Guides",
       "target": "知识库/09_动画系统/毛发表示与模拟.md",
-      "current_heading": "毛发：Cards、Strands 与 Guides",
+      "current_heading": "发片、发丝与引导线",
       "decision": "独立主归属或明确合并",
       "reason": "服装三角代理与毛发Guide有不同数据、渲染与LOD模型。",
       "source_hash": "27d8cb7367673427f53b245291fa7f0dd9843db6a934910aa1db7b96e5113568"
@@ -1876,7 +1876,7 @@
       "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
       "heading": "面部明暗",
       "target": "知识库/11_NPR与风格化渲染/Face SDF.md",
-      "current_heading": "面部明暗",
+      "current_heading": "灰度场与角度契约",
       "decision": "独立主归属或明确合并",
       "reason": "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。",
       "source_hash": "aa24b9772c9ba1b7d5c75e660dabb699313c9b53da91aa425902703eb4e0c67b"
@@ -1885,7 +1885,7 @@
       "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
       "heading": "面部为什么难",
       "target": "知识库/11_NPR与风格化渲染/Face SDF.md",
-      "current_heading": "面部为什么难",
+      "current_heading": "艺术分区与实际遮挡",
       "decision": "独立主归属或明确合并",
       "reason": "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。",
       "source_hash": "008a741aca943489e22680bda1b6009c3408c510d410f307a793a4693c10d3d7"
@@ -1894,7 +1894,7 @@
       "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
       "heading": "Face SDF的含义",
       "target": "知识库/11_NPR与风格化渲染/Face SDF.md",
-      "current_heading": "Face SDF的含义",
+      "current_heading": "灰度场与角度契约",
       "decision": "独立主归属或明确合并",
       "reason": "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。",
       "source_hash": "5412ced3d8d603e271f8d3c61fa4af3a74c1cab8e8b7d4cbf98f2c118603c492"
@@ -1903,7 +1903,7 @@
       "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
       "heading": "左右脸与翻转",
       "target": "知识库/11_NPR与风格化渲染/Face SDF.md",
-      "current_heading": "左右脸与翻转",
+      "current_heading": "方向求值与边界过滤",
       "decision": "独立主归属或明确合并",
       "reason": "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。",
       "source_hash": "e18629a6f47c0704a568b89610bf0c21fc4761d8a22d7aba5bd8b83276430279"
@@ -1912,7 +1912,7 @@
       "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
       "heading": "SDF阈值与软边",
       "target": "知识库/11_NPR与风格化渲染/Face SDF.md",
-      "current_heading": "SDF阈值与软边",
+      "current_heading": "方向求值与边界过滤",
       "decision": "独立主归属或明确合并",
       "reason": "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。",
       "source_hash": "a503aff7a7ffa0b231a7b9bbc630fe2ec2837c06d99dfee842320342287bd386"
@@ -1957,7 +1957,7 @@
       "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
       "heading": "方案对照",
       "target": "知识库/11_NPR与风格化渲染/角色阴影.md",
-      "current_heading": "方案对照",
+      "current_heading": "方案条件",
       "decision": "独立主归属或明确合并",
       "reason": "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。",
       "source_hash": "c63d7fa15f32102aac4ff5c5385fdc6cb3ce96b4469185419e6d1e1aed1a4ae4"
@@ -1966,7 +1966,7 @@
       "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
       "heading": "角色Shadow Map",
       "target": "知识库/11_NPR与风格化渲染/角色阴影.md",
-      "current_heading": "角色Shadow Map",
+      "current_heading": "角色阴影贴图",
       "decision": "独立主归属或明确合并",
       "reason": "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。",
       "source_hash": "e4d9968b4b10f19a1dd50864b2f1d27473772dcdbc37cba49a9fd446a8d9a135"
@@ -2002,7 +2002,7 @@
       "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
       "heading": "高光Mask与视角稳定",
       "target": "知识库/11_NPR与风格化渲染/风格化头发高光.md",
-      "current_heading": "高光Mask与视角稳定",
+      "current_heading": "高光遮罩与视角稳定",
       "decision": "独立主归属或明确合并",
       "reason": "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。",
       "source_hash": "7a50a6f55115613ab556e651d734e495a9b29bf1a9efd8f66e87b6af9143cb5d"
@@ -2011,7 +2011,7 @@
       "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
       "heading": "面部法线与眼睛",
       "target": "知识库/11_NPR与风格化渲染/风格化眼睛.md",
-      "current_heading": "眼球分层",
+      "current_heading": "虹膜的内部位置",
       "decision": "既有主归属合并或条件修正",
       "reason": "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。",
       "source_hash": "9a3401920ef8f4274b8aae8b9da2892f7b8b6ebaf7a9f70dfeddd3846b75612a"
@@ -2020,7 +2020,7 @@
       "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
       "heading": "为什么眼睛需要深度感",
       "target": "知识库/11_NPR与风格化渲染/风格化眼睛.md",
-      "current_heading": "为什么眼睛需要深度感",
+      "current_heading": "角膜反射与虹膜合成",
       "decision": "独立主归属或明确合并",
       "reason": "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。",
       "source_hash": "ad0f313a7e4e754f800739ab443b232144c49b2e82af659609baa8915f81b3eb"
@@ -2029,7 +2029,7 @@
       "source": "知识库/11_NPR与风格化渲染/角色面部、头发与阴影.md",
       "heading": "Face SDF 阈值",
       "target": "知识库/11_NPR与风格化渲染/Face SDF.md",
-      "current_heading": "Face SDF 阈值",
+      "current_heading": "灰度场与角度契约",
       "decision": "独立主归属或明确合并",
       "reason": "面部阈值、局部阴影、发流高光与眼睛分层分别有独立算法和资产输入。",
       "source_hash": "6974f6d735fbd4227e2c365a0d0add564cc7be13bb845f8b457780db25b11482"
@@ -2038,7 +2038,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "有限射线怎样估计贡献",
       "target": "知识库/12_光线追踪/实时光追采样.md",
-      "current_heading": "有限射线怎样估计贡献",
+      "current_heading": "有限射线的贡献估计",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "199d23cc7b5c3f3b8f19a196c73fb22c9671d2578652cf7f06bc182619bfb1d1"
@@ -2047,7 +2047,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "Ray Budget",
       "target": "知识库/12_光线追踪/实时光追采样.md",
-      "current_heading": "Ray Budget",
+      "current_heading": "射线预算",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "9105c6a7b85447553b9392a04a3d50742ca63e5bd4890895b88b726b87fe5263"
@@ -2065,7 +2065,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "Direct Lighting 采样",
       "target": "知识库/12_光线追踪/实时光追采样.md",
-      "current_heading": "Direct Lighting 采样",
+      "current_heading": "直接光照采样",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "fbe49d275db7041b64db8d892b6da1da60499003ddedb527f15c4970c4d25ead"
@@ -2074,7 +2074,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "Ray Cone 与材质 LOD",
       "target": "知识库/12_光线追踪/实时光追采样.md",
-      "current_heading": "Ray Cone 与材质 LOD",
+      "current_heading": "射线锥与材质 LOD",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "dabf15bf7701fa0596773383d2be415093997493b4fb4e1f80011b1eb9fbeaa2"
@@ -2092,7 +2092,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "Screen Space、SDF 与 Hardware RT",
       "target": "知识库/12_光线追踪/实时光追采样.md",
-      "current_heading": "Screen Space、SDF 与 Hardware RT",
+      "current_heading": "屏幕空间、SDF 与硬件光追",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "20868892b545113f94ea8d77db8b15291fb4ba8d2fe6dc1b777e8178dfc86418"
@@ -2101,7 +2101,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "噪声怎样稳定下来",
       "target": "知识库/12_光线追踪/光追降噪.md",
-      "current_heading": "噪声怎样稳定下来",
+      "current_heading": "时空滤波",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "9eb4ce96202154f1c42f504a62f9588f346a570515cb80e4901fdb859574fde2"
@@ -2110,7 +2110,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "为什么 Denoiser 需要辅助 Buffer",
       "target": "知识库/12_光线追踪/光追降噪.md",
-      "current_heading": "为什么 Denoiser 需要辅助 Buffer",
+      "current_heading": "几何辅助缓冲",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "4fc2eb7121e091b6a37b096f144bff1cacd82e84af97b698325b2b8d6745a8da"
@@ -2119,7 +2119,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "Temporal Accumulation",
       "target": "知识库/12_光线追踪/光追降噪.md",
-      "current_heading": "Temporal Accumulation",
+      "current_heading": "时域积累",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "aacfa78906e73af5751f356ab78da30a4fb2acfaafb8587cbb00af8333115642"
@@ -2128,7 +2128,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "Disocclusion 与 History Reject",
       "target": "知识库/12_光线追踪/光追降噪.md",
-      "current_heading": "Disocclusion 与 History Reject",
+      "current_heading": "遮挡揭露与历史拒绝",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "49880a6e2f0e23b5d00a5dbae21d7c0a9e360d0a10a6afba2c335ca811f57432"
@@ -2137,7 +2137,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "History Clamp",
       "target": "知识库/12_光线追踪/光追降噪.md",
-      "current_heading": "History Clamp",
+      "current_heading": "历史限制范围",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "adf1c84d0fdd7c9fd51446c47b84baf7f70b1c0649606a9a07840116eec8ab2d"
@@ -2146,7 +2146,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "Spatial Filter",
       "target": "知识库/12_光线追踪/光追降噪.md",
-      "current_heading": "Spatial Filter",
+      "current_heading": "空间滤波",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "ac7e7ba57ddaecd7a3bee2fd787ef0827aa8d28f9dfdd40a607b011ba85027d3"
@@ -2155,7 +2155,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "Variance 与 Adaptive Sampling",
       "target": "知识库/12_光线追踪/光追降噪.md",
-      "current_heading": "Variance 与 Adaptive Sampling",
+      "current_heading": "方差与自适应采样",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "57e2e79213f916636696afeccf8c753e1c2253c66f159c20f4ab189560e15c21"
@@ -2164,7 +2164,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "候选样本怎样跨时空复用",
       "target": "知识库/12_光线追踪/ReSTIR.md",
-      "current_heading": "候选样本怎样跨时空复用",
+      "current_heading": "单像素的重要性重采样",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "ec86fcc07d3e5cae8fe64c0a608a0987e602c328ea147c32f0cad2f894f0654c"
@@ -2173,7 +2173,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "ReSTIR",
       "target": "知识库/12_光线追踪/ReSTIR.md",
-      "current_heading": "ReSTIR",
+      "current_heading": "蓄水池合并与目标重评估",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "69ba45f39ea5c76eb89557328851d56b492bf59107e8e0bd1f911780953a2356"
@@ -2182,7 +2182,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "ReSTIR 的可见性问题",
       "target": "知识库/12_光线追踪/ReSTIR.md",
-      "current_heading": "ReSTIR 的可见性问题",
+      "current_heading": "时域与空间候选",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "bd2539027781509c7141780a25e956306b4c8ee3255d1845be6595132c4af898"
@@ -2191,7 +2191,7 @@
       "source": "知识库/12_光线追踪/实时光追、采样与降噪.md",
       "heading": "Denoiser 常见伪影",
       "target": "知识库/12_光线追踪/光追降噪.md",
-      "current_heading": "Denoiser 常见伪影",
+      "current_heading": "降噪器常见伪影",
       "decision": "独立主归属或明确合并",
       "reason": "射线估计、重建滤波与候选reservoir有不同统计状态和误差。",
       "source_hash": "c2610bf3d7ee316d94165674a0c9db85acb46cea6a8626359f4e7cd592082d15"
@@ -2470,7 +2470,7 @@
       "source": "知识库/15_资产与工具管线/版本控制、CI与大型资产协作.md",
       "heading": "Generated File",
       "target": "知识库/15_资产与工具管线/大型资产版本控制.md",
-      "current_heading": "Generated File",
+      "current_heading": "派生文件",
       "decision": "独立主归属或明确合并",
       "reason": "版本协作与自动构建流水线有独立输入、状态和责任。",
       "source_hash": "7d1f60cabf8d2ee4ed7838227ef7291bbd0e1038b691770984e8aa29a0506e5d"
@@ -2560,7 +2560,7 @@
       "source": "知识库/15_资产与工具管线/版本控制、CI与大型资产协作.md",
       "heading": "并行修改怎样进入同一版本",
       "target": "知识库/15_资产与工具管线/大型资产版本控制.md",
-      "current_heading": "并行修改怎样进入同一版本",
+      "current_heading": "并行修改合入",
       "decision": "独立主归属或明确合并",
       "reason": "版本协作与自动构建流水线有独立输入、状态和责任。",
       "source_hash": "1b994920d19afe606013472959da54b148336459ceb77a31625a1576730ccf78"
@@ -3982,7 +3982,7 @@
       "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
       "heading": "Dissolve",
       "target": "知识库/10_VFX与模拟/溶解材质.md",
-      "current_heading": "Dissolve",
+      "current_heading": "标量场与覆盖",
       "decision": "独立主归属或明确合并",
       "reason": "纹理动画、覆盖裁剪、颜色扰动、深度软交界与负载诊断各自成篇；Ribbon与场查询归入粒子系统，原页保留方案组合入口。",
       "source_hash": "98ac9450892cd2088bd854e26caf1072b78d5b1f3d310c1ed944aa3fb34c8e21"
@@ -4000,7 +4000,7 @@
       "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
       "heading": "Distortion 与 Refraction",
       "target": "知识库/10_VFX与模拟/屏幕扰动.md",
-      "current_heading": "Distortion 与 Refraction",
+      "current_heading": "屏幕扰动与折射",
       "decision": "独立主归属或明确合并",
       "reason": "纹理动画、覆盖裁剪、颜色扰动、深度软交界与负载诊断各自成篇；Ribbon与场查询归入粒子系统，原页保留方案组合入口。",
       "source_hash": "d06a902cd5107b44d198f470b7402f6ca6c3fc1f52faa0c9d232a8aae8aa1d9a"
@@ -4009,7 +4009,7 @@
       "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
       "heading": "Depth Fade 与 Soft Particle",
       "target": "知识库/10_VFX与模拟/软粒子.md",
-      "current_heading": "Depth Fade 与 Soft Particle",
+      "current_heading": "深度差与覆盖衰减",
       "decision": "独立主归属或明确合并",
       "reason": "纹理动画、覆盖裁剪、颜色扰动、深度软交界与负载诊断各自成篇；Ribbon与场查询归入粒子系统，原页保留方案组合入口。",
       "source_hash": "0fa65eae636721cdbe5a473e54cb8252038eb36b46c9eba2429039c1b6c082a5"
@@ -4027,7 +4027,7 @@
       "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
       "heading": "Polar UV、Flow 与噪声",
       "target": "知识库/10_VFX与模拟/VFX纹理动画.md",
-      "current_heading": "Polar UV、Flow 与噪声",
+      "current_heading": "极坐标 UV、流向与噪声",
       "decision": "独立主归属或明确合并",
       "reason": "纹理动画、覆盖裁剪、颜色扰动、深度软交界与负载诊断各自成篇；Ribbon与场查询归入粒子系统，原页保留方案组合入口。",
       "source_hash": "8d9a04bfca43f8e5e01c65f656c044f917470fdc09c36e072b93088b81aa23cd"
@@ -4054,7 +4054,7 @@
       "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
       "heading": "透明效果的成本从哪里来",
       "target": "知识库/14_性能分析与优化/VFX性能.md",
-      "current_heading": "透明效果的成本从哪里来",
+      "current_heading": "透明效果成本",
       "decision": "独立主归属或明确合并",
       "reason": "纹理动画、覆盖裁剪、颜色扰动、深度软交界与负载诊断各自成篇；Ribbon与场查询归入粒子系统，原页保留方案组合入口。",
       "source_hash": "500931283f4ce41c9405efac88984329b0e175e0ebd7f4596ce390a1c9617a5a"
@@ -4072,7 +4072,7 @@
       "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
       "heading": "Overdraw 的成本",
       "target": "知识库/14_性能分析与优化/VFX性能.md",
-      "current_heading": "Overdraw 的成本",
+      "current_heading": "重复绘制的成本",
       "decision": "独立主归属或明确合并",
       "reason": "纹理动画、覆盖裁剪、颜色扰动、深度软交界与负载诊断各自成篇；Ribbon与场查询归入粒子系统，原页保留方案组合入口。",
       "source_hash": "23387b59cc11f349138024a38de84d4022364009f4bd1556f87bc777bb1f31fd"
@@ -4099,7 +4099,7 @@
       "source": "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
       "heading": "带抗锯齿边缘的 Dissolve",
       "target": "知识库/10_VFX与模拟/溶解材质.md",
-      "current_heading": "带抗锯齿边缘的 Dissolve",
+      "current_heading": "覆盖率与发光边缘",
       "decision": "既有主归属合并或条件修正",
       "reason": "纹理动画、覆盖裁剪、颜色扰动、深度软交界与负载诊断各自成篇；Ribbon与场查询归入粒子系统，原页保留方案组合入口。",
       "source_hash": "74dc98ab73bdbe7e6f89743daf1a3eddf283926eaa3bf2d964c2d553eddbfeb5"

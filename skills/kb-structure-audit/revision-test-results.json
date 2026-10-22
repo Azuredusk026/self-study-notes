@@ -127,6 +127,14 @@
       "passed": true,
       "dxc_entries": 5,
       "scope": "正文sRGB、曝光、Bloom、SSAO、CoC"
+    },
+    {
+      "phase": "P2",
+      "command": "python -B 知识库/examples/revision_09_15/verify.py",
+      "passed": true,
+      "cpu_tests": 14,
+      "git_index_tests": 5,
+      "dxc_entries": 9
     }
   ]
 }

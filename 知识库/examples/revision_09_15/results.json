@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-22",
+  "passed": true,
+  "cpu_tests": 14,
+  "git_index_tests": 5,
+  "git_index_output": "test_chinese_and_spaces_keep_exact_path (__main__.StagedAssetCheck.test_chinese_and_spaces_keep_exact_path) ... ok\ntest_chinese_raw_binary_rejected (__main__.StagedAssetCheck.test_chinese_raw_binary_rejected) ... ok\ntest_raw_binary_rejected (__main__.StagedAssetCheck.test_raw_binary_rejected) ... ok\ntest_unstaged_edits_do_not_replace_index (__main__.StagedAssetCheck.test_unstaged_edits_do_not_replace_index) ... ok\ntest_valid_worktree_does_not_hide_bad_index (__main__.StagedAssetCheck.test_valid_worktree_does_not_hide_bad_index) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 3.197s\n\nOK\n",
+  "cpu_output": "test_face_front_side_back_threshold (__main__.Mechanisms.test_face_front_side_back_threshold) ... ok\ntest_face_vertical_direction_fallback (__main__.Mechanisms.test_face_vertical_direction_fallback) ... ok\ntest_iris_front_view_has_no_offset (__main__.Mechanisms.test_iris_front_view_has_no_offset) ... ok\ntest_iris_grazing_view_is_rejected (__main__.Mechanisms.test_iris_grazing_view_is_rejected) ... ok\ntest_iris_oblique_view_moves_opposite_view (__main__.Mechanisms.test_iris_oblique_view_moves_opposite_view) ... ok\ntest_merged_changed_target_mean (__main__.Mechanisms.test_merged_changed_target_mean) ... ok\ntest_merged_reservoir_reweights_target (__main__.Mechanisms.test_merged_reservoir_reweights_target) ... ok\ntest_retarget_reference_is_identity (__main__.Mechanisms.test_retarget_reference_is_identity) ... ok\ntest_retarget_rotated_basis_preserves_action (__main__.Mechanisms.test_retarget_rotated_basis_preserves_action) ... ok\ntest_ris_exhaustive_mean (__main__.Mechanisms.test_ris_exhaustive_mean) ... ok\ntest_ris_zero_stream_returns_zero (__main__.Mechanisms.test_ris_zero_stream_returns_zero) ... ok\ntest_transaction_compensation_continues_after_failure (__main__.Mechanisms.test_transaction_compensation_continues_after_failure) ... ok\ntest_transaction_precondition_failure_reverts_completed_steps (__main__.Mechanisms.test_transaction_precondition_failure_reverts_completed_steps) ... ok\ntest_transaction_success_does_not_compensate (__main__.Mechanisms.test_transaction_success_does_not_compensate) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.001s\n\nOK\n",
+  "compiler": "C:\\VulkanSDK\\1.4.350.0\\Bin\\dxc.EXE",
+  "compiler_version": "dxcompiler.dll: 1.10(5347-fe261573)(1.9.0.5347) - 1.9.0.5347 (fe2615732)\n",
+  "shader_probes": [
+    {
+      "article": "知识库/13_渲染架构/Deferred Rendering.md",
+      "marker": "float outerRadius",
+      "excerpt_sha256": "a2d5364f4b6c330b55a36afb2249ffad174e37baaeb436f939fff76db0b0ca09",
+      "target": "ps_6_0",
+      "entry": "Main",
+      "exit_code": 0,
+      "diagnostics": ""
+    },
+    {
+      "article": "知识库/12_光线追踪/光线求交与BVH.md",
+      "marker": "bool IntersectAabb",
+      "excerpt_sha256": "400965fb456aed2e0de9c719765b6189957d3afc447c7fb3db1d9549a586ef4d",
+      "target": "ps_6_0",
+      "entry": "Main",
+      "exit_code": 0,
+      "diagnostics": ""
+    },
+    {
+      "article": "知识库/11_NPR与风格化渲染/风格化眼睛.md",
+      "marker": "bool IrisUV",
+      "excerpt_sha256": "502980e52e6d9cf5c7c992cc668d25944088f92d3dd7c3bcfbe94ee512be6fba",
+      "target": "ps_6_0",
+      "entry": "Main",
+      "exit_code": 0,
+      "diagnostics": ""
+    },
+    {
+      "article": "知识库/11_NPR与风格化渲染/风格化眼睛.md",
+      "marker": "float facing",
+      "excerpt_sha256": "f1741855ed82fe100f42bf617058f304dd8556148cffbeb3566c4910b91f4f43",
+      "target": "ps_6_0",
+      "entry": "Main",
+      "exit_code": 0,
+      "diagnostics": ""
+    },
+    {
+      "article": "知识库/11_NPR与风格化渲染/Face SDF.md",
+      "marker": "float3 lightHead",
+      "excerpt_sha256": "2967797f577974d853f3693e200ad80b5177882b05104c025d4bfb906ee947b1",
+      "target": "ps_6_0",
+      "entry": "Main",
+      "exit_code": 0,
+      "diagnostics": ""
+    },
+    {
+      "article": "知识库/09_动画系统/角色布料.md",
+      "marker": "float3 BindRenderVertex",
+      "excerpt_sha256": "7dd1e788c9e25635b65b46bfa002bac7c46f4c48cfd7a1bfb9bff422461b6e99",
+      "target": "ps_6_0",
+      "entry": "Main",
+      "exit_code": 0,
+      "diagnostics": ""
+    },
+    {
+      "article": "知识库/11_NPR与风格化渲染/风格化头发高光.md",
+      "marker": "float3 shiftedT",
+      "excerpt_sha256": "055fe529f503dcc4c0f09fd527c63a9ebb31c5f10a57746e6d0f96de6cf4aba0",
+      "target": "ps_6_0",
+      "entry": "Main",
+      "exit_code": 0,
+      "diagnostics": ""
+    },
+    {
+      "article": "知识库/11_NPR与风格化渲染/NPR材质与分层光照.md",
+      "marker": "float level",
+      "excerpt_sha256": "5571ea651e3a270ca49e775293f91814498397fb97546f0138052162b652043d",
+      "target": "ps_6_0",
+      "entry": "Main",
+      "exit_code": 0,
+      "diagnostics": ""
+    },
+    {
+      "article": "知识库/11_NPR与风格化渲染/NPR材质与分层光照.md",
+      "marker": "float3 ramp",
+      "excerpt_sha256": "9f77435820efa189ba10d789a5c31cb1fab74886a94d2a8819ad7f142f59d758",
+      "target": "ps_6_0",
+      "entry": "Main",
+      "exit_code": 0,
+      "diagnostics": ""
+    }
+  ],
+  "scope": "CPU algebra tests and extracted HLSL fragment compilation; engine, GPU execution, capture and performance UNVERIFIED"
+}

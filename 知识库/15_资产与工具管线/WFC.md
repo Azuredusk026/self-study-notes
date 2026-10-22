@@ -13,33 +13,55 @@
 ```text
 1. 确定 Pattern 集合      每个单元可能填充的所有模块
 2. 初始化网格            每个单元的候选集 = 全部 Pattern
-3. 初始化不确定度        无权重时可用候选数；加权时用熵
+3. 施加预设与边界约束，然后对所有单元传播到稳定；空集合立即判为矛盾
+   初始化不确定度        无权重时可用候选数；加权时用熵
 4. 循环：
-     选择熵最小的单元      不确定性最低，最不容易出错
+     选择尚未确定且熵最小的单元  优先处理约束较强的位置
      从候选集中随机取一个   可按权重控制倾向
      传播约束             更新邻居候选集，递归直到稳定
    直到所有单元候选数为 1（成功）或出现候选数为 0（矛盾）
 5. 矛盾时换种子重来，或回退到上一步
 ```
 
-选择熵最小的单元是这个算法的关键启发式。优先处理约束最强的位置，能大幅降低走进死路的概率——如果先填自由度高的单元，后面很容易把自己逼进无解。
+选择熵最小的单元是这个算法的关键启发式。优先处理约束最强的位置，可作为尽早处理受限位置的策略，但收益取决于规则与输入——如果先填自由度高的单元，后面很容易把自己逼进无解。
 
 传播一直处理到候选集合不再变化。模块的候选数即使还大于一，减少候选也可能使邻居失去兼容选项，不能只在单元唯一时继续传播。数独求解器也可以加入更强的约束传播，具体传播范围由约束决定。
 
 ### 工程要点
 
-- **权重**。给 Pattern 加权可以控制内容倾向，例如让走廊比房间更常出现，避免结果呈现均匀的噪声感；
+- **权重**。给模式加权可以控制内容倾向，例如让走廊比房间更常出现，避免结果呈现均匀的噪声感；
 - **预设约束**。生成前可以固定某些单元——入口、出口、必经房间——它们在流程开始前就已坍缩，且不被后续步骤改变。这是把设计意图注入程序化流程的主要手段；
 - **矛盾处理**。矛盾是正常现象而非缺陷。实现必须设定最大重试次数，超出后明确报错，而不是无限循环；
 - **确定性**。种子加重试序号共同决定随机流，同样的输入必须得到同样的输出，否则无法复现问题。
 
 WFC 适合规则固定、模块数量庞大的重复性空间堆叠。它不适合需要全局叙事结构的内容——它只保证局部合法，不理解“这个关卡是否好玩”。
 
+### 候选集合传播
+
+设格子 i 的候选集合为 $S_i$，朝方向 d 的兼容表 `allowed[d][a]` 给出模块 a 允许的邻居模块。传给邻居 j 的候选上界是所有剩余模块兼容集合的并集：
+
+```text
+queue = all cells  // 首次传播；后续坍缩从候选发生变化的单元开始
+while queue not empty:
+    i = pop(queue)
+    for direction d and neighbor j:
+        support = union(allowed[d][a] for a in candidates[i])
+        reduced = candidates[j] intersect support
+        if reduced is empty: return contradiction
+        if reduced != candidates[j]:
+            candidates[j] = reduced
+            push(queue, j)
+```
+
+例如左格还可能是“门”或“墙”，右格可保留与任一选项兼容的模块；左格确定成“门”后，右格中只与墙兼容的项立即删除。首次传播把全部格子入队，并先施加预置入口与边界规则。即使没有预置，也可能存在初始候选得不到任何邻居支持的情况：两个相邻格子都只有模块 A，而 A 不允许相邻 A，应在首次传播中报告矛盾。随后每次坍缩只把改变的格子入队，传播稳定后再选择下一个未确定格子。
+
+权重 $w_a>0$ 时，熵可计算为 $H=\log W-\sum_a w_a\log w_a/W$，其中 $W=\sum_a w_a$。选择时按 $w_a/W$ 抽样；平局按稳定随机流打破。局部邻接合法仍不保证入口出口连通，完成后另做全局图搜索，失败进入有上限的回溯或重试。
+
 ## 验证方法
 
 固定种子核对布局，逐边验证邻接规则。不可满足输入应在有限预算内报告失败，预置入口和出口另检查全局可达性。最小熵是启发式，不保证任意局面不走入矛盾。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+实现状态：正文片段用于解释本页数据流与边界条件；完整宿主的编译、运行及性能测量尚未执行。可运行的独立模型以本页列出的具体测试为准。
 
 ## 相关主题
 
@@ -51,11 +73,6 @@ WFC 适合规则固定、模块数量庞大的重复性空间堆叠。它不适�
 
 ## 参考资料
 
-- Paul Merrell, *Model Synthesis* and SideFX WFC dungeon generator tutorial.
-- Gabriel Taubin, *A Signal Processing Approach to Fair Surface Design*, SIGGRAPH.
+- [mxgmn：Model.cs](https://github.com/mxgmn/WaveFunctionCollapse/blob/master/Model.cs)：`Clear` 初始处理无邻居支持的模式，`Propagate` 继续传播；本文集合伪代码用全格入队实现首次一致性检查。
 
-- Unity Manual, *LOD Group* and *Terrain Data*.
-- Houdini Documentation, *HeightField*, *PDG* and *Houdini Engine for Unity*.
-- Lindstrom and Turk, *Fast and Memory Efficient Polygonal Simplification*.
-- meshoptimizer documentation, *Vertex cache optimization*.
-- LearnOpenGL, `src/8.guest/2021/3.tessellation`.
+- [mxgmn：WaveFunctionCollapse](https://raw.githubusercontent.com/mxgmn/WaveFunctionCollapse/master/README.md)：Algorithm：观察、最小熵、传播与矛盾；本页显式邻接模型为独立简化实现。

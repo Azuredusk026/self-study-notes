@@ -16,11 +16,11 @@ $$
 \text{lights} = \text{mask}_{XY} \;\&\; \text{mask}_{Z}
 $$
 
-相比直接存三维 Cluster 列表，这种分离的存储量从 $N_x \times N_y \times N_z$ 降到 $N_x \times N_y + N_z$。代价是求交结果偏保守——某盏灯可能同时命中某个 Tile 和某个 Bin，实际却不在两者的交叉区域内。
+若每个单元都使用相同长度的固定位掩码，这种分离将掩码个数从 $N_x \times N_y \times N_z$ 降到 $N_x \times N_y + N_z$。每份掩码占 $4\lceil L/32\rceil$ 字节，其中 L 是灯光总数；可变长度列表的内存则取决于实际候选数，不能直接套用这个比例。代价是求交结果偏保守——某盏灯可能同时命中某个 Tile 和某个 Bin，实际却不在两者的交叉区域内。
 
-这个保守性在多数场景下可以接受，因为多算几盏灯的成本远低于存储与构建完整三维列表。深度跨度极大或灯光分布极不均匀时需要实测确认。
+分离能减少掩码的存储与构建工作，同时增加着色阶段的假阳性灯光。收益取决于灯数、覆盖范围、深度分布和每盏灯的着色成本，需要分别计时构建与最终着色。
 
-两个剔除 Kernel 的工作方式不同：XY 方向对 Tile 视锥的角射线做求交测试，Z 方向用前后两个平面做包含测试。前者可以让相邻 Tile 共享角点的计算结果。
+两个剔除 Kernel 的工作方式不同：XY 方向用 Tile 视锥的角点构造侧平面并测试灯体积，Z 方向用前后两个平面测试深度区间；只测试角射线会漏掉完全落在分块内部的小灯。相邻分块可共享角点。
 
 优势：
 
@@ -59,6 +59,10 @@ uint ClusterIndex(uint2 pixel, float viewDistance)
 
 两阶段列表构建可以先计数，再做前缀和分配区间，最后写灯索引。固定上限方案更简单，但灯光集中时容易溢出。算法选择应记录最大列表长度、构建时间和内存峰值。
 
+球形点光源的保守测试可以逐平面执行。平面法线指向簇内部且已归一化，球心 c 的有符号距离为 `dot(n,c)+d`；任一平面的距离小于 `-radius` 就可拒绝，全部通过则保留候选。通过只表示未被平面排除，允许边角假阳性。聚光灯可以先用保守包围球，再做可选锥体测试。
+
+位掩码代码要求 `lightCount <= 32`。扩展到多个字时，使用 `word=j/32`、`bit=j%32`，分别更新对应字；直接执行 `1u << j` 不能表示第 32 盏以后的灯。
+
 ## 验证方法
 
 - 可视化每簇灯光数，对边界灯逐个检查。
@@ -73,18 +77,21 @@ uint ClusterIndex(uint2 pixel, float viewDistance)
 这在光照剔除中很典型：把屏幕切成 Tile、视锥深度切成 Bin，分别预计算各自影响的灯光集合，着色时两个掩码求交即可：
 
 ```hlsl
+RWTexture2D<uint> _XYLightMaskMap; // 资源格式为 R32_UINT
+
+// 下列主体位于每个 Tile 对应的计算着色器调用中。
 uint tileLightMask = 0u;
 for (uint j = 0; j < lightCount; ++j)
 {
-    if (RaySphereOrConeIntersection(tileFrustum, lights[j]))
+    if (ConservativeSphereFrustumTest(tileFrustum, lights[j]))
         tileLightMask |= (1u << j);
 }
-_XYLightMaskMap[globalId.xy] = uint4(tileLightMask, 0, 0, 0);
+_XYLightMaskMap[globalId.xy] = tileLightMask;
 ```
 
 一个 Tile 的灯光列表被压成四字节。超过 32 盏灯时用多个 `uint` 扩展，求交仍是几条指令。
 
-这类 Kernel 常有共享计算的机会：$4\times4$ 个 Tile 需要 $5\times5$ 个角点，多出的角点可以由空闲线程顺带算出并存入共享内存，避免相邻 Tile 重复计算同一角点。
+这类 Kernel 常有共享计算的机会：$4\times4$ 个 Tile 需要 $5\times5$ 个角点，若工作组有 16 个线程，可让线程 i 依次处理索引 `i, i+16` 中小于 25 的角点，再执行工作组内存同步屏障。25 个角点全部就绪后，每个线程读取自己 Tile 的四角，避免相邻 Tile 重复计算。
 
 ## 相关主题
 
@@ -92,7 +99,7 @@ _XYLightMaskMap[globalId.xy] = uint4(tileLightMask, 0, 0, 0);
 - [[05_光照阴影与GI/直接光照]]
 - [[13_渲染架构/GBuffer布局]]
 - [[13_渲染架构/渲染命令的组织方式]]
-- [[14_性能分析与优化/帧瓶颈怎么判断]]
+- [[14_性能分析与优化/帧瓶颈诊断]]
 
 - [[13_渲染架构/渲染路径与光源组织]]
 
@@ -100,7 +107,5 @@ _XYLightMaskMap[globalId.xy] = uint4(tileLightMask, 0, 0, 0);
 
 ## 参考资料
 
-- Ola Olsson et al., *Clustered Deferred and Forward Shading*.
-- Johan Andersson, *Tiled Deferred Shading*.
-- Unity and Unreal documentation on Forward+, Deferred and mobile renderers.
-- LearnOpenGL, `src/5.advanced_lighting/8.1.deferred_shading`.
+- [Olsson 等：Clustered Deferred and Forward Shading](https://diglib7.eg.org/items/6342d4d6-5220-4376-a5c6-a153058f4a3c/full)：论文元数据与摘要：按三维位置或法线分簇；本文规则网格和位掩码是限定场景下的实现。
+- [AMD：ForwardPlus11](https://github.com/GPUOpen-LibrariesAndSDKs/ForwardPlus11/)：README：按屏幕块构造光源列表的官方样例入口。

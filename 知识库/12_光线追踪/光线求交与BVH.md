@@ -1,8 +1,8 @@
 # 光线求交与BVH
 
-光线追踪最基础的问题是：给定一条 Ray，找到沿正方向最近的有效交点。加速结构的价值在于尽早排除不可能命中的几何；求交结果与逐个测试完全相同，变的是要检查多少图元。
+光线追踪最基础的问题是：给定一条射线，找到沿正方向最近的有效交点。加速结构的价值在于尽早排除不可能命中的几何；求交结果与逐个测试完全相同，变的是要检查多少图元。
 
-## Ray
+## 射线
 
 参数形式：
 
@@ -10,29 +10,29 @@ $$
 \mathbf{r}(t)=\mathbf{o}+t\mathbf{d},\qquad t\ge 0
 $$
 
-$\mathbf{o}$ 是 Origin，$\mathbf{d}$ 是 Direction。Direction 是否归一化会影响 $t$ 能否解释为世界距离。
+$\mathbf{o}$ 是起点，$\mathbf{d}$ 是方向。方向是否归一化会影响 $t$ 能否解释为世界距离。
 
-实际查询通常给出 $t_{min}$ 和 $t_{max}$。$t_{min}$ 可避开起点表面的自相交，$t_{max}$ 可限制 Shadow Ray 到光源距离内。
+实际查询通常给出 $t_{min}$ 和 $t_{max}$。$t_{min}$ 可避开起点表面的自相交，$t_{max}$ 可限制阴影射线到光源距离内。
 
-过大的 Origin Bias 会漏掉近处薄几何；过小会因浮点误差再次命中当前表面。稳健实现需要结合场景尺度、法线方向和浮点误差，而不是全项目写死一个常量。
+过大的起点 Bias 会漏掉近处薄几何；过小会因浮点误差再次命中当前表面。稳健实现需要结合场景尺度、法线方向和浮点误差，而不是全项目写死一个常量。
 
 ## 平面与球体求交
 
-平面方程 $\mathbf{n}\cdot\mathbf{x}+d=0$。代入 Ray：
+平面方程 $\mathbf{n}\cdot\mathbf{x}+d=0$。代入射线：
 
 $$
 t=-\frac{\mathbf{n}\cdot\mathbf{o}+d}{\mathbf{n}\cdot\mathbf{d}}
 $$
 
-分母接近 0 时 Ray 与平面近似平行。
+分母接近 0 时射线与平面近似平行。
 
 球体中心 $\mathbf{c}$、半径 $R$，代入 $\|\mathbf{r}(t)-\mathbf{c}\|^2=R^2$ 得到一元二次方程。判别式小于 0 表示不相交，两个根中选择区间内最小正值。
 
-这些解析求交适合 Primitive Collider、调试和特殊体积。复杂场景最终主要处理三角形。
+这些解析求交适合图元 Collider、调试和特殊体积。复杂场景最终主要处理三角形。
 
-## 单个形状怎样求交
+## 图元求交
 
-### Ray-Triangle
+### 射线与三角形
 
 三角形可写为：
 
@@ -42,63 +42,63 @@ $$
 
 有效交点满足 $u\ge0$、$v\ge0$、$u+v\le1$。Möller-Trumbore 直接求解 $t,u,v$，不需要预存平面方程。
 
-Barycentric Weight 为 $(1-u-v,u,v)$，可用于插值 UV、Normal、Tangent 和其他顶点属性。几何法线来自边叉积，Shading Normal 来自顶点插值；二者用途不能混淆。
+Barycentric Weight 为 $(1-u-v,u,v)$，可用于插值 UV、法线、切线和其他顶点属性。几何法线来自边叉积，Shading 法线来自顶点插值；二者用途不能混淆。
 
 实现要处理：
 
 - Backface Culling 是否开启；
 - 接近边界和共面的浮点容差；
 - 顶点顺序与坐标系；
-- Ray Direction 未归一化时的距离语义；
-- Alpha-tested Triangle 命中后的纹理可见性。
+- 射线方向未归一化时的距离语义；
+- Alpha-tested 三角形命中后的纹理可见性。
 
-### AABB Slab Test
+### AABB 平板测试
 
-Axis-Aligned Bounding Box 由每轴 Min/Max 定义。Ray 在每个轴进入和离开盒子的参数为：
+Axis-Aligned Bounding 包围盒由每轴最小值和最大值定义。射线在每个轴进入和离开盒子的参数为：
 
 $$
 t_0=\frac{b_{min}-o}{d},\qquad t_1=\frac{b_{max}-o}{d}
 $$
 
-交换方向为负时的两个值，最终取三轴 Entry 的最大值和 Exit 的最小值。若 $t_{entry}\le t_{exit}$ 且与查询区间重叠，则相交。
+交换方向为负时的两个值，最终取三轴进入值的最大值和退出值的最小值。若 $t_{entry}\le t_{exit}$ 且与查询区间重叠，则相交。
 
-工程实现常预计算 `invDir` 和方向符号。Direction 分量为 0、NaN、Inf 和起点在盒内都要测试。
+工程实现常预计算 `invDir` 和方向符号。方向分量为 0、NaN、Inf 和起点在盒内都要测试。
 
 AABB 求交便宜、合并容易，适合 BVH 节点。物体旋转后 World AABB 会变松，但遍历仍简单。
 
 ### OBB
 
-Oriented Bounding Box 更贴合旋转物体，但直接求交更贵。常见做法是用 OBB 的逆变换把 Ray 变到 Box Local Space，再做 AABB Slab Test。
+有向包围盒更贴合旋转物体，但直接求交更贵。常见做法是用 OBB 的逆变换把射线变到包围盒局部空间，再做 AABB 平板测试。
 
-若变换含非均匀缩放，Direction 和 $t$ 的距离意义要谨慎处理。碰撞系统也可能使用 SAT 等方法，而 Ray Query 只需局部空间 Slab。
+若变换含非均匀缩放，方向和 $t$ 的距离意义要谨慎处理。碰撞系统也可能使用 SAT 等方法，而射线查询只需局部空间 Slab。
 
-## 大量几何怎样缩小候选
+## 空间加速结构
 
-### 为什么不能逐三角形扫描
+### 逐三角形扫描的成本
 
-$N$ 个三角形逐个测试是 $O(N)$。Shadow、Reflection、GI 每像素可能发多条 Ray，分辨率与 Bounce 又继续放大次数。
+$N$ 个三角形逐个测试是 $O(N)$。阴影、反射、GI 每像素可能发多条射线，分辨率与弹射次数又继续放大次数。
 
-空间结构先用便宜包围体排除大量几何，再只对少量候选做精确 Triangle Test。实际成本由节点访问、内存局部性、包围体重叠和 Ray Coherence 决定，不能只看渐进复杂度。
+空间结构先用便宜包围体排除大量几何，再只对少量候选做精确三角形 Test。实际成本由节点访问、内存局部性、包围体重叠和射线 Coherence 决定，不能只看渐进复杂度。
 
-### Uniform Grid、Octree 与 KD-Tree
+### 均匀网格、Octree 与 KD-Tree
 
-Uniform Grid 构建和查询简单，适合分布较均匀的场景。密度差异大时，空 Cell 和拥挤 Cell 都会浪费。
+均匀网格构建和查询简单，适合分布较均匀的场景。密度差异大时，空单元和拥挤单元都会浪费。
 
-Octree 每次把三维空间分成八块。稀疏八叉树只存非空区域，适合体素、SDF 和空间占用。大三角形跨多个 Cell 时需要复制引用或存到父层，层级深度也受场景边界影响。
+Octree 每次把三维空间分成八块。稀疏八叉树只存非空区域，适合体素、SDF 和空间占用。大三角形跨多个单元时需要复制引用或存到父层，层级深度也受场景边界影响。
 
-KD-Tree 用轴对齐平面递归切空间，可为静态 Ray Tracing 建高质量结构，但动态更新和构建较重。
+KD-Tree 用轴对齐平面递归切空间，可为静态射线 Tracing 建高质量结构，但动态更新和构建较重。
 
 ### BVH
 
-Bounding Volume Hierarchy 按几何对象分组。每个内部节点保存包住子节点的 Bounds，叶节点保存少量 Primitive。
+Bounding Volume 层级按几何对象分组。每个内部节点保存包住子节点的包围范围，叶节点保存少量图元。
 
-它划分的是对象集合，而不是强制把世界切成固定 Cell。大三角形通常只属于一个 Leaf，不需要像 Grid 那样复制到多个空间格。
+它划分的是对象集合，而不是强制把世界切成固定单元。大三角形通常只属于一个叶节点，不需要像 Grid 那样复制到多个空间格。
 
-理想情况下，查询沿树访问少量节点，接近 $O(\log N+k)$，也常写作 `O(log N + k)`；$k$ 是命中候选数。高度失衡或 Bounds 大量重叠时，最坏仍可能退化到 $O(N)$。
+理想情况下，查询沿树访问少量节点，接近 $O(\log N+k)$，也常写作 `O(log N + k)`；$k$ 是命中候选数。高度失衡或包围范围大量重叠时，最坏仍可能退化到 $O(N)$。
 
 ### BVH 构建
 
-最简单方法按 Primitive Centroid 的最长轴做 Median Split，树较平衡，构建快，但不一定减少遍历工作。
+最简单方法按图元质心的最长轴做中位数分割，树较平衡，构建快，但不一定减少遍历工作。
 
 Surface Area Heuristic（SAH）估计一次划分成本：
 
@@ -106,81 +106,83 @@ $$
 C=C_t+\frac{A_L}{A_P}N_LC_i+\frac{A_R}{A_P}N_RC_i
 $$
 
-$A_P/A_L/A_R$ 是父、左右 Bounds 表面积，$N_L/N_R$ 是 Primitive 数，$C_t$ 和 $C_i$ 是遍历与求交成本估计。它倾向选择重叠少、面积小的子节点。
+$A_P/A_L/A_R$ 是父、左右包围范围表面积，$N_L/N_R$ 是图元数，$C_t$ 和 $C_i$ 是遍历与求交成本估计。它倾向选择重叠少、面积小的子节点。
 
-完整 SAH 枚举较慢，常把 Centroid 分桶近似。离线静态场景可花更多时间建高质量 BVH；实时动态内容更重视构建速度。
+完整 SAH 枚举较慢，常把质心分桶近似。离线静态场景可花更多时间建高质量 BVH；实时动态内容更重视构建速度。
 
-LBVH 用 Morton Code 把空间位置编码排序，再并行生成层级。它适合 GPU 快速构建，但树质量通常低于精细 SAH。工程中可先 LBVH，再局部优化或重建上层。
+LBVH 用 Morton 编码把空间位置编码排序，再并行生成层级。它适合 GPU 快速构建，但树质量通常低于精细 SAH。工程中可先 LBVH，再局部优化或重建上层。
 
 ### BVH 遍历
 
 遍历从 Root 开始：
 
-1. Ray 不命中 Node Bounds，跳过整棵子树；
+1. 射线不命中节点包围范围，跳过整棵子树；
 2. 命中内部节点，继续测试子节点；
-3. 命中 Leaf，做精确 Primitive Test；
+3. 命中叶节点，做精确图元 Test；
 4. 更新当前最近 $t$，后续更远节点可以裁掉。
 
-Closest-hit 查询宜优先访问 Entry Distance 更近的子节点。Any-hit/Shadow 查询找到第一个有效遮挡就可以退出。
+最近命中查询宜优先访问进入距离更近的子节点。任意命中或遮挡查询找到第一个有效遮挡就可以退出。
 
-实现可使用显式 Stack、Rope/Parent Pointer 的 Stackless Traversal，或 Wide BVH 一次测试多个 Child。GPU 上还要考虑 Wave 内 Ray 访问不同节点造成的 Divergence。
+实现可使用显式栈、跳转或父节点指针的无栈遍历，或宽 BVH 一次测试多个子节点。GPU 上还要考虑 Wave 内射线访问不同节点造成的执行分歧。
 
 ### BVH2、BVH4 与 BVH8
 
-二叉 BVH 节点简单、树较深。更宽的 BVH 减少层数，并适合 SIMD/SIMT 一次测试多个 Bounds，但每节点数据更大，也可能测试更多空分支。
+二叉 BVH 节点简单、树较深。更宽的 BVH 减少层数，并适合 SIMD/SIMT 一次测试多个包围范围，但每节点数据更大，也可能测试更多空分支。
 
-硬件和 API 的内部布局通常不可见。应用侧更重要的是提供合适的几何、Build Flag 和更新策略。
+硬件和 API 的内部布局通常不可见。应用侧更重要的是提供合适的几何、构建 Flag 和更新策略。
 
-## 硬件追踪怎样接入场景
+## 硬件追踪的场景接入
 
 ### BLAS 与 TLAS
 
 现代硬件光追通常使用两级结构：
 
-- **BLAS**（Bottom Level Acceleration Structure）组织一个 Mesh 或一组 Geometry 的 Primitive；
-- **TLAS**（Top Level Acceleration Structure）组织 Instance，保存 Transform、Mask、Instance ID 和 BLAS 引用。
+- **BLAS**（底层加速结构）组织一个网格或一组 Geometry 的图元；
+- **TLAS**（顶层加速结构）组织实例，保存变换、遮罩、实例ID 和 BLAS 引用。
 
-多个实例可以共享同一 BLAS，只在 TLAS 保存不同 Transform。遍历先命中 Instance Bounds，再把 Ray 变到实例局部空间访问 BLAS。
+多个实例可以共享同一 BLAS，只在 TLAS 保存不同变换。遍历先命中实例包围范围，再把射线变到实例局部空间访问 BLAS。
 
-TLAS 使 Instance 移动时不必重建底层三角形结构。Skinned/Deformed Mesh 的顶点变化会影响 BLAS，需要 Refit/Update 或重建。
+TLAS 使实例移动时不必重建底层三角形结构。蒙皮/Deformed 网格的顶点变化会影响 BLAS，需要 Refit/更新或重建。
 
-### Build、Refit 与 Rebuild
+### 构建、Refit 与 Rebuild
 
-Refit 只根据变化后的 Leaf 重新合并上层 Bounds，速度快，拓扑不变。物体长期大幅变形后，Sibling Bounds 可能严重重叠，遍历质量下降。
+Refit 只根据变化后的叶节点重新合并上层包围范围，速度快，拓扑不变。物体长期大幅变形后，Sibling 包围范围可能严重重叠，遍历质量下降。
 
 Rebuild 重新划分几何，成本高但恢复质量。常见策略：
 
-- 静态几何一次高质量 Build；
+- 静态几何一次高质量构建；
 - 刚体实例只更新 TLAS；
 - 轻度变形 BLAS Refit；
 - 质量指标超过阈值后异步 Rebuild；
-- 对动态角色使用专门 Build Flag 和较低几何复杂度。
+- 对动态角色使用专门构建 Flag 和较低几何复杂度。
 
-Acceleration Structure 构建还需要 Scratch Buffer、临时峰值和同步，应计入帧预算。
+加速结构构建还需要临时工作缓冲、临时峰值和同步，应计入帧预算。
 
-### Ray Tracing Pipeline
+### 光追管线
 
-DXR/Vulkan RT 常见 Shader 阶段：
+DXR/Vulkan RT 常见着色器阶段：
 
-- Ray Generation 产生 Ray；
-- Intersection 处理自定义 Primitive；
-- Any Hit 处理 Alpha Test、透明或提前终止；
-- Closest Hit 计算最近命中的材质/光照；
+- 射线生成产生射线；
+- Intersection 处理自定义图元；
+- 任意命中处理 Alpha Test、透明或提前终止；
+- 最近命中计算最近命中的材质/光照；
 - Miss 处理环境；
 - Callable 复用函数。
 
-Ray Payload 携带 Radiance、Throughput、Depth、Random State 等数据。Payload 越大，寄存器和内存压力越高。复杂材质和不同 Ray 路径还会造成 Divergence。
+射线载荷携带辐亮度、路径权重、深度、随机状态等数据。Payload 越大，寄存器和内存压力越高。复杂材质和不同射线路径还会造成执行分歧。
 
-Inline Ray Query 在普通 Compute/Pixel Shader 中主动遍历，控制流更直接，适合 Shadow/AO 等简单查询。完整 Pipeline 更适合复杂 Hit Shader 和递归材质，但调度成本更高。
+内联射线查询在普通 Compute/像素着色器中主动遍历，控制流更直接，适合阴影/AO 等简单查询。完整管线更适合复杂 Hit 着色器和递归材质，但调度成本更高。
+
+实例射线转换时保留参数 t 可以简化最近命中比较：把原点乘逆变换，把方向乘逆线性变换，但不归一化新方向，则 `localOrigin + t*localDirection` 仍对应原世界射线同一个 t。若归一化局部方向，需要同时缩放查询区间和返回参数。非均匀缩放实例最容易暴露漏做这一步的错误。
 
 ## 验证方法
 
-- 用已知 Primitive 和解析结果测试 $t$、Barycentric 与 Normal。
-- 测试平行 Ray、盒内起点、负方向、边界命中和极端场景尺度。
-- 可视化 BVH Depth、Leaf Primitive Count、Bounds Overlap 和访问热度。
-- 比较 Median、SAH、LBVH 的 Build Time、Memory、Node Visit 与 Ray Time。
-- 分开统计 BLAS/TLAS Build、Update、Trace 和 Shader 成本。
-- 对 Alpha Test、负缩放实例、Skinned Mesh 和 Origin Bias 做回归。
+- 用已知图元和解析结果测试 $t$、Barycentric 与法线。
+- 测试平行射线、盒内起点、负方向、边界命中和极端场景尺度。
+- 可视化 BVH 深度、叶节点图元 Count、包围范围 Overlap 和访问热度。
+- 比较 Median、SAH、LBVH 的构建时间、内存、节点 Visit 与射线时间。
+- 分开统计 BLAS/TLAS 构建、更新、Trace 和着色器成本。
+- 对 Alpha Test、负缩放实例、蒙皮网格和起点 Bias 做回归。
 
 ### AABB Slab 求交
 
@@ -191,20 +193,29 @@ bool IntersectAabb(float3 origin, float3 direction,
                    float3 boxMin, float3 boxMax,
                    out float tEnter, out float tExit)
 {
-    float3 invDir = rcp(direction);
-    float3 t0 = (boxMin - origin) * invDir;
-    float3 t1 = (boxMax - origin) * invDir;
-    float3 nearT = min(t0, t1);
-    float3 farT = max(t0, t1);
-    tEnter = max(max(nearT.x, nearT.y), nearT.z);
-    tExit = min(min(farT.x, farT.y), farT.z);
-    return tExit >= max(tEnter, 0.0);
+    tEnter = -3.402823466e+38F;
+    tExit = 3.402823466e+38F;
+    [unroll] for (uint axis = 0; axis < 3; ++axis)
+    {
+        if (direction[axis] == 0.0)
+        {
+            if (origin[axis] < boxMin[axis] || origin[axis] > boxMax[axis])
+                return false;
+            continue;
+        }
+        float a = (boxMin[axis] - origin[axis]) / direction[axis];
+        float b = (boxMax[axis] - origin[axis]) / direction[axis];
+        tEnter = max(tEnter, min(a, b));
+        tExit = min(tExit, max(a, b));
+        if (tExit < max(tEnter, 0.0)) return false;
+    }
+    return true;
 }
 ```
 
-这个倒数片段在射线平行轴且原点恰在盒面时可能产生 `0 * infinity`，随后出现 NaN。可靠路径对平行轴单独判断：原点在该轴区间外就拒绝，在区间内则不收紧参数区间。近零阈值还要随尺度设计，不能把任意极小非零方向当零。BVH 遍历使用 `tEnter` 做近节点优先，并用当前最近命中距离裁剪远节点。用从盒内出发、平行盒面和负方向三组射线测试区间符号。
+输入必须有限，盒子满足 `boxMin <= boxMax`，方向至少一维非零。片段对平行轴单独判断：原点在该轴区间外就拒绝，在区间内则不收紧参数区间。显式分支避免盒面起点产生 `0 * infinity`。这里只把精确零方向视为平行；极小非零方向的除法仍可能溢出，生产遍历需结合有效查询区间、场景尺度和浮点误差选择保守策略。BVH 遍历使用 `tEnter` 做近节点优先，并用当前最近命中距离裁剪远节点。用从盒内出发、平行盒面和负方向三组射线测试区间符号。
 
-本机机制检查：5组 CPU 用例覆盖平行轴、盒面起点、盒内起点和正负方向，使用显式平行轴分支。检查代码见 [reference.py](../examples/mechanisms/reference.py)，运行 `python 知识库/examples/mechanisms/reference.py`。引擎画面、GPU捕获与性能另外验证。
+本机机制检查：5组 CPU 用例覆盖平行轴、盒面起点、盒内起点和正负方向，使用显式平行轴分支。检查代码见 [reference.py](../examples/mechanisms/reference.py)，运行 `python 知识库/examples/mechanisms/reference.py`。正文 HLSL 也由 [独立检查脚本](../examples/revision_09_15/README.md) 抽取并按 `ps_6_0` 编译。编译只验证类型与语法，引擎画面、GPU运行、捕获与性能另外验证。
 
 ## 相关主题
 
@@ -214,7 +225,4 @@ bool IntersectAabb(float3 origin, float3 direction,
 
 ## 参考资料
 
-- Möller and Trumbore, *Fast, Minimum Storage Ray-Triangle Intersection*.
-- Wald, *On Fast Construction of SAH-based Bounding Volume Hierarchies*.
-- NVIDIA, *Thinking Parallel: Part III, Tree Construction on the GPU*.
-- Microsoft DXR and Vulkan Ray Tracing specifications.
+- [PBRT 4e §7.3：Bounding Volume Hierarchies](https://www.pbr-book.org/4ed/Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies)：BVH 分区、构建和遍历；实例空间射线参数按仿射变换推导。

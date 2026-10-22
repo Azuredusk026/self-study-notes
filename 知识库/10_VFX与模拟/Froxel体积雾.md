@@ -13,28 +13,13 @@
 1. **散射计算**：每个 froxel 求一次光照散射与消光，结果写入三维纹理；
 2. **积分**：沿深度方向累计散射与透射，得到从相机到指定深度的介质结果。散射需乘之前各段的透射率，通常不能直接做普通数值相加。
 
-第二步是关键。有了前缀和，着色时只需按像素深度采样一次三维纹理就能拿到总散射量，复杂度 $O(1)$，不必沿视线逐步进行光线步进。
+第二步是关键。有了透射加权的前缀结果，着色时只需按像素深度采样一次三维纹理就能拿到总散射量，复杂度 $O(1)$，不必沿视线逐步进行光线步进。
 
 ### 沿深度复用
 
-让一个线程负责一段连续的深度切片，而非每个 froxel 一个线程：
+一个线程可以负责同一 XY 列中的一段连续深度切片。第 z 组的范围为 `[z*slicesPerThread, min((z+1)*slicesPerThread, depthCount))`，派发边缘先检查 XY 索引。已知前一格的远端射线距离，即可复用为后一格的近端距离，再由两者之差计算本段长度。
 
-```hlsl
-[numthreads(4, 4, 4)]
-void ScatteringKernel(uint3 id : SV_DispatchThreadID)
-{
-    uint startSlice = id.z * _SlicesPerThread;
-    uint endSlice   = startSlice + _SlicesPerThread;
-
-    for (uint3 v = uint3(id.xy, startSlice); v.z < endSlice; ++v.z)
-    {
-        // froxelFront = 上一格的 froxelBack，沿射线递推
-        // 距离、透射率可以累加复用
-    }
-}
-```
-
-沿 Z 步进时，前一个体素的远平面就是后一个的近平面，射线距离与累计透射率都可以递推。这比每个体素独立计算省下大量重复工作，代价是牺牲 Z 方向的并行度。
+这一步写出每格的局部散射与透射率。每段线程组只知道自己的起点，跨组累计需要后面的前缀积分，不能把组内从一开始累乘的透射率当作相机到该点的结果。连续处理减少坐标重建工作，也降低 Z 方向并行度；是否更快需在同一网格规模下计时。
 
 ### 时域累积
 
@@ -56,13 +41,15 @@ if (all(reprojUVW >= 0.0) && all(reprojUVW <= 1.0))
 
 实现上需要双缓冲三维纹理，每帧交换当前与历史。超出历史范围（相机快速移动、首帧）时要回退到纯当前帧结果。
 
-### 融合两个 Kernel 的可能
+### 散射与积分融合
 
-散射与积分分成两个 Kernel 的代价是：一整张三维纹理的写入加读取、一次额外 Dispatch、一个 UAV 屏障。
+散射与积分分成两个 Kernel 的代价是：一整张三维纹理的写入加读取、一次额外派发、一个 UAV 屏障。
 
 若一个线程完整负责一条 XY 视线的全部深度切片，可以边计算局部散射边合成累计结果。若不同线程只负责部分切片，仍需跨段前缀处理，不能仅加局部累加器。融合可能降低中间纹理访问，也会减少 Z 方向并行度。
 
 是否划算取决于三维纹理的带宽成本与并行度损失的相对大小，需要在目标平台实测。这类“多趟换并行度”的权衡在 Compute 管线中很常见。
+
+对两段 `(L1,T1)`、`(L2,T2)`，按近到远合成为 `(L1+T1*L2,T1*T2)`。交换两段会改变颜色贡献，结合三段却与分组方式无关，因此可以做保序并行扫描。示例中局部散射保存的是本段已经积分的辐亮度；若存的是每米源项，必须先乘相应积分因子，不能直接进入前缀合成。
 
 ## 透射加权的前缀合成
 
@@ -97,14 +84,10 @@ for (uint slice = 0; slice < sliceCount; ++slice)
 - [[03_Shader编程/Compute Shader]]、[[03_Shader编程/GPU归约与前缀和]]、[[03_Shader编程/GPU异步回读]]
 - [[07_颜色与后处理/颜色空间]]、[[07_颜色与后处理/Alpha表示]]、[[07_颜色与后处理/HDR与曝光]]
 - [[10_VFX与模拟/VFX效果组合]]
-- [[14_性能分析与优化/帧瓶颈怎么判断]]
+- [[14_性能分析与优化/帧瓶颈诊断]]
 
 - [[10_VFX与模拟/大气散射]]、[[10_VFX与模拟/体积云]]
 
 ## 参考资料
 
-- Sébastien Hillaire, *A Scalable and Production Ready Sky and Atmosphere Rendering Technique*.
-- Eric Bruneton and Fabrice Neyret, *Precomputed Atmospheric Scattering*.
-- Andrew Schneider, *The Real-time Volumetric Cloudscapes of Horizon Zero Dawn*.
-- Bartlomiej Wronski, *Volumetric Fog: Unified Compute Shader Based Solution to Atmospheric Scattering*, SIGGRAPH.
-- Sébastien Hillaire, *Physically Based and Unified Volumetric Rendering in Frostbite*.
+- [PBRT 4e §11.2：Transmittance](https://pbr-book.org/4ed/Volume_Scattering/Transmittance)：式11.6：分段透射的乘法性质；正文由此推导带透射权重的前缀合成。

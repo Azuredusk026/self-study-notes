@@ -17,15 +17,15 @@ Object → Vertex Shader → Rasterization → Material + Lights → Color
 - 流程直接；
 - 透明和自定义材质容易接入；
 - MSAA 相对自然；
-- 中间 Buffer 少，适合带宽敏感平台。
+- 中间缓冲少，适合带宽敏感平台。
 
-问题是要先决定每个物体受哪些灯影响。传统 Multi-pass Forward 可能对额外灯重复绘制物体；Single-pass Forward 会把灯列表传给 Shader，但列表长度和分支受限。
+问题是要先决定每个物体受哪些灯影响。传统 Multi-pass Forward 可能对额外灯重复绘制物体；Single-pass Forward 会把灯列表传给着色器，但列表长度和分支受限。
 
 不能简单说 Forward 的复杂度是 $N^2$。实际成本取决于可见对象、每个对象重叠灯数、屏幕覆盖、Pass 和剔除策略。
 
 ## Forward+
 
-Forward+ 保留 Forward 材质阶段，但先用 Tiled/Clustered Culling 建立灯列表。Pixel Shader 只遍历当前区域的灯。
+Forward+ 保留 Forward 材质阶段，但先用 Tiled/Clustered Culling 建立灯列表。像素着色器只遍历当前区域的灯。
 
 它结合了：
 
@@ -33,6 +33,8 @@ Forward+ 保留 Forward 材质阶段，但先用 Tiled/Clustered Culling 建立�
 - 屏幕分区对大量灯的筛选能力。
 
 代价是需要构建灯列表，且不透明和透明阶段可能使用不同列表或深度信息。
+
+本页读取的区域索引来自 [[13_渲染架构/Tiled与Clustered光源剔除]]。例如同一屏幕块里近处墙面与远处透明玻璃深度相差很大，只用不透明深度的最小最大值建表，会把玻璃附近的灯提前剔掉。透明阶段可使用覆盖完整视锥深度的簇表，或维护独立列表；选择改变的是候选集合，不改变材质 BRDF。
 
 ## 局部灯列表着色
 
@@ -66,7 +68,7 @@ float3 ShadeLocalLights(float3 positionWS, float3 normalWS, uint region)
 - [[05_光照阴影与GI/直接光照]]
 - [[13_渲染架构/GBuffer布局]]
 - [[13_渲染架构/渲染命令的组织方式]]
-- [[14_性能分析与优化/帧瓶颈怎么判断]]
+- [[14_性能分析与优化/帧瓶颈诊断]]
 
 - [[13_渲染架构/渲染路径与光源组织]]
 
@@ -74,7 +76,4 @@ float3 ShadeLocalLights(float3 positionWS, float3 normalWS, uint region)
 
 ## 参考资料
 
-- Ola Olsson et al., *Clustered Deferred and Forward Shading*.
-- Johan Andersson, *Tiled Deferred Shading*.
-- Unity and Unreal documentation on Forward+, Deferred and mobile renderers.
-- LearnOpenGL, `src/5.advanced_lighting/8.1.deferred_shading`.
+- [AMD：ForwardPlus11](https://github.com/GPUOpen-LibrariesAndSDKs/ForwardPlus11/)：官方样例 README：计算着色器构造局部灯列表、前向像素着色消费；本文未构建该旧版 D3D11 样例。

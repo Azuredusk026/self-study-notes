@@ -34,6 +34,7 @@ Allocate(bytes, alignment):
     region = FindFreeRange(begin, bytes)
     if region overlaps an in-flight range:
         grow the ring or wait for its completion value
+    Reserve(region)  // 立即占用，提交前也参与冲突检查
     writeCursor = region.end
     return region
 
@@ -41,11 +42,14 @@ Submit(region, value):
     inFlight.push(region, value)
 
 Collect(completedValue):
-    while oldest.value <= completedValue:
+    while inFlight is not empty and inFlight.front.value <= completedValue:
+        oldest = inFlight.pop_front()
         free(oldest.region)
 ```
 
-分配与提交可能由多个线程执行，需要统一排序或锁。环回时不能跨越未完成区间。等待会限制吞吐，扩容会增加峰值内存，选择依据是预算与可接受等待。
+分配与提交可能由多个线程执行，需要统一排序或锁；这里的 `inFlight` 按同一队列递增的提交完成值排序。环回时不能跨越未完成区间。等待会限制吞吐，扩容会增加峰值内存，选择依据是预算与可接受等待。
+
+环形分配器必须在分配成功时就保留区间，提交时再给它附完成值。假设两个记录线程都在提交前申请上传数据，若只把已提交区间放入冲突表，两次申请可能返回同一位置。可将区间分成“已保留、已提交、已完成”三个状态，取消未提交命令时释放其保留，GPU 完成后释放已提交区间。
 
 ## 分配与复用
 
@@ -77,6 +81,4 @@ Collect(completedValue):
 
 ## 参考资料
 
-- [D3D12 Heap Types](https://learn.microsoft.com/en-us/windows/win32/direct3d12/upload-and-readback-of-texture-data)。
-- [Vulkan Memory Allocation](https://docs.vulkan.org/spec/latest/chapters/memory.html)，coherent、flush、invalidate 与绑定。
-- Unreal RDG 官方文档，外部资源导入、导出和 transient allocator。
+- [Khronos：Memory Allocation](https://docs.vulkan.org/spec/latest/chapters/memory.html)：Host Access to Device Memory 与 VkMappedMemoryRange：映射、flush/invalidate 和 nonCoherentAtomSize 对齐。

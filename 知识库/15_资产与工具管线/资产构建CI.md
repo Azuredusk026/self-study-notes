@@ -6,41 +6,42 @@
 
 一次资产变更可执行：
 
-1. Checkout 正确 Commit/Changelist 和 LFS/Depot 内容；
+1. 检出正确 Commit/Changelist 和 LFS/Depot 内容；
 2. 恢复锁定的工具与依赖版本；
 3. 计算受影响资产；
-4. 运行 Validator/Importer/Cook；
+4. 运行验证器/导入器/Cook；
 5. 比较预算、引用和 Golden Result；
-6. 发布 Report、Artifact 和 Manifest；
+6. 发布 Report、产物和清单；
 7. 失败时阻止合入或发布。
 
-CI 要使用专用 Service Account，最小权限，并处理 DCC/Engine License。不要把个人账号和 Token 写进脚本。
+CI 要使用专用服务账号，最小权限，并处理 DCC 与引擎许可。不要把个人账号和 Token 写进脚本。
 
 ## 缓存
 
-DCC 转换、纹理压缩、Shader Compile 和 Cook 都昂贵。Cache Key 应包含 Source Hash、Settings、Tool Version、Platform 和 Dependency。
+DCC 转换、纹理压缩、着色器编译和 Cook 都昂贵。缓存键应包含源内容哈希、设置、工具版本、Platform 和依赖。
 
-缓存命中结果仍要验证 Metadata。错误 Cache Key 会复用过期产物，比没有缓存更难查。
+缓存命中结果仍要验证元数据。错误缓存键会复用过期产物，比没有缓存更难查。
 
-缓存应有容量、淘汰、命中率和污染恢复策略。CI 日志记录 Cache Hit/Miss 及耗时，才能判断收益。
+缓存应有容量、淘汰、命中率和污染恢复策略。CI 日志记录缓存命中与未命中及耗时，才能判断收益。
 
 ## 变更范围与依赖
 
-只检查本次直接修改文件可能漏掉下游。Texture 改变会影响 Material、Prefab、Level 和 Bundle。需要 Asset Dependency Graph 或 Import Database 计算受影响集合。
+只检查本次直接修改文件可能漏掉下游。纹理改变会影响材质、Prefab、关卡和资源包。需要资产依赖图或导入数据库计算受影响集合。
 
 全库检查最可靠但反馈慢。实践中：
 
 - Pre-submit 检查直接资产和关键反向依赖；
-- Merge CI 构建受影响 Bundle/Scene；
-- Nightly 做全库 Cook 与预算扫描；
-- Release 做目标平台完整构建。
+- 合并检查构建受影响资源包/场景；
+- 夜间任务做全库 Cook 与预算扫描；
+- 发布做目标平台完整构建。
 
 ## CI 中检查 LFS 指针
 
-大型二进制文件应在仓库中保存为 LFS 指针。下面的 Bash 检查暂存区中常见大型资产是否仍是普通 Git Blob：
+大型二进制文件应在仓库中保存为 LFS 指针。下面的 Bash 机制片段检查暂存区中常见大型资产是否具有 LFS 指针首行。`-z` 与 `read -d ''` 用 NUL 分隔文件名，保留中文、空格和换行；`pipefail` 把枚举命令及检查管道的失败传回调用方：
 
 ```bash
-git diff --cached --name-only --diff-filter=ACM | while IFS= read -r path; do
+set -o pipefail
+git diff --cached --name-only -z --diff-filter=ACM | while IFS= read -r -d '' path; do
   case "$path" in
     *.psd|*.fbx|*.wav|*.mp4)
       if ! git show ":$path" \
@@ -54,13 +55,19 @@ git diff --cached --name-only --diff-filter=ACM | while IFS= read -r path; do
 done
 ```
 
-管道直接检查暂存 Blob 的首行，不把二进制内容放入 Shell 变量。规则中的扩展名应与项目 `.gitattributes` 和资产类型表一致。仅检查扩展名不能识别改名或自定义容器，CI 还可结合文件大小和文件头。验证时分别提交一个 LFS 文件和一个普通 Blob，确保失败能指向具体路径。
+该片段要求路径不包含换行，且外层正确传播循环的失败退出码。管道直接检查暂存 Blob 的首行，不把二进制内容放入 Shell 变量。规则中的扩展名应与项目 `.gitattributes` 和资产类型表一致。仅检查扩展名不能识别改名或自定义容器，CI 还可结合文件大小和文件头。验证时分别提交一个 LFS 文件和一个普通 Blob，确保失败能指向具体路径。
+
+首行匹配只是一项快速筛查，真实指针还包含合法对象哈希和大小。发布前应使用 Git LFS 自身的指针与对象校验能力，并确认工作区已经取得真实内容：Git 暂存区应保存指针，导入器读到的工作区文件应保存资产，两者目标相反。缺失对象时先报告 LFS 下载或权限错误，再阻止导入，避免把存储故障误报成模型损坏。
+
+增量验收也要检查依赖闭包。例如材质引用贴图，修改贴图后，只有直接依赖内容的节点需要重新转换，打包节点仍需更新引用的内容身份。把所有反向引用无条件重建会浪费工作，完全忽略依赖变化又会发布旧包；依赖边应明确表示内容输入、元数据输入或仅运行时引用。
 
 ## 验证方法
 
 在干净工作区与缓存工作区构建同一输入，对比输出hash和诊断。修改依赖、工具版本或导入设置应触发正确节点；缺LFS、部分失败与发布中断保留可诊断状态。完整发布机制以资产构建与发布为主归属。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+实现状态：正文片段用于解释本页数据流与边界条件；完整宿主的编译、运行及性能测量尚未执行。可运行的独立模型以本页列出的具体测试为准。
+
+本机验证：[独立样例](../examples/revision_09_15/README.md) 的五项 Git 暂存区检查已通过，直接运行正文 Bash 片段，覆盖中文与空格文件名、英文及中文非指针拒绝，以及暂存内容与工作区内容不同的情况。它不访问 LFS 服务器，也不替代完整指针格式与对象存在性校验。
 
 ## 相关主题
 
@@ -69,7 +76,6 @@ done
 
 ## 参考资料
 
-- Git LFS Documentation, *Pointer files*, *Tracking* and *Locking*.
-- Perforce Helix Core Documentation, *Streams*, *File types*, *Shelving* and *Protections*.
-- Unity Version Control Documentation, *Branches*, *Locks* and *Gluon*.
-- Unity and Unreal Engine build automation and asset pipeline documentation.
+- [Git：git-diff](https://git-scm.com/docs/git-diff)：`-z` 选项规定 NUL 文件名分隔及路径不转义；本文 Bash 检查采用此约定。
+
+- [Git LFS：Pointer file specification](https://raw.githubusercontent.com/git-lfs/git-lfs/main/docs/spec.md)：指针格式和对象身份；正文首行检查仅作快速筛查，完整性需对照实体内容。

@@ -1,49 +1,64 @@
 # ReSTIR
 
-光源很多时，一个像素只看几次候选容易漏掉重要贡献。ReSTIR用reservoir保留代表样本与统计量，再跨帧和邻域重新评估候选。复用增加有效候选，也带来相关性与可见性偏差，权重必须在目标像素重算。
+光源很多时，一个像素只看几次候选，容易漏掉重要贡献。ReSTIR 用一个蓄水池保存代表样本及统计量，再把附近像素和历史帧的代表样本拿到当前像素重新评价。它压缩的是候选集合；要得到正确亮度，还必须补回选择概率和样本计数。
 
-## 候选样本怎样跨时空复用
+## 单像素的重要性重采样
 
-### ReSTIR
+先讨论固定像素的直接光积分 $I=\int f(y)\,dy$。$y$ 表示光源及光源表面位置，$f$ 包含颜色贡献与最终可见性。候选按密度 $p(y)$ 产生，所有密度使用相同测度，例如光源面积与光源选择概率的联合测度。若改用立体角密度，需要同时转换几何项，不能混用数值。
 
-Reservoir-based Spatiotemporal Importance Resampling（ReSTIR）用 Reservoir 保存许多候选中的代表样本及其统计权重。
+为便宜地比较候选，选取非负标量目标函数 $\hat p(y)$，例如未遮挡贡献的亮度。它不必归一化，但应在实际贡献非零的位置为正。每个候选的重采样权重是 $w_i=\hat p(y_i)/p(y_i)$。依次累计 $S=\sum_iw_i$，第 $i$ 个候选以 $w_i/S$ 的概率替换当前代表，最终样本的选择概率就与其权重成正比。
 
-Weighted Reservoir Sampling 处理第 $i$ 个候选权重 $w_i$ 时，以概率 $w_i/W_i$ 替换当前样本，其中 $W_i=\sum_{j=1}^{i}w_j$。最终只保存一个样本、权重和候选数，不必保存全部候选。
-
-ReSTIR DI 的典型过程：
-
-1. 当前像素从光源分布生成少量候选；
-2. 根据 Target Function 计算重要性权重；
-3. 与重投影的 Temporal Reservoir 合并；
-4. 与邻居 Spatial Reservoir 合并；
-5. 对最终样本做可见性测试；
-6. 用 Reservoir 统计量构造估计。
-
-Temporal/Spatial Reuse 使一个像素间接利用更多候选，但也带来相关性、Bias 和错误复用。必须检查 Geometry/Normal/Material 相似性，限制 History Age 和重复候选数。
-
-### ReSTIR 的可见性问题
-
-若每个候选都先发 Shadow Ray，复用的收益会被可见性成本吃掉。很多实现先用未遮挡贡献选 Reservoir，只对最终样本测试 Visibility。
-
-但遮挡后权重可能与目标分布不匹配，产生高方差或 Bias。Visibility Reuse、Pairwise MIS 和具体 ReSTIR 变体有不同修正，不能把基础 Reservoir 公式直接当完整实现。
-
-## 加权reservoir更新
-
-基础伪代码输入非负有限权重，累计W大于零时用w/W替换。它只说明单流采样，不是完整ReSTIR估计器。
+以下是算法伪代码。`random01` 给出独立的 $[0,1)$ 随机数，所有输入权重有限且非负。零权重仍计入候选总数；全零流保持无有效样本。
 
 ```text
-W += w
-M += 1
-if random01() < w/W: selected = candidate
+M = 0; S = 0; selected = invalid
+for candidate in candidates:
+    M += 1
+    w = target(candidate) / proposalPdf(candidate)
+    S += w
+    if w > 0 and random01() * S < w:
+        selected = candidate
+if S > 0:
+    W = S / (M * target(selected))
+    estimate = contributionWithVisibility(selected) * W
+else:
+    estimate = 0
 ```
 
-完整实现还保存目标函数与归一化权重，对时空reservoir合并处理候选数、重评估和MIS。可见性结果是否复用按具体变体核对。
+$W$ 是最终贡献的乘数，与更新期间的权重和 $S$ 不同。若只输出代表样本的颜色，亮光因为更常被选中，会被重复放大。条件在已生成候选集合上，最后估计的期望为：
 
-## 验证方法
+$$\sum_i\frac{w_i}{S}\frac{f(y_i)S}{M\hat p(y_i)}
+=\frac1M\sum_i\frac{f(y_i)}{p(y_i)}$$
 
-离散候选权重已知时统计选择频率，再与直接采样参考比较积分均值。目标像素改变、遮挡出现与历史重复时检查重评估、候选计数和年龄，不能只观察降噪后的颜色。
+右侧正是原候选的 Monte Carlo 估计。因此固定像素、有效支持和正确密度下，选择一个代表仍能保持期望。目标函数忽略遮挡并不自动造成偏差：最后重新计算正确可见性仍可无偏，但若代表经常被遮住，方差会很高。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+## 蓄水池合并与目标重评估
+
+源蓄水池 $j$ 保存样本 $y_j$、乘数 $W_j$ 和代表的候选数 $M_j$。拿到目标像素 $x$ 时，需要重新计算这个光样本在目标表面的重要性，而不是沿用邻居的亮度。基础合并权重为：
+
+$$w_j=\hat p_x(y_j)W_jM_j$$
+
+将这些权重送进同一替换过程，累计候选数为 $M=\sum_jM_j$，最终仍按 $W=S/[M\hat p_x(y)]$ 归一化。这条形式在源估计覆盖同一积分域、支持条件一致且归一化有效时成立；跨表面支持不一致、历史裁剪和可见性复用需要所用变体的修正，不能从基础式直接断言整个渲染器无偏。
+
+一个离散算例可以检查“换像素就重算”的必要性。光域只有两点，提议概率各为 1/2，两个源池各生成一个候选，因而 $W_j=2$。假设这次两个源池恰好分别保留这两点。目标像素的目标值为 4 和 1，合并权重为 8 和 2；实际贡献为 2 和 5。选择概率为 0.8 和 0.2，归一化后的输出分别为 2.5 和 25，期望为 7，恰好等于两点贡献之和。较大的单次输出是低概率样本的补偿，并非一定是数值错误。
+
+### 时域与空间候选
+
+时域阶段按运动向量寻找前帧表面，检查位置、法线和材质一致性，再读取历史池。光源索引必须有跨帧身份或重映射；光源删除后旧索引即使仍在数组范围内，也可能指向另一盏灯。相机切换、遮挡揭露和材质改变时使用当前池重建。
+
+空间阶段从相容邻居取候选。用独立输入和输出缓冲，避免线程读到邻居本轮已写的新池，否则复用次数会依赖执行顺序。深度和法线阈值减少明显错误连接，却不是估计器正确性的完整证明。重复复用会产生相关样本，$M$ 也不等于独立样本数；限制历史长度时，计数与归一化必须按所选算法一起处理。
+
+## 可见性与成本
+
+每个候选都发阴影射线，成本随候选数增加。先按未遮挡贡献重采样、只对最后代表发射线，可以把昂贵的可见性查询集中到少数样本。运动遮挡物出现时，重新求可见性仍有必要；直接沿用历史遮挡会使阴影滞后。
+
+ReSTIR 额外保存池数据，执行重投影、邻域读取与目标重评估。复杂 BRDF 或大量邻居会让这些成本超过节省的射线工作。比较时分别记录候选生成、时域、空间、最终阴影和命中着色，使用未降噪结果检查估计均值，再检查降噪后的稳定性。
+
+## 实现与验证
+
+[CPU参考程序](../examples/revision_09_15/reference.py)保留 `ris_estimate` 和 `merge_weight` 的独立标量实现。运行 `python 知识库/examples/revision_09_15/test_reference.py`，2026-10-22 的 14 项检查通过，其中四项覆盖离散域期望、全零池、合并权重和目标改变。有限域测试穷举提议组合与最终选择概率，不以随机碰巧接近均值作为通过依据。
+
+这些检查支持正文基础估计关系。它们没有运行完整的时空图像算法，不能证明复杂支持修正、动态可见性或相关性控制已实现。引擎编译、GPU 运行、捕获和性能测量均未执行。
 
 ## 相关主题
 
@@ -53,7 +68,5 @@ if random01() < w/W: selected = candidate
 
 ## 参考资料
 
-- Bitterli et al., *Spatiotemporal Reservoir Resampling for Real-Time Ray Tracing with Dynamic Direct Lighting*.
-- Schied et al., *Spatiotemporal Variance-Guided Filtering*.
-- NVIDIA, *Real-Time Denoising With Spatiotemporal Variance-Guided Filtering*.
-- Heitz et al., *A Fast and Robust Method for Avoiding Self-Intersection*.
+- Bitterli 等，[Spatiotemporal Reservoir Resampling](https://research.nvidia.com/labs/rtr/publication/bitterli2020spatiotemporal/)，SIGGRAPH 2020：直接光候选和时空复用的原始研究；性能数字属于论文场景，不移作本库测试结果。
+- NVIDIA，[RTXDI Reservoir.hlsli](https://github.com/NVIDIA-RTX/RTXDI-Library/blob/main/Include/Rtxdi/DI/Reservoir.hlsli)，`RTXDI_DIReservoir`、`RTXDI_CombineDIReservoirs`、`RTXDI_FinalizeResampling`：2026-10-22 核对字段与合并、归一化职责；可变分支仅作核对入口，本文代码为独立推导的算法伪代码。

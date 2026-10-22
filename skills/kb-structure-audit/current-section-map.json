@@ -196,7 +196,7 @@
       "source": "13_渲染架构/渲染路径与光源组织",
       "historical_heading": "Deferred 中怎样画灯",
       "target": "13_渲染架构/Deferred Rendering",
-      "current_heading": "Deferred 中怎样画灯",
+      "current_heading": "延迟光照的绘制范围",
       "original_ledger": "章节迁移清单.json",
       "previous_target": "13_渲染架构/Deferred Rendering"
     },
@@ -212,7 +212,7 @@
       "source": "13_渲染架构/渲染路径与光源组织",
       "historical_heading": "Deferred 并不一定更快",
       "target": "13_渲染架构/Deferred Rendering",
-      "current_heading": "Deferred 并不一定更快",
+      "current_heading": "成本与方案选择",
       "original_ledger": "章节迁移清单.json",
       "previous_target": "13_渲染架构/Deferred Rendering"
     },
@@ -276,7 +276,7 @@
       "source": "09_动画系统/动画压缩、面部、布料与毛发",
       "historical_heading": "动画数据为什么大",
       "target": "09_动画系统/动画压缩",
-      "current_heading": "动画数据为什么大",
+      "current_heading": "动画存储规模",
       "original_ledger": "章节迁移清单.json",
       "previous_target": "09_动画系统/动画压缩"
     },
@@ -284,7 +284,7 @@
       "source": "09_动画系统/动画压缩、面部、布料与毛发",
       "historical_heading": "Track 与 Key Reduction",
       "target": "09_动画系统/动画压缩",
-      "current_heading": "Track 与 Key Reduction",
+      "current_heading": "恒定轨道与关键帧抽取",
       "original_ledger": "章节迁移清单.json",
       "previous_target": "09_动画系统/动画压缩"
     },
@@ -292,7 +292,7 @@
       "source": "09_动画系统/动画压缩、面部、布料与毛发",
       "historical_heading": "Quantization",
       "target": "09_动画系统/动画压缩",
-      "current_heading": "Quantization",
+      "current_heading": "数值量化",
       "original_ledger": "章节迁移清单.json",
       "previous_target": "09_动画系统/动画压缩"
     },
@@ -300,7 +300,7 @@
       "source": "09_动画系统/动画压缩、面部、布料与毛发",
       "historical_heading": "Sample Rate 与 Variable Rate",
       "target": "09_动画系统/动画压缩",
-      "current_heading": "Sample Rate 与 Variable Rate",
+      "current_heading": "采样率与变长时间轨道",
       "original_ledger": "章节迁移清单.json",
       "previous_target": "09_动画系统/动画压缩"
     },
@@ -316,7 +316,7 @@
       "source": "09_动画系统/动画压缩、面部、布料与毛发",
       "historical_heading": "Blendshape 与 Morph Target",
       "target": "09_动画系统/面部动画",
-      "current_heading": "Blendshape 与 Morph Target",
+      "current_heading": "形状目标",
       "original_ledger": "章节迁移清单.json",
       "previous_target": "09_动画系统/面部动画"
     },
@@ -364,7 +364,7 @@
       "source": "09_动画系统/动画压缩、面部、布料与毛发",
       "historical_heading": "毛发：Cards、Strands 与 Guides",
       "target": "09_动画系统/毛发表示与模拟",
-      "current_heading": "毛发：Cards、Strands 与 Guides",
+      "current_heading": "发片、发丝与引导线",
       "original_ledger": "章节迁移清单.json",
       "previous_target": "09_动画系统/布料与毛发的表示、碰撞和LOD"
     },
@@ -420,7 +420,7 @@
       "source": "13_渲染架构/Render Pass、Command Buffer与Render Graph",
       "historical_heading": "Command Buffer 为什么存在",
       "target": "13_渲染架构/Command Buffer与帧提交",
-      "current_heading": "记录到完成",
+      "current_heading": "命令记录与完成",
       "original_ledger": "架构章节映射.json",
       "previous_target": "13_渲染架构/Command Buffer与帧提交"
     },
@@ -468,7 +468,7 @@
       "source": "13_渲染架构/Render Pass、Command Buffer与Render Graph",
       "historical_heading": "Render Graph",
       "target": "13_渲染架构/Render Graph",
-      "current_heading": "从声明到执行",
+      "current_heading": "声明与执行",
       "original_ledger": "架构章节映射.json",
       "previous_target": "13_渲染架构/Render Graph"
     },
@@ -476,7 +476,7 @@
       "source": "13_渲染架构/Render Pass、Command Buffer与Render Graph",
       "historical_heading": "Render Graph 能做什么",
       "target": "13_渲染架构/Render Graph",
-      "current_heading": "从声明到执行",
+      "current_heading": "声明与执行",
       "original_ledger": "架构章节映射.json",
       "previous_target": "13_渲染架构/Render Graph"
     },

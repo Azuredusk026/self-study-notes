@@ -18,6 +18,8 @@
 显示系统：呈现
 ```
 
+“完整覆盖”还受 viewport、scissor、裁剪和深度测试影响。全屏三角形只覆盖一个小 scissor 时，附件其他区域仍未初始化；如果后续要采样整张纹理，必须先清除或由其他写入覆盖这些像素。将目标预填成洋红色，再执行该通道，可以直接发现错误的丢弃声明。
+
 ## 后端表达
 
 ### Vulkan 动态渲染示例
@@ -97,6 +99,5 @@ Framebuffer Fetch或附件反馈扩展允许的访问有专门API条件，不能
 
 ## 参考资料
 
-- [Vulkan Render Pass](https://docs.vulkan.org/spec/latest/chapters/renderpass.html)，附件、动态渲染和 local read。
-- Unity URP Render Graph 官方文档，附件访问和通道合并。
-- Arm Developer，Tile-based rendering 与 framebuffer bandwidth 资料。
+- [Khronos：Render Pass](https://docs.vulkan.org/spec/latest/chapters/renderpass.html)：附件加载/存储操作、动态渲染与局部读取。
+- [Khronos：Subpasses](https://docs.vulkan.org/samples/latest/samples/performance/subpasses/README.html)：片上保留与依赖条件的官方示例。

@@ -4,17 +4,17 @@
 
 ## FK 与 IK
 
-Forward Kinematics（FK）从父到子给定关节旋转，结果稳定且符合动画制作习惯，但末端位置只能间接控制。
+正向运动学（FK）从父到子给定关节旋转，结果稳定且符合动画制作习惯，但末端位置只能间接控制。
 
-Inverse Kinematics（IK）给定 End Effector 目标，反求链上 Joint。它适合脚贴地、手握武器、看向目标和攀爬接触。
+逆向运动学（IK）给定末端目标，反求链上关节。它适合脚贴地、手握武器、看向目标和攀爬接触。
 
 IK 通常是在已采样动画上做最后修正，不是替代全部动画。
 
-## 让末端适应交互目标
+## 末端目标约束
 
-### Two Bone IK
+### 双骨骼 IK
 
-手臂和腿可近似为两段固定长度。给定根节点、目标和 Pole Vector，可解析求出中间 Joint 的弯曲平面和两个角度。
+手臂和腿可近似为两段固定长度。给定根节点、目标和 弯曲提示方向，可解析求出中间关节的弯曲平面和两个角度。
 
 目标距离必须限制在：
 
@@ -22,24 +22,24 @@ $$
 |l_1-l_2| \le d \le l_1+l_2
 $$
 
-超出范围时需要 Clamp 或允许 Stretch。Pole Vector 决定膝盖/肘部朝向；接近完全伸直时平面不稳定，应使用上一帧方向或动画 Hint 防止翻转。
+超出范围时需要限制范围或允许 伸长。弯曲提示方向 决定膝盖/肘部朝向；接近完全伸直时平面不稳定，应使用上一帧方向或动画提示方向 防止翻转。
 
 ### CCD 与 FABRIK
 
-CCD 从末端向根部迭代旋转每个 Joint，使末端逐步靠近目标。实现简单，但长链可能收敛慢，姿势也容易卷曲。
+CCD 从末端向根部迭代旋转每个关节，使末端逐步靠近目标。实现简单，但长链可能收敛慢，姿势也容易卷曲。
 
-FABRIK 在位置空间做 Forward/Backward Pass：先从末端向根部拉直，再固定根节点从根向末端恢复骨长。它收敛通常较快，也容易加入长度约束，但仍需把最终位置还原为 Joint Rotation。
+FABRIK 在位置空间做向末端和向根部的交替遍历：先从末端向根部拉直，再固定根节点从根向末端恢复骨长。它收敛通常较快，也容易加入长度约束，但仍需把最终位置还原为关节旋转。
 
 迭代 IK 必须设置最大迭代次数和误差阈值，避免不可达目标消耗无限时间。
 
-### Foot IK
+### 足部 IK
 
-一个可用的 Foot IK 不只是 Raycast 后移动脚：
+一个可用的足部 IK 不只是 射线检测 后移动脚：
 
-1. 从动画得到原始脚和骨盆 Pose；
-2. 向地面查询命中点与 Normal；
-3. 计算脚底 Offset 和朝向；
-4. 调整 Pelvis，避免腿被过度拉长；
+1. 从动画得到原始脚和骨盆姿态；
+2. 向地面查询命中点与法线；
+3. 计算脚底偏移和朝向；
+4. 调整 骨盆，避免腿被过度拉长；
 5. 对位置、旋转和权重做时间平滑；
 6. 仅在脚处于支撑相位时锁定，抬脚时释放。
 
@@ -47,20 +47,32 @@ FABRIK 在位置空间做 Forward/Backward Pass：先从末端向根部拉直，
 
 ## 两段链的角度
 
-算法伪代码输入正骨长l1、l2，d为根到目标的距离。Clamp后用余弦定理，角度余弦再限制到[-1,1]。
+算法伪代码输入正骨长 `l1`、`l2`，并要求 `0 < epsilon < min(l1,l2)`。`referenceAxis` 是归一化的参考长轴，`previousBend` 是上一有效弯曲方向。先处理重合目标，再把距离限制到可达域内部，避免伸直与完全折叠处的退化。
 
 ```text
-d = clamp(length(target-root), abs(l1-l2)+epsilon, l1+l2-epsilon)
+delta = target - root
+rawDistance = length(delta)
+axis = delta / rawDistance if rawDistance > epsilon else referenceAxis
+d = clamp(rawDistance, abs(l1-l2)+epsilon, l1+l2-epsilon)
 cosRoot = clamp((l1*l1+d*d-l2*l2)/(2*l1*d), -1, 1)
-rootAngle = acos(cosRoot)
-plane = BuildStablePlane(target-root, poleHint, previousPlane)
+bend = poleHint - axis * dot(poleHint, axis)
+if length(bend) < epsilon:
+    bend = previousBend - axis * dot(previousBend, axis)
+if length(bend) < epsilon:
+    fallback = (1,0,0) if abs(axis.x) <= abs(axis.y) else (0,1,0)
+    bend = fallback - axis * dot(fallback, axis)
+bend = normalize(bend)
+elbow = root + l1 * (cosRoot * axis + sqrt(max(0, 1-cosRoot*cosRoot)) * bend)
+end = root + d * axis
 ```
+
+这里的 `poleHint` 是根节点指向提示点的向量。投影减法先去掉沿目标轴的分量，剩下的方向决定肘部朝哪一侧弯曲；代码直接给出中间关节位置。根与目标重合时目标轴本身没有定义，先保留上一有效轴或参考姿态轴，再进入计算。上一帧弯曲方向也要重新投影到当前垂直平面，接近零时按参考姿态选取备用轴。最后由每根骨的参考长轴到新骨方向求旋转，长轴上的扭转继承动画或单独限制。
 
 ## 验证方法
 
 目标在可达域内、域外与完全伸直附近分别测试。记录末端误差、骨长误差、迭代数与平面翻转，移动平台锁点保存到平台局部空间。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+实现状态：正文片段用于解释本页数据流与边界条件；完整宿主的编译、运行及性能测量尚未执行。可运行的独立模型以本页列出的具体测试为准。
 
 ## 相关主题
 
@@ -71,6 +83,4 @@ plane = BuildStablePlane(target-root, poleHint, previousPlane)
 
 ## 参考资料
 
-- Buss, *Introduction to Inverse Kinematics with Jacobian Transpose, Pseudoinverse and Damped Least Squares Methods*.
-- Aristidou and Lasenby, *FABRIK: A fast, iterative solver for the Inverse Kinematics problem*.
-- Unity and Unreal Engine animation state machine, IK and Root Motion documentation.
+- [Buss：逆运动学方法](https://mathweb.ucsd.edu/~sbuss/ResearchWeb/ikmethods/)：作者页面的求解方法与不可达目标说明；本文两段链由余弦定理直接推导。

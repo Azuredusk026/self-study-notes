@@ -2,26 +2,26 @@
 
 粒子系统用大量生命周期短、行为相似的元素近似烟、火、碎片、轨迹和环境动态。系统真正困难的部分是生命周期管理、数据布局、并行更新、排序与跨系统交互。
 
-## 从发射到回收
+## 粒子生命周期
 
-### Particle、Emitter 与 System
+### 粒子、发射器与系统
 
-Particle 保存单个元素的状态，例如：
+粒子保存单个元素的状态，例如：
 
-- Position、Velocity、Age、Lifetime；
-- Color、Size、Rotation；
-- Random Seed、Custom Data；
-- Mesh/Material/Frame Index。
+- 位置、速度、年龄、寿命；
+- 颜色、尺寸、旋转；
+- 随机种子、自定义数据；
+- 网格、材质和帧索引。
 
-Emitter 定义 Spawn Rate、Burst、初始分布和 Update 规则。System 组合多个 Emitter，并管理共享参数、事件、LOD 和整体 Bounds。
+发射器定义发射 Rate、Burst、初始分布和更新规则。系统组合多个发射器，并管理共享参数、事件、LOD 和整体包围范围。
 
-一个爆炸可能由火球、烟、火星、冲击波、碎片、光源和声音组成。它们应共享时间与 Gameplay 语义，但不一定使用同一种模拟或材质。
+一个爆炸可能由火球、烟、火星、冲击波、碎片、光源和声音组成。它们应共享时间与玩法语义，但不一定使用同一种模拟或材质。
 
 ### 生命周期
 
-最基本的流程是 Spawn → Initialize → Update → Render → Kill。每帧应确保 Age 超过 Lifetime 的粒子被回收。只生成不回收会让存活数量持续增长。
+最基本的流程是发射 → Initialize → 更新 → 渲染 → 回收。每帧应确保年龄超过寿命的粒子被回收。只生成不回收会让存活数量持续增长。
 
-Spawn Rate 按每秒计数时，应累积不足一个粒子的余数：
+发射 Rate 按每秒计数时，应累积不足一个粒子的余数：
 
 $$
 n=\lfloor r\Delta t+a\rfloor,\qquad a'=r\Delta t+a-n
@@ -29,7 +29,7 @@ $$
 
 $r$ 是每秒发射率，$a$ 是上一帧余数。这样帧率变化时平均数量仍稳定。Burst 则在事件时一次生成指定数量。
 
-压紧后的数组下标会随并行调度变化，因而不能把它当作稳定身份。Random 不应直接依赖线程执行顺序。使用粒子 Stable ID、Emitter Seed 和 Spawn Index 派生随机数，才能重放和调试。
+压紧后的数组下标会随并行调度变化，因而不能把它当作稳定身份。随机不应直接依赖线程执行顺序。使用粒子稳定ID、发射器 Seed 和发射序号派生随机数，才能重放和调试。
 
 ### 基础积分
 
@@ -51,80 +51,82 @@ $$
 
 CPU 适合：
 
-- 需要精确 Gameplay 事件和物理查询；
+- 需要精确玩法事件和物理查询；
 - 数量较少但行为分支复杂；
 - 需要网络同步或 CPU 读取结果；
 - 平台不支持所需 Compute 能力。
 
-数据应使用 Structure of Arrays 或紧凑 Chunk，避免每粒子独立对象和分配。更新任务可按 Emitter/Chunk 并行，但 Spawn、Kill 与 Event Queue 需要清楚的所有权。
+数据应使用按字段分离的数组或紧凑分块，避免每粒子独立对象和分配。更新任务可按发射器/分块并行，但发射、回收与事件队列需要清楚的所有权。
 
 CPU 模拟后仍要把实例数据上传 GPU。数量很大时，模拟和上传都会成为瓶颈。
 
-## 设备端状态怎样流转
+## 设备端状态流转
 
-### GPU Particle Pool
+### GPU 粒子池
 
-GPU 粒子通常预分配固定容量的 Structured Buffer，不在每帧动态创建对象。常见资源：
+GPU 粒子通常预分配固定容量的结构化缓冲，不在每帧动态创建对象。常见资源：
 
-- Particle State Pool；
-- Alive List；
-- Dead List；
-- Spawn Request；
-- Sort Key/Index；
-- Indirect Draw Arguments；
-- Event Buffer。
+- 粒子状态 Pool；
+- 存活列表；
+- 空闲列表；
+- 发射 Request；
+- 排序键/索引；
+- 间接绘制 Arguments；
+- 事件缓冲。
 
-Dead List 保存可复用 Slot。Spawn 从 Dead List 取索引并初始化；Update 遍历 Alive List，仍存活的写入下一帧 Alive List，死亡的归还 Dead List。
+空闲列表保存可复用槽位。发射从空闲列表取索引并初始化；更新遍历存活列表，仍存活的写入下一帧存活列表，死亡的归还空闲列表。
 
-这相当于 GPU 上的对象池和 Stream Compaction。Append/Consume Buffer 或 Atomic Counter 可以管理数量，但原子竞争和无序写仍需控制。
+这相当于 GPU 上的对象池和流压缩。Append/Consume 缓冲或原子计数器可以管理数量，但原子竞争和无序写仍需控制。
 
 ### 一帧 GPU 模拟
 
 典型调度：
 
-1. 清零本帧 Counter；
-2. Spawn Pass 消费请求和 Dead Slot；
-3. Update Pass 推进位置、生命周期与属性；
-4. Collision/Event Pass 产生事件；
-5. Compact Alive List；
-6. 可选 Cull、LOD 与 Sort；
+1. 清零本帧计数器；
+2. 发射 Pass 消费请求和空闲槽位；
+3. 更新 Pass 推进位置、生命周期与属性；
+4. 碰撞/事件 Pass 产生事件；
+5. Compact 存活列表；
+6. 可选剔除、LOD 与排序；
 7. 写 Indirect Argument；
-8. Indirect Draw。
+8. 间接绘制。
 
-Pass 间 Buffer 从 UAV Write 变为 SRV/Indirect Read 时需要正确 Barrier。漏同步可能表现为随机丢粒子或读取上一帧数据。
+Pass 间缓冲从 UAV Write 变为 SRV/Indirect Read 时需要正确屏障。漏同步可能表现为随机丢粒子或读取上一帧数据。
 
 ### Bounds 与可见性
 
-CPU 不知道 GPU 粒子的最终位置时，很难得到紧致 Bounds。固定巨大 Bounds 会让离屏系统无法剔除；过小则粒子突然消失。
+CPU 不知道 GPU 粒子的最终位置时，很难得到紧致包围范围。固定巨大包围范围会让离屏系统无法剔除；过小则粒子突然消失。
 
 方案包括：
 
-- 作者设置保守 Fixed Bounds；
-- GPU Reduction 计算 Bounds，异步回读给下一帧 CPU；
+- 作者设置保守 Fixed 包围范围；
+- GPU Reduction 计算包围范围，异步回读给下一帧 CPU；
 - 按空间 Tile 管理粒子；
-- System 不可见时降低频率或停止 Spawn，但谨慎处理重新出现时的时间状态。
+- 系统不可见时降低频率或停止发射，但谨慎处理重新出现时的时间状态。
 
-GPU 回读会引入延迟，不能为了实时 Bounds 强制同步。
+GPU 回读会引入延迟，不能为了实时包围范围强制同步。
 
-## 怎样把粒子画出来
+池管理还要满足数量守恒：本帧存活数加空闲槽位数等于总容量，每个槽位恰属于其中一个集合。死亡槽位只归还一次，新发射请求最多消费可用数量。调试时可以给每个槽位累计归属标记，检查重复和遗漏；只看总数相等可能掩盖一个槽位重复、另一个丢失。固定随机种子保证随机输入一致，浮点运算和原子追加顺序仍可能使跨设备的位级结果不同。
 
-### Billboard、Mesh 与 Ribbon
+## 粒子绘制
+
+### 面片、网格与轨带
 
 Billboard 用面片朝向摄像机。它顶点少，但透明区域可能很大。
 
-Mesh Particle 适合碎片、石块和简单 Crowd。可通过 Instancing 绘制，并从粒子 Buffer 读取 Transform、颜色和动画帧。
+网格粒子适合碎片、石块和简单 Crowd。可通过 Instancing 绘制，并从粒子缓冲读取变换、颜色和动画帧。
 
 Ribbon/Trail 按历史点生成带状网格。Catmull-Rom 等曲线可平滑轨迹，但过密采样会增加顶点，过稀会在急转弯处折断。还要处理宽度方向、UV 距离和相机朝向。
 
 ### 排序
 
-标准 Alpha Blend 依赖 Back-to-front 顺序。Per-emitter 排序便宜，但两个 Emitter 互相穿插时错误；Global Sorting 更正确，却要统一收集粒子并减少状态切换。
+标准 Alpha Blend 依赖从后向前顺序。Per-emitter 排序便宜，但两个发射器互相穿插时错误；Global Sorting 更正确，却要统一收集粒子并减少状态切换。
 
-GPU 可生成 View Depth Sort Key，再用 Radix Sort、Bitonic Sort 或并行 Merge。排序成本随粒子数量增长，且会额外读写 Buffer。
+GPU 可生成视图深度排序键，再用基数排序、双调排序或并行合并。排序成本随粒子数量增长，且会额外读写缓冲。
 
 并非所有粒子都要严格排序：
 
-- Additive/Modulate 对顺序不敏感；
+- 在统一混合方程、无额外深度副作用时，纯加法或纯乘法混合可交换顺序；
 - 烟雾可接受近似分桶；
 - 小而快速的火星可以关闭排序；
 - 关键透明层再使用精确排序。
@@ -133,40 +135,40 @@ GPU 可生成 View Depth Sort Key，再用 Radix Sort、Bitonic Sort 或并行 M
 
 CPU Physics 对数十万粒子过贵。GPU 粒子常用：
 
-- Scene Depth：便宜，但只能碰当前视图可见表面，屏幕后信息缺失；
+- 场景深度：便宜，但只能碰当前视图可见表面，屏幕后信息缺失；
 - SDF/Distance Field：支持体积查询，但需要内存和更新；
 - Heightfield：适合地面；
-- 简化 Primitive/Analytic Collider；
-- Hardware Ray Query：质量高但成本与平台支持需评估。
+- 简化图元/Analytic Collider；
+- Hardware 射线查询：质量高但成本与平台支持需评估。
 
-Depth Collision 要把粒子投影到 Screen UV，比较粒子 View Depth 与 Scene Depth，并用重建 Normal 反射或衰减速度。相机外和被前景遮挡的碰撞都不可靠。
+深度碰撞要把粒子投影到屏幕 UV，比较粒子视图深度与场景深度，并用重建法线反射或衰减速度。相机外和被前景遮挡的碰撞都不可靠。
 
-## Niagara 与 VFX Graph 的架构理解
+## Niagara 与 VFX Graph 的架构
 
-现代系统把逻辑拆为 System、Emitter、Particle 阶段和可复用 Module。Parameter/Data Interface 负责从 Gameplay、Scene Texture、Skeleton、SDF 或外部 Buffer 输入数据。
+现代系统把逻辑拆为系统、发射器、粒子阶段和可复用 Module。参数与数据接口负责从玩法、场景纹理、骨架、SDF 或外部缓冲输入数据。
 
-节点图最终仍要编译成 CPU Vector VM、GPU Shader 或对应执行代码。图可视化不会消除分支、Buffer、同步和 Shader Variant 成本。
+节点图最终仍要编译成 CPU Vector VM、GPU 着色器或对应执行代码。图可视化不会消除分支、缓冲、同步和着色器 Variant 成本。
 
 可复用模块应定义清楚输入、输出、单位、空间和默认值。隐式读取全局参数的模块很难移植和调试。
 
 ## 事件与读回
 
-GPU Event 可以在设备内驱动二级 Emitter，例如死亡火花生成小烟。若要通知 Gameplay，通常需要异步 Readback，结果会延迟若干帧。
+GPU 事件可以在设备内驱动二级发射器，例如死亡火花生成小烟。若要通知玩法，通常需要异步 Readback，结果会延迟若干帧。
 
-关键命中、伤害和可交互碎片应由 Gameplay/CPU 决定，粒子只表现结果。不要让必须即时可靠的逻辑依赖 GPU 回读。
+关键命中、伤害和可交互碎片应由玩法/CPU 决定，粒子只表现结果。不要让必须即时可靠的逻辑依赖 GPU 回读。
 
 ## 验证方法
 
-- 显示 Spawn、Alive、Dead、Culled、Sorted 数量和容量峰值。
+- 显示发射、Alive、Dead、Culled、Sorted 数量和容量峰值。
 - 检查固定 Seed 下结果是否可复现。
-- 用 RenderDoc 检查 Compute Dispatch、Counter、Barrier 和 Indirect Args。
-- 分开记录 Simulation、Sort、Collision、Draw 和 Pixel 成本。
-- 测试暂停、时间缩放、大帧间隔、Emitter 销毁和场景切换。
-- 检查容量耗尽时是拒绝 Spawn、替换旧粒子还是降级，不能静默写越界。
+- 用 RenderDoc 检查 Compute 派发、计数器、屏障和 Indirect Args。
+- 分开记录模拟、排序、碰撞、Draw 和像素成本。
+- 测试暂停、时间缩放、大帧间隔、发射器销毁和场景切换。
+- 检查容量耗尽时是拒绝发射、替换旧粒子还是降级，不能静默写越界。
 
 ### GPU 粒子更新
 
-输入 Buffer 保存上一帧粒子，输出 Buffer 与存活计数器属于当前帧。每个线程处理一个槽位，存活粒子通过原子计数压紧写入：
+输入缓冲保存上一帧粒子，输出缓冲与存活计数器属于当前帧。每个线程处理一个槽位，存活粒子通过原子计数压紧写入：
 
 ```hlsl
 [numthreads(64, 1, 1)]
@@ -185,14 +187,14 @@ void Simulate(uint id : SV_DispatchThreadID)
 }
 ```
 
-Dispatch 前要把 `AliveCount` 清零，并确保上一轮写入已完成；模拟后再用计数生成 Indirect Draw 参数。原子追加在粒子很多时可能争用，分组前缀和能进一步优化。验证时读取少量计数器或在 GPU 调试器中检查：片段要求 `inputCount` 不超过输出容量，且每个输入最多输出一次；生产流程还要把 Spawn 的需求一起纳入容量预算。`AliveCount` 不得超过输出容量，死亡粒子不能残留到 Draw。
+派发前要把 `AliveCount` 清零，并确保上一轮写入已完成；模拟后再用计数生成间接绘制参数。原子追加在粒子很多时可能争用，分组前缀和能进一步优化。验证时读取少量计数器或在 GPU 调试器中检查：片段要求 `inputCount` 不超过输出容量，且每个输入最多输出一次；生产流程还要把发射的需求一起纳入容量预算。`AliveCount` 不得超过输出容量，死亡粒子不能残留到 Draw。
 
 
 ## 轨迹材质与连续采样
 
 Trail UV 常用 U 表示沿轨迹累计距离，V 表示横向。按累计距离而不是点序号铺 UV，可以避免采样密度变化时纹理伸缩。
 
-转弯处宽度方向可能翻转。生成网格时应保持连续 Frame，或使用 View-facing Ribbon 并处理相机方向接近平行时的退化。
+转弯处宽度方向可能翻转。生成网格时应保持连续标架，或使用面向相机的轨带并处理相机方向接近平行时的退化。
 
 透明 Ribbon 的自交无法通过简单排序完全解决。可改用 Additive、缩短寿命、控制轨迹形状，或在关键效果使用 OIT/专门网格。
 
@@ -201,9 +203,9 @@ Trail UV 常用 U 表示沿轨迹累计距离，V 表示横向。按累计距离
 
 VFX 常用低成本场而不是完整物理：
 
-- Scene Depth 做屏幕空间碰撞和交界；
+- 场景深度做屏幕空间碰撞和交界；
 - SDF 做体积碰撞、吸引和避障；
-- Curl Noise 生成近似无散度的旋涡速度场；
+- Curl 噪声生成近似无散度的旋涡速度场；
 - Vector Field 驱动群体流向；
 - Heightfield 模拟水面或地面传播；
 - Flipbook 播放 Houdini 离线流体结果。
@@ -215,11 +217,8 @@ VFX 常用低成本场而不是完整物理：
 - [[03_Shader编程/Compute Shader]]、[[03_Shader编程/GPU归约与前缀和]]、[[03_Shader编程/GPU异步回读]]
 - [[10_VFX与模拟/VFX效果组合]]
 - [[13_渲染架构/Draw Call与合批]]
-- [[14_性能分析与优化/帧瓶颈怎么判断]]
+- [[14_性能分析与优化/帧瓶颈诊断]]
 
 ## 参考资料
 
-- Reeves, *Particle Systems: A Technique for Modeling a Class of Fuzzy Objects*.
-- Unreal Engine Documentation, *Niagara Overview*.
-- Unity Documentation, *Visual Effect Graph*.
-- GPU Gems 3, *Chapter 23. High-Speed, Off-Screen Particles*.
+- [GPU Gems 3 第23章：High-Speed, Off-Screen Particles](https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-23-high-speed-screen-particles)：粒子覆盖与离屏合成成本；本文存活池、空闲池和槽位守恒为独立设计。
