@@ -26,11 +26,27 @@ if (hasDebugOutput) {
 
 这段代码依赖已经设为当前的有效 OpenGL 上下文。版本查询得到运行时能力，扩展查询还要结合相应函数入口是否成功加载。多个上下文并存时，对象共享范围与当前状态需要按规范和窗口库设置处理。逐通道记录着色程序、帧缓冲、深度和混合状态。对象绑定出错时，从第一条输出异常的绘制向前查找最近一次状态变更。
 
+## 顶点数组的绑定捕获
+
+对象保存数据，绑定点决定下一条命令操作哪个对象，容器对象再保存对象间的连接。以OpenGL 3.3核心上下文的顶点输入为例，调用`glVertexAttribPointer`时，当前`GL_ARRAY_BUFFER`会被记录到当前VAO的对应属性中。之后切换ARRAY_BUFFER不会自动改变这条连接。
+
+```cpp
+// vao、positions、otherBuffer已创建；positions含紧密排列的float3
+glBindVertexArray(vao);
+glBindBuffer(GL_ARRAY_BUFFER, positions);
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), nullptr);
+glEnableVertexAttribArray(0);
+glBindBuffer(GL_ARRAY_BUFFER, otherBuffer);
+// vao的属性0仍读取positions；glVertexAttribPointer再次调用才会改接
+```
+
+这段C++调用片段省略上下文、函数加载和数据上传。排查时查询属性0的`GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING`，再查stride、offset和使能位；仅查询当前ARRAY_BUFFER会看见otherBuffer，却不能解释绘制真正读取的资源。索引缓冲绑定则属于VAO状态，切换VAO时必须一并检查。
+
 ## 验证方法
 
 查询真实版本与扩展，检查函数加载、共享上下文和第一条异常绘制前的状态。删除名称语义由驱动管理未完成引用，覆盖缓冲内容仍需同步。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+实现状态：版本查询和VAO绑定均为需要有效上下文的C++片段，未在OpenGL上下文中执行。绑定捕获语义已核对规范；运行验收需按查询值确认属性0仍指向positions，并检查调试回调输出。
 
 ## 相关主题
 
@@ -39,9 +55,5 @@ if (hasDebugOutput) {
 
 ## 参考资料
 
-- Microsoft Learn, *Graphics Pipeline (Direct3D 11)*.
-- Khronos, *Vulkan Specification*, Chapter: Pipelines.
-- AMD GPUOpen, graphics performance guides.
-- LearnOpenGL, `src/4.advanced_opengl/9.*.geometry_shader_*`.
-- LearnOpenGL, `src/8.guest/2021/3.tessellation`.
-- LearnOpenGL 中文镜像，*OpenGL*、*Hello Window*、*Hello Triangle*。
+- [Khronos glVertexAttribPointer规范源文件](https://github.com/KhronosGroup/OpenGL-Refpages/blob/main/gl4/glVertexAttribPointer.xml)：2026-10-22核读Description中的GL_ARRAY_BUFFER_BINDING捕获及vertex array state段，限定传统属性指针接口。
+- [Khronos glDebugMessageCallback](https://registry.khronos.org/OpenGL-Refpages/gl4/html/glDebugMessageCallback.xhtml)：调试回调接口入口，本轮未运行上下文验证。

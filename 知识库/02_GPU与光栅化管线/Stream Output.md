@@ -2,7 +2,7 @@
 
 有时顶点结果还要用于下一次模拟或绘制，无需立即光栅化。Stream Output把选定阶段输出按声明写进缓冲，后续再作为输入。接口声明、输出容量与图元顺序共同决定这份缓存能否正确复用。
 
-## 流输出：把几何结果存下来
+## 流输出声明
 
 几何阶段的输出默认只能继续进入光栅化。如果想要的只是“处理后的顶点流”——供后续绘制、粒子状态更新或调试——其他路径可以在Compute中写缓冲，或者用CPU处理；Stream Output提供图形前端结果的直接捕获。
 
@@ -12,27 +12,23 @@ Direct3D 用声明表描述捕获项：
 
 ```cpp
 D3D11_SO_DECLARATION_ENTRY decl[] = {
-    { 0, "SV_POSITION", 0, 0, 4, 0 },   // 语义名, 索引, 起始分量, 分量数, 输出槽
+    { 0, "SV_POSITION", 0, 0, 4, 0 },   // 流编号, 语义名, 索引, 起始分量, 分量数, 输出槽
     { 0, "NORMAL",      0, 0, 3, 0 },
     { 0, "TEXCOORD",    0, 0, 2, 0 },
 };
 ```
 
+本例捕获4+3+2个32位分量，每条记录为36字节。创建Geometry Shader的流输出声明时，输出槽0的stride应为36；复用为顶点输入时，位置、法线和UV的偏移依次为0、16、28字节。声明描述的是选中字段的输出布局，不能直接采用含额外填充的CPU结构体大小。
+
 OpenGL 用 `glTransformFeedbackVaryings` 指定变量名列表，配合 `GL_INTERLEAVED_ATTRIBS`（交错写入同一缓冲）或 `GL_SEPARATE_ATTRIBS`（分缓冲写入）；GLSL 还可以用 `xfb_buffer`、`xfb_offset`、`xfb_stride` 布局限定符直接描述写入布局。
 
-### 顺序约束的代价
+### 输出数量与顺序
 
-流输出的昂贵不在“多写一份”，而在**顺序**。图形 API 功能规范要求：无论内部如何并行调度，具体顺序保证按API、图元与捕获模式核对，不能从一个API推断所有后端。
+D3D11流输出把条带展开为列表，只写完整图元。四顶点三角形带构成两个三角形，捕获结果是六条顶点记录，而不是四条；据此分配前述布局的缓冲需要216字节。把输入顶点数直接当作输出计数，会低估容量。
 
-一旦引入几何着色器或曲面细分，每个输入图元输出的顶点数可变，并行完成次序不可预测，顺序保证就从免费变成结构性成本：
+可变数量输出同时带来容量和调度问题。原子追加可以分配唯一位置，但完成顺序不等于输入顺序；需要稳定顺序的计算方案可先记录每项数量，再做前缀和分配连续区间。这个算法比较说明了顺序要求带来的额外工作，实际流输出硬件采用何种缓冲和调度方式仍需对应架构资料或计数器支持。
 
-- **原子追加**可分配唯一位置，但并行线程完成次序不等于输入顺序，单独使用不能满足有序捕获；
-- **两阶段写入**：先算每个图元的输出大小，再做前缀和求偏移，最后并行写入——高效但复杂，这已经接近“用计算着色器手写几何管线”的形态；
-- **粗粒度序列化**：实现简单，吞吐损失明显。
-
-流输出把并行友好的散写问题变成了要求顺序稳定的队列问题，强迫并行机器在某处排队。这也是它看似是通用 GPGPU 的早期入口、却没有成为通用计算主路径的原因——计算着色器从一开始就按显式并行、显式同步组织，不背图形管线的顺序包袱。
-
-流输出的现代角色是保守的：调试与可视化、小规模几何捕获、个别沿用至今的粒子更新。面对通用的生成、压缩、排序需求，实践上转向计算着色器加显式缓冲，顺序与压缩策略自行管理。
+捕获结果只用于下次绘制时，D3D11的`DrawAuto`可消费记录的输出数量，避免CPU回读计数。输出缓冲按`D3D11_BIND_STREAM_OUTPUT`创建，作为顶点输入时还需相应绑定标志。取消输出绑定后再把它用作输入；D3D12的显式资源状态转换属于另一套接口契约。
 
 ## 输出契约
 
@@ -55,7 +51,7 @@ drawCapturedGeometry()
 
 用三个已知位置捕获结果并检查stride、元素数与顺序。把缓冲作为下一次顶点输入，对比直接绘制；读回只在GPU复制完成后进行。测试输出容量不足和多流绑定。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+实现状态：D3D11声明和输出流程是宿主片段，36字节stride及条带六记录可按字段数复算。未创建D3D设备或执行捕获；运行验收需检查SO统计、容量不足行为和读回记录。
 
 ## 相关主题
 
@@ -64,13 +60,5 @@ drawCapturedGeometry()
 
 ## 参考资料
 
-- Frank Luna, *Introduction to 3D Game Programming with DirectX 12*, Tessellation and Geometry Shader chapters.
-- Khronos OpenGL Wiki, *Tessellation*, *Tessellation Control Shader*, *Tessellation Evaluation Shader*, *Transform Feedback*.
-- Microsoft Learn, *Geometry-Shader Stage*, *Primitive Topologies*, *Getting Started with the Stream-Output Stage*.
-- Microsoft, *Direct3D 11.3 Functional Specification*, Tessellation Pattern and Fixed Order of Pipeline Results.
-- NVIDIA, *GeForce 8 and 9 Series GPU Programming Guide*, Geometry Shader performance sections.
-- Joshua Barczak, *Why Geometry Shaders Are Slow (Unless you're Intel)*.
-- Jasper Bekkers, *Mesh Shaders and the Future of Geometry Processing*.
-- Catlike Coding, *Flat and Wireframe Shading*.
-
-- [D3D11声明字段顺序，2026-10-07核读](https://learn.microsoft.com/en-us/windows/win32/api/d3d11/ns-d3d11-d3d11_so_declaration_entry)。
+- [Microsoft Stream-Output Stage](https://learn.microsoft.com/en-us/windows/win32/direct3d11/d3d10-graphics-programming-guide-output-stream-stage)：2026-10-22核读条带转列表、完整图元写入、DrawAuto与绑定要求。
+- [D3D11_SO_DECLARATION_ENTRY](https://learn.microsoft.com/en-us/windows/win32/api/d3d11/ns-d3d11-d3d11_so_declaration_entry)：声明字段顺序，既有2026-10-07核读记录。

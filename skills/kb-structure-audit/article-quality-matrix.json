@@ -1385,43 +1385,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何把GPU执行和访存行为对应到性能瓶颈"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Wave、延迟隐藏与占用率；缓存与访问模式；直接与分块渲染；逻辑流量估算；控制变量实验；API 差异的影响"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "用32线程地址段和寄存器驻留上界展开访问合并与占用率；说明粒度假设。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Python逻辑流量算式独立执行；硬件计数器、GPU计时未执行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "CUDA Best Practices 13.4 §10.2.1与§11.1核读，CUDA示例的架构条件独立保留。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "保留线程、地址、计数器的推理链，替换不适用的宿主代码套话。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "GPU执行与访存对应现有主概念，正文标题按机制和操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "02领域维护覆盖、深度与资源执行机制，跨页应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
       }
     },
     "batch_migration_authorized": true,
@@ -1452,7 +1452,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "a38b011b456135e4201c5ca2d88ff2e5c1060a9c17e9f07df54ee2e630028b05",
+    "final_sha256": "088a9f021eb9ac817a2fd9aec10f8548da845206e7b2143893e3aa54c5b25ae9",
     "content_commit": "6de6394",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -1481,9 +1481,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gpu",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "用32线程地址段和寄存器驻留上界展开访问合并与占用率；说明粒度假设。",
+        "保留线程、地址、计数器的推理链，替换不适用的宿主代码套话。"
+      ],
+      "content_sha256": "088a9f021eb9ac817a2fd9aec10f8548da845206e7b2143893e3aa54c5b25ae9",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -1498,43 +1508,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何按输入图元生成有限数量的输出图元"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "几何着色器的编程模型；几何着色器的应用；几何着色器的执行成本；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "补线框距离发射与noperspective条件、跨近平面限制、广告牌退化方向；修正细分阶段和条带性能。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "HLSL/GLSL片段明确类型、矩阵和宿主遗漏；未执行完整GS编译与放大率计时。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Microsoft Geometry Shader Stage及HLSL Append核读输入、拓扑、显式采样与输出关系。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "硬件资源预留用条件表述，保留按图元上下文组织应用的主线。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Geometry Shader对应现有主概念，正文标题按机制和操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "02领域维护覆盖、深度与资源执行机制，跨页应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
       }
     },
     "batch_migration_authorized": true,
@@ -1571,7 +1581,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "3aebddad7663518623b964c7f7eae9630731eb0f7ee011768d025b30b3e33fc6",
+    "final_sha256": "54dc9ed74657dd3d2d7b0f102744bc8f05654b8b5fc4be717d04431eface8710",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -1601,9 +1611,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gpu",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "补线框距离发射与noperspective条件、跨近平面限制、广告牌退化方向；修正细分阶段和条带性能。",
+        "硬件资源预留用条件表述，保留按图元上下文组织应用的主线。"
+      ],
+      "content_sha256": "54dc9ed74657dd3d2d7b0f102744bc8f05654b8b5fc4be717d04431eface8710",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -1618,43 +1638,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何在上下文中管理图形对象绑定和使用"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "OpenGL 状态机与对象；顶点数组的绑定捕获；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "展开VAO捕获ARRAY_BUFFER的时机，给出切换绑定后仍读取原缓冲的例子。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "版本与属性绑定为OpenGL 3.3+上下文片段，函数加载、上传、实际绘制明确未执行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Khronos glVertexAttribPointer Description核读绑定捕获；非本主题来源删除。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "用对象、绑定点、容器连接解释状态错误，并给出具体查询字段。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "OpenGL对象与状态对应现有主概念，正文标题按机制和操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "02领域维护覆盖、深度与资源执行机制，跨页应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
       }
     },
     "batch_migration_authorized": true,
@@ -1684,7 +1704,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "bfd389d021ab1e9f4b3b7a946ce18c474c139cdba74e9c58770507e067a110c3",
+    "final_sha256": "3415086acc8ea82e4eb793f82204e59e8e06f406d28abd138ba5bc47d0fa3182",
     "content_commit": "8045bc0",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -1714,9 +1734,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gpu",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "展开VAO捕获ARRAY_BUFFER的时机，给出切换绑定后仍读取原缓冲的例子。",
+        "用对象、绑定点、容器连接解释状态错误，并给出具体查询字段。"
+      ],
+      "content_sha256": "3415086acc8ea82e4eb793f82204e59e8e06f406d28abd138ba5bc47d0fa3182",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -1730,43 +1760,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何用模板状态表达对象遮罩并避免位冲突"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Stencil；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "修正GreaterEqual方向，读掩码同时作用两侧，展开三分支与写掩码隔离。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "test_raster枚举256个旧值验证位保留；OpenGL独立演示通道补清除、宿主与状态前提。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Khronos glStencilFunc mask/GL_GEQUAL和glStencilOp三分支/Replace核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "把无来源真实案例改为有前提的分类方案，说明全位清除与共享位分配的边界。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Stencil与对象遮罩对应现有主概念，正文标题按机制和操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "02领域维护覆盖、深度与资源执行机制，跨页应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
       }
     },
     "batch_migration_authorized": true,
@@ -1796,7 +1826,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "932839d958724a52820fdd9765cfd824882822eb57e020f7af5d51372e5937ab",
+    "final_sha256": "c9eaa4baa291644c7b6c05341eb11cd696175873a4c2ee6556e6ea4be655dce0",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -1825,9 +1855,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gpu",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "修正GreaterEqual方向，读掩码同时作用两侧，展开三分支与写掩码隔离。",
+        "把无来源真实案例改为有前提的分类方案，说明全位清除与共享位分配的边界。"
+      ],
+      "content_sha256": "c9eaa4baa291644c7b6c05341eb11cd696175873a4c2ee6556e6ea4be655dce0",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -1842,43 +1882,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何把几何前端结果保存到缓冲供后续消费"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "流输出声明；输出契约；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "算出36字节字段布局和四顶点条带展开六条记录的容量，区分D3D11计数与D3D12状态。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "声明表与宿主伪代码保留明确状态，捕获运行未执行，验收检查SO统计和容量。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Microsoft Stream-Output Stage核读完整图元、条带展开、DrawAuto和绑定要求。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "用数量与顺序解释成本，删除未经硬件证实的强制排队及通用性能断言。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Stream Output对应现有主概念，正文标题按机制和操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "02领域维护覆盖、深度与资源执行机制，跨页应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
       }
     },
     "batch_migration_authorized": true,
@@ -1909,7 +1949,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "98c8e78871c135fac93fad46228e74b5f1e5474271ac704b2c519bbfac8050f1",
+    "final_sha256": "5cb9b54ea8701bfc4ee0c7c18478e2c5146b0a0dd4b3289f86efd000eba95592",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -1939,9 +1979,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gpu",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "算出36字节字段布局和四顶点条带展开六条记录的容量，区分D3D11计数与D3D12状态。",
+        "用数量与顺序解释成本，删除未经硬件证实的强制排队及通用性能断言。"
+      ],
+      "content_sha256": "5cb9b54ea8701bfc4ee0c7c18478e2c5146b0a0dd4b3289f86efd000eba95592",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -2065,43 +2115,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何把三角形覆盖转为正确片元属性"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "三角形覆盖；重心坐标；透视正确插值；屏幕空间导数；透视插值的计算轮廓；验证方法"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "展开有向边函数、重心权重和w不同的中点反例1/3，补退化条件。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "test_raster检查相同w退化与透视中点；HLSL、覆盖和导数GPU执行未验证。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "D3D11 Rasterization Rules核读共享边与MSAA；透视关系由CPU模型复核。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "从覆盖推到属性插值，客观标题取代设问标题，删除深度主题串引。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "光栅化与属性插值对应现有主概念，正文标题按机制和操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "02领域维护覆盖、深度与资源执行机制，跨页应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
       }
     },
     "batch_migration_authorized": true,
@@ -2133,7 +2183,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "ba7a45c66559c07291875bbdcb2047c77b8c95a11081d4e7985dd72b9baf90b8",
+    "final_sha256": "671143c057a99e1825ff327607acad6dbccf011a11dce0d0fe932a6b8f36ab1e",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -2162,9 +2212,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gpu",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "展开有向边函数、重心权重和w不同的中点反例1/3，补退化条件。",
+        "从覆盖推到属性插值，客观标题取代设问标题，删除深度主题串引。"
+      ],
+      "content_sha256": "671143c057a99e1825ff327607acad6dbccf011a11dce0d0fe932a6b8f36ab1e",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -2398,43 +2458,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何用保守可见性测试减少绘制"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "背面剔除；视锥剔除；遮挡剔除；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "纠正AABB对平面归一化的要求，区分球半径与投影半径，并计算贴边保留例。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "test_raster将投影半径与八角点枚举对照，检查平面尺度；引擎剔除未运行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "线性支持函数推导与独立角点枚举支持AABB条件；硬件覆盖另引API规则。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "按包围体数据说明误剔除，避免把坐标手性直接等同于法线方向。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "可见性剔除对应现有主概念，正文标题按机制和操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "02领域维护覆盖、深度与资源执行机制，跨页应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
       }
     },
     "batch_migration_authorized": true,
@@ -2462,7 +2522,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "4e4e9b056c6281ee428cf5e156624f66b82accfd3789d1f422bb1f043d57d6da",
+    "final_sha256": "969916b9729b6fbc4950039c84ce20478285d3c66749498d1c144a358b26f729",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -2491,9 +2551,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gpu",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "纠正AABB对平面归一化的要求，区分球半径与投影半径，并计算贴边保留例。",
+        "按包围体数据说明误剔除，避免把坐标手性直接等同于法线方向。"
+      ],
+      "content_sha256": "969916b9729b6fbc4950039c84ce20478285d3c66749498d1c144a358b26f729",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -2507,43 +2577,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何利用提前深度测试、深度预通道与Hi-Z减少被遮挡的着色工作"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Early-Z；Depth Prepass；Hi-Z；保守分层归约；验证方法；分组生成多级深度"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "纠正预通道只着色一次与Alpha Test天然禁用的绝对断言，补全局调度、覆盖一致和局部mip级数。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "归约为HLSL片段，明确同步、尺寸、UAV契约；GPU预通道与层级运行未执行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "D3D11覆盖与辅助调用规则核读；最远深度归约按全区域遮挡条件推导。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "比较几何重复与片元节省，删除无范围合批和固定四通道配方。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "基于深度的可见性优化对应现有主概念，正文标题按机制和操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "02领域维护覆盖、深度与资源执行机制，跨页应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
       }
     },
     "batch_migration_authorized": true,
@@ -2577,7 +2647,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "9f3d0d7c418fa645808b65f8e45e76cd370d1248b45d1d83d13ca661139e3590",
+    "final_sha256": "f24c7f66cda0b6d1eafbe29dc12621539eec814749c39f33e9cfb1a3c6765101",
     "content_commit": "6de6394",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -2607,9 +2677,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gpu",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "纠正预通道只着色一次与Alpha Test天然禁用的绝对断言，补全局调度、覆盖一致和局部mip级数。",
+        "比较几何重复与片元节省，删除无范围合批和固定四通道配方。"
+      ],
+      "content_sha256": "f24c7f66cda0b6d1eafbe29dc12621539eec814749c39f33e9cfb1a3c6765101",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -2623,43 +2703,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何从空间和时间样本重建稳定图像"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "空间采样方案；时域抗锯齿的基本思想；历史累积与重投影；伪影的成因；高频细节的稳定性；仅用重投影的简化方案"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "按齐次w表达抖动；展开EMA等效样本初始化与方差范围；修正颜色盒除零和运动对应限制。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "test_raster检查颜色盒内外及退化情况；既有reference.py检查EMA，完整TAA工程与画质未运行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Salvi2016第12—24、38—45页核读；MSAA样本规则来自Microsoft；数学例由CPU复算。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "统一客观章节名，保留累积和校验的机制链，收窄全来源、成本恒定等笼统表述。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "抗锯齿与时域重建对应现有主概念，正文标题按机制和操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "02领域维护覆盖、深度与资源执行机制，跨页应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
       }
     },
     "batch_migration_authorized": true,
@@ -2727,7 +2807,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "c394d9d1b44fe7b12aa5038d208d2f079e589bf5950bd497298b4abfdef7c275",
+    "final_sha256": "bdab3ec5174e242903620ca690667ed76abbfd63a61502800d575a63b7ba085a",
     "content_commit": "8045bc0",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -2756,9 +2836,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gpu",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "按齐次w表达抖动；展开EMA等效样本初始化与方差范围；修正颜色盒除零和运动对应限制。",
+        "统一客观章节名，保留累积和校验的机制链，收窄全来源、成本恒定等笼统表述。"
+      ],
+      "content_sha256": "bdab3ec5174e242903620ca690667ed76abbfd63a61502800d575a63b7ba085a",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -2773,43 +2863,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何让GPU完成图像进入扫描输出并控制排队延迟"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "CPU-GPU 并行和帧延迟；Swapchain 与显示呈现；呈现时间线；验证方法；相关主题；参考资料"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "区分在途帧与图像索引，解释提交fence不能证明呈现信号量已消费。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "给出60Hz FIFO模型及信号量寿命伪代码，明确获取失败与fence重置；显示测量未执行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Vulkan Guide Swapchain Semaphore Reuse的Problem/Solution核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "以时间线和资源归属解释延迟，删除仅称有对应实验却无链接的状态句。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "显示呈现对应现有主概念，正文标题按机制和操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "02领域维护覆盖、深度与资源执行机制，跨页应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
       }
     },
     "batch_migration_authorized": true,
@@ -2841,7 +2931,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "fed893d2b10e7d59b5ca0fff555580e1a65ddefa7c55ba3555bb9d81fa0ffdb9",
+    "final_sha256": "26664d39b03008620c120c749c4d0cc3939db44b18be2b96c5a0986e500e34cf",
     "content_commit": "8045bc0",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -2871,9 +2961,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gpu",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "区分在途帧与图像索引，解释提交fence不能证明呈现信号量已消费。",
+        "以时间线和资源归属解释延迟，删除仅称有对应实验却无链接的状态句。"
+      ],
+      "content_sha256": "26664d39b03008620c120c749c4d0cc3939db44b18be2b96c5a0986e500e34cf",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -2887,43 +2987,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何正确解释并消费深度值"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "深度映射；深度缓冲与深度纹理；从深度重建位置；Depth Test 和 Depth Write；验证方法；相关主题"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "补轴向深度逆函数与射线Z归一化，修正深度资源归属、拷贝路径和MSAA条件。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "test_raster检查两种深度方向的往返与单调性；HLSL逆VP宿主和实际精度测量未运行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Nathan Reed Why 1/z及Graphing depth maps核读，有限远平面模型独立复算。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "合并重复Reversed-Z段，移除动机替代推导的说法，章节按映射、资源、重建组织。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "深度缓冲与位置重建对应现有主概念，正文标题按机制和操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "02领域维护覆盖、深度与资源执行机制，跨页应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
       }
     },
     "batch_migration_authorized": true,
@@ -2959,7 +3059,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "817985712e552648ec5a1df699a7f2d2de0196f4e32726d5877f71624a20f39a",
+    "final_sha256": "7537ec86b35c5493ffda6271f5a84c540a29d8c308616d74c4bb6bd1a2aa085a",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -2988,9 +3088,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gpu",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "补轴向深度逆函数与射线Z归一化，修正深度资源归属、拷贝路径和MSAA条件。",
+        "合并重复Reversed-Z段，移除动机替代推导的说法，章节按映射、资源、重建组织。"
+      ],
+      "content_sha256": "7537ec86b35c5493ffda6271f5a84c540a29d8c308616d74c4bb6bd1a2aa085a",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -3004,43 +3114,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何在不透明遮挡之后正确合成透明表面"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Alpha Test；Alpha Blend；透明排序；常见透明方案；针对性的轻量方案；透明性能"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "补加权OIT清除与混合配置、空像素合成；深度剥离采用双图交替；限定离线索引排序误差。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "completion_reference.py的89项中包含前后向Alpha合成；OIT图像及容量未在GPU执行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "McGuire2015 Algorithm Overview与3D Transparency Pass核读，PDF获取失败未当作全文证据。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "透明排序改为客观标题，去除无依据的方向数质量保证和误入的网络验证描述。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "透明合成对应现有主概念，正文标题按机制和操作命名。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "02领域维护覆盖、深度与资源执行机制，跨页应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页采用数值例、公式、状态表或代码呈现机制，无新增结果图。"
       }
     },
     "batch_migration_authorized": true,
@@ -3079,7 +3189,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "af83f228a8c14f6deaee3bbe04447f39e410158fd4fec9b4eb625b2d527f163f",
+    "final_sha256": "9d13570614747e6882d8d5d09ca438996d3907417a99f2150aad5a4dce8ddd09",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -3108,9 +3218,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-gpu",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "补加权OIT清除与混合配置、空像素合成；深度剥离采用双图交替；限定离线索引排序误差。",
+        "透明排序改为客观标题，去除无依据的方向数质量保证和误入的网络验证描述。"
+      ],
+      "content_sha256": "9d13570614747e6882d8d5d09ca438996d3907417a99f2150aad5a4dce8ddd09",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {

@@ -337,7 +337,7 @@
       "source": "知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md",
       "heading": "几何着色器为什么慢",
       "target": "知识库/02_GPU与光栅化管线/Geometry Shader.md",
-      "current_heading": "几何着色器为什么慢",
+      "current_heading": "几何着色器的执行成本",
       "decision": "独立主归属或明确合并",
       "reason": "Geometry Shader改写图元，Stream Output保存结果；细分机制合入既有Tessellation主归属。",
       "source_hash": "89bdceb1d86023401c9ce7f3bc155b21b0c01255c3901f06ab291cf15236a3b6"
@@ -418,7 +418,7 @@
       "source": "知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md",
       "heading": "流输出：把几何结果存下来",
       "target": "知识库/02_GPU与光栅化管线/Stream Output.md",
-      "current_heading": "流输出：把几何结果存下来",
+      "current_heading": "流输出声明",
       "decision": "独立主归属或明确合并",
       "reason": "Geometry Shader改写图元，Stream Output保存结果；细分机制合入既有Tessellation主归属。",
       "source_hash": "dc1bf445b91ab8b4680f9e05d3ce3cbd09a124422dca84a17375cd024ba7423d"
@@ -427,7 +427,7 @@
       "source": "知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md",
       "heading": "顺序约束的代价",
       "target": "知识库/02_GPU与光栅化管线/Stream Output.md",
-      "current_heading": "顺序约束的代价",
+      "current_heading": "输出数量与顺序",
       "decision": "独立主归属或明确合并",
       "reason": "Geometry Shader改写图元，Stream Output保存结果；细分机制合入既有Tessellation主归属。",
       "source_hash": "a2b2baf4beb02b6731a7bb4815115eceb4f7ac17297b41454bb697e3c840fdca"

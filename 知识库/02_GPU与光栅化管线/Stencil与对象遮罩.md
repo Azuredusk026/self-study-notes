@@ -13,7 +13,7 @@ Stencil Buffer 保存少量整数位。每个样本可以根据比较结果执�
 - Portal 和 Mask；
 - 镜面、描边和特殊材质分类。
 
-Stencil 很便宜，但位数有限。项目需要统一位分配，否则不同系统会互相覆盖。
+Stencil可在允许提前测试的条件下减少着色，但附件访问与状态仍有成本，位数也有限。项目需要统一位分配，否则不同系统会互相覆盖。
 
 ### 用模板做对象分类
 
@@ -33,7 +33,7 @@ Stencil 很便宜，但位数有限。项目需要统一位分配，否则不同
 
 模板通常只有 8 位，所有系统共享，因此位分配必须全局规划。一种常见结构是低位留给临时标记（如光体积），高位段编码对象大类。
 
-数值的**排列顺序**可以用来减少比较次数。若角色、普通物体、地形依次取递增值，一次 `LessEqual` 比较配合适当的读掩码就能同时覆盖这三类，而把天空这类取更高值的对象排除在外：
+数值的**排列顺序**可以用来减少比较次数。若角色、普通物体、地形依次取递增值，一次 `GreaterEqual` 比较配合适当的读掩码就能同时覆盖这三类，而把天空这类取更高值的对象排除在外：
 
 ```text
 Character = 0x10
@@ -45,24 +45,27 @@ readMask = 0xF0, reference = 0x30, compare = GreaterEqual
 → 一次比较命中全部三类 PBR 对象，排除天空
 ```
 
-本例采用 OpenGL 比较语义：`reference op (stencil & readMask)`。`0x30 >= 0x10/0x20/0x30` 为真，`0x30 >= 0x80` 为假。零值仍满足比较，因此未标记样本需由其他条件排除，或使用精确分类判断。数值区间能减少比较，但分配方案会受排序约束。
+本例采用 OpenGL 比较语义：`(reference & readMask) op (stencil & readMask)`。`0x30 >= 0x10/0x20/0x30` 为真，`0x30 >= 0x80` 为假。零值仍满足比较，因此未标记样本需由其他条件排除，或使用精确分类判断。数值区间能减少比较，但分配方案会受排序约束。
 
 ### 位宽紧张下的取舍
 
-8 位很快会不够用。一个真实的取舍案例是：皮肤原本占用独立的模板值，后来被合并进角色类别。
+假设高4位保存对象大类，低4位由局部效果使用。把皮肤归入角色大类后，贴花可一次排除全部角色；需要单独处理皮肤的通道则读取材质分类缓冲。这个分工要求皮肤识别数据在消费时仍可访问，节省的模板位也必须足以抵消额外数据读取。
 
-- **收益**：排除全部角色像素（贴花与投影必须排除角色）只需一次比较，而不是逐类比较；
-- **代价**：无法单独用模板筛出皮肤像素，屏幕空间次表面散射这类需要精确圈定皮肤区域的效果失去了模板门控。
+写掩码控制更新哪些位。设操作结果为 $v$，原值为 $s$，8位写掩码为 $m$，最终值是 $(s\mathbin{\&}\sim m)\mathbin{|}(v\mathbin{\&}m)$。例如原值0x15、Replace值0x20、写掩码0xF0，结果为0x25；低4位的0x5保留下来。
 
-这个取舍成立的前提是目标平台本来也跑不动屏幕空间 SSS，皮肤的差异改由着色器内的分类标记处理，不增加 CPU 开销。换一个平台，结论可能完全相反。
-
-这类决策应当连同理由一起记录。只看到最终的位分配表，后来者无法判断哪些位置可以调整、哪些是刻意为之。
+模板失败时执行 `sfail`；模板通过但深度失败时执行 `dpfail`；两者都通过时执行 `dppass`。选中Replace分支后仍受写掩码约束。对象分类通常只在深度通过时写入，否则后方对象会覆盖前方表面的类别。
 
 ### 模板描边的执行顺序
 
 模板描边需要两次绘制同一对象。第一遍正常绘制并把可见样本的模板值写成 1；第二遍略微放大几何，只在模板值不等于 1 的位置输出描边颜色：
 
 ```cpp
+// 独立演示通道独占8位模板；FBO已具备模板附件
+glStencilMask(0xFF);
+glClearStencil(0);
+glClear(GL_STENCIL_BUFFER_BIT);
+glEnable(GL_DEPTH_TEST);
+glDepthMask(GL_TRUE);
 glEnable(GL_STENCIL_TEST);
 glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
 
@@ -81,7 +84,7 @@ glStencilFunc(GL_ALWAYS, 0, 0xFF);
 glDisable(GL_STENCIL_TEST);
 ```
 
-输入是同一网格、正常材质 Pass 和扩张描边 Pass；输出写入当前颜色附件和共享 Depth/Stencil Attachment。第一遍的 `GL_REPLACE` 只应发生在通过所选测试的样本上。第二遍关闭模板写入，防止描边区域污染后续对象。
+该C++片段要求当前有效OpenGL上下文、已绑定FBO和着色程序；`DrawObject`封装网格绑定与绘制。演示通道使用已知初始状态，并在退出后由下一通道重新设置状态。共享模板附件时按位分配清理，不能照搬全位清空。输入是同一网格、正常材质 Pass 和扩张描边 Pass；输出写入当前颜色附件和共享 Depth/Stencil Attachment。第一遍的 `GL_REPLACE` 只应发生在通过所选测试的样本上。第二遍关闭模板写入，防止描边区域污染后续对象。
 
 关闭深度测试能得到完整轮廓，也会让被遮挡部分透出来；保留深度测试可只显示可见轮廓。沿对象空间法线等比例扩张在非均匀缩放、尖角和远近透视下会宽度不稳，屏幕空间描边或背面膨胀需要单独处理。验证时清空模板为 0，并逐次查看两遍 Draw 的模板输入、模板输出和颜色输出。
 
@@ -102,13 +105,9 @@ glDisable(GL_STENCIL_TEST);
 
 - [[02_GPU与光栅化管线/光栅化可见性导读]]
 
-示例与验证范围：代码按文中前提解释机制，完整类型、资源和项目状态需由接入工程补齐。完整目标引擎运行与GPU性能为UNVERIFIED；正文给出的机制与实际实验范围分别记录。
+实现与验证：[raster_models.py](../examples/revision/raster_models.py) 与 [test_raster.py](../examples/revision/test_raster.py)枚举256个原值检查写掩码隔离，并核对分类比较结果，运行 `python -B 知识库/examples/revision/test_raster.py`。OpenGL上下文与两遍描边未运行；模板图像需用目标工程捕获。
 
 ## 参考资料
 
-- Microsoft Learn, *Depth-Stencil Functionality*.
-- Khronos, *Vulkan Specification*, Rasterization and Fragment Operations.
-- Emil Persson, *Creating Vast Game Worlds* and reversed-Z references collected by NVIDIA.
-- Nathan Reed, *Depth Precision Visualized*, NVIDIA Developer Blog.
-- Unity Manual, *Platform-specific rendering differences* and URP Depth Priming documentation.
-- Unity Technologies, URP `CanCopyDepth` implementation in the Universal Render Pipeline package.
+- [Khronos glStencilFunc规范源文件](https://github.com/KhronosGroup/OpenGL-Refpages/blob/main/gl4/glStencilFunc.xml)：2026-10-22核读mask参数与GL_GEQUAL条目，两边均先应用读掩码。
+- [Khronos glStencilOp规范源文件](https://github.com/KhronosGroup/OpenGL-Refpages/blob/main/gl4/glStencilOp.xml)：2026-10-22核读sfail、dpfail、dppass和Replace定义。关闭深度测试时，模板通过也进入dppass分支。

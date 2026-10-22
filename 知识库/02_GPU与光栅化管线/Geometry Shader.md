@@ -42,17 +42,17 @@ void main() {
 - `[maxvertexcount(N)]` 声明单次调用输出顶点的最大值，供编译器与硬件按最坏情况预留资源；
 - 输出通过流类型表达：`PointStream`、`LineStream`、`TriangleStream`。线条与三角形的输出拓扑只有带（strip）形式；需要列表语义时用 `RestartStrip` 逐段切分。条带末端顶点数不足以构成图元的部分会被丢弃；
 - 输出顶点的位置必须已经变换到齐次裁剪空间。顶点属性插值发生在光栅化阶段，几何着色器输出的每个顶点属性就是插值端点；
-- 几何着色器中不存在屏幕空间导数。需要采样纹理时只能用显式 mip 级别（如 `SampleLevel`），不能使用依赖隐式 LOD 的采样。
+- 几何着色器中不存在屏幕空间导数。纹理访问可使用显式mip级别（如`SampleLevel`）、显式梯度或Load；不能依赖本阶段不存在的屏幕导数。
 
 ### 图元拓扑
 
 几何着色器的输入前缀必须与输入装配阶段声明的图元拓扑一致，否则顶点对不上。基础拓扑分两类五种：点列表（point list）、线列表（line list）、线条带（line strip）、三角形列表（triangle list）、三角形带（triangle strip）。
 
-列表与带的区别在顶点复用方式。三角形列表每三个顶点组成一个独立三角形；三角形带中每个后续顶点都与前两个顶点组成新三角形，$N$ 个顶点表达 $N-2$ 个三角形，内存与处理都更省。
+列表与带的区别在顶点复用方式。三角形列表每三个顶点组成一个独立三角形；三角形带中每个后续顶点都与前两个顶点组成新三角形，$N$ 个顶点最多构成 $N-2$ 个三角形，退化图元和条带重启另计。索引三角形列表也能复用顶点；条带是否节省带宽或处理取决于索引排列、缓存和输出接口。
 
 两个容易忽略的细节：
 
-**绕序**。三角形带中相邻三角形共享边，顶点顺序天然交替，导致奇数位置与偶数位置的三角形绕序相反。GPU 内部会对偶数序三角形的后两个顶点做调换，使所有三角形保持一致的绕序，背面剔除才能正确工作。
+**绕序**。三角形带中相邻三角形共享边，顶点顺序天然交替，导致奇数位置与偶数位置的三角形绕序相反。图元装配规则按三角形序号交替调整有效绕序，使一个连续条带的正面方向一致；这是接口语义，不要求硬件物理交换顶点。
 
 **邻接图元**。`lineadj`（4 顶点：线段本体加两端邻点）与 `triangleadj`（6 顶点：三角形本体加三条边的对顶点）只为几何着色器提供邻接信息，邻接顶点不会被绘制——即使管线没有启用几何着色器，邻接顶点也不会出现在画面上。轮廓检测等算法依赖这一输入形态。
 
@@ -73,7 +73,8 @@ void GS(point VS_IN input[1], inout TriangleStream<GS_OUT> triStream)
     float3 up = float3(0, 1, 0);
     float3 look = GetWorldSpaceViewDir(input[0].positionWS);
     look.y = 0.0;
-    look = normalize(look);
+    float lookLengthSq = dot(look, look);
+    look = lookLengthSq > 1e-8 ? look * rsqrt(lookLengthSq) : float3(0, 0, 1);
     float3 right = cross(up, look);
 
     float2 corners[4] = { float2(-1,-1), float2(1,-1), float2(-1,1), float2(1,1) };
@@ -107,11 +108,18 @@ void GS(triangle VS_IN p[3], inout TriangleStream<GS_OUT> triStream)
     float2 e0 = p2 - p1, e1 = p2 - p0, e2 = p1 - p0;
     float area = abs(e1.x * e2.y - e1.y * e2.x);
     float3 d = float3(area / length(e0), area / length(e1), area / length(e2));
-    // 三个顶点分别携带 (d0,0,0) (0,d1,0) (0,0,d2)，光栅化时自动插值
+    // GS_OUT.edgeDistance必须声明为 noperspective float3
+    for (int i = 0; i < 3; ++i) {
+        GS_OUT o;
+        o.positionCS = p[i].positionCS;
+        o.edgeDistance = float3(0, 0, 0);
+        o.edgeDistance[i] = d[i];
+        triStream.Append(o);
+    }
 }
 ```
 
-在屏幕像素空间计算距离，线宽才能以像素为单位稳定控制。片元着色器取三个分量的最小值，经指数衰减得到抗锯齿的线宽，阈值外的片元丢弃。距离属性在片元阶段使用屏幕线性插值（如noperspective）才能保持屏幕距离含义。退化三角形与接近零w要拒绝。注意这里必须手动做透视除法：几何着色器拿到的 `positionCS` 尚未除以 $w$。
+在屏幕像素空间计算距离，线宽才能以像素为单位稳定控制。片元着色器取三个分量的最小值，经指数衰减得到抗锯齿的线宽，阈值外的片元丢弃。距离属性在片元阶段使用屏幕线性插值（如noperspective）才能保持屏幕距离含义。该片段要求输入已经位于可投影的同一裁剪区域，且三条边长度非零；跨近平面三角形应先正确裁剪并重算距离，不能只检查w非零。注意这里必须手动做透视除法：几何着色器拿到的 `positionCS` 尚未除以 $w$。
 
 ### 法线可视化与调试几何
 
@@ -144,7 +152,7 @@ void main() {
 
 ### 草地：两个阶段的组合
 
-大规模草地演示常把两个阶段串起来用：曲面细分负责增密（把地面网格细分出大量顶点，每个顶点位置长一根草），几何着色器负责成形（把每个细分出的图元扩展成一根弯曲的草叶）。
+大规模草地演示常把两个阶段串起来用：曲面细分负责增密（把地面网格细分出大量顶点，按细分后的图元选择草叶基点），几何着色器负责成形（把每个细分出的图元扩展成一根弯曲的草叶）。
 
 一根草叶的生成按执行顺序是若干几何操作的组合：
 
@@ -153,15 +161,15 @@ void main() {
 3. 沿高度分若干段，每段输出左右两个顶点形成条带：宽度随高度线性收窄，前向弯曲量按 $t^{curve}$ 增长，幂指数控制弯曲形状；
 4. 每个顶点的世界高度钳制不低于地面，防止弯曲穿透地表。
 
-这类组合管线的代价也直接可见：曲面细分的放大作用在顶点阶段，几何着色器的放大作用在图元阶段，两级相乘后三角形数量爆炸，规模一大 GPU 就会跑满。它是教学演示的合理选择，不是生产草地方案——生产环境通常用实例化加预生成叶片，或计算着色器驱动的 GPU-Driven 方案。
+曲面细分器产生参数域采样点，域着色器求出位置，几何着色器再按图元生成叶片。两级放大量相乘后，应预算输出顶点、覆盖面积和阴影重复绘制。可与实例化叶片、计算着色器生成方案在相同草密度和画质下比较，性能结论由目标设备测量决定。
 
-## 几何着色器为什么慢
+## 几何着色器的执行成本
 
-几何着色器在工程上的评价是“灵活但慢”，根源在于可变输出与 GPU 执行组织之间的结构性冲突。
+几何着色器的成本来自每图元调用、可变输出和后续光栅化。判断瓶颈需同时改变输入图元数、输出上限与实际输出量。
 
 **执行不均衡**。可变输出与分支可能降低执行批次利用率，具体调用映射与输出发射由硬件实现决定。Geometry Shader没有Compute线程组协作模型，不能把它描述为同组barrier等待。
 
-**预留缓冲压力**。`maxvertexcount` 让编译器和硬件按最坏情况为每个线程预留输出存储。预留量乘以并发线程数，总量可能把片上缓冲挤到显存，带来显著带宽压力与延迟，进一步压低并行度。预留和发射成本需目标平台的编译统计与计数器确认。
+**预留缓冲压力**。`maxvertexcount`给出输出上界，编译器与硬件可据此分配输出资源。较大的上界可能限制并发，即使实际输出较少也可能有成本；具体分配方式、是否溢出以及存储位置属于硬件实现。预留和发射成本需目标平台的编译统计与计数器确认。
 
 **后变换缓存失效**。顶点着色器的结果可以按索引复用，避免同一顶点重复变换。几何着色器生成的顶点是全新顶点，没有索引身份，无法进入这套缓存，同样的数据也要重新计算。
 
@@ -175,7 +183,7 @@ void main() {
 
 分别输入点、线和三角形，核对调用数、邻接顶点与输出上限。关闭生成逻辑后比较GPU时间，逐步增加放大率。广告牌方向关系由Billboard说明，细分控制点与参数域由Tessellation与位移说明。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+实现状态：HLSL/GLSL均为机制片段，宿主补齐输入输出类型、矩阵、屏幕尺寸和缓冲；线框片段明确发射距离属性，广告牌提供垂直视角退化方向。未编译完整Geometry Shader管线，未测放大吞吐；拓扑与Append语义已核对官方文档。
 
 ## 相关主题
 
@@ -185,11 +193,6 @@ void main() {
 
 ## 参考资料
 
-- Frank Luna, *Introduction to 3D Game Programming with DirectX 12*, Tessellation and Geometry Shader chapters.
-- Khronos OpenGL Wiki, *Tessellation*, *Tessellation Control Shader*, *Tessellation Evaluation Shader*, *Transform Feedback*.
-- Microsoft Learn, *Geometry-Shader Stage*, *Primitive Topologies*, *Getting Started with the Stream-Output Stage*.
-- Microsoft, *Direct3D 11.3 Functional Specification*, Tessellation Pattern and Fixed Order of Pipeline Results.
-- NVIDIA, *GeForce 8 and 9 Series GPU Programming Guide*, Geometry Shader performance sections.
-- Joshua Barczak, *Why Geometry Shaders Are Slow (Unless you're Intel)*.
-- Jasper Bekkers, *Mesh Shaders and the Future of Geometry Processing*.
-- Catlike Coding, *Flat and Wireframe Shading*.
+- [Microsoft HLSL Append](https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-so-append)：2026-10-22核读StreamDataType与CubeMapGS示例，支持Append及RestartStrip的输出关系。
+- [Microsoft Geometry-Shader Stage](https://learn.microsoft.com/en-us/windows/win32/direct3d11/geometry-shader-stage)：2026-10-22核读输入图元、输出拓扑、RestartStrip与允许的显式采样操作；完整平台能力以设备查询为准。
+- 广告牌坐标构造与曲面细分机制分别由相关专篇维护。

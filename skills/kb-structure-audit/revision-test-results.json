@@ -25,6 +25,35 @@
       "passed": true,
       "probes": 4,
       "scope": "DXC片段编译"
+    },
+    {
+      "phase": "P1-gpu",
+      "command": "python -B 知识库/examples/revision/test_raster.py",
+      "passed": true,
+      "tests": 5,
+      "scope": "透视插值、深度往返、AABB支持半径、颜色盒、模板位隔离"
+    },
+    {
+      "phase": "P1-gpu",
+      "command": "python -B 知识库/examples/mechanisms/reference.py",
+      "passed": true,
+      "checks": 83,
+      "scope": "CPU采样、深度区间、Gerstner及TAA权重模型"
+    },
+    {
+      "phase": "P1-gpu",
+      "command": "python -B 知识库/examples/mechanisms/completion_reference.py",
+      "passed": true,
+      "checks": 89,
+      "scope": "CPU机制模型"
+    },
+    {
+      "phase": "P1-gpu",
+      "command": "python -B skills/kb-structure-audit/scripts/batch_validate.py <staged-snapshot>",
+      "passed": true,
+      "pages": 184,
+      "errors": 0,
+      "scope": "暂存内容独立快照的静态链接、章节定位和登记一致性"
     }
   ]
 }
