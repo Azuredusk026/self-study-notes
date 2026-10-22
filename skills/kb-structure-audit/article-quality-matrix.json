@@ -605,43 +605,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何用概率分布估计积分并控制方差"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "积分估计→采样分布→离散CDF"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "补正采样支撑域、有限方差条件及舍入到CDF总和的边界；给出[0,1,0,3,0]选择例。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "draw_cdf的空输入、非法权重、零权重区间、最末浮点样本检查通过；C++宿主片段未编译。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "PBRT4 §2.3的SampleDiscrete和up==sumWeights分支核读；对应Python边界模型通过。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "从期望抵消解释权重，再用具体区间推动边界处理，删除无关球谐来源。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Monte Carlo采样定位现有主概念，正文小标题使用客观内容名称。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "01_数学与采样维护通用数学机制；引擎与材质应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页公式、数值例与代码已呈现运算关系，无新增结果图片。"
       }
     },
     "batch_migration_authorized": true,
@@ -678,7 +678,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "d3beaca1d243619b9852c718179fda64d4ce48413b0d6adfc4b7823bad3717a4",
+    "final_sha256": "0275c71ff29ac885b241735217006c94a913c660b0219de26243000d881cc528",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -708,9 +708,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-math",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "补正采样支撑域、有限方差条件及舍入到CDF总和的边界；给出[0,1,0,3,0]选择例。",
+        "从期望抵消解释权重，再用具体区间推动边界处理，删除无关球谐来源。"
+      ],
+      "content_sha256": "0275c71ff29ac885b241735217006c94a913c660b0219de26243000d881cc528",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -724,43 +734,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何表示旋转并保持旋转插值连续"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "旋转表示→状态插值→实现边界→验证"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "补旋转矩阵det=+1、Gram–Schmidt退化条件、Slerp半角解析例；限定Squad连续性前提。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "SlerpShortest与Gram–Schmidt按宿主片段说明；给出90度旋转中点解析预期，完整C++运行待验证。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Unity6000.0旋转文档核读其坐标与内部存储约定；一般推导按本文数学约定，非Unity实现证明。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "用零向量、镜像和半角说明可观察错误，疑问标题采用概念名称。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "旋转表示与插值定位现有主概念，正文小标题使用客观内容名称。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "01_数学与采样维护通用数学机制；引擎与材质应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页公式、数值例与代码已呈现运算关系，无新增结果图片。"
       }
     },
     "batch_migration_authorized": true,
@@ -806,7 +816,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "716f91105a7070db1b5e96d337507c0d5a0850ba64eb48e803291c56d3a5fd37",
+    "final_sha256": "8acf4d9c1d6e930c1e7d3e195f7c9a3e43514afa004d27afe4debd1ba9b344b5",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -835,9 +845,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-math",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "补旋转矩阵det=+1、Gram–Schmidt退化条件、Slerp半角解析例；限定Squad连续性前提。",
+        "用零向量、镜像和半角说明可观察错误，疑问标题采用概念名称。"
+      ],
+      "content_sha256": "8acf4d9c1d6e930c1e7d3e195f7c9a3e43514afa004d27afe4debd1ba9b344b5",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -852,43 +872,43 @@
     ],
     "technical_priority": "P0",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何用少量系数表示并重建低频球面光照"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "正交投影→系数求值→九项实基→验证"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "展开九项实基、立体角积分、余弦卷积频带权重和Lambert出射；给出常量与线性环境解析值。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "math_models.sh_irradiance对常量、线性环境的5个方向检查通过；输入限定九系数及单位方向。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Ramamoorthi原始prefilter.c的updatecoeffs核读；卷积结果由解析环境测试支持，PDF取回失败未记为核读。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "把基底顺序、采样测度和重复卷积的后果接成数据链，代码与公式采用同一顺序。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "球谐光照定位现有主概念，正文小标题使用客观内容名称。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "01_数学与采样维护通用数学机制；引擎与材质应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页公式、数值例与代码已呈现运算关系，无新增结果图片。"
       }
     },
     "batch_migration_authorized": true,
@@ -920,7 +940,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "b34ac540e71342d9159f2460a41c9fbdd5c76e21eae9357933e24db6beb0bf73",
+    "final_sha256": "7881917325acfaab712d4a87c1e7b5aba8e9a6cdf1122c9b61e40cbe2c2a387f",
     "content_commit": "ba93fc8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -950,9 +970,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-math",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "展开九项实基、立体角积分、余弦卷积频带权重和Lambert出射；给出常量与线性环境解析值。",
+        "把基底顺序、采样测度和重复卷积的后果接成数据链，代码与公式采用同一顺序。"
+      ],
+      "content_sha256": "7881917325acfaab712d4a87c1e7b5aba8e9a6cdf1122c9b61e40cbe2c2a387f",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -967,43 +997,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何生成可重复且具有空间结构的标量场"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "空间相关性→基础噪声→多尺度叠加→格点计算"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "展开一维格点点积、五次平滑、负坐标floor和二维/三维邻角；限定频谱与方向性断言。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "gradient_noise的整数格点、双侧接缝和固定种子CPU检查通过；未测二维频谱。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "Perlin作者Improved Noise实现noise/fade/grad核读；教学模型使用独立哈希。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "用x=2.25引入局部坐标和梯度，再解释接缝平滑与远景足迹，保留按用途比较噪声。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "程序噪声定位现有主概念，正文小标题使用客观内容名称。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "01_数学与采样维护通用数学机制；引擎与材质应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页公式、数值例与代码已呈现运算关系，无新增结果图片。"
       }
     },
     "batch_migration_authorized": true,
@@ -1038,7 +1068,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "cb647ea7cf74124cdcfac094d430c4607a56476eba1bc0b3c032ade786b3450c",
+    "final_sha256": "f7f1344d561d2caea1857319972312780d7633e7ead4444a51efd51f05b8067c",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -1068,9 +1098,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-math",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "展开一维格点点积、五次平滑、负坐标floor和二维/三维邻角；限定频谱与方向性断言。",
+        "用x=2.25引入局部坐标和梯度，再解释接缝平滑与远景足迹，保留按用途比较噪声。"
+      ],
+      "content_sha256": "f7f1344d561d2caea1857319972312780d7633e7ead4444a51efd51f05b8067c",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -1084,43 +1124,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "如何保持空间变换与法线变换正确"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "向量→坐标变换链→法线逆转置→验证"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "用nᵀt=0推导逆转置，并计算非均匀缩放下普通变换点积3、逆转置点积0。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "HLSL顶点片段明确缺失类型、绑定和常量缓冲；解析计算可独立复核，未声明编译。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "PBRT4 §3.9变换与齐次表示核读；法线约束在正文给出代数推导和数值反例。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "按点、方向、法线的语义逐层说明；标题陈述内容，矩阵等价式显式区分行列向量。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "空间变换定位现有主概念，正文小标题使用客观内容名称。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "01_数学与采样维护通用数学机制；引擎与材质应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页公式、数值例与代码已呈现运算关系，无新增结果图片。"
       }
     },
     "batch_migration_authorized": true,
@@ -1160,7 +1200,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "c585bf138e6ba31e1118f7666aae471fbbe1b2d7ac623184f3b02e8f28886b78",
+    "final_sha256": "cdf5a85e6107715e4619ca083534b5b9154cc562c651b3bd53e4c40ea73b244a",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -1189,9 +1229,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-math",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "用nᵀt=0推导逆转置，并计算非均匀缩放下普通变换点积3、逆转置点积0。",
+        "按点、方向、法线的语义逐层说明；标题陈述内容，矩阵等价式显式区分行列向量。"
+      ],
+      "content_sha256": "cdf5a85e6107715e4619ca083534b5b9154cc562c651b3bd53e4c40ea73b244a",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {
@@ -1206,43 +1256,43 @@
     ],
     "technical_priority": "P1",
     "writing_priority": "P0",
-    "writing_review": "待复读",
+    "writing_review": "通过",
     "quality_matrix": {
       "Scope": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "为什么离散采样会丢失或伪造信号细节"
       },
       "Structure": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "信号→采样与重建→滤波→时域→足迹积分"
       },
       "Depth": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "区分采样混叠与重建核误差，删除由放大模糊直接推定原因的表述；保留周期积分实现。"
       },
       "Implementation": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "completion_reference周期积分24项随89项回归通过；StripePS随4项DXC探针编译通过，GPU未运行。"
       },
       "Evidence": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "PBRT4 §8.1核读采样、重建与频域关系；CPU积分和DXC分别支持数值模型与语法。"
       },
       "Writing Style": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
-      },
-      "Visuals": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "删除设问式提示块，用过滤条件解释模糊与稳定性的取舍；验证表述对应条纹模型。"
       },
       "Title": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "采样与混叠定位现有主概念，正文小标题使用客观内容名称。"
       },
       "Information Architecture": {
-        "status": "待验证",
-        "basis": "本轮逐篇复读尚未完成，历史迁移结果单独保存。"
+        "status": "通过",
+        "basis": "01_数学与采样维护通用数学机制；引擎与材质应用通过相关主题连接。"
+      },
+      "Visuals": {
+        "status": "不适用",
+        "basis": "本页公式、数值例与代码已呈现运算关系，无新增结果图片。"
       }
     },
     "batch_migration_authorized": true,
@@ -1278,7 +1328,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "94f7b80f731c6c70ea78c886c12fbd182d06d64663b89d900015ce2978a65b69",
+    "final_sha256": "ddac18a79a70807a51df28489e2639e1248da1d3cd0198bc38fd0e39d1550cbc",
     "content_commit": "4e626da",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
@@ -1308,9 +1358,19 @@
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
       "date": "2026-10-22",
-      "status": "PENDING",
-      "scope": "全文、代码、来源、验证、标题与关联",
-      "findings": []
+      "status": "REVIEWED",
+      "phase": "P1-math",
+      "scope": "全文、代码、来源、验证与标题",
+      "findings": [
+        "区分采样混叠与重建核误差，删除由放大模糊直接推定原因的表述；保留周期积分实现。",
+        "删除设问式提示块，用过滤条件解释模糊与稳定性的取舍；验证表述对应条纹模型。"
+      ],
+      "content_sha256": "ddac18a79a70807a51df28489e2639e1248da1d3cd0198bc38fd0e39d1550cbc",
+      "runtime": {
+        "engine": "UNVERIFIED",
+        "gpu": "UNVERIFIED"
+      },
+      "acceptance": "编辑与声明范围通过；独立最终复核待执行"
     }
   },
   {

@@ -2,11 +2,13 @@
 import json
 import re
 import subprocess
+import os
+import shutil
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[3]
 BUILD=Path(__file__).parent/'build/completion-dxc'
-DXC=Path(r'C:\VulkanSDK\1.4.357.0\Bin\dxc.exe')
+DXC=Path(os.environ.get('DXC_PATH') or shutil.which('dxc') or 'dxc')
 
 
 def verify():

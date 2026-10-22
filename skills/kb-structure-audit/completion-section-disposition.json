@@ -31,7 +31,7 @@
       "source": "知识库/01_数学与采样/信号、频率与噪声.md",
       "heading": "欠采样的两种形态",
       "target": "知识库/01_数学与采样/采样与混叠.md",
-      "current_heading": "欠采样的两种形态",
+      "current_heading": "采样误差与重建误差",
       "decision": "独立主归属或明确合并",
       "reason": "信号重建解释采样误差，程序噪声生成空间场；输入模型、实现与验证各自独立。",
       "source_hash": "412b88c927342d613cce80ccd3b0a0ed65b1911be7ebe09556bd9d7e9ec0b609"
@@ -49,7 +49,7 @@
       "source": "知识库/01_数学与采样/信号、频率与噪声.md",
       "heading": "Fourier Transform",
       "target": "知识库/01_数学与采样/采样与混叠.md",
-      "current_heading": "Fourier Transform",
+      "current_heading": "傅里叶变换",
       "decision": "独立主归属或明确合并",
       "reason": "信号重建解释采样误差，程序噪声生成空间场；输入模型、实现与验证各自独立。",
       "source_hash": "75b916dae6a9d036abaf5afd9f4f49c7149a73c576240d20a184bdc6e8f85387"
@@ -58,7 +58,7 @@
       "source": "知识库/01_数学与采样/信号、频率与噪声.md",
       "heading": "空间噪声不是随机白点",
       "target": "知识库/01_数学与采样/程序噪声.md",
-      "current_heading": "空间噪声不是随机白点",
+      "current_heading": "空间相关性",
       "decision": "独立主归属或明确合并",
       "reason": "信号重建解释采样误差，程序噪声生成空间场；输入模型、实现与验证各自独立。",
       "source_hash": "1784676f129885cda54ea36cf6b14c4bcf84bbd2123c176efc5ff3e9f25411d9"
@@ -130,7 +130,7 @@
       "source": "知识库/01_数学与采样/信号、频率与噪声.md",
       "heading": "用屏幕导数限制程序纹理频率",
       "target": "知识库/01_数学与采样/采样与混叠.md",
-      "current_heading": "用屏幕导数限制程序纹理频率",
+      "current_heading": "程序条纹的足迹积分",
       "decision": "独立主归属或明确合并",
       "reason": "信号重建解释采样误差，程序噪声生成空间场；输入模型、实现与验证各自独立。",
       "source_hash": "daa6304cb0ad8ee2878a67e1f246af7fef6c765576fa034056525b4979b6a390"
@@ -148,7 +148,7 @@
       "source": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
       "heading": "Monte Carlo Integration",
       "target": "知识库/01_数学与采样/Monte Carlo采样.md",
-      "current_heading": "Monte Carlo Integration",
+      "current_heading": "随机积分估计",
       "decision": "独立主归属或明确合并",
       "reason": "随机积分与球面函数压缩有独立表示、误差及验证，SH不承担采样方法的主归属。",
       "source_hash": "7194804ccd140d1ccb7eb00673ecdd7042b2efeea48d5584aef4c8b8ffddd200"
@@ -175,7 +175,7 @@
       "source": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
       "heading": "重要性采样（Importance Sampling）",
       "target": "知识库/01_数学与采样/Monte Carlo采样.md",
-      "current_heading": "重要性采样（Importance Sampling）",
+      "current_heading": "重要性采样",
       "decision": "独立主归属或明确合并",
       "reason": "随机积分与球面函数压缩有独立表示、误差及验证，SH不承担采样方法的主归属。",
       "source_hash": "1024e892472c8fb0e6ed04060d41dfa14fcb9983b944847d9f394179378f65f5"
@@ -220,7 +220,7 @@
       "source": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
       "heading": "球谐函数（Spherical Harmonics）",
       "target": "知识库/01_数学与采样/球谐光照.md",
-      "current_heading": "球谐函数（Spherical Harmonics）",
+      "current_heading": "正交投影",
       "decision": "独立主归属或明确合并",
       "reason": "随机积分与球面函数压缩有独立表示、误差及验证，SH不承担采样方法的主归属。",
       "source_hash": "e5ef07a60e1faa2ee2ee0882bbb9927e5e4a0d1ced7db9fe6edfa13ad158c369"
@@ -229,7 +229,7 @@
       "source": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
       "heading": "为什么适合低频光照",
       "target": "知识库/01_数学与采样/球谐光照.md",
-      "current_heading": "为什么适合低频光照",
+      "current_heading": "低频光照与余弦卷积",
       "decision": "独立主归属或明确合并",
       "reason": "随机积分与球面函数压缩有独立表示、误差及验证，SH不承担采样方法的主归属。",
       "source_hash": "56e82469d8a9b9673fb10a5b9f501b9c8c455685536e5b6a412884895ac22438"
@@ -238,7 +238,7 @@
       "source": "知识库/01_数学与采样/概率采样、积分与球谐函数.md",
       "heading": "系数怎么得到",
       "target": "知识库/01_数学与采样/球谐光照.md",
-      "current_heading": "系数怎么得到",
+      "current_heading": "系数投影",
       "decision": "独立主归属或明确合并",
       "reason": "随机积分与球面函数压缩有独立表示、误差及验证，SH不承担采样方法的主归属。",
       "source_hash": "875576028cf323a76c87a93d40457ae173646505336db0a126d75cc57aadbacb"

@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-22",
+  "environment": {
+    "python": "3.11.9",
+    "dxc": "1.9.0.5347"
+  },
+  "runs": [
+    {
+      "phase": "P1-math",
+      "command": "python -B 知识库/examples/revision/test_math.py",
+      "passed": true,
+      "tests": 5,
+      "scope": "CDF、SH解析结果、一维噪声边界"
+    },
+    {
+      "phase": "P1-math",
+      "command": "python -B 知识库/examples/mechanisms/completion_reference.py",
+      "passed": true,
+      "checks": 89,
+      "scope": "CPU机制模型"
+    },
+    {
+      "phase": "P1-math",
+      "command": "python -B 知识库/examples/mechanisms/compile_completion.py",
+      "passed": true,
+      "probes": 4,
+      "scope": "DXC片段编译"
+    }
+  ]
+}

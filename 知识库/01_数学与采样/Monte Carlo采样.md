@@ -4,7 +4,7 @@
 
 ## 积分估计
 
-### Monte Carlo Integration
+### 随机积分估计
 
 要计算积分：
 
@@ -18,11 +18,11 @@ $$
 I\approx\frac{1}{N}\sum_{i=1}^{N}\frac{f(x_i)}{p(x_i)}
 $$
 
-每个样本用 $1/p(x_i)$ 修正被抽到的概率。否则更常被抽到的区域会被重复计算，估计产生偏差。
+每个样本用 $1/p(x_i)$ 修正被抽到的概率，因为期望中的采样密度会与分母抵消，留下原积分。这个推导要求所有非零贡献区域都有正采样概率；漏掉一个区域，再多样本也无法补回它的贡献。
 
-Monte Carlo 的典型误差大致按 $O(1/\sqrt N)$ 下降。想让误差减半，样本数通常需要增加到约四倍。这也是实时路径追踪必须依赖重要性采样、降噪和时域累积的原因。
+当样本独立、估计量方差有限时，均值的标准差按 $O(1/\sqrt N)$ 下降。想让误差减半，样本数通常需要增加到约四倍。这也是实时路径追踪必须依赖重要性采样、降噪和时域累积的原因。
 
-### 概率密度不是概率
+### 概率密度与概率质量
 
 连续分布中，$p(x)$ 是密度。某个精确点的概率通常为零，区间概率才是密度的积分。
 
@@ -36,7 +36,7 @@ $$
 
 ## 采样分布
 
-### 重要性采样（Importance Sampling）
+### 重要性采样
 
 如果 $f(x)$ 在少数区域很大，均匀采样会浪费大量样本。重要性采样让 $p(x)$ 尽量接近 $|f(x)|$ 的形状，把样本集中到贡献大的区域。
 
@@ -66,7 +66,7 @@ $$
 
 ## 离散重要性采样
 
-输入 `weights` 是非负函数值，`cdf` 保存归一化前缀和。采样返回离散索引及其概率质量：
+以下是C++机制片段，`Span`、`Sample`、`UpperBound`由宿主提供；`UpperBound`返回严格大于目标的首项索引。输入权重非负且有限，`u`位于[0,1)，调用者提供与权重等长的暂存数组。总和须可表示为有限正数；动态范围极大时先按最大权重缩放。空输入返回的`Sample`必须带无效索引，不能默认为有效第零项。
 
 ```cpp
 Sample DrawFromCdf(Span<float> weights, Span<float> cdf, float u)
@@ -80,20 +80,27 @@ Sample DrawFromCdf(Span<float> weights, Span<float> cdf, float u)
         int index = Min((int)(u * weights.size()), weights.size() - 1);
         return { index, 1.0f / weights.size() };
     }
-    int index = UpperBound(cdf, u * total);
+    float target = Min(u * total, std::nextafter(total, 0.0f));
+    int index = UpperBound(cdf, target);
     return { index, weights[index] / total };
 }
 ```
 
 离散求和时除以概率质量；用于面积或方向积分时，还需处理采样测度转换。所有权重为零时，示例回退到均匀采样；调用方也可以跳过该分布。可用常量函数验证：只要 PDF 与采样分布一致，多次估计的均值都应接近解析结果。
 
+### CDF边界与重用
+
+权重为`[0,1,0,3,0]`时，前缀为`[0,1,1,4,4]`。`u=0`应选索引1，`u=0.25`应选索引3。严格大于目标的查找会跳过没有宽度的区间。即使`u<1`，浮点乘法也可能把`u*total`舍入成`total`；代码将目标限制到总和前一个可表示值，避免查找返回数组末尾。`std::nextafter`来自`<cmath>`。
+
+构建前缀需要O(n)时间，一次二分查找需要O(log n)。同一分布需要多次抽样时，先建一次前缀再重复查找；若每次都重建，优化查找也不能消除线性构建成本。
+
 ## 验证方法
 
 对常量函数与已知多项式积分比较均值和方差，逐步增加样本数。连续密度、离散概率质量和立体角测度分别核对。CDF查找应使用严格大于目标值的首项，跳过零权重区间；输入u限制到[0,1)，权重非负且有限。
 
-实现状态：正文代码是机制片段或明确标注的伪代码，完整类型、资源与调用宿主按所述环境补齐。实际CPU与编译检查见对应实验链接；目标引擎运行与GPU测量为UNVERIFIED。
+本页C++是依赖宿主类型的机制片段，尚未独立编译。Python参考模型和边界测试见 [math_models.py](../examples/revision/math_models.py) 与 [test_math.py](../examples/revision/test_math.py)，运行 `python 知识库/examples/revision/test_math.py`；该测试只覆盖离散CDF、球谐解析例与一维噪声。
 
-本机CPU验证：CDF零权重区间由 [completion_reference.py](../examples/mechanisms/completion_reference.py) 检查，运行 `python 知识库/examples/mechanisms/completion_reference.py`。这些检查验证模型，不包含GPU执行或实际网络故障注入。
+本机CPU验证：CDF零权重区间由 [completion_reference.py](../examples/mechanisms/completion_reference.py) 检查，运行 `python 知识库/examples/mechanisms/completion_reference.py`。这些检查验证CDF区间选择，不包含GPU执行或完整积分器。
 
 ## 相关主题
 
@@ -104,7 +111,6 @@ Sample DrawFromCdf(Span<float> weights, Span<float> cdf, float u)
 ## 参考资料
 
 - Matt Pharr, Wenzel Jakob, Greg Humphreys, *Physically Based Rendering*.
-- Peter-Pike Sloan, *Stupid Spherical Harmonics Tricks*.
-- Ravi Ramamoorthi and Pat Hanrahan, *An Efficient Representation for Irradiance Environment Maps*.
+- PBRT第四版第2章：概率测度、估计量与重要性采样；球谐投影见对应专篇。
 
 - [CDF逆映射与采样域，2026-10-07核读](https://pbr-book.org/4ed/Monte_Carlo_Integration/Sampling_Using_the_Inversion_Method)。
