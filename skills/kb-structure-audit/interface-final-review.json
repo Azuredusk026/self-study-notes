@@ -1,0 +1,967 @@
+{
+  "date": "2026-10-23",
+  "method": "直接正文交叉复读；保留源记录，主审另按已读正文分段；机制结论不来自检查器",
+  "articles": [
+    {
+      "path": "知识库/05_光照阴影与GI/GI方案选择.md",
+      "mechanisms": [
+        "表面与空间存储",
+        "漫反射与镜面归属",
+        "动态更新边界"
+      ],
+      "counterexamples": [
+        "同一表面同时累加Lightmap与探针会双算；正文明确各自表面归属",
+        "烘焙灯关闭不能自动删除间接贡献，正文给动态更新接口"
+      ],
+      "changes": [
+        "直接正文与关键主归属反证后保留；未以测试或矩阵作质量依据"
+      ],
+      "content_sha256": "b12cf2af945ecdd790de5fd78dafadde5c1f9686b8814de3c748411c3b1e622e",
+      "source_records": [
+        "references/interface-final-render.json"
+      ]
+    },
+    {
+      "path": "知识库/06_纹理技术/视差映射.md",
+      "mechanisms": [
+        "高度深度约定",
+        "UV物理尺度",
+        "逐层首次交叉及残差插值",
+        "交点深度到自阴影",
+        "虚拟位置到点光",
+        "显式梯度与边界"
+      ],
+      "counterexamples": [
+        "正视时不能仅从UV反求深度，PomHit保留深度",
+        "平铺先Wrap再恢复位移会差一个纹理周期，正文保留连续UV",
+        "Vz低于下限后Phit并不在真实视线上，已补该近似的内部一致性与退出路线"
+      ],
+      "changes": [
+        "明确受限掠射路径恢复虚拟位置的误差，真实Vz或提前渐隐两种处理"
+      ],
+      "content_sha256": "9e87dc27356c3fbbb2b9f594bd653f4c869db46e967f90085783611e1b520b09",
+      "source_records": [
+        "references/interface-final-render.json",
+        "references/interface-final-style.json"
+      ]
+    },
+    {
+      "path": "知识库/07_颜色与后处理/Alpha表示.md",
+      "mechanisms": [
+        "覆盖数据",
+        "线性混合",
+        "预乘与过滤",
+        "Mip生成",
+        "UI调色与最终编码"
+      ],
+      "counterexamples": [
+        "半覆盖红与透明黑先滤再乘得到0.25，预乘链得到0.5",
+        "tintA减半须同时缩RGB，正文给0.25数例",
+        "色调映射后UI在线性显示域混合再编码，避免双编码"
+      ],
+      "changes": [
+        "直接正文与关键主归属反证后保留；未以测试或矩阵作质量依据"
+      ],
+      "content_sha256": "3eef24e2d962d155d01711005064c4fcb260c9185013a85791f93eb018a1dca8",
+      "source_records": [
+        "references/interface-final-render.json"
+      ]
+    },
+    {
+      "path": "知识库/07_颜色与后处理/后处理链.md",
+      "mechanisms": [
+        "AO光照归属",
+        "HDR效果顺序",
+        "运动向量分辨率",
+        "预曝光与历史",
+        "资源生产消费"
+      ],
+      "counterexamples": [
+        "像素向量跨尺寸先转UV再转目标像素",
+        "曝光改变须同步Bloom阈值与历史尺度，已追读Bloom完整链"
+      ],
+      "changes": [
+        "直接正文与关键主归属反证后保留；未以测试或矩阵作质量依据"
+      ],
+      "content_sha256": "73fc64ff047404450f75a773b392316c2f79f72c1e6f3348f57119cc4dd3ff8d",
+      "source_records": [
+        "references/interface-final-render.json"
+      ]
+    },
+    {
+      "path": "知识库/09_动画系统/角色动画导读.md",
+      "mechanisms": [
+        "局部姿态混合",
+        "IK与层级重算",
+        "绑定逆矩阵",
+        "Blend Shape空间",
+        "布料毛发锚点"
+      ],
+      "counterexamples": [
+        "旋转头部后绑定空间形变须随蒙皮，面部主归属给90度反例",
+        "世界模拟结果再乘对象矩阵会双变换，导读明确消费空间"
+      ],
+      "changes": [
+        "直接正文与关键主归属反证后保留；未以测试或矩阵作质量依据"
+      ],
+      "content_sha256": "abd38bca6e939261e4cd9d876481a40d68ac1ec0869450616b33f13258dd09a9",
+      "source_records": [
+        "references/interface-final-render.json"
+      ]
+    },
+    {
+      "path": "知识库/10_VFX与模拟/VFX效果组合.md",
+      "mechanisms": [
+        "粒子时间到帧采样",
+        "溶解覆盖",
+        "深度淡化",
+        "预乘合成",
+        "背景副本扰动"
+      ],
+      "counterexamples": [
+        "软粒子只改Alpha会残留RGB，导读与主归属一致",
+        "透明前背景副本不含同批透明，正文明确分层选择"
+      ],
+      "changes": [
+        "直接正文与关键主归属反证后保留；未以测试或矩阵作质量依据"
+      ],
+      "content_sha256": "8209fbda707a0f96c66cc11fdb779e9d346fb67145ef7794296839271d49d814",
+      "source_records": [
+        "references/interface-final-render.json"
+      ]
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
+      "mechanisms": [
+        "画面目标入口",
+        "同主光不同空间",
+        "阴影组合",
+        "蒙皮描边",
+        "时域一致"
+      ],
+      "counterexamples": [
+        "Face SDF需无缩放逆旋转，同一主光不能混入对象缩放",
+        "身体与轮廓尺寸抖动约定不同会跳线，导读明确共同输入"
+      ],
+      "changes": [
+        "直接正文与关键主归属反证后保留；未以测试或矩阵作质量依据"
+      ],
+      "content_sha256": "d228cbd5257abe805002b2b15e33b56cdc9cadd59ad9bb60c2bb72c4c842e0f4",
+      "source_records": [
+        "references/interface-final-render.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/Command Buffer与帧提交.md",
+      "mechanisms": [
+        "完成值等待",
+        "allocator及上传回收",
+        "记录提交失败",
+        "多线程依赖协调",
+        "在途帧与回读"
+      ],
+      "counterexamples": [
+        "Close失败仍Execute违反正文失败流程，机制片段已补返回分支",
+        "Close失败列表不可直接Reset重用，官方接口核读后明确重建",
+        "交换链0不证明槽位0完成，本文17/16数例明确"
+      ],
+      "changes": [
+        "补Reset和Close失败退出及不可重置列表恢复；添加官方来源"
+      ],
+      "content_sha256": "e2ebf85e5ebd3a89afd84f119595a86e445d61d646d15af0da21d15e1bec5a21",
+      "source_records": [
+        "references/interface-final-render.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/Deferred Rendering.md",
+      "mechanisms": [
+        "GBuffer布局",
+        "深度空间重建",
+        "GGX与逐灯累加",
+        "保守球锥覆盖",
+        "Tile列表",
+        "透明顺序",
+        "MSAA逐样本",
+        "片上附件",
+        "材质模型分派"
+      ],
+      "counterexamples": [
+        "自发光每灯相加会变亮，正文只初始化一次",
+        "两法线平均为零不能替代逐样本光照",
+        "内接锥体遗漏由外接半径cos校正处理",
+        "透明不能消费不透明深度裁剪列表，已追读列表主归属"
+      ],
+      "changes": [
+        "直接正文与关键主归属反证后保留；未以测试或矩阵作质量依据"
+      ],
+      "content_sha256": "b402431be306717b93ce7d7f4b4a2ec0ce25b2f48d09396837149b2a4e4aaf27",
+      "source_records": [
+        "references/interface-final-render.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/GPU资源绑定.md",
+      "mechanisms": [
+        "布局与数据组织",
+        "动态偏移",
+        "内存映射刷新",
+        "推送常量",
+        "Bindless发布回收"
+      ],
+      "counterexamples": [
+        "frameBase加两次读8960而非4864，正文数例明确",
+        "缓冲B和映射M与描述符O三原点不同，公式及13056刷新区间可推演",
+        "非一致原子跨帧共享即使记录不重叠也冲突，正文隔离扩张区间"
+      ],
+      "changes": [
+        "直接正文与关键主归属反证后保留；未以测试或矩阵作质量依据"
+      ],
+      "content_sha256": "a1743ee4bde388b1a7d0fbbb445399a58aa7a3f0b48b22398fece7106a0ea29b",
+      "source_records": [
+        "references/interface-final-render.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/渲染命令的组织方式.md",
+      "mechanisms": [
+        "图依赖编译",
+        "附件内容边界",
+        "命令承载",
+        "同步可见性",
+        "物理回收"
+      ],
+      "counterexamples": [
+        "读D命令录完不等GPU读完，阴影→光照案例连接完成值",
+        "主归属GPU生命周期明确保留/提交/完成，未把逻辑版本结束当物理释放"
+      ],
+      "changes": [
+        "直接正文与关键主归属反证后保留；未以测试或矩阵作质量依据"
+      ],
+      "content_sha256": "19438daf4837cd356c1fb53b2363a1dd1b9d7b967e3500e1d998d76b630e05b7",
+      "source_records": [
+        "references/interface-final-render.json"
+      ]
+    },
+    {
+      "path": "知识库/13_渲染架构/渲染路径与光源组织.md",
+      "mechanisms": [
+        "材质与光照时机",
+        "二维三维灯表",
+        "透明深度范围",
+        "共同BRDF与HDR"
+      ],
+      "counterexamples": [
+        "不透明列表遗漏前方透明灯，正文已有范围契约",
+        "Forward和Deferred选择不改变列表容量溢出责任"
+      ],
+      "changes": [
+        "直接正文与关键主归属反证后保留；未以测试或矩阵作质量依据"
+      ],
+      "content_sha256": "6faf0aef5c1af11dc24a682873e63e04b7e101a028e1da20388fb2741276b85b",
+      "source_records": [
+        "references/interface-final-render.json"
+      ]
+    },
+    {
+      "path": "知识库/14_性能分析与优化/PSO首次使用卡顿.md",
+      "mechanisms": [
+        "缓存分层",
+        "组合发现",
+        "封闭首屏集合",
+        "请求状态",
+        "保留引用",
+        "录制提交交接",
+        "设备代次",
+        "预算与实测"
+      ],
+      "counterexamples": [
+        "Ready后LRU淘汰使首用重建，正文同锁取引用与首屏保留覆盖空隙",
+        "旧设备完成回调不能打开新设备加载门，正文双代次检查",
+        "计数零不代表Failed和未发现请求可用，正文封闭集合逐键Ready"
+      ],
+      "changes": [
+        "直接正文与关键主归属反证后保留；未以测试或矩阵作质量依据"
+      ],
+      "content_sha256": "cdd4879bab49ad894db329b5c1413c9ee80d25c9c9cf0739c648534989936fd0",
+      "source_records": [
+        "references/interface-final-render.json"
+      ]
+    },
+    {
+      "path": "知识库/14_性能分析与优化/帧捕获与性能分析工具.md",
+      "mechanisms": [
+        "可复现负载",
+        "标记与时钟对齐",
+        "CPU等待前驱",
+        "捕获资源状态",
+        "跨资源像素回溯",
+        "计数器",
+        "构建与长期证据"
+      ],
+      "counterexamples": [
+        "E读取半分辨率纹理，不能沿最终同像素旧写入者追溯；正文给输入足迹转换",
+        "重放6毫秒与独立4毫秒不可平均，正文比较事件与调度",
+        "单内存快照不能证明增长，正文要求时间曲线"
+      ],
+      "changes": [
+        "直接正文与关键主归属反证后保留；未以测试或矩阵作质量依据"
+      ],
+      "content_sha256": "139955088b2b317deb5cb96135c7016bdff8eec884f6959a6f79102f2e7835f8",
+      "source_records": [
+        "references/interface-final-render.json"
+      ]
+    },
+    {
+      "path": "知识库/14_性能分析与优化/帧瓶颈诊断.md",
+      "mechanisms": [
+        "帧分布",
+        "CPU关键路径",
+        "GPU负载",
+        "重叠限帧",
+        "顶点像素访存",
+        "占用率",
+        "同步前驱",
+        "驻留预算"
+      ],
+      "counterexamples": [
+        "GPU12降10但60Hz仍16.67不说明优化无效",
+        "Draw下降但覆盖上升可能变慢，正文Nc+G说明",
+        "复制7完成图形仍11开始须继续追CPU，正文不把空泡一律归GPU",
+        "逻辑分配接近显存量不能独自证明驱逐，正文链接驻留事件"
+      ],
+      "changes": [
+        "直接正文与关键主归属反证后保留；未以测试或矩阵作质量依据"
+      ],
+      "content_sha256": "1559b340e8073fe0a8b5ce009670bf4c1b414dcbe030a902f85ec03a7826541d",
+      "source_records": [
+        "references/interface-final-render.json"
+      ]
+    },
+    {
+      "path": "知识库/14_性能分析与优化/性能对照实验.md",
+      "mechanisms": [
+        "控制变量",
+        "ABBA窗口",
+        "关键路径",
+        "像素模型",
+        "分位数",
+        "独立重复与质量"
+      ],
+      "counterexamples": [
+        "降低分辨率同时减算术与读写，最小表原结论过强已修",
+        "P99在20帧等于最大值，正文明确采样约束",
+        "通道4降3另一队列5升6，须比较汇合完成而非局部时间"
+      ],
+      "changes": [
+        "最小表只支持像素相关；补固定像素位宽/算术对照与压缩通道合并复核"
+      ],
+      "content_sha256": "78945156c8f94e90f945515bf99a7e104373964807ef14806193f6103d75d0f7",
+      "source_records": [
+        "references/interface-final-render.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/RPC.md",
+      "mechanisms": [
+        "封套与剩余预算",
+        "业务认证和首次执行验证",
+        "事务结果/状态共同提交",
+        "发件箱接收去重",
+        "结果与消息退休"
+      ],
+      "counterexamples": [
+        "发送者已停重试但在途旧包在接收记录删除后到达，不能再次生效",
+        "余额扣空后重试先返回旧成功结果"
+      ],
+      "changes": [
+        "补关闭纪元/区间或可信执行到期保护在途消息"
+      ],
+      "content_sha256": "9b73291c9e39bb25c7a34e4a14a44cf69b63faedc25471401a17ffcd0e966eb0",
+      "review": "独立直接复读全篇；主机制及下游接口反例推演",
+      "decision": "修订",
+      "source_records": [
+        "references/interface-final-runtime.json",
+        "references/interface-final-style.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/客户端预测.md",
+      "mechanisms": [
+        "固定输入和权威ACK/Tick",
+        "碰撞平台重放",
+        "模序号窗口",
+        "输入拒绝和关闭屏障",
+        "表现事件及预测代次"
+      ],
+      "counterexamples": [
+        "16位线序号在同会话回绕后事件槽与最初0号相撞",
+        "同ACK新Tick仍需接受平台外力状态"
+      ],
+      "changes": [
+        "完整输入序号持久保存，线低位按窗口展开，表现身份使用完整序号"
+      ],
+      "content_sha256": "b94e7b27377b0d124e085171a445878a60ab29980e1fe6becd09fcdec7065a68",
+      "review": "独立直接复读全篇；主机制及下游接口反例推演",
+      "decision": "修订",
+      "source_records": [
+        "references/interface-final-runtime.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/游戏网络时钟.md",
+      "mechanisms": [
+        "四时间戳测量",
+        "对称假设与不对称偏差",
+        "低RTT频率拟合",
+        "连续锚点相位流速",
+        "本地代次/播放缓冲/Tick"
+      ],
+      "counterexamples": [
+        "负相位不能直接降低已发布Sref",
+        "服务器估计10但快照只到9时不能显示10",
+        "重同步旧待发请求不得重发业务效果"
+      ],
+      "changes": [],
+      "content_sha256": "4f8de8b0d62109d29b61f21814ade094eecd3d7c817c5b6135d19e2dd6a94314",
+      "review": "独立直接复读全篇；主机制及下游接口反例推演",
+      "decision": "保留",
+      "source_records": [
+        "references/interface-final-runtime.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/世界分区与AOI.md",
+      "mechanisms": [
+        "一致空间桶和迟滞权限并集",
+        "可靠生成移除和复制代数",
+        "预算与实体观察时间",
+        "冻结Ready所有权条件提交",
+        "输入业务事务与发件箱",
+        "路由背压/会话关闭/目标恢复"
+      ],
+      "counterexamples": [
+        "epoch7已提交但迟到投递的合法事件在迁移8后不能一概拒绝",
+        "一个输入产生多个事件必须分槽避免同ID互相覆盖",
+        "旧m重复prepare不能冻结新owner"
+      ],
+      "changes": [
+        "分开旧权威写入和已提交发件箱效果授权，稳定效果ID包含实体实例/会话/完整序号/槽"
+      ],
+      "content_sha256": "ffd55659d349bda6d988d327d62d8f74c4b864206e2c231f754d20904c2d8ee7",
+      "review": "独立直接复读全篇；主机制及下游接口反例推演",
+      "decision": "修订",
+      "source_records": [
+        "references/interface-final-runtime.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/对局服务器架构.md",
+      "mechanisms": [
+        "分配Ready与取消条件提交",
+        "加入票据与排空",
+        "epoch权威结果",
+        "每Tick耐久提交",
+        "快照日志重建和退休"
+      ],
+      "counterexamples": [
+        "后台逐对象读当前世界会把K与K+1混在标K快照里",
+        "日志退休不可丢输入成功结果和未交付事件"
+      ],
+      "changes": [
+        "快照固定不可变已提交Tick视图，采用边界复制或写时复制"
+      ],
+      "content_sha256": "fd00e8da7a42afe2f5b7f80c7e448aae6d347903ae260f25ad8d451ca92ea86b",
+      "review": "独立直接复读全篇；主机制及下游接口反例推演",
+      "decision": "修订",
+      "source_records": [
+        "references/interface-final-runtime.json",
+        "references/interface-final-style.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/延迟补偿命中.md",
+      "mechanisms": [
+        "实际播放r与年龄",
+        "实体新鲜度与可验证样本",
+        "展示估计与权威历史差异",
+        "射手实际消费Tick",
+        "历史分段/球射线/遮挡",
+        "实例校验与共同提交"
+      ],
+      "counterexamples": [
+        "目标有限外推x=.1而权威x=.2，冻结r不消除姿态误差",
+        "历史命中旧实例不能伤害重生同ID",
+        "同请求重试不能等历史变丰富后重判"
+      ],
+      "changes": [],
+      "content_sha256": "c66064d91e9caa3529d79fd936020ed1143d315633ae1073b1a20da11e542a52",
+      "review": "独立直接复读全篇；主机制及下游接口反例推演",
+      "decision": "保留",
+      "source_records": [
+        "references/interface-final-runtime.json"
+      ]
+    },
+    {
+      "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
+      "mechanisms": [
+        "GC根图和引用体系",
+        "构造加载BeginPlay",
+        "增量写屏障",
+        "软引用加载和请求代数",
+        "EndPlay/BeginDestroy/栅栏"
+      ],
+      "counterexamples": [
+        "旧玩法4回调不能释放玩法5的新句柄",
+        "拒绝业务回调不能提前释放渲染线程仍持有资源",
+        "UObject循环无根可回收而原生共享引用循环不可"
+      ],
+      "changes": [],
+      "content_sha256": "e888e3fcb1e248180aa3359724dd5494e30b6c476fdad786e1ede5c666c5326a",
+      "review": "独立直接复读全篇；主机制及下游接口反例推演",
+      "decision": "保留",
+      "source_records": [
+        "references/interface-final-runtime.json"
+      ]
+    },
+    {
+      "path": "知识库/15_资产与工具管线/大型资产版本控制.md",
+      "mechanisms": [
+        "二进制粒度",
+        "Git对象与LFS指针对象",
+        "锁与新鲜基线",
+        "P4/Gluon提交",
+        "干净检出与缓存",
+        "合入旧引用比较",
+        "备份恢复迁移"
+      ],
+      "counterexamples": [
+        "A锁定C不阻止绕过锁的B提交D，合入仍需重建",
+        "只恢复Git引用而缺LFS对应OID不是可构建备份",
+        "两个候选在C独立过检不能直接顺序合入"
+      ],
+      "changes": [],
+      "content_sha256": "63809a337168f273a77c9c678eb958722d28ca7797a48d777682068f0880043a",
+      "review": "独立直接复读全篇；主机制及下游接口反例推演",
+      "decision": "保留",
+      "source_records": [
+        "references/interface-final-runtime.json"
+      ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+      "mechanisms": [
+        "状态与派生记录",
+        "检索硬约束与执行工具",
+        "Prepared/Applied对账",
+        "单写令牌与原子标记",
+        "不确定外部生成",
+        "补偿/人工改动",
+        "几何可达校验",
+        "批准撤销与发布回执"
+      ],
+      "counterexamples": [
+        "发布11回执丢失而人工已12，恢复不能重发或撤回12",
+        "工具取消不等于已无在途副作用",
+        "桌子不穿插却堵门需膨胀障碍连通校验"
+      ],
+      "changes": [],
+      "content_sha256": "fd984a8b96699c1a127822c13f00833cd47ff9ad9a9937fdff28615e8b25cd43",
+      "review": "独立直接复读全篇；主机制及下游接口反例推演",
+      "decision": "保留",
+      "source_records": [
+        "references/interface-final-runtime.json"
+      ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+      "mechanisms": [
+        "反向位置和深度足迹",
+        "法线变换与置信",
+        "像素合成/整图编码",
+        "ControlNet与DDIM像素投影",
+        "曝光排除真实变化",
+        "Q与锚点分离",
+        "方向隔离持久历史",
+        "对象冲突和F/U补洞"
+      ],
+      "counterexamples": [
+        "拒绝图外W仍NaN时M=0不能阻止整图污染",
+        "新生成Q=1但A=0不能冒充关键帧支持",
+        "左局部权重更高但覆盖少于右，选路须对象总分",
+        "整图补洞不得改写已选非洞像素"
+      ],
+      "changes": [
+        "拒绝重投影占位有限零，避免非法采样和0*NaN，除法归一化前先查有限数"
+      ],
+      "content_sha256": "b60eaeeb13b58ef81b08ba7681d89d57cab6589921a0ec62d19ff0a2e8496f8f",
+      "review": "独立直接复读全篇；主机制及下游接口反例推演",
+      "decision": "修订",
+      "source_records": [
+        "references/interface-final-runtime.json",
+        "references/interface-final-style.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "mechanisms": [
+        "预处理/编译/链接/加载",
+        "翻译单元与ODR",
+        "静态动态库与分配释放",
+        "C ABI类型布局/结构版本/错误输出",
+        "复制移动与异常保证",
+        "Win32消息与COM引用",
+        "活动令牌、入口门、回调及模块卸载"
+      ],
+      "counterexamples": [
+        "非空悬空指针不能安全读取size，调用者必须保证至少头部有效",
+        "回调持令牌同步卸载会等自身，改投宿主队列",
+        "后台任务等关闭信号时宿主先发信号再等令牌；清理期间代码仍加载"
+      ],
+      "changes": [
+        "补C ABI头部可读内存前提，清理一处排版"
+      ],
+      "content_sha256": "f00407aedec2cb40c28f325805dfc3e4e93e7b993baf577d6f3a92d71edea76a",
+      "review_basis": "独立全文复读正文并逐项推演；仅从作者记录取得路径，未以作者判断或测试为结论",
+      "source_records": [
+        "references/interface-final-physics.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/内存布局与分配.md",
+      "mechanisms": [
+        "栈堆、虚拟页与GPU存储",
+        "线性/栈/池/Buddy和碎片",
+        "AoS/SoA、缓存组和写策略",
+        "对齐溢出、构造失败和逆序析构",
+        "多帧槽位、Closing门、CPU子任务与GPU完成值"
+      ],
+      "counterexamples": [
+        "GPU图形42复制16对所需41/17不能回收",
+        "CPU计数归零后迟登记GPU会复用，任务释放前登记最大值",
+        "槽位回收若只清游标跳过非平凡对象析构，句柄泄漏",
+        "非伙伴16字节块不能合成32，XOR伙伴身份必须同阶空闲"
+      ],
+      "changes": [
+        "槽位最终回收明确先析构再换代清游标",
+        "将Buddy身份合并段移回分配器机制章节"
+      ],
+      "content_sha256": "ec843392817c0beb5e94842ca060df6e9e535c3c7fd6b3a5c9627f35b3b14bcb",
+      "review_basis": "独立全文复读正文并逐项推演；仅从作者记录取得路径，未以作者判断或测试为结论",
+      "source_records": [
+        "references/interface-final-physics.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/文件IO.md",
+      "mechanisms": [
+        "页缓存/短读/直接IO/映射",
+        "取消与终态、缓冲及解码寿命",
+        "临时文件刷新/名称替换/持久性",
+        "代次比较与资源发布",
+        "多文件固定清单、引用租约、代理在途读取回收"
+      ],
+      "counterexamples": [
+        "3+2字节后EOF不能填满8字节头",
+        "CancelIoEx后成功仍可丢弃业务结果，但等终态和消费者释放",
+        "读者取旧清单未加引用时不能允许回收，操作必须共锁",
+        "租约到期不能证明已开始IO结束：服务代理登记在途并等终态"
+      ],
+      "changes": [],
+      "content_sha256": "e40474a010c7a85b0bf216830e614fee138d3f75cbebef5add73978350be4a20",
+      "review_basis": "独立全文复读正文并逐项推演；仅从作者记录取得路径，未以作者判断或测试为结论",
+      "source_records": [
+        "references/interface-final-physics.json"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/进程与调度.md",
+      "mechanisms": [
+        "用户内核态及系统调用",
+        "进程线程协程/Task",
+        "Running/Ready/Blocked与调度",
+        "IPC偏移与发布同步",
+        "单调时钟、Tick累计器与过载",
+        "双向标准流、取消、进程树及结果校验"
+      ],
+      "counterexamples": [
+        "父写满stdin子写满stdout双向等待环：输入写及双输出读取并行",
+        "输出日志截断仍须读到EOF",
+        "单机1秒暂停最多追赶0.1秒并登记丢弃，权威模拟保持Tick政策",
+        "后代脱离进程组时组退出不能证明目录无人写"
+      ],
+      "changes": [
+        "将共享内存偏移例放回IPC，清理句柄表等不必要混杂"
+      ],
+      "content_sha256": "7b89199b8103243d17a94a3f1d03885732f56d44119de71499efd5a17d1a5936",
+      "review_basis": "独立全文复读正文并逐项推演；仅从作者记录取得路径，未以作者判断或测试为结论",
+      "source_records": [
+        "references/interface-final-physics.json"
+      ]
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Character Controller.md",
+      "mechanisms": [
+        "胶囊扫掠/skin与单面滑动",
+        "多面活动约束",
+        "可站立坡度/台阶候选",
+        "平台局部脚点和旋转携带",
+        "初始穿透恢复和安全点复验",
+        "单步唯一提交/跳离/速度反馈"
+      ],
+      "counterexamples": [
+        "平台上移1米已穿透恢复1米，剩余携带必须零",
+        "两面约束只在都活动时用交线，离开两面不钳死",
+        "台阶水平失败必须回普通滑动而不遗留抬高",
+        "穿透恢复位移不能作为主动速度反馈给导航"
+      ],
+      "changes": [],
+      "content_sha256": "49b0b4fe7a0a3445a2362ed3757ad1405d67b8ab59ff88bb6b03cfb5c6edbd03",
+      "review_basis": "独立全文复读正文并逐项推演；仅从作者记录取得路径，未以作者判断或测试为结论",
+      "source_records": [
+        "references/interface-final-physics.json"
+      ]
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+      "mechanisms": [
+        "骨骼到刚体/关节局部框架",
+        "质心线速度和四元数角速度",
+        "根yaw与骨盆平移恢复",
+        "纯表现与动态驱动恢复",
+        "比例阻尼扭矩及反作用",
+        "动画/肢体/胶囊单一控制权和中断"
+      ],
+      "counterexamples": [
+        "骨盆固定偏移遗漏导致皮肤与碰撞错位",
+        "超过半周四元数短弧速度混叠",
+        "只给B驱动扭矩不对A反作用会改整体角动量",
+        "新根确定后重算捕获局部姿态保持权重0世界姿态",
+        "恢复中墙阻挡或受击统一切回物理，不能同时双套权威碰撞"
+      ],
+      "changes": [],
+      "content_sha256": "4954a3a7f4dcc637fa9261196812c1a959c2a7a35a02c172bc86065830344011",
+      "review_basis": "独立全文复读正文并逐项推演；仅从作者记录取得路径，未以作者判断或测试为结论",
+      "source_records": [
+        "references/interface-final-physics.json",
+        "references/interface-final-style.json"
+      ]
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/破坏系统.md",
+      "mechanisms": [
+        "预切分资产/连接与支撑",
+        "径向损伤/连通分量",
+        "质量质心张量/形状局部变换",
+        "切分速度场与一次冲量",
+        "候选图和物理提交/事件去重",
+        "容量预算/代理通道/回收代次",
+        "权威拓扑重放"
+      ],
+      "counterexamples": [
+        "0—2替代连接使断1—2不脱落",
+        "异步准备期间旧簇继续运动：提交时读取当前位姿速度而非旧快照",
+        "相同事件待处理也去重，失败后保留身份",
+        "5关键分量仅4槽应背压，代理不减少独立刚体数",
+        "世界偏移直接写旋转簇局部会多转一次"
+      ],
+      "changes": [],
+      "content_sha256": "7762a057eb15659f0606e0bb925b94dc2a0d9ae3b060a93b3ae207e13fdf06a9",
+      "review_basis": "独立全文复读正文并逐项推演；仅从作者记录取得路径，未以作者判断或测试为结论",
+      "source_records": [
+        "references/interface-final-physics.json"
+      ]
+    },
+    {
+      "path": "知识库/20_游戏AI/MCTS.md",
+      "mechanisms": [
+        "状态复制/动作合法性",
+        "扩展/模拟",
+        "根视角UCT与回传",
+        "最终最大访问/预算",
+        "局面版本同入口提交",
+        "子树复用视角和访问偏移",
+        "取消检查点/扩展暂存"
+      ],
+      "counterexamples": [
+        "对手s符号与回传W不得双重翻转",
+        "复用节点N5子合4再3轮得到8/7合法",
+        "异步结果必须局面版本/合法性/落子同入口比较",
+        "取消在新边挂树后回传前留下N0，下一UCT可能除零"
+      ],
+      "changes": [
+        "新增本轮扩展暂存，完整收益后挂树及N/W一起完成，取消前丢弃；复用等清理结束"
+      ],
+      "content_sha256": "283be165d70366cdbf51e46e07447f97f597e53efae2cda2f651f88a8ca21551",
+      "review_basis": "独立全文复读正文并逐项推演；仅从作者记录取得路径，未以作者判断或测试为结论",
+      "source_records": [
+        "references/interface-final-physics.json",
+        "references/interface-final-style.json"
+      ]
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI决策模型.md",
+      "mechanisms": [
+        "规则与BDI意图",
+        "FSM/HFSM最近公共祖先及失败",
+        "BT顺序/选择/观察中止/叶生命周期",
+        "Utility归一化迟滞",
+        "GOAP回归事实/负效果/成本",
+        "HTN临时状态及方法回退",
+        "只读黑板快照与实际动作效果",
+        "取消资源所有者与模型共同账本"
+      ],
+      "counterexamples": [
+        "Sequence仅索引归零但Finished叶不复位会重复返回旧终态",
+        "移动取消未完成即新攻击争资源，动作ID只防迟到修改不能释放旧资源",
+        "GOAP捡弹破坏掩体不能作为最后一步满足双目标",
+        "HTN失败回退临时状态不能回滚真实世界",
+        "效用条件数量差异需同尺度归一化"
+      ],
+      "changes": [
+        "Sequence机制片段显式ResetTerminatedChildren，正文定义只复位已Exit节点",
+        "Running中止明确等待取消完成与资源交接再清理"
+      ],
+      "content_sha256": "ba87205791356a68ebd84bd356ff1484a34ec6dd546daa979d50061b734e58c8",
+      "review_basis": "独立全文复读正文并逐项推演；仅从作者记录取得路径，未以作者判断或测试为结论",
+      "source_records": [
+        "references/interface-final-physics.json"
+      ]
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/载具物理.md",
+      "mechanisms": [
+        "球形/圆轮接触",
+        "长度导数及轮载",
+        "轮轴滑移与联合附着",
+        "离合差速制动转向",
+        "角动量汇总",
+        "驻车可行域投影与候选回退",
+        "子步"
+      ],
+      "counterexamples": [
+        "外倾圆轮支撑半径与滚动力臂不同，正文分别推导并同链消费",
+        "小非零轮速使制动区间不含零，不能用对称区间错误锁住",
+        "两个100kg同向接触各冲量−1会过度制动，联合K得各−0.5",
+        "第二轮候选失败后须撤销全部临时反作用，正文从冻结状态重建",
+        "非零残余速度即使凸优化收敛仍不算驻车成功"
+      ],
+      "changes": [
+        "无确定公式缺口；把长度导数扩展、锁轮区间与角动量候选分段，保持推理层次"
+      ],
+      "content_sha256": "6c4be63802d0518bbf9a6744d0f9a795bc3d99055f3f6ae238d4b4445cd6e04b",
+      "source_records": [
+        "references/interface-final-priority-cross.json"
+      ]
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI导航.md",
+      "mechanisms": [
+        "烘焙与体型",
+        "搜索下界与重开",
+        "门户漏斗",
+        "停转圆弧速度表",
+        "ORCA几何",
+        "多半平面与双圆",
+        "走廊速度约束",
+        "反馈及版本"
+      ],
+      "counterexamples": [
+        "4m/s与2m/s²在0.1秒步需4.4米制动，正文给离散反应距离",
+        "圆弧切点在内不保证中段在内，正文要求交点间连续覆盖",
+        "墙右向≤1与ORCA≥1.5无解，正文分别标记动态与静态保证失效",
+        "避障后再夹加速度会进入禁区，正文双圆同求解",
+        "门户索引按实际位移推进，碰撞截断不伪造进度"
+      ],
+      "changes": [
+        "无确定机制断口；将速度候选无解及回退单独分段"
+      ],
+      "content_sha256": "009af8511d14b11951ad7ed4d4801570795dff679a606c7e6375a4b98e6e7ee4",
+      "source_records": [
+        "references/interface-final-priority-cross.json"
+      ]
+    },
+    {
+      "path": "知识库/12_光线追踪/ReSTIR.md",
+      "mechanisms": [
+        "RIS期望",
+        "面积参数测度",
+        "池合并目标重评估",
+        "支持与连续h归一化",
+        "来源身份",
+        "固定G递归证明",
+        "自适应偏差",
+        "时空冻结链",
+        "动态支持及最终可见性"
+      ],
+      "counterexamples": [
+        "面积2→6时历史Wparam=1与当前fparam=6配套，旧面积W=2错误",
+        "来源支持只含a时总M期望1.5而支持修正2",
+        "连续h分子必须来自实际选中源，空间数例a得9/85而非基线9/22",
+        "样本驱动m即使选择归一化同用仍期望4.25，正文明确外生G条件",
+        "源光被删除只置当前权重零，不能按代表值删整来源",
+        "共祖先相关来源可保期望但不能推出独立样本收敛速度"
+      ],
+      "changes": [
+        "无确定数学接口缺口；删除历史计数段重复的支持/自适应限制解释，保留已展开证明与反例"
+      ],
+      "content_sha256": "5ad21f29e8844f57ab615e50b48a43e6444837e07ee83f82812469acea700f90",
+      "source_records": [
+        "references/interface-final-priority-cross.json"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/快照同步.md",
+      "mechanisms": [
+        "量化字段与观察时间",
+        "基线完整记录表重建",
+        "基线确认与有界退休",
+        "包时间轴与延迟统计",
+        "单调播放/冻结/重同步",
+        "实体连续段求值",
+        "Stale/Missing与命中门控"
+      ],
+      "counterexamples": [
+        "32槽满时若等待第33份确认才能退休会死锁",
+        "新窗口数据先于控制不能读取尚未建立窗口",
+        "包时间前进不刷新稀疏B观察时间",
+        "传送Te只截断实体连续段而非全局包时间轴",
+        "Frozen恢复在同r重求姿态不伪造时间"
+      ],
+      "changes": [
+        "给出保留已确认42锚点的32槽推进、控制确认与乱序处理，其他主要机制直接反证保留"
+      ],
+      "content_sha256": "f1b60a2c7c57fefaa48005c5a48a90e1ad8d4257091f72c0b7eae68284f625c9",
+      "source_records": [
+        "references/interface-final-priority-runtime.json"
+      ]
+    },
+    {
+      "path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "mechanisms": [
+        "冻结计划与宿主上下文",
+        "手势首末值/锁/版本",
+        "身份创建删除引用",
+        "Unity/UE事务适配",
+        "补偿",
+        "条件发布回执",
+        "跨资源Committed与包呈现",
+        "撤销代理/逆操作/取消",
+        "工具模式与运行时隔离"
+      ],
+      "counterexamples": [
+        "Committed新目标但包仍旧值时，严格普通补丁前值会阻塞逆操作",
+        "一个包已呈现J另一个未呈现，K需两类精确前态及统一承接",
+        "撤销代理登记前崩溃仍由持久日志恢复",
+        "版本10→11→12不能用相同内容绕过代次"
+      ],
+      "changes": [
+        "补未完成呈现的条件逆操作：按日志证明旧/新已保存前态，K承接J同事务，恢复只呈现最新决定"
+      ],
+      "content_sha256": "e04d12b21af210dd2220369f15dfefc0d651550749bde0115e662a931279c9b2",
+      "source_records": [
+        "references/interface-final-priority-runtime.json"
+      ]
+    }
+  ]
+}

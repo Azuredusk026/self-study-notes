@@ -7310,23 +7310,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：表面与空间存储；漫反射与镜面归属；动态更新边界。反例见interface-p2-review.json。"
+        "basis": "逐项推演：表面与空间存储；漫反射与镜面归属；动态更新边界。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "不适用",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -7396,7 +7396,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、入口、术语、规则、章节与导读关系",
       "author_record": "revision-support-overviews.json",
       "author_sha256": "3dcbae9f5a9b4c48b99d25b9d445addfc65be69073d8b602facd4619f4aa4bef",
@@ -7417,7 +7417,7 @@
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "b12cf2af945ecdd790de5fd78dafadde5c1f9686b8814de3c748411c3b1e622e",
       "independent_review_date": "2026-10-23",
       "independent_judgment": [
@@ -7618,8 +7618,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "b12cf2af945ecdd790de5fd78dafadde5c1f9686b8814de3c748411c3b1e622e",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -9644,23 +9644,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：高度深度约定；UV物理尺度；逐层首次交叉及残差插值；交点深度到自阴影；虚拟位置到点光；显式梯度与边界。反例见interface-p2-review.json。"
+        "basis": "逐项推演：高度深度约定；UV物理尺度；逐层首次交叉及残差插值；交点深度到自阴影；虚拟位置到点光；显式梯度与边界。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -9739,11 +9739,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-06-08.json",
       "author_sha256": "da2d37581e8e24f5ff6d95a9faaca8149912e15c2ccf3af6daf65dcd368e2751",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "9e87dc27356c3fbbb2b9f594bd653f4c869db46e967f90085783611e1b520b09",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "9e87dc27356c3fbbb2b9f594bd653f4c869db46e967f90085783611e1b520b09",
@@ -10098,8 +10098,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "9e87dc27356c3fbbb2b9f594bd653f4c869db46e967f90085783611e1b520b09",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -10124,23 +10124,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：覆盖数据；线性混合；预乘与过滤；Mip生成；UI调色与最终编码。反例见interface-p2-review.json。"
+        "basis": "逐项推演：覆盖数据；线性混合；预乘与过滤；Mip生成；UI调色与最终编码。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -10219,7 +10219,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、证据、验证与标题",
       "findings": [
         "半覆盖红与透明黑先滤再乘得到0.25，预乘链得到0.5",
@@ -10234,7 +10234,7 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
       "first_review_sha256": "f80cfbc6855c6eb163043021e3df0df40a6460b83a50844f184b5b6b408aa248",
       "independent_review": "PASS",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "3eef24e2d962d155d01711005064c4fcb260c9185013a85791f93eb018a1dca8"
     },
     "historical_reviewed_content_sha256": "96980dc1a15960186f4ca06f13099212d3d2e088c5e5d399d6d01cfa8ab7d2ab",
@@ -10367,8 +10367,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "3eef24e2d962d155d01711005064c4fcb260c9185013a85791f93eb018a1dca8",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -10875,23 +10875,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：AO光照归属；HDR效果顺序；运动向量分辨率；预曝光与历史；资源生产消费。反例见interface-p2-review.json。"
+        "basis": "逐项推演：AO光照归属；HDR效果顺序；运动向量分辨率；预曝光与历史；资源生产消费。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "不适用",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -10961,7 +10961,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、入口、术语、规则、章节与导读关系",
       "author_record": "revision-support-overviews.json",
       "author_sha256": "4a9fc81a3ca124c1128e139d81dbbbd443db3e42e66ec319896a7db6d0f09aa2",
@@ -10982,7 +10982,7 @@
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "73fc64ff047404450f75a773b392316c2f79f72c1e6f3348f57119cc4dd3ff8d",
       "independent_review_date": "2026-10-23",
       "independent_judgment": [
@@ -11183,8 +11183,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "73fc64ff047404450f75a773b392316c2f79f72c1e6f3348f57119cc4dd3ff8d",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -14015,23 +14015,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：局部姿态混合；IK与层级重算；绑定逆矩阵；Blend Shape空间；布料毛发锚点。反例见interface-p2-review.json。"
+        "basis": "逐项推演：局部姿态混合；IK与层级重算；绑定逆矩阵；Blend Shape空间；布料毛发锚点。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "不适用",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -14101,7 +14101,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、入口、术语、规则、章节与导读关系",
       "author_record": "revision-support-overviews.json",
       "author_sha256": "e4d88658069a3fac67b019ab72377bfeaebf220374bbfe8a37ab5db1809b601c",
@@ -14122,7 +14122,7 @@
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "abd38bca6e939261e4cd9d876481a40d68ac1ec0869450616b33f13258dd09a9",
       "independent_review_date": "2026-10-23",
       "independent_judgment": [
@@ -14350,8 +14350,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "abd38bca6e939261e4cd9d876481a40d68ac1ec0869450616b33f13258dd09a9",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -15364,23 +15364,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：粒子时间到帧采样；溶解覆盖；深度淡化；预乘合成；背景副本扰动。反例见interface-p2-review.json。"
+        "basis": "逐项推演：粒子时间到帧采样；溶解覆盖；深度淡化；预乘合成；背景副本扰动。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "不适用",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -15450,7 +15450,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、入口、术语、规则、章节与导读关系",
       "author_record": "revision-support-overviews.json",
       "author_sha256": "333e4e16919f57a46ad34f0a7f557f97f7718c3ed60ea37dcea5778bdd1f52c3",
@@ -15471,7 +15471,7 @@
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "8209fbda707a0f96c66cc11fdb779e9d346fb67145ef7794296839271d49d814",
       "independent_review_date": "2026-10-23",
       "independent_judgment": [
@@ -15699,8 +15699,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "8209fbda707a0f96c66cc11fdb779e9d346fb67145ef7794296839271d49d814",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -17304,23 +17304,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：画面目标入口；同主光不同空间；阴影组合；蒙皮描边；时域一致。反例见interface-p2-review.json。"
+        "basis": "逐项推演：画面目标入口；同主光不同空间；阴影组合；蒙皮描边；时域一致。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "不适用",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -17390,7 +17390,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、入口、术语、规则、章节与导读关系",
       "author_record": "revision-support-overviews.json",
       "author_sha256": "897fa8b5639d0847629f0a046e14cdf84c81517a06cd542a9fd1d61251fa60d8",
@@ -17411,7 +17411,7 @@
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "d228cbd5257abe805002b2b15e33b56cdc9cadd59ad9bb60c2bb72c4c842e0f4",
       "independent_review_date": "2026-10-23",
       "independent_judgment": [
@@ -17639,8 +17639,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "d228cbd5257abe805002b2b15e33b56cdc9cadd59ad9bb60c2bb72c4c842e0f4",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -18923,23 +18923,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：候选密度与RIS；测度转换；合并；支持分区；连续目标归一化；外生调度条件归纳；时域空间缓冲；动态光支持；可见性成本。反例见interface-priority.json。"
+        "basis": "逐项推演：RIS期望；面积参数测度；池合并目标重评估；支持与连续h归一化；来源身份；固定G递归证明；自适应偏差；时空冻结链；动态支持及最终可见性。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -18983,7 +18983,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "17e7fc8ad90a2800ad1080654f535506e5f3d6a780565a9c4f67b6ae9daa6a9b",
+    "final_sha256": "5ad21f29e8844f57ab615e50b48a43e6444837e07ee83f82812469acea700f90",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "ReSTIR",
@@ -18995,7 +18995,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "17e7fc8ad90a2800ad1080654f535506e5f3d6a780565a9c4f67b6ae9daa6a9b",
+    "reviewed_content_sha256": "5ad21f29e8844f57ab615e50b48a43e6444837e07ee83f82812469acea700f90",
     "source_article_path": "知识库/12_光线追踪/实时光追、采样与降噪.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -19013,20 +19013,22 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P1",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "6eb1aeca647092c5ab20a6d0f56a1f21d437b074b187e03d7ff3a6ecda82b488",
-      "independent_record": "interface-priority.json",
-      "independent_source_sha256": "17e7fc8ad90a2800ad1080654f535506e5f3d6a780565a9c4f67b6ae9daa6a9b",
+      "independent_record": "interface-final-review.json",
+      "independent_source_sha256": "5ad21f29e8844f57ab615e50b48a43e6444837e07ee83f82812469acea700f90",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "17e7fc8ad90a2800ad1080654f535506e5f3d6a780565a9c4f67b6ae9daa6a9b",
+      "content_sha256": "5ad21f29e8844f57ab615e50b48a43e6444837e07ee83f82812469acea700f90",
       "independent_review": "PASS",
       "findings": [
-        "按代表亮度选择m得到4.25而真值4",
-        "只接受b来源得到4.5",
-        "动态新增b后中间池支持更新为a,b",
-        "空间连续h分母170而非总M44"
+        "面积2→6时历史Wparam=1与当前fparam=6配套，旧面积W=2错误",
+        "来源支持只含a时总M期望1.5而支持修正2",
+        "连续h分子必须来自实际选中源，空间数例a得9/85而非基线9/22",
+        "样本驱动m即使选择归一化同用仍期望4.25，正文明确外生G条件",
+        "源光被删除只置当前权重零，不能按代表值删整来源",
+        "共祖先相关来源可保期望但不能推出独立样本收敛速度"
       ],
       "runtime": {
         "shader_probes": [],
@@ -19242,9 +19244,9 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P1",
-      "record": "interface-priority.json",
-      "content_sha256": "17e7fc8ad90a2800ad1080654f535506e5f3d6a780565a9c4f67b6ae9daa6a9b",
+      "phase": "Final",
+      "record": "interface-final-review.json",
+      "content_sha256": "5ad21f29e8844f57ab615e50b48a43e6444837e07ee83f82812469acea700f90",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
   },
@@ -19864,23 +19866,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：完成值等待；allocator及上传回收；记录提交失败；多线程依赖协调；在途帧与回读。反例见interface-p2-review.json。"
+        "basis": "逐项推演：完成值等待；allocator及上传回收；记录提交失败；多线程依赖协调；在途帧与回读。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -19958,11 +19960,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "da0c5887697382d9d60baa9afcc8cd742da4bbc8ef53da93152d3d89abfbada5",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "e2ebf85e5ebd3a89afd84f119595a86e445d61d646d15af0da21d15e1bec5a21",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "e2ebf85e5ebd3a89afd84f119595a86e445d61d646d15af0da21d15e1bec5a21",
@@ -20296,8 +20298,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "e2ebf85e5ebd3a89afd84f119595a86e445d61d646d15af0da21d15e1bec5a21",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -20321,23 +20323,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：GBuffer布局；深度空间重建；GGX与逐灯累加；保守球锥覆盖；Tile列表；透明顺序；MSAA逐样本；片上附件；材质模型分派。反例见interface-p2-review.json。"
+        "basis": "逐项推演：GBuffer布局；深度空间重建；GGX与逐灯累加；保守球锥覆盖；Tile列表；透明顺序；MSAA逐样本；片上附件；材质模型分派。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -20418,11 +20420,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "4323ce6e38a375e8e94d205d4c5ca18b352961ff5367599ef9be43fcd0a6ce2e",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "b402431be306717b93ce7d7f4b4a2ec0ce25b2f48d09396837149b2a4e4aaf27",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "b402431be306717b93ce7d7f4b4a2ec0ce25b2f48d09396837149b2a4e4aaf27",
@@ -20814,8 +20816,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "b402431be306717b93ce7d7f4b4a2ec0ce25b2f48d09396837149b2a4e4aaf27",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -21878,23 +21880,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：布局与数据组织；动态偏移；内存映射刷新；推送常量；Bindless发布回收。反例见interface-p2-review.json。"
+        "basis": "逐项推演：布局与数据组织；动态偏移；内存映射刷新；推送常量；Bindless发布回收。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -21973,11 +21975,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "875c87a3dffd44e6f1f07f47740e1c9c30fe2f6ad82b07167fd5e1f26cb9c55f",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "a1743ee4bde388b1a7d0fbbb445399a58aa7a3f0b48b22398fece7106a0ea29b",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "a1743ee4bde388b1a7d0fbbb445399a58aa7a3f0b48b22398fece7106a0ea29b",
@@ -22190,8 +22192,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "a1743ee4bde388b1a7d0fbbb445399a58aa7a3f0b48b22398fece7106a0ea29b",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -23060,23 +23062,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：图依赖编译；附件内容边界；命令承载；同步可见性；物理回收。反例见interface-p2-review.json。"
+        "basis": "逐项推演：图依赖编译；附件内容边界；命令承载；同步可见性；物理回收。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "不适用",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -23148,7 +23150,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、入口、术语、规则、章节与导读关系",
       "author_record": "revision-support-overviews.json",
       "author_sha256": "9c1a7cc7a9ca0e410ffb3ee9d4b6d5df0088c5776ff9db53e62dcd328177fb3f",
@@ -23169,7 +23171,7 @@
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "19438daf4837cd356c1fb53b2363a1dd1b9d7b967e3500e1d998d76b630e05b7",
       "independent_review_date": "2026-10-23",
       "independent_judgment": [
@@ -23397,8 +23399,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "19438daf4837cd356c1fb53b2363a1dd1b9d7b967e3500e1d998d76b630e05b7",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -23423,23 +23425,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：材质与光照时机；二维三维灯表；透明深度范围；共同BRDF与HDR。反例见interface-p2-review.json。"
+        "basis": "逐项推演：材质与光照时机；二维三维灯表；透明深度范围；共同BRDF与HDR。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "不适用",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -23511,7 +23513,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、入口、术语、规则、章节与导读关系",
       "author_record": "revision-support-overviews.json",
       "author_sha256": "cd999e4fde55715ef7a314908f06db72063965e2b3c6942fa66c93f43078c290",
@@ -23532,7 +23534,7 @@
         "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
       },
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "6faf0aef5c1af11dc24a682873e63e04b7e101a028e1da20388fb2741276b85b",
       "independent_review_date": "2026-10-23",
       "independent_judgment": [
@@ -23760,8 +23762,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "6faf0aef5c1af11dc24a682873e63e04b7e101a028e1da20388fb2741276b85b",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -23785,23 +23787,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：缓存分层；组合发现；封闭首屏集合；请求状态；保留引用；录制提交交接；设备代次；预算与实测。反例见interface-p2-review.json。"
+        "basis": "逐项推演：缓存分层；组合发现；封闭首屏集合；请求状态；保留引用；录制提交交接；设备代次；预算与实测。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -23885,11 +23887,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "5256268d64f0f6c14b8b48c9cda676ecf231a2ec4f615cb410cc52f7600b6ba8",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "cdd4879bab49ad894db329b5c1413c9ee80d25c9c9cf0739c648534989936fd0",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "cdd4879bab49ad894db329b5c1413c9ee80d25c9c9cf0739c648534989936fd0",
@@ -24102,8 +24104,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "cdd4879bab49ad894db329b5c1413c9ee80d25c9c9cf0739c648534989936fd0",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -24313,23 +24315,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：可复现负载；标记与时钟对齐；CPU等待前驱；捕获资源状态；跨资源像素回溯；计数器；构建与长期证据。反例见interface-p2-review.json。"
+        "basis": "逐项推演：可复现负载；标记与时钟对齐；CPU等待前驱；捕获资源状态；跨资源像素回溯；计数器；构建与长期证据。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -24419,11 +24421,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "a406658efcd9d38ebfcac9d4fddbe760551470d446c5936413d53cfe5a8b095d",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "139955088b2b317deb5cb96135c7016bdff8eec884f6959a6f79102f2e7835f8",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "139955088b2b317deb5cb96135c7016bdff8eec884f6959a6f79102f2e7835f8",
@@ -24636,8 +24638,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "139955088b2b317deb5cb96135c7016bdff8eec884f6959a6f79102f2e7835f8",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -24662,23 +24664,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：帧分布；CPU关键路径；GPU负载；重叠限帧；顶点像素访存；占用率；同步前驱；驻留预算。反例见interface-p2-review.json。"
+        "basis": "逐项推演：帧分布；CPU关键路径；GPU负载；重叠限帧；顶点像素访存；占用率；同步前驱；驻留预算。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -24765,11 +24767,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "df8fbe30067f1423ef2a5b30844aee43fa6d186812e997f57345026bd738d0f4",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "1559b340e8073fe0a8b5ce009670bf4c1b414dcbe030a902f85ec03a7826541d",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "1559b340e8073fe0a8b5ce009670bf4c1b414dcbe030a902f85ec03a7826541d",
@@ -25104,8 +25106,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "1559b340e8073fe0a8b5ce009670bf4c1b414dcbe030a902f85ec03a7826541d",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -25131,23 +25133,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：控制变量；ABBA窗口；关键路径；像素模型；分位数；独立重复与质量。反例见interface-p2-review.json。"
+        "basis": "逐项推演：控制变量；ABBA窗口；关键路径；像素模型；分位数；独立重复与质量。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -25222,11 +25224,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "1a9327df6730ad7df1b974cba2d16dcb0453c2ea1e92569975b6938ff15fe9fe",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "78945156c8f94e90f945515bf99a7e104373964807ef14806193f6103d75d0f7",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "78945156c8f94e90f945515bf99a7e104373964807ef14806193f6103d75d0f7",
@@ -25439,8 +25441,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "78945156c8f94e90f945515bf99a7e104373964807ef14806193f6103d75d0f7",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -26054,23 +26056,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：二进制粒度；Git对象与LFS指针对象；锁与新鲜基线；P4/Gluon提交；干净检出与缓存；合入旧引用比较；备份恢复迁移。反例见interface-p2-review.json。"
+        "basis": "逐项推演：二进制粒度；Git对象与LFS指针对象；锁与新鲜基线；P4/Gluon提交；干净检出与缓存；合入旧引用比较；备份恢复迁移。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -26158,11 +26160,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "9a9a122bdd4b72625be0fdc8617bade6ab7e49f2445cb99b57b52ce993868c36",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "63809a337168f273a77c9c678eb958722d28ca7797a48d777682068f0880043a",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "63809a337168f273a77c9c678eb958722d28ca7797a48d777682068f0880043a",
@@ -26377,8 +26379,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "63809a337168f273a77c9c678eb958722d28ca7797a48d777682068f0880043a",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -26587,23 +26589,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：显式计划与序列化；手势合并；对象创建删除；宿主撤销通知；补偿；条件发布；共同提交；对象呈现与保存；持久逆操作；配置依赖。反例见interface-priority.json。"
+        "basis": "逐项推演：冻结计划与宿主上下文；手势首末值/锁/版本；身份创建删除引用；Unity/UE事务适配；补偿；条件发布回执；跨资源Committed与包呈现；撤销代理/逆操作/取消；工具模式与运行时隔离。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -26664,7 +26666,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "c451e61e30e1a191e0cc227f14a2a6dc51856e61f11731a4da6ea20a16b73017",
+    "final_sha256": "e04d12b21af210dd2220369f15dfefc0d651550749bde0115e662a931279c9b2",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "编辑器工具的事务与批处理",
@@ -26676,7 +26678,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "c451e61e30e1a191e0cc227f14a2a6dc51856e61f11731a4da6ea20a16b73017",
+    "reviewed_content_sha256": "e04d12b21af210dd2220369f15dfefc0d651550749bde0115e662a931279c9b2",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -26693,19 +26695,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P1",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "571c7c498abbe239666030c044d39447d9d55aa6cfc9586646884200b35cc249",
-      "independent_record": "interface-priority.json",
-      "independent_source_sha256": "c451e61e30e1a191e0cc227f14a2a6dc51856e61f11731a4da6ea20a16b73017",
+      "independent_record": "interface-final-review.json",
+      "independent_source_sha256": "e04d12b21af210dd2220369f15dfefc0d651550749bde0115e662a931279c9b2",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "c451e61e30e1a191e0cc227f14a2a6dc51856e61f11731a4da6ea20a16b73017",
+      "content_sha256": "e04d12b21af210dd2220369f15dfefc0d651550749bde0115e662a931279c9b2",
       "independent_review": "PASS",
       "findings": [
-        "文件V11已发布而对象呈现失败，重启按Committed重放",
-        "包已保存但Applied未登记，读同包标记",
-        "用户V12后撤销J拒绝覆盖"
+        "Committed新目标但包仍旧值时，严格普通补丁前值会阻塞逆操作",
+        "一个包已呈现J另一个未呈现，K需两类精确前态及统一承接",
+        "撤销代理登记前崩溃仍由持久日志恢复",
+        "版本10→11→12不能用相同内容绕过代次"
       ],
       "runtime": {
         "shader_probes": [],
@@ -26916,9 +26919,9 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P1",
-      "record": "interface-priority.json",
-      "content_sha256": "c451e61e30e1a191e0cc227f14a2a6dc51856e61f11731a4da6ea20a16b73017",
+      "phase": "Final",
+      "record": "interface-final-review.json",
+      "content_sha256": "e04d12b21af210dd2220369f15dfefc0d651550749bde0115e662a931279c9b2",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
   },
@@ -27327,23 +27330,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：预处理/编译/链接/加载；翻译单元与ODR；静态动态库与分配释放；C ABI类型布局/结构版本/错误输出；复制移动与异常保证；Win32消息与COM引用；活动令牌、入口门、回调及模块卸载。反例见interface-p2-review.json。"
+        "basis": "逐项推演：预处理/编译/链接/加载；翻译单元与ODR；静态动态库与分配释放；C ABI类型布局/结构版本/错误输出；复制移动与异常保证；Win32消息与COM引用；活动令牌、入口门、回调及模块卸载。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -27425,11 +27428,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "ef64e2b805ec769b3fcdcf27e9738b03b1abe6263b5675c42452946492c0579f",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "f00407aedec2cb40c28f325805dfc3e4e93e7b993baf577d6f3a92d71edea76a",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "f00407aedec2cb40c28f325805dfc3e4e93e7b993baf577d6f3a92d71edea76a",
@@ -27603,8 +27606,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "f00407aedec2cb40c28f325805dfc3e4e93e7b993baf577d6f3a92d71edea76a",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -27972,23 +27975,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：栈堆、虚拟页与GPU存储；线性/栈/池/Buddy和碎片；AoS/SoA、缓存组和写策略；对齐溢出、构造失败和逆序析构；多帧槽位、Closing门、CPU子任务与GPU完成值。反例见interface-p2-review.json。"
+        "basis": "逐项推演：栈堆、虚拟页与GPU存储；线性/栈/池/Buddy和碎片；AoS/SoA、缓存组和写策略；对齐溢出、构造失败和逆序析构；多帧槽位、Closing门、CPU子任务与GPU完成值。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -28064,11 +28067,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "9072767e1c3c51008285c9becfbdc3b711a99915b073436b31f2c4d04c6cda93",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "ec843392817c0beb5e94842ca060df6e9e535c3c7fd6b3a5c9627f35b3b14bcb",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "ec843392817c0beb5e94842ca060df6e9e535c3c7fd6b3a5c9627f35b3b14bcb",
@@ -28243,8 +28246,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "ec843392817c0beb5e94842ca060df6e9e535c3c7fd6b3a5c9627f35b3b14bcb",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -28954,23 +28957,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：页缓存/短读/直接IO/映射；取消与终态、缓冲及解码寿命；临时文件刷新/名称替换/持久性；代次比较与资源发布；多文件固定清单、引用租约、代理在途读取回收。反例见interface-p2-review.json。"
+        "basis": "逐项推演：页缓存/短读/直接IO/映射；取消与终态、缓冲及解码寿命；临时文件刷新/名称替换/持久性；代次比较与资源发布；多文件固定清单、引用租约、代理在途读取回收。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -29042,11 +29045,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "52caa93f715b03db9f723dc9bea4baa3217dc12e24238792f86f0758caa9c0f6",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "e40474a010c7a85b0bf216830e614fee138d3f75cbebef5add73978350be4a20",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "e40474a010c7a85b0bf216830e614fee138d3f75cbebef5add73978350be4a20",
@@ -29213,8 +29216,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "e40474a010c7a85b0bf216830e614fee138d3f75cbebef5add73978350be4a20",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -30438,23 +30441,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：用户内核态及系统调用；进程线程协程/Task；Running/Ready/Blocked与调度；IPC偏移与发布同步；单调时钟、Tick累计器与过载；双向标准流、取消、进程树及结果校验。反例见interface-p2-review.json。"
+        "basis": "逐项推演：用户内核态及系统调用；进程线程协程/Task；Running/Ready/Blocked与调度；IPC偏移与发布同步；单调时钟、Tick累计器与过载；双向标准流、取消、进程树及结果校验。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -30530,11 +30533,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "0be492a4ff26819870a4083f22ab510a1ae98910643dcf5c488aca6fdbc924f3",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "7b89199b8103243d17a94a3f1d03885732f56d44119de71499efd5a17d1a5936",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "7b89199b8103243d17a94a3f1d03885732f56d44119de71499efd5a17d1a5936",
@@ -30709,8 +30712,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "7b89199b8103243d17a94a3f1d03885732f56d44119de71499efd5a17d1a5936",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -30735,23 +30738,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：状态与派生记录；检索硬约束与执行工具；Prepared/Applied对账；单写令牌与原子标记；不确定外部生成；补偿/人工改动；几何可达校验；批准撤销与发布回执。反例见interface-p2-review.json。"
+        "basis": "逐项推演：状态与派生记录；检索硬约束与执行工具；Prepared/Applied对账；单写令牌与原子标记；不确定外部生成；补偿/人工改动；几何可达校验；批准撤销与发布回执。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -30841,11 +30844,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "e9af4532e29291c4b9d8f03901e3a8e1e83827016b4ba0ab918dac901876bd78",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "fd984a8b96699c1a127822c13f00833cd47ff9ad9a9937fdff28615e8b25cd43",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "fd984a8b96699c1a127822c13f00833cd47ff9ad9a9937fdff28615e8b25cd43",
@@ -31011,8 +31014,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "fd984a8b96699c1a127822c13f00833cd47ff9ad9a9937fdff28615e8b25cd43",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -31718,23 +31721,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：反向位置和深度足迹；法线变换与置信；像素合成/整图编码；ControlNet与DDIM像素投影；曝光排除真实变化；Q与锚点分离；方向隔离持久历史；对象冲突和F/U补洞。反例见interface-p2-review.json。"
+        "basis": "逐项推演：反向位置和深度足迹；法线变换与置信；像素合成/整图编码；ControlNet与DDIM像素投影；曝光排除真实变化；Q与锚点分离；方向隔离持久历史；对象冲突和F/U补洞。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -31817,11 +31820,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "4d2973877344a896d1fca6bc2fda130a9a3322f2aaedf5815226a7e76f58c421",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "b60eaeeb13b58ef81b08ba7681d89d57cab6589921a0ec62d19ff0a2e8496f8f",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "b60eaeeb13b58ef81b08ba7681d89d57cab6589921a0ec62d19ff0a2e8496f8f",
@@ -32007,8 +32010,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "b60eaeeb13b58ef81b08ba7681d89d57cab6589921a0ec62d19ff0a2e8496f8f",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -32033,23 +32036,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：胶囊扫掠/skin与单面滑动；多面活动约束；可站立坡度/台阶候选；平台局部脚点和旋转携带；初始穿透恢复和安全点复验；单步唯一提交/跳离/速度反馈。反例见interface-p2-review.json。"
+        "basis": "逐项推演：胶囊扫掠/skin与单面滑动；多面活动约束；可站立坡度/台阶候选；平台局部脚点和旋转携带；初始穿透恢复和安全点复验；单步唯一提交/跳离/速度反馈。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -32121,11 +32124,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "40ea9b61178c4bee76ed6619c9751b801c1f811a82075e81f168d704d0da276b",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "49b0b4fe7a0a3445a2362ed3757ad1405d67b8ab59ff88bb6b03cfb5c6edbd03",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "49b0b4fe7a0a3445a2362ed3757ad1405d67b8ab59ff88bb6b03cfb5c6edbd03",
@@ -32300,8 +32303,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "49b0b4fe7a0a3445a2362ed3757ad1405d67b8ab59ff88bb6b03cfb5c6edbd03",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -32326,23 +32329,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：骨骼到刚体/关节局部框架；质心线速度和四元数角速度；根yaw与骨盆平移恢复；纯表现与动态驱动恢复；比例阻尼扭矩及反作用；动画/肢体/胶囊单一控制权和中断。反例见interface-p2-review.json。"
+        "basis": "逐项推演：骨骼到刚体/关节局部框架；质心线速度和四元数角速度；根yaw与骨盆平移恢复；纯表现与动态驱动恢复；比例阻尼扭矩及反作用；动画/肢体/胶囊单一控制权和中断。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -32414,11 +32417,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "efa280d5045f01055c8664e6e876fffd837fb919bef69aa0c2929ecfa625bcf7",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "4954a3a7f4dcc637fa9261196812c1a959c2a7a35a02c172bc86065830344011",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "4954a3a7f4dcc637fa9261196812c1a959c2a7a35a02c172bc86065830344011",
@@ -32592,8 +32595,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "4954a3a7f4dcc637fa9261196812c1a959c2a7a35a02c172bc86065830344011",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -32954,23 +32957,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：预切分资产/连接与支撑；径向损伤/连通分量；质量质心张量/形状局部变换；切分速度场与一次冲量；候选图和物理提交/事件去重；容量预算/代理通道/回收代次；权威拓扑重放。反例见interface-p2-review.json。"
+        "basis": "逐项推演：预切分资产/连接与支撑；径向损伤/连通分量；质量质心张量/形状局部变换；切分速度场与一次冲量；候选图和物理提交/事件去重；容量预算/代理通道/回收代次；权威拓扑重放。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -33042,11 +33045,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "4f0d66f613f1d4da412303c9ff10d7bfe814ce64c7f6b1c4b52b289c743bf731",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "7762a057eb15659f0606e0bb925b94dc2a0d9ae3b060a93b3ae207e13fdf06a9",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "7762a057eb15659f0606e0bb925b94dc2a0d9ae3b060a93b3ae207e13fdf06a9",
@@ -33222,8 +33225,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "7762a057eb15659f0606e0bb925b94dc2a0d9ae3b060a93b3ae207e13fdf06a9",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -33248,23 +33251,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：接触几何；悬挂导数；轮载；轮胎坐标与联合滑移；传动制动；转向；角动量；多轮约束；失败回退；子步。反例见interface-priority.json。"
+        "basis": "逐项推演：球形/圆轮接触；长度导数及轮载；轮轴滑移与联合附着；离合差速制动转向；角动量汇总；驻车可行域投影与候选回退；子步。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -33306,7 +33309,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "fe4384810a4da640ab23effeeb75562058dda2bd1bb994c0889209fe05950974",
+    "final_sha256": "6c4be63802d0518bbf9a6744d0f9a795bc3d99055f3f6ae238d4b4445cd6e04b",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "载具物理",
@@ -33318,7 +33321,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "fe4384810a4da640ab23effeeb75562058dda2bd1bb994c0889209fe05950974",
+    "reviewed_content_sha256": "6c4be63802d0518bbf9a6744d0f9a795bc3d99055f3f6ae238d4b4445cd6e04b",
     "source_article_path": "知识库/18_游戏物理与模拟/角色、布料、破坏与载具物理.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -33336,19 +33339,21 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P1",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "c96ffb6893d31232bdd882575f213137fcafb913cd6794ba1cfab3e598e46db0",
-      "independent_record": "interface-priority.json",
-      "independent_source_sha256": "fe4384810a4da640ab23effeeb75562058dda2bd1bb994c0889209fe05950974",
+      "independent_record": "interface-final-review.json",
+      "independent_source_sha256": "6c4be63802d0518bbf9a6744d0f9a795bc3d99055f3f6ae238d4b4445cd6e04b",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "fe4384810a4da640ab23effeeb75562058dda2bd1bb994c0889209fe05950974",
+      "content_sha256": "6c4be63802d0518bbf9a6744d0f9a795bc3d99055f3f6ae238d4b4445cd6e04b",
       "independent_review": "PASS",
       "findings": [
-        "两轮各自消除同一自由速度导致过度制动",
-        "每轮预算0.2仍残余0.006m/s，不能判驻车",
-        "圆盘缩放可把jx推回制动区间外"
+        "外倾圆轮支撑半径与滚动力臂不同，正文分别推导并同链消费",
+        "小非零轮速使制动区间不含零，不能用对称区间错误锁住",
+        "两个100kg同向接触各冲量−1会过度制动，联合K得各−0.5",
+        "第二轮候选失败后须撤销全部临时反作用，正文从冻结状态重建",
+        "非零残余速度即使凸优化收敛仍不算驻车成功"
       ],
       "runtime": {
         "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页检查联合力限幅与离地零载荷；悬挂、轮速积分和实际驾驶性能未运行。",
@@ -33520,9 +33525,9 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P1",
-      "record": "interface-priority.json",
-      "content_sha256": "fe4384810a4da640ab23effeeb75562058dda2bd1bb994c0889209fe05950974",
+      "phase": "Final",
+      "record": "interface-final-review.json",
+      "content_sha256": "6c4be63802d0518bbf9a6744d0f9a795bc3d99055f3f6ae238d4b4445cd6e04b",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
   },
@@ -33889,23 +33894,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：状态复制/动作合法性；扩展/模拟；根视角UCT与回传；最终最大访问/预算；局面版本同入口提交；子树复用视角和访问偏移；取消检查点/扩展暂存。反例见interface-p2-review.json。"
+        "basis": "逐项推演：状态复制/动作合法性；扩展/模拟；根视角UCT与回传；最终最大访问/预算；局面版本同入口提交；子树复用视角和访问偏移；取消检查点/扩展暂存。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -33977,11 +33982,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "8486a0be5912f48ac20bb79bfbc70b2178f0bff01b1a7d22713c108ebffd6291",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "283be165d70366cdbf51e46e07447f97f597e53efae2cda2f651f88a8ca21551",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "283be165d70366cdbf51e46e07447f97f597e53efae2cda2f651f88a8ca21551",
@@ -34160,8 +34165,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "283be165d70366cdbf51e46e07447f97f597e53efae2cda2f651f88a8ca21551",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -34186,23 +34191,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：规则与BDI意图；FSM/HFSM最近公共祖先及失败；BT顺序/选择/观察中止/叶生命周期；Utility归一化迟滞；GOAP回归事实/负效果/成本；HTN临时状态及方法回退；只读黑板快照与实际动作效果；取消资源所有者与模型共同账本。反例见interface-p2-review.json。"
+        "basis": "逐项推演：规则与BDI意图；FSM/HFSM最近公共祖先及失败；BT顺序/选择/观察中止/叶生命周期；Utility归一化迟滞；GOAP回归事实/负效果/成本；HTN临时状态及方法回退；只读黑板快照与实际动作效果；取消资源所有者与模型共同账本。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -34282,11 +34287,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "dcc3c0cecb4e141053ad5f0f9408d0aaabe96a59ecd1a7b001b14da312200de0",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "ba87205791356a68ebd84bd356ff1484a34ec6dd546daa979d50061b734e58c8",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "ba87205791356a68ebd84bd356ff1484a34ec6dd546daa979d50061b734e58c8",
@@ -34462,8 +34467,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "ba87205791356a68ebd84bd356ff1484a34ec6dd546daa979d50061b734e58c8",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -34487,23 +34492,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：烘焙空间；A*与走廊；漏斗索引；停转和圆弧速度表；二维速度障碍；多约束求解；走廊速度半平面；碰撞反馈与版本。反例见interface-priority.json。"
+        "basis": "逐项推演：烘焙与体型；搜索下界与重开；门户漏斗；停转圆弧速度表；ORCA几何；多半平面与双圆；走廊速度约束；反馈及版本。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -34555,7 +34560,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "fde0b73f6fe46ad814c45eb1475252e42ae6b072f4f5b1640e0dd24a16ffa684",
+    "final_sha256": "009af8511d14b11951ad7ed4d4801570795dff679a606c7e6375a4b98e6e7ee4",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "游戏AI导航",
@@ -34567,7 +34572,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "fde0b73f6fe46ad814c45eb1475252e42ae6b072f4f5b1640e0dd24a16ffa684",
+    "reviewed_content_sha256": "009af8511d14b11951ad7ed4d4801570795dff679a606c7e6375a4b98e6e7ee4",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -34584,19 +34589,21 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P1",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "fe538c259388f11d043338ce983204d9cb134dc0eeeb401a38fc9b2af1c32218",
-      "independent_record": "interface-priority.json",
-      "independent_source_sha256": "fde0b73f6fe46ad814c45eb1475252e42ae6b072f4f5b1640e0dd24a16ffa684",
+      "independent_record": "interface-final-review.json",
+      "independent_source_sha256": "009af8511d14b11951ad7ed4d4801570795dff679a606c7e6375a4b98e6e7ee4",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "fde0b73f6fe46ad814c45eb1475252e42ae6b072f4f5b1640e0dd24a16ffa684",
+      "content_sha256": "009af8511d14b11951ad7ed4d4801570795dff679a606c7e6375a4b98e6e7ee4",
       "independent_review": "PASS",
       "findings": [
-        "4m/s、减速2、dt0.1需要4.4m",
-        "右墙限制1而ORCA要求1.5，集合为空并分级制动",
-        "实际未跨门户不能按请求推进"
+        "4m/s与2m/s²在0.1秒步需4.4米制动，正文给离散反应距离",
+        "圆弧切点在内不保证中段在内，正文要求交点间连续覆盖",
+        "墙右向≤1与ORCA≥1.5无解，正文分别标记动态与静态保证失效",
+        "避障后再夹加速度会进入禁区，正文双圆同求解",
+        "门户索引按实际位移推进，碰撞截断不伪造进度"
       ],
       "runtime": {
         "scope": "导航生成与ORCA职责按来源核读，正文跟随为C++机制片段。尚未烘焙测试关卡、运行漏斗或群体避障；A*主算法验证归属图搜索。",
@@ -34762,9 +34769,9 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P1",
-      "record": "interface-priority.json",
-      "content_sha256": "fde0b73f6fe46ad814c45eb1475252e42ae6b072f4f5b1640e0dd24a16ffa684",
+      "phase": "Final",
+      "record": "interface-final-review.json",
+      "content_sha256": "009af8511d14b11951ad7ed4d4801570795dff679a606c7e6375a4b98e6e7ee4",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
   },
@@ -35126,23 +35133,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：封套与剩余预算；业务认证和首次执行验证；事务结果/状态共同提交；发件箱接收去重；结果与消息退休。反例见interface-p2-review.json。"
+        "basis": "逐项推演：封套与剩余预算；业务认证和首次执行验证；事务结果/状态共同提交；发件箱接收去重；结果与消息退休。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -35215,11 +35222,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "b2157b0bac43567fbeb84af6ad66db8417b16de436f2c6b947613bc884286413",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "9b73291c9e39bb25c7a34e4a14a44cf69b63faedc25471401a17ffcd0e966eb0",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "9b73291c9e39bb25c7a34e4a14a44cf69b63faedc25471401a17ffcd0e966eb0",
@@ -35384,8 +35391,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "9b73291c9e39bb25c7a34e4a14a44cf69b63faedc25471401a17ffcd0e966eb0",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -35410,23 +35417,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：一致空间桶和迟滞权限并集；可靠生成移除和复制代数；预算与实体观察时间；冻结Ready所有权条件提交；输入业务事务与发件箱；路由背压/会话关闭/目标恢复。反例见interface-p2-review.json。"
+        "basis": "逐项推演：一致空间桶和迟滞权限并集；可靠生成移除和复制代数；预算与实体观察时间；冻结Ready所有权条件提交；输入业务事务与发件箱；路由背压/会话关闭/目标恢复。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -35498,11 +35505,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "1bdc2703a85fb7b0500f1e12cd71fb09d0fb2ae4e61d9b1c2e8b893bedea3ab1",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "ffd55659d349bda6d988d327d62d8f74c4b864206e2c231f754d20904c2d8ee7",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "ffd55659d349bda6d988d327d62d8f74c4b864206e2c231f754d20904c2d8ee7",
@@ -35681,8 +35688,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "ffd55659d349bda6d988d327d62d8f74c4b864206e2c231f754d20904c2d8ee7",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -35875,23 +35882,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：固定输入和权威ACK/Tick；碰撞平台重放；模序号窗口；输入拒绝和关闭屏障；表现事件及预测代次。反例见interface-p2-review.json。"
+        "basis": "逐项推演：固定输入和权威ACK/Tick；碰撞平台重放；模序号窗口；输入拒绝和关闭屏障；表现事件及预测代次。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -35967,11 +35974,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "e9e65578fc0e4f6038526023d5e6b97d2cfb0c6aa40742ab7dd91220fdcacb75",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "b94e7b27377b0d124e085171a445878a60ab29980e1fe6becd09fcdec7065a68",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "b94e7b27377b0d124e085171a445878a60ab29980e1fe6becd09fcdec7065a68",
@@ -36144,8 +36151,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "b94e7b27377b0d124e085171a445878a60ab29980e1fe6becd09fcdec7065a68",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -36170,23 +36177,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：分配Ready与取消条件提交；加入票据与排空；epoch权威结果；每Tick耐久提交；快照日志重建和退休。反例见interface-p2-review.json。"
+        "basis": "逐项推演：分配Ready与取消条件提交；加入票据与排空；epoch权威结果；每Tick耐久提交；快照日志重建和退休。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -36262,11 +36269,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "f669c47eede926787ad9ddd572b0fe938732b6323bff348a88de64df3458f24c",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "fd00e8da7a42afe2f5b7f80c7e448aae6d347903ae260f25ad8d451ca92ea86b",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "fd00e8da7a42afe2f5b7f80c7e448aae6d347903ae260f25ad8d451ca92ea86b",
@@ -36431,8 +36438,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "fd00e8da7a42afe2f5b7f80c7e448aae6d347903ae260f25ad8d451ca92ea86b",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -36457,23 +36464,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：实际播放r与年龄；实体新鲜度与可验证样本；展示估计与权威历史差异；射手实际消费Tick；历史分段/球射线/遮挡；实例校验与共同提交。反例见interface-p2-review.json。"
+        "basis": "逐项推演：实际播放r与年龄；实体新鲜度与可验证样本；展示估计与权威历史差异；射手实际消费Tick；历史分段/球射线/遮挡；实例校验与共同提交。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -36547,11 +36554,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "f63be6f7072aee778ca3b06abb89c53a7ea24902823c9c89529086863e518d0b",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "c66064d91e9caa3529d79fd936020ed1143d315633ae1073b1a20da11e542a52",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "c66064d91e9caa3529d79fd936020ed1143d315633ae1073b1a20da11e542a52",
@@ -36719,8 +36726,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "c66064d91e9caa3529d79fd936020ed1143d315633ae1073b1a20da11e542a52",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -36745,23 +36752,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：身份与完整记录表；字段与整实体省略；基线确认退休；播放时钟；冻结重锚；逐实体求值；查询关键集合。反例见interface-priority.json。"
+        "basis": "逐项推演：量化字段与观察时间；基线完整记录表重建；基线确认与有界退休；包时间轴与延迟统计；单调播放/冻结/重同步；实体连续段求值；Stale/Missing与命中门控。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-priority.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -36808,7 +36815,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "974c106eeb73ce85a9a1f9d7495969ffd21ccf1c2a92288376e2d39e8494a641",
+    "final_sha256": "f1b60a2c7c57fefaa48005c5a48a90e1ad8d4257091f72c0b7eae68284f625c9",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "快照同步",
@@ -36820,7 +36827,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "974c106eeb73ce85a9a1f9d7495969ffd21ccf1c2a92288376e2d39e8494a641",
+    "reviewed_content_sha256": "f1b60a2c7c57fefaa48005c5a48a90e1ad8d4257091f72c0b7eae68284f625c9",
     "source_article_path": "知识库/21_游戏网络/状态同步、预测与回滚.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -36838,19 +36845,21 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P1",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "9a172d9e779fa68af49b4b72975ddb7290764f7d15de3e14d76efaa5ea888955",
-      "independent_record": "interface-priority.json",
-      "independent_source_sha256": "974c106eeb73ce85a9a1f9d7495969ffd21ccf1c2a92288376e2d39e8494a641",
+      "independent_record": "interface-final-review.json",
+      "independent_source_sha256": "f1b60a2c7c57fefaa48005c5a48a90e1ad8d4257091f72c0b7eae68284f625c9",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "974c106eeb73ce85a9a1f9d7495969ffd21ccf1c2a92288376e2d39e8494a641",
+      "content_sha256": "f1b60a2c7c57fefaa48005c5a48a90e1ad8d4257091f72c0b7eae68284f625c9",
       "independent_review": "PASS",
       "findings": [
-        "43省略B不刷新B观察时间，44仍从42解码",
-        "A每50ms而B每500ms更新，B在r=1.12陈旧",
-        "传送无初始状态不能继续显示旧目标"
+        "32槽满时若等待第33份确认才能退休会死锁",
+        "新窗口数据先于控制不能读取尚未建立窗口",
+        "包时间前进不刷新稀疏B观察时间",
+        "传送Te只截断实体连续段而非全局包时间轴",
+        "Frozen恢复在同r重求姿态不伪造时间"
       ],
       "runtime": {
         "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页共用历史插值的区间检查；压缩格式、基线恢复协议和真实到达抖动仍是接入验收项。",
@@ -37010,9 +37019,9 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P1",
-      "record": "interface-priority.json",
-      "content_sha256": "974c106eeb73ce85a9a1f9d7495969ffd21ccf1c2a92288376e2d39e8494a641",
+      "phase": "Final",
+      "record": "interface-final-review.json",
+      "content_sha256": "f1b60a2c7c57fefaa48005c5a48a90e1ad8d4257091f72c0b7eae68284f625c9",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
   },
@@ -37374,23 +37383,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：四时间戳测量；对称假设与不对称偏差；低RTT频率拟合；连续锚点相位流速；本地代次/播放缓冲/Tick。反例见interface-p2-review.json。"
+        "basis": "逐项推演：四时间戳测量；对称假设与不对称偏差；低RTT频率拟合；连续锚点相位流速；本地代次/播放缓冲/Tick。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -37462,11 +37471,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "f1ab5abb4ebd056038592e8186ade68fca45c62d97573feecfdbf3b802c0458e",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "4f8de8b0d62109d29b61f21814ade094eecd3d7c817c5b6135d19e2dd6a94314",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "4f8de8b0d62109d29b61f21814ade094eecd3d7c817c5b6135d19e2dd6a94314",
@@ -37630,8 +37639,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "4f8de8b0d62109d29b61f21814ade094eecd3d7c817c5b6135d19e2dd6a94314",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
@@ -39229,23 +39238,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：GC根图和引用体系；构造加载BeginPlay；增量写屏障；软引用加载和请求代数；EndPlay/BeginDestroy/栅栏。反例见interface-p2-review.json。"
+        "basis": "逐项推演：GC根图和引用体系；构造加载BeginPlay；增量写屏障；软引用加载和请求代数；EndPlay/BeginDestroy/栅栏。反例见interface-final-review.json。"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-p2-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
       },
       "Title": {
         "status": "通过",
@@ -39320,11 +39329,11 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "interface-P2",
+      "phase": "interface-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-22-26.json",
       "author_sha256": "1b70b9c990489c75cd6fd8b31269c196dc1474c845f270efcf1f4d4e3bdfa4d1",
-      "independent_record": "interface-p2-review.json",
+      "independent_record": "interface-final-review.json",
       "independent_source_sha256": "e888e3fcb1e248180aa3359724dd5494e30b6c476fdad786e1ede5c666c5326a",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "e888e3fcb1e248180aa3359724dd5494e30b6c476fdad786e1ede5c666c5326a",
@@ -39505,8 +39514,8 @@
     },
     "interface_review": {
       "date": "2026-10-23",
-      "phase": "P2",
-      "record": "interface-p2-review.json",
+      "phase": "Final",
+      "record": "interface-final-review.json",
       "content_sha256": "e888e3fcb1e248180aa3359724dd5494e30b6c476fdad786e1ede5c666c5326a",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
     }
