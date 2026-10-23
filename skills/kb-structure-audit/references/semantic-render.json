@@ -1,0 +1,111 @@
+{
+  "articles": [
+    {
+      "path": "知识库/13_渲染架构/GPU资源绑定.md",
+      "mechanisms": [
+        "布局与动态偏移",
+        "映射刷新",
+        "Bindless生产消费",
+        "快照发布及退休"
+      ],
+      "counterexamples": [
+        "布局64项却分配少量槽位",
+        "同索引跨页串读",
+        "录制等待时回收"
+      ],
+      "changes": [
+        "以Vulkan固定数组接通布局能力池表字段着色器和分页；补成本数例"
+      ],
+      "content_sha256": "cc5dd6e86d2029ab1ef240d965c2484cf6572e717ab155c85511e918d8c9b1d4"
+    },
+    {
+      "path": "知识库/06_纹理技术/视差映射.md",
+      "mechanisms": [
+        "高度尺度",
+        "POM插值",
+        "导数",
+        "自阴影",
+        "虚拟命中位置"
+      ],
+      "counterexamples": [
+        "D=0.3返回t=0.3",
+        "掠射受限路径并非真实视线",
+        "Wrap差值不能夹断"
+      ],
+      "changes": [
+        "把导数说明移到自阴影和材质消费之前"
+      ],
+      "content_sha256": "ff21904c0e1d1fe290b18ad8bce96ccc216651edd558593d822c37a8542cedba"
+    },
+    {
+      "path": "知识库/12_光线追踪/ReSTIR.md",
+      "mechanisms": [
+        "测度",
+        "RIS",
+        "两遍支持修正",
+        "递归条件",
+        "时空资源版本"
+      ],
+      "counterexamples": [
+        "面积2到6参数域乘数",
+        "无代表源仍计支持",
+        "删除光不能删整来源"
+      ],
+      "changes": [
+        "全文复读保留，计算和资源引用接口已闭合"
+      ],
+      "content_sha256": "b1113fe0fab225b99754f57e902fed851306fe9037eb542d42e05a3fe2a76f22"
+    },
+    {
+      "path": "知识库/13_渲染架构/Command Buffer与帧提交.md",
+      "mechanisms": [
+        "完成值",
+        "故障",
+        "录制提交交接",
+        "跨列表依赖"
+      ],
+      "counterexamples": [
+        "S取消但L读新D",
+        "并行Signal使计数次序失配"
+      ],
+      "changes": [
+        "补提交串行条件及前驱取消传播"
+      ],
+      "content_sha256": "0cbec90b5f8684a78009e283bcf081bdce0f3d081eb6147cd310da34d1c190ee"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/PSO首次使用卡顿.md",
+      "mechanisms": [
+        "缓存层次",
+        "发现封闭",
+        "请求状态",
+        "保留",
+        "失效代次"
+      ],
+      "counterexamples": [
+        "失败计数归零不可进入",
+        "LRU在首屏前淘汰"
+      ],
+      "changes": [
+        "统一伪代码与正文的封闭集合、Ready及保留条件"
+      ],
+      "content_sha256": "30124c619472fcc50662ecdf1ad709581ad7e109865959d562a49075673e5843"
+    },
+    {
+      "path": "知识库/14_性能分析与优化/帧捕获与性能分析工具.md",
+      "mechanisms": [
+        "帧关联",
+        "异步计时",
+        "跨资源像素回溯",
+        "计数器假设"
+      ],
+      "counterexamples": [
+        "取消读者时GPU复制尚在途，区间仍不可复用"
+      ],
+      "changes": [
+        "补读回取消和提交状态的交接"
+      ],
+      "content_sha256": "644a8bec916383ea8de3681a206d0ea502494e74236091affb2da5bae93e55d2"
+    }
+  ]
+}

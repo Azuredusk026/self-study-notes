@@ -78,24 +78,42 @@ D3D12 root constants 受根签名 DWORD 预算约束，Metal 采用其绑定模�
 
 ### Bindless 的索引访问
 
-大描述符数组允许着色器用材质索引选择纹理。不同片元访问不同纹理时，编译器需要知道索引可能不一致；HLSL 可用 `NonUniformResourceIndex`，Vulkan 对应 descriptor indexing 能力及 SPIR-V 装饰。
+逐材质集合把纹理选择留给CPU绑定调用。材质种类很多时，可以把纹理放进同一个描述符数组，让材质记录保存数组下标。下面固定采用Vulkan 1.2、GLSL 4.50和容量64的数组，将创建端与着色器接口对应起来；容量由同一配置生成到宿主与着色器。
 
-```hlsl
-Texture2D<float4> materialTextures[] : register(t0, space1);
-SamplerState materialSampler : register(s0);
+set0/binding0仍保存相机uniform。新的set1包含四个绑定：binding0为对象表STORAGE_BUFFER，数量1、顶点阶段；binding1为材质表STORAGE_BUFFER，数量1、片元阶段；binding2为SAMPLED_IMAGE，数量64、片元阶段；binding3为SAMPLER，数量1、片元阶段。对象表采用std430的mat4数组，步长64字节；材质表采用uvec4数组，步长16字节，x保存纹理下标，其余分量预留。宿主按反射核对这些偏移。push constant范围为偏移0、大小8、VERTEX|FRAGMENT，两个uint分别为对象和材质下标。
 
-float4 ReadBaseColor(uint textureIndex, float2 uv)
-{
-    uint index = NonUniformResourceIndex(textureIndex);
-    return materialTextures[index].Sample(materialSampler, uv);
+设备创建前查询并启用shaderSampledImageArrayNonUniformIndexing，同时检查每阶段和集合的采样图像、sampler、storage buffer及总资源限制能容纳这份布局。固定64项声明不需要runtimeDescriptorArray或可变描述符数量；全部槽位写入有效视图，发布后集合保持不变，因此本路线也不依赖部分绑定或绑定后更新。能力或容量不足时选用前面的逐材质集合管线，按材质排序后逐次绑定，保持相同资源与参数内容。两条管线分别创建布局，不能给固定数组着色器静默分配更少的槽位。[Vulkan描述符数组](https://docs.vulkan.org/guide/latest/descriptor_arrays.html)与[索引能力](https://docs.vulkan.org/guide/latest/extensions/VK_EXT_descriptor_indexing.html)分别定义数组数量与索引条件。
+
+每个不可变页分配一个set1。池容量按同时存活的页数P预留2P个STORAGE_BUFFER、64P个SAMPLED_IMAGE、P个SAMPLER，以及P个集合。对binding2的VkWriteDescriptorSet设置dstArrayElement=0、descriptorCount=64，并提供64项图像视图和实际消费布局；未加载项填回退图像。binding3单独写sampler，对象表与材质表分别写各自缓冲范围。记录时绑定同一页的set1；图像的上传完成等待和布局转换仍按后文快照依赖执行，写下SHADER_READ_ONLY_OPTIMAL只是在描述预期布局。
+
+以下为两个阶段的接口片段，宿主将相机块与网格输入接入顶点入口：
+
+```glsl
+// 顶点阶段
+layout(set=1,binding=0,std430) readonly buffer Objects { mat4 model[]; };
+layout(push_constant) uniform Draw { uint objectIndex; uint materialIndex; } draw;
+// gl_Position = viewProjection * model[draw.objectIndex] * vec4(position,1);
+
+```
+
+```glsl
+// 片元阶段
+#extension GL_EXT_nonuniform_qualifier : require
+layout(set=1,binding=1,std430) readonly buffer Materials { uvec4 material[]; };
+layout(set=1,binding=2) uniform texture2D images[64];
+layout(set=1,binding=3) uniform sampler imageSampler;
+layout(push_constant) uniform Draw { uint objectIndex; uint materialIndex; } draw;
+vec4 ReadBaseColor(vec2 uv) {
+    uint slot = material[draw.materialIndex].x;
+    return texture(sampler2D(images[nonuniformEXT(slot)],imageSampler),uv);
 }
 ```
 
-这是 SM 5.1 及相应绑定环境中的函数片段，数组实际容量、根签名和材质表由应用建立。索引必须指向有效描述符。GPU 工作结束前释放纹理或复用槽位会产生无效访问或串材质；使用完成值延迟回收，并为未加载资源设置有效的回退描述符。
+宿主在绘制前检查对象和材质下标小于对应表长度，材质记录的slot小于64。示例每Draw固定材质下标；非一致索引能力与标记使后续扩展为逐实例或逐片元材质选择时仍有明确接口。若一帧需要超过64种纹理，把绘制按页分组，每页配套生成局部材质表并在页切换时重绑；CPU资源ID保持全局身份，着色器只消费当前页内下标。页分组减少了可共享批次，容量扩大又增加描述符占用，二者由实际材质集合决定。
 
 ### 资源索引的生产与发布
 
-索引首先来自CPU资源注册表。表项保存资源ID、资源代数、描述符槽位、加载状态和强引用；材质计划保存资源ID，在生成渲染快照时解析成有效槽位。未就绪纹理指向永久有效的回退槽位0，着色器不会拿尚未分配的槽位猜测资源是否可用。索引范围由实际数组容量检查，空洞也写合法回退描述符，或按设备能力启用部分绑定并保证着色器永远不访问未绑定项。
+索引首先来自CPU资源注册表。表项保存资源ID、资源代数、描述符槽位、加载状态和强引用；材质计划保存资源ID，在生成渲染快照时解析成有效槽位。未就绪纹理指向永久有效的回退槽位0，着色器不会拿尚未分配的槽位猜测资源是否可用。索引范围由实际数组容量检查，空洞也写合法回退描述符，保持前述64项布局全部有效。
 
 纹理B加载完成时，先创建兼容的图像与视图，上传内容并建立消费队列等待，再分配新槽位8、写入B的描述符。这里采用不可变描述符页：已发布给录制快照的页保持不变；需要新描述符就建立新的集合或堆页，并只写尚未被录制引用的页。新页还要填齐这份渲染快照中所有材质会访问的槽位：可以从CPU侧视图描述重新创建整套描述符并保持索引，也可以重排槽位后一起重建材质索引表。若只写B的槽位8，却让其余材质沿用旧页的整数索引，绑定新页后它们会读到空洞或另一资源。页封闭后构造新的材质记录，记录textureIndex=8，同时保存它所属的描述符页身份。B的上传完成依赖也挂在这份快照上；描述符写完不等于像素已经上传完毕。
 
@@ -115,7 +133,7 @@ CPU在快照发布锁内把新材质记录、描述符页、资源引用和上�
 
 ## 绑定成本
 
-改参数值、改纹理视图和改静态关键字分别影响上传、描述符更新和着色器/PSO 组合。Bindless 减少逐材质绑定，仍有描述符访问、纹理缓存、索引传输与生命周期维护成本。
+100次绘制若共用一页，逐材质方案可能重复绑定100次，数组方案只在页切换时绑定并逐Draw写索引；对象变换和材质值仍需要上传。只改变颜色时重建参数版本，替换纹理时重建描述符页及其索引表，改变静态关键字则选择另一PSO。三种更新分别计数，才能知道节省的是绑定调用还是实际工作。
 
 大量不相干的纹理访问会降低局部性。材质排序仍可能有价值。更新仍在使用的描述符需遵守 API 的 update-after-bind、堆和可见性限制。
 
