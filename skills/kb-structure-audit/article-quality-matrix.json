@@ -9740,7 +9740,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-06-08.json",
       "author_sha256": "da2d37581e8e24f5ff6d95a9faaca8149912e15c2ccf3af6daf65dcd368e2751",
@@ -10171,7 +10171,7 @@
     "execution_review": {
       "record": "references/execution-final-render.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "bcbfa4b8b1abe32cbbfe6e10a84d9b4183bd33765816dd900291a61cdf2edeef"
     }
   },
@@ -19084,7 +19084,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "6eb1aeca647092c5ab20a6d0f56a1f21d437b074b187e03d7ff3a6ecda82b488",
@@ -19361,7 +19361,7 @@
     "execution_review": {
       "record": "references/execution-final-render.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "b1113fe0fab225b99754f57e902fed851306fe9037eb542d42e05a3fe2a76f22"
     }
   },
@@ -20076,7 +20076,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "da0c5887697382d9d60baa9afcc8cd742da4bbc8ef53da93152d3d89abfbada5",
@@ -20484,7 +20484,7 @@
     "execution_review": {
       "record": "references/execution-final-render.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "39de6e64acaa1e1de0f3473dadd3158f27f20f809d0af58cca25bd0f2ea2bf08"
     }
   },
@@ -22064,23 +22064,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-priority-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：着色器反射到set/binding/type/count/stage布局；集合分配更新与管线兼容；CPU字段布局与动态缓冲寻址；映射刷新与非一致原子；小参数索引；Bindless资源注册到版本发布；录制保留与提交/取消竞态；多队列完成与页回收。具体反例见references/execution-priority-render.json"
+        "basis": "直接推演：着色器布局与字段；动态记录寻址；上传刷新；推送索引；描述符页发布；录制提交回收。具体反例见references/execution-final-render.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-priority-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-priority-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-priority-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
       },
       "Title": {
         "status": "通过",
@@ -22131,7 +22131,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "b1c11f4a244bfa72a8ceea4432e563784c79644a7d5d14ef1d94eaa089151132",
+    "final_sha256": "a9677cb6657fcaa6b6595cf5682ea46d827a60819fe441acfdf5cdb80a05bc8b",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "GPU资源绑定",
@@ -22143,7 +22143,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "b1c11f4a244bfa72a8ceea4432e563784c79644a7d5d14ef1d94eaa089151132",
+    "reviewed_content_sha256": "a9677cb6657fcaa6b6595cf5682ea46d827a60819fe441acfdf5cdb80a05bc8b",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -22160,21 +22160,19 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P1",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "875c87a3dffd44e6f1f07f47740e1c9c30fe2f6ad82b07167fd5e1f26cb9c55f",
-      "independent_record": "references/execution-priority-render.json",
-      "independent_source_sha256": "b1c11f4a244bfa72a8ceea4432e563784c79644a7d5d14ef1d94eaa089151132",
+      "independent_record": "references/execution-final-render.json",
+      "independent_source_sha256": "a9677cb6657fcaa6b6595cf5682ea46d827a60819fe441acfdf5cdb80a05bc8b",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "b1c11f4a244bfa72a8ceea4432e563784c79644a7d5d14ef1d94eaa089151132",
+      "content_sha256": "a9677cb6657fcaa6b6595cf5682ea46d827a60819fe441acfdf5cdb80a05bc8b",
       "independent_review": "PASS",
       "findings": [
-        "set1/binding1名称相同但类型数组不同，P集合不能交Q",
-        "材质3中的纹理8不等于直接访问纹理3",
-        "页A的8与页B的8不同，记录必须携带页身份",
-        "已录制未提交的R仍引用槽位7，队列全部完成也不能回收",
-        "取消若与Submitting竞争不可释放提交引用"
+        "B=128且原子256时仅对齐frameBase仍共享原子",
+        "新页只填新纹理会使旧材质索引失效",
+        "Close尚未提交不能靠GPU完成值释放"
       ],
       "runtime": {
         "shader_probes": [],
@@ -22422,10 +22420,10 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "execution_review": {
-      "record": "references/execution-priority-render.json",
+      "record": "references/execution-final-render.json",
       "date": "2026-10-23",
-      "phase": "P1",
-      "content_sha256": "b1c11f4a244bfa72a8ceea4432e563784c79644a7d5d14ef1d94eaa089151132"
+      "phase": "Final",
+      "content_sha256": "a9677cb6657fcaa6b6595cf5682ea46d827a60819fe441acfdf5cdb80a05bc8b"
     }
   },
   {
@@ -24118,7 +24116,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "5256268d64f0f6c14b8b48c9cda676ecf231a2ec4f615cb410cc52f7600b6ba8",
@@ -24381,7 +24379,7 @@
     "execution_review": {
       "record": "references/execution-final-render.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "3de3c265aba4ae1f7a33a350c0fb08ea9698bc8259fa3e5ce749a6142c75363a"
     }
   },
@@ -24697,7 +24695,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "a406658efcd9d38ebfcac9d4fddbe760551470d446c5936413d53cfe5a8b095d",
@@ -24959,7 +24957,7 @@
     "execution_review": {
       "record": "references/execution-final-render.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "262e30e377e9a810bb7d1056a50f2afd87ec031ece7f7059a2f84354ad15d233"
     }
   },
@@ -25543,7 +25541,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "1a9327df6730ad7df1b974cba2d16dcb0453c2ea1e92569975b6938ff15fe9fe",
@@ -25806,7 +25804,7 @@
     "execution_review": {
       "record": "references/execution-final-render.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "78945156c8f94e90f945515bf99a7e104373964807ef14806193f6103d75d0f7"
     }
   },
@@ -26523,7 +26521,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "9a9a122bdd4b72625be0fdc8617bade6ab7e49f2445cb99b57b52ce993868c36",
@@ -26787,7 +26785,7 @@
     "execution_review": {
       "record": "references/execution-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "63809a337168f273a77c9c678eb958722d28ca7797a48d777682068f0880043a"
     }
   },
@@ -27101,7 +27099,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "571c7c498abbe239666030c044d39447d9d55aa6cfc9586646884200b35cc249",
@@ -27371,7 +27369,7 @@
     "execution_review": {
       "record": "references/execution-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "e04d12b21af210dd2220369f15dfefc0d651550749bde0115e662a931279c9b2"
     }
   },
@@ -27878,7 +27876,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "ef64e2b805ec769b3fcdcf27e9738b03b1abe6263b5675c42452946492c0579f",
@@ -28092,7 +28090,7 @@
     "execution_review": {
       "record": "references/execution-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "3c48ba951cb94ce6a5571bb08b67efe23e127a7a4d8870e35bb66eb5c489f8c4"
     }
   },
@@ -28551,7 +28549,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "9072767e1c3c51008285c9becfbdc3b711a99915b073436b31f2c4d04c6cda93",
@@ -28766,7 +28764,7 @@
     "execution_review": {
       "record": "references/execution-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "6bfc260fa36364edbbdd21936db541f63326700231aa1dfc2ffc4d9d422b437b"
     }
   },
@@ -29475,23 +29473,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-priority-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：缓存页/设备请求/应用缓冲；短读/版本一致输入；直接IO与映射；系统终态/取消/解码所有权；并发深度与内存背压；资源发布代次与GPU消费者；不可变文件/持久清单回执；代理租约/服务纪元/在途退出；保护根与Deleting恢复。具体反例见references/execution-priority-runtime.json"
+        "basis": "直接推演：页缓存与跨页请求；短读和文件版本；直接IO与映射；请求取消终态；解码背压与共享切片；资源代次发布；持久清单和版本固定；跨进程租约代理；服务纪元及持久保护；Deleting回收状态。具体反例见references/execution-final-runtime.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-priority-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-priority-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-priority-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
       },
       "Title": {
         "status": "通过",
@@ -29563,21 +29561,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P1",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "52caa93f715b03db9f723dc9bea4baa3217dc12e24238792f86f0758caa9c0f6",
-      "independent_record": "references/execution-priority-runtime.json",
+      "independent_record": "references/execution-final-runtime.json",
       "independent_source_sha256": "22db1785dc6208e29f39e6bb1a70a22137306ed23d9052a5d71b4cbfb6b4c335",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "22db1785dc6208e29f39e6bb1a70a22137306ed23d9052a5d71b4cbfb6b4c335",
       "independent_review": "PASS",
       "findings": [
-        "完成设备请求但解码仍持有缓冲不能复用",
-        "200MB/s输入100MB/s解码使完成队列无限增长",
-        "代理重启清零内存计数但旧工作进程仍读取，GC不能删",
-        "旧令牌新服务不可复用，分块不能跨版本拼接",
-        "查零引用后新租约进入，必须与Deleting状态共同仲裁"
+        "CancelIoEx返回但设备仍写：终态与解码消费者共同决定回收。",
+        "旧服务失联而新服务计数为零：持久实例保护关系和隔离保留旧文件。",
+        "零租约检查后新读者进入：共同版本状态仲裁Deleting。",
+        "数据库引用提交但文件未持久：正文先文件再引用。"
       ],
       "runtime": {
         "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页运行临时目录里的真实文件写入、替换与替换前异常，验证最终内容和临时文件清理；未执行断电、网络文件系统或异步驱动取消测试。",
@@ -29769,9 +29766,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "execution_review": {
-      "record": "references/execution-priority-runtime.json",
+      "record": "references/execution-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P1",
+      "phase": "Final",
       "content_sha256": "22db1785dc6208e29f39e6bb1a70a22137306ed23d9052a5d71b4cbfb6b4c335"
     }
   },
@@ -31086,7 +31083,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "0be492a4ff26819870a4083f22ab510a1ae98910643dcf5c488aca6fdbc924f3",
@@ -31301,7 +31298,7 @@
     "execution_review": {
       "record": "references/execution-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "50828ba696701f2ec784522680ee0b877c14736f3f8a19b9bd25afcf7c8caad2"
     }
   },
@@ -31432,7 +31429,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "e9af4532e29291c4b9d8f03901e3a8e1e83827016b4ba0ab918dac901876bd78",
@@ -31637,7 +31634,7 @@
     "execution_review": {
       "record": "references/execution-final-physics.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "9f21cf94054ee0e8be20e40005aaf1cd82be6d4c94cc34ddca7aed9f7c216f49"
     }
   },
@@ -32441,7 +32438,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "4d2973877344a896d1fca6bc2fda130a9a3322f2aaedf5815226a7e76f58c421",
@@ -32667,7 +32664,7 @@
     "execution_review": {
       "record": "references/execution-final-physics.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "e2c5afd44ac45efa2e1cc92ba9794912fd7cc35417f133f8b340c0da445265cc"
     }
   },
@@ -32779,7 +32776,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "40ea9b61178c4bee76ed6619c9751b801c1f811a82075e81f168d704d0da276b",
@@ -32993,7 +32990,7 @@
     "execution_review": {
       "record": "references/execution-final-physics.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "49b0b4fe7a0a3445a2362ed3757ad1405d67b8ab59ff88bb6b03cfb5c6edbd03"
     }
   },
@@ -33105,7 +33102,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "efa280d5045f01055c8664e6e876fffd837fb919bef69aa0c2929ecfa625bcf7",
@@ -33318,7 +33315,7 @@
     "execution_review": {
       "record": "references/execution-final-physics.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "4954a3a7f4dcc637fa9261196812c1a959c2a7a35a02c172bc86065830344011"
     }
   },
@@ -33766,7 +33763,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "4f0d66f613f1d4da412303c9ff10d7bfe814ce64c7f6b1c4b52b289c743bf731",
@@ -33981,7 +33978,7 @@
     "execution_review": {
       "record": "references/execution-final-physics.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "1a4a994a77636a1be5158eb8cf4270475b08dddf6e092558bd938cef2ec6f381"
     }
   },
@@ -34093,7 +34090,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "c96ffb6893d31232bdd882575f213137fcafb913cd6794ba1cfab3e598e46db0",
@@ -34315,7 +34312,7 @@
     "execution_review": {
       "record": "references/execution-final-physics.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "6c4be63802d0518bbf9a6744d0f9a795bc3d99055f3f6ae238d4b4445cd6e04b"
     }
   },
@@ -34770,7 +34767,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "8486a0be5912f48ac20bb79bfbc70b2178f0bff01b1a7d22713c108ebffd6291",
@@ -34988,7 +34985,7 @@
     "execution_review": {
       "record": "references/execution-final-physics.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "283be165d70366cdbf51e46e07447f97f597e53efae2cda2f651f88a8ca21551"
     }
   },
@@ -35012,23 +35009,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-priority-physics.json；运行证据按正文实际范围分别登记。"
+        "basis": "全文机制、执行交接和失败推演见references/execution-final-physics.json；运行证据按正文实际范围分别登记。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：只读黑板/信念意图/动作资源账本；FSM/HFSM退出取消和进入失败清理；BT Idle/Running/Cancelling/Finished与终态消费；记忆/反应顺序、选择和观察中止；硬门禁与加权几何平均偏好；普通迟滞/动作失效/紧急事件切换优先级；GOAP回归负效果/预算/真实执行；HTN方法临时状态回退；层次模型同一执行资源交接。具体反例见references/execution-priority-physics.json"
+        "basis": "直接推演：黑板快照与接纳；动作取消与资源所有权；HFSM祖先退出/进入失败；BT四态和父子复位；效用门禁/迟滞；GOAP回归/HTN状态推进。具体反例见references/execution-final-physics.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-priority-physics.json；运行证据按正文实际范围分别登记。"
+        "basis": "全文机制、执行交接和失败推演见references/execution-final-physics.json；运行证据按正文实际范围分别登记。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-priority-physics.json；运行证据按正文实际范围分别登记。"
+        "basis": "全文机制、执行交接和失败推演见references/execution-final-physics.json；运行证据按正文实际范围分别登记。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-priority-physics.json；运行证据按正文实际范围分别登记。"
+        "basis": "全文机制、执行交接和失败推演见references/execution-final-physics.json；运行证据按正文实际范围分别登记。"
       },
       "Title": {
         "status": "通过",
@@ -35109,24 +35106,19 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P1",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "dcc3c0cecb4e141053ad5f0f9408d0aaabe96a59ecd1a7b001b14da312200de0",
-      "independent_record": "references/execution-priority-physics.json",
+      "independent_record": "references/execution-final-physics.json",
       "independent_source_sha256": "79cdf0a0e169ee3c8587ae09d732c245ae2fa2fe3c700c7edcbdd957a9a4576a",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "79cdf0a0e169ee3c8587ae09d732c245ae2fa2fe3c700c7edcbdd957a9a4576a",
       "independent_review": "PASS",
       "findings": [
-        "当前追击仅0.05秒且新分0.2，目标已销毁：绕过0.1分差和0.3秒门槛，取消后改选",
-        "重复Abort只保持Cancelling，取消超时资源保持占用且新冲突行为不接纳",
-        "Sequence追击Running中止：父Cancelling→子终态释放→复位已Finished孩子→父Finished(Cancelled)，攻击保持Idle",
-        "取消期间迟到Success结清旧实例但不推进下个孩子",
-        "HFSM平静/巡逻→战斗/攻击，攻击Enter失败先清自身局部资源，再Exit战斗，进平静/安全待机；同父失败只进搜寻",
-        "三个0.8偏好与一个0.8均为0.8，代码和公式同用归一化几何平均",
-        "补弹会删除掩体不能作最后动作，但补弹→进掩体合法；HTN临时钥匙不等于真实取得",
-        "叶Enter部分取得资源再失败：Cancelling保存Failure、完成失败清理后才Finished，不能泄露预约并让父启动下一动作"
+        "Enter部分成功不能立即向父节点报Failure",
+        "目标失效绕过普通迟滞但仍等待资源释放",
+        "规划临时效果不能写回事实"
       ],
       "runtime": {
         "scope": "行为树、效用和GOAP代码均为机制片段。已复读取消、代数、回归冲突和权重语义；未运行完整NPC框架、异步动作或规划搜索实验。",
@@ -35327,9 +35319,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "execution_review": {
-      "record": "references/execution-priority-physics.json",
+      "record": "references/execution-final-physics.json",
       "date": "2026-10-23",
-      "phase": "P1",
+      "phase": "Final",
       "content_sha256": "79cdf0a0e169ee3c8587ae09d732c245ae2fa2fe3c700c7edcbdd957a9a4576a"
     }
   },
@@ -35450,7 +35442,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "fe538c259388f11d043338ce983204d9cb134dc0eeeb401a38fc9b2af1c32218",
@@ -35666,7 +35658,7 @@
     "execution_review": {
       "record": "references/execution-final-physics.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "a26eeee7efe6e7a0e859ef08ea4aee6cc310d2815f58704bfc229363eadfba80"
     }
   },
@@ -36117,7 +36109,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "b2157b0bac43567fbeb84af6ad66db8417b16de436f2c6b947613bc884286413",
@@ -36321,7 +36313,7 @@
     "execution_review": {
       "record": "references/execution-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "9b73291c9e39bb25c7a34e4a14a44cf69b63faedc25471401a17ffcd0e966eb0"
     }
   },
@@ -36433,7 +36425,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "1bdc2703a85fb7b0500f1e12cd71fb09d0fb2ae4e61d9b1c2e8b893bedea3ab1",
@@ -36652,7 +36644,7 @@
     "execution_review": {
       "record": "references/execution-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "17dd41472399a725c8eca3b88afaf181c367b5a4a9c1c1b4d36016a5e484ee17"
     }
   },
@@ -36936,7 +36928,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "e9e65578fc0e4f6038526023d5e6b97d2cfb0c6aa40742ab7dd91220fdcacb75",
@@ -37149,7 +37141,7 @@
     "execution_review": {
       "record": "references/execution-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "33b3141dac17bd2929dd9460e78a295dcf9d45cce832e7e8c535b0f6740f3b73"
     }
   },
@@ -37265,7 +37257,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "f669c47eede926787ad9ddd572b0fe938732b6323bff348a88de64df3458f24c",
@@ -37470,7 +37462,7 @@
     "execution_review": {
       "record": "references/execution-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "fd00e8da7a42afe2f5b7f80c7e448aae6d347903ae260f25ad8d451ca92ea86b"
     }
   },
@@ -37584,7 +37576,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "f63be6f7072aee778ca3b06abb89c53a7ea24902823c9c89529086863e518d0b",
@@ -37791,7 +37783,7 @@
     "execution_review": {
       "record": "references/execution-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "b9ca23c8e6c85359fb3d2194c0f30c33292d553d65fdc85e61dbf0e4064f63e2"
     }
   },
@@ -37908,7 +37900,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "9a172d9e779fa68af49b4b72975ddb7290764f7d15de3e14d76efaa5ea888955",
@@ -38118,7 +38110,7 @@
     "execution_review": {
       "record": "references/execution-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "f1b60a2c7c57fefaa48005c5a48a90e1ad8d4257091f72c0b7eae68284f625c9"
     }
   },
@@ -38568,7 +38560,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "f1ab5abb4ebd056038592e8186ade68fca45c62d97573feecfdbf3b802c0458e",
@@ -38771,7 +38763,7 @@
     "execution_review": {
       "record": "references/execution-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "4f8de8b0d62109d29b61f21814ade094eecd3d7c817c5b6135d19e2dd6a94314"
     }
   },
@@ -40459,7 +40451,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-P2",
+      "phase": "execution-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-22-26.json",
       "author_sha256": "1b70b9c990489c75cd6fd8b31269c196dc1474c845f270efcf1f4d4e3bdfa4d1",
@@ -40683,7 +40675,7 @@
     "execution_review": {
       "record": "references/execution-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "e888e3fcb1e248180aa3359724dd5494e30b6c476fdad786e1ede5c666c5326a"
     }
   },
