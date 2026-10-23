@@ -1,0 +1,233 @@
+{
+  "date": "2026-10-23",
+  "review_basis": "正文逐主要机制与消费者反证，不使用矩阵或测试作为正文通过依据",
+  "articles": [
+    {
+      "path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "mechanisms": [
+        "预处理/翻译单元/链接/加载",
+        "ABI前缀与分配释放",
+        "对象模型与异常安全",
+        "插件关闭令牌与COM引用"
+      ],
+      "counterexamples": [
+        "回调自己同步卸载会等待自己的活动令牌",
+        "任务等对象停止信号而卸载只等任务归零"
+      ],
+      "changes": [
+        "展开非重入卸载与停止信号先于等待，数据寿命持续到任务结束"
+      ],
+      "content_sha256": "0b4d51984c64a83dfc9b227fa7578e1133a919dfa71596e9f79c8c8a167e32a2",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "evidence": "直接复读全篇与接口反例推演；未新增目标引擎运行证据。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/内存布局与分配.md",
+      "mechanisms": [
+        "栈堆与虚拟页",
+        "碎片/池/Buddy",
+        "缓存局部性与映射",
+        "对齐整数溢出",
+        "CPU任务/GPU队列/析构/重置"
+      ],
+      "counterexamples": [
+        "构造含文件句柄对象后只清游标会泄漏",
+        "构造期间后续分配已发生，回退游标会覆盖存活对象"
+      ],
+      "changes": [
+        "补齐非平凡对象构造记录、逆序析构、尾部回退条件，拆开长段"
+      ],
+      "content_sha256": "071c51e8410363a4db87c51866759c613b9096b592b838bf80c4f9ca12b44909",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "evidence": "直接复读全篇与接口反例推演；未新增目标引擎运行证据。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/文件IO.md",
+      "mechanisms": [
+        "短读与长度校验",
+        "取消终态与缓冲消费者",
+        "临时文件原子发布",
+        "版本与代次提交",
+        "多文件固定版本及回收"
+      ],
+      "counterexamples": [
+        "租约过期时旧请求仍在进行，直接删除不满足读者退出条件",
+        "读者每文件重读清单产生混合版本"
+      ],
+      "changes": [
+        "明确服务代理的在途操作登记与结束，租约只是必要条件，拆分发布和回收段"
+      ],
+      "content_sha256": "e40474a010c7a85b0bf216830e614fee138d3f75cbebef5add73978350be4a20",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "evidence": "直接复读全篇与接口反例推演；未新增目标引擎运行证据。"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/进程与调度.md",
+      "mechanisms": [
+        "系统调用与切换",
+        "线程任务和进程隔离",
+        "IPC与偏移发布",
+        "单调时间累计器与过载",
+        "子进程输入输出取消"
+      ],
+      "counterexamples": [
+        "父写满stdin而子写满stdout形成双向死锁",
+        "管道日志超限停止读取又会阻塞子进程"
+      ],
+      "changes": [
+        "输入并发写入、输出持续排空与输入结束语义接通"
+      ],
+      "content_sha256": "2df4b54b0d7ebed168b05931e51301d9cf14447c2ba6856d328ba0b061459d74",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "evidence": "直接复读全篇与接口反例推演；未新增目标引擎运行证据。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Character Controller.md",
+      "mechanisms": [
+        "胶囊扫掠与skin",
+        "多面滑动",
+        "坡台阶与初始恢复",
+        "平台携带及跳离",
+        "候选提交与反馈"
+      ],
+      "counterexamples": [
+        "平台抬升1米被当成主动速度导致下步重复积分",
+        "恢复旧安全位置不能绕过当前场景查询"
+      ],
+      "changes": [
+        "拆分恢复/平台/主动位移，明确世界导航速度与主动加速度圆的平移"
+      ],
+      "content_sha256": "49b0b4fe7a0a3445a2362ed3757ad1405d67b8ab59ff88bb6b03cfb5c6edbd03",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "evidence": "直接复读全篇与接口反例推演；未新增目标引擎运行证据。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+      "mechanisms": [
+        "骨骼刚体固定偏移",
+        "短弧连续速度",
+        "根对齐与表现混合",
+        "关节驱动",
+        "进入恢复再受击门禁"
+      ],
+      "counterexamples": [
+        "动画相对角未经过关节局部框架导致错误轴驱动",
+        "只给子体力矩破坏内部角动量",
+        "胶囊空间未释放不能交还动画"
+      ],
+      "changes": [
+        "展开关节框架目标、短弧PD、单位、双向冲量、饱和与恢复提交"
+      ],
+      "content_sha256": "590a62caa0d48db15980b9c7af2930cc9a00b3833b174be4ec05e6ec7506442b",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "evidence": "直接复读全篇与接口反例推演；未新增目标引擎运行证据。"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/破坏系统.md",
+      "mechanisms": [
+        "资产分区和黏结",
+        "伤害预算与支撑遍历",
+        "质心惯性/速度",
+        "候选拓扑物理提交",
+        "预算代理/回收/权威重放"
+      ],
+      "counterexamples": [
+        "异步准备期间旧动态簇已经转动，使用准备时速度产生跳变",
+        "重复事件准备失败再入队会重复扣损伤"
+      ],
+      "changes": [
+        "提交时从当前旧簇重建世界形状与速度，独立冲量对账"
+      ],
+      "content_sha256": "7762a057eb15659f0606e0bb925b94dc2a0d9ae3b060a93b3ae207e13fdf06a9",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "evidence": "直接复读全篇与接口反例推演；未新增目标引擎运行证据。"
+    },
+    {
+      "path": "知识库/20_游戏AI/MCTS.md",
+      "mechanisms": [
+        "状态合法动作",
+        "扩展模拟",
+        "UCT对手符号",
+        "整路径回传",
+        "预算动作提交",
+        "子树视角及计数复用"
+      ],
+      "counterexamples": [
+        "两个结果先通过版本检查再排队会重复落子",
+        "取消只忽略动作但旧任务继续修改复用子树"
+      ],
+      "changes": [
+        "版本合法性落子统一提交，等待搜索退出再复用/释放树"
+      ],
+      "content_sha256": "9db256795ed6ffd2dabe55e2cfd9f8b9266cee968a9b378b08a2ee243d948a41",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "evidence": "直接复读全篇与接口反例推演；未新增目标引擎运行证据。"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI决策模型.md",
+      "mechanisms": [
+        "事实/BDI意图",
+        "FSM/HFSM",
+        "BT进入更新中止",
+        "效用归一化迟滞",
+        "GOAP回归/HTN回溯",
+        "黑板快照与执行资源"
+      ],
+      "counterexamples": [
+        "旧取消回调清掉新动作同资源槽",
+        "单有动作ID拒迟到不能证明旧移动停止"
+      ],
+      "changes": [
+        "新增取消中间态、资源所有者与交接，HFSM/效用细则移到所属章节"
+      ],
+      "content_sha256": "b461ed8f537ddba8da074bfb68544e7a8da4f8add26ec0c27dd0d46977e72e7c",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "DEEPEN",
+        "RESTRUCTURE"
+      ],
+      "title_review": "PASS",
+      "evidence": "直接复读全篇与接口反例推演；未新增目标引擎运行证据。"
+    }
+  ]
+}

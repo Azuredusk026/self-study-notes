@@ -48,6 +48,14 @@ vkCmdBindDescriptorSets(commandBuffer,
 
 例如双帧缓冲每帧占4096字节，第二帧第3条记录的动态偏移为`4096+3*256=4864`。描述符基础偏移0、range80时读取`[4864,4944)`；若描述符基础偏移又设为4096，实际读到8960附近，上传正确也会串帧。CPU写完但未刷新非一致内存则是另一类失效：地址正确，GPU仍可能看不到新内容。分别检查GPU读取地址与内存可见性，才能把绑定错位和上传失效分开。
 
+### 缓冲偏移与映射偏移
+
+描述符寻址相对缓冲开头，内存刷新相对`VkDeviceMemory`开头，CPU指针则相对映射起点。这三个原点必须先对齐。设缓冲绑定在内存对象的字节偏移B，映射从内存偏移M开始，记录在缓冲内的偏移为O，则CPU写入地址是`mappedPointer+(B+O-M)`；刷新使用内存偏移`B+O`，描述符仍使用缓冲偏移O。把B再次加到描述符里，会把GPU读址推向另一份记录。
+
+例如B=8192、M=4096、O=4864，CPU指针偏移为8960，内存写入区间为`[13056,13136)`，描述符读取的缓冲区间仍为`[4864,4944)`。非一致原子大小若为256字节，刷新区间扩为`[13056,13312)`。分配器保证扩张区间处于映射内；到内存分配末尾的范围按API允许的末尾规则处理，不能越界刷新。
+
+帧区间按这份刷新粒度隔离。两帧的有效记录即使没有重叠，共享一个非一致原子也可能让宿主刷新与GPU访问发生冲突。把帧起点和预留容量按动态缓冲对齐与非一致原子对齐的公倍数取整，并将扩张后的范围纳入在途占用检查；同帧记录可以共享原子，前提是统一写完、刷新后再提交。这样绑定对齐、内存可见性和帧寿命才使用同一份区间记录。
+
 ### 小参数与推送常量
 
 Vulkan push constants 把少量值记录在命令里，适合对象索引与标志。Vulkan 1.0 核心保证至少 128 字节，实际容量查询 `maxPushConstantsSize`。范围、阶段和管线布局需要匹配。
@@ -102,6 +110,7 @@ float4 ReadBaseColor(uint textureIndex, float2 uv)
 
 ## 参考资料
 
+- [Vulkan VkMappedMemoryRange](https://docs.vulkan.org/refpages/latest/refpages/source/VkMappedMemoryRange.html)：刷新偏移相对内存对象，范围受映射与非一致原子对齐约束。
 - [Vulkan Resource Descriptors](https://docs.vulkan.org/spec/latest/chapters/descriptorsets.html)。
 - [D3D12 Root Signatures](https://learn.microsoft.com/en-us/windows/win32/direct3d12/root-signatures)。
 - [NonUniformResourceIndex](https://learn.microsoft.com/en-us/windows/win32/direct3d12/resource-binding-in-hlsl)，动态索引与资源绑定。

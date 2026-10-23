@@ -1,0 +1,307 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "path": "知识库/05_光照阴影与GI/GI方案选择.md",
+      "mechanisms": [
+        "静态表面存储",
+        "动态探针",
+        "间接漫反射与镜面",
+        "变化光更新"
+      ],
+      "counterexamples": [
+        "建筑Lightmap与角色Probe各归其表面，不能重复加",
+        "关灯不能抹去已烘焙间接光"
+      ],
+      "changes": "复读保留；导读提供组合归属和完整主归属入口",
+      "content_sha256": "b12cf2af945ecdd790de5fd78dafadde5c1f9686b8814de3c748411c3b1e622e",
+      "full_text_review": true
+    },
+    {
+      "path": "知识库/06_纹理技术/视差映射.md",
+      "mechanisms": [
+        "高度深度约定",
+        "切线尺度",
+        "单次估计",
+        "逐层POM",
+        "交点UV深度",
+        "自阴影",
+        "虚拟位置",
+        "导数与边界"
+      ],
+      "counterexamples": [
+        "正视UV相同仍需保存hit.depth",
+        "Wrap后求UV差会跳一个周期",
+        "Clamp高度边与自阴影越界规则必须相同"
+      ],
+      "changes": "增加虚拟命中位置到点光方向/距离的完整式；统一面片边界与两条射线",
+      "content_sha256": "2d08d4bc7524953141b7a455b655c66bfaff4bc143ee224c558581561c241e3e",
+      "full_text_review": true
+    },
+    {
+      "path": "知识库/07_颜色与后处理/Alpha表示.md",
+      "mechanisms": [
+        "颜色与覆盖",
+        "过滤前预乘",
+        "mip",
+        "调色",
+        "Over",
+        "显示编码"
+      ],
+      "counterexamples": [
+        "红与透明平均后再乘得到0.25，过滤前预乘贡献0.5",
+        "tintA减半必须同时缩Cp",
+        "sRGB两次编码"
+      ],
+      "changes": "复读保留；每次表示转换及消费已贯通",
+      "content_sha256": "3eef24e2d962d155d01711005064c4fcb260c9185013a85791f93eb018a1dca8",
+      "full_text_review": true
+    },
+    {
+      "path": "知识库/07_颜色与后处理/后处理链.md",
+      "mechanisms": [
+        "效果生产消费",
+        "HDR与显示域",
+        "时域尺寸",
+        "预曝光",
+        "资源寿命"
+      ],
+      "counterexamples": [
+        "像素运动向量换尺寸先转UV",
+        "预曝光k变而阈值不变会改变Bloom"
+      ],
+      "changes": "复读保留；组合路线及主归属完整",
+      "content_sha256": "73fc64ff047404450f75a773b392316c2f79f72c1e6f3348f57119cc4dd3ff8d",
+      "full_text_review": true
+    },
+    {
+      "path": "知识库/09_动画系统/角色动画导读.md",
+      "mechanisms": [
+        "局部姿态",
+        "IK",
+        "层级与绑定逆",
+        "Blend Shape",
+        "模拟锚点",
+        "渲染空间"
+      ],
+      "counterexamples": [
+        "当前骨架与前帧锚点导致滞后",
+        "世界模拟结果再次乘对象矩阵导致双变换"
+      ],
+      "changes": "复读保留；姿态和模拟消费者明确",
+      "content_sha256": "abd38bca6e939261e4cd9d876481a40d68ac1ec0869450616b33f13258dd09a9",
+      "full_text_review": true
+    },
+    {
+      "path": "知识库/10_VFX与模拟/VFX效果组合.md",
+      "mechanisms": [
+        "年龄与帧采样",
+        "溶解覆盖",
+        "软粒子深度",
+        "预乘合成",
+        "扰动背景"
+      ],
+      "counterexamples": [
+        "只缩Alpha保留Cp导致残色",
+        "同批透明未在背景副本中不能折射到它"
+      ],
+      "changes": "复读保留；组合路径和资源时机明确",
+      "content_sha256": "8209fbda707a0f96c66cc11fdb779e9d346fb67145ef7794296839271d49d814",
+      "full_text_review": true
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
+      "mechanisms": [
+        "主光与分层",
+        "头部Face SDF",
+        "阴影",
+        "蒙皮与描边",
+        "时域输入"
+      ],
+      "counterexamples": [
+        "头部局部灯与身体世界灯必须同源",
+        "抖动或尺寸错配使身体静止而线跳动"
+      ],
+      "changes": "复读保留；输入变换和输出诊断已连接",
+      "content_sha256": "d228cbd5257abe805002b2b15e33b56cdc9cadd59ad9bb60c2bb72c4c842e0f4",
+      "full_text_review": true
+    },
+    {
+      "path": "知识库/13_渲染架构/Command Buffer与帧提交.md",
+      "mechanisms": [
+        "帧所有权",
+        "等待复用",
+        "记录提交完成",
+        "提交失败",
+        "线程协调",
+        "多队列",
+        "在途帧"
+      ],
+      "counterexamples": [
+        "SetEventOnCompletion失败不能进入永久等待",
+        "事件醒来但完成值不足不能复用",
+        "Execute后Signal失败不能回滚成未提交"
+      ],
+      "changes": "等待轮廓补HRESULT、等待结果和完成条件重查",
+      "content_sha256": "e2ebf85e5ebd3a89afd84f119595a86e445d61d646d15af0da21d15e1bec5a21",
+      "full_text_review": true
+    },
+    {
+      "path": "知识库/13_渲染架构/Deferred Rendering.md",
+      "mechanisms": [
+        "GBuffer布局",
+        "位置重建",
+        "材质直接光",
+        "保守体积",
+        "Tile消费",
+        "透明",
+        "MSAA",
+        "片上附件",
+        "模型扩展",
+        "成本"
+      ],
+      "counterexamples": [
+        "内接球或锥漏光须保守外接",
+        "平均法线和ID不能代替逐样本照明",
+        "透明灯列表不能只含不透明深度",
+        "瞬态附件丢弃后不能被下一通道采样"
+      ],
+      "changes": "复读保留；各路径输入输出与降级规则连续",
+      "content_sha256": "b402431be306717b93ce7d7f4b4a2ec0ce25b2f48d09396837149b2a4e4aaf27",
+      "full_text_review": true
+    },
+    {
+      "path": "知识库/13_渲染架构/GPU资源绑定.md",
+      "mechanisms": [
+        "描述符布局",
+        "动态偏移",
+        "上传刷新",
+        "推送常量",
+        "Bindless",
+        "槽位发布",
+        "回收"
+      ],
+      "counterexamples": [
+        "B8192、M4096、O4864的CPU指针偏移8960，GPU缓冲偏移仍4864",
+        "不同帧不应共享非一致原子",
+        "槽7复用导致旧绘制串材质"
+      ],
+      "changes": "补三种寻址原点、刷新范围与在途原子隔离",
+      "content_sha256": "a1743ee4bde388b1a7d0fbbb445399a58aa7a3f0b48b22398fece7106a0ea29b",
+      "full_text_review": true
+    },
+    {
+      "path": "知识库/13_渲染架构/渲染命令的组织方式.md",
+      "mechanisms": [
+        "图依赖",
+        "附件",
+        "命令录制",
+        "同步",
+        "寿命"
+      ],
+      "counterexamples": [
+        "阴影D最后读命令录完但GPU未完成，仍不可回收"
+      ],
+      "changes": "复读保留；分工与示例建立主归属关系",
+      "content_sha256": "19438daf4837cd356c1fb53b2363a1dd1b9d7b967e3500e1d998d76b630e05b7",
+      "full_text_review": true
+    },
+    {
+      "path": "知识库/13_渲染架构/渲染路径与光源组织.md",
+      "mechanisms": [
+        "Forward与Deferred",
+        "局部灯列表",
+        "透明深度",
+        "HDR合成"
+      ],
+      "counterexamples": [
+        "不透明最近深度列表漏掉前方透明所需光，换着色路径不修复生产范围"
+      ],
+      "changes": "复读保留；机制组合契约充分",
+      "content_sha256": "6faf0aef5c1af11dc24a682873e63e04b7e101a028e1da20388fb2741276b85b",
+      "full_text_review": true
+    },
+    {
+      "path": "知识库/14_性能分析与优化/PSO首次使用卡顿.md",
+      "mechanisms": [
+        "完整键与缓存层",
+        "组合收集",
+        "请求状态",
+        "首屏集合",
+        "就绪保留",
+        "设备代次",
+        "首用期限",
+        "LRU",
+        "预算"
+      ],
+      "counterexamples": [
+        "80ms就绪100ms淘汰200ms首用仍卡顿",
+        "旧设备创建结果晚到不能打开新设备加载门"
+      ],
+      "changes": "补加载器保留到命令引用再到GPU完成、Ready与强引用原子交接",
+      "content_sha256": "cdd4879bab49ad894db329b5c1413c9ee80d25c9c9cf0739c648534989936fd0",
+      "full_text_review": true
+    },
+    {
+      "path": "知识库/14_性能分析与优化/帧捕获与性能分析工具.md",
+      "mechanisms": [
+        "稳定复现",
+        "帧身份时钟",
+        "引擎平台视图",
+        "捕获",
+        "调试",
+        "像素回溯",
+        "计数器",
+        "追踪内存",
+        "构建",
+        "假设"
+      ],
+      "counterexamples": [
+        "最终像素读取半分辨率资源时需跨资源按UV回溯，不能同像素索引",
+        "重放6ms不能与独立4ms混为一次测量"
+      ],
+      "changes": "重排帧对齐到工具前；改工具清单为调查流程；补采样足迹跨资源追踪",
+      "content_sha256": "139955088b2b317deb5cb96135c7016bdff8eec884f6959a6f79102f2e7835f8",
+      "full_text_review": true
+    },
+    {
+      "path": "知识库/14_性能分析与优化/帧瓶颈诊断.md",
+      "mechanisms": [
+        "CPU与GPU",
+        "重叠等待",
+        "Draw顶点像素",
+        "带宽缓存占用",
+        "同步",
+        "驻留预算"
+      ],
+      "counterexamples": [
+        "GPU12ms与CPU6ms不相加为18ms吞吐",
+        "copy到11ms才完成不能删wait",
+        "减少分配量不能证明驱逐原因"
+      ],
+      "changes": "复读保留；各成本假设已有反例与下一步验证接口",
+      "content_sha256": "1559b340e8073fe0a8b5ce009670bf4c1b414dcbe030a902f85ec03a7826541d",
+      "full_text_review": true
+    },
+    {
+      "path": "知识库/14_性能分析与优化/性能对照实验.md",
+      "mechanisms": [
+        "冻结条件",
+        "ABBA",
+        "关键路径",
+        "时间模型",
+        "统计",
+        "工具证据",
+        "诊断"
+      ],
+      "counterexamples": [
+        "20帧P99就是最大值",
+        "中位数9ms仍可能每百帧停顿100ms",
+        "同窗口帧不能全算独立重复"
+      ],
+      "changes": "补统计定义与配对单位、长尾反证和独立窗口判定",
+      "content_sha256": "78945156c8f94e90f945515bf99a7e104373964807ef14806193f6103d75d0f7",
+      "full_text_review": true
+    }
+  ]
+}

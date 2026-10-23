@@ -18,7 +18,7 @@ CPU刚记录完一帧，就把上传缓冲拿去写下一帧，看似节省了�
 
 ### D3D12 的安全复用
 
-以下是 D3D12 调用顺序轮廓，输入为一组帧资源。完成事件已创建，错误处理与交换链获取省略。`nextFence` 全局递增；`HandleSubmissionFailure`按下节规则停止正常帧循环并处理提交故障。
+以下是 D3D12 调用顺序轮廓，输入为一组帧资源。完成事件已创建为自动复位事件，由当前等待者独占；交换链获取由宿主提供；`RecordFrame`在记录端验证输入，API记录错误还会由Close返回。`nextFence` 全局递增；`HandleSubmissionFailure`按下节规则停止正常帧循环并处理提交故障。
 
 ```cpp
 Frame& frame = frames[frameSlot];
@@ -27,18 +27,42 @@ if (completed == UINT64_MAX) {
     HandleSubmissionFailure(DXGI_ERROR_DEVICE_REMOVED);
     return;
 }
-if (completed < frame.completionValue) {
-    fence->SetEventOnCompletion(frame.completionValue, completionEvent);
-    WaitForSingleObject(completionEvent, INFINITE);
-    if (fence->GetCompletedValue() == UINT64_MAX) {
+while (completed < frame.completionValue) {
+    HRESULT eventResult = fence->SetEventOnCompletion(
+        frame.completionValue, completionEvent);
+    if (FAILED(eventResult)) {
+        HandleSubmissionFailure(eventResult);
+        return;
+    }
+    DWORD waitResult = WaitForSingleObject(completionEvent, INFINITE);
+    if (waitResult != WAIT_OBJECT_0) {
+        HRESULT error = waitResult == WAIT_FAILED
+            ? HRESULT_FROM_WIN32(GetLastError()) : E_FAIL;
+        HandleSubmissionFailure(error);
+        return;
+    }
+    completed = fence->GetCompletedValue();
+    if (completed == UINT64_MAX) {
         HandleSubmissionFailure(DXGI_ERROR_DEVICE_REMOVED);
         return;
     }
 }
-frame.allocator->Reset();
-commandList->Reset(frame.allocator.Get(), initialPipeline);
+HRESULT resetResult = frame.allocator->Reset();
+if (FAILED(resetResult)) {
+    HandleSubmissionFailure(resetResult);
+    return;
+}
+resetResult = commandList->Reset(frame.allocator.Get(), initialPipeline);
+if (FAILED(resetResult)) {
+    HandleSubmissionFailure(resetResult);
+    return;
+}
 RecordFrame(commandList.Get(), frame);
-commandList->Close();
+HRESULT closeResult = commandList->Close();
+if (FAILED(closeResult)) {
+    HandleSubmissionFailure(closeResult);
+    return; // 此列表没有提交，不能继续Execute
+}
 ID3D12CommandList* lists[] = {commandList.Get()};
 queue->ExecuteCommandLists(1, lists);
 const UINT64 submittedValue = nextFence++;
@@ -56,9 +80,9 @@ frame.completionValue = submittedValue;
 
 ### 提交失败与资源状态
 
-帧槽位在可复用、记录中、已提交三个状态间移动。记录或Close失败时，本次命令尚未进入队列，可以保留诊断并在清理未提交记录后重建；Execute之后即使后续Signal失败，也不能把槽位当成“未提交”立即覆盖，因为GPU可能已经消费命令。应用进入设备/提交故障处理，停止复用依赖该完成值的资源，确认队列或设备已终止后再销毁。示例调用序列在每一步成功的路径上成立，错误返回不产生虚假的GPU完成事实。
+帧槽位在可复用、记录中、已提交三个状态间移动。Reset失败就退出记录，Close失败就退出提交；这时本次命令尚未进入队列，可以保留诊断并清理未提交记录。D3D12中Close失败的命令列表之后也不能Reset成功，恢复时重建该列表，而不是在下一帧原样重试。Execute之后即使后续Signal失败，也不能把槽位当成“未提交”立即覆盖，因为GPU可能已经消费命令。应用进入设备/提交故障处理，停止复用依赖该完成值的资源，确认队列或设备已终止后再销毁。示例调用序列在每一步成功的路径上成立，错误返回不产生虚假的GPU完成事实。
 
-`GetCompletedValue`在设备移除时返回UINT64_MAX，这不是“全部命令已经正常完成”的证明。若只比较数值大小，设备故障会被误判为可以重置所有帧槽位；示例在等待前后都先识别这个哨兵值并转入故障路径。实际宿主也检查SetEventOnCompletion的HRESULT、等待返回值及设备状态，只有正常完成才复用；示例中的这些调用以成功路径为前提。完成值计数不分配UINT64_MAX，并在接近回绕时排空与重建该计数纪元。
+`GetCompletedValue`在设备移除时返回UINT64_MAX，这不是“全部命令已经正常完成”的证明。若只比较数值大小，设备故障会被误判为可以重置所有帧槽位；示例在等待前后都先识别这个哨兵值并转入故障路径。事件注册失败直接离开等待路径；事件唤醒后重新查询完成值，满足本槽位条件才继续。唤醒本身不充当GPU完成证据。完成值计数不分配UINT64_MAX，并在接近回绕时排空与重建该计数纪元。
 
 正常路径可以提前给本帧预留唯一完成值，Signal成功后将它登记为槽位的回收条件；上传、描述符和allocator都挂到这个条件。多线程只读同一场景快照时，快照的CPU寿命至少覆盖所有记录任务，快照所引用的GPU资源则继续保留到队列完成。前者随线程结束回收，后者随完成值回收，这两个边界不能合并。
 
@@ -103,8 +127,11 @@ Unity `ScriptableRenderContext.Submit` 提交已组织的渲染工作，资源�
 
 ## 参考资料
 
+- [Microsoft：ID3D12GraphicsCommandList::Reset](https://learn.microsoft.com/en-us/windows/win32/api/d3d12/nf-d3d12-id3d12graphicscommandlist-reset)、[Close](https://learn.microsoft.com/en-us/windows/win32/api/d3d12/nf-d3d12-id3d12graphicscommandlist-close)：2026-10-23核读HRESULT失败路径及Close失败后的列表状态。
+
 - [Microsoft：ID3D12Fence::GetCompletedValue](https://learn.microsoft.com/en-us/windows/win32/api/d3d12/nf-d3d12-id3d12fence-getcompletedvalue)：2026-10-23核读设备移除返回UINT64_MAX的语义。
 
+- [Microsoft：SetEventOnCompletion](https://learn.microsoft.com/en-us/windows/win32/api/d3d12/nf-d3d12-id3d12fence-seteventoncompletion)：事件注册具有HRESULT失败路径。
 - [D3D12 Command Queues and Lists](https://learn.microsoft.com/en-us/windows/win32/direct3d12/command-queues-and-command-lists)。
 - [Vulkan Command Buffers](https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html)，pending 状态与重用限制。
 - [Vulkan Frames in Flight](https://docs.vulkan.org/tutorial/latest/03_Drawing_a_triangle/03_Drawing/03_Frames_in_flight.html)。

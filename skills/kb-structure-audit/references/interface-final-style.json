@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-23",
+  "method": "主审直接复读六篇全文，将同段中的数据契约、状态动作、例子和失败路径按因果分段；不改变算法或验收范围",
+  "articles": [
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+      "changes": "按明确语义边界拆开长段，保持完整推演顺序",
+      "content_sha256": "b60eaeeb13b58ef81b08ba7681d89d57cab6589921a0ec62d19ff0a2e8496f8f"
+    },
+    {
+      "path": "知识库/21_游戏网络/RPC.md",
+      "changes": "按明确语义边界拆开长段，保持完整推演顺序",
+      "content_sha256": "9b73291c9e39bb25c7a34e4a14a44cf69b63faedc25471401a17ffcd0e966eb0"
+    },
+    {
+      "path": "知识库/21_游戏网络/对局服务器架构.md",
+      "changes": "按明确语义边界拆开长段，保持完整推演顺序",
+      "content_sha256": "fd00e8da7a42afe2f5b7f80c7e448aae6d347903ae260f25ad8d451ca92ea86b"
+    },
+    {
+      "path": "知识库/06_纹理技术/视差映射.md",
+      "changes": "按明确语义边界拆开长段，保持完整推演顺序",
+      "content_sha256": "9e87dc27356c3fbbb2b9f594bd653f4c869db46e967f90085783611e1b520b09"
+    },
+    {
+      "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+      "changes": "主审全文复读后按空间转换、取消提交和失败原因分段",
+      "content_sha256": "4954a3a7f4dcc637fa9261196812c1a959c2a7a35a02c172bc86065830344011"
+    },
+    {
+      "path": "知识库/20_游戏AI/MCTS.md",
+      "changes": "主审全文复读后按空间转换、取消提交和失败原因分段",
+      "content_sha256": "283be165d70366cdbf51e46e07447f97f597e53efae2cda2f651f88a8ca21551"
+    }
+  ]
+}
