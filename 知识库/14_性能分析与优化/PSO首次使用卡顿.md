@@ -39,11 +39,11 @@ while loading:
     collect newly requested pipeline work
     poll completion of required pipeline requests
     keep loading UI responsive
-    if contentReady and requiredPipelineRequestsFinished:
+    if discoveryClosed and contentReady and allRequiredRequestsReadyAndRetained:
         enter target scene
 ```
 
-这里的“完成”只覆盖已发现且被列为必需的请求。UE 5.8 文档说明 `FShaderPipelineCache::NumPrecompilesRemaining()` 可以查询组合缓存与 PSO Precaching 当前未完成的编译请求。计数归零后仍可能因后续内容加载新增请求，因此不能由此判断所有未来组合已经准备好。真正验证是在首次绘制时关联请求键与完成时间。
+循环中的discoveryClosed由首屏内容发现阶段封闭必需键集合后置位；allRequiredRequestsReadyAndRetained要求每个键都已就绪并取得保留引用，Failed不满足该条件。这里的“完成”只覆盖已发现且被列为必需的请求。UE 5.8 文档说明 `FShaderPipelineCache::NumPrecompilesRemaining()` 可以查询组合缓存与 PSO Precaching 当前未完成的编译请求。计数归零后仍可能因后续内容加载新增请求，因此不能由此判断所有未来组合已经准备好。真正验证是在首次绘制时关联请求键与完成时间。
 
 若等待时间超过产品预算，可以优先准备首屏组合，把其余工作限制在受控后台预算内。跳过对象、默认材质和现场同步创建分别牺牲画面完整性、外观或流畅度，策略必须按项目目标定义并记录触发次数。
 

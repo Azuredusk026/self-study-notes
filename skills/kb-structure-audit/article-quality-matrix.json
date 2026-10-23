@@ -9644,23 +9644,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：深度约定；UV度量；分层首次交点；线性残差细化；显式梯度；自阴影；虚拟光照位置。具体反例见references/execution-final-render.json"
+        "basis": "正文逐项推演：高度尺度；POM插值；导数；自阴影；虚拟命中位置。见references/semantic-render.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -9711,7 +9711,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "bcbfa4b8b1abe32cbbfe6e10a84d9b4183bd33765816dd900291a61cdf2edeef",
+    "final_sha256": "ff21904c0e1d1fe290b18ad8bce96ccc216651edd558593d822c37a8542cedba",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "视差映射",
@@ -9723,7 +9723,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "bcbfa4b8b1abe32cbbfe6e10a84d9b4183bd33765816dd900291a61cdf2edeef",
+    "reviewed_content_sha256": "ff21904c0e1d1fe290b18ad8bce96ccc216651edd558593d822c37a8542cedba",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -9740,19 +9740,19 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-Final",
+      "phase": "semantic-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-06-08.json",
       "author_sha256": "da2d37581e8e24f5ff6d95a9faaca8149912e15c2ccf3af6daf65dcd368e2751",
-      "independent_record": "references/execution-final-render.json",
-      "independent_source_sha256": "bcbfa4b8b1abe32cbbfe6e10a84d9b4183bd33765816dd900291a61cdf2edeef",
+      "independent_record": "references/semantic-render.json",
+      "independent_source_sha256": "ff21904c0e1d1fe290b18ad8bce96ccc216651edd558593d822c37a8542cedba",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "bcbfa4b8b1abe32cbbfe6e10a84d9b4183bd33765816dd900291a61cdf2edeef",
+      "content_sha256": "ff21904c0e1d1fe290b18ad8bce96ccc216651edd558593d822c37a8542cedba",
       "independent_review": "PASS",
       "findings": [
-        "D(u)=u的一次采样不满足交点",
-        "掠射受限射线偏离真实视线",
-        "先Wrap再重建Phit造成接缝周期位移"
+        "D=0.3返回t=0.3",
+        "掠射受限路径并非真实视线",
+        "Wrap差值不能夹断"
       ],
       "runtime": {
         "source_scope": {
@@ -10173,6 +10173,76 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "bcbfa4b8b1abe32cbbfe6e10a84d9b4183bd33765816dd900291a61cdf2edeef"
+    },
+    "semantic_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "execution-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-06-08.json",
+      "author_sha256": "da2d37581e8e24f5ff6d95a9faaca8149912e15c2ccf3af6daf65dcd368e2751",
+      "independent_record": "references/execution-final-render.json",
+      "independent_source_sha256": "bcbfa4b8b1abe32cbbfe6e10a84d9b4183bd33765816dd900291a61cdf2edeef",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "bcbfa4b8b1abe32cbbfe6e10a84d9b4183bd33765816dd900291a61cdf2edeef",
+      "independent_review": "PASS",
+      "findings": [
+        "D(u)=u的一次采样不满足交点",
+        "掠射受限射线偏离真实视线",
+        "先Wrap再重建Phit造成接缝周期位移"
+      ],
+      "runtime": {
+        "source_scope": {
+          "scope": "pom_line：顶层、常值及线性高度场解析交点；pom.frag GLSL4.50 SPIR-V编译",
+          "cpu_status": "PASS",
+          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+          "shader_compile": "PASS",
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "visual_result": "UNVERIFIED",
+          "performance": "UNVERIFIED",
+          "limitations": "未创建纹理/宿主管线；画面、过滤、自阴影和GPU成本未执行",
+          "results": "知识库/examples/revision_06_08/results.json"
+        },
+        "results": "知识库/examples/revision_06_08/results.json",
+        "new_tests": [],
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
+      "navigation_integration": {
+        "before_sha256": "da2d37581e8e24f5ff6d95a9faaca8149912e15c2ccf3af6daf65dcd368e2751",
+        "after_sha256": "4cc4245a613850cea3b8f9777de3ec303e73643815e68291d8d46978dc06fc92",
+        "changes": [
+          {
+            "old": "一帧如何到达屏幕",
+            "new": "渲染帧流程",
+            "old_path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+            "new_path": "知识库/02_GPU与光栅化管线/渲染帧流程.md"
+          },
+          {
+            "old": "光栅化可见性导读",
+            "new": "光栅化可见性",
+            "old_path": "知识库/02_GPU与光栅化管线/光栅化可见性导读.md",
+            "new_path": "知识库/02_GPU与光栅化管线/光栅化可见性.md"
+          },
+          {
+            "old": "可见性与合成导读",
+            "new": "可见性与合成",
+            "old_path": "知识库/02_GPU与光栅化管线/可见性与合成导读.md",
+            "new_path": "知识库/02_GPU与光栅化管线/可见性与合成.md"
+          }
+        ]
+      }
+    },
+    "semantic_review": {
+      "record": "references/semantic-render.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "ff21904c0e1d1fe290b18ad8bce96ccc216651edd558593d822c37a8542cedba"
     }
   },
   {
@@ -18994,23 +19064,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：候选测度；RIS；两遍连续来源归一化；递归条件G；动态支持；时空缓冲；最终可见性。具体反例见references/execution-final-render.json"
+        "basis": "正文逐项推演：测度；RIS；两遍支持修正；递归条件；时空资源版本。见references/semantic-render.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -19084,20 +19154,19 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-Final",
+      "phase": "semantic-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "6eb1aeca647092c5ab20a6d0f56a1f21d437b074b187e03d7ff3a6ecda82b488",
-      "independent_record": "references/execution-final-render.json",
+      "independent_record": "references/semantic-render.json",
       "independent_source_sha256": "b1113fe0fab225b99754f57e902fed851306fe9037eb542d42e05a3fe2a76f22",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "b1113fe0fab225b99754f57e902fed851306fe9037eb542d42e05a3fe2a76f22",
       "independent_review": "PASS",
       "findings": [
-        "按随机代表删除历史偏差",
-        "新增光源不在旧支持",
-        "源h表被原地覆盖",
-        "相关祖先不能当独立样本"
+        "面积2到6参数域乘数",
+        "无代表源仍计支持",
+        "删除光不能删整来源"
       ],
       "runtime": {
         "shader_probes": [],
@@ -19362,6 +19431,50 @@
       "record": "references/execution-final-render.json",
       "date": "2026-10-23",
       "phase": "Final",
+      "content_sha256": "b1113fe0fab225b99754f57e902fed851306fe9037eb542d42e05a3fe2a76f22"
+    },
+    "semantic_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "execution-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-09-15.json",
+      "author_sha256": "6eb1aeca647092c5ab20a6d0f56a1f21d437b074b187e03d7ff3a6ecda82b488",
+      "independent_record": "references/execution-final-render.json",
+      "independent_source_sha256": "b1113fe0fab225b99754f57e902fed851306fe9037eb542d42e05a3fe2a76f22",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "b1113fe0fab225b99754f57e902fed851306fe9037eb542d42e05a3fe2a76f22",
+      "independent_review": "PASS",
+      "findings": [
+        "按随机代表删除历史偏差",
+        "新增光源不在旧支持",
+        "源h表被原地覆盖",
+        "相关祖先不能当独立样本"
+      ],
+      "runtime": {
+        "shader_probes": [],
+        "git_index_tests": null,
+        "new_transaction_tests": null,
+        "inherited_model_scope": {
+          "scope": "“蓄水池合并与目标重评估”明确数据、步骤和边界；本轮CPU实测revision_09_15：4项RIS有限域；完整宿主及GPU执行UNVERIFIED",
+          "cpu_checks": "revision_09_15：4项RIS有限域",
+          "shader_probes": [],
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "performance": "UNVERIFIED"
+        },
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "semantic_review": {
+      "record": "references/semantic-render.json",
+      "date": "2026-10-23",
+      "phase": "P2",
       "content_sha256": "b1113fe0fab225b99754f57e902fed851306fe9037eb542d42e05a3fe2a76f22"
     }
   },
@@ -19981,23 +20094,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：帧槽位；记录提交完成；D3D12失败；引用移交；并行依赖；读回。具体反例见references/execution-final-render.json"
+        "basis": "正文逐项推演：完成值；故障；录制提交交接；跨列表依赖。见references/semantic-render.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -20047,7 +20160,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "39de6e64acaa1e1de0f3473dadd3158f27f20f809d0af58cca25bd0f2ea2bf08",
+    "final_sha256": "0cbec90b5f8684a78009e283bcf081bdce0f3d081eb6147cd310da34d1c190ee",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "Command Buffer与帧提交",
@@ -20059,7 +20172,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "39de6e64acaa1e1de0f3473dadd3158f27f20f809d0af58cca25bd0f2ea2bf08",
+    "reviewed_content_sha256": "0cbec90b5f8684a78009e283bcf081bdce0f3d081eb6147cd310da34d1c190ee",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -20076,20 +20189,18 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-Final",
+      "phase": "semantic-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "da0c5887697382d9d60baa9afcc8cd742da4bbc8ef53da93152d3d89abfbada5",
-      "independent_record": "references/execution-final-render.json",
-      "independent_source_sha256": "39de6e64acaa1e1de0f3473dadd3158f27f20f809d0af58cca25bd0f2ea2bf08",
+      "independent_record": "references/semantic-render.json",
+      "independent_source_sha256": "0cbec90b5f8684a78009e283bcf081bdce0f3d081eb6147cd310da34d1c190ee",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "39de6e64acaa1e1de0f3473dadd3158f27f20f809d0af58cca25bd0f2ea2bf08",
+      "content_sha256": "0cbec90b5f8684a78009e283bcf081bdce0f3d081eb6147cd310da34d1c190ee",
       "independent_review": "PASS",
       "findings": [
-        "Signal失败已有GPU工作",
-        "UINT64_MAX设备移除",
-        "取消和Submitting竞争",
-        "CPU录制顺序与GPU依赖不同"
+        "S取消但L读新D",
+        "并行Signal使计数次序失配"
       ],
       "runtime": {
         "shader_probes": [],
@@ -20486,6 +20597,74 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "39de6e64acaa1e1de0f3473dadd3158f27f20f809d0af58cca25bd0f2ea2bf08"
+    },
+    "semantic_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "execution-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-09-15.json",
+      "author_sha256": "da0c5887697382d9d60baa9afcc8cd742da4bbc8ef53da93152d3d89abfbada5",
+      "independent_record": "references/execution-final-render.json",
+      "independent_source_sha256": "39de6e64acaa1e1de0f3473dadd3158f27f20f809d0af58cca25bd0f2ea2bf08",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "39de6e64acaa1e1de0f3473dadd3158f27f20f809d0af58cca25bd0f2ea2bf08",
+      "independent_review": "PASS",
+      "findings": [
+        "Signal失败已有GPU工作",
+        "UINT64_MAX设备移除",
+        "取消和Submitting竞争",
+        "CPU录制顺序与GPU依赖不同"
+      ],
+      "runtime": {
+        "shader_probes": [],
+        "git_index_tests": null,
+        "new_transaction_tests": null,
+        "inherited_model_scope": {
+          "scope": "“D3D12 的安全复用”明确数据、步骤和边界；未宣称本页CPU实验已运行；完整宿主及GPU执行UNVERIFIED",
+          "cpu_checks": null,
+          "shader_probes": [],
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "performance": "UNVERIFIED"
+        },
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
+      "navigation_integration": {
+        "before_sha256": "d0ae03913faa0d158e21cd86c689d36f11062b291f5ae0bc0f1e158873dd434e",
+        "after_sha256": "6834b78e91600958ef6dbd384cbfb5c12f92269dba540f345591551e74951a3c",
+        "changes": [
+          {
+            "old": "一帧如何到达屏幕",
+            "new": "渲染帧流程",
+            "old_path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+            "new_path": "知识库/02_GPU与光栅化管线/渲染帧流程.md"
+          },
+          {
+            "old": "光栅化可见性导读",
+            "new": "光栅化可见性",
+            "old_path": "知识库/02_GPU与光栅化管线/光栅化可见性导读.md",
+            "new_path": "知识库/02_GPU与光栅化管线/光栅化可见性.md"
+          },
+          {
+            "old": "可见性与合成导读",
+            "new": "可见性与合成",
+            "old_path": "知识库/02_GPU与光栅化管线/可见性与合成导读.md",
+            "new_path": "知识库/02_GPU与光栅化管线/可见性与合成.md"
+          }
+        ]
+      }
+    },
+    "semantic_review": {
+      "record": "references/semantic-render.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "0cbec90b5f8684a78009e283bcf081bdce0f3d081eb6147cd310da34d1c190ee"
     }
   },
   {
@@ -24058,23 +24237,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：完整组合收集；分层缓存；首用期限；异步状态；首屏封存；LRU；设备代次；录制引用。具体反例见references/execution-final-render.json"
+        "basis": "正文逐项推演：缓存层次；发现封闭；请求状态；保留；失效代次。见references/semantic-render.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -24130,7 +24309,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "3de3c265aba4ae1f7a33a350c0fb08ea9698bc8259fa3e5ce749a6142c75363a",
+    "final_sha256": "30124c619472fcc50662ecdf1ad709581ad7e109865959d562a49075673e5843",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "PSO首次使用卡顿",
@@ -24142,7 +24321,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "3de3c265aba4ae1f7a33a350c0fb08ea9698bc8259fa3e5ce749a6142c75363a",
+    "reviewed_content_sha256": "30124c619472fcc50662ecdf1ad709581ad7e109865959d562a49075673e5843",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -24159,20 +24338,18 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-Final",
+      "phase": "semantic-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "5256268d64f0f6c14b8b48c9cda676ecf231a2ec4f615cb410cc52f7600b6ba8",
-      "independent_record": "references/execution-final-render.json",
-      "independent_source_sha256": "3de3c265aba4ae1f7a33a350c0fb08ea9698bc8259fa3e5ce749a6142c75363a",
+      "independent_record": "references/semantic-render.json",
+      "independent_source_sha256": "30124c619472fcc50662ecdf1ad709581ad7e109865959d562a49075673e5843",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "3de3c265aba4ae1f7a33a350c0fb08ea9698bc8259fa3e5ce749a6142c75363a",
+      "content_sha256": "30124c619472fcc50662ecdf1ad709581ad7e109865959d562a49075673e5843",
       "independent_review": "PASS",
       "findings": [
-        "计数归零但Failed",
-        "Ready后首用前淘汰",
-        "旧设备任务迟到",
-        "取消释放记录中对象"
+        "失败计数归零不可进入",
+        "LRU在首屏前淘汰"
       ],
       "runtime": {
         "shader_probes": [],
@@ -24424,6 +24601,50 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "3de3c265aba4ae1f7a33a350c0fb08ea9698bc8259fa3e5ce749a6142c75363a"
+    },
+    "semantic_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "execution-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-09-15.json",
+      "author_sha256": "5256268d64f0f6c14b8b48c9cda676ecf231a2ec4f615cb410cc52f7600b6ba8",
+      "independent_record": "references/execution-final-render.json",
+      "independent_source_sha256": "3de3c265aba4ae1f7a33a350c0fb08ea9698bc8259fa3e5ce749a6142c75363a",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "3de3c265aba4ae1f7a33a350c0fb08ea9698bc8259fa3e5ce749a6142c75363a",
+      "independent_review": "PASS",
+      "findings": [
+        "计数归零但Failed",
+        "Ready后首用前淘汰",
+        "旧设备任务迟到",
+        "取消释放记录中对象"
+      ],
+      "runtime": {
+        "shader_probes": [],
+        "git_index_tests": null,
+        "new_transaction_tests": null,
+        "inherited_model_scope": {
+          "scope": "“提前准备与加载边界”明确数据、步骤和边界；未宣称本页CPU实验已运行；完整宿主及GPU执行UNVERIFIED",
+          "cpu_checks": null,
+          "shader_probes": [],
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "performance": "UNVERIFIED"
+        },
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "semantic_review": {
+      "record": "references/semantic-render.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "30124c619472fcc50662ecdf1ad709581ad7e109865959d562a49075673e5843"
     }
   },
   {
@@ -24631,23 +24852,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：复现身份；时钟关联；查询读回；像素资源回溯；计数器；内存时间线；构建扰动。具体反例见references/execution-final-render.json"
+        "basis": "正文逐项推演：帧关联；异步计时；跨资源像素回溯；计数器假设。见references/semantic-render.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-render.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -24709,7 +24930,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "262e30e377e9a810bb7d1056a50f2afd87ec031ece7f7059a2f84354ad15d233",
+    "final_sha256": "644a8bec916383ea8de3681a206d0ea502494e74236091affb2da5bae93e55d2",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "帧捕获与性能分析工具",
@@ -24721,7 +24942,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "262e30e377e9a810bb7d1056a50f2afd87ec031ece7f7059a2f84354ad15d233",
+    "reviewed_content_sha256": "644a8bec916383ea8de3681a206d0ea502494e74236091affb2da5bae93e55d2",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -24738,19 +24959,17 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-Final",
+      "phase": "semantic-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "a406658efcd9d38ebfcac9d4fddbe760551470d446c5936413d53cfe5a8b095d",
-      "independent_record": "references/execution-final-render.json",
-      "independent_source_sha256": "262e30e377e9a810bb7d1056a50f2afd87ec031ece7f7059a2f84354ad15d233",
+      "independent_record": "references/semantic-render.json",
+      "independent_source_sha256": "644a8bec916383ea8de3681a206d0ea502494e74236091affb2da5bae93e55d2",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "262e30e377e9a810bb7d1056a50f2afd87ec031ece7f7059a2f84354ad15d233",
+      "content_sha256": "644a8bec916383ea8de3681a206d0ea502494e74236091affb2da5bae93e55d2",
       "independent_review": "PASS",
       "findings": [
-        "查询GPU已完成但CPU尚未读取被覆盖",
-        "后处理黑色来自其他输入资源",
-        "捕获6ms与独立包4ms不能直接归因"
+        "取消读者时GPU复制尚在途，区间仍不可复用"
       ],
       "runtime": {
         "shader_probes": [],
@@ -25002,6 +25221,49 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "262e30e377e9a810bb7d1056a50f2afd87ec031ece7f7059a2f84354ad15d233"
+    },
+    "semantic_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "execution-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-09-15.json",
+      "author_sha256": "a406658efcd9d38ebfcac9d4fddbe760551470d446c5936413d53cfe5a8b095d",
+      "independent_record": "references/execution-final-render.json",
+      "independent_source_sha256": "262e30e377e9a810bb7d1056a50f2afd87ec031ece7f7059a2f84354ad15d233",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "262e30e377e9a810bb7d1056a50f2afd87ec031ece7f7059a2f84354ad15d233",
+      "independent_review": "PASS",
+      "findings": [
+        "查询GPU已完成但CPU尚未读取被覆盖",
+        "后处理黑色来自其他输入资源",
+        "捕获6ms与独立包4ms不能直接归因"
+      ],
+      "runtime": {
+        "shader_probes": [],
+        "git_index_tests": null,
+        "new_transaction_tests": null,
+        "inherited_model_scope": {
+          "scope": "“证据与假设”明确数据、步骤和边界；未宣称本页CPU实验已运行；完整宿主及GPU执行UNVERIFIED",
+          "cpu_checks": null,
+          "shader_probes": [],
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "performance": "UNVERIFIED"
+        },
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "semantic_review": {
+      "record": "references/semantic-render.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "644a8bec916383ea8de3681a206d0ea502494e74236091affb2da5bae93e55d2"
     }
   },
   {
@@ -27821,23 +28083,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：翻译单元/链接/加载；ODR与模板可见性；动态库分配器与ABI；对象布局及虚函数；移动和异常安全；C接口版本前缀；模块活动令牌；卸载及回调退出；COM引用和Apartment。具体反例见references/execution-final-runtime.json"
+        "basis": "正文逐项推演：构建链接加载；ABI与布局；异常保证；卸载同步门与COM引用。见references/semantic-final-runtime.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -27889,7 +28151,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "3c48ba951cb94ce6a5571bb08b67efe23e127a7a4d8870e35bb66eb5c489f8c4",
+    "final_sha256": "469ff119b0b8a929a9f42953d667f4910f23e5d2cb88d3e98f0746773ac3ec2c",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "C++工程边界",
@@ -27901,7 +28163,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "3c48ba951cb94ce6a5571bb08b67efe23e127a7a4d8870e35bb66eb5c489f8c4",
+    "reviewed_content_sha256": "469ff119b0b8a929a9f42953d667f4910f23e5d2cb88d3e98f0746773ac3ec2c",
     "source_article_path": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -27919,20 +28181,17 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-Final",
+      "phase": "semantic-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "ef64e2b805ec769b3fcdcf27e9738b03b1abe6263b5675c42452946492c0579f",
-      "independent_record": "references/execution-final-runtime.json",
-      "independent_source_sha256": "3c48ba951cb94ce6a5571bb08b67efe23e127a7a4d8870e35bb66eb5c489f8c4",
+      "independent_record": "references/semantic-final-runtime.json",
+      "independent_source_sha256": "469ff119b0b8a929a9f42953d667f4910f23e5d2cb88d3e98f0746773ac3ec2c",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "3c48ba951cb94ce6a5571bb08b67efe23e127a7a4d8870e35bb66eb5c489f8c4",
+      "content_sha256": "469ff119b0b8a929a9f42953d667f4910f23e5d2cb88d3e98f0746773ac3ec2c",
       "independent_review": "PASS",
       "findings": [
-        "extern C却字段偏移不同：正文要求sizeof/offsetof与逐字段文件编码。",
-        "检查Running后卸载先见零：同门内增加活动计数。",
-        "回调内同步卸载等待自己：投递宿主队列后退出。",
-        "异步保留借用COM指针：取得独立引用且遵守Apartment。"
+        "Closing等待活动令牌；回调不能同步卸载自身；COM跨Apartment"
       ],
       "runtime": {
         "scope": "C ABI声明是接口片段，未编译动态库与加载宿主。版本前缀、错误输出和卸载顺序已在正文明确，实际工具链ABI仍需构建验证。",
@@ -28135,6 +28394,40 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "3c48ba951cb94ce6a5571bb08b67efe23e127a7a4d8870e35bb66eb5c489f8c4"
+    },
+    "semantic_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "execution-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "ef64e2b805ec769b3fcdcf27e9738b03b1abe6263b5675c42452946492c0579f",
+      "independent_record": "references/execution-final-runtime.json",
+      "independent_source_sha256": "3c48ba951cb94ce6a5571bb08b67efe23e127a7a4d8870e35bb66eb5c489f8c4",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "3c48ba951cb94ce6a5571bb08b67efe23e127a7a4d8870e35bb66eb5c489f8c4",
+      "independent_review": "PASS",
+      "findings": [
+        "extern C却字段偏移不同：正文要求sizeof/offsetof与逐字段文件编码。",
+        "检查Running后卸载先见零：同门内增加活动计数。",
+        "回调内同步卸载等待自己：投递宿主队列后退出。",
+        "异步保留借用COM指针：取得独立引用且遵守Apartment。"
+      ],
+      "runtime": {
+        "scope": "C ABI声明是接口片段，未编译动态库与加载宿主。版本前缀、错误输出和卸载顺序已在正文明确，实际工具链ABI仍需构建验证。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "semantic_review": {
+      "record": "references/semantic-final-runtime.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "469ff119b0b8a929a9f42953d667f4910f23e5d2cb88d3e98f0746773ac3ec2c"
     }
   },
   {
@@ -28500,23 +28793,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：栈堆/虚拟存储；内部外部碎片；Buddy/池/栈策略；局部性及缓存冲突；对齐和溢出；并发游标分配；对象构造析构登记；CPU子任务及GPU多队列退休。具体反例见references/execution-final-runtime.json"
+        "basis": "正文逐项推演：碎片与伙伴合并；缓存映射；游标对齐；析构与异步槽位。见references/semantic-final-runtime.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -28562,7 +28855,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "6bfc260fa36364edbbdd21936db541f63326700231aa1dfc2ffc4d9d422b437b",
+    "final_sha256": "4866c9b7a835262dadb2c62276f801b562f855cd698b57f5458d50d88fbcf192",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "内存布局与分配",
@@ -28574,7 +28867,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "6bfc260fa36364edbbdd21936db541f63326700231aa1dfc2ffc4d9d422b437b",
+    "reviewed_content_sha256": "4866c9b7a835262dadb2c62276f801b562f855cd698b57f5458d50d88fbcf192",
     "source_article_path": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -28592,20 +28885,17 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-Final",
+      "phase": "semantic-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "9072767e1c3c51008285c9becfbdc3b711a99915b073436b31f2c4d04c6cda93",
-      "independent_record": "references/execution-final-runtime.json",
-      "independent_source_sha256": "6bfc260fa36364edbbdd21936db541f63326700231aa1dfc2ffc4d9d422b437b",
+      "independent_record": "references/semantic-final-runtime.json",
+      "independent_source_sha256": "4866c9b7a835262dadb2c62276f801b562f855cd698b57f5458d50d88fbcf192",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "6bfc260fa36364edbbdd21936db541f63326700231aa1dfc2ffc4d9d422b437b",
+      "content_sha256": "4866c9b7a835262dadb2c62276f801b562f855cd698b57f5458d50d88fbcf192",
       "independent_review": "PASS",
       "findings": [
-        "两个任务读取同一游标：整段加锁或CAS重算。",
-        "构造尚未登记却批次关闭：任务引用覆盖登记。",
-        "GPU值晚于CPU计数归零登记：正文要求释放最后引用前登记，队列取最大值。",
-        "邻近空闲却非同阶伙伴：o XOR b及同阶表验证。"
+        "零大小无独占字节；CAS失败重算；CPU归零前登记GPU值"
       ],
       "runtime": {
         "scope": "分配器为整数关系与寿命伪代码，未实现平台分配器或测量缓存命中。字节算例用于审查对齐范围，性能结论保留工作负载条件。",
@@ -28809,6 +29099,40 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "6bfc260fa36364edbbdd21936db541f63326700231aa1dfc2ffc4d9d422b437b"
+    },
+    "semantic_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "execution-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "9072767e1c3c51008285c9becfbdc3b711a99915b073436b31f2c4d04c6cda93",
+      "independent_record": "references/execution-final-runtime.json",
+      "independent_source_sha256": "6bfc260fa36364edbbdd21936db541f63326700231aa1dfc2ffc4d9d422b437b",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "6bfc260fa36364edbbdd21936db541f63326700231aa1dfc2ffc4d9d422b437b",
+      "independent_review": "PASS",
+      "findings": [
+        "两个任务读取同一游标：整段加锁或CAS重算。",
+        "构造尚未登记却批次关闭：任务引用覆盖登记。",
+        "GPU值晚于CPU计数归零登记：正文要求释放最后引用前登记，队列取最大值。",
+        "邻近空闲却非同阶伙伴：o XOR b及同阶表验证。"
+      ],
+      "runtime": {
+        "scope": "分配器为整数关系与寿命伪代码，未实现平台分配器或测量缓存命中。字节算例用于审查对齐范围，性能结论保留工作负载条件。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "semantic_review": {
+      "record": "references/semantic-final-runtime.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "4866c9b7a835262dadb2c62276f801b562f855cd698b57f5458d50d88fbcf192"
     }
   },
   {
@@ -31066,23 +31390,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：系统调用与切换；进程线程协程；Ready/Blocked区别；池内依赖死锁；IPC偏移和发布；单调计时及Tick过载；子进程三管道；截止取消与整组退出。具体反例见references/execution-final-runtime.json"
+        "basis": "正文逐项推演：系统调用与调度；IPC与偏移；固定Tick；管道排空与进程树退出。见references/semantic-final-runtime.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -31158,20 +31482,17 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-Final",
+      "phase": "semantic-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "0be492a4ff26819870a4083f22ab510a1ae98910643dcf5c488aca6fdbc924f3",
-      "independent_record": "references/execution-final-runtime.json",
+      "independent_record": "references/semantic-final-runtime.json",
       "independent_source_sha256": "50828ba696701f2ec784522680ee0b877c14736f3f8a19b9bd25afcf7c8caad2",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "50828ba696701f2ec784522680ee0b877c14736f3f8a19b9bd25afcf7c8caad2",
       "independent_review": "PASS",
       "findings": [
-        "所有池线程同步等同池子任务：续体或帮助执行。",
-        "父写stdin而子写stdout：三管道并行推进。",
-        "父进程退出但后代持有文件：受管进程组及禁止脱离。",
-        "权威对局套用单机丢步：明确分开过载规则。"
+        "stdin/stdout双向满管道；超时进程树退出后复用"
       ],
       "runtime": {
         "scope": "正文工具进程是协议伪代码，未启动实际DCC或测量调度延迟。时间线诊断按Running/Ready/Blocked区分，平台测量工具与目标进程需一起记录。",
@@ -31375,6 +31696,40 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "50828ba696701f2ec784522680ee0b877c14736f3f8a19b9bd25afcf7c8caad2"
+    },
+    "semantic_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "execution-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "0be492a4ff26819870a4083f22ab510a1ae98910643dcf5c488aca6fdbc924f3",
+      "independent_record": "references/execution-final-runtime.json",
+      "independent_source_sha256": "50828ba696701f2ec784522680ee0b877c14736f3f8a19b9bd25afcf7c8caad2",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "50828ba696701f2ec784522680ee0b877c14736f3f8a19b9bd25afcf7c8caad2",
+      "independent_review": "PASS",
+      "findings": [
+        "所有池线程同步等同池子任务：续体或帮助执行。",
+        "父写stdin而子写stdout：三管道并行推进。",
+        "父进程退出但后代持有文件：受管进程组及禁止脱离。",
+        "权威对局套用单机丢步：明确分开过载规则。"
+      ],
+      "runtime": {
+        "scope": "正文工具进程是协议伪代码，未启动实际DCC或测量调度延迟。时间线诊断按Running/Ready/Blocked区分，平台测量工具与目标进程需一起记录。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "semantic_review": {
+      "record": "references/semantic-final-runtime.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "50828ba696701f2ec784522680ee0b877c14736f3f8a19b9bd25afcf7c8caad2"
     }
   },
   {
@@ -31397,23 +31752,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-physics.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-ai.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：持久任务；目录过滤/计划校验；单写代次与接管；创建移动对账；外部生成不确定结果；取消补偿；几何验证；批准撤销与发布CAS。具体反例见references/execution-final-physics.json"
+        "basis": "正文逐项推演：任务状态；串行入口与持久标记；补偿恢复；布局可达；批准与发布事务。见references/semantic-final-ai.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-physics.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-ai.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-physics.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-ai.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-physics.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-ai.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -31475,7 +31830,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "9f21cf94054ee0e8be20e40005aaf1cd82be6d4c94cc34ddca7aed9f7c216f49",
+    "final_sha256": "259cda73ed39e1cc7a956616fe5778cff826761cb123707feb09c5d044185375",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "Agent资产管线",
@@ -31487,7 +31842,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "9f21cf94054ee0e8be20e40005aaf1cd82be6d4c94cc34ddca7aed9f7c216f49",
+    "reviewed_content_sha256": "259cda73ed39e1cc7a956616fe5778cff826761cb123707feb09c5d044185375",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -31504,19 +31859,19 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-Final",
+      "phase": "semantic-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "e9af4532e29291c4b9d8f03901e3a8e1e83827016b4ba0ab918dac901876bd78",
-      "independent_record": "references/execution-final-physics.json",
-      "independent_source_sha256": "9f21cf94054ee0e8be20e40005aaf1cd82be6d4c94cc34ddca7aed9f7c216f49",
+      "independent_record": "references/semantic-final-ai.json",
+      "independent_source_sha256": "259cda73ed39e1cc7a956616fe5778cff826761cb123707feb09c5d044185375",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "9f21cf94054ee0e8be20e40005aaf1cd82be6d4c94cc34ddca7aed9f7c216f49",
+      "content_sha256": "259cda73ed39e1cc7a956616fe5778cff826761cb123707feb09c5d044185375",
       "independent_review": "PASS",
       "findings": [
-        "旧宿主子进程未退出不能接管同一场景",
-        "绝对位置相同但第三版本仍是冲突",
-        "撤销批准与发布必须共用条件事务"
+        "补偿成功响应丢失后按补偿标记恢复",
+        "执行器接管改变授权代次但稳定业务摘要不变",
+        "家具人工改动阻止删除父房间"
       ],
       "runtime": {
         "scope": "本页是资产任务设计与接口协议，未部署Agent、连接DCC或执行资产发布。事务边界的可运行示例见RPC篇，场景操作的幂等性必须由各工具实现验证。",
@@ -31711,6 +32066,39 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "9f21cf94054ee0e8be20e40005aaf1cd82be6d4c94cc34ddca7aed9f7c216f49"
+    },
+    "semantic_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "execution-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "e9af4532e29291c4b9d8f03901e3a8e1e83827016b4ba0ab918dac901876bd78",
+      "independent_record": "references/execution-final-physics.json",
+      "independent_source_sha256": "9f21cf94054ee0e8be20e40005aaf1cd82be6d4c94cc34ddca7aed9f7c216f49",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "9f21cf94054ee0e8be20e40005aaf1cd82be6d4c94cc34ddca7aed9f7c216f49",
+      "independent_review": "PASS",
+      "findings": [
+        "旧宿主子进程未退出不能接管同一场景",
+        "绝对位置相同但第三版本仍是冲突",
+        "撤销批准与发布必须共用条件事务"
+      ],
+      "runtime": {
+        "scope": "本页是资产任务设计与接口协议，未部署Agent、连接DCC或执行资产发布。事务边界的可运行示例见RPC篇，场景操作的幂等性必须由各工具实现验证。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "semantic_review": {
+      "record": "references/semantic-final-ai.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "259cda73ed39e1cc7a956616fe5778cff826761cb123707feb09c5d044185375"
     }
   },
   {
@@ -32414,23 +32802,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-physics.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-ai.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：反向对应/足迹拒绝；刚体深度/法线输送；像素与VAE空间；DDIM时刻/投影；曝光遮罩；Q与锚点支持；双向独立状态；对象冲突与整帧补洞。具体反例见references/execution-final-physics.json"
+        "basis": "正文逐项推演：反向对应与采样足迹；法线空间；潜变量与投影DDIM；曝光及双置信；清单恢复与双向融合。见references/semantic-final-ai.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-physics.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-ai.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-physics.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-ai.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-physics.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-ai.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -32483,7 +32871,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "e2c5afd44ac45efa2e1cc92ba9794912fd7cc35417f133f8b340c0da445265cc",
+    "final_sha256": "c5f6024897e316ff0a1205eca042e36cd4848f4e1a082dc42542edb281a2d155",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "视频生成时序一致性",
@@ -32495,7 +32883,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "e2c5afd44ac45efa2e1cc92ba9794912fd7cc35417f133f8b340c0da445265cc",
+    "reviewed_content_sha256": "c5f6024897e316ff0a1205eca042e36cd4848f4e1a082dc42542edb281a2d155",
     "source_article_path": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -32513,20 +32901,19 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-Final",
+      "phase": "semantic-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "4d2973877344a896d1fca6bc2fda130a9a3322f2aaedf5815226a7e76f58c421",
-      "independent_record": "references/execution-final-physics.json",
-      "independent_source_sha256": "e2c5afd44ac45efa2e1cc92ba9794912fd7cc35417f133f8b340c0da445265cc",
+      "independent_record": "references/semantic-final-ai.json",
+      "independent_source_sha256": "c5f6024897e316ff0a1205eca042e36cd4848f4e1a082dc42542edb281a2d155",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "e2c5afd44ac45efa2e1cc92ba9794912fd7cc35417f133f8b340c0da445265cc",
+      "content_sha256": "c5f6024897e316ff0a1205eca042e36cd4848f4e1a082dc42542edb281a2d155",
       "independent_review": "PASS",
       "findings": [
-        "零权重NaN仍污染张量需有限占位",
-        "新生成Q=1不能恢复锚点链",
-        "补洞网络不能覆盖已选定区域",
-        "曝光统计必须双侧亮度正有限"
+        "10%无效足迹不能被平均置信稀释",
+        "上游关键帧修改使后续历史清单失效",
+        "曝光必须消费末次投影output"
       ],
       "runtime": {
         "scope": "本页光流与法线公式是坐标推导；TokenFlow引用支持扩散特征对应传播，不证明本页的全部过滤策略。未生成视频或测量时序指标。",
@@ -32741,6 +33128,40 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "e2c5afd44ac45efa2e1cc92ba9794912fd7cc35417f133f8b340c0da445265cc"
+    },
+    "semantic_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "execution-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "4d2973877344a896d1fca6bc2fda130a9a3322f2aaedf5815226a7e76f58c421",
+      "independent_record": "references/execution-final-physics.json",
+      "independent_source_sha256": "e2c5afd44ac45efa2e1cc92ba9794912fd7cc35417f133f8b340c0da445265cc",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "e2c5afd44ac45efa2e1cc92ba9794912fd7cc35417f133f8b340c0da445265cc",
+      "independent_review": "PASS",
+      "findings": [
+        "零权重NaN仍污染张量需有限占位",
+        "新生成Q=1不能恢复锚点链",
+        "补洞网络不能覆盖已选定区域",
+        "曝光统计必须双侧亮度正有限"
+      ],
+      "runtime": {
+        "scope": "本页光流与法线公式是坐标推导；TokenFlow引用支持扩散特征对应传播，不证明本页的全部过滤策略。未生成视频或测量时序指标。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "semantic_review": {
+      "record": "references/semantic-final-ai.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "c5f6024897e316ff0a1205eca042e36cd4848f4e1a082dc42542edb281a2d155"
     }
   },
   {
@@ -35487,23 +35908,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-physics.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-ai.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：烘焙与半径侵蚀；A星与走廊漏斗；圆弧共享裁剪/速度表；ORCA边界；多约束候选求交；走廊分段；碰撞反馈/异步取消/网格外连接。具体反例见references/execution-final-physics.json"
+        "basis": "正文逐项推演：生成侵蚀与搜索；漏斗；圆弧速度表；二维避障与走廊求交；反馈与取消。见references/semantic-final-ai.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-physics.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-ai.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-physics.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-ai.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-physics.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-ai.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -35556,7 +35977,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "a26eeee7efe6e7a0e859ef08ea4aee6cc310d2815f58704bfc229363eadfba80",
+    "final_sha256": "b012d8ef9cecd8c32df80d6d148e45d523436855df532dc8c271747869f40139",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "游戏AI导航",
@@ -35568,7 +35989,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "a26eeee7efe6e7a0e859ef08ea4aee6cc310d2815f58704bfc229363eadfba80",
+    "reviewed_content_sha256": "b012d8ef9cecd8c32df80d6d148e45d523436855df532dc8c271747869f40139",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -35585,20 +36006,19 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-Final",
+      "phase": "semantic-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "fe538c259388f11d043338ce983204d9cb134dc0eeeb401a38fc9b2af1c32218",
-      "independent_record": "references/execution-final-physics.json",
-      "independent_source_sha256": "a26eeee7efe6e7a0e859ef08ea4aee6cc310d2815f58704bfc229363eadfba80",
+      "independent_record": "references/semantic-final-ai.json",
+      "independent_source_sha256": "b012d8ef9cecd8c32df80d6d148e45d523436855df532dc8c271747869f40139",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "a26eeee7efe6e7a0e859ef08ea4aee6cc310d2815f58704bfc229363eadfba80",
+      "content_sha256": "b012d8ef9cecd8c32df80d6d148e45d523436855df532dc8c271747869f40139",
       "independent_review": "PASS",
       "findings": [
-        "相邻圆弧分别放得下但共享直线裁剪重叠",
-        "ORCA可行但走廊半平面不容许须报告失败",
-        "取消中的平台搬运使新路线起点过期",
-        "控制器截断不能按请求速度推进门户"
+        "相邻圆弧裁剪之和超过中段长度",
+        "避障要求右1.5而墙只许1导致不可行",
+        "取消期间平台移动需重验新路径起点"
       ],
       "runtime": {
         "scope": "导航生成与ORCA职责按来源核读，正文跟随为C++机制片段。尚未烘焙测试关卡、运行漏斗或群体避障；A*主算法验证归属图搜索。",
@@ -35803,6 +36223,40 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "a26eeee7efe6e7a0e859ef08ea4aee6cc310d2815f58704bfc229363eadfba80"
+    },
+    "semantic_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "execution-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "fe538c259388f11d043338ce983204d9cb134dc0eeeb401a38fc9b2af1c32218",
+      "independent_record": "references/execution-final-physics.json",
+      "independent_source_sha256": "a26eeee7efe6e7a0e859ef08ea4aee6cc310d2815f58704bfc229363eadfba80",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "a26eeee7efe6e7a0e859ef08ea4aee6cc310d2815f58704bfc229363eadfba80",
+      "independent_review": "PASS",
+      "findings": [
+        "相邻圆弧分别放得下但共享直线裁剪重叠",
+        "ORCA可行但走廊半平面不容许须报告失败",
+        "取消中的平台搬运使新路线起点过期",
+        "控制器截断不能按请求速度推进门户"
+      ],
+      "runtime": {
+        "scope": "导航生成与ORCA职责按来源核读，正文跟随为C++机制片段。尚未烘焙测试关卡、运行漏斗或群体避障；A*主算法验证归属图搜索。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "semantic_review": {
+      "record": "references/semantic-final-ai.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "b012d8ef9cecd8c32df80d6d148e45d523436855df532dc8c271747869f40139"
     }
   },
   {
@@ -36480,23 +36934,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：网格精筛；迟滞和权限并集；复制代数可靠控制；带宽与实体观察时间；冻结准备/权威条件提交；事务输入效果槽；路由与输入会话关闭；故障恢复epoch。具体反例见references/execution-final-runtime.json"
+        "basis": "正文逐项推演：候选与迟滞；可靠控制与复制代数；所有权冻结与提交；输入事务与恢复。见references/semantic-final-runtime.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -36568,20 +37022,17 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-Final",
+      "phase": "semantic-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "1bdc2703a85fb7b0500f1e12cd71fb09d0fb2ae4e61d9b1c2e8b893bedea3ab1",
-      "independent_record": "references/execution-final-runtime.json",
+      "independent_record": "references/semantic-final-runtime.json",
       "independent_source_sha256": "17dd41472399a725c8eca3b88afaf181c367b5a4a9c1c1b4d36016a5e484ee17",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "17dd41472399a725c8eca3b88afaf181c367b5a4a9c1c1b4d36016a5e484ee17",
       "independent_review": "PASS",
       "findings": [
-        "只查R会在迟滞带误删：R+h加旧集精筛。",
-        "迁移后迟到prepare冻结新owner：迁移ID先查结果。",
-        "同输入多个副作用共用ID：正文和伪代码均包含effectSlot。",
-        "旧epoch已提交outbox晚到：保留历史交付资格，与新未提交调用分开。"
+        "迁移重复准备不冻结新owner；发件箱与业务同事务"
       ],
       "runtime": {
         "scope": "正文网格代码是依赖容器与向量库的C++机制片段。已复读负坐标取整、候选精筛与所有权超时流程；尚未运行多服迁移、并发查询和AOI带宽压测。",
@@ -36789,6 +37240,40 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "17dd41472399a725c8eca3b88afaf181c367b5a4a9c1c1b4d36016a5e484ee17"
+    },
+    "semantic_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "execution-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "1bdc2703a85fb7b0500f1e12cd71fb09d0fb2ae4e61d9b1c2e8b893bedea3ab1",
+      "independent_record": "references/execution-final-runtime.json",
+      "independent_source_sha256": "17dd41472399a725c8eca3b88afaf181c367b5a4a9c1c1b4d36016a5e484ee17",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "17dd41472399a725c8eca3b88afaf181c367b5a4a9c1c1b4d36016a5e484ee17",
+      "independent_review": "PASS",
+      "findings": [
+        "只查R会在迟滞带误删：R+h加旧集精筛。",
+        "迁移后迟到prepare冻结新owner：迁移ID先查结果。",
+        "同输入多个副作用共用ID：正文和伪代码均包含effectSlot。",
+        "旧epoch已提交outbox晚到：保留历史交付资格，与新未提交调用分开。"
+      ],
+      "runtime": {
+        "scope": "正文网格代码是依赖容器与向量库的C++机制片段。已复读负坐标取整、候选精筛与所有权超时流程；尚未运行多服迁移、并发查询和AOI带宽压测。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "semantic_review": {
+      "record": "references/semantic-final-runtime.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "17dd41472399a725c8eca3b88afaf181c367b5a4a9c1c1b4d36016a5e484ee17"
     }
   },
   {
@@ -36979,23 +37464,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：输入步与ACK/Tick边界；状态恢复和碰撞重放；移动平台依赖；中性步与输入缺口；完整序号和压缩轮次；表现事件去重；视觉偏移与本地纪元。具体反例见references/execution-final-runtime.json"
+        "basis": "正文逐项推演：输入与Tick锚点；完整序号；碰撞重放；缺口与拒绝；表现去重。见references/semantic-final-runtime.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -37041,7 +37526,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "33b3141dac17bd2929dd9460e78a295dcf9d45cce832e7e8c535b0f6740f3b73",
+    "final_sha256": "b6e6fb6ccec1e84340a1838f99a5725ac2e91ca65b6fef58d6589d24d03b5ebb",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "客户端预测",
@@ -37053,7 +37538,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "33b3141dac17bd2929dd9460e78a295dcf9d45cce832e7e8c535b0f6740f3b73",
+    "reviewed_content_sha256": "b6e6fb6ccec1e84340a1838f99a5725ac2e91ca65b6fef58d6589d24d03b5ebb",
     "source_article_path": "知识库/21_游戏网络/状态同步、预测与回滚.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -37071,20 +37556,17 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-Final",
+      "phase": "semantic-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "e9e65578fc0e4f6038526023d5e6b97d2cfb0c6aa40742ab7dd91220fdcacb75",
-      "independent_record": "references/execution-final-runtime.json",
-      "independent_source_sha256": "33b3141dac17bd2929dd9460e78a295dcf9d45cce832e7e8c535b0f6740f3b73",
+      "independent_record": "references/semantic-final-runtime.json",
+      "independent_source_sha256": "b6e6fb6ccec1e84340a1838f99a5725ac2e91ca65b6fef58d6589d24d03b5ebb",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "33b3141dac17bd2929dd9460e78a295dcf9d45cce832e7e8c535b0f6740f3b73",
+      "content_sha256": "b6e6fb6ccec1e84340a1838f99a5725ac2e91ca65b6fef58d6589d24d03b5ebb",
       "independent_review": "PASS",
       "findings": [
-        "同ACK但平台推进：按新Tick接受。",
-        "输入排队与客户端生成Tick不同：以权威锚点重排待确认输入并重建外部依赖。",
-        "一整轮旧包0迟到：认证轮次展开完整序号。",
-        "本地清队列被当作撤销业务：独立预测纪元和业务关闭屏障。"
+        "同ACK新Tick仍接纳；缺平台外部状态暂停预测；事件完整序号"
       ],
       "runtime": {
         "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页验证序号回绕及包含墙面钳制的输入重放；旧 completion_reference.py 只验证加法分段关系。真实移动平台与碰撞引擎的重放尚未运行。",
@@ -37286,6 +37768,40 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "33b3141dac17bd2929dd9460e78a295dcf9d45cce832e7e8c535b0f6740f3b73"
+    },
+    "semantic_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "execution-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "e9e65578fc0e4f6038526023d5e6b97d2cfb0c6aa40742ab7dd91220fdcacb75",
+      "independent_record": "references/execution-final-runtime.json",
+      "independent_source_sha256": "33b3141dac17bd2929dd9460e78a295dcf9d45cce832e7e8c535b0f6740f3b73",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "33b3141dac17bd2929dd9460e78a295dcf9d45cce832e7e8c535b0f6740f3b73",
+      "independent_review": "PASS",
+      "findings": [
+        "同ACK但平台推进：按新Tick接受。",
+        "输入排队与客户端生成Tick不同：以权威锚点重排待确认输入并重建外部依赖。",
+        "一整轮旧包0迟到：认证轮次展开完整序号。",
+        "本地清队列被当作撤销业务：独立预测纪元和业务关闭屏障。"
+      ],
+      "runtime": {
+        "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页验证序号回绕及包含墙面钳制的输入重放；旧 completion_reference.py 只验证加法分段关系。真实移动平台与碰撞引擎的重放尚未运行。",
+        "cpu_command": "python 知识库/examples/revision_16_21/test_reference.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "semantic_review": {
+      "record": "references/semantic-final-runtime.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "b6e6fb6ccec1e84340a1838f99a5725ac2e91ca65b6fef58d6589d24d03b5ebb"
     }
   },
   {
@@ -37629,23 +38145,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "直接推演：开火r与画面年龄；单实体有效性与关键集合；估计姿态和权威历史；射手消费Tick枪口；历史段与动态遮挡；射线最近命中；实时隔离；伤害幂等提交。具体反例见references/execution-final-runtime.json"
+        "basis": "正文逐项推演：显示时间及实体有效性；权威历史与展示误差；碰撞求交；实时隔离与提交。见references/semantic-final-runtime.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "全文机制、执行交接和失败推演见references/execution-final-runtime.json；运行证据按正文实际范围分别登记。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -37689,7 +38205,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "b9ca23c8e6c85359fb3d2194c0f30c33292d553d65fdc85e61dbf0e4064f63e2",
+    "final_sha256": "14f08b31fb53039ba01de0d1fe5296903eb19c6d09d08c669408e8db9845475f",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "延迟补偿命中",
@@ -37701,7 +38217,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "b9ca23c8e6c85359fb3d2194c0f30c33292d553d65fdc85e61dbf0e4064f63e2",
+    "reviewed_content_sha256": "14f08b31fb53039ba01de0d1fe5296903eb19c6d09d08c669408e8db9845475f",
     "source_article_path": "知识库/21_游戏网络/状态同步、预测与回滚.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -37719,19 +38235,17 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "execution-Final",
+      "phase": "semantic-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "f63be6f7072aee778ca3b06abb89c53a7ea24902823c9c89529086863e518d0b",
-      "independent_record": "references/execution-final-runtime.json",
-      "independent_source_sha256": "b9ca23c8e6c85359fb3d2194c0f30c33292d553d65fdc85e61dbf0e4064f63e2",
+      "independent_record": "references/semantic-final-runtime.json",
+      "independent_source_sha256": "14f08b31fb53039ba01de0d1fe5296903eb19c6d09d08c669408e8db9845475f",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "b9ca23c8e6c85359fb3d2194c0f30c33292d553d65fdc85e61dbf0e4064f63e2",
+      "content_sha256": "14f08b31fb53039ba01de0d1fe5296903eb19c6d09d08c669408e8db9845475f",
       "independent_review": "PASS",
       "findings": [
-        "数例把单实体达到外推上限直接称作全局Frozen，与前文Stale接口不一致。",
-        "同一r不保证估计姿态等于权威：数例0.1/0.2明确误差。",
-        "旧目标重生后同数值ID：实例代数拒绝伤害转移。"
+        "r与实体Stale独立；历史持有；异步射击Pending与后续弹药消费"
       ],
       "runtime": {
         "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页验证历史线性插值的窗口拒绝及球形射线正反向求交；尚未运行骨骼碰撞场景、真实网络故障或公平性测试。",
@@ -37928,6 +38442,39 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "b9ca23c8e6c85359fb3d2194c0f30c33292d553d65fdc85e61dbf0e4064f63e2"
+    },
+    "semantic_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "execution-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "f63be6f7072aee778ca3b06abb89c53a7ea24902823c9c89529086863e518d0b",
+      "independent_record": "references/execution-final-runtime.json",
+      "independent_source_sha256": "b9ca23c8e6c85359fb3d2194c0f30c33292d553d65fdc85e61dbf0e4064f63e2",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "b9ca23c8e6c85359fb3d2194c0f30c33292d553d65fdc85e61dbf0e4064f63e2",
+      "independent_review": "PASS",
+      "findings": [
+        "数例把单实体达到外推上限直接称作全局Frozen，与前文Stale接口不一致。",
+        "同一r不保证估计姿态等于权威：数例0.1/0.2明确误差。",
+        "旧目标重生后同数值ID：实例代数拒绝伤害转移。"
+      ],
+      "runtime": {
+        "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页验证历史线性插值的窗口拒绝及球形射线正反向求交；尚未运行骨骼碰撞场景、真实网络故障或公平性测试。",
+        "cpu_command": "python 知识库/examples/revision_16_21/test_reference.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "semantic_review": {
+      "record": "references/semantic-final-runtime.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "14f08b31fb53039ba01de0d1fe5296903eb19c6d09d08c669408e8db9845475f"
     }
   },
   {

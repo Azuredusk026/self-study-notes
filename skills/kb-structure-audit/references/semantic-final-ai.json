@@ -1,0 +1,73 @@
+{
+  "articles": [
+    {
+      "path": "知识库/20_游戏AI/游戏AI决策模型.md",
+      "mechanisms": [
+        "动作账本与HFSM路径",
+        "行为树取消上行",
+        "Utility门禁迟滞",
+        "GOAP与HTN及跨模型交接"
+      ],
+      "counterexamples": [
+        "追击取消期间目标改到平静需继续退出战斗",
+        "子Cancelled经Running顺序节点必须保持Cancelled",
+        "新计划等待旧移动释放后重验"
+      ],
+      "changes": [],
+      "content_sha256": "3b51a7803ffbc7fcd9382a18514aa3201751d2e8ff4b6f43131e85ad54ebaa91"
+    },
+    {
+      "path": "知识库/20_游戏AI/游戏AI导航.md",
+      "mechanisms": [
+        "生成侵蚀与搜索",
+        "漏斗",
+        "圆弧速度表",
+        "二维避障与走廊求交",
+        "反馈与取消"
+      ],
+      "counterexamples": [
+        "相邻圆弧裁剪之和超过中段长度",
+        "避障要求右1.5而墙只许1导致不可行",
+        "取消期间平台移动需重验新路径起点"
+      ],
+      "changes": [],
+      "content_sha256": "b012d8ef9cecd8c32df80d6d148e45d523436855df532dc8c271747869f40139"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+      "mechanisms": [
+        "任务状态",
+        "串行入口与持久标记",
+        "补偿恢复",
+        "布局可达",
+        "批准与发布事务"
+      ],
+      "counterexamples": [
+        "补偿成功响应丢失后按补偿标记恢复",
+        "执行器接管改变授权代次但稳定业务摘要不变",
+        "家具人工改动阻止删除父房间"
+      ],
+      "changes": [],
+      "content_sha256": "259cda73ed39e1cc7a956616fe5778cff826761cb123707feb09c5d044185375"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+      "mechanisms": [
+        "反向对应与采样足迹",
+        "法线空间",
+        "潜变量与投影DDIM",
+        "曝光及双置信",
+        "清单恢复与双向融合"
+      ],
+      "counterexamples": [
+        "10%无效足迹不能被平均置信稀释",
+        "上游关键帧修改使后续历史清单失效",
+        "曝光必须消费末次投影output"
+      ],
+      "changes": [
+        "明确曝光P为循环最终output而非未投影临时解码值"
+      ],
+      "content_sha256": "c5f6024897e316ff0a1205eca042e36cd4848f4e1a082dc42542edb281a2d155"
+    }
+  ]
+}
