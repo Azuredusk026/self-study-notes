@@ -52,3 +52,5 @@ Git 仓库发布 README、`知识库/`、`skills/` 与 `AGENTS.md`。知识库�
 [跨机制接口复读记录](skills/kb-structure-audit/references/interface-review-report.md)记录40篇文章的接口推演、失败反例与分阶段证据。
 
 [执行规则复读记录](skills/kb-structure-audit/references/execution-review-report.md)记录30篇文章的统一执行规则、正文顺序与恢复反例。
+
+[执行语义与恢复接口复读记录](skills/kb-structure-audit/references/semantic-review-report.md)记录18篇文章的消费接口、取消传播、恢复状态和全文反证。

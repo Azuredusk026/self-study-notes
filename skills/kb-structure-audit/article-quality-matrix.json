@@ -9644,23 +9644,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：高度尺度；POM插值；导数；自阴影；虚拟命中位置。见references/semantic-render.json"
+        "basis": "正文逐项推演：高度与UV度量；首次交点与残差插值；导数；高度场自阴影；虚拟位置与光照；边界。见references/semantic-final-render.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -9740,19 +9740,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P2",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-06-08.json",
       "author_sha256": "da2d37581e8e24f5ff6d95a9faaca8149912e15c2ccf3af6daf65dcd368e2751",
-      "independent_record": "references/semantic-render.json",
+      "independent_record": "references/semantic-final-render.json",
       "independent_source_sha256": "ff21904c0e1d1fe290b18ad8bce96ccc216651edd558593d822c37a8542cedba",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "ff21904c0e1d1fe290b18ad8bce96ccc216651edd558593d822c37a8542cedba",
       "independent_review": "PASS",
       "findings": [
-        "D=0.3返回t=0.3",
-        "掠射受限路径并非真实视线",
-        "Wrap差值不能夹断"
+        "D(u)=u时一次采样误差与POM求交区分",
+        "同一hit深度和UV进入光线查询",
+        "平铺前夹UV导致世界位置周期错误",
+        "掠射限制改变射线：正文说明近似并给退出策略"
       ],
       "runtime": {
         "source_scope": {
@@ -10239,9 +10240,9 @@
       }
     },
     "semantic_review": {
-      "record": "references/semantic-render.json",
+      "record": "references/semantic-final-render.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "ff21904c0e1d1fe290b18ad8bce96ccc216651edd558593d822c37a8542cedba"
     }
   },
@@ -19064,23 +19065,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：测度；RIS；两遍支持修正；递归条件；时空资源版本。见references/semantic-render.json"
+        "basis": "正文逐项推演：候选与面积测度；参数测度转换；RIS；来源支持与两遍归一化；外生调度递归；动态支持；A/B/C/H及联合寿命。见references/semantic-final-render.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -19154,19 +19155,21 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P2",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "6eb1aeca647092c5ab20a6d0f56a1f21d437b074b187e03d7ff3a6ecda82b488",
-      "independent_record": "references/semantic-render.json",
+      "independent_record": "references/semantic-final-render.json",
       "independent_source_sha256": "b1113fe0fab225b99754f57e902fed851306fe9037eb542d42e05a3fe2a76f22",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "b1113fe0fab225b99754f57e902fed851306fe9037eb542d42e05a3fe2a76f22",
       "independent_review": "PASS",
       "findings": [
-        "面积2到6参数域乘数",
-        "无代表源仍计支持",
-        "删除光不能删整来源"
+        "面积2变6时W_param保持而贡献改变",
+        "代表光删除不能删除来源M",
+        "来源目标分子与当前目标不可互换",
+        "共享祖先相关不等于独立样本；线性期望条件另列",
+        "H仍有效但历史光表被覆盖：联合版本持有"
       ],
       "runtime": {
         "shader_probes": [],
@@ -19472,9 +19475,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "semantic_review": {
-      "record": "references/semantic-render.json",
+      "record": "references/semantic-final-render.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "b1113fe0fab225b99754f57e902fed851306fe9037eb542d42e05a3fe2a76f22"
     }
   },
@@ -20094,23 +20097,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：完成值；故障；录制提交交接；跨列表依赖。见references/semantic-render.json"
+        "basis": "正文逐项推演：帧槽复用；错误返回；录制引用；提交仲裁；前驱取消；多队列完成。见references/semantic-final-render.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -20189,18 +20192,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P2",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "da0c5887697382d9d60baa9afcc8cd742da4bbc8ef53da93152d3d89abfbada5",
-      "independent_record": "references/semantic-render.json",
+      "independent_record": "references/semantic-final-render.json",
       "independent_source_sha256": "0cbec90b5f8684a78009e283bcf081bdce0f3d081eb6147cd310da34d1c190ee",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "0cbec90b5f8684a78009e283bcf081bdce0f3d081eb6147cd310da34d1c190ee",
       "independent_review": "PASS",
       "findings": [
-        "S取消但L读新D",
-        "并行Signal使计数次序失配"
+        "Signal失败后不可释放已Execute资源",
+        "UINT64_MAX按设备失效处理",
+        "生产者S取消时读取新D的L必须取消或重录",
+        "交换链索引不是完成值"
       ],
       "runtime": {
         "shader_probes": [],
@@ -20661,9 +20666,9 @@
       }
     },
     "semantic_review": {
-      "record": "references/semantic-render.json",
+      "record": "references/semantic-final-render.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "0cbec90b5f8684a78009e283bcf081bdce0f3d081eb6147cd310da34d1c190ee"
     }
   },
@@ -22243,23 +22248,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：布局与动态偏移；映射刷新；Bindless生产消费；快照发布及退休。见references/semantic-render.json"
+        "basis": "正文逐项推演：布局与字段；动态偏移；映射原点与刷新；固定数组能力及池容量；对象材质纹理三级索引；发布录制提交退休。见references/semantic-final-render.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -22339,19 +22344,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P1",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "875c87a3dffd44e6f1f07f47740e1c9c30fe2f6ad82b07167fd5e1f26cb9c55f",
-      "independent_record": "references/semantic-render.json",
+      "independent_record": "references/semantic-final-render.json",
       "independent_source_sha256": "cc5dd6e86d2029ab1ef240d965c2484cf6572e717ab155c85511e918d8c9b1d4",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "cc5dd6e86d2029ab1ef240d965c2484cf6572e717ab155c85511e918d8c9b1d4",
       "independent_review": "PASS",
       "findings": [
-        "布局64项却分配少量槽位",
-        "同索引跨页串读",
-        "录制等待时回收"
+        "B未对齐原子导致跨帧共享：正文约束B或独立原子区间",
+        "同槽位跨页读错：页与材质版本联合发布",
+        "设备不支持64项：切换逐材质管线而非缩短数组",
+        "未提交命令持有旧页：发布释放不等于回收"
       ],
       "runtime": {
         "shader_probes": [],
@@ -22642,9 +22648,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "semantic_review": {
-      "record": "references/semantic-render.json",
+      "record": "references/semantic-final-render.json",
       "date": "2026-10-23",
-      "phase": "P1",
+      "phase": "Final",
       "content_sha256": "cc5dd6e86d2029ab1ef240d965c2484cf6572e717ab155c85511e918d8c9b1d4"
     }
   },
@@ -24237,23 +24243,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：缓存层次；发现封闭；请求状态；保留；失效代次。见references/semantic-render.json"
+        "basis": "正文逐项推演：组合键与缓存层；发现封闭；请求状态；就绪保留；代次失效；预算及首用。见references/semantic-final-render.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -24338,18 +24344,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P2",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "5256268d64f0f6c14b8b48c9cda676ecf231a2ec4f615cb410cc52f7600b6ba8",
-      "independent_record": "references/semantic-render.json",
+      "independent_record": "references/semantic-final-render.json",
       "independent_source_sha256": "30124c619472fcc50662ecdf1ad709581ad7e109865959d562a49075673e5843",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "30124c619472fcc50662ecdf1ad709581ad7e109865959d562a49075673e5843",
       "independent_review": "PASS",
       "findings": [
-        "失败计数归零不可进入",
-        "LRU在首屏前淘汰"
+        "Failed计数归零不满足Ready门",
+        "首屏前LRU淘汰由保留引用防止",
+        "旧设备创建成功不能发布新缓存",
+        "键完整但创建迟于使用仍卡顿"
       ],
       "runtime": {
         "shader_probes": [],
@@ -24641,9 +24649,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "semantic_review": {
-      "record": "references/semantic-render.json",
+      "record": "references/semantic-final-render.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "30124c619472fcc50662ecdf1ad709581ad7e109865959d562a49075673e5843"
     }
   },
@@ -24852,23 +24860,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：帧关联；异步计时；跨资源像素回溯；计数器假设。见references/semantic-render.json"
+        "basis": "正文逐项推演：复现与标记；时钟域；查询及CPU消费；像素跨资源追踪；计数器与因果实验。见references/semantic-final-render.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-render.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -24959,17 +24967,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P2",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "a406658efcd9d38ebfcac9d4fddbe760551470d446c5936413d53cfe5a8b095d",
-      "independent_record": "references/semantic-render.json",
+      "independent_record": "references/semantic-final-render.json",
       "independent_source_sha256": "644a8bec916383ea8de3681a206d0ea502494e74236091affb2da5bae93e55d2",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "644a8bec916383ea8de3681a206d0ea502494e74236091affb2da5bae93e55d2",
       "independent_review": "PASS",
       "findings": [
-        "取消读者时GPU复制尚在途，区间仍不可复用"
+        "GPU复制完成前取消CPU读者仍不可复用",
+        "结果120未读不能被123覆盖",
+        "后处理黑像素追到输入纹理而非只追最终目标",
+        "不同队列时间戳不能直接相减"
       ],
       "runtime": {
         "shader_probes": [],
@@ -25260,9 +25271,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "semantic_review": {
-      "record": "references/semantic-render.json",
+      "record": "references/semantic-final-render.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "644a8bec916383ea8de3681a206d0ea502494e74236091affb2da5bae93e55d2"
     }
   },
@@ -28181,7 +28192,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P2",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "ef64e2b805ec769b3fcdcf27e9738b03b1abe6263b5675c42452946492c0579f",
@@ -28426,7 +28437,7 @@
     "semantic_review": {
       "record": "references/semantic-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "469ff119b0b8a929a9f42953d667f4910f23e5d2cb88d3e98f0746773ac3ec2c"
     }
   },
@@ -28885,7 +28896,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P2",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "9072767e1c3c51008285c9becfbdc3b711a99915b073436b31f2c4d04c6cda93",
@@ -29131,7 +29142,7 @@
     "semantic_review": {
       "record": "references/semantic-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "4866c9b7a835262dadb2c62276f801b562f855cd698b57f5458d50d88fbcf192"
     }
   },
@@ -29840,23 +29851,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-runtime.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：缓存页与字节完整性；逻辑读取与系统子请求；预算与解码持有；持久发布；代理重启与版本排空。见references/semantic-runtime.json"
+        "basis": "正文逐项推演：缓存页与字节完整性；逻辑读取与系统子请求；预算与解码持有；持久发布；代理重启与版本排空。见references/semantic-final-runtime.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-runtime.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-runtime.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-runtime.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-runtime.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -29928,18 +29939,17 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P1",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "52caa93f715b03db9f723dc9bea4baa3217dc12e24238792f86f0758caa9c0f6",
-      "independent_record": "references/semantic-runtime.json",
+      "independent_record": "references/semantic-final-runtime.json",
       "independent_source_sha256": "e82cfc067c2dd3f9b1b42ba447c38b817cebe8aedf574eade0079c03c19ec71b",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "e82cfc067c2dd3f9b1b42ba447c38b817cebe8aedf574eade0079c03c19ec71b",
       "independent_review": "PASS",
       "findings": [
-        "8字节头短读3字节后取消不能重提",
-        "A转B后长驻实例关闭A入口并等待续读与发送结束"
+        "短读3+5与取消间隙；Draining期间短读逻辑请求仍持有版本"
       ],
       "runtime": {
         "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页运行临时目录里的真实文件写入、替换与替换前异常，验证最终内容和临时文件清理；未执行断电、网络文件系统或异步驱动取消测试。",
@@ -30165,9 +30175,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "semantic_review": {
-      "record": "references/semantic-runtime.json",
+      "record": "references/semantic-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P1",
+      "phase": "Final",
       "content_sha256": "e82cfc067c2dd3f9b1b42ba447c38b817cebe8aedf574eade0079c03c19ec71b"
     }
   },
@@ -31482,7 +31492,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P2",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "0be492a4ff26819870a4083f22ab510a1ae98910643dcf5c488aca6fdbc924f3",
@@ -31728,7 +31738,7 @@
     "semantic_review": {
       "record": "references/semantic-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "50828ba696701f2ec784522680ee0b877c14736f3f8a19b9bd25afcf7c8caad2"
     }
   },
@@ -31859,7 +31869,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P2",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "e9af4532e29291c4b9d8f03901e3a8e1e83827016b4ba0ab918dac901876bd78",
@@ -32097,7 +32107,7 @@
     "semantic_review": {
       "record": "references/semantic-final-ai.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "259cda73ed39e1cc7a956616fe5778cff826761cb123707feb09c5d044185375"
     }
   },
@@ -32901,7 +32911,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P2",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "4d2973877344a896d1fca6bc2fda130a9a3322f2aaedf5815226a7e76f58c421",
@@ -33160,7 +33170,7 @@
     "semantic_review": {
       "record": "references/semantic-final-ai.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "c5f6024897e316ff0a1205eca042e36cd4848f4e1a082dc42542edb281a2d155"
     }
   },
@@ -34259,7 +34269,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P1",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "4f0d66f613f1d4da412303c9ff10d7bfe814ce64c7f6b1c4b52b289c743bf731",
@@ -34509,7 +34519,7 @@
     "semantic_review": {
       "record": "references/semantic-final-physics.json",
       "date": "2026-10-23",
-      "phase": "P1",
+      "phase": "Final",
       "content_sha256": "b9e8e4d30f445b4545299a164b422280d4bb764455a73aebe7d1774dca0c3e7e"
     }
   },
@@ -35540,23 +35550,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-ai.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-ai.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：快照与所有权；HFSM进入退出；行为树取消传播；效用门禁；GOAP/HTN；跨模型交接。见references/semantic-ai.json"
+        "basis": "正文逐项推演：动作账本与HFSM路径；行为树取消上行；Utility门禁迟滞；GOAP与HTN及跨模型交接。见references/semantic-final-ai.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-ai.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-ai.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-ai.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-ai.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/semantic-ai.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/semantic-final-ai.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -35637,19 +35647,19 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P1",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "dcc3c0cecb4e141053ad5f0f9408d0aaabe96a59ecd1a7b001b14da312200de0",
-      "independent_record": "references/semantic-ai.json",
+      "independent_record": "references/semantic-final-ai.json",
       "independent_source_sha256": "3b51a7803ffbc7fcd9382a18514aa3201751d2e8ff4b6f43131e85ad54ebaa91",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "3b51a7803ffbc7fcd9382a18514aa3201751d2e8ff4b6f43131e85ad54ebaa91",
       "independent_review": "PASS",
       "findings": [
-        "叶取消后Sequence仍Running：原样传播Cancelled，不启动Selector备用分支",
-        "追击取消中目标改为安全待机：退出追击后重算公共前缀并退出战斗",
-        "撤退候选取消期间失效：释放旧资源后以新快照重选"
+        "追击取消期间目标改到平静需继续退出战斗",
+        "子Cancelled经Running顺序节点必须保持Cancelled",
+        "新计划等待旧移动释放后重验"
       ],
       "runtime": {
         "scope": "行为树、效用和GOAP代码均为机制片段。已复读取消、代数、回归冲突和权重语义；未运行完整NPC框架、异步动作或规划搜索实验。",
@@ -35883,9 +35893,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "semantic_review": {
-      "record": "references/semantic-ai.json",
+      "record": "references/semantic-final-ai.json",
       "date": "2026-10-23",
-      "phase": "P1",
+      "phase": "Final",
       "content_sha256": "3b51a7803ffbc7fcd9382a18514aa3201751d2e8ff4b6f43131e85ad54ebaa91"
     }
   },
@@ -36006,7 +36016,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P2",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "fe538c259388f11d043338ce983204d9cb134dc0eeeb401a38fc9b2af1c32218",
@@ -36255,7 +36265,7 @@
     "semantic_review": {
       "record": "references/semantic-final-ai.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "b012d8ef9cecd8c32df80d6d148e45d523436855df532dc8c271747869f40139"
     }
   },
@@ -37022,7 +37032,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P2",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "1bdc2703a85fb7b0500f1e12cd71fb09d0fb2ae4e61d9b1c2e8b893bedea3ab1",
@@ -37272,7 +37282,7 @@
     "semantic_review": {
       "record": "references/semantic-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "17dd41472399a725c8eca3b88afaf181c367b5a4a9c1c1b4d36016a5e484ee17"
     }
   },
@@ -37556,7 +37566,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P2",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "e9e65578fc0e4f6038526023d5e6b97d2cfb0c6aa40742ab7dd91220fdcacb75",
@@ -37800,7 +37810,7 @@
     "semantic_review": {
       "record": "references/semantic-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "b6e6fb6ccec1e84340a1838f99a5725ac2e91ca65b6fef58d6589d24d03b5ebb"
     }
   },
@@ -38235,7 +38245,7 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "semantic-P2",
+      "phase": "semantic-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "f63be6f7072aee778ca3b06abb89c53a7ea24902823c9c89529086863e518d0b",
@@ -38473,7 +38483,7 @@
     "semantic_review": {
       "record": "references/semantic-final-runtime.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "14f08b31fb53039ba01de0d1fe5296903eb19c6d09d08c669408e8db9845475f"
     }
   },
