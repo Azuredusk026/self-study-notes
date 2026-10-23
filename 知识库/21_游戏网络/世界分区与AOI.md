@@ -85,7 +85,7 @@ BEGIN
   check seq and immutable input digest
   state' = ApplyRules(state, input)
   save state', result(seq), lastInput = seq
-  append outbox(eventId = session + seq, event)
+  append outbox(eventId = (entityInstance, session, fullSeq, effectSlot), event)
 COMMIT
 ack committed result
 ```
