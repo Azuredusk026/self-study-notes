@@ -22458,23 +22458,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-render.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：布局与兼容；动态偏移及非一致刷新；固定数组生产消费；录制持有及设备恢复。见references/continuity-cross-render.json"
+        "basis": "正文逐项推演：布局与兼容；动态偏移与三原点；非一致原子隔离；数组能力与索引生产；不可变快照；录制提交退休；设备换代。见references/resume-render.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-render.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-render.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-render.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -22525,7 +22525,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "873406f4da2442a65c296bfe4da0f2d58d96311cc4deeea25b66b0a407415930",
+    "final_sha256": "2f2edb63e722dfe78a25278ff2ad2eb4c4596582f3cca82bc84c9a6ea296db37",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "GPU资源绑定",
@@ -22537,7 +22537,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "873406f4da2442a65c296bfe4da0f2d58d96311cc4deeea25b66b0a407415930",
+    "reviewed_content_sha256": "2f2edb63e722dfe78a25278ff2ad2eb4c4596582f3cca82bc84c9a6ea296db37",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -22554,20 +22554,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "continuity-Final",
+      "phase": "resume-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "875c87a3dffd44e6f1f07f47740e1c9c30fe2f6ad82b07167fd5e1f26cb9c55f",
-      "independent_record": "references/continuity-cross-render.json",
-      "independent_source_sha256": "873406f4da2442a65c296bfe4da0f2d58d96311cc4deeea25b66b0a407415930",
+      "independent_record": "references/resume-render.json",
+      "independent_source_sha256": "2f2edb63e722dfe78a25278ff2ad2eb4c4596582f3cca82bc84c9a6ea296db37",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "873406f4da2442a65c296bfe4da0f2d58d96311cc4deeea25b66b0a407415930",
+      "content_sha256": "2f2edb63e722dfe78a25278ff2ad2eb4c4596582f3cca82bc84c9a6ea296db37",
       "independent_review": "PASS",
       "findings": [
-        "B=128反例由B原子对齐与帧占用解决",
-        "页B只写槽8会破坏旧材质，正文要求全64有效及索引同版本",
-        "录制未提交由保留令牌持有，GPU完成不足以回收",
-        "旧设备槽8由设备代次拒绝"
+        "B=128须原子隔离",
+        "页A槽8不能配页B",
+        "Recorded旧代次不能提交",
+        "检查代次后关设备由共同入口仲裁"
       ],
       "runtime": {
         "shader_probes": [],
@@ -22906,6 +22906,50 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "873406f4da2442a65c296bfe4da0f2d58d96311cc4deeea25b66b0a407415930"
+    },
+    "resume_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "continuity-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-09-15.json",
+      "author_sha256": "875c87a3dffd44e6f1f07f47740e1c9c30fe2f6ad82b07167fd5e1f26cb9c55f",
+      "independent_record": "references/continuity-cross-render.json",
+      "independent_source_sha256": "873406f4da2442a65c296bfe4da0f2d58d96311cc4deeea25b66b0a407415930",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "873406f4da2442a65c296bfe4da0f2d58d96311cc4deeea25b66b0a407415930",
+      "independent_review": "PASS",
+      "findings": [
+        "B=128反例由B原子对齐与帧占用解决",
+        "页B只写槽8会破坏旧材质，正文要求全64有效及索引同版本",
+        "录制未提交由保留令牌持有，GPU完成不足以回收",
+        "旧设备槽8由设备代次拒绝"
+      ],
+      "runtime": {
+        "shader_probes": [],
+        "git_index_tests": null,
+        "new_transaction_tests": null,
+        "inherited_model_scope": {
+          "scope": "“Vulkan 动态 uniform 示例”明确数据、步骤和边界；未宣称本页CPU实验已运行；完整宿主及GPU执行UNVERIFIED",
+          "cpu_checks": null,
+          "shader_probes": [],
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "performance": "UNVERIFIED"
+        },
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "resume_review": {
+      "record": "references/resume-render.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "2f2edb63e722dfe78a25278ff2ad2eb4c4596582f3cca82bc84c9a6ea296db37"
     }
   },
   {
@@ -24497,23 +24541,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-render.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：覆盖集合；请求状态；Ready持有与录制交接；共享等待者与后台创建。见references/continuity-cross-render.json"
+        "basis": "正文逐项推演：组合覆盖；首屏发现封闭；请求状态；Ready保留；共享取消；首用期限与预算；设备失效。见references/resume-render.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-render.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-render.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-render.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -24569,7 +24613,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "5f9b1bef484fa9f988bf0530f568e0ff33d0356209985ef6ce3f9bd07fb26ad7",
+    "final_sha256": "3ee27c0dafc013252227a540ae68477b1ce4f2f1e2de31e9aedd22a0e53bfb2e",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "PSO首次使用卡顿",
@@ -24581,7 +24625,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "5f9b1bef484fa9f988bf0530f568e0ff33d0356209985ef6ce3f9bd07fb26ad7",
+    "reviewed_content_sha256": "3ee27c0dafc013252227a540ae68477b1ce4f2f1e2de31e9aedd22a0e53bfb2e",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -24598,20 +24642,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "continuity-Final",
+      "phase": "resume-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "5256268d64f0f6c14b8b48c9cda676ecf231a2ec4f615cb410cc52f7600b6ba8",
-      "independent_record": "references/continuity-cross-render.json",
-      "independent_source_sha256": "5f9b1bef484fa9f988bf0530f568e0ff33d0356209985ef6ce3f9bd07fb26ad7",
+      "independent_record": "references/resume-render.json",
+      "independent_source_sha256": "3ee27c0dafc013252227a540ae68477b1ce4f2f1e2de31e9aedd22a0e53bfb2e",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "5f9b1bef484fa9f988bf0530f568e0ff33d0356209985ef6ce3f9bd07fb26ad7",
+      "content_sha256": "3ee27c0dafc013252227a540ae68477b1ce4f2f1e2de31e9aedd22a0e53bfb2e",
       "independent_review": "PASS",
       "findings": [
-        "Failed与未发现请求不能以全局零计数放行",
-        "80ms就绪100ms淘汰200ms首用由加载保留排除",
-        "A退出不能撤销B等待；创建已开始则保留设备输入直到返回",
-        "旧设备创建成功由请求及设备代次拒绝"
+        "A退出与B加入按锁顺序决定新旧请求",
+        "Queued领取与取消互斥",
+        "Creating无人等待仍保留输入",
+        "80就绪100淘汰200首用须保留"
       ],
       "runtime": {
         "shader_probes": [],
@@ -24951,6 +24995,50 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "5f9b1bef484fa9f988bf0530f568e0ff33d0356209985ef6ce3f9bd07fb26ad7"
+    },
+    "resume_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "continuity-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-09-15.json",
+      "author_sha256": "5256268d64f0f6c14b8b48c9cda676ecf231a2ec4f615cb410cc52f7600b6ba8",
+      "independent_record": "references/continuity-cross-render.json",
+      "independent_source_sha256": "5f9b1bef484fa9f988bf0530f568e0ff33d0356209985ef6ce3f9bd07fb26ad7",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "5f9b1bef484fa9f988bf0530f568e0ff33d0356209985ef6ce3f9bd07fb26ad7",
+      "independent_review": "PASS",
+      "findings": [
+        "Failed与未发现请求不能以全局零计数放行",
+        "80ms就绪100ms淘汰200ms首用由加载保留排除",
+        "A退出不能撤销B等待；创建已开始则保留设备输入直到返回",
+        "旧设备创建成功由请求及设备代次拒绝"
+      ],
+      "runtime": {
+        "shader_probes": [],
+        "git_index_tests": null,
+        "new_transaction_tests": null,
+        "inherited_model_scope": {
+          "scope": "“提前准备与加载边界”明确数据、步骤和边界；未宣称本页CPU实验已运行；完整宿主及GPU执行UNVERIFIED",
+          "cpu_checks": null,
+          "shader_probes": [],
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "performance": "UNVERIFIED"
+        },
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "resume_review": {
+      "record": "references/resume-render.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "3ee27c0dafc013252227a540ae68477b1ce4f2f1e2de31e9aedd22a0e53bfb2e"
     }
   },
   {
@@ -25158,23 +25246,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-render.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：时钟关联及读回；事件与像素回溯；硬件计数器与构建；取消及设备丢失。见references/continuity-cross-render.json"
+        "basis": "正文逐项推演：稳定复现；时钟对齐；异步查询读回；黑像素跨资源追踪；覆盖与依赖；计数器与构建。见references/resume-render.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-render.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-render.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-render.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-render.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -25265,20 +25353,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "continuity-Final",
+      "phase": "resume-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "a406658efcd9d38ebfcac9d4fddbe760551470d446c5936413d53cfe5a8b095d",
-      "independent_record": "references/continuity-cross-render.json",
+      "independent_record": "references/resume-render.json",
       "independent_source_sha256": "50f96e26aafc99c57799ebb8ca2842eccb0dcc3b83852a8380254a36179babc4",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "50f96e26aafc99c57799ebb8ca2842eccb0dcc3b83852a8380254a36179babc4",
       "independent_review": "PASS",
       "findings": [
-        "120查询已完成但CPU未消费不能被123覆盖",
-        "取消CPU读者不释放GPU尚在写的区间",
-        "后处理黑像素沿真实输入mip/层/采样足迹而非最终RT回溯",
-        "设备丢失保留缺样而不填0ms；黑像素与慢帧分列假设，缩小纹理变快不能证明黑色原因。"
+        "120未消费不能123覆盖",
+        "丢设备样本不填零",
+        "半分辨率纹素按UV映射",
+        "改小纹理变快不能证明黑色原因"
       ],
       "runtime": {
         "shader_probes": [],
@@ -25616,6 +25704,50 @@
       "record": "references/continuity-cross-render.json",
       "date": "2026-10-23",
       "phase": "Final",
+      "content_sha256": "50f96e26aafc99c57799ebb8ca2842eccb0dcc3b83852a8380254a36179babc4"
+    },
+    "resume_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "continuity-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-09-15.json",
+      "author_sha256": "a406658efcd9d38ebfcac9d4fddbe760551470d446c5936413d53cfe5a8b095d",
+      "independent_record": "references/continuity-cross-render.json",
+      "independent_source_sha256": "50f96e26aafc99c57799ebb8ca2842eccb0dcc3b83852a8380254a36179babc4",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "50f96e26aafc99c57799ebb8ca2842eccb0dcc3b83852a8380254a36179babc4",
+      "independent_review": "PASS",
+      "findings": [
+        "120查询已完成但CPU未消费不能被123覆盖",
+        "取消CPU读者不释放GPU尚在写的区间",
+        "后处理黑像素沿真实输入mip/层/采样足迹而非最终RT回溯",
+        "设备丢失保留缺样而不填0ms；黑像素与慢帧分列假设，缩小纹理变快不能证明黑色原因。"
+      ],
+      "runtime": {
+        "shader_probes": [],
+        "git_index_tests": null,
+        "new_transaction_tests": null,
+        "inherited_model_scope": {
+          "scope": "“证据与假设”明确数据、步骤和边界；未宣称本页CPU实验已运行；完整宿主及GPU执行UNVERIFIED",
+          "cpu_checks": null,
+          "shader_probes": [],
+          "engine_compile": "UNVERIFIED",
+          "engine_runtime": "UNVERIFIED",
+          "gpu_capture": "UNVERIFIED",
+          "performance": "UNVERIFIED"
+        },
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "resume_review": {
+      "record": "references/resume-render.json",
+      "date": "2026-10-23",
+      "phase": "P2",
       "content_sha256": "50f96e26aafc99c57799ebb8ca2842eccb0dcc3b83852a8380254a36179babc4"
     }
   },
@@ -28436,23 +28568,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-system.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：翻译单元与链接；ABI布局；移动与异常保证；接口版本；关闭与回调寿命。见references/continuity-cross-network.json"
+        "basis": "正文逐项推演：插件翻译单元、符号链接、加载与ABI错误分阶段定位；extern声明和模板显式实例化；类型布局、虚析构、复制移动与RAII异常保证连接C ABI创建输出提交；接口version/size前缀和模块代次对象表配对Destroy；普通调用、后台令牌、存活对象分别计数；Closing关闭入口，RequestStop唤醒，Draining排空；对象析构DAG与提供模块依赖冻结后按依赖者优先销毁；超时保留模块和阶段回执续行；Win32常驻跳板拒绝旧代迟到事件；COM独立引用和Apartment封送约定。见references/resume-system.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-system.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-system.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-system.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -28504,7 +28636,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "45a81c65b1546b925c42b29ce854178fd28346a5fd4455eb32c7c9621caa239e",
+    "final_sha256": "53ec5a5fd155af1338998ee17676fd4aa5b636b0650166cbc7b77e5c2ec96685",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "C++工程边界",
@@ -28516,7 +28648,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "45a81c65b1546b925c42b29ce854178fd28346a5fd4455eb32c7c9621caa239e",
+    "reviewed_content_sha256": "53ec5a5fd155af1338998ee17676fd4aa5b636b0650166cbc7b77e5c2ec96685",
     "source_article_path": "知识库/16_编程与数据结构/C++、CSharp与Python工程基础.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -28534,20 +28666,21 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "continuity-Final",
+      "phase": "resume-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "ef64e2b805ec769b3fcdcf27e9738b03b1abe6263b5675c42452946492c0579f",
-      "independent_record": "references/continuity-cross-network.json",
-      "independent_source_sha256": "45a81c65b1546b925c42b29ce854178fd28346a5fd4455eb32c7c9621caa239e",
+      "independent_record": "references/resume-system.json",
+      "independent_source_sha256": "53ec5a5fd155af1338998ee17676fd4aa5b636b0650166cbc7b77e5c2ec96685",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "45a81c65b1546b925c42b29ce854178fd28346a5fd4455eb32c7c9621caa239e",
+      "content_sha256": "53ec5a5fd155af1338998ee17676fd4aa5b636b0650166cbc7b77e5c2ec96685",
       "independent_review": "PASS",
       "findings": [
-        "包含保护不解决双翻译单元全局定义",
-        "固定宽整数不消除填充",
-        "投递失败归还活动令牌",
-        "回调内部不能同步卸载等待自身"
+        "把存活对象算入等归零的活动计数会等Destroy而Destroy等计数；正文拆成对象表与两类计数",
+        "A析构借用B时先DestroyB悬空；冻结依赖表选择无存活依赖者A，再销毁B",
+        "已排队插件裸回调在卸载后进入：投递前持令牌，常驻跳板检查代次及Closing",
+        "工作线程等待对象停止信号而关闭方先等待：RequestStop先于Draining且对象保留",
+        "卸载超时重来重复Destroy：唯一关闭执行者保存阶段与对象回执，成功销毁即移除记录"
       ],
       "runtime": {
         "scope": "C ABI声明是接口片段，未编译动态库与加载宿主。版本前缀、错误输出和卸载顺序已在正文明确，实际工具链ABI仍需构建验证。",
@@ -28815,6 +28948,40 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "45a81c65b1546b925c42b29ce854178fd28346a5fd4455eb32c7c9621caa239e"
+    },
+    "resume_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "continuity-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "ef64e2b805ec769b3fcdcf27e9738b03b1abe6263b5675c42452946492c0579f",
+      "independent_record": "references/continuity-cross-network.json",
+      "independent_source_sha256": "45a81c65b1546b925c42b29ce854178fd28346a5fd4455eb32c7c9621caa239e",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "45a81c65b1546b925c42b29ce854178fd28346a5fd4455eb32c7c9621caa239e",
+      "independent_review": "PASS",
+      "findings": [
+        "包含保护不解决双翻译单元全局定义",
+        "固定宽整数不消除填充",
+        "投递失败归还活动令牌",
+        "回调内部不能同步卸载等待自身"
+      ],
+      "runtime": {
+        "scope": "C ABI声明是接口片段，未编译动态库与加载宿主。版本前缀、错误输出和卸载顺序已在正文明确，实际工具链ABI仍需构建验证。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "resume_review": {
+      "record": "references/resume-system.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "53ec5a5fd155af1338998ee17676fd4aa5b636b0650166cbc7b77e5c2ec96685"
     }
   },
   {
@@ -30295,23 +30462,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-network.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：缓存与短读；系统请求和逻辑读取；解码交接；清单发布；代理排空与删除。见references/continuity-cross-network.json"
+        "basis": "正文逐项推演：页缓存、短读、直接IO与映射；请求取消和子请求身份；解码及资源代次交接；不可变发布与CAS冲突续行；代理纪元、运行中排空与删除恢复。见references/resume-network.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-network.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-network.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-network.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -30353,7 +30520,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "5eb5b85e84a757700ac326b8cdabbb9143b587868905a92098522998521c28d5",
+    "final_sha256": "9850f1d52cd794fb4e7197442837afe5da9c79c6829c22860d628e30c6ca902f",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "文件IO",
@@ -30365,7 +30532,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "5eb5b85e84a757700ac326b8cdabbb9143b587868905a92098522998521c28d5",
+    "reviewed_content_sha256": "9850f1d52cd794fb4e7197442837afe5da9c79c6829c22860d628e30c6ca902f",
     "source_article_path": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -30383,20 +30550,21 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "continuity-Final",
+      "phase": "resume-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "52caa93f715b03db9f723dc9bea4baa3217dc12e24238792f86f0758caa9c0f6",
-      "independent_record": "references/continuity-cross-network.json",
-      "independent_source_sha256": "5eb5b85e84a757700ac326b8cdabbb9143b587868905a92098522998521c28d5",
+      "independent_record": "references/resume-network.json",
+      "independent_source_sha256": "9850f1d52cd794fb4e7197442837afe5da9c79c6829c22860d628e30c6ca902f",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "5eb5b85e84a757700ac326b8cdabbb9143b587868905a92098522998521c28d5",
+      "content_sha256": "9850f1d52cd794fb4e7197442837afe5da9c79c6829c22860d628e30c6ca902f",
       "independent_review": "PASS",
       "findings": [
-        "8字节先读3：请求槽归还但字节预算不归还",
-        "任务创建失败读取方释放，投递失败提交方销毁任务",
-        "Draining仍等短读续读请求结束",
-        "旧实例失联保留持久保护"
+        "头部3+2+3分别使用3000/3003/3005偏移且保留字节预算",
+        "P提交g8/B而Q预期g7冲突，Q需保留/重建/新发布ID续行",
+        "P提交后丢响应，原发布ID返回原g8回执",
+        "A加载晚于B采用资格失效，A缓冲仍等消费者退出",
+        "Deleting与发布引用仲裁避免重新指向删除中目录"
       ],
       "runtime": {
         "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页运行临时目录里的真实文件写入、替换与替换前异常，验证最终内容和临时文件清理；未执行断电、网络文件系统或异步驱动取消测试。",
@@ -30657,6 +30825,40 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "5eb5b85e84a757700ac326b8cdabbb9143b587868905a92098522998521c28d5"
+    },
+    "resume_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "continuity-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "52caa93f715b03db9f723dc9bea4baa3217dc12e24238792f86f0758caa9c0f6",
+      "independent_record": "references/continuity-cross-network.json",
+      "independent_source_sha256": "5eb5b85e84a757700ac326b8cdabbb9143b587868905a92098522998521c28d5",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "5eb5b85e84a757700ac326b8cdabbb9143b587868905a92098522998521c28d5",
+      "independent_review": "PASS",
+      "findings": [
+        "8字节先读3：请求槽归还但字节预算不归还",
+        "任务创建失败读取方释放，投递失败提交方销毁任务",
+        "Draining仍等短读续读请求结束",
+        "旧实例失联保留持久保护"
+      ],
+      "runtime": {
+        "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页运行临时目录里的真实文件写入、替换与替换前异常，验证最终内容和临时文件清理；未执行断电、网络文件系统或异步驱动取消测试。",
+        "cpu_command": "python 知识库/examples/revision_16_21/test_reference.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "resume_review": {
+      "record": "references/resume-network.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "9850f1d52cd794fb4e7197442837afe5da9c79c6829c22860d628e30c6ca902f"
     }
   },
   {
@@ -33358,23 +33560,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-agent.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-assets.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：反向对应与逐足迹拒绝；像素投影DDIM；曝光与置信度；双向融合及条件提交。见references/continuity-cross-agent.json"
+        "basis": "正文逐项推演：反向对应、逐足迹Q及锚点拒绝；视深度与法线空间输送；整图编码、DDIM步长、像素投影及显露初始化；曝光稳定遮罩、Q/A分离和方向历史隔离；双向冲突选路、补洞、人工决议和整序列消费。见references/resume-assets.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-agent.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-assets.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-agent.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-assets.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-agent.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-assets.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -33427,7 +33629,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "1ee7507f4dbd0405217d7ebf1373a1386b14e3ea77eeb06b56f198887342e354",
+    "final_sha256": "904e85ace851593fd4334892148a091a2be57f6941b600bd2592cf50473d25c8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "视频生成时序一致性",
@@ -33439,7 +33641,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "1ee7507f4dbd0405217d7ebf1373a1386b14e3ea77eeb06b56f198887342e354",
+    "reviewed_content_sha256": "904e85ace851593fd4334892148a091a2be57f6941b600bd2592cf50473d25c8",
     "source_article_path": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -33457,20 +33659,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "continuity-Final",
+      "phase": "resume-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "4d2973877344a896d1fca6bc2fda130a9a3322f2aaedf5815226a7e76f58c421",
-      "independent_record": "references/continuity-cross-agent.json",
-      "independent_source_sha256": "1ee7507f4dbd0405217d7ebf1373a1386b14e3ea77eeb06b56f198887342e354",
+      "independent_record": "references/resume-assets.json",
+      "independent_source_sha256": "904e85ace851593fd4334892148a091a2be57f6941b600bd2592cf50473d25c8",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "1ee7507f4dbd0405217d7ebf1373a1386b14e3ea77eeb06b56f198887342e354",
+      "content_sha256": "904e85ace851593fd4334892148a091a2be57f6941b600bd2592cf50473d25c8",
       "independent_review": "PASS",
       "findings": [
-        "非零低Q样本不能被插值稀释",
-        "显露Q重置1但锚点保持0",
-        "关键帧重新批准使依赖清单失效，旧任务不能推进新指针",
-        "两路总权重0走当前结构补洞而非除0"
+        "第4帧显露衣服M=0，内容通过后Q=1但锚点仍0",
+        "固定种子跨设备不能替代已提交文件，恢复读哈希清单",
+        "人工批准旧候选期间一方向重算，批准哈希比较失败",
+        "编码器遇缺帧报错，不跨版本混搭"
       ],
       "runtime": {
         "scope": "本页光流与法线公式是坐标推导；TokenFlow引用支持扩散特征对应传播，不证明本页的全部过滤策略。未生成视频或测量时序指标。",
@@ -33752,6 +33954,40 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "1ee7507f4dbd0405217d7ebf1373a1386b14e3ea77eeb06b56f198887342e354"
+    },
+    "resume_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "continuity-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "4d2973877344a896d1fca6bc2fda130a9a3322f2aaedf5815226a7e76f58c421",
+      "independent_record": "references/continuity-cross-agent.json",
+      "independent_source_sha256": "1ee7507f4dbd0405217d7ebf1373a1386b14e3ea77eeb06b56f198887342e354",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "1ee7507f4dbd0405217d7ebf1373a1386b14e3ea77eeb06b56f198887342e354",
+      "independent_review": "PASS",
+      "findings": [
+        "非零低Q样本不能被插值稀释",
+        "显露Q重置1但锚点保持0",
+        "关键帧重新批准使依赖清单失效，旧任务不能推进新指针",
+        "两路总权重0走当前结构补洞而非除0"
+      ],
+      "runtime": {
+        "scope": "本页光流与法线公式是坐标推导；TokenFlow引用支持扩散特征对应传播，不证明本页的全部过滤策略。未生成视频或测量时序指标。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "resume_review": {
+      "record": "references/resume-assets.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "904e85ace851593fd4334892148a091a2be57f6941b600bd2592cf50473d25c8"
     }
   },
   {
@@ -36164,23 +36400,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-agent.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-assets.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：动作账本；HFSM活动路径；BT终态传播；Utility门禁；GOAP/HTN执行；世界快照恢复。见references/continuity-cross-agent.json"
+        "basis": "正文逐项推演：只读黑板和实例资源归属；HFSM公共祖先、进入失败和异步退出；行为树四态、父子复位和Cancelled传播；门禁、几何平均与迟滞；GOAP回归、负效果、HTN临时状态回滚；异步事件消费批次、动作命令及存档重放。见references/resume-assets.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-agent.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-assets.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-agent.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-assets.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-agent.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-assets.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -36232,7 +36468,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "74f9acb93f1377b2fefe46e1f08e58837008e0b764744af0c97088e86218b357",
+    "final_sha256": "faf8b7534492527fe69bf7920f17630db730788bd076bb69dfdca7172b1e5322",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "游戏AI决策模型",
@@ -36244,7 +36480,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "74f9acb93f1377b2fefe46e1f08e58837008e0b764744af0c97088e86218b357",
+    "reviewed_content_sha256": "faf8b7534492527fe69bf7920f17630db730788bd076bb69dfdca7172b1e5322",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -36261,20 +36497,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "continuity-Final",
+      "phase": "resume-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "dcc3c0cecb4e141053ad5f0f9408d0aaabe96a59ecd1a7b001b14da312200de0",
-      "independent_record": "references/continuity-cross-agent.json",
-      "independent_source_sha256": "74f9acb93f1377b2fefe46e1f08e58837008e0b764744af0c97088e86218b357",
+      "independent_record": "references/resume-assets.json",
+      "independent_source_sha256": "faf8b7534492527fe69bf7920f17630db730788bd076bb69dfdca7172b1e5322",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "74f9acb93f1377b2fefe46e1f08e58837008e0b764744af0c97088e86218b357",
+      "content_sha256": "faf8b7534492527fe69bf7920f17630db730788bd076bb69dfdca7172b1e5322",
       "independent_review": "PASS",
       "findings": [
-        "追击退出中目标改平静：重算剩余活动前缀",
-        "Cancelled穿过Running顺序节点不转Failure",
-        "Enter部分成功先清理再失败",
-        "恢复Running不能重复Enter，先宿主对账"
+        "受伤先于成功消费导致Cancelled，反序导致Success；重放不能用新到达速度",
+        "旧动作释放比较所有者，不清空新实例槽",
+        "提交命令后崩溃按命令ID对账；重放不重复领取资源",
+        "失败Enter清理前父节点不能推进下一动作"
       ],
       "runtime": {
         "scope": "行为树、效用和GOAP代码均为机制片段。已复读取消、代数、回归冲突和权重语义；未运行完整NPC框架、异步动作或规划搜索实验。",
@@ -36545,6 +36781,40 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "74f9acb93f1377b2fefe46e1f08e58837008e0b764744af0c97088e86218b357"
+    },
+    "resume_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "continuity-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "dcc3c0cecb4e141053ad5f0f9408d0aaabe96a59ecd1a7b001b14da312200de0",
+      "independent_record": "references/continuity-cross-agent.json",
+      "independent_source_sha256": "74f9acb93f1377b2fefe46e1f08e58837008e0b764744af0c97088e86218b357",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "74f9acb93f1377b2fefe46e1f08e58837008e0b764744af0c97088e86218b357",
+      "independent_review": "PASS",
+      "findings": [
+        "追击退出中目标改平静：重算剩余活动前缀",
+        "Cancelled穿过Running顺序节点不转Failure",
+        "Enter部分成功先清理再失败",
+        "恢复Running不能重复Enter，先宿主对账"
+      ],
+      "runtime": {
+        "scope": "行为树、效用和GOAP代码均为机制片段。已复读取消、代数、回归冲突和权重语义；未运行完整NPC框架、异步动作或规划搜索实验。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "resume_review": {
+      "record": "references/resume-assets.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "faf8b7534492527fe69bf7920f17630db730788bd076bb69dfdca7172b1e5322"
     }
   },
   {
@@ -36566,23 +36836,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-agent.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-assets.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：烘焙单位与门户；漏斗索引回退；圆弧速度表；ORCA与走廊联合求解；取消和恢复。见references/continuity-cross-agent.json"
+        "basis": "正文逐项推演：半径侵蚀、净空和分层邻接；A*代价、快照查询和版本结果消费；门户漏斗回退与曲线联合裁剪；制动速度表、ORCA半平面及双圆可达求解；凸走廊约束、无解制动、实际反馈与异步取消。见references/resume-assets.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-agent.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-assets.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-agent.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-assets.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-agent.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-assets.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -36635,7 +36905,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "7fe2ee3f2e248e723e26913c10f99aa70ee5c295511517789c1914a004efc81d",
+    "final_sha256": "9edf59800071d13f38b2926d6fd854bbe6236368ac0d988e5c56656012694bd7",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "游戏AI导航",
@@ -36647,7 +36917,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "7fe2ee3f2e248e723e26913c10f99aa70ee5c295511517789c1914a004efc81d",
+    "reviewed_content_sha256": "9edf59800071d13f38b2926d6fd854bbe6236368ac0d988e5c56656012694bd7",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -36664,20 +36934,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "continuity-Final",
+      "phase": "resume-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "fe538c259388f11d043338ce983204d9cb134dc0eeeb401a38fc9b2af1c32218",
-      "independent_record": "references/continuity-cross-agent.json",
-      "independent_source_sha256": "7fe2ee3f2e248e723e26913c10f99aa70ee5c295511517789c1914a004efc81d",
+      "independent_record": "references/resume-assets.json",
+      "independent_source_sha256": "9edf59800071d13f38b2926d6fd854bbe6236368ac0d988e5c56656012694bd7",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "7fe2ee3f2e248e723e26913c10f99aa70ee5c295511517789c1914a004efc81d",
+      "content_sha256": "9edf59800071d13f38b2926d6fd854bbe6236368ac0d988e5c56656012694bd7",
       "independent_review": "PASS",
       "findings": [
-        "两相邻圆弧各裁0.7米而线段1米需联合缩小",
-        "墙限制vx<=1而动态约束vx>=1.5时明确无解回退",
-        "控制器截断采用实际位移更新",
-        "平台带走角色导致候选起点复验失败"
+        "门8版搜索Q7返回前关闭为9，结果拒绝并查询Q8",
+        "瓦片重建期间快照保活，不能混旧多边形与新邻接",
+        "ORCA唯一方向穿墙时两集合无解，回退也报告失败",
+        "取消期间平台搬运位置，候选路径启动重验起点"
       ],
       "runtime": {
         "scope": "导航生成与ORCA职责按来源核读，正文跟随为C++机制片段。尚未烘焙测试关卡、运行漏斗或群体避障；A*主算法验证归属图搜索。",
@@ -36949,6 +37219,40 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "7fe2ee3f2e248e723e26913c10f99aa70ee5c295511517789c1914a004efc81d"
+    },
+    "resume_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "continuity-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "fe538c259388f11d043338ce983204d9cb134dc0eeeb401a38fc9b2af1c32218",
+      "independent_record": "references/continuity-cross-agent.json",
+      "independent_source_sha256": "7fe2ee3f2e248e723e26913c10f99aa70ee5c295511517789c1914a004efc81d",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "7fe2ee3f2e248e723e26913c10f99aa70ee5c295511517789c1914a004efc81d",
+      "independent_review": "PASS",
+      "findings": [
+        "两相邻圆弧各裁0.7米而线段1米需联合缩小",
+        "墙限制vx<=1而动态约束vx>=1.5时明确无解回退",
+        "控制器截断采用实际位移更新",
+        "平台带走角色导致候选起点复验失败"
+      ],
+      "runtime": {
+        "scope": "导航生成与ORCA职责按来源核读，正文跟随为C++机制片段。尚未烘焙测试关卡、运行漏斗或群体避障；A*主算法验证归属图搜索。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "resume_review": {
+      "record": "references/resume-assets.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "9edf59800071d13f38b2926d6fd854bbe6236368ac0d988e5c56656012694bd7"
     }
   },
   {
@@ -38156,23 +38460,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-network.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：完整序号与模拟锚点；碰撞重放；缺口拒绝；输入ACK与动作回执；表现恢复。见references/continuity-cross-network.json"
+        "basis": "正文逐项推演：输入身份与ACK/Tick配对；碰撞及外部平台重放；缺口与拒绝消费；动作修订单调合并；回执流缺口、恢复基线及事件去重；预测纪元与业务会话关闭。见references/resume-network.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-network.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-network.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/continuity-cross-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/resume-network.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -38218,7 +38522,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "95cf17857fd18f224884f86dfd850369c87d1bbf05c3a9c63f480c84fd6d4769",
+    "final_sha256": "bef1780a96e0e65a7c9926dcd9be8e5f9496925f9610137c3b6e76269111ad2f",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "客户端预测",
@@ -38230,7 +38534,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "95cf17857fd18f224884f86dfd850369c87d1bbf05c3a9c63f480c84fd6d4769",
+    "reviewed_content_sha256": "bef1780a96e0e65a7c9926dcd9be8e5f9496925f9610137c3b6e76269111ad2f",
     "source_article_path": "知识库/21_游戏网络/状态同步、预测与回滚.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -38248,20 +38552,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "continuity-Final",
+      "phase": "resume-P2",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "e9e65578fc0e4f6038526023d5e6b97d2cfb0c6aa40742ab7dd91220fdcacb75",
-      "independent_record": "references/continuity-cross-network.json",
-      "independent_source_sha256": "95cf17857fd18f224884f86dfd850369c87d1bbf05c3a9c63f480c84fd6d4769",
+      "independent_record": "references/resume-network.json",
+      "independent_source_sha256": "bef1780a96e0e65a7c9926dcd9be8e5f9496925f9610137c3b6e76269111ad2f",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "95cf17857fd18f224884f86dfd850369c87d1bbf05c3a9c63f480c84fd6d4769",
+      "content_sha256": "bef1780a96e0e65a7c9926dcd9be8e5f9496925f9610137c3b6e76269111ad2f",
       "independent_review": "PASS",
       "findings": [
-        "ACK17但射击Pending：输入出队而回执保留",
-        "相同ACK新Tick平台仍更新",
-        "上一整轮低位0不能当65536",
-        "超历史窗口先关闭输入业务会话"
+        "604终态先于600Pending到达，修订2保持终态",
+        "ACK17丢失但命中先到，移动仍可重放而音效只消费一次",
+        "流游标有缺口不越过，完整基线覆盖后丢弃旧流记录",
+        "预测纪元切换后迟到原事件仍按身份去重"
       ],
       "runtime": {
         "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页验证序号回绕及包含墙面钳制的输入重放；旧 completion_reference.py 只验证加法分段关系。真实移动平台与碰撞引擎的重放尚未运行。",
@@ -38528,6 +38832,40 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "95cf17857fd18f224884f86dfd850369c87d1bbf05c3a9c63f480c84fd6d4769"
+    },
+    "resume_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "continuity-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "e9e65578fc0e4f6038526023d5e6b97d2cfb0c6aa40742ab7dd91220fdcacb75",
+      "independent_record": "references/continuity-cross-network.json",
+      "independent_source_sha256": "95cf17857fd18f224884f86dfd850369c87d1bbf05c3a9c63f480c84fd6d4769",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "95cf17857fd18f224884f86dfd850369c87d1bbf05c3a9c63f480c84fd6d4769",
+      "independent_review": "PASS",
+      "findings": [
+        "ACK17但射击Pending：输入出队而回执保留",
+        "相同ACK新Tick平台仍更新",
+        "上一整轮低位0不能当65536",
+        "超历史窗口先关闭输入业务会话"
+      ],
+      "runtime": {
+        "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页验证序号回绕及包含墙面钳制的输入重放；旧 completion_reference.py 只验证加法分段关系。真实移动平台与碰撞引擎的重放尚未运行。",
+        "cpu_command": "python 知识库/examples/revision_16_21/test_reference.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "resume_review": {
+      "record": "references/resume-network.json",
+      "date": "2026-10-23",
+      "phase": "P2",
+      "content_sha256": "bef1780a96e0e65a7c9926dcd9be8e5f9496925f9610137c3b6e76269111ad2f"
     }
   },
   {
