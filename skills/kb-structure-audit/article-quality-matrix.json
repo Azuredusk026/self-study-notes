@@ -29343,23 +29343,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/resume-cross-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：粒子热字段、缓存组、碎片和Buddy身份；固定宽度对齐和并发游标领取；Reserved/Committed/Aborted/Destroyed记录与提交链；提交依赖边的序号检查、显式收尾与逆序析构；CPU引用、GPU队列完成、Closing门与槽代次。见references/resume-cross-system.json"
+        "basis": "正文逐项推演：字段读取与AoS/SoA；缓存映射；栈堆与驻留；碎片与分配器；对齐与并发游标；构造提交链；析构依赖；双队列退休。见references/delivery-priority.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/resume-cross-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/resume-cross-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/resume-cross-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -29405,7 +29405,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "f738663b1000fb059aa40bcdf15d09d10503637918cd8aba0be28bbf19252c17",
+    "final_sha256": "1a8a9d25968c358bff3f6f5e6486030ca1424c56edbf4d4b75b89e695eb4b264",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "内存布局与分配",
@@ -29417,7 +29417,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "f738663b1000fb059aa40bcdf15d09d10503637918cd8aba0be28bbf19252c17",
+    "reviewed_content_sha256": "1a8a9d25968c358bff3f6f5e6486030ca1424c56edbf4d4b75b89e695eb4b264",
     "source_article_path": "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -29435,21 +29435,21 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "resume-Final",
+      "phase": "delivery-P1",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "9072767e1c3c51008285c9becfbdc3b711a99915b073436b31f2c4d04c6cda93",
-      "independent_record": "references/resume-cross-system.json",
-      "independent_source_sha256": "f738663b1000fb059aa40bcdf15d09d10503637918cd8aba0be28bbf19252c17",
+      "independent_record": "references/delivery-priority.json",
+      "independent_source_sha256": "1a8a9d25968c358bff3f6f5e6486030ca1424c56edbf4d4b75b89e695eb4b264",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "f738663b1000fb059aa40bcdf15d09d10503637918cd8aba0be28bbf19252c17",
+      "content_sha256": "1a8a9d25968c358bff3f6f5e6486030ca1424c56edbf4d4b75b89e695eb4b264",
       "independent_review": "PASS",
       "findings": [
-        "A先预留B先提交，B序号1/A序号2，A先析构仍能用B",
-        "提交后B借用A会违反序号规则，字段写入前拒绝；双向收尾转独立值后再析构",
-        "构造异常只析构完成子对象，记录Aborted不再次析构外对象",
-        "Closing已持引用任务可提交，退休先等计数零；成功构造不会遇到关闭后登记失败",
-        "图形42>=41但复制16<17仍保留A/B；复制17且显式收尾完成才析构和重置代次"
+        "4项AoS192与SoA144",
+        "打包192不能忽略成本",
+        "cursor13经对齐最终400",
+        "A先预留B先提交按序2再1销毁",
+        "复制16未到17不可复用"
       ],
       "runtime": {
         "scope": "分配器为整数关系与寿命伪代码，未实现平台分配器或测量缓存命中。字节算例用于审查对齐范围，性能结论保留工作负载条件。",
@@ -29752,6 +29752,41 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "f738663b1000fb059aa40bcdf15d09d10503637918cd8aba0be28bbf19252c17"
+    },
+    "delivery_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "resume-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "9072767e1c3c51008285c9becfbdc3b711a99915b073436b31f2c4d04c6cda93",
+      "independent_record": "references/resume-cross-system.json",
+      "independent_source_sha256": "f738663b1000fb059aa40bcdf15d09d10503637918cd8aba0be28bbf19252c17",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "f738663b1000fb059aa40bcdf15d09d10503637918cd8aba0be28bbf19252c17",
+      "independent_review": "PASS",
+      "findings": [
+        "A先预留B先提交，B序号1/A序号2，A先析构仍能用B",
+        "提交后B借用A会违反序号规则，字段写入前拒绝；双向收尾转独立值后再析构",
+        "构造异常只析构完成子对象，记录Aborted不再次析构外对象",
+        "Closing已持引用任务可提交，退休先等计数零；成功构造不会遇到关闭后登记失败",
+        "图形42>=41但复制16<17仍保留A/B；复制17且显式收尾完成才析构和重置代次"
+      ],
+      "runtime": {
+        "scope": "分配器为整数关系与寿命伪代码，未实现平台分配器或测量缓存命中。字节算例用于审查对齐范围，性能结论保留工作负载条件。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "delivery_review": {
+      "record": "references/delivery-priority.json",
+      "date": "2026-10-23",
+      "phase": "P1",
+      "content_sha256": "1a8a9d25968c358bff3f6f5e6486030ca1424c56edbf4d4b75b89e695eb4b264"
     }
   },
   {
@@ -32439,23 +32474,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/resume-cross-assets.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：餐桌任务J的查询硬约束、单位变换、几何/导航验证及有限返工；Prepared/Applied/Recorded与单写代次、创建挂接快照和移动条件版本；B补偿v3到v4后A承接v4，回执消费与游标事务推进；T字段与R关系集合分别版本化，挂接/删除跨对象回执原子推进；Conflict决议接纳、保留父关系闭包、Waived剩余项闭包、决议后恢复；不可变产物、批准绑定、条件发布/撤回及消费者失败保留旧场景。见references/resume-cross-assets.json"
+        "basis": "正文逐项推演：餐桌J尺寸单位、可行域膨胀、栅格可达性与V1/V2实际场景验证；跨对象读取集合、区域查询空集合保护、修改集合与宿主条件提交；固定外部资产/规则/导航哈希与源几何匹配；本任务回执承接后重新校验；Prepared未交付续行、宿主接管与稳定业务摘要；连续补偿游标、父子关系集合版本、冲突决议保留闭包；不可变批准候选、发布与撤回代次、消费者完整加载。见references/delivery-priority.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/resume-cross-assets.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/resume-cross-assets.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/resume-cross-assets.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -32517,7 +32552,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "aa9457cb5eb5759e068d274c949cc28a3bdd479c24a111038525bcac64fbccdb",
+    "final_sha256": "ca38a69fc49e399bc26f61dc7bf5738992431817494c93fb884f55f790023af8",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "Agent资产管线",
@@ -32529,7 +32564,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "aa9457cb5eb5759e068d274c949cc28a3bdd479c24a111038525bcac64fbccdb",
+    "reviewed_content_sha256": "ca38a69fc49e399bc26f61dc7bf5738992431817494c93fb884f55f790023af8",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -32546,21 +32581,22 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "resume-Final",
+      "phase": "delivery-P1",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "e9af4532e29291c4b9d8f03901e3a8e1e83827016b4ba0ab918dac901876bd78",
-      "independent_record": "references/resume-cross-assets.json",
-      "independent_source_sha256": "aa9457cb5eb5759e068d274c949cc28a3bdd479c24a111038525bcac64fbccdb",
+      "independent_record": "references/delivery-priority.json",
+      "independent_source_sha256": "ca38a69fc49e399bc26f61dc7bf5738992431817494c93fb884f55f790023af8",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "aa9457cb5eb5759e068d274c949cc28a3bdd479c24a111038525bcac64fbccdb",
+      "content_sha256": "ca38a69fc49e399bc26f61dc7bf5738992431817494c93fb884f55f790023af8",
       "independent_review": "PASS",
       "findings": [
-        "人工加椅子再删使集合c2到c4，即使集合为空仍拒绝删除R；关系回执仅承接任务自身变化",
-        "人工在v4后改色到v5，恢复A必须绑定v5与决议ID；批准移动不隐含批准删除",
-        "本次独立发现：Waived只跳过B会继续A并删T；作者已补默认A/创建T Retained及父闭包，明确绑定剩余目标才续行",
-        "决议宿主已提交但游标未更新崩溃：按决议ID回执补登记",
-        "发布11响应丢失、人工12在先，旧回执不能覆盖或撤回12"
+        "R变换r1到r2而T对象和关系未变：宿主读集比较拒绝旧操作，关闭计划及验证批准后重算，新操作ID绑定新计划",
+        "空区域新增椅子：区域集合版本变化使旧计划失效，不能只比较原查询返回对象",
+        "A自身写v2后B仍按v1执行：B消费A持久回执并在新快照校验；任务身份不能跳过验证",
+        "Prepared落盘未派发后取消/父变换变化：先对账，取消不补发；正向续行仍按原读写条件，过期走返工",
+        "撤销B产v4后人工v5：版本比较冲突；保留或Waived向父关系传播，批准恢复位置不隐含批准删除",
+        "发布11响应丢失而人工12：返回11原回执并保护12"
       ],
       "runtime": {
         "scope": "本页是资产任务设计与接口协议，未部署Agent、连接DCC或执行资产发布。事务边界的可运行示例见RPC篇，场景操作的幂等性必须由各工具实现验证。",
@@ -32854,6 +32890,41 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "aa9457cb5eb5759e068d274c949cc28a3bdd479c24a111038525bcac64fbccdb"
+    },
+    "delivery_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "resume-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "e9af4532e29291c4b9d8f03901e3a8e1e83827016b4ba0ab918dac901876bd78",
+      "independent_record": "references/resume-cross-assets.json",
+      "independent_source_sha256": "aa9457cb5eb5759e068d274c949cc28a3bdd479c24a111038525bcac64fbccdb",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "aa9457cb5eb5759e068d274c949cc28a3bdd479c24a111038525bcac64fbccdb",
+      "independent_review": "PASS",
+      "findings": [
+        "人工加椅子再删使集合c2到c4，即使集合为空仍拒绝删除R；关系回执仅承接任务自身变化",
+        "人工在v4后改色到v5，恢复A必须绑定v5与决议ID；批准移动不隐含批准删除",
+        "本次独立发现：Waived只跳过B会继续A并删T；作者已补默认A/创建T Retained及父闭包，明确绑定剩余目标才续行",
+        "决议宿主已提交但游标未更新崩溃：按决议ID回执补登记",
+        "发布11响应丢失、人工12在先，旧回执不能覆盖或撤回12"
+      ],
+      "runtime": {
+        "scope": "本页是资产任务设计与接口协议，未部署Agent、连接DCC或执行资产发布。事务边界的可运行示例见RPC篇，场景操作的幂等性必须由各工具实现验证。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "delivery_review": {
+      "record": "references/delivery-priority.json",
+      "date": "2026-10-23",
+      "phase": "P1",
+      "content_sha256": "ca38a69fc49e399bc26f61dc7bf5738992431817494c93fb884f55f790023af8"
     }
   },
   {
@@ -36398,23 +36469,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/resume-cross-assets.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：快照事件批次和消费序号、命令ID回执及世界边界重放；动作独占资源与取消终态交接；HFSM实际路径/LCA逐步退出和Enter失败清理；BT Idle/Running/Cancelling/Finished与顺序/选择Cancelled传播；效用门禁、几何平均评分和失效绕过迟滞；GOAP反向事实、负效果/最优成本去重与HTN临时状态回退；快照42追击17到43取消到44候选18再接纳，存档对账后继续。见references/resume-cross-assets.json"
+        "basis": "正文逐项推演：黑板事实与跨对象读取集在接纳边界核对，运行后失效继续取消；FSM逐段退出与部分进入失败，BT等待接纳及取消传播；效用门禁、几何评分及失效绕过迟滞，GOAP回归与HTN临时状态；稳定命令身份、持久出站、宿主Absent/Unknown及原接纳/终态回执；统一有序世界效果日志、恢复排他锁与纪元栅栏、L100至L104二次恢复。见references/delivery-priority.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/resume-cross-assets.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/resume-cross-assets.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/resume-cross-assets.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -36466,7 +36537,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "faf8b7534492527fe69bf7920f17630db730788bd076bb69dfdca7172b1e5322",
+    "final_sha256": "4209d5772ad9f6edf686943d88ddc1c484df39ca5789b92b51efd6a2f3437c9a",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "游戏AI决策模型",
@@ -36478,7 +36549,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "faf8b7534492527fe69bf7920f17630db730788bd076bb69dfdca7172b1e5322",
+    "reviewed_content_sha256": "4209d5772ad9f6edf686943d88ddc1c484df39ca5789b92b51efd6a2f3437c9a",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -36495,21 +36566,21 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "resume-Final",
+      "phase": "delivery-P1",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "dcc3c0cecb4e141053ad5f0f9408d0aaabe96a59ecd1a7b001b14da312200de0",
-      "independent_record": "references/resume-cross-assets.json",
-      "independent_source_sha256": "faf8b7534492527fe69bf7920f17630db730788bd076bb69dfdca7172b1e5322",
+      "independent_record": "references/delivery-priority.json",
+      "independent_source_sha256": "4209d5772ad9f6edf686943d88ddc1c484df39ca5789b92b51efd6a2f3437c9a",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "faf8b7534492527fe69bf7920f17630db730788bd076bb69dfdca7172b1e5322",
+      "content_sha256": "4209d5772ad9f6edf686943d88ddc1c484df39ca5789b92b51efd6a2f3437c9a",
       "independent_review": "PASS",
       "findings": [
-        "受伤与移动成功同时到达：采用已提交事件顺序，恢复不依据新线程速度重选，也不重复世界副作用",
-        "追击Exit中目标变为平静：完成旧退出后按实际剩余路径重算LCA",
-        "失败Enter部分预约先清理到终态才报Failure，阻止父节点接纳冲突资源",
-        "顺序Running子节点返回Cancelled直接向上传，不当Failure启动后继",
-        "GOAP补弹破坏掩体不能当最后动作，但进入掩体后缀允许更早补弹；HTN失败方法丢弃临时状态"
+        "命令登记未派发：原ID首次接纳或固定拒绝，不能重建Enter",
+        "接纳成功回执丢失：查原实例；效果已提交：恢复效果后只消费终态",
+        "等待接纳时中止：先登记原命令取消终态，迟到接纳不能成为无人动作",
+        "恢复读取H以后旧工作者追加：排他锁封住恢复窗口，恢复记录后纪元检查拒绝",
+        "恢复记录后补发前再次退出：日志按序恢复C17出站及前次纪元，原命令仍可续行"
       ],
       "runtime": {
         "scope": "行为树、效用和GOAP代码均为机制片段。已复读取消、代数、回归冲突和权重语义；未运行完整NPC框架、异步动作或规划搜索实验。",
@@ -36814,6 +36885,41 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "faf8b7534492527fe69bf7920f17630db730788bd076bb69dfdca7172b1e5322"
+    },
+    "delivery_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "resume-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "dcc3c0cecb4e141053ad5f0f9408d0aaabe96a59ecd1a7b001b14da312200de0",
+      "independent_record": "references/resume-cross-assets.json",
+      "independent_source_sha256": "faf8b7534492527fe69bf7920f17630db730788bd076bb69dfdca7172b1e5322",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "faf8b7534492527fe69bf7920f17630db730788bd076bb69dfdca7172b1e5322",
+      "independent_review": "PASS",
+      "findings": [
+        "受伤与移动成功同时到达：采用已提交事件顺序，恢复不依据新线程速度重选，也不重复世界副作用",
+        "追击Exit中目标变为平静：完成旧退出后按实际剩余路径重算LCA",
+        "失败Enter部分预约先清理到终态才报Failure，阻止父节点接纳冲突资源",
+        "顺序Running子节点返回Cancelled直接向上传，不当Failure启动后继",
+        "GOAP补弹破坏掩体不能当最后动作，但进入掩体后缀允许更早补弹；HTN失败方法丢弃临时状态"
+      ],
+      "runtime": {
+        "scope": "行为树、效用和GOAP代码均为机制片段。已复读取消、代数、回归冲突和权重语义；未运行完整NPC框架、异步动作或规划搜索实验。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "delivery_review": {
+      "record": "references/delivery-priority.json",
+      "date": "2026-10-23",
+      "phase": "P1",
+      "content_sha256": "4209d5772ad9f6edf686943d88ddc1c484df39ca5789b92b51efd6a2f3437c9a"
     }
   },
   {
@@ -39210,23 +39316,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/resume-cross-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：实际播放时刻与权威历史策略分离，输入消费步取得枪口；历史样本固定、球体求交和最近遮挡排序；接纳即扣原武器弹药，Pending独立于射手寿命；固定Tick完成集合、超时、伤害与事件同一耐久提交；恢复原决策批次、包保护、新纪元尝试和终态重发。见references/resume-cross-network.json"
+        "basis": "正文逐项推演：显示r/年龄/呈现状态与实体新鲜度：Playing、Frozen、Stale分别决定视图许可，权威历史与客户端估计轨迹误差单列；历史分段、门遮挡、球形射线正向最近交点和临时场景恢复；Tick600接纳原S7/W3、弹药2到1、Pending与输入ACK分离；当前目标代数与集合内接纳序结算；完成集合截取、606截止、Tick权威批次及同事务伤害/回执；统一LSN中的恢复身份变化、历史身份回放与当前所有者隔离；快照/旧日志/查询包保留。见references/delivery-priority.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/resume-cross-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/resume-cross-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/resume-cross-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -39270,7 +39376,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "0e1ca830ac1c9732f241dd5b86074957cf8ab665a30689f6c45c8fe66879c2bd",
+    "final_sha256": "1803c1694b4e44f2a7a73b372eceefcbcee4b4f799a855d5e7f013f93b9617dc",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "延迟补偿命中",
@@ -39282,7 +39388,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "0e1ca830ac1c9732f241dd5b86074957cf8ab665a30689f6c45c8fe66879c2bd",
+    "reviewed_content_sha256": "1803c1694b4e44f2a7a73b372eceefcbcee4b4f799a855d5e7f013f93b9617dc",
     "source_article_path": "知识库/21_游戏网络/状态同步、预测与回滚.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -39300,21 +39406,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "resume-Final",
+      "phase": "delivery-P1",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "f63be6f7072aee778ca3b06abb89c53a7ea24902823c9c89529086863e518d0b",
-      "independent_record": "references/resume-cross-network.json",
-      "independent_source_sha256": "0e1ca830ac1c9732f241dd5b86074957cf8ab665a30689f6c45c8fe66879c2bd",
+      "independent_record": "references/delivery-priority.json",
+      "independent_source_sha256": "1803c1694b4e44f2a7a73b372eceefcbcee4b4f799a855d5e7f013f93b9617dc",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "0e1ca830ac1c9732f241dd5b86074957cf8ab665a30689f6c45c8fe66879c2bd",
+      "content_sha256": "1803c1694b4e44f2a7a73b372eceefcbcee4b4f799a855d5e7f013f93b9617dc",
       "independent_review": "PASS",
       "findings": [
-        "将T4加速到权威x=0.2而显示x=0.1，正文明确所见误差，不误承诺精确画面复现",
-        "600扣W3弹药后602射手死亡，射击独立结算，不扣S8弹药",
-        "18在604先完成杀死T4，17在605结算无伤害；重放按批次而非新线程速度",
-        "606交换队列后迟到命中不能撤销超时；Tick提交失败不发ACK",
-        "最后耐久603、604尚未提交的完成丢失允许；恢复重派后形成新批次，已提交结果保持原序"
+        "旧快照(7,1)经恢复(8,2)后604提交伤害，再从同一快照二次恢复；必须先消费恢复LSN101后消费Tick604的LSN102",
+        "LSN101已提交尚未派发再退出，第二次先还原(8,2)再为仍Pending者登记(9,3)，不能丢命令或替换已终态项",
+        "当前所有者9不得拒绝日志中的历史纪元8决策；旧实时任务仍由所有者入口隔离",
+        "新快照覆盖恢复记录但Tick未变，回放从覆盖LSN之后开始；旧快照仍保留时不能截去它需要的日志"
       ],
       "runtime": {
         "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页验证历史线性插值的窗口拒绝及球形射线正反向求交；尚未运行骨骼碰撞场景、真实网络故障或公平性测试。",
@@ -39609,6 +39714,41 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "0e1ca830ac1c9732f241dd5b86074957cf8ab665a30689f6c45c8fe66879c2bd"
+    },
+    "delivery_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "resume-Final",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "f63be6f7072aee778ca3b06abb89c53a7ea24902823c9c89529086863e518d0b",
+      "independent_record": "references/resume-cross-network.json",
+      "independent_source_sha256": "0e1ca830ac1c9732f241dd5b86074957cf8ab665a30689f6c45c8fe66879c2bd",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "0e1ca830ac1c9732f241dd5b86074957cf8ab665a30689f6c45c8fe66879c2bd",
+      "independent_review": "PASS",
+      "findings": [
+        "将T4加速到权威x=0.2而显示x=0.1，正文明确所见误差，不误承诺精确画面复现",
+        "600扣W3弹药后602射手死亡，射击独立结算，不扣S8弹药",
+        "18在604先完成杀死T4，17在605结算无伤害；重放按批次而非新线程速度",
+        "606交换队列后迟到命中不能撤销超时；Tick提交失败不发ACK",
+        "最后耐久603、604尚未提交的完成丢失允许；恢复重派后形成新批次，已提交结果保持原序"
+      ],
+      "runtime": {
+        "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页验证历史线性插值的窗口拒绝及球形射线正反向求交；尚未运行骨骼碰撞场景、真实网络故障或公平性测试。",
+        "cpu_command": "python 知识库/examples/revision_16_21/test_reference.py",
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
+    },
+    "delivery_review": {
+      "record": "references/delivery-priority.json",
+      "date": "2026-10-23",
+      "phase": "P1",
+      "content_sha256": "1803c1694b4e44f2a7a73b372eceefcbcee4b4f799a855d5e7f013f93b9617dc"
     }
   },
   {
