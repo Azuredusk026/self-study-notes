@@ -9644,23 +9644,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：高度尺度与切线空间；一次采样误差；首次交叉残差插值；显式梯度；材质与Phit；有限光与边界。见references/delivery-system.json"
+        "basis": "正文逐项推演：D=1-h、TBN/UV物理尺度、一次偏移误差与逐层首次交叉；残差插值比例before/(before-error)、同hit UV/depth/valid及显式梯度；同hit材质采样、Phit单位还原、未环绕UV差与光照衰减；点光有限qEnd、方向光层顶终点、正负Lz、阴影bias和掠射近似；有限面片NoHit与平铺Wrap、最终几何轮廓/深度边界。见references/delivery-cross-system.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -9740,20 +9740,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "delivery-P2",
+      "phase": "delivery-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-06-08.json",
       "author_sha256": "da2d37581e8e24f5ff6d95a9faaca8149912e15c2ccf3af6daf65dcd368e2751",
-      "independent_record": "references/delivery-system.json",
+      "independent_record": "references/delivery-cross-system.json",
       "independent_source_sha256": "f9534979528a98d2775f93664d7f25c0c355aaf8452f4c6856cc49c95d046794",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "f9534979528a98d2775f93664d7f25c0c355aaf8452f4c6856cc49c95d046794",
       "independent_review": "PASS",
       "findings": [
-        "D(u)=u得t=.5",
-        "光深度.4且hit.6只走.2",
-        "无命中先终结消费",
-        "Wrap不夹射线UV"
+        "D(u)=u时一次估计u=.48并非交点，正文推到t=.5/u=.5",
+        "点光深度.4、hit深度.6只查q=.2，位于光之后的凸起不再遮挡",
+        "独立面片越界有效位先由材质处理；多消费者使用同hit，平面回退统一零深度",
+        "掠射Vz夹限导致Phit不严格在相机射线，正文说明形状压缩与严格求交选择"
       ],
       "runtime": {
         "source_scope": {
@@ -10452,9 +10452,9 @@
       }
     },
     "delivery_review": {
-      "record": "references/delivery-system.json",
+      "record": "references/delivery-cross-system.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "f9534979528a98d2775f93664d7f25c0c355aaf8452f4c6856cc49c95d046794"
     }
   },
@@ -22528,23 +22528,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：接口布局与兼容；动态偏移和映射原点；原子隔离；固定数组与快照；录制提交退休；设备代次；整页读取集合与发布入口。见references/delivery-system.json"
+        "basis": "正文逐项推演：着色器反射→集合布局→字段偏移→兼容管线绑定；动态uniform80/256计址、frameBase唯一归属、B/M/O三个原点与非一致刷新原子；固定64描述符数组/能力检查/回退页/局部材质索引；完整页的全部资源/材质/对象读集与布局设备集合代次共同发布；录制保留→Submitting提交持有→多队列完成→取消/设备故障隔离。见references/delivery-cross-system.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -22624,21 +22624,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "delivery-P2",
+      "phase": "delivery-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "875c87a3dffd44e6f1f07f47740e1c9c30fe2f6ad82b07167fd5e1f26cb9c55f",
-      "independent_record": "references/delivery-system.json",
+      "independent_record": "references/delivery-cross-system.json",
       "independent_source_sha256": "915085fc22f6c5e44f935515c437a7dbc713cd28a5aeb102fe71012d70e1c4a4",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "915085fc22f6c5e44f935515c437a7dbc713cd28a5aeb102fe71012d70e1c4a4",
       "independent_review": "PASS",
       "findings": [
-        "B版本1晚到不能覆盖版本2",
-        "尚未发布图像仍等GPU上传结清",
-        "页A索引不配页B",
-        "设备检查与提交接纳同门",
-        "B不变而同页A热更仍拒绝旧快照"
+        "B不变而同页A热更新时旧全页发布必须失败；最终正文将A等所有资源与集合新增删除纳入同入口比较",
+        "B=8192/M=4096/O=4864时映射指针8960，刷新13056，描述符4864，三个坐标无重复加基址",
+        "R已录制未提交时即便所有已提交GPU已完成也不能释放旧页；令牌覆盖录制空档",
+        "旧页槽8红与新页槽8蓝不能混绑；页面索引与表共同成为快照保留单位"
       ],
       "runtime": {
         "shader_probes": [],
@@ -23060,9 +23059,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "delivery_review": {
-      "record": "references/delivery-system.json",
+      "record": "references/delivery-cross-system.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "915085fc22f6c5e44f935515c437a7dbc713cd28a5aeb102fe71012d70e1c4a4"
     }
   },
@@ -24655,23 +24654,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：缓存层次与覆盖；发现封闭；首用期限；请求共享与取消；就绪保留；设备失效与预算。见references/delivery-system.json"
+        "basis": "正文逐项推演：组合列表/驱动二进制/内存PSO三缓存层，覆盖与请求首用时间区分；内容发现代次/构建/配置集合封闭与加载门同入口；Queued/Creating/Ready/Failed和请求/设备身份，最后等待者退出仲裁；Ready取得保留引用到录制/提交/GPU完成，不以瞬时计数替代首屏就绪；并行编译内存预算、冷暖条件与首次使用证据。见references/delivery-cross-system.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -24756,19 +24755,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "delivery-P2",
+      "phase": "delivery-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "5256268d64f0f6c14b8b48c9cda676ecf231a2ec4f615cb410cc52f7600b6ba8",
-      "independent_record": "references/delivery-system.json",
+      "independent_record": "references/delivery-cross-system.json",
       "independent_source_sha256": "8cd731f5959a178e887edf1c3feaae8eb6243ad667daff12c8b485e0844282f5",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "8cd731f5959a178e887edf1c3feaae8eb6243ad667daff12c8b485e0844282f5",
       "independent_review": "PASS",
       "findings": [
-        "新画质代次不能由旧Ready集合放行",
-        "A最后退出与B加入同锁仲裁",
-        "80就绪100淘汰200首用需持有"
+        "20ms请求80ms完成60ms首用仍差20ms；列表覆盖不能证明及时就绪",
+        "旧画质集合全部Ready，配置代次已变时不能打开新加载门",
+        "A最后等待者退出同时B加入，锁内状态决定旧任务继续或新代次；旧通知不能取消新请求",
+        "K在80ms就绪100ms候选淘汰200ms首用时保留令牌阻止无意重建"
       ],
       "runtime": {
         "shader_probes": [],
@@ -25191,9 +25191,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "delivery_review": {
-      "record": "references/delivery-system.json",
+      "record": "references/delivery-cross-system.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "8cd731f5959a178e887edf1c3feaae8eb6243ad667daff12c8b485e0844282f5"
     }
   },
@@ -25402,23 +25402,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：复现与标记；时钟域；读回领取；像素跨资源；计数器与构建；设备故障。见references/delivery-system.json"
+        "basis": "正文逐项推演：frameId提交/GPU标记及时钟域关联，偶发追踪与可复现帧捕获；查询槽代次/设备频率、复制完成、Ready领取Consuming和结果发布；取消/CPU异常/设备丢失隔离与CPU/GPU分别排空；CPU/GPU工具分工、API消息范围、通道/资源/覆盖/着色器/依赖调查；黑像素跨目标生产者与采样足迹回溯、计数器/构建配置/修改实验。见references/delivery-cross-system.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -25509,20 +25509,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "delivery-P2",
+      "phase": "delivery-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-09-15.json",
       "author_sha256": "a406658efcd9d38ebfcac9d4fddbe760551470d446c5936413d53cfe5a8b095d",
-      "independent_record": "references/delivery-system.json",
+      "independent_record": "references/delivery-cross-system.json",
       "independent_source_sha256": "612c5c5ec0adf038252e81d95d09b74859d3b3a920cda9ca6f3bb710e90f1adc",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "612c5c5ec0adf038252e81d95d09b74859d3b3a920cda9ca6f3bb710e90f1adc",
       "independent_review": "PASS",
       "findings": [
-        "120 Consuming取消不能123覆盖",
-        "故障保留CPU读者",
-        "半分辨率按足迹查源",
-        "缩纹理变快不证明黑像素原因"
+        "120结果Ready后CPU拷贝中取消，123不能复用直到CPU退出并Discarded；已Consumed随后取消不撤销发布",
+        "设备重建时旧Consuming结果即使拷贝成功也丢弃且持引用到退出，新同号槽不能补旧曲线",
+        "RenderDoc重放6ms而独立4ms先核相同工作与捕获扰动，不合成性能结论",
+        "最终(100,50)读取半分辨率输入时按UV换算并追其生产者，不能一直沿最终目标旧写入者"
       ],
       "runtime": {
         "shader_probes": [],
@@ -25944,9 +25944,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "delivery_review": {
-      "record": "references/delivery-system.json",
+      "record": "references/delivery-cross-system.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "612c5c5ec0adf038252e81d95d09b74859d3b3a920cda9ca6f3bb710e90f1adc"
     }
   },
@@ -28767,23 +28767,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：翻译单元与ABI；布局与对象模型；资源异常保证；版本前缀；排队创建；模块关闭DAG；Win32/COM消费。见references/delivery-system.json"
+        "basis": "正文逐项推演：翻译单元/链接/加载诊断、头文件ODR、动态模块分配方释放；C ABI版本前缀/宽度/大小与字段布局、异常保证与对象虚析构契约；Queued创建领取、预留对象记录、调用返回登记、模块代次与输入持有；Closing冻结对象表、RequestStop、Draining、无环依赖Destroy及超时续行；Win32常驻跳板与COM引用/Apartment交接。见references/delivery-cross-system.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -28865,21 +28865,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "delivery-P2",
+      "phase": "delivery-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "ef64e2b805ec769b3fcdcf27e9738b03b1abe6263b5675c42452946492c0579f",
-      "independent_record": "references/delivery-system.json",
+      "independent_record": "references/delivery-cross-system.json",
       "independent_source_sha256": "d38810035a3d2f40908e9340b1f12c150f5f668ee0dcecd69e92d37f3d2a2c4f",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "d38810035a3d2f40908e9340b1f12c150f5f668ee0dcecd69e92d37f3d2a2c4f",
       "independent_review": "PASS",
       "findings": [
-        "Queued取消不进入插件",
-        "Invoking必须等结果登记",
-        "登记槽先预留避免创建后登记失败",
-        "Closing先冻结迟到创建",
-        "旧模块句柄不交新函数表"
+        "Create已接纳尚未返回时Closing先等对象表修改归零，迟到对象登记后进入停止清单",
+        "Create成功后登记空间耗尽的反例由调用前预留、成功后不分配登记解决",
+        "A析构借用B时先Stop二者、排空任务后Destroy A再B；失败保留对象且不重放已成功Destroy",
+        "后台回调持活动令牌，Closing丢弃未开始项；模块卸载请求由宿主执行避免等待自身"
       ],
       "runtime": {
         "scope": "C ABI声明是接口片段，未编译动态库与加载宿主。版本前缀、错误输出和卸载顺序已在正文明确，实际工具链ABI仍需构建验证。",
@@ -29212,9 +29211,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "delivery_review": {
-      "record": "references/delivery-system.json",
+      "record": "references/delivery-cross-system.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "d38810035a3d2f40908e9340b1f12c150f5f668ee0dcecd69e92d37f3d2a2c4f"
     }
   },
@@ -29581,23 +29580,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：字段读取与AoS/SoA；缓存映射；栈堆与驻留；碎片与分配器；对齐与并发游标；构造提交链；析构依赖；双队列退休。见references/delivery-priority.json"
+        "basis": "正文逐项推演：4粒子AoS步长48共192字节，SoA64+64+16=144字节；GPU采用AoS需重打包；缓存行足迹/组冲突、栈堆/虚拟页、碎片/Buddy伙伴与分配策略；线性分配对齐及溢出；基址约束与本例[64,128)、[128,192)、[192,208)、[208,400)；Reserved→Committed提交序、构造异常/RAII、预留节点避免成功构造后登记失败；A→B要求A序号大于B；显式收尾、Closing、双队列完成值和引用门。见references/delivery-cross-system.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -29673,21 +29672,20 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "delivery-P1",
+      "phase": "delivery-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "9072767e1c3c51008285c9becfbdc3b711a99915b073436b31f2c4d04c6cda93",
-      "independent_record": "references/delivery-priority.json",
+      "independent_record": "references/delivery-cross-system.json",
       "independent_source_sha256": "1a8a9d25968c358bff3f6f5e6486030ca1424c56edbf4d4b75b89e695eb4b264",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "1a8a9d25968c358bff3f6f5e6486030ca1424c56edbf4d4b75b89e695eb4b264",
       "independent_review": "PASS",
       "findings": [
-        "4项AoS192与SoA144",
-        "打包192不能忽略成本",
-        "cursor13经对齐最终400",
-        "A先预留B先提交按序2再1销毁",
-        "复制16未到17不可复用"
+        "把AoS上传与SoA源等同会遗漏48字节和一次打包；正文明确区分",
+        "A先预留B先提交时仍按序2的A后序1的B析构，依赖B提交后才允许A构造",
+        "B反向借用A被拒绝，转显式收尾/组合所有者，不能假设任意逆序安全",
+        "图形42>=41而复制16<17时批次不能复用；Closing后子任务先领取再归还父引用避免假零"
       ],
       "runtime": {
         "scope": "分配器为整数关系与寿命伪代码，未实现平台分配器或测量缓存命中。字节算例用于审查对齐范围，性能结论保留工作负载条件。",
@@ -30021,9 +30019,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "delivery_review": {
-      "record": "references/delivery-priority.json",
+      "record": "references/delivery-cross-system.json",
       "date": "2026-10-23",
-      "phase": "P1",
+      "phase": "Final",
       "content_sha256": "1a8a9d25968c358bff3f6f5e6486030ca1424c56edbf4d4b75b89e695eb4b264"
     }
   },
@@ -30732,23 +30730,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-network.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：缓存页与应用缓冲、跨页/短读、不可变输入、直接IO和内存映射寿命；逻辑读取/系统子请求代次、取消竞争、预算背压、解码交接与失败释放；资源代次发布、引用与GPU退休消费者分离；临时文件持久化、控制清单CAS、发布冲突重建与读取固定版本；跨进程租约/实例保护、重启隔离、Draining与Deleting回收；发布任务持久交付、原ID对账续行、取消与发布原子排序、跨对象依赖读集。见references/delivery-network.json"
+        "basis": "正文逐项推演：缓存页、短读偏移、不可变文件与对齐路径；逻辑读取与子请求两级身份、取消竞态、字节预算和消费者引用移交；解码排队失败清理及最终资源代次采用；文件同步先于入口事务，发布任务持久交付与原回执续行；发布冲突重新校验完整依赖，读取固定版本与持久保护根；跨进程租约/实例保护、按版本Draining、Deleting有序回收。见references/delivery-cross-network.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-network.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-network.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-network.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -30820,20 +30818,23 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "delivery-P2",
+      "phase": "delivery-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "52caa93f715b03db9f723dc9bea4baa3217dc12e24238792f86f0758caa9c0f6",
-      "independent_record": "references/delivery-network.json",
+      "independent_record": "references/delivery-cross-network.json",
       "independent_source_sha256": "ca188beee287273bf72af6f5125c43a3b1a2581f3b138b3325ff24605d71f2d4",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "ca188beee287273bf72af6f5125c43a3b1a2581f3b138b3325ff24605d71f2d4",
       "independent_review": "PASS",
       "findings": [
-        "B文件已Prepared但线程未派发或事务未调用即退出，恢复由耐久任务原ID续交",
-        "事务提交成功响应丢失，恢复先查原回执；查询不可用保持Unknown，不另推进代次",
-        "取消与已开始发布竞争，Closing与发布CAS比较同一任务状态，执行者退出后再核对回执回收",
-        "Q针对g8/B的依赖检查后入口变化，旧CAS失败且不能只换期望代次；独立可变依赖必须进入同事务条件或不可变输入清单"
+        "8字节头先到3字节：系统槽归还但缓冲与字节预算保留，3003继续读5字节",
+        "取消与成功完成竞争：等系统终态，不以取消调用返回释放缓冲",
+        "IO完成后解码队列关闭：任务创建/投递分支分别归还持有，不能泄漏或双释放",
+        "发布登记后未派发或事务已成功丢响应：按同一发布ID查回执，Unknown继续保护暂存",
+        "Q基于g7冲突看到g8：重新检查依赖后新ID，不能仅更改expectedGeneration",
+        "Draining期间短读重排队：仍计逻辑在途，不能将子请求间隙误判排空",
+        "旧实例失联与本地空队列：持久实例保护继续隔离，退出确认后解除"
       ],
       "runtime": {
         "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页运行临时目录里的真实文件写入、替换与替换前异常，验证最终内容和临时文件清理；未执行断电、网络文件系统或异步驱动取消测试。",
@@ -31159,9 +31160,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "delivery_review": {
-      "record": "references/delivery-network.json",
+      "record": "references/delivery-cross-network.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "ca188beee287273bf72af6f5125c43a3b1a2581f3b138b3325ff24605d71f2d4"
     }
   },
@@ -32746,23 +32747,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-assets.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：餐桌J尺寸单位、可行域膨胀、栅格可达性与V1/V2实际场景验证；跨对象读取集合、区域查询空集合保护、修改集合与宿主条件提交；固定外部资产/规则/导航哈希与源几何匹配；本任务回执承接后重新校验；Prepared未交付续行、宿主接管与稳定业务摘要；连续补偿游标、父子关系集合版本、冲突决议保留闭包；不可变批准候选、发布与撤回代次、消费者完整加载。见references/delivery-priority.json"
+        "basis": "正文逐项推演：同一餐桌任务贯穿布局、读取版本、执行、V1/V2、审核、取消及发布；米单位包围体、角色半径膨胀与连通查询接到实际实例；完整读取/修改集合由宿主同一提交检查，场景令牌与稳定业务摘要分离；连续补偿v3→v4→v5承接和跨对象集合c1→c2承接；冲突决议按观察版本提交，Waived/Retained向父关系保留闭包，批准移动与删除分别授权；发布绑定不可变清单与批准版本，结果不确定先查原回执。见references/delivery-cross-assets.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-assets.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-assets.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-assets.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -32853,22 +32854,22 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "delivery-P1",
+      "phase": "delivery-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "e9af4532e29291c4b9d8f03901e3a8e1e83827016b4ba0ab918dac901876bd78",
-      "independent_record": "references/delivery-priority.json",
+      "independent_record": "references/delivery-cross-assets.json",
       "independent_source_sha256": "ca38a69fc49e399bc26f61dc7bf5738992431817494c93fb884f55f790023af8",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "ca38a69fc49e399bc26f61dc7bf5738992431817494c93fb884f55f790023af8",
       "independent_review": "PASS",
       "findings": [
-        "R变换r1到r2而T对象和关系未变：宿主读集比较拒绝旧操作，关闭计划及验证批准后重算，新操作ID绑定新计划",
-        "空区域新增椅子：区域集合版本变化使旧计划失效，不能只比较原查询返回对象",
-        "A自身写v2后B仍按v1执行：B消费A持久回执并在新快照校验；任务身份不能跳过验证",
-        "Prepared落盘未派发后取消/父变换变化：先对账，取消不补发；正向续行仍按原读写条件，过期走返工",
-        "撤销B产v4后人工v5：版本比较冲突；保留或Waived向父关系传播，批准恢复位置不隐含批准删除",
-        "发布11响应丢失而人工12：返回11原回执并保护12"
+        "房间R变换r1→r2但T版本未变：读取集合拒绝，旧批准失效，新快照重新布局",
+        "空间查询为空后加入椅子：区域集合版本变化，不能只比较旧对象",
+        "创建T后任务自己的区域集合c0→c1：消费宿主回执形成新快照再规划B，不能机械刷新版本",
+        "撤销B后人工改色：按v5审核后恢复位置仍需单独决定删除，保留闭包阻止误删R",
+        "Prepared未派发时取消：任务禁止正向续交，已接纳项先对账后补偿",
+        "发布11已成功响应丢失且人工已发布12：原回执确认11，不覆盖12"
       ],
       "runtime": {
         "scope": "本页是资产任务设计与接口协议，未部署Agent、连接DCC或执行资产发布。事务边界的可运行示例见RPC篇，场景操作的幂等性必须由各工具实现验证。",
@@ -33193,9 +33194,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "delivery_review": {
-      "record": "references/delivery-priority.json",
+      "record": "references/delivery-cross-assets.json",
       "date": "2026-10-23",
-      "phase": "P1",
+      "phase": "Final",
       "content_sha256": "ca38a69fc49e399bc26f61dc7bf5738992431817494c93fb884f55f790023af8"
     }
   },
@@ -33900,23 +33901,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-assets.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-assets.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：反向对应、足迹置信度与ID/深度/法线拒绝，显露区当前R初始化；潜变量空间尺度、模型条件、DDIM起始步及逐步图像投影；曝光稳定区域增益、内容V检查、局部Q与锚点A_anchor分离；双向独立历史及不可变帧清单，完整输入依赖、活动版本条件提交；未交付帧任务续行、尝试所有权、候选接纳回执与控制日志二次恢复；对象冲突选路、F/U补洞及最终序列/编码消费。见references/delivery-assets.json"
+        "basis": "正文逐项推演：反向位置、采样足迹逐样本Q/ID/深度门控、历史法线输送；显示线性颜色与sRGB编码、整图VAE、DDIM起点及逐步像素投影；曝光统计与S应用同排除真实照明，内容V优先于新生成Q重置；Q与A_anchor分别追踪邻帧历史和批准锚点，左右方向独立状态；逻辑任务出站、尝试代次栅栏、首次候选接纳与指针条件提交；完整输入清单、控制序号二次恢复、冲突决议及最终编码清单。见references/delivery-cross-assets.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-assets.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-assets.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-assets.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-assets.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-assets.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-assets.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -33999,24 +34000,23 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "delivery-P2",
+      "phase": "delivery-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "4d2973877344a896d1fca6bc2fda130a9a3322f2aaedf5815226a7e76f58c421",
-      "independent_record": "references/delivery-assets.json",
+      "independent_record": "references/delivery-cross-assets.json",
       "independent_source_sha256": "a11dd67779a8f14d73cee58829b783b6098939f4b35c04edb9f376aa11afd33b",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "a11dd67779a8f14d73cee58829b783b6098939f4b35c04edb9f376aa11afd33b",
       "independent_review": "PASS",
       "findings": [
-        "前景颜色混入双线性足迹即使平均Q高：非零足迹逐项拒绝；天空独立方向分支",
-        "同相机输入而标注/上游历史变化：逻辑K4完整读集变化，旧任务不可提交新序列",
-        "K4已登记未派发而崩溃：回放后按待交付表查询原入口再交付；已接纳先对账",
-        "进程失联仍在运行：递增尝试代次先关闭旧结果入口，不假定计算或资源已退出",
-        "控制40快照后41尝试2、42选C4、43H4、44K5再崩溃：按控制序恢复身份后消费固定结果，只续K5",
-        "C4选定后序列关闭：历史提交失败并隔离旧输出；决议变化也使旧补洞结果失效",
-        "两候选都无锚点：U待补当前结构重生，补洞只覆盖U，不替换既定F",
-        "替代尝试沿用逻辑任务ID：工作进程按逻辑ID与尝试代次联合去重，新代次须控制库授权，避免返回旧尝试接纳而不启动；逻辑输出仍首次选定"
+        "双线性足迹10%样本Q=0：逐样本拒绝，不能让平均Q=0.9混入坏颜色",
+        "历史被遮挡后重生成：Q可为1但A_anchor=0，不能冒充批准关键帧传播",
+        "旧关键帧被重新批准，K4迟到：活动序列与前驱H3失配，不能推进新指针",
+        "控制41更新尝试、42选定、43提交、44登记K5后再次退出：先依序恢复，只续交K5",
+        "同种子不同设备产生不同候选：首次选定清单及文件哈希固定已提交结果",
+        "左右冲突选择一路后该路有洞：U独立补洞且final仅取U区域，不能混入另一路或反写传播历史",
+        "同K4替代尝试需要启动新计算：逻辑生命周期按K4查询，工作进程按K4+尝试去重；新尝试需控制库授权，原尝试重送返回原状态"
       ],
       "runtime": {
         "scope": "本页光流与法线公式是坐标推导；TokenFlow引用支持扩散特征对应传播，不证明本页的全部过滤策略。未生成视频或测量时序指标。",
@@ -34363,9 +34363,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "delivery_review": {
-      "record": "references/delivery-assets.json",
+      "record": "references/delivery-cross-assets.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "a11dd67779a8f14d73cee58829b783b6098939f4b35c04edb9f376aa11afd33b"
     }
   },
@@ -36779,23 +36779,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-ai.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：黑板事实与跨对象读取集在接纳边界核对，运行后失效继续取消；FSM逐段退出与部分进入失败，BT等待接纳及取消传播；效用门禁、几何评分及失效绕过迟滞，GOAP回归与HTN临时状态；稳定命令身份、持久出站、宿主Absent/Unknown及原接纳/终态回执；统一有序世界效果日志、恢复排他锁与纪元栅栏、L100至L104二次恢复。见references/delivery-priority.json"
+        "basis": "正文逐项推演：黑板快照、读取版本集合、宿主接纳与独占资源所有权；HFSM公共前缀、目标改变、Enter部分失败与配对清理；BT四态、等待接纳、父子Cancelled传播与显式复位；效用几何平均、必要门禁、迟滞与失效优先级；GOAP反向回归与负效果、HTN临时状态与失败回退；持久C17出站、接纳去重、效果日志和L100至L104二次恢复。见references/delivery-cross-ai.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-ai.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-ai.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-ai.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -36876,21 +36876,25 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "delivery-P1",
+      "phase": "delivery-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "dcc3c0cecb4e141053ad5f0f9408d0aaabe96a59ecd1a7b001b14da312200de0",
-      "independent_record": "references/delivery-priority.json",
+      "independent_record": "references/delivery-cross-ai.json",
       "independent_source_sha256": "4209d5772ad9f6edf686943d88ddc1c484df39ca5789b92b51efd6a2f3437c9a",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "4209d5772ad9f6edf686943d88ddc1c484df39ca5789b92b51efd6a2f3437c9a",
       "independent_review": "PASS",
       "findings": [
-        "命令登记未派发：原ID首次接纳或固定拒绝，不能重建Enter",
-        "接纳成功回执丢失：查原实例；效果已提交：恢复效果后只消费终态",
-        "等待接纳时中止：先登记原命令取消终态，迟到接纳不能成为无人动作",
-        "恢复读取H以后旧工作者追加：排他锁封住恢复窗口，恢复记录后纪元检查拒绝",
-        "恢复记录后补发前再次退出：日志按序恢复C17出站及前次纪元，原命令仍可续行"
+        "已登记C17未派发：确定Absent才同ID新信封补发；Unknown等待，原载荷读集过期则宿主拒绝，新决策另建命令",
+        "C17已接纳实例17但回执丢失：宿主按原ID返回原实例，资源账本不产生第二个所有者",
+        "未接纳时先中止：命令取消墓碑使迟到C17取得取消终态；节点不以缺实例ID重新Enter",
+        "L100登记、L101新纪元、L102接纳、L103位置效果后第二次退出：顺序消费恢复身份与效果，L104接管后只对账，不再次移动",
+        "读取H以后旧线程试图提交效果：恢复排他锁封住H到新纪元记录窗口，新纪元提交后入口继续拒绝旧信封",
+        "追击退出期间目标从攻击改安全待机：已退出不重入，重新计算实际活动路径公共前缀；Enter失败先清理部分资源",
+        "BT父中止后迟到Success：取消路径统一结束，不能启动攻击；独立子Cancelled也原样上返而非尝试备用分支",
+        "目标毁灭且追击仅0.05秒：门禁失效绕过0.3秒迟滞，仍等待旧资源释放",
+        "补弹删除在掩体：不能作最后动作，可先补弹再进掩体；HTN失败临时效果丢弃，不写真实事实"
       ],
       "runtime": {
         "scope": "行为树、效用和GOAP代码均为机制片段。已复读取消、代数、回归冲突和权重语义；未运行完整NPC框架、异步动作或规划搜索实验。",
@@ -37226,9 +37230,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "delivery_review": {
-      "record": "references/delivery-priority.json",
+      "record": "references/delivery-cross-ai.json",
       "date": "2026-10-23",
-      "phase": "P1",
+      "phase": "Final",
       "content_sha256": "4209d5772ad9f6edf686943d88ddc1c484df39ca5789b92b51efd6a2f3437c9a"
     }
   },
@@ -37251,23 +37255,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-ai.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-ai.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：体素化、净空过滤、角色半径侵蚀与多边形生成；A*成本下界、完整读取集、异步快照持有及采用/启动分界；漏斗叉积与索引回退、停转/圆弧组合及速度传播；ORCA边界构造、多半平面双圆求交及无解回退；走廊安全半平面、实际位移、取消与存档恢复。见references/delivery-ai.json"
+        "basis": "正文逐项推演：导航空间表示、坡度高度过滤、世界单位到体素保守舍入与半径侵蚀；A*可采纳启发、过期堆项、不可变搜索读集与采用/启动分界；门Q7/Q8、目标版本、后台查询尝试日志与二次恢复；门户漏斗有向面积、顶点输出后回退索引；停转制动、圆弧几何/共享段约束和纵横加速度速度表；二维速度障碍圆弧与切线、半平面、两圆多约束候选求解；凸走廊速度半平面、门户子步、无解制动与控制器实际位移；已接纳移动原ID恢复、部分路径/取消/网格外连接消费。见references/delivery-cross-ai.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-ai.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-ai.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-ai.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-ai.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-ai.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-ai.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -37349,21 +37353,26 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "delivery-P2",
+      "phase": "delivery-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "fe538c259388f11d043338ce983204d9cb134dc0eeeb401a38fc9b2af1c32218",
-      "independent_record": "references/delivery-ai.json",
+      "independent_record": "references/delivery-cross-ai.json",
       "independent_source_sha256": "e4313ae3f659d63b393885f8016d9704f7be0c2a8d8c5c2b4155ba190354a736",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "e4313ae3f659d63b393885f8016d9704f7be0c2a8d8c5c2b4155ba190354a736",
       "independent_review": "PASS",
       "findings": [
-        "Q7门未变而掩体移动：目标变换版本使候选失效",
-        "路线外搜索读取瓦片的代价变化：读取集涵盖搜索输入，严格重新查询",
-        "拒绝迟到结果时工作者仍读快照：完成回执以前继续持有瓦片",
-        "未派发查询再次恢复：先消费尝试变更记录，再重派未完成项",
-        "移动命令已完成但回执未消费：恢复位置和原终态，不新建移动代次"
+        "0.4米半径与0.15米单元：ceil为3格；2格仅0.3米，身体可能过窄通道",
+        "Q7门8查询门9采用：读集拒绝；目标a到b也拒绝；未读无关瓦片变化可保留",
+        "被搜索但最终路线外区域成本变化：实际读取瓦片与代价读集参与严格拒绝，不能只验走廊",
+        "采用后平台搬走：启动重新投影实际起点并核对完整路线及旧动作释放；启动同控制入口提交",
+        "Q7未派发/尝试1恢复尝试2并采用后再退出：恢复先消费尝试变更再结果，不重赛完成次序；Q8替代后Q7仍过期",
+        "漏斗斜率区间不相交：输出前门户(1,1)，回退索引重遍防漏约束",
+        "相邻两圆角各裁0.7米但共享段1米：同时缩小半径，不能只独立检查每个圆角",
+        "动态约束要求向墙1.5米每秒、边界仅允许1：先放松动态约束制动并标失败；不可达再扫掠，不虚称安全",
+        "碰撞截断与平台搬运：实际位移推进门户，纠正位移另标，部分终点不报总目标成功",
+        "移动已接纳但回执未消费：恢复原ID与世界前沿，不新建移动实例；跳跃安全退出前不交移动权"
       ],
       "runtime": {
         "scope": "导航生成与ORCA职责按来源核读，正文跟随为C++机制片段。尚未烘焙测试关卡、运行漏斗或群体避障；A*主算法验证归属图搜索。",
@@ -37700,9 +37709,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "delivery_review": {
-      "record": "references/delivery-ai.json",
+      "record": "references/delivery-cross-ai.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "e4313ae3f659d63b393885f8016d9704f7be0c2a8d8c5c2b4155ba190354a736"
     }
   },
@@ -38911,23 +38920,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-network.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：固定输入步、完整序号身份、ACK/Tick快照边界与移动平台预测依赖；校正从完整权威状态逐步碰撞重放，缺外部条件暂停，视觉半衰期独立；输入拒绝/缺口/会话关闭；待确认输入重发与已接纳动作查询分离；动作修订、连续流游标、基线/实时回执合并、历史表现去重；未交付输入续交、本地基线与游标共同提交及二次进程恢复。见references/delivery-network.json"
+        "basis": "正文逐项推演：固定输入身份与ACK/Tick锚点、待交付队列、服务端权威边界；墙面碰撞重放、平台外部状态、显示偏移半衰期；完整序号轮次防整轮迟到，输入缺口关闭屏障；输入ACK与动作修订/回执流分别消费；基线完整响应安装动作表与流游标同一提交，跨进程保存同边界。见references/delivery-cross-network.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-network.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-network.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-network.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-network.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -39003,20 +39012,22 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "delivery-P2",
+      "phase": "delivery-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "e9e65578fc0e4f6038526023d5e6b97d2cfb0c6aa40742ab7dd91220fdcacb75",
-      "independent_record": "references/delivery-network.json",
+      "independent_record": "references/delivery-cross-network.json",
       "independent_source_sha256": "9af31c9ff97e30092cb93a1e6554d9294f754c1a76161bd8a1ccede2ab852717",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "9af31c9ff97e30092cb93a1e6554d9294f754c1a76161bd8a1ccede2ab852717",
       "independent_review": "PASS",
       "findings": [
-        "C/17登记后未发送或发送成功未收到ACK，均保留同一身份续交；预测重放不创建网络命令",
-        "先保存覆盖游标再保存动作表时崩溃会在二次恢复丢终态，改为完整基线暂存后共同提交",
-        "分块基线未收齐不得删除等待项；基线传输期间604终态已到仍保留较高修订",
-        "客户端丢失本地队列时不能猜17内容重新编号，走会话关闭屏障重同步"
+        "C/17登记未发送即断线：同身份补交，预测重放不新增网络输入",
+        "同ACK新Tick被平台搬运：接纳新状态锚点，不能按ACK相同拒绝",
+        "线上0可能指完整0或65536：认证参考轮次展开，不能只猜ACK高位",
+        "604终态先到而600 Pending基线后到：动作修订保留终态，移动仍按独立Tick接纳",
+        "基线分块未收齐即退出：动作表/游标均保留旧边界，不能跳过尚未安装终态",
+        "17缺失而18/19到达：请求补发或关闭会话屏障，不跳ACK伪造消费"
       ],
       "runtime": {
         "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页验证序号回绕及包含墙面钳制的输入重放；旧 completion_reference.py 只验证加法分段关系。真实移动平台与碰撞引擎的重放尚未运行。",
@@ -39348,9 +39359,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "delivery_review": {
-      "record": "references/delivery-network.json",
+      "record": "references/delivery-cross-network.json",
       "date": "2026-10-23",
-      "phase": "P2",
+      "phase": "Final",
       "content_sha256": "9af31c9ff97e30092cb93a1e6554d9294f754c1a76161bd8a1ccede2ab852717"
     }
   },
@@ -39695,23 +39706,23 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-network.json；运行证据保持各篇实际范围。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：显示r/年龄/呈现状态与实体新鲜度：Playing、Frozen、Stale分别决定视图许可，权威历史与客户端估计轨迹误差单列；历史分段、门遮挡、球形射线正向最近交点和临时场景恢复；Tick600接纳原S7/W3、弹药2到1、Pending与输入ACK分离；当前目标代数与集合内接纳序结算；完成集合截取、606截止、Tick权威批次及同事务伤害/回执；统一LSN中的恢复身份变化、历史身份回放与当前所有者隔离；快照/旧日志/查询包保留。见references/delivery-priority.json"
+        "basis": "正文逐项推演：显示r、输入消费Tick枪口与结算Tick目标状态分别固定；视图关键集合、权威历史误差及展示轨迹替代策略说明清楚；历史球体求交、最近遮挡排序和可移动门同时间规则；接纳耐久扣原武器弹药，Pending纯查询与独立终态消费；完成集合/截止批次成为同一Tick事务输入；Tick与恢复记录共用LSN，历史尝试与当前执行纪元分离，恢复根控制查询包回收。见references/delivery-cross-network.json"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-network.json；运行证据保持各篇实际范围。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-network.json；运行证据保持各篇实际范围。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-priority.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-network.json；运行证据保持各篇实际范围。"
       },
       "Title": {
         "status": "通过",
@@ -39785,20 +39796,22 @@
     "revision_review": {
       "date": "2026-10-23",
       "status": "REVIEWED",
-      "phase": "delivery-P1",
+      "phase": "delivery-Final",
       "scope": "全文、公式、代码、来源与标题，含独立复读",
       "author_record": "revision-16-21.json",
       "author_sha256": "f63be6f7072aee778ca3b06abb89c53a7ea24902823c9c89529086863e518d0b",
-      "independent_record": "references/delivery-priority.json",
+      "independent_record": "references/delivery-cross-network.json",
       "independent_source_sha256": "1803c1694b4e44f2a7a73b372eceefcbcee4b4f799a855d5e7f013f93b9617dc",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
       "content_sha256": "1803c1694b4e44f2a7a73b372eceefcbcee4b4f799a855d5e7f013f93b9617dc",
       "independent_review": "PASS",
       "findings": [
-        "旧快照(7,1)经恢复(8,2)后604提交伤害，再从同一快照二次恢复；必须先消费恢复LSN101后消费Tick604的LSN102",
-        "LSN101已提交尚未派发再退出，第二次先还原(8,2)再为仍Pending者登记(9,3)，不能丢命令或替换已终态项",
-        "当前所有者9不得拒绝日志中的历史纪元8决策；旧实时任务仍由所有者入口隔离",
-        "新快照覆盖恢复记录但Tick未变，回放从覆盖LSN之后开始；旧快照仍保留时不能截去它需要的日志"
+        "T4显示加速外推x=0.1而权威x=0.2：时间有效不承诺精确所见命中，边界明确",
+        "接纳600后射手死亡重生S8：仍结算S7/W3原射击，不扣新库存",
+        "604先采用18而605才采用17：回放固定原批次，不能按新线程速度换伤害顺序",
+        "LSN100旧尝试(7,1)、101恢复为(8,2)、102伤害后纪元9再次恢复：先101再102且不拒绝历史纪元8",
+        "仅提交101未派发再退出：回放101后为仍Pending创建(9,3)，原截止606不移动",
+        "新终态快照生成但旧快照仍保留：旧日志和查询包仍有恢复根，不能提前回收"
       ],
       "runtime": {
         "scope": "2026-10-22，以本机 Python 3.11 运行 `python 知识库/examples/revision_16_21/test_reference.py`，17项检查通过。[参考实现](../examples/revision_16_21/reference.py)与[测试输入](../examples/revision_16_21/test_reference.py)可复现本页注明的机制。 本页验证历史线性插值的窗口拒绝及球形射线正反向求交；尚未运行骨骼碰撞场景、真实网络故障或公平性测试。",
@@ -40124,9 +40137,9 @@
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review"
     },
     "delivery_review": {
-      "record": "references/delivery-priority.json",
+      "record": "references/delivery-cross-network.json",
       "date": "2026-10-23",
-      "phase": "P1",
+      "phase": "Final",
       "content_sha256": "1803c1694b4e44f2a7a73b372eceefcbcee4b4f799a855d5e7f013f93b9617dc"
     }
   },

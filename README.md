@@ -58,3 +58,5 @@ Git 仓库发布 README、`知识库/`、`skills/` 与 `AGENTS.md`。知识库�
 [连续执行与恢复复读记录](skills/kb-structure-audit/references/continuity-review-report.md)记录15篇文章的连续案例、补偿承接、异步消费与恢复反例。
 
 [冲突续行与决策重放复读记录](skills/kb-structure-audit/references/resume-review-report.md)记录13篇文章的跨对象版本、并发析构、异步决策重放及全文反证。
+
+[未交付命令与二次回放复读记录](skills/kb-structure-audit/references/delivery-review-report.md)记录13篇文章的命令续行、恢复记录消费、读取版本及全文反证。
