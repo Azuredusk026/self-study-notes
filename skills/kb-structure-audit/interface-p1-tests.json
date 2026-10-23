@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-23",
+  "scope": "原有样例回归；不覆盖全部新增机制或证明正文质量",
+  "runs": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanism_chain/protocol/test_protocol.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_cancel_does_not_add_undo_record (__main__.ProtocolTests.test_cancel_does_not_add_undo_record) ... ok\ntest_crash_after_commit_replay_does_not_repeat_effect (__main__.ProtocolTests.test_crash_after_commit_replay_does_not_repeat_effect) ... ok\ntest_crash_before_commit_does_not_consume_or_apply (__main__.ProtocolTests.test_crash_before_commit_does_not_consume_or_apply) ... ok\ntest_drag_keeps_first_old_and_last_new (__main__.ProtocolTests.test_drag_keeps_first_old_and_last_new) ... ok\ntest_fencing_and_gap_reject_without_effect (__main__.ProtocolTests.test_fencing_and_gap_reject_without_effect) ... ok\ntest_generation_cas_preserves_external_edit_after_publish (__main__.ProtocolTests.test_generation_cas_preserves_external_edit_after_publish) ... ok\ntest_late_prepare_retry_does_not_freeze_current_owner (__main__.ProtocolTests.test_late_prepare_retry_does_not_freeze_current_owner) ... ok\ntest_new_session_does_not_treat_sequence_one_as_old_duplicate (__main__.ProtocolTests.test_new_session_does_not_treat_sequence_one_as_old_duplicate) ... ok\ntest_old_retry_returns_its_original_result (__main__.ProtocolTests.test_old_retry_returns_its_original_result) ... ok\ntest_only_prepared_snapshot_can_change_owner (__main__.ProtocolTests.test_only_prepared_snapshot_can_change_owner) ... ok\ntest_output_aba_still_conflicts (__main__.ProtocolTests.test_output_aba_still_conflicts) ... ok\ntest_pending_queue_prevents_session_reset (__main__.ProtocolTests.test_pending_queue_prevents_session_reset) ... ok\ntest_recovery_completes_publish_without_republishing (__main__.ProtocolTests.test_recovery_completes_publish_without_republishing) ... ok\ntest_repeated_sequence_with_different_payload_is_rejected (__main__.ProtocolTests.test_repeated_sequence_with_different_payload_is_rejected) ... ok\ntest_write_failure_rolls_back_effect (__main__.ProtocolTests.test_write_failure_rolls_back_effect) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.607s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanism_chain/snapshot/test_playback.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_extrapolation_cap_stops_timestamp_as_well_as_pose (__main__.PlaybackCases.test_extrapolation_cap_stops_timestamp_as_well_as_pose) ... ok\ntest_large_backlog_uses_explicit_anchor_instead_of_endless_speedup (__main__.PlaybackCases.test_large_backlog_uses_explicit_anchor_instead_of_endless_speedup) ... ok\ntest_old_right_endpoint_cannot_rewind_resync (__main__.PlaybackCases.test_old_right_endpoint_cannot_rewind_resync) ... ok\ntest_one_packet_does_not_restart_unbuffered_playback (__main__.PlaybackCases.test_one_packet_does_not_restart_unbuffered_playback) ... ok\ntest_refilled_buffer_resumes_from_frozen_timestamp (__main__.PlaybackCases.test_refilled_buffer_resumes_from_frozen_timestamp) ... ok\ntest_timeout_enters_explicit_resync_then_anchors_inside_buffer (__main__.PlaybackCases.test_timeout_enters_explicit_resync_then_anchors_inside_buffer) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanism_chain/vehicle/test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanism_chain/restir/test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_chosen_light_rechecked_at_all_source_surfaces (__main__.Correction.test_chosen_light_rechecked_at_all_source_surfaces) ... ok\ntest_empty_source_still_participates_in_support_normalizer (__main__.Correction.test_empty_source_still_participates_in_support_normalizer) ... ok\ntest_naive_total_count_loses_half_of_missing_light (__main__.Correction.test_naive_total_count_loses_half_of_missing_light) ... ok\ntest_support_partition_restores_missing_light (__main__.Correction.test_support_partition_restores_missing_light) ... ok\ntest_unequal_source_counts_enter_both_weight_and_normalizer (__main__.Correction.test_unequal_source_counts_enter_both_weight_and_normalizer) ... ok\ntest_weighted_partition_keeps_origin_numerator (__main__.Correction.test_weighted_partition_keeps_origin_numerator) ... ok\ntest_candidate_weight_uses_same_jacobian_in_target_and_pdf (__main__.MeasureConversion.test_candidate_weight_uses_same_jacobian_in_target_and_pdf) ... ok\ntest_degenerate_emitter_cannot_convert_measure (__main__.MeasureConversion.test_degenerate_emitter_cannot_convert_measure) ... ok\ntest_old_area_weight_does_not_freeze_growing_light (__main__.MeasureConversion.test_old_area_weight_does_not_freeze_growing_light) ... ok\ntest_static_light_estimate_is_invariant_to_measure (__main__.MeasureConversion.test_static_light_estimate_is_invariant_to_measure) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/retained_review/restir/check.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: ReSTIR计数、归一化、空间合并和支持反例，9项断言\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision_16_21/test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_clock_asymmetric_bias (__main__.Network.test_clock_asymmetric_bias) ... ok\ntest_clock_excludes_server_processing (__main__.Network.test_clock_excludes_server_processing) ... ok\ntest_history_rejects_extrapolation (__main__.Network.test_history_rejects_extrapolation) ... ok\ntest_ray_hits_nearest_forward_surface (__main__.Network.test_ray_hits_nearest_forward_surface) ... ok\ntest_reconcile_replays_collision (__main__.Network.test_reconcile_replays_collision) ... ok\ntest_rollback_corrects_state_and_rebuilds_events (__main__.Network.test_rollback_corrects_state_and_rebuilds_events) ... ok\ntest_rpc_failure_rolls_back_balance (__main__.Network.test_rpc_failure_rolls_back_balance) ... ok\ntest_rpc_retry_and_payload_conflict (__main__.Network.test_rpc_retry_and_payload_conflict) ... ok\ntest_wrapped_sequence (__main__.Network.test_wrapped_sequence) ... ok\ntest_fracture_support_disconnect (__main__.Physics.test_fracture_support_disconnect) ... ok\ntest_slide_retains_tangent (__main__.Physics.test_slide_retains_tangent) ... ok\ntest_tire_shared_force_budget (__main__.Physics.test_tire_shared_force_budget) ... ok\ntest_xpbd_coincident_rejected (__main__.Physics.test_xpbd_coincident_rejected) ... ok\ntest_xpbd_compliance_and_accumulation (__main__.Physics.test_xpbd_compliance_and_accumulation) ... ok\ntest_xpbd_pinned_particle (__main__.Physics.test_xpbd_pinned_particle) ... ok\ntest_atomic_publish_failure_preserves_destination (__main__.Storage.test_atomic_publish_failure_preserves_destination) ... ok\ntest_atomic_publish_roundtrip (__main__.Storage.test_atomic_publish_roundtrip) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 0.041s\n\nOK\n"
+    }
+  ],
+  "passed": true
+}

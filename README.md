@@ -48,3 +48,5 @@ Git 仓库发布 README、`知识库/`、`skills/` 与 `AGENTS.md`。知识库�
 [保留文章逐机制复读记录](skills/kb-structure-audit/references/retained-review-report.md)记录48篇保留文章的机制审查、具体反例与实际验证范围。
 
 [主要机制与衔接复读记录](skills/kb-structure-audit/references/chain-review-report.md)记录48篇文章的完整机制交接、最终反例、当前正文与实际验证范围。
+
+[跨机制接口复读记录](skills/kb-structure-audit/references/interface-review-report.md)记录40篇文章的接口推演、失败反例与分阶段证据。
