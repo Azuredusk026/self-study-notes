@@ -12,8 +12,6 @@
 | D3D12 | root signature、descriptor heap、descriptor table | 根参数预算、堆寿命、视图与状态 |
 | Metal | buffer/texture 绑定、argument buffer | 平台能力、资源使用声明和寿命 |
 
-描述符是资源视图与寻址信息。绑定描述符本身不会上传像素数据，也不自动完成 GPU 写后读同步。
-
 ### 按访问和更新频率组织
 
 全帧数据、视图数据、材质数据和逐对象数据通常分开。其目的是减少更新与重绑范围，但最终分组还取决于 API、材质排序、实例化方式和 CPU/GPU 数据生产者。
@@ -76,9 +74,9 @@ Vulkan push constants 把少量值记录在命令里，适合对象索引与标�
 
 D3D12 root constants 受根签名 DWORD 预算约束，Metal 采用其绑定模型。小参数通道可减少缓冲更新，但实际延迟和驱动开销仍需测量。
 
-### Bindless 的索引访问
+### 描述符数组与材质索引
 
-逐材质集合把纹理选择留给CPU绑定调用。材质种类很多时，可以把纹理放进同一个描述符数组，让材质记录保存数组下标。下面固定采用Vulkan 1.2、GLSL 4.50和容量64的数组，将创建端与着色器接口对应起来；容量由同一配置生成到宿主与着色器。
+动态偏移解决同一缓冲中选择哪条记录，纹理选择仍由逐材质集合的CPU绑定调用决定。材质种类很多时，可以把纹理放进同一个描述符数组，让材质记录保存数组下标。下面固定采用Vulkan 1.2、GLSL 4.50和容量64的数组，将创建端与着色器接口对应起来；容量由同一配置生成到宿主与着色器。
 
 set0/binding0仍保存相机uniform。新的set1包含四个绑定：binding0为对象表STORAGE_BUFFER，数量1、顶点阶段；binding1为材质表STORAGE_BUFFER，数量1、片元阶段；binding2为SAMPLED_IMAGE，数量64、片元阶段；binding3为SAMPLER，数量1、片元阶段。对象表采用std430的mat4数组，步长64字节；材质表采用uvec4数组，步长16字节，x保存纹理下标，其余分量预留。宿主按反射核对这些偏移。push constant范围为偏移0、大小8、VERTEX|FRAGMENT，两个uint分别为对象和材质下标。
 
