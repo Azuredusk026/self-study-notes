@@ -11,7 +11,7 @@
 | [[20_游戏AI/计划终态与重规划]] | 计划结束或站位失效后怎样续行并限制重复失败。 |
 | [[20_游戏AI/决策日志与恢复]] | 决策与世界效果如何登记、去重并在退出后恢复。 |
 
-先读动作身份与交接，再读状态机和行为树；需要目标选择时进入评分与规划，需要持久化时继续阅读提交、终态和恢复。下列章节提供各机制的直接入口。
+先读动作身份与交接，再读状态机和行为树；需要目标选择时进入评分与规划，组合多个模型时继续阅读计划提交与终态处理；持久化需求进入日志与恢复。下列章节提供各机制的直接入口。
 
 ## 控制关系
 
@@ -147,4 +147,5 @@
 
 ## 参考资料
 
-详见[[20_游戏AI/效用评分与目标规划#参考资料]]。
+- [Epic Behavior Tree Node Reference：Decorators](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-behavior-tree-node-reference-decorators)：Observer Aborts的Self与Lower Priority语义；具体实现随引擎版本核对。
+- [Orkin：Three States and a Plan](https://www.gamedevs.org/uploads/three-states-plan-ai-of-fear.pdf)：GOAP动作前提与效果原始实践。

@@ -4904,39 +4904,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "batch_migration_authorized": true,
@@ -4954,8 +4954,9 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
     "changes": [
@@ -5005,7 +5006,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "8623343aebeb72eed6e9f0a93fb273501f431830f1bb8c8ad103b7b2d01c6bfd",
+    "final_sha256": "ad6210b9f72c50a073a9daf9124c22f10ba8aca7f86a8764f82272b8a7a13346",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "抗锯齿与时域重建",
@@ -5017,7 +5018,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "8623343aebeb72eed6e9f0a93fb273501f431830f1bb8c8ad103b7b2d01c6bfd",
+    "reviewed_content_sha256": "ad6210b9f72c50a073a9daf9124c22f10ba8aca7f86a8764f82272b8a7a13346",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -5034,11 +5035,11 @@
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "8623343aebeb72eed6e9f0a93fb273501f431830f1bb8c8ad103b7b2d01c6bfd",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "root",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "ad6210b9f72c50a073a9daf9124c22f10ba8aca7f86a8764f82272b8a7a13346",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "historical_reviewed_content_sha256": "c394d9d1b44fe7b12aa5038d208d2f079e589bf5950bd497298b4abfdef7c275",
     "historical_content_commit": "8045bc0",
@@ -5141,11 +5142,20 @@
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "8623343aebeb72eed6e9f0a93fb273501f431830f1bb8c8ad103b7b2d01c6bfd",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "ad6210b9f72c50a073a9daf9124c22f10ba8aca7f86a8764f82272b8a7a13346",
       "full_text_read": true,
+      "reviewer": "root：本轮逐页复读",
+      "basis": "采样篇产生历史坐标与累积值，校验篇消费有限候选并决定拒绝或裁剪；原页保留空间方案对照，三个职责各有实现与诊断边界。"
+    },
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "8623343aebeb72eed6e9f0a93fb273501f431830f1bb8c8ad103b7b2d01c6bfd",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
       "reviewer": "root",
-      "basis": "复读范围与技术修复见报告"
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
     }
   },
   {
@@ -28580,39 +28590,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "不适用",
-        "basis": "导读连接正文，运行范围由对应专题说明。"
+        "basis": "原页提供专题关系与兼容标题；运行证据归对应正文。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "batch_migration_authorized": true,
@@ -28689,11 +28699,11 @@
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "97fcc8e6a206dc89046749154bb3e373df7a27bc41115f7ffefdb9621a1d0f02",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "ai_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "97fcc8e6a206dc89046749154bb3e373df7a27bc41115f7ffefdb9621a1d0f02",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "historical_reviewed_content_sha256": "1656f915fdb2871cd127333aa8758a571c61426517f8a1797d6ca0c19f7377cc",
     "historical_content_commit": "162fef2",
@@ -28973,11 +28983,20 @@
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
+      "record": "references/longpage-second-review-2026-10-24.md",
       "content_sha256": "97fcc8e6a206dc89046749154bb3e373df7a27bc41115f7ffefdb9621a1d0f02",
       "full_text_read": true,
+      "reviewer": "root：本轮逐页复读",
+      "basis": "手势撤销、批次条件发布和跨资源共同决定分别采用内存事务、输出回执与持久目标呈现；合并会掩盖它们不同的原子性和恢复能力。"
+    },
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "97fcc8e6a206dc89046749154bb3e373df7a27bc41115f7ffefdb9621a1d0f02",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
       "reviewer": "ai_split",
-      "basis": "复读范围与技术修复见报告"
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
     }
   },
   {
@@ -29379,39 +29398,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "不适用",
-        "basis": "导读连接正文，运行范围由对应专题说明。"
+        "basis": "原页提供专题关系与兼容标题；运行证据归对应正文。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "batch_migration_authorized": true,
@@ -29479,11 +29498,11 @@
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "a3413ee7535dbfa0b236e78d3ac4e88c4c60f508293b5678d7cbb6758866b1e5",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "ai_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "a3413ee7535dbfa0b236e78d3ac4e88c4c60f508293b5678d7cbb6758866b1e5",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "historical_reviewed_content_sha256": "dbf8b38419fddf14d26b88870b562c0c7ea92f31ea18b9455a4ee4474dd32ba4",
     "historical_content_commit": "162fef2",
@@ -29813,11 +29832,11 @@
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
+      "record": "references/longpage-second-review-2026-10-24.md",
       "content_sha256": "a3413ee7535dbfa0b236e78d3ac4e88c4c60f508293b5678d7cbb6758866b1e5",
       "full_text_read": true,
-      "reviewer": "ai_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "构建与类型规则、对象借用、模块整体排空与线程受限清理各自回答不同安全条件；线程篇无需重复构建及模板来源，源说明通过原页保存。"
     },
     "optimization_20261024_baseline_review": {
       "date": "2026-10-23",
@@ -29889,6 +29908,15 @@
       },
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
       "independent_scope": "仅对应independent_source_sha256记录的历史快照；本轮未新增独立审阅者"
+    },
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "a3413ee7535dbfa0b236e78d3ac4e88c4c60f508293b5678d7cbb6758866b1e5",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "ai_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
     }
   },
   {
@@ -31503,39 +31531,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "batch_migration_authorized": true,
@@ -31551,8 +31579,9 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
     "changes": [
@@ -31563,7 +31592,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "1fe0f1b40252d543112f1308754f3ab5fd9d111626998d083fa5d9807d481a3f",
+    "final_sha256": "b7c94cec6daab23ef67a90d080718326c6ca6fe337a1cb77c37eee62e980eede",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "文件IO",
@@ -31575,7 +31604,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "1fe0f1b40252d543112f1308754f3ab5fd9d111626998d083fa5d9807d481a3f",
+    "reviewed_content_sha256": "b7c94cec6daab23ef67a90d080718326c6ca6fe337a1cb77c37eee62e980eede",
     "source_article_path": "知识库/16_编程与数据结构/操作系统、进程与并发基础.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -31593,11 +31622,11 @@
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "1fe0f1b40252d543112f1308754f3ab5fd9d111626998d083fa5d9807d481a3f",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "cpp_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "b7c94cec6daab23ef67a90d080718326c6ca6fe337a1cb77c37eee62e980eede",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "historical_reviewed_content_sha256": "43b315b3e627c45bedf22ce16a55d7397559851cd3fcc1a373cfd53bcf6bc731",
     "historical_content_commit": "162fef2",
@@ -31951,11 +31980,20 @@
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "1fe0f1b40252d543112f1308754f3ab5fd9d111626998d083fa5d9807d481a3f",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "b7c94cec6daab23ef67a90d080718326c6ca6fe337a1cb77c37eee62e980eede",
       "full_text_read": true,
+      "reviewer": "root：本轮逐页复读",
+      "basis": "读取缓冲、条件发布和跨进程回收分别保护字节消费者、清单入口与远端在途操作；系统完成不等于文件可回收，保持三篇。"
+    },
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "1fe0f1b40252d543112f1308754f3ab5fd9d111626998d083fa5d9807d481a3f",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
       "reviewer": "cpp_split",
-      "basis": "复读范围与技术修复见报告"
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
     }
   },
   {
@@ -33533,39 +33571,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "不适用",
-        "basis": "导读连接正文，运行范围由对应专题说明。"
+        "basis": "原页提供专题关系与兼容标题；运行证据归对应正文。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "batch_migration_authorized": true,
@@ -33642,11 +33680,11 @@
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "bd8b6c1d72cbdbc9ab5624b482dffa4e069dc667bb79a2f187b5a602c00fceb2",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "cpp_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "bd8b6c1d72cbdbc9ab5624b482dffa4e069dc667bb79a2f187b5a602c00fceb2",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "historical_reviewed_content_sha256": "43c0d99da0caf1d6a215fd632d1484cc0fa1b88a369ffc77ff2e04f97e7fd36f",
     "historical_content_commit": "9160f31",
@@ -33968,11 +34006,11 @@
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
+      "record": "references/longpage-second-review-2026-10-24.md",
       "content_sha256": "bd8b6c1d72cbdbc9ab5624b482dffa4e069dc667bb79a2f187b5a602c00fceb2",
       "full_text_read": true,
-      "reviewer": "cpp_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "五篇分别处理任务编排、世界几何、写入授权、逆操作版本链与残留审核；补偿版本承接不等于残留发布，保持独立，基础事务协议通过链接共用。"
     },
     "optimization_20261024_baseline_review": {
       "date": "2026-10-23",
@@ -34048,6 +34086,15 @@
       },
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
       "independent_scope": "仅对应independent_source_sha256记录的历史快照；本轮未新增独立审阅者"
+    },
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "bd8b6c1d72cbdbc9ab5624b482dffa4e069dc667bb79a2f187b5a602c00fceb2",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "cpp_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
     }
   },
   {
@@ -34830,39 +34877,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "不适用",
-        "basis": "导读连接正文，运行范围由对应专题说明。"
+        "basis": "原页提供专题关系与兼容标题；运行证据归对应正文。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "batch_migration_authorized": true,
@@ -34878,8 +34925,9 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
     "changes": [
@@ -34901,7 +34949,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "0a6c1cb8fdc489c206f29c9e51f5e12e063f24479b68563e5bbc3de800406feb",
+    "final_sha256": "ce97b5b0896713821b4869b51e4038dbad0ccf1b5ed7073250418b145dc2baab",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "OVERVIEW",
     "canonical_concept": "视频生成时序一致性",
@@ -34913,7 +34961,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "0a6c1cb8fdc489c206f29c9e51f5e12e063f24479b68563e5bbc3de800406feb",
+    "reviewed_content_sha256": "ce97b5b0896713821b4869b51e4038dbad0ccf1b5ed7073250418b145dc2baab",
     "source_article_path": "知识库/17_AIGC与Agent管线/ComfyUI工作流与时序一致性.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -34931,11 +34979,11 @@
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "0a6c1cb8fdc489c206f29c9e51f5e12e063f24479b68563e5bbc3de800406feb",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "ai_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "ce97b5b0896713821b4869b51e4038dbad0ccf1b5ed7073250418b145dc2baab",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "historical_reviewed_content_sha256": "aaf058dc177ccf69b833447f77059066d8624dfa787a81de9be7a164f8e2ae0a",
     "historical_content_commit": "9160f31",
@@ -35310,11 +35358,20 @@
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "0a6c1cb8fdc489c206f29c9e51f5e12e063f24479b68563e5bbc3de800406feb",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "ce97b5b0896713821b4869b51e4038dbad0ccf1b5ed7073250418b145dc2baab",
       "full_text_read": true,
+      "reviewer": "root：本轮逐页复读",
+      "basis": "几何对应、生成约束、曝光融合和持久任务分别处理表面位置、去噪、颜色与控制身份；恢复篇删除未使用的颜色字段模板并独立声明未实现范围。"
+    },
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "0a6c1cb8fdc489c206f29c9e51f5e12e063f24479b68563e5bbc3de800406feb",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
       "reviewer": "ai_split",
-      "basis": "复读范围与技术修复见报告"
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
     }
   },
   {
@@ -37916,39 +37973,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "不适用",
-        "basis": "导读连接正文，运行范围由对应专题说明。"
+        "basis": "原页提供专题关系与兼容标题；运行证据归对应正文。"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "batch_migration_authorized": true,
@@ -37964,8 +38021,9 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
     "changes": [
@@ -37986,7 +38044,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "322b4e9749ace2a4d33cb8c5aa0eff18bf99c553033093756803951f0ce66fe3",
+    "final_sha256": "6e3bdd1e1ff3c58718db5bd9245ca5412b7f40d2a273972726ab31ff93b5440e",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "OVERVIEW",
     "canonical_concept": "游戏AI决策模型",
@@ -37998,7 +38056,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "322b4e9749ace2a4d33cb8c5aa0eff18bf99c553033093756803951f0ce66fe3",
+    "reviewed_content_sha256": "6e3bdd1e1ff3c58718db5bd9245ca5412b7f40d2a273972726ab31ff93b5440e",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -38015,11 +38073,11 @@
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "322b4e9749ace2a4d33cb8c5aa0eff18bf99c553033093756803951f0ce66fe3",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "agent_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "6e3bdd1e1ff3c58718db5bd9245ca5412b7f40d2a273972726ab31ff93b5440e",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "historical_reviewed_content_sha256": "991aeb390c698a13e54b90587458f3f37ed3c1d7a88f3251b8dd01b04e0c33af",
     "historical_content_commit": "162fef2",
@@ -38352,11 +38410,11 @@
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "322b4e9749ace2a4d33cb8c5aa0eff18bf99c553033093756803951f0ce66fe3",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "6e3bdd1e1ff3c58718db5bd9245ca5412b7f40d2a273972726ab31ff93b5440e",
       "full_text_read": true,
-      "reviewer": "agent_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "六篇分别给出动作身份、模型生命周期、目标与步骤选择、候选采用、终态续行和持久恢复；采用与终态虽循环关联，但校验条件和失败策略不同，保留独立检索入口。"
     },
     "optimization_20261024_baseline_review": {
       "date": "2026-10-23",
@@ -38438,6 +38496,15 @@
       },
       "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
       "independent_scope": "仅对应independent_source_sha256记录的历史快照；本轮未新增独立审阅者"
+    },
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "322b4e9749ace2a4d33cb8c5aa0eff18bf99c553033093756803951f0ce66fe3",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "agent_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
     }
   },
   {
@@ -41098,39 +41165,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "batch_migration_authorized": true,
@@ -41149,8 +41216,9 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
     "modernization_status": "最终边界、命名与正文处理完成",
     "changes": [
@@ -41160,7 +41228,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "5161554741a5993b31ccc280795b12fe1e7652eed331a506b724cb673a95cb86",
+    "final_sha256": "da178f45df10f11b6b9b03b2ac0d67967a8b759f513fee90a139e46b977ad996",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "延迟补偿命中",
@@ -41172,7 +41240,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "5161554741a5993b31ccc280795b12fe1e7652eed331a506b724cb673a95cb86",
+    "reviewed_content_sha256": "da178f45df10f11b6b9b03b2ac0d67967a8b759f513fee90a139e46b977ad996",
     "source_article_path": "知识库/21_游戏网络/状态同步、预测与回滚.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -41190,11 +41258,11 @@
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "5161554741a5993b31ccc280795b12fe1e7652eed331a506b724cb673a95cb86",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "cpp_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "da178f45df10f11b6b9b03b2ac0d67967a8b759f513fee90a139e46b977ad996",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "historical_reviewed_content_sha256": "cecd6efbb47d54e49cd280f67a75797ac440d71add8a1daf7b37d823555c7ca1",
     "historical_content_commit": "162fef2",
@@ -41592,11 +41660,20 @@
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "5161554741a5993b31ccc280795b12fe1e7652eed331a506b724cb673a95cb86",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "da178f45df10f11b6b9b03b2ac0d67967a8b759f513fee90a139e46b977ad996",
       "full_text_read": true,
+      "reviewer": "root：本轮逐页复读",
+      "basis": "原页选择历史时间并查询几何，结算篇采用异步结果并恢复权威伤害；几何求交和耐久Tick独立验证，保持两页。"
+    },
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "5161554741a5993b31ccc280795b12fe1e7652eed331a506b724cb673a95cb86",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
       "reviewer": "cpp_split",
-      "basis": "复读范围与技术修复见报告"
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
     }
   },
   {
@@ -46625,39 +46702,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "资产任务编排与发布",
@@ -46677,19 +46754,19 @@
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "b4e3727e80aee5a9e61e1d7dd79292370b3cd0cb30f9d5d9b414a01b263213cf",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "cpp_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "b4e3727e80aee5a9e61e1d7dd79292370b3cd0cb30f9d5d9b414a01b263213cf",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
+      "record": "references/longpage-second-review-2026-10-24.md",
       "content_sha256": "b4e3727e80aee5a9e61e1d7dd79292370b3cd0cb30f9d5d9b414a01b263213cf",
       "full_text_read": true,
-      "reviewer": "cpp_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "五篇分别处理任务编排、世界几何、写入授权、逆操作版本链与残留审核；补偿版本承接不等于残留发布，保持独立，基础事务协议通过链接共用。"
     },
     "source_sections": [
       [
@@ -46707,7 +46784,16 @@
           "批准记录与发布回执"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "b4e3727e80aee5a9e61e1d7dd79292370b3cd0cb30f9d5d9b414a01b263213cf",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "cpp_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
@@ -46723,39 +46809,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "资产布局的几何验证",
@@ -46765,29 +46851,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "fc599347d8c6f31b5f06908790fa2023446f3e850db3434a4dda4c7a88c3aa7f",
+    "final_sha256": "d7304d3f54f7bf898a1df156abc8d094389140c1bec89c02fb04cb5d8cf04ed5",
     "article_type": "ARTICLE",
     "canonical_concept": "资产布局的几何验证",
-    "reviewed_content_sha256": "fc599347d8c6f31b5f06908790fa2023446f3e850db3434a4dda4c7a88c3aa7f",
+    "reviewed_content_sha256": "d7304d3f54f7bf898a1df156abc8d094389140c1bec89c02fb04cb5d8cf04ed5",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "fc599347d8c6f31b5f06908790fa2023446f3e850db3434a4dda4c7a88c3aa7f",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "cpp_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "d7304d3f54f7bf898a1df156abc8d094389140c1bec89c02fb04cb5d8cf04ed5",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "fc599347d8c6f31b5f06908790fa2023446f3e850db3434a4dda4c7a88c3aa7f",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "d7304d3f54f7bf898a1df156abc8d094389140c1bec89c02fb04cb5d8cf04ed5",
       "full_text_read": true,
-      "reviewer": "cpp_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "五篇分别处理任务编排、世界几何、写入授权、逆操作版本链与残留审核；补偿版本承接不等于残留发布，保持独立，基础事务协议通过链接共用。"
     },
     "source_sections": [
       [
@@ -46801,7 +46888,16 @@
           "连续站位区域的验证结果"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "fc599347d8c6f31b5f06908790fa2023446f3e850db3434a4dda4c7a88c3aa7f",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "cpp_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
@@ -46817,39 +46913,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "场景工具的条件执行",
@@ -46869,19 +46965,19 @@
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "764987141b2a64516d4dd3a686d054f68b479655fc0f6c7edd2f61251b556bdd",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "cpp_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "764987141b2a64516d4dd3a686d054f68b479655fc0f6c7edd2f61251b556bdd",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
+      "record": "references/longpage-second-review-2026-10-24.md",
       "content_sha256": "764987141b2a64516d4dd3a686d054f68b479655fc0f6c7edd2f61251b556bdd",
       "full_text_read": true,
-      "reviewer": "cpp_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "五篇分别处理任务编排、世界几何、写入授权、逆操作版本链与残留审核；补偿版本承接不等于残留发布，保持独立，基础事务协议通过链接共用。"
     },
     "source_sections": [
       [
@@ -46896,7 +46992,16 @@
           "生成服务与不确定结果"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "764987141b2a64516d4dd3a686d054f68b479655fc0f6c7edd2f61251b556bdd",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "cpp_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
@@ -46912,39 +47017,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "场景补偿的版本承接",
@@ -46964,19 +47069,19 @@
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "6cbf6a43d429e3fd1c9c97e736bd57c0c79a47b10b143b73ee58271cc9b8243b",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "cpp_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "6cbf6a43d429e3fd1c9c97e736bd57c0c79a47b10b143b73ee58271cc9b8243b",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
+      "record": "references/longpage-second-review-2026-10-24.md",
       "content_sha256": "6cbf6a43d429e3fd1c9c97e736bd57c0c79a47b10b143b73ee58271cc9b8243b",
       "full_text_read": true,
-      "reviewer": "cpp_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "五篇分别处理任务编排、世界几何、写入授权、逆操作版本链与残留审核；补偿版本承接不等于残留发布，保持独立，基础事务协议通过链接共用。"
     },
     "source_sections": [
       [
@@ -46988,7 +47093,16 @@
           "父子关系与跨对象版本"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "6cbf6a43d429e3fd1c9c97e736bd57c0c79a47b10b143b73ee58271cc9b8243b",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "cpp_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
@@ -47004,39 +47118,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "补偿隔离与冲突接管",
@@ -47056,19 +47170,19 @@
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "5e6e25497a5c81f5542ee36f4a9b2c8db73f55cb63ad0442fe39b8773220d97b",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "cpp_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "5e6e25497a5c81f5542ee36f4a9b2c8db73f55cb63ad0442fe39b8773220d97b",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
+      "record": "references/longpage-second-review-2026-10-24.md",
       "content_sha256": "5e6e25497a5c81f5542ee36f4a9b2c8db73f55cb63ad0442fe39b8773220d97b",
       "full_text_read": true,
-      "reviewer": "cpp_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "五篇分别处理任务编排、世界几何、写入授权、逆操作版本链与残留审核；补偿版本承接不等于残留发布，保持独立，基础事务协议通过链接共用。"
     },
     "source_sections": [
       [
@@ -47078,7 +47192,16 @@
           "冲突决议与续行"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "5e6e25497a5c81f5542ee36f4a9b2c8db73f55cb63ad0442fe39b8773220d97b",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "cpp_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/20_游戏AI/决策输入与动作交接.md",
@@ -47094,39 +47217,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "决策输入与动作交接",
@@ -47136,29 +47259,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "6290e9bf2e665e617610af5bf84a1b9c478622f8d0427cc29715ddd6fe639e5c",
+    "final_sha256": "1fef0554e6d9a03fde287658369f08cbaaa3ab9ca81756a5250f404886a5af1b",
     "article_type": "ARTICLE",
     "canonical_concept": "决策输入与动作交接",
-    "reviewed_content_sha256": "6290e9bf2e665e617610af5bf84a1b9c478622f8d0427cc29715ddd6fe639e5c",
+    "reviewed_content_sha256": "1fef0554e6d9a03fde287658369f08cbaaa3ab9ca81756a5250f404886a5af1b",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "6290e9bf2e665e617610af5bf84a1b9c478622f8d0427cc29715ddd6fe639e5c",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "agent_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "1fef0554e6d9a03fde287658369f08cbaaa3ab9ca81756a5250f404886a5af1b",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "6290e9bf2e665e617610af5bf84a1b9c478622f8d0427cc29715ddd6fe639e5c",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "1fef0554e6d9a03fde287658369f08cbaaa3ab9ca81756a5250f404886a5af1b",
       "full_text_read": true,
-      "reviewer": "agent_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "六篇分别给出动作身份、模型生命周期、目标与步骤选择、候选采用、终态续行和持久恢复；采用与终态虽循环关联，但校验条件和失败策略不同，保留独立检索入口。"
     },
     "source_sections": [
       [
@@ -47172,7 +47296,16 @@
           "执行身份"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "6290e9bf2e665e617610af5bf84a1b9c478622f8d0427cc29715ddd6fe639e5c",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "agent_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/20_游戏AI/状态机与行为树.md",
@@ -47188,39 +47321,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "状态机与行为树",
@@ -47230,29 +47363,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "1577491836f8a75b70a068d2e1cfd4d893a81c98cc7974166c5c84e52ee8c47c",
+    "final_sha256": "f86a393cdcf7f1bfc76a7edda29ecd1e1ec5af2d104fddd851f17d3d8587e593",
     "article_type": "ARTICLE",
     "canonical_concept": "状态机与行为树",
-    "reviewed_content_sha256": "1577491836f8a75b70a068d2e1cfd4d893a81c98cc7974166c5c84e52ee8c47c",
+    "reviewed_content_sha256": "f86a393cdcf7f1bfc76a7edda29ecd1e1ec5af2d104fddd851f17d3d8587e593",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "1577491836f8a75b70a068d2e1cfd4d893a81c98cc7974166c5c84e52ee8c47c",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "agent_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "f86a393cdcf7f1bfc76a7edda29ecd1e1ec5af2d104fddd851f17d3d8587e593",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "1577491836f8a75b70a068d2e1cfd4d893a81c98cc7974166c5c84e52ee8c47c",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "f86a393cdcf7f1bfc76a7edda29ecd1e1ec5af2d104fddd851f17d3d8587e593",
       "full_text_read": true,
-      "reviewer": "agent_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "六篇分别给出动作身份、模型生命周期、目标与步骤选择、候选采用、终态续行和持久恢复；采用与终态虽循环关联，但校验条件和失败策略不同，保留独立检索入口。"
     },
     "source_sections": [
       [
@@ -47268,7 +47402,16 @@
           "条件观察与调度"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "1577491836f8a75b70a068d2e1cfd4d893a81c98cc7974166c5c84e52ee8c47c",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "agent_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/20_游戏AI/效用评分与目标规划.md",
@@ -47284,39 +47427,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "效用评分与目标规划",
@@ -47326,29 +47469,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "23a7d3da079289160c7f675717f1167b838cb9e264bcb2345bcf60298cbf799f",
+    "final_sha256": "3824b141e0e5a5ecc5eceb6407f8a61cc3b7c6fae4ecff21573caf13ed8ab7e0",
     "article_type": "ARTICLE",
     "canonical_concept": "效用评分与目标规划",
-    "reviewed_content_sha256": "23a7d3da079289160c7f675717f1167b838cb9e264bcb2345bcf60298cbf799f",
+    "reviewed_content_sha256": "3824b141e0e5a5ecc5eceb6407f8a61cc3b7c6fae4ecff21573caf13ed8ab7e0",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "23a7d3da079289160c7f675717f1167b838cb9e264bcb2345bcf60298cbf799f",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "agent_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "3824b141e0e5a5ecc5eceb6407f8a61cc3b7c6fae4ecff21573caf13ed8ab7e0",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "23a7d3da079289160c7f675717f1167b838cb9e264bcb2345bcf60298cbf799f",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "3824b141e0e5a5ecc5eceb6407f8a61cc3b7c6fae4ecff21573caf13ed8ab7e0",
       "full_text_read": true,
-      "reviewer": "agent_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "六篇分别给出动作身份、模型生命周期、目标与步骤选择、候选采用、终态续行和持久恢复；采用与终态虽循环关联，但校验条件和失败策略不同，保留独立检索入口。"
     },
     "source_sections": [
       [
@@ -47363,7 +47507,16 @@
           "HTN分解与状态推进"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "23a7d3da079289160c7f675717f1167b838cb9e264bcb2345bcf60298cbf799f",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "agent_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/20_游戏AI/决策计划提交.md",
@@ -47379,39 +47532,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "决策计划提交",
@@ -47421,29 +47574,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "d566b3e9aedb3ac40f98942132cdb7bad9ebf6abaa00b4edd554f6d43ffb4052",
+    "final_sha256": "5c4b707662f2d9d4e79565df894f0c8e59bd96fb8b0994cb84f24d3a3589f30f",
     "article_type": "ARTICLE",
     "canonical_concept": "决策计划提交",
-    "reviewed_content_sha256": "d566b3e9aedb3ac40f98942132cdb7bad9ebf6abaa00b4edd554f6d43ffb4052",
+    "reviewed_content_sha256": "5c4b707662f2d9d4e79565df894f0c8e59bd96fb8b0994cb84f24d3a3589f30f",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "d566b3e9aedb3ac40f98942132cdb7bad9ebf6abaa00b4edd554f6d43ffb4052",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "agent_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "5c4b707662f2d9d4e79565df894f0c8e59bd96fb8b0994cb84f24d3a3589f30f",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "d566b3e9aedb3ac40f98942132cdb7bad9ebf6abaa00b4edd554f6d43ffb4052",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "5c4b707662f2d9d4e79565df894f0c8e59bd96fb8b0994cb84f24d3a3589f30f",
       "full_text_read": true,
-      "reviewer": "agent_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "六篇分别给出动作身份、模型生命周期、目标与步骤选择、候选采用、终态续行和持久恢复；采用与终态虽循环关联，但校验条件和失败策略不同，保留独立检索入口。"
     },
     "source_sections": [
       [
@@ -47454,7 +47608,16 @@
           "候选采用失败"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "d566b3e9aedb3ac40f98942132cdb7bad9ebf6abaa00b4edd554f6d43ffb4052",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "agent_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/20_游戏AI/计划终态与重规划.md",
@@ -47470,39 +47633,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "计划终态与重规划",
@@ -47512,29 +47675,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "dc18e5271ba86533c42122fa7e147bb7a948ef880b7e8e411d37b1beced4692b",
+    "final_sha256": "836a0b1d846e6660bf1e49fbcdc4f249dec168d8c5f91b9975e92ed0c145d015",
     "article_type": "ARTICLE",
     "canonical_concept": "计划终态与重规划",
-    "reviewed_content_sha256": "dc18e5271ba86533c42122fa7e147bb7a948ef880b7e8e411d37b1beced4692b",
+    "reviewed_content_sha256": "836a0b1d846e6660bf1e49fbcdc4f249dec168d8c5f91b9975e92ed0c145d015",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "dc18e5271ba86533c42122fa7e147bb7a948ef880b7e8e411d37b1beced4692b",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "agent_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "836a0b1d846e6660bf1e49fbcdc4f249dec168d8c5f91b9975e92ed0c145d015",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "dc18e5271ba86533c42122fa7e147bb7a948ef880b7e8e411d37b1beced4692b",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "836a0b1d846e6660bf1e49fbcdc4f249dec168d8c5f91b9975e92ed0c145d015",
       "full_text_read": true,
-      "reviewer": "agent_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "六篇分别给出动作身份、模型生命周期、目标与步骤选择、候选采用、终态续行和持久恢复；采用与终态虽循环关联，但校验条件和失败策略不同，保留独立检索入口。"
     },
     "source_sections": [
       [
@@ -47545,7 +47709,16 @@
           "行为树终态与计划续行"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "dc18e5271ba86533c42122fa7e147bb7a948ef880b7e8e411d37b1beced4692b",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "agent_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/20_游戏AI/决策日志与恢复.md",
@@ -47561,39 +47734,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "决策日志与恢复",
@@ -47603,29 +47776,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "53ea8d7436875626874b2b4bf1d02c1c38c487edcf5e3354534b9a7e5545272a",
+    "final_sha256": "358d8426976cb3576a6c423dd960c3625a5fcdc783581a80bdac2d225548e22c",
     "article_type": "ARTICLE",
     "canonical_concept": "决策日志与恢复",
-    "reviewed_content_sha256": "53ea8d7436875626874b2b4bf1d02c1c38c487edcf5e3354534b9a7e5545272a",
+    "reviewed_content_sha256": "358d8426976cb3576a6c423dd960c3625a5fcdc783581a80bdac2d225548e22c",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "53ea8d7436875626874b2b4bf1d02c1c38c487edcf5e3354534b9a7e5545272a",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "agent_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "358d8426976cb3576a6c423dd960c3625a5fcdc783581a80bdac2d225548e22c",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "53ea8d7436875626874b2b4bf1d02c1c38c487edcf5e3354534b9a7e5545272a",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "358d8426976cb3576a6c423dd960c3625a5fcdc783581a80bdac2d225548e22c",
       "full_text_read": true,
-      "reviewer": "agent_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "六篇分别给出动作身份、模型生命周期、目标与步骤选择、候选采用、终态续行和持久恢复；采用与终态虽循环关联，但校验条件和失败策略不同，保留独立检索入口。"
     },
     "source_sections": [
       [
@@ -47637,7 +47811,16 @@
           "逐机制反例"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "53ea8d7436875626874b2b4bf1d02c1c38c487edcf5e3354534b9a7e5545272a",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "agent_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
@@ -47653,39 +47836,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "C++构建与对象模型",
@@ -47695,29 +47878,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "5df6feec81e9844e65c763332528b997391722668326338e5188b5db0bf55a3c",
+    "final_sha256": "5a24e813a9ae49e638b37c5f63ec2a81606c4cd2f4f6f10f4fb964bec883007c",
     "article_type": "ARTICLE",
     "canonical_concept": "C++构建与对象模型",
-    "reviewed_content_sha256": "5df6feec81e9844e65c763332528b997391722668326338e5188b5db0bf55a3c",
+    "reviewed_content_sha256": "5a24e813a9ae49e638b37c5f63ec2a81606c4cd2f4f6f10f4fb964bec883007c",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "5df6feec81e9844e65c763332528b997391722668326338e5188b5db0bf55a3c",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "ai_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "5a24e813a9ae49e638b37c5f63ec2a81606c4cd2f4f6f10f4fb964bec883007c",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "5df6feec81e9844e65c763332528b997391722668326338e5188b5db0bf55a3c",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "5a24e813a9ae49e638b37c5f63ec2a81606c4cd2f4f6f10f4fb964bec883007c",
       "full_text_read": true,
-      "reviewer": "ai_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "构建与类型规则、对象借用、模块整体排空与线程受限清理各自回答不同安全条件；线程篇无需重复构建及模板来源，源说明通过原页保存。"
     },
     "source_sections": [
       [
@@ -47736,7 +47920,16 @@
           "Win32 与 COM 边界"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "5df6feec81e9844e65c763332528b997391722668326338e5188b5db0bf55a3c",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "ai_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
@@ -47752,39 +47945,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "插件接口与对象借用",
@@ -47794,29 +47987,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "7aab8df0658e78d30f291f3653f5ab0ee7749e7ac914519de0b550e63d6d4ef7",
+    "final_sha256": "89a95cee5946ed70c08e32484e99241c04322f323449127767cdcf0233bd2fe7",
     "article_type": "ARTICLE",
     "canonical_concept": "插件接口与对象借用",
-    "reviewed_content_sha256": "7aab8df0658e78d30f291f3653f5ab0ee7749e7ac914519de0b550e63d6d4ef7",
+    "reviewed_content_sha256": "89a95cee5946ed70c08e32484e99241c04322f323449127767cdcf0233bd2fe7",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "7aab8df0658e78d30f291f3653f5ab0ee7749e7ac914519de0b550e63d6d4ef7",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "ai_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "89a95cee5946ed70c08e32484e99241c04322f323449127767cdcf0233bd2fe7",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "7aab8df0658e78d30f291f3653f5ab0ee7749e7ac914519de0b550e63d6d4ef7",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "89a95cee5946ed70c08e32484e99241c04322f323449127767cdcf0233bd2fe7",
       "full_text_read": true,
-      "reviewer": "ai_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "构建与类型规则、对象借用、模块整体排空与线程受限清理各自回答不同安全条件；线程篇无需重复构建及模板来源，源说明通过原页保存。"
     },
     "source_sections": [
       [
@@ -47831,7 +48025,16 @@
           "关闭记录与执行权"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "7aab8df0658e78d30f291f3653f5ab0ee7749e7ac914519de0b550e63d6d4ef7",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "ai_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
@@ -47847,39 +48050,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "插件关闭与卸载",
@@ -47889,29 +48092,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "ef2c43c1f5f6327c7fff572667b88423680626dd785232c7959fa1d1a633a685",
+    "final_sha256": "82a5d689588db9b35b6cae60211a91d62c7bb0910b3dda41892be03ef36820eb",
     "article_type": "ARTICLE",
     "canonical_concept": "插件关闭与卸载",
-    "reviewed_content_sha256": "ef2c43c1f5f6327c7fff572667b88423680626dd785232c7959fa1d1a633a685",
+    "reviewed_content_sha256": "82a5d689588db9b35b6cae60211a91d62c7bb0910b3dda41892be03ef36820eb",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "ef2c43c1f5f6327c7fff572667b88423680626dd785232c7959fa1d1a633a685",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "ai_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "82a5d689588db9b35b6cae60211a91d62c7bb0910b3dda41892be03ef36820eb",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "ef2c43c1f5f6327c7fff572667b88423680626dd785232c7959fa1d1a633a685",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "82a5d689588db9b35b6cae60211a91d62c7bb0910b3dda41892be03ef36820eb",
       "full_text_read": true,
-      "reviewer": "ai_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "构建与类型规则、对象借用、模块整体排空与线程受限清理各自回答不同安全条件；线程篇无需重复构建及模板来源，源说明通过原页保存。"
     },
     "source_sections": [
       [
@@ -47923,7 +48127,16 @@
           "依赖销毁与卸载续行"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "ef2c43c1f5f6327c7fff572667b88423680626dd785232c7959fa1d1a633a685",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "ai_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
@@ -47939,39 +48152,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "线程受限资源的关闭",
@@ -47981,29 +48194,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "47b0e72950c68b18e80ede004eabb852e5e5d6eb9ed38d7136190c99de69e30c",
+    "final_sha256": "eb2803715e668b49a83dcd487b9df2c11d0664a5a2750073351df2ef09ccb77f",
     "article_type": "ARTICLE",
     "canonical_concept": "线程受限资源的关闭",
-    "reviewed_content_sha256": "47b0e72950c68b18e80ede004eabb852e5e5d6eb9ed38d7136190c99de69e30c",
+    "reviewed_content_sha256": "eb2803715e668b49a83dcd487b9df2c11d0664a5a2750073351df2ef09ccb77f",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "47b0e72950c68b18e80ede004eabb852e5e5d6eb9ed38d7136190c99de69e30c",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "ai_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "eb2803715e668b49a83dcd487b9df2c11d0664a5a2750073351df2ef09ccb77f",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "47b0e72950c68b18e80ede004eabb852e5e5d6eb9ed38d7136190c99de69e30c",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "eb2803715e668b49a83dcd487b9df2c11d0664a5a2750073351df2ef09ccb77f",
       "full_text_read": true,
-      "reviewer": "ai_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "构建与类型规则、对象借用、模块整体排空与线程受限清理各自回答不同安全条件；线程篇无需重复构建及模板来源，源说明通过原页保存。"
     },
     "source_sections": [
       [
@@ -48014,7 +48228,16 @@
           "窗口与接口收尾"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "47b0e72950c68b18e80ede004eabb852e5e5d6eb9ed38d7136190c99de69e30c",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "ai_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
@@ -48030,39 +48253,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "编辑手势与撤销",
@@ -48072,29 +48295,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "248369dee872fcf3a77c8b6cc49f00e3b13ea7a945dda179948c8f3bbd2bf20c",
+    "final_sha256": "b9e8eb030e72e5f19db3c46d9568db03a310563c1b4a0b24452b4cba85089b40",
     "article_type": "ARTICLE",
     "canonical_concept": "编辑手势与撤销",
-    "reviewed_content_sha256": "248369dee872fcf3a77c8b6cc49f00e3b13ea7a945dda179948c8f3bbd2bf20c",
+    "reviewed_content_sha256": "b9e8eb030e72e5f19db3c46d9568db03a310563c1b4a0b24452b4cba85089b40",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "248369dee872fcf3a77c8b6cc49f00e3b13ea7a945dda179948c8f3bbd2bf20c",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "ai_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "b9e8eb030e72e5f19db3c46d9568db03a310563c1b4a0b24452b4cba85089b40",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "248369dee872fcf3a77c8b6cc49f00e3b13ea7a945dda179948c8f3bbd2bf20c",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "b9e8eb030e72e5f19db3c46d9568db03a310563c1b4a0b24452b4cba85089b40",
       "full_text_read": true,
-      "reviewer": "ai_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "手势撤销、批次条件发布和跨资源共同决定分别采用内存事务、输出回执与持久目标呈现；合并会掩盖它们不同的原子性和恢复能力。"
     },
     "source_sections": [
       [
@@ -48110,7 +48334,16 @@
           "事务执行与补偿"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "248369dee872fcf3a77c8b6cc49f00e3b13ea7a945dda179948c8f3bbd2bf20c",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "ai_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/15_资产与工具管线/批处理条件发布.md",
@@ -48126,39 +48359,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "批处理条件发布",
@@ -48168,29 +48401,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "d0bc055863d906289627a246b45c0364135fde32a77a739457f8a90c500cca2a",
+    "final_sha256": "1c97115eac1a2abba50d601ae53148404a13b4f22d954e48d2a9c8fecf85b226",
     "article_type": "ARTICLE",
     "canonical_concept": "批处理条件发布",
-    "reviewed_content_sha256": "d0bc055863d906289627a246b45c0364135fde32a77a739457f8a90c500cca2a",
+    "reviewed_content_sha256": "1c97115eac1a2abba50d601ae53148404a13b4f22d954e48d2a9c8fecf85b226",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "d0bc055863d906289627a246b45c0364135fde32a77a739457f8a90c500cca2a",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "ai_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "1c97115eac1a2abba50d601ae53148404a13b4f22d954e48d2a9c8fecf85b226",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "d0bc055863d906289627a246b45c0364135fde32a77a739457f8a90c500cca2a",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "1c97115eac1a2abba50d601ae53148404a13b4f22d954e48d2a9c8fecf85b226",
       "full_text_read": true,
-      "reviewer": "ai_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "手势撤销、批次条件发布和跨资源共同决定分别采用内存事务、输出回执与持久目标呈现；合并会掩盖它们不同的原子性和恢复能力。"
     },
     "source_sections": [
       [
@@ -48203,7 +48437,16 @@
           "工具版本与数据契约"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "d0bc055863d906289627a246b45c0364135fde32a77a739457f8a90c500cca2a",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "ai_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
@@ -48219,39 +48462,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "跨资源编辑恢复",
@@ -48261,29 +48504,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "469afc6635cc7474ffe6a2fd07ae342377cebfa5d33bd08ed05330b2a532db63",
+    "final_sha256": "5feeaf684e7ea27dee2fc28aaf750e67947800adeae8c3dde706844158b195ce",
     "article_type": "ARTICLE",
     "canonical_concept": "跨资源编辑恢复",
-    "reviewed_content_sha256": "469afc6635cc7474ffe6a2fd07ae342377cebfa5d33bd08ed05330b2a532db63",
+    "reviewed_content_sha256": "5feeaf684e7ea27dee2fc28aaf750e67947800adeae8c3dde706844158b195ce",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "469afc6635cc7474ffe6a2fd07ae342377cebfa5d33bd08ed05330b2a532db63",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "ai_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "5feeaf684e7ea27dee2fc28aaf750e67947800adeae8c3dde706844158b195ce",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "469afc6635cc7474ffe6a2fd07ae342377cebfa5d33bd08ed05330b2a532db63",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "5feeaf684e7ea27dee2fc28aaf750e67947800adeae8c3dde706844158b195ce",
       "full_text_read": true,
-      "reviewer": "ai_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "手势撤销、批次条件发布和跨资源共同决定分别采用内存事务、输出回执与持久目标呈现；合并会掩盖它们不同的原子性和恢复能力。"
     },
     "source_sections": [
       [
@@ -48293,7 +48537,16 @@
           "宿主撤销与持久恢复"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "469afc6635cc7474ffe6a2fd07ae342377cebfa5d33bd08ed05330b2a532db63",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "ai_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/21_游戏网络/异步命中结算与恢复.md",
@@ -48309,39 +48562,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "异步命中结算与恢复",
@@ -48351,29 +48604,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "d459d1efe9b056740106738bb9cf86efaf01d00662295ca63f8730130c561d06",
+    "final_sha256": "3082b1ae12cde1f9046441bbf365bd61e81725be6e2fd58b65554df58b004ef4",
     "article_type": "ARTICLE",
     "canonical_concept": "异步命中结算与恢复",
-    "reviewed_content_sha256": "d459d1efe9b056740106738bb9cf86efaf01d00662295ca63f8730130c561d06",
+    "reviewed_content_sha256": "3082b1ae12cde1f9046441bbf365bd61e81725be6e2fd58b65554df58b004ef4",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "d459d1efe9b056740106738bb9cf86efaf01d00662295ca63f8730130c561d06",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "cpp_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "3082b1ae12cde1f9046441bbf365bd61e81725be6e2fd58b65554df58b004ef4",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "d459d1efe9b056740106738bb9cf86efaf01d00662295ca63f8730130c561d06",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "3082b1ae12cde1f9046441bbf365bd61e81725be6e2fd58b65554df58b004ef4",
       "full_text_read": true,
-      "reviewer": "cpp_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "原页选择历史时间并查询几何，结算篇采用异步结果并恢复权威伤害；几何求交和耐久Tick独立验证，保持两页。"
     },
     "source_sections": [
       [
@@ -48388,7 +48642,16 @@
           "观察与反例"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "d459d1efe9b056740106738bb9cf86efaf01d00662295ca63f8730130c561d06",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "cpp_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/16_编程与数据结构/不可变文件发布.md",
@@ -48404,39 +48667,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "不可变文件发布",
@@ -48456,19 +48719,19 @@
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "62ceeed710208f7f03b2fb3c8b54a78f39c4e3ad283843a200e1d2663d7b1211",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "cpp_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "62ceeed710208f7f03b2fb3c8b54a78f39c4e3ad283843a200e1d2663d7b1211",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
+      "record": "references/longpage-second-review-2026-10-24.md",
       "content_sha256": "62ceeed710208f7f03b2fb3c8b54a78f39c4e3ad283843a200e1d2663d7b1211",
       "full_text_read": true,
-      "reviewer": "cpp_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "读取缓冲、条件发布和跨进程回收分别保护字节消费者、清单入口与远端在途操作；系统完成不等于文件可回收，保持三篇。"
     },
     "source_sections": [
       [
@@ -48481,7 +48744,16 @@
           "读取固定版本"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "62ceeed710208f7f03b2fb3c8b54a78f39c4e3ad283843a200e1d2663d7b1211",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "cpp_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/16_编程与数据结构/文件版本代理与回收.md",
@@ -48497,39 +48769,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "文件版本代理与回收",
@@ -48549,19 +48821,19 @@
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "3dfc93f3af603b9f041ae0423a876f43d0520ccff83a28a7c46dd1c7eda3bb53",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "cpp_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "3dfc93f3af603b9f041ae0423a876f43d0520ccff83a28a7c46dd1c7eda3bb53",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
+      "record": "references/longpage-second-review-2026-10-24.md",
       "content_sha256": "3dfc93f3af603b9f041ae0423a876f43d0520ccff83a28a7c46dd1c7eda3bb53",
       "full_text_read": true,
-      "reviewer": "cpp_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "读取缓冲、条件发布和跨进程回收分别保护字节消费者、清单入口与远端在途操作；系统完成不等于文件可回收，保持三篇。"
     },
     "source_sections": [
       [
@@ -48574,7 +48846,16 @@
           "垃圾回收的状态转换"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "3dfc93f3af603b9f041ae0423a876f43d0520ccff83a28a7c46dd1c7eda3bb53",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "cpp_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
@@ -48590,39 +48871,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "视频历史重投影",
@@ -48632,29 +48913,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "642e7ec88ad769037a747309ab90e6b93b563191b04105412c9e69595e780f91",
+    "final_sha256": "d485f42b35606ca28d27988595040eaa96193ddd287eb87316856e2720449a95",
     "article_type": "ARTICLE",
     "canonical_concept": "视频历史重投影",
-    "reviewed_content_sha256": "642e7ec88ad769037a747309ab90e6b93b563191b04105412c9e69595e780f91",
+    "reviewed_content_sha256": "d485f42b35606ca28d27988595040eaa96193ddd287eb87316856e2720449a95",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "642e7ec88ad769037a747309ab90e6b93b563191b04105412c9e69595e780f91",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "ai_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "d485f42b35606ca28d27988595040eaa96193ddd287eb87316856e2720449a95",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "642e7ec88ad769037a747309ab90e6b93b563191b04105412c9e69595e780f91",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "d485f42b35606ca28d27988595040eaa96193ddd287eb87316856e2720449a95",
       "full_text_read": true,
-      "reviewer": "ai_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "几何对应、生成约束、曝光融合和持久任务分别处理表面位置、去噪、颜色与控制身份；恢复篇删除未使用的颜色字段模板并独立声明未实现范围。"
     },
     "source_sections": [
       [
@@ -48667,7 +48949,16 @@
           "法线与当前结构"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "642e7ec88ad769037a747309ab90e6b93b563191b04105412c9e69595e780f91",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "ai_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
@@ -48683,39 +48974,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "视频生成的逐步颜色约束",
@@ -48725,29 +49016,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "b010b458be0624769ba0ec26d56f0c35e37b3ab29a0973469f9fb6d05bd5b3ec",
+    "final_sha256": "005301528cc77ccf5f5886f67854226d493869ed09fa3830870056ddcc5e9981",
     "article_type": "ARTICLE",
     "canonical_concept": "视频生成的逐步颜色约束",
-    "reviewed_content_sha256": "b010b458be0624769ba0ec26d56f0c35e37b3ab29a0973469f9fb6d05bd5b3ec",
+    "reviewed_content_sha256": "005301528cc77ccf5f5886f67854226d493869ed09fa3830870056ddcc5e9981",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "b010b458be0624769ba0ec26d56f0c35e37b3ab29a0973469f9fb6d05bd5b3ec",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "ai_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "005301528cc77ccf5f5886f67854226d493869ed09fa3830870056ddcc5e9981",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "b010b458be0624769ba0ec26d56f0c35e37b3ab29a0973469f9fb6d05bd5b3ec",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "005301528cc77ccf5f5886f67854226d493869ed09fa3830870056ddcc5e9981",
       "full_text_read": true,
-      "reviewer": "ai_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "几何对应、生成约束、曝光融合和持久任务分别处理表面位置、去噪、颜色与控制身份；恢复篇删除未使用的颜色字段模板并独立声明未实现范围。"
     },
     "source_sections": [
       [
@@ -48763,7 +49055,16 @@
           "去噪循环实现"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "b010b458be0624769ba0ec26d56f0c35e37b3ab29a0973469f9fb6d05bd5b3ec",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "ai_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
@@ -48779,39 +49080,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "视频曝光与关键帧融合",
@@ -48821,29 +49122,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "6135d76e8d939d9a1c9c24a2369d1e3b5b684c988c5a91d173ee3872c213d059",
+    "final_sha256": "a3e1dd7d9b717db86ffc6a374525bb945f92fdedbd623bb3a01c9555451f90c9",
     "article_type": "ARTICLE",
     "canonical_concept": "视频曝光与关键帧融合",
-    "reviewed_content_sha256": "6135d76e8d939d9a1c9c24a2369d1e3b5b684c988c5a91d173ee3872c213d059",
+    "reviewed_content_sha256": "a3e1dd7d9b717db86ffc6a374525bb945f92fdedbd623bb3a01c9555451f90c9",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "6135d76e8d939d9a1c9c24a2369d1e3b5b684c988c5a91d173ee3872c213d059",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "ai_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "a3e1dd7d9b717db86ffc6a374525bb945f92fdedbd623bb3a01c9555451f90c9",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "6135d76e8d939d9a1c9c24a2369d1e3b5b684c988c5a91d173ee3872c213d059",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "a3e1dd7d9b717db86ffc6a374525bb945f92fdedbd623bb3a01c9555451f90c9",
       "full_text_read": true,
-      "reviewer": "ai_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "几何对应、生成约束、曝光融合和持久任务分别处理表面位置、去噪、颜色与控制身份；恢复篇删除未使用的颜色字段模板并独立声明未实现范围。"
     },
     "source_sections": [
       [
@@ -48854,7 +49156,16 @@
           "关键帧与传播冲突"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "6135d76e8d939d9a1c9c24a2369d1e3b5b684c988c5a91d173ee3872c213d059",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "ai_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
@@ -48870,39 +49181,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "视频生成任务恢复",
@@ -48912,29 +49223,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "11a612dccb5777962e173711aa8b8e5ef2bacd450e4581f58293fe196b8b0953",
+    "final_sha256": "6aceb9ee1cf022e4e868af209a4b907229878e49d31f90cc50dc94befe808b92",
     "article_type": "ARTICLE",
     "canonical_concept": "视频生成任务恢复",
-    "reviewed_content_sha256": "11a612dccb5777962e173711aa8b8e5ef2bacd450e4581f58293fe196b8b0953",
+    "reviewed_content_sha256": "6aceb9ee1cf022e4e868af209a4b907229878e49d31f90cc50dc94befe808b92",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "11a612dccb5777962e173711aa8b8e5ef2bacd450e4581f58293fe196b8b0953",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "ai_split",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "6aceb9ee1cf022e4e868af209a4b907229878e49d31f90cc50dc94befe808b92",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "11a612dccb5777962e173711aa8b8e5ef2bacd450e4581f58293fe196b8b0953",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "6aceb9ee1cf022e4e868af209a4b907229878e49d31f90cc50dc94befe808b92",
       "full_text_read": true,
-      "reviewer": "ai_split",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "几何对应、生成约束、曝光融合和持久任务分别处理表面位置、去噪、颜色与控制身份；恢复篇删除未使用的颜色字段模板并独立声明未实现范围。"
     },
     "source_sections": [
       [
@@ -48945,7 +49257,16 @@
           "冲突决议与最终序列"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "11a612dccb5777962e173711aa8b8e5ef2bacd450e4581f58293fe196b8b0953",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "ai_split",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
@@ -48961,39 +49282,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "时域采样与重投影",
@@ -49003,29 +49324,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "707a56bd2540d5d0f63ca9d761b6e0161416bb8266379e20e81f46052049edfa",
+    "final_sha256": "ece5b567911f2468e7e9f506cbfe1d8465ef7a7143a81eed3f6f4d43640228c1",
     "article_type": "ARTICLE",
     "canonical_concept": "时域采样与重投影",
-    "reviewed_content_sha256": "707a56bd2540d5d0f63ca9d761b6e0161416bb8266379e20e81f46052049edfa",
+    "reviewed_content_sha256": "ece5b567911f2468e7e9f506cbfe1d8465ef7a7143a81eed3f6f4d43640228c1",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "707a56bd2540d5d0f63ca9d761b6e0161416bb8266379e20e81f46052049edfa",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "root",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "ece5b567911f2468e7e9f506cbfe1d8465ef7a7143a81eed3f6f4d43640228c1",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "707a56bd2540d5d0f63ca9d761b6e0161416bb8266379e20e81f46052049edfa",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "ece5b567911f2468e7e9f506cbfe1d8465ef7a7143a81eed3f6f4d43640228c1",
       "full_text_read": true,
-      "reviewer": "root",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "采样篇产生历史坐标与累积值，校验篇消费有限候选并决定拒绝或裁剪；原页保留空间方案对照，三个职责各有实现与诊断边界。"
     },
     "source_sections": [
       [
@@ -49052,7 +49374,16 @@
           "时域超采样"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "707a56bd2540d5d0f63ca9d761b6e0161416bb8266379e20e81f46052049edfa",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "root",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   },
   {
     "path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
@@ -49068,39 +49399,39 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "输入、输出和主要技术问题由首段限定。 见references/longpage-review-2026-10-24.md"
+        "basis": "按本页主问题检查输入与输出，边界结论见本组粒度复核。 见references/longpage-second-review-2026-10-24.md"
       },
       "Structure": {
         "status": "通过",
-        "basis": "章节按机制推进，导读保存专题关系及旧锚点。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐篇复读标题树；构建篇按家族归并层级，原标题入口保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Depth": {
         "status": "通过",
-        "basis": "原机制、数例和来源逐节对照迁移；复核修订见报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "逐节对照源章与目标，复算本组所列数例，完整机制和来源保留。 见references/longpage-second-review-2026-10-24.md"
       },
       "Implementation": {
         "status": "通过",
-        "basis": "已有样例验证与本页协议设计分别说明，运行范围见正文及报告。 见references/longpage-review-2026-10-24.md"
+        "basis": "明确区分伪代码、CPU样例、离线编译和未运行宿主，实际范围见正文与回归记录。 见references/longpage-second-review-2026-10-24.md"
       },
       "Evidence": {
         "status": "通过",
-        "basis": "来源随正文保存；CPU样例、协议推演与目标宿主运行分别记录。 见references/longpage-review-2026-10-24.md"
+        "basis": "按页面实际职责保留来源及实验，复核移除的重复书目在组内索引仍可达。 见references/longpage-second-review-2026-10-24.md"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "完整复读中文因果、主语、变量定义和跨页衔接。 见references/longpage-review-2026-10-24.md"
+        "basis": "复读中文主语、因果、跨页指代及变量定义，统一对象代次术语。 见references/longpage-second-review-2026-10-24.md"
       },
       "Title": {
         "status": "通过",
-        "basis": "采用独立技术问题名称，H1、文件与登记一致。 见references/longpage-review-2026-10-24.md"
+        "basis": "标题仍准确表达独立技术问题，未发生新命名迁移。 见references/longpage-second-review-2026-10-24.md"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "完整机制唯一主归属；原文标题保留入口，地图与术语同步。 见references/longpage-review-2026-10-24.md"
+        "basis": "原页提供路线，完整机制直链到主归属；粒度与跨领域关联逐组检查。 见references/longpage-second-review-2026-10-24.md"
       },
       "Visuals": {
         "status": "通过",
-        "basis": "保留原状态图、公式与数例，按本页机制解释。 见references/longpage-review-2026-10-24.md"
+        "basis": "公式、状态图和数例与正文一致；构建图归档与链接改为并列路径。 见references/longpage-second-review-2026-10-24.md"
       }
     },
     "current_title": "时域历史校验",
@@ -49110,29 +49441,30 @@
     "pending_split": false,
     "modernization_batch": "longpage-review-2026-10-24",
     "executed_content_actions": [
+      "FACT-CHECK",
       "RESTRUCTURE",
-      "FACT-CHECK"
+      "REWRITE"
     ],
-    "final_sha256": "3bcc7f296d471152717371762d6c2a25ca2eac3e524c4e229d3212d6582cea88",
+    "final_sha256": "51ecbbcd780c8e6315aeb70e36d405bc43c7ab86da0664923ee038b5fa92d033",
     "article_type": "ARTICLE",
     "canonical_concept": "时域历史校验",
-    "reviewed_content_sha256": "3bcc7f296d471152717371762d6c2a25ca2eac3e524c4e229d3212d6582cea88",
+    "reviewed_content_sha256": "51ecbbcd780c8e6315aeb70e36d405bc43c7ab86da0664923ee038b5fa92d033",
     "revision_review": {
       "date": "2026-10-24",
       "status": "REVIEWED",
-      "content_sha256": "3bcc7f296d471152717371762d6c2a25ca2eac3e524c4e229d3212d6582cea88",
       "independent_review": "PASS",
-      "independent_record": "references/longpage-review-2026-10-24.md",
-      "reviewer": "root",
-      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+      "content_sha256": "51ecbbcd780c8e6315aeb70e36d405bc43c7ab86da0664923ee038b5fa92d033",
+      "independent_record": "references/longpage-second-review-2026-10-24.md",
+      "reviewer": "root：独立复核轮次",
+      "scope": "重新全文复读，技术、中文、跨页、源章迁移及粒度核对；完整宿主运行范围未扩大"
     },
     "current_body_review": {
       "date": "2026-10-24",
-      "record": "references/longpage-review-2026-10-24.md",
-      "content_sha256": "3bcc7f296d471152717371762d6c2a25ca2eac3e524c4e229d3212d6582cea88",
+      "record": "references/longpage-second-review-2026-10-24.md",
+      "content_sha256": "51ecbbcd780c8e6315aeb70e36d405bc43c7ab86da0664923ee038b5fa92d033",
       "full_text_read": true,
-      "reviewer": "root",
-      "basis": "复读范围与技术修复见报告"
+      "reviewer": "root：本轮逐页复读",
+      "basis": "采样篇产生历史坐标与累积值，校验篇消费有限候选并决定拒绝或裁剪；原页保留空间方案对照，三个职责各有实现与诊断边界。"
     },
     "source_sections": [
       [
@@ -49154,6 +49486,15 @@
           "分辨率与着色率"
         ]
       ]
-    ]
+    ],
+    "second_longpage_previous_review": {
+      "date": "2026-10-24",
+      "status": "REVIEWED",
+      "content_sha256": "3bcc7f296d471152717371762d6c2a25ca2eac3e524c4e229d3212d6582cea88",
+      "independent_review": "PASS",
+      "independent_record": "references/longpage-review-2026-10-24.md",
+      "reviewer": "root",
+      "scope": "独立全文复读与源文迁移对照；具体运行范围见报告"
+    }
   }
 ]

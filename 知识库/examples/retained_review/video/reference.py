@@ -1,11 +1,15 @@
 """CPU reference for the explicit offline teaching pipeline, no diffusion runtime."""
-from math import sqrt
+from math import sqrt, isfinite
 def valid(q,size,current_id,history_id,expected_depth,history_depth,confidence,tolerance,cut):
     if cut: return 'cut'
     if not (0<=q[0]<size[0] and 0<=q[1]<size[1]): return 'bounds'
     if current_id!=history_id: return 'identity'
+    # Entity branch only: sky pixels use the separate direction/ID contract.
+    if not (isfinite(expected_depth) and expected_depth > 0
+            and isfinite(history_depth) and history_depth > 0
+            and isfinite(tolerance) and tolerance >= 0): return 'depth'
     if abs(expected_depth-history_depth)>tolerance: return 'depth'
-    if confidence<.8: return 'confidence'
+    if not (isfinite(confidence) and .8<=confidence<=1): return 'confidence'
     return 'accept'
 def latent_query(point,flow,scale):
     return tuple(p+b/scale for p,b in zip(point,flow))

@@ -24,7 +24,7 @@
         "C++编译与对象语义",
         "C++模块的构建基础"
       ],
-      "reviewed_sha256": "5df6feec81e9844e65c763332528b997391722668326338e5188b5db0bf55a3c"
+      "reviewed_sha256": "5a24e813a9ae49e638b37c5f63ec2a81606c4cd2f4f6f10f4fb964bec883007c"
     },
     {
       "path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
@@ -44,7 +44,7 @@
         "插件对象的接口契约",
         "跨模块对象的借用协议"
       ],
-      "reviewed_sha256": "7aab8df0658e78d30f291f3653f5ab0ee7749e7ac914519de0b550e63d6d4ef7"
+      "reviewed_sha256": "89a95cee5946ed70c08e32484e99241c04322f323449127767cdcf0233bd2fe7"
     },
     {
       "path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
@@ -61,7 +61,7 @@
         "插件卸载状态机",
         "模块依赖的有序销毁"
       ],
-      "reviewed_sha256": "ef2c43c1f5f6327c7fff572667b88423680626dd785232c7959fa1d1a633a685"
+      "reviewed_sha256": "82a5d689588db9b35b6cae60211a91d62c7bb0910b3dda41892be03ef36820eb"
     },
     {
       "path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
@@ -77,7 +77,7 @@
         "窗口与COM资源收尾",
         "异步资源关闭协议"
       ],
-      "reviewed_sha256": "47b0e72950c68b18e80ede004eabb852e5e5d6eb9ed38d7136190c99de69e30c"
+      "reviewed_sha256": "eb2803715e668b49a83dcd487b9df2c11d0664a5a2750073351df2ef09ccb77f"
     }
   ],
   "overview_question": "怎样沿构建、接口、对象借用、模块卸载与线程清理阅读C++工程边界？",
@@ -94,7 +94,7 @@
       "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
       "target_heading": "C++ 构建链",
       "source_body_sha256": "59433180b24f39ec86d14b7b7b398851b5fe567d1b9d9011cc45253b3434550c",
-      "reviewed_body_sha256": "64258c8f0e87af21ff09cc3b5d1c3c5ddbdd1706decaa3b953cfd0a52c1e1afd"
+      "reviewed_body_sha256": "19a82c24e57f38fe1538c3c8f842305cd03111fa08b480b74e39f9cef4269969"
     },
     {
       "source_heading": "头文件与翻译单元",
@@ -178,7 +178,7 @@
       "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
       "target_heading": "接口结构的版本协商",
       "source_body_sha256": "e0662a7b61d5f425a5f37b9f8c5c3d4ccdb4ddf1be2f42bd472ae2e204bffd2d",
-      "reviewed_body_sha256": "e0662a7b61d5f425a5f37b9f8c5c3d4ccdb4ddf1be2f42bd472ae2e204bffd2d"
+      "reviewed_body_sha256": "e13ebb14e688cbd7f57af4f929847f60bb70351b4e79cd0d7843e7e6462e3caa"
     },
     {
       "source_heading": "对象使用与关闭",
@@ -192,21 +192,21 @@
       "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
       "target_heading": "调用入口与依赖登记",
       "source_body_sha256": "51128a4f7085bf562d17cfa228ba06b16cee41a8c66f1942e3b3161dd689b280",
-      "reviewed_body_sha256": "51128a4f7085bf562d17cfa228ba06b16cee41a8c66f1942e3b3161dd689b280"
+      "reviewed_body_sha256": "b453f419129a6b80b368326d5c1d6c6e708b54d5399ef84dcabffb9817b5a391"
     },
     {
       "source_heading": "普通销毁与对象借用",
       "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
       "target_heading": "普通销毁与对象借用",
       "source_body_sha256": "af3acc2d7b0f6128869604314b8c709afde5e4c1bd92b8a03cdb186ae0ab6ba2",
-      "reviewed_body_sha256": "ca28555d9bc2a9d35fee4b50afa1921d33883fe9a97c45266fcaaf9986e3d649"
+      "reviewed_body_sha256": "6e80b87b75bb906a4e876862099c3f0d68c1f04a78bab6e208e8b0b838e9af82"
     },
     {
       "source_heading": "关闭记录与执行权",
       "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
       "target_heading": "关闭记录与执行权",
       "source_body_sha256": "ac29e88ee1c6edc7d49e5e60738eec4f35d363e9d5a7b8afe427ec5d97fbc6ad",
-      "reviewed_body_sha256": "ac29e88ee1c6edc7d49e5e60738eec4f35d363e9d5a7b8afe427ec5d97fbc6ad"
+      "reviewed_body_sha256": "eb760dbe61f42c90be0bf1656ed252808f941157f4bd429d94824c31a0b89ba2"
     },
     {
       "source_heading": "模块关闭与停止请求",
@@ -227,7 +227,7 @@
       "target_path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
       "target_heading": "关闭期间的依赖清理调用",
       "source_body_sha256": "9d6e63367e197ca8d69978a5c78438ba29835689a18b426316ec85dd9636a39c",
-      "reviewed_body_sha256": "9d6e63367e197ca8d69978a5c78438ba29835689a18b426316ec85dd9636a39c"
+      "reviewed_body_sha256": "d782c951f61d598e6c561fd5212df26867a13b6b90ff09f051b2e74d6717008d"
     },
     {
       "source_heading": "依赖销毁与卸载续行",
@@ -241,21 +241,21 @@
       "target_path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
       "target_heading": "清理线程与关闭派发",
       "source_body_sha256": "69754a9e8bfbea38502c7aa5ef5966ca84df9de76fd8b9708a7a6612d4f13ed0",
-      "reviewed_body_sha256": "e5a7104d69fb6f094bb120af80eb069e4009c944a6927f64a297b0062c2ad978"
+      "reviewed_body_sha256": "32916206509f74cb118b6769b36cda08ddbc33f58ea6c730ef08be57ce089c56"
     },
     {
       "source_heading": "异步撤销的结果对账",
       "target_path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
       "target_heading": "异步撤销的结果对账",
       "source_body_sha256": "28e8fb9c02b81107066a7b1d89472764ec1358c325ce5a88643d2ae67b654876",
-      "reviewed_body_sha256": "7c90499be15991d2581f9b4bbf489a94c35223b5698420707855ff83f0bb5af7"
+      "reviewed_body_sha256": "6810699e3176bbd4e2781169956dff91979dd7cfc1f58fae88a9b49119db1ba0"
     },
     {
       "source_heading": "窗口与接口收尾",
       "target_path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
       "target_heading": "窗口与接口收尾",
       "source_body_sha256": "645c33ad10ccb68cbd5fb6bbefdfec56082c3b04ea5bb2c7c7b3b4fc60831b33",
-      "reviewed_body_sha256": "79793029ec0a9fb1ceafb33a094b4664b9fc91980bf720087562308f0a0b0aa1"
+      "reviewed_body_sha256": "9b778ad6fb4b94b021db92a53b65ea3b47a9a28e803fa44a157e7190cbeab363"
     },
     {
       "source_heading": "验证方法",
@@ -1473,5 +1473,194 @@
     ],
     "runtime": "动态库、COM和窗口实际执行未验证。"
   },
-  "adopted_source_sha256": "a3413ee7535dbfa0b236e78d3ac4e88c4c60f508293b5678d7cbb6758866b1e5"
+  "adopted_source_sha256": "a3413ee7535dbfa0b236e78d3ac4e88c4c60f508293b5678d7cbb6758866b1e5",
+  "adopted_snapshot_history": [
+    {
+      "commit": "f803387",
+      "record": "references/longpage-review-2026-10-24.md",
+      "source_sha256": "a3413ee7535dbfa0b236e78d3ac4e88c4c60f508293b5678d7cbb6758866b1e5",
+      "articles": [
+        {
+          "path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+          "sha256": "5df6feec81e9844e65c763332528b997391722668326338e5188b5db0bf55a3c"
+        },
+        {
+          "path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+          "sha256": "7aab8df0658e78d30f291f3653f5ab0ee7749e7ac914519de0b550e63d6d4ef7"
+        },
+        {
+          "path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
+          "sha256": "ef2c43c1f5f6327c7fff572667b88423680626dd785232c7959fa1d1a633a685"
+        },
+        {
+          "path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+          "sha256": "47b0e72950c68b18e80ede004eabb852e5e5d6eb9ed38d7136190c99de69e30c"
+        }
+      ],
+      "heading_bodies": [
+        {
+          "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+          "target_heading": "C++构建与模块边界",
+          "reviewed_body_sha256": "09fdb1097e5aace097659f7de2afc1b6947280fa9a57722e45a43122cc5c5f3e"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+          "target_heading": "C++ 构建链",
+          "reviewed_body_sha256": "64258c8f0e87af21ff09cc3b5d1c3c5ddbdd1706decaa3b953cfd0a52c1e1afd"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+          "target_heading": "头文件与翻译单元",
+          "reviewed_body_sha256": "90ce0c8f10ad16237309ba7796c801e65eaa1f7d31ad87dfa0d43f18fce8b26d"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+          "target_heading": "静态与动态库",
+          "reviewed_body_sha256": "1c5b339b8910ebd7cbd93036a1ed7b609e49739f6e181567abc52798391421c7"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+          "target_heading": "ABI 与 C接口",
+          "reviewed_body_sha256": "c72b50a7f26cc2da14ae587377f6e9ff3f662afb2033087df58d17b54dfba6a0"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+          "target_heading": "类型布局与资源语义",
+          "reviewed_body_sha256": "2350ead84b9bee664b7576f06c980011f17c3aed5b77ea1468e60675098a83b5"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+          "target_heading": "C++ 类型与布局",
+          "reviewed_body_sha256": "4f434569ab1523ac5b2425be5b63338948fda4df88004f5b425b0d9688a89b61"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+          "target_heading": "C++ 对象模型与虚函数",
+          "reviewed_body_sha256": "d00695b4864d248ef336899b8f586084a5018b4b841ae08ceceacae3bd2da145"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+          "target_heading": "复制、移动与异常安全",
+          "reviewed_body_sha256": "55ed10fa0859f7a10ca35fd3a911dd9a3966bf9a15f9f1ac11fcbc3687122c5f"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+          "target_heading": "布局与边界字节",
+          "reviewed_body_sha256": "cc9712afa78004d7ab7504153cc98b3a5c85d42a184a6009800f26630e9a9373"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+          "target_heading": "Win32 与 COM 边界",
+          "reviewed_body_sha256": "9cd2ae4873c8e9a8c6592e87ac28f5451bf125d1ae6dad367e2d66d7ad0f6ecc"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+          "target_heading": "所有权与模块接口",
+          "reviewed_body_sha256": "ceddcd89ae630ca22cab3ae0b718e8b8900c15032eb9f36528e14774e1b79c54"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+          "target_heading": "C ABI契约",
+          "reviewed_body_sha256": "74b74a6dfd5fc1e0253ec33b0209f1af7c20809fdfbe9135b8717a2e5c78664a"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+          "target_heading": "接口结构的版本协商",
+          "reviewed_body_sha256": "e0662a7b61d5f425a5f37b9f8c5c3d4ccdb4ddf1be2f42bd472ae2e204bffd2d"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+          "target_heading": "对象使用与关闭",
+          "reviewed_body_sha256": "db96d764d77f1c6c9329f354a60502eca9d78341c326867019874b3c62c5b947"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+          "target_heading": "调用入口与依赖登记",
+          "reviewed_body_sha256": "51128a4f7085bf562d17cfa228ba06b16cee41a8c66f1942e3b3161dd689b280"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+          "target_heading": "普通销毁与对象借用",
+          "reviewed_body_sha256": "ca28555d9bc2a9d35fee4b50afa1921d33883fe9a97c45266fcaaf9986e3d649"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+          "target_heading": "关闭记录与执行权",
+          "reviewed_body_sha256": "ac29e88ee1c6edc7d49e5e60738eec4f35d363e9d5a7b8afe427ec5d97fbc6ad"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
+          "target_heading": "模块关闭与停止请求",
+          "reviewed_body_sha256": "6e8b80b2473eb8ffe9b830e44ce308d9d140bf20dc9319724ac028190cca8f88"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
+          "target_heading": "工作排空与清理准备",
+          "reviewed_body_sha256": "e7929c9b3aeda0dc757d89fe53785273b4b118f0c82f4a31b08f60bae0dbfc49"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
+          "target_heading": "关闭期间的依赖清理调用",
+          "reviewed_body_sha256": "9d6e63367e197ca8d69978a5c78438ba29835689a18b426316ec85dd9636a39c"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
+          "target_heading": "依赖销毁与卸载续行",
+          "reviewed_body_sha256": "89a7e3ae05606adf119ef96ad062f8d178b77cb0b6ec3f16aa5c7cd8fecc4008"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+          "target_heading": "清理线程与关闭派发",
+          "reviewed_body_sha256": "e5a7104d69fb6f094bb120af80eb069e4009c944a6927f64a297b0062c2ad978"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+          "target_heading": "异步撤销的结果对账",
+          "reviewed_body_sha256": "7c90499be15991d2581f9b4bbf489a94c35223b5698420707855ff83f0bb5af7"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+          "target_heading": "窗口与接口收尾",
+          "reviewed_body_sha256": "79793029ec0a9fb1ceafb33a094b4664b9fc91980bf720087562308f0a0b0aa1"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/C++工程边界.md",
+          "target_heading": "验证方法",
+          "reviewed_body_sha256": "857b578475ff54e00b42bcd84c3836650be73189ad4b8a60e9d0ea1729d0d066"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/C++工程边界.md",
+          "target_heading": "实现与证据",
+          "reviewed_body_sha256": "bdb95ce33ad3b84ebee58bb344323ba95dd9312c2fe8501f504b10e6b030df90"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/C++工程边界.md",
+          "target_heading": "相关主题",
+          "reviewed_body_sha256": "e432750d148c77e90d354252544ea3c4bd3d529d60058580b6bea44298a1dc59"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/C++工程边界.md",
+          "target_heading": "参考资料",
+          "reviewed_body_sha256": "1f2ca590443d656735955e335076e91f87ffdb209efc08f96cc5ab9e4f428ed8"
+        }
+      ]
+    }
+  ],
+  "second_review": {
+    "baseline": "f803387",
+    "record": "references/longpage-second-review-2026-10-24.md",
+    "reviewer": "root：重新全文复读",
+    "pages": [
+      "知识库/16_编程与数据结构/C++工程边界.md",
+      "知识库/16_编程与数据结构/C++构建与对象模型.md",
+      "知识库/16_编程与数据结构/插件接口与对象借用.md",
+      "知识库/16_编程与数据结构/插件关闭与卸载.md",
+      "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+    ],
+    "boundary_action": "KEEP",
+    "boundary_basis": "构建与类型规则、对象借用、模块整体排空与线程受限清理各自回答不同安全条件；线程篇无需重复构建及模板来源，源说明通过原页保存。",
+    "examples_checked": "A借B、C_A协调者S→H与代次3→4、R8/U1异步撤销、Unknown、窗口通知后Release、A先于B销毁。",
+    "source_urls_preserved": 8,
+    "runtime": "回归实际结果另列，完整宿主与模型尚未运行"
+  }
 }

@@ -21,7 +21,7 @@
         "编辑手势与撤销机制",
         "编辑手势与撤销协议"
       ],
-      "reviewed_sha256": "248369dee872fcf3a77c8b6cc49f00e3b13ea7a945dda179948c8f3bbd2bf20c"
+      "reviewed_sha256": "b9e8eb030e72e5f19db3c46d9568db03a310563c1b4a0b24452b4cba85089b40"
     },
     {
       "path": "知识库/15_资产与工具管线/批处理条件发布.md",
@@ -39,7 +39,7 @@
         "批处理条件发布机制",
         "批处理条件发布协议"
       ],
-      "reviewed_sha256": "d0bc055863d906289627a246b45c0364135fde32a77a739457f8a90c500cca2a"
+      "reviewed_sha256": "1c97115eac1a2abba50d601ae53148404a13b4f22d954e48d2a9c8fecf85b226"
     },
     {
       "path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
@@ -54,7 +54,7 @@
         "跨资源编辑恢复机制",
         "跨资源编辑恢复协议"
       ],
-      "reviewed_sha256": "469afc6635cc7474ffe6a2fd07ae342377cebfa5d33bd08ed05330b2a532db63"
+      "reviewed_sha256": "5feeaf684e7ea27dee2fc28aaf750e67947800adeae8c3dde706844158b195ce"
     }
   ],
   "overview_question": "编辑器修改分为交互对象事务、批量文件发布，以及对象与文件共同提交三类问题。本文给出阅读入口；完整补丁、数例、宿主API与恢复顺序由对应专题说明。先阅读[[15_资产与工具管线/编辑手势与撤销]]，批处理进入[[15_资产与工具管线/批处理条件发布]]，跨资源操作进入[[15_资产与工具管线/跨资源编辑恢复]]。",
@@ -72,7 +72,7 @@
       "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
       "target_heading": "计划与编辑输入",
       "source_body_sha256": "9e32c09a63b0580752b604a90326371a2a1b3c668cc9a32b4a1bafb5243513a6",
-      "reviewed_body_sha256": "9e32c09a63b0580752b604a90326371a2a1b3c668cc9a32b4a1bafb5243513a6"
+      "reviewed_body_sha256": "7fa7a367fdabc112bf65227b77760f53742b4b90d59e5a43bf889f617ee18067"
     },
     {
       "source_heading": "编辑事务与撤销",
@@ -93,7 +93,7 @@
       "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
       "target_heading": "手势合并",
       "source_body_sha256": "77eefcbc5dba425c457b63c5fd3ec4598775e509e668b190235b2fb906f916d6",
-      "reviewed_body_sha256": "77eefcbc5dba425c457b63c5fd3ec4598775e509e668b190235b2fb906f916d6"
+      "reviewed_body_sha256": "57fd7c7acbccd6974fd0f2acd1c8129428bc1259ec41facae4c09473bc71dbfe"
     },
     {
       "source_heading": "创建、删除与引用",
@@ -128,14 +128,14 @@
       "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
       "target_heading": "计划预览与稳定执行",
       "source_body_sha256": "ae2d44aecbfcc17210f995909b2081699c60d0caf04f16ca14b12612d23c286d",
-      "reviewed_body_sha256": "ae2d44aecbfcc17210f995909b2081699c60d0caf04f16ca14b12612d23c286d"
+      "reviewed_body_sha256": "7d18b0e8761f24479e07411e2b1cd0ddc198405fc9230f4949f8182673271f90"
     },
     {
       "source_heading": "条件发布与检查点恢复",
       "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
       "target_heading": "条件发布与检查点恢复",
       "source_body_sha256": "ad776bd4e4778aed0f5ca33168721f8b4f1bbdd07221977fd67b2e7d90d25b4d",
-      "reviewed_body_sha256": "ad776bd4e4778aed0f5ca33168721f8b4f1bbdd07221977fd67b2e7d90d25b4d"
+      "reviewed_body_sha256": "79c071a952bc7a9184d3bd46ad57ce7efd7ee801b0c2cd400fe63182293c2f9b"
     },
     {
       "source_heading": "进度、取消与错误恢复",
@@ -156,7 +156,7 @@
       "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
       "target_heading": "对象与文件的共同提交",
       "source_body_sha256": "fe59c5fea04073fc91f65b43f87dc408fdb000ab536157be334e62fa035065d4",
-      "reviewed_body_sha256": "bb71f1870bbd9126829b4392519f5a8a43e81a7d9ceccd281ef499e6d25bf2df"
+      "reviewed_body_sha256": "1b319950de2dd0ffeed4fd10adee8cefbe41c5cca2807fb1cf35975bbd4d5a1c"
     },
     {
       "source_heading": "宿主撤销与持久恢复",
@@ -755,5 +755,134 @@
     }
   },
   "review_status": "PASS_WITH_RUNTIME_LIMITATIONS",
-  "adopted_source_sha256": "97fcc8e6a206dc89046749154bb3e373df7a27bc41115f7ffefdb9621a1d0f02"
+  "adopted_source_sha256": "97fcc8e6a206dc89046749154bb3e373df7a27bc41115f7ffefdb9621a1d0f02",
+  "adopted_snapshot_history": [
+    {
+      "commit": "f803387",
+      "record": "references/longpage-review-2026-10-24.md",
+      "source_sha256": "97fcc8e6a206dc89046749154bb3e373df7a27bc41115f7ffefdb9621a1d0f02",
+      "articles": [
+        {
+          "path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+          "sha256": "248369dee872fcf3a77c8b6cc49f00e3b13ea7a945dda179948c8f3bbd2bf20c"
+        },
+        {
+          "path": "知识库/15_资产与工具管线/批处理条件发布.md",
+          "sha256": "d0bc055863d906289627a246b45c0364135fde32a77a739457f8a90c500cca2a"
+        },
+        {
+          "path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+          "sha256": "469afc6635cc7474ffe6a2fd07ae342377cebfa5d33bd08ed05330b2a532db63"
+        }
+      ],
+      "heading_bodies": [
+        {
+          "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+          "target_heading": "用户操作流程",
+          "reviewed_body_sha256": "1ed726208ea2146abb148e1054a29cdb4ef6209d16c531ab1c612899a7e6f8c7"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+          "target_heading": "计划与编辑输入",
+          "reviewed_body_sha256": "9e32c09a63b0580752b604a90326371a2a1b3c668cc9a32b4a1bafb5243513a6"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+          "target_heading": "编辑事务与撤销",
+          "reviewed_body_sha256": "131a7f731f3053359970b0cf9c3a98ea26c0f3d1af774c6244eaa9896838e038"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+          "target_heading": "命令、补丁与事务",
+          "reviewed_body_sha256": "3654bfc28de0784b71c1ccaace45a67266a23bf48b514eda26000260ae659eca"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+          "target_heading": "手势合并",
+          "reviewed_body_sha256": "77eefcbc5dba425c457b63c5fd3ec4598775e509e668b190235b2fb906f916d6"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+          "target_heading": "创建、删除与引用",
+          "reviewed_body_sha256": "2f68bdda220c2075146286b3cae9651800f0fb8fbc7e6973b31f05181c3969a0"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+          "target_heading": "Unity 与 Unreal 的撤销",
+          "reviewed_body_sha256": "137e64877581efaa0df0ebb9148de0dc16b08e230f4c3641f776f090da084db9"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+          "target_heading": "事务执行与补偿",
+          "reviewed_body_sha256": "6f5999ab78dee11a270aa4c1e0eafee3a281fede03e5d4bc09e287d3a9e1516d"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+          "target_heading": "批处理与失败恢复",
+          "reviewed_body_sha256": "a286017694f8841b7b408ab834f9cafc3d5e2894339236963a755626040d462d"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+          "target_heading": "计划预览与稳定执行",
+          "reviewed_body_sha256": "ae2d44aecbfcc17210f995909b2081699c60d0caf04f16ca14b12612d23c286d"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+          "target_heading": "条件发布与检查点恢复",
+          "reviewed_body_sha256": "ad776bd4e4778aed0f5ca33168721f8b4f1bbdd07221977fd67b2e7d90d25b4d"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+          "target_heading": "进度、取消与错误恢复",
+          "reviewed_body_sha256": "9b3ab49316081920ae2c8246508061cd091ccb044772575e1ac779f9f2207834"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+          "target_heading": "工具版本与数据契约",
+          "reviewed_body_sha256": "bc39f283db588bbfe07811b36d8522782d694c99188a7f490105f3ad666f3b9f"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+          "target_heading": "对象与文件的共同提交",
+          "reviewed_body_sha256": "bb71f1870bbd9126829b4392519f5a8a43e81a7d9ceccd281ef499e6d25bf2df"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+          "target_heading": "宿主撤销与持久恢复",
+          "reviewed_body_sha256": "a00a98ca37b57538091e3f11dfafab12579d72dfef97461b0a2ce4cccf794487"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+          "target_heading": "验证路径",
+          "reviewed_body_sha256": "33a00be108342d5becc2020e908eb1f44e2fe3a6c08bf5192e03aa12309ea10d"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+          "target_heading": "相关主题",
+          "reviewed_body_sha256": "6fa84a05f0e52eb12d683a05ac1f10fec558bccff0a7dde2418c0e9f2010e6bb"
+        },
+        {
+          "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+          "target_heading": "参考资料",
+          "reviewed_body_sha256": "ccb752bf104b5e49f416736f82707434e4639ba59c919d5d7eb00b75f78945d9"
+        }
+      ]
+    }
+  ],
+  "second_review": {
+    "baseline": "f803387",
+    "record": "references/longpage-second-review-2026-10-24.md",
+    "reviewer": "root：重新全文复读",
+    "pages": [
+      "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "知识库/15_资产与工具管线/批处理条件发布.md",
+      "知识库/15_资产与工具管线/跨资源编辑恢复.md"
+    ],
+    "boundary_action": "KEEP",
+    "boundary_basis": "手势撤销、批次条件发布和跨资源共同决定分别采用内存事务、输出回执与持久目标呈现；合并会掩盖它们不同的原子性和恢复能力。",
+    "examples_checked": "1→2→3→9、A/B交换、代次10→11→12、J/K多包允许前态、撤销与重做代次12/13。",
+    "source_urls_preserved": 8,
+    "runtime": "回归实际结果另列，完整宿主与模型尚未运行"
+  }
 }

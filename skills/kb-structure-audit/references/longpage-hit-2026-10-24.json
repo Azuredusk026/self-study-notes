@@ -20,7 +20,7 @@
         "异步命中结算与恢复机制",
         "异步命中结算与恢复协议"
       ],
-      "reviewed_sha256": "d459d1efe9b056740106738bb9cf86efaf01d00662295ca63f8730130c561d06"
+      "reviewed_sha256": "3082b1ae12cde1f9046441bbf365bd61e81725be6e2fd58b65554df58b004ef4"
     }
   ],
   "overview_question": null,
@@ -31,7 +31,7 @@
       "target_path": "知识库/21_游戏网络/异步命中结算与恢复.md",
       "target_heading": "命中提交与验证",
       "source_body_sha256": "cc462a09a6710bb9a905d0311b92bbedd73f8a3b692c126f484c1e5fd03b0554",
-      "reviewed_body_sha256": "cc462a09a6710bb9a905d0311b92bbedd73f8a3b692c126f484c1e5fd03b0554"
+      "reviewed_body_sha256": "80cddcf7b0b9bce1a7da393b7cf6162be5092e0d45a06b0f45223b047b948f77"
     },
     {
       "source_heading": "接纳与弹药所有权",
@@ -45,7 +45,7 @@
       "target_path": "知识库/21_游戏网络/异步命中结算与恢复.md",
       "target_heading": "查询完成与结算顺序",
       "source_body_sha256": "2938fe51c62e5cbe2c8d9898206923679d7a636f74bf85d7a6a36677390ac008",
-      "reviewed_body_sha256": "2938fe51c62e5cbe2c8d9898206923679d7a636f74bf85d7a6a36677390ac008"
+      "reviewed_body_sha256": "29a102055128973f819abbe58c1a270306352e7d729e57974171dac16e1a88f6"
     },
     {
       "source_heading": "权威决策与Tick日志",
@@ -80,7 +80,7 @@
       "target_path": "知识库/21_游戏网络/延迟补偿命中.md",
       "target_heading": "射击与显示时间",
       "source_body_sha256": "ab47cbe6e4e308444f799f4973952d7f929151542faafb6da4e3544df2015ff9",
-      "reviewed_body_sha256": "ab47cbe6e4e308444f799f4973952d7f929151542faafb6da4e3544df2015ff9"
+      "reviewed_body_sha256": "dd5649ecb136952bb5f56045467042c1cf1c74dca268bc71b1f85f496e40fe58"
     },
     {
       "source_heading": "实体新鲜度与视图校验",
@@ -101,21 +101,21 @@
       "target_path": "知识库/21_游戏网络/延迟补偿命中.md",
       "target_heading": "历史碰撞体",
       "source_body_sha256": "8dd26cd1c49f4d5628255d56ba3c353b587bdaec2f2490b9e3b80f1aa572f0a9",
-      "reviewed_body_sha256": "8dd26cd1c49f4d5628255d56ba3c353b587bdaec2f2490b9e3b80f1aa572f0a9"
+      "reviewed_body_sha256": "7e1478c727c041a9f7909d64fad740abcff3233efd407e5b27a4dc65f9d5c7c9"
     },
     {
       "source_heading": "最小射线查询",
       "target_path": "知识库/21_游戏网络/延迟补偿命中.md",
       "target_heading": "最小射线查询",
       "source_body_sha256": "e81fc7eb6cb32ee0be16f351b9cf6532d8a57ea590bd5a7b1253198ab130d52f",
-      "reviewed_body_sha256": "c5c0e4d22db4da29f55ab4ffb9950ff6f8db769abc1233308765427bc6e48d00"
+      "reviewed_body_sha256": "6943bf77c514e75ca8ffb8f037fec4046967dc05432219bb70d7b2e91519f076"
     },
     {
       "source_heading": "历史遮挡与实时状态隔离",
       "target_path": "知识库/21_游戏网络/延迟补偿命中.md",
       "target_heading": "历史遮挡与实时状态隔离",
       "source_body_sha256": "9badba34578ee5e34649046588d845e3a1ab843269e3698900ec65c94d40827c",
-      "reviewed_body_sha256": "9badba34578ee5e34649046588d845e3a1ab843269e3698900ec65c94d40827c"
+      "reviewed_body_sha256": "867040bed97868b0d73d8bd0a5b506fd0a3b86bcb0f423dcf3f6b676bb15d9e1"
     },
     {
       "source_heading": "实现与证据",
@@ -467,5 +467,114 @@
     "runtime_scope": "仅原样例已记录的运行证据；未实现跨进程服务、断电实验、耐久Tick或真实网络故障。",
     "status": "PASS_WITH_REPAIRS"
   },
-  "adopted_source_sha256": "5161554741a5993b31ccc280795b12fe1e7652eed331a506b724cb673a95cb86"
+  "adopted_source_sha256": "da178f45df10f11b6b9b03b2ac0d67967a8b759f513fee90a139e46b977ad996",
+  "adopted_snapshot_history": [
+    {
+      "commit": "f803387",
+      "record": "references/longpage-review-2026-10-24.md",
+      "source_sha256": "5161554741a5993b31ccc280795b12fe1e7652eed331a506b724cb673a95cb86",
+      "articles": [
+        {
+          "path": "知识库/21_游戏网络/异步命中结算与恢复.md",
+          "sha256": "d459d1efe9b056740106738bb9cf86efaf01d00662295ca63f8730130c561d06"
+        }
+      ],
+      "heading_bodies": [
+        {
+          "target_path": "知识库/21_游戏网络/异步命中结算与恢复.md",
+          "target_heading": "命中提交与验证",
+          "reviewed_body_sha256": "cc462a09a6710bb9a905d0311b92bbedd73f8a3b692c126f484c1e5fd03b0554"
+        },
+        {
+          "target_path": "知识库/21_游戏网络/异步命中结算与恢复.md",
+          "target_heading": "接纳与弹药所有权",
+          "reviewed_body_sha256": "97c5ff553b47014e38e73e29f222956e25b3f5d8d9739a8e116fa4c71b50c317"
+        },
+        {
+          "target_path": "知识库/21_游戏网络/异步命中结算与恢复.md",
+          "target_heading": "查询完成与结算顺序",
+          "reviewed_body_sha256": "2938fe51c62e5cbe2c8d9898206923679d7a636f74bf85d7a6a36677390ac008"
+        },
+        {
+          "target_path": "知识库/21_游戏网络/异步命中结算与恢复.md",
+          "target_heading": "权威决策与Tick日志",
+          "reviewed_body_sha256": "2ef37dd4b52e71d5b4e6167e23086214bc9ebea323b9a173f51f5b7b74483708"
+        },
+        {
+          "target_path": "知识库/21_游戏网络/异步命中结算与恢复.md",
+          "target_heading": "查询包与崩溃恢复",
+          "reviewed_body_sha256": "b4a997b3b1774e1bdaaf24ea51e2c980e1a2aa150abbc29476e0c082ba87db03"
+        },
+        {
+          "target_path": "知识库/21_游戏网络/异步命中结算与恢复.md",
+          "target_heading": "恢复记录与有序回放",
+          "reviewed_body_sha256": "0301fe9e30fce653ce7556307fc93b5ba3779280114ea9a5c321fa6c46870115"
+        },
+        {
+          "target_path": "知识库/21_游戏网络/异步命中结算与恢复.md",
+          "target_heading": "观察与反例",
+          "reviewed_body_sha256": "00dde76b8f4d0ff4b02800ed9a3a218896d02b7c1b3dd53e4d581fa003dcab8e"
+        },
+        {
+          "target_path": "知识库/21_游戏网络/延迟补偿命中.md",
+          "target_heading": "射击与显示时间",
+          "reviewed_body_sha256": "ab47cbe6e4e308444f799f4973952d7f929151542faafb6da4e3544df2015ff9"
+        },
+        {
+          "target_path": "知识库/21_游戏网络/延迟补偿命中.md",
+          "target_heading": "实体新鲜度与视图校验",
+          "reviewed_body_sha256": "2c531534c96eb7355a07109f46e9a6b4e399c79ff62e1f730e2af652462449e1"
+        },
+        {
+          "target_path": "知识库/21_游戏网络/延迟补偿命中.md",
+          "target_heading": "显示估计与权威历史",
+          "reviewed_body_sha256": "ed8fe570b1e26506390eaef4cb4d8de93cc55e8ddad27e7a33403c9258cc7f50"
+        },
+        {
+          "target_path": "知识库/21_游戏网络/延迟补偿命中.md",
+          "target_heading": "历史碰撞体",
+          "reviewed_body_sha256": "8dd26cd1c49f4d5628255d56ba3c353b587bdaec2f2490b9e3b80f1aa572f0a9"
+        },
+        {
+          "target_path": "知识库/21_游戏网络/延迟补偿命中.md",
+          "target_heading": "最小射线查询",
+          "reviewed_body_sha256": "c5c0e4d22db4da29f55ab4ffb9950ff6f8db769abc1233308765427bc6e48d00"
+        },
+        {
+          "target_path": "知识库/21_游戏网络/延迟补偿命中.md",
+          "target_heading": "历史遮挡与实时状态隔离",
+          "reviewed_body_sha256": "9badba34578ee5e34649046588d845e3a1ab843269e3698900ec65c94d40827c"
+        },
+        {
+          "target_path": "知识库/21_游戏网络/延迟补偿命中.md",
+          "target_heading": "实现与证据",
+          "reviewed_body_sha256": "a1aefc9348187868a6ccacd5d95f14308aac7288c50bd11afc2b7070e517c317"
+        },
+        {
+          "target_path": "知识库/21_游戏网络/延迟补偿命中.md",
+          "target_heading": "相关主题",
+          "reviewed_body_sha256": "36bbcdddce48f2efe1aeb1f58efc54b50fda17fdc6b9517b31842fc86bb9dfac"
+        },
+        {
+          "target_path": "知识库/21_游戏网络/延迟补偿命中.md",
+          "target_heading": "参考资料",
+          "reviewed_body_sha256": "5807aac3becc6818fd1eb62fcad2d9bb0c9456da5648a58ac97834ee2ae41ccf"
+        }
+      ]
+    }
+  ],
+  "second_review": {
+    "baseline": "f803387",
+    "record": "references/longpage-second-review-2026-10-24.md",
+    "reviewer": "root：重新全文复读",
+    "pages": [
+      "知识库/21_游戏网络/延迟补偿命中.md",
+      "知识库/21_游戏网络/异步命中结算与恢复.md"
+    ],
+    "boundary_action": "KEEP",
+    "boundary_basis": "原页选择历史时间并查询几何，结算篇采用异步结果并恢复权威伤害；几何求交和耐久Tick独立验证，保持两页。",
+    "examples_checked": "9.920/9.820秒、外推0.1与权威0.2米、球交距离4米、Tick604/605/606、LSN100→101→102、纪元7/8/9。",
+    "source_urls_preserved": 1,
+    "runtime": "回归实际结果另列，完整宿主与模型尚未运行"
+  }
 }

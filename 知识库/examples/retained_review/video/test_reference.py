@@ -4,6 +4,23 @@ try:
 except ImportError:
     valid=latent_query=mix_normal=keyframe=None
 class VideoTests(unittest.TestCase):
+    def test_nonfinite_depth_is_rejected(self):
+        for value in (float('nan'), float('inf'), -float('inf'), 0, -1):
+            with self.subTest(history=value):
+                self.assertEqual(valid((10,10),(100,100),7,7,2,value,.9,.1,False),'depth')
+            with self.subTest(expected=value):
+                self.assertEqual(valid((10,10),(100,100),7,7,value,2,.9,.1,False),'depth')
+
+    def test_invalid_confidence_is_rejected(self):
+        for value in (float('nan'), float('inf'), -float('inf'), -1, 1.1):
+            with self.subTest(confidence=value):
+                self.assertEqual(valid((10,10),(100,100),7,7,2,2,value,.1,False),'confidence')
+
+    def test_invalid_depth_tolerance_is_rejected(self):
+        for value in (float('nan'), float('inf'), -1):
+            with self.subTest(tolerance=value):
+                self.assertEqual(valid((10,10),(100,100),7,7,2,1,.9,value,False),'depth')
+
     def test_rejections(self):
         self.assertIsNotNone(valid,'历史判定实现缺失')
         self.assertEqual(valid((10,10),(100,100),7,7,2,2,.9,.1,False),'accept')

@@ -43,7 +43,7 @@
         "资产布局验证",
         "场景几何与交互验证"
       ],
-      "reviewed_sha256": "fc599347d8c6f31b5f06908790fa2023446f3e850db3434a4dda4c7a88c3aa7f"
+      "reviewed_sha256": "d7304d3f54f7bf898a1df156abc8d094389140c1bec89c02fb04cb5d8cf04ed5"
     },
     {
       "path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
@@ -174,7 +174,7 @@
       "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
       "target_heading": "交互站位与可达性",
       "source_body_sha256": "a04a7fc866eb022e619395ccfd56e021ba6b5aed680a6847bc227fefed88765c",
-      "reviewed_body_sha256": "a04a7fc866eb022e619395ccfd56e021ba6b5aed680a6847bc227fefed88765c"
+      "reviewed_body_sha256": "7e6a1641ce1c282d8302bdbc9caf1b63a826851424fa6d3b77846586603f140b"
     },
     {
       "source_heading": "缩放变化与补偿验证",
@@ -195,7 +195,7 @@
       "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
       "target_heading": "连续站位区域的验证结果",
       "source_body_sha256": "706a8ea393ca9933caabfbe2cdafacc55106005e0eef13110e97d1aa35b01ffe",
-      "reviewed_body_sha256": "80352b7f55648bd53ec17d344355485e07e08b652b88f9e17faf692dd7621ccf"
+      "reviewed_body_sha256": "d815edb85fb1bba528abb4ebba39970fedb16a80849042b9abcd92ce8a5e6a80"
     },
     {
       "source_heading": "操作登记与恢复对账",
@@ -1380,5 +1380,214 @@
     "status": "PASS_WITH_REPAIRS",
     "runtime": "未部署Agent、宿主、DCC或实际导航，证据状态保持原范围。"
   },
-  "adopted_source_sha256": "bd8b6c1d72cbdbc9ab5624b482dffa4e069dc667bb79a2f187b5a602c00fceb2"
+  "adopted_source_sha256": "bd8b6c1d72cbdbc9ab5624b482dffa4e069dc667bb79a2f187b5a602c00fceb2",
+  "adopted_snapshot_history": [
+    {
+      "commit": "f803387",
+      "record": "references/longpage-review-2026-10-24.md",
+      "source_sha256": "bd8b6c1d72cbdbc9ab5624b482dffa4e069dc667bb79a2f187b5a602c00fceb2",
+      "articles": [
+        {
+          "path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+          "sha256": "b4e3727e80aee5a9e61e1d7dd79292370b3cd0cb30f9d5d9b414a01b263213cf"
+        },
+        {
+          "path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+          "sha256": "fc599347d8c6f31b5f06908790fa2023446f3e850db3434a4dda4c7a88c3aa7f"
+        },
+        {
+          "path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+          "sha256": "764987141b2a64516d4dd3a686d054f68b479655fc0f6c7edd2f61251b556bdd"
+        },
+        {
+          "path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+          "sha256": "6cbf6a43d429e3fd1c9c97e736bd57c0c79a47b10b143b73ee58271cc9b8243b"
+        },
+        {
+          "path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+          "sha256": "5e6e25497a5c81f5542ee36f4a9b2c8db73f55cb63ad0442fe39b8773220d97b"
+        }
+      ],
+      "heading_bodies": [
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+          "target_heading": "任务状态与产物",
+          "reviewed_body_sha256": "52f9d72ad0ef29862a5a26478d5deaead634358b989a3838747df31a14faa372"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+          "target_heading": "状态推进",
+          "reviewed_body_sha256": "8881ea8cf1ab454107dc69addff25395487810bd76e16ca82c4ee6ce3cfbeb56"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+          "target_heading": "任务与产物记录",
+          "reviewed_body_sha256": "0409270b93e3ffaa7ae7947430d42f78688dc12471ea7145aa7779f0afbc0d44"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+          "target_heading": "推理与工具接口",
+          "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+          "target_heading": "角色与数据契约",
+          "reviewed_body_sha256": "0816235de5095aa75546fdbfdeea8b21ecb3febb500ca02eac1d18f0e0a0125d"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+          "target_heading": "工具参数与执行边界",
+          "reviewed_body_sha256": "2d974ef53b8e740d4e1ba8b137bab9b5a46a98846c50cce7336ebe86c0a7fc40"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+          "target_heading": "调度职责",
+          "reviewed_body_sha256": "ec8e9a6889e21b87385a86bd2945b9cad6094865ecbba25001aca656c414334f"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+          "target_heading": "室内场景的结构化规划",
+          "reviewed_body_sha256": "4a5e44f3490cd75abb42cb0411e4d52809de7e855b6feaf50c77d840897c9872"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+          "target_heading": "规划的数值约束",
+          "reviewed_body_sha256": "45a53fff0837c519a982acceb5537f1dc2106b0e23b9b0052171e485447209b7"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+          "target_heading": "缩放与空间度量",
+          "reviewed_body_sha256": "a14d6f3618ba145533cd85c2e8595d9b441e9a564fdd21a88ec18bc2bce9b405"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+          "target_heading": "交互站位与可达性",
+          "reviewed_body_sha256": "a04a7fc866eb022e619395ccfd56e021ba6b5aed680a6847bc227fefed88765c"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+          "target_heading": "缩放变化与补偿验证",
+          "reviewed_body_sha256": "2520099c3ee248901dd709a76eb0a24abdc22d21af8ee9e0dac948e5c5a66362"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+          "target_heading": "读取版本与条件执行",
+          "reviewed_body_sha256": "9682edfde7c68e64e0540caf11768bb6b70eb208b62273c30057a46c5610482f"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+          "target_heading": "连续站位区域的验证结果",
+          "reviewed_body_sha256": "80352b7f55648bd53ec17d344355485e07e08b652b88f9e17faf692dd7621ccf"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+          "target_heading": "操作登记与恢复对账",
+          "reviewed_body_sha256": "838a95da296950a819053b7687aa2dcecdd60c3f86b3d50eba16f67f60b1ca87"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+          "target_heading": "工具执行的并发交接",
+          "reviewed_body_sha256": "e66d173bb9b1c0ac28519475f12fa8e7e427f16ccae41eaa8d7ef16c0008c6d3"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+          "target_heading": "创建操作与持久标记",
+          "reviewed_body_sha256": "77829eb92ab72ec186d8677867f26c6cac301b394d5d65b91ff4a5cbf7d56f38"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+          "target_heading": "失败恢复",
+          "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+          "target_heading": "幂等与重试",
+          "reviewed_body_sha256": "5a7fe0336511814c3d71458863161aab183bd9ec44bae2dab2cb5c2756b77bf3"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+          "target_heading": "生成服务与不确定结果",
+          "reviewed_body_sha256": "1056af6a18716a716698d9038c443cad7488e37e011dd7ed4181aeaf848dc575"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+          "target_heading": "补偿与版本恢复",
+          "reviewed_body_sha256": "2667798a637b75a3767ef997b617e80bf99e710d432033c14448e5ad18e5fc14"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+          "target_heading": "补偿中间状态与最终门禁",
+          "reviewed_body_sha256": "1f5dd19ad6c3b39cd679ef88afeabd545cd5b3936c0d75a34db46cfa3291fd37"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+          "target_heading": "补偿坐标与父变换",
+          "reviewed_body_sha256": "034be6874d65aaf1b726084791f207621bde8a457b427eda0bf43bd60a27f72c"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+          "target_heading": "连续移动的补偿承接",
+          "reviewed_body_sha256": "3f861069f11b6fad12d0ceca459be2582cb3bf04d626ceff231cf38a417a8fdb"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+          "target_heading": "父子关系与跨对象版本",
+          "reviewed_body_sha256": "36075d5a9f2f47382d1602cb6534d68e5fd633fef346602181fe08d1083e77f9"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+          "target_heading": "冲突决议与续行",
+          "reviewed_body_sha256": "c0b50fa793adf8fc7f929a45b1e8e462cb0e4af6b97b7818c981aa7fe888cb7a"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+          "target_heading": "资产验收与发布",
+          "reviewed_body_sha256": "caa09765349bd5e7124705f3b304bf41f146690d166ee732f049811f247f4a21"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+          "target_heading": "审核与不可变候选",
+          "reviewed_body_sha256": "026deb67841fb4bfd6b39a2a66e3120ab1302f86aae9494dfa3a277bd6a22e77"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+          "target_heading": "批准记录与发布回执",
+          "reviewed_body_sha256": "d2807840e7c50f0d3a5e2e0bcfe78b55dc14474c5ef3c1bfcb840557a569a611"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+          "target_heading": "实现与证据",
+          "reviewed_body_sha256": "7501d032f3164057ebb1f46adf97930ae5c1fbd64575460085a7218c3a7df093"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+          "target_heading": "相关主题",
+          "reviewed_body_sha256": "e03445f3b3ca7d100cd380070fd6d880180cf52d4046c329551acb3f2db4d191"
+        },
+        {
+          "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+          "target_heading": "参考资料",
+          "reviewed_body_sha256": "24365127ae01617d4df747fe46ff18684d394b16d06a5427312dd7d87629b853"
+        }
+      ]
+    }
+  ],
+  "second_review": {
+    "baseline": "f803387",
+    "record": "references/longpage-second-review-2026-10-24.md",
+    "reviewer": "root：重新全文复读",
+    "pages": [
+      "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+      "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md"
+    ],
+    "boundary_action": "KEEP",
+    "boundary_basis": "五篇分别处理任务编排、世界几何、写入授权、逆操作版本链与残留审核；补偿版本承接不等于残留发布，保持独立，基础事务协议通过链接共用。",
+    "examples_checked": "越墙0.3米、缩放0.5/2、局部半径0.8/0.2、v3→v4→v5、集合c0→c4、世界位置10.5/11与JR/VR1。",
+    "source_urls_preserved": 2,
+    "runtime": "回归实际结果另列，完整宿主与模型尚未运行"
+  }
 }

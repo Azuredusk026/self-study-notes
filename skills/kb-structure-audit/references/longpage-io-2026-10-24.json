@@ -152,7 +152,7 @@
       "target_path": "知识库/16_编程与数据结构/文件IO.md",
       "target_heading": "提交、完成与取消",
       "source_body_sha256": "9c94c1554a2885156d35b3f89e8a23ed72a9a45ae315b1b1db39c2ec9aed0f33",
-      "reviewed_body_sha256": "9c94c1554a2885156d35b3f89e8a23ed72a9a45ae315b1b1db39c2ec9aed0f33"
+      "reviewed_body_sha256": "872b49a9a72c3b58f7acadeda3788a94792edfd85d782bf68bf56e7546c2ce99"
     },
     {
       "source_heading": "并发深度与背压",
@@ -537,6 +537,150 @@
     "runtime_scope": "仅原样例已记录的运行证据；未实现跨进程服务、断电实验、耐久Tick或真实网络故障。",
     "status": "PASS_WITH_REPAIRS"
   },
-  "adopted_source_sha256": "1fe0f1b40252d543112f1308754f3ab5fd9d111626998d083fa5d9807d481a3f",
-  "source_primary_question": "如何在缓存、短读与异步取消下把完整字节安全交给资源消费者"
+  "adopted_source_sha256": "b7c94cec6daab23ef67a90d080718326c6ca6fe337a1cb77c37eee62e980eede",
+  "source_primary_question": "如何在缓存、短读与异步取消下把完整字节安全交给资源消费者",
+  "adopted_snapshot_history": [
+    {
+      "commit": "f803387",
+      "record": "references/longpage-review-2026-10-24.md",
+      "source_sha256": "1fe0f1b40252d543112f1308754f3ab5fd9d111626998d083fa5d9807d481a3f",
+      "articles": [
+        {
+          "path": "知识库/16_编程与数据结构/不可变文件发布.md",
+          "sha256": "62ceeed710208f7f03b2fb3c8b54a78f39c4e3ad283843a200e1d2663d7b1211"
+        },
+        {
+          "path": "知识库/16_编程与数据结构/文件版本代理与回收.md",
+          "sha256": "3dfc93f3af603b9f041ae0423a876f43d0520ccff83a28a7c46dd1c7eda3bb53"
+        }
+      ],
+      "heading_bodies": [
+        {
+          "target_path": "知识库/16_编程与数据结构/不可变文件发布.md",
+          "target_heading": "不可变文件与持久清单",
+          "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/不可变文件发布.md",
+          "target_heading": "文件准备与正式入口",
+          "reviewed_body_sha256": "acbe6e12b87fb468fa5fc126b44d3ed1bdb9039ec1bbd14dcacb3a7896a5e3e9"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/不可变文件发布.md",
+          "target_heading": "发布任务登记与续行",
+          "reviewed_body_sha256": "c0fc45def6c714e434439648bc7d3893bfee47e6441a5db8860ddc2cd3a165c0"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/不可变文件发布.md",
+          "target_heading": "发布冲突与恢复",
+          "reviewed_body_sha256": "a1d273ff97856d5f560b1f545e9c623aec9c9159da3090be09385d73fe6fc336"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/不可变文件发布.md",
+          "target_heading": "读取固定版本",
+          "reviewed_body_sha256": "22cade63ce561f588176ecd5719115357286fc2e606d453d77cefdfda1cf7ec8"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件版本代理与回收.md",
+          "target_heading": "跨进程代理与回收",
+          "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件版本代理与回收.md",
+          "target_heading": "令牌和在途读取",
+          "reviewed_body_sha256": "0a666c2fe8d5351373ba6b287fbffcbc2d4cae9aa4158f7e2a662a4f13f6c573"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件版本代理与回收.md",
+          "target_heading": "服务重启与旧操作",
+          "reviewed_body_sha256": "274d2e927cbb7446d6c9482d0ecc3009683db154d677048ccf0f622c1b0d78ee"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件版本代理与回收.md",
+          "target_heading": "运行中的版本排空",
+          "reviewed_body_sha256": "06460dd1fb368f83dc3b4290608e899a2b87e1f4484b328a16aff83b6681ffad"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件版本代理与回收.md",
+          "target_heading": "垃圾回收的状态转换",
+          "reviewed_body_sha256": "7b75bd41490c7a6b20096729c7f0e98150ed43007c89686ae14c5bf53f215494"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件IO.md",
+          "target_heading": "文件、缓存页与应用缓冲",
+          "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件IO.md",
+          "target_heading": "缓冲读取的数据路径",
+          "reviewed_body_sha256": "cf16aa9f0dcfa3b7570bafd139a618926979de8fe249c68647d9cfb6d39ea0b8"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件IO.md",
+          "target_heading": "短读与完整输入",
+          "reviewed_body_sha256": "01bfbabbd6f6e25b457b829a3bb961d5f5d790655c2698af7d7cc4b24fa65d56"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件IO.md",
+          "target_heading": "直接IO与内存映射",
+          "reviewed_body_sha256": "a4de8357eb059cc7f5f8e798f9625a99edeb47e85fb9bd9d78e11d2a5e0d13ec"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件IO.md",
+          "target_heading": "请求队列与消费者寿命",
+          "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件IO.md",
+          "target_heading": "提交、完成与取消",
+          "reviewed_body_sha256": "9c94c1554a2885156d35b3f89e8a23ed72a9a45ae315b1b1db39c2ec9aed0f33"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件IO.md",
+          "target_heading": "并发深度与背压",
+          "reviewed_body_sha256": "29dcf7d891290679dd55b08ebb199e080e329c98e56cd34da33382196a35d580"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件IO.md",
+          "target_heading": "解码与资源版本交接",
+          "reviewed_body_sha256": "9f62d7f54ea54b45940cf8a8c47758c64eea1457c2a744303a98680b67e8e722"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件IO.md",
+          "target_heading": "验证方法",
+          "reviewed_body_sha256": "386a234e1aa9a859d709dc2ac1a8be8f128b0f558d2ae4617cd278fb383f9233"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件IO.md",
+          "target_heading": "实现与证据",
+          "reviewed_body_sha256": "64f4368c37ae4607a739f764a91fa7c35542739debc58555a7b54cb6142b5225"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件IO.md",
+          "target_heading": "相关主题",
+          "reviewed_body_sha256": "96b5e87a80b796dbdf1e82dc6fe84f47438cf28c0473d9251b5049f6a61d9c5c"
+        },
+        {
+          "target_path": "知识库/16_编程与数据结构/文件IO.md",
+          "target_heading": "参考资料",
+          "reviewed_body_sha256": "f270f88d221fe6f7e631780ca63d1ec7733b8d2faac6bbbb7c742a51f236a191"
+        }
+      ]
+    }
+  ],
+  "second_review": {
+    "baseline": "f803387",
+    "record": "references/longpage-second-review-2026-10-24.md",
+    "reviewer": "root：重新全文复读",
+    "pages": [
+      "知识库/16_编程与数据结构/文件IO.md",
+      "知识库/16_编程与数据结构/不可变文件发布.md",
+      "知识库/16_编程与数据结构/文件版本代理与回收.md"
+    ],
+    "boundary_action": "KEEP",
+    "boundary_basis": "读取缓冲、条件发布和跨进程回收分别保护字节消费者、清单入口与远端在途操作；系统完成不等于文件可回收，保持三篇。",
+    "examples_checked": "4096字节页、偏移3008至6000、头部3+2+3、2992负载、5秒500MB背压、P/Q竞争g7→g8、Draining短读间隙。",
+    "source_urls_preserved": 2,
+    "runtime": "回归实际结果另列，完整宿主与模型尚未运行"
+  }
 }

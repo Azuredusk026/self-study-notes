@@ -33,7 +33,7 @@
         "TAA样本累积",
         "时域重建的采样过程"
       ],
-      "reviewed_sha256": "707a56bd2540d5d0f63ca9d761b6e0161416bb8266379e20e81f46052049edfa"
+      "reviewed_sha256": "ece5b567911f2468e7e9f506cbfe1d8465ef7a7143a81eed3f6f4d43640228c1"
     },
     {
       "path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
@@ -60,7 +60,7 @@
         "TAA历史拒绝与裁剪",
         "时域伪影的历史判据"
       ],
-      "reviewed_sha256": "3bcc7f296d471152717371762d6c2a25ca2eac3e524c4e229d3212d6582cea88"
+      "reviewed_sha256": "51ecbbcd780c8e6315aeb70e36d405bc43c7ab86da0664923ee038b5fa92d033"
     }
   ],
   "overview_question": null,
@@ -133,7 +133,7 @@
       "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
       "target_heading": "等权重方案",
       "source_body_sha256": "90c3c66e7f2a0326c9ec3d8058cf0fc9f386f7bcc372ec45436490882fa3a7ac",
-      "reviewed_body_sha256": "90c3c66e7f2a0326c9ec3d8058cf0fc9f386f7bcc372ec45436490882fa3a7ac"
+      "reviewed_body_sha256": "e7722a406af3c58c5e752e54194bde74d08fd7715edc1473be3bff760ec1b989"
     },
     {
       "source_heading": "$\\alpha$ 的下界",
@@ -210,14 +210,14 @@
       "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
       "target_heading": "拒绝",
       "source_body_sha256": "1535b9c368188e9e9e14ddb1b2dca29717d3ce1e9ccd2d55e87bcb1d2052345d",
-      "reviewed_body_sha256": "1535b9c368188e9e9e14ddb1b2dca29717d3ce1e9ccd2d55e87bcb1d2052345d"
+      "reviewed_body_sha256": "506e42769f72985a763e48a5244eaad04958fc2b5ab4f1426039e0b25923583a"
     },
     {
       "source_heading": "矫正",
       "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
       "target_heading": "矫正",
       "source_body_sha256": "f42048a5f76ac08a9a429e02236116d25022544e668e25956e95f255fc18082d",
-      "reviewed_body_sha256": "f42048a5f76ac08a9a429e02236116d25022544e668e25956e95f255fc18082d"
+      "reviewed_body_sha256": "2da4b37f08ade416a8d142355abe3b74b14a5a20c814bb31ae33f4fe513ea5ec"
     },
     {
       "source_heading": "颜色空间与离群值",
@@ -245,7 +245,7 @@
       "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
       "target_heading": "伪影的成因",
       "source_body_sha256": "8e396f054ea35b0d01f49e75a548489416196b9efcda2f37b937573b1afad00e",
-      "reviewed_body_sha256": "3c8fe64ba4dfe9038156898f5829451cb348a47b30019db10624fdae5960da19"
+      "reviewed_body_sha256": "871e29ecc632ca5505b2b1460150e2e3cd2f590fddb32a2c917fc7b5993e9628"
     },
     {
       "source_heading": "模糊",
@@ -287,7 +287,7 @@
       "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
       "target_heading": "应对方向",
       "source_body_sha256": "100cf282ab001d5ede0be5bb8f4f145284be0ef7f8bb34d918ae3b7060343c78",
-      "reviewed_body_sha256": "ac0d1234119968d1b84119d0968f3a3e8dbd9d258851d061bcba510195dadd81"
+      "reviewed_body_sha256": "e67b1684ea04952283285070c0739a8de71d12c5205cb1e8616ef32fb966a295"
     },
     {
       "source_heading": "分辨率与着色率",
@@ -366,7 +366,7 @@
       "target_heading": "验证方法",
       "disposition": "retained source entry or metadata",
       "source_body_sha256": "4dbb340841cad34c7d9f5ace1dc000874e427f490209ae5212ea28bf41dd0bcc",
-      "reviewed_body_sha256": "6effc4cfa7a1d8120acdb432aa84cb411b1712c6cc6d973a3de852f94c9de241"
+      "reviewed_body_sha256": "de5e4a8fa6e834f3e0d4adc5389071681c38bfb28b07d9acc3a5e2a8f41671b0"
     },
     {
       "source_heading": "相关主题",
@@ -1915,5 +1915,259 @@
     "verification_scope": "CPU数例与采用HLSL离线编译纳入最终回归；完整TAA宿主、GPU画质与性能未运行。",
     "source": "https://developer.download.nvidia.com/gameworks/events/GDC2016/msalvi_temporal_supersampling.pdf"
   },
-  "adopted_source_sha256": "8623343aebeb72eed6e9f0a93fb273501f431830f1bb8c8ad103b7b2d01c6bfd"
+  "adopted_source_sha256": "ad6210b9f72c50a073a9daf9124c22f10ba8aca7f86a8764f82272b8a7a13346",
+  "adopted_snapshot_history": [
+    {
+      "commit": "f803387",
+      "record": "references/longpage-review-2026-10-24.md",
+      "source_sha256": "8623343aebeb72eed6e9f0a93fb273501f431830f1bb8c8ad103b7b2d01c6bfd",
+      "articles": [
+        {
+          "path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "sha256": "707a56bd2540d5d0f63ca9d761b6e0161416bb8266379e20e81f46052049edfa"
+        },
+        {
+          "path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+          "sha256": "3bcc7f296d471152717371762d6c2a25ca2eac3e524c4e229d3212d6582cea88"
+        }
+      ],
+      "heading_bodies": [
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "时域抗锯齿",
+          "reviewed_body_sha256": "03377af4ae7eb54ea4c7f15f4b79877bd57dfbc6a58ae67312cb51a31b6c4fad"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "抖动",
+          "reviewed_body_sha256": "941041546a74048b3971110e7efb261ecb9e2b0237b5cc2e25d4c0bab1e5ee6e"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "写入投影矩阵",
+          "reviewed_body_sha256": "183b3d2112e2c7351f7914f9cb598332227520f22ef8315b781176631686d13e"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "序列的选择",
+          "reviewed_body_sha256": "cdbdb374a177c4fa2a1a11e02f4c8a64bd90b7b31c24a65465582957c2b8d2e7"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "纹理采样偏置",
+          "reviewed_body_sha256": "4d1caa56da53ddeb4f1a73b66960b102dbdfbce56775e866eb42862143fe6ec0"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "历史累积与重投影",
+          "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "样本累积",
+          "reviewed_body_sha256": "fad138f9a141a221f0dd545eac83f38b9e8ad7040ab6290a4ce8fd444f8bd97e"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "固定系数等价于指数平滑",
+          "reviewed_body_sha256": "be3f285c88d8f2fe07409f1635d0d65da778aeae7a22b43da580ddca09e6275b"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "等效采样数",
+          "reviewed_body_sha256": "5400c200578cc013e928531382f9b38c6768b8052265ddc26db0fd35d6faf77c"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "等权重方案",
+          "reviewed_body_sha256": "90c3c66e7f2a0326c9ec3d8058cf0fc9f386f7bcc372ec45436490882fa3a7ac"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "$\\alpha$ 的下界",
+          "reviewed_body_sha256": "d7201e4d1418891be15461765b3a392689ed7d25289e7f2928d0e8b09320b700"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "在管线中的位置",
+          "reviewed_body_sha256": "1cc941574f406b8435bcade45bb7b1e2038a7352e7623d51661f979ec2d743a7"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "亮度自适应权重",
+          "reviewed_body_sha256": "f7e8da182c4da3c68f1305522740250a5f4c9d0ba8ddeb398dd4fb938dff8ae7"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "重投影",
+          "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "运动向量",
+          "reviewed_body_sha256": "04f85a59f7e7e247ec53a04c170bdb7e683a2e76645608f715d583200af9b9ba"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "采样邻域最近深度",
+          "reviewed_body_sha256": "5f1c69a5d480e02822bf0d137500216ece66043514aedae2986db01380841b01"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "重采样滤波",
+          "reviewed_body_sha256": "2556c8c000b47457712d03c7bd5b25837b697685972c03a951d59e1a15cac675"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "仅用重投影的简化方案",
+          "reviewed_body_sha256": "ce1711761e8bc1bc2dcef89ee23a37e26d188dc7ca6955a640b10f112a06524f"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "target_heading": "时域超采样",
+          "reviewed_body_sha256": "f3f6b6196f5810c7fa371ebac8344f2d2e8603c306621df83f5ab5a4327b494d"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+          "target_heading": "历史校验",
+          "reviewed_body_sha256": "0f960f3353723250cc08355885bf1a8a87b1762b9ee98c2bbdc51a476dd977d4"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+          "target_heading": "拒绝",
+          "reviewed_body_sha256": "1535b9c368188e9e9e14ddb1b2dca29717d3ce1e9ccd2d55e87bcb1d2052345d"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+          "target_heading": "矫正",
+          "reviewed_body_sha256": "f42048a5f76ac08a9a429e02236116d25022544e668e25956e95f255fc18082d"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+          "target_heading": "颜色空间与离群值",
+          "reviewed_body_sha256": "7c38ce1bb50d5df75401297bedb7dc87cbe723893067e3efe55e0c21856e585d"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+          "target_heading": "混合系数自适应",
+          "reviewed_body_sha256": "520cd5ed52c57df430b63a1bcf7159631d95dd7fea4800fbb2ec0201a2c2fe33"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+          "target_heading": "一个像素的历史决策",
+          "reviewed_body_sha256": "8c61b3fde1eae8ecf134615d71a941a7c5f317459c3ff603dc52a011ec2c1550"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+          "target_heading": "伪影的成因",
+          "reviewed_body_sha256": "3c8fe64ba4dfe9038156898f5829451cb348a47b30019db10624fdae5960da19"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+          "target_heading": "模糊",
+          "reviewed_body_sha256": "81eaf59a140430a2e865f5831df3666d8807f6bf5ebcf7fac05571bf7c3f0a66"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+          "target_heading": "鬼影",
+          "reviewed_body_sha256": "ed6e6444609b60a71881374355e029de533445fe0c0b19d009d1131cf97cb740"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+          "target_heading": "闪烁",
+          "reviewed_body_sha256": "037c0bcff701f21f9c6dc6355e49273753b5027eaf7f2ba214fccd0052924bf3"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+          "target_heading": "欠采样",
+          "reviewed_body_sha256": "8905a8294af5457101da1446fbef10aac62753609faf304a0f252b48f8871005"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+          "target_heading": "高频细节的稳定性",
+          "reviewed_body_sha256": "2c45989c502f21fcd0e515b6a3fd1a720e984ed97723a7b82fd2924abc9f7555"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+          "target_heading": "应对方向",
+          "reviewed_body_sha256": "ac0d1234119968d1b84119d0968f3a3e8dbd9d258851d061bcba510195dadd81"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+          "target_heading": "分辨率与着色率",
+          "reviewed_body_sha256": "0b00ce743ed50e2f43e37fe2e786c10946740cb656cbd229145ba28a911cc634"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+          "target_heading": "空间采样方案",
+          "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+          "target_heading": "超采样（SSAA）",
+          "reviewed_body_sha256": "b6509d94d47b9771ec4be370890022b5b3e14498837566141e302a9c964fb71c"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+          "target_heading": "MSAA",
+          "reviewed_body_sha256": "d32de9709624024785b5281b74f304107e26f774eddc318d16af3432f4a686cb"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+          "target_heading": "Sample Frequency 和 Resolve",
+          "reviewed_body_sha256": "3ec130a032a3af9c23d738368c741fae5e409cb9f66067c7e5fdcf09637025b5"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+          "target_heading": "FXAA",
+          "reviewed_body_sha256": "62fc6ba1b3e6dad240e9c2c09c87c2be168817eb7d54551d6c9df9b56d5e0e5b"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+          "target_heading": "成本特性",
+          "reviewed_body_sha256": "c717f9579191aad8c1d1df34094a21e3087c82772f5812fa8e25031f46fa5f51"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+          "target_heading": "与引擎的耦合",
+          "reviewed_body_sha256": "4238289e1cb313c0ffdcff3982a3874394607600f798298f66097725816507b7"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+          "target_heading": "方案选择",
+          "reviewed_body_sha256": "45835b36ad352124ad581e68411715d72a7c6a0c50ec00c8d55f0bafd37b2f38"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+          "target_heading": "验证方法",
+          "reviewed_body_sha256": "6effc4cfa7a1d8120acdb432aa84cb411b1712c6cc6d973a3de852f94c9de241"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+          "target_heading": "相关主题",
+          "reviewed_body_sha256": "b6a7c9de8bee3c6c743295d087d78f3352ab85c936ce6944d7a492c9036c5d2d"
+        },
+        {
+          "target_path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+          "target_heading": "参考资料",
+          "reviewed_body_sha256": "8326deadf2798547c7873e869b0d3d798a8718a6b34737518bd4f09e0a8c8f02"
+        }
+      ]
+    }
+  ],
+  "second_review": {
+    "baseline": "f803387",
+    "record": "references/longpage-second-review-2026-10-24.md",
+    "reviewer": "root：重新全文复读",
+    "pages": [
+      "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+      "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+      "知识库/02_GPU与光栅化管线/时域历史校验.md"
+    ],
+    "boundary_action": "KEEP",
+    "boundary_basis": "采样篇产生历史坐标与累积值，校验篇消费有限候选并决定拒绝或裁剪；原页保留空间方案对照，三个职责各有实现与诊断边界。",
+    "examples_checked": "0.5像素抖动、N_eff=2.17/5.13/9.78/19、-0.25UV、深度5/2米、裁剪0.76、2×2超分初始化。",
+    "source_urls_preserved": 3,
+    "runtime": "回归实际结果另列，完整宿主与模型尚未运行"
+  }
 }
