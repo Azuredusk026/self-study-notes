@@ -64,12 +64,14 @@
       "title_reason": "现有标题准确表达主概念，保留",
       "primary_concept": "术语表",
       "boundary_action": "KEEP",
-      "content_sha256": "82df12094e79ae6ea6a05478c8985815c2734fb87259e9ccafbddc46e0f975d5",
+      "content_sha256": "f96687156559d0af0878bebfe03d30221bc37806f78881b3df5aa1e6cdd18a83",
       "historical_content_sha256": "e89244c9a204500ce628f2c3b88908e93d49282b1beda90164846b9d73ef665b",
       "current_review_date": "2026-10-23",
       "heading_outline": [
-        "# 术语表"
-      ]
+        "# 术语表",
+        "## 批次退休"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/00_知识库说明/知识地图.md",
@@ -89,7 +91,7 @@
       "title_reason": "现有标题准确表达主概念，保留",
       "primary_concept": "知识地图",
       "boundary_action": "KEEP",
-      "content_sha256": "7db42b17898c7007245eb6a724445ae3aa096cd045c51ea90d02500fe73dca7c",
+      "content_sha256": "9067d0b321ec28d9543ba2a0ec1b223e7a2eb1ec9cc1cc7661faaaa7615a8435",
       "historical_content_sha256": "0c4d44ad0f1ac6c30138c01f8687536635db694de2da4a9eaa4c0ae176568042",
       "current_review_date": "2026-10-23",
       "heading_outline": [
@@ -129,7 +131,8 @@
         "### 24_游戏音频",
         "### 25_UI与文本",
         "### 26_GPU驱动与虚拟几何"
-      ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/00_知识库说明/知识库实施规范.md",
@@ -830,7 +833,15 @@
       "content_sha256": "e4711efe5fbded08da7f2bae1aa7dd73db879b366cd356a0e68337b806a07ca9",
       "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
       "historical_content_sha256": "0b95bc7843d85bd08fb7bbc64ef85f77ad67bcdc2d1ea75dad9b888e1c924e26",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 光栅化可见性",
+        "## 专题入口",
+        "## 阅读路线",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/02_GPU与光栅化管线/可见性与合成.md",
@@ -867,7 +878,15 @@
       "content_sha256": "14bbb31533c26e5bb79b38b8a00ac467b24a38b692cec3887fe98ed3f0a3a2a9",
       "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
       "historical_content_sha256": "09b85918518a7ca91ce9f0bbfa7eab20b96fc8b683b01a9a55864afe76816cd5",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 可见性与合成",
+        "## 专题入口",
+        "## 阅读路线",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/02_GPU与光栅化管线/可见性剔除.md",
@@ -1451,7 +1470,34 @@
       "boundary_action": "KEEP",
       "content_sha256": "7059a5e432d725d5fa913723132b2d1b51699464a9eaebbd46bb8de02501fe2e",
       "historical_content_sha256": "fb5b6c1d666fe0321907ba2bc0cd236cf1fd3ad19ecfd6be011db3cc8cb4df5e",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# BRDF与微表面模型",
+        "## 反射积分",
+        "### 辐射量与单位",
+        "### Rendering Equation",
+        "## 表面反射模型",
+        "### Lambert Diffuse",
+        "### Phong 和 Blinn-Phong",
+        "## 物理约束",
+        "### BRDF 的约束",
+        "#### 非负",
+        "#### 能量守恒",
+        "#### Helmholtz Reciprocity",
+        "## 微表面分解",
+        "### 微表面模型",
+        "#### D：Normal Distribution Function",
+        "#### F：Fresnel",
+        "#### G：Geometry Term",
+        "#### 代码中的组合顺序",
+        "## 参数与能量",
+        "### 粗糙度映射",
+        "### 多次散射",
+        "## 验证方法",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/04_光照模型与PBR/Cubemap环境采样.md",
@@ -1606,7 +1652,31 @@
       "boundary_action": "KEEP",
       "content_sha256": "ef09171d4a59c69587deff4f569d3b688b143e30d3dcef3cab5bd84e75255879",
       "historical_content_sha256": "4dbbb900ab1004c0ee32f2a2a7c1f5ee95e641ada9c1522e8b4a366fb54003e4",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 皮肤次表面散射",
+        "## 扩散剖面",
+        "## 三类实时方案",
+        "## 预积分次表面散射",
+        "### 表的两个维度",
+        "### 局部圆弧上的查表生成",
+        "# mu ∈ [-1,1]，q ≥ 0，samples 为正整数；完整输入检查见参考文件。",
+        "### 采样与法线分层",
+        "### 边界与代价",
+        "## 屏幕空间次表面散射",
+        "### 可分离近似",
+        "### 离散核的一次求值",
+        "### 深度感知的采样半径",
+        "### 边界泄漏",
+        "### 管线集成",
+        "## 纹理空间扩散",
+        "## 薄组织透射的简化模型",
+        "## 皮肤的其他分层",
+        "## 验证方法",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/05_光照阴影与GI/GI方案选择.md",
@@ -1642,7 +1712,16 @@
       "boundary_action": "OVERVIEW",
       "content_sha256": "b12cf2af945ecdd790de5fd78dafadde5c1f9686b8814de3c748411c3b1e622e",
       "historical_content_sha256": "d0151a6339430868920927c3e4613458f4dd41d1a0e5ae8a0e933554e15e9883",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# GI方案选择",
+        "## 专题入口",
+        "## 阅读路线",
+        "### 组合时的数据归属",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/05_光照阴影与GI/Light Probe.md",
@@ -2513,7 +2592,16 @@
       "boundary_action": "OVERVIEW",
       "content_sha256": "73fc64ff047404450f75a773b392316c2f79f72c1e6f3348f57119cc4dd3ff8d",
       "historical_content_sha256": "78b6b6cecd8cd61da43ba2df7fa86e4bdb40728aa63990500e56981585a6fce3",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 后处理链",
+        "## 专题入口",
+        "## 资源与顺序",
+        "### 一条资源衔接路线",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/07_颜色与后处理/屏幕空间AO.md",
@@ -3324,7 +3412,16 @@
       "content_sha256": "abd38bca6e939261e4cd9d876481a40d68ac1ec0869450616b33f13258dd09a9",
       "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
       "historical_content_sha256": "0a8290f15312f178896d29ef11551906f61e99748669fdb99e47ac327b772ad0",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 角色动画导读",
+        "## 专题入口",
+        "## 阅读路线",
+        "### 姿态与表面衔接",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/角色布料.md",
@@ -3562,7 +3659,16 @@
       "boundary_action": "OVERVIEW",
       "content_sha256": "8209fbda707a0f96c66cc11fdb779e9d346fb67145ef7794296839271d49d814",
       "historical_content_sha256": "1ee01411db637ab058d623b040dff60856b7b340a59b3063e2b6cfbd7ed3d1f5",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# VFX效果组合",
+        "## 专题入口",
+        "## 阅读路线",
+        "### 透明粒子的组合顺序",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/VFX纹理动画.md",
@@ -3710,7 +3816,17 @@
       "boundary_action": "KEEP",
       "content_sha256": "29baba9526f5617681ad43b0dbf855604cef93a8b06a84e6e2f1d40b04f1e983",
       "historical_content_sha256": "410d036780926b132f912d32a7e67d6ecd7c65d4255a42dd8d0ebd0505c681b1",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 屏幕扰动",
+        "## 屏幕扰动与折射",
+        "## 偏移采样",
+        "### 前景拒绝",
+        "## 验证方法",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/水面与海洋渲染.md",
@@ -3804,9 +3920,19 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "软粒子",
       "boundary_action": "KEEP",
-      "content_sha256": "8735c8dc21d06cec315c06d374f8542dce2c3138b57e2c2b85e747dcf1bd2421",
+      "content_sha256": "114c8cb8d7209a0152e1f419b744a93349f5200106ac699f24716466fc58ea19",
       "historical_content_sha256": "56789251fc85bd1f93233f46ab804201bbb9a900842af14b51a3b7ab5a0d1a4d",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 软粒子",
+        "## 深度差与覆盖衰减",
+        "## 深度淡出",
+        "## 镜头附近的覆盖控制",
+        "## 验证方法",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/11_NPR与风格化渲染/Face SDF.md",
@@ -3865,7 +3991,17 @@
       "boundary_action": "OVERVIEW",
       "content_sha256": "d228cbd5257abe805002b2b15e33b56cdc9cadd59ad9bb60c2bb72c4c842e0f4",
       "historical_content_sha256": "24240f8ada2079c05a511944a3f409f24c357206bde15f52c82bcd1064f75061",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# NPR与场景风格导读",
+        "## 画面目标与机制",
+        "## 场景尺度与效果关系",
+        "## 阅读与验证路线",
+        "### 角色效果的共同输入",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/11_NPR与风格化渲染/NPR材质与分层光照.md",
@@ -4314,7 +4450,8 @@
         "### 最小实现路径",
         "## 相关主题",
         "## 参考资料"
-      ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/13_渲染架构/Draw Call与合批.md",
@@ -4503,12 +4640,14 @@
       "confidence": "命名建议可供采用评审",
       "content_sha256": "0003f43d2cb47fc6858939388fd6ed9096282c3c09c4a1248a563eb9961d6a72",
       "heading_outline": [
-        "# 资源状态、屏障与跨队列同步",
-        "## 执行与内存依赖",
-        "## Vulkan 写后读示例",
-        "## 图像布局与子资源",
-        "## 队列同步",
-        "## 异步计算的条件",
+        "# GPU同步与屏障",
+        "## GPU访问依赖",
+        "### 执行与内存依赖",
+        "### Vulkan 写后读示例",
+        "### 图像布局与子资源",
+        "## 提交与队列",
+        "### 队列同步",
+        "### 异步计算的条件",
         "## 验证方法",
         "## 相关主题",
         "## 参考资料"
@@ -4518,7 +4657,8 @@
       "deferred_title": false,
       "title_reason": "保留屏障机制与布局/跨队列同步，不只用泛同步名",
       "historical_content_sha256": "042fdaf91237c2a8f7b49f610eb16c8f02dd27b418602b3663689066a0d55711",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/13_渲染架构/GPU资源生命周期.md",
@@ -4540,7 +4680,22 @@
       "boundary_action": "KEEP",
       "content_sha256": "c015f78b6a3af02d665bffa327720d6ca462d8b52793137d6434dd042de5ffe9",
       "historical_content_sha256": "837898039461989ac87e62c67abe1fc84b0c80ad40233c9b2b720fbc3c0e27cd",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# GPU资源生命周期",
+        "## 内容与完成边界",
+        "### 帧内与跨帧资源",
+        "## 数据传输",
+        "### 上传与回读",
+        "### 环形上传区间",
+        "## 分配与复用",
+        "### 池复用与堆别名",
+        "### 驻留与内存预算",
+        "## 验证方法",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/13_渲染架构/GPU资源绑定.md",
@@ -4607,15 +4762,22 @@
       "reason": "材质是应用输入，描述符是绑定工具；GPU限定区分一般程序参数绑定。",
       "review_batch": "第二批跨领域样本",
       "confidence": "命名建议可供采用评审",
-      "content_sha256": "962820d6416e8143b837b03602f0fa4236fbc8fe9074fd760bd5fdc429901c5a",
+      "content_sha256": "a74e108321287e6724de4fef885fa970de9b80f6124329fe1021a941e99d5399",
       "heading_outline": [
-        "# 资源绑定、描述符与材质数据组织",
-        "## API 暴露方式",
-        "## 按访问和更新频率组织",
-        "## Vulkan 动态 uniform 示例",
-        "## 小参数与推送常量",
-        "## Bindless 的索引访问",
-        "## 成本与边界",
+        "# GPU资源绑定",
+        "## 寻址与布局",
+        "### API 暴露方式",
+        "### 按访问和更新频率组织",
+        "### 从着色器接口建立布局",
+        "### 管线切换与兼容性",
+        "## 动态数据与索引",
+        "### Vulkan 动态 uniform 示例",
+        "### 缓冲偏移与映射偏移",
+        "### 小参数与推送常量",
+        "### 描述符数组与材质索引",
+        "### 资源索引的生产与发布",
+        "### 录制引用、提交与回收",
+        "## 绑定成本",
         "## 验证方法",
         "## 相关主题",
         "## 参考资料"
@@ -4625,7 +4787,8 @@
       "deferred_title": false,
       "title_reason": "保留GPU工程语境，布局和材质是输入约束",
       "historical_content_sha256": "d4bd25126146c8d0796aee695465f252ea1694eef4a38ed196709ff2dd0597b6",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/13_渲染架构/Pipeline State Object.md",
@@ -4797,7 +4960,15 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
       "historical_content_sha256": "4e242ce6988dfc34017809258150b65f5bfe3c76a0a9271f3624af85d31281e5",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 渲染命令的组织方式",
+        "## 专题入口",
+        "## 阅读路线",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/13_渲染架构/渲染路径与光源组织.md",
@@ -5014,9 +5185,21 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "VFX性能",
       "boundary_action": "KEEP",
-      "content_sha256": "c580981f3893cd781414f4be04bef41643676037d9ab4fef48062d62ba9778ec",
+      "content_sha256": "2beef77b97b80f26894e4eda38310a07b40f0a69787f2f9bf5b4006df1552555",
       "historical_content_sha256": "6e35e2c555364e6a923e58b29f66248a76bd044f6ed79fdc16e56839aa9f631d",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# VFX性能",
+        "## 透明效果成本",
+        "### 重复绘制的成本",
+        "### 分辨率修改的成本边界",
+        "### 常见降级手段",
+        "### 预算与验证",
+        "## 验证方法",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/14_性能分析与优化/帧捕获与性能分析工具.md",
@@ -5334,7 +5517,32 @@
       "boundary_action": "KEEP",
       "content_sha256": "63809a337168f273a77c9c678eb958722d28ca7797a48d777682068f0880043a",
       "historical_content_sha256": "ff28fa748e1c4f7003838618ca089f4dbe9ce680784ae82ce2d0cd15c6a147a1",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 大型资产版本控制",
+        "## 文本与二进制的差异",
+        "## 历史与存储服务",
+        "### Git 的对象历史",
+        "### Git LFS",
+        "#### 跟踪、对象上传与干净检出",
+        "### Git LFS Lock",
+        "### Perforce Helix Core",
+        "### PlasticSCM / Unity Version Control",
+        "### 选择方案",
+        "## 检出契约",
+        "## 协作与恢复",
+        "### 文件粒度",
+        "### 派生文件",
+        "### 分支、主干与合入队列",
+        "### 二进制资产审查",
+        "### 锁与任务系统",
+        "### 跨职能合作",
+        "### 故障与恢复",
+        "## 验证方法",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/15_资产与工具管线/程序化资产生成.md",
@@ -5673,7 +5881,7 @@
     },
     {
       "path": "知识库/16_编程与数据结构/内存布局与分配.md",
-      "primary_question": "如何按访问和寿命选择分配器及数据布局",
+      "primary_question": "如何按访问模式安排数据布局并取得对齐且容量安全的存储",
       "article_boundary": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
       "candidates": [
         {
@@ -5704,9 +5912,28 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "内存布局与分配",
       "boundary_action": "KEEP",
-      "content_sha256": "70b40a6624a2e84008b8aeed6c8071ba082bb598254269ab21060e95ad701743",
+      "content_sha256": "26ba19f188c24c2824baa11b08d0f128187023fbb8fd5e834cc66aa0f6245bed",
       "historical_content_sha256": "759ecf229234d78867d1db9ab41b26af76b36ce3b5fd6a1421f3574b3f600131",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 内存布局与分配",
+        "## 数据局部性",
+        "### 字段大小与上传布局",
+        "## 缓存映射与写策略",
+        "## 栈与堆",
+        "## 虚拟地址与物理存储",
+        "## 分配器与碎片",
+        "## 帧分配器",
+        "## 对齐与批次寿命",
+        "### 构造登记与提交次序",
+        "### 析构依赖与变更检查",
+        "## 异步批次与复用",
+        "## 验证方法",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/16_编程与数据结构/图搜索.md",
@@ -5936,7 +6163,19 @@
       "boundary_action": "KEEP",
       "content_sha256": "61b4c39d597a53393a95d4830d22e5a741218b63b9e70603a4f061bd1b68068e",
       "historical_content_sha256": "c30e25e86285ea3a3013dc3fcc6421179505543090d01a355b0aed057af80b82",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 对象池",
+        "## 租用与复用",
+        "## 租用与生命周期回调",
+        "## 句柄与释放竞争",
+        "## 容量与驻留成本",
+        "## 验证方法",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/16_编程与数据结构/对象生命周期.md",
@@ -6211,34 +6450,11 @@
       "confidence": "命名建议可供采用评审",
       "content_sha256": "76401e70fa0b8dc72675a2fd9a677840a0541653c5e14f6f4b4d94b56594ce1a",
       "heading_outline": [
-        "# 算法设计、树、图与空间划分",
-        "## 渐进复杂度",
-        "## 递归与枚举",
-        "## 排序与分治",
-        "## 动态规划",
-        "## 贪心算法",
-        "## 先定义操作",
-        "## Array、List 与 Deque",
-        "## `std::vector` 的容量与失效",
-        "## Stack、Queue 与 Priority Queue",
-        "## Hash Table",
-        "## Tree",
-        "## 红黑树与有序关联容器",
-        "## Graph",
-        "## Topological Sort",
-        "## Dijkstra",
-        "## A*",
-        "## 字符串匹配与 KMP",
-        "## 空间查询为什么需要结构",
-        "## Uniform Grid 与 Spatial Hash",
-        "## Quadtree 与 Octree",
-        "## BVH",
-        "## KD-Tree 与空间分割",
-        "## Scene Graph 不是空间索引",
-        "## 复杂度与数据局部性",
-        "## 常见游戏开发应用",
-        "## 验证方法",
-        "### A* 的核心循环",
+        "# 算法与数据结构导读",
+        "## 专题入口",
+        "## 阅读路线",
+        "## 选择示例",
+        "## 实现与证据",
         "## 相关主题",
         "## 参考资料"
       ],
@@ -6247,7 +6463,8 @@
       "deferred_title": false,
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "historical_content_sha256": "fe18924b6e5608f28d84bde7bf069bad25a684c5802c0b1d79cdab7109cc281d",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/16_编程与数据结构/算法设计.md",
@@ -6388,9 +6605,24 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "线程同步",
       "boundary_action": "KEEP",
-      "content_sha256": "fdb2b07994660a6a26b227b3ecade4e57d13a07336e6ce9c42b207bbe06cbdea",
+      "content_sha256": "168c93aca1b95f8b5c2dda756989988e56c64432e9b6adf4eeec59d5d301984f",
       "historical_content_sha256": "1cb604ad8ae2d30fb7ea91cea1116263aecef60b6422fd87321c82fe4d3de98a",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 线程同步",
+        "## 共享状态与互斥",
+        "## 条件变量与等待谓词",
+        "### 检查与入睡的交接",
+        "### 入队、取出与停止",
+        "## 原子发布与内存顺序",
+        "### 多轮复用与回收",
+        "## 锁的选择与等待依赖",
+        "### 双锁死锁",
+        "## 推演与验证",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/16_编程与数据结构/虚拟内存.md",
@@ -6464,7 +6696,18 @@
       "boundary_action": "KEEP",
       "content_sha256": "2681234dd7d5e60a8dd64e82938f559ccfb2d7bcff112176846b11a19e434ea2",
       "historical_content_sha256": "b9e18c3e95009a24fa9643d166782eed07d92c0306321bff64ef197e40e91362",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 跨语言接口",
+        "## 字节表示与长度",
+        "## 输出缓冲与所有权",
+        "## 错误与异步寿命",
+        "## 调用粒度与路径",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/16_编程与数据结构/进程与调度.md",
@@ -6973,7 +7216,30 @@
       "boundary_action": "KEEP",
       "content_sha256": "b9e8e4d30f445b4545299a164b422280d4bb764455a73aebe7d1774dca0c3e7e",
       "historical_content_sha256": "b831847e662bb0197ef4e9c603a0515f52088c6ede871eccd6167ceccf239aff",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 破坏系统",
+        "## 碎块资产与连接",
+        "### 几何分区",
+        "### 黏结与支撑",
+        "## 冲击与断裂",
+        "### 径向伤害分配",
+        "### 支撑传播",
+        "## 动态簇重建",
+        "### 质量与惯性",
+        "### 质量坐标与刚体接口",
+        "### 速度场与冲量",
+        "## 物理提交与失败恢复",
+        "### 事件接纳与候选准备",
+        "### 安全点提交",
+        "### 失败恢复",
+        "## 预算与生命周期",
+        "## 权威事件与重放",
+        "## 实现与验证",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/18_游戏物理与模拟/载具物理.md",
@@ -7008,9 +7274,32 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "载具物理",
       "boundary_action": "KEEP",
-      "content_sha256": "6c4be63802d0518bbf9a6744d0f9a795bc3d99055f3f6ae238d4b4445cd6e04b",
+      "content_sha256": "9f8c703f8cd49b824b698e314bdbf24080f501b96317323e6567fc7b718fdf62",
       "historical_content_sha256": "ec08906c61c80be9c1f2a31d426592dd21f2521d82e623728bca0f2dc1fa72d9",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 载具物理",
+        "## 接触几何与悬挂",
+        "### 查询长度与轮心",
+        "### 压缩速度与法向载荷",
+        "## 接触速度与轮胎力",
+        "### 轮胎坐标",
+        "### 原始力与联合附着",
+        "## 传动、转向与轮速",
+        "### 发动机到车轮",
+        "### 制动与反作用",
+        "### 转向几何",
+        "## 每步积分与低速保持",
+        "### 力与角动量汇总",
+        "### 驻车与时间步",
+        "### 多轮约束与统一提交",
+        "### 候选失败与动态回退",
+        "### 子步与接触更新",
+        "## 实现与验证",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "path": "知识库/19_Gameplay与游戏框架/玩法事件与脚本.md",
@@ -9914,6 +10203,35 @@
         "## 参考资料"
       ],
       "second_longpage_review": "references/longpage-second-review-2026-10-24.md"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/帧分配器的构造与退休.md",
+      "primary_question": "如何登记帧内对象并在CPU和GPU消费者退出后按依赖析构",
+      "primary_concept": "帧分配器的构造与退休",
+      "current_title": "帧分配器的构造与退休",
+      "suggested_title": "帧分配器的构造与退休",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "独立构造和退休协议，候选见迁移记录",
+      "content_sha256": "4e015ae1428401619e7ea129a150a798e588336273d1170faf2d3a32cfa7476e",
+      "heading_outline": [
+        "# 帧分配器的构造与退休",
+        "## 构造登记与提交次序",
+        "## 析构依赖与变更检查",
+        "## 异步批次与复用",
+        "## 验证方法",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     }
   ],
   "sample_dimensions": [

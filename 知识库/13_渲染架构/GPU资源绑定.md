@@ -36,14 +36,23 @@ Vulkan集合兼容还涉及管线布局中此前集合的布局与push constant�
 
 ### Vulkan 动态 uniform 示例
 
-缓冲记录按 `minUniformBufferOffsetAlignment` 对齐，每个帧使用独立的未完成区间。示例只演示绑定已创建的 descriptor set，输入偏移为字节单位。
+缓冲记录按 `minUniformBufferOffsetAlignment` 对齐，每个帧使用独立的未完成区间。示例绑定已创建的descriptor set，基础偏移固定为0，bufferSize为实际缓冲字节数。宿主先验证记录大小不超过maxUniformBufferRange，并提供`<cstdint>`、`<limits>`、`<stdexcept>`及Vulkan头文件。所有偏移和长度以字节计；参数无效时在记录绑定命令前报告错误。
 
 ```cpp
 VkDeviceSize alignment = limits.minUniformBufferOffsetAlignment;
 VkDeviceSize recordSize = sizeof(MaterialConstants);
+const VkDeviceSize maxSize = std::numeric_limits<VkDeviceSize>::max();
+if (alignment == 0 || recordSize == 0 ||
+    recordSize > maxSize - (alignment - 1))
+    throw std::invalid_argument("invalid record size or alignment");
 VkDeviceSize stride = ((recordSize + alignment - 1) / alignment) * alignment;
+if (frameBase % alignment != 0 || frameBase > bufferSize ||
+    materialIndex > (maxSize - frameBase) / stride)
+    throw std::out_of_range("material address overflow");
 VkDeviceSize offset = frameBase + materialIndex * stride;
-assert(offset <= UINT32_MAX);
+if (offset > UINT32_MAX || offset > bufferSize ||
+    recordSize > bufferSize - offset)
+    throw std::out_of_range("material range exceeds buffer");
 uint32_t dynamicOffset = static_cast<uint32_t>(offset);
 vkCmdBindDescriptorSets(commandBuffer,
     VK_PIPELINE_BIND_POINT_GRAPHICS,
@@ -148,6 +157,8 @@ CPU在快照发布锁内把新材质记录、描述符页、资源引用和上�
 - 记录每帧描述符更新数、绑定调用数和上传字节，比较分组前后 CPU 时间。
 - 使用不同设备对齐要求构建参数表，并检查范围和偏移验证消息。
 
+2026年10月24日以Clang和C++17编译正文动态偏移片段，[宿主检查](../examples/remaining_review/verify.py)通过8类地址边界用例。Vulkan类型与绑定函数由桩替代，检查覆盖乘加溢出、对齐、32位偏移及记录完整范围；实际设备描述符、验证层和GPU执行另验。
+
 ## 相关主题
 
 - [[13_渲染架构/GPU资源生命周期]]
@@ -157,6 +168,8 @@ CPU在快照发布锁内把新材质记录、描述符页、资源引用和上�
 示例状态：本页代码用于解释对应的数据和调用约束，完整资源创建、类型与调用环境由项目提供。除文中另列的实际实验外，本页未执行目标引擎编译、GPU捕获或性能计时。
 
 ## 参考资料
+
+- [Vulkan vkCmdBindDescriptorSets](https://docs.vulkan.org/refpages/latest/refpages/source/vkCmdBindDescriptorSets.html)：动态偏移采用32位整数，满足设备对齐，最终偏移加范围受缓冲大小约束。
 
 - [Vulkan VkMappedMemoryRange](https://docs.vulkan.org/refpages/latest/refpages/source/VkMappedMemoryRange.html)：刷新偏移相对内存对象，范围受映射与非一致原子对齐约束。
 - [Vulkan Resource Descriptors](https://docs.vulkan.org/spec/latest/chapters/descriptorsets.html)。

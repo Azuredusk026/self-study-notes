@@ -1,0 +1,53 @@
+{
+  "source_commit": "8986ffc",
+  "source_path": "知识库/16_编程与数据结构/内存布局与分配.md",
+  "articles": [
+    {
+      "path": "知识库/16_编程与数据结构/帧分配器的构造与退休.md",
+      "primary_question": "如何登记帧内对象并在CPU和GPU消费者退出后按依赖析构",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "构造登记与提交次序",
+        "析构依赖与变更检查",
+        "异步批次与复用"
+      ],
+      "title_candidates": [
+        "帧分配器的构造与退休",
+        "帧内对象的依赖销毁",
+        "异步帧存储的批次寿命"
+      ],
+      "reviewed_sha256": "4e015ae1428401619e7ea129a150a798e588336273d1170faf2d3a32cfa7476e"
+    }
+  ],
+  "mappings": [
+    {
+      "source_heading": "构造登记与提交次序",
+      "target_path": "知识库/16_编程与数据结构/帧分配器的构造与退休.md",
+      "target_heading": "构造登记与提交次序",
+      "source_body_sha256": "927173647fdc1848de3c8636cd0976d29749cd902fba167a071b3d1aad87d4d3",
+      "reviewed_body_sha256": "927173647fdc1848de3c8636cd0976d29749cd902fba167a071b3d1aad87d4d3"
+    },
+    {
+      "source_heading": "析构依赖与变更检查",
+      "target_path": "知识库/16_编程与数据结构/帧分配器的构造与退休.md",
+      "target_heading": "析构依赖与变更检查",
+      "source_body_sha256": "1c0c9b523107f04401bccafe3c6c09bb12acad83cfeaac3a543eb279fd77ce1a",
+      "reviewed_body_sha256": "2f539a2f2ff9e4d9e439d1dba89a8d843bfcc1225da695016092856d3ab3f830"
+    },
+    {
+      "source_heading": "异步批次与复用",
+      "target_path": "知识库/16_编程与数据结构/帧分配器的构造与退休.md",
+      "target_heading": "异步批次与复用",
+      "source_body_sha256": "2b7879d9a434b8d8d13307647c18750a4d9569b3cfd4f3723a78ba395fc5b85d",
+      "reviewed_body_sha256": "2b7879d9a434b8d8d13307647c18750a4d9569b3cfd4f3723a78ba395fc5b85d"
+    }
+  ],
+  "preservation": "三节机制、A/B序号与队列数例逐字迁移，跨页深层链接另作主归属更新。",
+  "adopted_source_sha256": "26ba19f188c24c2824baa11b08d0f128187023fbb8fd5e834cc66aa0f6245bed",
+  "review": {
+    "record": "references/remaining-review-2026-10-24.md",
+    "old_headings_preserved": true,
+    "source_urls_missing": 0,
+    "mechanism_comparison": "三节逐字对照，仅两处跨页链接改到现行主归属"
+  }
+}

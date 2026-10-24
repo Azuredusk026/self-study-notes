@@ -19,14 +19,16 @@
       "path": "知识库/00_知识库说明/术语表.md",
       "article_type": "SUPPORT",
       "primary_question": "读者如何统一技术叫法",
-      "source_sections": []
+      "source_sections": [],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "知识地图",
       "path": "知识库/00_知识库说明/知识地图.md",
       "article_type": "SUPPORT",
       "primary_question": "读者如何按问题找到学习路线",
-      "source_sections": []
+      "source_sections": [],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "知识库实施规范",
@@ -201,7 +203,8 @@
           []
         ]
       ],
-      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "可见性与合成",
@@ -214,7 +217,8 @@
           []
         ]
       ],
-      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "可见性剔除",
@@ -348,7 +352,8 @@
       "path": "知识库/04_光照模型与PBR/BRDF与微表面模型.md",
       "article_type": "ARTICLE",
       "primary_question": "如何从反射约束得到直接光照BRDF",
-      "source_sections": []
+      "source_sections": [],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "Cubemap环境采样",
@@ -413,7 +418,8 @@
       "path": "知识库/04_光照模型与PBR/皮肤次表面散射.md",
       "article_type": "ARTICLE",
       "primary_question": "如何以实时预算近似皮肤次表面散射",
-      "source_sections": []
+      "source_sections": [],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "GI方案选择",
@@ -425,7 +431,8 @@
           "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
           []
         ]
-      ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "Light Probe",
@@ -630,7 +637,8 @@
           "知识库/07_颜色与后处理/Tone Mapping、Bloom与屏幕效果.md",
           []
         ]
-      ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "屏幕空间AO",
@@ -843,7 +851,8 @@
           []
         ]
       ],
-      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "角色布料",
@@ -911,7 +920,8 @@
           "知识库/10_VFX与模拟/常用VFX材质、模拟与性能.md",
           []
         ]
-      ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "VFX纹理动画",
@@ -969,7 +979,8 @@
             "Distortion 与 Refraction"
           ]
         ]
-      ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "水面与海洋渲染",
@@ -1005,7 +1016,8 @@
             "Depth Fade 与 Soft Particle"
           ]
         ]
-      ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "Face SDF",
@@ -1027,7 +1039,8 @@
       "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
       "article_type": "OVERVIEW",
       "primary_question": "NPR与场景风格导读",
-      "source_sections": []
+      "source_sections": [],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "NPR材质与分层光照",
@@ -1149,7 +1162,8 @@
       "path": "知识库/13_渲染架构/Deferred Rendering.md",
       "article_type": "ARTICLE",
       "primary_question": "如何在延迟光照阶段消费表面与灯光数据",
-      "source_sections": []
+      "source_sections": [],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "Draw Call与合批",
@@ -1177,21 +1191,24 @@
       "path": "知识库/13_渲染架构/GPU同步与屏障.md",
       "article_type": "ARTICLE",
       "primary_question": "如何令GPU资源访问顺序和可见性正确",
-      "source_sections": []
+      "source_sections": [],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "GPU资源生命周期",
       "path": "知识库/13_渲染架构/GPU资源生命周期.md",
       "article_type": "ARTICLE",
       "primary_question": "如何按GPU完成值分配和回收资源内存",
-      "source_sections": []
+      "source_sections": [],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "GPU资源绑定",
       "path": "知识库/13_渲染架构/GPU资源绑定.md",
       "article_type": "ARTICLE",
       "primary_question": "如何使材质资源寻址和描述符寿命正确",
-      "source_sections": []
+      "source_sections": [],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "Pipeline State Object",
@@ -1239,7 +1256,8 @@
           []
         ]
       ],
-      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
+      "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "渲染路径与光源组织",
@@ -1273,7 +1291,8 @@
             "透明效果的成本从哪里来"
           ]
         ]
-      ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "帧捕获与性能分析工具",
@@ -1350,7 +1369,8 @@
             "并行修改怎样进入同一版本"
           ]
         ]
-      ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "程序化资产生成",
@@ -1446,7 +1466,7 @@
       "concept": "内存布局与分配",
       "path": "知识库/16_编程与数据结构/内存布局与分配.md",
       "article_type": "ARTICLE",
-      "primary_question": "如何按访问和寿命选择分配器及数据布局",
+      "primary_question": "如何按访问模式安排数据布局并取得对齐且容量安全的存储",
       "source_sections": [
         [
           "知识库/16_编程与数据结构/内存、对象生命周期与对象池.md",
@@ -1458,7 +1478,8 @@
             "Cache 映射与写策略"
           ]
         ]
-      ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "图搜索",
@@ -1507,7 +1528,8 @@
             "复用以前先确认旧使用者已退出"
           ]
         ]
-      ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "对象生命周期",
@@ -1566,7 +1588,8 @@
           "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
           []
         ]
-      ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "算法设计",
@@ -1599,7 +1622,8 @@
             "并发错误怎样缩小范围"
           ]
         ]
-      ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "虚拟内存",
@@ -1628,7 +1652,8 @@
             "跨语言接口怎样落地"
           ]
         ]
-      ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "进程与调度",
@@ -1798,7 +1823,8 @@
             "破坏"
           ]
         ]
-      ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "载具物理",
@@ -1812,7 +1838,8 @@
             "载具"
           ]
         ]
-      ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     },
     {
       "concept": "玩法事件与脚本",
@@ -2872,6 +2899,23 @@
           ]
         ]
       ]
+    },
+    {
+      "concept": "帧分配器的构造与退休",
+      "path": "知识库/16_编程与数据结构/帧分配器的构造与退休.md",
+      "article_type": "ARTICLE",
+      "primary_question": "如何登记帧内对象并在CPU和GPU消费者退出后按依赖析构",
+      "source_sections": [
+        [
+          "知识库/16_编程与数据结构/内存布局与分配.md",
+          [
+            "构造登记与提交次序",
+            "析构依赖与变更检查",
+            "异步批次与复用"
+          ]
+        ]
+      ],
+      "remaining_review": "references/remaining-review-2026-10-24.md"
     }
   ],
   "policy": "完整机制在唯一专篇或明确主归属章节维护，导读只连接关系"
