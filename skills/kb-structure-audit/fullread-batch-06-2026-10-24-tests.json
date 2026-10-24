@@ -1,0 +1,83 @@
+{
+  "batch": "06",
+  "started_at": "2026-10-24T15:39:03.434316+08:00",
+  "runs": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision_22_26/verify.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"record_date\": \"2026-10-22\", \"python\": \"3.11.9\", \"cpu_tests\": 21, \"cpu_passed\": true, \"probes\": [{\"entry\": \"GlyphPS\", \"profile\": \"ps_6_0\", \"passed\": true, \"scope\": \"HLSL compilation only\"}, {\"entry\": \"MainCS\", \"profile\": \"cs_6_0\", \"passed\": true, \"scope\": \"HLSL compilation only\"}], \"dxc_version\": \"dxcompiler.dll: 1.10(5347-fe261573)(1.9.0.5347) - 1.9.0.5347 (fe2615732)\", \"engine_compile\": \"UNVERIFIED\", \"engine_runtime\": \"UNVERIFIED\", \"gpu_capture\": \"UNVERIFIED\", \"performance\": \"UNVERIFIED\"}\n",
+      "stderr": "test_audio_empty (test_reference.ReferenceTests.test_audio_empty) ... ok\ntest_audio_single_sample_target (test_reference.ReferenceTests.test_audio_single_sample_target) ... ok\ntest_audio_sum_remains_float_and_ramps (test_reference.ReferenceTests.test_audio_sum_remains_float_and_ramps) ... ok\ntest_batches_preserve_painter_order (test_reference.ReferenceTests.test_batches_preserve_painter_order) ... ok\ntest_cut_children_cover_parent (test_reference.ReferenceTests.test_cut_children_cover_parent) ... ok\ntest_cut_missing_sibling_keeps_parent (test_reference.ReferenceTests.test_cut_missing_sibling_keeps_parent) ... ok\ntest_cut_threshold_equality (test_reference.ReferenceTests.test_cut_threshold_equality) ... ok\ntest_cycle_is_rejected (test_reference.ReferenceTests.test_cycle_is_rejected) ... ok\ntest_diamond_dependency (test_reference.ReferenceTests.test_diamond_dependency) ... ok\ntest_ecs_remove_last (test_reference.ReferenceTests.test_ecs_remove_last) ... ok\ntest_ecs_swap_updates_moved_entity (test_reference.ReferenceTests.test_ecs_swap_updates_moved_entity) ... ok\ntest_empty_clip_skipped (test_reference.ReferenceTests.test_empty_clip_skipped) ... ok\ntest_empty_draw_list (test_reference.ReferenceTests.test_empty_draw_list) ... ok\ntest_forward_hiz_all_samples_covered (test_reference.ReferenceTests.test_forward_hiz_all_samples_covered) ... ok\ntest_glyph_offset_and_bearing (test_reference.ReferenceTests.test_glyph_offset_and_bearing) ... ok\ntest_hiz_background_prevents_rejection (test_reference.ReferenceTests.test_hiz_background_prevents_rejection) ... ok\ntest_hiz_equal_is_visible (test_reference.ReferenceTests.test_hiz_equal_is_visible) ... ok\ntest_nested_clipping (test_reference.ReferenceTests.test_nested_clipping) ... ok\ntest_reverse_hiz_all_samples_covered (test_reference.ReferenceTests.test_reverse_hiz_all_samples_covered) ... ok\ntest_unknown_dependency_rejected (test_reference.ReferenceTests.test_unknown_dependency_rejected) ... ok\ntest_zero_advance_mark_has_separate_position (test_reference.ReferenceTests.test_zero_advance_mark_has_separate_position) ... ok\n\n----------------------------------------------------------------------\nRan 21 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision_22_26/test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_audio_empty (__main__.ReferenceTests.test_audio_empty) ... ok\ntest_audio_single_sample_target (__main__.ReferenceTests.test_audio_single_sample_target) ... ok\ntest_audio_sum_remains_float_and_ramps (__main__.ReferenceTests.test_audio_sum_remains_float_and_ramps) ... ok\ntest_batches_preserve_painter_order (__main__.ReferenceTests.test_batches_preserve_painter_order) ... ok\ntest_cut_children_cover_parent (__main__.ReferenceTests.test_cut_children_cover_parent) ... ok\ntest_cut_missing_sibling_keeps_parent (__main__.ReferenceTests.test_cut_missing_sibling_keeps_parent) ... ok\ntest_cut_threshold_equality (__main__.ReferenceTests.test_cut_threshold_equality) ... ok\ntest_cycle_is_rejected (__main__.ReferenceTests.test_cycle_is_rejected) ... ok\ntest_diamond_dependency (__main__.ReferenceTests.test_diamond_dependency) ... ok\ntest_ecs_remove_last (__main__.ReferenceTests.test_ecs_remove_last) ... ok\ntest_ecs_swap_updates_moved_entity (__main__.ReferenceTests.test_ecs_swap_updates_moved_entity) ... ok\ntest_empty_clip_skipped (__main__.ReferenceTests.test_empty_clip_skipped) ... ok\ntest_empty_draw_list (__main__.ReferenceTests.test_empty_draw_list) ... ok\ntest_forward_hiz_all_samples_covered (__main__.ReferenceTests.test_forward_hiz_all_samples_covered) ... ok\ntest_glyph_offset_and_bearing (__main__.ReferenceTests.test_glyph_offset_and_bearing) ... ok\ntest_hiz_background_prevents_rejection (__main__.ReferenceTests.test_hiz_background_prevents_rejection) ... ok\ntest_hiz_equal_is_visible (__main__.ReferenceTests.test_hiz_equal_is_visible) ... ok\ntest_nested_clipping (__main__.ReferenceTests.test_nested_clipping) ... ok\ntest_reverse_hiz_all_samples_covered (__main__.ReferenceTests.test_reverse_hiz_all_samples_covered) ... ok\ntest_unknown_dependency_rejected (__main__.ReferenceTests.test_unknown_dependency_rejected) ... ok\ntest_zero_advance_mark_has_separate_position (__main__.ReferenceTests.test_zero_advance_mark_has_separate_position) ... ok\n\n----------------------------------------------------------------------\nRan 21 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanism_depth/ecs/test_ecs.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_actual_addresses_and_float32_round_trip (__main__.EcsTests.test_actual_addresses_and_float32_round_trip) ... ok\ntest_cache_coverage_distinguishes_stride_and_columns (__main__.EcsTests.test_cache_coverage_distinguishes_stride_and_columns) ... ok\ntest_integrate_updates_only_matching_active_entities (__main__.EcsTests.test_integrate_updates_only_matching_active_entities) ... ok\ntest_invalid_input_does_not_remove_source (__main__.EcsTests.test_invalid_input_does_not_remove_source) ... ok\ntest_iteration_rejects_structure_and_allows_later_flush (__main__.EcsTests.test_iteration_rejects_structure_and_allows_later_flush) ... ok\ntest_layout_fits_maximal_capacity_with_padding (__main__.EcsTests.test_layout_fits_maximal_capacity_with_padding) ... ok\ntest_move_first_row_repairs_swapped_entity_and_copies_all_columns (__main__.EcsTests.test_move_first_row_repairs_swapped_entity_and_copies_all_columns) ... ok\ntest_query_cache_sees_new_archetype_and_new_chunk (__main__.EcsTests.test_query_cache_sees_new_archetype_and_new_chunk) ... ok\ntest_query_matches_superset_and_rejects_missing_or_tagged (__main__.EcsTests.test_query_matches_superset_and_rejects_missing_or_tagged) ... ok\ntest_remove_component_and_last_row_path (__main__.EcsTests.test_remove_component_and_last_row_path) ... ok\ntest_repeated_migrations_match_entity_keyed_oracle (__main__.EcsTests.test_repeated_migrations_match_entity_keyed_oracle) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.054s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanism_chain/protocol/test_protocol.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_cancel_does_not_add_undo_record (__main__.ProtocolTests.test_cancel_does_not_add_undo_record) ... ok\ntest_crash_after_commit_replay_does_not_repeat_effect (__main__.ProtocolTests.test_crash_after_commit_replay_does_not_repeat_effect) ... ok\ntest_crash_before_commit_does_not_consume_or_apply (__main__.ProtocolTests.test_crash_before_commit_does_not_consume_or_apply) ... ok\ntest_drag_keeps_first_old_and_last_new (__main__.ProtocolTests.test_drag_keeps_first_old_and_last_new) ... ok\ntest_fencing_and_gap_reject_without_effect (__main__.ProtocolTests.test_fencing_and_gap_reject_without_effect) ... ok\ntest_generation_cas_preserves_external_edit_after_publish (__main__.ProtocolTests.test_generation_cas_preserves_external_edit_after_publish) ... ok\ntest_late_prepare_retry_does_not_freeze_current_owner (__main__.ProtocolTests.test_late_prepare_retry_does_not_freeze_current_owner) ... ok\ntest_new_session_does_not_treat_sequence_one_as_old_duplicate (__main__.ProtocolTests.test_new_session_does_not_treat_sequence_one_as_old_duplicate) ... ok\ntest_old_retry_returns_its_original_result (__main__.ProtocolTests.test_old_retry_returns_its_original_result) ... ok\ntest_only_prepared_snapshot_can_change_owner (__main__.ProtocolTests.test_only_prepared_snapshot_can_change_owner) ... ok\ntest_output_aba_still_conflicts (__main__.ProtocolTests.test_output_aba_still_conflicts) ... ok\ntest_pending_queue_prevents_session_reset (__main__.ProtocolTests.test_pending_queue_prevents_session_reset) ... ok\ntest_recovery_completes_publish_without_republishing (__main__.ProtocolTests.test_recovery_completes_publish_without_republishing) ... ok\ntest_repeated_sequence_with_different_payload_is_rejected (__main__.ProtocolTests.test_repeated_sequence_with_different_payload_is_rejected) ... ok\ntest_write_failure_rolls_back_effect (__main__.ProtocolTests.test_write_failure_rolls_back_effect) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.839s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "skills/kb-structure-audit/scripts/validate.py",
+        "D:\\Assigment\\HIT\\Note"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"formal_articles\": 216,\n  \"support_pages\": 5,\n  \"registered_images\": 2,\n  \"errors\": [],\n  \"quality_matrix_pages\": 221,\n  \"rename_targets\": 120,\n  \"category_domains\": 27,\n  \"category_articles\": 221,\n  \"writing_candidates\": 2,\n  \"scope\": \"静态不变量；写作质量和技术断言需原文复读及证据核验\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "skills/kb-structure-audit/scripts/batch_validate.py",
+        "D:\\Assigment\\HIT\\Note"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"formal_articles\": 216,\n  \"support_pages\": 5,\n  \"registered_images\": 2,\n  \"errors\": [],\n  \"quality_matrix_pages\": 221,\n  \"rename_targets\": 120,\n  \"category_domains\": 27,\n  \"category_articles\": 221,\n  \"writing_candidates\": 2,\n  \"scope\": \"静态不变量；写作质量和技术断言需原文复读及证据核验\",\n  \"frozen_pages\": 221,\n  \"reviewed_pages\": 221,\n  \"original_pages\": 113,\n  \"batches\": [\n    {\n      \"id\": \"Completion\",\n      \"pages\": 221\n    }\n  ],\n  \"title_statuses\": {\n    \"PASS\": 221\n  },\n  \"deferred_titles\": 0,\n  \"pending_splits\": 0,\n  \"wiki_references\": 1997,\n  \"local_markdown_references\": 1033,\n  \"checked_anchors\": 316,\n  \"orphan_pages\": [],\n  \"historical_sections\": 63\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "skills/kb-structure-audit/scripts/revision_validate.py",
+        "D:\\Assigment\\HIT\\Note"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"pages\": 221,\n  \"dimensions\": 1989,\n  \"errors\": [],\n  \"scope\": \"复读登记完整性和当前正文快照；不替代全文判断、来源核读或目标环境实验\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "CPU模型、正文C++宿主及离线编译、静态登记；没有GPU执行或完整引擎运行",
+  "passed": true,
+  "command_count": 7,
+  "finished_at": "2026-10-24T15:39:10.301073+08:00"
+}

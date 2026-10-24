@@ -4,7 +4,7 @@ Unity对象比较为null时，C#包装引用仍可能存在，因为原生对象
 
 ## 版本与对象身份
 
-本文按Unity 6000.0的`Object.operator ==`和`Object.Destroy`文档解释生命周期，2026-10-22核读。C#示例为机制片段，完整Unity工程编译与运行尚未执行（UNVERIFIED）。
+本文按Unity 6000.0的`Object.operator ==`和`Object.Destroy`文档解释生命周期，2026-10-22核读。C#示例为机制片段，完整Unity工程编译与运行尚未执行。
 
 ### Unity Object的两层身份
 
@@ -67,7 +67,7 @@ System.Collections.IEnumerator ProbeLifetime()
 
 ## 验证方法
 
-分别记录Instantiate、Activate、Destroy与原生资源释放时间。销毁后比较ReferenceEquals与引擎null检查，测试场景卸载和Asset句柄未释放。实际Unity运行UNVERIFIED。
+分别记录Instantiate、Activate、Destroy与原生资源释放时间。销毁后比较ReferenceEquals与引擎null检查，测试场景卸载和Asset句柄未释放。实际Unity运行尚未验证。
 
 ## 相关主题
 

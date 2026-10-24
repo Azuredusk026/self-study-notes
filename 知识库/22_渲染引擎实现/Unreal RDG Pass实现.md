@@ -98,7 +98,7 @@ Raster 通道参数声明颜色与深度附件及 load/store，回调设置 view
 
 ## 编译证据
 
-2026-10-22运行[verify.py](../examples/revision_22_26/verify.py)，从本页提取`MainCS`，DXC以`cs_6_0`编译通过；[结果记录](../examples/revision_22_26/results.json)包含工具版本。命令为`python 知识库/examples/revision_22_26/verify.py`。此检查只证明HLSL语法与入口可编译，UE参数绑定、模块编译、dispatch与输出消费尚未运行（UNVERIFIED）。
+2026-10-22运行[verify.py](../examples/revision_22_26/verify.py)，从本页提取`MainCS`，DXC以`cs_6_0`编译通过；[结果记录](../examples/revision_22_26/results.json)包含工具版本。命令为`python 知识库/examples/revision_22_26/verify.py`。此检查只证明HLSL语法与入口可编译，UE参数绑定、模块编译、dispatch与输出消费尚未运行。
 
 ## 相关主题
 

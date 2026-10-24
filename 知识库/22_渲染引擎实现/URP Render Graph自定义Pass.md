@@ -4,7 +4,7 @@
 
 ## 适用环境
 
-接口范围为 Unity 6.0 / URP 17 的 Render Graph 路径，核对日期 2026-10-22。以下代码为自定义 `ScriptableRenderPass` 内的方法片段，使用官方记录模式；类壳、材质资产和 feature 入队代码由项目提供。完整Unity工程编译与运行为UNVERIFIED。
+接口范围为 Unity 6.0 / URP 17 的 Render Graph 路径，核对日期 2026-10-22。以下代码为自定义 `ScriptableRenderPass` 内的方法片段，使用官方记录模式；类壳、材质资产和 feature 入队代码由项目提供。完整Unity工程编译与运行尚未验证。
 
 ## 记录、执行与输出交接
 
@@ -22,7 +22,7 @@ Feature 的 `Create` 可能因编辑器重建多次调用，需处理已有资�
 
 Unity 6.0 / URP17的Feature在Create建立Pass，在AddRenderPasses按相机类型入队。图路径把资源声明放在RecordRenderGraph，避免在Feature长期保存帧内TextureHandle。兼容路径的SetupRenderPasses与RTHandle访问按目标包接口核对。
 
-下面是Feature类中的C#方法片段，m_pass由Create初始化，输出是本相机Pass队列。它不包含完整类、资源释放或图声明，完整Unity编译运行为UNVERIFIED。
+下面是Feature类中的C#方法片段，m_pass由Create初始化，输出是本相机Pass队列。它不包含完整类、资源释放或图声明，完整Unity编译运行尚未验证。
 
 ```csharp
 /// <summary>Creates the pass owned by this feature.</summary>

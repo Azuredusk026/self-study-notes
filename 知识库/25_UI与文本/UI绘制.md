@@ -92,7 +92,7 @@ DPI 缩放应作用于布局单位，再映射到物理像素。文字基线和�
 
 ## 参考实验与证据
 
-[CPU参考模型](../examples/revision_22_26/reference.py)检查嵌套裁剪交集、空交集、相邻合批和A/B/A保序。2026-10-22执行`python 知识库/examples/revision_22_26/test_reference.py`，21项通过，其中4项属于本页。完整布局引擎、命中处理、GPU缓冲上传和实际绘制为UNVERIFIED。
+[CPU参考模型](../examples/revision_22_26/reference.py)检查嵌套裁剪交集、空交集、相邻合批和A/B/A保序。2026-10-22执行`python 知识库/examples/revision_22_26/test_reference.py`，21项通过，其中4项属于本页。完整布局引擎、命中处理、GPU缓冲上传和实际绘制尚未验证。
 
 ## 相关主题
 

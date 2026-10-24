@@ -8552,7 +8552,7 @@
       "reason": "Unity限定不够精确，正文实际只讲URP路径；版本保留在适用环境，不把整个版本号塞标题。",
       "review_batch": "第二批跨领域样本",
       "confidence": "命名建议可供采用评审",
-      "content_sha256": "d76b3d39ab79f63e2c135f0089eaee77df05f562bf0675c7cba8aeac1f2bd264",
+      "content_sha256": "a6544dcfea531cc4287f31c04d278a2a695b48187d839cb675061faeefb7fe59",
       "heading_outline": [
         "# Unity Render Graph 与自定义通道",
         "## 适用环境",
@@ -8568,12 +8568,13 @@
       "previous_title": "Unity Render Graph 与自定义通道",
       "reviewed_title_decision": "REWRITE",
       "title_coverage_review": "明确URP实现，避免Unity暗示HDRP；正文版本约束保持",
-      "reviewed_content_sha256": "812a16a357fffb275706f7e1ba9d168d7a0a87981cef26eca14922192bd5eae5",
+      "reviewed_content_sha256": "a6544dcfea531cc4287f31c04d278a2a695b48187d839cb675061faeefb7fe59",
       "pending_split": false,
       "deferred_title": false,
       "title_reason": "现有标题准确表达主概念，保留",
       "historical_content_sha256": "411241b60a8df40e54203a81a222732c2e4335df646181606f4a3457c9dec6d2",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
@@ -8593,9 +8594,10 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "Unity渲染帧组织",
       "boundary_action": "KEEP",
-      "content_sha256": "7556853521a9c533d88eea88d2a783d9d52857e433706af0ab3f340c4cad4918",
+      "content_sha256": "2791e73fafc2a30dc8499eff36d6811242c959e282c727cc137a14d30c4e5c4b",
       "historical_content_sha256": "acd48b79a05181720b5eb125ddf851c0b8cdeeacd179dee4ed701b53da0ef045",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/22_渲染引擎实现/Unreal RDG Pass实现.md",
@@ -8615,9 +8617,10 @@
       "title_reason": "版本资源声明和AddPass为明确工程任务",
       "primary_concept": "Unreal RDG Pass实现",
       "boundary_action": "KEEP",
-      "content_sha256": "8e3aa1432021cb691f97a45bb228896f4fc8bf2ff9f421f56bf52611253a5d17",
+      "content_sha256": "247a53a53ce48ec810503e2c213cbd1453834bd5226bcf54d87f180a2eee4fee",
       "historical_content_sha256": "9eddb422401fb604cacdef163bd9334a2bf4ac96dc05881950eb14c02ecec56a",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
@@ -8637,9 +8640,10 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "Unreal渲染帧组织",
       "boundary_action": "KEEP",
-      "content_sha256": "0b26a412f1ad077d2f733f785577e7ef5d1ae4ed1fe5a3ebe7713060ea22691e",
+      "content_sha256": "90164d10e2494f47d89bfec155e18edacad4af8c3cd7d8b6e70a86b347d457eb",
       "historical_content_sha256": "c1c65dc6213eca3d18d6b1b2d115606ad8a2e008c4f8234aedf1fc250a3099a2",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/22_渲染引擎实现/Unreal自定义Mesh Pass.md",
@@ -8659,9 +8663,10 @@
       "title_reason": "网格数据到通道接入为主轴",
       "primary_concept": "Unreal自定义Mesh Pass",
       "boundary_action": "KEEP",
-      "content_sha256": "1ae115ed43f3243509baf9ef83cd889c9ac9d6e3327dc18061258e5f07e76769",
+      "content_sha256": "974926d03fb11f24775bcc54da824ad71689216e0b96df9ccb9698a4d4498d05",
       "historical_content_sha256": "21fb9a86f5a23932afff015003a3cb9dd51ef9489c11df411ecce769bf143100",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/22_渲染引擎实现/引擎渲染扩展导读.md",
@@ -8698,7 +8703,8 @@
       "content_sha256": "65fd47526a3e17bd62999c843d573180472d96a06b0cb34ef93da3ab4c6ff712",
       "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
       "historical_content_sha256": "0f1ccdad48e76da5f4e7431dfa889820415dfcea888aafcddb7ff5eb8491c6c8",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/23_引擎运行系统/ECS与数据布局.md",
@@ -8735,7 +8741,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "62832e7e6dda34ce17d3edb80d69f44a97bc27f3663515da79cae9e6b59c111c",
       "historical_content_sha256": "73108cf807636487b8a7d9308cfcbe44b6f73871ded6fb7d499871b422b85485",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/23_引擎运行系统/Unity对象生命周期.md",
@@ -8770,9 +8777,10 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "Unity对象生命周期",
       "boundary_action": "KEEP",
-      "content_sha256": "63e371e3bda2f120ef15d924572b60b8d23bf7ed9fac3690539501e4826619c7",
+      "content_sha256": "e4f268d828473bc825ac70d577e16a787b148db8113d62f7e8c642f18ae865d2",
       "historical_content_sha256": "62b2f94e67a247b9a155c12d226c85b37e9a6169a2c970422f87fcc76dbb4842",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
@@ -8808,9 +8816,10 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "Unreal对象生命周期",
       "boundary_action": "KEEP",
-      "content_sha256": "e888e3fcb1e248180aa3359724dd5494e30b6c476fdad786e1ede5c666c5326a",
+      "content_sha256": "5333167646e09c1daa2cebba06487b9a0c65f83f13c316dc4a672006258f8462",
       "historical_content_sha256": "242ebd41eb1615ba4631e56f3e2fac2b394659bbca5d9ab771ac1f1be6e0221f",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/23_引擎运行系统/任务系统.md",
@@ -8847,7 +8856,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "2aaf5a02713e0eaba17a95418fe626f8547ab18facc66dee9a345317caf335b6",
       "historical_content_sha256": "78a48faa678b33338aa3d450abac45ef3bb3f157c38dc947f168f3d2716f2232",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/23_引擎运行系统/引擎世界与对象模型.md",
@@ -8867,9 +8877,10 @@
       "title_reason": "对象契约为主，分层与更新阶段是组织方式",
       "primary_concept": "引擎世界与对象模型",
       "boundary_action": "KEEP",
-      "content_sha256": "79e1e66c144dbab2542f1946b2759e562427838c6930ebd11916615fa8827d40",
+      "content_sha256": "53f2c2129a85af144da5d7280113fee7bdbf361063ae43035ffeb1ba0285363f",
       "historical_content_sha256": "698383e8bdb97bf11d0cbf640866763d27a730466eb27d3a130449ec8a9c2393",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/23_引擎运行系统/资源依赖与异步加载.md",
@@ -8889,9 +8900,10 @@
       "title_reason": "保留构建到加载所有权主轴",
       "primary_concept": "资源依赖与异步加载",
       "boundary_action": "KEEP",
-      "content_sha256": "3bfa83cf3189c2b516318e9d959e29e3b7d9a22b0d884392cd46a03369dcd014",
+      "content_sha256": "a31d70cb7da5d90cac2421e281957a8658b93cfc3cb8a915dccbf110894fca60",
       "historical_content_sha256": "a8d703d6af88d83d045e54b3c155eebe7bb0f227a5619a7e3c0e42fb273e5a95",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/24_游戏音频/游戏音频系统.md",
@@ -8911,9 +8923,10 @@
       "title_reason": "现标题清楚表达运行领域",
       "primary_concept": "游戏音频系统",
       "boundary_action": "KEEP",
-      "content_sha256": "fefd4570b7ad0a2ba21d5d4ed46dbd466c6c4e4c666e0e1cd87ca66189f4a6ee",
+      "content_sha256": "69880c48ef72c7aeeed1cdb255cec91bab6ef44717239cf8de1a836cb157e542",
       "historical_content_sha256": "cc2944a357e6acb303cba4a1b05450115b994ea4d44252d4b816c599376d8a0a",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/25_UI与文本/UI绘制.md",
@@ -8948,9 +8961,10 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "UI绘制",
       "boundary_action": "KEEP",
-      "content_sha256": "ac2cace12b4f17067916d30e1334af694dc570d2ff5113c65537e03d3eb7eeec",
+      "content_sha256": "b1887178f97fa4ae8d52b44ee936d75083f602202bdb82e905eb5000b1b89eab",
       "historical_content_sha256": "3ac9f2b876a8d47df89c3fcd39aecca54a9bcc77ea78c344c41e30e14aeb315f",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/25_UI与文本/文字渲染.md",
@@ -8985,9 +8999,10 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "文字渲染",
       "boundary_action": "KEEP",
-      "content_sha256": "e57637c19684e2e391894e58eac4be1cc066bed99a61538cba4998bc6804de45",
+      "content_sha256": "c79cf83e078d36dcd3ce4252fadb7cf8b94314d0aac165c476485b28d7b36b51",
       "historical_content_sha256": "90b65c509bf77007aaa957f0d50b991925de4bdd9611d8df603ea9550a34b512",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
@@ -9007,9 +9022,10 @@
       "title_reason": "Nanite已有主归属，本文负责可见列表与间接绘制",
       "primary_concept": "GPU-Driven Rendering",
       "boundary_action": "KEEP",
-      "content_sha256": "12ec6e6f76a8b9d1734312c108f100d162483a4f7dc6f609640c6b24bc615cc1",
+      "content_sha256": "361824b3db3de2a8b9080c9ffaaf3c1467b261384eb0db3b1d4adef698fa9beb",
       "historical_content_sha256": "a2c362da7eec0a561aaa043cc821a202a4785cf1ec404c83b03f03249facd242",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md",
@@ -9029,9 +9045,10 @@
       "title_reason": "保留版本系统和运行职责，避免无限宽的Nanite总称",
       "primary_concept": "Nanite几何选择与流送",
       "boundary_action": "KEEP",
-      "content_sha256": "7863a00f36c390fc214f40d9d6bbf1fba9d9459770a5666cd14bdd5ba2281e10",
+      "content_sha256": "8ba4a365c863daec1f2fa732d1e672f15b022c19f0f9000d954a250e9d96b232",
       "historical_content_sha256": "52da2649331f18e00c3d9634bd28fb9a0c032005de5fb703f1d4e4fb0cffe47e",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-06-2026-10-24.md"
     },
     {
       "path": "知识库/20_游戏AI/NavMesh.md",

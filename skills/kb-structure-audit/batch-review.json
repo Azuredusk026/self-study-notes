@@ -6387,13 +6387,14 @@
         "actions": [
           "KEEP"
         ],
-        "final_sha256": "411241b60a8df40e54203a81a222732c2e4335df646181606f4a3457c9dec6d2",
+        "final_sha256": "a6544dcfea531cc4287f31c04d278a2a695b48187d839cb675061faeefb7fe59",
         "reason": [
           "既有PASS页面保持正文；同步必要引用"
         ],
         "primary_question": "如何在Unity 6 URP记录并消费自定义通道",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
@@ -6401,13 +6402,14 @@
         "actions": [
           "REWRITE"
         ],
-        "final_sha256": "acd48b79a05181720b5eb125ddf851c0b8cdeeacd179dee4ed701b53da0ef045",
+        "final_sha256": "2791e73fafc2a30dc8499eff36d6811242c959e282c727cc137a14d30c4e5c4b",
         "reason": [
           "版本化条件保存在对应引擎实现页"
         ],
         "primary_question": "Unity如何按管线资产与相机配置组织剔除、通道、资源和提交",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/22_渲染引擎实现/Unreal RDG Pass实现.md",
@@ -6415,13 +6417,14 @@
         "actions": [
           "KEEP"
         ],
-        "final_sha256": "9eddb422401fb604cacdef163bd9334a2bf4ac96dc05881950eb14c02ecec56a",
+        "final_sha256": "247a53a53ce48ec810503e2c213cbd1453834bd5226bcf54d87f180a2eee4fee",
         "reason": [
           "既有PASS页面保持正文；同步必要引用"
         ],
         "primary_question": "如何用RDG参数表达资源依赖并执行通道",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
@@ -6429,13 +6432,14 @@
         "actions": [
           "REWRITE"
         ],
-        "final_sha256": "c1c65dc6213eca3d18d6b1b2d115606ad8a2e008c4f8234aedf1fc250a3099a2",
+        "final_sha256": "90164d10e2494f47d89bfec155e18edacad4af8c3cd7d8b6e70a86b347d457eb",
         "reason": [
           "版本化条件保存在对应引擎实现页"
         ],
         "primary_question": "Unreal如何把游戏线程场景更新转换为渲染线程、RDG、RHI与GPU帧工作",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/22_渲染引擎实现/Unreal自定义Mesh Pass.md",
@@ -6443,13 +6447,14 @@
         "actions": [
           "REWRITE"
         ],
-        "final_sha256": "21fb9a86f5a23932afff015003a3cb9dd51ef9489c11df411ecce769bf143100",
+        "final_sha256": "974926d03fb11f24775bcc54da824ad71689216e0b96df9ccb9698a4d4498d05",
         "reason": [
           "既有PASS页面保持正文；同步必要引用"
         ],
         "primary_question": "如何把自定义网格效果接入Unreal绘制流程",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/22_渲染引擎实现/引擎渲染扩展导读.md",
@@ -6458,14 +6463,15 @@
           "REWRITE",
           "RESTRUCTURE"
         ],
-        "final_sha256": "0f1ccdad48e76da5f4e7431dfa889820415dfcea888aafcddb7ff5eb8491c6c8",
+        "final_sha256": "65fd47526a3e17bd62999c843d573180472d96a06b0cb34ef93da3ab4c6ff712",
         "reason": [
           "按版本化实现路线组织，原接口正文合入引擎专篇。"
         ],
         "primary_question": "这些专题如何按输入与工程问题衔接",
         "article_type": "OVERVIEW",
         "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
-        "cleanup_reason": "删除空的阅读与选择H2，保留专题路线"
+        "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/23_引擎运行系统/ECS与数据布局.md",
@@ -6475,13 +6481,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "73108cf807636487b8a7d9308cfcbe44b6f73871ded6fb7d499871b422b85485",
+        "final_sha256": "62832e7e6dda34ce17d3edb80d69f44a97bc27f3663515da79cae9e6b59c111c",
         "reason": [
           "组件数据组织与CPU任务调度可以独立采用，主模型不同。"
         ],
         "primary_question": "如何按访问与查询模式组织大量实体数据",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/23_引擎运行系统/Unity对象生命周期.md",
@@ -6491,13 +6498,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "62b2f94e67a247b9a155c12d226c85b37e9a6169a2c970422f87fcc76dbb4842",
+        "final_sha256": "e4f268d828473bc825ac70d577e16a787b148db8113d62f7e8c642f18ae865d2",
         "reason": [
           "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。"
         ],
         "primary_question": "如何协调托管包装与Unity原生对象的创建销毁",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
@@ -6508,13 +6516,14 @@
           "DEEPEN",
           "FACT-CHECK"
         ],
-        "final_sha256": "242ebd41eb1615ba4631e56f3e2fac2b394659bbca5d9ab771ac1f1be6e0221f",
+        "final_sha256": "5333167646e09c1daa2cebba06487b9a0c65f83f13c316dc4a672006258f8462",
         "reason": [
           "分配访问、通用所有权、两种引擎对象模型与池化复用属于独立技术职责。"
         ],
         "primary_question": "如何让UObject引用被引擎GC识别",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/23_引擎运行系统/任务系统.md",
@@ -6524,13 +6533,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "78a48faa678b33338aa3d450abac45ef3bb3f157c38dc947f168f3d2716f2232",
+        "final_sha256": "2aaf5a02713e0eaba17a95418fe626f8547ab18facc66dee9a345317caf335b6",
         "reason": [
           "组件数据组织与CPU任务调度可以独立采用，主模型不同。"
         ],
         "primary_question": "如何用显式依赖调度帧内CPU工作",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/23_引擎运行系统/引擎世界与对象模型.md",
@@ -6538,13 +6548,14 @@
         "actions": [
           "REWRITE"
         ],
-        "final_sha256": "698383e8bdb97bf11d0cbf640866763d27a730466eb27d3a130449ec8a9c2393",
+        "final_sha256": "53f2c2129a85af144da5d7280113fee7bdbf361063ae43035ffeb1ba0285363f",
         "reason": [
           "既有PASS页面保持正文；同步必要引用"
         ],
         "primary_question": "如何定义引擎世界的依赖、所有权与更新阶段",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/23_引擎运行系统/资源依赖与异步加载.md",
@@ -6552,13 +6563,14 @@
         "actions": [
           "REWRITE"
         ],
-        "final_sha256": "a8d703d6af88d83d045e54b3c155eebe7bb0f227a5619a7e3c0e42fb273e5a95",
+        "final_sha256": "a31d70cb7da5d90cac2421e281957a8658b93cfc3cb8a915dccbf110894fca60",
         "reason": [
           "既有PASS页面保持正文；同步必要引用"
         ],
         "primary_question": "如何沿依赖加载资产并保持版本与所有权",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/24_游戏音频/游戏音频系统.md",
@@ -6566,13 +6578,14 @@
         "actions": [
           "REWRITE"
         ],
-        "final_sha256": "cc2944a357e6acb303cba4a1b05450115b994ea4d44252d4b816c599376d8a0a",
+        "final_sha256": "69880c48ef72c7aeeed1cdb255cec91bab6ef44717239cf8de1a836cb157e542",
         "reason": [
           "既有PASS页面保持正文；同步必要引用"
         ],
         "primary_question": "如何在实时回调预算内混音并管理声音",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/25_UI与文本/UI绘制.md",
@@ -6582,13 +6595,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "3ac9f2b876a8d47df89c3fcd39aecca54a9bcc77ea78c344c41e30e14aeb315f",
+        "final_sha256": "b1887178f97fa4ae8d52b44ee936d75083f602202bdb82e905eb5000b1b89eab",
         "reason": [
           "控件布局提交与Unicode塑形/字形采样是不同数据流。"
         ],
         "primary_question": "如何把布局与裁剪转换成可批量提交的界面命令",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/25_UI与文本/文字渲染.md",
@@ -6598,13 +6612,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "90b65c509bf77007aaa957f0d50b991925de4bdd9611d8df603ea9550a34b512",
+        "final_sha256": "c79cf83e078d36dcd3ce4252fadb7cf8b94314d0aac165c476485b28d7b36b51",
         "reason": [
           "控件布局提交与Unicode塑形/字形采样是不同数据流。"
         ],
         "primary_question": "如何把Unicode文本塑形成字形并恢复像素覆盖",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
@@ -6612,13 +6627,14 @@
         "actions": [
           "REWRITE"
         ],
-        "final_sha256": "a2c362da7eec0a561aaa043cc821a202a4785cf1ec404c83b03f03249facd242",
+        "final_sha256": "361824b3db3de2a8b9080c9ffaaf3c1467b261384eb0db3b1d4adef698fa9beb",
         "reason": [
           "既有PASS页面保持正文；同步必要引用"
         ],
         "primary_question": "如何在GPU生成可见对象与间接绘制参数",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md",
@@ -6626,13 +6642,14 @@
         "actions": [
           "REWRITE"
         ],
-        "final_sha256": "52da2649331f18e00c3d9634bd28fb9a0c032005de5fb703f1d4e4fb0cffe47e",
+        "final_sha256": "8ba4a365c863daec1f2fa732d1e672f15b022c19f0f9000d954a250e9d96b232",
         "reason": [
           "既有PASS页面保持正文；同步必要引用"
         ],
         "primary_question": "如何按屏幕误差选择并流送Nanite几何",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-06-2026-10-24.md"
       },
       {
         "path": "知识库/20_游戏AI/NavMesh.md",

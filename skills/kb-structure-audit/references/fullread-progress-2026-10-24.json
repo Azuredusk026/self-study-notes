@@ -1868,26 +1868,264 @@
           "han": 2102
         }
       ]
+    },
+    {
+      "id": "06",
+      "baseline": "89eee09",
+      "report": "references/fullread-batch-06-2026-10-24.md",
+      "pages": [
+        {
+          "path": "知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md",
+          "before_sha256": "d76b3d39ab79f63e2c135f0089eaee77df05f562bf0675c7cba8aeac1f2bd264",
+          "after_sha256": "a6544dcfea531cc4287f31c04d278a2a695b48187d839cb675061faeefb7fe59",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "逐行读Feature筛选、A读B写cameraColor交接与17版API条件；相机0.5重复两次得0.25、单采样和XR缩放边界完整，运行状态改为中文。",
+          "han": 1460
+        },
+        {
+          "path": "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
+          "before_sha256": "7556853521a9c533d88eea88d2a783d9d52857e433706af0ab3f340c4cad4918",
+          "after_sha256": "2791e73fafc2a30dc8499eff36d6811242c959e282c727cc137a14d30c4e5c4b",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "沿Cull过滤到颜色生产消费与Submit完成区分复读；1920分配1536有效比例.8只转换一次，各入口和相机历史主归属明确。",
+          "han": 1885
+        },
+        {
+          "path": "知识库/22_渲染引擎实现/Unreal RDG Pass实现.md",
+          "before_sha256": "8e3aa1432021cb691f97a45bb228896f4fc8bf2ff9f421f56bf52611253a5d17",
+          "after_sha256": "247a53a53ce48ec810503e2c213cbd1453834bd5226bcf54d87f180a2eee4fee",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "逐行追踪参数结构及MainCS，17乘9对应3乘2组384线程/153有效；输入单采样、输出UAV和提取存储寿命清楚，编译与引擎运行分列。",
+          "han": 1434
+        },
+        {
+          "path": "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
+          "before_sha256": "0b26a412f1ad077d2f733f785577e7ef5d1ae4ed1fe5a3ebe7713060ea22691e",
+          "after_sha256": "90164d10e2494f47d89bfec155e18edacad4af8c3cd7d8b6e70a86b347d457eb",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "沿红蓝更新包到代理版本和延迟销毁全文复读；网格/全屏入口、HDR4与后处理阶段及迟到回读身份衔接，机制由各专篇展开。",
+          "han": 2060
+        },
+        {
+          "path": "知识库/22_渲染引擎实现/Unreal自定义Mesh Pass.md",
+          "before_sha256": "1ae115ed43f3243509baf9ef83cd889c9ac9d6e3327dc18061258e5f07e76769",
+          "after_sha256": "974926d03fb11f24775bcc54da824ad71689216e0b96df9ccb9698a4d4498d05",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算32字节顶点布局与错误偏移16、三个批次仅甲入选及RGBA8约7.91MiB；缓存失效、Vertex Factory和两类取顶点路径完整，3649中文字保持统一绘制问题。",
+          "han": 3652
+        },
+        {
+          "path": "知识库/22_渲染引擎实现/引擎渲染扩展导读.md",
+          "before_sha256": "65fd47526a3e17bd62999c843d573180472d96a06b0cb34ef93da3ab4c6ff712",
+          "after_sha256": "65fd47526a3e17bd62999c843d573180472d96a06b0cb34ef93da3ab4c6ff712",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "全文沿对象遮罩到合成选择入口，保留帧组织、图通道、网格实现的关系与版本路线；导读没有复制各专篇实现，837中文字职责适当。",
+          "han": 837
+        },
+        {
+          "path": "知识库/23_引擎运行系统/ECS与数据布局.md",
+          "before_sha256": "62832e7e6dda34ce17d3edb80d69f44a97bc27f3663515da79cae9e6b59c111c",
+          "after_sha256": "62832e7e6dda34ce17d3edb80d69f44a97bc27f3663515da79cae9e6b59c111c",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算64实体AoS64行/SoA24行、容量122与112、位置2/0/6及末行9填洞；新块查询缓存和失败保留源行完整，11项实际字节缓冲测试可复现。",
+          "han": 2437
+        },
+        {
+          "path": "知识库/23_引擎运行系统/Unity对象生命周期.md",
+          "before_sha256": "63e371e3bda2f120ef15d924572b60b8d23bf7ed9fac3690539501e4826619c7",
+          "after_sha256": "e4f268d828473bc825ac70d577e16a787b148db8113d62f7e8c642f18ae865d2",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "逐行读销毁后双重null探针及借出7到8拒绝头像；Destroy时机与包装/原生寿命分开，停用池仍驻留，实际引擎证据按尚未验证登记。",
+          "han": 1100
+        },
+        {
+          "path": "知识库/23_引擎运行系统/Unreal对象生命周期.md",
+          "before_sha256": "e888e3fcb1e248180aa3359724dd5494e30b6c476fdad786e1ede5c666c5326a",
+          "after_sha256": "5333167646e09c1daa2cebba06487b9a0c65f83f13c316dc4a672006258f8462",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "沿UPROPERTY保活、Outer边界、玩法代数4到5和旧A回调不释放新B句柄复读；增量写屏障、Actor初始化及EndPlay到资源栅栏完整。",
+          "han": 2929
+        },
+        {
+          "path": "知识库/23_引擎运行系统/任务系统.md",
+          "before_sha256": "2aaf5a02713e0eaba17a95418fe626f8547ab18facc66dee9a345317caf335b6",
+          "after_sha256": "2aaf5a02713e0eaba17a95418fe626f8547ab18facc66dee9a345317caf335b6",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算菱形A0/B1/C1/D2计数、acq_rel末前驱发布及两个父任务耗尽线程池；取消传播无效输出与单线程图模型范围明确。",
+          "han": 1844
+        },
+        {
+          "path": "知识库/23_引擎运行系统/引擎世界与对象模型.md",
+          "before_sha256": "79e1e66c144dbab2542f1946b2759e562427838c6930ebd11916615fa8827d40",
+          "after_sha256": "53f2c2129a85af144da5d7280113fee7bdbf361063ae43035ffeb1ba0285363f",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算父10子2到12、换父5局部7和句柄3/7到3/8；TRS剪切、反射字段17与快照发布所有权连贯，基础寿命通过链接共用。",
+          "han": 2525
+        },
+        {
+          "path": "知识库/23_引擎运行系统/资源依赖与异步加载.md",
+          "before_sha256": "3bfa83cf3189c2b516318e9d959e29e3b7d9a22b0d884392cd46a03369dcd014",
+          "after_sha256": "a31d70cb7da5d90cac2421e281957a8658b93cfc3cb8a915dccbf110894fca60",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "全文推演A/B共享纹理、200/100MB每秒同单位吞吐及取消票据到句柄；补退役覆盖已录制未提交命令与暂存所有权，链接GPU寿命主文。",
+          "han": 2795
+        },
+        {
+          "path": "知识库/24_游戏音频/游戏音频系统.md",
+          "before_sha256": "fefd4570b7ad0a2ba21d5d4ed46dbd466c6c4e4c666e0e1cd87ca66189f4a6ee",
+          "after_sha256": "69880c48ef72c7aeeed1cdb255cec91bab6ef44717239cf8de1a836cb157e542",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算512/48000秒、SPSC1500减1200有效300/空724及立体声1024标量；增益.501/.251、居中.707与块内斜坡完整，离线数值与音频实时证据分开。",
+          "han": 2351
+        },
+        {
+          "path": "知识库/25_UI与文本/UI绘制.md",
+          "before_sha256": "ac2cace12b4f17067916d30e1334af694dc570d2ff5113c65537e03d3eb7eeec",
+          "after_sha256": "b1887178f97fa4ae8d52b44ee936d75083f602202bdb82e905eb5000b1b89eab",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算九宫格160边20与目标30边15、裁剪30/0/100/20；A/B/A保持画家顺序、索引基址和DPI转换一次，字形塑形引用文字主文。",
+          "han": 1512
+        },
+        {
+          "path": "知识库/25_UI与文本/文字渲染.md",
+          "before_sha256": "e57637c19684e2e391894e58eac4be1cc066bed99a61538cba4998bc6804de45",
+          "after_sha256": "c79cf83e078d36dcd3ce4252fadb7cf8b94314d0aac165c476485b28d7b36b51",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算基线10/40与偏移2/3得矩形13/29至19/38、MSDF中值.6；字体单位、零前进组合与回退簇、线性覆盖和预乘混合完整。",
+          "han": 1702
+        },
+        {
+          "path": "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
+          "before_sha256": "12ec6e6f76a8b9d1734312c108f100d162483a4f7dc6f609640c6b24bc615cc1",
+          "after_sha256": "361824b3db3de2a8b9080c9ffaaf3c1467b261384eb0db3b1d4adef698fa9beb",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "全文追踪0.2/.7遮挡0.6保留、.9拒绝及正反Z归约，10/12/13列表到实例12间接寻址；溢出保守回退与两类屏障完整，4141中文字保持端到端工作集生成主问题。",
+          "han": 4144
+        },
+        {
+          "path": "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md",
+          "before_sha256": "7863a00f36c390fc214f40d9d6bbf1fba9d9459770a5666cd14bdd5ba2281e10",
+          "after_sha256": "8ba4a365c863daec1f2fa732d1e672f15b022c19f0f9000d954a250e9d96b232",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算误差.01米在10/5米为.54/1.08像素，明确z为轴向正深度；完整组缺右子回退父级与树模型/DAG范围分开，2021机制和UE5.4限制有版本来源。",
+          "han": 2330
+        }
+      ]
     }
   ],
-  "remaining": [
-    "知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md",
-    "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
-    "知识库/22_渲染引擎实现/Unreal RDG Pass实现.md",
-    "知识库/22_渲染引擎实现/Unreal渲染帧组织.md",
-    "知识库/22_渲染引擎实现/Unreal自定义Mesh Pass.md",
-    "知识库/22_渲染引擎实现/引擎渲染扩展导读.md",
-    "知识库/23_引擎运行系统/ECS与数据布局.md",
-    "知识库/23_引擎运行系统/Unity对象生命周期.md",
-    "知识库/23_引擎运行系统/Unreal对象生命周期.md",
-    "知识库/23_引擎运行系统/任务系统.md",
-    "知识库/23_引擎运行系统/引擎世界与对象模型.md",
-    "知识库/23_引擎运行系统/资源依赖与异步加载.md",
-    "知识库/24_游戏音频/游戏音频系统.md",
-    "知识库/25_UI与文本/UI绘制.md",
-    "知识库/25_UI与文本/文字渲染.md",
-    "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
-    "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md"
-  ],
-  "full_text_read_count": 121
+  "remaining": [],
+  "full_text_read_count": 138,
+  "completion": {
+    "status": "COMPLETE",
+    "original_articles": 136,
+    "new_topics": 2,
+    "reviewed_total": 138,
+    "remaining": 0,
+    "record": "references/fullread-completion-2026-10-24.md",
+    "final_validation": "fullread-final-2026-10-24-tests.json",
+    "commands_passed": 61,
+    "scope": "全文复读与本机验证；目标引擎、GPU执行及性能未运行"
+  }
 }

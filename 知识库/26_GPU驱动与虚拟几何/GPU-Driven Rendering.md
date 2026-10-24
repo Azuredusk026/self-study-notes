@@ -195,7 +195,7 @@ Mesh Shader输出的图元仍交给硬件光栅器处理。软件光栅化则由
 
 ## 参考实验与证据
 
-[CPU参考模型](../examples/revision_22_26/reference.py)的`occluded`检查正反Z、背景保留、深度相等和完整区域归约。2026-10-22执行`python 知识库/examples/revision_22_26/test_reference.py`，21项通过，其中4项属于遮挡关系。它仅在已经收集完整深度样本、`epsilon=0`的条件下验证标量比较，不覆盖投影矩形、层级坐标、GPU原子、跨队列屏障或绘制输出。正文使用机制伪代码，GPU编译、运行与性能为UNVERIFIED。
+[CPU参考模型](../examples/revision_22_26/reference.py)的`occluded`检查正反Z、背景保留、深度相等和完整区域归约。2026-10-22执行`python 知识库/examples/revision_22_26/test_reference.py`，21项通过，其中4项属于遮挡关系。它仅在已经收集完整深度样本、`epsilon=0`的条件下验证标量比较，不覆盖投影矩形、层级坐标、GPU原子、跨队列屏障或绘制输出。正文使用机制伪代码，GPU编译、运行与性能尚未验证。
 
 ## 相关主题
 
