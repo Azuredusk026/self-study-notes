@@ -1,0 +1,1110 @@
+{
+  "source_commit": "bc4ed68",
+  "source_path": "知识库/20_游戏AI/游戏AI决策模型.md",
+  "articles": [
+    {
+      "path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "primary_question": "感知事实如何转换为明确归属的动作请求？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "控制关系",
+        "统一调度与控制所有者",
+        "决策输入与动作交接",
+        "黑板快照",
+        "动作实例与独占资源",
+        "执行身份"
+      ],
+      "title_candidates": [
+        "决策输入与动作交接",
+        "动作控制所有权",
+        "游戏AI事实与执行身份"
+      ],
+      "reviewed_sha256": "6290e9bf2e665e617610af5bf84a1b9c478622f8d0427cc29715ddd6fe639e5c"
+    },
+    {
+      "path": "知识库/20_游戏AI/状态机与行为树.md",
+      "primary_question": "模式切换和跨帧行为如何管理生命周期？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "状态机与层次切换",
+        "状态进入、更新与退出",
+        "进入失败与恢复路径",
+        "行为树与节点生命周期",
+        "组合语义",
+        "叶节点的四种状态",
+        "顺序节点的父子推进",
+        "条件观察与调度"
+      ],
+      "title_candidates": [
+        "状态机与行为树",
+        "层次状态切换与行为树执行",
+        "游戏AI行为生命周期"
+      ],
+      "reviewed_sha256": "1577491836f8a75b70a068d2e1cfd4d893a81c98cc7974166c5c84e52ee8c47c"
+    },
+    {
+      "path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "primary_question": "目标如何评分并展开为步骤？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "效用评分与动作切换",
+        "必要条件与偏好",
+        "迟滞与失效优先级",
+        "目标规划与执行",
+        "GOAP回归搜索",
+        "规划的反向搜索",
+        "HTN分解与状态推进"
+      ],
+      "title_candidates": [
+        "效用评分与目标规划",
+        "效用目标选择与行动规划",
+        "游戏AI目标推演"
+      ],
+      "reviewed_sha256": "23a7d3da079289160c7f675717f1167b838cb9e264bcb2345bcf60298cbf799f"
+    },
+    {
+      "path": "知识库/20_游戏AI/决策计划提交.md",
+      "primary_question": "规划候选如何校验并安装？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "组合调度与提交",
+        "模式进入与规划交接",
+        "候选采用失败"
+      ],
+      "title_candidates": [
+        "决策计划提交",
+        "规划候选的条件采用",
+        "游戏AI执行树安装"
+      ],
+      "reviewed_sha256": "d566b3e9aedb3ac40f98942132cdb7bad9ebf6abaa00b4edd554f6d43ffb4052"
+    },
+    {
+      "path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "primary_question": "终态后如何续行并控制失败预算？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "计划终态与恢复",
+        "模型组合的状态推进",
+        "行为树终态与计划续行"
+      ],
+      "title_candidates": [
+        "计划终态与重规划",
+        "目标满足与计划续行",
+        "游戏AI失败预算"
+      ],
+      "reviewed_sha256": "dc18e5271ba86533c42122fa7e147bb7a948ef880b7e8e411d37b1beced4692b"
+    },
+    {
+      "path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "primary_question": "命令和效果如何去重并恢复？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "异步事件与决策重放",
+        "命令登记与宿主接纳",
+        "世界效果与恢复前沿",
+        "逐机制反例"
+      ],
+      "title_candidates": [
+        "决策日志与恢复",
+        "游戏AI命令的持久恢复",
+        "决策与世界效果重放"
+      ],
+      "reviewed_sha256": "53ea8d7436875626874b2b4bf1d02c1c38c487edcf5e3354534b9a7e5545272a"
+    }
+  ],
+  "overview_question": "事实、选择、计划、动作与持久恢复如何分工？",
+  "mappings": [
+    {
+      "source_heading": "控制关系",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "target_heading": "控制关系",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_heading": "统一调度与控制所有者",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "target_heading": "统一调度与控制所有者",
+      "source_body_sha256": "285488c86d8c8b058a74887a36d7788a3394d4ab13836426701c7626b89b38f3",
+      "reviewed_body_sha256": "5d77e99971fd4a17b6e6c75ab6328552f299fee51d20a68249ed87368531d4c0"
+    },
+    {
+      "source_heading": "决策输入与动作交接",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "target_heading": "决策输入与动作交接",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_heading": "黑板快照",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "target_heading": "黑板快照",
+      "source_body_sha256": "b61d71484f4de4fd3a4c96dc990ae79a1fc90fdf67cb7c0451612d0d7d5b48c9",
+      "reviewed_body_sha256": "90d360d6d15982f1bb2ae6825f72d0009cbf02ce68fde099d86b682b57c3486d"
+    },
+    {
+      "source_heading": "动作实例与独占资源",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "target_heading": "动作实例与独占资源",
+      "source_body_sha256": "3f4f030f666b2fe0c8e400392535e06a1cd5eac87db773bf9f9067e8406ebf74",
+      "reviewed_body_sha256": "cbf62ff993884fd9a0587c0060c9a53fbbbcc94328cbaaa978d5dcfd76cca027"
+    },
+    {
+      "source_heading": "执行身份",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "target_heading": "执行身份",
+      "source_body_sha256": "c557b91ddcfa29503341d7773f3b917e5be9ed30711e9e89aa5d1d01c0b8dfe9",
+      "reviewed_body_sha256": "dec6cacdce448ecf59858d7ec06837da6dda75bfb3aa7037f5356c6478e5ea47"
+    },
+    {
+      "source_heading": "状态机与层次切换",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "target_heading": "状态机与层次切换",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_heading": "状态进入、更新与退出",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "target_heading": "状态进入、更新与退出",
+      "source_body_sha256": "521efae9d6bfa760086c56b6df1f7787a4c3699b72dd61eb4a92907281cfbe03",
+      "reviewed_body_sha256": "73cfa0318f76a5582b6cbbf95b9a174c0398666b1578d7415e7b02f4fb51e785"
+    },
+    {
+      "source_heading": "进入失败与恢复路径",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "target_heading": "进入失败与恢复路径",
+      "source_body_sha256": "f5011cc4dc25fa9714754d49f7be2e1a2d1135737a1487853c7ab6a703f4ffa3",
+      "reviewed_body_sha256": "f5011cc4dc25fa9714754d49f7be2e1a2d1135737a1487853c7ab6a703f4ffa3"
+    },
+    {
+      "source_heading": "行为树与节点生命周期",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "target_heading": "行为树与节点生命周期",
+      "source_body_sha256": "5f82dbeb9b4c096d1dedf55ca9e66d162a395a400e7b7707732ed9d6e3b6717b",
+      "reviewed_body_sha256": "75a8517ea5bcde2b0e8b3e04e4d0a948ab6516a78f7229354a805ee20afaa313"
+    },
+    {
+      "source_heading": "组合语义",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "target_heading": "组合语义",
+      "source_body_sha256": "5b81ad92dc5f4b62c67a4cbe856fb646924395b5877a117beba8828256d8c1a8",
+      "reviewed_body_sha256": "5b81ad92dc5f4b62c67a4cbe856fb646924395b5877a117beba8828256d8c1a8"
+    },
+    {
+      "source_heading": "叶节点的四种状态",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "target_heading": "叶节点的四种状态",
+      "source_body_sha256": "2e072ff709fad75dcf83745793516942aade6464cbd0e16e01f25828bb6f3b1d",
+      "reviewed_body_sha256": "2e072ff709fad75dcf83745793516942aade6464cbd0e16e01f25828bb6f3b1d"
+    },
+    {
+      "source_heading": "顺序节点的父子推进",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "target_heading": "顺序节点的父子推进",
+      "source_body_sha256": "f913c11292805f9730cf322e39ab358256cfaf60fc5b41f7d4570d40feb54e3c",
+      "reviewed_body_sha256": "f913c11292805f9730cf322e39ab358256cfaf60fc5b41f7d4570d40feb54e3c"
+    },
+    {
+      "source_heading": "条件观察与调度",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "target_heading": "条件观察与调度",
+      "source_body_sha256": "3dd3a1e6774c4f99668d15331af64277d79de56f17a2c7438006695b1b2482c4",
+      "reviewed_body_sha256": "3dd3a1e6774c4f99668d15331af64277d79de56f17a2c7438006695b1b2482c4"
+    },
+    {
+      "source_heading": "效用评分与动作切换",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "target_heading": "效用评分与动作切换",
+      "source_body_sha256": "64c1af9d8c2ed52ac4be0500f1b71752f5e7999ce234581449fd7870998b50f9",
+      "reviewed_body_sha256": "64c1af9d8c2ed52ac4be0500f1b71752f5e7999ce234581449fd7870998b50f9"
+    },
+    {
+      "source_heading": "必要条件与偏好",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "target_heading": "必要条件与偏好",
+      "source_body_sha256": "a01f8264db021ab2245195c46533cb84359624d4b3039c6aaa6704bf6f6162db",
+      "reviewed_body_sha256": "a01f8264db021ab2245195c46533cb84359624d4b3039c6aaa6704bf6f6162db"
+    },
+    {
+      "source_heading": "迟滞与失效优先级",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "target_heading": "迟滞与失效优先级",
+      "source_body_sha256": "404a121923d62e24280bfd127591db7df01ca7f2c8a92a8fe90dee519a240942",
+      "reviewed_body_sha256": "5f70e996701fc97f60c3f918ecfda223ed3a92528248fa470fabd5d6233f7ac0"
+    },
+    {
+      "source_heading": "目标规划与执行",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "target_heading": "目标规划与执行",
+      "source_body_sha256": "2ef8ffa40b557d4f0576b065f6aaf545e209c59eaaa2e227a4708859cd422a66",
+      "reviewed_body_sha256": "2ef8ffa40b557d4f0576b065f6aaf545e209c59eaaa2e227a4708859cd422a66"
+    },
+    {
+      "source_heading": "GOAP回归搜索",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "target_heading": "GOAP回归搜索",
+      "source_body_sha256": "4166a411eb38a244848c2c4cc60c1a2ae6d2f6b81a2cb531c63dda9c26dae540",
+      "reviewed_body_sha256": "4166a411eb38a244848c2c4cc60c1a2ae6d2f6b81a2cb531c63dda9c26dae540"
+    },
+    {
+      "source_heading": "规划的反向搜索",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "target_heading": "规划的反向搜索",
+      "source_body_sha256": "cfb323d5d8011c76e879a5a3b68dccff4020a72afa2e45f028fb451058017128",
+      "reviewed_body_sha256": "1cf940f2a1fb0d7f10df7a609d049054174f3eb8f6f0a9d849dc757a7f455a40"
+    },
+    {
+      "source_heading": "HTN分解与状态推进",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "target_heading": "HTN分解与状态推进",
+      "source_body_sha256": "899d46c25209f5e1c2b5d5f747aa538b39eaca8f418672addc59c1425cd8d38a",
+      "reviewed_body_sha256": "80095f485f87234c48a39ea2374ed73c6157d2ec57ac9beed23a64592955d473"
+    },
+    {
+      "source_heading": "组合调度与提交",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "target_heading": "组合调度与提交",
+      "source_body_sha256": "bbc6ba227a1ed9d4aa7622d339b6b006ebf1807ba1fe213e514647d0bb5380ee",
+      "reviewed_body_sha256": "bbc6ba227a1ed9d4aa7622d339b6b006ebf1807ba1fe213e514647d0bb5380ee"
+    },
+    {
+      "source_heading": "模式进入与规划交接",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "target_heading": "模式进入与规划交接",
+      "source_body_sha256": "38f123e7b52ea27c484a8694826145a700f666431654ba2207e909c14d5fddab",
+      "reviewed_body_sha256": "b5cd5e2ae2b307c9965d58173e3c48b864ff0b7f4b28e671e9a824b952517f88"
+    },
+    {
+      "source_heading": "候选采用失败",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "target_heading": "候选采用失败",
+      "source_body_sha256": "4b642b4e1e40da3d69f5983a6a489f5162d3d99caed2c0101dbf771f67abf58f",
+      "reviewed_body_sha256": "fa96d8e4c61f8ac85e48e116ab0ebf43b50c65e4cfef3634a012e9931e8b0dea"
+    },
+    {
+      "source_heading": "计划终态与恢复",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "target_heading": "计划状态推进",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_heading": "模型组合的状态推进",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "target_heading": "模型组合的状态推进",
+      "source_body_sha256": "d679f44ef7fba38f7b2d685415a56d7bfe8308fe19bedc353e27e6a389b99d00",
+      "reviewed_body_sha256": "9e34e4273c398ba006aaa66ea8fefe558a2f068eb86a4085846e7193756c2090"
+    },
+    {
+      "source_heading": "行为树终态与计划续行",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "target_heading": "行为树终态与计划续行",
+      "source_body_sha256": "8edb1871f36aa7684434c419da00d26b4f6cc44a9c6568b829e939d17828b526",
+      "reviewed_body_sha256": "1f05cc0d181a05a4e2b548cd87369b3cdc2ba1ece7160030c65084c4d5e51f86"
+    },
+    {
+      "source_heading": "异步事件与决策重放",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "target_heading": "异步事件与决策重放",
+      "source_body_sha256": "b4384253825451ebca220b33bedcfcefe749d5d6d7cdca8428d2689163600d9e",
+      "reviewed_body_sha256": "ee5769df250ffd28b86cc21d5ca9d48e93990dde8f8cabeb4f4e9787bc3c3e8c"
+    },
+    {
+      "source_heading": "命令登记与宿主接纳",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "target_heading": "命令登记与宿主接纳",
+      "source_body_sha256": "07ba1ae63dc66a3c813dce00eca0d9d7e1903e0510d20609a8d812a1e4de81eb",
+      "reviewed_body_sha256": "07ba1ae63dc66a3c813dce00eca0d9d7e1903e0510d20609a8d812a1e4de81eb"
+    },
+    {
+      "source_heading": "世界效果与恢复前沿",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "target_heading": "世界效果与恢复前沿",
+      "source_body_sha256": "21cb864b8a6b744fed493be0a23d7af0b8655dde27365417ee96447f8055f407",
+      "reviewed_body_sha256": "21cb864b8a6b744fed493be0a23d7af0b8655dde27365417ee96447f8055f407"
+    },
+    {
+      "source_heading": "逐机制反例",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "target_heading": "逐机制反例",
+      "source_body_sha256": "d14970256eb1d4329f7f3b6c9a7d33f77f3671a9a8f01ed56a1c84f56b5f9ff8",
+      "reviewed_body_sha256": "024266cc11f5799ab09eb0f4785cef50aa98f95df482be76e2ed3b6073f65352"
+    },
+    {
+      "source_heading": "实现与证据",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "target_heading": "实现与证据",
+      "source_body_sha256": "696f69c6d78c4f7581e45bc4f1156d85509185fa88f95612e2800da0e6f003ec",
+      "reviewed_body_sha256": "1684766115bebff2d43013be6a0881808ad4a5b873b07923763d36e8f6d2a2d1"
+    },
+    {
+      "source_heading": "相关主题",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "target_heading": "相关主题",
+      "source_body_sha256": "3af57f91fc0e04ebfa7cd067836dc8423901e6d2ea9d47e9af387aec6a5da12c",
+      "reviewed_body_sha256": "3af57f91fc0e04ebfa7cd067836dc8423901e6d2ea9d47e9af387aec6a5da12c"
+    },
+    {
+      "source_heading": "参考资料",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "target_heading": "参考资料",
+      "source_body_sha256": "6c565b8fdc17ae8ca9abcbe9b0ed5d7e2b8131e5c8030c864921ca61864f5a95",
+      "reviewed_body_sha256": "6c565b8fdc17ae8ca9abcbe9b0ed5d7e2b8131e5c8030c864921ca61864f5a95"
+    }
+  ],
+  "paragraph_mappings": [
+    {
+      "sha256": "9afdd67bb0e89929df95bb46f63c615e1ae02e0d7a33f9511361f747a89ccf05",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "## 控制关系"
+    },
+    {
+      "sha256": "28f9727dacfb1eb602dd9ce3008c732af4fde5c1ac59fbea97cf8437af75ab3a",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "### 统一调度与控制所有者"
+    },
+    {
+      "sha256": "0ba854e47137fe010e77a4f96db3da91cefb995a22faf98a3256780c164d6f83",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "守卫的组合路线由单一调度器提交状态。层次状态机（HFSM）保存根/平静/巡逻或根/战斗/交战、搜寻、撤退这样的活动路径。平静与战斗是容纳共享感知和目标跟踪的父状态；最内层活动模式独占计划上下文。交战树"
+    },
+    {
+      "sha256": "1f072e376c4fa651be1a4e43179b3e236f1d034bf3cc28cd98243da2ca6ff0c5",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "效用层选择目标模式与目标事实，目标导向行动规划（GOAP）或层次任务网络（HTN）生成候选步骤，行为树叶节点登记动作命令。模式还可以持有移动完成后接管的站位保持实例；保持由宿主持续更新，行为树不重复登"
+    },
+    {
+      "sha256": "0fc4ae55d3437366ec3086a3761629584a805725578b9e6e36d2af04e10002d1",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "本文分别说明组合配置和独立状态机配置。组合配置的模式进入只建立计划上下文，动作由行为树叶登记；独立配置的状态通过适配层直接登记动作，其进入可以等待动作初始化。两者都使用宿主动作账本，NPC创建时固定配"
+    },
+    {
+      "sha256": "f3981790e6651b4feb36e07b1875e52fa1330fdcda81a9a72113b29847e0fc75",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "每轮先处理旧动作回执和失效事件，效用层据同一快照提出目标，再推进HFSM退出；退出完成后重新核对目标门禁，进入新模式。一轮只有一次持久提交，活动路径、模式上下文、命令归属和事件游标共同生效。需要派发的"
+    },
+    {
+      "sha256": "5e0e13238fdb464cde4e68086d5f961f2d9c7e6d323214b304158fc44b99c0f4",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "## 决策输入与动作交接"
+    },
+    {
+      "sha256": "c1cf2d54d571133242f7d7bbd9e19d2c2bca7a198b3d44664af1264df5c75932",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "### 黑板快照"
+    },
+    {
+      "sha256": "1a65053275568dab154b235ca3c05b3f21db7bd362f5cdcfedd9a4cccb11753d",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "黑板键保存类型、值、来源、更新时间和版本。感知更新先形成一份只读快照，决策在这份快照上完成本轮判断。遍历途中到达的普通事件进入下一轮；紧急事件通过调度入口中止当前动作。如此树的前半段不会读旧目标，后半"
+    },
+    {
+      "sha256": "6c688aa97119642dd2925d4871036ff151d1cca51f10729537278f31ea202acd",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "短期可见状态和长期记忆分开保存。敌人离开视野时，当前可见标记变假，但最后位置可以保留到记忆时限。信念—愿望—意图模型（BDI）正是对这几类信息的区分：最后位置是信念，追击和自保是愿望，当前已经接受的撤"
+    },
+    {
+      "sha256": "b420b3fd22377e65c4c41154e643280d3507e6eb57ae6fda23f592c255f3981f",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "### 动作实例与独占资源"
+    },
+    {
+      "sha256": "38aa6ef754d00698e25a1d26e837f2bac641042360874128940ccd386332dd40",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "决策输出候选动作、目标和所依据的快照。执行器重新检查目标、冷却及资源，接纳后才生成动作实例ID；拒绝则返回原因。两次追击拥有不同实例，完成消息回到原实例，不能只按行为名称匹配。规划中的预期效果只有在执"
+    },
+    {
+      "sha256": "3b632dd72f82af9ad493c7dbd3c4ad6e89a1e5417e060bf8fb4e0bbca148c75d",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "这次接近所需的目标位置、门连接和掩体预约都可能变化。快照因此保存实际读取的对象代数与字段版本，执行器在接纳时共同核对并取得资源。接纳后的目标或路线再失效，则走取消；这次启动检查并不保证未来输入一直不变"
+    },
+    {
+      "sha256": "d365f33cfcb1b6ff6961272534b518fa174882daa22d35411b837d0d0f7183d2",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "移动器、武器或动画通道等独占资源保存所有者ID与代次。切换动作时先向旧实例发出幂等取消，执行器停止后续副作用、释放预约，再返回取消完成。新动作在冲突资源释放后才接纳；决策可以提前准备候选，但不能提前声"
+    },
+    {
+      "sha256": "e304b620ab946d5b72b51342a07d80f9cc59f03ec09944ddd6468b2be9864962",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "到达后仍需抵消平台运动时，移动完成提交可以把移动器交给模式持有的站位保持实例。原移动实例随Success结清，资源账本中的所有者变为保持实例；模式上下文保存这份持续责任。手部交互消费绑定保持实例及代次"
+    },
+    {
+      "sha256": "1c094ce651e1324873b5b53b8f57ede9e9c0740c0598f96dc9252afbcb9bab43",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "旧移动取消期间收到迟到成功，只能结清旧实例。释放资源也比较所有者ID，旧清理不能清空新请求的槽。取消超时则保持占用并报告故障，候选可改用其他资源上的安全行为。已经射出的子弹属于世界事件，取消只阻止继续"
+    },
+    {
+      "sha256": "c17ccdfb4b1fb1f3777999a7b5fd5b98b8f4b9bbe0f6c6ade59f7d45a9680f5d",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "守卫在快照42的交战树中启动接近叶时，决策先登记命令C17，宿主接纳后才得到移动实例17。命令描述一次请求，实例描述宿主实际接纳的执行，两者之间可能隔着排队、拒绝或进程退出。行为树在收到接纳结果以前保"
+    },
+    {
+      "sha256": "79016178cbca63972cafd10c711c32dbe3756443a606fafa977fa1bfb628616f",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "### 执行身份"
+    },
+    {
+      "sha256": "48d81998320f8342713153dedeba2e276aef4f437f426c2b8b4ef6ad6d125db0",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "同一守卫同时保存选择、计划和执行进度，完成消息必须定位到其中的具体实例。"
+    },
+    {
+      "sha256": "e8f73793cbac6c78c70f90aa2cd9ff08bb1229f6168a943ed78b5d26c59b29a6",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "| 身份 | 保存者与用途 | 变化边界 |\n|---|---|---|\n| NPC实例ID | 调度器，区分销毁后重建的守卫 | 实体重建时变化 |\n| 模式实例ID | HFSM，拥有一次进入到退"
+    },
+    {
+      "sha256": "c31f6c681512c6bcc69fc67ad18ab9b184894e5c3a51dc6ae09f41da46bdf9f0",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "表中的计划与树身份补充了开头的命令及动作身份：模式在Planning等待候选，采用后执行树才活动；同模式重规划保留模式实例，替换计划代次与树。"
+    },
+    {
+      "sha256": "72108e3a2de2227d7119f06fac185fb66b8efa2d7d73f925c48ee46082f357ec",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "守卫取得移动控制权后，还要决定哪些事件能够改变当前模式。状态机先把这种模式切换表达出来；行为树随后负责模式内部的多步执行。"
+    },
+    {
+      "sha256": "514b9b0bdee980a275194c612f0cd603e530a704b876d55c8e7fed66eceb0da1",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "## 状态机与层次切换"
+    },
+    {
+      "sha256": "218d663b80d5b601e5ab594c69e96f58e09d26a90b641a781c4b172ca674bf0a",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "### 状态进入、更新与退出"
+    },
+    {
+      "sha256": "885568b280062d960ca99892e17ca8beef69a5500c682a7c4eaa4dfde3f7a6bf",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "有限状态机（FSM）用活动状态和转移条件表达待机、巡逻、追击或攻击。守卫从巡逻转向追击，改变的是活动路径及其动作所有权；敌人的位置更新则留在当前追击状态的普通更新里。状态进入时建立本次执行上下文，更新"
+    },
+    {
+      "sha256": "6254c5bc9cd56ed4ff73e15be1dab3d1f304b7ef2dc8f09e1eb4b15110cb1f66",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "层次状态机（HFSM）把共享行为放在父状态。以下配置中，战斗父状态负责目标跟踪，追击和攻击状态分别经适配层拥有移动与武器请求。"
+    },
+    {
+      "sha256": "a0f223752151e83576c2dd4a5ba69b7e47fc71d8188efd288ce352d754488cd5",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "```text\n根\n├─ 平静\n│  ├─ 巡逻\n│  └─ 安全待机\n└─ 战斗\n   ├─ 追击\n   ├─ 攻击\n   ├─ 搜寻\n   └─ 撤退\n```"
+    },
+    {
+      "sha256": "5746aa30191964216f87ce39820fbad9b51be8991dff0e967e0a9396f0cb0eee",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "在这份独立配置中，从战斗/追击到战斗/攻击，最近公共祖先是战斗。先让追击取消移动，等待资源释放，再完成追击退出；战斗保持活动，最后进入攻击。等待期间HFSM保存目标路径并处于转移中，旧状态不再发新请求"
+    },
+    {
+      "sha256": "3eff7da4bda582ad2ba7cfc834324486002aa30ff40a83dc206df62217a470e7",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "转移记录保存实际活动路径、正在退出的状态和最新目标路径。目标改变只替换目标；正在退出的状态继续清理，完成后才从活动路径末端删除。随后以剩余活动路径与最新目标重新求公共前缀，逐个退出公共前缀之后的状态，"
+    },
+    {
+      "sha256": "0d4c92122ac322493bd790b1d157bcbb916caacf147a0a0fc13a9a836ebda737",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "例如追击正在退出，目标由战斗/攻击改为平静/安全待机。追击清理完成后活动路径是根/战斗，与新目标的公共前缀只有根，因此继续退出战斗，再进入平静和安全待机。若目标改回追击，旧追击也先退出，再创建新实例；"
+    },
+    {
+      "sha256": "57d4309746255a541e74f95fd097a38046aed05ce921e0fb4dc9713f7710cf11",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "### 进入失败与恢复路径"
+    },
+    {
+      "sha256": "f005c4b8006a8573b27050d1d69da55e42423293d2e8fca9186c5654ee92c6d0",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "独立FSM配置从平静/巡逻转到战斗/攻击，公共祖先是根。退出顺序为巡逻、平静，进入顺序为战斗、攻击。这份配置的Enter可通过适配层等待动作初始化，每个成功进入的状态记入本次清单；Enter失败的状态"
+    },
+    {
+      "sha256": "a19b3a9db3c8658f348ec22c08b23f680e929ccc8f6a12d16cd3ca070f276450",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "假设战斗进入成功，攻击因目标销毁而失败。先完成攻击的部分初始化清理，再退出本次成功进入的战斗，回到仍活动的根。若指定的失败目标是平静/安全待机，就依次进入平静和安全待机。原巡逻的移动已被取消，因此不能"
+    },
+    {
+      "sha256": "4ebfb8fc9955bc38e6c324fb09b6710f7db609ab5ca5c02b349218165a17a69c",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "同一父状态内失败时，清单更短：追击已退出，攻击进入失败，公共祖先战斗仍活动。失败策略选择战斗/搜寻，只需进入搜寻。清理只撤销本次进入部分，公共祖先是否退出由实际路径决定，不能一律退到根或保留已经退出的"
+    },
+    {
+      "sha256": "004478f0bc7c5729aa8660dba71735245f8d77cace9688d47efe5d2cf629ec9a",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "## 行为树与节点生命周期"
+    },
+    {
+      "sha256": "5f82dbeb9b4c096d1dedf55ca9e66d162a395a400e7b7707732ed9d6e3b6717b",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "回到组合配置，交战模式确定后，守卫仍需依次检查目标、接近和攻击。状态标签本身没有保存“接近还没完成，攻击尚未开始”这份进度，行为树把它放在活动节点与子节点索引中。"
+    },
+    {
+      "sha256": "16e0f1214a5d29f9cffafc4c8e05d890e136dc3617286a56ea114469d12392c9",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "### 组合语义"
+    },
+    {
+      "sha256": "40cd78f9fd1116221c31efdec8ea72145ee3567842a2fe7b2305e6ff92f6a526",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "行为树把条件和动作放在叶节点，由组合节点决定遍历顺序。顺序节点需要所有子节点成功；遇失败即结束。选择节点按优先级尝试子节点，失败才尝试下一个，成功即结束。两者遇到运行中的子节点都保留该分支。装饰节点可"
+    },
+    {
+      "sha256": "1358338baab109f7aea74319e48591a9034216f58aa23f6fdf802c6a60322b83",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "记忆型顺序节点在动作跨帧运行时保存索引；反应式顺序节点每轮从前面的条件重新检查。反应式检查若改变了活动路径，先中止原动作，再进入新的冲突分支。只把索引归零会让旧追击继续占用移动器，同时再次创建另一次追"
+    },
+    {
+      "sha256": "d96a74d043365001946233be6e374a49e262e0a41e966e114af8056b165035af",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "### 叶节点的四种状态"
+    },
+    {
+      "sha256": "70b76c8fcfa18161527089d034810360e4b2dc2fca954297b11a02f1f215a034",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "节点生命周期和对父节点的结果分别保存。生命周期为Idle、Running、Cancelling、Finished；终态结果为Success、Failure或Cancelled。Running与Canc"
+    },
+    {
+      "sha256": "b2d4c55f7150ff29aa694cbcc4003de58e7827daeb1b010784fa503f9040fd8c",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "| 生命周期 | 接收普通更新 | 接收中止 | 进入下一状态 |\n|---|---|---|---|\n| Idle | 调用一次Enter，登记命令后保存命令ID | 直接以Cancelled结束，"
+    },
+    {
+      "sha256": "3c0d2608e551c211de95e36ad7335e761d58deb1263e22559d0c051270602e6e",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "Running内的等待接纳阶段没有实例ID，普通更新只查询同一命令，不再调用Enter。此时中止也要进入Cancelling，向宿主提交针对原命令ID的取消；宿主若尚未接纳，就保存该命令的取消终态，迟"
+    },
+    {
+      "sha256": "89430d36c753c9cd5b57b50733b512bfa3d26872cd0dff56f2050c4c87237960",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "Enter被拒绝时必须保证没有残留预约。若初始化已经部分取得资源，节点进入Cancelling并保存待结束结果Failure，沿同一执行账本撤销并等待释放；清理完成才进入Finished(Failur"
+    },
+    {
+      "sha256": "026abd8512dc96d7656925409aca1283da3c426d257f56b78e98ceadca5dc2d3",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "动作在取消请求之前已经成功时，可以正常结清Success；父节点若已进入Cancelling，也不会据此启动下一动作。取消后到来的成功只说明底层已停止，由取消路径统一结清为Cancelled。事件处理"
+    },
+    {
+      "sha256": "c02f242d7bb07766d0022c0b18c930ae3909d3e34a2a6e3548c65a195cfd4ee1",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "### 顺序节点的父子推进"
+    },
+    {
+      "sha256": "c6c937fbaa69a046be4fcb5e107f5d4bace3cc72c5c479df000e3a5722c6a913",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "下面是记忆型顺序节点的机制伪代码。叶节点Tick执行上表，组合节点在Idle进入Running时完成无外部资源的Enter；`Finish`缓存结果，并为已经成功进入的本节点执行Exit一次。未进入就"
+    },
+    {
+      "sha256": "70a10b9f664798c8f55beb573b7b4fd161c32a5f6c49d8fe79071566003a7ba0",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "```text\nTickSequence:\n    if state == Finished: return savedResult\n    if state == Idle:\n        sta"
+    },
+    {
+      "sha256": "86460530ff65f5c264cc652c22181462d3b85bcb5beb575de10aa7b5d76edcb2",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "AbortSequence:\n    if state == Finished or state == Cancelling: return\n    if state == Idle:\n       "
+    },
+    {
+      "sha256": "dba49af72b6fc2ca949800c07685fda326f3ec46304276856dfe3c69f17ddbaf",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "组合节点中止先标记自己Cancelling，再向活动子节点传播。子节点内部若还是组合节点，就继续向下传播；结束则由叶到父逐层确认。父节点等待整个活动子树终止后才复位已结束孩子，自己变为Finished"
+    },
+    {
+      "sha256": "be6f111ee42c105242d98924e3daf33c88e16cbbf87d749879b4de9cedf44882",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "即使父节点仍为Running，子节点也可能因执行器撤销而返回Cancelled。顺序节点原样传播这个终态，选择节点同样结束当前选择。只有Failure允许选择节点尝试下一孩子；条件重评估由上层显式复位"
+    },
+    {
+      "sha256": "b9ab72b3271395923a490d91612848e0db97303bc1185c0deb54153763203a8e",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "例如顺序为“目标有效、接近、攻击”。接近处于Running时目标失效，父节点先进入Cancelling；接近叶等待移动器取消完成，期间攻击始终Idle。完成后接近叶Exit、父节点复位已结束子节点并输"
+    },
+    {
+      "sha256": "effcdca07d362e6fc3acc1f7bc10f85d67033e601cb39bb19db698288d57e164",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "### 条件观察与调度"
+    },
+    {
+      "sha256": "22d2e0c156d3e955d34492664e64a54a48f741777e12b119fa73530b3e48f0f2",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "每帧遍历能发现条件变化，代价随NPC数量和树规模增长。观察者可在相关黑板键变化时请求重评估，Running和Cancelling节点仍须收到执行结果。事件派发与本轮快照在固定边界交接，条件变化不会直接"
+    },
+    {
+      "sha256": "77ae25398e519c0ae5b92c92d28e1336bb54a5111d7c1fe7dee5bbd9997d7067",
+      "target_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "source_excerpt": "Unreal的Observer Aborts把中止范围分为Self、Lower Priority、Both和None，分别作用于自身分支、较低优先分支、两者或关闭观察中止；具体执行仍由引擎调度。这些选"
+    },
+    {
+      "sha256": "83cc682dcd99688d58e6958d89185297a9a040dbf9aa33a7e7c5d8d067a2cdaf",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "## 效用评分与动作切换"
+    },
+    {
+      "sha256": "64c1af9d8c2ed52ac4be0500f1b71752f5e7999ce234581449fd7870998b50f9",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "行为树可以执行交战中的接近和攻击，受伤以后是否值得继续交战，则需要比较交战、搜寻与撤退。效用系统先排除做不到的目标模式，再比较可行候选，选择结果经HFSM和计划进入同一取消与接纳接口。"
+    },
+    {
+      "sha256": "4cf3a5d008a86f639b39b0cbba714ff8cdf615e6e163c6fd65885fd016a0ebb8",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "### 必要条件与偏好"
+    },
+    {
+      "sha256": "84c223984f6879cf243ebebc3c6f49f71f0747af164f55cf8b272e7faf445562",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "效用系统（Utility AI）比较此刻各行为的价值。先用布尔门禁判断目标、弹药、路径和冷却等必要条件，再给可行行为计算偏好分数。本页的偏好采用加权几何平均："
+    },
+    {
+      "sha256": "b1373fb552bdf152ec886f4570b2cb32000340f8b3356f8191ea177006628473",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "$$U=\\exp\\left(\\frac{\\sum_i w_i\\log\\max(s_i,\\epsilon)}{\\sum_i w_i}\\right).$$"
+    },
+    {
+      "sha256": "efc58a450be86d11afec4e6314f8eb0228ab263ae7d30aa37018b18afc7390e4",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "每个原始输入先按已配置区间归一化，曲线输出s在[0,1]，权重w为正，ε取10⁻⁶。越界有限值可按规则夹到区间；非有限值或无效配置产生诊断，并把该候选判为不可用。必要条件为假直接拒绝，不能让ε把“没有"
+    },
+    {
+      "sha256": "d36828eb5e3fe5218550fcfa38ad42ffd5fa35a2cac359aa15405c5db1a25a65",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "```text\nScoreAction(action, snapshot):\n    if any necessary condition is false: return Ineligible\n  "
+    },
+    {
+      "sha256": "326a145740a580f936989ed28f0c96a936113ed9088aaca249ba79af7b3876e8",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "三个同权0.8偏好和一个0.8偏好都会得到0.8；直接连乘则是0.512与0.8，差异只来自条目数量。几何平均保留低分压低总体偏好的性质，但偏好零分经数值下限仍是很小的正数。确实需要否决行为的条件放在"
+    },
+    {
+      "sha256": "bea972f9ab71f4da7c3d065071d3e59d2147d1922f570f02a642662af3ede3ec",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "### 迟滞与失效优先级"
+    },
+    {
+      "sha256": "16b5488ab15ff8a60c8465e27d9d0fe8bd00a57674dc6540c1c009a1ac852758",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "普通切换要求新动作分数严格高于当前分数0.1，且当前动作已持续0.3秒。两项门槛只在当前动作仍可行且正在运行时适用。每次重评估先检查当前门禁和执行终态：目标销毁、路径失败、弹药耗尽或动作已结束，都直接"
+    },
+    {
+      "sha256": "4e66933f1fb2ffd7ce726ded7455e642038de20a74dd7f6b5c4e6f7d6fc29fd5",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "当前交战0.75，新搜寻0.82，普通变化保留交战；新撤退0.9且当前模式持续0.4秒才触发普通切换。若敌人已销毁，即使交战只运行0.05秒、搜寻只有0.2，也先退出失效交战并取消其中的活动动作，再进"
+    },
+    {
+      "sha256": "132a67ea39a0c73df3ee6cbd8aac1b8de73536d38de3246b8ac09754e5ce83e4",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "选择最高分时用稳定行为ID打破平分。停止旧动作后，候选还要经过资源释放与最新门禁检查；等待取消期间若候选也失效，重新选择即可，旧动作不会重新获得执行权。随机选择是另一种项目策略，需要保存分布、种子和随"
+    },
+    {
+      "sha256": "369760bc2cd7979bf000d2e8a8add9f5ffea058c990ede02b67fda1691d489fb",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "## 目标规划与执行"
+    },
+    {
+      "sha256": "2ef8ffa40b557d4f0576b065f6aaf545e209c59eaaa2e227a4708859cd422a66",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "撤退候选得分最高，并不意味着守卫已经知道怎样进入掩体。若它还需补弹、拿钥匙或开门，规划器把目标展开成有前后依赖的动作，执行器逐步核对真实结果。"
+    },
+    {
+      "sha256": "b4a80742ac033f27fe02e65bf499fe103b871fb382b58167215f527d3c53ac96",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "### GOAP回归搜索"
+    },
+    {
+      "sha256": "4166a411eb38a244848c2c4cc60c1a2ae6d2f6b81a2cb531c63dda9c26dae540",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "目标导向行动规划（GOAP）用有限事实描述状态，动作用前提、效果和非负成本描述转换。受伤守卫当前既无弹药也未在掩体，目标是“有弹药且在掩体”。补弹动作使弹药为真但离开掩体，进入掩体动作保持弹药并使在掩"
+    },
+    {
+      "sha256": "0ae15e182134d31895ffaf44ec527d369f2279e00557b4498d5854de74b50d69",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "#### 规划的反向搜索"
+    },
+    {
+      "sha256": "849a92f471548e9e897c4f8e2f97a713d3b00ece0969e44f977ac75a8ad55eae",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "```cpp\nPlan GoapPlan(WorldState start, Goal goal, Action[] actions)\n{\n    bestCost[goal.facts] = 0; "
+    },
+    {
+      "sha256": "fc502ce97dcc960b52585fd557cf9fcb1410be52ad9523aab16f7cf88b99e37d",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "这是回归规划的算法轮廓。每步用动作效果满足部分目标，再把动作前提加入剩余需求。片段将正效果、负效果与前提表示成事实集合，负效果与目标冲突时拒绝，合并后同一键出现矛盾值时也拒绝。bestCost按规范化"
+    },
+    {
+      "sha256": "c1f581f92f7e36aec894747b6f697afcabb2c4f7d558d448632a232cac66e802",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "计划只是意图，不保证底层动作一定成功。执行器要报告完成、失败、取消和超时，规划器据此更新事实。调试时同时保存搜索过的状态、被拒绝的前提和最终成本。"
+    },
+    {
+      "sha256": "a38c22ded9095b86f4bcc3e0a8ace7a806e44668a05308b39cd59559345e4543",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "回归时若把“冲出掩体捡弹药”直接作为最后动作，它的负效果删除了目标中的在掩体，应拒绝这个位置。先选择“进入掩体”作为最后动作，再回归到补弹，则可以形成合法的“补弹→进入掩体”。这说明负效果检查针对本次"
+    },
+    {
+      "sha256": "233ca1416c79f3c7a9e1ba4266f0d1fe5eaa7406939d47609851437024e486f6",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "搜索队列按成本、稳定动作ID排序，事实集合采用固定键序列作为去重键；到达预设的展开节点上限（例如每次5000个）返回预算耗尽，不把未完成搜索当成证明无计划。零成本循环只在改善某个事实集的最佳成本时重新"
+    },
+    {
+      "sha256": "7aa2a2862ca07f2058c8fb806cdb1adb52c0177c57f1bcefdc21b60ea5ccfbf1",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "### HTN分解与状态推进"
+    },
+    {
+      "sha256": "e88edf899f6cbe079f554c5fbea77770d7908f931c0ac48ad06cf7377869ab0c",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "层次任务网络（HTN）用领域方法将复合任务拆成子任务。同一守卫需要撤退时，领域方法可按门状态选择[进入掩体]，或[取得钥匙,开门,进入掩体]。规划器的节点保存临时状态、待展开任务列表与原子计划；取首任"
+    },
+    {
+      "sha256": "2b128e0143e9c99046a9c285d413cdfc0c02d05e9915bc82bbebbe4175b0c4c2",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "假设掩体在锁门之后，第一个方法要求门已开启，前提不满足，规划器恢复该方法展开前的临时状态，再尝试[取得钥匙,开门,进入掩体]。取得钥匙的效果先写入临时状态，开门才会通过；方法失败时连同这份临时效果一起"
+    },
+    {
+      "sha256": "46230043ce4b4182f33b611c74823ab182e42c62c11df8e6633b8caf1928e5ad",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "临时推演只用于找计划。真实执行取得钥匙失败，世界里仍没有钥匙，执行器不会继续开门，也不会把规划快照写回场景。GOAP与HTN都把原子动作交给同一动作账本，只有宿主确认成功才推进计划；取消时按活动实例释"
+    },
+    {
+      "sha256": "42b05bbbfb8a3dbfdbf2a474089058268f8e0abd9f364f9e4da3ae9f64e3e0b8",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "source_excerpt": "## 组合调度与提交"
+    },
+    {
+      "sha256": "bbc6ba227a1ed9d4aa7622d339b6b006ebf1807ba1fe213e514647d0bb5380ee",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "source_excerpt": "各模型已经说明怎样选择与执行，组合时还要确定哪一层拥有计划、哪一层可以发动作，以及一次选择在哪个提交点生效。守卫受伤后转入撤退，下面沿这次交接连接它们。"
+    },
+    {
+      "sha256": "dd520a2ca894787f195ebd0a8eac3eac2e9fc58c6a6ac2ffcf0a93cf62b95d3f",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "source_excerpt": "### 模式进入与规划交接"
+    },
+    {
+      "sha256": "ef27358cdc28134a395f94309b1107bf7cb8fd411a8ba70d75f3b3d9272ea9ff",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "source_excerpt": "撤退需要规划，但创建模式实例与找到计划是两个完成边界。组合配置的Enter在调度入口同步校验模式配置、目标门禁和上下文容量，准备模式实例ID、计划代次、目标读集与Planning记录。提交成功时把模式"
+    },
+    {
+      "sha256": "9b4a5b0d0606dcaa0bed7af07c2f3b9217ebae8c3130ee196b67f25d897fe544",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "source_excerpt": "规划在Enter的提交完成后推进。第一次提交保存Planning、模式实例、计划代次、输入快照与查询ID，并将规划请求写入出站表。派发器随后执行该请求：同步配置在本机有界计算，异步配置交给工作线程。两"
+    },
+    {
+      "sha256": "2cb1ac1c486b4d51f2e80dd8a2681b0432873b3b4838ce7627e0e1f7da109617",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "source_excerpt": "采用计划时，调度器校验模式实例、计划代次和读集，把有序原子步骤映射成记忆型顺序树。每个步骤固定动作类型、参数、前提与效果核对规则，对应一片动作叶。步骤开始前复查前提；叶消费宿主成功回执时先核对实际效果"
+    },
+    {
+      "sha256": "f10ab1e73927134274cc048fa561f6ee224b6c88f7589e82d78cf28b78541934",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "source_excerpt": "非空计划的第二次提交消费规划候选，再共同保存计划安装、树实例、Executing阶段和首叶待发命令。空计划先核对当前事实：目标成立则共同保存候选已消费与Satisfied读集，不创建树或首命令；目标未"
+    },
+    {
+      "sha256": "9c4073b57a9c6ccebce558254e71b01d605ca92a83ce91ce0f176015fc2002d6",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "source_excerpt": "采用前重新核对模式、目标、计划代次与输入读集，再准备树及命令记录的容量。Planning没有活动树；准备失败也没有叶可以派发。决策日志与失败回执使用独立预留空间；树槽不足仍能提交等待或失败记录。候选按"
+    },
+    {
+      "sha256": "47545a8a5b44c1e92017bc706b2eb9d953140e73c6045b8e4729251665313e30",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "source_excerpt": "每个决策轮只有一次提交和一个独立轮号。同一逻辑Tick可先完成进入轮，再完成同步规划候选的采用轮；后一个轮号产生新的命令序号空间。这样命令ID仍由NPC实例、轮号和轮内序号唯一确定，计算速度不会改变提"
+    },
+    {
+      "sha256": "26497c17e894872acc8b68a404726e758f89a62b71bfad22bbd6d4b118dc68fd",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "source_excerpt": "在容量充足的撤退分支中，日志L110提交模式M8、计划1、Planning和查询P12，Enter在这里完成；派发P12得到[补弹,进入掩体]后，L111才提交树B9及首命令C18。L110以前中断，"
+    },
+    {
+      "sha256": "34822b86697785c2a55925ef9847a6e64e25a93aa96093c4eb8509bdce67a559",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "source_excerpt": "#### 候选采用失败"
+    },
+    {
+      "sha256": "40ef829f4bece50f0186449355b917cb9a4116d1742e5a9ba88e14e14486a123",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "source_excerpt": "| 失败条件 | 本次决策提交 | 下一轮动作 |\n|---|---|---|\n| 候选模式实例或计划代次已过期 | 将旧候选置Discarded，保存拒绝原因，当前有效计划保持原状态 | 继续当前计"
+    },
+    {
+      "sha256": "d79e4b29db7db823c773c40273f24dfe1113b468d826f80d4d24e650e3e1c19d",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "source_excerpt": "WaitingCapacity首次发生时保存当前Tick加3的截止值，每个后续逻辑Tick最多尝试一次。到截止仍不能安装，就把候选置Rejected，按一次规划采用失败消费，计入同一目标的连续失败预算"
+    },
+    {
+      "sha256": "58269a31f30878db827326c06613d67869a42bbe44ce78cdb4f5f0157dc97b06",
+      "target_path": "知识库/20_游戏AI/决策计划提交.md",
+      "source_excerpt": "假设L110已进入M8，Tick50收到P12候选，但树槽不足。L111保存WaitingCapacity和截止Tick53，M8仍为Planning，尚无B9或C18。Tick51容量仍不足，只保存"
+    },
+    {
+      "sha256": "075f505e40fdbd499118f24d7f28344f7d583910c0fea7d62b11c6b662a0448b",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "## 计划终态与恢复"
+    },
+    {
+      "sha256": "8b68e323380aefa64261a8a4989e14b0725aa0b34904c9a87c05ad7f50cba9d0",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "### 模型组合的状态推进"
+    },
+    {
+      "sha256": "eb0965cf69bf51f3408973f2c1ebfd2cfa83ed340f34cad0d21c2058c71e37a3",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "| 决策边界 | HFSM实际路径 | 目标与计划 | 行为树及命令 |\n|---|---|---|---|\n| 快照42 | 根/战斗/交战 | 交战计划代次5，步骤接近→攻击 | 接近叶登记C17"
+    },
+    {
+      "sha256": "a30fb4582b6b8f74337f3c6aed4fda68c30e1b2fff24f9091cf534b68d908697",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "若快照44已有弹药，规划器只生成进入掩体，C18才是移动命令；命令载荷由实际首步骤决定。HFSM退出先等待整棵旧树结清，再结清模式持续持有的保持等资源，最后清理模式上下文。叶取消自己的动作，模式取消已"
+    },
+    {
+      "sha256": "1593986d046f9b9edc26a1112e24308612d1352d2bb792b97cccd29535c54fb5",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "快照44进入撤退以前分配上下文失败，就沿FSM的进入失败路径到安全待机；已经提交Planning以后，搜索或采用失败归当前撤退实例，按前节预算续行。两者分别发生在Enter提交之前和之后。"
+    },
+    {
+      "sha256": "3ab0a447489825afb468c0d78e2f5d0c18e012ced7fbc2d9b4823d715b870a0a",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "恢复先定位表中的交接位置：取消回执未消费就仍在交战退出中；进入提交已存在则恢复撤退Planning；采用提交已存在才恢复新树与C18。后文日志按这三种持久状态对账，内存里的目标标签不决定是否重新Ent"
+    },
+    {
+      "sha256": "7d26dd17eba9c9c261795a5510295259469e951ca29c2224f6a51ca3ce70d233",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "### 行为树终态与计划续行"
+    },
+    {
+      "sha256": "cdb66684a660aafc545962f155977453795bd6b502322c6b3335941fea343518",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "同模式内换计划保留模式实例，递增计划代次并创建新树，旧树的Finished结果保存在终态记录中。模式阶段沿前节的Planning、Executing推进，再按根终态进入Replanning、Satis"
+    },
+    {
+      "sha256": "6bd796f76c602749ad3cc7cd4d7f256940ccf888a97315a16013957fad91610b",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "| 根终态与条件 | 模式和目标处理 | 后续执行 |\n|---|---|---|\n| Success，实际事实已满足目标 | 模式保留，计划记Satisfied，保存目标成立所依据的读集 | 停止T"
+    },
+    {
+      "sha256": "cedb110dd6be401cab7731b96be07c6cd9d847b57e6f9c4a676529a8898efcd5",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "根节点Finished以前，失败叶已经完成自己的资源清理；宿主账本若尚不能确认释放，模式保持清理等待，不创建替代树。动作成功只更新实际效果，并不自动证明整个目标成立。"
+    },
+    {
+      "sha256": "b7a746fb911d69e19d46d6506b3e27b5a0d7880a3ed705e0f56b6364372246b7",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "Satisfied保存目标读集，相关事实失效时重新评估。静态掩体允许被动站立时，树结束并释放移动器；移动支撑上则由模式持有的保持实例继续占用移动器，树结束只表示计划步骤完成。两种情况都由实际站位事实决"
+    },
+    {
+      "sha256": "fa2bc4501be276bbada8b52baade428a8c1e7fba867ffc7db8336b7ecd2cd824",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "模式退出先禁止新交互并使站位事实失效，完成活动树及手部交互的取消，再登记对保持实例的取消。保持退出且账本确认资源不再属于它后，HFSM才完成该模式Exit。同模式换计划若需要移动器，也走这一保持取消入"
+    },
+    {
+      "sha256": "638fc82a9983f5360aca640bae3ba1afa53c9a62b8d071449c4328f30b2568c8",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "有活动交互时，保持失效会使其前提失效，叶完成中止后将根终态交给上表消费；没有活动树的Satisfied模式则直接等待保持恢复。两种路径都不在事实无效期间启动依赖站位的新叶。目标相同且保持仍Recove"
+    },
+    {
+      "sha256": "3fb214238a096dd506125cb3255bcf842bf651f4673674937b9860f54529ba93",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "继续快照44的无弹药分支：补弹叶失败，根返回Failure，模式仍为战斗/撤退，撤退计划1终结。调度器消费终态后登记计划2的Planning状态，新快照发现附近另一弹药点可用，规划结果绑定同一撤退实例"
+    },
+    {
+      "sha256": "6f3905faa8c907ac387ebbcd750c9e2d95ea14e4522478d0e15911b5ccbcd4ae",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "同模式重规划也沿前文的候选采用入口执行，WaitingCapacity、读集拒绝与失败预算均归当前计划代次。Planning与Replanning没有活动执行树，查询身份及候选状态随模式上下文保存。"
+    },
+    {
+      "sha256": "6c8b051920ffa221d99e9512a48bd671542d11c11c061818abe02a7ba5c7d98e",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "预算耗尽与证明无计划分别记录，但都消耗一次规划尝试；相同目标及外部输入版本下最多连续3次规划或执行失败，随后退出到安全待机，并为该目标保存30个逻辑Tick的退避。"
+    },
+    {
+      "sha256": "e31063648b10e2e230172002163cd24886bc2ba1b999773889f189b7f7b2770e",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "目标成功满足或相关外部输入的语义版本变化时重置连续失败计数；规划成功而执行失败仍属于一次失败，搜索返回可行计划本身不清零。输入依赖变化或紧急事件可以提前触发重评估；退避到期只允许新尝试，不绕过门禁。重"
+    },
+    {
+      "sha256": "ddbde6e5cae48acdf8017e01846f831230daf2029e759b2d8060f8a270881340",
+      "target_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "source_excerpt": "终态消费、失败计数、Satisfied读集或新Planning记录在同一次决策提交中保存，异步派发进入出站表。消费后尚未发出规划查询就退出，恢复续交该查询；消费前退出则重取原根终态。若再次恢复，沿原提"
+    },
+    {
+      "sha256": "cbc2642c7be9b14d1b3e81589adba2a1159a918641f5bc48e51cf15096210889",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "### 异步事件与决策重放"
+    },
+    {
+      "sha256": "17f4f2bc7c5fcae1a713e68dd5691e9faf86e61be8ed4121a417b8a462ad08c4",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "上面的正常交接依赖完成消息。守卫的移动成功与受伤同时到达时，先消费成功会让实例17正常结束；先消费受伤则开始取消，随后成功只结清取消路径。调度器为每个NPC保存递增消费序号，一轮开始冻结事件批次，按事"
+    },
+    {
+      "sha256": "5094542ddbdb19302406acded2a10980dfe9cae6dad542dcc03d74cc9e6098f3",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "有序来源缺号时暂缓其后续事件，并查询回执或请求重传；来源确认不可恢复时写入显式故障事件。取消截止也作为带逻辑Tick的事件进入批次，已提交的批次直接读取日志，恢复后的完成速度不能改变截止前收取的集合。"
+    },
+    {
+      "sha256": "797391aac7ea5337934776115e6e17265cd7870d932a73fa480ff88f92bea77c",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "#### 命令登记与宿主接纳"
+    },
+    {
+      "sha256": "14c601da2330dd6eb000d0f59075a79abf6f7dce2d89b417c4baaa5f4b9b9f84",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "决策日志的一次提交包含冻结事件、黑板差异、模型配置版本、活动模型状态和待发命令，并同时推进事件消费游标。命令ID取持久NPC实例ID、决策轮号和轮内序号，载荷包含计划代次、目标、前提读取版本与载荷哈希"
+    },
+    {
+      "sha256": "1aeadd5c4be08b49237f6fff6d4e2063ffabe2e7a54a93c7eec169bc32f8c92b",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "每条已登记命令构成持久出站表的一项。发送完成标记只帮助调度，宿主的接纳或拒绝回执才决定它是否已经交付。宿主以命令ID查询接纳账本：已存在且哈希相同就返回原实例及已有回执，哈希不同报身份冲突；不存在时检"
+    },
+    {
+      "sha256": "b441dbe9fc4ebcd756ad9804c72d0f0f242bb33bd6137bb69d33503101705100",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "守卫的C17可以经历以下三种退出位置。它们恢复后的动作不同："
+    },
+    {
+      "sha256": "355d649f9e53551f7df8d5086dd41ba25e6051815b1584cfde3d5543beb2c83f",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "| 持久状态 | 恢复采用的记录 | 续行 |\n|---|---|---|\n| 决策已登记C17，宿主没有接纳记录 | 原C17载荷，宿主给出的确定Absent结果 | 以新信封纪元补发原C17；宿主"
+    },
+    {
+      "sha256": "5792bd34f86a16e92f727520a0852fb97cf43e019b441d46504d36920bf4b502",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "Absent表示宿主持久账本在约定恢复前沿内确定没有这个ID，超时、网络失败与账本尚未加载都属于Unknown。Unknown保持等待并重试对账，不能据此补发另一ID。首次接纳前若门已关闭，C17拒绝"
+    },
+    {
+      "sha256": "b65e004bc8e1447d3aea088710ef0b4c7d5e5d377d698e743413393892a40773",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "#### 世界效果与恢复前沿"
+    },
+    {
+      "sha256": "7532fc396d3a0940a175fcea9fc8c2aa4c0d968ce53daae862624a0da3bc7b81",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "为让上表有确定输入，本页采用同一宿主有序提交日志。决策提交、宿主接纳、世界效果及终态、恢复控制记录都取得全局日志序号L。内存世界是这份日志的物化状态：宿主先持久提交效果与回执，再按效果序号应用一次；快"
+    },
+    {
+      "sha256": "d7d18e78422a6c433997f2d78dc2253bd639fbea2f2a6ecedf6f9cabcd6c3873",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "进程退出后，先关闭命令派发、动作更新与普通决策轮，并在宿主提交入口取得恢复排他锁，阻止旧进程和工作线程继续提交，再取得日志的已提交末端H。该锁保持到新纪元恢复记录提交，避免读取H以后还有旧纪元效果追加"
+    },
+    {
+      "sha256": "bd21fc68f159af0637bf6efe8f40ca11711ddf84dcf2514d44411e7b0789c8b2",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "随后以更高运行纪元写入恢复记录，包含恢复前沿H、原纪元、新纪元、活动实例的继续或安全退出决定、未完成查询的重新派发参数。该记录的宿主提交同时推进允许纪元，接纳入口和每次世界效果提交都在同一日志串行化边"
+    },
+    {
+      "sha256": "c5ace456293a5c0db2a3efe87c2ed97ffa741d6bdb97702dbf32a7c6acbbd9a6",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "例如日志L100登记C17，进程在派发前退出。恢复到H=100后，L101记录纪元7接管为8；宿主确认C17为Absent，新纪元补发原C17，L102接纳为实例17，L103记录到达及位置效果。若在"
+    },
+    {
+      "sha256": "34760c096ab5db7d24eecb4a217116a4c9ea483800831572733c0d792f194ffe",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "世界到达H且恢复记录已提交后，先对账活动动作与出站表，再开放发送。每轮先消费冻结的已有回执和紧急事件、登记所需取消，然后发送仍待交付的原命令。宿主对新接纳再次核对前提；取消与启动仍遵守资源释放次序。恢"
+    },
+    {
+      "sha256": "7b401238ba50738206c761737aa9e293d1c238e5bb5f94da4330c917614bf66b",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "新快照同时保存L位置、世界已应用位置、出站表、接纳账本、回执消费游标及活动动作阶段。模式持有的保持实例、资源归属、事实代次与恢复截止也属于这一前沿；恢复世界及所有权后先核对保持，再允许依赖站位的交互和"
+    },
+    {
+      "sha256": "ad6a7be34fbb2f5b64468df771598c60452efef6ffa1f3f354d65d75595250a2",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "只有所有受支持的快照都越过终态和消费位置，且不存在待交付或待对账引用时，才清理命令去重记录。模式仍引用的保持或取消记录继续保留。日志恢复到一半再次退出仍按同一序号重放；内存发送标记和当前线程状态都不是"
+    },
+    {
+      "sha256": "5282b3abcb97023ed46f31c98f13f2ad7005b86a4a1c24eec76a1d361738a68f",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "调试记录本轮快照、候选门禁与评分、活动节点、动作ID、资源所有者、取消原因和终态。看到角色仍追旧敌人时，先检查决策是否产生取消，再检查执行器是否完成交接，最后检查新候选是否被接纳。这样可以区分选择错误"
+    },
+    {
+      "sha256": "d36f4be582d9fa06971b78d915b419474a628c55b6b34cd170807d7e5e30adb8",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "### 逐机制反例"
+    },
+    {
+      "sha256": "d14970256eb1d4329f7f3b6c9a7d33f77f3671a9a8f01ed56a1c84f56b5f9ff8",
+      "target_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "source_excerpt": "- 确定性回放：固定种子与世界快照离线重放整局决策，逐帧比对每个 NPC 的当前节点与动作序列；任何分叉都要能定位到具体黑板键的变化。\n- 中止测试集：为每类 Observer 中止构造“打断瞬间”用"
+    },
+    {
+      "sha256": "4630c17a280d0f3beaa66b9663cbcc4036657dc2e96854efa82dcc8dcfff9d91",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "# 游戏AI决策模型"
+    },
+    {
+      "sha256": "5feec390260a558a8f700daaecccbec94d69f2012f6cd986adc078176abc5552",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "守卫正在追击敌人，敌人突然消失，下一帧又收到受伤事件。决策系统既要决定继续搜寻还是撤退，也要让旧移动真正停止，再把移动器交给新动作。只选对行为名称，还不能保证角色执行的是这次决定。"
+    },
+    {
+      "sha256": "33638ffde0168c83324eaa1d52de1f18ddb59d30dcdf6f2e6b174fad0f53aa77",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "感知层提供带时间和来源的事实，决策层选择意图，执行层操作移动、动画和技能。先确定各模型的控制职责，再沿事实、动作交接、模型机制和持久提交展开，才能解释某个时刻究竟是谁在控制角色。"
+    },
+    {
+      "sha256": "e75be644c71c5fcc013e22b33b74faadd923c0b5f9ce5a841f5ef202d63a825a",
+      "target_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "source_excerpt": "全文使用同一名守卫：它从巡逻进入交战，执行接近和攻击，受伤后转而寻找掩体。快照42、43、44分别表示接纳接近动作、受伤重选和取消完成后的最新事实。"
+    },
+    {
+      "sha256": "010182ab2af2e8cb7ff4bf23ea5286c342051d0c0edaa96337980e97ec0699d1",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "## 实现与证据"
+    },
+    {
+      "sha256": "696f69c6d78c4f7581e45bc4f1156d85509185fa88f95612e2800da0e6f003ec",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "行为树、效用和GOAP正文为机制片段。[有限键值GOAP模型](../examples/revision_16_21/review_reference.py)通过3项回归检查：拒绝破坏目标的末动作、先"
+    },
+    {
+      "sha256": "ff3caf42e0e094c9090945a09203577e08cb1a04a89e6ff87440418522a4ec16",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "## 相关主题"
+    },
+    {
+      "sha256": "3af57f91fc0e04ebfa7cd067836dc8423901e6d2ea9d47e9af387aec6a5da12c",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "- [[19_Gameplay与游戏框架/玩法事件与脚本]]\n- [[20_游戏AI/游戏AI导航]]\n- [[20_游戏AI/群体战术信息]]、[[20_游戏AI/MCTS]]、[[20_游戏AI/"
+    },
+    {
+      "sha256": "95d93065e8a34be82d81b7e09fe98d491a8db7f8a206a74bedbb19ebdf2c6ecf",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "## 参考资料"
+    },
+    {
+      "sha256": "6c565b8fdc17ae8ca9abcbe9b0ed5d7e2b8131e5c8030c864921ca61864f5a95",
+      "target_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "source_excerpt": "- [Epic Behavior Tree Node Reference：Decorators](https://dev.epicgames.com/documentation/en-us/unrea"
+    }
+  ],
+  "findings": [
+    "GOAP效果统一为有限键值赋值，明确同键异值冲突与负目标语义，伪代码状态直接说明。",
+    "拆分后跨页前文、后文和预算引用改为明确链接。",
+    "统一日志恢复明确为本文采用的一种架构，并保留未运行状态。",
+    "恢复测试清单明确标为验证用例设计，补充固定配置与事件输入，避免误读为运行成果。",
+    "各篇补充输入、输出、身份与示例日志编号定义，并将跨篇悬空过渡改为直接专题引用。"
+  ],
+  "verification_scope": {
+    "full_read": "已复读全部原文并沿快照42–44、L100–104、L110–113、Tick50–53推演；独立复核待后续审阅者执行。",
+    "runtime": "完整NPC、异步动作、持久恢复未运行。",
+    "paragraph_ledger": "按原文空行分段生成哈希去向；修订段落可通过source_excerpt识别并复核，哈希保存原段身份。",
+    "executed": "python 知识库/examples/revision_16_21/test_review_reference.py：15项通过，其中3项支持GOAP局部模型。",
+    "paragraph_coverage": {
+      "source_paragraphs": 143,
+      "mapped_paragraphs": 143,
+      "missing_hashes": []
+    }
+  },
+  "independent_review": {
+    "reviewer": "agent_split",
+    "date": "2026-10-24",
+    "scope": "完整复读导读及六篇正文，并沿模式进入/候选安装、行为树取消、GOAP回归、失败预算与日志二次恢复推演。",
+    "findings": [
+      "修正计划提交导言把模式与树同次发布的歧义：模式Enter先提交，树与首命令在后续候选采用轮共同提交。",
+      "将效用切换阈值写为分差严格大于0.1，消除中文比较范围歧义。",
+      "修正对象代数为对象代次，明确三次失败上限属于示例配置。",
+      "标题候选改为有实际定位差异的概念/机制/功能命名。"
+    ],
+    "technical_evidence": [
+      "Epic官方装饰节点文档核对Self/Lower Priority/Both/None边界；示例生命周期是本知识库设计协议。",
+      "python 知识库/examples/revision_16_21/test_review_reference.py：15项通过，其中3项支持GOAP回归机制；不证明完整NPC接入。"
+    ],
+    "unverified": [
+      "完整NPC异步动作、引擎行为树中止和持久恢复尚未运行。"
+    ]
+  },
+  "adopted_source_sha256": "322b4e9749ace2a4d33cb8c5aa0eff18bf99c553033093756803951f0ce66fe3"
+}

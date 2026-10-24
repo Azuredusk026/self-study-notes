@@ -59,12 +59,12 @@
       "deferred_title": false,
       "primary_question": "读者如何统一技术叫法",
       "content_actions": [
-        "DEEPEN",
         "FACT-CHECK",
+        "KEEP",
         "RESTRUCTURE",
         "REWRITE"
       ],
-      "final_sha256": "1765d97514363006aa44cafad4e1fb6879544ac2af2bf53c305da12d87711efa",
+      "final_sha256": "82df12094e79ae6ea6a05478c8985815c2734fb87259e9ccafbddc46e0f975d5",
       "historical_final_sha256": "e89244c9a204500ce628f2c3b88908e93d49282b1beda90164846b9d73ef665b"
     },
     {
@@ -82,10 +82,9 @@
       "primary_question": "读者如何按问题找到学习路线",
       "content_actions": [
         "FACT-CHECK",
-        "RESTRUCTURE",
         "REWRITE"
       ],
-      "final_sha256": "5eef8f00007fae9771481620b93b06415a37f5c1aae7e73212de31ae95bbbc8e",
+      "final_sha256": "7db42b17898c7007245eb6a724445ae3aa096cd045c51ea90d02500fe73dca7c",
       "historical_final_sha256": "0c4d44ad0f1ac6c30138c01f8687536635db694de2da4a9eaa4c0ae176568042"
     },
     {
@@ -477,12 +476,12 @@
       "boundary_action": "KEEP",
       "pending_split": false,
       "deferred_title": false,
-      "primary_question": "如何从空间和时间样本重建稳定图像",
+      "primary_question": "空间抗锯齿与时域方案怎样比较成本、质量和引擎接入条件？",
       "content_actions": [
-        "DEEPEN",
-        "REWRITE"
+        "RESTRUCTURE",
+        "FACT-CHECK"
       ],
-      "final_sha256": "c53a0759eefeeb2b4fc68eb65f3d8d7a101fea253b520b86e97b314606188538",
+      "final_sha256": "8623343aebeb72eed6e9f0a93fb273501f431830f1bb8c8ad103b7b2d01c6bfd",
       "historical_final_sha256": "c394d9d1b44fe7b12aa5038d208d2f079e589bf5950bd497298b4abfdef7c275"
     },
     {
@@ -2540,16 +2539,15 @@
       "title_review": "PASS",
       "title_decision": "ADOPT",
       "category_review": "PASS",
-      "boundary_action": "KEEP",
+      "boundary_action": "OVERVIEW",
       "pending_split": false,
       "deferred_title": false,
-      "primary_question": "如何让编辑器操作可预览、撤销和批量恢复",
+      "primary_question": "按技术问题选择编辑器工具的事务与批处理的专题入口",
       "content_actions": [
-        "DEEPEN",
-        "FACT-CHECK",
-        "REWRITE"
+        "RESTRUCTURE",
+        "FACT-CHECK"
       ],
-      "final_sha256": "e04d12b21af210dd2220369f15dfefc0d651550749bde0115e662a931279c9b2",
+      "final_sha256": "97fcc8e6a206dc89046749154bb3e373df7a27bc41115f7ffefdb9621a1d0f02",
       "historical_final_sha256": "1656f915fdb2871cd127333aa8758a571c61426517f8a1797d6ca0c19f7377cc"
     },
     {
@@ -2604,17 +2602,15 @@
       "title_review": "PASS",
       "title_decision": "ADOPT",
       "category_review": "PASS",
-      "boundary_action": "KEEP",
+      "boundary_action": "OVERVIEW",
       "pending_split": false,
       "deferred_title": false,
-      "primary_question": "如何从编译链接到插件ABI保持类型与资源契约",
+      "primary_question": "按技术问题选择C++工程边界的专题入口",
       "content_actions": [
-        "DEEPEN",
-        "FACT-CHECK",
         "RESTRUCTURE",
-        "REWRITE"
+        "FACT-CHECK"
       ],
-      "final_sha256": "e42a55f60b1ba2887e7ff056031fc0d12d2cec45f21ad4dd0bd34afeb7e0e507",
+      "final_sha256": "a3413ee7535dbfa0b236e78d3ac4e88c4c60f508293b5678d7cbb6758866b1e5",
       "historical_final_sha256": "dbf8b38419fddf14d26b88870b562c0c7ea92f31ea18b9455a4ee4474dd32ba4"
     },
     {
@@ -2783,14 +2779,12 @@
       "boundary_action": "KEEP",
       "pending_split": false,
       "deferred_title": false,
-      "primary_question": "如何在缓存与异步请求下读写并可靠发布文件",
+      "primary_question": "如何在缓存、短读与异步取消下把完整字节安全交给资源消费者",
       "content_actions": [
-        "DEEPEN",
-        "FACT-CHECK",
         "RESTRUCTURE",
-        "REWRITE"
+        "FACT-CHECK"
       ],
-      "final_sha256": "ca188beee287273bf72af6f5125c43a3b1a2581f3b138b3325ff24605d71f2d4",
+      "final_sha256": "1fe0f1b40252d543112f1308754f3ab5fd9d111626998d083fa5d9807d481a3f",
       "historical_final_sha256": "43b315b3e627c45bedf22ce16a55d7397559851cd3fcc1a373cfd53bcf6bc731"
     },
     {
@@ -2954,17 +2948,15 @@
       "title_review": "PASS",
       "title_decision": "ADOPT",
       "category_review": "PASS",
-      "boundary_action": "KEEP",
+      "boundary_action": "OVERVIEW",
       "pending_split": false,
       "deferred_title": false,
-      "primary_question": "如何令Agent工具任务可追踪、幂等和验收",
+      "primary_question": "按技术问题选择Agent资产管线的专题入口",
       "content_actions": [
-        "DEEPEN",
-        "FACT-CHECK",
         "RESTRUCTURE",
-        "REWRITE"
+        "FACT-CHECK"
       ],
-      "final_sha256": "9d99be355026b1943b6a50970082d31051ea0e92554af6fbd0ed73fdf9062a9c",
+      "final_sha256": "bd8b6c1d72cbdbc9ab5624b482dffa4e069dc667bb79a2f187b5a602c00fceb2",
       "historical_final_sha256": "43c0d99da0caf1d6a215fd632d1484cc0fa1b88a369ffc77ff2e04f97e7fd36f"
     },
     {
@@ -3064,17 +3056,15 @@
       "title_review": "PASS",
       "title_decision": "ADOPT",
       "category_review": "PASS",
-      "boundary_action": "KEEP",
+      "boundary_action": "OVERVIEW",
       "pending_split": false,
       "deferred_title": false,
-      "primary_question": "如何在运动与遮挡变化下复用生成特征",
+      "primary_question": "按技术问题选择视频生成时序一致性的专题入口",
       "content_actions": [
-        "DEEPEN",
-        "FACT-CHECK",
         "RESTRUCTURE",
-        "REWRITE"
+        "FACT-CHECK"
       ],
-      "final_sha256": "a11dd67779a8f14d73cee58829b783b6098939f4b35c04edb9f376aa11afd33b",
+      "final_sha256": "0a6c1cb8fdc489c206f29c9e51f5e12e063f24479b68563e5bbc3de800406feb",
       "historical_final_sha256": "aaf058dc177ccf69b833447f77059066d8624dfa787a81de9be7a164f8e2ae0a"
     },
     {
@@ -3282,17 +3272,15 @@
       "title_review": "PASS",
       "title_decision": "ADOPT",
       "category_review": "PASS",
-      "boundary_action": "KEEP",
+      "boundary_action": "OVERVIEW",
       "pending_split": false,
       "deferred_title": false,
-      "primary_question": "如何按决策问题选择行为组织模型",
+      "primary_question": "按技术问题选择游戏AI决策模型的专题入口",
       "content_actions": [
-        "DEEPEN",
-        "FACT-CHECK",
         "RESTRUCTURE",
-        "REWRITE"
+        "FACT-CHECK"
       ],
-      "final_sha256": "b118150a24839fe5c6bbed98570f96d440e0ed1db695d6f5da15c81125e12ad7",
+      "final_sha256": "322b4e9749ace2a4d33cb8c5aa0eff18bf99c553033093756803951f0ce66fe3",
       "historical_final_sha256": "991aeb390c698a13e54b90587458f3f37ed3c1d7a88f3251b8dd01b04e0c33af"
     },
     {
@@ -3485,12 +3473,10 @@
       "deferred_title": false,
       "primary_question": "如何按受控历史时刻回退碰撞体进行命中判断",
       "content_actions": [
-        "DEEPEN",
-        "FACT-CHECK",
         "RESTRUCTURE",
-        "REWRITE"
+        "FACT-CHECK"
       ],
-      "final_sha256": "a8b3d3ad490c9dd075c23b6da1f649b51b98d24a968a51f976e3bbf0fbe7eeaf",
+      "final_sha256": "5161554741a5993b31ccc280795b12fe1e7652eed331a506b724cb673a95cb86",
       "historical_final_sha256": "cecd6efbb47d54e49cd280f67a75797ac440d71add8a1daf7b37d823555c7ca1"
     },
     {
@@ -4087,6 +4073,519 @@
         "RESTRUCTURE"
       ],
       "final_sha256": "8a9cc95dbf268b36a6e2e1b12363147be7ab6ab675b17692b19e8dfb2782a5eb"
+    },
+    {
+      "current_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "final_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "final_category": "17_AIGC与Agent管线",
+      "final_filename": "资产任务编排与发布.md",
+      "final_h1": "资产任务编排与发布",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "资产任务如何连接规划、验证、审核与不可变版本发布？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "b4e3727e80aee5a9e61e1d7dd79292370b3cd0cb30f9d5d9b414a01b263213cf"
+    },
+    {
+      "current_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "final_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "final_category": "17_AIGC与Agent管线",
+      "final_filename": "资产布局的几何验证.md",
+      "final_h1": "资产布局的几何验证",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "资产布局如何在统一空间中验证几何与交互可达性？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "fc599347d8c6f31b5f06908790fa2023446f3e850db3434a4dda4c7a88c3aa7f"
+    },
+    {
+      "current_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "final_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "final_category": "17_AIGC与Agent管线",
+      "final_filename": "场景工具的条件执行.md",
+      "final_h1": "场景工具的条件执行",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "场景工具如何在并发、超时和接管下实现条件执行与恢复？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "764987141b2a64516d4dd3a686d054f68b479655fc0f6c7edd2f61251b556bdd"
+    },
+    {
+      "current_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "final_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "final_category": "17_AIGC与Agent管线",
+      "final_filename": "场景补偿的版本承接.md",
+      "final_h1": "场景补偿的版本承接",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "取消场景操作如何按局部字段和持久回执承接版本？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "6cbf6a43d429e3fd1c9c97e736bd57c0c79a47b10b143b73ee58271cc9b8243b"
+    },
+    {
+      "current_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "final_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "final_category": "17_AIGC与Agent管线",
+      "final_filename": "补偿隔离与冲突接管.md",
+      "final_h1": "补偿隔离与冲突接管",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "补偿中间态如何隔离，冲突与残留如何接管？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "5e6e25497a5c81f5542ee36f4a9b2c8db73f55cb63ad0442fe39b8773220d97b"
+    },
+    {
+      "current_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "final_path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "final_category": "20_游戏AI",
+      "final_filename": "决策输入与动作交接.md",
+      "final_h1": "决策输入与动作交接",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "感知事实如何转换为明确归属的动作请求？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "6290e9bf2e665e617610af5bf84a1b9c478622f8d0427cc29715ddd6fe639e5c"
+    },
+    {
+      "current_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "final_path": "知识库/20_游戏AI/状态机与行为树.md",
+      "final_category": "20_游戏AI",
+      "final_filename": "状态机与行为树.md",
+      "final_h1": "状态机与行为树",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "模式切换和跨帧行为如何管理生命周期？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "1577491836f8a75b70a068d2e1cfd4d893a81c98cc7974166c5c84e52ee8c47c"
+    },
+    {
+      "current_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "final_path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "final_category": "20_游戏AI",
+      "final_filename": "效用评分与目标规划.md",
+      "final_h1": "效用评分与目标规划",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "目标如何评分并展开为步骤？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "23a7d3da079289160c7f675717f1167b838cb9e264bcb2345bcf60298cbf799f"
+    },
+    {
+      "current_path": "知识库/20_游戏AI/决策计划提交.md",
+      "final_path": "知识库/20_游戏AI/决策计划提交.md",
+      "final_category": "20_游戏AI",
+      "final_filename": "决策计划提交.md",
+      "final_h1": "决策计划提交",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "规划候选如何校验并安装？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "d566b3e9aedb3ac40f98942132cdb7bad9ebf6abaa00b4edd554f6d43ffb4052"
+    },
+    {
+      "current_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "final_path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "final_category": "20_游戏AI",
+      "final_filename": "计划终态与重规划.md",
+      "final_h1": "计划终态与重规划",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "终态后如何续行并控制失败预算？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "dc18e5271ba86533c42122fa7e147bb7a948ef880b7e8e411d37b1beced4692b"
+    },
+    {
+      "current_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "final_path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "final_category": "20_游戏AI",
+      "final_filename": "决策日志与恢复.md",
+      "final_h1": "决策日志与恢复",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "命令和效果如何去重并恢复？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "53ea8d7436875626874b2b4bf1d02c1c38c487edcf5e3354534b9a7e5545272a"
+    },
+    {
+      "current_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+      "final_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+      "final_category": "16_编程与数据结构",
+      "final_filename": "C++构建与对象模型.md",
+      "final_h1": "C++构建与对象模型",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "C++源文件怎样形成可加载模块，对象布局与资源操作又受到哪些约束？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "5df6feec81e9844e65c763332528b997391722668326338e5188b5db0bf55a3c"
+    },
+    {
+      "current_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+      "final_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+      "final_category": "16_编程与数据结构",
+      "final_filename": "插件接口与对象借用.md",
+      "final_h1": "插件接口与对象借用",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "宿主怎样创建插件对象、建立借用关系并安全交接单对象关闭权？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "7aab8df0658e78d30f291f3653f5ab0ee7749e7ac914519de0b550e63d6d4ef7"
+    },
+    {
+      "current_path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
+      "final_path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
+      "final_category": "16_编程与数据结构",
+      "final_filename": "插件关闭与卸载.md",
+      "final_h1": "插件关闭与卸载",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "模块怎样停止工作、排空访问并按依赖销毁对象，最终卸载代码？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "ef2c43c1f5f6327c7fff572667b88423680626dd785232c7959fa1d1a633a685"
+    },
+    {
+      "current_path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+      "final_path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+      "final_category": "16_编程与数据结构",
+      "final_filename": "线程受限资源的关闭.md",
+      "final_h1": "线程受限资源的关闭",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "宿主怎样在指定线程完成异步撤销、窗口销毁和接口释放，并确认每个步骤的结果？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "47b0e72950c68b18e80ede004eabb852e5e5d6eb9ed38d7136190c99de69e30c"
+    },
+    {
+      "current_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "final_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "final_category": "15_资产与工具管线",
+      "final_filename": "编辑手势与撤销.md",
+      "final_h1": "编辑手势与撤销",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "如何把交互预览组织为可验证可撤销的对象事务",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "248369dee872fcf3a77c8b6cc49f00e3b13ea7a945dda179948c8f3bbd2bf20c"
+    },
+    {
+      "current_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "final_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "final_category": "15_资产与工具管线",
+      "final_filename": "批处理条件发布.md",
+      "final_h1": "批处理条件发布",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "如何使批处理在取消与崩溃后依据版本和回执安全继续",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "d0bc055863d906289627a246b45c0364135fde32a77a739457f8a90c500cca2a"
+    },
+    {
+      "current_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "final_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "final_category": "15_资产与工具管线",
+      "final_filename": "跨资源编辑恢复.md",
+      "final_h1": "跨资源编辑恢复",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "如何让对象呈现和文件版本共同服从持久编辑决定",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "469afc6635cc7474ffe6a2fd07ae342377cebfa5d33bd08ed05330b2a532db63"
+    },
+    {
+      "current_path": "知识库/21_游戏网络/异步命中结算与恢复.md",
+      "final_path": "知识库/21_游戏网络/异步命中结算与恢复.md",
+      "final_category": "21_游戏网络",
+      "final_filename": "异步命中结算与恢复.md",
+      "final_h1": "异步命中结算与恢复",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "异步历史查询如何成为可去重可回放的权威伤害决定",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "d459d1efe9b056740106738bb9cf86efaf01d00662295ca63f8730130c561d06"
+    },
+    {
+      "current_path": "知识库/16_编程与数据结构/不可变文件发布.md",
+      "final_path": "知识库/16_编程与数据结构/不可变文件发布.md",
+      "final_category": "16_编程与数据结构",
+      "final_filename": "不可变文件发布.md",
+      "final_h1": "不可变文件发布",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "如何条件发布不可变文件并恢复未知发布结果",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "62ceeed710208f7f03b2fb3c8b54a78f39c4e3ad283843a200e1d2663d7b1211"
+    },
+    {
+      "current_path": "知识库/16_编程与数据结构/文件版本代理与回收.md",
+      "final_path": "知识库/16_编程与数据结构/文件版本代理与回收.md",
+      "final_category": "16_编程与数据结构",
+      "final_filename": "文件版本代理与回收.md",
+      "final_h1": "文件版本代理与回收",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "如何在服务重启与版本排空期间保护仍被读取的文件",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "3dfc93f3af603b9f041ae0423a876f43d0520ccff83a28a7c46dd1c7eda3bb53"
+    },
+    {
+      "current_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "final_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "final_category": "17_AIGC与Agent管线",
+      "final_filename": "视频历史重投影.md",
+      "final_h1": "视频历史重投影",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "当前像素如何在历史帧中找到可信的同一表面？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "642e7ec88ad769037a747309ab90e6b93b563191b04105412c9e69595e780f91"
+    },
+    {
+      "current_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "final_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "final_category": "17_AIGC与Agent管线",
+      "final_filename": "视频生成的逐步颜色约束.md",
+      "final_h1": "视频生成的逐步颜色约束",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "如何把有效历史颜色约束接入图生图去噪？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "b010b458be0624769ba0ec26d56f0c35e37b3ab29a0973469f9fb6d05bd5b3ec"
+    },
+    {
+      "current_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "final_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "final_category": "17_AIGC与Agent管线",
+      "final_filename": "视频曝光与关键帧融合.md",
+      "final_h1": "视频曝光与关键帧融合",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "如何控制曝光漂移并处理双向关键帧传播冲突？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "6135d76e8d939d9a1c9c24a2369d1e3b5b684c988c5a91d173ee3872c213d059"
+    },
+    {
+      "current_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "final_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "final_category": "17_AIGC与Agent管线",
+      "final_filename": "视频生成任务恢复.md",
+      "final_h1": "视频生成任务恢复",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "视频传播、补洞与编码任务如何按不可变清单恢复？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "11a612dccb5777962e173711aa8b8e5ef2bacd450e4581f58293fe196b8b0953"
+    },
+    {
+      "current_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+      "final_path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+      "final_category": "02_GPU与光栅化管线",
+      "final_filename": "时域采样与重投影.md",
+      "final_h1": "时域采样与重投影",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "怎样通过亚像素抖动、运动重投影与历史权重累积重建当前图像？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "707a56bd2540d5d0f63ca9d761b6e0161416bb8266379e20e81f46052049edfa"
+    },
+    {
+      "current_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+      "final_path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+      "final_category": "02_GPU与光栅化管线",
+      "final_filename": "时域历史校验.md",
+      "final_h1": "时域历史校验",
+      "title_review": "PASS",
+      "title_decision": "ADOPT",
+      "category_review": "PASS",
+      "boundary_action": "KEEP",
+      "pending_split": false,
+      "deferred_title": false,
+      "primary_question": "重投影历史怎样经过几何拒绝、颜色裁剪与权重调整，并控制残影和闪烁？",
+      "content_actions": [
+        "RESTRUCTURE",
+        "FACT-CHECK"
+      ],
+      "final_sha256": "3bcc7f296d471152717371762d6c2a25ca2eac3e524c4e229d3212d6582cea88"
     }
   ],
   "original_records": [
@@ -4249,9 +4748,14 @@
     {
       "source": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
       "targets": [
-        "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md"
+        "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+        "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+        "知识库/02_GPU与光栅化管线/时域历史校验.md"
       ],
-      "products": [],
+      "products": [
+        "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+        "知识库/02_GPU与光栅化管线/时域历史校验.md"
+      ],
       "status": "COMPLETE"
     },
     {
@@ -4835,9 +5339,16 @@
     {
       "source": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
       "targets": [
-        "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md"
+        "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+        "知识库/15_资产与工具管线/编辑手势与撤销.md",
+        "知识库/15_资产与工具管线/批处理条件发布.md",
+        "知识库/15_资产与工具管线/跨资源编辑恢复.md"
       ],
-      "products": [],
+      "products": [
+        "知识库/15_资产与工具管线/编辑手势与撤销.md",
+        "知识库/15_资产与工具管线/批处理条件发布.md",
+        "知识库/15_资产与工具管线/跨资源编辑恢复.md"
+      ],
       "status": "COMPLETE"
     },
     {
@@ -4914,9 +5425,20 @@
     {
       "source": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
       "targets": [
-        "知识库/17_AIGC与Agent管线/Agent资产管线.md"
+        "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+        "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+        "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+        "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+        "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+        "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md"
       ],
-      "products": [],
+      "products": [
+        "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+        "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+        "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+        "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+        "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md"
+      ],
       "status": "COMPLETE"
     },
     {
@@ -4990,9 +5512,22 @@
     {
       "source": "知识库/20_游戏AI/游戏AI决策模型.md",
       "targets": [
-        "知识库/20_游戏AI/游戏AI决策模型.md"
+        "知识库/20_游戏AI/游戏AI决策模型.md",
+        "知识库/20_游戏AI/决策输入与动作交接.md",
+        "知识库/20_游戏AI/状态机与行为树.md",
+        "知识库/20_游戏AI/效用评分与目标规划.md",
+        "知识库/20_游戏AI/决策计划提交.md",
+        "知识库/20_游戏AI/计划终态与重规划.md",
+        "知识库/20_游戏AI/决策日志与恢复.md"
       ],
-      "products": [],
+      "products": [
+        "知识库/20_游戏AI/决策输入与动作交接.md",
+        "知识库/20_游戏AI/状态机与行为树.md",
+        "知识库/20_游戏AI/效用评分与目标规划.md",
+        "知识库/20_游戏AI/决策计划提交.md",
+        "知识库/20_游戏AI/计划终态与重规划.md",
+        "知识库/20_游戏AI/决策日志与恢复.md"
+      ],
       "status": "COMPLETE"
     },
     {
@@ -5191,7 +5726,7 @@
   ],
   "current_content_review": {
     "date": "2026-10-24",
-    "scope": "独立复核后当前路径与导航专题归属",
-    "record": "references/independent-review-2026-10-24.md"
+    "scope": "长文独立问题整理后的当前路径与主归属",
+    "record": "references/longpage-review-2026-10-24.md"
   }
 }

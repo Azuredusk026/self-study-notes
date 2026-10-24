@@ -1,0 +1,1384 @@
+{
+  "source_commit": "bc4ed68",
+  "source_path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+  "overview_question": "资产任务各阶段如何选择对应的设计与恢复专题？",
+  "articles": [
+    {
+      "path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "primary_question": "资产任务如何连接规划、验证、审核与不可变版本发布？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "任务状态与产物",
+        "状态推进",
+        "任务与产物记录",
+        "推理与工具接口",
+        "角色与数据契约",
+        "工具参数与执行边界",
+        "调度职责",
+        "资产验收与发布",
+        "审核与不可变候选",
+        "批准记录与发布回执"
+      ],
+      "title_candidates": [
+        "资产任务编排与发布",
+        "资产任务状态与发布",
+        "Agent任务编排"
+      ],
+      "reviewed_sha256": "b4e3727e80aee5a9e61e1d7dd79292370b3cd0cb30f9d5d9b414a01b263213cf"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "primary_question": "资产布局如何在统一空间中验证几何与交互可达性？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "室内场景的结构化规划",
+        "规划的数值约束",
+        "缩放与空间度量",
+        "交互站位与可达性",
+        "缩放变化与补偿验证",
+        "连续站位区域的验证结果"
+      ],
+      "title_candidates": [
+        "资产布局的几何验证",
+        "资产布局验证",
+        "场景几何与交互验证"
+      ],
+      "reviewed_sha256": "fc599347d8c6f31b5f06908790fa2023446f3e850db3434a4dda4c7a88c3aa7f"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "primary_question": "场景工具如何在并发、超时和接管下实现条件执行与恢复？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "读取版本与条件执行",
+        "操作登记与恢复对账",
+        "工具执行的并发交接",
+        "创建操作与持久标记",
+        "失败恢复",
+        "幂等与重试",
+        "生成服务与不确定结果"
+      ],
+      "title_candidates": [
+        "场景工具的条件执行",
+        "场景操作的条件提交",
+        "场景工具的恢复对账"
+      ],
+      "reviewed_sha256": "764987141b2a64516d4dd3a686d054f68b479655fc0f6c7edd2f61251b556bdd"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "primary_question": "取消场景操作如何按局部字段和持久回执承接版本？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "补偿与版本恢复",
+        "补偿坐标与父变换",
+        "连续移动的补偿承接",
+        "父子关系与跨对象版本"
+      ],
+      "title_candidates": [
+        "场景补偿的版本承接",
+        "场景操作的补偿恢复",
+        "场景补偿版本链"
+      ],
+      "reviewed_sha256": "6cbf6a43d429e3fd1c9c97e736bd57c0c79a47b10b143b73ee58271cc9b8243b"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "primary_question": "补偿中间态如何隔离，冲突与残留如何接管？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "补偿中间状态与最终门禁",
+        "冲突决议与续行"
+      ],
+      "title_candidates": [
+        "补偿隔离与冲突接管",
+        "取消任务的残留接管",
+        "场景补偿隔离"
+      ],
+      "reviewed_sha256": "5e6e25497a5c81f5542ee36f4a9b2c8db73f55cb63ad0442fe39b8773220d97b"
+    }
+  ],
+  "mappings": [
+    {
+      "source_heading": "任务状态与产物",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "target_heading": "任务状态与产物",
+      "source_body_sha256": "52f9d72ad0ef29862a5a26478d5deaead634358b989a3838747df31a14faa372",
+      "reviewed_body_sha256": "52f9d72ad0ef29862a5a26478d5deaead634358b989a3838747df31a14faa372"
+    },
+    {
+      "source_heading": "状态推进",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "target_heading": "状态推进",
+      "source_body_sha256": "e84364ad094227959439e7239bad3d9e5dcb85e385d7a8dec56c40c316eb70b7",
+      "reviewed_body_sha256": "8881ea8cf1ab454107dc69addff25395487810bd76e16ca82c4ee6ce3cfbeb56"
+    },
+    {
+      "source_heading": "任务与产物记录",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "target_heading": "任务与产物记录",
+      "source_body_sha256": "0409270b93e3ffaa7ae7947430d42f78688dc12471ea7145aa7779f0afbc0d44",
+      "reviewed_body_sha256": "0409270b93e3ffaa7ae7947430d42f78688dc12471ea7145aa7779f0afbc0d44"
+    },
+    {
+      "source_heading": "推理与工具接口",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "target_heading": "推理与工具接口",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_heading": "角色与数据契约",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "target_heading": "角色与数据契约",
+      "source_body_sha256": "0816235de5095aa75546fdbfdeea8b21ecb3febb500ca02eac1d18f0e0a0125d",
+      "reviewed_body_sha256": "0816235de5095aa75546fdbfdeea8b21ecb3febb500ca02eac1d18f0e0a0125d"
+    },
+    {
+      "source_heading": "工具参数与执行边界",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "target_heading": "工具参数与执行边界",
+      "source_body_sha256": "2d974ef53b8e740d4e1ba8b137bab9b5a46a98846c50cce7336ebe86c0a7fc40",
+      "reviewed_body_sha256": "2d974ef53b8e740d4e1ba8b137bab9b5a46a98846c50cce7336ebe86c0a7fc40"
+    },
+    {
+      "source_heading": "调度职责",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "target_heading": "调度职责",
+      "source_body_sha256": "df24b7a9c39b401c2a5a4561440f6a5d7ff89215f44422700976f9b6116c22c5",
+      "reviewed_body_sha256": "ec8e9a6889e21b87385a86bd2945b9cad6094865ecbba25001aca656c414334f"
+    },
+    {
+      "source_heading": "室内场景的结构化规划",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "target_heading": "室内场景的结构化规划",
+      "source_body_sha256": "4a5e44f3490cd75abb42cb0411e4d52809de7e855b6feaf50c77d840897c9872",
+      "reviewed_body_sha256": "4a5e44f3490cd75abb42cb0411e4d52809de7e855b6feaf50c77d840897c9872"
+    },
+    {
+      "source_heading": "规划的数值约束",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "target_heading": "规划的数值约束",
+      "source_body_sha256": "f31431536921f277f98c1af77afcaa5f2eff1e9669de24fd334379aaab2e613e",
+      "reviewed_body_sha256": "45a53fff0837c519a982acceb5537f1dc2106b0e23b9b0052171e485447209b7"
+    },
+    {
+      "source_heading": "缩放与空间度量",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "target_heading": "缩放与空间度量",
+      "source_body_sha256": "c0338c47cddcee80de49e910f986a4040dc32cc8ad971bb86293728dfe4eebdd",
+      "reviewed_body_sha256": "a14d6f3618ba145533cd85c2e8595d9b441e9a564fdd21a88ec18bc2bce9b405"
+    },
+    {
+      "source_heading": "交互站位与可达性",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "target_heading": "交互站位与可达性",
+      "source_body_sha256": "a04a7fc866eb022e619395ccfd56e021ba6b5aed680a6847bc227fefed88765c",
+      "reviewed_body_sha256": "a04a7fc866eb022e619395ccfd56e021ba6b5aed680a6847bc227fefed88765c"
+    },
+    {
+      "source_heading": "缩放变化与补偿验证",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "target_heading": "缩放变化与补偿验证",
+      "source_body_sha256": "2520099c3ee248901dd709a76eb0a24abdc22d21af8ee9e0dac948e5c5a66362",
+      "reviewed_body_sha256": "2520099c3ee248901dd709a76eb0a24abdc22d21af8ee9e0dac948e5c5a66362"
+    },
+    {
+      "source_heading": "读取版本与条件执行",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "target_heading": "读取版本与条件执行",
+      "source_body_sha256": "858d669f10a12f16723ae4f4b04ac35f0d51b9a2a81f738dfefe3faa1fc25fb0",
+      "reviewed_body_sha256": "9682edfde7c68e64e0540caf11768bb6b70eb208b62273c30057a46c5610482f"
+    },
+    {
+      "source_heading": "连续站位区域的验证结果",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "target_heading": "连续站位区域的验证结果",
+      "source_body_sha256": "706a8ea393ca9933caabfbe2cdafacc55106005e0eef13110e97d1aa35b01ffe",
+      "reviewed_body_sha256": "80352b7f55648bd53ec17d344355485e07e08b652b88f9e17faf692dd7621ccf"
+    },
+    {
+      "source_heading": "操作登记与恢复对账",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "target_heading": "操作登记与恢复对账",
+      "source_body_sha256": "5aadb387fa357dfce6eeef5903a4464a394daf51e58ca4efbe63f20dbd4d0884",
+      "reviewed_body_sha256": "838a95da296950a819053b7687aa2dcecdd60c3f86b3d50eba16f67f60b1ca87"
+    },
+    {
+      "source_heading": "工具执行的并发交接",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "target_heading": "工具执行的并发交接",
+      "source_body_sha256": "e66d173bb9b1c0ac28519475f12fa8e7e427f16ccae41eaa8d7ef16c0008c6d3",
+      "reviewed_body_sha256": "e66d173bb9b1c0ac28519475f12fa8e7e427f16ccae41eaa8d7ef16c0008c6d3"
+    },
+    {
+      "source_heading": "创建操作与持久标记",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "target_heading": "创建操作与持久标记",
+      "source_body_sha256": "118bd5ca99f45dc788db88f40a79b495c3e780f5f47700d63f1067ba41cb23a3",
+      "reviewed_body_sha256": "77829eb92ab72ec186d8677867f26c6cac301b394d5d65b91ff4a5cbf7d56f38"
+    },
+    {
+      "source_heading": "失败恢复",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "target_heading": "失败恢复",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_heading": "幂等与重试",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "target_heading": "幂等与重试",
+      "source_body_sha256": "5a7fe0336511814c3d71458863161aab183bd9ec44bae2dab2cb5c2756b77bf3",
+      "reviewed_body_sha256": "5a7fe0336511814c3d71458863161aab183bd9ec44bae2dab2cb5c2756b77bf3"
+    },
+    {
+      "source_heading": "生成服务与不确定结果",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "target_heading": "生成服务与不确定结果",
+      "source_body_sha256": "1056af6a18716a716698d9038c443cad7488e37e011dd7ed4181aeaf848dc575",
+      "reviewed_body_sha256": "1056af6a18716a716698d9038c443cad7488e37e011dd7ed4181aeaf848dc575"
+    },
+    {
+      "source_heading": "补偿与版本恢复",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "target_heading": "补偿与版本恢复",
+      "source_body_sha256": "2667798a637b75a3767ef997b617e80bf99e710d432033c14448e5ad18e5fc14",
+      "reviewed_body_sha256": "2667798a637b75a3767ef997b617e80bf99e710d432033c14448e5ad18e5fc14"
+    },
+    {
+      "source_heading": "补偿中间状态与最终门禁",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "target_heading": "补偿中间状态与最终门禁",
+      "source_body_sha256": "8ec013bf1ad6f0e6c56801764b3028046341140c43c67d3ff0c75cbc61d6a2c0",
+      "reviewed_body_sha256": "1f5dd19ad6c3b39cd679ef88afeabd545cd5b3936c0d75a34db46cfa3291fd37"
+    },
+    {
+      "source_heading": "补偿坐标与父变换",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "target_heading": "补偿坐标与父变换",
+      "source_body_sha256": "9f8bd36bc8073c05ddedf5cc124f7ead724b8eabfa1e34492a568710a6d25b2d",
+      "reviewed_body_sha256": "034be6874d65aaf1b726084791f207621bde8a457b427eda0bf43bd60a27f72c"
+    },
+    {
+      "source_heading": "连续移动的补偿承接",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "target_heading": "连续移动的补偿承接",
+      "source_body_sha256": "3f861069f11b6fad12d0ceca459be2582cb3bf04d626ceff231cf38a417a8fdb",
+      "reviewed_body_sha256": "3f861069f11b6fad12d0ceca459be2582cb3bf04d626ceff231cf38a417a8fdb"
+    },
+    {
+      "source_heading": "父子关系与跨对象版本",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "target_heading": "父子关系与跨对象版本",
+      "source_body_sha256": "36075d5a9f2f47382d1602cb6534d68e5fd633fef346602181fe08d1083e77f9",
+      "reviewed_body_sha256": "36075d5a9f2f47382d1602cb6534d68e5fd633fef346602181fe08d1083e77f9"
+    },
+    {
+      "source_heading": "冲突决议与续行",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "target_heading": "冲突决议与续行",
+      "source_body_sha256": "921e7217dfb7a0f29c249b83c8ea441f3cada400d3342d76db802e61496ccfdd",
+      "reviewed_body_sha256": "c0b50fa793adf8fc7f929a45b1e8e462cb0e4af6b97b7818c981aa7fe888cb7a"
+    },
+    {
+      "source_heading": "资产验收与发布",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "target_heading": "资产验收与发布",
+      "source_body_sha256": "f9a88d1c41d2913ca230bb8f80e5bae44ff55c3c8f86b4bc47e168f9c9222e6b",
+      "reviewed_body_sha256": "caa09765349bd5e7124705f3b304bf41f146690d166ee732f049811f247f4a21"
+    },
+    {
+      "source_heading": "审核与不可变候选",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "target_heading": "审核与不可变候选",
+      "source_body_sha256": "9bedc99071ff46162d8d4fe3acbf23c09f03ae7452d19b42b6e597866af99311",
+      "reviewed_body_sha256": "026deb67841fb4bfd6b39a2a66e3120ab1302f86aae9494dfa3a277bd6a22e77"
+    },
+    {
+      "source_heading": "批准记录与发布回执",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "target_heading": "批准记录与发布回执",
+      "source_body_sha256": "d2807840e7c50f0d3a5e2e0bcfe78b55dc14474c5ef3c1bfcb840557a569a611",
+      "reviewed_body_sha256": "d2807840e7c50f0d3a5e2e0bcfe78b55dc14474c5ef3c1bfcb840557a569a611"
+    },
+    {
+      "source_heading": "实现与证据",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "target_heading": "实现与证据",
+      "source_body_sha256": "eff71df095b1482d2012f566ea23283042f4c960a4ab79ace2d29d13a37e1128",
+      "reviewed_body_sha256": "7501d032f3164057ebb1f46adf97930ae5c1fbd64575460085a7218c3a7df093"
+    },
+    {
+      "source_heading": "相关主题",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "target_heading": "相关主题",
+      "source_body_sha256": "7a00584f1b8b0616f8dca7026e4661b6bf9664a9799d19378c76790d7fd5ea57",
+      "reviewed_body_sha256": "e03445f3b3ca7d100cd380070fd6d880180cf52d4046c329551acb3f2db4d191"
+    },
+    {
+      "source_heading": "参考资料",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "target_heading": "参考资料",
+      "source_body_sha256": "24365127ae01617d4df747fe46ff18684d394b16d06a5427312dd7d87629b853",
+      "reviewed_body_sha256": "24365127ae01617d4df747fe46ff18684d394b16d06a5427312dd7d87629b853"
+    }
+  ],
+  "paragraph_mapping": [
+    {
+      "sha256": "6f70f15aabf3bf35b1ad4792d868fe35dad697018c6536d538293f1d72e3c619",
+      "source_heading": "Agent资产管线",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "# Agent资产管线"
+    },
+    {
+      "sha256": "85b499dea16f73343064f438cb8d17979f1eea44005a40db034842813d4a9121",
+      "source_heading": "Agent资产管线",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "一张餐桌放进房间后，几何检查通过了，入口到座位的通道却被挡住。规划器把桌子移开，视觉审核又要求取消这次布局。此时系统既要恢复任务自己的修改，也要保留期间发生的人工编辑；工具超时或进程中断还可能让执行结"
+    },
+    {
+      "sha256": "69081591634c0983c1f995a26133a197059284a75ab991ca97e006ea8548f64b",
+      "source_heading": "Agent资产管线",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "模型从需求中找出候选资产，工具把资产写入场景，验证器判断结果是否符合要求。三者处理不同的信息：模型处理语义与候选，工具执行明确的状态变化，验证器读取实际产物。任务记录连接这些步骤，中断以后据此恢复。"
+    },
+    {
+      "sha256": "297870fd404801265c93c6905cd2fe06a8ed18ea670c59ae1649e3ff1d12885e",
+      "source_heading": "Agent资产管线",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "本文沿任务J布置房间R和桌子T。J先创建房间与桌子，移动A调整桌子位置，导航拒绝后移动B让出通道。技术门禁通过时进入视觉审核；审核取消则逆序撤销B、A和创建操作。人工编辑与取消相遇时，审核者决定保留哪"
+    },
+    {
+      "sha256": "9a1c0b8af905739cc329ff338dd72612c175b75175d26b857e517f46112a6ebf",
+      "source_heading": "任务状态与产物",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "## 任务状态与产物"
+    },
+    {
+      "sha256": "6bccad820e97529df77d8c02d685574e542f1ed6d539c87ce6c9455b3a2b1018",
+      "source_heading": "任务状态与产物",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "任务先记录自己推进到哪里，再记录这一阶段实际产生的场景与报告。J把移动A后的验证命名为V1，移动B后的验证命名为V2；两份报告分别归属自己的布局快照。下面的记录串起正向执行、审核和取消。"
+    },
+    {
+      "sha256": "03af7462c829b798d9c2e7e41c1620a8a82b2dcb1b5103904356d80c989283ba",
+      "source_heading": "任务状态与产物",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "| 阶段 | 消费的记录 | 产生的记录 |\n|---|---|---|\n| 创建与移动A | 固定资产、场景读集和条件计划 | 宿主回执、实际对象与关系版本 |\n| V1拒绝、移动B | V1失败位"
+    },
+    {
+      "sha256": "0d67cc3a63cb56fa10bedc2a6b001f5868abfee15a8f1e8196a6c578c334ad02",
+      "source_heading": "状态推进",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "### 状态推进"
+    },
+    {
+      "sha256": "3907634c66c272577cb1cc5dfe76b8b475d28611afe9d0085b94c6c411df4cec",
+      "source_heading": "状态推进",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "任务从接收需求进入解析、规划、计划校验、执行、技术验证和视觉审核。每次转换记录前置条件、输入、输出和责任方。执行失败进入返工或失败状态，取消先停止派发新操作，等待已发工具返回终态或完成对账，再按登记补"
+    },
+    {
+      "sha256": "60e504bab1534417c292bb7c5212aadf98d77bbaced1d9b5d7fd435becd9290f",
+      "source_heading": "状态推进",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "```text\nReceived -> Parsed -> Planned -> PlanValidated -> Executing\n         -> TechnicalValidation "
+    },
+    {
+      "sha256": "1bb93d8d91ac9ea15fd37b725e21224403f1c13f8fefb0ef7249563d1ec837c6",
+      "source_heading": "状态推进",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "这是流程状态定义。调度器将当前状态与输入输出ID持久化，模型上下文只用于重建推理所需的信息。若资产已经生成但状态记录丢失，恢复时通过操作ID与产物清单对账，而不是重新生成一份。"
+    },
+    {
+      "sha256": "461e5e153976bb0a0d6144287f9dcdb23a65db3e89c64feb6771002ff8c7f477",
+      "source_heading": "任务与产物记录",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "### 任务与产物记录"
+    },
+    {
+      "sha256": "8f23eacb2a6e687537ff77b74c408d702842d3263b96aa95e3dbc265dc064c2c",
+      "source_heading": "任务与产物记录",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "任务记录保存需求、目标平台、约束、工作流版本、工具权限、当前阶段、尝试次数、输入输出ID、验证结果和成本。产物记录保存稳定ID、内容哈希、来源与许可、派生关系、模型与工具版本、提示词、随机种子、编辑历"
+    },
+    {
+      "sha256": "041e411dca096d4045fee7e4f2004aeb0eb605282cc932b98157eed2dbcf856c",
+      "source_heading": "任务与产物记录",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "这条派生链让维护者能回答“哪个输入产生了这个模型”“换一个依赖会影响哪些下游资产”。文件名相同而哈希不同，就是不同内容。人工调整形成新版本，并保存它相对上一生成版本的字段差异。重跑时以旧生成G0为共同"
+    },
+    {
+      "sha256": "deb6f75631c974e8d0fa102c8ac3f4d4d47006d166f9e08d280f8c4c02f1651e",
+      "source_heading": "推理与工具接口",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "## 推理与工具接口"
+    },
+    {
+      "sha256": "6bb36151663d104b8fa9c03a4138a67cdf2c63d1c5a2e1129aea3a24a985f6a7",
+      "source_heading": "角色与数据契约",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "### 角色与数据契约"
+    },
+    {
+      "sha256": "d1bcbd8faa3a5862c7c68a6098b48c1df1dc3cde76100e792e0cdbdd4bd9c228",
+      "source_heading": "角色与数据契约",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "需求解析角色输出尺寸、风格、预算和格式，缺失与冲突单独记录。规划角色把需求分解成功能区、通道和约束；资产选择角色在批准目录内筛选候选；执行角色只应用已校验的目标布局。验证角色读取结果与既定规则，输出具"
+    },
+    {
+      "sha256": "76c111d61e0538fbaddc26b04f890530d9161d64b3bd2878b82f09560eb73770",
+      "source_heading": "角色与数据契约",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "每个角色声明输入、可调用工具、输出结构、判断标准和失败表达。输出先经过结构校验，再进入下一阶段。模型生成了合法JSON，只能说明字段可解析；资产是否存在、尺寸是否兼容、布局是否可达，仍由数据查询与规则"
+    },
+    {
+      "sha256": "5f5b2f595bf821fb7f031b0cd9e7be32b86c2aad845e563e0083b23fb28c2274",
+      "source_heading": "角色与数据契约",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "提示词保存稳定职责和少量示例，当前资产通过检索返回有限候选。查询先按许可、平台、尺寸上限和格式等硬约束过滤，再把剩余条目的稳定ID、版本、尺寸、预算与预览交给模型排序。模型选中的ID必须属于该次结果集"
+    },
+    {
+      "sha256": "1e7248e2028f5fbc8fc5515fbeab628f4b33939affab468f7c0192ee7dda512f",
+      "source_heading": "角色与数据契约",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "计划校验还检查父子引用无环、每个目标ID唯一、变换数值有限，以及每项操作所需权限。结构合法后才计算几何和预算；执行器只接受同一计划哈希，不允许模型在执行过程中无记录地换资产。这样每次决策都能对应到实际"
+    },
+    {
+      "sha256": "0538d472d7317cc017399b12bab7107d4345bcee1735fd1f9f58b348a539d491",
+      "source_heading": "工具参数与执行边界",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "### 工具参数与执行边界"
+    },
+    {
+      "sha256": "8f6c65b59a9e8031c634d7eb1e711406488700c8c5ad4e50c1dc09f7155f3eaa",
+      "source_heading": "工具参数与执行边界",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "```text\nsearch_assets(query, constraints)\nget_asset_metadata(asset_id)\nspawn_asset(asset_id, transfo"
+    },
+    {
+      "sha256": "8ec691072b808a9d3f81d98b90b56e90150f01461f22c033e37e675ca67a9e23",
+      "source_heading": "工具参数与执行边界",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "这是接口示意。变换参数注明单位与坐标系，资产与场景使用稳定ID，修改操作带操作ID、计划哈希、读取集合和修改集合。返回值包含结果、实际变更的产物、错误码、警告与重试属性，便于调度器区分输入错误和暂时性"
+    },
+    {
+      "sha256": "7dccb6f4ebf5bc8e17be49f0f3310533281778c74be7db2f7f844b4fd9f49caf",
+      "source_heading": "工具参数与执行边界",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "规划器只读需求与目录，执行器写入任务专属暂存场景，验证器读取产物并写报告，发布器在批准条件满足后切换正式版本。路径与网络范围由执行层校验；外部文档、资产名和元数据始终作为数据处理，其中出现的命令不能改"
+    },
+    {
+      "sha256": "dad7d9553b68d746ad5a1b772c854643c8fe1344472b0abbce9904734d6e08e2",
+      "source_heading": "调度职责",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "### 调度职责"
+    },
+    {
+      "sha256": "0a357e8b7dd2b92458c6dbbf11d00e45e9d9ec603e0e9bbc2c862da125239cec",
+      "source_heading": "调度职责",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "调度器负责状态转换、截止时间、取消、并发配额、持久化和人工审核。模型在需要语义判断的节点提出候选，确定的执行与门禁由代码推进。工具长期无响应时，调度器保留请求ID并查询状态，避免把超时误记为未执行。"
+    },
+    {
+      "sha256": "8950656da8bdbecc9be5bec1693423e850ef1757d9e2830725328990f0be7092",
+      "source_heading": "调度职责",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "这些职责确定以后，规划器还需要把“桌子不要挡路”变成可测的几何条件。尺寸、碰撞、站位和导航使用同一份世界几何，验证结果才能指出应该调整哪一个对象。"
+    },
+    {
+      "sha256": "700ec2c3ce785b5f926a7c300095f2cd13048073e955961d66bbe85959b5e12f",
+      "source_heading": "室内场景的结构化规划",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "## 室内场景的结构化规划"
+    },
+    {
+      "sha256": "d1dfd454899dbca6d9ca648f4a2ded274e6d0b0190be74bdef1593b07875ab06",
+      "source_heading": "室内场景的结构化规划",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "```text\nRoom { zones, anchors, pathways, placements, lightingIntent, constraints }\nPlacement { asset"
+    },
+    {
+      "sha256": "34084f571bac6c5dbc8692398d523650039fd440b69ad04e0c584d8e751cd11a",
+      "source_heading": "室内场景的结构化规划",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "先确定房间功能区和通道净空，再查询尺寸合适的资产，最后求解位置与朝向。验证器用包围体或精确碰撞检查穿插，用导航数据检查可达性，再检查门窗净空、墙地锚点、功能距离与渲染预算。模型读取失败位置和原因，重新"
+    },
+    {
+      "sha256": "332b45ed52caed1cf777cf8a41e27cf9d7b4409a9b79c0967294afcfb7993936",
+      "source_heading": "室内场景的结构化规划",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "例如餐桌摆放满足几何不相交，却挡住门到座位的通路，碰撞检查可以通过，导航检查仍应拒绝。把两项规则分别记录，才能让返工针对通道，而不是反复缩小所有家具。"
+    },
+    {
+      "sha256": "ae41c8f33f5a0d162e43f6f07c393d5ddd596fe7c102f5e722f4bbc72f41a76a",
+      "source_heading": "规划的数值约束",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "### 规划的数值约束"
+    },
+    {
+      "sha256": "5f841d5123281813ef79ae2493594e1dd1465515b96f35dd94d33408888b83a7",
+      "source_heading": "规划的数值约束",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "假设房间内可通行矩形为4米乘3米，入口沿宽度方向需保留1米净空。候选桌子宽1.6米，若中心距左墙0.5米，半宽0.8米会越墙0.3米，布局校验先拒绝；中心移到1米后包围盒合法，仍须检查门到座位路径。规"
+    },
+    {
+      "sha256": "840355130bdbeab6f0e6bd07ea0a1017e5e6c32620aecf08660eb97777f09913",
+      "source_heading": "规划的数值约束",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "资产尺寸取自选定的不可变资产版本。操作完成后，验证器读取真实实例变换和碰撞数据；计划中的位置只是期望值，不能代替实际场景。目录更新、房间移动和其他家具变化还可能使计划的输入过期，执行条件见“读取版本与"
+    },
+    {
+      "sha256": "a14740f16ea4a755b53c8d97759c15ae47296e8b7c99529b95f0afe37f856a92",
+      "source_heading": "规划的数值约束",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "规划到执行先统一几何单位。资产顶点与尺寸元数据转换为米，实例局部矩阵L和完整祖先世界矩阵P共同把顶点送到世界空间，`x_world=P×L×x_asset`。碰撞、门窗净空和导航均消费这份世界几何；变"
+    },
+    {
+      "sha256": "b10977fbd89867949fbb5adfa2a0ac5baf66b3796bc92d10128a22291381fc3a",
+      "source_heading": "缩放与空间度量",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "### 缩放与空间度量"
+    },
+    {
+      "sha256": "0e53a875a0ee9b1a827a15215e1e022eb722eea4d0dd0993173a977b103f0db0",
+      "source_heading": "缩放与空间度量",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "角色配置中的半径、高度、台阶和净空阈值都使用世界米。假设房间局部通道宽1米，世界半径0.4米的角色需要0.8米净宽。父变换沿通道宽度方向缩放0.5后，实际净宽为0.5米，应拒绝通行；父变换放大2倍后净"
+    },
+    {
+      "sha256": "b8a8bcb3a951ec2bf6f9588ebd0fab1a6c86610b6da1484a2bbbb8a9d0f28ba5",
+      "source_heading": "缩放与空间度量",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "完整父变换的线性部分记A。局部位移d对应世界距离`length(A*d)`，平方为`dᵀ*Aᵀ*A*d`。只含旋转时长度保持；统一缩放s使局部半径变为`r/abs(s)`；非均匀缩放或剪切下，世界半径"
+    },
+    {
+      "sha256": "22f5e721ea0a7f6e3240a32d3e05d6904fbf09c2c56400f683c67a759fca000b",
+      "source_heading": "缩放与空间度量",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "本管线直接在世界空间完成检查，避免给每种规则另设局部距离算法。把变换后的碰撞网格、家具占地和门的完整开合扫掠送入验证器；有剪切的层级使用最终顶点或由其生成的保守凸体，宿主碰撞组件仅支持特定缩放时，不能"
+    },
+    {
+      "sha256": "ebc3292cff824cf8ea8dbee5f18548e7e695aff434c3160de96b6dea9d15517b",
+      "source_heading": "缩放与空间度量",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "平面布局采用世界Up定义的水平平面与正交单位基，把世界占地投影为以米计的多边形。先按角色世界半径向外膨胀家具，再向内收缩房间边界，得到角色中心可行域；轴对齐包围盒只用于保守快速拒绝。门保留开合扫过区域"
+    },
+    {
+      "sha256": "d9f8712e7791f8dc8ee6328d5a7ceea4c1e7c787d72aa95788f8776592007371",
+      "source_heading": "缩放与空间度量",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "世界网格的格长也以米计。只有整个格子处于可行域才标为可走，邻格连线与拐角余量一并检查。入口有效格到合法交互站位作连通查询，间隙小于角色直径时膨胀后的障碍相连，路径断开；保守误拒绝通过减小世界格长或精确"
+    },
+    {
+      "sha256": "734cb5a091bd064d13a93820e8323f9797ec733597ba3517329fb00fa68080b3",
+      "source_heading": "交互站位与可达性",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "### 交互站位与可达性"
+    },
+    {
+      "sha256": "6c20db11e2646991aa28f878efcc33a752ebd3f7603074450fb810f3db8329a3",
+      "source_heading": "交互站位与可达性",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "桌面上的交互触点与角色站位承担不同作用。资产版本为座位保存交互槽、局部脚点或允许站位区、接近侧、期望朝向、支撑层，以及投影容差、交互距离和射线规则。规划器先把这些位置按实际实例矩阵变到世界空间，再把角"
+    },
+    {
+      "sha256": "c469dbb668ae14ebde6d87735404edccd2182123fb97b50e78cedfd387931ba2",
+      "source_heading": "交互站位与可达性",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "假设座位脚点距墙世界0.2米，角色半径0.4米，同侧最近可走脚点距墙至少0.4米。投影需偏移0.2米：若槽位只允许0.1米，就拒绝这个站位；允许0.25米时，再检查实际胶囊、朝向、从视点或手部到触点的"
+    },
+    {
+      "sha256": "b71d4b433df73b18f818eac922f026d313976976b5a670311db0e02caac7947b",
+      "source_heading": "交互站位与可达性",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "技术报告为每个必需交互槽保存原目标、采用脚点、偏移、姿态、支撑面、实际交互检查和完整路线结果。必需槽至少有一个完整可达且可交互的姿态才通过；部分路径和候选耗尽分别记录失败原因，附近存在可走点本身不构成"
+    },
+    {
+      "sha256": "d0ad541677c389e36dacfac3facc404191cc9d7c01ec5a534eeace3f8bd8ef5b",
+      "source_heading": "缩放变化与补偿验证",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "### 缩放变化与补偿验证"
+    },
+    {
+      "sha256": "e90bbd261020938d3c35089039d73b7d9ab48842bedc9fbdceb389e5c5501236",
+      "source_heading": "缩放变化与补偿验证",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "J的读取集合包含完整祖先链、实例局部矩阵、资产碰撞与交互槽版本和角色世界体型。任一祖先缩放变化都会使世界几何及导航源哈希变化；即使T的局部位置没变，也重新构建候选世界几何、站位区和触点，不能只更新世界"
+    },
+    {
+      "sha256": "17eedf7b1d48e64b74f7ecb746fc5da482d3561b5dc3871a733ee0e2345eb887",
+      "source_heading": "缩放变化与补偿验证",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "例如R平移到世界X=10并沿X缩放0.5，撤销B恢复T局部X=1时，世界X为10.5。补偿用当前父矩阵重新生成家具的世界形状、门扫掠和交互点，再检查硬约束并生成布局诊断。通路因缩放变窄可作为隔离中间态"
+    },
+    {
+      "sha256": "ba1a7fab0bbc1273de29c572d0450f70572daed160c52d6b9e263d332b0a1d69",
+      "source_heading": "读取版本与条件执行",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "### 读取版本与条件执行"
+    },
+    {
+      "sha256": "844649702c044796ff9f0d7302fcf8f7ff6c5e75e348ea929ff95286d2a90231",
+      "source_heading": "读取版本与条件执行",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "J根据房间R的世界变换r1，把局部位置换成桌子T的世界位置。人工随后把R移动到r2，T对象版本和父子关系都可能保持原值。此时仅比较T，执行器仍会接纳按r1算出的旧位置。问题出在操作读取了R，却只保护了"
+    },
+    {
+      "sha256": "fd70a0b42e8f8629bd25842a5380869e9c29b2b7d08b0547e81683b64aef89ce",
+      "source_heading": "读取版本与条件执行",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "计划因此保存读取集合与修改集合。读取项记录稳定ID、字段语义和版本；修改项记录目标ID、预期版本及绝对目标值。J使用以下依赖："
+    },
+    {
+      "sha256": "5a0a8663ed6afee43abd3a3d38e437f0004122a09a9f8b2c08c6e285af027e80",
+      "source_heading": "读取版本与条件执行",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "| 输入 | 版本保护的内容 | 变化后的处理 |\n|---|---|---|\n| R及祖先变换、边界、门窗、其他家具 | 变换、几何、碰撞与挂接记录 | 重建受影响世界变换和可行域，重算布局与碰撞 "
+    },
+    {
+      "sha256": "cec445e81109277658679eaa24b8a168ea4f7e32a239a199c02333d1e0fa0906",
+      "source_heading": "读取版本与条件执行",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "读取集合从同一场景快照建立。空间查询同时登记覆盖区域的集合版本；即使查询结果为空，新增对象也会改变该版本。宿主若不能提供细粒度版本，就比较整个暂存场景快照代次。版本粒度粗会增加重算，却能保持依赖完整。"
+    },
+    {
+      "sha256": "36ed09ae6d7cdad24ae3509a6dbcbf96caa0e35f85c0df541349285835fb5fc6",
+      "source_heading": "读取版本与条件执行",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "执行器在宿主提交边界共同检查读取集合、修改集合、场景令牌和任务许可，通过后才写对象、关系、新版本与操作回执。所有场景写入者，包括人工工具，都经过同一版本化入口。检查与写入之间没有可插入的场景修改；采用"
+    },
+    {
+      "sha256": "48951ad1f221b066f3cf89c8e606995e139d3627570f1281e0ee64c8ed19589e",
+      "source_heading": "读取版本与条件执行",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "R从r1变成r2时，旧操作得到`DependencyChanged`及不匹配的读取项，场景不发生该操作的修改。调度器关闭这份计划的后续派发，使其技术报告、预览和批准失效；读取新快照，重新求世界位置、碰"
+    },
+    {
+      "sha256": "48cfa300459c4d31e07e43f0470270c0ae00bad30997a184edbf6d19830ef309",
+      "source_heading": "读取版本与条件执行",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "执行中的读取集合也随本任务写入变化。创建T使区域集合从c0变c1，移动A使T从v1变v2；B必须消费相应宿主回执，将这些输出加入新的快照，再做自身的计划校验。只有登记在回执上的精确承接可以更新输入；“"
+    },
+    {
+      "sha256": "2673ead14d8d18344c139a6bdb121f849b46054b1c7a3175bdc4222d2cdd89d1",
+      "source_heading": "读取版本与条件执行",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "返工有固定终止规则：每次报告保存失败规则ID、位置、相关对象与实际值，规划器每轮只提交有限候选；同一规则在相同资产集合和输入版本下连续3轮未改善则停止自动返工，进入人工审核或失败队列。技术通过只推进到"
+    },
+    {
+      "sha256": "104ac5b72350d9cb2a29b8599ba2243a0e98e18b01bae8b7dd8df3be61f2c06b",
+      "source_heading": "读取版本与条件执行",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "在J中，移动A后的实际布局形成验证尝试V1，通路失败报告引用桌子T及其版本；移动B消费新快照并重新验证，形成V2。V1的迟到成功不能替代V2，因为验证回执同时绑定场景快照哈希、完整输入依赖、规则版本和"
+    },
+    {
+      "sha256": "411c26c744048fdbb818d0a6e3f5e279f07b6d2d89c43e3b1616935c72be19e0",
+      "source_heading": "连续站位区域的验证结果",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "### 连续站位区域的验证结果"
+    },
+    {
+      "sha256": "400af5ffa9d492ce367ae47fb720052ad5efccd0534266529ed93b0d37e721dd",
+      "source_heading": "连续站位区域的验证结果",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "V2消费的是一个已经验证的交互姿态及其路线。导航验证器先裁剪允许站位区，再检查身体、朝向、视线、探头行程、目标表面接触和入口到站位的完整路径；具体几何计算见[[20_游戏AI/游戏AI导航#连续区域的"
+    },
+    {
+      "sha256": "e2410d5bcaed83251ffcc807fa9e4206a964dae3f73d576bb3a1db7c6445d133",
+      "source_heading": "连续站位区域的验证结果",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "管线将结果整理成以下记录，而不是只接收一个“可达”布尔值："
+    },
+    {
+      "sha256": "1b60c282bccb3b44ad3e729565c8f3986ba5acc1ada93e190fdfd9a8236a3186",
+      "source_heading": "连续站位区域的验证结果",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "| 记录 | 内容与消费方式 |\n|---|---|\n| 验证身份 | 任务J、尝试V2、布局快照哈希、资产及角色配置、规则版本，确定报告归属 |\n| 目标与姿态 | 交互槽、目标分片及区域哈希、实际"
+    },
+    {
+      "sha256": "564190564ad5cd3bba915d4b28e136b45a9a679e08f2f1503da1681e8e0fb2f1",
+      "source_heading": "连续站位区域的验证结果",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "姿态和路线共同引用同一场景快照。导航构建仍Pending时，报告不能形成通过候选；挡板变化使姿态读集失配时，建立新尝试，而不是把新场景哈希填进V2。几何计算的结果由此接入任务身份、审核和恢复，审核者无"
+    },
+    {
+      "sha256": "6a72903ec331a99a9ffddd3f1f19a2883b93c6d21c3ca556a9950270564b8f92",
+      "source_heading": "连续站位区域的验证结果",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "exact",
+      "source_excerpt": "V2还核对同一产物清单中的文件、依赖、坐标、单位、枢轴、网格、材质、纹理、LOD、碰撞，以及目标平台内存、绘制、着色器与加载预算。DCC导入、引擎构建和实际运行各自保存结果，报告按规则集版本汇总必需项"
+    },
+    {
+      "sha256": "b5a934167e3d96bc06a5666a24fac7d0f0b1be44d95ad7c60577d80ecf09142a",
+      "source_heading": "连续站位区域的验证结果",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "布局或体型配置变化时，目标区域、接触终点和扫掠都由新快照重算，形成新的验证尝试；V2继续归属B的快照。取消的中间报告与最终保留布局分别按后文“补偿中间状态与最终门禁”交接。"
+    },
+    {
+      "sha256": "07d9ac61f50456c0b138c4dcfa0411151024ae7fcfa7f45cde62f10733d64e88",
+      "source_heading": "连续站位区域的验证结果",
+      "target_path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "到这里，正常执行能够产出一份身份明确的布局及报告。工具响应丢失时，调度器还不能仅凭当前阶段判断移动是否发生，需要先恢复操作回执，再决定继续验证还是进入补偿。"
+    },
+    {
+      "sha256": "8952aeea3d1b2ba2eae73d3f1c55d895b5d1841c8f670a835b1075876e02b3ef",
+      "source_heading": "操作登记与恢复对账",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "## 操作登记与恢复对账"
+    },
+    {
+      "sha256": "07203b75c49da99e6f2aa5b325b4a2894787e1c0229314b07c164c8e3cba1693",
+      "source_heading": "操作登记与恢复对账",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "工具返回超时以后，调度器只知道没有收到结果，不知道场景是否已经写入。创建操作先生成稳定目标ID与操作ID，把期望变更写入任务记录；执行器检查目标ID是否存在，存在时核对内容版本，缺失时才创建。操作结果"
+    },
+    {
+      "sha256": "5948368898a792375217c7d438e3397f3d84ec73d433a22d67b32b8ae859680b",
+      "source_heading": "操作登记与恢复对账",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "登记表保存`Prepared、Applied、Recorded`三种状态。Prepared先落盘；调用工具后，只有收到成功回执或读取到匹配的持久操作标记，才能记Applied；结果与产物清单写入同一登"
+    },
+    {
+      "sha256": "89dbdebd2439cf37e05f6aaf65f664f6064df341ffe065ffcf6e0bbe78141689",
+      "source_heading": "操作登记与恢复对账",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "场景对账完成后，产物清单进入技术验证；人工修改形成新哈希和新验证尝试。补偿按对象ID、操作标记和版本共同定位，只恢复仍属于该次操作的内容，发布步骤另按批准记录与发布代次仲裁。"
+    },
+    {
+      "sha256": "ae936eb8568b508fc47945f51b6070fe609a971bb86f31b864e4a01c68914874",
+      "source_heading": "工具执行的并发交接",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "## 工具执行的并发交接"
+    },
+    {
+      "sha256": "1ad30788f57c86d8dca78468d784a8a579c8fab853c41e3930c186e826edd775",
+      "source_heading": "工具执行的并发交接",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "“查询目标不存在，再创建”有两个执行者同时通过检查的竞争。每个暂存场景由一个串行执行器持有，调度器分配带代次的场景写入令牌。工具入口在同一互斥区核对场景ID与令牌代次，再把请求放入归属该代次的串行写入"
+    },
+    {
+      "sha256": "72e93d5100b45a8bb78354defa0486789e6a3a5f32f21d6d17c5262ced665e80",
+      "source_heading": "工具执行的并发交接",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "代次检查与实际写入之间也要保持这份授权。检查通过以后，如果请求又被转交给不核验代次的普通线程，旧执行者仍可能在接管后写入。因此宿主拥有串行队列与写入口，排空针对这条实际执行路径，而不只观察调度器是否停"
+    },
+    {
+      "sha256": "9e0e6725ea2be86e3217c03eef6671291758a594f5d11d74f8821eefee3898c9",
+      "source_heading": "工具执行的并发交接",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "排空失败时保持接管未完成，停止旧宿主及持有场景写权限的工具子进程，确认它们已经终止、写入队列已关闭，再恢复宿主并重建场景快照。这些条件成立后才启用新执行器。无法确认旧调用终止时，使用新的隔离场景和独立"
+    },
+    {
+      "sha256": "99999f571ead22c46349d1963e513b5757f40e344953a3dacac863a52f2371d7",
+      "source_heading": "创建操作与持久标记",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "### 创建操作与持久标记"
+    },
+    {
+      "sha256": "98e4867164b015e6cd75bba9154fc932356372b663dd6e185d7e65768db85de1",
+      "source_heading": "创建操作与持久标记",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "在这个单写前提下，创建操作先登记`操作ID、确定的目标ID、资产版本、期望变换、场景代次`。稳定操作参数的摘要包含目标ID、资产版本、期望变换、计划哈希和读取/修改集合；场景写入令牌代次属于本次调用的"
+    },
+    {
+      "sha256": "376318df5f3d34355c790b641b8e1fbe9c02122e7ca7ec000a744dc2b64f604d",
+      "source_heading": "创建操作与持久标记",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "确认原操作未接纳且目标不存在时，先检查完整读取、修改集合。创建在未挂接的对象上准备资产版本、变换与操作标记，再在宿主事务内复核条件，共同挂接完整对象、推进版本并保存操作回执，最后返回结果。宿主若不支持"
+    },
+    {
+      "sha256": "fa853a2b487f1d0fcfd8dcd75a44776d55291d2b07395cd7d78306783a3cae31",
+      "source_heading": "创建操作与持久标记",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "没有可持久标记的宿主，先保存隔离场景快照和对象清单，再据快照差异对账，正式场景始终在批准后接收完整版本。"
+    },
+    {
+      "sha256": "cdca57f8bac4e434d2910a02921603a8c86099a3f832c82704b1837ddb2e68bd",
+      "source_heading": "创建操作与持久标记",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "移动操作在同一串行入口登记目标ID、预期对象版本、绝对目标变换和原变换。宿主原子地写入目标变换、新版本与操作标记；恢复时若标记和目标状态匹配，就补登记并返回原结果，不能再叠加一次位移。若目标仍是登记的"
+    },
+    {
+      "sha256": "2216e7098add104bde9f562dc9427b124b926b7261d167bef77b7e8ccbee2be0",
+      "source_heading": "失败恢复",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "## 失败恢复"
+    },
+    {
+      "sha256": "e860978c036438b1b7d180a9c38c89060e13afe310dfe9688d6a74156c54a3ab",
+      "source_heading": "幂等与重试",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "### 幂等与重试"
+    },
+    {
+      "sha256": "6b10beab5e16df679bb7d401ad18fcdda555886eb28141d87ee524503a80852b",
+      "source_heading": "幂等与重试",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "同一操作ID的重试返回已有结果或继续未完成操作。布局更新可以描述完整期望状态，执行器比较当前场景后只应用差异。生成目标ID、写场景和记录结果之间的空隙，按前述恢复对账处理。"
+    },
+    {
+      "sha256": "67ef85edf3776d3673d2e58322cc8f8cb1006c76cd7ce7df1a1c48ef4780f5be",
+      "source_heading": "幂等与重试",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "输入验证失败进入修正流程；服务繁忙与短暂断连采用有限退避重试；容量不足交给调度器更换工作进程或采用批准的降级参数。模型、种子、分辨率或候选变化会形成新的变体ID，使原始请求与降级产物可区分。"
+    },
+    {
+      "sha256": "ac65d815d15e10261a131e8cda308779f239316c2f816aa2f954cd8f0a0130aa",
+      "source_heading": "幂等与重试",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "重试策略记录次数上限、退避、抖动、可重试错误码和总截止时间。相同输入稳定触发工具缺陷时保存诊断，进入修复队列。重复请求不会改变确定性错误的根因。"
+    },
+    {
+      "sha256": "eeb7b6c226a547783f43ce9764be46403206aab3a7717afe47c08abb44c0547c",
+      "source_heading": "生成服务与不确定结果",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "### 生成服务与不确定结果"
+    },
+    {
+      "sha256": "09b3686fa4c228dfe7341511935f4985e15c39f78ba568932c8d05d0a3d0ec28",
+      "source_heading": "生成服务与不确定结果",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "图像或模型生成可能在场景写入之前调用外部服务。请求登记同时保存提供方任务ID或提供方支持的幂等键，超时后先查询该任务；成功时把输出下载到任务的不可变产物目录，核对哈希后才进入导入。改变种子或降级模型形"
+    },
+    {
+      "sha256": "bbc275172678e123599c4420262020fc615bdd11c189a0c760988ce00a55d477",
+      "source_heading": "生成服务与不确定结果",
+      "target_path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "status": "exact",
+      "source_excerpt": "提供方若既不支持幂等键也不能查询，响应丢失后便无法判断它是否已经计算。此时登记为结果不确定，停止自动重复付费调用；可明确建立新尝试，但每次尝试各自记录成本，只有被选中的输出进入下游。稳定场景目标ID能"
+    },
+    {
+      "sha256": "9c6875a7a9bca8685bca0376781cf5a8e0ec67bea4fc542a48ae1177addd2a1f",
+      "source_heading": "补偿与版本恢复",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "### 补偿与版本恢复"
+    },
+    {
+      "sha256": "2f90ecbb49ec7ecc5c977939812d043421943f0bb4bbb797e6b37fad90105dc1",
+      "source_heading": "补偿与版本恢复",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "创建暂存场景、放置资产、生成预览、导入验证和发布通常跨越多个工具。每步记录实际创建的ID与对应补偿：移除本操作创建的实例、释放临时资源或恢复发布指针。补偿也按操作ID幂等执行，且核对对象版本，避免删除"
+    },
+    {
+      "sha256": "791bc86951437b7555fb63ac356c339d443d20bf6914230472b010993dc7bc2b",
+      "source_heading": "补偿与版本恢复",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "每步成功后先保存实际结果与补偿参数，再派发依赖它的下一步。取消状态先置为Cancelling，使调度器停止新派发；对于已发请求逐项查询终态，迟到成功也登记到补偿列表。随后逆依赖顺序执行补偿，每项保存待"
+    },
+    {
+      "sha256": "0a2b3c719226968628871783985fbedba58252e46f615c2eed2693bdcfd20bab",
+      "source_heading": "补偿与版本恢复",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "补偿操作也先登记独立的操作ID、原操作ID、预期当前版本和目标恢复状态。恢复变换与补偿标记在同一宿主提交中保存；响应丢失后先查询该标记，匹配便补记完成，不再用已经改变的对象版本判定冲突。删除则在场景清"
+    },
+    {
+      "sha256": "cba42c99078729753401602fdf688ff72d2d82992e5df362ec602bde11919042",
+      "source_heading": "补偿中间状态与最终门禁",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "### 补偿中间状态与最终门禁"
+    },
+    {
+      "sha256": "c22b84b55e1ed3194ad3a2b61a7237dc3fc7a1ded7461cf60d630ce6f2869539",
+      "source_heading": "补偿中间状态与最终门禁",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "status": "exact",
+      "source_excerpt": "J的A布局挡住通路，B才把通路让开。取消先撤销B，必然再次经过A的布局，再撤销A和创建操作。如果每一步都要求通过正式布局的导航门禁，这条正常取消链会停在第一步。任务因此分别记录宿主硬约束、补偿中间检查"
+    },
+    {
+      "sha256": "b8c23a2afa14f9d17038d3e10b6c0381b622735fc207e5eee37eb2001c3483db",
+      "source_heading": "补偿中间状态与最终门禁",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "status": "exact",
+      "source_excerpt": "宿主硬约束保护每次提交都必须成立的条件：对象身份及版本匹配、授权有效、变换有限且可表示、父子关系无环、引用有目标，以及宿主资源容量上限。违反这些条件时整步拒绝，保持原场景，进入补偿冲突或明确的容量故障"
+    },
+    {
+      "sha256": "6c810b2c4ff0dff29f114612d4ba7561e86c31e6bceb893f3cd17074c9ba7570",
+      "source_heading": "补偿中间状态与最终门禁",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "status": "exact",
+      "source_excerpt": "这种中间态在任务专属暂存场景内执行。进入Cancelling时，宿主在同一许可入口关闭该场景的正向业务写入、运行模拟、普通预览交付和发布许可，保存补偿会话ID、起始快照及补偿列表；已接纳消费者先退出或"
+    },
+    {
+      "sha256": "be1b1fffa8b29c297a0482369a83053ed29b06ac8bac7fba01c9af895054ed87",
+      "source_heading": "补偿中间状态与最终门禁",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "status": "exact",
+      "source_excerpt": "每一步先在当前不可变快照上计算候选，检查硬约束，同时产生布局诊断；只有硬约束通过才条件提交。导航诊断绑定候选几何哈希，尚无匹配导航数据时记Pending，不借用旧导航宣称可达。匹配数据就绪后按该候选重"
+    },
+    {
+      "sha256": "7d13370fca8a7e61ee0729c7d9fb5c99df6b3fe5537bfd08a78e980d5c082ff8",
+      "source_heading": "补偿中间状态与最终门禁",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "没有外部编辑时，撤销B恢复A的局部布局并产生v4，通路失败随回执记录；执行器继续撤销A产生v5，再删除T、删除空房间R，按墓碑确认所有任务对象已清理，进入Cancelled。场景为空时验收对象与关系清"
+    },
+    {
+      "sha256": "5f40ab8354dbbf450bef9cb61816a1d2a7f2f2e8fa15e85481a8434640da99d7",
+      "source_heading": "补偿中间状态与最终门禁",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "含Retained或Waived的结果先形成完整残留清单。J的在途操作全部结清后，维护方创建接管任务JR，引用该清单与不可变残留快照；宿主关闭J的补偿写入权限，按场景令牌交接规则授予JR维护权限。J保"
+    },
+    {
+      "sha256": "8498dd7ea83e019fc31e472de1bf5c512405770d856feddd3b8bf0d8bdac5708",
+      "source_heading": "补偿中间状态与最终门禁",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "status": "exact",
+      "source_excerpt": "JR建立验证尝试VR1，绑定最终残留快照哈希、读取集合、角色与规则版本。VR1重新生成站位区域、目标表面接触及完整路线；补偿中间候选的迟到结果只补原尝试，原V2也保持历史归属。后续人工修改产生新哈希时"
+    },
+    {
+      "sha256": "b413d07ab0c58d2e0f62224d828c1568407a745bef7a4e5e2de41e18246a3428",
+      "source_heading": "补偿中间状态与最终门禁",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "未通过或导航仍Pending时，原任务J仍报告CancelledWithRetainedObjects，但残留资产继续由维护方接管，场景保持隔离并返回门禁结果；清理终态不代表可运行或可发布。门禁通过后"
+    },
+    {
+      "sha256": "86a9dd00cfd0bfee7c12ef8dd5f99e07776bb787a41aaa4c4f20c9e1731b6423",
+      "source_heading": "补偿坐标与父变换",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "### 补偿坐标与父变换"
+    },
+    {
+      "sha256": "74f8c721cb5fcec49027e5c489aac91e9a1e6b3a5f838d1d9eead3dbf8f0f37b",
+      "source_heading": "补偿坐标与父变换",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "任务的变换记录采用父局部空间。每项保存父ID与关系代次、输入局部矩阵、输出局部矩阵，以及计算时读取的祖先变换版本。执行接口需要世界矩阵时，宿主用同一快照的父世界矩阵P计算W=P×L；回执同时保存实际局"
+    },
+    {
+      "sha256": "fe31eae95e1d3f56d0c8978c81930802a7d44a8462ebbf97baa2ee1027a3556b",
+      "source_heading": "补偿坐标与父变换",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "取消恢复的是本任务修改的局部字段。设R最初位于世界X=0，A将T局部X从0移到1，B从1移到2；人工再将R移到世界X=10，T自身版本仍为v3。撤销B的候选局部X为1，按当前R计算世界X=11。原世界"
+    },
+    {
+      "sha256": "53987ca125130aefad7f28238f78fad9446260fc1065144b6abbda0c0aac83a6",
+      "source_heading": "补偿坐标与父变换",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "父变换变化使原导航与净空结论失效。补偿器先取得新快照，构造候选局部恢复，按当前祖先和区域对象集合验证硬约束，并用匹配的导航版本生成布局诊断；导航未就绪记Pending。补偿读取集来自这次计算；原读取集"
+    },
+    {
+      "sha256": "994fbd30938226983b0543895621404c93199b19a57bc5753e4e6c3d1ec72d41",
+      "source_heading": "补偿坐标与父变换",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "人工在检查后再次移动R时，提交返回DependencyChanged，场景不写入；调度器消费本次拒绝回执，重读并重算。"
+    },
+    {
+      "sha256": "ad07be39a3c04eb9b2c239ad1a88418fb37ec2b5c25a2371d9b0413b6af40368",
+      "source_heading": "补偿坐标与父变换",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "补偿链槽位保持不变，每次改变读取集合或目标都登记新的补偿尝试ID，载荷及摘要在该尝试内固定；响应未知时先查原尝试，只有确定拒绝或未接纳且已经关闭原提交权限，才建立下一尝试。原T版本已被外部修改则进入补"
+    },
+    {
+      "sha256": "5474449b094af44dc265282a27b6fc4ba66ce14e56d3f72249e9fa68ca99166b",
+      "source_heading": "补偿坐标与父变换",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "候选局部恢复违反宿主硬约束时进入CompensationConflict，报告规则与实际值；碰撞、净空和通路的中间诊断随补偿记录保存，按前述隔离规则继续清理。审核可保留当前局部状态，或批准绑定当前快照"
+    },
+    {
+      "sha256": "49b836c3562ee68bf3ab48254e774336377487b990b21b2f782f00fc73aef1a2",
+      "source_heading": "补偿坐标与父变换",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "补偿回执保存空间、父关系、新读集、输入输出局部矩阵与版本。宿主已经恢复到世界X=11但响应丢失时，接管者先消费原回执承接游标；即使R随后移到20，也不会再次执行补偿把T拉回11。再次恢复仍读取同一补偿"
+    },
+    {
+      "sha256": "c3e5e790c16ad16902fea1ad78553373359b50cb27a62aae201af0cfe768e545",
+      "source_heading": "连续移动的补偿承接",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "### 连续移动的补偿承接"
+    },
+    {
+      "sha256": "d8fdfb063e0de9cdd0f7ffe57ca2fada653c53b30641a9c81407a82c5916d242",
+      "source_heading": "连续移动的补偿承接",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "桌子最初处于版本v1。操作A把它移到靠墙位置，产生v2；操作B为通道再调整一次，产生v3。取消时先撤销B，把变换恢复到A完成后的值，但对象版本继续增加为v4。撤销A接下来必须检查v4；v2记录的是历史"
+    },
+    {
+      "sha256": "8be561e25813706b40679e77d838b807483765258399b52ab93653e409762ee0",
+      "source_heading": "连续移动的补偿承接",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "任务为每个对象保存正向操作链和补偿游标。链中每项包含前驱操作、输入版本、输出版本、修改字段及其原值；同一对象的正向写入按这条链串行完成。取消排空在途请求后，游标指向末项B，预期版本为v3。宿主在一次提"
+    },
+    {
+      "sha256": "b60bb08d65ed679dd5ad78663d2bf95fc3880298764cfee6f3afd0e87f37e63b",
+      "source_heading": "连续移动的补偿承接",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "调度器据持久回执把游标推进到A，预期版本设为v4。撤销A仍使用A登记的原变换，生成v5，再以相同方式推进。字段恢复之外的对象内容保持当前值；每一步检查整个对象版本，因而外部修改任何受版本管理的字段都会"
+    },
+    {
+      "sha256": "d2de167aef10294a3be82d22578b96cf319cf6cda5d35f10fa961589596d13b9",
+      "source_heading": "连续移动的补偿承接",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "宿主提交成功而游标尚未更新就崩溃时，恢复先按补偿ID读取回执，再推进游标；游标更新和回执消费标记在登记数据库同一事务中完成。宿主侧回执随对象变化原子保存，不能仅由调度器在收到响应后补写。宿主不支持字段"
+    },
+    {
+      "sha256": "5033023d2c2b1489dcaa755c91a1efc5ddb999fa11a46c790fb494e7c7d462aa",
+      "source_heading": "连续移动的补偿承接",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "创建操作也参与同一条链：家具的后续移动全部撤销后，创建补偿使用游标承接的最新版本删除家具，并保留删除墓碑。子对象存在冲突时，父对象的删除依赖尚未满足，任务停在CompensationConflict。"
+    },
+    {
+      "sha256": "ea060d8add41835ead886958e025a54edf0c54e163c34b7356c5a669e914c4ef",
+      "source_heading": "父子关系与跨对象版本",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "### 父子关系与跨对象版本"
+    },
+    {
+      "sha256": "1008b3453599f8a99f6dbfa27573d28f99fd65ae9e6ee8522ef1b38a6be8e386",
+      "source_heading": "父子关系与跨对象版本",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "桌子挂入房间同时改变两份数据：T的父引用和R的子对象集合。本文把对象字段与关系分别版本化；对象版本保护变换、资产引用等字段，关系记录`(关系ID, 父ID, 子ID, 关系代次)`保护挂接，父对象另有"
+    },
+    {
+      "sha256": "07a3e287bd9477647c72558482fa13b03c925e06dbc8d1506b324b4534ab00ab",
+      "source_heading": "父子关系与跨对象版本",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "J创建R时得到对象版本r1、集合版本c0，挂入T后为c1。取消删除T得到c2；删除R接纳c2，需要删除T的持久回执证明c1到c2的变化属于当前补偿链。R自己的字段仍比较r1。任务维护每个受影响对象和关"
+    },
+    {
+      "sha256": "eadb3737a169881d11390b69efe478c4ed3729dff3950e9149d32fa8097effef",
+      "source_heading": "父子关系与跨对象版本",
+      "target_path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "status": "exact",
+      "source_excerpt": "人工向R加入椅子会产生c3；即使J的桌子已删除，删除R比较c2仍失败。人工新增后又删除椅子会得到c4，集合虽空也不能跳过版本冲突。反过来，人工只改桌子的颜色会改变T对象版本，使删除T停止，关系继续存在"
+    },
+    {
+      "sha256": "347c40bed7000239e7664e558c2da69d6fe629c6cc3b0b2a397b8aac65bbeaa2",
+      "source_heading": "冲突决议与续行",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "### 冲突决议与续行"
+    },
+    {
+      "sha256": "b8818323abe9dc0f967206e503612b1a889f77cff2a55711faf6c61f43c79460",
+      "source_heading": "冲突决议与续行",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "status": "exact",
+      "source_excerpt": "冲突记录保存待补偿项、预期与实际版本、实际字段差异、受阻后继和场景快照哈希。任务停止这条依赖链，独立且无共享写集合的补偿可以继续；取消入口仍关闭新业务派发。审核决议拥有稳定决议ID，绑定冲突记录代次、"
+    },
+    {
+      "sha256": "7af82f6364addffe4d4ee35fd9e10553c51bbd9835f7a701d021a0b24c2937e2",
+      "source_heading": "冲突决议与续行",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "status": "exact",
+      "source_excerpt": "| 决议 | 宿主与登记动作 | 后继处理 |\n|---|---|---|\n| 保留人工结果 | 比较观察版本，保存保留对象与关系的回执，将该对象剩余补偿项置为Retained | 删除依赖这些对象的"
+    },
+    {
+      "sha256": "84c9e6ae4f3c9068f3db0852e2762760fc7cc6f0ad647c7c330aff967a372fb3",
+      "source_heading": "冲突决议与续行",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "status": "exact",
+      "source_excerpt": "例如撤销B产生v4后，人工改色生成v5，撤销A冲突。批准恢复可以只恢复A的原位置而保留v5颜色：审核目标明确列出这两项，宿主比较v5后产生v6。接下来删除T仍会删除人工颜色，所以批准恢复必须同时逐项批"
+    },
+    {
+      "sha256": "6e0ed60d0e2f8cd9596ff2f5a71a185ec40213c87ba9fcdb37be150d34b3c113",
+      "source_heading": "冲突决议与续行",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "status": "exact",
+      "source_excerpt": "若在撤销B发生冲突时选择放弃B，默认保持T的实际状态：B为Waived，A和创建T为Retained，R也进入保留闭包。调度器不能仅跳过B再撤销A或删除T；这会绕过“当前状态列为残留”的决议。需要继续"
+    },
+    {
+      "sha256": "91b343b2f42738b331eb26b635989fba21bdca4130c9b353e27cbe223d04cca1",
+      "source_heading": "冲突决议与续行",
+      "target_path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "status": "exact",
+      "source_excerpt": "宿主已执行决议而调度器崩溃时，以决议ID查询回执，补齐游标与依赖标记；不存在匹配回执才比较观察版本并执行。重复审核提交返回原决议，新的决议只能针对尚未结清的冲突代次。全部在途请求已对账、所有补偿项为C"
+    },
+    {
+      "sha256": "7719de2fb53f22dcef99f7ea299f82debc8ac96d6ed956b0e35ccc104acf0c16",
+      "source_heading": "资产验收与发布",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "## 资产验收与发布"
+    },
+    {
+      "sha256": "f9a88d1c41d2913ca230bb8f80e5bae44ff55c3c8f86b4bc47e168f9c9222e6b",
+      "source_heading": "资产验收与发布",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "前面的几何、交互和平台检查汇入同一份不可变候选。发布入口从这里消费被接纳的完整报告与审核结果，正常布局和接管后的残留布局采用相同的批准事务。"
+    },
+    {
+      "sha256": "5acb6bd8442ef16cb4b608690267d0834d837797bf164d3e6a671e8a28cd3e8c",
+      "source_heading": "审核与不可变候选",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "### 审核与不可变候选"
+    },
+    {
+      "sha256": "9bedc99071ff46162d8d4fe3acbf23c09f03ae7452d19b42b6e597866af99311",
+      "source_heading": "审核与不可变候选",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "审核入口接收候选ID、任务ID、快照哈希、验证尝试ID和报告哈希，先核对它们共同指向同一产物清单，再显示需求、固定相机预览、来源、工具版本与不确定项。正常任务J消费V2，维护任务JR消费VR1或当前后"
+    },
+    {
+      "sha256": "a3a9545e7847cc756fcbca4fd328df20ab164517aea25d3257641dc5602db2d4",
+      "source_heading": "批准记录与发布回执",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "### 批准记录与发布回执"
+    },
+    {
+      "sha256": "66dda06b2a946c78e39453865e69a87086fc9e1a8ac93079d0967609e96fe5e7",
+      "source_heading": "批准记录与发布回执",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "批准记录绑定`任务ID、验证尝试ID、报告哈希、产物清单哈希、输入哈希、规则版本、审核版本`。发布前将全部产物写入不可变存储并从发布环境核对依赖可读取，正式入口只保存这份清单的引用。如此发布后不需要再"
+    },
+    {
+      "sha256": "afae8c337a585930db55272b392d3f733da67ce7b4cf9d63a26318884bca2123",
+      "source_heading": "批准记录与发布回执",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "控制数据库在一个事务中检查：任务仍允许发布、批准记录仍有效且版本匹配、正式入口代次等于计划的expectedGeneration。成功时共同写入新入口、新代次和以操作ID为键的发布回执。批准撤销也更新"
+    },
+    {
+      "sha256": "c38070807c8db28357ebe525ad748e80100edb8487a6e7216f84d83fa5fbd62b",
+      "source_heading": "批准记录与发布回执",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "发布调用超时后按操作ID查询回执，有回执就返回当时的新代次，不再次覆盖入口。没有回执时重新检查全部条件再尝试。取消若与发布并发，由该事务中的任务状态判定先后：取消先登记则发布失败；发布已完成则按撤回流"
+    },
+    {
+      "sha256": "80231059e16a6acdcaba4a86f5899399fdc520d336033802ed05eb2f42a69f98",
+      "source_heading": "批准记录与发布回执",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "例如任务发布代次11后结果响应丢失，人工又发布12。恢复根据回执确认11成功，既不重放到13，也不把12撤回到10。批准、发布、取消和恢复都围绕同一份持久回执判断，任务日志则保存这些结果供追踪。"
+    },
+    {
+      "sha256": "b560e66ab123ba0223b49f9bc2ec7714d6555cb1480182bd7fb317425736a0a7",
+      "source_heading": "批准记录与发布回执",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "日志保存每次工具调用、状态变化、重试、补偿和批准记录。密钥与个人信息在写日志前脱敏；完整提示词和私有输入保存在对应访问范围内。"
+    },
+    {
+      "sha256": "64dba82738eece17eae4a5bae3b95e65d32a74bb7916b13fe9ba972ba62ed3bd",
+      "source_heading": "批准记录与发布回执",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "评估使用固定历史任务与失败集，同时记录检索准确率、布局通过率、人工返工率、工具恢复成功率、预算漏检、平均成本及人工修改保留率。生成数量增加而正式通过率下降，意味着系统把成本转移给了人工审核。"
+    },
+    {
+      "sha256": "010182ab2af2e8cb7ff4bf23ea5286c342051d0c0edaa96337980e97ec0699d1",
+      "source_heading": "实现与证据",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "## 实现与证据"
+    },
+    {
+      "sha256": "eff71df095b1482d2012f566ea23283042f4c960a4ab79ace2d29d13a37e1128",
+      "source_heading": "实现与证据",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "本页是资产任务设计与接口协议，未部署Agent、连接DCC或执行资产发布。事务边界的可运行示例见RPC篇，场景操作的幂等性必须由各工具实现验证。"
+    },
+    {
+      "sha256": "ff3caf42e0e094c9090945a09203577e08cb1a04a89e6ff87440418522a4ec16",
+      "source_heading": "相关主题",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "## 相关主题"
+    },
+    {
+      "sha256": "7a00584f1b8b0616f8dca7026e4661b6bf9664a9799d19378c76790d7fd5ea57",
+      "source_heading": "相关主题",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "- [[15_资产与工具管线/资产构建与发布]]\n- [[15_资产与工具管线/编辑器工具的事务与批处理]]\n- [[17_AIGC与Agent管线/扩散模型]]、[[17_AIGC与Agent管线/"
+    },
+    {
+      "sha256": "95d93065e8a34be82d81b7e09fe98d491a8db7f8a206a74bedbb19ebdf2c6ecf",
+      "source_heading": "参考资料",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "## 参考资料"
+    },
+    {
+      "sha256": "24365127ae01617d4df747fe46ff18684d394b16d06a5427312dd7d87629b853",
+      "source_heading": "参考资料",
+      "target_path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "status": "exact",
+      "source_excerpt": "- [SQLite Transaction](https://www.sqlite.org/lang_transaction.html)：本地操作登记的事务边界。\n- [etcd API guaran"
+    }
+  ],
+  "findings": [
+    "状态图补齐Cancelling直接进入CancelledWithRetainedObjects的分支，使无未决冲突但保留对象的取消也有完整路径。",
+    "将跨页前述、后文和RPC篇等引用改为具体页面或章节，补齐每页J/R/T/A/B/V等符号上下文。",
+    "按编排发布、几何验证、条件执行、补偿版本和隔离接管划分独立问题，原页全部原标题保留为路由。",
+    "将连续3轮未改善的返工阈值明确为本设计参数，避免将示例策略读为通用技术标准。"
+  ],
+  "verification_scope": [
+    "全文机制与数例复读",
+    "原段落哈希及去向登记",
+    "未部署Agent、连接DCC、构建导航或执行发布；宿主并发协议尚无运行证据。",
+    "读取SQLite事务文档与etcd 3.5 API保证，核对串行写事务与条件事务的支持边界；该依据不证明DCC宿主支持原子提交。"
+  ],
+  "independent_review": {
+    "reviewer": "cpp_split",
+    "date": "2026-10-24",
+    "scope": "完整复读五篇正文及原导读，逐步手工推演版本和接管；未执行宿主。",
+    "repairs": [
+      {
+        "path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+        "finding": "矩阵乘法顺序需要约定向量形式；线性变换A与移动操作A同名。",
+        "fix": "声明列向量及P/L变换组成，将线性部分改记K。"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+        "finding": "恢复Prepared的简述只写确认未接纳，未说明防止旧调用随后接纳。",
+        "fix": "补齐关闭旧提交权限、旧队列项及在途调用退出的前提。"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+        "finding": "缺少决议回执不能证明宿主未执行；旧调用若仍在途会与重发竞争。",
+        "fix": "补充原决议排队/执行查询、终态等待、旧权限排空和宿主事务去重。"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+        "finding": "幂等与重试兼容入口指向父章节。",
+        "fix": "精确指向目标同名小节。"
+      }
+    ],
+    "page_conclusions": [
+      {
+        "path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+        "conclusion": "J/V1/V2、JR/VR1和发布代次11/12具备定义；批准与发布同事务仲裁完整。"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+        "conclusion": "越墙0.3米、缩放0.5与2、局部半径0.8/0.2和世界位置10.5数例成立；明确列向量与K后变量衔接通过。"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+        "conclusion": "读写集、集合幻读保护、稳定操作摘要与授权封套分离保留；恢复Prepared补充旧授权排空。"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+        "conclusion": "B撤销v3→v4，A承接v4→v5，局部恢复与父平移10/20，以及关系集合c0→c4推演完整。"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+        "conclusion": "中间导航失败不阻止隔离补偿，保留闭包和JR接管完整；补齐决议结果未知时的安全续行。"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+        "conclusion": "五篇职责及原标题兼容入口完整，修正幂等与重试精确锚点。"
+      }
+    ],
+    "status": "PASS_WITH_REPAIRS",
+    "runtime": "未部署Agent、宿主、DCC或实际导航，证据状态保持原范围。"
+  },
+  "adopted_source_sha256": "bd8b6c1d72cbdbc9ab5624b482dffa4e069dc667bb79a2f187b5a602c00fceb2"
+}

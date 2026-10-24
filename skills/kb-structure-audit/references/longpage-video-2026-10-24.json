@@ -1,0 +1,1071 @@
+{
+  "source_commit": "bc4ed68",
+  "source_path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+  "articles": [
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "primary_question": "当前像素如何在历史帧中找到可信的同一表面？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "帧输入与执行顺序",
+        "历史位置与可见性",
+        "当前像素查询历史",
+        "深度比较与拒绝分支",
+        "法线与当前结构"
+      ],
+      "title_candidates": [
+        "视频历史重投影",
+        "帧间表面对应",
+        "视频遮挡与历史拒绝"
+      ],
+      "reviewed_sha256": "642e7ec88ad769037a747309ab90e6b93b563191b04105412c9e69595e780f91"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "primary_question": "如何把有效历史颜色约束接入图生图去噪？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "历史图与潜变量",
+        "像素空间合成",
+        "潜变量重投影的替代路线",
+        "条件去噪与历史约束",
+        "模型和条件契约",
+        "起始噪声与步长",
+        "每步预测与颜色投影",
+        "去噪循环实现"
+      ],
+      "title_candidates": [
+        "视频生成的逐步颜色约束",
+        "历史颜色的扩散约束",
+        "像素投影DDIM"
+      ],
+      "reviewed_sha256": "b010b458be0624769ba0ec26d56f0c35e37b3ab29a0973469f9fb6d05bd5b3ec"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "primary_question": "如何控制曝光漂移并处理双向关键帧传播冲突？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "漂移估计与真实照明",
+        "生成内容与几何记录",
+        "关键帧与传播冲突"
+      ],
+      "title_candidates": [
+        "视频曝光与关键帧融合",
+        "关键帧双向传播融合",
+        "视频时域曝光校正"
+      ],
+      "reviewed_sha256": "6135d76e8d939d9a1c9c24a2369d1e3b5b684c988c5a91d173ee3872c213d059"
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "primary_question": "视频传播、补洞与编码任务如何按不可变清单恢复？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "历史提交与方向隔离",
+        "任务续行与二次恢复",
+        "冲突决议与最终序列"
+      ],
+      "title_candidates": [
+        "视频生成任务恢复",
+        "视频生成的持久任务",
+        "视频帧清单与续行"
+      ],
+      "reviewed_sha256": "11a612dccb5777962e173711aa8b8e5ef2bacd450e4581f58293fe196b8b0953"
+    }
+  ],
+  "overview_question": "时序一致性各环节如何连接并定位机制与恢复入口？",
+  "mappings": [
+    {
+      "source_heading": "帧输入与执行顺序",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "target_heading": "帧输入与执行顺序",
+      "source_body_sha256": "cb5b8dbaffc167690e847956fac126f1afcd6e3aed4c9c5832012f9f7649d3cf",
+      "reviewed_body_sha256": "67550f38bf16bd761c8f4310589d38ab9b7a4d7f2328e73649bebf29b396b26e"
+    },
+    {
+      "source_heading": "历史位置与可见性",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "target_heading": "历史位置与可见性",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_heading": "当前像素查询历史",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "target_heading": "当前像素查询历史",
+      "source_body_sha256": "d72abd776da19c8f4e56eb47e916ee6260dba63fb0db358a44ea6f90c064a1ad",
+      "reviewed_body_sha256": "d72abd776da19c8f4e56eb47e916ee6260dba63fb0db358a44ea6f90c064a1ad"
+    },
+    {
+      "source_heading": "深度比较与拒绝分支",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "target_heading": "深度比较与拒绝分支",
+      "source_body_sha256": "eb158b44e117a240d080f3815a2029eab2e23821610a05e16677fed949e4bb95",
+      "reviewed_body_sha256": "eb158b44e117a240d080f3815a2029eab2e23821610a05e16677fed949e4bb95"
+    },
+    {
+      "source_heading": "法线与当前结构",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "target_heading": "法线与当前结构",
+      "source_body_sha256": "6c2f51d614f4ed640e37c0623c31c2b4b609c5d7f1fdbadb8cd9fafcb5b1e97f",
+      "reviewed_body_sha256": "8215ef3772a97170b9c5f1073496041264117db329eaac808804186de2ffe9a4"
+    },
+    {
+      "source_heading": "历史图与潜变量",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "target_heading": "历史图与潜变量",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_heading": "像素空间合成",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "target_heading": "像素空间合成",
+      "source_body_sha256": "e4c54eefbea5402813d601360bf0a59821d71c36b7b0a504233badf2dbb9f3e0",
+      "reviewed_body_sha256": "f8e9281a4634adde7b8d2a29675ca0f8eabc4621c3af9417f11db5f90b6fefaa"
+    },
+    {
+      "source_heading": "潜变量重投影的替代路线",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "target_heading": "潜变量重投影的替代路线",
+      "source_body_sha256": "3b47d7df91aa40f70e5ccd284b124501936dd217af75b056ff5bbce16a3a41c7",
+      "reviewed_body_sha256": "3b47d7df91aa40f70e5ccd284b124501936dd217af75b056ff5bbce16a3a41c7"
+    },
+    {
+      "source_heading": "条件去噪与历史约束",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "target_heading": "条件去噪与历史约束",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_heading": "模型和条件契约",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "target_heading": "模型和条件契约",
+      "source_body_sha256": "d3fab5ae2169418b5388742260a94bee2672db96891dd38a3485aed2e9589c16",
+      "reviewed_body_sha256": "405169b10adf6a05ce8fc213dbaf1d989b79ceebb0b67fefce7ff12598eb65a0"
+    },
+    {
+      "source_heading": "起始噪声与步长",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "target_heading": "起始噪声与步长",
+      "source_body_sha256": "6a55573ffdc86ee97340e15cbf2cc9d206af0721174ef33e641da0a8e4761c0a",
+      "reviewed_body_sha256": "6a55573ffdc86ee97340e15cbf2cc9d206af0721174ef33e641da0a8e4761c0a"
+    },
+    {
+      "source_heading": "每步预测与颜色投影",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "target_heading": "每步预测与颜色投影",
+      "source_body_sha256": "f6e6ea8a727fe0f131cd8fcf669ad3a73d5dd8862ac771955e2773164936f638",
+      "reviewed_body_sha256": "06677d23176ccb4db58a66536976e405d1eaea8d9a11ee9d9f0dfec83f78bbe6"
+    },
+    {
+      "source_heading": "去噪循环实现",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "target_heading": "去噪循环实现",
+      "source_body_sha256": "1c4145f084671dd6c92504f6c7bf5b8240431f6b38aefd0bcca0124902535336",
+      "reviewed_body_sha256": "1c4145f084671dd6c92504f6c7bf5b8240431f6b38aefd0bcca0124902535336"
+    },
+    {
+      "source_heading": "曝光与历史推进",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "target_heading": "漂移估计与真实照明",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewed_body_sha256": "8470bb411220a5effcf9c86b879aeb6c144d7a9c59c54c5cfeebd1ae3bfd0485"
+    },
+    {
+      "source_heading": "漂移估计与真实照明",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "target_heading": "漂移估计与真实照明",
+      "source_body_sha256": "8a4cbddfa49c426a347305d57a4b0d59a93ba3605db22a22dc1b73c8f695c3bf",
+      "reviewed_body_sha256": "8470bb411220a5effcf9c86b879aeb6c144d7a9c59c54c5cfeebd1ae3bfd0485"
+    },
+    {
+      "source_heading": "生成内容与几何记录",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "target_heading": "生成内容与几何记录",
+      "source_body_sha256": "b4e58197e0f08ed27fa5a807016515f01a69ec1b8edb341104bd006b344744e6",
+      "reviewed_body_sha256": "b4e58197e0f08ed27fa5a807016515f01a69ec1b8edb341104bd006b344744e6"
+    },
+    {
+      "source_heading": "历史提交与方向隔离",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "target_heading": "历史提交与方向隔离",
+      "source_body_sha256": "9534fcdc960d966e296cf915c65dea9b5179acde636ed042642868a46699ea4e",
+      "reviewed_body_sha256": "9534fcdc960d966e296cf915c65dea9b5179acde636ed042642868a46699ea4e"
+    },
+    {
+      "source_heading": "任务续行与二次恢复",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "target_heading": "任务续行与二次恢复",
+      "source_body_sha256": "a559e6423b5e3e4d93fb8d5fec041be7b2f4e0a65c002996c4f8d497f2523eb8",
+      "reviewed_body_sha256": "ac1bfca78056b4b24a5f7fd61e8e68138875a445599a4095af0e2285f42e09ae"
+    },
+    {
+      "source_heading": "关键帧与传播冲突",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "target_heading": "关键帧与传播冲突",
+      "source_body_sha256": "d9cba22f8337a228e8000ca853c52adf6e9d8a64759b52ed10e03c38cc46bd6c",
+      "reviewed_body_sha256": "7bd3035353a1980ae100f66b612a7a6684e3a2512ce096cfb0c1fe2d81c78a14"
+    },
+    {
+      "source_heading": "冲突决议与最终序列",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "target_heading": "冲突决议与最终序列",
+      "source_body_sha256": "4176edf16bd487fcb856250f62a96d837ea59fb49f4af044946e6afb1a44c444",
+      "reviewed_body_sha256": "4e0f1f48df8654a6fec1068f7aa9a38f2455736db7bfeec5e7ca48a86a491452"
+    },
+    {
+      "source_heading": "故障定位",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "target_heading": "故障定位",
+      "source_body_sha256": "102fce23229dc3d50c073b0b3bffb992ae4190ec5c6881019ea6b75c98a1790c",
+      "reviewed_body_sha256": "157cc76d42cc78069aa36e86263b19b93b1136d1c866ab4f1e096c5b8b1d5906"
+    },
+    {
+      "source_heading": "实现与证据",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "target_heading": "实现与证据",
+      "source_body_sha256": "db77ca7e871fd95d39bf36a8d10f6b1c97e51612fcc90be483557e1a8b959b5a",
+      "reviewed_body_sha256": "8402748447dc4063be90b9ca3865fc8edf6524ab755eeb68aebaed409c7f6b31"
+    },
+    {
+      "source_heading": "相关主题",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "target_heading": "相关主题",
+      "source_body_sha256": "f3eee78fe105cbf793780913e5acbbb1f90b292f70fac127d24896c16f9c40ea",
+      "reviewed_body_sha256": "13effe7f68ffa41ab53686c63f62eb063fb9a533303b809a82a45c1a976176db"
+    },
+    {
+      "source_heading": "参考资料",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "target_heading": "参考资料",
+      "source_body_sha256": "b0f7b57279042b41c70573aac2a5bb8db33868c84e33ad000ba8a5eb694f2342",
+      "reviewed_body_sha256": "e0e85314526394d2fc49ef795c8c5d267f6bdeb0ccb71c43f8131e5e74fbbd7b"
+    }
+  ],
+  "paragraph_mapping": [
+    {
+      "sha256": "f2afb14e8697594e2c8098ad9ae62ca7c823d432747a1014a9879b9d1b4c0c11",
+      "source_heading": "视频生成时序一致性",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "# 视频生成时序一致性"
+    },
+    {
+      "sha256": "da83cf7d13c8ec038646951adf521a8b7098be28dbb7d9afe7b763ba97e0283f",
+      "source_heading": "视频生成时序一致性",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "角色在画面中向右走，逐帧重绘却让衣服花纹留在原地；角色经过柱子，又把柱子的颜色拖到身后。前一种问题来自对应位置错误，后一种来自复用了已经遮挡的历史。固定随机种子不会提供表面对应关系，时间滤波也无法自己"
+    },
+    {
+      "sha256": "c664debbf39df7a8a931ce7694179fb6606bb817a714efc0b77819ec6f9ed57e",
+      "source_heading": "视频生成时序一致性",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "本页采用一条明确的离线教学管线：输入同一镜头的渲染序列，保存颜色、线性深度、对象ID、视空间法线、相机与刚体变换，以及当前到前帧的对应位置。关键帧先完成风格确认；中间帧重投影已生成颜色，通过有效遮罩作"
+    },
+    {
+      "sha256": "f8739d27f003c10277e19b957087460cc467229d5ad176e9e91235e03524dd64",
+      "source_heading": "帧输入与执行顺序",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "## 帧输入与执行顺序"
+    },
+    {
+      "sha256": "35abe0f2e962a0d0ee7b09e2d87b9fca9facb0edd9f89ef3cd900967ffcaad6d",
+      "source_heading": "帧输入与执行顺序",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "镜头以第0、10帧为批准关键帧。角色在第3帧经过柱子，第4帧露出一部分衣服：对应有效的区域继续采用历史，被柱子挡过的区域以当前渲染初始化。先沿0到10和10到0分别生成，再融合中间帧；第4帧的左右候选"
+    },
+    {
+      "sha256": "aa32cac147cdfc685de40987e9b76bedbce50aae5419243d1385536bec6e680c",
+      "source_heading": "帧输入与执行顺序",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "每帧保留渲染颜色`R_t`、以米为单位的正向视深度`D_t`、稳定对象ID、几何法线和相机参数。颜色先经镜头固定的色调映射，再以sRGB编码交给图像模型；重投影、曝光统计和颜色混合使用解码后的线性RG"
+    },
+    {
+      "sha256": "196d75b7885ade13411d2f8f90b7bc61a2dbeddfe134b4aa44fdb43097b3dde1",
+      "source_heading": "帧输入与执行顺序",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "背景拥有独立ID和有效深度约定。相机采用朝向−Z的右手坐标，天空没有有限深度；对天空像素，将当前相机反投影得到的方向乘当前相机旋转的逆矩阵，再乘历史相机旋转并投影到历史屏幕，只比较背景ID，不执行实体"
+    },
+    {
+      "sha256": "deae0beeb6d79b43c327956a3fb24dd40ddfc99c70184057eb25790aebe18689",
+      "source_heading": "帧输入与执行顺序",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "历史记录`H_t`包含最终生成颜色、当前帧原始渲染颜色R与几何缓冲、局部历史置信度`Q_t`、锚点路径置信度`A_anchor,t`和帧号。几何缓冲来自渲染，不从生成图反推。第一帧没有历史，所有历史遮"
+    },
+    {
+      "sha256": "f8af4d55a4d093866c39dbf14794bad03263a233d72febed4a5d29b9dc2e6352",
+      "source_heading": "帧输入与执行顺序",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "```text\n当前渲染与历史几何 → 反向对应与历史拒绝 → 重投影颜色和置信度\n→ 当前渲染填满显露区 → 整图编码与加噪 → 深度条件去噪及逐步颜色约束\n→ 曝光漂移校正 → 当前几何检查与历史"
+    },
+    {
+      "sha256": "7d2bfd2c22b1b6d92d285a4f4a1a8c0bc0f0fd4c567c8f3c28009f0ba7304f98",
+      "source_heading": "帧输入与执行顺序",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "这里“当前输入图”始终是已经存在的`R_t`，不是尚未产生的当前生成结果。显露区因此有确定来源，不会形成“先需要生成结果才能初始化生成”的循环。保存失败保留旧历史，重试使用同一帧号与随机种子；镜头切换"
+    },
+    {
+      "sha256": "f3d6c9a43888bdb587d87d4fd98fcb5050e9ecae99fc1c020993e09496ff2fc4",
+      "source_heading": "历史位置与可见性",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "## 历史位置与可见性"
+    },
+    {
+      "sha256": "6f1479831614a781b6d6659b660c82e1105cb297d585d9caa7551065668a5cd0",
+      "source_heading": "当前像素查询历史",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "### 当前像素查询历史"
+    },
+    {
+      "sha256": "62eeac2e40163c7f44a79ec1186ea2e9f8c16b80516811b8a079e8b0eb5c0139",
+      "source_heading": "当前像素查询历史",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "设像素中心采用左上角为原点、向右向下为正的连续坐标。当前像素x的反向光流B以原图像素为单位，历史查询位置为："
+    },
+    {
+      "sha256": "915f3703384c4c17ab107e621960ffb9f88b870027f34358cc2ad54bc1911a8e",
+      "source_heading": "当前像素查询历史",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "$$q=x+B_{t\\rightarrow t-1}(x),\\qquad \\hat I_t(x)=I_{t-1}(q)$$"
+    },
+    {
+      "sha256": "a4b8785867db5c8f9be7506e1d0864fab733024e273b6961292665bdc2bed977",
+      "source_heading": "当前像素查询历史",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "物体从前帧横坐标92移动到当前100，当前的B为−8，查询92才能取得同一表面。前向流定义在前帧92处，值为+8；把当前100处的前向流取负不能保证找到92，因为它属于另一份定义域，遮挡处甚至没有一一"
+    },
+    {
+      "sha256": "81e17d7066bdf4e0424ca442518f0adab1e3440ec373b5d944569e61bb499da5",
+      "source_heading": "当前像素查询历史",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "颜色和连续属性可在q处插值，对象ID使用离散查询。插值足迹跨越不同对象时拒绝历史；同一对象的自遮挡也可能形成深度断层，因此足迹内每个参与插值的深度都要通过预期深度检查，再插值颜色。局部历史置信度Q也逐"
+    },
+    {
+      "sha256": "43a9785db61b0c201e4ba746acaf015b6660cf94e13218131a90de4173c06946",
+      "source_heading": "当前像素查询历史",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "锚点路径A_anchor单独按同样的非零足迹检查：任一参与样本不具备0.8以上的锚点支持，本次锚点路径置信度取零，但局部Q有效的颜色仍可用于局部时序复用。锚点支持不能由其他高权重样本稀释补足。若使用U"
+    },
+    {
+      "sha256": "0a2404d308d3f50a0d65538e2b5d45e7a37405815ac00a153c2f714888479233",
+      "source_heading": "当前像素查询历史",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "例如90%权重的颜色0.2对应Q=1，10%权重颜色0.9对应Q=0。先插值Q会得到0.9，通过0.8门限，却把无效颜色混成0.27。本规则在采样前就拒绝第二个非零样本，当前像素进入重新生成。若该无效"
+    },
+    {
+      "sha256": "1df0c8c0cf3c4ded2a539ce61bc6e7422a6fdfea0885f2b9742a496956e84cf5",
+      "source_heading": "深度比较与拒绝分支",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "### 深度比较与拒绝分支"
+    },
+    {
+      "sha256": "2922778c5059b0d0f027a379087fe41d87247ee26e8d80ac508ba6fe9023f7be",
+      "source_heading": "深度比较与拒绝分支",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "位置落在图内并不表示历史可用。从当前像素反投影得到视射线r，以`p_view=r*D_t/(-r.z)`得到当前视位置。设V是世界到相机矩阵，O是对象到世界矩阵，则历史视位置为`p_h=V_(t-1)"
+    },
+    {
+      "sha256": "56b3efaf186f0f60ea8acd1c4ead09bac8e8da31c71cb12d8bf08da24bba8adc",
+      "source_heading": "深度比较与拒绝分支",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "天空先走独立分支：只使用旋转查询、图内检查、背景ID与对应置信度，跳过有限深度和表面法线比较。实体像素按以下顺序判定，输出拒绝原因供调试："
+    },
+    {
+      "sha256": "0733b6b7d1703f00d5b196052513dfc72b61533504e282965d682cb8ff6c650a",
+      "source_heading": "深度比较与拒绝分支",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "```text\n镜头切换，或expectedDepth非正/非有限：拒绝\nq超出图像，或采样足迹混入其他对象：拒绝\n历史对象ID与当前表面ID不同：拒绝\nabs(historyDepth - expe"
+    },
+    {
+      "sha256": "00c4f23efcca62fb5c5f03a7a1a00dc82a9d21824c1964c99cf11cc95d98c543",
+      "source_heading": "深度比较与拒绝分支",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "当前墙面预期在前帧深度2米，历史查询处却是1米远的柱子，差1米超过0.02米，应重新生成墙面。若只检查运动向量和图内范围，柱子颜色就会进入墙面。薄物体在同一ID内自遮挡时，深度检查仍能排除错误表面；仅"
+    },
+    {
+      "sha256": "7eec724b496440b915fa0f7ed3f6ba4455617014c65ed57883f9b927e7c8fd65",
+      "source_heading": "深度比较与拒绝分支",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "接受位置取得历史颜色，拒绝位置使用当前渲染颜色`R_t`作为初始图。遮罩边缘可以在确认同一表面的区域内平滑，但不能跨过深度边界扩大历史权重。否则拒绝逻辑正确，后面的羽化仍会把前景污染带回来。"
+    },
+    {
+      "sha256": "04b93a159ce31e80a5ee44a7591fa350177cbb621ce2a73037ebf34e47a3545f",
+      "source_heading": "法线与当前结构",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "## 法线与当前结构"
+    },
+    {
+      "sha256": "874f1ad58ebf6d5127208837babcc268ea698e7acd96e6ea735036351ae20b78",
+      "source_heading": "法线与当前结构",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "颜色可作为外观参考，法线却有方向空间。当前和历史都保存视空间法线时，相机旋转本身就会改变数值。设C是世界到相机矩阵的旋转部分，U是对象到世界矩阵的刚体旋转部分，均为3×3矩阵。颜色仍记R，避免把渲染图"
+    },
+    {
+      "sha256": "0728d0492c0d7b5ea9972794b9d64abd1cdd554c236c52533a1bc8d9b5fdfead",
+      "source_heading": "法线与当前结构",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "$$n_h=C_t U_t U_{t-1}^{-1}C_{t-1}^{-1}n_{t-1}$$"
+    },
+    {
+      "sha256": "27b5d4c39ccd1784eb240889320fae11b6023176c06e76ef5ab329a5e875398b",
+      "source_heading": "法线与当前结构",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "先撤销前相机旋转，撤销前物体旋转，再施加当前物体和相机旋转。静态物体的两个U相消。比如同一世界法线在前视空间为(1,0,0)，当前相机旋转使其变为(0,1,0)，输送后再比较，才不会把相机运动误当成表"
+    },
+    {
+      "sha256": "0df3c2303ba2c5c52c9e606325f2986c47e44c9e33e7304a9fadd53424dc4457",
+      "source_heading": "法线与当前结构",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "若几何法线缓冲采用RGB编码，先从[0,1]解码到[−1,1]，验证长度并归一化。将输送后的历史法线与当前结构法线做点积，本例低于`cos30°`就拒绝；这里比较的是同一语义的几何法线，不能将历史着色"
+    },
+    {
+      "sha256": "f9d58c688000183b2b844a6d36d99e5ce0ac30ddc6f0724c93b132b3ec6cec05",
+      "source_heading": "法线与当前结构",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "接受后取`v=(1-w)n_current+w*n_history`，再归一化，教学权重取0.75。当前(0,0,1)、历史(0,0.28,0.96)的点积为0.96，通过30度阈值；此时v=(0,0"
+    },
+    {
+      "sha256": "e495134b9782e155ab20a3d5e2ed70f9fb591cca1b7b1d390cf7fb9eb70cb084",
+      "source_heading": "法线与当前结构",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "过滤后的法线保存在诊断缓冲中，供法线条件模型的替代路线使用；本页选定的深度ControlNet读取当前深度，ID继续用于对应验证。分别生成深度、法线和遮罩再强行对齐，会让同一轮廓拥有不同位置，历史拒绝"
+    },
+    {
+      "sha256": "32574063a9dfa316ebc4410fc864bd9f6a96d6eaba7ef3c19d0350674112a904",
+      "source_heading": "历史图与潜变量",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "## 历史图与潜变量"
+    },
+    {
+      "sha256": "1b71cd57d8a3d9cca342d7bd7ba2736a0170b4ae901932327aeb1de4227fffe5",
+      "source_heading": "像素空间合成",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "### 像素空间合成"
+    },
+    {
+      "sha256": "cf5787bb2bc4a73ef3f08e2639f4c90e3f3e6fdd269191e39b2cfead6ffa1e6c",
+      "source_heading": "像素空间合成",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "令`W_t`是重投影后的线性历史颜色。分配W、重投影Q和锚点置信度缓冲时先填有限零值；图外或其他拒绝分支不执行无效采样，保留占位值并将M置零。着色器或张量运算中的`0*NaN`仍为NaN，遮罩乘法不能"
+    },
+    {
+      "sha256": "42376272eaa3d6c0d9717c3cfe4bb84e60dc8d506e31849ac4f4cc67857149d2",
+      "source_heading": "像素空间合成",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "先将位置、ID、深度、置信度与法线检查的结果合为几何有效遮罩，再与当前照明、材质稳定遮罩相交，得到`M_t`。灯光切换或材质更新的对象在构造A以前就令M为零；没有事件信息时，比较当前R和重投影的历史渲"
+    },
+    {
+      "sha256": "0801dd75c338a4735fb4de14073c3a90fb607902df281486d731955fbcaeed0e",
+      "source_heading": "像素空间合成",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "以sRGB编码传递`T`构造模型输入：这里的线性RGB已经经过开头固定的色调映射，T只把显示线性RGB编码为sRGB，不重复执行色调映射。历史和生成结果均保存为这个显示线性工作域，而不是场景辐射亮度。"
+    },
+    {
+      "sha256": "0f61317802a3011dd069280ec980fe3314e3fb680ef64400cbce62f99e1306d1",
+      "source_heading": "像素空间合成",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "$$A_t=M_t W_t+(1-M_t)R_t,\\qquad z_A=s\\,E(2T(A_t)-1)$$"
+    },
+    {
+      "sha256": "2200a7b05f92aab2f6b65a371c08830b96c0b20882ff48f1c5073c6d8d2e07f2",
+      "source_heading": "像素空间合成",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "`E`取VAE编码分布的均值，`s`读取`vae.config.scaling_factor`，不手填另一个模型的常量。模型图像张量为`1×3×H×W`、值域[−1,1]，潜变量为`1×4×H/8×W"
+    },
+    {
+      "sha256": "8f73ca5a9334de7d3b43b8d505434eeeb1f79257d3f428e533e4cbccdc049379",
+      "source_heading": "像素空间合成",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "像素遮罩不能直接当潜变量遮罩。8×8块只要有一个显露像素，平均池化就会留下非零历史权重；保守取最小值又会整块放弃历史。即使扩大拒绝边缘，VAE卷积与注意力也可能让远处像素影响同一个特征。本路线因此始终"
+    },
+    {
+      "sha256": "1332c0a87f2a6273ad9faff134f87d98fed4946203e15edd2677acc5285ee78f",
+      "source_heading": "潜变量重投影的替代路线",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "### 潜变量重投影的替代路线"
+    },
+    {
+      "sha256": "dea00f13a0577b433325977c849b32781b7658f868ff3a510423598bca11fecb",
+      "source_heading": "潜变量重投影的替代路线",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "直接搬运历史潜变量可以省去一部分图像重编码，但要另行解决遮罩与编码不等变问题。对于缩小8倍且无裁剪的编码，原图像素中心采用整数坐标，潜变量中心l对应`x=8(l+0.5)-0.5`；查询原图反向流后，"
+    },
+    {
+      "sha256": "36fe393f08b4a80dcfcd19f04398d371c7e0beb5d6f1928837f9c381abf472a0",
+      "source_heading": "潜变量重投影的替代路线",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "$$l_h=(x+B+0.5)/8-0.5=l+B/8$$"
+    },
+    {
+      "sha256": "78e2c27b67d2965b701556a1fb5b6f7fb383438ab8a9abd15c695122e7f2c0ef",
+      "source_heading": "潜变量重投影的替代路线",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "l=20、B=−8时查19，直接查12会把运动扩大8倍。存在裁剪和填充时，先由当前潜变量中心还原原图位置，加上原图流，再应用历史图的预处理仿射变换。这个坐标正确性只保证查询位置正确，不能保证`E(wa"
+    },
+    {
+      "sha256": "b1813851ad5dbee8f742d2b99702e78e898c692b30bbff192dade03c792f2e19",
+      "source_heading": "条件去噪与历史约束",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "## 条件去噪与历史约束"
+    },
+    {
+      "sha256": "c6586e9e0220a05280354adb954c3f4c810caa1742052fbac93d2b7eebdda230",
+      "source_heading": "模型和条件契约",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "### 模型和条件契约"
+    },
+    {
+      "sha256": "a761782d365d1b4cc80126bf069b8eaa1e5e0b474125749b2a9ff93bca9c5511",
+      "source_heading": "模型和条件契约",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "下面选用Diffusers 0.35.1、Stable Diffusion 1.5、`lllyasviel/sd-controlnet-depth`和DDIM。模型权重、提示词、负面提示词、随机种子与"
+    },
+    {
+      "sha256": "6e1189442a2435de9b7231661db161a2c168f31a9dc934fb112dcc0c51685890",
+      "source_heading": "模型和条件契约",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "independent_review_edit",
+      "source_excerpt": "深度ControlNet接收三通道[0,1]图，近处亮、远处暗。使用镜头固定近远距离n、f，令`C=clamp((1/D-1/f)/(1/n-1/f),0,1)`并复制到RGB；n、f以米计，天空填零"
+    },
+    {
+      "sha256": "41f93a3d187a7fdd5f701c7837d36969a512bf54718d00c9d10341eb8ca91980",
+      "source_heading": "模型和条件契约",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "本路线的法线参与历史拒绝与诊断，深度进入ControlNet，文本进入文本编码器。二者用途分开，代码无需一个未定义的“深度、法线和角色参考”接口。需要法线ControlNet时，增加独立权重并按该权重"
+    },
+    {
+      "sha256": "0435448ce9299c3eafdb90e45f2480e7ee15ca599c55e1ac46afec8c1c35fafb",
+      "source_heading": "起始噪声与步长",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "### 起始噪声与步长"
+    },
+    {
+      "sha256": "d243f4803e34c8195da23555a9afaa077ab6f657e718dcf25f0ab9b2789c157c",
+      "source_heading": "起始噪声与步长",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "先令DDIM使用50步、`timestep_spacing=\"leading\"`、`steps_offset=0`、`prediction_type=\"epsilon\"`、`clip_sample=F"
+    },
+    {
+      "sha256": "b2564902e31c9151aeba52282ca13269e8881cac2006d83620ade042170f6553",
+      "source_heading": "起始噪声与步长",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "$$z_k=\\sqrt{a_k}z_A+\\sqrt{1-a_k}\\epsilon$$"
+    },
+    {
+      "sha256": "446084ee060e326ba5bbe0ebf9a89da188db93926806f5795c25e4d293e8f784",
+      "source_heading": "起始噪声与步长",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "调用`set_timesteps(50)`后截取`timesteps[20:]`，以首项580调用`add_noise`，这样起点与实际迭代一致。强度过小会保留原渲染外观，过大则更容易改变局部身份；两"
+    },
+    {
+      "sha256": "705c64ee249dae415f2c18f11438d41b282cb275f093dad1564d0647b9bf7741",
+      "source_heading": "每步预测与颜色投影",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "### 每步预测与颜色投影"
+    },
+    {
+      "sha256": "a8385b795bb33b9320109aede2f8ddd76a1986efc81f84aeba2dc0a7376af180",
+      "source_heading": "每步预测与颜色投影",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "independent_review_edit",
+      "source_excerpt": "每一步将当前潜变量分别与负面提示词、镜头提示词送入ControlNet和UNet；负面提示词为空时就是空文本分支。ControlNet的深度残差权重固定为1，输入两份同一深度图；残差写入UNet的下采"
+    },
+    {
+      "sha256": "98e3ee05782be61a80b161bb9ef3e8d119c2635de60d09626b24c5d00f6d08a5",
+      "source_heading": "每步预测与颜色投影",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "由噪声预测反推干净潜变量，解码成线性图`P_k`，再施加当前像素的历史约束："
+    },
+    {
+      "sha256": "88847ea8e3b45f179a72a9be7a45f49527a6f490129d90fb369d98c2c23f8833",
+      "source_heading": "每步预测与颜色投影",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "$$\\hat z_0=(z_k-\\sqrt{1-a_k}\\hat\\epsilon)/\\sqrt{a_k},\\qquad\nP'_k=(1-\\lambda M_t)P_k+\\lambda M_tW_t$$"
+    },
+    {
+      "sha256": "42942475520b3d6038fcdb53fe543555300ebaf01554724764e9406d33fb5fc2",
+      "source_heading": "每步预测与颜色投影",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "教学权重λ取0.75，随后把`P'_k`整张重新编码为`z'_0`。接受位置的预测颜色0.4、历史0.8，投影为0.7；拒绝位置保持0.4。投影修正干净图，不把无噪声历史直接塞进带噪声的`z_k`。下"
+    },
+    {
+      "sha256": "3fb68a11e217fcf5237dd3579ded5c98baacfade13d6432271d7ea8b65142b5e",
+      "source_heading": "每步预测与颜色投影",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "$$z_{k'}=\\sqrt{a_{k'}}z'_0+\\sqrt{1-a_{k'}}\\hat\\epsilon$$"
+    },
+    {
+      "sha256": "1aa0686cbb19bb6f08686bfb5c8eec88c6128d2e0e0ee8c2de0a3df19049d333",
+      "source_heading": "每步预测与颜色投影",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "这是本页明确定义的像素投影DDIM变体，随机步长η取零。它不是把官方`step`的结果再当作同噪声级别的图，也不是现有论文的完整复现。最后一步令`a_next=1`，输出干净图；解码后再作一次相同像素"
+    },
+    {
+      "sha256": "8e073aff9c8f48c8507746117cf23ec116d9fa2d32acfd8e03e9e4f661c5027b",
+      "source_heading": "每步预测与颜色投影",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "投影强会锁住纹理，也会保留历史里的错误。光照变化、非刚体不可靠区和镜头切换因此必须在构造M时撤去历史权重，不能依靠去噪器事后修正。反复解码、编码还增加每个去噪步的VAE成本，并可能累积细节损失；提高关"
+    },
+    {
+      "sha256": "22221825f3cb499596a24ba527114f064ec8e75030d8285850049106c4035524",
+      "source_heading": "去噪循环实现",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "### 去噪循环实现"
+    },
+    {
+      "sha256": "f134e50ecd2ceb011e2af9f1f15c8ea827b7132431358d9ed47fd9d884b46755",
+      "source_heading": "去噪循环实现",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "下面是机制片段，`pipe`是已加载上述权重的`StableDiffusionControlNetImg2ImgPipeline`，只处理一帧、一个样本。`A`、`W`为线性RGB张量，M为`1×1×"
+    },
+    {
+      "sha256": "95d5123dd2cb39362f8a58f898815fdbcb9f87f54aed3416d1ea3e7151247b86",
+      "source_heading": "去噪循环实现",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "```python\n# PyTorch / Diffusers 0.35.1，机制片段；在 torch.no_grad() 内执行。\nscheduler.set_timesteps(50, devic"
+    },
+    {
+      "sha256": "35e5adf36109d0578fcb928f74469d5267762542b94d1ab39f8b7812c8b99d01",
+      "source_heading": "去噪循环实现",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "status": "exact",
+      "source_excerpt": "实现把模型全部移到同一设备，模型输入采用其权重精度；VAE若以float32运行，就在编码、解码边界显式转换，并把得到的潜变量转回UNet精度。`scheduler`使用上述DDIM配置并赋给`pip"
+    },
+    {
+      "sha256": "c4fe5dccd77e47521b76813642614311125d822edfed69392278c9127aaba29c",
+      "source_heading": "曝光与历史推进",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "## 曝光与历史推进"
+    },
+    {
+      "sha256": "83a0310544557ccbc27679adf460107a12284fe12c4bbc3e5afbd774dae65477",
+      "source_heading": "漂移估计与真实照明",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "### 漂移估计与真实照明"
+    },
+    {
+      "sha256": "d41109f5d7ae9df55c9686b35e2b937ef0f88a74139194728315610139d6bbf0",
+      "source_heading": "漂移估计与真实照明",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "independent_review_edit",
+      "source_excerpt": "本节用P表示上述循环返回的最终`output`，包含末次像素投影；循环内部尚未投影的解码临时量不进入曝光统计。生成输出可能逐帧变亮，即使历史对应正确，下一帧仍会把这种漂移当作外观继续传播。统计使用线性"
+    },
+    {
+      "sha256": "d931f8f292e07b7ee7c90e3c4f97277c70fe82217c8b7db81900d18cc460345e",
+      "source_heading": "漂移估计与真实照明",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "exact",
+      "source_excerpt": "稳定区域的目标亮度取W，当前输出亮度取P。对每个合格像素计算`log(Y_W/Y_P)`，取中位数r，再令原始增益`g*=exp(r)`。中位数能抵抗少量局部生成错误，却不能抵抗整片材质真正改变；渲染"
+    },
+    {
+      "sha256": "26ea24c28ab3abec870f43cfcdaf218e5d079501d22bd27702afd6a38d9c2c05",
+      "source_heading": "漂移估计与真实照明",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "exact",
+      "source_excerpt": "将增益限制到[0.8,1.25]，再限制相对上一帧增益最多乘或除1.05，估计出的g只作用于稳定校正遮罩S覆盖的位置：`P_corrected=P*(1+S*(g-1))`。S在通过M且照明、材质稳定"
+    },
+    {
+      "sha256": "cefff59d01a5dfa507fce3123dc7fdc8e993e4aec0b87b0092e070cc2c47437a",
+      "source_heading": "漂移估计与真实照明",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "exact",
+      "source_excerpt": "例如三处稳定亮度的W为0.2、0.4、0.6，P为0.1、0.2、0.3，三个比值都是2，原始增益2先被截到1.25，再从上一增益1限制到1.05。稳定区域输出只温和提亮，避免一次错误统计导致突变。如"
+    },
+    {
+      "sha256": "d1d842fa84e4a4147a8ead9e0ec943a95ff736117b1465c0c6c8fd37f31f3da8",
+      "source_heading": "生成内容与几何记录",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "### 生成内容与几何记录"
+    },
+    {
+      "sha256": "f88438a1791cdb61056cb581f10e33c2db4eba4d7119f8378beca379b8e99ce5",
+      "source_heading": "生成内容与几何记录",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "exact",
+      "source_excerpt": "曝光校正后的图进入历史之前，还需检查生成内容有没有离开对应几何。将渲染对象轮廓与生成图中可识别的目标轮廓对照，若偏离超过镜头设定的2像素，将相关边缘带的Q置零；人物身份和语义细节由关键帧确认。自动识别"
+    },
+    {
+      "sha256": "e1d7a5b0faee78e10e91477485165251c056752567fae47e665870cdd8418976",
+      "source_heading": "生成内容与几何记录",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "exact",
+      "source_excerpt": "历史保存最终颜色、原始R/D/ID/法线与当前变换、曝光增益及饱和遮罩、种子、模型修订号、帧号，以及Q。在生成M之前，先算`q_candidate=当前对应置信度×重投影的历史Q`；低于0.8时拒绝，"
+    },
+    {
+      "sha256": "f6dabb5ed40854e22ee7c0eddde06ae1747ad02886e5382646d8845efd2dccd9",
+      "source_heading": "生成内容与几何记录",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "exact",
+      "source_excerpt": "例如关键帧Q为1、每次对应置信度0.9，前两次Q分别为0.9和0.81，第三次候选为0.729，立即拒绝历史并由当前结构生成。Q表示相邻帧可否继续采用这份局部结果；新生成后Q可重置1，但它没有因此重新"
+    },
+    {
+      "sha256": "ff134e2dc16a91e7b1eeb621f370fde090aac05748a486db26149dbe383c6059",
+      "source_heading": "生成内容与几何记录",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "exact",
+      "source_excerpt": "锚点路径另存A_anchor：批准关键帧通过内容检查后取`Q=A_anchor=1`；接受历史且V为1时取`A_anchor=重投影的前帧A_anchor×当前对应置信度`；M为0后重新生成时A_an"
+    },
+    {
+      "sha256": "eac8239c764a0eef9e6388c7a5b842ca1464745bf756753f434062595c35a730",
+      "source_heading": "生成内容与几何记录",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "exact",
+      "source_excerpt": "例如一处表面因遮挡拒绝历史，重新生成后内容通过检查，状态为Q=1、A_anchor=0；下一帧对应置信0.9，局部复用后Q为0.9，A_anchor仍为0。它可以提供邻帧历史，却不能在关键帧双向融合时"
+    },
+    {
+      "sha256": "abfc2b130548083dc1f20687002b8558b08be633c4cc81a887fac3089cf455b3",
+      "source_heading": "历史提交与方向隔离",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "### 历史提交与方向隔离"
+    },
+    {
+      "sha256": "50456197a7249e22d29389a7358648c341e46695955b9da0a8c03e059e166add",
+      "source_heading": "历史提交与方向隔离",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "status": "exact",
+      "source_excerpt": "每条传播方向拥有独立的颜色、Q、A_anchor和曝光增益状态。从右关键帧往左时，查询当前帧到后一帧的位置并读取右向历史；照明比较也与该方向的历史渲染R比较。增益限速的上一值来自上一处理帧，即时间轴上"
+    },
+    {
+      "sha256": "cfa297d86c5f17fdd7f091a9442b949c5e1fd49b3cb51071a1be0840194298f5",
+      "source_heading": "历史提交与方向隔离",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "status": "exact",
+      "source_excerpt": "保存以`镜头、方向、帧号、输入哈希、模型配置哈希`定位一次工作。先写出不可变颜色与各缓冲，记录文件哈希并确认全部可读取，再以单份清单发布该帧历史；串行执行器最后切换当前历史指针。中途失败留下未引用文件"
+    },
+    {
+      "sha256": "23dba21c1e75bf9f9894011d0ff176b7cb2b6d15b5c10251c8f5b90811e7ca29",
+      "source_heading": "历史提交与方向隔离",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "status": "exact",
+      "source_excerpt": "历史指针按传播序列版本分别保存。每次切换同时比较序列仍为活动版本、当前前驱清单哈希符合预期；取消或重新批准关键帧先关闭旧序列的提交权限，再建立新序列。旧工作即使迟到完成，也只能留下旧版本下的不可变文件"
+    },
+    {
+      "sha256": "a5f7762ea15c42370e94068f85b58519fde263a13c7fa8ea54c0ea46d6142aee",
+      "source_heading": "历史提交与方向隔离",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "status": "exact",
+      "source_excerpt": "固定种子并不自动保证不同设备或模型运行库逐位产生相同图像。已经发布的历史以文件哈希为准，恢复直接消费该清单；重算只能产生新候选，不能用同一路径覆盖已发布字节。运行清单另外保存权重哈希、模型与调度配置、"
+    },
+    {
+      "sha256": "313e5c1fec93522ac49cb2dcdb60878c0dba3e8f4fb0f599a4574b4c198b63ab",
+      "source_heading": "任务续行与二次恢复",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "### 任务续行与二次恢复"
+    },
+    {
+      "sha256": "d5a7d8ee7c5c4483b96a90d5031b8148f79f7059bfd822374563944571a35552",
+      "source_heading": "任务续行与二次恢复",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "以左向传播的第4帧为例，调度器先登记逻辑任务K4，再交给工作进程。K4绑定序列版本、方向、帧号、完整输入清单及预期前驱H3；工作进程读取清单指定的字节并核对哈希，不在运行期间读取“最新关键帧”或活动目"
+    },
+    {
+      "sha256": "2b6c10ce6ed3b1c3fe6fcef8b9ae3d52a4a62111c142a342669a234f617910ad",
+      "source_heading": "任务续行与二次恢复",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "status": "exact",
+      "source_excerpt": "任务登记、派发意图和状态变化进入控制库的一条有序记录流。每次事务获得递增控制序号，原子保存变化及尚未交付的派发项。控制库按逻辑任务ID查询完整生命周期，工作进程的接纳去重键则为`逻辑任务ID、尝试代次"
+    },
+    {
+      "sha256": "0128386adb7627708dd3fc5bb4ddd29f4fcbc769e1a6bc9ab379cc7b1381bf10",
+      "source_heading": "任务续行与二次恢复",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "status": "exact",
+      "source_excerpt": "| 持久状态 | 恢复动作 | 允许推进历史的条件 |\n|---|---|---|\n| 已登记、无接纳回执 | 查询原执行入口；确认未接纳后重发原K4，输入过期则终结旧任务 | 当前序列和H3仍匹配 "
+    },
+    {
+      "sha256": "0a35f0916ffe52cbd46550de0a12acc2b910f49c88c875cbbf3bff00936e97c3",
+      "source_heading": "任务续行与二次恢复",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "status": "exact",
+      "source_excerpt": "工作进程失联并不证明它已停止。允许启动替代尝试时，控制库先递增该任务的尝试代次，旧尝试在结果提交入口被拒绝；计算可能暂时重复，但输出始终写独立不可变目录。候选接纳事务检查当前尝试代次、任务仍活动和完整"
+    },
+    {
+      "sha256": "a2c1158e4ff95bf347b3ac6f47fe55aefc16c70ceba544e1292664f1733eff8d",
+      "source_heading": "任务续行与二次恢复",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "status": "exact",
+      "source_excerpt": "控制序号统一排列关键帧重新批准、关闭序列、工作接纳、候选选定、历史指针提交、融合决议和发布。快照保存最后消费序号、活动序列、任务与尝试、选定结果、各历史指针及待交付项；恢复先加载快照，再按序重放其后记"
+    },
+    {
+      "sha256": "a2404aaa837f0bd23231927322df89606df529afb3948427bc3ddfbd01f040d3",
+      "source_heading": "任务续行与二次恢复",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "status": "exact",
+      "source_excerpt": "例如快照停在控制序号40：K4已登记，尚未派发。第一次恢复到41登记尝试2，42选定颜色清单C4，43提交H4，44登记K5；新快照生成前再次退出。第二次恢复必须先消费41恢复尝试身份，再消费42的既"
+    },
+    {
+      "sha256": "8ee037afc80e2bdbe0fa8d86ca93bc93861673b540056e0976d4cbe7de339796",
+      "source_heading": "关键帧与传播冲突",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "exact",
+      "source_excerpt": "## 关键帧与传播冲突"
+    },
+    {
+      "sha256": "fa9c719a4b263b6ab3486ad9432998990a344ec9ef4da10b13eb5fdef32f6e21",
+      "source_heading": "关键帧与传播冲突",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "exact",
+      "source_excerpt": "历史一帧帧插值会积累模糊，因此在镜头0、10帧设置已批准关键帧，分别向中间帧传播。第4帧对左关键帧距离4、右关键帧距离6；教学时间权重为0.6与0.4，再乘各路径的锚点置信度A_anchor；局部历史"
+    },
+    {
+      "sha256": "065db608b3b78b50a43125dd65439a38360d1702cb34108e3e8160133479845d",
+      "source_heading": "关键帧与传播冲突",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "先检查乘置信度后的权重和大于零，再执行归一化；某像素的总和为零表示该处没有可用锚点，将该像素标为待补区域，最终以当前R填入该处、M在该处置零后重新运行上述条件去噪，不把已失去锚点来源的候选伪装成锚点传"
+    },
+    {
+      "sha256": "3d32750a2bea7c5facf14da940ad8e2aa1590cc969fb0cb81cac2399fd020ff9",
+      "source_heading": "关键帧与传播冲突",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "exact",
+      "source_excerpt": "两份传播都属于同一对象、通过深度且外观差异较小时，可在线性颜色空间混合。某标量颜色为0.2与0.4，上述权重得到约0.270；只有左路通过门限时直接取0.2。若两份轮廓错位或角色细节不同，混合会产生双"
+    },
+    {
+      "sha256": "647f656797547fcb3cd0a36b509a163097fa090f74ebbda00dfb4eeff6335ca0",
+      "source_heading": "关键帧与传播冲突",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "exact",
+      "source_excerpt": "冲突不能仅靠时间距离发现。本例用当前渲染ID界定同一个对象，并在二者共同有效区域计算各像素RGB最大绝对差。这里的ID来自同一份渲染，本身不能检测生成轮廓是否移动；轮廓差由各候选图的对象分割或人工标注"
+    },
+    {
+      "sha256": "5e34e19fd33b47bf0df4e1ad50f6ce825db595740696c34285dd4be244792271",
+      "source_heading": "关键帧与传播冲突",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "exact",
+      "source_excerpt": "共同有效区域为空时，两路之间没有可比较的外观证据，也按冲突选路。若超过0.15的像素多于该对象共同有效区域的10%，将该对象判为冲突；把每份候选对象轮廓转成边界像素集合，计算两集合之间的双向最近距离最"
+    },
+    {
+      "sha256": "9ecb64b22ab7bc72826a246a62e192c82804c3eee840e092b05104bbfa8bc4d7",
+      "source_heading": "关键帧与传播冲突",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "exact",
+      "source_excerpt": "时间与置信度权重只在通过冲突判断后逐像素混合。冲突时，对当前对象全部像素求每一路有效锚点权重之和，再除以对象像素数，得到对象分数；无效位置贡献零，因此覆盖面积也参与选择。选择分数较大的一路，平分时固定"
+    },
+    {
+      "sha256": "79d56b2a6fdb4e582ef8c20371cd035fa17dd24a6ca4768bc135f9aa3981b52f",
+      "source_heading": "关键帧与传播冲突",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "exact",
+      "source_excerpt": "例如一个对象100个像素，左路60个有效像素、每个权重0.6，右路100个有效像素、每个权重0.4。分数分别为0.36与0.4，选择右路。只比较共同有效区域或单个像素的0.6与0.4，会忽略左路40个"
+    },
+    {
+      "sha256": "76b1e0e3c320383e8446fafa2cfa650881ad138a054cbe4714913c5c996e728a",
+      "source_heading": "关键帧与传播冲突",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "所有对象完成混合或选路后，形成整帧候选F和待补遮罩U。U为零的位置已有选定颜色，U为一的位置用R初始化；统一调用本页循环，令`A=(1-U)*F+U*R`、`M=1-U`、`W=F`，F在空洞的占位值"
+    },
+    {
+      "sha256": "44e238fedf82228c0ba2eda9ec1dd9c587082f234c3e1326edadd10212a36faf",
+      "source_heading": "关键帧与传播冲突",
+      "target_path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "status": "exact",
+      "source_excerpt": "得到补洞图G以后，只取U覆盖的结果：`final=(1-U)*F+U*G`。这样全局网络可以读到上下文，已选定区域也不会因为补另一个对象的洞而再次变化。最终检查补洞边界、生成轮廓与身份，失败对象进入返"
+    },
+    {
+      "sha256": "a19806e48adad9d84efa5b6d99683b843a237d8f4084d16c156f0848c3d31a0c",
+      "source_heading": "冲突决议与最终序列",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "### 冲突决议与最终序列"
+    },
+    {
+      "sha256": "7a3f3c8a6b00fabeb887580ebbf03931df560de86e90fb4f15d9910f3dedb79d",
+      "source_heading": "冲突决议与最终序列",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "status": "exact",
+      "source_excerpt": "第4帧的冲突记录绑定左右候选清单、当前渲染、对象ID与标注哈希，保存门限、有效面积、分数、选中方向及待补遮罩。自动选路也写入记录，人工可以批准左路、右路或重新生成；每次批准形成新决议ID，目标仍是当时"
+    },
+    {
+      "sha256": "87983103a2bf8deb13ddbd1fb530b0abfb188417d7f0eb9bc37aa9ff75d9373f",
+      "source_heading": "冲突决议与最终序列",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "status": "exact",
+      "source_excerpt": "补洞任务的输入包括决议ID、F/U哈希和模型配置，输出与最终内容检查一同形成不可变帧清单。人工重画的像素以带遮罩的明确修订产物加入同一清单，重新检查对象轮廓和边界；它只修改最终序列，传播历史仍保持各自"
+    },
+    {
+      "sha256": "d39f7907c3c43843f4fa491836ce7c9d23fbd2bc7f183e432964b2d5a64235fa",
+      "source_heading": "冲突决议与最终序列",
+      "target_path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "第4帧补洞通过后，它仍只是最终序列中的一个不可变帧。整段输出先收齐所有帧、帧率、颜色编码和音画时间映射，再生成最终序列清单。发布指针条件比较当前序列代次、关键帧批准版本和全部决议版本，通过才切换。视频"
+    },
+    {
+      "sha256": "8edcafd51afc5d4be454df24ce3cf609916ffa2e1911ca7c27a061a5352990e1",
+      "source_heading": "故障定位",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "## 故障定位"
+    },
+    {
+      "sha256": "3fdaff739cad48cc33b9db836835c5726a421e995926104d594904d7036b8295",
+      "source_heading": "故障定位",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "independent_review_edit",
+      "source_excerpt": "验证先看静止相机下的平移，保存B和历史查询位置，确认花纹跟随表面；再加入相机旋转检查法线输送；用柱子遮挡角色，确认显露处M为零且初始图来自当前R；最后播放关键帧交界，观察冲突选择是否产生跳变。固定几何"
+    },
+    {
+      "sha256": "22beaed78e01c950d1e6bf58d1aa6f64611716f5fd81658ed05d057a0b1b0d9d",
+      "source_heading": "故障定位",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "independent_review_edit",
+      "source_excerpt": "记录有效区域重投影误差、拒绝比例、同一对象外观偏移和新显露区域细节。全部拒绝能让历史误差消失，却没有时间复用；低帧差也可能来自拖影，必须同时观察当前动作、轮廓和显露区域。逐步投影保留了错误外观时，沿W"
+    },
+    {
+      "sha256": "010182ab2af2e8cb7ff4bf23ea5286c342051d0c0edaa96337980e97ec0699d1",
+      "source_heading": "实现与证据",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "## 实现与证据"
+    },
+    {
+      "sha256": "db77ca7e871fd95d39bf36a8d10f6b1c97e51612fcc90be483557e1a8b959b5a",
+      "source_heading": "实现与证据",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "[CPU参考计算](../examples/retained_review/video/reference.py)展开拒绝分支、潜变量尺度、零向量回退和关键帧冲突选择；运行 `python 知识库/e"
+    },
+    {
+      "sha256": "ff3caf42e0e094c9090945a09203577e08cb1a04a89e6ff87440418522a4ec16",
+      "source_heading": "相关主题",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "## 相关主题"
+    },
+    {
+      "sha256": "f3eee78fe105cbf793780913e5acbbb1f90b292f70fac127d24896c16f9c40ea",
+      "source_heading": "相关主题",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "- [[17_AIGC与Agent管线/ComfyUI工作流]]\n- [[02_GPU与光栅化管线/抗锯齿与时域重建]]"
+    },
+    {
+      "sha256": "95d93065e8a34be82d81b7e09fe98d491a8db7f8a206a74bedbb19ebdf2c6ecf",
+      "source_heading": "参考资料",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "exact",
+      "source_excerpt": "## 参考资料"
+    },
+    {
+      "sha256": "6bc0568b72a69e1fc2908e9e88bebcf93a99cf43fb9b8df242504ef4e93b0ae5",
+      "source_heading": "参考资料",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "- [Diffusers 0.35.1 ControlNet图生图源码](https://github.com/huggingface/diffusers/blob/v0.35.1/src/diffu"
+    },
+    {
+      "sha256": "2ecae97e00dc822efd07ad59d1d2101d1bd56d39738e37413580bd6e131fd2bd",
+      "source_heading": "参考资料",
+      "target_path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "status": "reviewed_edit",
+      "source_excerpt": "- [TokenFlow，v3](https://arxiv.org/abs/2307.10373v3)：2026-10-23核读摘要；支持按帧间对应传播扩散特征的研究路线，不证明本页几何阈值和图生图"
+    }
+  ],
+  "findings": [
+    "将几何对应、模型逐步约束、曝光锚点融合和持久续行分为四个独立问题；补齐各页共享R/W/M/Q/A_anchor契约。",
+    "将跨页的上述循环、后文恢复等引用改为具体标题锚点；保留全部数例、去噪代码、历史证据范围和来源。",
+    "将消费前驱H3的第4帧明确为从第0帧向第10帧传播，消除左向措辞与前驱帧号冲突。",
+    "区分最终序列候选接纳指针和视频编码完成后的正式输出指针，避免把未经编码的清单接纳误解为视频已发布。"
+  ],
+  "verification_scope": [
+    "全文复读与原段落去向核对",
+    "2026-10-24运行retained_review/video/test_reference.py：3项通过；mechanism_chain/video/test_reference.py：18项通过。",
+    "核读Diffusers 0.35.1官方源码的encode_prompt返回、DDIM时间步与epsilon反推；未加载模型权重，无视频输出与主观质量评测。"
+  ],
+  "independent_review": {
+    "reviewer": "ai_split",
+    "date": "2026-10-24",
+    "scope": "全文复读导读和四篇正文，核对重投影92→100、深度2米/1米、法线输送、潜变量20→19、DDIM580起点、投影0.4/0.8→0.7、锚点0.9/0.81/0.729、双向0.652/0.348及控制序号40–44。",
+    "findings_fixed": [
+      "深度ControlNet补0<n<f、有限正深度及无效非天空输入失败规则，防止倒数除零。",
+      "CFG公式将empty名称改为negative，明确非空负面提示词的分支含义。",
+      "曝光10%判据明确分母、暗部下限和反向传播的历史定义。",
+      "故障定位补W/M/P中文定义，独立阅读时可追踪缓冲。"
+    ],
+    "paragraph_coverage": {
+      "source_paragraphs": 112,
+      "ledger_entries": 112,
+      "missing_hashes": []
+    },
+    "fact_check": [
+      "核读Diffusers v0.35.1 ControlNet图生图与DDIM官方源码；50步leading和epsilon路线保持，本文像素投影仍明确为自定义变体。"
+    ],
+    "runtime": "未加载模型，未测视频生成画质、GPU性能或任务恢复端到端。",
+    "verification": [
+      "python -B 知识库/examples/retained_review/video/test_reference.py：3项通过",
+      "python -B 知识库/examples/mechanism_chain/video/test_reference.py：18项通过"
+    ]
+  },
+  "review_status": "PASS_WITH_RUNTIME_LIMITATIONS",
+  "adopted_source_sha256": "0a6c1cb8fdc489c206f29c9e51f5e12e063f24479b68563e5bbc3de800406feb"
+}

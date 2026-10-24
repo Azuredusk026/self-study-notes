@@ -5986,5 +5986,86 @@
       "知识库/20_游戏AI/导航动作交接.md"
     ],
     "record": "references/navigation-split-2026-10-24.json"
+  },
+  "longpage_followup": {
+    "date": "2026-10-24",
+    "record": "references/longpage-review-2026-10-24.md",
+    "splits": [
+      {
+        "source": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+        "targets": [
+          "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+          "知识库/02_GPU与光栅化管线/时域历史校验.md"
+        ],
+        "record": "references/longpage-aa-2026-10-24.json"
+      },
+      {
+        "source": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+        "targets": [
+          "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+          "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+          "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+          "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+          "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md"
+        ],
+        "record": "references/longpage-agent-2026-10-24.json"
+      },
+      {
+        "source": "知识库/20_游戏AI/游戏AI决策模型.md",
+        "targets": [
+          "知识库/20_游戏AI/决策输入与动作交接.md",
+          "知识库/20_游戏AI/状态机与行为树.md",
+          "知识库/20_游戏AI/效用评分与目标规划.md",
+          "知识库/20_游戏AI/决策计划提交.md",
+          "知识库/20_游戏AI/计划终态与重规划.md",
+          "知识库/20_游戏AI/决策日志与恢复.md"
+        ],
+        "record": "references/longpage-ai-2026-10-24.json"
+      },
+      {
+        "source": "知识库/16_编程与数据结构/C++工程边界.md",
+        "targets": [
+          "知识库/16_编程与数据结构/C++构建与对象模型.md",
+          "知识库/16_编程与数据结构/插件接口与对象借用.md",
+          "知识库/16_编程与数据结构/插件关闭与卸载.md",
+          "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+        ],
+        "record": "references/longpage-cpp-2026-10-24.json"
+      },
+      {
+        "source": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+        "targets": [
+          "知识库/15_资产与工具管线/编辑手势与撤销.md",
+          "知识库/15_资产与工具管线/批处理条件发布.md",
+          "知识库/15_资产与工具管线/跨资源编辑恢复.md"
+        ],
+        "record": "references/longpage-editor-2026-10-24.json"
+      },
+      {
+        "source": "知识库/21_游戏网络/延迟补偿命中.md",
+        "targets": [
+          "知识库/21_游戏网络/异步命中结算与恢复.md"
+        ],
+        "record": "references/longpage-hit-2026-10-24.json"
+      },
+      {
+        "source": "知识库/16_编程与数据结构/文件IO.md",
+        "targets": [
+          "知识库/16_编程与数据结构/不可变文件发布.md",
+          "知识库/16_编程与数据结构/文件版本代理与回收.md"
+        ],
+        "record": "references/longpage-io-2026-10-24.json"
+      },
+      {
+        "source": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+        "targets": [
+          "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+          "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+          "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+          "知识库/17_AIGC与Agent管线/视频生成任务恢复.md"
+        ],
+        "record": "references/longpage-video-2026-10-24.json"
+      }
+    ]
   }
 }

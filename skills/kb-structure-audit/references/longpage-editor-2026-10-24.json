@@ -1,0 +1,759 @@
+{
+  "source_commit": "bc4ed68",
+  "source_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+  "articles": [
+    {
+      "path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "primary_question": "如何把交互预览组织为可验证可撤销的对象事务",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "用户操作流程",
+        "计划与编辑输入",
+        "编辑事务与撤销",
+        "命令、补丁与事务",
+        "手势合并",
+        "创建、删除与引用",
+        "Unity 与 Unreal 的撤销",
+        "事务执行与补偿"
+      ],
+      "title_candidates": [
+        "编辑手势与撤销",
+        "编辑手势与撤销机制",
+        "编辑手势与撤销协议"
+      ],
+      "reviewed_sha256": "248369dee872fcf3a77c8b6cc49f00e3b13ea7a945dda179948c8f3bbd2bf20c"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "primary_question": "如何使批处理在取消与崩溃后依据版本和回执安全继续",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "批处理与失败恢复",
+        "计划预览与稳定执行",
+        "条件发布与检查点恢复",
+        "进度、取消与错误恢复",
+        "工具版本与数据契约"
+      ],
+      "title_candidates": [
+        "批处理条件发布",
+        "批处理条件发布机制",
+        "批处理条件发布协议"
+      ],
+      "reviewed_sha256": "d0bc055863d906289627a246b45c0364135fde32a77a739457f8a90c500cca2a"
+    },
+    {
+      "path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "primary_question": "如何让对象呈现和文件版本共同服从持久编辑决定",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "对象与文件的共同提交",
+        "宿主撤销与持久恢复"
+      ],
+      "title_candidates": [
+        "跨资源编辑恢复",
+        "跨资源编辑恢复机制",
+        "跨资源编辑恢复协议"
+      ],
+      "reviewed_sha256": "469afc6635cc7474ffe6a2fd07ae342377cebfa5d33bd08ed05330b2a532db63"
+    }
+  ],
+  "overview_question": "编辑器修改分为交互对象事务、批量文件发布，以及对象与文件共同提交三类问题。本文给出阅读入口；完整补丁、数例、宿主API与恢复顺序由对应专题说明。先阅读[[15_资产与工具管线/编辑手势与撤销]]，批处理进入[[15_资产与工具管线/批处理条件发布]]，跨资源操作进入[[15_资产与工具管线/跨资源编辑恢复]]。",
+  "source_article_type": "OVERVIEW",
+  "mappings": [
+    {
+      "source_heading": "用户操作流程",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "target_heading": "用户操作流程",
+      "source_body_sha256": "14fdc688d2073bfb55daaf73e3e743a621c1e253d1754387a181663d77ea766d",
+      "reviewed_body_sha256": "1ed726208ea2146abb148e1054a29cdb4ef6209d16c531ab1c612899a7e6f8c7"
+    },
+    {
+      "source_heading": "计划与编辑输入",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "target_heading": "计划与编辑输入",
+      "source_body_sha256": "9e32c09a63b0580752b604a90326371a2a1b3c668cc9a32b4a1bafb5243513a6",
+      "reviewed_body_sha256": "9e32c09a63b0580752b604a90326371a2a1b3c668cc9a32b4a1bafb5243513a6"
+    },
+    {
+      "source_heading": "编辑事务与撤销",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "target_heading": "编辑事务与撤销",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewed_body_sha256": "131a7f731f3053359970b0cf9c3a98ea26c0f3d1af774c6244eaa9896838e038"
+    },
+    {
+      "source_heading": "命令、补丁与事务",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "target_heading": "命令、补丁与事务",
+      "source_body_sha256": "3654bfc28de0784b71c1ccaace45a67266a23bf48b514eda26000260ae659eca",
+      "reviewed_body_sha256": "3654bfc28de0784b71c1ccaace45a67266a23bf48b514eda26000260ae659eca"
+    },
+    {
+      "source_heading": "手势合并",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "target_heading": "手势合并",
+      "source_body_sha256": "77eefcbc5dba425c457b63c5fd3ec4598775e509e668b190235b2fb906f916d6",
+      "reviewed_body_sha256": "77eefcbc5dba425c457b63c5fd3ec4598775e509e668b190235b2fb906f916d6"
+    },
+    {
+      "source_heading": "创建、删除与引用",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "target_heading": "创建、删除与引用",
+      "source_body_sha256": "2f68bdda220c2075146286b3cae9651800f0fb8fbc7e6973b31f05181c3969a0",
+      "reviewed_body_sha256": "2f68bdda220c2075146286b3cae9651800f0fb8fbc7e6973b31f05181c3969a0"
+    },
+    {
+      "source_heading": "Unity 与 Unreal 的撤销",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "target_heading": "Unity 与 Unreal 的撤销",
+      "source_body_sha256": "32c2bc33d63438078594d4ea8f58f589fc667714b562395f9ddcc321a6a29244",
+      "reviewed_body_sha256": "137e64877581efaa0df0ebb9148de0dc16b08e230f4c3641f776f090da084db9"
+    },
+    {
+      "source_heading": "事务执行与补偿",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "target_heading": "事务执行与补偿",
+      "source_body_sha256": "6f5999ab78dee11a270aa4c1e0eafee3a281fede03e5d4bc09e287d3a9e1516d",
+      "reviewed_body_sha256": "6f5999ab78dee11a270aa4c1e0eafee3a281fede03e5d4bc09e287d3a9e1516d"
+    },
+    {
+      "source_heading": "批处理与失败恢复",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "target_heading": "批处理与失败恢复",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewed_body_sha256": "a286017694f8841b7b408ab834f9cafc3d5e2894339236963a755626040d462d"
+    },
+    {
+      "source_heading": "计划预览与稳定执行",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "target_heading": "计划预览与稳定执行",
+      "source_body_sha256": "ae2d44aecbfcc17210f995909b2081699c60d0caf04f16ca14b12612d23c286d",
+      "reviewed_body_sha256": "ae2d44aecbfcc17210f995909b2081699c60d0caf04f16ca14b12612d23c286d"
+    },
+    {
+      "source_heading": "条件发布与检查点恢复",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "target_heading": "条件发布与检查点恢复",
+      "source_body_sha256": "ad776bd4e4778aed0f5ca33168721f8b4f1bbdd07221977fd67b2e7d90d25b4d",
+      "reviewed_body_sha256": "ad776bd4e4778aed0f5ca33168721f8b4f1bbdd07221977fd67b2e7d90d25b4d"
+    },
+    {
+      "source_heading": "进度、取消与错误恢复",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "target_heading": "进度、取消与错误恢复",
+      "source_body_sha256": "2d1ee7816be38812596a59dc1dc407e9c947456891241446a9e403255e0a5d13",
+      "reviewed_body_sha256": "9b3ab49316081920ae2c8246508061cd091ccb044772575e1ac779f9f2207834"
+    },
+    {
+      "source_heading": "工具版本与数据契约",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "target_heading": "工具版本与数据契约",
+      "source_body_sha256": "bc39f283db588bbfe07811b36d8522782d694c99188a7f490105f3ad666f3b9f",
+      "reviewed_body_sha256": "bc39f283db588bbfe07811b36d8522782d694c99188a7f490105f3ad666f3b9f"
+    },
+    {
+      "source_heading": "对象与文件的共同提交",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "target_heading": "对象与文件的共同提交",
+      "source_body_sha256": "fe59c5fea04073fc91f65b43f87dc408fdb000ab536157be334e62fa035065d4",
+      "reviewed_body_sha256": "bb71f1870bbd9126829b4392519f5a8a43e81a7d9ceccd281ef499e6d25bf2df"
+    },
+    {
+      "source_heading": "宿主撤销与持久恢复",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "target_heading": "宿主撤销与持久恢复",
+      "source_body_sha256": "d0dc135ae17818d8b49be90eec921c39d2fe1df7119718972cf242684945a9f6",
+      "reviewed_body_sha256": "a00a98ca37b57538091e3f11dfafab12579d72dfef97461b0a2ce4cccf794487"
+    },
+    {
+      "source_heading": "验证路径",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "target_heading": "验证路径",
+      "source_body_sha256": "d0a1e2dc60e5cea1e59f3e988748f1a627551add8b092440261b2931064acf4f",
+      "reviewed_body_sha256": "33a00be108342d5becc2020e908eb1f44e2fe3a6c08bf5192e03aa12309ea10d"
+    },
+    {
+      "source_heading": "相关主题",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "target_heading": "相关主题",
+      "source_body_sha256": "6fa84a05f0e52eb12d683a05ac1f10fec558bccff0a7dde2418c0e9f2010e6bb",
+      "reviewed_body_sha256": "6fa84a05f0e52eb12d683a05ac1f10fec558bccff0a7dde2418c0e9f2010e6bb"
+    },
+    {
+      "source_heading": "参考资料",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "target_heading": "参考资料",
+      "source_body_sha256": "ccb752bf104b5e49f416736f82707434e4639ba59c919d5d7eb00b75f78945d9",
+      "reviewed_body_sha256": "ccb752bf104b5e49f416736f82707434e4639ba59c919d5d7eb00b75f78945d9"
+    }
+  ],
+  "paragraphs": [
+    {
+      "source_heading": "用户操作流程",
+      "source_paragraph_sha256": "8e60169e259f5b69f2fc5d46b046258ba556c2b084931198fe6f2b39c28e5b8f",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "用户操作流程",
+      "source_paragraph_sha256": "bcfccc23c8443b8e1fca3498a0eb0e2b5fa41bed09fef8b86d27cdd5b96a5038",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "计划与编辑输入",
+      "source_paragraph_sha256": "c7b230241c57a327e0f2f607f1d0cebd5d03e0d9b84c67239e03814e60149f42",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "计划与编辑输入",
+      "source_paragraph_sha256": "b5e6bc7dc8212a33e98be84439eeb018673b8cb18852c9c35758d630f56ccf42",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "计划与编辑输入",
+      "source_paragraph_sha256": "8df585b5a71ed8d9338950e7880dcea70446753df120a2546529652c76446d96",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "命令、补丁与事务",
+      "source_paragraph_sha256": "3654bfc28de0784b71c1ccaace45a67266a23bf48b514eda26000260ae659eca",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "手势合并",
+      "source_paragraph_sha256": "19855e54a87910d243851a2c2b999df5344a77ba9632c2e9b2a8d0caff3734e8",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "手势合并",
+      "source_paragraph_sha256": "5cf1d5d36db45ac1c22731558511f421603c5c6244da39c2fce57707de8b0d1b",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "手势合并",
+      "source_paragraph_sha256": "0bd9708883c1666f2e4ec8e8c0b6eab1fbab8df2f45978865498c7df15e90a86",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "手势合并",
+      "source_paragraph_sha256": "af2dacabb4f6e1171cbb981c119c2b073aa77b4624a487fdb9492f259d25393a",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "创建、删除与引用",
+      "source_paragraph_sha256": "e44d2c008660a88a096fab5949a642519d6e792202f70b9744ef84819f99bc42",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "创建、删除与引用",
+      "source_paragraph_sha256": "36cc59a57be7a228dc8c648d77567b2ca9361ba9ad429be1c0853915a752b4f2",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "创建、删除与引用",
+      "source_paragraph_sha256": "b41529ec18756a3e2650b2e9b0f9efbdac7681cd8d0f6810343f94a056c7475a",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "Unity 与 Unreal 的撤销",
+      "source_paragraph_sha256": "e200ec6f6bdb1e0b18a23afec4671b3d868686f307e85779956e88c8d5e6a725",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "Unity 与 Unreal 的撤销",
+      "source_paragraph_sha256": "a5a529daaa1c8c519969ce9b01566e8ec0bb83cb01a4ce3a606286746a952a16",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "Unity 与 Unreal 的撤销",
+      "source_paragraph_sha256": "53283f2a7bdf53cd52fe4998de86866653a97dcf72bd8b6d11539064bef533d2",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "Unity 与 Unreal 的撤销",
+      "source_paragraph_sha256": "b4178ccc04b828fe3e789de420f56a5f0888db66932645ca3da307536e2a978d",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "Unity 与 Unreal 的撤销",
+      "source_paragraph_sha256": "04c82236338c7ee42b6f2e4b7129cda43360af380fb66070a09f87835cd9cd74",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "Unity 与 Unreal 的撤销",
+      "source_paragraph_sha256": "e5286bdaf875f925e31f44f556998194938f9682ba8e672a869731974fe819f1",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "Unity 与 Unreal 的撤销",
+      "source_paragraph_sha256": "36e42b9f0077cbc5f246c318f60c48706ddbc4b312e7fa55206d8543e56bcaaf",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "事务执行与补偿",
+      "source_paragraph_sha256": "ba13169f6b600d4dac6137a456de4face1aba2c82208a4c77017f29fc468ff20",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "事务执行与补偿",
+      "source_paragraph_sha256": "d2f1ec3cdd2b2a01be6a831078f023abd0dd41d23fd62c9150c297a2d8779da8",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "事务执行与补偿",
+      "source_paragraph_sha256": "991a4f5e2a77e6fc333e2025ef4c414a1f8ed57587e1a4d593eac34695337a0b",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "事务执行与补偿",
+      "source_paragraph_sha256": "7ebf49ae00dc444330ab63c662e1ba798220bcaeb586c9f28b51f6082f09ddb0",
+      "target_path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "计划预览与稳定执行",
+      "source_paragraph_sha256": "9dbf25d58c00a58b7cc84befa0ee2b1d12a09d246694c87e8c93d45ea858fe4e",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "计划预览与稳定执行",
+      "source_paragraph_sha256": "ba0a3ff55b309e1e66a8722b4835d615d1baaee12aaece89639be693f14f2c11",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "计划预览与稳定执行",
+      "source_paragraph_sha256": "73232388814cfa324208f6824b23e78b527cb6eaeea4da59d1324dd48a7ec01f",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "条件发布与检查点恢复",
+      "source_paragraph_sha256": "aaf93e4160e9460a1d7a3254c874f83298ebd81ace2c03c4b1401e556db4efee",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "条件发布与检查点恢复",
+      "source_paragraph_sha256": "f597611a546dc2999b4ba0eae83a4d9fc50c0b8c94b07e25a4995fd810e246b4",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "条件发布与检查点恢复",
+      "source_paragraph_sha256": "9cf2f77eb4101865485a79d0a98a44deb6b7ede1f175663072a4ea5941df9299",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "条件发布与检查点恢复",
+      "source_paragraph_sha256": "93bc402361a9f01643717cb403d78260755c2eefb64765142f91a5def53d5be5",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "条件发布与检查点恢复",
+      "source_paragraph_sha256": "8aa7bd59ab7d80c02843be499b5852ae64e6709c0d92c57ba98e7c0803c38505",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "条件发布与检查点恢复",
+      "source_paragraph_sha256": "739241036769dcff7ef684b9b88606995c81c8d96889a51ba90691ca380a7e36",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "条件发布与检查点恢复",
+      "source_paragraph_sha256": "01192d69fc0524834eab66e58eb1e3917fd79dfae64c3f70e8c2e98efef62cd8",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "条件发布与检查点恢复",
+      "source_paragraph_sha256": "06dbd0e7d88311731a3ab676cc058eb68ed16d952e41cf9a37cde57195482950",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "对象与文件的共同提交",
+      "source_paragraph_sha256": "41c652f10aba39d78d53467d45f8bdae52ed03a774673014853989245d907cda",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "对象与文件的共同提交",
+      "source_paragraph_sha256": "60e6e424085a64e6633fe0d9867913e3d815a3789c31d00469352536cc60c6dd",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "对象与文件的共同提交",
+      "source_paragraph_sha256": "b9311b5f5b629c79f151a30d9c01a97276389078f2567617824e4b21071bbe30",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "对象与文件的共同提交",
+      "source_paragraph_sha256": "d2596c7058ec5b3d9036ed80245d1185932813bfc11ad5c97e91da549b3b7e64",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "对象与文件的共同提交",
+      "source_paragraph_sha256": "72d38226f41e42f9d7e56dc11c8bcb618fe88746b85f94cd063b024c196b9b3a",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "对象与文件的共同提交",
+      "source_paragraph_sha256": "4433ef80c75524cc6bfc7c422c1ecaca4dded242fc0f29005f85d19e5fd623c6",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "对象与文件的共同提交",
+      "source_paragraph_sha256": "dceaaf3aa36d13c4363a7fb8fddc2365d4127b7af93197b5a86f71d771b0adfd",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "对象与文件的共同提交",
+      "source_paragraph_sha256": "2915f630ae590190f96180207a80e07c8afa7b67bfe7ac9aa10b53d3d77adc12",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "对象与文件的共同提交",
+      "source_paragraph_sha256": "9eb3634f9d7e231f9e73d8775ba7497470c67b9e50714db5acf9aee488f67d5d",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "对象与文件的共同提交",
+      "source_paragraph_sha256": "fac64da1126df97f42be3159f67dd53061730f43e2e51b4b82d413b5f2d0478b",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "宿主撤销与持久恢复",
+      "source_paragraph_sha256": "5ed6bbd7146a98b8683ce2ffabe6626d0ad0c0cd4350d7b74c71e8550edee4f5",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "宿主撤销与持久恢复",
+      "source_paragraph_sha256": "334084e8523ff65e75d6a91fe489df6075f921a12dac04454afe9ca6b177ea6a",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "宿主撤销与持久恢复",
+      "source_paragraph_sha256": "cc9e68c84da26aca1ce7eaf4383c0b319de7c1801be055fa5149a0df99da7f69",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "宿主撤销与持久恢复",
+      "source_paragraph_sha256": "91348e0041f27860b12246bec4ea2a0e1c7128df744840daa113cb37091096db",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "宿主撤销与持久恢复",
+      "source_paragraph_sha256": "f7a1060476b974aa71c4a0cebed8361053e3ba428a6904355f97af3ff005d8a0",
+      "target_path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "进度、取消与错误恢复",
+      "source_paragraph_sha256": "7fb41da50dc62001dd54919099b880347d141a3685d86afe42bc23ea49e11e06",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "进度、取消与错误恢复",
+      "source_paragraph_sha256": "5255a44b05b19d52aaf56beea4ee7adc77752f866a16df6cc7c6e18a006738dd",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "进度、取消与错误恢复",
+      "source_paragraph_sha256": "d92e3f5b55bcde330a206950c9c9eb90d849a41f1fd2897f2774414528735d30",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "进度、取消与错误恢复",
+      "source_paragraph_sha256": "03284e8a3f4203626be6fd15ddf097cd868e11f512ae3dfc58045293d1bdd6ac",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "工具版本与数据契约",
+      "source_paragraph_sha256": "5a78ef7791ed19d308c8c2ef216b91be63d9c1db97e3c6a8e80e00efe8ed9965",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "工具版本与数据契约",
+      "source_paragraph_sha256": "b20c419a87e9cb589d2270e1b5d8cc3f89d745ea794569574961d646e9e1156a",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "工具版本与数据契约",
+      "source_paragraph_sha256": "e85b64f42a478ba99b708c4504a8a38b9d3b59545048a22d4db415412d0e217e",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "工具版本与数据契约",
+      "source_paragraph_sha256": "6ad9b28d35e26620224a28d500ec4db44776d5e9de9de395c8800728b0c2206e",
+      "target_path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "验证路径",
+      "source_paragraph_sha256": "f11b98f121a5b87f4462651fd822397aac16660dc29dade1f640c4cbf816a02a",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "验证路径",
+      "source_paragraph_sha256": "96a6ebbc45eb40c920a2a5533baaffc7ef2333d42519b3920234952733c435f8",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "验证路径",
+      "source_paragraph_sha256": "9e71989403dc3564740de2d3495a26bf9468edaf3fc01c213afec8dc2173b107",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "验证路径",
+      "source_paragraph_sha256": "866ef9a86d08e1f81ae4ea9e743d7095f2878b836df45b950d7ee4ec2ef0a31f",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "验证路径",
+      "source_paragraph_sha256": "00ac1be04ee187cbe94dad8b54b776034a11ee2ff87ce89eb84cb23988f35c4b",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "相关主题",
+      "source_paragraph_sha256": "6fa84a05f0e52eb12d683a05ac1f10fec558bccff0a7dde2418c0e9f2010e6bb",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "参考资料",
+      "source_paragraph_sha256": "7d02002fa9af84a64d77f9d372f5600325cb8f52de3a31c0411c5c5003ff4837",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "参考资料",
+      "source_paragraph_sha256": "38e7b4e4a570cbf11417057b4642bec1190bb0899fa676aa78435ea2fc378068",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "参考资料",
+      "source_paragraph_sha256": "feb3ac8a4046cd14bcec8d32a16a5356caa9508fd70e91862a12a7cf836fe15f",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED"
+    },
+    {
+      "source_heading": "编辑器工具的事务与批处理",
+      "source_paragraph_sha256": "6d05a7112d01027b38431b33c8e726b61d461f3af11ce851150b5ac3035bb51f",
+      "source_excerpt": "# 编辑器工具的事务与批处理",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "导言",
+      "source_paragraph_sha256": "e179c46def6b4d3165a9910f82d42f61bbf806af2e523fcc0ac7642c5ee69c1e",
+      "source_excerpt": "拖动一个控件时，属性面板、Gizmo 和资产文件都可能变化。用户按一次撤销，期待这几份状态一起回到操作前。工具因此先把修改表示成计划与事务，再由同一执行路径用于界面和批处理，保存与失败恢复也沿这份变更集处理。",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "REVISED_OVERVIEW_INTRODUCTION"
+    },
+    {
+      "source_heading": "用户操作流程",
+      "source_paragraph_sha256": "6dae6628436ece2fd346d611bd83ccdadeab3bd418c56ce7cdf5e033309519cf",
+      "source_excerpt": "## 用户操作流程",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "计划与编辑输入",
+      "source_paragraph_sha256": "3fd24a520e9042dd40199c0a6789c16a7ff9a1b718a8db76c7ea396d59dd07ae",
+      "source_excerpt": "## 计划与编辑输入",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "编辑事务与撤销",
+      "source_paragraph_sha256": "dd6966d820e98b396847775970b15400c592bb946a7e6a93f5abcc726072e352",
+      "source_excerpt": "## 编辑事务与撤销",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "命令、补丁与事务",
+      "source_paragraph_sha256": "5c0b344447c10081e3555bd236e54895d3c64560becc9d817863a77818954113",
+      "source_excerpt": "### 命令、补丁与事务",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "手势合并",
+      "source_paragraph_sha256": "80406008658c85504a3e46365383e61cf2ea9f61141242a72b158048d6e806f0",
+      "source_excerpt": "#### 手势合并",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "创建、删除与引用",
+      "source_paragraph_sha256": "83d75735756d013ff408ba02555d57993100a58a3d069aef1e1bcd457d50921f",
+      "source_excerpt": "#### 创建、删除与引用",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "Unity 与 Unreal 的撤销",
+      "source_paragraph_sha256": "b4e9f4b1e7a66e2f858c54469d33435e56281158b95e029cb0d13ece481771a4",
+      "source_excerpt": "### Unity 与 Unreal 的撤销",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "事务执行与补偿",
+      "source_paragraph_sha256": "ccd29e013a317b32e2b206247fee36ee483cfbce68c5a9e80e089da348b9e980",
+      "source_excerpt": "### 事务执行与补偿",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "批处理与失败恢复",
+      "source_paragraph_sha256": "ca74089943a69c2981c62f8dc26ba2ff3f9adda33a77e8072d15908156aa7843",
+      "source_excerpt": "## 批处理与失败恢复",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "计划预览与稳定执行",
+      "source_paragraph_sha256": "d5f2ffca4e3357e915d2cf0812b25cc972f2543a0e9f8fa5a30ad887e6a0c2ab",
+      "source_excerpt": "### 计划预览与稳定执行",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "条件发布与检查点恢复",
+      "source_paragraph_sha256": "4a5ddd782529b8c3b0e1f19c82f27028a60efcfb09e06dc1c2691636981d20f6",
+      "source_excerpt": "### 条件发布与检查点恢复",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "对象与文件的共同提交",
+      "source_paragraph_sha256": "73a61e1cefae41572f1da53566a496b741963557e7e33393dadeca80276037d3",
+      "source_excerpt": "### 对象与文件的共同提交",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "宿主撤销与持久恢复",
+      "source_paragraph_sha256": "939dcf66e14fa6b8fbdd18208b51a8c979e26271a1e706793e980dec9a0450a3",
+      "source_excerpt": "### 宿主撤销与持久恢复",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "进度、取消与错误恢复",
+      "source_paragraph_sha256": "f16f834a385f518e3d584eb16ebaa388ce9fdec85a3922fa4ff093f9ea80bba4",
+      "source_excerpt": "### 进度、取消与错误恢复",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "工具版本与数据契约",
+      "source_paragraph_sha256": "3effa59f21e68a62d8f9f1d7e9e638a4cc9daab6306e04c1548ef106cdd7624c",
+      "source_excerpt": "## 工具版本与数据契约",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "验证路径",
+      "source_paragraph_sha256": "66a56f7ef25763414b8d41154a35b1fce5dfed6e925550afba9901a91c2e7033",
+      "source_excerpt": "## 验证路径",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "相关主题",
+      "source_paragraph_sha256": "ff3caf42e0e094c9090945a09203577e08cb1a04a89e6ff87440418522a4ec16",
+      "source_excerpt": "## 相关主题",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    },
+    {
+      "source_heading": "参考资料",
+      "source_paragraph_sha256": "95d93065e8a34be82d81b7e09fe98d491a8db7f8a206a74bedbb19ebdf2c6ecf",
+      "source_excerpt": "## 参考资料",
+      "target_path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+      "status": "PRESERVED_OVERVIEW_HEADING"
+    }
+  ],
+  "findings": [
+    "导读验证命令以行内命令保留，正文实现代码归属专题。"
+  ],
+  "verification_scope": "逐节迁移；原正文数例、公式、参考链接完整保留，独立复核与运行结果另记。",
+  "independent_review": {
+    "reviewer": "ai_split",
+    "date": "2026-10-24",
+    "scope": "完整复读导读、三篇正文与迁移记录，逐项推演手势1→2→3→9、A/B名称交换、输出代次10→11→12、J/K部分呈现逆操作。",
+    "findings_fixed": [
+      "两个空H2补充机制导语。",
+      "导读execute_plan、手势篇后文与跨资源篇前文改为明确专题链接。",
+      "批处理内部异常处理区分未提交步骤补偿和已发布结果的回执恢复、条件逆操作，避免盲目恢复文件覆盖后续编辑。"
+    ],
+    "mechanism_review": "补丁、稳定ID、主线程宿主撤销、不可变文件与条件发布、共同持久决定、包内标记、J由K承接及第三方版本Conflict机制与数例完整保留。",
+    "runtime": "本机协议测试另记录；完整引擎撤销、多包呈现和真实文件持久性仍未运行。",
+    "verification": "python -B 知识库/examples/mechanism_chain/protocol/test_protocol.py：15项通过，其中工具相关手势、发布回执、代次冲突与强退边界按测试名称识别。",
+    "paragraph_coverage": {
+      "source_paragraphs": 87,
+      "ledger_entries": 87,
+      "missing": 0,
+      "note": "既有67项正文登记外补齐原标题与导言身份，全部87个原文空行段落具有去向。导言保留为导读重述。"
+    }
+  },
+  "review_status": "PASS_WITH_RUNTIME_LIMITATIONS",
+  "adopted_source_sha256": "97fcc8e6a206dc89046749154bb3e373df7a27bc41115f7ffefdb9621a1d0f02"
+}

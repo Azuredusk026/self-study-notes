@@ -51,7 +51,7 @@
       "primary_question": "读者如何统一技术叫法",
       "article_boundary": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
       "candidates": [],
-      "review_basis": "现行独立问题与主归属见references/independent-review-2026-10-24.md",
+      "review_basis": "references/longpage-review-2026-10-24.md",
       "content_actions": [
         "KEEP"
       ],
@@ -64,7 +64,7 @@
       "title_reason": "现有标题准确表达主概念，保留",
       "primary_concept": "术语表",
       "boundary_action": "KEEP",
-      "content_sha256": "1765d97514363006aa44cafad4e1fb6879544ac2af2bf53c305da12d87711efa",
+      "content_sha256": "82df12094e79ae6ea6a05478c8985815c2734fb87259e9ccafbddc46e0f975d5",
       "historical_content_sha256": "e89244c9a204500ce628f2c3b88908e93d49282b1beda90164846b9d73ef665b",
       "current_review_date": "2026-10-23",
       "heading_outline": [
@@ -76,7 +76,7 @@
       "primary_question": "读者如何按问题找到学习路线",
       "article_boundary": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
       "candidates": [],
-      "review_basis": "现行独立问题与主归属见references/independent-review-2026-10-24.md",
+      "review_basis": "references/longpage-review-2026-10-24.md",
       "content_actions": [
         "REWRITE"
       ],
@@ -89,7 +89,7 @@
       "title_reason": "现有标题准确表达主概念，保留",
       "primary_concept": "知识地图",
       "boundary_action": "KEEP",
-      "content_sha256": "5eef8f00007fae9771481620b93b06415a37f5c1aae7e73212de31ae95bbbc8e",
+      "content_sha256": "7db42b17898c7007245eb6a724445ae3aa096cd045c51ea90d02500fe73dca7c",
       "historical_content_sha256": "0c4d44ad0f1ac6c30138c01f8687536635db694de2da4a9eaa4c0ae176568042",
       "current_review_date": "2026-10-23",
       "heading_outline": [
@@ -915,7 +915,7 @@
     },
     {
       "path": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
-      "primary_question": "如何从空间和时间样本重建稳定图像",
+      "primary_question": "空间抗锯齿与时域方案怎样比较成本、质量和引擎接入条件？",
       "primary_concept": "抗锯齿与时域重建",
       "article_boundary": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
       "input_output": {
@@ -976,52 +976,54 @@
       "rename_file": true,
       "update_links": true,
       "adoption_status": "已采用",
-      "review_basis": "H1直接命名技术问题，机制小节采用内容名称。",
+      "review_basis": "references/longpage-review-2026-10-24.md",
       "reason": "TAA与超采样共享重建闭环，深度集中在时域机制，不宜按阶段拆成词条。",
       "review_batch": "第二批跨领域样本",
       "confidence": "命名建议可供采用评审",
-      "content_sha256": "c53a0759eefeeb2b4fc68eb65f3d8d7a101fea253b520b86e97b314606188538",
+      "content_sha256": "8623343aebeb72eed6e9f0a93fb273501f431830f1bb8c8ad103b7b2d01c6bfd",
       "heading_outline": [
-        "# 抗锯齿、TAA 与时域超采样",
-        "## 空间方案",
+        "# 抗锯齿与时域重建",
+        "## 空间采样方案",
         "### 超采样（SSAA）",
         "### MSAA",
         "#### Sample Frequency 和 Resolve",
         "### FXAA",
-        "## 时域抗锯齿的基本思想",
-        "## 抖动",
-        "### 写入投影矩阵",
-        "### 序列的选择",
-        "### 纹理需要补偿",
-        "## 样本累积",
-        "### 固定系数等价于指数平滑",
-        "### 等效采样数",
-        "### 等权重方案",
-        "### $\\alpha$ 的下界",
-        "## 在管线中的位置",
-        "### 亮度自适应权重",
-        "## 重投影",
-        "### 运动向量",
-        "### 采样邻域最近深度",
-        "### 重采样滤波",
-        "## 历史校验",
-        "### 拒绝",
-        "### 矫正",
-        "### 颜色空间与离群值",
-        "### 混合系数自适应",
+        "## 时域抗锯齿",
+        "### 抖动",
+        "#### 写入投影矩阵",
+        "#### 序列的选择",
+        "#### 纹理采样偏置",
+        "## 历史累积与重投影",
+        "### 样本累积",
+        "#### 固定系数等价于指数平滑",
+        "#### 等效采样数",
+        "#### 等权重方案",
+        "#### $\\alpha$ 的下界",
+        "### 在管线中的位置",
+        "#### 亮度自适应权重",
+        "### 重投影",
+        "#### 运动向量",
+        "#### 采样邻域最近深度",
+        "#### 重采样滤波",
+        "### 历史校验",
+        "#### 拒绝",
+        "#### 矫正",
+        "#### 颜色空间与离群值",
+        "#### 混合系数自适应",
+        "### 一个像素的历史决策",
         "## 伪影的成因",
         "### 模糊",
         "### 鬼影",
         "### 闪烁",
         "### 欠采样",
-        "## 为什么高频细节最容易糊",
+        "## 高频细节的稳定性",
         "### 应对方向",
-        "### 不适合的手段",
+        "### 分辨率与着色率",
         "## 仅用重投影的简化方案",
         "## 时域超采样",
         "## 成本特性",
         "## 与引擎的耦合",
-        "## 怎么选",
+        "## 方案选择",
         "## 验证方法",
         "## 相关主题",
         "## 参考资料"
@@ -5372,7 +5374,7 @@
     },
     {
       "path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
-      "primary_question": "如何让编辑器操作可预览、撤销和批量恢复",
+      "primary_question": "按技术问题选择编辑器工具的事务与批处理的专题入口",
       "primary_concept": "编辑器工具的事务与批处理",
       "article_boundary": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
       "input_output": {
@@ -5423,38 +5425,36 @@
       ],
       "suggested_title": "编辑器工具的事务与批处理",
       "title_review": "PASS",
-      "boundary_action": "KEEP",
+      "boundary_action": "OVERVIEW",
       "content_actions": [
         "REWRITE"
       ],
       "rename_file": true,
       "update_links": true,
       "adoption_status": "已采用",
-      "review_basis": "H1“编辑器工具的事务与批处理”与文件一致，全文H2—H6无疑问标题；作者更名及本轮新增章节分别登记。",
+      "review_basis": "references/longpage-review-2026-10-24.md",
       "reason": "大量H2是同一可靠工具的约束，不宜按API关键词拆小页；编辑器限定区分运行时事务。",
       "review_batch": "第二批跨领域样本",
       "confidence": "命名建议可供采用评审",
-      "content_sha256": "e04d12b21af210dd2220369f15dfefc0d651550749bde0115e662a931279c9b2",
+      "content_sha256": "97fcc8e6a206dc89046749154bb3e373df7a27bc41115f7ffefdb9621a1d0f02",
       "heading_outline": [
-        "# 编辑器工具与批处理架构",
-        "## 从工作流而不是 API 开始",
-        "## 分层",
-        "## Context 与显式输入",
-        "## 序列化层",
-        "## Command、Patch 与 Transaction",
-        "## Unity 与 Unreal 的撤销",
-        "## Preview 与 Dry-run",
-        "## 批处理",
-        "## 幂等与可重入",
-        "## 文件写入",
-        "## 进度与取消",
-        "## 错误模型",
-        "## 配置与 Schema",
-        "## 插件部署",
-        "## Editor 与 Runtime 隔离",
-        "## 工具可用性",
-        "## 可观测性",
-        "## 测试",
+        "# 编辑器工具的事务与批处理",
+        "## 用户操作流程",
+        "## 计划与编辑输入",
+        "## 编辑事务与撤销",
+        "### 命令、补丁与事务",
+        "#### 手势合并",
+        "#### 创建、删除与引用",
+        "### Unity 与 Unreal 的撤销",
+        "### 事务执行与补偿",
+        "## 批处理与失败恢复",
+        "### 计划预览与稳定执行",
+        "### 条件发布与检查点恢复",
+        "### 对象与文件的共同提交",
+        "### 宿主撤销与持久恢复",
+        "### 进度、取消与错误恢复",
+        "## 工具版本与数据契约",
+        "## 验证路径",
         "## 相关主题",
         "## 参考资料"
       ],
@@ -5526,7 +5526,7 @@
     },
     {
       "path": "知识库/16_编程与数据结构/C++工程边界.md",
-      "primary_question": "如何从编译链接到插件ABI保持类型与资源契约",
+      "primary_question": "按技术问题选择C++工程边界的专题入口",
       "article_boundary": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
       "candidates": [
         {
@@ -5542,7 +5542,7 @@
           "reason": "只适合关系路线页，技术专篇保持主概念名"
         }
       ],
-      "review_basis": "H1“C++工程边界”覆盖本页主问题；客观子标题：C++构建与模块边界、C++ 构建链、头文件与翻译单元、静态与动态库。",
+      "review_basis": "references/longpage-review-2026-10-24.md",
       "content_actions": [
         "REWRITE",
         "RESTRUCTURE",
@@ -5556,10 +5556,43 @@
       "deferred_title": false,
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "C++工程边界",
-      "boundary_action": "KEEP",
-      "content_sha256": "e42a55f60b1ba2887e7ff056031fc0d12d2cec45f21ad4dd0bd34afeb7e0e507",
+      "boundary_action": "OVERVIEW",
+      "content_sha256": "a3413ee7535dbfa0b236e78d3ac4e88c4c60f508293b5678d7cbb6758866b1e5",
       "historical_content_sha256": "dbf8b38419fddf14d26b88870b562c0c7ea92f31ea18b9455a4ee4474dd32ba4",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# C++工程边界",
+        "## 阅读顺序",
+        "## C++构建与模块边界",
+        "## C++ 构建链",
+        "## 头文件与翻译单元",
+        "## 静态与动态库",
+        "## ABI 与 C接口",
+        "## 类型布局与资源语义",
+        "## C++ 类型与布局",
+        "## C++ 对象模型与虚函数",
+        "## 复制、移动与异常安全",
+        "## 布局与边界字节",
+        "## Win32 与 COM 边界",
+        "## 所有权与模块接口",
+        "## C ABI契约",
+        "## 接口结构的版本协商",
+        "## 对象使用与关闭",
+        "## 调用入口与依赖登记",
+        "## 普通销毁与对象借用",
+        "## 关闭记录与执行权",
+        "## 模块关闭与停止请求",
+        "## 工作排空与清理准备",
+        "## 清理线程与关闭派发",
+        "## 异步撤销的结果对账",
+        "## 窗口与接口收尾",
+        "## 关闭期间的依赖清理调用",
+        "## 依赖销毁与卸载续行",
+        "## 验证方法",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
     },
     {
       "path": "知识库/16_编程与数据结构/CSharp运行模型.md",
@@ -5941,7 +5974,7 @@
     },
     {
       "path": "知识库/16_编程与数据结构/文件IO.md",
-      "primary_question": "如何在缓存与异步请求下读写并可靠发布文件",
+      "primary_question": "如何在缓存、短读与异步取消下把完整字节安全交给资源消费者",
       "article_boundary": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
       "candidates": [
         {
@@ -5957,7 +5990,7 @@
           "reason": "只适合关系路线页，技术专篇保持主概念名"
         }
       ],
-      "review_basis": "H1“文件IO”覆盖本页主问题；客观子标题：读取与缓存、异步请求与缓冲寿命、临时文件与发布、验证方法。",
+      "review_basis": "references/longpage-review-2026-10-24.md",
       "content_actions": [
         "REWRITE",
         "RESTRUCTURE",
@@ -5972,9 +6005,34 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "文件IO",
       "boundary_action": "KEEP",
-      "content_sha256": "ca188beee287273bf72af6f5125c43a3b1a2581f3b138b3325ff24605d71f2d4",
+      "content_sha256": "1fe0f1b40252d543112f1308754f3ab5fd9d111626998d083fa5d9807d481a3f",
       "historical_content_sha256": "43b315b3e627c45bedf22ce16a55d7397559851cd3fcc1a373cfd53bcf6bc731",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 文件IO",
+        "## 文件、缓存页与应用缓冲",
+        "### 缓冲读取的数据路径",
+        "### 短读与完整输入",
+        "### 直接IO与内存映射",
+        "## 请求队列与消费者寿命",
+        "### 提交、完成与取消",
+        "### 并发深度与背压",
+        "## 解码与资源版本交接",
+        "## 不可变文件与持久清单",
+        "### 文件准备与正式入口",
+        "### 发布任务登记与续行",
+        "### 发布冲突与恢复",
+        "### 读取固定版本",
+        "## 跨进程代理与回收",
+        "### 令牌和在途读取",
+        "### 服务重启与旧操作",
+        "### 运行中的版本排空",
+        "### 垃圾回收的状态转换",
+        "## 验证方法",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
     },
     {
       "path": "知识库/16_编程与数据结构/空间索引.md",
@@ -6443,10 +6501,10 @@
     },
     {
       "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
-      "primary_question": "如何令Agent工具任务可追踪、幂等和验收",
+      "primary_question": "按技术问题选择Agent资产管线的专题入口",
       "article_boundary": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
       "candidates": [],
-      "review_basis": "H1“Agent资产管线”覆盖本页主问题；客观子标题：任务状态与产物、状态推进、任务与产物记录、推理与工具接口。",
+      "review_basis": "references/longpage-review-2026-10-24.md",
       "content_actions": [
         "REWRITE"
       ],
@@ -6458,10 +6516,46 @@
       "deferred_title": false,
       "title_reason": "保留自动生产组织目的，质量为执行约束",
       "primary_concept": "Agent资产管线",
-      "boundary_action": "KEEP",
-      "content_sha256": "9d99be355026b1943b6a50970082d31051ea0e92554af6fbd0ed73fdf9062a9c",
+      "boundary_action": "OVERVIEW",
+      "content_sha256": "bd8b6c1d72cbdbc9ab5624b482dffa4e069dc667bb79a2f187b5a602c00fceb2",
       "historical_content_sha256": "43c0d99da0caf1d6a215fd632d1484cc0fa1b88a369ffc77ff2e04f97e7fd36f",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# Agent资产管线",
+        "## 阅读顺序",
+        "## 任务状态与产物",
+        "### 状态推进",
+        "### 任务与产物记录",
+        "## 推理与工具接口",
+        "### 角色与数据契约",
+        "### 工具参数与执行边界",
+        "### 调度职责",
+        "## 室内场景的结构化规划",
+        "### 规划的数值约束",
+        "### 缩放与空间度量",
+        "### 交互站位与可达性",
+        "### 缩放变化与补偿验证",
+        "### 读取版本与条件执行",
+        "### 连续站位区域的验证结果",
+        "## 操作登记与恢复对账",
+        "## 工具执行的并发交接",
+        "### 创建操作与持久标记",
+        "## 失败恢复",
+        "### 幂等与重试",
+        "### 生成服务与不确定结果",
+        "### 补偿与版本恢复",
+        "### 补偿中间状态与最终门禁",
+        "### 补偿坐标与父变换",
+        "### 连续移动的补偿承接",
+        "### 父子关系与跨对象版本",
+        "### 冲突决议与续行",
+        "## 资产验收与发布",
+        "### 审核与不可变候选",
+        "### 批准记录与发布回执",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
     },
     {
       "path": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
@@ -6630,7 +6724,7 @@
     },
     {
       "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
-      "primary_question": "如何在运动与遮挡变化下复用生成特征",
+      "primary_question": "按技术问题选择视频生成时序一致性的专题入口",
       "article_boundary": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
       "candidates": [
         {
@@ -6646,7 +6740,7 @@
           "reason": "只适合关系路线页，技术专篇保持主概念名"
         }
       ],
-      "review_basis": "H1“视频生成时序一致性”覆盖本页主问题；客观子标题：跨帧内容对应、逐帧差异、约束分层、光流重投影。",
+      "review_basis": "references/longpage-review-2026-10-24.md",
       "content_actions": [
         "REWRITE",
         "RESTRUCTURE",
@@ -6660,10 +6754,38 @@
       "deferred_title": false,
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "视频生成时序一致性",
-      "boundary_action": "KEEP",
-      "content_sha256": "a11dd67779a8f14d73cee58829b783b6098939f4b35c04edb9f376aa11afd33b",
+      "boundary_action": "OVERVIEW",
+      "content_sha256": "0a6c1cb8fdc489c206f29c9e51f5e12e063f24479b68563e5bbc3de800406feb",
       "historical_content_sha256": "aaf058dc177ccf69b833447f77059066d8624dfa787a81de9be7a164f8e2ae0a",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 视频生成时序一致性",
+        "## 阅读顺序",
+        "## 帧输入与执行顺序",
+        "## 历史位置与可见性",
+        "### 当前像素查询历史",
+        "### 深度比较与拒绝分支",
+        "## 法线与当前结构",
+        "## 历史图与潜变量",
+        "### 像素空间合成",
+        "### 潜变量重投影的替代路线",
+        "## 条件去噪与历史约束",
+        "### 模型和条件契约",
+        "### 起始噪声与步长",
+        "### 每步预测与颜色投影",
+        "### 去噪循环实现",
+        "## 曝光与历史推进",
+        "### 漂移估计与真实照明",
+        "### 生成内容与几何记录",
+        "### 历史提交与方向隔离",
+        "### 任务续行与二次恢复",
+        "## 关键帧与传播冲突",
+        "### 冲突决议与最终序列",
+        "## 故障定位",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
     },
     {
       "path": "知识库/18_游戏物理与模拟/Character Controller.md",
@@ -6984,10 +7106,10 @@
     },
     {
       "path": "知识库/20_游戏AI/游戏AI决策模型.md",
-      "primary_question": "如何按决策问题选择行为组织模型",
+      "primary_question": "按技术问题选择游戏AI决策模型的专题入口",
       "article_boundary": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
       "candidates": [],
-      "review_basis": "H1“游戏AI决策模型”覆盖本页主问题；客观子标题：反应式行为组合、FSM 与 HFSM、行为树、中止语义。",
+      "review_basis": "references/longpage-review-2026-10-24.md",
       "content_actions": [
         "REWRITE"
       ],
@@ -6999,10 +7121,47 @@
       "deferred_title": false,
       "title_reason": "反应、效用和规划为行为选择方法比较",
       "primary_concept": "游戏AI决策模型",
-      "boundary_action": "KEEP",
-      "content_sha256": "b118150a24839fe5c6bbed98570f96d440e0ed1db695d6f5da15c81125e12ad7",
+      "boundary_action": "OVERVIEW",
+      "content_sha256": "322b4e9749ace2a4d33cb8c5aa0eff18bf99c553033093756803951f0ce66fe3",
       "historical_content_sha256": "991aeb390c698a13e54b90587458f3f37ed3c1d7a88f3251b8dd01b04e0c33af",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "heading_outline": [
+        "# 游戏AI决策模型",
+        "## 控制关系",
+        "### 统一调度与控制所有者",
+        "## 决策输入与动作交接",
+        "### 黑板快照",
+        "### 动作实例与独占资源",
+        "### 执行身份",
+        "## 状态机与层次切换",
+        "### 状态进入、更新与退出",
+        "### 进入失败与恢复路径",
+        "## 行为树与节点生命周期",
+        "### 组合语义",
+        "### 叶节点的四种状态",
+        "### 顺序节点的父子推进",
+        "### 条件观察与调度",
+        "## 效用评分与动作切换",
+        "### 必要条件与偏好",
+        "### 迟滞与失效优先级",
+        "## 目标规划与执行",
+        "### GOAP回归搜索",
+        "#### 规划的反向搜索",
+        "### HTN分解与状态推进",
+        "## 组合调度与提交",
+        "### 模式进入与规划交接",
+        "#### 候选采用失败",
+        "## 计划终态与恢复",
+        "### 模型组合的状态推进",
+        "### 行为树终态与计划续行",
+        "### 异步事件与决策重放",
+        "#### 命令登记与宿主接纳",
+        "#### 世界效果与恢复前沿",
+        "### 逐机制反例",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
     },
     {
       "path": "知识库/20_游戏AI/游戏AI导航.md",
@@ -7620,23 +7779,27 @@
       "rename_file": false,
       "update_links": false,
       "adoption_status": "已采用",
-      "review_basis": "H1“延迟补偿命中”覆盖本页主问题；客观子标题：射击与显示时间、历史碰撞体、最小射线查询、命中提交与验证。",
+      "review_basis": "references/longpage-review-2026-10-24.md",
       "reason": "回滚模拟与服务器历史命中检查只共享时间背景，执行、调试和成本不同；短标题不足以修复主归属。 联合入口名称是边界处理后的条件方案，当前整页不直接采用短名。",
       "review_batch": "第二批跨领域样本",
       "confidence": "边界优先处理",
-      "content_sha256": "a8b3d3ad490c9dd075c23b6da1f649b51b98d24a968a51f976e3bbf0fbe7eeaf",
+      "content_sha256": "5161554741a5993b31ccc280795b12fe1e7652eed331a506b724cb673a95cb86",
       "heading_outline": [
-        "# 状态同步、预测与回滚",
-        "## 三类同步思路",
-        "## 压缩与基线",
-        "## 客户端预测与校正",
-        "## 远端实体插值",
-        "### 插值缓冲的取时刻",
-        "## 回滚与命中判定",
-        "## 权威边界",
-        "## 断线、重连与回放",
-        "## 验证方法",
-        "### 客户端预测与校正",
+        "# 延迟补偿命中",
+        "## 射击与显示时间",
+        "### 实体新鲜度与视图校验",
+        "### 显示估计与权威历史",
+        "## 历史碰撞体",
+        "## 最小射线查询",
+        "## 历史遮挡与实时状态隔离",
+        "## 命中提交与验证",
+        "### 接纳与弹药所有权",
+        "### 查询完成与结算顺序",
+        "### 权威决策与Tick日志",
+        "### 查询包与崩溃恢复",
+        "### 恢复记录与有序回放",
+        "### 观察与反例",
+        "## 实现与证据",
         "## 相关主题",
         "## 参考资料"
       ],
@@ -8756,6 +8919,966 @@
           "reason": "备选：对应局部机制，覆盖范围按本页实际职责比较"
         }
       ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+      "primary_question": "资产任务如何连接规划、验证、审核与不可变版本发布？",
+      "primary_concept": "资产任务编排与发布",
+      "current_title": "资产任务编排与发布",
+      "suggested_title": "资产任务编排与发布",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "b4e3727e80aee5a9e61e1d7dd79292370b3cd0cb30f9d5d9b414a01b263213cf",
+      "candidates": [
+        "资产任务编排与发布",
+        "资产任务状态与发布",
+        "Agent任务编排"
+      ],
+      "heading_outline": [
+        "# 资产任务编排与发布",
+        "## 任务状态与产物",
+        "### 状态推进",
+        "### 任务与产物记录",
+        "## 推理与工具接口",
+        "### 角色与数据契约",
+        "### 工具参数与执行边界",
+        "### 调度职责",
+        "## 资产验收与发布",
+        "### 审核与不可变候选",
+        "### 批准记录与发布回执",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+      "primary_question": "资产布局如何在统一空间中验证几何与交互可达性？",
+      "primary_concept": "资产布局的几何验证",
+      "current_title": "资产布局的几何验证",
+      "suggested_title": "资产布局的几何验证",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "fc599347d8c6f31b5f06908790fa2023446f3e850db3434a4dda4c7a88c3aa7f",
+      "candidates": [
+        "资产布局的几何验证",
+        "资产布局验证",
+        "场景几何与交互验证"
+      ],
+      "heading_outline": [
+        "# 资产布局的几何验证",
+        "## 室内场景的结构化规划",
+        "### 规划的数值约束",
+        "### 缩放与空间度量",
+        "### 交互站位与可达性",
+        "## 缩放变化与补偿验证",
+        "## 连续站位区域的验证结果",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+      "primary_question": "场景工具如何在并发、超时和接管下实现条件执行与恢复？",
+      "primary_concept": "场景工具的条件执行",
+      "current_title": "场景工具的条件执行",
+      "suggested_title": "场景工具的条件执行",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "764987141b2a64516d4dd3a686d054f68b479655fc0f6c7edd2f61251b556bdd",
+      "candidates": [
+        "场景工具的条件执行",
+        "场景操作的条件提交",
+        "场景工具的恢复对账"
+      ],
+      "heading_outline": [
+        "# 场景工具的条件执行",
+        "## 读取版本与条件执行",
+        "## 操作登记与恢复对账",
+        "## 工具执行的并发交接",
+        "### 创建操作与持久标记",
+        "## 失败恢复",
+        "### 幂等与重试",
+        "### 生成服务与不确定结果",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+      "primary_question": "取消场景操作如何按局部字段和持久回执承接版本？",
+      "primary_concept": "场景补偿的版本承接",
+      "current_title": "场景补偿的版本承接",
+      "suggested_title": "场景补偿的版本承接",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "6cbf6a43d429e3fd1c9c97e736bd57c0c79a47b10b143b73ee58271cc9b8243b",
+      "candidates": [
+        "场景补偿的版本承接",
+        "场景操作的补偿恢复",
+        "场景补偿版本链"
+      ],
+      "heading_outline": [
+        "# 场景补偿的版本承接",
+        "## 补偿与版本恢复",
+        "## 补偿坐标与父变换",
+        "## 连续移动的补偿承接",
+        "## 父子关系与跨对象版本",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+      "primary_question": "补偿中间态如何隔离，冲突与残留如何接管？",
+      "primary_concept": "补偿隔离与冲突接管",
+      "current_title": "补偿隔离与冲突接管",
+      "suggested_title": "补偿隔离与冲突接管",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "5e6e25497a5c81f5542ee36f4a9b2c8db73f55cb63ad0442fe39b8773220d97b",
+      "candidates": [
+        "补偿隔离与冲突接管",
+        "取消任务的残留接管",
+        "场景补偿隔离"
+      ],
+      "heading_outline": [
+        "# 补偿隔离与冲突接管",
+        "## 补偿中间状态与最终门禁",
+        "## 冲突决议与续行",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/20_游戏AI/决策输入与动作交接.md",
+      "primary_question": "感知事实如何转换为明确归属的动作请求？",
+      "primary_concept": "决策输入与动作交接",
+      "current_title": "决策输入与动作交接",
+      "suggested_title": "决策输入与动作交接",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "6290e9bf2e665e617610af5bf84a1b9c478622f8d0427cc29715ddd6fe639e5c",
+      "candidates": [
+        "决策输入与动作交接",
+        "动作控制所有权",
+        "游戏AI事实与执行身份"
+      ],
+      "heading_outline": [
+        "# 决策输入与动作交接",
+        "## 控制关系",
+        "### 统一调度与控制所有者",
+        "## 决策输入与动作交接",
+        "### 黑板快照",
+        "### 动作实例与独占资源",
+        "### 执行身份",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/20_游戏AI/状态机与行为树.md",
+      "primary_question": "模式切换和跨帧行为如何管理生命周期？",
+      "primary_concept": "状态机与行为树",
+      "current_title": "状态机与行为树",
+      "suggested_title": "状态机与行为树",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "1577491836f8a75b70a068d2e1cfd4d893a81c98cc7974166c5c84e52ee8c47c",
+      "candidates": [
+        "状态机与行为树",
+        "层次状态切换与行为树执行",
+        "游戏AI行为生命周期"
+      ],
+      "heading_outline": [
+        "# 状态机与行为树",
+        "## 状态机与层次切换",
+        "### 状态进入、更新与退出",
+        "### 进入失败与恢复路径",
+        "## 行为树与节点生命周期",
+        "### 组合语义",
+        "### 叶节点的四种状态",
+        "### 顺序节点的父子推进",
+        "### 条件观察与调度",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/20_游戏AI/效用评分与目标规划.md",
+      "primary_question": "目标如何评分并展开为步骤？",
+      "primary_concept": "效用评分与目标规划",
+      "current_title": "效用评分与目标规划",
+      "suggested_title": "效用评分与目标规划",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "23a7d3da079289160c7f675717f1167b838cb9e264bcb2345bcf60298cbf799f",
+      "candidates": [
+        "效用评分与目标规划",
+        "效用目标选择与行动规划",
+        "游戏AI目标推演"
+      ],
+      "heading_outline": [
+        "# 效用评分与目标规划",
+        "## 效用评分与动作切换",
+        "### 必要条件与偏好",
+        "### 迟滞与失效优先级",
+        "## 目标规划与执行",
+        "### GOAP回归搜索",
+        "#### 规划的反向搜索",
+        "### HTN分解与状态推进",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/20_游戏AI/决策计划提交.md",
+      "primary_question": "规划候选如何校验并安装？",
+      "primary_concept": "决策计划提交",
+      "current_title": "决策计划提交",
+      "suggested_title": "决策计划提交",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "d566b3e9aedb3ac40f98942132cdb7bad9ebf6abaa00b4edd554f6d43ffb4052",
+      "candidates": [
+        "决策计划提交",
+        "规划候选的条件采用",
+        "游戏AI执行树安装"
+      ],
+      "heading_outline": [
+        "# 决策计划提交",
+        "## 组合调度与提交",
+        "### 模式进入与规划交接",
+        "#### 候选采用失败",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/20_游戏AI/计划终态与重规划.md",
+      "primary_question": "终态后如何续行并控制失败预算？",
+      "primary_concept": "计划终态与重规划",
+      "current_title": "计划终态与重规划",
+      "suggested_title": "计划终态与重规划",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "dc18e5271ba86533c42122fa7e147bb7a948ef880b7e8e411d37b1beced4692b",
+      "candidates": [
+        "计划终态与重规划",
+        "目标满足与计划续行",
+        "游戏AI失败预算"
+      ],
+      "heading_outline": [
+        "# 计划终态与重规划",
+        "## 计划状态推进",
+        "### 模型组合的状态推进",
+        "### 行为树终态与计划续行",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/20_游戏AI/决策日志与恢复.md",
+      "primary_question": "命令和效果如何去重并恢复？",
+      "primary_concept": "决策日志与恢复",
+      "current_title": "决策日志与恢复",
+      "suggested_title": "决策日志与恢复",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "53ea8d7436875626874b2b4bf1d02c1c38c487edcf5e3354534b9a7e5545272a",
+      "candidates": [
+        "决策日志与恢复",
+        "游戏AI命令的持久恢复",
+        "决策与世界效果重放"
+      ],
+      "heading_outline": [
+        "# 决策日志与恢复",
+        "## 异步事件与决策重放",
+        "### 命令登记与宿主接纳",
+        "### 世界效果与恢复前沿",
+        "## 逐机制反例",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+      "primary_question": "C++源文件怎样形成可加载模块，对象布局与资源操作又受到哪些约束？",
+      "primary_concept": "C++构建与对象模型",
+      "current_title": "C++构建与对象模型",
+      "suggested_title": "C++构建与对象模型",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "5df6feec81e9844e65c763332528b997391722668326338e5188b5db0bf55a3c",
+      "candidates": [
+        "C++构建与对象模型",
+        "C++编译与对象语义",
+        "C++模块的构建基础"
+      ],
+      "heading_outline": [
+        "# C++构建与对象模型",
+        "## C++构建与模块边界",
+        "## C++ 构建链",
+        "## 头文件与翻译单元",
+        "## 静态与动态库",
+        "## ABI 与 C接口",
+        "## 类型布局与资源语义",
+        "## C++ 类型与布局",
+        "## C++ 对象模型与虚函数",
+        "## 复制、移动与异常安全",
+        "## 布局与边界字节",
+        "## Win32 与 COM 边界",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+      "primary_question": "宿主怎样创建插件对象、建立借用关系并安全交接单对象关闭权？",
+      "primary_concept": "插件接口与对象借用",
+      "current_title": "插件接口与对象借用",
+      "suggested_title": "插件接口与对象借用",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "7aab8df0658e78d30f291f3653f5ab0ee7749e7ac914519de0b550e63d6d4ef7",
+      "candidates": [
+        "插件接口与对象借用",
+        "插件对象的接口契约",
+        "跨模块对象的借用协议"
+      ],
+      "heading_outline": [
+        "# 插件接口与对象借用",
+        "## 所有权与模块接口",
+        "## C ABI契约",
+        "## 接口结构的版本协商",
+        "## 对象使用与关闭",
+        "## 调用入口与依赖登记",
+        "## 普通销毁与对象借用",
+        "## 关闭记录与执行权",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
+      "primary_question": "模块怎样停止工作、排空访问并按依赖销毁对象，最终卸载代码？",
+      "primary_concept": "插件关闭与卸载",
+      "current_title": "插件关闭与卸载",
+      "suggested_title": "插件关闭与卸载",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "ef2c43c1f5f6327c7fff572667b88423680626dd785232c7959fa1d1a633a685",
+      "candidates": [
+        "插件关闭与卸载",
+        "插件卸载状态机",
+        "模块依赖的有序销毁"
+      ],
+      "heading_outline": [
+        "# 插件关闭与卸载",
+        "## 模块关闭与停止请求",
+        "## 工作排空与清理准备",
+        "## 关闭期间的依赖清理调用",
+        "## 依赖销毁与卸载续行",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+      "primary_question": "宿主怎样在指定线程完成异步撤销、窗口销毁和接口释放，并确认每个步骤的结果？",
+      "primary_concept": "线程受限资源的关闭",
+      "current_title": "线程受限资源的关闭",
+      "suggested_title": "线程受限资源的关闭",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "47b0e72950c68b18e80ede004eabb852e5e5d6eb9ed38d7136190c99de69e30c",
+      "candidates": [
+        "线程受限资源的关闭",
+        "窗口与COM资源收尾",
+        "异步资源关闭协议"
+      ],
+      "heading_outline": [
+        "# 线程受限资源的关闭",
+        "## 清理线程与关闭派发",
+        "### 异步撤销的结果对账",
+        "### 窗口与接口收尾",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+      "primary_question": "如何把交互预览组织为可验证可撤销的对象事务",
+      "primary_concept": "编辑手势与撤销",
+      "current_title": "编辑手势与撤销",
+      "suggested_title": "编辑手势与撤销",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "248369dee872fcf3a77c8b6cc49f00e3b13ea7a945dda179948c8f3bbd2bf20c",
+      "candidates": [
+        "编辑手势与撤销",
+        "编辑手势与撤销机制",
+        "编辑手势与撤销协议"
+      ],
+      "heading_outline": [
+        "# 编辑手势与撤销",
+        "## 用户操作流程",
+        "## 计划与编辑输入",
+        "## 编辑事务与撤销",
+        "### 命令、补丁与事务",
+        "#### 手势合并",
+        "#### 创建、删除与引用",
+        "### Unity 与 Unreal 的撤销",
+        "### 事务执行与补偿",
+        "## 验证方法",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/15_资产与工具管线/批处理条件发布.md",
+      "primary_question": "如何使批处理在取消与崩溃后依据版本和回执安全继续",
+      "primary_concept": "批处理条件发布",
+      "current_title": "批处理条件发布",
+      "suggested_title": "批处理条件发布",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "d0bc055863d906289627a246b45c0364135fde32a77a739457f8a90c500cca2a",
+      "candidates": [
+        "批处理条件发布",
+        "批处理条件发布机制",
+        "批处理条件发布协议"
+      ],
+      "heading_outline": [
+        "# 批处理条件发布",
+        "## 批处理与失败恢复",
+        "### 计划预览与稳定执行",
+        "### 条件发布与检查点恢复",
+        "### 进度、取消与错误恢复",
+        "## 工具版本与数据契约",
+        "## 验证方法",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+      "primary_question": "如何让对象呈现和文件版本共同服从持久编辑决定",
+      "primary_concept": "跨资源编辑恢复",
+      "current_title": "跨资源编辑恢复",
+      "suggested_title": "跨资源编辑恢复",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "469afc6635cc7474ffe6a2fd07ae342377cebfa5d33bd08ed05330b2a532db63",
+      "candidates": [
+        "跨资源编辑恢复",
+        "跨资源编辑恢复机制",
+        "跨资源编辑恢复协议"
+      ],
+      "heading_outline": [
+        "# 跨资源编辑恢复",
+        "## 对象与文件的共同提交",
+        "## 宿主撤销与持久恢复",
+        "## 验证方法",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/21_游戏网络/异步命中结算与恢复.md",
+      "primary_question": "异步历史查询如何成为可去重可回放的权威伤害决定",
+      "primary_concept": "异步命中结算与恢复",
+      "current_title": "异步命中结算与恢复",
+      "suggested_title": "异步命中结算与恢复",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "d459d1efe9b056740106738bb9cf86efaf01d00662295ca63f8730130c561d06",
+      "candidates": [
+        "异步命中结算与恢复",
+        "异步命中结算与恢复机制",
+        "异步命中结算与恢复协议"
+      ],
+      "heading_outline": [
+        "# 异步命中结算与恢复",
+        "## 命中提交与验证",
+        "### 接纳与弹药所有权",
+        "### 查询完成与结算顺序",
+        "### 权威决策与Tick日志",
+        "### 查询包与崩溃恢复",
+        "### 恢复记录与有序回放",
+        "### 观察与反例",
+        "## 验证方法",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/不可变文件发布.md",
+      "primary_question": "如何条件发布不可变文件并恢复未知发布结果",
+      "primary_concept": "不可变文件发布",
+      "current_title": "不可变文件发布",
+      "suggested_title": "不可变文件发布",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "62ceeed710208f7f03b2fb3c8b54a78f39c4e3ad283843a200e1d2663d7b1211",
+      "candidates": [
+        "不可变文件发布",
+        "不可变文件发布机制",
+        "不可变文件发布协议"
+      ],
+      "heading_outline": [
+        "# 不可变文件发布",
+        "## 不可变文件与持久清单",
+        "### 文件准备与正式入口",
+        "### 发布任务登记与续行",
+        "### 发布冲突与恢复",
+        "### 读取固定版本",
+        "## 验证方法",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/16_编程与数据结构/文件版本代理与回收.md",
+      "primary_question": "如何在服务重启与版本排空期间保护仍被读取的文件",
+      "primary_concept": "文件版本代理与回收",
+      "current_title": "文件版本代理与回收",
+      "suggested_title": "文件版本代理与回收",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "3dfc93f3af603b9f041ae0423a876f43d0520ccff83a28a7c46dd1c7eda3bb53",
+      "candidates": [
+        "文件版本代理与回收",
+        "文件版本代理与回收机制",
+        "文件版本代理与回收协议"
+      ],
+      "heading_outline": [
+        "# 文件版本代理与回收",
+        "## 跨进程代理与回收",
+        "### 令牌和在途读取",
+        "### 服务重启与旧操作",
+        "### 运行中的版本排空",
+        "### 垃圾回收的状态转换",
+        "## 验证方法",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+      "primary_question": "当前像素如何在历史帧中找到可信的同一表面？",
+      "primary_concept": "视频历史重投影",
+      "current_title": "视频历史重投影",
+      "suggested_title": "视频历史重投影",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "642e7ec88ad769037a747309ab90e6b93b563191b04105412c9e69595e780f91",
+      "candidates": [
+        "视频历史重投影",
+        "帧间表面对应",
+        "视频遮挡与历史拒绝"
+      ],
+      "heading_outline": [
+        "# 视频历史重投影",
+        "## 帧输入与执行顺序",
+        "## 历史位置与可见性",
+        "### 当前像素查询历史",
+        "### 深度比较与拒绝分支",
+        "## 法线与当前结构",
+        "## 故障定位",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+      "primary_question": "如何把有效历史颜色约束接入图生图去噪？",
+      "primary_concept": "视频生成的逐步颜色约束",
+      "current_title": "视频生成的逐步颜色约束",
+      "suggested_title": "视频生成的逐步颜色约束",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "b010b458be0624769ba0ec26d56f0c35e37b3ab29a0973469f9fb6d05bd5b3ec",
+      "candidates": [
+        "视频生成的逐步颜色约束",
+        "历史颜色的扩散约束",
+        "像素投影DDIM"
+      ],
+      "heading_outline": [
+        "# 视频生成的逐步颜色约束",
+        "## 历史图与潜变量",
+        "### 像素空间合成",
+        "### 潜变量重投影的替代路线",
+        "## 条件去噪与历史约束",
+        "### 模型和条件契约",
+        "### 起始噪声与步长",
+        "### 每步预测与颜色投影",
+        "### 去噪循环实现",
+        "# PyTorch / Diffusers 0.35.1，机制片段；在 torch.no_grad() 内执行。",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+      "primary_question": "如何控制曝光漂移并处理双向关键帧传播冲突？",
+      "primary_concept": "视频曝光与关键帧融合",
+      "current_title": "视频曝光与关键帧融合",
+      "suggested_title": "视频曝光与关键帧融合",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "6135d76e8d939d9a1c9c24a2369d1e3b5b684c988c5a91d173ee3872c213d059",
+      "candidates": [
+        "视频曝光与关键帧融合",
+        "关键帧双向传播融合",
+        "视频时域曝光校正"
+      ],
+      "heading_outline": [
+        "# 视频曝光与关键帧融合",
+        "## 漂移估计与真实照明",
+        "## 生成内容与几何记录",
+        "## 关键帧与传播冲突",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+      "primary_question": "视频传播、补洞与编码任务如何按不可变清单恢复？",
+      "primary_concept": "视频生成任务恢复",
+      "current_title": "视频生成任务恢复",
+      "suggested_title": "视频生成任务恢复",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "11a612dccb5777962e173711aa8b8e5ef2bacd450e4581f58293fe196b8b0953",
+      "candidates": [
+        "视频生成任务恢复",
+        "视频生成的持久任务",
+        "视频帧清单与续行"
+      ],
+      "heading_outline": [
+        "# 视频生成任务恢复",
+        "## 历史提交与方向隔离",
+        "## 任务续行与二次恢复",
+        "## 冲突决议与最终序列",
+        "## 实现与证据",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+      "primary_question": "怎样通过亚像素抖动、运动重投影与历史权重累积重建当前图像？",
+      "primary_concept": "时域采样与重投影",
+      "current_title": "时域采样与重投影",
+      "suggested_title": "时域采样与重投影",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "707a56bd2540d5d0f63ca9d761b6e0161416bb8266379e20e81f46052049edfa",
+      "candidates": [
+        "时域采样与重投影",
+        "TAA样本累积",
+        "时域重建的采样过程"
+      ],
+      "heading_outline": [
+        "# 时域采样与重投影",
+        "## 时域抗锯齿",
+        "### 抖动",
+        "#### 写入投影矩阵",
+        "#### 序列的选择",
+        "#### 纹理采样偏置",
+        "## 历史累积与重投影",
+        "### 样本累积",
+        "#### 固定系数等价于指数平滑",
+        "#### 等效采样数",
+        "#### 等权重方案",
+        "#### $\\alpha$ 的下界",
+        "### 在管线中的位置",
+        "#### 亮度自适应权重",
+        "### 重投影",
+        "#### 运动向量",
+        "#### 采样邻域最近深度",
+        "#### 重采样滤波",
+        "## 仅用重投影的简化方案",
+        "## 时域超采样",
+        "## 验证方法",
+        "## 相关主题",
+        "## 参考资料"
+      ]
+    },
+    {
+      "path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+      "primary_question": "重投影历史怎样经过几何拒绝、颜色裁剪与权重调整，并控制残影和闪烁？",
+      "primary_concept": "时域历史校验",
+      "current_title": "时域历史校验",
+      "suggested_title": "时域历史校验",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "review_basis": "references/longpage-review-2026-10-24.md",
+      "content_sha256": "3bcc7f296d471152717371762d6c2a25ca2eac3e524c4e229d3212d6582cea88",
+      "candidates": [
+        "时域历史校验",
+        "TAA历史拒绝与裁剪",
+        "时域伪影的历史判据"
+      ],
+      "heading_outline": [
+        "# 时域历史校验",
+        "## 历史校验",
+        "### 拒绝",
+        "### 矫正",
+        "### 颜色空间与离群值",
+        "### 混合系数自适应",
+        "## 一个像素的历史决策",
+        "## 伪影的成因",
+        "### 模糊",
+        "### 鬼影",
+        "### 闪烁",
+        "### 欠采样",
+        "## 高频细节的稳定性",
+        "### 应对方向",
+        "### 分辨率与着色率",
+        "## 验证方法",
+        "## 相关主题",
+        "## 参考资料"
+      ]
     }
   ],
   "sample_dimensions": [
@@ -8769,5 +9892,5 @@
   "selection_basis": "覆盖短概念、问题症状、同题多机制、引擎限定、既有导读与边界混合；非随机样本，不代表全库质量比例",
   "naming_patterns_report": "references/title-pattern-report.md",
   "title_gold_example": "Render Graph",
-  "current_review_date": "2026-10-23"
+  "current_review_date": "2026-10-24"
 }

@@ -3676,7 +3676,7 @@
   "completion": {
     "baseline": "fcf4de0",
     "original_pages": 113,
-    "pages": 191,
+    "pages": 218,
     "articles": [
       {
         "path": "知识库/00_知识库说明/学习与维护方法.md",
@@ -3712,7 +3712,7 @@
         "actions": [
           "KEEP"
         ],
-        "final_sha256": "1765d97514363006aa44cafad4e1fb6879544ac2af2bf53c305da12d87711efa",
+        "final_sha256": "82df12094e79ae6ea6a05478c8985815c2734fb87259e9ccafbddc46e0f975d5",
         "reason": [
           "既有PASS页面保持正文；同步必要引用"
         ],
@@ -3726,7 +3726,7 @@
         "actions": [
           "REWRITE"
         ],
-        "final_sha256": "5eef8f00007fae9771481620b93b06415a37f5c1aae7e73212de31ae95bbbc8e",
+        "final_sha256": "7db42b17898c7007245eb6a724445ae3aa096cd045c51ea90d02500fe73dca7c",
         "reason": [
           "既有PASS页面保持正文；同步必要引用"
         ],
@@ -4018,11 +4018,11 @@
         "actions": [
           "REWRITE"
         ],
-        "final_sha256": "c394d9d1b44fe7b12aa5038d208d2f079e589bf5950bd497298b4abfdef7c275",
+        "final_sha256": "8623343aebeb72eed6e9f0a93fb273501f431830f1bb8c8ad103b7b2d01c6bfd",
         "reason": [
           "既有PASS页面保持正文；同步必要引用"
         ],
-        "primary_question": "如何从空间和时间样本重建稳定图像",
+        "primary_question": "空间抗锯齿与时域方案怎样比较成本、质量和引擎接入条件？",
         "article_type": "ARTICLE",
         "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
       },
@@ -5481,12 +5481,12 @@
         "actions": [
           "REWRITE"
         ],
-        "final_sha256": "1656f915fdb2871cd127333aa8758a571c61426517f8a1797d6ca0c19f7377cc",
+        "final_sha256": "97fcc8e6a206dc89046749154bb3e373df7a27bc41115f7ffefdb9621a1d0f02",
         "reason": [
           "既有PASS页面保持正文；同步必要引用"
         ],
-        "primary_question": "如何让编辑器操作可预览、撤销和批量恢复",
-        "article_type": "ARTICLE",
+        "primary_question": "按技术问题选择编辑器工具的事务与批处理的专题入口",
+        "article_type": "OVERVIEW",
         "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
       },
       {
@@ -5527,12 +5527,12 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "dbf8b38419fddf14d26b88870b562c0c7ea92f31ea18b9455a4ee4474dd32ba4",
+        "final_sha256": "a3413ee7535dbfa0b236e78d3ac4e88c4c60f508293b5678d7cbb6758866b1e5",
         "reason": [
           "三种语言的编译与宿主机制和跨语言通信各有独立维护边界。"
         ],
-        "primary_question": "如何从编译链接到插件ABI保持类型与资源契约",
-        "article_type": "ARTICLE",
+        "primary_question": "按技术问题选择C++工程边界的专题入口",
+        "article_type": "OVERVIEW",
         "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
       },
       {
@@ -5656,11 +5656,11 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "43b315b3e627c45bedf22ce16a55d7397559851cd3fcc1a373cfd53bcf6bc731",
+        "final_sha256": "1fe0f1b40252d543112f1308754f3ab5fd9d111626998d083fa5d9807d481a3f",
         "reason": [
           "调度隔离、页表映射、内存同步与文件系统服务有独立模型。"
         ],
-        "primary_question": "如何在缓存与异步请求下读写并可靠发布文件",
+        "primary_question": "如何在缓存、短读与异步取消下把完整字节安全交给资源消费者",
         "article_type": "ARTICLE",
         "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
       },
@@ -5781,12 +5781,12 @@
         "actions": [
           "REWRITE"
         ],
-        "final_sha256": "43c0d99da0caf1d6a215fd632d1484cc0fa1b88a369ffc77ff2e04f97e7fd36f",
+        "final_sha256": "bd8b6c1d72cbdbc9ab5624b482dffa4e069dc667bb79a2f187b5a602c00fceb2",
         "reason": [
           "既有PASS页面保持正文；同步必要引用"
         ],
-        "primary_question": "如何令Agent工具任务可追踪、幂等和验收",
-        "article_type": "ARTICLE",
+        "primary_question": "按技术问题选择Agent资产管线的专题入口",
+        "article_type": "OVERVIEW",
         "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
       },
       {
@@ -5861,12 +5861,12 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "aaf058dc177ccf69b833447f77059066d8624dfa787a81de9be7a164f8e2ae0a",
+        "final_sha256": "0a6c1cb8fdc489c206f29c9e51f5e12e063f24479b68563e5bbc3de800406feb",
         "reason": [
           "节点运行资产与跨帧内容对应关系是不同主问题。"
         ],
-        "primary_question": "如何在运动与遮挡变化下复用生成特征",
-        "article_type": "ARTICLE",
+        "primary_question": "按技术问题选择视频生成时序一致性的专题入口",
+        "article_type": "OVERVIEW",
         "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
       },
       {
@@ -6013,12 +6013,12 @@
         "actions": [
           "REWRITE"
         ],
-        "final_sha256": "991aeb390c698a13e54b90587458f3f37ed3c1d7a88f3251b8dd01b04e0c33af",
+        "final_sha256": "322b4e9749ace2a4d33cb8c5aa0eff18bf99c553033093756803951f0ce66fe3",
         "reason": [
           "既有PASS页面保持正文；同步必要引用"
         ],
-        "primary_question": "如何按决策问题选择行为组织模型",
-        "article_type": "ARTICLE",
+        "primary_question": "按技术问题选择游戏AI决策模型的专题入口",
+        "article_type": "OVERVIEW",
         "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
       },
       {
@@ -6155,7 +6155,7 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "cecd6efbb47d54e49cd280f67a75797ac440d71add8a1daf7b37d823555c7ca1",
+        "final_sha256": "5161554741a5993b31ccc280795b12fe1e7652eed331a506b724cb673a95cb86",
         "reason": [
           "快照显示、预测校正、确定性重模拟与历史命中查询有不同状态恢复范围。"
         ],
@@ -6584,6 +6584,411 @@
         "primary_question": "如何采用导航查询并完成移动保持取消与恢复的控制权交接",
         "article_type": "ARTICLE",
         "review_scope": "正文与源章节逐项对照，含来源、数例、衔接与独立复读"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/资产任务编排与发布.md",
+        "source": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "b4e3727e80aee5a9e61e1d7dd79292370b3cd0cb30f9d5d9b414a01b263213cf",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "资产任务如何连接规划、验证、审核与不可变版本发布？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/资产布局的几何验证.md",
+        "source": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "fc599347d8c6f31b5f06908790fa2023446f3e850db3434a4dda4c7a88c3aa7f",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "资产布局如何在统一空间中验证几何与交互可达性？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/场景工具的条件执行.md",
+        "source": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "764987141b2a64516d4dd3a686d054f68b479655fc0f6c7edd2f61251b556bdd",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "场景工具如何在并发、超时和接管下实现条件执行与恢复？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/场景补偿的版本承接.md",
+        "source": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "6cbf6a43d429e3fd1c9c97e736bd57c0c79a47b10b143b73ee58271cc9b8243b",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "取消场景操作如何按局部字段和持久回执承接版本？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/补偿隔离与冲突接管.md",
+        "source": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "5e6e25497a5c81f5542ee36f4a9b2c8db73f55cb63ad0442fe39b8773220d97b",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "补偿中间态如何隔离，冲突与残留如何接管？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/20_游戏AI/决策输入与动作交接.md",
+        "source": "知识库/20_游戏AI/游戏AI决策模型.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "6290e9bf2e665e617610af5bf84a1b9c478622f8d0427cc29715ddd6fe639e5c",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "感知事实如何转换为明确归属的动作请求？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/20_游戏AI/状态机与行为树.md",
+        "source": "知识库/20_游戏AI/游戏AI决策模型.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "1577491836f8a75b70a068d2e1cfd4d893a81c98cc7974166c5c84e52ee8c47c",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "模式切换和跨帧行为如何管理生命周期？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/20_游戏AI/效用评分与目标规划.md",
+        "source": "知识库/20_游戏AI/游戏AI决策模型.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "23a7d3da079289160c7f675717f1167b838cb9e264bcb2345bcf60298cbf799f",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "目标如何评分并展开为步骤？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/20_游戏AI/决策计划提交.md",
+        "source": "知识库/20_游戏AI/游戏AI决策模型.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "d566b3e9aedb3ac40f98942132cdb7bad9ebf6abaa00b4edd554f6d43ffb4052",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "规划候选如何校验并安装？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/20_游戏AI/计划终态与重规划.md",
+        "source": "知识库/20_游戏AI/游戏AI决策模型.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "dc18e5271ba86533c42122fa7e147bb7a948ef880b7e8e411d37b1beced4692b",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "终态后如何续行并控制失败预算？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/20_游戏AI/决策日志与恢复.md",
+        "source": "知识库/20_游戏AI/游戏AI决策模型.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "53ea8d7436875626874b2b4bf1d02c1c38c487edcf5e3354534b9a7e5545272a",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "命令和效果如何去重并恢复？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+        "source": "知识库/16_编程与数据结构/C++工程边界.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "5df6feec81e9844e65c763332528b997391722668326338e5188b5db0bf55a3c",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "C++源文件怎样形成可加载模块，对象布局与资源操作又受到哪些约束？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+        "source": "知识库/16_编程与数据结构/C++工程边界.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "7aab8df0658e78d30f291f3653f5ab0ee7749e7ac914519de0b550e63d6d4ef7",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "宿主怎样创建插件对象、建立借用关系并安全交接单对象关闭权？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
+        "source": "知识库/16_编程与数据结构/C++工程边界.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "ef2c43c1f5f6327c7fff572667b88423680626dd785232c7959fa1d1a633a685",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "模块怎样停止工作、排空访问并按依赖销毁对象，最终卸载代码？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+        "source": "知识库/16_编程与数据结构/C++工程边界.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "47b0e72950c68b18e80ede004eabb852e5e5d6eb9ed38d7136190c99de69e30c",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "宿主怎样在指定线程完成异步撤销、窗口销毁和接口释放，并确认每个步骤的结果？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/15_资产与工具管线/编辑手势与撤销.md",
+        "source": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "248369dee872fcf3a77c8b6cc49f00e3b13ea7a945dda179948c8f3bbd2bf20c",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "如何把交互预览组织为可验证可撤销的对象事务",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/15_资产与工具管线/批处理条件发布.md",
+        "source": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "d0bc055863d906289627a246b45c0364135fde32a77a739457f8a90c500cca2a",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "如何使批处理在取消与崩溃后依据版本和回执安全继续",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/15_资产与工具管线/跨资源编辑恢复.md",
+        "source": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "469afc6635cc7474ffe6a2fd07ae342377cebfa5d33bd08ed05330b2a532db63",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "如何让对象呈现和文件版本共同服从持久编辑决定",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/21_游戏网络/异步命中结算与恢复.md",
+        "source": "知识库/21_游戏网络/延迟补偿命中.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "d459d1efe9b056740106738bb9cf86efaf01d00662295ca63f8730130c561d06",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "异步历史查询如何成为可去重可回放的权威伤害决定",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/不可变文件发布.md",
+        "source": "知识库/16_编程与数据结构/文件IO.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "62ceeed710208f7f03b2fb3c8b54a78f39c4e3ad283843a200e1d2663d7b1211",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "如何条件发布不可变文件并恢复未知发布结果",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/16_编程与数据结构/文件版本代理与回收.md",
+        "source": "知识库/16_编程与数据结构/文件IO.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "3dfc93f3af603b9f041ae0423a876f43d0520ccff83a28a7c46dd1c7eda3bb53",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "如何在服务重启与版本排空期间保护仍被读取的文件",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/视频历史重投影.md",
+        "source": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "642e7ec88ad769037a747309ab90e6b93b563191b04105412c9e69595e780f91",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "当前像素如何在历史帧中找到可信的同一表面？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/视频生成的逐步颜色约束.md",
+        "source": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "b010b458be0624769ba0ec26d56f0c35e37b3ab29a0973469f9fb6d05bd5b3ec",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "如何把有效历史颜色约束接入图生图去噪？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/视频曝光与关键帧融合.md",
+        "source": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "6135d76e8d939d9a1c9c24a2369d1e3b5b684c988c5a91d173ee3872c213d059",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "如何控制曝光漂移并处理双向关键帧传播冲突？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/17_AIGC与Agent管线/视频生成任务恢复.md",
+        "source": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "11a612dccb5777962e173711aa8b8e5ef2bacd450e4581f58293fe196b8b0953",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "视频传播、补洞与编码任务如何按不可变清单恢复？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/时域采样与重投影.md",
+        "source": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "707a56bd2540d5d0f63ca9d761b6e0161416bb8266379e20e81f46052049edfa",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "怎样通过亚像素抖动、运动重投影与历史权重累积重建当前图像？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
+      },
+      {
+        "path": "知识库/02_GPU与光栅化管线/时域历史校验.md",
+        "source": "知识库/02_GPU与光栅化管线/抗锯齿与时域重建.md",
+        "actions": [
+          "RESTRUCTURE",
+          "FACT-CHECK"
+        ],
+        "final_sha256": "3bcc7f296d471152717371762d6c2a25ca2eac3e524c4e229d3212d6582cea88",
+        "reason": [
+          "独立问题主归属与迁移对照见references/longpage-review-2026-10-24.md"
+        ],
+        "primary_question": "重投影历史怎样经过几何拒绝、颜色裁剪与权重调整，并控制残影和闪烁？",
+        "article_type": "ARTICLE",
+        "review_scope": "正文、源文、数例与来源独立复读"
       }
     ],
     "status": "COMPLETE",

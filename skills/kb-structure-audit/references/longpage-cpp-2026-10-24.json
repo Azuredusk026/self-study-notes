@@ -1,0 +1,1477 @@
+{
+  "source_commit": "bc4ed68",
+  "source_path": "知识库/16_编程与数据结构/C++工程边界.md",
+  "articles": [
+    {
+      "path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+      "primary_question": "C++源文件怎样形成可加载模块，对象布局与资源操作又受到哪些约束？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "C++构建与模块边界",
+        "C++ 构建链",
+        "头文件与翻译单元",
+        "静态与动态库",
+        "ABI 与 C接口",
+        "类型布局与资源语义",
+        "C++ 类型与布局",
+        "C++ 对象模型与虚函数",
+        "复制、移动与异常安全",
+        "布局与边界字节",
+        "Win32 与 COM 边界"
+      ],
+      "title_candidates": [
+        "C++构建与对象模型",
+        "C++编译与对象语义",
+        "C++模块的构建基础"
+      ],
+      "reviewed_sha256": "5df6feec81e9844e65c763332528b997391722668326338e5188b5db0bf55a3c"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+      "primary_question": "宿主怎样创建插件对象、建立借用关系并安全交接单对象关闭权？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "所有权与模块接口",
+        "C ABI契约",
+        "接口结构的版本协商",
+        "对象使用与关闭",
+        "调用入口与依赖登记",
+        "普通销毁与对象借用",
+        "关闭记录与执行权"
+      ],
+      "title_candidates": [
+        "插件接口与对象借用",
+        "插件对象的接口契约",
+        "跨模块对象的借用协议"
+      ],
+      "reviewed_sha256": "7aab8df0658e78d30f291f3653f5ab0ee7749e7ac914519de0b550e63d6d4ef7"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
+      "primary_question": "模块怎样停止工作、排空访问并按依赖销毁对象，最终卸载代码？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "模块关闭与停止请求",
+        "工作排空与清理准备",
+        "关闭期间的依赖清理调用",
+        "依赖销毁与卸载续行"
+      ],
+      "title_candidates": [
+        "插件关闭与卸载",
+        "插件卸载状态机",
+        "模块依赖的有序销毁"
+      ],
+      "reviewed_sha256": "ef2c43c1f5f6327c7fff572667b88423680626dd785232c7959fa1d1a633a685"
+    },
+    {
+      "path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+      "primary_question": "宿主怎样在指定线程完成异步撤销、窗口销毁和接口释放，并确认每个步骤的结果？",
+      "article_type": "ARTICLE",
+      "source_headings": [
+        "清理线程与关闭派发",
+        "异步撤销的结果对账",
+        "窗口与接口收尾"
+      ],
+      "title_candidates": [
+        "线程受限资源的关闭",
+        "窗口与COM资源收尾",
+        "异步资源关闭协议"
+      ],
+      "reviewed_sha256": "47b0e72950c68b18e80ede004eabb852e5e5d6eb9ed38d7136190c99de69e30c"
+    }
+  ],
+  "overview_question": "怎样沿构建、接口、对象借用、模块卸载与线程清理阅读C++工程边界？",
+  "mappings": [
+    {
+      "source_heading": "C++构建与模块边界",
+      "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+      "target_heading": "C++构建与模块边界",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewed_body_sha256": "09fdb1097e5aace097659f7de2afc1b6947280fa9a57722e45a43122cc5c5f3e"
+    },
+    {
+      "source_heading": "C++ 构建链",
+      "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+      "target_heading": "C++ 构建链",
+      "source_body_sha256": "59433180b24f39ec86d14b7b7b398851b5fe567d1b9d9011cc45253b3434550c",
+      "reviewed_body_sha256": "64258c8f0e87af21ff09cc3b5d1c3c5ddbdd1706decaa3b953cfd0a52c1e1afd"
+    },
+    {
+      "source_heading": "头文件与翻译单元",
+      "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+      "target_heading": "头文件与翻译单元",
+      "source_body_sha256": "90ce0c8f10ad16237309ba7796c801e65eaa1f7d31ad87dfa0d43f18fce8b26d",
+      "reviewed_body_sha256": "90ce0c8f10ad16237309ba7796c801e65eaa1f7d31ad87dfa0d43f18fce8b26d"
+    },
+    {
+      "source_heading": "静态与动态库",
+      "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+      "target_heading": "静态与动态库",
+      "source_body_sha256": "a04f0901ef26900003207c9e44fb2b6d6cf3faeec25a5b0e0409e6f86ee12ef6",
+      "reviewed_body_sha256": "1c5b339b8910ebd7cbd93036a1ed7b609e49739f6e181567abc52798391421c7"
+    },
+    {
+      "source_heading": "ABI 与 C接口",
+      "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+      "target_heading": "ABI 与 C接口",
+      "source_body_sha256": "c72b50a7f26cc2da14ae587377f6e9ff3f662afb2033087df58d17b54dfba6a0",
+      "reviewed_body_sha256": "c72b50a7f26cc2da14ae587377f6e9ff3f662afb2033087df58d17b54dfba6a0"
+    },
+    {
+      "source_heading": "类型布局与资源语义",
+      "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+      "target_heading": "类型布局与资源语义",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewed_body_sha256": "2350ead84b9bee664b7576f06c980011f17c3aed5b77ea1468e60675098a83b5"
+    },
+    {
+      "source_heading": "C++ 类型与布局",
+      "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+      "target_heading": "C++ 类型与布局",
+      "source_body_sha256": "4f434569ab1523ac5b2425be5b63338948fda4df88004f5b425b0d9688a89b61",
+      "reviewed_body_sha256": "4f434569ab1523ac5b2425be5b63338948fda4df88004f5b425b0d9688a89b61"
+    },
+    {
+      "source_heading": "C++ 对象模型与虚函数",
+      "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+      "target_heading": "C++ 对象模型与虚函数",
+      "source_body_sha256": "d00695b4864d248ef336899b8f586084a5018b4b841ae08ceceacae3bd2da145",
+      "reviewed_body_sha256": "d00695b4864d248ef336899b8f586084a5018b4b841ae08ceceacae3bd2da145"
+    },
+    {
+      "source_heading": "复制、移动与异常安全",
+      "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+      "target_heading": "复制、移动与异常安全",
+      "source_body_sha256": "55ed10fa0859f7a10ca35fd3a911dd9a3966bf9a15f9f1ac11fcbc3687122c5f",
+      "reviewed_body_sha256": "55ed10fa0859f7a10ca35fd3a911dd9a3966bf9a15f9f1ac11fcbc3687122c5f"
+    },
+    {
+      "source_heading": "布局与边界字节",
+      "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+      "target_heading": "布局与边界字节",
+      "source_body_sha256": "cc9712afa78004d7ab7504153cc98b3a5c85d42a184a6009800f26630e9a9373",
+      "reviewed_body_sha256": "cc9712afa78004d7ab7504153cc98b3a5c85d42a184a6009800f26630e9a9373"
+    },
+    {
+      "source_heading": "Win32 与 COM 边界",
+      "target_path": "知识库/16_编程与数据结构/C++构建与对象模型.md",
+      "target_heading": "Win32 与 COM 边界",
+      "source_body_sha256": "9cbe5dd02a376b81af6b45b8b1bdc5eb4fc3f25b9459252668b686606127f332",
+      "reviewed_body_sha256": "9cd2ae4873c8e9a8c6592e87ac28f5451bf125d1ae6dad367e2d66d7ad0f6ecc"
+    },
+    {
+      "source_heading": "所有权与模块接口",
+      "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+      "target_heading": "所有权与模块接口",
+      "source_body_sha256": "47fe1ad1eb0ed0dea31ff1b89527991c85762b4dbb0e651009d0d732a2f846c7",
+      "reviewed_body_sha256": "ceddcd89ae630ca22cab3ae0b718e8b8900c15032eb9f36528e14774e1b79c54"
+    },
+    {
+      "source_heading": "C ABI契约",
+      "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+      "target_heading": "C ABI契约",
+      "source_body_sha256": "74b74a6dfd5fc1e0253ec33b0209f1af7c20809fdfbe9135b8717a2e5c78664a",
+      "reviewed_body_sha256": "74b74a6dfd5fc1e0253ec33b0209f1af7c20809fdfbe9135b8717a2e5c78664a"
+    },
+    {
+      "source_heading": "接口结构的版本协商",
+      "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+      "target_heading": "接口结构的版本协商",
+      "source_body_sha256": "e0662a7b61d5f425a5f37b9f8c5c3d4ccdb4ddf1be2f42bd472ae2e204bffd2d",
+      "reviewed_body_sha256": "e0662a7b61d5f425a5f37b9f8c5c3d4ccdb4ddf1be2f42bd472ae2e204bffd2d"
+    },
+    {
+      "source_heading": "对象使用与关闭",
+      "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+      "target_heading": "对象使用与关闭",
+      "source_body_sha256": "8168fd74347c2160294c13a074d28a30f6b1f3643b38e907246fb3685cf5e7d5",
+      "reviewed_body_sha256": "db96d764d77f1c6c9329f354a60502eca9d78341c326867019874b3c62c5b947"
+    },
+    {
+      "source_heading": "调用入口与依赖登记",
+      "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+      "target_heading": "调用入口与依赖登记",
+      "source_body_sha256": "51128a4f7085bf562d17cfa228ba06b16cee41a8c66f1942e3b3161dd689b280",
+      "reviewed_body_sha256": "51128a4f7085bf562d17cfa228ba06b16cee41a8c66f1942e3b3161dd689b280"
+    },
+    {
+      "source_heading": "普通销毁与对象借用",
+      "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+      "target_heading": "普通销毁与对象借用",
+      "source_body_sha256": "af3acc2d7b0f6128869604314b8c709afde5e4c1bd92b8a03cdb186ae0ab6ba2",
+      "reviewed_body_sha256": "ca28555d9bc2a9d35fee4b50afa1921d33883fe9a97c45266fcaaf9986e3d649"
+    },
+    {
+      "source_heading": "关闭记录与执行权",
+      "target_path": "知识库/16_编程与数据结构/插件接口与对象借用.md",
+      "target_heading": "关闭记录与执行权",
+      "source_body_sha256": "ac29e88ee1c6edc7d49e5e60738eec4f35d363e9d5a7b8afe427ec5d97fbc6ad",
+      "reviewed_body_sha256": "ac29e88ee1c6edc7d49e5e60738eec4f35d363e9d5a7b8afe427ec5d97fbc6ad"
+    },
+    {
+      "source_heading": "模块关闭与停止请求",
+      "target_path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
+      "target_heading": "模块关闭与停止请求",
+      "source_body_sha256": "340e2dc79259f7308cf731ee3363460461e439e4c47d3701c9809e33efe8732f",
+      "reviewed_body_sha256": "6e8b80b2473eb8ffe9b830e44ce308d9d140bf20dc9319724ac028190cca8f88"
+    },
+    {
+      "source_heading": "工作排空与清理准备",
+      "target_path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
+      "target_heading": "工作排空与清理准备",
+      "source_body_sha256": "61c33a578cfe2d75104af2e4f92a34081b7985369979e6d07155b66d2ba736e5",
+      "reviewed_body_sha256": "e7929c9b3aeda0dc757d89fe53785273b4b118f0c82f4a31b08f60bae0dbfc49"
+    },
+    {
+      "source_heading": "关闭期间的依赖清理调用",
+      "target_path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
+      "target_heading": "关闭期间的依赖清理调用",
+      "source_body_sha256": "9d6e63367e197ca8d69978a5c78438ba29835689a18b426316ec85dd9636a39c",
+      "reviewed_body_sha256": "9d6e63367e197ca8d69978a5c78438ba29835689a18b426316ec85dd9636a39c"
+    },
+    {
+      "source_heading": "依赖销毁与卸载续行",
+      "target_path": "知识库/16_编程与数据结构/插件关闭与卸载.md",
+      "target_heading": "依赖销毁与卸载续行",
+      "source_body_sha256": "89a7e3ae05606adf119ef96ad062f8d178b77cb0b6ec3f16aa5c7cd8fecc4008",
+      "reviewed_body_sha256": "89a7e3ae05606adf119ef96ad062f8d178b77cb0b6ec3f16aa5c7cd8fecc4008"
+    },
+    {
+      "source_heading": "清理线程与关闭派发",
+      "target_path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+      "target_heading": "清理线程与关闭派发",
+      "source_body_sha256": "69754a9e8bfbea38502c7aa5ef5966ca84df9de76fd8b9708a7a6612d4f13ed0",
+      "reviewed_body_sha256": "e5a7104d69fb6f094bb120af80eb069e4009c944a6927f64a297b0062c2ad978"
+    },
+    {
+      "source_heading": "异步撤销的结果对账",
+      "target_path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+      "target_heading": "异步撤销的结果对账",
+      "source_body_sha256": "28e8fb9c02b81107066a7b1d89472764ec1358c325ce5a88643d2ae67b654876",
+      "reviewed_body_sha256": "7c90499be15991d2581f9b4bbf489a94c35223b5698420707855ff83f0bb5af7"
+    },
+    {
+      "source_heading": "窗口与接口收尾",
+      "target_path": "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+      "target_heading": "窗口与接口收尾",
+      "source_body_sha256": "645c33ad10ccb68cbd5fb6bbefdfec56082c3b04ea5bb2c7c7b3b4fc60831b33",
+      "reviewed_body_sha256": "79793029ec0a9fb1ceafb33a094b4664b9fc91980bf720087562308f0a0b0aa1"
+    },
+    {
+      "source_heading": "验证方法",
+      "target_path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "target_heading": "验证方法",
+      "disposition": "retained source entry or metadata",
+      "source_body_sha256": "857b578475ff54e00b42bcd84c3836650be73189ad4b8a60e9d0ea1729d0d066",
+      "reviewed_body_sha256": "857b578475ff54e00b42bcd84c3836650be73189ad4b8a60e9d0ea1729d0d066"
+    },
+    {
+      "source_heading": "实现与证据",
+      "target_path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "target_heading": "实现与证据",
+      "disposition": "retained source entry or metadata",
+      "source_body_sha256": "bdb95ce33ad3b84ebee58bb344323ba95dd9312c2fe8501f504b10e6b030df90",
+      "reviewed_body_sha256": "bdb95ce33ad3b84ebee58bb344323ba95dd9312c2fe8501f504b10e6b030df90"
+    },
+    {
+      "source_heading": "相关主题",
+      "target_path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "target_heading": "相关主题",
+      "disposition": "retained source entry or metadata",
+      "source_body_sha256": "e432750d148c77e90d354252544ea3c4bd3d529d60058580b6bea44298a1dc59",
+      "reviewed_body_sha256": "e432750d148c77e90d354252544ea3c4bd3d529d60058580b6bea44298a1dc59"
+    },
+    {
+      "source_heading": "参考资料",
+      "target_path": "知识库/16_编程与数据结构/C++工程边界.md",
+      "target_heading": "参考资料",
+      "disposition": "retained source entry or metadata",
+      "source_body_sha256": "1f2ca590443d656735955e335076e91f87ffdb209efc08f96cc5ab9e4f428ed8",
+      "reviewed_body_sha256": "1f2ca590443d656735955e335076e91f87ffdb209efc08f96cc5ab9e4f428ed8"
+    }
+  ],
+  "paragraphs": [
+    {
+      "source_sha256": "64d50a1621d3ea5d93817753e833344a0f8fba90f9cf7e25a09ab51a62bd2545",
+      "source_excerpt": "# C++工程边界",
+      "targets": [
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "add3a2f58ec5e397d8962790501ab2dc68b6469b0fcd17edd3098b782b9f06c6",
+      "source_excerpt": "设编辑器加载资产插件M，先创建缓存B，再在界面线程T创建解码器A。A借用B的缓存页，后台任务W处理资产，T还管理A的窗口和COM接口。用户关闭A时，W尚未退出，随后又要求卸载M。宿主既要让清理在正确线",
+      "targets": [
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "b7188ecbec2492ef9f20140fd69504fad1aa59dd2d93079a6131623016843d46",
+      "source_excerpt": "下面沿这个插件的构建、创建、使用和关闭说明各层边界。头文件能编译只证明声明可见；符号能加载也不能证明双方对字节和释放责任理解一致。到了关闭阶段，保留模块、保护对象和安排清理线程又是三份分别需要兑现的约",
+      "targets": [
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "72e1c112927260ec4930232345b9e0bb7123862eb17e727b2e0f8df5d27aa41c",
+      "source_excerpt": "## C++构建与模块边界",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md",
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "REVISED",
+      "revision_reason": "独立复核补充自足定义、Apartment适用条件、跨页链接或标题层级；原机制与数据保留。"
+    },
+    {
+      "source_sha256": "301564115cb9fa86d2e897e68ef1d5ead82b5dffda93b989d432a8b2e13dccbb",
+      "source_excerpt": "### C++ 构建链",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "1bfc02611d856e36b2171353fe55c0c6f5002b5ae2e1b81a2f9c23c08de3f927",
+      "source_excerpt": "插件的asset.cpp和宿主的editor.cpp分别编译，二者通过公共头约定CreateAsset。每个文件先经过下面的构建链：",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "4cfd1d2cfffc72f65b08d4e1894e4729eca8cd191ee7267c0c6c716c0d37f992",
+      "source_excerpt": "```text\nSource\n -> Preprocess\n -> Compile\n -> Object File\n -> Link\n -> Executable / Static Library /",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "3cd1da922621964d8b228bd7ea035f604fe07274c1e93085919b05f0dcf9f5d9",
+      "source_excerpt": "预处理器展开 `#include`、宏和条件编译。编译器对每个翻译单元生成目标文件。链接器解析跨文件符号、库依赖和最终地址。",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "a8b8db91a33039c59ac904d2e28bfa0ca6b9301981da4200dbc77e0adf396145",
+      "source_excerpt": "若editor.cpp看不到参数类型，编译阶段就失败。声明可见而链接器找不到CreateAsset定义，会产生Unresolved External；两个目标文件都提供同一强符号则可能产生Multip",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "c046082e4c106602b3a7a8b45e614ba22a16f42d4bfde7f34eefd6476fb506f2",
+      "source_excerpt": "排错先判断阶段，不要看到“编译失败”就反复改代码。",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "0ea04287825ab7b9ed4c598a6365df2e6fcee2e812deaa7bd1189f3569b8548a",
+      "source_excerpt": "### 头文件与翻译单元",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "67a9d8fd5d27d30a92e3f0070f09c643fe2f2822bce630821a5af3616ed32367",
+      "source_excerpt": "资产接口头同时被宿主和插件包含，通常保存声明、必要类型以及需要在调用侧实例化的内联与模板。实现放在`.cpp`，修改解码算法便不必让所有调用方重新编译；公共头改变则使包含它的翻译单元重新构建。",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "daea68b8364950ca6000bc4ecd6faf8c2aa737dfa43d63b55f8fb0b9735099b3",
+      "source_excerpt": "减少不必要的头文件包含：",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "bd52d2b151aff69c44d2eb075dce41ef57562741bd616a4dbb14f9046079542b",
+      "source_excerpt": "- 能前置声明时不引入完整定义；\n- 私有实现可使用 PImpl 隔离依赖；\n- 稳定公共接口与高频变化实现分开；\n- 隐式实例化通常需要模板定义可见；对支持的具体类型显式实例化后，可以把相应定义放在",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "ce27d96184aa75af4de3939f0054cc84de9acc48efd9580b5bbd245eb0804686",
+      "source_excerpt": "包含保护/`#pragma once` 防止同一翻译单元重复包含，但不解决跨翻译单元的单一定义规则。",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "f3c9b65787bfb1e6d25fe8218619e1708ae5ca69686545db63c70c1ab7c8502c",
+      "source_excerpt": "例如a.cpp与b.cpp都包含定义了普通全局变量的公共头，各自编译都能成功，链接时却可能产生重复定义。包含保护只在单个翻译单元内起作用，不能合并这两份定义。让头只声明`extern int coun",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "aa7cb36a709711591144137412f784d88231daabc502c31f24906565f31b94b0",
+      "source_excerpt": "### 静态与动态库",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "505eee52cd04ac88c1ca866a5fd7446ed9e938959e807d0c5b0a09a608a30ef8",
+      "source_excerpt": "静态库在链接时把所需目标文件合入最终产物。部署简单，但多个程序可能各自包含一份，更新需要重新链接。",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "f3e99ab21b13a0158355154d08ab52f992b895853847d117610b368cd2a0374f",
+      "source_excerpt": "这里的资产处理器采用动态库，宿主按受控搜索路径加载插件及依赖，再解析导出入口。双方必须匹配调用约定和参数布局；创建对象后，还要保证它的析构函数所在模块一直加载到对象销毁。独立替换因此要求先排空旧模块的",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "a73f77f6b063067fc19720e47af533f489e5569ed02d2a86f181da07c4e96875",
+      "source_excerpt": "跨 DLL 分配、另一侧释放若使用不同堆/CRT，可能崩溃。边界常提供成对 `Create/Destroy`，由分配方负责释放。",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "c9c332931102b0681a0f9329c3a9b101806f9a4b51fb253b4b34341ad259465f",
+      "source_excerpt": "### ABI 与 C接口",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "84037441f2f5e52360fc3ed5950823f5173bda2d12395a9ac396c06a285fa3bf",
+      "source_excerpt": "若直接让CreateAsset返回std::string或C++对象，宿主就同时依赖插件的类布局、标准库实现和异常约定。这里用C ABI导出入口：整数规定宽度，字节缓冲配长度，对象以不透明句柄返回。接",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "138a344bbb0e3e847f4b6546fef1be10c186c73ac095b36ff728aaa2968f904a",
+      "source_excerpt": "不要跨边界直接传 `std::string`、`std::vector` 或编译器私有对象，除非所有模块严格锁定同一工具链。",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "4bdd65139f17bc041e7b38137127b99e46f5a29704963bd78cd3c3075c937ed6",
+      "source_excerpt": "## 类型布局与资源语义",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md",
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "REVISED",
+      "revision_reason": "独立复核补充自足定义、Apartment适用条件、跨页链接或标题层级；原机制与数据保留。"
+    },
+    {
+      "source_sha256": "b41ca6d1cf01effebe8aab4287f26fbb12eb12232eaa06e5d62c40cdd707dc6a",
+      "source_excerpt": "### C++ 类型与布局",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "242bbc876f18f44d6bdfec1ba4c6f8c8a0721a31020ebf053a3466bc4db96e07",
+      "source_excerpt": "插件内部仍可用STL容器、迭代器和算法保存资产。模板在编译期生成具体类型代码，内部选择不必暴露为公共接口。继承与虚函数支持运行时多态，但会引入对象布局、间接调用和 ABI 约束；数据导向热路径更常用显",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "14f86c63a3fa04ded6b1a9e452980ec17925a7236c3639fa87edd9d235156793",
+      "source_excerpt": "结构体的填充字节由成员对齐要求决定，成员顺序会改变 `sizeof`。联合体让多个成员共享同一段存储，必须记录当前有效成员；现代 C++ 更适合用 `std::variant` 表达带标签联合。任何跨",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "a744a1e0f5cb81012fbb90f80378e313d09c9d8d18d816214579ae039e78107a",
+      "source_excerpt": "### C++ 对象模型与虚函数",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "e3aa194608e55b2ddd22f8c82821e620a192a849140a5a80190dd60b4e04cce4",
+      "source_excerpt": "资产插件内部可以用基类管理不同解码器。普通非虚成员函数不存放在每个对象内。对象主要保存非静态数据成员和编译器需要的隐藏信息。含虚函数的对象通常带一个虚表指针，指向该动态类型的虚函数表。通过基类指针或引",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "d340ce30476ed4eec70539b83a8fc18a8326ca23f8673ab2038fbd1b40ca51e9",
+      "source_excerpt": "标准规定的是多态行为，不规定虚表的具体内存布局。常见实现可以帮助理解成本，但不能作为跨编译器 ABI 契约。",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "3f93b19679c250579f294a12a5ba9df0ac6a435c683b1b38ff1629ae25979c28",
+      "source_excerpt": "解码器的派生实现用`override`让编译器核对重写签名，稳定终点可用`final`限制扩展；接口中的纯虚函数`=0`要求具体解码器提供实现。宿主若通过普通基类指针delete解码器，基类必须提供虚",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "ed608cea679877475f5703a468eebff1c459d6503c11fbced6a054025f37caef",
+      "source_excerpt": "构造和析构期间，虚调用只到当前构造层级。基类构造函数因此不能调用虚函数来初始化尚未构造的派生缓冲。解码器也以指针或引用传递；把派生对象按值赋给基类会切掉派生部分，后续再调用已经无法恢复原解码器状态。",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "20f1c0f202409e5885996222720cdda879791036ed83f233622ec086d09b8c92",
+      "source_excerpt": "虚调用的主要代价是一次间接调用，并可能限制内联。真正风险通常是对象分散、指针追逐和所有权不清。稳定扩展点适合接口多态，海量同构对象的热循环更适合连续数据与显式类型分组。",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "6abefb4deecffb3bab1b1033a10c25ef84b916d92518ea085c19b02aa19a21a8",
+      "source_excerpt": "### 复制、移动与异常安全",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "1df7578c7f014d5b334cd3fa2e3f430ee31216d08dc089a6acacfa9689934051",
+      "source_excerpt": "解码器获得文件和输出缓冲后，失败路径也必须释放它们。资源类型应优先遵守 Rule of Zero：让标准容器和智能指针管理资源，类型本身不手写析构、复制和移动。直接持有资源的 C++ 类型，需要一起设",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "b963862a3f13475134db84dbef55b0a3e0ee36aae22c1057f0b40f4bb5eea02e",
+      "source_excerpt": "移动操作按类型契约转移或重建资源。标准库类型的移后对象通常处于有效但未指定的状态，具体可执行哪些操作仍取决于操作前提；自定义资源类型也要明确移后状态与允许的操作。`std::move` 只是把表达式转",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "1d393e11ed9df8eae4e66c65f5346413fe36234607936e8dd4f648f29043c2e5",
+      "source_excerpt": "容器和工具代码常讨论三种异常保证：基本保证要求失败后没有资源泄漏且对象不变量成立，值可以变化；强保证要求因异常失败时状态不变；不抛异常保证要求异常不会离开函数。RAII、先构造临时结果再交换，以及不抛",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "f4421e11a5e6258cd544e922f33d2e3d02b4d80a565771be6cacf899cdd71216",
+      "source_excerpt": "例如赋值要同时更新缓冲与长度，先释放旧缓冲再分配新缓冲，分配失败就无法保持旧值。先用RAII临时对象分配并复制全部数据，成功后以不抛异常的交换提交，失败则临时对象释放自身，原对象保持不变。强保证依赖提",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "cf2bd069b6679b5912c22206f8dbb9be23f341151a5281436adad951f34f1a4d",
+      "source_excerpt": "### 布局与边界字节",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "cc9712afa78004d7ab7504153cc98b3a5c85d42a184a6009800f26630e9a9373",
+      "source_excerpt": "固定宽度不自动固定布局。例如uint8_t后接uint32_t，在第二字段按4字节对齐的常见ABI下，中间会插入3字节填充。调用双方对结构尺寸、字段偏移、对齐和调用约定使用同一契约，并在各自构建中检查",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "4dd657f102349048b9094e24b39adb15a094b1856dd2e28271c06981fec25d36",
+      "source_excerpt": "### Win32 与 COM 边界",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "6a9340a66b2f6fe8dc1d8a777e1f04f626b253cd5be643096fd72cb161189fcf",
+      "source_excerpt": "A在T创建窗口并注册消息来源。Win32 GUI程序从消息队列取出事件，经`TranslateMessage`和`DispatchMessage`送到窗口过程`WndProc`。`WPARAM`、`L",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "REVISED",
+      "revision_reason": "独立复核补充自足定义、Apartment适用条件、跨页链接或标题层级；原机制与数据保留。"
+    },
+    {
+      "source_sha256": "bfcccdaf0eb428c53d19ce23e1c209c19154c398bab0af5ebe0ea21aaa7d17b1",
+      "source_excerpt": "COM用接口与二进制契约连接组件。对象通过`QueryInterface`查询接口，用`AddRef/Release`管理引用计数，接口以GUID标识。资产解码器持有的COM接口也属于关闭资源；智能指",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "REVISED",
+      "revision_reason": "独立复核补充自足定义、Apartment适用条件、跨页链接或标题层级；原机制与数据保留。"
+    },
+    {
+      "source_sha256": "3ac001f8398c1af3a0b1d46c51d5c64c362188f5c0849e6d6afc0faf9ef76c41",
+      "source_excerpt": "COM引用也按交接点计数。成功的`QueryInterface`给调用者一份需要Release的接口引用；借用指针只在原所有者保证寿命期间使用，要留到异步任务就取得独立引用。Release降到零后对象",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "db3c9963917d4b4094b70c6a1542f16728b0dcedbb7b1ec22634b2d89399fa90",
+      "source_excerpt": "## 所有权与模块接口",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md",
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "47fe1ad1eb0ed0dea31ff1b89527991c85762b4dbb0e651009d0d732a2f846c7",
+      "source_excerpt": "RAII和唯一、共享、弱引用的完整语义见 [[16_编程与数据结构/对象生命周期]]。插件边界把这些规则落实到创建、销毁和卸载三个入口。前面的布局与异常保证在这里成为调用协议：宿主先提供有效接口头，插",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "1da96c42727cd47ec36f6067378c52df309ada127882c045562309d465ff4a09",
+      "source_excerpt": "### C ABI契约",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "59c2474620df503f0da33dfabad783e967282aefd1bccafcc10f771d5318e982",
+      "source_excerpt": "声明片段使用固定位宽版本和不透明句柄，创建与释放由同一模块实现。调用约定与导出宏按平台补齐。",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "574d7d667406dd45c68049f61cf2ab27c032e332b4ffccad07ea23f07e6bb2b6",
+      "source_excerpt": "```cpp\nstruct AssetApi { uint32_t version; uint32_t size; };\nextern \"C\" int CreateAsset(const AssetA",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "670f7b7ca44f24507be09e905b4dae9c0ac963bdcfec0040fe280c8ae0370619",
+      "source_excerpt": "### 接口结构的版本协商",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "3fe4941daabc0944f8bd6887b4b4340200d11de3465d75390171a3060fada99f",
+      "source_excerpt": "接口调用者先保证指针指向至少包含version和size的有效可读头部；空指针检查不能证明任意非空地址都可访问。插件读取这个头部以后验证版本和size，并要求声明范围内的内存仍由调用者保持有效。siz",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "6f03f1059bdbac74a3f5f4f1eddfc1dad266b2f5f32de390b2f53c7782ee3003",
+      "source_excerpt": "创建函数先检查输出句柄指针本身非空，再把它指向的句柄槽置空，参数校验通过后才构造对象；内部异常在导出边界转为错误码。只有成功时句柄才转交调用者。DestroyAsset返回0表示销毁成功，空句柄也返回",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "3d64f6b62249b55381a4795566b3822e75121fb70d5c31d98bff21b60aee3f76",
+      "source_excerpt": "CreateAsset成功后，宿主把句柄登记到该模块代次的对象表，记录匹配的Destroy入口；登记完成才归还本次创建的调用计数，销毁完成才移除对象记录。热替换产生新的模块代次，新代次的函数表只接收自",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "7a51bbd24d4c129c2bd7af7c3698f271c1d9513b015e8e6cc8560bf14a774426",
+      "source_excerpt": "宿主若把CreateAsset排队，任务记录先固定模块代次、输入版本、类型声明的执行线程和参数缓冲持有，再进入Queued。本例A的创建由T执行；执行线程在模块入口内同时检查Running与任务仍为Q",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "2943f9c59af44d3f78c53fa271dfed4c988ba33ebdba58ba9b0ed0b840dce455",
+      "source_excerpt": "调用前还预留对象表条目、停止与收尾及销毁的派发槽、结果记录空间。预留失败就不进入插件；成功返回后以不分配内存的写入保存句柄、模块代次、线程要求和Destroy入口，再把任务改为Recorded，最后释",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "a2adb8305d96d6c1df159df0a75286bd187e368879f875d48df9f03ac7955196",
+      "source_excerpt": "## 对象使用与关闭",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md",
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "e789af880f68062452fd1930fe45526e1f564f26932e781faff1baf6a7f148e6",
+      "source_excerpt": "M的对象表已经登记B和A，A→B表示后台工作与析构都还可能访问缓存。W持有A的使用令牌，延迟回调Q另持一份；A的停止、显式收尾和销毁派发槽在发布对象前预留，清理线程记录为T。宿主常驻协调者可以运行在另",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "313a87bff845bc597371ba17032a1d6fec5aa7de7a22c653cc40adcb140cc185",
+      "source_excerpt": "关闭A还涉及它内部的三份资源。A持有COM接口I，通过I建立事件订阅，并管理一个窗口；窗口销毁通知要通过I归还预留通知令牌。它们按以下依赖收尾：",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "974f00ada6df7f798480d301ff525e22e70f8eddd77f7d2cac7ed70cc6729c2b",
+      "source_excerpt": "| 资源步骤 | 完成条件 | 仍须保留的资源 |\n|---|---|---|\n| 撤销订阅 | 提供方确认撤销，原来源的排队及在途业务回调全部退出 | 窗口、I及所有相关代码 |\n| 清理窗口 | ",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "5b7b58e1636ca52bb63bd2e7dc0676552f42018b688a0efceb1c9024bb01306c",
+      "source_excerpt": "下面沿单对象关闭、模块接管、排空、三项收尾、销毁A和B、卸载M推进。资源步骤完成以前，瞬时使用计数归零只说明暂时无人访问，不能授权提前释放其后继仍需使用的资源。",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "REVISED",
+      "revision_reason": "独立复核补充自足定义、Apartment适用条件、跨页链接或标题层级；原机制与数据保留。"
+    },
+    {
+      "source_sha256": "7d5fe6e7f3d7e92244fd13d8d2a7e839a89aa3109e8676cbfc49807007957315",
+      "source_excerpt": "### 调用入口与依赖登记",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "4b702f96b6237972db8a14ab7ad1050448cdf8cdc8211c1a0d283466a9b82124",
+      "source_excerpt": "宿主为每代模块保存状态、调用计数、后台活动计数和对象表；每个对象另有Active、Stopping、Destroyed状态、使用计数、代数与依赖者集合。模块调用计数保留代码，对象使用计数保留当前访问，",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "76ccb0e2f73e556b88b509ea8953c92507d4cdde7fc28826b06008595b04c121",
+      "source_excerpt": "宿主公开句柄使用槽位与对象代数，插件裸地址保存在表内。普通调用按“模块门→对象表”的固定顺序加锁，在同一临界区核对Running、模块代次、对象Active及代数，并取得模块和对象令牌，再释放锁进入插",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "1505ee50eba27a5248d03f8e9c99050256599eb18dcf2c916e585c9b82f3e2e3",
+      "source_excerpt": "B先登记入对象表，建立A→B时在对象表锁内检查两者Active、预留依赖记录并检查无环，再发布借用字段；检查失败保持字段原值。边保留到A停止使用、析构结束且清除字段。瞬时使用计数为零不表示A以后不会再",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "972c3b18db5ce6e2eb16744ee34aa4010859004a7e2f2faae5731c1e2b0ab9a0",
+      "source_excerpt": "后台任务与延迟回调在投递前取得对象使用及模块活动令牌。宿主常驻跳板保存代次、任务身份与状态；投递失败归还令牌，执行结束或取消确认后归还。取消接口只禁止将来调度时，还须确认队列项已移除，或正在执行的调用",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "b6a9dd6458c1dd395a8ff8c8f11aa6e393787735871a0b677d5c7539653979d5",
+      "source_excerpt": "### 普通销毁与对象借用",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "dcdf3ab20675a3074e2f582e8e23b3f532809ec6e6eec89f734e97582cc02efe",
+      "source_excerpt": "模块Running时单独关闭B，入口先检查依赖者。存在A→B就返回Busy并列出A，B保持Active。调用方先关闭A或显式结束借用再重试B。关闭没有依赖者的A时，把A置Stopping并登记唯一记录",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "fd4d4a2a2754e14a9bbad49b1db776bd7351689eb28200e0e9ea3c0a4aed18e8",
+      "source_excerpt": "单对象协调者S先将A的RequestStop派给T，保存返回回执，再等待A的任务、回调和使用者退出。本例Q取消确认后归还使用令牌，W仍持有自己的令牌，所以C_A停在Waiting。B继续保留缓存，A还",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "8318e667c58b179b1c6de05d03df298534ce15a378b3c6de0ea3332da6c2ebf8",
+      "source_excerpt": "协调者持模块引用到收尾结束，等待期间释放对象表与业务锁。失败保留Stopping、原句柄和依赖闭包，安全可重试的步骤续行；部分析构无法保证对象完整时进入隔离故障。关闭A以后再关闭B，才允许B释放原来借",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "0b388ed8d3ee6103ca3d9e740a275de01c6e02f3b9515a07edfc6b5f09e173da",
+      "source_excerpt": "新借用与普通关闭在同一入口排序。B先有A→B就返回Busy；无依赖者的B先进入Stopping，后来的A→B便被拒绝。两个关闭者竞争同一对象只有一份记录进入析构，旧句柄的代数也不能访问复用槽位。",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "c54a9daa38df80e8a567a115be71e501f1092125021f64b2de74e1dcde2fe9af",
+      "source_excerpt": "### 关闭记录与执行权",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "733a3109b9aa8978e8dd5a40cfa91f9afd648f916b7ee30c1ef19eec1308196f",
+      "source_excerpt": "关闭记录解决重复请求，执行权决定谁能推进它。每份记录保存关闭ID、对象代数、协调者ID、所有权代次、阶段及当前步骤。步骤状态为Ready、Queued、Invoking、Completed或Waiti",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "154265b8218f864cf62266679a78009160e7ddbe5caa3927fa86fef1f7386202",
+      "source_excerpt": "关闭步骤与外部请求分别保存状态。步骤回答“当前允许关闭到哪里”，请求尝试回答“提供方接纳了哪一次调用”。同步RequestStop或Destroy没有独立外部尝试；异步订阅撤销则在步骤下保存Prepa",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "ec311de367af84e5fca238c3a57aa155605e3029087c9c4db3861510ff8560c7",
+      "source_excerpt": "单对象关闭与模块关闭相遇时，模块协调者先登记接管请求。原协调者不再登记新步骤，在一个没有插件调用在途的边界交出记录；宿主门内共同替换协调者、递增所有权代次并保留原阶段与已完成回执。Waiting可包含",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "b47156ee3871d5a0eff8e6bf2d3b31d83288868328b58e7770d6ba1be126a11a",
+      "source_excerpt": "Invoking时保留原调用者，模块协调者订阅该步骤回执并继续给其他对象发停止请求。调用返回后，宿主先按原步骤ID登记结果，再交接剩余工作；已成功的Destroy共同删除对象与依赖边，模块清单直接排除",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "9afe625c81f222fa4c3d291cc82aea70377022d6fb26db079b037186bcee4391",
+      "source_excerpt": "此时用户要求卸载M，模块协调者H取得C_A的Waiting记录：在宿主门内把协调者S改为H，所有权代次从3增至4，原RequestStop回执保持。S的旧通知再到达时不能推进记录。若卸载请求来得更晚、",
+      "targets": [
+        "知识库/16_编程与数据结构/插件接口与对象借用.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "791fb7adaf28244fdd60a869eaf1f395bcc903efc64857f4ae8d3d6476e3a824",
+      "source_excerpt": "### 模块关闭与停止请求",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "0bdd1369555b7acd94c729383ea5d1377fcfb7f8ad4ae2aae109f6d2b198b396",
+      "source_excerpt": "关闭整个插件时，宿主常驻协调者保存Closing、Draining、Destroying和Unloaded阶段。进入Closing在模块门内关闭普通入口，再撤销外部业务事件来源。创建及依赖修改在模块门",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "3030d7528048f6b7e4fd1b9b7b8fea64b4859c0aa9d1e69228ef81646f168a33",
+      "source_excerpt": "CreateAsset尚未返回时，关闭方等待它完成无分配登记，因此不会漏掉新对象。创建入口必须有界返回，长期工作登记后交给后台任务；无法退出的构造使关闭停在Closing并保留模块。这里尚未等待全部后",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "8d316c416fc3cd949b31d0cdfe0bc10604a01dced8ffd2e5cb5cca99d222326c",
+      "source_excerpt": "H沿A的原停止记录等待W，同时登记B的RequestStop。停止请求幂等地停止业务来源、唤醒工作者并撤销预约，B停止业务后仍保留A需要的缓存。Closing时跳板丢弃尚未开始的普通回调并归还令牌，已",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "0dbb0fed4d5ae3aa192d5098a6c2b201cdbfe67749bce2860123506824c2737a",
+      "source_excerpt": "### 工作排空与清理准备",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "a7321615f86007b14303dea908b370148e85e01c3ea9bcbc66157ae07e8ca3be",
+      "source_excerpt": "停止准备先登记并推进下节的订阅撤销，H进入Draining后等待所有可能访问A待释放资源的使用者退出，再授权窗口和接口收尾。这个集合包括关闭入口前接纳的普通调用、W及其停止子任务、Q和其他已排队或正在",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "a9a8dbb3141c2c75c279744043c322669bd5cbf9651b443c0c7720a7c3226337",
+      "source_excerpt": "例如关闭入口前，调用U已取得A的使用令牌，正在读取COM接口。W和Q先退出，U还持一份，H只能等待，不能先让T执行Release。U返回并归还后，H在同一宿主门内核对RequestStop与订阅撤销回",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "752b761271e314a3aed3abe7fd612622887e93e33040d6a62e130846c5eb6e9e",
+      "source_excerpt": "已持令牌的工作者可产生完成既有停止工作所需的子任务，先增子计数再释放父计数；普通工作来源始终关闭。等待释放计数锁和工作者退出所需的业务锁。插件回调要求卸载时只向宿主投递请求并返回，H在外层收尾，回调不",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "8f0ba048a459887fa0dd1693c13f21168f6e138ce58f739350d99087690bdd54",
+      "source_excerpt": "可能失败的IO、业务结算、资源申请和异步释放在此阶段完成，逐项保存结果。进入Destroying前校验清理权限、参数及所需记录空间，析构只消费准备好的不抛异常同步清理。提供者B停止业务后仍保留缓存、分",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "225c753073c5839b90d0eadcebb298daed85108017e1dcec72a87faf443438b3",
+      "source_excerpt": "### 清理线程与关闭派发",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "875ad840f21f9fdbc3b4f24a87061800b0d808ca60ef914fb513bbbfda94e297",
+      "source_excerpt": "解码器A持有的窗口和COM接口在界面线程T清理。线程约束与寿命是两件事：保留模块使代码可调用，不能让任意线程取得操作窗口或接口的权限。对象登记时同时保存RequestStop、显式收尾和Destroy",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "198548fbb4ced98ab3254d138187176b2201cc0838d33b3a990e37344ff8aa2b",
+      "source_excerpt": "T先执行订阅撤销，再在Draining中按资源依赖关闭窗口并释放COM引用。收尾步骤及其同步清理回调另持步骤保护，它们不属于已经关闭的业务访问集合，否则会出现收尾等待自己退出的循环。宿主只允许绑定当前",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "faffd64c7ef86102787623571d9f2367fcd4f2516f216993358421dd9fb935d5",
+      "source_excerpt": "A发布时为订阅、窗口和每份COM引用准备稳定资源步骤ID及结果空间，将“对象使用与关闭”开头的资源依赖登记到关闭记录。前驱步骤完成并退出后才可授权后继；资源依赖与对象A→B的寿命关系分别保存。",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "646287f2ed7839563742768375723fccafb4a2f1cb2533a7dc5f32b142f1fcf9",
+      "source_excerpt": "停止准备中，T先通过I撤销订阅，并使对应宿主回调来源停止接纳。撤销结果单独登记；已经排队的该来源回调由宿主跳板拒绝普通执行并归还保护，已进入的回调仍持使用令牌。取消来源属于停止与排空准备，窗口和I此时",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "1d7ea70755444183d6b4a1cd1dc83a903a702053607d5b10c46bfabb777e046f",
+      "source_excerpt": "#### 异步撤销的结果对账",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "REVISED",
+      "revision_reason": "独立复核补充自足定义、Apartment适用条件、跨页链接或标题层级；原机制与数据保留。"
+    },
+    {
+      "source_sha256": "2d2466310f38524526f0c2342d6a6961b511b7a7abbc2bfd3a5596ab64f62b28",
+      "source_excerpt": "撤销订阅可能在T调用返回后才完成。每个撤销步骤保存C_A、A对象代数、订阅ID与代数、稳定步骤ID、尝试ID、参数哈希和提供方任务ID。提交调用前登记Prepared，并把尝试ID作为提供方支持的幂等",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "cf19c7fdb1412538f290cc820028c70c9ef5cada518e90299ed4e86fbfd6b810",
+      "source_excerpt": "同步调用返回只结束Invoking，未取得终态的步骤转Waiting，并单独保留异步活动保护、I引用和结果接收记录。这些保护在调用前预留并登记，在途调用保护与异步等待保护的交接共同记录，避免调用返回后",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "77f9290b78040df7858ed6eb60a1c7e1c5b0cd9a3fbde418dbdd3ed11d05d4fc",
+      "source_excerpt": "发起权限与结果入口分别核验。S只有持当前所有权代次才可派发新调用；结果经宿主常驻接收跳板进入收件表，按原尝试的接纳凭据、提供方任务ID、对象及订阅代数、载荷哈希核对。原请求在代次3被合法接纳，H接管为",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "720f329a69b51a2a00af1aab6d3d3dd8fb09ed1abea209dfddd7949874c129e8",
+      "source_excerpt": "结果先于接纳响应登记时，收件表暂存候选结果并按尝试关联键查询提供方，补齐接纳凭据后再消费；缺少凭据保持待对账。结果已经到达只说明有一份待核实消息，不能直接把关闭步骤记为完成。",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "08d7c4e165e77017546ae18c98bb4ff8cc37c16aa6dd33b3f88de7c2c745a4bf",
+      "source_excerpt": "例如撤销步骤R8的尝试U1已被提供方接纳，S在Waiting交给H。U1成功消息到达，宿主先把终态写入U1的结果槽。H在同一宿主门内比较当前所有权代次4、R8等待的尝试U1与结果消费标记，共同登记提供",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "9f77eb9b0e91eef316b85b486c18d64943aef42b5d6a27765e09901d3eb80e9f",
+      "source_excerpt": "S随后收到旧唤醒时只能查询同一结果；U1重复成功返回原终态，不再次撤销或释放I。不同参数、错误订阅代数及并非该提供方任务的消息进入诊断，不改变当前步骤。提供方契约要求同一尝试只有一个确定终态；观察到矛",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "86765520c4f6c7b844c6dc2e7d97c05fe1d2ad27a2b71d1e2d7bb6733228b933",
+      "source_excerpt": "接收过程中保护也分开归还。提供方的终态说明该尝试执行结束，结果证据入表并获宿主确认后归还该尝试的异步活动保护；当前接收跳板及仍在队列中的通知各持自己的保护，退出或取消确认后才归还。订阅业务回调的排空完",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "515326adbc22705ea59bb47648014df7377f64ac43a69cdbcd983cfe5e8440e7",
+      "source_excerpt": "业务订阅的撤销完成与结果入口的关闭分别登记。本例的尝试结果路由由宿主常驻接收器管理，登记与注销均不调用I。H消费确定终态后，注销U1的结果路由并确认其通知队列排空，再结束对应接收保护；如果已排队通知仍",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "7666e5d53adb251ebc52e355d5e34dd2ad5584d1884b3cef16b1af5d5d5020d2",
+      "source_excerpt": "结果入口只持身份及证据，不访问已经完成收尾的A资源，因此独立排空不会要求窗口或I重新存活。其他提供方的结果注销若仍需I，就把该注销及排空登记为I释放的前驱步骤，按同一资源依赖规则执行。",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "8c8d93510894b9816f87a44e423277622660c257407cf07fbe74622e4219dbfe",
+      "source_excerpt": "调用响应丢失时保持Unknown，H按提供方任务ID或原关联键查询。已接纳就等待或消费原终态，确认失败后可用新尝试ID重试。确定未接纳还须关闭旧派发授权，确认旧队列项退出、原调用已返回且提供方已拒绝或",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "76eec5b40a6f405624a1e2ff7fb21ebd8d4713a621655c000fe89854028a2261",
+      "source_excerpt": "无法查询且没有幂等契约时保留等待与I，报告无法确认。宿主进程内续行先消费收件表，再决定派发；对象与函数表不跨进程恢复，进程边界见“依赖销毁与卸载续行”。",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "c2703576384d4bd189193cc9c4645177436033073e20bee01812a56d7a9d8e53",
+      "source_excerpt": "#### 窗口与接口收尾",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "REVISED",
+      "revision_reason": "独立复核补充自足定义、Apartment适用条件、跨页链接或标题层级；原机制与数据保留。"
+    },
+    {
+      "source_sha256": "228b32ae0a6e445a6a82166a3d8e9cac20dc5e5af131f92ec87d23966e6df4e1",
+      "source_excerpt": "T随后执行DestroyWindow。同步销毁回调通过仍有效的I归还预留通知令牌；本项目接口将这份归还约定为幂等、同步、不抛异常的结算，它不创建任务，也不等待订阅退出。回调读取已完成的订阅步骤，沿原回",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "495875200ed68cf96c85a4528a9721d39292fcffc8d4b777e72aee81ce5581bb",
+      "source_excerpt": "若窗口销毁失败且窗口仍有效，保存失败回执，保留窗口及I，仅重试该窗口步骤。订阅已撤销与通知令牌已归还的结果分别沿原回执消费，不能重复结算。Release尚未Invoking时仍可交接执行权；已经Inv",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "117b83531073a5a736193335062fffa03b71cdf448628622094101280c5db609",
+      "source_excerpt": "字段更新与完成登记之间禁止异步取消执行线程。线程异常终止而无法判断释放结果时隔离该记录，保留模块，不以重试猜测。全部资源步骤完成后才保存整体收尾回执，后续Destroy只消费这个已收尾状态。本例A的析",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "e88cfee3d1c8830605facf61245ffbea7c0d309e1503c033031b0be59a15d278",
+      "source_excerpt": "宿主在发布对象前预留停止、收尾与销毁的派发槽及结果空间，进入Destroying前再核验参数和关闭令牌；容量不足在发布前失败。发起调用的清理跳板只接受绑定C_A、具体步骤、A的对象代数和当前所有权代次",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "d32a1b152dec8f5791d6c22fde079c24b4ae759561f8b7aa1300a8eec6ae81f6",
+      "source_excerpt": "协调者投递后暂停推进，步骤仍明确保持Queued或Invoking，T的常驻事件循环继续服务关闭消息、COM派发和必要的窗口销毁消息。T收到消息后核验步骤，再在该线程同步调用插件，返回时保存回执。协调",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "2564d05fc05340e19b079bde253d3a6bf64528521edfa5f23f29585591b9b2b8",
+      "source_excerpt": "窗口过程也通过宿主跳板保留模块。调用DestroyWindow时，宿主在T的调用作用域保存当前步骤和目标窗口的清理权限；同步触发的WM_DESTROY和WM_NCDESTROY由跳板核对这份上下文后进",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "c2697d3ce4cae6db31f55e0d0a6ceee77d08230e3e085da3268220ab1a519dd9",
+      "source_excerpt": "Destroying阶段由协调者一次授权一个对象的销毁步骤，必要时借上述预留通道派到T；插件函数本身同步返回。协调者等待回执期间不持对象锁。这份宿主关闭派发与插件新建异步工作分别计数：前者是已登记步骤",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "917078916a22f03cacbd1190a64bbc43f5bdf3df342d826e4c1a7c2d6b39732d",
+      "source_excerpt": "跨线程依赖清理还要满足提供者的线程契约。Draining可先将资源交回B所属线程，等待回执后清空A对应字段，原依赖边仍保留到A析构结束。确需在析构内同步跨线程调用时，准备合法封送接口或宿主清理代理，由",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "5ffca2696bfdfe92300776aefff963237e6725361eaeca27b8e372024e7a60a7",
+      "source_excerpt": "T或其Apartment未能处理清理消息时，记录保持Queued或Invoking，保留对象、模块和依赖。超时不能把Destroy搬到任意工作线程重试。最后一个相关对象及关闭跳板退出后，才撤销清理通道",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "d1fb3683ea47f3234f698823d6f42b5fc553a57535ac47e4f12a8c498f009e1d",
+      "source_excerpt": "T完成显式收尾后，H等待收尾回执和同步回调退出。H共同检查各对象收尾完成、模块既有调用与后台活动为零、本阶段清理计数归零，才进入Destroying。A、B仍在对象表，A→B仍保留。尚未授权的Dest",
+      "targets": [
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "6260e9f34af060865cf61806b13905a5b5292e43e402d0aa09ad707149f572b8",
+      "source_excerpt": "### 关闭期间的依赖清理调用",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "beccff5f079ed8bcb32c505e07878a21b496004d2dafb1514a4f913ecba5d6ef",
+      "source_excerpt": "H完成准备后进入Destroying，授权A在T执行Destroy。A最后仍需归还B的缓存页，所以H签发限定清理令牌，绑定C_A、A的对象代数、B及允许的操作。宿主核对既有A→B、双方对象与模块保留以",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "cdbf1ea64172ca69eac5d740cc5aa26b560d2d7159036c8d3b03177ba990974b",
+      "source_excerpt": "入口在宿主控制锁内登记双方清理在途计数及模块保留，然后释放锁调用。跨模块按稳定模块ID顺序取得控制锁；执行插件和等待时不持这些锁。提供者按对象同步协议处理并发归还与统计更新，计数保护寿命，对象锁保护数",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "be91005a7a242542a97e6c45775d3cf6b0e0ddb8f66dcfeda46675915660e06c",
+      "source_excerpt": "T的跳板把该步骤从Queued改为Invoking，再调用A的Destroy。A用清理令牌归还缓存页，B的归还函数返回后，A完成析构；宿主保存成功回执并共同删除A和A→B。T的跳板退出前仍持模块保护，",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "55aa3c51d72299bc2234665e3e8dd8d0ac6f0ec17901f61afda25484db0f252f",
+      "source_excerpt": "普通单对象关闭沿相同入口执行，B可仍为Active；插件内部直接借用指针也遵守同一资源保留条件。关闭阶段的推进与在途归零在共同入口比较，不能在锁外观察零后再放入新的清理调用。",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "b94762e0faa27084c8b194317ae869a2e47c90706de87b6c58e15ffe08157d7a",
+      "source_excerpt": "### 依赖销毁与卸载续行",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "RESTRUCTURED",
+      "reason": "标题级别调整、跨页指代改为明确链接或导读概述；机制语义保留。"
+    },
+    {
+      "source_sha256": "249a43c0867c42d311eac3da36d94dfc3436138230a5094e98670c037eacadf1",
+      "source_excerpt": "H确认A成功回执和跳板退出后，才授权B的Destroy。本例B的清理允许在H的执行线程运行；它同步释放剩余缓存，返回成功后从对象表移除。销毁按无存活依赖者的对象推进，每个函数在指定线程同步返回并捕获内",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "ca1ea47d5be7dd73b247ffba242d57a6192e731a94219069b979c74bb1af471a",
+      "source_excerpt": "关闭记录保存阶段、协调者与所有权代次、步骤状态、指定线程、销毁回执和未退出任务身份。超时保留当前阶段与全部尚存对象、函数表及依赖模块，续行重新检查计数和步骤账本；已确认返回的RequestStop可按",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "e1d84debc649ab55fe8265df18fa1f0d4699a063b686ab605038fc9e0060c64c",
+      "source_excerpt": "最后一次Destroy返回且其跳板归还保护后，H确认M的对象表、清理在途及关闭派发队列均为空，撤销M这一代的清理通道，再调用平台卸载入口，写Unloaded并释放模块引用。T若服务其他模块则继续运行；",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "3c1dcb3006099ecdca62baf086d7c3b0686367b70083e587ebda43675887964d",
+      "source_excerpt": "进程内续行从C_A、B的关闭记录、步骤回执和当前计数继续：A已经销毁就直接等待其旧跳板或推进B，T上的步骤仍Invoking就等待原调用，Queued项按当前授权派发。进程结束后裸地址与这些运行中记录",
+      "targets": [
+        "知识库/16_编程与数据结构/插件关闭与卸载.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "dfed8e4fb9ce75a8fe0345747b76795553b332c305aed6940b4b5be3b26cc3b9",
+      "source_excerpt": "## 验证方法",
+      "targets": [
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "857b578475ff54e00b42bcd84c3836650be73189ad4b8a60e9d0ea1729d0d066",
+      "source_excerpt": "分别制造缺符号、ABI版本不匹配与加载缺库，确认诊断阶段准确。测试空指针、字段size和成对释放；编译器私有容器不跨稳定插件接口。通用所有权见对象生命周期。",
+      "targets": [
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "010182ab2af2e8cb7ff4bf23ea5286c342051d0c0edaa96337980e97ec0699d1",
+      "source_excerpt": "## 实现与证据",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md",
+        "知识库/16_编程与数据结构/插件接口与对象借用.md",
+        "知识库/16_编程与数据结构/插件关闭与卸载.md",
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "bdb95ce33ad3b84ebee58bb344323ba95dd9312c2fe8501f504b10e6b030df90",
+      "source_excerpt": "C ABI声明是接口片段。版本前缀、错误输出、模块引用与线程要求按正文资料解释；关闭步骤、协调者代次、结果收件表及清理授权是本文定义的宿主协议。正文沿A、B、T推演关闭与接管，未编译动态库、加载宿主或",
+      "targets": [
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "ff3caf42e0e094c9090945a09203577e08cb1a04a89e6ff87440418522a4ec16",
+      "source_excerpt": "## 相关主题",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md",
+        "知识库/16_编程与数据结构/插件接口与对象借用.md",
+        "知识库/16_编程与数据结构/插件关闭与卸载.md",
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "e432750d148c77e90d354252544ea3c4bd3d529d60058580b6bea44298a1dc59",
+      "source_excerpt": "- [[16_编程与数据结构/对象生命周期]]\n- [[15_资产与工具管线/资产构建CI]]\n- [[16_编程与数据结构/CSharp运行模型]]\n- [[16_编程与数据结构/Python宿主集",
+      "targets": [
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "95d93065e8a34be82d81b7e09fe98d491a8db7f8a206a74bedbb19ebdf2c6ecf",
+      "source_excerpt": "## 参考资料",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md",
+        "知识库/16_编程与数据结构/插件接口与对象借用.md",
+        "知识库/16_编程与数据结构/插件关闭与卸载.md",
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "89370131b37e5c2c2237f5e789486649cdb0af80cbcf1ec99c3ee4404d63f68b",
+      "source_excerpt": "- [Microsoft：引用计数规则](https://learn.microsoft.com/en-us/windows/win32/com/rules-for-managing-referenc",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md",
+        "知识库/16_编程与数据结构/插件接口与对象借用.md",
+        "知识库/16_编程与数据结构/插件关闭与卸载.md",
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "6b823ca6e470f5b993b27c1c4b6a1a9f5265c00016daa8b9d9bcd184bc0a48fa",
+      "source_excerpt": "- [Microsoft单线程Apartment](https://learn.microsoft.com/en-us/windows/win32/com/single-threaded-apartm",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md",
+        "知识库/16_编程与数据结构/插件接口与对象借用.md",
+        "知识库/16_编程与数据结构/插件关闭与卸载.md",
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "ce7ea24d3c62ce9ff1dbc4b373df54f5d7395ae13826376087866ac6cbf315a6",
+      "source_excerpt": "- [Microsoft异常安全](https://learn.microsoft.com/en-us/cpp/cpp/how-to-design-for-exception-safety?view=",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md",
+        "知识库/16_编程与数据结构/插件接口与对象借用.md",
+        "知识库/16_编程与数据结构/插件关闭与卸载.md",
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "VERBATIM"
+    },
+    {
+      "source_sha256": "25fb4e645ac6ffecfd3cce0d980e4f15760e966b0c46731835c4783141cf3f28",
+      "source_excerpt": "- [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)：I.26、C.35与R资源管",
+      "targets": [
+        "知识库/16_编程与数据结构/C++构建与对象模型.md",
+        "知识库/16_编程与数据结构/插件接口与对象借用.md",
+        "知识库/16_编程与数据结构/插件关闭与卸载.md",
+        "知识库/16_编程与数据结构/线程受限资源的关闭.md",
+        "知识库/16_编程与数据结构/C++工程边界.md"
+      ],
+      "status": "VERBATIM"
+    }
+  ],
+  "findings": [
+    "将构建与对象语义、接口和对象借用、模块关闭、线程资源收尾分别建立主归属。",
+    "关闭状态、协调者代次3至4、异步撤销U1与R8、结果路由排空和Unknown重试条件全部保留。",
+    "跨页前后文提示改为具体双链；运行证据保持未执行。",
+    "构建链区分归档工具生成静态库与链接器生成可执行文件/动态库，避免把静态库归档视为最终符号解析。"
+  ],
+  "verification_scope": [
+    "逐段阅读全部原文和四篇目标正文",
+    "134段原文去向按SHA-256登记，标题与跨页指代调整另记",
+    "四篇正文汉字数约2436至3800；原页保留全部原标题入口",
+    "未执行动态库加载、COM异步撤销或性能测试，未提升原运行证据"
+  ],
+  "review_status": "PASS_WITH_RUNTIME_LIMITATIONS",
+  "fact_check": [
+    {
+      "source": "https://learn.microsoft.com/en-us/cpp/build/reference/lib-reference?view=msvc-170",
+      "claim": "LIB汇集COFF目标文件，区别于最终链接。",
+      "date": "2026-10-24"
+    },
+    {
+      "source": "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-destroywindow",
+      "claim": "DestroyWindow在创建窗口的线程执行，发送WM_DESTROY和WM_NCDESTROY。",
+      "date": "2026-10-24"
+    }
+  ],
+  "independent_review": {
+    "reviewer": "ai_split",
+    "date": "2026-10-24",
+    "scope": "复读原导读、四篇目标正文，核对构建、借用、接管、Unknown与线程清理链。",
+    "findings_fixed": [
+      "构建篇Win32小节补充A、M、T身份定义，证据段去除不存在的B推演指代。",
+      "补充两个空H2的机制导语；线程清理H4改H3，保持原标题锚点。",
+      "接口篇的跨篇后续流程改为明确专题链接。",
+      "COM约束区分STA所属线程和同一MTA多线程直接调用，避免把创建线程限制推广到所有接口。"
+    ],
+    "evidence": [
+      "Microsoft Processes, Threads, and Apartments：STA单线程、MTA多线程直接调用；2026-10-24核读。",
+      "Microsoft DestroyWindow：调用线程必须与创建线程一致；2026-10-24核读。"
+    ],
+    "runtime": "动态库、COM和窗口实际执行未验证。"
+  },
+  "adopted_source_sha256": "a3413ee7535dbfa0b236e78d3ac4e88c4c60f508293b5678d7cbb6758866b1e5"
+}
