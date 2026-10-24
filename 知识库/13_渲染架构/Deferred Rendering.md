@@ -12,13 +12,15 @@
 
 下面给出一套贯穿全文的明确布局。基础色在线性空间，法线存观察空间单位方向；金属度与粗糙度都在`[0,1]`，自发光使用线性HDR颜色。四个颜色附件合计24字节/像素，深度另计4字节。项目压缩布局时仍须保持相同解码语义。
 
-| 附件 | 格式 | 数据与清理值 |
-|---|---|---|
-| BaseMetal | RGBA8_UNORM | RGB为线性基础色，A为金属度；清零 |
-| NormalRoughness | RGBA16_FLOAT | RGB为`N*0.5+0.5`，A为粗糙度；清零 |
-| Emissive | RGBA16_FLOAT | RGB为自发光，A保留；清零 |
-| Model | R32_UINT | 0为GGX材质，1为无光照材质；清为`0xFFFFFFFF`表示背景 |
-| Depth | D32_FLOAT | 设备深度；本文普通Z清为1，比较使用LESS |
+| 附件 | 格式 | 每样本字节数 | 数据与清理值 |
+|---|---|---|---|
+| BaseMetal | RGBA8_UNORM | 4 | RGB为线性基础色，A为金属度；清零 |
+| NormalRoughness | RGBA16_FLOAT | 8 | RGB为`N*0.5+0.5`，A为粗糙度；清零 |
+| Emissive | RGBA16_FLOAT | 8 | RGB为自发光，A保留；清零 |
+| Model | R32_UINT | 4 | 0为GGX材质，1为无光照材质；清为`0xFFFFFFFF`表示背景 |
+| Depth | D32_FLOAT | 4 | 设备深度；本文普通Z清为1，比较使用LESS |
+
+颜色附件的逐样本合计为`4+8+8+4=24`字节，加深度为28字节。这是本文示例的字段预算；接入Direct3D时分别对应R8G8B8A8_UNORM、R16G16B16A16_FLOAT、R32_UINT和D32_FLOAT。资源创建前查询目标设备对格式用途与样本数的支持，确认颜色写入、整数读取和多样本路径均可用。
 
 纹理的基础色采样若使用sRGB视图，采样器已把它解为线性值，再写入这里的UNORM附件；光照阶段按线性值读取。法线、粗糙度与金属度属于数值数据，采用线性视图。若把法线也做sRGB解码，`0.5`会变成另一个数，原本的零方向分量随之改变。格式和通道压缩的取舍见[[13_渲染架构/GBuffer布局]]。
 
@@ -171,7 +173,7 @@ Khronos的[subpasses样例](https://docs.vulkan.org/samples/latest/samples/perfo
 
 ### 带宽与工作量
 
-本文布局每像素颜色24字节加深度4字节，1920×1080时约58.06 MB；这是未压缩附件的一份逻辑容量，未计HDR、资源对齐、压缩和多样本。四样本理论存储量乘4。若每帧写一次、光照至少完整读一次，按28字节计算的逻辑往返约116.12 MB，60帧时约6.97 GB/s；逐灯多次读取、缓存、深度压缩与片上驻留都会使实际外存流量与这个模型不同。
+本文布局在单样本1920×1080下的逻辑容量为`1920*1080*28=58,060,800`字节，即58.06 MB或55.37 MiB；其中MB按10⁶字节、MiB按2²⁰字节计。预算只包含表中附件，HDR输出、交换链、额外Resolve资源、分配对齐和压缩分别计入。四样本的这部分逻辑容量为232,243,200字节。若每帧完整写一次并完整读一次，逻辑往返为116.12 MB，60帧/秒时约6.97 GB/s。这个模型固定了完整读写次数；背景跳过、逐灯重读、缓存、深度压缩与片上驻留会改变实际外存流量，测量结果由设备计数器给出。
 
 Forward也可以一次绘制后循环多灯，因此比较不能把所有前向路径都假设为逐灯重复几何。Deferred主要把材质采样与灯数量分开，代价是附件写读、解码与后续合成。大量重叠灯且不透明占比高时，这份分离容易产生价值；灯少、带宽紧或透明占比高时，附件成本可能超过节省。
 
@@ -208,6 +210,8 @@ CPU参考的8项检查以手算输入覆盖Y轴、齐次除法、位置与方向
 - [[14_性能分析与优化/帧瓶颈诊断]]
 
 ## 参考资料
+
+- [Microsoft：DXGI_FORMAT](https://learn.microsoft.com/en-us/windows/win32/api/dxgiformat/ne-dxgiformat-dxgi_format)：格式各分量位宽；2026-10-24核对本文24字节颜色附件与4字节深度预算。容量与读写数值按本页尺寸和次数计算。
 
 - [Khronos：Subpasses](https://docs.vulkan.org/samples/latest/samples/performance/subpasses/README.html)，几何/光照子通道、input attachment与实际片上合并条件。
 - [Vulkan规范：Render Pass](https://docs.vulkan.org/spec/latest/chapters/renderpass.html)，子通道依赖、附件布局及生命周期语义。

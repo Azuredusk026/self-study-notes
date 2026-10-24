@@ -63,4 +63,4 @@ x1 += w1 * deltaLambda * n;
 
 ## 参考资料
 
-- [XPBD原论文](https://mmacklin.com/xpbd.pdf)：第3节公式与Algorithm 1；2026-10-22核读。
+- [XPBD原论文](https://mmacklin.com/xpbd.pdf)：第4节公式17、18与Algorithm 1说明位置更新、累计乘子及时间步流程；2026-10-24复核。
