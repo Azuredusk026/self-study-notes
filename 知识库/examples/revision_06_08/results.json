@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-10-22T17:50:57.700823+00:00",
+  "recorded_at": "2026-10-24T04:15:39.024130+00:00",
   "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
   "versions": {
     "glslangValidator.exe": {
@@ -47,13 +47,13 @@
         "frag",
         "pom.frag",
         "-o",
-        "C:\\Users\\23587\\AppData\\Local\\Temp\\kb-texture-geometry-3faepqfv\\pom.frag.spv"
+        "C:\\Users\\23587\\AppData\\Local\\Temp\\kb-texture-geometry-5msac3qz\\pom.frag.spv"
       ],
       "exit_code": 0,
       "status": "PASS",
       "stdout": "pom.frag\n",
       "stderr": "",
-      "artifact_bytes": 4088
+      "artifact_bytes": 8764
     },
     {
       "label": "domain.hlsl",
@@ -65,7 +65,7 @@
         "DSMain",
         "domain.hlsl",
         "-Fo",
-        "C:\\Users\\23587\\AppData\\Local\\Temp\\kb-texture-geometry-3faepqfv\\domain.hlsl.dxil"
+        "C:\\Users\\23587\\AppData\\Local\\Temp\\kb-texture-geometry-5msac3qz\\domain.hlsl.dxil"
       ],
       "exit_code": 0,
       "status": "PASS",
@@ -76,7 +76,7 @@
   ],
   "source_sha256": {
     "domain.hlsl": "3766bd3467f4bbbfd476ef36dbe529076ed53d11798eba05634300b51c4e0ac7",
-    "pom.frag": "c9c9cd0c0325b036a6b228368747d632caf005a668b691ce60ed96e930ff0157",
+    "pom.frag": "d12a57cdfe1de2169f14680260e089dfbf4f4e87538a806729712780aaa3b6f6",
     "reference.py": "c3417cbebd5bfd776a2abcf34aa421d353437dde54dc7ed184874f82badebd56",
     "test_reference.py": "917b9701e8683089b19ab7a95f9b2aed859e08b82f5662ed28ca60b9a2691568",
     "verify.py": "f78734e3fb55e1e0fd15d0f861d466a3980d240505d7aa3f5950f7ba7377ea75"
