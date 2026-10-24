@@ -64,20 +64,27 @@ $$
 
 ## 离散重要性采样
 
-以下是C++机制片段，`Span`、`Sample`、`UpperBound`由宿主提供；`UpperBound`返回严格大于目标的首项索引。输入权重非负且有限，`u`位于[0,1)，调用者提供与权重等长的暂存数组。总和须可表示为有限正数；动态范围极大时先按最大权重缩放。空输入返回的`Sample`必须带无效索引，不能默认为有效第零项。
+以下是C++机制片段，`Span`、`Sample`、`UpperBound`由宿主提供；`UpperBound`返回严格大于目标的首项索引。输入权重非负且有限，`u`位于[0,1)，调用者提供与权重等长的暂存数组。非空输入的项数须能由int表示。总和须有限；全零权重走均匀回退，其他输入的总和必须为正。每个正权重还须在工作精度下形成非零CDF区间，并得到可表示的正概率；片段会拒绝吞项或概率下溢。异常类型来自`<stdexcept>`。空输入返回的`Sample`必须带无效索引，不能默认为有效第零项。
 
 ```cpp
 Sample DrawFromCdf(Span<float> weights, Span<float> cdf, float u)
 {
     if (weights.empty()) return {};
     cdf[0] = weights[0];
-    for (int i = 1; i < weights.size(); ++i)
+    for (int i = 1; i < weights.size(); ++i) {
         cdf[i] = cdf[i - 1] + weights[i];
+        if (!std::isfinite(cdf[i]) ||
+            (weights[i] > 0.0f && cdf[i] <= cdf[i - 1]))
+            throw std::range_error("CDF interval is not representable");
+    }
     float total = cdf.back();
     if (total <= 0.0f) {
         int index = Min((int)(u * weights.size()), weights.size() - 1);
         return { index, 1.0f / weights.size() };
     }
+    for (int i = 0; i < weights.size(); ++i)
+        if (weights[i] > 0.0f && weights[i] / total == 0.0f)
+            throw std::range_error("sample probability underflow");
     float target = Min(u * total, std::nextafter(total, 0.0f));
     int index = UpperBound(cdf, target);
     return { index, weights[index] / total };
@@ -89,6 +96,8 @@ Sample DrawFromCdf(Span<float> weights, Span<float> cdf, float u)
 ### CDF边界与重用
 
 权重为`[0,1,0,3,0]`时，前缀为`[0,1,1,4,4]`。`u=0`应选索引1，`u=0.25`应选索引3。严格大于目标的查找会跳过没有宽度的区间。即使`u<1`，浮点乘法也可能把`u*total`舍入成`total`；代码将目标限制到总和前一个可表示值，避免查找返回数组末尾。`std::nextafter`来自`<cmath>`。
+
+权重`[16777216,1]`以32位float累计时，第二个前缀仍是16777216，正权重1没有对应区间。按最大值缩放仍可能保留同样的相对精度问题；接口应拒绝这类输入，再由调用者选择更高精度、分层分布或受约束的权重范围。随机数生成器也有有限分辨率，应与最小概率和允许偏差一起验证。这份CDF是有限精度近似，不能据实数积分公式宣称任意动态范围下严格无偏。
 
 构建前缀需要O(n)时间，一次二分查找需要O(log n)。同一分布需要多次抽样时，先建一次前缀再重复查找；若每次都重建，优化查找也不能消除线性构建成本。
 
@@ -102,7 +111,7 @@ Sample DrawFromCdf(Span<float> weights, Span<float> cdf, float u)
 
 对常量函数与已知多项式积分比较均值和方差，逐步增加样本数。连续密度、离散概率质量和立体角测度分别核对。CDF查找应使用严格大于目标值的首项，跳过零权重区间；输入u限制到[0,1)，权重非负且有限。
 
-本页C++是依赖宿主类型的机制片段，尚未独立编译。Python参考模型和边界测试见 [math_models.py](../examples/revision/math_models.py) 与 [test_math.py](../examples/revision/test_math.py)，运行 `python 知识库/examples/revision/test_math.py`；该测试只覆盖离散CDF、球谐解析例与一维噪声。
+本页C++是依赖宿主类型的机制片段。[正文抽取宿主](../examples/fullread_review/verify.py)补齐Span、Sample与查找接口，以Clang和C++17编译并运行8类边界检查；工作精度为32位float，完整积分器与GPU未运行。Python参考模型和边界测试见 [math_models.py](../examples/revision/math_models.py) 与 [test_math.py](../examples/revision/test_math.py)，运行 `python 知识库/examples/revision/test_math.py`；该测试只覆盖离散CDF、球谐解析例与一维噪声。
 
 本机CPU验证：CDF零权重区间由 [completion_reference.py](../examples/mechanisms/completion_reference.py) 检查，运行 `python 知识库/examples/mechanisms/completion_reference.py`。这些检查验证CDF区间选择，不包含GPU执行或完整积分器。
 

@@ -1,0 +1,145 @@
+{
+  "batch": "01",
+  "started_at": "2026-10-24T15:10:33.857783+08:00",
+  "runs": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_math.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_raster.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_shader.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_lighting.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.281s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/compile_shader.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"checks\": [\n    \"ScanGroups cs_6_0 compilation\",\n    \"Min/max reduction cs_6_0 compilation with guarded loads and distinct padding\",\n    \"CopyKernel cs_6_0 compilation\",\n    \"PerView vs_6_0 compilation; five offsets and 96-byte size\",\n    \"GLSL 330 VertexData matched block links with different instance names\",\n    \"GLSL mismatched block member type correctly rejected\"\n  ],\n  \"scope\": \"Compilation, reflection and offline linking; no GPU execution\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/compile_lighting.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"dxc_entries\": [\"brdf\", \"normal\", \"ibl\", \"skin_lut\", \"skin_radius\", \"skin_rejection\"], \"glsl_link\": \"sky/refraction\", \"scope\": \"离线编译与链接，未执行GPU\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanisms/completion_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"checks\": {\"cdf_zero_intervals\": 16, \"periodic_stripe_integral\": 24, \"exclusive_scan_compaction\": 6, \"ordered_alpha_equivalence\": 30, \"prediction_replay\": 10, \"probe_trilinear_weights\": 3}, \"total\": 89, \"scope\": \"CPU models of CDF, stripe integral, scan, Alpha, replay and Probe weights; no engine or GPU execution\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanisms/compile_completion.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"probes\": [{\"entry\": \"CopyKernel\", \"target\": \"cs_6_0\", \"passed\": true, \"scope\": \"DXC fragment compile only\"}, {\"entry\": \"StripePS\", \"target\": \"ps_6_0\", \"passed\": true, \"scope\": \"DXC fragment compile only\"}, {\"entry\": \"GlyphPS\", \"target\": \"ps_6_0\", \"passed\": true, \"scope\": \"DXC fragment compile only\"}, {\"entry\": \"MorphPS\", \"target\": \"ps_6_0\", \"passed\": true, \"scope\": \"DXC fragment compile only\"}], \"total\": 4, \"runtime\": \"UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/fullread_review/verify.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"baseline\": null,\n  \"expected_baseline_failure\": false,\n  \"cdf_cases_passed\": 8,\n  \"baseline_failure_case\": null,\n  \"depth_peel_offline_compiled\": true,\n  \"scope\": \"actual article fragments; C++17 CPU checks and offline HLSL compilation, no GPU output\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/fullread_review/verify.py",
+        "--baseline",
+        "ac9ecf0"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"baseline\": \"ac9ecf0\",\n  \"expected_baseline_failure\": true,\n  \"cdf_cases_passed\": 0,\n  \"baseline_failure_case\": \"positive interval 16777216+1 collapsed\",\n  \"depth_peel_offline_compiled\": false,\n  \"scope\": \"actual article fragments; C++17 CPU checks and offline HLSL compilation, no GPU output\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "skills/kb-structure-audit/scripts/validate.py",
+        "D:\\Assigment\\HIT\\Note"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"formal_articles\": 214,\n  \"support_pages\": 5,\n  \"registered_images\": 2,\n  \"errors\": [],\n  \"quality_matrix_pages\": 219,\n  \"rename_targets\": 120,\n  \"category_domains\": 27,\n  \"category_articles\": 219,\n  \"writing_candidates\": 2,\n  \"scope\": \"静态不变量；写作质量和技术断言需原文复读及证据核验\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "skills/kb-structure-audit/scripts/batch_validate.py",
+        "D:\\Assigment\\HIT\\Note"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"formal_articles\": 214,\n  \"support_pages\": 5,\n  \"registered_images\": 2,\n  \"errors\": [],\n  \"quality_matrix_pages\": 219,\n  \"rename_targets\": 120,\n  \"category_domains\": 27,\n  \"category_articles\": 219,\n  \"writing_candidates\": 2,\n  \"scope\": \"静态不变量；写作质量和技术断言需原文复读及证据核验\",\n  \"frozen_pages\": 219,\n  \"reviewed_pages\": 219,\n  \"original_pages\": 113,\n  \"batches\": [\n    {\n      \"id\": \"Completion\",\n      \"pages\": 219\n    }\n  ],\n  \"title_statuses\": {\n    \"PASS\": 219\n  },\n  \"deferred_titles\": 0,\n  \"pending_splits\": 0,\n  \"wiki_references\": 1968,\n  \"local_markdown_references\": 1027,\n  \"checked_anchors\": 298,\n  \"orphan_pages\": [],\n  \"historical_sections\": 63\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "skills/kb-structure-audit/scripts/revision_validate.py",
+        "D:\\Assigment\\HIT\\Note"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"pages\": 219,\n  \"dimensions\": 1971,\n  \"errors\": [],\n  \"scope\": \"复读登记完整性和当前正文快照；不替代全文判断、来源核读或目标环境实验\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "CPU模型、正文C++宿主及离线编译、静态登记；没有GPU执行或完整引擎运行",
+  "passed": true,
+  "command_count": 13,
+  "finished_at": "2026-10-24T15:10:47.056429+08:00"
+}
