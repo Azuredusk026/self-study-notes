@@ -3148,7 +3148,7 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "主要机制按前置输入、生产、转换、消费和恢复接口复读；当前全部章节见chain-final-00-15.json，保留各页的专题、导读或规则职责。"
+        "basis": "主要机制按前置输入、生产、转换、消费和恢复接口复读；当前全部章节见chain-final-00-15.json，保留各页的专题、导读或规则职责。 2026-10-24 P1审查范围见references/optimization-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
@@ -3160,11 +3160,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "主要机制、相邻接口和反例的正文复读见chain-00-15.json, chain-cross-00-15.json, chain-final-00-15.json；实验与目标运行各自登记，运行状态不代替正文判断。"
+        "basis": "主要机制、相邻接口和反例的正文复读见chain-00-15.json, chain-cross-00-15.json, chain-final-00-15.json；实验与目标运行各自登记，运行状态不代替正文判断。 2026-10-24 P1审查范围见references/optimization-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "主要机制、相邻接口和反例的正文复读见chain-00-15.json, chain-cross-00-15.json, chain-final-00-15.json；实验与目标运行各自登记，运行状态不代替正文判断。"
+        "basis": "主要机制、相邻接口和反例的正文复读见chain-00-15.json, chain-cross-00-15.json, chain-final-00-15.json；实验与目标运行各自登记，运行状态不代替正文判断。 2026-10-24 P1审查范围见references/optimization-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
@@ -3194,6 +3194,7 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
+      "DEEPEN",
       "RESTRUCTURE",
       "REWRITE"
     ],
@@ -3205,7 +3206,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "5f51c8f4aab99e75bc4b9491a16c2101b3149ea5724c3da110e502eb32ac6792",
+    "final_sha256": "9faf1f8bc8ff31e200ed43292d53154478a9837da0d56c83c98a6ecaf74cda63",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "OVERVIEW",
     "canonical_concept": "渲染帧流程",
@@ -3217,7 +3218,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "5f51c8f4aab99e75bc4b9491a16c2101b3149ea5724c3da110e502eb32ac6792",
+    "reviewed_content_sha256": "9faf1f8bc8ff31e200ed43292d53154478a9837da0d56c83c98a6ecaf74cda63",
     "historical_quality_matrix": {
       "Scope": "明确承担路线与选择职责",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -3235,10 +3236,10 @@
       "date": "2026-10-23",
       "status": "REVIEWED",
       "phase": "chain-final",
-      "scope": "全文、入口、术语、规则、章节与导读关系",
+      "scope": "历史独立复核保留原快照；当前快照的后续审查范围见optimization_20261024_review",
       "author_record": "revision-support-overviews.json",
       "author_sha256": "5bd88d61ad648b8048f1461b980d29a15317460f5d7ad0dba359e4870ce24950",
-      "content_sha256": "5f51c8f4aab99e75bc4b9491a16c2101b3149ea5724c3da110e502eb32ac6792",
+      "content_sha256": "9faf1f8bc8ff31e200ed43292d53154478a9837da0d56c83c98a6ecaf74cda63",
       "findings": [
         "物理更名一帧如何到达屏幕→渲染帧流程并同步H1。",
         "沿记录、覆盖、附件与呈现明确阅读顺序和完成边界。",
@@ -3263,7 +3264,8 @@
         "首段及阅读路线区分CPU记录、GPU执行、显示呈现及跨帧重叠；Present等待保留多个可能来源。",
         "核对Command Buffer与帧提交“命令记录与完成”、显示呈现“CPU-GPU并行和帧延迟”；没有单凭Present归因或运行结果声明。",
         "入口负责关系，13维护附件/命令，14维护诊断；四项专题表与标题范围匹配。"
-      ]
+      ],
+      "independent_scope": "仅对应independent_source_sha256记录的历史快照；本轮未新增独立审阅者"
     },
     "prior_revision_reviews": [
       {
@@ -3420,6 +3422,55 @@
         "CPU录完不能推出GPU已完成",
         "Present等待可能限帧或队列积压，导读正确指向呈现和瓶颈调查"
       ]
+    },
+    "optimization_20261024_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "chain-final",
+      "scope": "全文、入口、术语、规则、章节与导读关系",
+      "author_record": "revision-support-overviews.json",
+      "author_sha256": "5bd88d61ad648b8048f1461b980d29a15317460f5d7ad0dba359e4870ce24950",
+      "content_sha256": "5f51c8f4aab99e75bc4b9491a16c2101b3149ea5724c3da110e502eb32ac6792",
+      "findings": [
+        "物理更名一帧如何到达屏幕→渲染帧流程并同步H1。",
+        "沿记录、覆盖、附件与呈现明确阅读顺序和完成边界。",
+        "相关主题改为坐标、GPU执行和诊断工具，去掉与入口表重复的列表。"
+      ],
+      "independent_review": "PASS",
+      "runtime": {
+        "navigation": "PASS",
+        "title_and_heading": "PASS",
+        "map_coverage": "NOT_APPLICABLE",
+        "standalone_code": "NOT_APPLICABLE",
+        "engine_runtime": "NOT_APPLICABLE",
+        "gpu_capture": "NOT_APPLICABLE",
+        "performance": "NOT_APPLICABLE",
+        "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
+      },
+      "acceptance": "主机制与机制衔接的全文推演及具体反例；见chain_review",
+      "independent_record": "chain-final-00-15.json",
+      "independent_source_sha256": "5bd88d61ad648b8048f1461b980d29a15317460f5d7ad0dba359e4870ce24950",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "首段及阅读路线区分CPU记录、GPU执行、显示呈现及跨帧重叠；Present等待保留多个可能来源。",
+        "核对Command Buffer与帧提交“命令记录与完成”、显示呈现“CPU-GPU并行和帧延迟”；没有单凭Present归因或运行结果声明。",
+        "入口负责关系，13维护附件/命令，14维护诊断；四项专题表与标题范围匹配。"
+      ]
+    },
+    "optimization_20261024_review": {
+      "date": "2026-10-24",
+      "phase": "P1",
+      "record": "references/optimization-2026-10-24.md",
+      "content_sha256": "9faf1f8bc8ff31e200ed43292d53154478a9837da0d56c83c98a6ecaf74cda63",
+      "reviewer_mode": "单执行者来源核读及后续复读",
+      "scope": "本轮涉及机制与全文衔接；历史验证按原记录范围解释",
+      "boundary_action": "OVERVIEW",
+      "content_actions": [
+        "RESTRUCTURE",
+        "DEEPEN"
+      ],
+      "title_review": "PASS",
+      "runtime": "本轮运行项见报告；完整引擎、GPU捕获与性能保持未验证"
     }
   },
   {
@@ -3943,7 +3994,7 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "主要机制按前置输入、生产、转换、消费和恢复接口复读；当前全部章节见chain-final-00-15.json，保留各页的专题、导读或规则职责。"
+        "basis": "主要机制按前置输入、生产、转换、消费和恢复接口复读；当前全部章节见chain-final-00-15.json，保留各页的专题、导读或规则职责。 2026-10-24 P1审查范围见references/optimization-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
@@ -3955,11 +4006,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "主要机制、相邻接口和反例的正文复读见chain-00-15.json, chain-cross-00-15.json, chain-final-00-15.json；实验与目标运行各自登记，运行状态不代替正文判断。"
+        "basis": "主要机制、相邻接口和反例的正文复读见chain-00-15.json, chain-cross-00-15.json, chain-final-00-15.json；实验与目标运行各自登记，运行状态不代替正文判断。 2026-10-24 P1审查范围见references/optimization-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "主要机制、相邻接口和反例的正文复读见chain-00-15.json, chain-cross-00-15.json, chain-final-00-15.json；实验与目标运行各自登记，运行状态不代替正文判断。"
+        "basis": "主要机制、相邻接口和反例的正文复读见chain-00-15.json, chain-cross-00-15.json, chain-final-00-15.json；实验与目标运行各自登记，运行状态不代替正文判断。 2026-10-24 P1审查范围见references/optimization-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
@@ -3987,6 +4038,7 @@
     "pending_split": false,
     "modernization_batch": "Completion",
     "executed_content_actions": [
+      "DEEPEN",
       "RESTRUCTURE",
       "REWRITE"
     ],
@@ -3997,7 +4049,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "68bdc4f4b4c41a2220e8d58dca13e183b331851df80b37d2780eeb6a3f8db82e",
+    "final_sha256": "14bbb31533c26e5bb79b38b8a00ac467b24a38b692cec3887fe98ed3f0a3a2a9",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "OVERVIEW",
     "canonical_concept": "可见性与合成",
@@ -4009,7 +4061,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "68bdc4f4b4c41a2220e8d58dca13e183b331851df80b37d2780eeb6a3f8db82e",
+    "reviewed_content_sha256": "14bbb31533c26e5bb79b38b8a00ac467b24a38b692cec3887fe98ed3f0a3a2a9",
     "source_article_path": "知识库/02_GPU与光栅化管线/剔除、透明与混合.md",
     "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
     "historical_quality_matrix": {
@@ -4029,10 +4081,10 @@
       "date": "2026-10-23",
       "status": "REVIEWED",
       "phase": "chain-final",
-      "scope": "全文、入口、术语、规则、章节与导读关系",
+      "scope": "历史独立复核保留原快照；当前快照的后续审查范围见optimization_20261024_review",
       "author_record": "revision-support-overviews.json",
       "author_sha256": "97876cdca7bdd701c2727cb1c6c4c465eaa4a4bc7a2ad0e1c75931a8e192ad1d",
-      "content_sha256": "68bdc4f4b4c41a2220e8d58dca13e183b331851df80b37d2780eeb6a3f8db82e",
+      "content_sha256": "14bbb31533c26e5bb79b38b8a00ac467b24a38b692cec3887fe98ed3f0a3a2a9",
       "findings": [
         "物理更名可见性与合成导读→可见性与合成并同步H1。",
         "限定最近表面结论，补多视图候选与透明深度策略路线。",
@@ -4057,7 +4109,8 @@
         "常规不透明最近样本与透明多层颜色分开；相机和阴影视图分别判断候选。",
         "对照剔除、透明合成主篇首段和章节；透明的遮挡/深度写入按合成模型确定，未泛化为所有透明都遮挡或都不写深度。",
         "两个主要入口与Alpha、GPU参数前后置分工明确；自然中文直接陈述条件和作用。"
-      ]
+      ],
+      "independent_scope": "仅对应independent_source_sha256记录的历史快照；本轮未新增独立审阅者"
     },
     "prior_revision_reviews": [
       {
@@ -4214,6 +4267,55 @@
         "相机不可见不等于阴影视图不可见，正文分开",
         "透明层可能保留后方贡献，不能按普通不透明遮挡删除"
       ]
+    },
+    "optimization_20261024_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "chain-final",
+      "scope": "全文、入口、术语、规则、章节与导读关系",
+      "author_record": "revision-support-overviews.json",
+      "author_sha256": "97876cdca7bdd701c2727cb1c6c4c465eaa4a4bc7a2ad0e1c75931a8e192ad1d",
+      "content_sha256": "68bdc4f4b4c41a2220e8d58dca13e183b331851df80b37d2780eeb6a3f8db82e",
+      "findings": [
+        "物理更名可见性与合成导读→可见性与合成并同步H1。",
+        "限定最近表面结论，补多视图候选与透明深度策略路线。",
+        "添加Alpha表示和GPU驱动入口。"
+      ],
+      "independent_review": "PASS",
+      "runtime": {
+        "navigation": "PASS",
+        "title_and_heading": "PASS",
+        "map_coverage": "NOT_APPLICABLE",
+        "standalone_code": "NOT_APPLICABLE",
+        "engine_runtime": "NOT_APPLICABLE",
+        "gpu_capture": "NOT_APPLICABLE",
+        "performance": "NOT_APPLICABLE",
+        "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
+      },
+      "acceptance": "主机制与机制衔接的全文推演及具体反例；见chain_review",
+      "independent_record": "chain-final-00-15.json",
+      "independent_source_sha256": "97876cdca7bdd701c2727cb1c6c4c465eaa4a4bc7a2ad0e1c75931a8e192ad1d",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "常规不透明最近样本与透明多层颜色分开；相机和阴影视图分别判断候选。",
+        "对照剔除、透明合成主篇首段和章节；透明的遮挡/深度写入按合成模型确定，未泛化为所有透明都遮挡或都不写深度。",
+        "两个主要入口与Alpha、GPU参数前后置分工明确；自然中文直接陈述条件和作用。"
+      ]
+    },
+    "optimization_20261024_review": {
+      "date": "2026-10-24",
+      "phase": "P1",
+      "record": "references/optimization-2026-10-24.md",
+      "content_sha256": "14bbb31533c26e5bb79b38b8a00ac467b24a38b692cec3887fe98ed3f0a3a2a9",
+      "reviewer_mode": "单执行者来源核读及后续复读",
+      "scope": "本轮涉及机制与全文衔接；历史验证按原记录范围解释",
+      "boundary_action": "OVERVIEW",
+      "content_actions": [
+        "RESTRUCTURE",
+        "DEEPEN"
+      ],
+      "title_review": "PASS",
+      "runtime": "本轮运行项见报告；完整引擎、GPU捕获与性能保持未验证"
     }
   },
   {
@@ -24504,7 +24606,7 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。 2026-10-24 P1审查范围见references/optimization-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
@@ -24516,11 +24618,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。 2026-10-24 P1审查范围见references/optimization-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。 2026-10-24 P1审查范围见references/optimization-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
@@ -24562,7 +24664,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "6faf0aef5c1af11dc24a682873e63e04b7e101a028e1da20388fb2741276b85b",
+    "final_sha256": "c31847373c59c10560cac100d50fc2056bc63d7f88462c6798ba33cf3419fb91",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "OVERVIEW",
     "canonical_concept": "渲染路径与光源组织",
@@ -24574,7 +24676,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "6faf0aef5c1af11dc24a682873e63e04b7e101a028e1da20388fb2741276b85b",
+    "reviewed_content_sha256": "c31847373c59c10560cac100d50fc2056bc63d7f88462c6798ba33cf3419fb91",
     "cleanup_reason": "删除空的阅读与选择H2，保留专题路线",
     "historical_quality_matrix": {
       "Scope": "明确承担路线与选择职责",
@@ -24593,10 +24695,10 @@
       "date": "2026-10-23",
       "status": "REVIEWED",
       "phase": "interface-Final",
-      "scope": "全文、入口、术语、规则、章节与导读关系",
+      "scope": "历史独立复核保留原快照；当前快照的后续审查范围见optimization_20261024_review",
       "author_record": "revision-support-overviews.json",
       "author_sha256": "cd999e4fde55715ef7a314908f06db72063965e2b3c6942fa66c93f43078c290",
-      "content_sha256": "6faf0aef5c1af11dc24a682873e63e04b7e101a028e1da20388fb2741276b85b",
+      "content_sha256": "c31847373c59c10560cac100d50fc2056bc63d7f88462c6798ba33cf3419fb91",
       "findings": [
         "不透明列表遗漏前方透明灯，正文已有范围契约",
         "Forward和Deferred选择不改变列表容量溢出责任"
@@ -24620,7 +24722,8 @@
         "Forward/Deferred决定求值时机，Tiled/Clustered决定局部灯列表；灯列表可服务不同路径。",
         "对照三篇主文首段/标题树，固定场景、分辨率、灯分布后分别测列表、几何、照明和内存成本。",
         "先分决策再比成本，保留透明与GBuffer等相关入口；没有由灯数直接推导性能。"
-      ]
+      ],
+      "independent_scope": "仅对应independent_source_sha256记录的历史快照；本轮未新增独立审阅者"
     },
     "prior_revision_reviews": [
       {
@@ -24845,6 +24948,54 @@
       "record": "interface-final-review.json",
       "content_sha256": "6faf0aef5c1af11dc24a682873e63e04b7e101a028e1da20388fb2741276b85b",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
+    },
+    "optimization_20261024_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "interface-Final",
+      "scope": "全文、入口、术语、规则、章节与导读关系",
+      "author_record": "revision-support-overviews.json",
+      "author_sha256": "cd999e4fde55715ef7a314908f06db72063965e2b3c6942fa66c93f43078c290",
+      "content_sha256": "6faf0aef5c1af11dc24a682873e63e04b7e101a028e1da20388fb2741276b85b",
+      "findings": [
+        "不透明列表遗漏前方透明灯，正文已有范围契约",
+        "Forward和Deferred选择不改变列表容量溢出责任"
+      ],
+      "independent_review": "PASS",
+      "runtime": {
+        "navigation": "PASS",
+        "title_and_heading": "PASS",
+        "map_coverage": "NOT_APPLICABLE",
+        "standalone_code": "NOT_APPLICABLE",
+        "engine_runtime": "NOT_APPLICABLE",
+        "gpu_capture": "NOT_APPLICABLE",
+        "performance": "NOT_APPLICABLE",
+        "scope": "本页为支持文档或导读；技术主专题的UNVERIFIED状态不由本页提升。"
+      },
+      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
+      "independent_record": "interface-final-review.json",
+      "independent_source_sha256": "6faf0aef5c1af11dc24a682873e63e04b7e101a028e1da20388fb2741276b85b",
+      "independent_review_date": "2026-10-23",
+      "independent_judgment": [
+        "Forward/Deferred决定求值时机，Tiled/Clustered决定局部灯列表；灯列表可服务不同路径。",
+        "对照三篇主文首段/标题树，固定场景、分辨率、灯分布后分别测列表、几何、照明和内存成本。",
+        "先分决策再比成本，保留透明与GBuffer等相关入口；没有由灯数直接推导性能。"
+      ]
+    },
+    "optimization_20261024_review": {
+      "date": "2026-10-24",
+      "phase": "P1",
+      "record": "references/optimization-2026-10-24.md",
+      "content_sha256": "c31847373c59c10560cac100d50fc2056bc63d7f88462c6798ba33cf3419fb91",
+      "reviewer_mode": "单执行者来源核读及后续复读",
+      "scope": "本轮涉及机制与全文衔接；历史验证按原记录范围解释",
+      "boundary_action": "OVERVIEW",
+      "content_actions": [
+        "RESTRUCTURE",
+        "DEEPEN"
+      ],
+      "title_review": "PASS",
+      "runtime": "本轮运行项见报告；完整引擎、GPU捕获与性能保持未验证"
     }
   },
   {
@@ -30357,7 +30508,7 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：图表示；拓扑排序；Dijkstra；A*；A* 主循环；验证方法；实现与证据；相关主题；参考资料。独立全文判断见depth-independent-16-21.json"
+        "basis": "当前标题与章节：图表示；拓扑排序；Dijkstra；A*；A* 主循环；验证方法；实现与证据；相关主题；参考资料。独立全文判断见depth-independent-16-21.json 2026-10-24 P1审查范围见references/optimization-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
@@ -30369,11 +30520,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。A*主循环是依赖图、堆与成本表的C++伪代码；新增三节点算例与重开条件。尚未运行独立搜索实现，最优性需按本文前提与Dijkstra对照。"
+        "basis": "“参考资料”按主题绑定来源；“实现与证据”区分机制推导、运行实验与目标接入。A*主循环是依赖图、堆与成本表的C++伪代码；新增三节点算例与重开条件。尚未运行独立搜索实现，最优性需按本文前提与Dijkstra对照。 2026-10-24 P1审查范围见references/optimization-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验。独立全文复读：A→B10/A→C→B2过期条目与不一致h重开形成因果；原环诊断和A*尾章混排，已归到各主章。；松弛/过期记录合回A*，Kahn环诊断合回拓扑，消除混合补充尾章。定位与操作见depth-independent-16-21.json"
+        "basis": "作者具体机制：正文输入、关键中间状态与失效因果已复读；实际引擎/模型/设备运行按正文边界另验。独立全文复读：A→B10/A→C→B2过期条目与不一致h重开形成因果；原环诊断和A*尾章混排，已归到各主章。；松弛/过期记录合回A*，Kahn环诊断合回拓扑，消除混合补充尾章。定位与操作见depth-independent-16-21.json 2026-10-24 P1审查范围见references/optimization-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
@@ -30420,7 +30571,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "20240786dc98f928356261938be64d3a892080027f04fcfe3451969dee641dd2",
+    "final_sha256": "6389b38ce00e4e48eef5a8a6e33f836f0967924920c85aa48c2f27deb140a6c5",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "图搜索",
@@ -30432,7 +30583,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "20240786dc98f928356261938be64d3a892080027f04fcfe3451969dee641dd2",
+    "reviewed_content_sha256": "6389b38ce00e4e48eef5a8a6e33f836f0967924920c85aa48c2f27deb140a6c5",
     "source_article_path": "知识库/16_编程与数据结构/算法设计、树、图与空间划分.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -30451,13 +30602,13 @@
       "date": "2026-10-23",
       "status": "REVIEWED",
       "phase": "P3-depth",
-      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "scope": "历史独立复核保留原快照；当前快照的后续审查范围见optimization_20261024_review",
       "author_record": "revision-16-21.json",
       "author_sha256": "4815eb3be2b0de77055ffb15ef27dc75554e7a88dda2c7de8c95611ce58e7bea",
       "independent_record": "depth-independent-16-21.json",
       "independent_source_sha256": "20240786dc98f928356261938be64d3a892080027f04fcfe3451969dee641dd2",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "20240786dc98f928356261938be64d3a892080027f04fcfe3451969dee641dd2",
+      "content_sha256": "6389b38ce00e4e48eef5a8a6e33f836f0967924920c85aa48c2f27deb140a6c5",
       "independent_review": "PASS",
       "findings": [
         "将负环破坏有限最短距离的范围限定为源可达且环可达的目标。"
@@ -30470,7 +30621,8 @@
         "gpu_capture": "UNVERIFIED",
         "performance": "UNVERIFIED"
       },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+      "independent_scope": "仅对应independent_source_sha256记录的历史快照；本轮未新增独立审阅者"
     },
     "historical_reviewed_content_sha256": "be21d8712c54952d5695ca38a0b31037ceb84641cb16906a3a1aa481d96af8a9",
     "historical_content_commit": "162fef2",
@@ -30507,6 +30659,46 @@
         "performance": "UNVERIFIED"
       },
       "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
+    },
+    "optimization_20261024_baseline_review": {
+      "date": "2026-10-23",
+      "status": "REVIEWED",
+      "phase": "P3-depth",
+      "scope": "全文、公式、代码、来源与标题，含独立复读",
+      "author_record": "revision-16-21.json",
+      "author_sha256": "4815eb3be2b0de77055ffb15ef27dc75554e7a88dda2c7de8c95611ce58e7bea",
+      "independent_record": "depth-independent-16-21.json",
+      "independent_source_sha256": "20240786dc98f928356261938be64d3a892080027f04fcfe3451969dee641dd2",
+      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+      "content_sha256": "20240786dc98f928356261938be64d3a892080027f04fcfe3451969dee641dd2",
+      "independent_review": "PASS",
+      "findings": [
+        "将负环破坏有限最短距离的范围限定为源可达且环可达的目标。"
+      ],
+      "runtime": {
+        "scope": "A*主循环是依赖图、堆与成本表的C++伪代码；新增三节点算例与重开条件。尚未运行独立搜索实现，最优性需按本文前提与Dijkstra对照。",
+        "cpu_command": null,
+        "engine_compile": "UNVERIFIED",
+        "engine_runtime": "UNVERIFIED",
+        "gpu_capture": "UNVERIFIED",
+        "performance": "UNVERIFIED"
+      },
+      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+    },
+    "optimization_20261024_review": {
+      "date": "2026-10-24",
+      "phase": "P1",
+      "record": "references/optimization-2026-10-24.md",
+      "content_sha256": "6389b38ce00e4e48eef5a8a6e33f836f0967924920c85aa48c2f27deb140a6c5",
+      "reviewer_mode": "单执行者来源核读及后续复读",
+      "scope": "本轮涉及机制与全文衔接；历史验证按原记录范围解释",
+      "boundary_action": "KEEP",
+      "content_actions": [
+        "RESTRUCTURE",
+        "DEEPEN"
+      ],
+      "title_review": "PASS",
+      "runtime": "本轮运行项见报告；完整引擎、GPU捕获与性能保持未验证"
     }
   },
   {
@@ -37764,7 +37956,7 @@
       },
       "Structure": {
         "status": "通过",
-        "basis": "按空间、查询、路线几何、连续运动及保持交接组织；独立推导世界与相对速度、旋转搬运、连续加速边界及保持纠偏，实际反馈决定推进。 正文逐项输入与反例见kb-authoring/references/four-article-final-review.md；运行范围按本篇实现与证据。 2026-10-24 P0审查范围见references/optimization-2026-10-24.md。"
+        "basis": "按空间、查询、路线几何、连续运动及保持交接组织；独立推导世界与相对速度、旋转搬运、连续加速边界及保持纠偏，实际反馈决定推进。 正文逐项输入与反例见kb-authoring/references/four-article-final-review.md；运行范围按本篇实现与证据。 2026-10-24 P0审查范围见references/optimization-2026-10-24.md。 2026-10-24 P1审查范围见references/optimization-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
@@ -37776,11 +37968,11 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "通用机制由本篇参考资料支持，自定义计算给出推导与数例，自定义账本和事务明确为宿主协议；本轮直接正文复读及数值重算已记录，未增加引擎或服务运行证据。 2026-10-24 P0审查范围见references/optimization-2026-10-24.md。"
+        "basis": "通用机制由本篇参考资料支持，自定义计算给出推导与数例，自定义账本和事务明确为宿主协议；本轮直接正文复读及数值重算已记录，未增加引擎或服务运行证据。 2026-10-24 P0审查范围见references/optimization-2026-10-24.md。 2026-10-24 P1审查范围见references/optimization-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "按可行走空间、查询采用、路线几何、运动约束、版本失效及控制交接推进；公式先定义空间与单位，再给数例和失败分支。 直接正文复读记录：skills/kb-authoring/references/four-article-final-review.md。 2026-10-24 P0审查范围见references/optimization-2026-10-24.md。"
+        "basis": "按可行走空间、查询采用、路线几何、运动约束、版本失效及控制交接推进；公式先定义空间与单位，再给数例和失败分支。 直接正文复读记录：skills/kb-authoring/references/four-article-final-review.md。 2026-10-24 P0审查范围见references/optimization-2026-10-24.md。 2026-10-24 P1审查范围见references/optimization-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
@@ -37833,7 +38025,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "2d800697bc9ad1112530941110f46c11401d0b82995ebd9dacdea43dfc73ff37",
+    "final_sha256": "a4798980c92a15e0e44d334758c0668c496064b1f821ea80a66dd50f8caf8ebd",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "游戏AI导航",
@@ -37845,7 +38037,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "2d800697bc9ad1112530941110f46c11401d0b82995ebd9dacdea43dfc73ff37",
+    "reviewed_content_sha256": "a4798980c92a15e0e44d334758c0668c496064b1f821ea80a66dd50f8caf8ebd",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -37869,7 +38061,7 @@
       "independent_record": "references/delivery-cross-ai.json",
       "independent_source_sha256": "e4313ae3f659d63b393885f8016d9704f7be0c2a8d8c5c2b4155ba190354a736",
       "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "2d800697bc9ad1112530941110f46c11401d0b82995ebd9dacdea43dfc73ff37",
+      "content_sha256": "a4798980c92a15e0e44d334758c0668c496064b1f821ea80a66dd50f8caf8ebd",
       "independent_review": "PASS",
       "findings": [
         "0.4米半径与0.15米单元：ceil为3格；2格仅0.3米，身体可能过窄通道",
@@ -38274,14 +38466,15 @@
     },
     "optimization_20261024_review": {
       "date": "2026-10-24",
-      "phase": "P0",
+      "phase": "P1",
       "record": "references/optimization-2026-10-24.md",
-      "content_sha256": "2d800697bc9ad1112530941110f46c11401d0b82995ebd9dacdea43dfc73ff37",
+      "content_sha256": "a4798980c92a15e0e44d334758c0668c496064b1f821ea80a66dd50f8caf8ebd",
       "reviewer_mode": "单执行者来源核读及后续复读",
       "scope": "本轮涉及机制与全文衔接；历史验证按原记录范围解释",
       "boundary_action": "KEEP",
       "content_actions": [
-        "FACT-CHECK"
+        "RESTRUCTURE",
+        "DEEPEN"
       ],
       "title_review": "PASS",
       "runtime": "本轮运行项见报告；完整引擎、GPU捕获与性能保持未验证"
