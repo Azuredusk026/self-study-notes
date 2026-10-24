@@ -64,7 +64,7 @@
       "title_reason": "现有标题准确表达主概念，保留",
       "primary_concept": "术语表",
       "boundary_action": "KEEP",
-      "content_sha256": "f96687156559d0af0878bebfe03d30221bc37806f78881b3df5aa1e6cdd18a83",
+      "content_sha256": "bed07899029cc25706505b501890b720108842e5d2bbccefdbecccd49809c6da",
       "historical_content_sha256": "e89244c9a204500ce628f2c3b88908e93d49282b1beda90164846b9d73ef665b",
       "current_review_date": "2026-10-23",
       "heading_outline": [
@@ -91,7 +91,7 @@
       "title_reason": "现有标题准确表达主概念，保留",
       "primary_concept": "知识地图",
       "boundary_action": "KEEP",
-      "content_sha256": "9067d0b321ec28d9543ba2a0ec1b223e7a2eb1ec9cc1cc7661faaaa7615a8435",
+      "content_sha256": "caa60a91f7cec063e8ac7c6486374e56c0d12f9971f1a12c63d59f74b16639ab",
       "historical_content_sha256": "0c4d44ad0f1ac6c30138c01f8687536635db694de2da4a9eaa4c0ae176568042",
       "current_review_date": "2026-10-23",
       "heading_outline": [
@@ -3092,9 +3092,10 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "IK",
       "boundary_action": "KEEP",
-      "content_sha256": "6306194ef948a06da36bba26a46ab3c0f900a10be24cc8728587f946f0b8cbe3",
+      "content_sha256": "c7edb5333da265ed107a87fe93b5f5f8dba30b1dcfc51bbf0d73fd60ecf1ea64",
       "historical_content_sha256": "352c7c780012f121c2d9f2426283c0a94d92ba3ded1acaede8e67d97538eeb3c",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/动画压缩.md",
@@ -3163,7 +3164,7 @@
       "reason": "量化与解码是压缩实现环节，标题只定位压缩即可。",
       "review_batch": "第二批跨领域样本",
       "confidence": "命名建议可供采用评审",
-      "content_sha256": "bb5a246ced9eb473b96ac81b08696f7e8263b7c2a8f12c9631186e6d45fb20a3",
+      "content_sha256": "da0ba0a2bbbb83428946dfe3752d290586916873bbf456dab05fb9b1ee537835",
       "heading_outline": [
         "# 动画压缩、轨道量化与运行时解码",
         "## 动画数据为什么大",
@@ -3180,12 +3181,13 @@
       "previous_title": "动画压缩、轨道量化与运行时解码",
       "reviewed_title_decision": "REWRITE",
       "title_coverage_review": "轨道抽取、量化和解码共同实现压缩，名称覆盖误差/性能取舍",
-      "reviewed_content_sha256": "ed4cee1f9d002874e5a56a7850bdd8eacd2b2f908c0086460723d23815844ce4",
+      "reviewed_content_sha256": "da0ba0a2bbbb83428946dfe3752d290586916873bbf456dab05fb9b1ee537835",
       "pending_split": false,
       "deferred_title": false,
       "title_reason": "现有标题准确表达主概念，保留",
       "historical_content_sha256": "a789d46359b374eef79fee318842a0dcac6d78c33dd8f50567115bb05f8f9bb2",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/动画姿态混合.md",
@@ -3222,7 +3224,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "594a5e7019ebdc9b831f4b800303e5cfe7f58858c1c63337e98ab7b95e041660",
       "historical_content_sha256": "5177dbed697e6265e97238f350410656e99498448e5467bea9d6c1b09eb0f960",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/动画重定向.md",
@@ -3259,7 +3262,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "eff1665cf67309bf3977b6964b4e3df09ab42160ab85fe4c30d0657fdfa061a6",
       "historical_content_sha256": "504b4ea532886ad7ab12b22d28d7423c371de6ba30fd693be3a2c29f5486547c",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/植被风动.md",
@@ -3307,12 +3311,13 @@
       "previous_title": "植被风动与顶点变形",
       "reviewed_title_decision": "REWRITE",
       "title_coverage_review": "顶点变形是风动实现路径，根部、相位和跨Pass一致性都服务风动",
-      "reviewed_content_sha256": "2dc9fbb2e14fd770b26ca27b5e56c52b6a033e0cee5d46f2fb11db69ab3daf8f",
+      "reviewed_content_sha256": "0dc05f34b58e4e545657c2c91dd6818d03eed87c6de74665c65db425b12ba6e9",
       "pending_split": false,
       "deferred_title": false,
       "title_reason": "现有标题准确表达主概念，保留",
       "historical_content_sha256": "7015802bb8e516a7eee3f7633883b91e3ff6bc84b1d81a11464953dc7cd86b27",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/毛发表示与模拟.md",
@@ -3426,7 +3431,8 @@
       "deferred_title": false,
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "historical_content_sha256": "c063c0e576492058df26512e9a9b947efa323b5b1fd8904a53d765c0e7946a5d",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/角色动画导读.md",
@@ -3540,7 +3546,7 @@
       "reason": "段落和代码以布料表面映射为主，毛发仅概要；缩成二级运动会掩盖两种问题深度差异。 联合入口名称是边界处理后的条件方案，当前整页不直接采用短名。",
       "review_batch": "第二批跨领域样本",
       "confidence": "边界优先处理",
-      "content_sha256": "d76486a5e7b36ab8a60b64f5d6ca912653c4ce23ff30c06c646bdbfffb55ac6a",
+      "content_sha256": "52495bd9a10dcc4bde2e67c4813f8fd279366d8f15fd6c1b9255f63332d88fc4",
       "heading_outline": [
         "# 布料与毛发的表示、碰撞和 LOD",
         "## 布料的表示层级",
@@ -3586,7 +3592,8 @@
       "deferred_title": false,
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "historical_content_sha256": "df7c9a74d7e3e74aa7e2732a76373214e3f8ef1545235bc413cd14f71649c759",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/面部动画.md",
@@ -3608,7 +3615,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "93eba65c4962051ccfeef3890e87c48e8ae591c20171efeb56878fabb1a9f7b6",
       "historical_content_sha256": "545c2562b39d587727fdc67d57d5fb0b9acddc4b5bfc7779459bbd6c3fa3065a",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/骨骼动画与蒙皮.md",
@@ -3630,7 +3638,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "320b0efd99a2bc96abad6c13648845862b3e0fccfa20e40de483e48d3fa63b6b",
       "historical_content_sha256": "74740a47420ab78a00e0069926f8e0dd6e7267175e2fa05690fa2a7a81cf71fd",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/Froxel体积雾.md",
@@ -3652,7 +3661,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "2b84613355d7a6cdd68b049fc45f350d758e2c9d32024644a68ea6ef84049b0d",
       "historical_content_sha256": "a11756b91aa44007db21ec540b39bc7f7fe93ce9660d1aaf67eac1731700dd13",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/GPU粒子系统.md",
@@ -3672,9 +3682,10 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "GPU粒子系统",
       "boundary_action": "KEEP",
-      "content_sha256": "f7b64ae8e69ed8a73948037e78c822612173a6c2bb7f49c1cc79858db452edcb",
+      "content_sha256": "a97c7f664938e8f2addffd334060a2419d065756c9380e005ea198ef7518682f",
       "historical_content_sha256": "f884fc6ad481c91313be52e2de331b209425dd63f420e5e36bbb5ae6c14e4f9d",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/VFX效果组合.md",
@@ -3756,7 +3767,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "4bbc96c8fd44a252bc2084032b95d9d8acdf5096ed7eb7d039b30022469a1bdb",
       "historical_content_sha256": "dfc6a3e09419b0afd5ba4738a965d160e6102ef1bc2769bd76783859bde5deaf",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/体积云.md",
@@ -3793,7 +3805,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "140a1e98e48ee30a1bef70597a9c1795b9a1a3340f0099a4490e92531688d462",
       "historical_content_sha256": "7df4971b5a3d2c1aafdd9c9e0e7872c7a495cb8e7d86fb1758b7b7eb54ef29c0",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/大气散射.md",
@@ -3830,7 +3843,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "f969db7dbc57432c6007998fc2ec30d653a0a42192674cdf1fad6245de377b94",
       "historical_content_sha256": "ed1d2958828e5a6635868d9058deb67fb13979c2dd92a562560c4e850f05c783",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/屏幕扰动.md",
@@ -3897,9 +3911,10 @@
       "title_reason": "保留水面集成问题与大尺度海洋限定",
       "primary_concept": "水面与海洋渲染",
       "boundary_action": "KEEP",
-      "content_sha256": "18ee661a220d904e8543e97eaf588bdb1dc4f9200fd46cf36d1959a922300f86",
+      "content_sha256": "12a49a13d385997d4b3d9a96a322a31838d9eeaae8e500a8eb23d86ab6488d36",
       "historical_content_sha256": "844af312853049f5f5dbf58f872ebb146d03f8c5507a723580a782bc2388b2e3",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/溶解材质.md",
@@ -3936,7 +3951,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "a6a2f304271ab2e4461591fe97803279896654ab0d5987e964239a3db07e47cf",
       "historical_content_sha256": "bd4a43213d7bd25c1dd4ec2b18e21628d20ca3b3c0c7fee8fabe2d4e69faacd9",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/软粒子.md",
@@ -4020,7 +4036,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "e810e6267baf49dd765b63946bd1ff96163fb30bce09ae7f0c3485819c1d398e",
       "historical_content_sha256": "066a0491f850578833e310e65e5d95bbbbd44cf9ffc4a861fd92b68c97a2a47b",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
@@ -4072,9 +4089,10 @@
       "title_reason": "现名覆盖明暗坐标与材质组合，保留",
       "primary_concept": "NPR材质与分层光照",
       "boundary_action": "KEEP",
-      "content_sha256": "86000e704a728ed1a164570f15761a2a8e837d084d0306488c800c2b4b4101b5",
+      "content_sha256": "c57e8cd65b48d8737e9b4b9de7f6f26d92834e3743344e5c588ed63b480900a8",
       "historical_content_sha256": "44395a48eb3dab6d908234023e63b967b8ceffb7be976c92c875cbed7566ae5e",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/11_NPR与风格化渲染/描边.md",
@@ -4118,13 +4136,14 @@
       "reason": "标题定位实际主问题；内部机制留在H2/H3；必要术语按读者习惯保留",
       "review_batch": "首批样本，沿用已完成的全文审查",
       "original_title_type": "核心技术问题",
-      "content_sha256": "123ab9a80c1fe11677f5cf40482eb0e8a8d33ef0f51b3e53fcdd82ba42a18199",
-      "reviewed_content_sha256": "89870fed439741222dc00d1a1c36cf0d1b8f77eb1d7f8a0ef07cb2ca758a432d",
+      "content_sha256": "6a92d83faa6de6891778d177c62abb97fe7d22091fc9c15f2bc26effe3f1f82d",
+      "reviewed_content_sha256": "6a92d83faa6de6891778d177c62abb97fe7d22091fc9c15f2bc26effe3f1f82d",
       "pending_split": false,
       "deferred_title": false,
       "title_reason": "现有标题准确表达主概念，保留",
       "historical_content_sha256": "b38d67ca1f6e2bd032bfabda54d213ce621ecf07294009cc9feed3b07ad52b37",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/11_NPR与风格化渲染/角色阴影.md",
@@ -4161,7 +4180,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "f28f8895a333e959099af7ba5fade1461895e07c2f318484488cf15c73728500",
       "historical_content_sha256": "fec6322560895c8a89aa810b826f79653455bc98a0153522a6734b507174891c",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/11_NPR与风格化渲染/风格化头发高光.md",
@@ -4198,7 +4218,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "52532e714c22b451bfdfea99ce56321b77a759771a487dff0b9eb6723f9cc93e",
       "historical_content_sha256": "a9eeae4a5b589e6bfa57cffdc1b0dd7c6d5fa326865338df5e8ace22f23282a9",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/11_NPR与风格化渲染/风格化眼睛.md",
@@ -4235,7 +4256,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "4ea0fbbe892d552d8a7e7ac780cec9e6ca3026547e3243ce147daeef368f50a9",
       "historical_content_sha256": "3912961ea20a58c03f128af607dca25adf23237b247c6257551dbac4a06d0a5d",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/12_光线追踪/ReSTIR.md",
@@ -4270,9 +4292,10 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "ReSTIR",
       "boundary_action": "KEEP",
-      "content_sha256": "b1113fe0fab225b99754f57e902fed851306fe9037eb542d42e05a3fe2a76f22",
+      "content_sha256": "cb1f0b64f1b19037d11705452aa2329336367504dd91fda6c5a8fb62113ab281",
       "historical_content_sha256": "c4b63b36c373f563f23f792c68aa5914642c3e2f595968239a3d87e43a902358",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/12_光线追踪/光线求交与BVH.md",
@@ -4294,7 +4317,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "58459a720e541a5884323c99c79601217975a0ea576e2b3aba59dbba3ca1f89a",
       "historical_content_sha256": "cb9866dc3f380cf44f408cb30cee03258822e6ed68ef067563ac1bda5e8edfdf",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/12_光线追踪/光追降噪.md",
@@ -4330,9 +4354,10 @@
       "title_reason": "边界或导读任务保留原标题，不在标题阶段拆分",
       "primary_concept": "光追降噪",
       "boundary_action": "KEEP",
-      "content_sha256": "4b2ad31b59af6deab406e28eacaa042daee115570e86999c8801be4625739eed",
+      "content_sha256": "4bcc7827d0180672c7325122f97679f355f66482750b680bdbba9acc2c4da7f2",
       "historical_content_sha256": "81aae2dc57c29ae1d0b8143057008d4c753b8a67ea87012457e787917168cfda",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/12_光线追踪/实时光追采样.md",
@@ -4369,7 +4394,8 @@
       "boundary_action": "KEEP",
       "content_sha256": "6da82a4ea8a0cc744cb0f8f1590907c65c54de4eea2a9e159f5d8cd74cf3eba8",
       "historical_content_sha256": "f5f2fd6c79859d2b9c0950ce7e330631073ca51dd868445e6d00e52b3f648ccd",
-      "current_review_date": "2026-10-23"
+      "current_review_date": "2026-10-23",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/13_渲染架构/Command Buffer与帧提交.md",
@@ -10283,6 +10309,54 @@
         "## 参考资料"
       ],
       "remaining_review": "references/remaining-review-2026-10-24.md"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/描边方向烘焙.md",
+      "primary_question": "如何烘焙并存储跨硬边连续且能随蒙皮变形的描边方向",
+      "primary_concept": "描边方向烘焙",
+      "current_title": "描边方向烘焙",
+      "suggested_title": "描边方向烘焙",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_candidates": [
+        "描边方向烘焙",
+        "硬边外扩方向",
+        "描边顶点方向资产"
+      ],
+      "review_basis": "独立输入、计算与验证；候选和迁移见references/fullread-batch-03-2026-10-24.md",
+      "content_sha256": "af3f3b310830c972c47ee8a008cd82b857064bddbda86f7f0fefc6314a80d523",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
+    },
+    {
+      "path": "知识库/12_光线追踪/ReSTIR支持域与归一化.md",
+      "primary_question": "如何在支持域不同的蓄水池之间合并并保持递归贡献乘数正确",
+      "primary_concept": "ReSTIR支持域与归一化",
+      "current_title": "ReSTIR支持域与归一化",
+      "suggested_title": "ReSTIR支持域与归一化",
+      "title_review": "PASS",
+      "boundary_action": "KEEP",
+      "category_review": "PASS",
+      "content_actions": [
+        "RESTRUCTURE"
+      ],
+      "adoption_status": "已采用",
+      "pending_split": false,
+      "deferred_title": false,
+      "title_candidates": [
+        "ReSTIR支持域与归一化",
+        "蓄水池的支持修正",
+        "相关来源的贡献分配"
+      ],
+      "review_basis": "独立输入、计算与验证；候选和迁移见references/fullread-batch-03-2026-10-24.md",
+      "content_sha256": "9b914f65997d431be17a8258fd559a3ed3b11ebaedf8d6c752a58da1298e2370",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     }
   ],
   "sample_dimensions": [

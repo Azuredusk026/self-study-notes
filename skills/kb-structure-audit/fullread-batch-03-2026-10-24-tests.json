@@ -1,0 +1,151 @@
+{
+  "batch": "03",
+  "started_at": "2026-10-24T15:29:54.444355+08:00",
+  "runs": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/outline/reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"cases\": {\"smooth_order_independence\": 6, \"weighted_direction\": 1, \"pixel_width_sizes_distances_directions\": 27, \"mask_boundary_checks\": 5, \"relative_depth\": 2, \"stencil_mask_vs_id\": 2}, \"total\": 43, \"scope\": \"CPU reference algorithms and numeric checks; no GPU execution\", \"unity_shader\": \"not compiled or run in Unity\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision_09_15/verify.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"cpu_tests\": 14, \"git_index_tests\": 5, \"shader_probes\": 9, \"scope\": \"CPU algebra tests and extracted HLSL fragment compilation; engine, GPU execution, capture and performance UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanism_depth/face_sdf/test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanism_depth/water_atmosphere/test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.004s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanism_chain/restir/test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_chosen_light_rechecked_at_all_source_surfaces (__main__.Correction.test_chosen_light_rechecked_at_all_source_surfaces) ... ok\ntest_empty_source_still_participates_in_support_normalizer (__main__.Correction.test_empty_source_still_participates_in_support_normalizer) ... ok\ntest_naive_total_count_loses_half_of_missing_light (__main__.Correction.test_naive_total_count_loses_half_of_missing_light) ... ok\ntest_support_partition_restores_missing_light (__main__.Correction.test_support_partition_restores_missing_light) ... ok\ntest_unequal_source_counts_enter_both_weight_and_normalizer (__main__.Correction.test_unequal_source_counts_enter_both_weight_and_normalizer) ... ok\ntest_weighted_partition_keeps_origin_numerator (__main__.Correction.test_weighted_partition_keeps_origin_numerator) ... ok\ntest_candidate_weight_uses_same_jacobian_in_target_and_pdf (__main__.MeasureConversion.test_candidate_weight_uses_same_jacobian_in_target_and_pdf) ... ok\ntest_degenerate_emitter_cannot_convert_measure (__main__.MeasureConversion.test_degenerate_emitter_cannot_convert_measure) ... ok\ntest_old_area_weight_does_not_freeze_growing_light (__main__.MeasureConversion.test_old_area_weight_does_not_freeze_growing_light) ... ok\ntest_static_light_estimate_is_invariant_to_measure (__main__.MeasureConversion.test_static_light_estimate_is_invariant_to_measure) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/retained_review/restir/check.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: ReSTIR计数、归一化、空间合并和支持反例，9项断言\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/fullread_review/check_denoise_cloth.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"baseline\": null,\n  \"case\": \"all\",\n  \"baseline_failure_reproduced\": false,\n  \"scope\": \"actual HLSL arithmetic/control fragments compiled as equivalent C++17 CPU operations; vector/resource helpers are host implementations, no GPU execution\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/fullread_review/verify_split.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"groups\": 3,\n  \"moved_sections\": 16,\n  \"old_headings_preserved\": true,\n  \"source_urls_missing\": 0,\n  \"scope\": \"exact source mechanism bodies with explicit cross-page context/path adjustments; semantic decisions recorded separately\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/fullread_review/check_denoise_cloth.py",
+        "--baseline",
+        "99a6acd",
+        "--case",
+        "denoise"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"baseline\": \"99a6acd\",\n  \"case\": \"denoise\",\n  \"baseline_failure_reproduced\": true,\n  \"scope\": \"actual HLSL arithmetic/control fragments compiled as equivalent C++17 CPU operations; vector/resource helpers are host implementations, no GPU execution\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/fullread_review/check_denoise_cloth.py",
+        "--baseline",
+        "99a6acd",
+        "--case",
+        "cloth"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"baseline\": \"99a6acd\",\n  \"case\": \"cloth\",\n  \"baseline_failure_reproduced\": true,\n  \"scope\": \"actual HLSL arithmetic/control fragments compiled as equivalent C++17 CPU operations; vector/resource helpers are host implementations, no GPU execution\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "skills/kb-structure-audit/scripts/validate.py",
+        "D:\\Assigment\\HIT\\Note"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"formal_articles\": 216,\n  \"support_pages\": 5,\n  \"registered_images\": 2,\n  \"errors\": [],\n  \"quality_matrix_pages\": 221,\n  \"rename_targets\": 120,\n  \"category_domains\": 27,\n  \"category_articles\": 221,\n  \"writing_candidates\": 2,\n  \"scope\": \"静态不变量；写作质量和技术断言需原文复读及证据核验\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "skills/kb-structure-audit/scripts/batch_validate.py",
+        "D:\\Assigment\\HIT\\Note"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"formal_articles\": 216,\n  \"support_pages\": 5,\n  \"registered_images\": 2,\n  \"errors\": [],\n  \"quality_matrix_pages\": 221,\n  \"rename_targets\": 120,\n  \"category_domains\": 27,\n  \"category_articles\": 221,\n  \"writing_candidates\": 2,\n  \"scope\": \"静态不变量；写作质量和技术断言需原文复读及证据核验\",\n  \"frozen_pages\": 221,\n  \"reviewed_pages\": 221,\n  \"original_pages\": 113,\n  \"batches\": [\n    {\n      \"id\": \"Completion\",\n      \"pages\": 221\n    }\n  ],\n  \"title_statuses\": {\n    \"PASS\": 221\n  },\n  \"deferred_titles\": 0,\n  \"pending_splits\": 0,\n  \"wiki_references\": 1996,\n  \"local_markdown_references\": 1033,\n  \"checked_anchors\": 316,\n  \"orphan_pages\": [],\n  \"historical_sections\": 63\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "skills/kb-structure-audit/scripts/revision_validate.py",
+        "D:\\Assigment\\HIT\\Note"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"pages\": 221,\n  \"dimensions\": 1989,\n  \"errors\": [],\n  \"scope\": \"复读登记完整性和当前正文快照；不替代全文判断、来源核读或目标环境实验\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "CPU模型、正文C++宿主及离线编译、静态登记；没有GPU执行或完整引擎运行",
+  "passed": true,
+  "command_count": 13,
+  "finished_at": "2026-10-24T15:30:09.791466+08:00"
+}

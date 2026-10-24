@@ -451,7 +451,7 @@
     {
       "domain": "11_NPR与风格化渲染",
       "domain_mission": "用受控材质、轮廓与角色明暗形成风格画面",
-      "article_count": 7,
+      "article_count": 8,
       "category_review": "PASS",
       "core_questions": [
         "如何用艺术阈值场控制角色脸部明暗",
@@ -460,7 +460,8 @@
         "描边",
         "如何控制角色局部遮挡并保持风格化色块",
         "如何沿发流生成可控且稳定的高光色带",
-        "如何用独立角膜与虹膜层表现眼球深度"
+        "如何用独立角膜与虹膜层表现眼球深度",
+        "如何烘焙并存储跨硬边连续且能随蒙皮变形的描边方向"
       ],
       "affected_articles": [
         "知识库/11_NPR与风格化渲染/Face SDF.md",
@@ -469,7 +470,8 @@
         "知识库/11_NPR与风格化渲染/描边.md",
         "知识库/11_NPR与风格化渲染/角色阴影.md",
         "知识库/11_NPR与风格化渲染/风格化头发高光.md",
-        "知识库/11_NPR与风格化渲染/风格化眼睛.md"
+        "知识库/11_NPR与风格化渲染/风格化眼睛.md",
+        "知识库/11_NPR与风格化渲染/描边方向烘焙.md"
       ],
       "adoption_status": "方案B已采用",
       "historical_affected_articles": [
@@ -490,19 +492,21 @@
     {
       "domain": "12_光线追踪",
       "domain_mission": "用光线查询、采样与重建计算实时照明",
-      "article_count": 4,
+      "article_count": 5,
       "category_review": "PASS",
       "core_questions": [
         "如何用reservoir复用候选光照样本并校正权重",
         "如何用层级结构减少光线求交工作",
         "如何利用几何与历史过滤低样本光照",
-        "如何在有限射线预算内取得有效光照样本"
+        "如何在有限射线预算内取得有效光照样本",
+        "如何在支持域不同的蓄水池之间合并并保持递归贡献乘数正确"
       ],
       "affected_articles": [
         "知识库/12_光线追踪/ReSTIR.md",
         "知识库/12_光线追踪/光线求交与BVH.md",
         "知识库/12_光线追踪/光追降噪.md",
-        "知识库/12_光线追踪/实时光追采样.md"
+        "知识库/12_光线追踪/实时光追采样.md",
+        "知识库/12_光线追踪/ReSTIR支持域与归一化.md"
       ],
       "adoption_status": "方案B已采用",
       "historical_affected_articles": [
@@ -1130,7 +1134,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "00索引只保存术语摘要；通过02、05、08、10、13、14、20、21、23的主归属承接机制。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。",
-      "content_sha256": "f96687156559d0af0878bebfe03d30221bc37806f78881b3df5aa1e6cdd18a83",
+      "content_sha256": "bed07899029cc25706505b501890b720108842e5d2bbccefdbecccd49809c6da",
       "related_topics": [
         "02_GPU与光栅化管线/深度缓冲与位置重建",
         "02_GPU与光栅化管线/抗锯齿与时域重建",
@@ -1177,7 +1181,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "总入口覆盖00—26所有领域；路线表示关系，目录保持唯一主归属。 本批双链与本地Markdown链接存在性检查通过。 独立复核356个本地引用存在，地图集合与实际184页一致。",
-      "content_sha256": "9067d0b321ec28d9543ba2a0ec1b223e7a2eb1ec9cc1cc7661faaaa7615a8435",
+      "content_sha256": "caa60a91f7cec063e8ac7c6486374e56c0d12f9971f1a12c63d59f74b16639ab",
       "related_topics": [
         "02_GPU与光栅化管线/GPU执行与访存",
         "13_渲染架构/Command Buffer与帧提交",
@@ -2758,14 +2762,15 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属09_动画系统；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "6306194ef948a06da36bba26a46ab3c0f900a10be24cc8728587f946f0b8cbe3",
+      "content_sha256": "c7edb5333da265ed107a87fe93b5f5f8dba30b1dcfc51bbf0d73fd60ecf1ea64",
       "related_topics": [
         "09_动画系统/骨骼动画与蒙皮",
         "18_游戏物理与模拟/Character Controller",
         "09_动画系统/动画姿态混合",
         "09_动画系统/动画重定向"
       ],
-      "historical_content_sha256": "352c7c780012f121c2d9f2426283c0a94d92ba3ded1acaede8e67d97538eeb3c"
+      "historical_content_sha256": "352c7c780012f121c2d9f2426283c0a94d92ba3ded1acaede8e67d97538eeb3c",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/动画压缩.md",
@@ -2776,7 +2781,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属09_动画系统；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "bb5a246ced9eb473b96ac81b08696f7e8263b7c2a8f12c9631186e6d45fb20a3",
+      "content_sha256": "da0ba0a2bbbb83428946dfe3752d290586916873bbf456dab05fb9b1ee537835",
       "related_topics": [
         "09_动画系统/骨骼动画与蒙皮",
         "09_动画系统/动画姿态混合",
@@ -2789,7 +2794,8 @@
         "11_NPR与风格化渲染/风格化眼睛",
         "09_动画系统/角色动画导读"
       ],
-      "historical_content_sha256": "a789d46359b374eef79fee318842a0dcac6d78c33dd8f50567115bb05f8f9bb2"
+      "historical_content_sha256": "a789d46359b374eef79fee318842a0dcac6d78c33dd8f50567115bb05f8f9bb2",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/动画姿态混合.md",
@@ -2807,7 +2813,8 @@
         "09_动画系统/IK",
         "09_动画系统/动画重定向"
       ],
-      "historical_content_sha256": "5177dbed697e6265e97238f350410656e99498448e5467bea9d6c1b09eb0f960"
+      "historical_content_sha256": "5177dbed697e6265e97238f350410656e99498448e5467bea9d6c1b09eb0f960",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/动画重定向.md",
@@ -2825,7 +2832,8 @@
         "09_动画系统/动画姿态混合",
         "09_动画系统/IK"
       ],
-      "historical_content_sha256": "504b4ea532886ad7ab12b22d28d7423c371de6ba30fd693be3a2c29f5486547c"
+      "historical_content_sha256": "504b4ea532886ad7ab12b22d28d7423c371de6ba30fd693be3a2c29f5486547c",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/植被风动.md",
@@ -2844,7 +2852,8 @@
         "09_动画系统/骨骼动画与蒙皮",
         "02_GPU与光栅化管线/抗锯齿与时域重建"
       ],
-      "historical_content_sha256": "7015802bb8e516a7eee3f7633883b91e3ff6bc84b1d81a11464953dc7cd86b27"
+      "historical_content_sha256": "7015802bb8e516a7eee3f7633883b91e3ff6bc84b1d81a11464953dc7cd86b27",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/毛发表示与模拟.md",
@@ -2861,7 +2870,8 @@
         "11_NPR与风格化渲染/风格化头发高光",
         "09_动画系统/角色布料"
       ],
-      "historical_content_sha256": "c063c0e576492058df26512e9a9b947efa323b5b1fd8904a53d765c0e7946a5d"
+      "historical_content_sha256": "c063c0e576492058df26512e9a9b947efa323b5b1fd8904a53d765c0e7946a5d",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/角色动画导读.md",
@@ -2900,14 +2910,15 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属09_动画系统；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "d76486a5e7b36ab8a60b64f5d6ca912653c4ce23ff30c06c646bdbfffb55ac6a",
+      "content_sha256": "52495bd9a10dcc4bde2e67c4813f8fd279366d8f15fd6c1b9255f63332d88fc4",
       "related_topics": [
         "18_游戏物理与模拟/XPBD",
         "18_游戏物理与模拟/XPBD",
         "09_动画系统/骨骼动画与蒙皮",
         "09_动画系统/毛发表示与模拟"
       ],
-      "historical_content_sha256": "df7c9a74d7e3e74aa7e2732a76373214e3f8ef1545235bc413cd14f71649c759"
+      "historical_content_sha256": "df7c9a74d7e3e74aa7e2732a76373214e3f8ef1545235bc413cd14f71649c759",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/面部动画.md",
@@ -2931,7 +2942,8 @@
         "11_NPR与风格化渲染/风格化眼睛",
         "09_动画系统/角色动画导读"
       ],
-      "historical_content_sha256": "545c2562b39d587727fdc67d57d5fb0b9acddc4b5bfc7779459bbd6c3fa3065a"
+      "historical_content_sha256": "545c2562b39d587727fdc67d57d5fb0b9acddc4b5bfc7779459bbd6c3fa3065a",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/09_动画系统/骨骼动画与蒙皮.md",
@@ -2949,7 +2961,8 @@
         "13_渲染架构/Draw Call与合批",
         "14_性能分析与优化/帧瓶颈诊断"
       ],
-      "historical_content_sha256": "74740a47420ab78a00e0069926f8e0dd6e7267175e2fa05690fa2a7a81cf71fd"
+      "historical_content_sha256": "74740a47420ab78a00e0069926f8e0dd6e7267175e2fa05690fa2a7a81cf71fd",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/Froxel体积雾.md",
@@ -2976,7 +2989,8 @@
         "10_VFX与模拟/大气散射",
         "10_VFX与模拟/体积云"
       ],
-      "historical_content_sha256": "a11756b91aa44007db21ec540b39bc7f7fe93ce9660d1aaf67eac1731700dd13"
+      "historical_content_sha256": "a11756b91aa44007db21ec540b39bc7f7fe93ce9660d1aaf67eac1731700dd13",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/GPU粒子系统.md",
@@ -2987,7 +3001,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属10_VFX与模拟；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "f7b64ae8e69ed8a73948037e78c822612173a6c2bb7f49c1cc79858db452edcb",
+      "content_sha256": "a97c7f664938e8f2addffd334060a2419d065756c9380e005ea198ef7518682f",
       "related_topics": [
         "03_Shader编程/Compute Shader",
         "03_Shader编程/GPU归约与前缀和",
@@ -2996,7 +3010,8 @@
         "13_渲染架构/Draw Call与合批",
         "14_性能分析与优化/帧瓶颈诊断"
       ],
-      "historical_content_sha256": "f884fc6ad481c91313be52e2de331b209425dd63f420e5e36bbb5ae6c14e4f9d"
+      "historical_content_sha256": "f884fc6ad481c91313be52e2de331b209425dd63f420e5e36bbb5ae6c14e4f9d",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/VFX效果组合.md",
@@ -3041,7 +3056,8 @@
         "10_VFX与模拟/软粒子",
         "14_性能分析与优化/VFX性能"
       ],
-      "historical_content_sha256": "dfc6a3e09419b0afd5ba4738a965d160e6102ef1bc2769bd76783859bde5deaf"
+      "historical_content_sha256": "dfc6a3e09419b0afd5ba4738a965d160e6102ef1bc2769bd76783859bde5deaf",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/体积云.md",
@@ -3057,7 +3073,8 @@
         "10_VFX与模拟/大气散射",
         "01_数学与采样/程序噪声"
       ],
-      "historical_content_sha256": "7df4971b5a3d2c1aafdd9c9e0e7872c7a495cb8e7d86fb1758b7b7eb54ef29c0"
+      "historical_content_sha256": "7df4971b5a3d2c1aafdd9c9e0e7872c7a495cb8e7d86fb1758b7b7eb54ef29c0",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/大气散射.md",
@@ -3074,7 +3091,8 @@
         "07_颜色与后处理/HDR与曝光",
         "10_VFX与模拟/体积云"
       ],
-      "historical_content_sha256": "ed1d2958828e5a6635868d9058deb67fb13979c2dd92a562560c4e850f05c783"
+      "historical_content_sha256": "ed1d2958828e5a6635868d9058deb67fb13979c2dd92a562560c4e850f05c783",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/屏幕扰动.md",
@@ -3106,7 +3124,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属10_VFX与模拟；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "18ee661a220d904e8543e97eaf588bdb1dc4f9200fd46cf36d1959a922300f86",
+      "content_sha256": "12a49a13d385997d4b3d9a96a322a31838d9eeaae8e500a8eb23d86ab6488d36",
       "related_topics": [
         "08_几何与网格/Tessellation与位移",
         "08_几何与网格/LOD选择",
@@ -3120,7 +3138,8 @@
         "04_光照模型与PBR/PBR材质",
         "10_VFX与模拟/VFX效果组合"
       ],
-      "historical_content_sha256": "844af312853049f5f5dbf58f872ebb146d03f8c5507a723580a782bc2388b2e3"
+      "historical_content_sha256": "844af312853049f5f5dbf58f872ebb146d03f8c5507a723580a782bc2388b2e3",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/溶解材质.md",
@@ -3140,7 +3159,8 @@
         "10_VFX与模拟/软粒子",
         "14_性能分析与优化/VFX性能"
       ],
-      "historical_content_sha256": "bd4a43213d7bd25c1dd4ec2b18e21628d20ca3b3c0c7fee8fabe2d4e69faacd9"
+      "historical_content_sha256": "bd4a43213d7bd25c1dd4ec2b18e21628d20ca3b3c0c7fee8fabe2d4e69faacd9",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/10_VFX与模拟/软粒子.md",
@@ -3178,7 +3198,8 @@
         "11_NPR与风格化渲染/角色阴影",
         "01_数学与采样/空间变换"
       ],
-      "historical_content_sha256": "066a0491f850578833e310e65e5d95bbbbd44cf9ffc4a861fd92b68c97a2a47b"
+      "historical_content_sha256": "066a0491f850578833e310e65e5d95bbbbd44cf9ffc4a861fd92b68c97a2a47b",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/11_NPR与风格化渲染/NPR与场景风格导读.md",
@@ -3217,7 +3238,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属11_NPR与风格化渲染；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "86000e704a728ed1a164570f15761a2a8e837d084d0306488c800c2b4b4101b5",
+      "content_sha256": "c57e8cd65b48d8737e9b4b9de7f6f26d92834e3743344e5c588ed63b480900a8",
       "related_topics": [
         "04_光照模型与PBR/BRDF与微表面模型",
         "05_光照阴影与GI/Shadow Map",
@@ -3228,7 +3249,8 @@
         "11_NPR与风格化渲染/NPR与场景风格导读",
         "22_渲染引擎实现/Unreal自定义Mesh Pass"
       ],
-      "historical_content_sha256": "44395a48eb3dab6d908234023e63b967b8ceffb7be976c92c875cbed7566ae5e"
+      "historical_content_sha256": "44395a48eb3dab6d908234023e63b967b8ceffb7be976c92c875cbed7566ae5e",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/11_NPR与风格化渲染/描边.md",
@@ -3239,7 +3261,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属11_NPR与风格化渲染；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "123ab9a80c1fe11677f5cf40482eb0e8a8d33ef0f51b3e53fcdd82ba42a18199",
+      "content_sha256": "6a92d83faa6de6891778d177c62abb97fe7d22091fc9c15f2bc26effe3f1f82d",
       "related_topics": [
         "02_GPU与光栅化管线/Stencil与对象遮罩",
         "02_GPU与光栅化管线/Geometry Shader",
@@ -3254,7 +3276,8 @@
         "09_动画系统/骨骼动画与蒙皮",
         "14_性能分析与优化/性能对照实验"
       ],
-      "historical_content_sha256": "b38d67ca1f6e2bd032bfabda54d213ce621ecf07294009cc9feed3b07ad52b37"
+      "historical_content_sha256": "b38d67ca1f6e2bd032bfabda54d213ce621ecf07294009cc9feed3b07ad52b37",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/11_NPR与风格化渲染/角色阴影.md",
@@ -3273,7 +3296,8 @@
         "11_NPR与风格化渲染/风格化头发高光",
         "11_NPR与风格化渲染/风格化眼睛"
       ],
-      "historical_content_sha256": "fec6322560895c8a89aa810b826f79653455bc98a0153522a6734b507174891c"
+      "historical_content_sha256": "fec6322560895c8a89aa810b826f79653455bc98a0153522a6734b507174891c",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/11_NPR与风格化渲染/风格化头发高光.md",
@@ -3292,7 +3316,8 @@
         "11_NPR与风格化渲染/角色阴影",
         "11_NPR与风格化渲染/风格化眼睛"
       ],
-      "historical_content_sha256": "a9eeae4a5b589e6bfa57cffdc1b0dd7c6d5fa326865338df5e8ace22f23282a9"
+      "historical_content_sha256": "a9eeae4a5b589e6bfa57cffdc1b0dd7c6d5fa326865338df5e8ace22f23282a9",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/11_NPR与风格化渲染/风格化眼睛.md",
@@ -3309,7 +3334,8 @@
         "11_NPR与风格化渲染/角色阴影",
         "09_动画系统/面部动画"
       ],
-      "historical_content_sha256": "3912961ea20a58c03f128af607dca25adf23237b247c6257551dbac4a06d0a5d"
+      "historical_content_sha256": "3912961ea20a58c03f128af607dca25adf23237b247c6257551dbac4a06d0a5d",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/12_光线追踪/ReSTIR.md",
@@ -3320,14 +3346,15 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属12_光线追踪；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "b1113fe0fab225b99754f57e902fed851306fe9037eb542d42e05a3fe2a76f22",
+      "content_sha256": "cb1f0b64f1b19037d11705452aa2329336367504dd91fda6c5a8fb62113ab281",
       "related_topics": [
         "12_光线追踪/实时光追采样",
         "01_数学与采样/Monte Carlo采样",
         "12_光线追踪/实时光追采样",
         "12_光线追踪/光追降噪"
       ],
-      "historical_content_sha256": "c4b63b36c373f563f23f792c68aa5914642c3e2f595968239a3d87e43a902358"
+      "historical_content_sha256": "c4b63b36c373f563f23f792c68aa5914642c3e2f595968239a3d87e43a902358",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/12_光线追踪/光线求交与BVH.md",
@@ -3346,7 +3373,8 @@
         "12_光线追踪/ReSTIR",
         "16_编程与数据结构/算法与数据结构导读"
       ],
-      "historical_content_sha256": "cb9866dc3f380cf44f408cb30cee03258822e6ed68ef067563ac1bda5e8edfdf"
+      "historical_content_sha256": "cb9866dc3f380cf44f408cb30cee03258822e6ed68ef067563ac1bda5e8edfdf",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/12_光线追踪/光追降噪.md",
@@ -3357,13 +3385,14 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属12_光线追踪；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "4b2ad31b59af6deab406e28eacaa042daee115570e86999c8801be4625739eed",
+      "content_sha256": "4bcc7827d0180672c7325122f97679f355f66482750b680bdbba9acc2c4da7f2",
       "related_topics": [
         "12_光线追踪/实时光追采样",
         "02_GPU与光栅化管线/抗锯齿与时域重建",
         "12_光线追踪/ReSTIR"
       ],
-      "historical_content_sha256": "81aae2dc57c29ae1d0b8143057008d4c753b8a67ea87012457e787917168cfda"
+      "historical_content_sha256": "81aae2dc57c29ae1d0b8143057008d4c753b8a67ea87012457e787917168cfda",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/12_光线追踪/实时光追采样.md",
@@ -3381,7 +3410,8 @@
         "12_光线追踪/光追降噪",
         "12_光线追踪/ReSTIR"
       ],
-      "historical_content_sha256": "f5f2fd6c79859d2b9c0950ce7e330631073ca51dd868445e6d00e52b3f648ccd"
+      "historical_content_sha256": "f5f2fd6c79859d2b9c0950ce7e330631073ca51dd868445e6d00e52b3f648ccd",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     },
     {
       "path": "知识库/13_渲染架构/Command Buffer与帧提交.md",
@@ -6180,6 +6210,30 @@
       "reason": "宿主对象与帧存储管理",
       "content_sha256": "4e015ae1428401619e7ea129a150a798e588336273d1170faf2d3a32cfa7476e",
       "remaining_review": "references/remaining-review-2026-10-24.md"
+    },
+    {
+      "path": "知识库/11_NPR与风格化渲染/描边方向烘焙.md",
+      "current_title": "描边方向烘焙",
+      "primary_question": "如何烘焙并存储跨硬边连续且能随蒙皮变形的描边方向",
+      "current_domain": "11_NPR与风格化渲染",
+      "proposed_domain": "11_NPR与风格化渲染",
+      "category_review": "PASS",
+      "adoption_status": "已采用",
+      "reason": "主问题属于原领域的独立机制",
+      "content_sha256": "af3f3b310830c972c47ee8a008cd82b857064bddbda86f7f0fefc6314a80d523",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
+    },
+    {
+      "path": "知识库/12_光线追踪/ReSTIR支持域与归一化.md",
+      "current_title": "ReSTIR支持域与归一化",
+      "primary_question": "如何在支持域不同的蓄水池之间合并并保持递归贡献乘数正确",
+      "current_domain": "12_光线追踪",
+      "proposed_domain": "12_光线追踪",
+      "category_review": "PASS",
+      "adoption_status": "已采用",
+      "reason": "主问题属于原领域的独立机制",
+      "content_sha256": "9b914f65997d431be17a8258fd559a3ed3b11ebaedf8d6c752a58da1298e2370",
+      "fullread_review": "references/fullread-batch-03-2026-10-24.md"
     }
   ],
   "proposed_counts": {
@@ -6194,8 +6248,8 @@
     "08_几何与网格": 6,
     "09_动画系统": 10,
     "10_VFX与模拟": 10,
-    "11_NPR与风格化渲染": 7,
-    "12_光线追踪": 4,
+    "11_NPR与风格化渲染": 8,
+    "12_光线追踪": 5,
     "13_渲染架构": 14,
     "14_性能分析与优化": 6,
     "15_资产与工具管线": 10,

@@ -2916,6 +2916,34 @@
         ]
       ],
       "remaining_review": "references/remaining-review-2026-10-24.md"
+    },
+    {
+      "concept": "描边方向烘焙",
+      "path": "知识库/11_NPR与风格化渲染/描边方向烘焙.md",
+      "article_type": "ARTICLE",
+      "primary_question": "如何烘焙并存储跨硬边连续且能随蒙皮变形的描边方向",
+      "source_sections": [
+        [
+          "知识库/11_NPR与风格化渲染/描边.md",
+          [
+            "硬边裂缝与独立方向"
+          ]
+        ]
+      ]
+    },
+    {
+      "concept": "ReSTIR支持域与归一化",
+      "path": "知识库/12_光线追踪/ReSTIR支持域与归一化.md",
+      "article_type": "ARTICLE",
+      "primary_question": "如何在支持域不同的蓄水池之间合并并保持递归贡献乘数正确",
+      "source_sections": [
+        [
+          "知识库/12_光线追踪/ReSTIR.md",
+          [
+            "支持域修正与归一化"
+          ]
+        ]
+      ]
     }
   ],
   "policy": "完整机制在唯一专篇或明确主归属章节维护，导读只连接关系"

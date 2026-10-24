@@ -14,7 +14,7 @@ IK 通常是在已采样动画上做最后修正，不是替代全部动画。
 
 ### 双骨骼 IK
 
-手臂和腿可近似为两段固定长度。给定根节点、目标和 弯曲提示方向，可解析求出中间关节的弯曲平面和两个角度。
+手臂和腿可近似为两段固定长度。给定根节点、目标和弯曲提示方向，可解析求出中间关节的弯曲平面和两个角度。
 
 两段链的根、肘和末端构成三角形。三角形任一边不能长于另外两边之和，因此目标距离必须限制在：
 
@@ -22,7 +22,7 @@ $$
 |l_1-l_2| \le d \le l_1+l_2
 $$
 
-超出范围时需要限制范围或允许 伸长。弯曲提示方向 决定膝盖/肘部朝向；接近完全伸直时平面不稳定，应使用上一帧方向或动画提示方向 防止翻转。
+超出范围时需要限制范围或允许伸长。弯曲提示方向决定膝盖/肘部朝向；接近完全伸直时平面不稳定，应使用上一帧方向或动画提示方向防止翻转。
 
 ### CCD 与 FABRIK
 
@@ -40,12 +40,12 @@ FABRIK则先固定末端到目标，沿链反向把每个前驱放到“离已�
 
 ### 足部 IK
 
-一个可用的足部 IK 不只是 射线检测 后移动脚：
+一个可用的足部 IK 不只是射线检测后移动脚：
 
 1. 从动画得到原始脚和骨盆姿态；
 2. 向地面查询命中点与法线；
 3. 计算脚底偏移和朝向；
-4. 调整 骨盆，避免腿被过度拉长；
+4. 调整骨盆，避免腿被过度拉长；
 5. 对位置、旋转和权重做时间平滑；
 6. 仅在脚处于支撑相位时锁定，抬脚时释放。
 
@@ -53,7 +53,7 @@ FABRIK则先固定末端到目标，沿链反向把每个前驱放到“离已�
 
 ## 两段链的角度
 
-算法伪代码输入正骨长 `l1`、`l2`，并要求 `0 < epsilon < min(l1,l2)`。`referenceAxis` 是归一化的参考长轴，`previousBend` 是上一有效弯曲方向。先处理重合目标，再把距离限制到可达域内部，避免伸直与完全折叠处的退化。
+算法伪代码输入正骨长 `l1`、`l2`，并要求长度容差`0 < epsilon < min(l1,l2)`；方向容差`directionTolerance`无量纲且位于(0,1)。`referenceAxis` 是归一化的参考长轴，`previousBend`是上一有效单位弯曲方向。先处理重合目标，再把距离限制到可达域内部，避免伸直与完全折叠处的退化。
 
 ```text
 delta = target - root
@@ -61,10 +61,11 @@ rawDistance = length(delta)
 axis = delta / rawDistance if rawDistance > epsilon else referenceAxis
 d = clamp(rawDistance, abs(l1-l2)+epsilon, l1+l2-epsilon)
 cosRoot = clamp((l1*l1+d*d-l2*l2)/(2*l1*d), -1, 1)
-bend = poleHint - axis * dot(poleHint, axis)
-if length(bend) < epsilon:
+hint = normalize(poleHint) if length(poleHint) > epsilon else previousBend
+bend = hint - axis * dot(hint, axis)
+if length(bend) < directionTolerance:
     bend = previousBend - axis * dot(previousBend, axis)
-if length(bend) < epsilon:
+if length(bend) < directionTolerance:
     fallback = (1,0,0) if abs(axis.x) <= abs(axis.y) else (0,1,0)
     bend = fallback - axis * dot(fallback, axis)
 bend = normalize(bend)

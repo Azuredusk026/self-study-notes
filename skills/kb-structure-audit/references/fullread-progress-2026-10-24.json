@@ -867,35 +867,408 @@
           "han": 3071
         }
       ]
+    },
+    {
+      "id": "03",
+      "baseline": "99a6acd",
+      "report": "references/fullread-batch-03-2026-10-24.md",
+      "pages": [
+        {
+          "path": "知识库/09_动画系统/IK.md",
+          "before_sha256": "6306194ef948a06da36bba26a46ab3c0f900a10be24cc8728587f946f0b8cbe3",
+          "after_sha256": "c7edb5333da265ed107a87fe93b5f5f8dba30b1dcfc51bbf0d73fd60ecf1ea64",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算双骨1/1与目标1的肘(0.5,√3/2)、不可达3米和CCD/FABRIK一轮；提示点先转单位方向，方向容差与骨长容差分开，避免换长度单位改变弯曲面选择，清理中文词间空格。",
+          "han": 1482
+        },
+        {
+          "path": "知识库/09_动画系统/动画压缩.md",
+          "before_sha256": "bb5a246ced9eb473b96ac81b08696f7e8263b7c2a8f12c9631186e6d45fb20a3",
+          "after_sha256": "da0ba0a2bbbb83428946dfe3752d290586916873bbf456dab05fb9b1ee537835",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算1.2MB原始轨道、删中点误差0/0.3米和根偏1度放大10.5毫米；补最大分量独立翻正可能打断编码前半球连续，解码插值再次选短弧，量化与末端误差链完整。",
+          "han": 1588
+        },
+        {
+          "path": "知识库/09_动画系统/动画姿态混合.md",
+          "before_sha256": "594a5e7019ebdc9b831f4b800303e5cfe7f58858c1c63337e98ab7b95e041660",
+          "after_sha256": "594a5e7019ebdc9b831f4b800303e5cfe7f58858c1c63337e98ab7b95e041660",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算脚位±0.3相消、二维权重0.5/0.2/0.3和局部加法旋转右乘；相位、根运动、事件归属和模型层级一次累积连贯，选择与混合按统一姿态生成问题保留。",
+          "han": 1982
+        },
+        {
+          "path": "知识库/09_动画系统/动画重定向.md",
+          "before_sha256": "eff1665cf67309bf3977b6964b4e3df09ab42160ab85fe4c30d0657fdfa061a6",
+          "after_sha256": "eff1665cf67309bf3977b6964b4e3df09ab42160ab85fe4c30d0657fdfa061a6",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算参考姿态恒等、C绕Z90把X增量映到Y轴及腿长比根位移；固定目标参考骨长、握持IK与扭转分配边界完整，作者代数与引擎实现已区分。",
+          "han": 1383
+        },
+        {
+          "path": "知识库/09_动画系统/植被风动.md",
+          "before_sha256": "0dc05f34b58e4e545657c2c91dd6818d03eed87c6de74665c65db425b12ba6e9",
+          "after_sha256": "0dc05f34b58e4e545657c2c91dd6818d03eed87c6de74665c65db425b12ba6e9",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算0.2振幅乘0.5权重得到0.1米及根零位移；逐通道当前/前帧参数、解析切线导数和大世界历史重置规则完整。",
+          "han": 1143
+        },
+        {
+          "path": "知识库/09_动画系统/毛发表示与模拟.md",
+          "before_sha256": "a03bf5ada8d2b23dc5270e06938e2641ced0d0f04597346ead4b08c7a4da6393",
+          "after_sha256": "a03bf5ada8d2b23dc5270e06938e2641ced0d0f04597346ead4b08c7a4da6393",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算非均匀引导点0/.2/1的s=.5落0.5而非0.2、段内0.375；主引导正交标架与加权中心位置分工明确，反向切线和LOD覆盖条件保留。",
+          "han": 859
+        },
+        {
+          "path": "知识库/09_动画系统/角色布料.md",
+          "before_sha256": "d76486a5e7b36ab8a60b64f5d6ca912653c4ce23ff30c06c646bdbfffb55ac6a",
+          "after_sha256": "52495bd9a10dcc4bde2e67c4813f8fd279366d8f15fd6c1b9255f63332d88fc4",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算重心0.3/0.5及一厘米偏移；移除会改变小三角形法线长度的固定面积平方钳位，退化与翻转由调用前检查回退，实际抽取CPU宿主复现并修正0.1毫米三角形偏移缩水。",
+          "han": 1834
+        },
+        {
+          "path": "知识库/09_动画系统/面部动画.md",
+          "before_sha256": "93eba65c4962051ccfeef3890e87c48e8ae591c20171efeb56878fabb1a9f7b6",
+          "after_sha256": "93eba65c4962051ccfeef3890e87c48e8ae591c20171efeb56878fabb1a9f7b6",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算嘴角组合0.005/-0.0075与修形-0.001/.0015；差值模型空间、蒙皮前后顺序和拓扑身份明确，组合修形不伪装成自动生成的单目标推论。",
+          "han": 1119
+        },
+        {
+          "path": "知识库/09_动画系统/骨骼动画与蒙皮.md",
+          "before_sha256": "320b0efd99a2bc96abad6c13648845862b3e0fccfa20e40de483e48d3fa63b6b",
+          "after_sha256": "320b0efd99a2bc96abad6c13648845862b3e0fccfa20e40de483e48d3fa63b6b",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算逆绑定x3到局部1再到模型6，省略时错误8；局部TRS、根运动所有权、混合法线逆转置及零权重导入条件一致，DQS不是任意缩放的通用替代。",
+          "han": 2255
+        },
+        {
+          "path": "知识库/10_VFX与模拟/Froxel体积雾.md",
+          "before_sha256": "2b84613355d7a6cdd68b049fc45f350d758e2c9d32024644a68ea6ef84049b0d",
+          "after_sha256": "2b84613355d7a6cdd68b049fc45f350d758e2c9d32024644a68ea6ef84049b0d",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算两段散射(4,.125)、背景8输出5与交换后4.5；段合成结合但不交换、每米源项与已积分段值分开，跨组前缀及历史坐标约定完整。",
+          "han": 1425
+        },
+        {
+          "path": "知识库/10_VFX与模拟/GPU粒子系统.md",
+          "before_sha256": "f7b64ae8e69ed8a73948037e78c822612173a6c2bb7f49c1cc79858db452edcb",
+          "after_sha256": "a97c7f664938e8f2addffd334060a2419d065756c9380e005ea198ef7518682f",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算容量4的存活与空闲唯一性，澄清固定槽池压紧槽号与双缓冲压紧Particle记录两种布局；稳定ID随记录复制，避免把行号误当池槽号，屏障与容量条件保留。",
+          "han": 2650
+        },
+        {
+          "path": "知识库/10_VFX与模拟/VFX纹理动画.md",
+          "before_sha256": "4bbc96c8fd44a252bc2084032b95d9d8acdf5096ed7eb7d039b30022469a1bdb",
+          "after_sha256": "4bbc96c8fd44a252bc2084032b95d9d8acdf5096ed7eb7d039b30022469a1bdb",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算双相0.25/.75等权及周期1处跳变相权重归零；Flipbook格坐标、边距、流动频率与每周期UV位移定义完整。",
+          "han": 813
+        },
+        {
+          "path": "知识库/10_VFX与模拟/体积云.md",
+          "before_sha256": "140a1e98e48ee30a1bef70597a9c1795b9a1a3340f0099a4490e92531688d462",
+          "after_sha256": "140a1e98e48ee30a1bef70597a9c1795b9a1a3340f0099a4490e92531688d462",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算消光0.2乘5米得到T=.368、散射1.264与分段等价；密度塑形、HG正方向、有限云区间和薄云空步漏检有明确解释。",
+          "han": 1332
+        },
+        {
+          "path": "知识库/10_VFX与模拟/大气散射.md",
+          "before_sha256": "f969db7dbc57432c6007998fc2ec30d653a0a42192674cdf1fad6245de377b94",
+          "after_sha256": "f969db7dbc57432c6007998fc2ec30d653a0a42192674cdf1fad6245de377b94",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算一千米单位错配、均匀散射.25285及.15739+.09546、球Rg1/Rt2的LUT端点；两光路透射、高阶角度递推与二维缓存近似范围完整。",
+          "han": 2507
+        },
+        {
+          "path": "知识库/10_VFX与模拟/水面与海洋渲染.md",
+          "before_sha256": "18ee661a220d904e8543e97eaf588bdb1dc4f9200fd46cf36d1959a922300f86",
+          "after_sha256": "12a49a13d385997d4b3d9a96a322a31838d9eeaae8e500a8eb23d86ab6488d36",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算Gerstner导数基底、FFT四点1/0/-1/0与雅可比.686/- .571；水体颜色区分吸收和散射，Cwater是等效散射源而非吸收自产颜色，保留网格、波形与着色的集成条件。",
+          "han": 3943
+        },
+        {
+          "path": "知识库/10_VFX与模拟/溶解材质.md",
+          "before_sha256": "a6a2f304271ab2e4461591fe97803279896654ab0d5987e964239a3db07e47cf",
+          "after_sha256": "a6a2f304271ab2e4461591fe97803279896654ab0d5987e964239a3db07e47cf",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算噪声.55、阈值.5与宽.1的覆盖.84375，核对clip仍为二值及m=t端点；本体、深度、阴影共享阈值，边宽值域与像素覆盖清楚。",
+          "han": 785
+        },
+        {
+          "path": "知识库/11_NPR与风格化渲染/Face SDF.md",
+          "before_sha256": "e810e6267baf49dd765b63946bd1ff96163fb30bce09ae7f0c3485819c1d398e",
+          "after_sha256": "e810e6267baf49dd765b63946bd1ff96163fb30bce09ae7f0c3485819c1d398e",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算0.5到0.75的熄灭区间中点.625、非单调拒绝、缩放误阈值.148及两角平均不能恢复覆盖；竖直过渡单独求导，制作与消费契约完整。",
+          "han": 2572
+        },
+        {
+          "path": "知识库/11_NPR与风格化渲染/NPR材质与分层光照.md",
+          "before_sha256": "86000e704a728ed1a164570f15761a2a8e837d084d0306488c800c2b4b4101b5",
+          "after_sha256": "c57e8cd65b48d8737e9b4b9de7f6f26d92834e3743344e5c588ed63b480900a8",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算0.8乘可见性.5后阈值.6的不同分层顺序，以及三层非负权重和1；收窄按美漫/日漫标签泛化的断言，主光、材质和参数归属保持具体。",
+          "han": 3115
+        },
+        {
+          "path": "知识库/11_NPR与风格化渲染/描边.md",
+          "before_sha256": "123ab9a80c1fe11677f5cf40482eb0e8a8d33ef0f51b3e53fcdd82ba42a18199",
+          "after_sha256": "6a92d83faa6de6891778d177c62abb97fe7d22091fc9c15f2bc26effe3f1f82d",
+          "full_text_read": true,
+          "boundary_action": "SPLIT",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "全文复读全部方案与接入；方向烘焙成为独立资产问题，接入实验迁往样例README，主文保留壳、屏幕与艺术线比较及全部原标题入口，约5894中文字。",
+          "han": 5894
+        },
+        {
+          "path": "知识库/11_NPR与风格化渲染/角色阴影.md",
+          "before_sha256": "f28f8895a333e959099af7ba5fade1461895e07c2f318484488cf15c73728500",
+          "after_sha256": "f28f8895a333e959099af7ba5fade1461895e07c2f318484488cf15c73728500",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算候选深度5米与头发4.8、bias.01的判定和不同角色拒绝；屏幕单步假阳性、离屏缺失及真实几何阴影并列解释，PCF/PCSS基础通过主归属共用。",
+          "han": 1400
+        },
+        {
+          "path": "知识库/11_NPR与风格化渲染/风格化头发高光.md",
+          "before_sha256": "52532e714c22b451bfdfea99ce56321b77a759771a487dff0b9eb6723f9cc93e",
+          "after_sha256": "52532e714c22b451bfdfea99ce56321b77a759771a487dff0b9eb6723f9cc93e",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算shift0响应1、shift1指数8响应1/16；发流沿V需副切线、手性在偏移后影响高光，L+V零向量与经验模型边界清楚。",
+          "han": 983
+        },
+        {
+          "path": "知识库/11_NPR与风格化渲染/风格化眼睛.md",
+          "before_sha256": "4ea0fbbe892d552d8a7e7ac780cec9e6ca3026547e3243ce147daeef368f50a9",
+          "after_sha256": "4ea0fbbe892d552d8a7e7ac780cec9e6ca3026547e3243ce147daeef368f50a9",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算深度1mm/宽10mm与V .6/.8的UV偏移-.075，检查一次界面F分层、左右目近距汇聚及眼睑坐标；平面视差和完整曲面折射已区分。",
+          "han": 1205
+        },
+        {
+          "path": "知识库/12_光线追踪/ReSTIR.md",
+          "before_sha256": "b1113fe0fab225b99754f57e902fed851306fe9037eb542d42e05a3fe2a76f22",
+          "after_sha256": "cb1f0b64f1b19037d11705452aa2329336367504dd91fda6c5a8fb62113ab281",
+          "full_text_read": true,
+          "boundary_action": "SPLIT",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算面积2到6参数转换、时域权重16/40与W4/3、空间9/85及18/11；支持证明归独立专题，主文保留两遍调用契约和全部帧流程，完整计数与来源身份数例保留，约5073中文字。",
+          "han": 5073
+        },
+        {
+          "path": "知识库/12_光线追踪/光线求交与BVH.md",
+          "before_sha256": "58459a720e541a5884323c99c79601217975a0ea576e2b3aba59dbba3ca1f89a",
+          "after_sha256": "58459a720e541a5884323c99c79601217975a0ea576e2b3aba59dbba3ca1f89a",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算slab平行轴、近盒2命中5而跳过远盒8、缩放2导致局部方向.5与世界t4；BVH树成本与最坏退化、射线有效区间及硬件布局范围完整。",
+          "han": 2687
+        },
+        {
+          "path": "知识库/12_光线追踪/光追降噪.md",
+          "before_sha256": "4b2ad31b59af6deab406e28eacaa042daee115570e86999c8801be4625739eed",
+          "after_sha256": "4bcc7827d0180672c7325122f97679f355f66482750b680bdbba9acc2c4da7f2",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算历史3份均值2与当前6得3；无效历史显式分支保留当前色，拒绝NaN与负计数，正文抽取CPU宿主复现原0×NaN污染；可比前帧深度、空间归一化与曝光尺度完整。",
+          "han": 1588
+        },
+        {
+          "path": "知识库/12_光线追踪/实时光追采样.md",
+          "before_sha256": "6da82a4ea8a0cc744cb0f8f1590907c65c54de4eea2a9e159f5d8cd74cf3eba8",
+          "after_sha256": "6da82a4ea8a0cc744cb0f8f1590907c65c54de4eea2a9e159f5d8cd74cf3eba8",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算面积密度.25、距离2、光面余弦.5的立体角密度2与选灯后.2；贡献、测度、射线锥与回退语义分开，通用MC公式以主归属共用。",
+          "han": 1321
+        },
+        {
+          "path": "知识库/11_NPR与风格化渲染/描边方向烘焙.md",
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "af3f3b310830c972c47ee8a008cd82b857064bddbda86f7f0fefc6314a80d523",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "独立复读迁移目标，输入拓扑、面法线和权重，输出每LOD顶点方向；完整保留累加一次归一化、通道量化、蒙皮和非均匀缩放，CPU参考与未运行资产流程明确，约1461中文字。",
+          "han": 1461
+        },
+        {
+          "path": "知识库/12_光线追踪/ReSTIR支持域与归一化.md",
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "9b914f65997d431be17a8258fd559a3ed3b11ebaedf8d6c752a58da1298e2370",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "独立复读迁移目标，定义源池输入与B/C/K，完整保留支持分区、连续来源权重、两遍算法、递归前提、4.25/4.5偏差反例和历史版本；跨页前文改成主归属链接，约3359中文字。",
+          "han": 3374
+        }
+      ]
     }
   ],
   "remaining": [
-    "知识库/09_动画系统/IK.md",
-    "知识库/09_动画系统/动画压缩.md",
-    "知识库/09_动画系统/动画姿态混合.md",
-    "知识库/09_动画系统/动画重定向.md",
-    "知识库/09_动画系统/植被风动.md",
-    "知识库/09_动画系统/毛发表示与模拟.md",
-    "知识库/09_动画系统/角色布料.md",
-    "知识库/09_动画系统/面部动画.md",
-    "知识库/09_动画系统/骨骼动画与蒙皮.md",
-    "知识库/10_VFX与模拟/Froxel体积雾.md",
-    "知识库/10_VFX与模拟/GPU粒子系统.md",
-    "知识库/10_VFX与模拟/VFX纹理动画.md",
-    "知识库/10_VFX与模拟/体积云.md",
-    "知识库/10_VFX与模拟/大气散射.md",
-    "知识库/10_VFX与模拟/水面与海洋渲染.md",
-    "知识库/10_VFX与模拟/溶解材质.md",
-    "知识库/11_NPR与风格化渲染/Face SDF.md",
-    "知识库/11_NPR与风格化渲染/NPR材质与分层光照.md",
-    "知识库/11_NPR与风格化渲染/描边.md",
-    "知识库/11_NPR与风格化渲染/角色阴影.md",
-    "知识库/11_NPR与风格化渲染/风格化头发高光.md",
-    "知识库/11_NPR与风格化渲染/风格化眼睛.md",
-    "知识库/12_光线追踪/ReSTIR.md",
-    "知识库/12_光线追踪/光线求交与BVH.md",
-    "知识库/12_光线追踪/光追降噪.md",
-    "知识库/12_光线追踪/实时光追采样.md",
     "知识库/13_渲染架构/Command Buffer与帧提交.md",
     "知识库/13_渲染架构/Draw Call与合批.md",
     "知识库/13_渲染架构/Forward Rendering与Forward+.md",
@@ -956,5 +1329,5 @@
     "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
     "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md"
   ],
-  "full_text_read_count": 51
+  "full_text_read_count": 79
 }
