@@ -6029,13 +6029,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "44251ba9e9992ae6b8f574a630e53d5f1d3cd4b1d57e1efdfc6ec4c634189c3b",
+        "final_sha256": "4954a3a7f4dcc637fa9261196812c1a959c2a7a35a02c172bc86065830344011",
         "reason": [
           "扫掠角色、骨架刚体切换、柔软约束、断裂连接与轮胎动力学有独立求解和验证。"
         ],
         "primary_question": "如何在动画姿态与刚体骨架之间切换控制",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-05-2026-10-24.md"
       },
       {
         "path": "知识库/18_游戏物理与模拟/XPBD.md",
@@ -6059,13 +6060,14 @@
         "actions": [
           "REWRITE"
         ],
-        "final_sha256": "293ef685bddb1e5548c7942df95279e6e0b9c99880251dc74701cd22407d683b",
+        "final_sha256": "7152d45c222b21d55720410c624d3a265eda3c131a2d5b0ef09723fcff9e498b",
         "reason": [
           "既有PASS页面保持正文；同步必要引用"
         ],
         "primary_question": "如何从状态积分和碰撞生成受约束运动",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-05-2026-10-24.md"
       },
       {
         "path": "知识库/18_游戏物理与模拟/破坏系统.md",
@@ -6107,13 +6109,14 @@
         "actions": [
           "KEEP"
         ],
-        "final_sha256": "8d11e7a8e656f48ce940c161a5d06c4297f7caa462cdde425abc4489f5820129",
+        "final_sha256": "2f4a7f1814b3bf754cd7694185be1a5169ffeac711d8d8d63bf522bc4e764ae3",
         "reason": [
           "既有PASS页面保持正文；同步必要引用"
         ],
         "primary_question": "如何解耦玩法规则与事件脚本执行",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-05-2026-10-24.md"
       },
       {
         "path": "知识库/19_Gameplay与游戏框架/输入与动作状态.md",
@@ -6137,13 +6140,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "1b767e6b17c80a7fda928bce07ed0f09259f9b8908e1274b6935fc562d5f141d",
+        "final_sha256": "283be165d70366cdbf51e46e07447f97f597e53efae2cda2f651f88a8ca21551",
         "reason": [
           "群体空间信息、树搜索与策略训练采用不同状态和评估方式。"
         ],
         "primary_question": "如何在有限预算内用模拟平衡探索与回报",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-05-2026-10-24.md"
       },
       {
         "path": "知识库/20_游戏AI/游戏AI决策模型.md",
@@ -6198,13 +6202,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "e59dcded4e9e17e28835bba53f3e09d41fea0bbc1abd017347b3076f6e21476a",
+        "final_sha256": "516eb8fbff74ef1d692ad77bca36c964ef5618b3bad68a14fcdb3154f629d5a3",
         "reason": [
           "群体空间信息、树搜索与策略训练采用不同状态和评估方式。"
         ],
         "primary_question": "如何以感知与影响场支持群体协作决策",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-05-2026-10-24.md"
       },
       {
         "path": "知识库/21_游戏网络/RPC.md",
@@ -6214,13 +6219,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "0ee880c288acc2626904cf2a41ee93241db1e1a4a80538547a9bdbb34349158d",
+        "final_sha256": "9b73291c9e39bb25c7a34e4a14a44cf69b63faedc25471401a17ffcd0e966eb0",
         "reason": [
           "消息传输、时钟估计与远程事务有独立协议和正确性条件。"
         ],
         "primary_question": "如何把远程请求转成可校验可重试的事务",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-05-2026-10-24.md"
       },
       {
         "path": "知识库/21_游戏网络/世界分区与AOI.md",
@@ -6230,13 +6236,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "b8c272bb9edb77ed968aadfe53fcfce02611a6aaf5f35c8914352a3d9e3f741f",
+        "final_sha256": "17dd41472399a725c8eca3b88afaf181c367b5a4a9c1c1b4d36016a5e484ee17",
         "reason": [
           "服务路由存储、空间复制迁移与异常校验分别有独立故障模型。"
         ],
         "primary_question": "如何筛选复制对象并交接跨区权威",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-05-2026-10-24.md"
       },
       {
         "path": "知识库/21_游戏网络/回滚同步.md",
@@ -6246,13 +6253,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "fd5208daae5d34e308fa62846aa9513c85e4b4a26c401dd6891248485bd7a14e",
+        "final_sha256": "f7566d2dc140b0274c46ca43902f8dbdd0e382aea60ef5b6dd78d679bcfd06c2",
         "reason": [
           "快照显示、预测校正、确定性重模拟与历史命中查询有不同状态恢复范围。"
         ],
         "primary_question": "如何恢复历史Tick并重模拟迟到输入",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-05-2026-10-24.md"
       },
       {
         "path": "知识库/21_游戏网络/客户端预测.md",
@@ -6262,13 +6270,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "e33997f501e7127df897c850a03475c8a808efc61df5e9bf0f571e25260f5457",
+        "final_sha256": "9af31c9ff97e30092cb93a1e6554d9294f754c1a76161bd8a1ccede2ab852717",
         "reason": [
           "快照显示、预测校正、确定性重模拟与历史命中查询有不同状态恢复范围。"
         ],
         "primary_question": "如何用权威确认重放未确认输入并分离视觉误差",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-05-2026-10-24.md"
       },
       {
         "path": "知识库/21_游戏网络/对局服务器架构.md",
@@ -6278,13 +6287,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "e1af77616c6b24894e468169c3b44d586c08ab028888b37cb6c8529b9d6b454a",
+        "final_sha256": "fd00e8da7a42afe2f5b7f80c7e448aae6d347903ae260f25ad8d451ca92ea86b",
         "reason": [
           "服务路由存储、空间复制迁移与异常校验分别有独立故障模型。"
         ],
         "primary_question": "如何组织权威实例路由存储与故障恢复",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-05-2026-10-24.md"
       },
       {
         "path": "知识库/21_游戏网络/延迟补偿命中.md",
@@ -6311,13 +6321,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "c829e6333f306e0d0d9a6c76025c86c65253a6cb7a966f1fa69a9e1e3c5b3e62",
+        "final_sha256": "f1b60a2c7c57fefaa48005c5a48a90e1ad8d4257091f72c0b7eae68284f625c9",
         "reason": [
           "快照显示、预测校正、确定性重模拟与历史命中查询有不同状态恢复范围。"
         ],
         "primary_question": "如何用基线压缩与延后插值显示远端状态",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-05-2026-10-24.md"
       },
       {
         "path": "知识库/21_游戏网络/服务端反作弊校验.md",
@@ -6327,13 +6338,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "25aacce589c820c1243871d3ef38dc91e37449bc45def501169f071d44e804c7",
+        "final_sha256": "0be2a8ab35df283f5bc7214b15b7231b7c00bede78d8d8bc884212d176ec75b8",
         "reason": [
           "服务路由存储、空间复制迁移与异常校验分别有独立故障模型。"
         ],
         "primary_question": "如何验证客户端请求并记录可审计异常",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-05-2026-10-24.md"
       },
       {
         "path": "知识库/21_游戏网络/游戏网络传输.md",
@@ -6343,13 +6355,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "bd200b979436f7f77c5cb0b6c8a0772a5ac58022f9f04d91f44fade19ebe1ac2",
+        "final_sha256": "3036a5f2add016fde97ff5ab431d6ebd2460bc1f9943b030031d793f0d83095f",
         "reason": [
           "消息传输、时钟估计与远程事务有独立协议和正确性条件。"
         ],
         "primary_question": "如何在乱序丢包与字节流下传送有边界的消息",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-05-2026-10-24.md"
       },
       {
         "path": "知识库/21_游戏网络/游戏网络时钟.md",
@@ -6359,13 +6372,14 @@
           "RESTRUCTURE",
           "DEEPEN"
         ],
-        "final_sha256": "5ee3cf18677fbebea7203dc4c5d6f63d13145269de847de82bdcb7210d9634ad",
+        "final_sha256": "4f8de8b0d62109d29b61f21814ade094eecd3d7c817c5b6135d19e2dd6a94314",
         "reason": [
           "消息传输、时钟估计与远程事务有独立协议和正确性条件。"
         ],
         "primary_question": "如何估计往返延迟与共同模拟时间",
         "article_type": "ARTICLE",
-        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查"
+        "review_scope": "最终正文与来源章节复读，输入输出、主归属、标题覆盖、机制和验证检查",
+        "fullread_review": "references/fullread-batch-05-2026-10-24.md"
       },
       {
         "path": "知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md",

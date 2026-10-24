@@ -1665,23 +1665,212 @@
           "han": 1181
         }
       ]
+    },
+    {
+      "id": "05",
+      "baseline": "b7536ca",
+      "report": "references/fullread-batch-05-2026-10-24.md",
+      "pages": [
+        {
+          "path": "知识库/18_游戏物理与模拟/Ragdoll.md",
+          "before_sha256": "4954a3a7f4dcc637fa9261196812c1a959c2a7a35a02c172bc86065830344011",
+          "after_sha256": "4954a3a7f4dcc637fa9261196812c1a959c2a7a35a02c172bc86065830344011",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "全文推演骨骼到质心固定变换、短弧角速度、骨盆回推根与关节PD反作用；纯表现和动态驱动有唯一碰撞控制权，恢复门禁与失败回退完整。",
+          "han": 2402
+        },
+        {
+          "path": "知识库/18_游戏物理与模拟/刚体物理求解.md",
+          "before_sha256": "902bb9bb6dff3c97bbf3ee13562b49cf204aab5644bd83d50765a494ed428b6c",
+          "after_sha256": "7152d45c222b21d55720410c624d3a265eda3c131a2d5b0ef09723fcff9e498b",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复读固定步、圆盒内外接触、有效质量K与累计冲量；修正半隐式误差仅为相位的简化说法，给出0.1步能量0.49505反例及稳定范围，保留原求解机制与来源。",
+          "han": 2755
+        },
+        {
+          "path": "知识库/19_Gameplay与游戏框架/玩法事件与脚本.md",
+          "before_sha256": "2f4a7f1814b3bf754cd7694185be1a5169ffeac711d8d8d63bf522bc4e764ae3",
+          "after_sha256": "2f4a7f1814b3bf754cd7694185be1a5169ffeac711d8d8d63bf522bc4e764ae3",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "逐行跟踪交换队列、递归Flush、逐事件订阅快照和日志异常前提；命令与事实、跨语言及3C都围绕玩法组合边界，四项正文.NET实验可复现。",
+          "han": 2106
+        },
+        {
+          "path": "知识库/20_游戏AI/MCTS.md",
+          "before_sha256": "283be165d70366cdbf51e46e07447f97f597e53efae2cda2f651f88a8ca21551",
+          "after_sha256": "283be165d70366cdbf51e46e07447f97f597e53efae2cda2f651f88a8ca21551",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "手推四石子的前三轮和120轮116/4访问；根视角W与对手负号、子树换根、历史叶样本及取消临时节点共同防止错翻收益与N零除。",
+          "han": 2743
+        },
+        {
+          "path": "知识库/20_游戏AI/群体战术信息.md",
+          "before_sha256": "516eb8fbff74ef1d692ad77bca36c964ef5618b3bad68a14fcdb3154f629d5a3",
+          "after_sha256": "516eb8fbff74ef1d692ad77bca36c964ef5618b3bad68a14fcdb3154f629d5a3",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算双缓冲0/8/0到2/2/2与原地2/2.25/.5625，半衰期及持续源趋近4；场并非守恒能量，事实时效和可达查询边界清楚。",
+          "han": 1272
+        },
+        {
+          "path": "知识库/21_游戏网络/RPC.md",
+          "before_sha256": "9b73291c9e39bb25c7a34e4a14a44cf69b63faedc25471401a17ffcd0e966eb0",
+          "after_sha256": "9b73291c9e39bb25c7a34e4a14a44cf69b63faedc25471401a17ffcd0e966eb0",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "沿余额事务与消息17发件箱追踪提交、丢回执、重复及结果退休；旧ID先查结果再验当前余额，关闭区间防迟到包重新生效，基础协议引用主归属。",
+          "han": 2474
+        },
+        {
+          "path": "知识库/21_游戏网络/世界分区与AOI.md",
+          "before_sha256": "17dd41472399a725c8eca3b88afaf181c367b5a4a9c1c1b4d36016a5e484ee17",
+          "after_sha256": "17dd41472399a725c8eca3b88afaf181c367b5a4a9c1c1b4d36016a5e484ee17",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算R10/h2的进入退出、复制g4到g5及A7冻结到B8提交；持久输入101、会话关闭屏障与已提交旧epoch事件交付完整，AOI筛选和权威交接有明确接口。",
+          "han": 4269
+        },
+        {
+          "path": "知识库/21_游戏网络/回滚同步.md",
+          "before_sha256": "f7566d2dc140b0274c46ca43902f8dbdd0e382aea60ef5b6dd78d679bcfd06c2",
+          "after_sha256": "f7566d2dc140b0274c46ca43902f8dbdd0e382aea60ef5b6dd78d679bcfd06c2",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算输入+1/+1/+1恢复步前1再执行-1得当前1；快照覆盖随机状态及ID分配器，事件集合差分包含撤销，跨平台确定性与CPU整数模型分开。",
+          "han": 1140
+        },
+        {
+          "path": "知识库/21_游戏网络/客户端预测.md",
+          "before_sha256": "9af31c9ff97e30092cb93a1e6554d9294f754c1a76161bd8a1ccede2ab852717",
+          "after_sha256": "9af31c9ff97e30092cb93a1e6554d9294f754c1a76161bd8a1ccede2ab852717",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "全文沿C17/C18墙10米重放到9米，输入ACK与动作终态分离；复核65536完整身份、回执600/604乱序、基线与游标共同提交和历史上限，保持一条输入消费链。",
+          "han": 4650
+        },
+        {
+          "path": "知识库/21_游戏网络/对局服务器架构.md",
+          "before_sha256": "fd00e8da7a42afe2f5b7f80c7e448aae6d347903ae260f25ad8d451ca92ea86b",
+          "after_sha256": "fd00e8da7a42afe2f5b7f80c7e448aae6d347903ae260f25ad8d451ca92ea86b",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "推演Allocated/Ready条件竞争、r42奖励、快照100与日志101至105恢复；所有权、日志、输入结果和发件箱共同耐久，热状态与交易边界及证据范围明确。",
+          "han": 3172
+        },
+        {
+          "path": "知识库/21_游戏网络/快照同步.md",
+          "before_sha256": "f1b60a2c7c57fefaa48005c5a48a90e1ad8d4257091f72c0b7eae68284f625c9",
+          "after_sha256": "f1b60a2c7c57fefaa48005c5a48a90e1ad8d4257091f72c0b7eae68284f625c9",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "全文手推42至44差量10020/10040、B观察时间不刷新、32槽窗口推进；播放r冻结/重锚及逐实体Stale各自有条件，关键集合有效性连接命中主文，4474中文字无需继续拆碎。",
+          "han": 4474
+        },
+        {
+          "path": "知识库/21_游戏网络/服务端反作弊校验.md",
+          "before_sha256": "0be2a8ab35df283f5bc7214b15b7231b7c00bede78d8d8bc884212d176ec75b8",
+          "after_sha256": "0be2a8ab35df283f5bc7214b15b7231b7c00bede78d8d8bc884212d176ec75b8",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算0.05秒乘6米每秒乘1.1得.33米，确认冲刺2米后2.33；重复客户端时长不增加预算，路径碰撞和统计调查分别处理。",
+          "han": 1008
+        },
+        {
+          "path": "知识库/21_游戏网络/游戏网络传输.md",
+          "before_sha256": "3036a5f2add016fde97ff5ab431d6ebd2460bc1f9943b030031d793f0d83095f",
+          "after_sha256": "3036a5f2add016fde97ff5ab431d6ebd2460bc1f9943b030031d793f0d83095f",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "追踪字节100至108的缺口与12字节消息分为5/5/14接收；固定8字节头、整数溢出、负载验证及消息年龄完整，网络基础与RPC事务通过链接分工。",
+          "han": 2756
+        },
+        {
+          "path": "知识库/21_游戏网络/游戏网络时钟.md",
+          "before_sha256": "4f8de8b0d62109d29b61f21814ade094eecd3d7c817c5b6135d19e2dd6a94314",
+          "after_sha256": "4f8de8b0d62109d29b61f21814ade094eecd3d7c817c5b6135d19e2dd6a94314",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算四时间戳偏移5秒、非对称偏差50毫秒、100ppm和Tick603；连续锚点只改未来斜率，本地代次与服务器纪元及显示播放r分开。",
+          "han": 2102
+        }
+      ]
     }
   ],
   "remaining": [
-    "知识库/18_游戏物理与模拟/Ragdoll.md",
-    "知识库/18_游戏物理与模拟/刚体物理求解.md",
-    "知识库/19_Gameplay与游戏框架/玩法事件与脚本.md",
-    "知识库/20_游戏AI/MCTS.md",
-    "知识库/20_游戏AI/群体战术信息.md",
-    "知识库/21_游戏网络/RPC.md",
-    "知识库/21_游戏网络/世界分区与AOI.md",
-    "知识库/21_游戏网络/回滚同步.md",
-    "知识库/21_游戏网络/客户端预测.md",
-    "知识库/21_游戏网络/对局服务器架构.md",
-    "知识库/21_游戏网络/快照同步.md",
-    "知识库/21_游戏网络/服务端反作弊校验.md",
-    "知识库/21_游戏网络/游戏网络传输.md",
-    "知识库/21_游戏网络/游戏网络时钟.md",
     "知识库/22_渲染引擎实现/URP Render Graph自定义Pass.md",
     "知识库/22_渲染引擎实现/Unity渲染帧组织.md",
     "知识库/22_渲染引擎实现/Unreal RDG Pass实现.md",
@@ -1700,5 +1889,5 @@
     "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
     "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md"
   ],
-  "full_text_read_count": 107
+  "full_text_read_count": 121
 }
