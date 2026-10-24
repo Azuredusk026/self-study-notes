@@ -22,6 +22,8 @@
 
 颜色附件的逐样本合计为`4+8+8+4=24`字节，加深度为28字节。这是本文示例的字段预算；接入Direct3D时分别对应R8G8B8A8_UNORM、R16G16B16A16_FLOAT、R32_UINT和D32_FLOAT。资源创建前查询目标设备对格式用途与样本数的支持，确认颜色写入、整数读取和多样本路径均可用。
 
+背景标记按整数值精确初始化。D3D11的`ClearRenderTargetView`接收浮点参数，指定整数位模式时采用覆盖目标的全屏绘制，像素着色器向Model输出`uint(0xFFFFFFFF)`。使用完整目标视口，关闭深度/模板测试、混合、裁剪矩形和Alpha-to-Coverage，开启Model通道写入，并用全开样本掩码覆盖全部样本。其他颜色附件和深度按表清理，再进行几何写入。相应API若提供保证该整数值的清理接口，可使用其整数路径。
+
 纹理的基础色采样若使用sRGB视图，采样器已把它解为线性值，再写入这里的UNORM附件；光照阶段按线性值读取。法线、粗糙度与金属度属于数值数据，采用线性视图。若把法线也做sRGB解码，`0.5`会变成另一个数，原本的零方向分量随之改变。格式和通道压缩的取舍见[[13_渲染架构/GBuffer布局]]。
 
 以下HLSL机制片段接收已完成材质采样的值，输出与表中四个颜色附件对应。法线从对象空间进入观察空间之前，用对象到观察矩阵的逆转置变换，再归一化；法线贴图则先经正确的切线基底恢复。材质模型ID对一个图元保持离散，顶点接口使用`nointerpolation uint`。
@@ -212,6 +214,7 @@ CPU参考的8项检查以手算输入覆盖Y轴、齐次除法、位置与方向
 ## 参考资料
 
 - [Microsoft：DXGI_FORMAT](https://learn.microsoft.com/en-us/windows/win32/api/dxgiformat/ne-dxgiformat-dxgi_format)：格式各分量位宽；2026-10-24核对本文24字节颜色附件与4字节深度预算。容量与读写数值按本页尺寸和次数计算。
+- [Microsoft：ClearRenderTargetView](https://learn.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-clearrendertargetview)：Remarks中的整数位模式初始化要求；2026-10-24独立复核。
 
 - [Khronos：Subpasses](https://docs.vulkan.org/samples/latest/samples/performance/subpasses/README.html)，几何/光照子通道、input attachment与实际片上合并条件。
 - [Vulkan规范：Render Pass](https://docs.vulkan.org/spec/latest/chapters/renderpass.html)，子通道依赖、附件布局及生命周期语义。

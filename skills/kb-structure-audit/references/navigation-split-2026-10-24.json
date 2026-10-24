@@ -1,0 +1,305 @@
+{
+  "source_commit": "df12d19",
+  "source_path": "知识库/20_游戏AI/游戏AI导航.md",
+  "reason": "独立技术问题分归属，原页提供路线与旧标题入口",
+  "records": [
+    {
+      "source_heading": "可行走空间",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "target": "知识库/20_游戏AI/NavMesh.md",
+      "target_heading": "可行走空间",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "可行走空间表示",
+      "source_body_sha256": "e98ca4784e355e9c45d7d8a4a5f8c16a7923713674905b7a72231b2e807efa64",
+      "target": "知识库/20_游戏AI/NavMesh.md",
+      "target_heading": "可行走空间表示",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "813a24356b385e0f530b8fa9af5172d73e3b804c7dcce0ef23ef79fcbb23f216",
+      "text_change": "经独立复读的技术限定或跨页过渡修订，见独立复核记录"
+    },
+    {
+      "source_heading": "NavMesh 生成",
+      "source_body_sha256": "56c04c9fce602b1716507acba9a4cbdca08b3e8fbe2d90fe275b0d7166432eb4",
+      "target": "知识库/20_游戏AI/NavMesh.md",
+      "target_heading": "NavMesh 生成",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "56c04c9fce602b1716507acba9a4cbdca08b3e8fbe2d90fe275b0d7166432eb4",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "世界空间与缩放",
+      "source_body_sha256": "80f8ca5583dbabb3747bbed403f2e05dfb7d54ce68004dc7511b707e8764c0f4",
+      "target": "知识库/20_游戏AI/NavMesh.md",
+      "target_heading": "世界空间与缩放",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "80f8ca5583dbabb3747bbed403f2e05dfb7d54ce68004dc7511b707e8764c0f4",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "导航烘焙的数据交接",
+      "source_body_sha256": "969787029ce20435079d133bf9dee9f0927a3e0271a1784c4336ec9cbb7d5af4",
+      "target": "知识库/20_游戏AI/NavMesh.md",
+      "target_heading": "导航烘焙的数据交接",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "969787029ce20435079d133bf9dee9f0927a3e0271a1784c4336ec9cbb7d5af4",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "交互目标与导航投影",
+      "source_body_sha256": "04d2d156ffbaadb5caf2ab2a1aa9a8cfc42060a4de059eba3b3a635120837ce8",
+      "target": "知识库/20_游戏AI/导航目标投影.md",
+      "target_heading": "交互目标与导航投影",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "04d2d156ffbaadb5caf2ab2a1aa9a8cfc42060a4de059eba3b3a635120837ce8",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "连续区域的数值推演",
+      "source_body_sha256": "a464417a5afa2c33cc50e5dada4f707e850dbeff623fb1ab61bdb953b7b12e17",
+      "target": "知识库/20_游戏AI/导航目标投影.md",
+      "target_heading": "连续区域的数值推演",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "a464417a5afa2c33cc50e5dada4f707e850dbeff623fb1ab61bdb953b7b12e17",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "路线几何与速度规划",
+      "source_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "target": "知识库/20_游戏AI/路径跟随.md",
+      "target_heading": "路线几何与速度规划",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "路径走廊与漏斗",
+      "source_body_sha256": "c3382e7cf1b889e6d8313a0c0c3933afefeacce2b194524f82dab03093b6331e",
+      "target": "知识库/20_游戏AI/路径跟随.md",
+      "target_heading": "路径走廊与漏斗",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "c3382e7cf1b889e6d8313a0c0c3933afefeacce2b194524f82dab03093b6331e",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "漏斗的索引与转角提交",
+      "source_body_sha256": "09c3e3646f1583efd3b19056caa2b434960059865bb987a7416dc6a7e9f1c0af",
+      "target": "知识库/20_游戏AI/路径跟随.md",
+      "target_heading": "漏斗的索引与转角提交",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "09c3e3646f1583efd3b19056caa2b434960059865bb987a7416dc6a7e9f1c0af",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "折点、圆弧与速度上限",
+      "source_body_sha256": "bc78ddea32a1ffd2de6e28381f188d25b615d255460c5afa99337d803c198f69",
+      "target": "知识库/20_游戏AI/路径跟随.md",
+      "target_heading": "折点、圆弧与速度上限",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "e68beaae4b96189d5190ba2c839105e37965366d340265c1c8d74a4397119efd",
+      "text_change": "经独立复读的技术限定或跨页过渡修订，见独立复核记录"
+    },
+    {
+      "source_heading": "到达与阻塞反馈",
+      "source_body_sha256": "809524f299816e0f2400554707e1835e687bf023b96b0819532c93b9aeab696a",
+      "target": "知识库/20_游戏AI/路径跟随.md",
+      "target_heading": "到达与阻塞反馈",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "809524f299816e0f2400554707e1835e687bf023b96b0819532c93b9aeab696a",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "走廊版本与可执行性",
+      "source_body_sha256": "556323925dc5ca5c60a11bb5ce2d09925db7c0bf24007b9f28c3a354cc18c647",
+      "target": "知识库/20_游戏AI/路径跟随.md",
+      "target_heading": "走廊版本与可执行性",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "b235a92d49db3e921df87cc3ae673156dccedf673fb24955ee2f5958e79b7010",
+      "text_change": "经独立复读的技术限定或跨页过渡修订，见独立复核记录"
+    },
+    {
+      "source_heading": "坡面速度与控制器消费",
+      "source_body_sha256": "a1e92255761a21bccb3e6153055b1a8b165b8551d331446566777ac99a9e2070",
+      "target": "知识库/20_游戏AI/移动支撑与速度反馈.md",
+      "target_heading": "坡面速度与控制器消费",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "bead4d1b31e50e4ec73c9a2bf05bddb24d2bcc366c6e054edd580400d4638d0c",
+      "text_change": "经独立复读的技术限定或跨页过渡修订，见独立复核记录"
+    },
+    {
+      "source_heading": "支撑旋转与速度变化",
+      "source_body_sha256": "ffbafdafc50e33dcea591993cf3504afa0989098f5707a6f6e50e9ebeabdf91e",
+      "target": "知识库/20_游戏AI/移动支撑与速度反馈.md",
+      "target_heading": "支撑旋转与速度变化",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "ffbafdafc50e33dcea591993cf3504afa0989098f5707a6f6e50e9ebeabdf91e",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "位移与步末速度",
+      "source_body_sha256": "a6876cd391d5fa6de056f8b80e72ccaff778cc540ef03e01c803a08b71bb5a96",
+      "target": "知识库/20_游戏AI/移动支撑与速度反馈.md",
+      "target_heading": "位移与步末速度",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "ce8daf0f97974eb2966b077bcc56769d3658aeb42d2eab3ce0985efc26ed19a1",
+      "text_change": "经独立复读的技术限定或跨页过渡修订，见独立复核记录"
+    },
+    {
+      "source_heading": "局部避障",
+      "source_body_sha256": "4edd306b099bfdf23276ed02537550b5b8020a82b5982ed0dd1e0e208a663ad8",
+      "target": "知识库/20_游戏AI/局部避障.md",
+      "target_heading": "局部避障",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "1bc1a01abd83b488a5e583ae1b12a1a9becb0441bb1404eb20e1ef37953c8188",
+      "text_change": "经独立复读的技术限定或跨页过渡修订，见独立复核记录"
+    },
+    {
+      "source_heading": "速度约束的几何例子",
+      "source_body_sha256": "0596e306675806040a6769e82d5a7bf05e90603b815c3914973e88756b99b9e2",
+      "target": "知识库/20_游戏AI/局部避障.md",
+      "target_heading": "速度约束的几何例子",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "1d5450cf25621990b30088a0de68aa29983bbfcbe8e8103d5dbfcdacaacc639f",
+      "text_change": "经独立复读的技术限定或跨页过渡修订，见独立复核记录"
+    },
+    {
+      "source_heading": "二维速度约束构造",
+      "source_body_sha256": "b16752c8dbe524868808ee5664557486a3344a908daf548beaee1c3ae9859c7f",
+      "target": "知识库/20_游戏AI/局部避障.md",
+      "target_heading": "二维速度约束构造",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "b16752c8dbe524868808ee5664557486a3344a908daf548beaee1c3ae9859c7f",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "多约束求解与可达速度",
+      "source_body_sha256": "695a91ebab7177a5f3f3d7ccc4ed27a0370886f578daad76e51c129d43e6aa18",
+      "target": "知识库/20_游戏AI/局部避障.md",
+      "target_heading": "多约束求解与可达速度",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "58a8c9b21c6af63fce497c22af2ee9ed7efcd671a4836ae7947030ebd7533d25",
+      "text_change": "经独立复读的技术限定或跨页过渡修订，见独立复核记录"
+    },
+    {
+      "source_heading": "走廊边界与速度求交",
+      "source_body_sha256": "9077f6edc37cf562f4f26675261813bc6bbc1869f30e5a0d618d7ab76eb01d7a",
+      "target": "知识库/20_游戏AI/导航边界与坡面交接.md",
+      "target_heading": "走廊边界与速度求交",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "9077f6edc37cf562f4f26675261813bc6bbc1869f30e5a0d618d7ab76eb01d7a",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "移动支撑与边界参考系",
+      "source_body_sha256": "c34c1276ee43bddab06c39dd0e3c5d315e6156ba6c1dbeaabb1f3a1528bda0b7",
+      "target": "知识库/20_游戏AI/导航边界与坡面交接.md",
+      "target_heading": "移动支撑与边界参考系",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "55a41c26a980d10e6e8b69e5692c14c069ba4f65976d3cf896ce3d121e2e1145",
+      "text_change": "经独立复读的技术限定或跨页过渡修订，见独立复核记录"
+    },
+    {
+      "source_heading": "坡面边界与实际交接",
+      "source_body_sha256": "b595612d14b3398fd413efc11843ba918219f2d1d2e14c3aa6b9ebc9a74adba1",
+      "target": "知识库/20_游戏AI/导航边界与坡面交接.md",
+      "target_heading": "坡面边界与实际交接",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "b595612d14b3398fd413efc11843ba918219f2d1d2e14c3aa6b9ebc9a74adba1",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "接入中断与恢复",
+      "source_body_sha256": "b9b0b64c34ea5e04e48f55fddb5def4b6d69da6d70979cef41ed20f3d4163153",
+      "target": "知识库/20_游戏AI/导航边界与坡面交接.md",
+      "target_heading": "接入中断与恢复",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "f4c67408f844d4ab96e62c19ca7aee9bcbd92f1483d8c971e407f527b516f9bc",
+      "text_change": "经独立复读的技术限定或跨页过渡修订，见独立复核记录"
+    },
+    {
+      "source_heading": "查询快照与采用",
+      "source_body_sha256": "6a30e9f66a5f42d574af512844416b4ae9c37ee721119ec1f34580e25b480f92",
+      "target": "知识库/20_游戏AI/导航动作交接.md",
+      "target_heading": "查询快照与采用",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "f06339858a22ba5a1ee932a947062ca7323748b0436fc320300f8e185869a94e",
+      "text_change": "经独立复读的技术限定或跨页过渡修订，见独立复核记录"
+    },
+    {
+      "source_heading": "控制器反馈与动作交接",
+      "source_body_sha256": "bd50f633747b4ae715928f92f84b7b55f7c2a93cc01be4fc7e25114dbec928ad",
+      "target": "知识库/20_游戏AI/导航动作交接.md",
+      "target_heading": "控制器反馈与动作交接",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "9217ede99f7a578453488c79b47b81ab4513ae99543a7669124837e9f6402780",
+      "text_change": "经独立复读的技术限定或跨页过渡修订，见独立复核记录"
+    },
+    {
+      "source_heading": "站位保持与位置纠偏",
+      "source_body_sha256": "18b05af075337023dabd51771fd539def40a57dad8d74ca188e23a78e65d31c6",
+      "target": "知识库/20_游戏AI/导航动作交接.md",
+      "target_heading": "站位保持与位置纠偏",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "dd9d978c1f87ab3f9e7bb81348fbab114c3655b1ba9bb836b2f901aa47294c64",
+      "text_change": "经独立复读的技术限定或跨页过渡修订，见独立复核记录"
+    },
+    {
+      "source_heading": "保持所有权与模式交接",
+      "source_body_sha256": "64feafded890e751a0b6a412c52808c29241dbc44a7e7327780b1132085cfa12",
+      "target": "知识库/20_游戏AI/导航动作交接.md",
+      "target_heading": "保持所有权与模式交接",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "64feafded890e751a0b6a412c52808c29241dbc44a7e7327780b1132085cfa12",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "路线失效与取消",
+      "source_body_sha256": "73359f4c7e73ac35b0986b6a677505c4fdcd9f65fbaa95516447940806ba1941",
+      "target": "知识库/20_游戏AI/导航动作交接.md",
+      "target_heading": "路线失效与取消",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "73359f4c7e73ac35b0986b6a677505c4fdcd9f65fbaa95516447940806ba1941",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "调试与边界",
+      "source_body_sha256": "92c65ac54351cba7781544b951d5b25c219670c8ae68a65c3b7cde94ecce9d87",
+      "target": "知识库/20_游戏AI/导航动作交接.md",
+      "target_heading": "调试与边界",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "92c65ac54351cba7781544b951d5b25c219670c8ae68a65c3b7cde94ecce9d87",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "A* 与启发函数",
+      "source_body_sha256": "96b72b1cd7d77b52ba4779a6ae153dd2e345780a310031c4e19aaaf4ad256867",
+      "target": "知识库/20_游戏AI/游戏AI导航.md",
+      "target_heading": "A* 与启发函数",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "96b72b1cd7d77b52ba4779a6ae153dd2e345780a310031c4e19aaaf4ad256867",
+      "text_change": "原文保留"
+    },
+    {
+      "source_heading": "搜索实现与导航约束",
+      "source_body_sha256": "9239fc44c77152a922af435c675b163fb0820b3eef425bdf09a14304806abc5d",
+      "target": "知识库/20_游戏AI/游戏AI导航.md",
+      "target_heading": "搜索实现与导航约束",
+      "body_preserved_at_extraction": true,
+      "reviewed_body_sha256": "9239fc44c77152a922af435c675b163fb0820b3eef425bdf09a14304806abc5d",
+      "text_change": "原文保留"
+    }
+  ],
+  "new_pages": [
+    "NavMesh",
+    "导航目标投影",
+    "路径跟随",
+    "移动支撑与速度反馈",
+    "局部避障",
+    "导航边界与坡面交接",
+    "导航动作交接"
+  ],
+  "validation_and_references": "原验证清单、全部参考资料保留在导读；专题分别关联其证据"
+}
