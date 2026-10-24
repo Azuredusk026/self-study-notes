@@ -87,7 +87,7 @@ int SelectLod(float screenFraction, int currentLod,
 
 固定FOV与分辨率往返经过阈值，记录切换次数、轮廓差和双绘制成本。远景法线、Alpha覆盖与材质mip同时检查；流送未完成时回退已驻留层。
 
-CPU参考`select_lod`覆盖滞回双向边界与跨多级跳变，见 [reference.py](../examples/revision_06_08/reference.py)，运行 `python -B 知识库/examples/revision_06_08/test_reference.py`。C++片段未独立编译，真实LOD画面、资源流送与交叉淡化成本为UNVERIFIED。
+CPU参考`select_lod`覆盖滞回双向边界与跨多级跳变，见 [reference.py](../examples/revision_06_08/reference.py)，运行 `python -B 知识库/examples/revision_06_08/test_reference.py`。C++片段未独立编译，真实LOD画面、资源流送与交叉淡化成本为尚未验证。
 
 ## 相关主题
 

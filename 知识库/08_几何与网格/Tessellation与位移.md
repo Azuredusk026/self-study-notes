@@ -167,7 +167,7 @@ OpenGL的equal、fractional_even与fractional_odd分别向对应整数段数约�
 - [[26_GPU驱动与虚拟几何/GPU-Driven Rendering]]
 - [[10_VFX与模拟/水面与海洋渲染]]
 
-本机检查：CPU模型`phong_point`验证顶点保持、共面保持和非平坦法线导致的曲面变化。`domain.hlsl`的DSMain已通过DXC ds_6_0编译，尚缺Hull、资源与绘制宿主；完整细分流水线、Unity运行、GPU画面和性能为UNVERIFIED。运行入口见 [verify.py](../examples/revision_06_08/verify.py)。
+本机检查：CPU模型`phong_point`验证顶点保持、共面保持和非平坦法线导致的曲面变化。`domain.hlsl`的DSMain已通过DXC ds_6_0编译，尚缺Hull、资源与绘制宿主；完整细分流水线、Unity运行、GPU画面和性能为尚未验证。运行入口见 [verify.py](../examples/revision_06_08/verify.py)。
 
 ## 参考资料
 

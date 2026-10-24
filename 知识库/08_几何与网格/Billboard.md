@@ -65,7 +65,7 @@ Billboard减少几何，代价可能转移到透明覆盖、排序与纹理采�
 - [[10_VFX与模拟/GPU粒子系统]]
 - [[02_GPU与光栅化管线/透明合成]]
 
-CPU参考`billboard_right`检查正常相机方向和正上方退化输入，备用方向投影后与Up正交，见 [reference.py](../examples/revision_06_08/reference.py)。运行 `python -B 知识库/examples/revision_06_08/test_reference.py`。HLSL为宿主机制片段；Impostor烘焙、多视图、阴影与GPU画面为UNVERIFIED。
+CPU参考`billboard_right`检查正常相机方向和正上方退化输入，备用方向投影后与Up正交，见 [reference.py](../examples/revision_06_08/reference.py)。运行 `python -B 知识库/examples/revision_06_08/test_reference.py`。HLSL为宿主机制片段；Impostor烘焙、多视图、阴影与GPU画面为尚未验证。
 
 ## 参考资料
 

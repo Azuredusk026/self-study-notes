@@ -1,0 +1,113 @@
+{
+  "batch": "02",
+  "started_at": "2026-10-24T15:14:50.724281+08:00",
+  "runs": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_gi.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.021s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/compile_gi.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"dxc_entries\": [\"probe\", \"reflection\", \"ltc\", \"pcf\"], \"glsl_entries\": [\"cascade\", \"point\"], \"scope\": \"离线编译；无GPU执行\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/test_post.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision/compile_post.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"passed\": true, \"dxc_entries\": [\"srgb\", \"exposure\", \"bloom\", \"ssao\", \"coc_motion\"], \"scope\": \"仅离线编译，未执行GPU\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/revision_06_08/verify.py"
+      ],
+      "returncode": 0,
+      "stdout": "CPU reference tests: PASS\npom.frag: PASS\ndomain.hlsl: PASS\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/mechanism_depth/bloom/test_reference.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "知识库/examples/retained_review/pom/check.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: POM交点、插值、自阴影和漏检反例，9项断言\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "skills/kb-structure-audit/scripts/validate.py",
+        "D:\\Assigment\\HIT\\Note"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"formal_articles\": 214,\n  \"support_pages\": 5,\n  \"registered_images\": 2,\n  \"errors\": [],\n  \"quality_matrix_pages\": 219,\n  \"rename_targets\": 120,\n  \"category_domains\": 27,\n  \"category_articles\": 219,\n  \"writing_candidates\": 2,\n  \"scope\": \"静态不变量；写作质量和技术断言需原文复读及证据核验\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "skills/kb-structure-audit/scripts/batch_validate.py",
+        "D:\\Assigment\\HIT\\Note"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"formal_articles\": 214,\n  \"support_pages\": 5,\n  \"registered_images\": 2,\n  \"errors\": [],\n  \"quality_matrix_pages\": 219,\n  \"rename_targets\": 120,\n  \"category_domains\": 27,\n  \"category_articles\": 219,\n  \"writing_candidates\": 2,\n  \"scope\": \"静态不变量；写作质量和技术断言需原文复读及证据核验\",\n  \"frozen_pages\": 219,\n  \"reviewed_pages\": 219,\n  \"original_pages\": 113,\n  \"batches\": [\n    {\n      \"id\": \"Completion\",\n      \"pages\": 219\n    }\n  ],\n  \"title_statuses\": {\n    \"PASS\": 219\n  },\n  \"deferred_titles\": 0,\n  \"pending_splits\": 0,\n  \"wiki_references\": 1970,\n  \"local_markdown_references\": 1027,\n  \"checked_anchors\": 298,\n  \"orphan_pages\": [],\n  \"historical_sections\": 63\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "skills/kb-structure-audit/scripts/revision_validate.py",
+        "D:\\Assigment\\HIT\\Note"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"pages\": 219,\n  \"dimensions\": 1971,\n  \"errors\": [],\n  \"scope\": \"复读登记完整性和当前正文快照；不替代全文判断、来源核读或目标环境实验\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "CPU模型、正文C++宿主及离线编译、静态登记；没有GPU执行或完整引擎运行",
+  "passed": true,
+  "command_count": 10,
+  "finished_at": "2026-10-24T15:14:57.591378+08:00"
+}

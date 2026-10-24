@@ -96,7 +96,7 @@ normal = normalize(sum(weights[i] * normalInSameSpace[i]))
 
 相邻Tile边界逐点比较高度、材质权重与法线。测试最低高度精度、斜坡三向采样与缺块回退，显示层权重和检查零权重区域。硬件细分因子机制引用Tessellation与位移。
 
-CPU参考`height_normal`使用不同世界间距复算解析斜坡，见 [reference.py](../examples/revision_06_08/reference.py)，运行 `python -B 知识库/examples/revision_06_08/test_reference.py`。未执行Houdini生成、Tile导出、引擎地形或GPU细分；这些状态为UNVERIFIED。
+CPU参考`height_normal`使用不同世界间距复算解析斜坡，见 [reference.py](../examples/revision_06_08/reference.py)，运行 `python -B 知识库/examples/revision_06_08/test_reference.py`。未执行Houdini生成、Tile导出、引擎地形或GPU细分；这些状态为尚未验证。
 
 ## 相关主题
 

@@ -8627,15 +8627,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "主问题仍为Light Probe；低频光照表示；存储与运行时读取；三线性 Probe 插值围绕其输入、机制与边界展开。"
+        "basis": "主问题仍为Light Probe；低频光照表示；存储与运行时读取；三线性 Probe 插值围绕其输入、机制与边界展开。 本批全文复读：复算108字节、八角权重与系数5、屏蔽上层后的归一化2；将体积外坐标先在浮点域钳位再转整数，补网格索引与缓冲容量前提，避免极远位置转换越界。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：低频光照表示；存储与运行时读取；三线性 Probe 插值；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：低频光照表示；存储与运行时读取；三线性 Probe 插值；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算108字节、八角权重与系数5、屏蔽上层后的归一化2；将体积外坐标先在浮点域钳位再转整数，补网格索引与缓冲容量前提，避免极远位置转换越界。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：八角权重、内存步长与系数语义完整；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：八角具体权重、z0系数2/z1系数6→5及去墙后重新归一化2完整。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：八角权重、内存步长与系数语义完整；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：八角具体权重、z0系数2/z1系数6→5及去墙后重新归一化2完整。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算108字节、八角权重与系数5、屏蔽上层后的归一化2；将体积外坐标先在浮点域钳位再转整数，补网格索引与缓冲容量前提，避免极远位置转换越界。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -8643,19 +8643,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。 本批全文复读：复算108字节、八角权重与系数5、屏蔽上层后的归一化2；将体积外坐标先在浮点域钳位再转整数，补网格索引与缓冲容量前提，避免极远位置转换越界。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：八角权重、内存步长与系数语义完整；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：八角具体权重、z0系数2/z1系数6→5及去墙后重新归一化2完整。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：八角权重、内存步长与系数语义完整；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：八角具体权重、z0系数2/z1系数6→5及去墙后重新归一化2完整。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算108字节、八角权重与系数5、屏蔽上层后的归一化2；将体积外坐标先在浮点域钳位再转整数，补网格索引与缓冲容量前提，避免极远位置转换越界。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。 本批全文复读：复算108字节、八角权重与系数5、屏蔽上层后的归一化2；将体积外坐标先在浮点域钳位再转整数，补网格索引与缓冲容量前提，避免极远位置转换越界。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。 本批全文复读：复算108字节、八角权重与系数5、屏蔽上层后的归一化2；将体积外坐标先在浮点域钳位再转整数，补网格索引与缓冲容量前提，避免极远位置转换越界。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -8676,6 +8676,7 @@
     "modernization_batch": "Completion",
     "executed_content_actions": [
       "DEEPEN",
+      "FACT-CHECK",
       "RESTRUCTURE",
       "REWRITE"
     ],
@@ -8689,7 +8690,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "c96d48f5415d423ff257356ee93c36e2efaf3a17267658da6de49c31e0f4bffd",
+    "final_sha256": "b7a6695329fceb102285a58f6b3c8e9472337d3cb88189bcb5adeba8caf4616d",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "Light Probe",
@@ -8701,7 +8702,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "c96d48f5415d423ff257356ee93c36e2efaf3a17267658da6de49c31e0f4bffd",
+    "reviewed_content_sha256": "b7a6695329fceb102285a58f6b3c8e9472337d3cb88189bcb5adeba8caf4616d",
     "source_article_path": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -8717,23 +8718,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、代码、公式、证据、验证与标题",
-      "findings": [
-        "明确 l=0,1,2 共 9 个基函数、RGB 共 27 个系数的来源，H2 改为低频光照表示。"
-      ],
-      "content_sha256": "c96d48f5415d423ff257356ee93c36e2efaf3a17267658da6de49c31e0f4bffd",
-      "runtime": {
-        "engine": "UNVERIFIED",
-        "gpu": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
-      "first_review_sha256": "09c974f6933678509b17fa9771638fbb64efa4c46a7d03ca3f2c31088475890f",
       "independent_review": "PASS",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "adee4786d6a56fdfdc91b72edb5be34f2d3b1a5c87f51ed0eba03eb79eb85000"
+      "content_sha256": "b7a6695329fceb102285a58f6b3c8e9472337d3cb88189bcb5adeba8caf4616d",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算108字节、八角权重与系数5、屏蔽上层后的归一化2；将体积外坐标先在浮点域钳位再转整数，补网格索引与缓冲容量前提，避免极远位置转换越界。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "78423a5108bc5686d88b0f15f937df414f9b3734f8fbc43622ee0d04ac0a5542",
     "historical_content_commit": "4e626da",
@@ -8764,6 +8756,38 @@
       "independent_review": "PASS",
       "independent_record": "revision-independent-03-05.json",
       "independent_source_sha256": "b0f39f1b5b6a2af14f134260d4467fad4b5b6d5fad65dd813c5bba139c62247a"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、代码、公式、证据、验证与标题",
+          "findings": [
+            "明确 l=0,1,2 共 9 个基函数、RGB 共 27 个系数的来源，H2 改为低频光照表示。"
+          ],
+          "content_sha256": "c96d48f5415d423ff257356ee93c36e2efaf3a17267658da6de49c31e0f4bffd",
+          "runtime": {
+            "engine": "UNVERIFIED",
+            "gpu": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+          "first_review_sha256": "09c974f6933678509b17fa9771638fbb64efa4c46a7d03ca3f2c31088475890f",
+          "independent_review": "PASS",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "adee4786d6a56fdfdc91b72edb5be34f2d3b1a5c87f51ed0eba03eb79eb85000"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "b7a6695329fceb102285a58f6b3c8e9472337d3cb88189bcb5adeba8caf4616d",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算108字节、八角权重与系数5、屏蔽上层后的归一化2；将体积外坐标先在浮点域钳位再转整数，补网格索引与缓冲容量前提，避免极远位置转换越界。"
     }
   },
   {
@@ -8782,15 +8806,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "主问题仍为Lightmap；运行时查询；烘焙边界与失效围绕其输入、机制与边界展开。"
+        "basis": "主问题仍为Lightmap；运行时查询；烘焙边界与失效围绕其输入、机制与边界展开。 本批全文复读：复算256/2048尺度0.125、512/2048偏移0.25和重复直接光导致2.5/π变4/π；方向编码和贡献归属明确，UV保护边引用图集主归属。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：静态表面光照表示；Lightmap；Directional Lightmap；运行时查询；烘焙边界与失效；光照贡献的归属；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：静态表面光照表示；Lightmap；Directional Lightmap；运行时查询；烘焙边界与失效；光照贡献的归属；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算256/2048尺度0.125、512/2048偏移0.25和重复直接光导致2.5/π变4/π；方向编码和贡献归属明确，UV保护边引用图集主归属。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：UV scaleBias、辐照度与Padding失效解释具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：scaleBias、Padding与5+3重复直接光得到4/π反例，编码/方向压缩局限清楚。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：UV scaleBias、辐照度与Padding失效解释具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：scaleBias、Padding与5+3重复直接光得到4/π反例，编码/方向压缩局限清楚。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算256/2048尺度0.125、512/2048偏移0.25和重复直接光导致2.5/π变4/π；方向编码和贡献归属明确，UV保护边引用图集主归属。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -8798,19 +8822,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。 本批全文复读：复算256/2048尺度0.125、512/2048偏移0.25和重复直接光导致2.5/π变4/π；方向编码和贡献归属明确，UV保护边引用图集主归属。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：UV scaleBias、辐照度与Padding失效解释具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：scaleBias、Padding与5+3重复直接光得到4/π反例，编码/方向压缩局限清楚。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：UV scaleBias、辐照度与Padding失效解释具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：scaleBias、Padding与5+3重复直接光得到4/π反例，编码/方向压缩局限清楚。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算256/2048尺度0.125、512/2048偏移0.25和重复直接光导致2.5/π变4/π；方向编码和贡献归属明确，UV保护边引用图集主归属。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。 本批全文复读：复算256/2048尺度0.125、512/2048偏移0.25和重复直接光导致2.5/π变4/π；方向编码和贡献归属明确，UV保护边引用图集主归属。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。 本批全文复读：复算256/2048尺度0.125、512/2048偏移0.25和重复直接光导致2.5/π变4/π；方向编码和贡献归属明确，UV保护边引用图集主归属。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -8873,23 +8897,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、代码、公式、证据、验证与标题",
-      "findings": [
-        "保留：主问题边界、查询输入单位和烘焙缓存失效条件明确，未冒称资产实测。"
-      ],
-      "content_sha256": "f4364286ad7e3ae35bb8433c215df61e7d228a54cccebfe8cb12df34702ba271",
-      "runtime": {
-        "engine": "UNVERIFIED",
-        "gpu": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
-      "first_review_sha256": "30df52bc6f451a176f58a7ef3740243909abc2dc95e3d5151537934a6bdbb7fb",
       "independent_review": "PASS",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "8a360bb1952a130126286fc8b44e376f509f9939c9365001636b04e65d288dce"
+      "content_sha256": "f4364286ad7e3ae35bb8433c215df61e7d228a54cccebfe8cb12df34702ba271",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算256/2048尺度0.125、512/2048偏移0.25和重复直接光导致2.5/π变4/π；方向编码和贡献归属明确，UV保护边引用图集主归属。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "8337a78d35a7f94703cb70b8378c49ef1c806b5da309f201ebbf3d0e7b44061b",
     "historical_content_commit": "4e626da",
@@ -8920,6 +8935,38 @@
       "independent_review": "PASS",
       "independent_record": "revision-independent-03-05.json",
       "independent_source_sha256": "3e32bd771d88e636d7a3412f88319b5b1b15352a5e6a0bd0ea2542311710773e"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、代码、公式、证据、验证与标题",
+          "findings": [
+            "保留：主问题边界、查询输入单位和烘焙缓存失效条件明确，未冒称资产实测。"
+          ],
+          "content_sha256": "f4364286ad7e3ae35bb8433c215df61e7d228a54cccebfe8cb12df34702ba271",
+          "runtime": {
+            "engine": "UNVERIFIED",
+            "gpu": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+          "first_review_sha256": "30df52bc6f451a176f58a7ef3740243909abc2dc95e3d5151537934a6bdbb7fb",
+          "independent_review": "PASS",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "8a360bb1952a130126286fc8b44e376f509f9939c9365001636b04e65d288dce"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "f4364286ad7e3ae35bb8433c215df61e7d228a54cccebfe8cb12df34702ba271",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算256/2048尺度0.125、512/2048偏移0.25和重复直接光导致2.5/π变4/π；方向编码和贡献归属明确，UV保护边引用图集主归属。"
     }
   },
   {
@@ -8938,15 +8985,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "主问题仍为Reflection Probe；局部反射查询；探针混合与更新围绕其输入、机制与边界展开。"
+        "basis": "主问题仍为Reflection Probe；局部反射查询；探针混合与更新围绕其输入、机制与边界展开。 本批全文复读：复算盒[-1,1]内点0.5沿+Z的出口方向、单探针权重0.25混全局得到1.75/1.25/1；保留零分量射线、盒外回退及局部权重归一化边界。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：局部反射数据；局部反射查询；探针混合与更新；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：局部反射数据；局部反射查询；探针混合与更新；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算盒[-1,1]内点0.5沿+Z的出口方向、单探针权重0.25混全局得到1.75/1.25/1；保留零分量射线、盒外回退及局部权重归一化边界。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：盒出口求交和偏移点比值例、全局剩余权重明确；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：盒内出口平行轴避零、单探针0.25混全局而非归一化跳变具体。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：盒出口求交和偏移点比值例、全局剩余权重明确；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：盒内出口平行轴避零、单探针0.25混全局而非归一化跳变具体。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算盒[-1,1]内点0.5沿+Z的出口方向、单探针权重0.25混全局得到1.75/1.25/1；保留零分量射线、盒外回退及局部权重归一化边界。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -8954,19 +9001,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。 本批全文复读：复算盒[-1,1]内点0.5沿+Z的出口方向、单探针权重0.25混全局得到1.75/1.25/1；保留零分量射线、盒外回退及局部权重归一化边界。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：盒出口求交和偏移点比值例、全局剩余权重明确；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：盒内出口平行轴避零、单探针0.25混全局而非归一化跳变具体。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：盒出口求交和偏移点比值例、全局剩余权重明确；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：盒内出口平行轴避零、单探针0.25混全局而非归一化跳变具体。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算盒[-1,1]内点0.5沿+Z的出口方向、单探针权重0.25混全局得到1.75/1.25/1；保留零分量射线、盒外回退及局部权重归一化边界。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。 本批全文复读：复算盒[-1,1]内点0.5沿+Z的出口方向、单探针权重0.25混全局得到1.75/1.25/1；保留零分量射线、盒外回退及局部权重归一化边界。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。 本批全文复读：复算盒[-1,1]内点0.5沿+Z的出口方向、单探针权重0.25混全局得到1.75/1.25/1；保留零分量射线、盒外回退及局部权重归一化边界。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -9027,23 +9074,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、代码、公式、证据、验证与标题",
-      "findings": [
-        "加入全局余权重公式及三个 TDD；明确单位反射方向和每探针先查询再混合，H2 改为局部反射数据。"
-      ],
-      "content_sha256": "f338df355aa8d20004262557e7566dc3b12e4fc96e6343ec4659abc309bdc55c",
-      "runtime": {
-        "engine": "UNVERIFIED",
-        "gpu": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
-      "first_review_sha256": "a4f3b75d65befa3eeb4bd94e2aafb94d34cbb7bb8d94e13ec62a80370369570e",
       "independent_review": "PASS",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "8877a9d1ac33e9ca862a908898852d21ef78c331e225b1fdfacf749ca99a0fe2"
+      "content_sha256": "f338df355aa8d20004262557e7566dc3b12e4fc96e6343ec4659abc309bdc55c",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算盒[-1,1]内点0.5沿+Z的出口方向、单探针权重0.25混全局得到1.75/1.25/1；保留零分量射线、盒外回退及局部权重归一化边界。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "50ab10c207a24b4c7f7f5631e32186cc48b891a8405c904c57c4a1605aa8a691",
     "historical_content_commit": "4e626da",
@@ -9074,6 +9112,38 @@
       "independent_review": "PASS",
       "independent_record": "revision-independent-03-05.json",
       "independent_source_sha256": "5084764f63dcdc8e4fcb050c7558e402e15728ad5036ca6b75af4843b8db7668"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、代码、公式、证据、验证与标题",
+          "findings": [
+            "加入全局余权重公式及三个 TDD；明确单位反射方向和每探针先查询再混合，H2 改为局部反射数据。"
+          ],
+          "content_sha256": "f338df355aa8d20004262557e7566dc3b12e4fc96e6343ec4659abc309bdc55c",
+          "runtime": {
+            "engine": "UNVERIFIED",
+            "gpu": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+          "first_review_sha256": "a4f3b75d65befa3eeb4bd94e2aafb94d34cbb7bb8d94e13ec62a80370369570e",
+          "independent_review": "PASS",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "8877a9d1ac33e9ca862a908898852d21ef78c331e225b1fdfacf749ca99a0fe2"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "f338df355aa8d20004262557e7566dc3b12e4fc96e6343ec4659abc309bdc55c",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算盒[-1,1]内点0.5沿+Z的出口方向、单探针权重0.25混全局得到1.75/1.25/1；保留零分量射线、盒外回退及局部权重归一化边界。"
     }
   },
   {
@@ -9091,15 +9161,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "主问题仍为Shadow Map；处理边界过渡；平面投影阴影；点光源阴影围绕其输入、机制与边界展开。"
+        "basis": "主问题仍为Shadow Map；处理边界过渡；平面投影阴影；点光源阴影围绕其输入、机制与边界展开。 本批全文复读：逐节核对PCF比较后过滤、PCSS线性距离及完整宽度到半径、CSM重叠和固定光基底吸附；复算0.5002偏置、点光径向距离与方差上界，阴影方案家族保留同页。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：Shadow Map 流程；生成；查询；过滤离散可见性；深度比较与过滤顺序；PCF 的含义；PCSS；1. Blocker Search；2. 估计 Penumbra；3. Variable-radius PCF；Shadow Acne；偏置改变的输入；阴影资源与投影方案；CSM；1. 分割相机视锥；2. 计算每层光空间矩阵；3. 保存每层深度；4. 选择 Cascade；5. 处理边界过渡；6. Bias 和过滤尺度；7. 稳定化和 Texel Snapping；8. 成本；9. 调试；平面投影阴影；方差阴影与虚拟阴影；Point Light Shadow；常见伪影定位；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：Shadow Map 流程；生成；查询；过滤离散可见性；深度比较与过滤顺序；PCF 的含义；PCSS；1. Blocker Search；2. 估计 Penumbra；3. Variable-radius PCF；Shadow Acne；偏置改变的输入；阴影资源与投影方案；CSM；1. 分割相机视锥；2. 计算每层光空间矩阵；3. 保存每层深度；4. 选择 Cascade；5. 处理边界过渡；6. Bias 和过滤尺度；7. 稳定化和 Texel Snapping；8. 成本；9. 调试；平面投影阴影；方差阴影与虚拟阴影；Point Light Shadow；常见伪影定位；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：逐节核对PCF比较后过滤、PCSS线性距离及完整宽度到半径、CSM重叠和固定光基底吸附；复算0.5002偏置、点光径向距离与方差上界，阴影方案家族保留同页。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：PCF次序、PCSS相似三角形、CSM稳定基准充分；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：PCF比较后过滤、PCSS深度测度、CSM覆盖/吸附和双VSM区分齐全；点光返回阴影与PCF可见性反向已明示。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：PCF次序、PCSS相似三角形、CSM稳定基准充分；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：PCF比较后过滤、PCSS深度测度、CSM覆盖/吸附和双VSM区分齐全；点光返回阴影与PCF可见性反向已明示。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：逐节核对PCF比较后过滤、PCSS线性距离及完整宽度到半径、CSM重叠和固定光基底吸附；复算0.5002偏置、点光径向距离与方差上界，阴影方案家族保留同页。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -9107,19 +9177,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。 本批全文复读：逐节核对PCF比较后过滤、PCSS线性距离及完整宽度到半径、CSM重叠和固定光基底吸附；复算0.5002偏置、点光径向距离与方差上界，阴影方案家族保留同页。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：PCF次序、PCSS相似三角形、CSM稳定基准充分；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：PCF比较后过滤、PCSS深度测度、CSM覆盖/吸附和双VSM区分齐全；点光返回阴影与PCF可见性反向已明示。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：PCF次序、PCSS相似三角形、CSM稳定基准充分；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：PCF比较后过滤、PCSS深度测度、CSM覆盖/吸附和双VSM区分齐全；点光返回阴影与PCF可见性反向已明示。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：逐节核对PCF比较后过滤、PCSS线性距离及完整宽度到半径、CSM重叠和固定光基底吸附；复算0.5002偏置、点光径向距离与方差上界，阴影方案家族保留同页。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。 本批全文复读：逐节核对PCF比较后过滤、PCSS线性距离及完整宽度到半径、CSM重叠和固定光基底吸附；复算0.5002偏置、点光径向距离与方差上界，阴影方案家族保留同页。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。 本批全文复读：逐节核对PCF比较后过滤、PCSS线性距离及完整宽度到半径、CSM重叠和固定光基底吸附；复算0.5002偏置、点光径向距离与方差上界，阴影方案家族保留同页。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -9205,47 +9275,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、代码、公式、证据、验证与标题",
-      "findings": [
-        "补常规 Z 前提、混合带矩阵覆盖、各面上方向；修正平面投影无 Bias 与必然低成本断言，补 GLSL 编译证据。"
-      ],
-      "content_sha256": "e5f03b2faf393fe55bda9a0ce1b6a1e726608a0dc139250d166242a2671ea6cb",
-      "runtime": {
-        "engine": "UNVERIFIED",
-        "gpu": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
-      "first_review_sha256": "e710b1bb248c3e6f983e2fa05f3e44cba662551b16985b0537dacdf066b9517f",
       "independent_review": "PASS",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "32d38ead6780c0599332682f294bb323433085f43a9badbba34ae2ab966a6ae2",
-      "navigation_integration": {
-        "before_sha256": "a209eff9c432eb53e369676f522b20b8c136d6ef32b781eb7127ae3535535b89",
-        "after_sha256": "c543ff03d755a0a33c1661dce531fb735d7802b268a5d2820aad744e8549d675",
-        "changes": [
-          {
-            "old": "一帧如何到达屏幕",
-            "new": "渲染帧流程",
-            "old_path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
-            "new_path": "知识库/02_GPU与光栅化管线/渲染帧流程.md"
-          },
-          {
-            "old": "光栅化可见性导读",
-            "new": "光栅化可见性",
-            "old_path": "知识库/02_GPU与光栅化管线/光栅化可见性导读.md",
-            "new_path": "知识库/02_GPU与光栅化管线/光栅化可见性.md"
-          },
-          {
-            "old": "可见性与合成导读",
-            "new": "可见性与合成",
-            "old_path": "知识库/02_GPU与光栅化管线/可见性与合成导读.md",
-            "new_path": "知识库/02_GPU与光栅化管线/可见性与合成.md"
-          }
-        ]
-      }
+      "content_sha256": "e5f03b2faf393fe55bda9a0ce1b6a1e726608a0dc139250d166242a2671ea6cb",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "逐节核对PCF比较后过滤、PCSS线性距离及完整宽度到半径、CSM重叠和固定光基底吸附；复算0.5002偏置、点光径向距离与方差上界，阴影方案家族保留同页。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "c94919664a6d16c315c56afd9f02f908d15c94cc34511baa171dc27e79a16216",
     "historical_content_commit": "4e626da",
@@ -9300,6 +9337,62 @@
           }
         ]
       }
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、代码、公式、证据、验证与标题",
+          "findings": [
+            "补常规 Z 前提、混合带矩阵覆盖、各面上方向；修正平面投影无 Bias 与必然低成本断言，补 GLSL 编译证据。"
+          ],
+          "content_sha256": "e5f03b2faf393fe55bda9a0ce1b6a1e726608a0dc139250d166242a2671ea6cb",
+          "runtime": {
+            "engine": "UNVERIFIED",
+            "gpu": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+          "first_review_sha256": "e710b1bb248c3e6f983e2fa05f3e44cba662551b16985b0537dacdf066b9517f",
+          "independent_review": "PASS",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "32d38ead6780c0599332682f294bb323433085f43a9badbba34ae2ab966a6ae2",
+          "navigation_integration": {
+            "before_sha256": "a209eff9c432eb53e369676f522b20b8c136d6ef32b781eb7127ae3535535b89",
+            "after_sha256": "c543ff03d755a0a33c1661dce531fb735d7802b268a5d2820aad744e8549d675",
+            "changes": [
+              {
+                "old": "一帧如何到达屏幕",
+                "new": "渲染帧流程",
+                "old_path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+                "new_path": "知识库/02_GPU与光栅化管线/渲染帧流程.md"
+              },
+              {
+                "old": "光栅化可见性导读",
+                "new": "光栅化可见性",
+                "old_path": "知识库/02_GPU与光栅化管线/光栅化可见性导读.md",
+                "new_path": "知识库/02_GPU与光栅化管线/光栅化可见性.md"
+              },
+              {
+                "old": "可见性与合成导读",
+                "new": "可见性与合成",
+                "old_path": "知识库/02_GPU与光栅化管线/可见性与合成导读.md",
+                "new_path": "知识库/02_GPU与光栅化管线/可见性与合成.md"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "e5f03b2faf393fe55bda9a0ce1b6a1e726608a0dc139250d166242a2671ea6cb",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "逐节核对PCF比较后过滤、PCSS线性距离及完整宽度到半径、CSM重叠和固定光基底吸附；复算0.5002偏置、点光径向距离与方差上界，阴影方案家族保留同页。"
     }
   },
   {
@@ -9318,15 +9411,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "主问题仍为动态GI；可见性与历史更新围绕其输入、机制与边界展开。"
+        "basis": "主问题仍为动态GI；可见性与历史更新围绕其输入、机制与边界展开。 本批全文复读：复算SSGI -4/-6穿越-5、体素红蓝前向累加、SDF平面步进、二点矩上界0.8与真实0.5，以及10次更新0.651；追踪表示、命中照明与Lumen版本职责已分清。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：屏幕空间追踪；体素锥追踪；距离场追踪；动态探针更新；距离可见性与时间更新；Lumen的场景表示与回退；方案适用条件；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：屏幕空间追踪；体素锥追踪；距离场追踪；动态探针更新；距离可见性与时间更新；Lumen的场景表示与回退；方案适用条件；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算SSGI -4/-6穿越-5、体素红蓝前向累加、SDF平面步进、二点矩上界0.8与真实0.5，以及10次更新0.651；追踪表示、命中照明与Lumen版本职责已分清。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：距离矩二点反例和1-h^k响应延迟可推算；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：屏幕/体素/距离场与探针矩主要机制齐全；Lumen原并列清单改为屏幕失败→世界追踪→命中照明缓存→时域的故障链，限定5.6概念职责。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：距离矩二点反例和1-h^k响应延迟可推算；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：屏幕/体素/距离场与探针矩主要机制齐全；Lumen原并列清单改为屏幕失败→世界追踪→命中照明缓存→时域的故障链，限定5.6概念职责。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算SSGI -4/-6穿越-5、体素红蓝前向累加、SDF平面步进、二点矩上界0.8与真实0.5，以及10次更新0.651；追踪表示、命中照明与Lumen版本职责已分清。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -9334,19 +9427,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。 本批全文复读：复算SSGI -4/-6穿越-5、体素红蓝前向累加、SDF平面步进、二点矩上界0.8与真实0.5，以及10次更新0.651；追踪表示、命中照明与Lumen版本职责已分清。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：距离矩二点反例和1-h^k响应延迟可推算；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：屏幕/体素/距离场与探针矩主要机制齐全；Lumen原并列清单改为屏幕失败→世界追踪→命中照明缓存→时域的故障链，限定5.6概念职责。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：距离矩二点反例和1-h^k响应延迟可推算；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：屏幕/体素/距离场与探针矩主要机制齐全；Lumen原并列清单改为屏幕失败→世界追踪→命中照明缓存→时域的故障链，限定5.6概念职责。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算SSGI -4/-6穿越-5、体素红蓝前向累加、SDF平面步进、二点矩上界0.8与真实0.5，以及10次更新0.651；追踪表示、命中照明与Lumen版本职责已分清。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。 本批全文复读：复算SSGI -4/-6穿越-5、体素红蓝前向累加、SDF平面步进、二点矩上界0.8与真实0.5，以及10次更新0.651；追踪表示、命中照明与Lumen版本职责已分清。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。 本批全文复读：复算SSGI -4/-6穿越-5、体素红蓝前向累加、SDF平面步进、二点矩上界0.8与真实0.5，以及10次更新0.651；追踪表示、命中照明与Lumen版本职责已分清。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -9367,6 +9460,7 @@
     "modernization_batch": "Completion",
     "executed_content_actions": [
       "DEEPEN",
+      "FACT-CHECK",
       "RESTRUCTURE",
       "REWRITE"
     ],
@@ -9384,7 +9478,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "31190bd5e4236ab1182cf7a983f7568b9250625471180346125050194cf9decc",
+    "final_sha256": "7dac928ec3c0f125036105c512033cc0669c1e1905667c7a7646f9581463a580",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "动态GI",
@@ -9396,7 +9490,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "31190bd5e4236ab1182cf7a983f7568b9250625471180346125050194cf9decc",
+    "reviewed_content_sha256": "7dac928ec3c0f125036105c512033cc0669c1e1905667c7a7646f9581463a580",
     "source_article_path": "知识库/05_光照阴影与GI/烘焙光照、Probe与实时GI.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -9412,23 +9506,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、代码、公式、证据、验证与标题",
-      "findings": [
-        "保留：探针、体素等方案的表示/更新边界明确，伪代码展开可见性和历史关键机制。"
-      ],
-      "content_sha256": "31190bd5e4236ab1182cf7a983f7568b9250625471180346125050194cf9decc",
-      "runtime": {
-        "engine": "UNVERIFIED",
-        "gpu": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
-      "first_review_sha256": "c54fd5625d6dc5801bcdbf820ac316ab9723954e247d0dce593ba5b7be44a9b7",
       "independent_review": "PASS",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "a560bd22360011a84153c3b445dc6226ca20f0456fe83e2a50293d9aefae80d8"
+      "content_sha256": "7dac928ec3c0f125036105c512033cc0669c1e1905667c7a7646f9581463a580",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算SSGI -4/-6穿越-5、体素红蓝前向累加、SDF平面步进、二点矩上界0.8与真实0.5，以及10次更新0.651；追踪表示、命中照明与Lumen版本职责已分清。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "079c18942082fde200a173493c33db1ad9d18e3fe4dbdcb67b9cce04c74bf829",
     "historical_content_commit": "4e626da",
@@ -9459,6 +9544,38 @@
       "independent_review": "PASS",
       "independent_record": "revision-independent-03-05.json",
       "independent_source_sha256": "b3cd44e74a241d29328dbc9f9271d603a097c12793d0ede6b8cf5e21c39db364"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、代码、公式、证据、验证与标题",
+          "findings": [
+            "保留：探针、体素等方案的表示/更新边界明确，伪代码展开可见性和历史关键机制。"
+          ],
+          "content_sha256": "31190bd5e4236ab1182cf7a983f7568b9250625471180346125050194cf9decc",
+          "runtime": {
+            "engine": "UNVERIFIED",
+            "gpu": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+          "first_review_sha256": "c54fd5625d6dc5801bcdbf820ac316ab9723954e247d0dce593ba5b7be44a9b7",
+          "independent_review": "PASS",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "a560bd22360011a84153c3b445dc6226ca20f0456fe83e2a50293d9aefae80d8"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "7dac928ec3c0f125036105c512033cc0669c1e1905667c7a7646f9581463a580",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算SSGI -4/-6穿越-5、体素红蓝前向累加、SDF平面步进、二点矩上界0.8与真实0.5，以及10次更新0.651；追踪表示、命中照明与Lumen版本职责已分清。"
     }
   },
   {
@@ -9477,15 +9594,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "主问题仍为直接光照；LTC 的执行过程；Horizon Clipping 与 LUT 边界围绕其输入、机制与边界展开。"
+        "basis": "主问题仍为直接光照；LTC 的执行过程；Horizon Clipping 与 LUT 边界围绕其输入、机制与边界展开。 本批全文复读：复算1000流明对应79.58坎德拉及2/4米照度19.89/4.97；核对LTC五顶点裁剪、逆矩阵按行构造、边积分除2π与幅度表组合，面积积分不重复乘距离或余弦。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：光源模型；Directional Light；Point Light；Spot Light；Area Light；LTC 的执行过程；Horizon Clipping 与 LUT 边界；单位与空间分布；光的单位和曝光；光源单位换算；Light Cookie 和 IES；光源尺寸的影响；表面求值与光源组织；直接光照的典型计算；多光源成本；光源剔除；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：光源模型；Directional Light；Point Light；Spot Light；Area Light；LTC 的执行过程；Horizon Clipping 与 LUT 边界；单位与空间分布；光的单位和曝光；光源单位换算；Light Cookie 和 IES；光源尺寸的影响；表面求值与光源组织；直接光照的典型计算；多光源成本；光源剔除；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算1000流明对应79.58坎德拉及2/4米照度19.89/4.97；核对LTC五顶点裁剪、逆矩阵按行构造、边积分除2π与幅度表组合，面积积分不重复乘距离或余弦。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：LTC裁剪、球面边积分与幅度约定充分；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：LTC局部基、矩阵、地平线裁剪和边积分完整；光通量1000到19.89lux与锥角单位可推演。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：LTC裁剪、球面边积分与幅度约定充分；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：LTC局部基、矩阵、地平线裁剪和边积分完整；光通量1000到19.89lux与锥角单位可推演。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算1000流明对应79.58坎德拉及2/4米照度19.89/4.97；核对LTC五顶点裁剪、逆矩阵按行构造、边积分除2π与幅度表组合，面积积分不重复乘距离或余弦。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -9493,19 +9610,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。"
+        "basis": "本轮命令输出保存 independent-03-05-results.json；外部核读范围列于 sources。未执行部分保持 UNVERIFIED。 本批全文复读：复算1000流明对应79.58坎德拉及2/4米照度19.89/4.97；核对LTC五顶点裁剪、逆矩阵按行构造、边积分除2π与幅度表组合，面积积分不重复乘距离或余弦。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：LTC裁剪、球面边积分与幅度约定充分；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：LTC局部基、矩阵、地平线裁剪和边积分完整；光通量1000到19.89lux与锥角单位可推演。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：LTC裁剪、球面边积分与幅度约定充分；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：LTC局部基、矩阵、地平线裁剪和边积分完整；光通量1000到19.89lux与锥角单位可推演。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算1000流明对应79.58坎德拉及2/4米照度19.89/4.97；核对LTC五顶点裁剪、逆矩阵按行构造、边积分除2π与幅度表组合，面积积分不重复乘距离或余弦。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。"
+        "basis": "H1 与文件名相同，标题采用客观内容名称；小标题调整见 heading_mapping。 本批全文复读：复算1000流明对应79.58坎德拉及2/4米照度19.89/4.97；核对LTC五顶点裁剪、逆矩阵按行构造、边积分除2π与幅度表组合，面积积分不重复乘距离或余弦。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。"
+        "basis": "本轮17页双链、章节锚点、相对文件链接检查均通过；性能篇旧标题反链已清零。 本批全文复读：复算1000流明对应79.58坎德拉及2/4米照度19.89/4.97；核对LTC五顶点裁剪、逆矩阵按行构造、边积分除2π与幅度表组合，面积积分不重复乘距离或余弦。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -9578,23 +9695,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、代码、公式、证据、验证与标题",
-      "findings": [
-        "明确输入为按边界排列的非退化共面凸四边形，证明裁剪数组最多 5 个点；编译探针保持该输入前提。"
-      ],
-      "content_sha256": "877c64efd5627399896ad5cef6bbea001165837eb4e563623c967647a1f9da16",
-      "runtime": {
-        "engine": "UNVERIFIED",
-        "gpu": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
-      "first_review_sha256": "d67c0a20c487c46298226125383cf25ee4a4f12a696e681978ce28d2f8b51d4b",
       "independent_review": "PASS",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "bbafaaefa40e8d27697ab17fa4e028a3fafdd2bd66975b50f43455b973152043"
+      "content_sha256": "877c64efd5627399896ad5cef6bbea001165837eb4e563623c967647a1f9da16",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算1000流明对应79.58坎德拉及2/4米照度19.89/4.97；核对LTC五顶点裁剪、逆矩阵按行构造、边积分除2π与幅度表组合，面积积分不重复乘距离或余弦。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "261033f6564433f55aae75c606f59265a589f7d4c6462e61795d55be76dedb6b",
     "historical_content_commit": "4e626da",
@@ -9625,6 +9733,38 @@
       "independent_review": "PASS",
       "independent_record": "revision-independent-03-05.json",
       "independent_source_sha256": "b638ec8103340a6c25ff2b697e6ee380ce4b58eb3d9c43476f571972c3e2daa3"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、代码、公式、证据、验证与标题",
+          "findings": [
+            "明确输入为按边界排列的非退化共面凸四边形，证明裁剪数组最多 5 个点；编译探针保持该输入前提。"
+          ],
+          "content_sha256": "877c64efd5627399896ad5cef6bbea001165837eb4e563623c967647a1f9da16",
+          "runtime": {
+            "engine": "UNVERIFIED",
+            "gpu": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+          "first_review_sha256": "d67c0a20c487c46298226125383cf25ee4a4f12a696e681978ce28d2f8b51d4b",
+          "independent_review": "PASS",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "bbafaaefa40e8d27697ab17fa4e028a3fafdd2bd66975b50f43455b973152043"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "877c64efd5627399896ad5cef6bbea001165837eb4e563623c967647a1f9da16",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算1000流明对应79.58坎德拉及2/4米照度19.89/4.97；核对LTC五顶点裁剪、逆矩阵按行构造、边积分除2π与幅度表组合，面积积分不重复乘距离或余弦。"
     }
   },
   {
@@ -9643,15 +9783,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "整mip纹理在需求、预算和上传延迟之间的驻留决策；全文已复核，定位“预算分配”。"
+        "basis": "整mip纹理在需求、预算和上传延迟之间的驻留决策；全文已复核，定位“预算分配”。 本批全文复读：复算1024到256需求mip2、UV乘4需求加2、预算22分21/1及峰值50；回收补齐未提交录制引用，需求、目标、驻留与主生命周期协议衔接完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：需求层级与实际驻留；需求估计误差；预算分配；上传发布与回收；验证与诊断；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：需求层级与实际驻留；需求估计误差；预算分配；上传发布与回收；验证与诊断；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算1024到256需求mip2、UV乘4需求加2、预算22分21/1及峰值50；回收补齐未提交录制引用，需求、目标、驻留与主生命周期协议衔接完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：desired/target/resident、优先级22字节例和发布寿命贯通；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：desired/target/resident三状态、两纹理22预算及重建50峰值完整，UV4倍需求粗2级正确。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：desired/target/resident、优先级22字节例和发布寿命贯通；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：desired/target/resident三状态、两纹理22预算及重建50峰值完整，UV4倍需求粗2级正确。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算1024到256需求mip2、UV乘4需求加2、预算22分21/1及峰值50；回收补齐未提交录制引用，需求、目标、驻留与主生命周期协议衔接完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -9659,19 +9799,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。 本批全文复读：复算1024到256需求mip2、UV乘4需求加2、预算22分21/1及峰值50；回收补齐未提交录制引用，需求、目标、驻留与主生命周期协议衔接完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：desired/target/resident、优先级22字节例和发布寿命贯通；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：desired/target/resident三状态、两纹理22预算及重建50峰值完整，UV4倍需求粗2级正确。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：desired/target/resident、优先级22字节例和发布寿命贯通；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：desired/target/resident三状态、两纹理22预算及重建50峰值完整，UV4倍需求粗2级正确。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算1024到256需求mip2、UV乘4需求加2、预算22分21/1及峰值50；回收补齐未提交录制引用，需求、目标、驻留与主生命周期协议衔接完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1“Texture Streaming”与文件一致；各级标题客观，无新增标题映射。"
+        "basis": "H1“Texture Streaming”与文件一致；各级标题客观，无新增标题映射。 本批全文复读：复算1024到256需求mip2、UV乘4需求加2、预算22分21/1及峰值50；回收补齐未提交录制引用，需求、目标、驻留与主生命周期协议衔接完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。"
+        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。 本批全文复读：复算1024到256需求mip2、UV乘4需求加2、预算22分21/1及峰值50；回收补齐未提交录制引用，需求、目标、驻留与主生命周期协议衔接完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -9707,7 +9847,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "95f6e2ee6d029fae3a7fdf47f8e2fade53204108a2ff7e364ca7dd1306e402f2",
+    "final_sha256": "21e03326d54a45dcb2583cd0025b3bb090a2ff9d85d3b1560c163d69e2ac1c4d",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "Texture Streaming",
@@ -9719,7 +9859,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "95f6e2ee6d029fae3a7fdf47f8e2fade53204108a2ff7e364ca7dd1306e402f2",
+    "reviewed_content_sha256": "21e03326d54a45dcb2583cd0025b3bb090a2ff9d85d3b1560c163d69e2ac1c4d",
     "source_article_path": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -9735,40 +9875,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、公式、代码、来源与标题，含独立复读",
-      "author_record": "revision-06-08.json",
-      "author_sha256": "24a6618fcbf0f351fc5bf2f94c981e4faa72d0a3299cd5a1f9e98999c99f54bc",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "1bbfa679330ce01f5536b791c1887d81b8ad45e949135e42f35d3ecfcc7862f6",
-      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "95f6e2ee6d029fae3a7fdf47f8e2fade53204108a2ff7e364ca7dd1306e402f2",
       "independent_review": "PASS",
-      "findings": "完整复读并核算rho=qW/P、UV乘4对应LOD增加2级、22字节优先级算例；desired/target/resident及上传发布/回收的状态区别清楚。CPU预算与LOD回归通过，保留。",
-      "runtime": {
-        "source_scope": {
-          "scope": "stream_targets；fallback超预算、优先级和达到目标停止；texture_lod的UV四倍回归",
-          "cpu_status": "PASS",
-          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
-          "shader_compile": "NOT_APPLICABLE",
-          "engine_compile": "UNVERIFIED",
-          "engine_runtime": "UNVERIFIED",
-          "gpu_capture": "UNVERIFIED",
-          "visual_result": "UNVERIFIED",
-          "performance": "UNVERIFIED",
-          "limitations": "IO、GPU驻留与引擎调度未执行",
-          "results": "知识库/examples/revision_06_08/results.json"
-        },
-        "results": "知识库/examples/revision_06_08/results.json",
-        "new_tests": [],
-        "engine_compile": "UNVERIFIED",
-        "engine_runtime": "UNVERIFIED",
-        "gpu_capture": "UNVERIFIED",
-        "performance": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+      "content_sha256": "21e03326d54a45dcb2583cd0025b3bb090a2ff9d85d3b1560c163d69e2ac1c4d",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算1024到256需求mip2、UV乘4需求加2、预算22分21/1及峰值50；回收补齐未提交录制引用，需求、目标、驻留与主生命周期协议衔接完整。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "38b4393c523384b7cee3d3f3f6509a707d6e38ae47329a88ea8ebe2caf547c86",
     "historical_content_commit": "ba93fc8",
@@ -9816,6 +9930,55 @@
         "performance": "UNVERIFIED"
       },
       "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、公式、代码、来源与标题，含独立复读",
+          "author_record": "revision-06-08.json",
+          "author_sha256": "24a6618fcbf0f351fc5bf2f94c981e4faa72d0a3299cd5a1f9e98999c99f54bc",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "1bbfa679330ce01f5536b791c1887d81b8ad45e949135e42f35d3ecfcc7862f6",
+          "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+          "content_sha256": "95f6e2ee6d029fae3a7fdf47f8e2fade53204108a2ff7e364ca7dd1306e402f2",
+          "independent_review": "PASS",
+          "findings": "完整复读并核算rho=qW/P、UV乘4对应LOD增加2级、22字节优先级算例；desired/target/resident及上传发布/回收的状态区别清楚。CPU预算与LOD回归通过，保留。",
+          "runtime": {
+            "source_scope": {
+              "scope": "stream_targets；fallback超预算、优先级和达到目标停止；texture_lod的UV四倍回归",
+              "cpu_status": "PASS",
+              "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+              "shader_compile": "NOT_APPLICABLE",
+              "engine_compile": "UNVERIFIED",
+              "engine_runtime": "UNVERIFIED",
+              "gpu_capture": "UNVERIFIED",
+              "visual_result": "UNVERIFIED",
+              "performance": "UNVERIFIED",
+              "limitations": "IO、GPU驻留与引擎调度未执行",
+              "results": "知识库/examples/revision_06_08/results.json"
+            },
+            "results": "知识库/examples/revision_06_08/results.json",
+            "new_tests": [],
+            "engine_compile": "UNVERIFIED",
+            "engine_runtime": "UNVERIFIED",
+            "gpu_capture": "UNVERIFIED",
+            "performance": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "21e03326d54a45dcb2583cd0025b3bb090a2ff9d85d3b1560c163d69e2ac1c4d",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算1024到256需求mip2、UV乘4需求加2、预算22分21/1及峰值50；回收补齐未提交录制引用，需求、目标、驻留与主生命周期协议衔接完整。"
     }
   },
   {
@@ -9834,15 +9997,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "虚拟页查询、缺页回退与物理缓存采样的地址机制；全文已复核，定位“逻辑页与物理槽”。"
+        "basis": "虚拟页查询、缺页回退与物理缓存采样的地址机制；全文已复核，定位“逻辑页与物理槽”。 本批全文复读：复算物理页中心7.5/12与1.5/12、回退祖先局部0.75/0.25和12.9%边框；补旧页表版本未提交录制保留，尾部mip和跨页导数条件保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：逻辑页与物理槽；缺页回退；过滤与页边框；槽位发布与回收；运行时虚拟纹理；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：逻辑页与物理槽；缺页回退；过滤与页边框；槽位发布与回收；运行时虚拟纹理；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算物理页中心7.5/12与1.5/12、回退祖先局部0.75/0.25和12.9%边框；补旧页表版本未提交录制保留，尾部mip和跨页导数条件保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：页地址/父页坐标/边框及发布次序清楚；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：物理7.5/12中心、祖先重新计算局部UV、版本7/8/9槽回收与mip尾部边界展开。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：页地址/父页坐标/边框及发布次序清楚；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：物理7.5/12中心、祖先重新计算局部UV、版本7/8/9槽回收与mip尾部边界展开。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算物理页中心7.5/12与1.5/12、回退祖先局部0.75/0.25和12.9%边框；补旧页表版本未提交录制保留，尾部mip和跨页导数条件保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -9850,19 +10013,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。 本批全文复读：复算物理页中心7.5/12与1.5/12、回退祖先局部0.75/0.25和12.9%边框；补旧页表版本未提交录制保留，尾部mip和跨页导数条件保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：页地址/父页坐标/边框及发布次序清楚；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：物理7.5/12中心、祖先重新计算局部UV、版本7/8/9槽回收与mip尾部边界展开。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：页地址/父页坐标/边框及发布次序清楚；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：物理7.5/12中心、祖先重新计算局部UV、版本7/8/9槽回收与mip尾部边界展开。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算物理页中心7.5/12与1.5/12、回退祖先局部0.75/0.25和12.9%边框；补旧页表版本未提交录制保留，尾部mip和跨页导数条件保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1“Virtual Texture”与文件一致；各级标题客观，无新增标题映射。"
+        "basis": "H1“Virtual Texture”与文件一致；各级标题客观，无新增标题映射。 本批全文复读：复算物理页中心7.5/12与1.5/12、回退祖先局部0.75/0.25和12.9%边框；补旧页表版本未提交录制保留，尾部mip和跨页导数条件保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。"
+        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。 本批全文复读：复算物理页中心7.5/12与1.5/12、回退祖先局部0.75/0.25和12.9%边框；补旧页表版本未提交录制保留，尾部mip和跨页导数条件保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -9899,7 +10062,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "7f2da1abe58f0e59de3be2a84d89a859454561422fb3805f9e6a6ae9aa05bca5",
+    "final_sha256": "8fdf0da4b7420cad7de455aa6c2e0077e77a57a7590e9ab88df212a0fe751932",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "Virtual Texture",
@@ -9911,7 +10074,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "7f2da1abe58f0e59de3be2a84d89a859454561422fb3805f9e6a6ae9aa05bca5",
+    "reviewed_content_sha256": "8fdf0da4b7420cad7de455aa6c2e0077e77a57a7590e9ab88df212a0fe751932",
     "source_article_path": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -9927,43 +10090,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、公式、代码、来源与标题，含独立复读",
-      "author_record": "revision-06-08.json",
-      "author_sha256": "8bf0d3b1b582d762f51bfea4f46437161ca04d3ab4ed03e59a388004ac8e0990",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "fdaca9b698aa6c632b4b1f455ab066ce5ba9aaf8f288f973598ca77ae0fde565",
-      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "7f2da1abe58f0e59de3be2a84d89a859454561422fb3805f9e6a6ae9aa05bca5",
       "independent_review": "PASS",
-      "findings": "页首纹素中心、祖先UV重算与槽位版本寿命成立；补根页仍含B×B纹素及尾部mip的模型边界，核读UE5.6最粗层截断。新增拒绝非2的幂网格和超模型层级的2项TDD检查。",
-      "runtime": {
-        "source_scope": {
-          "scope": "vt_address；页首中心、祖先重新映射、缺失根页拒绝",
-          "cpu_status": "PASS",
-          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
-          "shader_compile": "NOT_APPLICABLE",
-          "engine_compile": "UNVERIFIED",
-          "engine_runtime": "UNVERIFIED",
-          "gpu_capture": "UNVERIFIED",
-          "visual_result": "UNVERIFIED",
-          "performance": "UNVERIFIED",
-          "limitations": "GPU反馈、页表纹理、跨页过滤、RVT更新与性能未执行",
-          "results": "知识库/examples/revision_06_08/results.json"
-        },
-        "results": "知识库/examples/revision_06_08/results.json",
-        "new_tests": [
-          "test_virtual_non_power_of_two_grid_rejected",
-          "test_virtual_tail_outside_model_is_explicit"
-        ],
-        "engine_compile": "UNVERIFIED",
-        "engine_runtime": "UNVERIFIED",
-        "gpu_capture": "UNVERIFIED",
-        "performance": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+      "content_sha256": "8fdf0da4b7420cad7de455aa6c2e0077e77a57a7590e9ab88df212a0fe751932",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算物理页中心7.5/12与1.5/12、回退祖先局部0.75/0.25和12.9%边框；补旧页表版本未提交录制保留，尾部mip和跨页导数条件保留。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "cd4c2e721a2e90c3f8f8a4a553d811b999328cbca01340920de67d5dcd1d6dcf",
     "historical_content_commit": "ba93fc8",
@@ -10014,6 +10148,58 @@
         "performance": "UNVERIFIED"
       },
       "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、公式、代码、来源与标题，含独立复读",
+          "author_record": "revision-06-08.json",
+          "author_sha256": "8bf0d3b1b582d762f51bfea4f46437161ca04d3ab4ed03e59a388004ac8e0990",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "fdaca9b698aa6c632b4b1f455ab066ce5ba9aaf8f288f973598ca77ae0fde565",
+          "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+          "content_sha256": "7f2da1abe58f0e59de3be2a84d89a859454561422fb3805f9e6a6ae9aa05bca5",
+          "independent_review": "PASS",
+          "findings": "页首纹素中心、祖先UV重算与槽位版本寿命成立；补根页仍含B×B纹素及尾部mip的模型边界，核读UE5.6最粗层截断。新增拒绝非2的幂网格和超模型层级的2项TDD检查。",
+          "runtime": {
+            "source_scope": {
+              "scope": "vt_address；页首中心、祖先重新映射、缺失根页拒绝",
+              "cpu_status": "PASS",
+              "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+              "shader_compile": "NOT_APPLICABLE",
+              "engine_compile": "UNVERIFIED",
+              "engine_runtime": "UNVERIFIED",
+              "gpu_capture": "UNVERIFIED",
+              "visual_result": "UNVERIFIED",
+              "performance": "UNVERIFIED",
+              "limitations": "GPU反馈、页表纹理、跨页过滤、RVT更新与性能未执行",
+              "results": "知识库/examples/revision_06_08/results.json"
+            },
+            "results": "知识库/examples/revision_06_08/results.json",
+            "new_tests": [
+              "test_virtual_non_power_of_two_grid_rejected",
+              "test_virtual_tail_outside_model_is_explicit"
+            ],
+            "engine_compile": "UNVERIFIED",
+            "engine_runtime": "UNVERIFIED",
+            "gpu_capture": "UNVERIFIED",
+            "performance": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "8fdf0da4b7420cad7de455aa6c2e0077e77a57a7590e9ab88df212a0fe751932",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算物理页中心7.5/12与1.5/12、回退祖先局部0.75/0.25和12.9%边框；补旧页表版本未提交录制保留，尾部mip和跨页导数条件保留。"
     }
   },
   {
@@ -10032,15 +10218,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "固定块压缩的字节预算与数据误差；全文已复核，定位“块存储预算”。"
+        "basis": "固定块压缩的字节预算与数据误差；全文已复核，定位“块存储预算”。 本批全文复读：核对BC1红蓝调色板与纯绿不可重建、4×4八字节及1024完整mip链699064字节；ASTC4/6/8块的8/3.56/2bpp、LDR/HDR能力和细长mip边界一致。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：GPU 纹理压缩；BC 格式；移动端格式；ETC2/EAC；ASTC；PVRTC；压缩格式选择；块存储预算；端点与索引的误差来源；一个颜色块的重建；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：GPU 纹理压缩；BC 格式；移动端格式；ETC2/EAC；ASTC；PVRTC；压缩格式选择；块存储预算；端点与索引的误差来源；一个颜色块的重建；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：核对BC1红蓝调色板与纯绿不可重建、4×4八字节及1024完整mip链699064字节；ASTC4/6/8块的8/3.56/2bpp、LDR/HDR能力和细长mip边界一致。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：BC1端点索引误差与整块mip预算具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：BC1两端红蓝调色板不可能重建绿、块预算及mip完整块明确；格式表为选择参考。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：BC1端点索引误差与整块mip预算具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：BC1两端红蓝调色板不可能重建绿、块预算及mip完整块明确；格式表为选择参考。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：核对BC1红蓝调色板与纯绿不可重建、4×4八字节及1024完整mip链699064字节；ASTC4/6/8块的8/3.56/2bpp、LDR/HDR能力和细长mip边界一致。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -10048,19 +10234,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。 本批全文复读：核对BC1红蓝调色板与纯绿不可重建、4×4八字节及1024完整mip链699064字节；ASTC4/6/8块的8/3.56/2bpp、LDR/HDR能力和细长mip边界一致。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：BC1端点索引误差与整块mip预算具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：BC1两端红蓝调色板不可能重建绿、块预算及mip完整块明确；格式表为选择参考。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：BC1端点索引误差与整块mip预算具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：BC1两端红蓝调色板不可能重建绿、块预算及mip完整块明确；格式表为选择参考。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：核对BC1红蓝调色板与纯绿不可重建、4×4八字节及1024完整mip链699064字节；ASTC4/6/8块的8/3.56/2bpp、LDR/HDR能力和细长mip边界一致。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1“纹理压缩格式”与文件一致；各级标题客观，无新增标题映射。"
+        "basis": "H1“纹理压缩格式”与文件一致；各级标题客观，无新增标题映射。 本批全文复读：核对BC1红蓝调色板与纯绿不可重建、4×4八字节及1024完整mip链699064字节；ASTC4/6/8块的8/3.56/2bpp、LDR/HDR能力和细长mip边界一致。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。"
+        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。 本批全文复读：核对BC1红蓝调色板与纯绿不可重建、4×4八字节及1024完整mip链699064字节；ASTC4/6/8块的8/3.56/2bpp、LDR/HDR能力和细长mip边界一致。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -10126,40 +10312,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、公式、代码、来源与标题，含独立复读",
-      "author_record": "revision-06-08.json",
-      "author_sha256": "2684d6fc50b22e7537e1019dee94be9856a637256c0a0a72a94f8cbf09248e2e",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "4f18f692e8ce43d1a040fed89a60b4de625f75939d79ad48050b54c5e5d74300",
-      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "8042f16d9e4a969d34132fc3e89e76ab8165f4c21b05b55fcc99987f470b8e67",
       "independent_review": "PASS",
-      "findings": "核对BC块字节、ASTC128位与3.56bpp、非方形mip尾和4/3推导；BC5正半球解码条件明确。已有699064字节预算回归通过，保留。",
-      "runtime": {
-        "source_scope": {
-          "scope": "mip_bytes；5×3块载荷、1024² BC1=699064字节、8×1尾部",
-          "cpu_status": "PASS",
-          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
-          "shader_compile": "NOT_APPLICABLE",
-          "engine_compile": "UNVERIFIED",
-          "engine_runtime": "UNVERIFIED",
-          "gpu_capture": "UNVERIFIED",
-          "visual_result": "UNVERIFIED",
-          "performance": "UNVERIFIED",
-          "limitations": "未运行编码器或设备格式支持与解码画面检查",
-          "results": "知识库/examples/revision_06_08/results.json"
-        },
-        "results": "知识库/examples/revision_06_08/results.json",
-        "new_tests": [],
-        "engine_compile": "UNVERIFIED",
-        "engine_runtime": "UNVERIFIED",
-        "gpu_capture": "UNVERIFIED",
-        "performance": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+      "content_sha256": "8042f16d9e4a969d34132fc3e89e76ab8165f4c21b05b55fcc99987f470b8e67",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "核对BC1红蓝调色板与纯绿不可重建、4×4八字节及1024完整mip链699064字节；ASTC4/6/8块的8/3.56/2bpp、LDR/HDR能力和细长mip边界一致。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "a2b7404878740168331e191bba59f0ff29b2b6ee35c4441e11647d88aa5d07d8",
     "historical_content_commit": "4e626da",
@@ -10207,6 +10367,55 @@
         "performance": "UNVERIFIED"
       },
       "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、公式、代码、来源与标题，含独立复读",
+          "author_record": "revision-06-08.json",
+          "author_sha256": "2684d6fc50b22e7537e1019dee94be9856a637256c0a0a72a94f8cbf09248e2e",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "4f18f692e8ce43d1a040fed89a60b4de625f75939d79ad48050b54c5e5d74300",
+          "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+          "content_sha256": "8042f16d9e4a969d34132fc3e89e76ab8165f4c21b05b55fcc99987f470b8e67",
+          "independent_review": "PASS",
+          "findings": "核对BC块字节、ASTC128位与3.56bpp、非方形mip尾和4/3推导；BC5正半球解码条件明确。已有699064字节预算回归通过，保留。",
+          "runtime": {
+            "source_scope": {
+              "scope": "mip_bytes；5×3块载荷、1024² BC1=699064字节、8×1尾部",
+              "cpu_status": "PASS",
+              "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+              "shader_compile": "NOT_APPLICABLE",
+              "engine_compile": "UNVERIFIED",
+              "engine_runtime": "UNVERIFIED",
+              "gpu_capture": "UNVERIFIED",
+              "visual_result": "UNVERIFIED",
+              "performance": "UNVERIFIED",
+              "limitations": "未运行编码器或设备格式支持与解码画面检查",
+              "results": "知识库/examples/revision_06_08/results.json"
+            },
+            "results": "知识库/examples/revision_06_08/results.json",
+            "new_tests": [],
+            "engine_compile": "UNVERIFIED",
+            "engine_runtime": "UNVERIFIED",
+            "gpu_capture": "UNVERIFIED",
+            "performance": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "8042f16d9e4a969d34132fc3e89e76ab8165f4c21b05b55fcc99987f470b8e67",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "核对BC1红蓝调色板与纯绿不可重建、4×4八字节及1024完整mip链699064字节；ASTC4/6/8块的8/3.56/2bpp、LDR/HDR能力和细长mip边界一致。"
     }
   },
   {
@@ -10225,15 +10434,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "子图坐标与过滤足迹的隔离；全文已复核，定位“逐级隔离”。"
+        "basis": "子图坐标与过滤足迹的隔离；全文已复核，定位“逐级隔离”。 本批全文复读：复算16.5/64至23.5/64的中心语义、mip3边框8变1；完整UV映射和逐级隔离保留，图集不等同于合批，Wrap原始导数与Texture Array作明确对照。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：表面坐标与共享纹理；边距与串色；间距的定量估算；Texture Atlas；Trim Sheet；Texture Array；图集 UV 变换；逐级隔离；资产展开与密度；UV展开；纹素密度；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：表面坐标与共享纹理；边距与串色；间距的定量估算；Texture Atlas；Trim Sheet；Texture Array；图集 UV 变换；逐级隔离；资产展开与密度；UV展开；纹素密度；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算16.5/64至23.5/64的中心语义、mip3边框8变1；完整UV映射和逐级隔离保留，图集不等同于合批，Wrap原始导数与Texture Array作明确对照。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：中心UV与逐级隔离局限可推算；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：首尾中心16.5/64至23.5/64与逐mip隔离固定布局、宽核Padding条件清楚。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：中心UV与逐级隔离局限可推算；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：首尾中心16.5/64至23.5/64与逐mip隔离固定布局、宽核Padding条件清楚。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算16.5/64至23.5/64的中心语义、mip3边框8变1；完整UV映射和逐级隔离保留，图集不等同于合批，Wrap原始导数与Texture Array作明确对照。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -10241,19 +10450,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。 本批全文复读：复算16.5/64至23.5/64的中心语义、mip3边框8变1；完整UV映射和逐级隔离保留，图集不等同于合批，Wrap原始导数与Texture Array作明确对照。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：中心UV与逐级隔离局限可推算；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：首尾中心16.5/64至23.5/64与逐mip隔离固定布局、宽核Padding条件清楚。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：中心UV与逐级隔离局限可推算；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：首尾中心16.5/64至23.5/64与逐mip隔离固定布局、宽核Padding条件清楚。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算16.5/64至23.5/64的中心语义、mip3边框8变1；完整UV映射和逐级隔离保留，图集不等同于合批，Wrap原始导数与Texture Array作明确对照。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1“纹理图集”与文件一致；各级标题客观，无新增标题映射。"
+        "basis": "H1“纹理图集”与文件一致；各级标题客观，无新增标题映射。 本批全文复读：复算16.5/64至23.5/64的中心语义、mip3边框8变1；完整UV映射和逐级隔离保留，图集不等同于合批，Wrap原始导数与Texture Array作明确对照。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。"
+        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。 本批全文复读：复算16.5/64至23.5/64的中心语义、mip3边框8变1；完整UV映射和逐级隔离保留，图集不等同于合批，Wrap原始导数与Texture Array作明确对照。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -10294,7 +10503,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "586dd26add2c9e0626b252406e9b50d0d9dc4df7e5d296f2e557d636148c13d6",
+    "final_sha256": "70978bab12d746fdbb5f6765637b03d6021c585af7d72319925ea0402da5d570",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "纹理图集",
@@ -10306,7 +10515,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "586dd26add2c9e0626b252406e9b50d0d9dc4df7e5d296f2e557d636148c13d6",
+    "reviewed_content_sha256": "70978bab12d746fdbb5f6765637b03d6021c585af7d72319925ea0402da5d570",
     "source_article_path": "知识库/06_纹理技术/UV、图集、流送与虚拟纹理.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -10322,40 +10531,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、公式、代码、来源与标题，含独立复读",
-      "author_record": "revision-06-08.json",
-      "author_sha256": "425136c8c9acfc032c1a4ad9ecf343d3465e633cfa076819517d42f68726c7b5",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "a3772f040eaa3098f3d15a174bdf736a21e5230273316f589ec0d357ee3e96de",
-      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "586dd26add2c9e0626b252406e9b50d0d9dc4df7e5d296f2e557d636148c13d6",
       "independent_review": "PASS",
-      "findings": "补局部UV范围；逐级独立重排与固定归一化布局分开，前者必须按级查矩形并显式混合；纠正远处串色几乎全因Padding的泛化。中心到中心7纹素跨度计算成立。",
-      "runtime": {
-        "source_scope": {
-          "scope": "bilinear的中心语义；AtlasUv是HLSL机制片段，数值例可复算",
-          "cpu_status": "PASS",
-          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
-          "shader_compile": "NOT_APPLICABLE",
-          "engine_compile": "UNVERIFIED",
-          "engine_runtime": "UNVERIFIED",
-          "gpu_capture": "UNVERIFIED",
-          "visual_result": "UNVERIFIED",
-          "performance": "UNVERIFIED",
-          "limitations": "图集构建器、逐级隔离和真实GPU过滤未执行",
-          "results": "知识库/examples/revision_06_08/results.json"
-        },
-        "results": "知识库/examples/revision_06_08/results.json",
-        "new_tests": [],
-        "engine_compile": "UNVERIFIED",
-        "engine_runtime": "UNVERIFIED",
-        "gpu_capture": "UNVERIFIED",
-        "performance": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+      "content_sha256": "70978bab12d746fdbb5f6765637b03d6021c585af7d72319925ea0402da5d570",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算16.5/64至23.5/64的中心语义、mip3边框8变1；完整UV映射和逐级隔离保留，图集不等同于合批，Wrap原始导数与Texture Array作明确对照。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "fa8989d08fc9fd6b6f6b9536ae75d2e6e127c0a79e817919ead3b35692bf2191",
     "historical_content_commit": "ba93fc8",
@@ -10403,6 +10586,55 @@
         "performance": "UNVERIFIED"
       },
       "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、公式、代码、来源与标题，含独立复读",
+          "author_record": "revision-06-08.json",
+          "author_sha256": "425136c8c9acfc032c1a4ad9ecf343d3465e633cfa076819517d42f68726c7b5",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "a3772f040eaa3098f3d15a174bdf736a21e5230273316f589ec0d357ee3e96de",
+          "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+          "content_sha256": "586dd26add2c9e0626b252406e9b50d0d9dc4df7e5d296f2e557d636148c13d6",
+          "independent_review": "PASS",
+          "findings": "补局部UV范围；逐级独立重排与固定归一化布局分开，前者必须按级查矩形并显式混合；纠正远处串色几乎全因Padding的泛化。中心到中心7纹素跨度计算成立。",
+          "runtime": {
+            "source_scope": {
+              "scope": "bilinear的中心语义；AtlasUv是HLSL机制片段，数值例可复算",
+              "cpu_status": "PASS",
+              "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+              "shader_compile": "NOT_APPLICABLE",
+              "engine_compile": "UNVERIFIED",
+              "engine_runtime": "UNVERIFIED",
+              "gpu_capture": "UNVERIFIED",
+              "visual_result": "UNVERIFIED",
+              "performance": "UNVERIFIED",
+              "limitations": "图集构建器、逐级隔离和真实GPU过滤未执行",
+              "results": "知识库/examples/revision_06_08/results.json"
+            },
+            "results": "知识库/examples/revision_06_08/results.json",
+            "new_tests": [],
+            "engine_compile": "UNVERIFIED",
+            "engine_runtime": "UNVERIFIED",
+            "gpu_capture": "UNVERIFIED",
+            "performance": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "70978bab12d746fdbb5f6765637b03d6021c585af7d72319925ea0402da5d570",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算16.5/64至23.5/64的中心语义、mip3边框8变1；完整UV映射和逐级隔离保留，图集不等同于合批，Wrap原始导数与Texture Array作明确对照。"
     }
   },
   {
@@ -10421,15 +10653,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "纹理采样足迹决定层级与过滤的计算；全文已复核，定位“LOD估计”。"
+        "basis": "纹理采样足迹决定层级与过滤的计算；全文已复核，定位“LOD估计”。 本批全文复读：复算2×2双线性3、1024×512导数足迹4与LOD2、8×1共15纹素；法线平均丢失方差、单父纹素无法保持任意Alpha形状，各向异性16/2足迹解释完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：专题阅读；纹素坐标与单级过滤；点采样；双线性过滤；Mipmap；LOD估计；三线性过滤；各向异性过滤；放大与缩小；Address Mode；Repeat/Wrap；Clamp；Mirror；Border；数据语义与mip生成；Normal Map；Alpha Test；SDF；ORM/Mask；数据缩小的具体失效；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：专题阅读；纹素坐标与单级过滤；点采样；双线性过滤；Mipmap；LOD估计；三线性过滤；各向异性过滤；放大与缩小；Address Mode；Repeat/Wrap；Clamp；Mirror；Border；数据语义与mip生成；Normal Map；Alpha Test；SDF；ORM/Mask；数据缩小的具体失效；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算2×2双线性3、1024×512导数足迹4与LOD2、8×1共15纹素；法线平均丢失方差、单父纹素无法保持任意Alpha形状，各向异性16/2足迹解释完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：双线性中心和LOD导数有数值例；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：UV中心双线性、1024×512导数LOD2、16×2各向异性足迹与Alpha统计限制具体。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：双线性中心和LOD导数有数值例；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：UV中心双线性、1024×512导数LOD2、16×2各向异性足迹与Alpha统计限制具体。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算2×2双线性3、1024×512导数足迹4与LOD2、8×1共15纹素；法线平均丢失方差、单父纹素无法保持任意Alpha形状，各向异性16/2足迹解释完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -10437,19 +10669,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。 本批全文复读：复算2×2双线性3、1024×512导数足迹4与LOD2、8×1共15纹素；法线平均丢失方差、单父纹素无法保持任意Alpha形状，各向异性16/2足迹解释完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：双线性中心和LOD导数有数值例；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：UV中心双线性、1024×512导数LOD2、16×2各向异性足迹与Alpha统计限制具体。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：双线性中心和LOD导数有数值例；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：UV中心双线性、1024×512导数LOD2、16×2各向异性足迹与Alpha统计限制具体。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算2×2双线性3、1024×512导数足迹4与LOD2、8×1共15纹素；法线平均丢失方差、单父纹素无法保持任意Alpha形状，各向异性16/2足迹解释完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1“纹理采样与过滤”与文件一致；各级标题客观，无新增标题映射。"
+        "basis": "H1“纹理采样与过滤”与文件一致；各级标题客观，无新增标题映射。 本批全文复读：复算2×2双线性3、1024×512导数足迹4与LOD2、8×1共15纹素；法线平均丢失方差、单父纹素无法保持任意Alpha形状，各向异性16/2足迹解释完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。"
+        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。 本批全文复读：复算2×2双线性3、1024×512导数足迹4与LOD2、8×1共15纹素；法线平均丢失方差、单父纹素无法保持任意Alpha形状，各向异性16/2足迹解释完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -10529,40 +10761,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、公式、代码、来源与标题，含独立复读",
-      "author_record": "revision-06-08.json",
-      "author_sha256": "d598cf2a11f6b37f9f01534622ac63f41140ad49af57a4cc95b21362b1e51091",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "be4ddc59b09c38e3902be52c94a3fe0f014efdc17c20b823382c9247607bbcbc",
-      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "a66c0318466dd5cb2446337deec89543c3a49dd686324ea2013527c9ac0d9387",
       "independent_review": "PASS",
-      "findings": "完整复读双线性纹素中心、Clamp、纹素单位导数、各向异性和数据语义；复算2×2中心为3、非方纹理LOD2及8×1尾部15纹素，CPU检查通过，保留。",
-      "runtime": {
-        "source_scope": {
-          "scope": "texture_lod、bilinear、mip_bytes；纹素单位、中心、Clamp、细长尾部",
-          "cpu_status": "PASS",
-          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
-          "shader_compile": "NOT_APPLICABLE",
-          "engine_compile": "UNVERIFIED",
-          "engine_runtime": "UNVERIFIED",
-          "gpu_capture": "UNVERIFIED",
-          "visual_result": "UNVERIFIED",
-          "performance": "UNVERIFIED",
-          "limitations": "硬件各向异性分布、实际精度和画面未执行",
-          "results": "知识库/examples/revision_06_08/results.json"
-        },
-        "results": "知识库/examples/revision_06_08/results.json",
-        "new_tests": [],
-        "engine_compile": "UNVERIFIED",
-        "engine_runtime": "UNVERIFIED",
-        "gpu_capture": "UNVERIFIED",
-        "performance": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+      "content_sha256": "a66c0318466dd5cb2446337deec89543c3a49dd686324ea2013527c9ac0d9387",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算2×2双线性3、1024×512导数足迹4与LOD2、8×1共15纹素；法线平均丢失方差、单父纹素无法保持任意Alpha形状，各向异性16/2足迹解释完整。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "c68dcd35f5027f111c966c8b1ed02a4cef8647fe3e488359ac4f04c4bf135b19",
     "historical_content_commit": "6de6394",
@@ -10610,6 +10816,55 @@
         "performance": "UNVERIFIED"
       },
       "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、公式、代码、来源与标题，含独立复读",
+          "author_record": "revision-06-08.json",
+          "author_sha256": "d598cf2a11f6b37f9f01534622ac63f41140ad49af57a4cc95b21362b1e51091",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "be4ddc59b09c38e3902be52c94a3fe0f014efdc17c20b823382c9247607bbcbc",
+          "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+          "content_sha256": "a66c0318466dd5cb2446337deec89543c3a49dd686324ea2013527c9ac0d9387",
+          "independent_review": "PASS",
+          "findings": "完整复读双线性纹素中心、Clamp、纹素单位导数、各向异性和数据语义；复算2×2中心为3、非方纹理LOD2及8×1尾部15纹素，CPU检查通过，保留。",
+          "runtime": {
+            "source_scope": {
+              "scope": "texture_lod、bilinear、mip_bytes；纹素单位、中心、Clamp、细长尾部",
+              "cpu_status": "PASS",
+              "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+              "shader_compile": "NOT_APPLICABLE",
+              "engine_compile": "UNVERIFIED",
+              "engine_runtime": "UNVERIFIED",
+              "gpu_capture": "UNVERIFIED",
+              "visual_result": "UNVERIFIED",
+              "performance": "UNVERIFIED",
+              "limitations": "硬件各向异性分布、实际精度和画面未执行",
+              "results": "知识库/examples/revision_06_08/results.json"
+            },
+            "results": "知识库/examples/revision_06_08/results.json",
+            "new_tests": [],
+            "engine_compile": "UNVERIFIED",
+            "engine_runtime": "UNVERIFIED",
+            "gpu_capture": "UNVERIFIED",
+            "performance": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "a66c0318466dd5cb2446337deec89543c3a49dd686324ea2013527c9ac0d9387",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算2×2双线性3、1024×512导数足迹4与LOD2、8×1共15纹素；法线平均丢失方差、单父纹素无法保持任意Alpha形状，各向异性16/2足迹解释完整。"
     }
   },
   {
@@ -10627,15 +10882,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "切线空间视线与高度场首次交点的重建；全文已复核，定位“视差遮蔽映射”。"
+        "basis": "切线空间视线与高度场首次交点的重建；全文已复核，定位“视差遮蔽映射”。 本批全文复读：复算D(u)=u的真实交点0.5、恒定D=0.3时u=0.54、光在深度0.4时qEnd0.2；观察与朝光共用PomHit，材质梯度、虚拟位置和层内光源截止完整，长篇仍围绕同一高度场交点消费。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。 本批全文复读：复算D(u)=u的真实交点0.5、恒定D=0.3时u=0.54、光在深度0.4时qEnd0.2；观察与朝光共用PomHit，材质梯度、虚拟位置和层内光源截止完整，长篇仍围绕同一高度场交点消费。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "正文逐项推演：D=1-h、TBN/UV物理尺度、一次偏移误差与逐层首次交叉；残差插值比例before/(before-error)、同hit UV/depth/valid及显式梯度；同hit材质采样、Phit单位还原、未环绕UV差与光照衰减；点光有限qEnd、方向光层顶终点、正负Lz、阴影bias和掠射近似；有限面片NoHit与平铺Wrap、最终几何轮廓/深度边界。见references/delivery-cross-system.json"
+        "basis": "正文逐项推演：D=1-h、TBN/UV物理尺度、一次偏移误差与逐层首次交叉；残差插值比例before/(before-error)、同hit UV/depth/valid及显式梯度；同hit材质采样、Phit单位还原、未环绕UV差与光照衰减；点光有限qEnd、方向光层顶终点、正负Lz、阴影bias和掠射近似；有限面片NoHit与平铺Wrap、最终几何轮廓/深度边界。见references/delivery-cross-system.json 本批全文复读：复算D(u)=u的真实交点0.5、恒定D=0.3时u=0.54、光在深度0.4时qEnd0.2；观察与朝光共用PomHit，材质梯度、虚拟位置和层内光源截止完整，长篇仍围绕同一高度场交点消费。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -10643,19 +10898,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。 本批全文复读：复算D(u)=u的真实交点0.5、恒定D=0.3时u=0.54、光在深度0.4时qEnd0.2；观察与朝光共用PomHit，材质梯度、虚拟位置和层内光源截止完整，长篇仍围绕同一高度场交点消费。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。"
+        "basis": "机制、消费与恢复接口及全文复读见references/delivery-cross-system.json；运行证据保持各篇实际范围。 本批全文复读：复算D(u)=u的真实交点0.5、恒定D=0.3时u=0.54、光在深度0.4时qEnd0.2；观察与朝光共用PomHit，材质梯度、虚拟位置和层内光源截止完整，长篇仍围绕同一高度场交点消费。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1“视差映射”与文件一致；各级标题客观，无新增标题映射。"
+        "basis": "H1“视差映射”与文件一致；各级标题客观，无新增标题映射。 本批全文复读：复算D(u)=u的真实交点0.5、恒定D=0.3时u=0.54、光在深度0.4时qEnd0.2；观察与朝光共用PomHit，材质梯度、虚拟位置和层内光源截止完整，长篇仍围绕同一高度场交点消费。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。"
+        "basis": "主归属06_纹理技术；本批12篇双链全部存在，相关主实现通过专篇承接。 本批全文复读：复算D(u)=u的真实交点0.5、恒定D=0.3时u=0.54、光在深度0.4时qEnd0.2；观察与朝光共用PomHit，材质梯度、虚拟位置和层内光源截止完整，长篇仍围绕同一高度场交点消费。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -10698,7 +10953,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "f9534979528a98d2775f93664d7f25c0c355aaf8452f4c6856cc49c95d046794",
+    "final_sha256": "dbf4f2e23fe4a4ef877d5e13625ba209f80d03a613c9105e789064185a4a4f9d",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "视差映射",
@@ -10710,7 +10965,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "f9534979528a98d2775f93664d7f25c0c355aaf8452f4c6856cc49c95d046794",
+    "reviewed_content_sha256": "dbf4f2e23fe4a4ef877d5e13625ba209f80d03a613c9105e789064185a4a4f9d",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -10725,69 +10980,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "delivery-Final",
-      "scope": "全文、公式、代码、来源与标题，含独立复读",
-      "author_record": "revision-06-08.json",
-      "author_sha256": "da2d37581e8e24f5ff6d95a9faaca8149912e15c2ccf3af6daf65dcd368e2751",
-      "independent_record": "references/delivery-cross-system.json",
-      "independent_source_sha256": "f9534979528a98d2775f93664d7f25c0c355aaf8452f4c6856cc49c95d046794",
-      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "f9534979528a98d2775f93664d7f25c0c355aaf8452f4c6856cc49c95d046794",
       "independent_review": "PASS",
-      "findings": [
-        "D(u)=u时一次估计u=.48并非交点，正文推到t=.5/u=.5",
-        "点光深度.4、hit深度.6只查q=.2，位于光之后的凸起不再遮挡",
-        "独立面片越界有效位先由材质处理；多消费者使用同hit，平面回退统一零深度",
-        "掠射Vz夹限导致Phit不严格在相机射线，正文说明形状压缩与严格求交选择"
-      ],
-      "runtime": {
-        "source_scope": {
-          "scope": "pom_line：顶层、常值及线性高度场解析交点；pom.frag GLSL4.50 SPIR-V编译",
-          "cpu_status": "PASS",
-          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
-          "shader_compile": "PASS",
-          "engine_compile": "UNVERIFIED",
-          "engine_runtime": "UNVERIFIED",
-          "gpu_capture": "UNVERIFIED",
-          "visual_result": "UNVERIFIED",
-          "performance": "UNVERIFIED",
-          "limitations": "未创建纹理/宿主管线；画面、过滤、自阴影和GPU成本未执行",
-          "results": "知识库/examples/revision_06_08/results.json"
-        },
-        "results": "知识库/examples/revision_06_08/results.json",
-        "new_tests": [],
-        "engine_compile": "UNVERIFIED",
-        "engine_runtime": "UNVERIFIED",
-        "gpu_capture": "UNVERIFIED",
-        "performance": "UNVERIFIED"
-      },
-      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
-      "navigation_integration": {
-        "before_sha256": "da2d37581e8e24f5ff6d95a9faaca8149912e15c2ccf3af6daf65dcd368e2751",
-        "after_sha256": "4cc4245a613850cea3b8f9777de3ec303e73643815e68291d8d46978dc06fc92",
-        "changes": [
-          {
-            "old": "一帧如何到达屏幕",
-            "new": "渲染帧流程",
-            "old_path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
-            "new_path": "知识库/02_GPU与光栅化管线/渲染帧流程.md"
-          },
-          {
-            "old": "光栅化可见性导读",
-            "new": "光栅化可见性",
-            "old_path": "知识库/02_GPU与光栅化管线/光栅化可见性导读.md",
-            "new_path": "知识库/02_GPU与光栅化管线/光栅化可见性.md"
-          },
-          {
-            "old": "可见性与合成导读",
-            "new": "可见性与合成",
-            "old_path": "知识库/02_GPU与光栅化管线/可见性与合成导读.md",
-            "new_path": "知识库/02_GPU与光栅化管线/可见性与合成.md"
-          }
-        ]
-      }
+      "content_sha256": "dbf4f2e23fe4a4ef877d5e13625ba209f80d03a613c9105e789064185a4a4f9d",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算D(u)=u的真实交点0.5、恒定D=0.3时u=0.54、光在深度0.4时qEnd0.2；观察与朝光共用PomHit，材质梯度、虚拟位置和层内光源截止完整，长篇仍围绕同一高度场交点消费。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "223fd3936b0b7e701fe09c36026fb3a4ba61bab5c7b1b674eafaae82b9f01ecc",
     "historical_content_commit": "4e626da",
@@ -11443,6 +11643,84 @@
       "date": "2026-10-23",
       "phase": "Final",
       "content_sha256": "f9534979528a98d2775f93664d7f25c0c355aaf8452f4c6856cc49c95d046794"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "delivery-Final",
+          "scope": "全文、公式、代码、来源与标题，含独立复读",
+          "author_record": "revision-06-08.json",
+          "author_sha256": "da2d37581e8e24f5ff6d95a9faaca8149912e15c2ccf3af6daf65dcd368e2751",
+          "independent_record": "references/delivery-cross-system.json",
+          "independent_source_sha256": "f9534979528a98d2775f93664d7f25c0c355aaf8452f4c6856cc49c95d046794",
+          "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+          "content_sha256": "f9534979528a98d2775f93664d7f25c0c355aaf8452f4c6856cc49c95d046794",
+          "independent_review": "PASS",
+          "findings": [
+            "D(u)=u时一次估计u=.48并非交点，正文推到t=.5/u=.5",
+            "点光深度.4、hit深度.6只查q=.2，位于光之后的凸起不再遮挡",
+            "独立面片越界有效位先由材质处理；多消费者使用同hit，平面回退统一零深度",
+            "掠射Vz夹限导致Phit不严格在相机射线，正文说明形状压缩与严格求交选择"
+          ],
+          "runtime": {
+            "source_scope": {
+              "scope": "pom_line：顶层、常值及线性高度场解析交点；pom.frag GLSL4.50 SPIR-V编译",
+              "cpu_status": "PASS",
+              "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+              "shader_compile": "PASS",
+              "engine_compile": "UNVERIFIED",
+              "engine_runtime": "UNVERIFIED",
+              "gpu_capture": "UNVERIFIED",
+              "visual_result": "UNVERIFIED",
+              "performance": "UNVERIFIED",
+              "limitations": "未创建纹理/宿主管线；画面、过滤、自阴影和GPU成本未执行",
+              "results": "知识库/examples/revision_06_08/results.json"
+            },
+            "results": "知识库/examples/revision_06_08/results.json",
+            "new_tests": [],
+            "engine_compile": "UNVERIFIED",
+            "engine_runtime": "UNVERIFIED",
+            "gpu_capture": "UNVERIFIED",
+            "performance": "UNVERIFIED"
+          },
+          "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
+          "navigation_integration": {
+            "before_sha256": "da2d37581e8e24f5ff6d95a9faaca8149912e15c2ccf3af6daf65dcd368e2751",
+            "after_sha256": "4cc4245a613850cea3b8f9777de3ec303e73643815e68291d8d46978dc06fc92",
+            "changes": [
+              {
+                "old": "一帧如何到达屏幕",
+                "new": "渲染帧流程",
+                "old_path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+                "new_path": "知识库/02_GPU与光栅化管线/渲染帧流程.md"
+              },
+              {
+                "old": "光栅化可见性导读",
+                "new": "光栅化可见性",
+                "old_path": "知识库/02_GPU与光栅化管线/光栅化可见性导读.md",
+                "new_path": "知识库/02_GPU与光栅化管线/光栅化可见性.md"
+              },
+              {
+                "old": "可见性与合成导读",
+                "new": "可见性与合成",
+                "old_path": "知识库/02_GPU与光栅化管线/可见性与合成导读.md",
+                "new_path": "知识库/02_GPU与光栅化管线/可见性与合成.md"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "dbf4f2e23fe4a4ef877d5e13625ba209f80d03a613c9105e789064185a4a4f9d",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算D(u)=u的真实交点0.5、恒定D=0.3时u=0.54、光在深度0.4时qEnd0.2；观察与朝光共用PomHit，材质梯度、虚拟位置和层内光源截止完整，长篇仍围绕同一高度场交点消费。"
     }
   },
   {
@@ -11461,15 +11739,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何在纹理过滤与混合中保持覆盖颜色一致"
+        "basis": "如何在纹理过滤与混合中保持覆盖颜色一致 本批全文复读：复算红边先过滤再预乘0.25与预乘后过滤0.5，以及tintA0.5时预乘红0.25；资源制作、mip、混合和UI后合成链连续，透明排序由主归属维护。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。 本批全文复读：复算红边先过滤再预乘0.25与预乘后过滤0.5，以及tintA0.5时预乘红0.25；资源制作、mip、混合和UI后合成链连续，透明排序由主归属维护。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "逐项推演：覆盖数据；线性混合；预乘与过滤；Mip生成；UI调色与最终编码。反例见interface-final-review.json。"
+        "basis": "逐项推演：覆盖数据；线性混合；预乘与过滤；Mip生成；UI调色与最终编码。反例见interface-final-review.json。 本批全文复读：复算红边先过滤再预乘0.25与预乘后过滤0.5，以及tintA0.5时预乘红0.25；资源制作、mip、混合和UI后合成链连续，透明排序由主归属维护。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -11477,19 +11755,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。 本批全文复读：复算红边先过滤再预乘0.25与预乘后过滤0.5，以及tintA0.5时预乘红0.25；资源制作、mip、混合和UI后合成链连续，透明排序由主归属维护。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。"
+        "basis": "正文推演与反证见interface-final-review.json；实现形式、编译、CPU检查、目标运行分别以正文实际证据为准。 本批全文复读：复算红边先过滤再预乘0.25与预乘后过滤0.5，以及tintA0.5时预乘红0.25；资源制作、mip、混合和UI后合成链连续，透明排序由主归属维护。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "Alpha表示定位当前概念与操作，子标题避免疑问句。"
+        "basis": "Alpha表示定位当前概念与操作，子标题避免疑问句。 本批全文复读：复算红边先过滤再预乘0.25与预乘后过滤0.5，以及tintA0.5时预乘红0.25；资源制作、mip、混合和UI后合成链连续，透明排序由主归属维护。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。"
+        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。 本批全文复读：复算红边先过滤再预乘0.25与预乘后过滤0.5，以及tintA0.5时预乘红0.25；资源制作、mip、混合和UI后合成链连续，透明排序由主归属维护。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -11558,25 +11836,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "interface-Final",
-      "scope": "全文、公式、代码、证据、验证与标题",
-      "findings": [
-        "半覆盖红与透明黑先滤再乘得到0.25，预乘链得到0.5",
-        "tintA减半须同时缩RGB，正文给0.25数例",
-        "色调映射后UI在线性显示域混合再编码，避免双编码"
-      ],
-      "content_sha256": "3eef24e2d962d155d01711005064c4fcb260c9185013a85791f93eb018a1dca8",
-      "runtime": {
-        "engine": "UNVERIFIED",
-        "gpu": "UNVERIFIED"
-      },
-      "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
-      "first_review_sha256": "f80cfbc6855c6eb163043021e3df0df40a6460b83a50844f184b5b6b408aa248",
       "independent_review": "PASS",
-      "independent_record": "interface-final-review.json",
-      "independent_source_sha256": "3eef24e2d962d155d01711005064c4fcb260c9185013a85791f93eb018a1dca8"
+      "content_sha256": "3eef24e2d962d155d01711005064c4fcb260c9185013a85791f93eb018a1dca8",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算红边先过滤再预乘0.25与预乘后过滤0.5，以及tintA0.5时预乘红0.25；资源制作、mip、混合和UI后合成链连续，透明排序由主归属维护。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "96980dc1a15960186f4ca06f13099212d3d2e088c5e5d399d6d01cfa8ab7d2ab",
     "historical_content_commit": "ba93fc8",
@@ -11712,6 +11979,40 @@
       "record": "interface-final-review.json",
       "content_sha256": "3eef24e2d962d155d01711005064c4fcb260c9185013a85791f93eb018a1dca8",
       "criterion": "完整正文的主要机制、跨机制接口与具体反例；登记与测试不作正文质量证据"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "interface-Final",
+          "scope": "全文、公式、代码、证据、验证与标题",
+          "findings": [
+            "半覆盖红与透明黑先滤再乘得到0.25，预乘链得到0.5",
+            "tintA减半须同时缩RGB，正文给0.25数例",
+            "色调映射后UI在线性显示域混合再编码，避免双编码"
+          ],
+          "content_sha256": "3eef24e2d962d155d01711005064c4fcb260c9185013a85791f93eb018a1dca8",
+          "runtime": {
+            "engine": "UNVERIFIED",
+            "gpu": "UNVERIFIED"
+          },
+          "acceptance": "逐主要机制和跨接口直接复读；具体反例见interface_review",
+          "first_review_sha256": "f80cfbc6855c6eb163043021e3df0df40a6460b83a50844f184b5b6b408aa248",
+          "independent_review": "PASS",
+          "independent_record": "interface-final-review.json",
+          "independent_source_sha256": "3eef24e2d962d155d01711005064c4fcb260c9185013a85791f93eb018a1dca8"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "3eef24e2d962d155d01711005064c4fcb260c9185013a85791f93eb018a1dca8",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算红边先过滤再预乘0.25与预乘后过滤0.5，以及tintA0.5时预乘红0.25；资源制作、mip、混合和UI后合成链连续，透明排序由主归属维护。"
     }
   },
   {
@@ -11730,15 +12031,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何通过多尺度滤波合成光晕"
+        "basis": "如何通过多尺度滤波合成光晕 本批全文复读：复算软阈值边界导数、16亮点逐级4/1、帐篷九权重和1及尺度系数0.5/0.25/0.25；保持常量与有限边界能量守恒分开，完整金字塔算法保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "Bloom 的完整流程；验证方法；相关主题；参考资料"
+        "basis": "Bloom 的完整流程；验证方法；相关主题；参考资料 本批全文复读：复算软阈值边界导数、16亮点逐级4/1、帐篷九权重和1及尺度系数0.5/0.25/0.25；保持常量与有限边界能量守恒分开，完整金字塔算法保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "盒式2×2→帐篷9权重→三级0.5/0.25/0.25→纹理提交；边界钳位与面积加权已区分。 本轮全文重组与实验范围见depth-priority-review及各主题报告。"
+        "basis": "盒式2×2→帐篷9权重→三级0.5/0.25/0.25→纹理提交；边界钳位与面积加权已区分。 本轮全文重组与实验范围见depth-priority-review及各主题报告。 本批全文复读：复算软阈值边界导数、16亮点逐级4/1、帐篷九权重和1及尺度系数0.5/0.25/0.25；保持常量与有限边界能量守恒分开，完整金字塔算法保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -11746,19 +12047,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "§8.1.5 Bloom讨论曝光相对自发光；不作为本页归一化滤波算法的直接实现证据；原资料与计算实验分别记录。"
+        "basis": "§8.1.5 Bloom讨论曝光相对自发光；不作为本页归一化滤波算法的直接实现证据；原资料与计算实验分别记录。 本批全文复读：复算软阈值边界导数、16亮点逐级4/1、帐篷九权重和1及尺度系数0.5/0.25/0.25；保持常量与有限边界能量守恒分开，完整金字塔算法保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "盒式2×2→帐篷9权重→三级0.5/0.25/0.25→纹理提交；边界钳位与面积加权已区分。 本轮全文重组与实验范围见depth-priority-review及各主题报告。"
+        "basis": "盒式2×2→帐篷9权重→三级0.5/0.25/0.25→纹理提交；边界钳位与面积加权已区分。 本轮全文重组与实验范围见depth-priority-review及各主题报告。 本批全文复读：复算软阈值边界导数、16亮点逐级4/1、帐篷九权重和1及尺度系数0.5/0.25/0.25；保持常量与有限边界能量守恒分开，完整金字塔算法保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "Bloom定位当前概念与操作，子标题避免疑问句。"
+        "basis": "Bloom定位当前概念与操作，子标题避免疑问句。 本批全文复读：复算软阈值边界导数、16亮点逐级4/1、帐篷九权重和1及尺度系数0.5/0.25/0.25；保持常量与有限边界能量守恒分开，完整金字塔算法保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。"
+        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。 本批全文复读：复算软阈值边界导数、16亮点逐级4/1、帐篷九权重和1及尺度系数0.5/0.25/0.25；保持常量与有限边界能量守恒分开，完整金字塔算法保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -11822,25 +12123,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-22",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P1-post",
-      "scope": "全文、公式、代码、证据、验证与标题",
-      "findings": [
-        "展开软阈值二次过渡、多尺度归一化、加法和能量分配区别及纹理读写调度。",
-        "阈值和输入处于同一曝光尺度，降低分辨率的过滤边界明确；无实测性能断言。"
-      ],
-      "content_sha256": "e4013fd06cb3d630bc04d2ab8690ab5a04cdec825d2c48c186381d86b42619fc",
-      "runtime": {
-        "engine": "UNVERIFIED",
-        "gpu": "UNVERIFIED"
-      },
-      "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
-      "first_review_sha256": "53ba7268c2b1f37e41bf082f96d6b058c50bc2c4579da10b7d403021faddb617",
       "independent_review": "PASS",
-      "independent_record": "revision-independent-07.json",
-      "independent_source_sha256": "e6abed97fc335d867293fec9398691e51b0e2d7e0100fcfdd7910263daee3c9c",
-      "current_depth_record": "depth-priority-review.json"
+      "content_sha256": "e4013fd06cb3d630bc04d2ab8690ab5a04cdec825d2c48c186381d86b42619fc",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算软阈值边界导数、16亮点逐级4/1、帐篷九权重和1及尺度系数0.5/0.25/0.25；保持常量与有限边界能量守恒分开，完整金字塔算法保留。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "b3cc23740e4fa0fd57ad4b935d77029c4e0a8ae7ab2ae6dcd5b7e495ecb72bbe",
     "historical_content_commit": "ba93fc8",
@@ -11874,6 +12164,40 @@
         "independent_source_sha256": "e6abed97fc335d867293fec9398691e51b0e2d7e0100fcfdd7910263daee3c9c",
         "current_depth_record": "depth-priority-review.json"
       }
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-22",
+          "status": "REVIEWED",
+          "phase": "P1-post",
+          "scope": "全文、公式、代码、证据、验证与标题",
+          "findings": [
+            "展开软阈值二次过渡、多尺度归一化、加法和能量分配区别及纹理读写调度。",
+            "阈值和输入处于同一曝光尺度，降低分辨率的过滤边界明确；无实测性能断言。"
+          ],
+          "content_sha256": "e4013fd06cb3d630bc04d2ab8690ab5a04cdec825d2c48c186381d86b42619fc",
+          "runtime": {
+            "engine": "UNVERIFIED",
+            "gpu": "UNVERIFIED"
+          },
+          "acceptance": "全文与声明范围独立复核通过；目标引擎与画面按实际状态登记",
+          "first_review_sha256": "53ba7268c2b1f37e41bf082f96d6b058c50bc2c4579da10b7d403021faddb617",
+          "independent_review": "PASS",
+          "independent_record": "revision-independent-07.json",
+          "independent_source_sha256": "e6abed97fc335d867293fec9398691e51b0e2d7e0100fcfdd7910263daee3c9c",
+          "current_depth_record": "depth-priority-review.json"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "e4013fd06cb3d630bc04d2ab8690ab5a04cdec825d2c48c186381d86b42619fc",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算软阈值边界导数、16亮点逐级4/1、帐篷九权重和1及尺度系数0.5/0.25/0.25；保持常量与有限边界能量守恒分开，完整金字塔算法保留。"
     }
   },
   {
@@ -11892,15 +12216,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何保存场景亮度并让不同帧的曝光数据可比较"
+        "basis": "如何保存场景亮度并让不同帧的曝光数据可比较 本批全文复读：复算四亮度几何均值0.56234、裁极值0.31623、对数曝光中点2而非2.5及历史10换40后显示5；预曝光与显示曝光倍率来源已明确。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：场景亮度；HDR Buffer；Exposure；测光与时间适应；Pre-Exposure；历史曝光换算；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：场景亮度；HDR Buffer；Exposure；测光与时间适应；Pre-Exposure；历史曝光换算；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算四亮度几何均值0.56234、裁极值0.31623、对数曝光中点2而非2.5及历史10换40后显示5；预曝光与显示曝光倍率来源已明确。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：预曝光历史10到40与显示5、对数时间适应清楚；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：对数均值、log曝光1到4半步2与历史10→40→5完整；自动测光输入尺度明确。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：预曝光历史10到40与显示5、对数时间适应清楚；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：对数均值、log曝光1到4半步2与历史10→40→5完整；自动测光输入尺度明确。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算四亮度几何均值0.56234、裁极值0.31623、对数曝光中点2而非2.5及历史10换40后显示5；预曝光与显示曝光倍率来源已明确。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -11908,19 +12232,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "UE5.6；Histogram and Basic Algorithm、Manual Algorithm、Pre-Exposure，前帧曝光应用于写入场景颜色之前；原资料与计算实验分别记录。"
+        "basis": "UE5.6；Histogram and Basic Algorithm、Manual Algorithm、Pre-Exposure，前帧曝光应用于写入场景颜色之前；原资料与计算实验分别记录。 本批全文复读：复算四亮度几何均值0.56234、裁极值0.31623、对数曝光中点2而非2.5及历史10换40后显示5；预曝光与显示曝光倍率来源已明确。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：预曝光历史10到40与显示5、对数时间适应清楚；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：对数均值、log曝光1到4半步2与历史10→40→5完整；自动测光输入尺度明确。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：预曝光历史10到40与显示5、对数时间适应清楚；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：对数均值、log曝光1到4半步2与历史10→40→5完整；自动测光输入尺度明确。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算四亮度几何均值0.56234、裁极值0.31623、对数曝光中点2而非2.5及历史10换40后显示5；预曝光与显示曝光倍率来源已明确。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "HDR与曝光定位当前概念与操作，子标题避免疑问句。"
+        "basis": "HDR与曝光定位当前概念与操作，子标题避免疑问句。 本批全文复读：复算四亮度几何均值0.56234、裁极值0.31623、对数曝光中点2而非2.5及历史10换40后显示5；预曝光与显示曝光倍率来源已明确。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。"
+        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。 本批全文复读：复算四亮度几何均值0.56234、裁极值0.31623、对数曝光中点2而非2.5及历史10换40后显示5；预曝光与显示曝光倍率来源已明确。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -11987,24 +12311,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、公式、代码、证据、验证与标题",
-      "findings": [
-        "展开对数测光、秒单位适应、预曝光历史与显示尺度公式，替换抽象曝光接口。",
-        "区分当前缓冲倍率与其估计来源，以20/10/40/5算例贯通存储和显示。"
-      ],
-      "content_sha256": "e0f610cceb83a52c9e2b55a886cf10bcd9526643d22d7bcbae54e690fbe66bde",
-      "runtime": {
-        "engine": "UNVERIFIED",
-        "gpu": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
-      "first_review_sha256": "71c1eb8ed484c7d8c38f320dc01af2a76fd27b43528dfa14443f6aa0103e44f9",
       "independent_review": "PASS",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "605b7f0797237f6ee39d2b6597198d4256b6286f0f6447632b101dba4487a7f6"
+      "content_sha256": "e0f610cceb83a52c9e2b55a886cf10bcd9526643d22d7bcbae54e690fbe66bde",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算四亮度几何均值0.56234、裁极值0.31623、对数曝光中点2而非2.5及历史10换40后显示5；预曝光与显示曝光倍率来源已明确。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "2282be503ac805bafb6442b76a5f001c27164037700ac7b5297700e6e2971223",
     "historical_content_commit": "ba93fc8",
@@ -12036,6 +12350,39 @@
       "independent_review": "PASS",
       "independent_record": "revision-independent-07.json",
       "independent_source_sha256": "0132abd09f4c52b0b267d0b564541a9ae8b36ab99909742e29ddf2ebbe08fc43"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、公式、代码、证据、验证与标题",
+          "findings": [
+            "展开对数测光、秒单位适应、预曝光历史与显示尺度公式，替换抽象曝光接口。",
+            "区分当前缓冲倍率与其估计来源，以20/10/40/5算例贯通存储和显示。"
+          ],
+          "content_sha256": "e0f610cceb83a52c9e2b55a886cf10bcd9526643d22d7bcbae54e690fbe66bde",
+          "runtime": {
+            "engine": "UNVERIFIED",
+            "gpu": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+          "first_review_sha256": "71c1eb8ed484c7d8c38f320dc01af2a76fd27b43528dfa14443f6aa0103e44f9",
+          "independent_review": "PASS",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "605b7f0797237f6ee39d2b6597198d4256b6286f0f6447632b101dba4487a7f6"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "e0f610cceb83a52c9e2b55a886cf10bcd9526643d22d7bcbae54e690fbe66bde",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算四亮度几何均值0.56234、裁极值0.31623、对数曝光中点2而非2.5及历史10换40后显示5；预曝光与显示曝光倍率来源已明确。"
     }
   },
   {
@@ -12054,15 +12401,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何把场景HDR亮度映射到显示范围"
+        "basis": "如何把场景HDR亮度映射到显示范围 本批全文复读：复算Reinhard10/11、RGB比例变化、LUT整形0/1/3/15到0/.25/.5/1与16级纹素中心；曲线、色域和输出编码职责分开，保持比例不等同于不出色域。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：Tone Mapping；Reinhard；Filmic Curve；亮度与颜色比例；Color Grading 和 LUT；LUT整形的明确示例；最小映射；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：Tone Mapping；Reinhard；Filmic Curve；亮度与颜色比例；Color Grading 和 LUT；LUT整形的明确示例；最小映射；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算Reinhard10/11、RGB比例变化、LUT整形0/1/3/15到0/.25/.5/1与16级纹素中心；曲线、色域和输出编码职责分开，保持比例不等同于不出色域。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：Reinhard单调及颜色比例改变、LUT中心明确；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：逐通道10/2/1比例改变、亮度统一缩放出色域与LUT逆整形链完整。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：Reinhard单调及颜色比例改变、LUT中心明确；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：逐通道10/2/1比例改变、亮度统一缩放出色域与LUT逆整形链完整。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算Reinhard10/11、RGB比例变化、LUT整形0/1/3/15到0/.25/.5/1与16级纹素中心；曲线、色域和输出编码职责分开，保持比例不等同于不出色域。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -12070,19 +12417,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "Imaging pipeline及Filmic post-processing，支持链路职责；本文Reinhard具体关系独立推导；§19原色、XYZ与传递函数；原资料与计算实验分别记录。"
+        "basis": "Imaging pipeline及Filmic post-processing，支持链路职责；本文Reinhard具体关系独立推导；§19原色、XYZ与传递函数；原资料与计算实验分别记录。 本批全文复读：复算Reinhard10/11、RGB比例变化、LUT整形0/1/3/15到0/.25/.5/1与16级纹素中心；曲线、色域和输出编码职责分开，保持比例不等同于不出色域。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：Reinhard单调及颜色比例改变、LUT中心明确；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：逐通道10/2/1比例改变、亮度统一缩放出色域与LUT逆整形链完整。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：Reinhard单调及颜色比例改变、LUT中心明确；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：逐通道10/2/1比例改变、亮度统一缩放出色域与LUT逆整形链完整。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算Reinhard10/11、RGB比例变化、LUT整形0/1/3/15到0/.25/.5/1与16级纹素中心；曲线、色域和输出编码职责分开，保持比例不等同于不出色域。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "Tone Mapping定位当前概念与操作，子标题避免疑问句。"
+        "basis": "Tone Mapping定位当前概念与操作，子标题避免疑问句。 本批全文复读：复算Reinhard10/11、RGB比例变化、LUT整形0/1/3/15到0/.25/.5/1与16级纹素中心；曲线、色域和输出编码职责分开，保持比例不等同于不出色域。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。"
+        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。 本批全文复读：复算Reinhard10/11、RGB比例变化、LUT整形0/1/3/15到0/.25/.5/1与16级纹素中心；曲线、色域和输出编码职责分开，保持比例不等同于不出色域。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -12146,24 +12493,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、公式、代码、证据、验证与标题",
-      "findings": [
-        "用导数与数值说明Reinhard，比较逐通道与亮度缩放，补LUT端点、整形域和色域边界。",
-        "按动态范围、颜色比例与查表契约叙述，删除与本页无关SSAO引用。"
-      ],
-      "content_sha256": "1893793db38118b2f3b5c01370a84324916cf999f101a334241fcc4cc567450b",
-      "runtime": {
-        "engine": "UNVERIFIED",
-        "gpu": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
-      "first_review_sha256": "c49a1618edfe254b5ade0d8dd1c30077bc3b077e5e74493a1edeae3a6e63cc27",
       "independent_review": "PASS",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "a9b2dd5263fd1ebaccbe99cba8a009ce7c92108659bee522a9fc6ad2218b4928"
+      "content_sha256": "1893793db38118b2f3b5c01370a84324916cf999f101a334241fcc4cc567450b",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算Reinhard10/11、RGB比例变化、LUT整形0/1/3/15到0/.25/.5/1与16级纹素中心；曲线、色域和输出编码职责分开，保持比例不等同于不出色域。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "5e0093846137587fe1ba6a64a016e6094579305e0b010553fe58e672266c4ee7",
     "historical_content_commit": "ba93fc8",
@@ -12195,6 +12532,39 @@
       "independent_review": "PASS",
       "independent_record": "revision-independent-07.json",
       "independent_source_sha256": "c6717728cc63f7f002ea18c9ebbeabc0708929aab55738ebbba3381cdf23e377"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、公式、代码、证据、验证与标题",
+          "findings": [
+            "用导数与数值说明Reinhard，比较逐通道与亮度缩放，补LUT端点、整形域和色域边界。",
+            "按动态范围、颜色比例与查表契约叙述，删除与本页无关SSAO引用。"
+          ],
+          "content_sha256": "1893793db38118b2f3b5c01370a84324916cf999f101a334241fcc4cc567450b",
+          "runtime": {
+            "engine": "UNVERIFIED",
+            "gpu": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+          "first_review_sha256": "c49a1618edfe254b5ade0d8dd1c30077bc3b077e5e74493a1edeae3a6e63cc27",
+          "independent_review": "PASS",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "a9b2dd5263fd1ebaccbe99cba8a009ce7c92108659bee522a9fc6ad2218b4928"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "1893793db38118b2f3b5c01370a84324916cf999f101a334241fcc4cc567450b",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算Reinhard10/11、RGB比例变化、LUT整形0/1/3/15到0/.25/.5/1与16级纹素中心；曲线、色域和输出编码职责分开，保持比例不等同于不出色域。"
     }
   },
   {
@@ -12562,15 +12932,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何从可见深度估计局部环境遮挡"
+        "basis": "如何从可见深度估计局部环境遮挡 本批全文复读：复算负Z比较-4.7通过-4.8+.05、四方向可见0.75与长度比例衰减；缺失方向保留总分母、法线退化备用轴及间接项合成有明确限定。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：Screen-space Ambient Occlusion；SSAO 的采样数据流；边界过滤与合成；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：Screen-space Ambient Occlusion；SSAO 的采样数据流；边界过滤与合成；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算负Z比较-4.7通过-4.8+.05、四方向可见0.75与长度比例衰减；缺失方向保留总分母、法线退化备用轴及间接项合成有明确限定。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：观察空间比较、半球基退化和缺失偏差解释完整；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：负Z比较-4.7/-4.8+Bias与平面反例、无效样本总分母偏亮解释齐全。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：观察空间比较、半球基退化和缺失偏差解释完整；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：负Z比较-4.7/-4.8+Bias与平面反例、无效样本总分母偏亮解释齐全。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算负Z比较-4.7通过-4.8+.05、四方向可见0.75与长度比例衰减；缺失方向保留总分母、法线退化备用轴及间接项合成有明确限定。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -12578,19 +12948,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "main函数半球采样、视空间z比较和smoothstep距离权重；原例无本文裁剪/有效标记与退化基底保护；原资料与计算实验分别记录。"
+        "basis": "main函数半球采样、视空间z比较和smoothstep距离权重；原例无本文裁剪/有效标记与退化基底保护；原资料与计算实验分别记录。 本批全文复读：复算负Z比较-4.7通过-4.8+.05、四方向可见0.75与长度比例衰减；缺失方向保留总分母、法线退化备用轴及间接项合成有明确限定。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：观察空间比较、半球基退化和缺失偏差解释完整；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：负Z比较-4.7/-4.8+Bias与平面反例、无效样本总分母偏亮解释齐全。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：观察空间比较、半球基退化和缺失偏差解释完整；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：负Z比较-4.7/-4.8+Bias与平面反例、无效样本总分母偏亮解释齐全。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算负Z比较-4.7通过-4.8+.05、四方向可见0.75与长度比例衰减；缺失方向保留总分母、法线退化备用轴及间接项合成有明确限定。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "屏幕空间AO定位当前概念与操作，子标题避免疑问句。"
+        "basis": "屏幕空间AO定位当前概念与操作，子标题避免疑问句。 本批全文复读：复算负Z比较-4.7通过-4.8+.05、四方向可见0.75与长度比例衰减；缺失方向保留总分母、法线退化备用轴及间接项合成有明确限定。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。"
+        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。 本批全文复读：复算负Z比较-4.7通过-4.8+.05、四方向可见0.75与长度比例衰减；缺失方向保留总分母、法线退化备用轴及间接项合成有明确限定。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -12651,24 +13021,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、公式、代码、证据、验证与标题",
-      "findings": [
-        "补实现缺失的裁剪/越屏/背景拒绝和稳定TBN，解释右手深度比较与缺失样本偏差。",
-        "把验证要求落实到代码，分清环境可见性、直接光与自发光归属。"
-      ],
-      "content_sha256": "8684d15d73f9708657924eaa920d51eb7cb64d0cc7d3294cebf44ac76a9534d9",
-      "runtime": {
-        "engine": "UNVERIFIED",
-        "gpu": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
-      "first_review_sha256": "38b8cb1bd084c9f91202e98b54d337b229ad61c5e676050e7490534c407f2e04",
       "independent_review": "PASS",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "b5e03d696cb142efab1fa9f586700b4ba70662c589709cf8632ecf364a299df9"
+      "content_sha256": "8684d15d73f9708657924eaa920d51eb7cb64d0cc7d3294cebf44ac76a9534d9",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算负Z比较-4.7通过-4.8+.05、四方向可见0.75与长度比例衰减；缺失方向保留总分母、法线退化备用轴及间接项合成有明确限定。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "36c7c23f4ed0ef919c96d71216345c548a2e7eabae263b146c10407c0a8b9f78",
     "historical_content_commit": "ba93fc8",
@@ -12700,6 +13060,39 @@
       "independent_review": "PASS",
       "independent_record": "revision-independent-07.json",
       "independent_source_sha256": "5368aec5da16de9f6b12f7d4986cdbccdb019653ddf2f30f91bc6afe426fa4e9"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、公式、代码、证据、验证与标题",
+          "findings": [
+            "补实现缺失的裁剪/越屏/背景拒绝和稳定TBN，解释右手深度比较与缺失样本偏差。",
+            "把验证要求落实到代码，分清环境可见性、直接光与自发光归属。"
+          ],
+          "content_sha256": "8684d15d73f9708657924eaa920d51eb7cb64d0cc7d3294cebf44ac76a9534d9",
+          "runtime": {
+            "engine": "UNVERIFIED",
+            "gpu": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+          "first_review_sha256": "38b8cb1bd084c9f91202e98b54d337b229ad61c5e676050e7490534c407f2e04",
+          "independent_review": "PASS",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "b5e03d696cb142efab1fa9f586700b4ba70662c589709cf8632ecf364a299df9"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "8684d15d73f9708657924eaa920d51eb7cb64d0cc7d3294cebf44ac76a9534d9",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算负Z比较-4.7通过-4.8+.05、四方向可见0.75与长度比例衰减；缺失方向保留总分母、法线退化备用轴及间接项合成有明确限定。"
     }
   },
   {
@@ -12718,15 +13111,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何根据离焦与曝光时间扩展像素覆盖"
+        "basis": "如何根据离焦与曝光时间扩展像素覆盖 本批全文复读：复算50mm焦距的-17.09像素、近景红覆盖0.25及半快门亮点读取0.6；本文以深度覆盖约束比较两类镜头模糊，长度可控且组合顺序明确，保持方案比较，不再拆成缺少比较语境的短页。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：Depth of Field；薄透镜与像素半径；前后景覆盖；近景覆盖的合成算例；Motion Blur；快门时间与速度单位；Lens Effect；资源与调度；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：Depth of Field；薄透镜与像素半径；前后景覆盖；近景覆盖的合成算例；Motion Blur；快门时间与速度单位；Lens Effect；资源与调度；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算50mm焦距的-17.09像素、近景红覆盖0.25及半快门亮点读取0.6；本文以深度覆盖约束比较两类镜头模糊，长度可控且组合顺序明确，保持方案比较，不再拆成缺少比较语境的短页。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：CoC半径与运动亮点反算方向具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：近景0.25预乘覆盖与运动v=-0.1收集方向实例完整；Lens附加仅约定主流程。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：CoC半径与运动亮点反算方向具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：近景0.25预乘覆盖与运动v=-0.1收集方向实例完整；Lens附加仅约定主流程。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算50mm焦距的-17.09像素、近景红覆盖0.25及半快门亮点读取0.6；本文以深度覆盖约束比较两类镜头模糊，长度可控且组合顺序明确，保持方案比较，不再拆成缺少比较语境的短页。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -12734,19 +13127,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "§27.2—27.3，原例current-prev速度与正向gather；本页采用相反速度定义，方向独立推导；§28.3薄透镜、§28.4前景CoC覆盖及近景模糊限制；原资料与计算实验分别记录。"
+        "basis": "§27.2—27.3，原例current-prev速度与正向gather；本页采用相反速度定义，方向独立推导；§28.3薄透镜、§28.4前景CoC覆盖及近景模糊限制；原资料与计算实验分别记录。 本批全文复读：复算50mm焦距的-17.09像素、近景红覆盖0.25及半快门亮点读取0.6；本文以深度覆盖约束比较两类镜头模糊，长度可控且组合顺序明确，保持方案比较，不再拆成缺少比较语境的短页。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：CoC半径与运动亮点反算方向具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：近景0.25预乘覆盖与运动v=-0.1收集方向实例完整；Lens附加仅约定主流程。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：CoC半径与运动亮点反算方向具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：近景0.25预乘覆盖与运动v=-0.1收集方向实例完整；Lens附加仅约定主流程。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算50mm焦距的-17.09像素、近景红覆盖0.25及半快门亮点读取0.6；本文以深度覆盖约束比较两类镜头模糊，长度可控且组合顺序明确，保持方案比较，不再拆成缺少比较语境的短页。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "景深与运动模糊定位当前概念与操作，子标题避免疑问句。"
+        "basis": "景深与运动模糊定位当前概念与操作，子标题避免疑问句。 本批全文复读：复算50mm焦距的-17.09像素、近景红覆盖0.25及半快门亮点读取0.6；本文以深度覆盖约束比较两类镜头模糊，长度可控且组合顺序明确，保持方案比较，不再拆成缺少比较语境的短页。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。"
+        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。 本批全文复读：复算50mm焦距的-17.09像素、近景红覆盖0.25及半快门亮点读取0.6；本文以深度覆盖约束比较两类镜头模糊，长度可控且组合顺序明确，保持方案比较，不再拆成缺少比较语境的短页。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -12809,24 +13202,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、公式、代码、证据、验证与标题",
-      "findings": [
-        "补薄透镜CoC半径公式、近远符号/长度单位、邻居覆盖、快门与帧位移换算及资源顺序。",
-        "用两个不同的覆盖来源组织主问题，替换隐藏全部计算的三行伪代码，明确单层缺失信息。"
-      ],
-      "content_sha256": "51f2975b3aa05db8337e46f0eaf6c9b468ce118d7d3a63272e04d51c0bbd2ec2",
-      "runtime": {
-        "engine": "UNVERIFIED",
-        "gpu": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
-      "first_review_sha256": "ad65c468b02a56f52c2dca93e53ba1555cafe8638666848ad5c8e4e1adedbec9",
       "independent_review": "PASS",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "67e991885c7c3af16d671bb9da36380315e8d31edd4d40805df4d9417bf65154"
+      "content_sha256": "51f2975b3aa05db8337e46f0eaf6c9b468ce118d7d3a63272e04d51c0bbd2ec2",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算50mm焦距的-17.09像素、近景红覆盖0.25及半快门亮点读取0.6；本文以深度覆盖约束比较两类镜头模糊，长度可控且组合顺序明确，保持方案比较，不再拆成缺少比较语境的短页。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "390e9fd34d4948e511d741c4b0c3755110b28dcb1cc1666ff4183ed52ca664fa",
     "historical_content_commit": "ba93fc8",
@@ -12858,6 +13241,39 @@
       "independent_review": "PASS",
       "independent_record": "revision-independent-07.json",
       "independent_source_sha256": "29d95f8c5215315aace3659cf5fad719b3e12f6f36ff56f5feb2a71a1f525aa9"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、公式、代码、证据、验证与标题",
+          "findings": [
+            "补薄透镜CoC半径公式、近远符号/长度单位、邻居覆盖、快门与帧位移换算及资源顺序。",
+            "用两个不同的覆盖来源组织主问题，替换隐藏全部计算的三行伪代码，明确单层缺失信息。"
+          ],
+          "content_sha256": "51f2975b3aa05db8337e46f0eaf6c9b468ce118d7d3a63272e04d51c0bbd2ec2",
+          "runtime": {
+            "engine": "UNVERIFIED",
+            "gpu": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+          "first_review_sha256": "ad65c468b02a56f52c2dca93e53ba1555cafe8638666848ad5c8e4e1adedbec9",
+          "independent_review": "PASS",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "67e991885c7c3af16d671bb9da36380315e8d31edd4d40805df4d9417bf65154"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "51f2975b3aa05db8337e46f0eaf6c9b468ce118d7d3a63272e04d51c0bbd2ec2",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算50mm焦距的-17.09像素、近景红覆盖0.25及半快门亮点读取0.6；本文以深度覆盖约束比较两类镜头模糊，长度可控且组合顺序明确，保持方案比较，不再拆成缺少比较语境的短页。"
     }
   },
   {
@@ -12876,15 +13292,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "如何在编码与线性光计算之间正确转换"
+        "basis": "如何在编码与线性光计算之间正确转换 本批全文复读：复算sRGB0.5解码0.214、线性0.5编码0.735及红色亮度0.0455；采样解码、原色转换和显示编码顺序准确，数据纹理语义与Alpha职责分别链接。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：颜色编码；线性光照计算；sRGB传递函数；编码、原色与输出；纹理编码选择；常用 sRGB；常用 Linear/Data；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：颜色编码；线性光照计算；sRGB传递函数；编码、原色与输出；纹理编码选择；常用 sRGB；常用 Linear/Data；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算sRGB0.5解码0.214、线性0.5编码0.735及红色亮度0.0455；采样解码、原色转换和显示编码顺序准确，数据纹理语义与Alpha职责分别链接。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：0.5解码/0.735编码与硬件重复转换明确；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：0.5/0.214/0.735与线性原色XYZ红亮度0.0455明确；传递与原色分离。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：0.5解码/0.735编码与硬件重复转换明确；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：0.5/0.214/0.735与线性原色XYZ红亮度0.0455明确；传递与原色分离。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算sRGB0.5解码0.214、线性0.5编码0.735及红色亮度0.0455；采样解码、原色转换和显示编码顺序准确，数据纹理语义与Alpha职责分别链接。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -12892,19 +13308,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "2026-10-20 Candidate Recommendation Draft；§10.2 sRGB与§19转换代码；原资料与计算实验分别记录。"
+        "basis": "2026-10-20 Candidate Recommendation Draft；§10.2 sRGB与§19转换代码；原资料与计算实验分别记录。 本批全文复读：复算sRGB0.5解码0.214、线性0.5编码0.735及红色亮度0.0455；采样解码、原色转换和显示编码顺序准确，数据纹理语义与Alpha职责分别链接。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：0.5解码/0.735编码与硬件重复转换明确；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：0.5/0.214/0.735与线性原色XYZ红亮度0.0455明确；传递与原色分离。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：0.5解码/0.735编码与硬件重复转换明确；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：0.5/0.214/0.735与线性原色XYZ红亮度0.0455明确；传递与原色分离。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算sRGB0.5解码0.214、线性0.5编码0.735及红色亮度0.0455；采样解码、原色转换和显示编码顺序准确，数据纹理语义与Alpha职责分别链接。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "颜色空间定位当前概念与操作，子标题避免疑问句。"
+        "basis": "颜色空间定位当前概念与操作，子标题避免疑问句。 本批全文复读：复算sRGB0.5解码0.214、线性0.5编码0.735及红色亮度0.0455；采样解码、原色转换和显示编码顺序准确，数据纹理语义与Alpha职责分别链接。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。"
+        "basis": "07领域维护颜色表示与后处理；BRDF、透明排序、深度与时域主机制链接其专篇。 本批全文复读：复算sRGB0.5解码0.214、线性0.5编码0.735及红色亮度0.0455；采样解码、原色转换和显示编码顺序准确，数据纹理语义与Alpha职责分别链接。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -12973,24 +13389,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、公式、代码、证据、验证与标题",
-      "findings": [
-        "展开编码逆函数、黑白混合数值反例、原色与传递函数差别和资源转换顺序。",
-        "使用完整中文说明数值与显示关系，删除颜色运算必然变暗的泛化及跨页重复衰减推导。"
-      ],
-      "content_sha256": "676cc2fe287d9e9b31f138160a376f69348034ac77e7f6114fb127160d391b3a",
-      "runtime": {
-        "engine": "UNVERIFIED",
-        "gpu": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
-      "first_review_sha256": "a839be78dd37cdd143a6600f4460f6badc07525fc2ecf2d80a9e3d7cbbe2c7b6",
       "independent_review": "PASS",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "028c8f268698ef477246ecf8923976cd489610a266cec7d9fdb1a010004161ac"
+      "content_sha256": "676cc2fe287d9e9b31f138160a376f69348034ac77e7f6114fb127160d391b3a",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算sRGB0.5解码0.214、线性0.5编码0.735及红色亮度0.0455；采样解码、原色转换和显示编码顺序准确，数据纹理语义与Alpha职责分别链接。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "f3cadb1c6e8fec6a2bb30309bdf12d6a361eacfa196a82b9c237e1c6b8fd1730",
     "historical_content_commit": "ba93fc8",
@@ -13022,6 +13428,39 @@
       "independent_review": "PASS",
       "independent_record": "revision-independent-07.json",
       "independent_source_sha256": "d6ad8b536a1ea4365706c43a0d9e3315c98b8ab50c37386285639580f1566fbc"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、公式、代码、证据、验证与标题",
+          "findings": [
+            "展开编码逆函数、黑白混合数值反例、原色与传递函数差别和资源转换顺序。",
+            "使用完整中文说明数值与显示关系，删除颜色运算必然变暗的泛化及跨页重复衰减推导。"
+          ],
+          "content_sha256": "676cc2fe287d9e9b31f138160a376f69348034ac77e7f6114fb127160d391b3a",
+          "runtime": {
+            "engine": "UNVERIFIED",
+            "gpu": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+          "first_review_sha256": "a839be78dd37cdd143a6600f4460f6badc07525fc2ecf2d80a9e3d7cbbe2c7b6",
+          "independent_review": "PASS",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "028c8f268698ef477246ecf8923976cd489610a266cec7d9fdb1a010004161ac"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "676cc2fe287d9e9b31f138160a376f69348034ac77e7f6114fb127160d391b3a",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算sRGB0.5解码0.214、线性0.5编码0.735及红色亮度0.0455；采样解码、原色转换和显示编码顺序准确，数据纹理语义与Alpha职责分别链接。"
     }
   },
   {
@@ -13039,15 +13478,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "面片坐标架、脚底锚点与深度的约束；全文已复核，定位“球面与轴约束”。"
+        "basis": "面片坐标架、脚底锚点与深度的约束；全文已复核，定位“球面与轴约束”。 本批全文复读：核对脚底锚点、Up投影与正上方备用方向，复算8视角60度的2/3与1/3；多视角深度不能直接平均，几何与采样契约完整，使用完整中文说明未验证范围。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：朝向与坐标架；球面与轴约束；生成阶段；锚点与场景深度；脚底保持固定；多视角Impostor；离散视角的选择；验证与代价；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：朝向与坐标架；球面与轴约束；生成阶段；锚点与场景深度；脚底保持固定；多视角Impostor；离散视角的选择；验证与代价；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：核对脚底锚点、Up投影与正上方备用方向，复算8视角60度的2/3与1/3；多视角深度不能直接平均，几何与采样契约完整，使用完整中文说明未验证范围。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：脚底与圆柱坐标架、上方退化解释具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：脚底锚点、退化Right投影与60度8视图1/3混合、对应表面不等价解释清楚。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：脚底与圆柱坐标架、上方退化解释具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：脚底锚点、退化Right投影与60度8视图1/3混合、对应表面不等价解释清楚。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：核对脚底锚点、Up投影与正上方备用方向，复算8视角60度的2/3与1/3；多视角深度不能直接平均，几何与采样契约完整，使用完整中文说明未验证范围。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -13055,19 +13494,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。 本批全文复读：核对脚底锚点、Up投影与正上方备用方向，复算8视角60度的2/3与1/3；多视角深度不能直接平均，几何与采样契约完整，使用完整中文说明未验证范围。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：脚底与圆柱坐标架、上方退化解释具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：脚底锚点、退化Right投影与60度8视图1/3混合、对应表面不等价解释清楚。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：脚底与圆柱坐标架、上方退化解释具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：脚底锚点、退化Right投影与60度8视图1/3混合、对应表面不等价解释清楚。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：核对脚底锚点、Up投影与正上方备用方向，复算8视角60度的2/3与1/3；多视角深度不能直接平均，几何与采样契约完整，使用完整中文说明未验证范围。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1“Billboard”与文件一致；各级标题客观，无新增标题映射。"
+        "basis": "H1“Billboard”与文件一致；各级标题客观，无新增标题映射。 本批全文复读：核对脚底锚点、Up投影与正上方备用方向，复算8视角60度的2/3与1/3；多视角深度不能直接平均，几何与采样契约完整，使用完整中文说明未验证范围。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。"
+        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。 本批全文复读：核对脚底锚点、Up投影与正上方备用方向，复算8视角60度的2/3与1/3；多视角深度不能直接平均，几何与采样契约完整，使用完整中文说明未验证范围。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -13108,7 +13547,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "4848194964bf1558aaf29512b89e540ba0bc06e04ea706cada5d3da2b27f4c30",
+    "final_sha256": "16449c86016bd720f32d0ed975bd76109ee7faa542a0e52048dd4edea654d276",
     "article_type": "ARTICLE",
     "canonical_concept": "Billboard",
     "final_sources": [
@@ -13119,7 +13558,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "4848194964bf1558aaf29512b89e540ba0bc06e04ea706cada5d3da2b27f4c30",
+    "reviewed_content_sha256": "16449c86016bd720f32d0ed975bd76109ee7faa542a0e52048dd4edea654d276",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
       "Structure": "按问题依赖组织层级，静态检查另验",
@@ -13134,40 +13573,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": null,
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、公式、代码、来源与标题，含独立复读",
-      "author_record": "revision-06-08.json",
-      "author_sha256": "67ff163b9dfeaa5e34aaa84090f0af371da0b4ffa7614420e0007b8349d5002c",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "886b3d9531258f2afd6149458181024261ae613ab987e25bb4be7ca829cb96b0",
-      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "4848194964bf1558aaf29512b89e540ba0bc06e04ea706cada5d3da2b27f4c30",
       "independent_review": "PASS",
-      "findings": "坐标架和脚底锚点计算成立；补正上方固定备用方向仅避免零向量，不能保证角度连续，保持上一朝向与滞回须按对象和视图存状态。CPU正交回退通过。",
-      "runtime": {
-        "source_scope": {
-          "scope": "billboard_right：正常视向和正上方退化，备用向量与Up正交",
-          "cpu_status": "PASS",
-          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
-          "shader_compile": "NOT_APPLICABLE",
-          "engine_compile": "UNVERIFIED",
-          "engine_runtime": "UNVERIFIED",
-          "gpu_capture": "UNVERIFIED",
-          "visual_result": "UNVERIFIED",
-          "performance": "UNVERIFIED",
-          "limitations": "HLSL宿主、Impostor烘焙、阴影和GPU画面未执行",
-          "results": "知识库/examples/revision_06_08/results.json"
-        },
-        "results": "知识库/examples/revision_06_08/results.json",
-        "new_tests": [],
-        "engine_compile": "UNVERIFIED",
-        "engine_runtime": "UNVERIFIED",
-        "gpu_capture": "UNVERIFIED",
-        "performance": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+      "content_sha256": "16449c86016bd720f32d0ed975bd76109ee7faa542a0e52048dd4edea654d276",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "核对脚底锚点、Up投影与正上方备用方向，复算8视角60度的2/3与1/3；多视角深度不能直接平均，几何与采样契约完整，使用完整中文说明未验证范围。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "3762968f2c53dff265ea0872933466e54ec853c1a8e1e42ab4ac333c847b3523",
     "historical_content_commit": "6de6394",
@@ -13215,6 +13628,55 @@
         "performance": "UNVERIFIED"
       },
       "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、公式、代码、来源与标题，含独立复读",
+          "author_record": "revision-06-08.json",
+          "author_sha256": "67ff163b9dfeaa5e34aaa84090f0af371da0b4ffa7614420e0007b8349d5002c",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "886b3d9531258f2afd6149458181024261ae613ab987e25bb4be7ca829cb96b0",
+          "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+          "content_sha256": "4848194964bf1558aaf29512b89e540ba0bc06e04ea706cada5d3da2b27f4c30",
+          "independent_review": "PASS",
+          "findings": "坐标架和脚底锚点计算成立；补正上方固定备用方向仅避免零向量，不能保证角度连续，保持上一朝向与滞回须按对象和视图存状态。CPU正交回退通过。",
+          "runtime": {
+            "source_scope": {
+              "scope": "billboard_right：正常视向和正上方退化，备用向量与Up正交",
+              "cpu_status": "PASS",
+              "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+              "shader_compile": "NOT_APPLICABLE",
+              "engine_compile": "UNVERIFIED",
+              "engine_runtime": "UNVERIFIED",
+              "gpu_capture": "UNVERIFIED",
+              "visual_result": "UNVERIFIED",
+              "performance": "UNVERIFIED",
+              "limitations": "HLSL宿主、Impostor烘焙、阴影和GPU画面未执行",
+              "results": "知识库/examples/revision_06_08/results.json"
+            },
+            "results": "知识库/examples/revision_06_08/results.json",
+            "new_tests": [],
+            "engine_compile": "UNVERIFIED",
+            "engine_runtime": "UNVERIFIED",
+            "gpu_capture": "UNVERIFIED",
+            "performance": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "16449c86016bd720f32d0ed975bd76109ee7faa542a0e52048dd4edea654d276",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "核对脚底锚点、Up投影与正上方备用方向，复算8视角60度的2/3与1/3；多视角深度不能直接平均，几何与采样契约完整，使用完整中文说明未验证范围。"
     }
   },
   {
@@ -13233,15 +13695,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "二维高度样本到地形位置、法线与相邻块的一致性；全文已复核，定位“GPU 细分地形”。"
+        "basis": "二维高度样本到地形位置、法线与相邻块的一致性；全文已复核，定位“GPU 细分地形”。 本批全文复读：复算100米8位0.392米和16位1.53毫米、h=2x+3z法线、粗细块T形裂缝；层权重零值回退、共享边法线和细分求值职责清楚。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：地形的基本表示；采样位置与世界法线；相邻层级的边界；GPU 细分地形；地形材质分层；Houdini HeightField 流程；材质权重求值；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：地形的基本表示；采样位置与世界法线；相邻层级的边界；GPU 细分地形；地形材质分层；Houdini HeightField 流程；材质权重求值；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算100米8位0.392米和16位1.53毫米、h=2x+3z法线、粗细块T形裂缝；层权重零值回退、共享边法线和细分求值职责清楚。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：间距、量化、梯度法线具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：端点间距、100米8/16量化、坡度dx/dz、细中点T裂缝与Skirt代价展开。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：间距、量化、梯度法线具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：端点间距、100米8/16量化、坡度dx/dz、细中点T裂缝与Skirt代价展开。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算100米8位0.392米和16位1.53毫米、h=2x+3z法线、粗细块T形裂缝；层权重零值回退、共享边法线和细分求值职责清楚。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -13249,19 +13711,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。 本批全文复读：复算100米8位0.392米和16位1.53毫米、h=2x+3z法线、粗细块T形裂缝；层权重零值回退、共享边法线和细分求值职责清楚。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：间距、量化、梯度法线具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：端点间距、100米8/16量化、坡度dx/dz、细中点T裂缝与Skirt代价展开。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：间距、量化、梯度法线具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：端点间距、100米8/16量化、坡度dx/dz、细中点T裂缝与Skirt代价展开。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算100米8位0.392米和16位1.53毫米、h=2x+3z法线、粗细块T形裂缝；层权重零值回退、共享边法线和细分求值职责清楚。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1“Heightfield地形”与文件一致；各级标题客观，无新增标题映射。"
+        "basis": "H1“Heightfield地形”与文件一致；各级标题客观，无新增标题映射。 本批全文复读：复算100米8位0.392米和16位1.53毫米、h=2x+3z法线、粗细块T形裂缝；层权重零值回退、共享边法线和细分求值职责清楚。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。"
+        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。 本批全文复读：复算100米8位0.392米和16位1.53毫米、h=2x+3z法线、粗细块T形裂缝；层权重零值回退、共享边法线和细分求值职责清楚。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -13298,7 +13760,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "2d82676e06e98bfe0baad18916b8dd8712ef77745554bf126ddc3c0f01922de0",
+    "final_sha256": "0f51c672d307489aed4f5f925d4d15b4cd92152d094e06c2edb68d05c26888a0",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "Heightfield地形",
@@ -13310,7 +13772,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "2d82676e06e98bfe0baad18916b8dd8712ef77745554bf126ddc3c0f01922de0",
+    "reviewed_content_sha256": "0f51c672d307489aed4f5f925d4d15b4cd92152d094e06c2edb68d05c26888a0",
     "source_article_path": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -13326,40 +13788,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、公式、代码、来源与标题，含独立复读",
-      "author_record": "revision-06-08.json",
-      "author_sha256": "cc027c3d63c20f9114faa57fa5a9f7876a48923828b85a8a38a516d4bf98344a",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "659b6aa2aa5fe8319f5b6fa3aef0f1516cdb2f2fdcd209617d2f7034b8add109",
-      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "2d82676e06e98bfe0baad18916b8dd8712ef77745554bf126ddc3c0f01922de0",
       "independent_review": "PASS",
-      "findings": "核对Nx-1端点间距、中心纹素映射、米制梯度与量化步长；细分不会自动降低高度带宽，补实际采样次数/mip/缓存条件。解析斜坡CPU回归通过。",
-      "runtime": {
-        "source_scope": {
-          "scope": "height_normal：h=2x+3z且dx不等于dz的解析法线",
-          "cpu_status": "PASS",
-          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
-          "shader_compile": "NOT_APPLICABLE",
-          "engine_compile": "UNVERIFIED",
-          "engine_runtime": "UNVERIFIED",
-          "gpu_capture": "UNVERIFIED",
-          "visual_result": "UNVERIFIED",
-          "performance": "UNVERIFIED",
-          "limitations": "Houdini生成、Tile导出、地形工程和GPU细分未执行",
-          "results": "知识库/examples/revision_06_08/results.json"
-        },
-        "results": "知识库/examples/revision_06_08/results.json",
-        "new_tests": [],
-        "engine_compile": "UNVERIFIED",
-        "engine_runtime": "UNVERIFIED",
-        "gpu_capture": "UNVERIFIED",
-        "performance": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+      "content_sha256": "0f51c672d307489aed4f5f925d4d15b4cd92152d094e06c2edb68d05c26888a0",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算100米8位0.392米和16位1.53毫米、h=2x+3z法线、粗细块T形裂缝；层权重零值回退、共享边法线和细分求值职责清楚。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "84f724ff6af202b9a7a26964ddab46d3c5f6e5426aeda54315aa98095fe3138c",
     "historical_content_commit": "4e626da",
@@ -13407,6 +13843,55 @@
         "performance": "UNVERIFIED"
       },
       "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、公式、代码、来源与标题，含独立复读",
+          "author_record": "revision-06-08.json",
+          "author_sha256": "cc027c3d63c20f9114faa57fa5a9f7876a48923828b85a8a38a516d4bf98344a",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "659b6aa2aa5fe8319f5b6fa3aef0f1516cdb2f2fdcd209617d2f7034b8add109",
+          "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+          "content_sha256": "2d82676e06e98bfe0baad18916b8dd8712ef77745554bf126ddc3c0f01922de0",
+          "independent_review": "PASS",
+          "findings": "核对Nx-1端点间距、中心纹素映射、米制梯度与量化步长；细分不会自动降低高度带宽，补实际采样次数/mip/缓存条件。解析斜坡CPU回归通过。",
+          "runtime": {
+            "source_scope": {
+              "scope": "height_normal：h=2x+3z且dx不等于dz的解析法线",
+              "cpu_status": "PASS",
+              "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+              "shader_compile": "NOT_APPLICABLE",
+              "engine_compile": "UNVERIFIED",
+              "engine_runtime": "UNVERIFIED",
+              "gpu_capture": "UNVERIFIED",
+              "visual_result": "UNVERIFIED",
+              "performance": "UNVERIFIED",
+              "limitations": "Houdini生成、Tile导出、地形工程和GPU细分未执行",
+              "results": "知识库/examples/revision_06_08/results.json"
+            },
+            "results": "知识库/examples/revision_06_08/results.json",
+            "new_tests": [],
+            "engine_compile": "UNVERIFIED",
+            "engine_runtime": "UNVERIFIED",
+            "gpu_capture": "UNVERIFIED",
+            "performance": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "0f51c672d307489aed4f5f925d4d15b4cd92152d094e06c2edb68d05c26888a0",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算100米8位0.392米和16位1.53毫米、h=2x+3z法线、粗细块T形裂缝；层权重零值回退、共享边法线和细分求值职责清楚。"
     }
   },
   {
@@ -13425,15 +13910,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "屏幕贡献与滞回边界的LOD选择；全文已复核，定位“带滞回的 LOD 选择”。"
+        "basis": "屏幕贡献与滞回边界的LOD选择；全文已复核，定位“带滞回的 LOD 选择”。 本批全文复读：复算2米深度10/FOV90占108像素、互补噪声及0.18/0.22滞回边界；屏幕误差、流送回退和几何不重合的覆盖局限均保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：以屏幕占比决定 LOD；LOD的简化对象；切换、Cross Fade 与 Hysteresis；几何与材质细节同步；LOD预算；带滞回的 LOD 选择；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：以屏幕占比决定 LOD；LOD的简化对象；切换、Cross Fade 与 Hysteresis；几何与材质细节同步；LOD预算；带滞回的 LOD 选择；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算2米深度10/FOV90占108像素、互补噪声及0.18/0.22滞回边界；屏幕误差、流送回退和几何不重合的覆盖局限均保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：投影误差与0.18/0.22双向滞回可推演；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：108像素投影、互补noise阈值、0.18/0.22滞回与多级跳变完整。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：投影误差与0.18/0.22双向滞回可推演；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：108像素投影、互补noise阈值、0.18/0.22滞回与多级跳变完整。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算2米深度10/FOV90占108像素、互补噪声及0.18/0.22滞回边界；屏幕误差、流送回退和几何不重合的覆盖局限均保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -13441,19 +13926,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。 本批全文复读：复算2米深度10/FOV90占108像素、互补噪声及0.18/0.22滞回边界；屏幕误差、流送回退和几何不重合的覆盖局限均保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：投影误差与0.18/0.22双向滞回可推演；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：108像素投影、互补noise阈值、0.18/0.22滞回与多级跳变完整。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：投影误差与0.18/0.22双向滞回可推演；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：108像素投影、互补noise阈值、0.18/0.22滞回与多级跳变完整。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算2米深度10/FOV90占108像素、互补噪声及0.18/0.22滞回边界；屏幕误差、流送回退和几何不重合的覆盖局限均保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1“LOD选择”与文件一致；各级标题客观，无新增标题映射。"
+        "basis": "H1“LOD选择”与文件一致；各级标题客观，无新增标题映射。 本批全文复读：复算2米深度10/FOV90占108像素、互补噪声及0.18/0.22滞回边界；屏幕误差、流送回退和几何不重合的覆盖局限均保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。"
+        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。 本批全文复读：复算2米深度10/FOV90占108像素、互补噪声及0.18/0.22滞回边界；屏幕误差、流送回退和几何不重合的覆盖局限均保留。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -13491,7 +13976,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "287e17348c7fdb1e636648991c3a839e065deb032b54ad2cfd4d78d4f443d09a",
+    "final_sha256": "3549412c4c21b6e9604c56b938b0378748ee814b48c6d9ee2faff3694b20f17b",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "LOD选择",
@@ -13503,7 +13988,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "287e17348c7fdb1e636648991c3a839e065deb032b54ad2cfd4d78d4f443d09a",
+    "reviewed_content_sha256": "3549412c4c21b6e9604c56b938b0378748ee814b48c6d9ee2faff3694b20f17b",
     "source_article_path": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -13519,40 +14004,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、公式、代码、来源与标题，含独立复读",
-      "author_record": "revision-06-08.json",
-      "author_sha256": "894a037988ef6009fa049a10f031d8e876b91d5d5d5875c24aa39b96c7b75869",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "fa3feba082c1830d40098e95c421fc82b344724fe3d0acd46e90f66c8d6a941d",
-      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "287e17348c7fdb1e636648991c3a839e065deb032b54ad2cfd4d78d4f443d09a",
       "independent_review": "PASS",
-      "findings": "重算屏幕比例与像素误差，检查轴向深度而非欧氏距离、双向滞回和多级瞬移；核读Unity6屏幕高度比例及双层淡化，CPU边界回归通过，保留。",
-      "runtime": {
-        "source_scope": {
-          "scope": "select_lod：.18/.22双边界和跨多级跳变",
-          "cpu_status": "PASS",
-          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
-          "shader_compile": "NOT_APPLICABLE",
-          "engine_compile": "UNVERIFIED",
-          "engine_runtime": "UNVERIFIED",
-          "gpu_capture": "UNVERIFIED",
-          "visual_result": "UNVERIFIED",
-          "performance": "UNVERIFIED",
-          "limitations": "C++片段、引擎LOD、流送与交叉淡化成本未执行",
-          "results": "知识库/examples/revision_06_08/results.json"
-        },
-        "results": "知识库/examples/revision_06_08/results.json",
-        "new_tests": [],
-        "engine_compile": "UNVERIFIED",
-        "engine_runtime": "UNVERIFIED",
-        "gpu_capture": "UNVERIFIED",
-        "performance": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+      "content_sha256": "3549412c4c21b6e9604c56b938b0378748ee814b48c6d9ee2faff3694b20f17b",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算2米深度10/FOV90占108像素、互补噪声及0.18/0.22滞回边界；屏幕误差、流送回退和几何不重合的覆盖局限均保留。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "597e8d432caddc86c69982fe3dfca10c128c67121caba8d5053417badc8e2094",
     "historical_content_commit": "4e626da",
@@ -13600,6 +14059,55 @@
         "performance": "UNVERIFIED"
       },
       "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、公式、代码、来源与标题，含独立复读",
+          "author_record": "revision-06-08.json",
+          "author_sha256": "894a037988ef6009fa049a10f031d8e876b91d5d5d5875c24aa39b96c7b75869",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "fa3feba082c1830d40098e95c421fc82b344724fe3d0acd46e90f66c8d6a941d",
+          "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+          "content_sha256": "287e17348c7fdb1e636648991c3a839e065deb032b54ad2cfd4d78d4f443d09a",
+          "independent_review": "PASS",
+          "findings": "重算屏幕比例与像素误差，检查轴向深度而非欧氏距离、双向滞回和多级瞬移；核读Unity6屏幕高度比例及双层淡化，CPU边界回归通过，保留。",
+          "runtime": {
+            "source_scope": {
+              "scope": "select_lod：.18/.22双边界和跨多级跳变",
+              "cpu_status": "PASS",
+              "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+              "shader_compile": "NOT_APPLICABLE",
+              "engine_compile": "UNVERIFIED",
+              "engine_runtime": "UNVERIFIED",
+              "gpu_capture": "UNVERIFIED",
+              "visual_result": "UNVERIFIED",
+              "performance": "UNVERIFIED",
+              "limitations": "C++片段、引擎LOD、流送与交叉淡化成本未执行",
+              "results": "知识库/examples/revision_06_08/results.json"
+            },
+            "results": "知识库/examples/revision_06_08/results.json",
+            "new_tests": [],
+            "engine_compile": "UNVERIFIED",
+            "engine_runtime": "UNVERIFIED",
+            "gpu_capture": "UNVERIFIED",
+            "performance": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "3549412c4c21b6e9604c56b938b0378748ee814b48c6d9ee2faff3694b20f17b",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算2米深度10/FOV90占108像素、互补噪声及0.18/0.22滞回边界；屏幕误差、流送回退和几何不重合的覆盖局限均保留。"
     }
   },
   {
@@ -13617,15 +14125,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "参数域采样生成、曲面求值与几何位移；全文已复核，定位“控制点与 Patch”。"
+        "basis": "参数域采样生成、曲面求值与几何位移；全文已复核，定位“控制点与 Patch”。 本批全文复读：核对控制点和参数域不等同、tri/quad/isoline因子、显式mip位移和Phong切平面投影；强度归零、共享边求值与API上限明确，完整细分与URP未运行。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：管线位置；控制点与 Patch；细分因子；分割模式；参数域坐标；Domain Shader 的插值与位移；Unity URP 中的写法；几何生成与采样成本；与其他 LOD 方案的关系；Phong细分曲面；参数点生成的API约定；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：管线位置；控制点与 Patch；细分因子；分割模式；参数域坐标；Domain Shader 的插值与位移；Unity URP 中的写法；几何生成与采样成本；与其他 LOD 方案的关系；Phong细分曲面；参数点生成的API约定；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：核对控制点和参数域不等同、tri/quad/isoline因子、显式mip位移和Phong切平面投影；强度归零、共享边求值与API上限明确，完整细分与URP未运行。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：共享边条件、域求值和Phong投影充分；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：共享边同因子之外UV/mip一致、Domain位移、Phong切平面及参数域边界展开。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：共享边条件、域求值和Phong投影充分；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：共享边同因子之外UV/mip一致、Domain位移、Phong切平面及参数域边界展开。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：核对控制点和参数域不等同、tri/quad/isoline因子、显式mip位移和Phong切平面投影；强度归零、共享边求值与API上限明确，完整细分与URP未运行。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -13633,19 +14141,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。 本批全文复读：核对控制点和参数域不等同、tri/quad/isoline因子、显式mip位移和Phong切平面投影；强度归零、共享边求值与API上限明确，完整细分与URP未运行。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：共享边条件、域求值和Phong投影充分；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：共享边同因子之外UV/mip一致、Domain位移、Phong切平面及参数域边界展开。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：共享边条件、域求值和Phong投影充分；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：共享边同因子之外UV/mip一致、Domain位移、Phong切平面及参数域边界展开。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：核对控制点和参数域不等同、tri/quad/isoline因子、显式mip位移和Phong切平面投影；强度归零、共享边求值与API上限明确，完整细分与URP未运行。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1“Tessellation与位移”与文件一致；各级标题客观，无新增标题映射。"
+        "basis": "H1“Tessellation与位移”与文件一致；各级标题客观，无新增标题映射。 本批全文复读：核对控制点和参数域不等同、tri/quad/isoline因子、显式mip位移和Phong切平面投影；强度归零、共享边求值与API上限明确，完整细分与URP未运行。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。"
+        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。 本批全文复读：核对控制点和参数域不等同、tri/quad/isoline因子、显式mip位移和Phong切平面投影；强度归零、共享边求值与API上限明确，完整细分与URP未运行。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -13687,7 +14195,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "a594d5b3f9a700fdbf744bc83a6573363adedd2de3e0b1b1367df5b8935f93ca",
+    "final_sha256": "b3cdd94868815383f8c8c542c71c767ffced5ab3217840a4a50c1d251cec06cd",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "Tessellation与位移",
@@ -13699,7 +14207,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "a594d5b3f9a700fdbf744bc83a6573363adedd2de3e0b1b1367df5b8935f93ca",
+    "reviewed_content_sha256": "b3cdd94868815383f8c8c542c71c767ffced5ab3217840a4a50c1d251cec06cd",
     "source_article_path": "知识库/02_GPU与光栅化管线/几何着色器、曲面细分与流输出.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -13715,64 +14223,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、公式、代码、来源与标题，含独立复读",
-      "author_record": "revision-06-08.json",
-      "author_sha256": "7fa295dab1ed800e84ae56c5a984c5a3a47db9ac8146b383e600c927676b69d4",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "8dee11a5bf940dbc38f6a51792608aa0d8c80a76513a5990646ccfea4ff153a4",
-      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "a594d5b3f9a700fdbf744bc83a6573363adedd2de3e0b1b1367df5b8935f93ca",
       "independent_review": "PASS",
-      "findings": "参数域与控制点数量解耦，输出数量为着色器固定声明；内部因子描述采样密度，删除Domain必最昂贵与位移轮廓必正确等推断。Phong投影和位移单位复核，CPU及ds_6_0通过。",
-      "runtime": {
-        "source_scope": {
-          "scope": "phong_point：顶点保持、共面和弯曲；domain.hlsl DSMain ds_6_0编译",
-          "cpu_status": "PASS",
-          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
-          "shader_compile": "PASS",
-          "engine_compile": "UNVERIFIED",
-          "engine_runtime": "UNVERIFIED",
-          "gpu_capture": "UNVERIFIED",
-          "visual_result": "UNVERIFIED",
-          "performance": "UNVERIFIED",
-          "limitations": "缺Hull与绘制宿主；Unity运行、GPU拓扑/裂缝与性能未执行",
-          "results": "知识库/examples/revision_06_08/results.json"
-        },
-        "results": "知识库/examples/revision_06_08/results.json",
-        "new_tests": [],
-        "engine_compile": "UNVERIFIED",
-        "engine_runtime": "UNVERIFIED",
-        "gpu_capture": "UNVERIFIED",
-        "performance": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
-      "navigation_integration": {
-        "before_sha256": "b93558d159af33dc47661df78a8320301b764e00d0b87086af0a960ee2d1cf3e",
-        "after_sha256": "61374c996ace6f407d9eca64fb0152f44adf933ca4e814f3c5adad0a5d40e3c0",
-        "changes": [
-          {
-            "old": "一帧如何到达屏幕",
-            "new": "渲染帧流程",
-            "old_path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
-            "new_path": "知识库/02_GPU与光栅化管线/渲染帧流程.md"
-          },
-          {
-            "old": "光栅化可见性导读",
-            "new": "光栅化可见性",
-            "old_path": "知识库/02_GPU与光栅化管线/光栅化可见性导读.md",
-            "new_path": "知识库/02_GPU与光栅化管线/光栅化可见性.md"
-          },
-          {
-            "old": "可见性与合成导读",
-            "new": "可见性与合成",
-            "old_path": "知识库/02_GPU与光栅化管线/可见性与合成导读.md",
-            "new_path": "知识库/02_GPU与光栅化管线/可见性与合成.md"
-          }
-        ]
-      }
+      "content_sha256": "b3cdd94868815383f8c8c542c71c767ffced5ab3217840a4a50c1d251cec06cd",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "核对控制点和参数域不等同、tri/quad/isoline因子、显式mip位移和Phong切平面投影；强度归零、共享边求值与API上限明确，完整细分与URP未运行。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "7d762856cc255bf8087d347a00e3989702bd9fa4af9df5ee022be947a5a3149c",
     "historical_content_commit": "ba93fc8",
@@ -13844,6 +14302,79 @@
           }
         ]
       }
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、公式、代码、来源与标题，含独立复读",
+          "author_record": "revision-06-08.json",
+          "author_sha256": "7fa295dab1ed800e84ae56c5a984c5a3a47db9ac8146b383e600c927676b69d4",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "8dee11a5bf940dbc38f6a51792608aa0d8c80a76513a5990646ccfea4ff153a4",
+          "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+          "content_sha256": "a594d5b3f9a700fdbf744bc83a6573363adedd2de3e0b1b1367df5b8935f93ca",
+          "independent_review": "PASS",
+          "findings": "参数域与控制点数量解耦，输出数量为着色器固定声明；内部因子描述采样密度，删除Domain必最昂贵与位移轮廓必正确等推断。Phong投影和位移单位复核，CPU及ds_6_0通过。",
+          "runtime": {
+            "source_scope": {
+              "scope": "phong_point：顶点保持、共面和弯曲；domain.hlsl DSMain ds_6_0编译",
+              "cpu_status": "PASS",
+              "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+              "shader_compile": "PASS",
+              "engine_compile": "UNVERIFIED",
+              "engine_runtime": "UNVERIFIED",
+              "gpu_capture": "UNVERIFIED",
+              "visual_result": "UNVERIFIED",
+              "performance": "UNVERIFIED",
+              "limitations": "缺Hull与绘制宿主；Unity运行、GPU拓扑/裂缝与性能未执行",
+              "results": "知识库/examples/revision_06_08/results.json"
+            },
+            "results": "知识库/examples/revision_06_08/results.json",
+            "new_tests": [],
+            "engine_compile": "UNVERIFIED",
+            "engine_runtime": "UNVERIFIED",
+            "gpu_capture": "UNVERIFIED",
+            "performance": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告",
+          "navigation_integration": {
+            "before_sha256": "b93558d159af33dc47661df78a8320301b764e00d0b87086af0a960ee2d1cf3e",
+            "after_sha256": "61374c996ace6f407d9eca64fb0152f44adf933ca4e814f3c5adad0a5d40e3c0",
+            "changes": [
+              {
+                "old": "一帧如何到达屏幕",
+                "new": "渲染帧流程",
+                "old_path": "知识库/02_GPU与光栅化管线/一帧如何到达屏幕.md",
+                "new_path": "知识库/02_GPU与光栅化管线/渲染帧流程.md"
+              },
+              {
+                "old": "光栅化可见性导读",
+                "new": "光栅化可见性",
+                "old_path": "知识库/02_GPU与光栅化管线/光栅化可见性导读.md",
+                "new_path": "知识库/02_GPU与光栅化管线/光栅化可见性.md"
+              },
+              {
+                "old": "可见性与合成导读",
+                "new": "可见性与合成",
+                "old_path": "知识库/02_GPU与光栅化管线/可见性与合成导读.md",
+                "new_path": "知识库/02_GPU与光栅化管线/可见性与合成.md"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "b3cdd94868815383f8c8c542c71c767ffced5ab3217840a4a50c1d251cec06cd",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "核对控制点和参数域不等同、tri/quad/isoline因子、显式mip位移和Phong切平面投影；强度归零、共享边求值与API上限明确，完整细分与URP未运行。"
     }
   },
   {
@@ -13862,15 +14393,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "从树冠代理构造可写回资产的着色法线；全文已复核，定位“椭球代理的法线场”。"
+        "basis": "从树冠代理构造可写回资产的着色法线；全文已复核，定位“椭球代理的法线场”。 本批全文复读：复算椭球normalize(0.5,1,0)、三角包裹半径1.5与重心法线0.8165/0.4082/0.4082；Taubin两遍快照、逆法线转换M转置及切线重建条件完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：植被的包裹法线；椭球代理的法线场；代理网格生成；生成流程；法线空间与切线；写回资产；边界；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：植被的包裹法线；椭球代理的法线场；代理网格生成；生成流程；法线空间与切线；写回资产；边界；验证方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算椭球normalize(0.5,1,0)、三角包裹半径1.5与重心法线0.8165/0.4082/0.4082；Taubin两遍快照、逆法线转换M转置及切线重建条件完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：椭球梯度、同步Taubin及空间转换原因清楚；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：椭球梯度、最长边半径漏第三点、Taubin双快照、最近面法线权重与M转置逆映射完整。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：椭球梯度、同步Taubin及空间转换原因清楚；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：椭球梯度、最长边半径漏第三点、Taubin双快照、最近面法线权重与M转置逆映射完整。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算椭球normalize(0.5,1,0)、三角包裹半径1.5与重心法线0.8165/0.4082/0.4082；Taubin两遍快照、逆法线转换M转置及切线重建条件完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -13878,19 +14409,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。 本批全文复读：复算椭球normalize(0.5,1,0)、三角包裹半径1.5与重心法线0.8165/0.4082/0.4082；Taubin两遍快照、逆法线转换M转置及切线重建条件完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：椭球梯度、同步Taubin及空间转换原因清楚；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：椭球梯度、最长边半径漏第三点、Taubin双快照、最近面法线权重与M转置逆映射完整。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：椭球梯度、同步Taubin及空间转换原因清楚；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：椭球梯度、最长边半径漏第三点、Taubin双快照、最近面法线权重与M转置逆映射完整。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算椭球normalize(0.5,1,0)、三角包裹半径1.5与重心法线0.8165/0.4082/0.4082；Taubin两遍快照、逆法线转换M转置及切线重建条件完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1“植被包裹法线”与文件一致；各级标题客观，无新增标题映射。"
+        "basis": "H1“植被包裹法线”与文件一致；各级标题客观，无新增标题映射。 本批全文复读：复算椭球normalize(0.5,1,0)、三角包裹半径1.5与重心法线0.8165/0.4082/0.4082；Taubin两遍快照、逆法线转换M转置及切线重建条件完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。"
+        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。 本批全文复读：复算椭球normalize(0.5,1,0)、三角包裹半径1.5与重心法线0.8165/0.4082/0.4082；Taubin两遍快照、逆法线转换M转置及切线重建条件完整。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -13926,7 +14457,7 @@
       "## 相关主题",
       "## 参考资料"
     ],
-    "final_sha256": "72a4dcf34aafb805f4b14b564320e25fc5bd3ed94e6b03f6f26961bbd5d7642a",
+    "final_sha256": "223807445ff0fc6bfca93b47c2e094ba08984912ceb0e7888a191f2171650937",
     "implementation_status": "当前主归属与迁移完成；目标运行未执行项为UNVERIFIED",
     "article_type": "ARTICLE",
     "canonical_concept": "植被包裹法线",
@@ -13938,7 +14469,7 @@
     ],
     "title_coverage": "标题对应本页输入、输出与主要机制；导读只保留关系与路线",
     "completion_status": "COMPLETE",
-    "reviewed_content_sha256": "72a4dcf34aafb805f4b14b564320e25fc5bd3ed94e6b03f6f26961bbd5d7642a",
+    "reviewed_content_sha256": "223807445ff0fc6bfca93b47c2e094ba08984912ceb0e7888a191f2171650937",
     "source_article_path": "知识库/08_几何与网格/LOD、地形与程序化资产.md",
     "historical_quality_matrix": {
       "Scope": "主要问题与最终主归属确定",
@@ -13954,40 +14485,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、公式、代码、来源与标题，含独立复读",
-      "author_record": "revision-06-08.json",
-      "author_sha256": "cfb990f3657ff888055a7c1e79b876bd58778ccb441edc65ccf876da0dbf0773",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "083857ab1f04ec10636e7538da385e3cfa96b49655cb84b497b51bcc6a0b51cc",
-      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "72a4dcf34aafb805f4b14b564320e25fc5bd3ed94e6b03f6f26961bbd5d7642a",
       "independent_review": "PASS",
-      "findings": "重算椭球梯度、中心回退、代理球覆盖和双步同步平滑；法线恢复M转置以及改法线后的切线正交约束成立。CPU椭球与平滑检查通过，保留。",
-      "runtime": {
-        "source_scope": {
-          "scope": "ellipsoid_normal、smooth_step：非球形梯度、中心回退、同步邻域和固定边界",
-          "cpu_status": "PASS",
-          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
-          "shader_compile": "NOT_APPLICABLE",
-          "engine_compile": "UNVERIFIED",
-          "engine_runtime": "UNVERIFIED",
-          "gpu_capture": "UNVERIFIED",
-          "visual_result": "UNVERIFIED",
-          "performance": "UNVERIFIED",
-          "limitations": "代理球壳、最近面查询、资产写回及引擎光照未执行",
-          "results": "知识库/examples/revision_06_08/results.json"
-        },
-        "results": "知识库/examples/revision_06_08/results.json",
-        "new_tests": [],
-        "engine_compile": "UNVERIFIED",
-        "engine_runtime": "UNVERIFIED",
-        "gpu_capture": "UNVERIFIED",
-        "performance": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+      "content_sha256": "223807445ff0fc6bfca93b47c2e094ba08984912ceb0e7888a191f2171650937",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算椭球normalize(0.5,1,0)、三角包裹半径1.5与重心法线0.8165/0.4082/0.4082；Taubin两遍快照、逆法线转换M转置及切线重建条件完整。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "f03f8fdcd15c19b3963ff8af6a59b94ff6ee13fa93e2f2a26a215d76bb6dee8e",
     "historical_content_commit": "4e626da",
@@ -14035,6 +14540,55 @@
         "performance": "UNVERIFIED"
       },
       "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、公式、代码、来源与标题，含独立复读",
+          "author_record": "revision-06-08.json",
+          "author_sha256": "cfb990f3657ff888055a7c1e79b876bd58778ccb441edc65ccf876da0dbf0773",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "083857ab1f04ec10636e7538da385e3cfa96b49655cb84b497b51bcc6a0b51cc",
+          "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+          "content_sha256": "72a4dcf34aafb805f4b14b564320e25fc5bd3ed94e6b03f6f26961bbd5d7642a",
+          "independent_review": "PASS",
+          "findings": "重算椭球梯度、中心回退、代理球覆盖和双步同步平滑；法线恢复M转置以及改法线后的切线正交约束成立。CPU椭球与平滑检查通过，保留。",
+          "runtime": {
+            "source_scope": {
+              "scope": "ellipsoid_normal、smooth_step：非球形梯度、中心回退、同步邻域和固定边界",
+              "cpu_status": "PASS",
+              "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+              "shader_compile": "NOT_APPLICABLE",
+              "engine_compile": "UNVERIFIED",
+              "engine_runtime": "UNVERIFIED",
+              "gpu_capture": "UNVERIFIED",
+              "visual_result": "UNVERIFIED",
+              "performance": "UNVERIFIED",
+              "limitations": "代理球壳、最近面查询、资产写回及引擎光照未执行",
+              "results": "知识库/examples/revision_06_08/results.json"
+            },
+            "results": "知识库/examples/revision_06_08/results.json",
+            "new_tests": [],
+            "engine_compile": "UNVERIFIED",
+            "engine_runtime": "UNVERIFIED",
+            "gpu_capture": "UNVERIFIED",
+            "performance": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "223807445ff0fc6bfca93b47c2e094ba08984912ceb0e7888a191f2171650937",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算椭球normalize(0.5,1,0)、三角包裹半径1.5与重心法线0.8165/0.4082/0.4082；Taubin两遍快照、逆法线转换M转置及切线重建条件完整。"
     }
   },
   {
@@ -14052,15 +14606,15 @@
     "quality_matrix": {
       "Scope": {
         "status": "通过",
-        "basis": "面角属性转GPU记录及其访问和简化约束；全文已复核，定位“Buffer 更新、映射与复制”。"
+        "basis": "面角属性转GPU记录及其访问和简化约束；全文已复核，定位“Buffer 更新、映射与复制”。 本批全文复读：复算顶点20字节偏移0/12/16、LRU四未命中与ACMR2、QEM两平面误差5及奇异方向；网格展开到布局、变更和场景查询契约连贯，保留数据约束与独立主归属链接。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Structure": {
         "status": "通过",
-        "basis": "当前标题与章节：Point、Vertex 与 Primitive；面角属性展开；Vertex Buffer 与 Index Buffer；顶点布局；布局偏移检查；Buffer 更新、映射与复制；Post-transform Vertex Cache；法线、硬边与 UV 缝；简化网格的误差与数据约束；折叠点求解；重拓扑与烘焙输入；渲染数据与场景查询的契约；程序化输入的属性契约；检查方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json"
+        "basis": "当前标题与章节：Point、Vertex 与 Primitive；面角属性展开；Vertex Buffer 与 Index Buffer；顶点布局；布局偏移检查；Buffer 更新、映射与复制；Post-transform Vertex Cache；法线、硬边与 UV 缝；简化网格的误差与数据约束；折叠点求解；重拓扑与烘焙输入；渲染数据与场景查询的契约；程序化输入的属性契约；检查方法；相关主题；参考资料。独立全文判断见depth-independent-01-08.json 本批全文复读：复算顶点20字节偏移0/12/16、LRU四未命中与ACMR2、QEM两平面误差5及奇异方向；网格展开到布局、变更和场景查询契约连贯，保留数据约束与独立主归属链接。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Depth": {
         "status": "通过",
-        "basis": "作者具体机制：面角键展开、20字节布局、QEM奇异反例具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：面角完整键、20字节布局、映射在途安全、LRU4miss和QEM奇异反例均展开。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：面角键展开、20字节布局、QEM奇异反例具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：面角完整键、20字节布局、映射在途安全、LRU4miss和QEM奇异反例均展开。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算顶点20字节偏移0/12/16、LRU四未命中与ACMR2、QEM两平面误差5及奇异方向；网格展开到布局、变更和场景查询契约连贯，保留数据约束与独立主归属链接。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Implementation": {
         "status": "通过",
@@ -14068,19 +14622,19 @@
       },
       "Evidence": {
         "status": "通过",
-        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。"
+        "basis": "作者来源范围与正文断言对照；本轮再次联网核读者在independent_source_checks单独列出，其他来源保留为继承核读。 本批全文复读：复算顶点20字节偏移0/12/16、LRU四未命中与ACMR2、QEM两平面误差5及奇异方向；网格展开到布局、变更和场景查询契约连贯，保留数据约束与独立主归属链接。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Writing Style": {
         "status": "通过",
-        "basis": "作者具体机制：面角键展开、20字节布局、QEM奇异反例具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：面角完整键、20字节布局、映射在途安全、LRU4miss和QEM奇异反例均展开。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json"
+        "basis": "作者具体机制：面角键展开、20字节布局、QEM奇异反例具体；保留已成熟机制，补充具体输入、中间数值、失效路径或调整章节顺序。原具体缺口保持为复核依据；最终质量由独立全文复读判断。。独立全文复读：面角完整键、20字节布局、映射在途安全、LRU4miss和QEM奇异反例均展开。；从实际正文跟踪主要机制与失败；技术编译/CPU/引擎边界按正文分别记录。定位与操作见depth-independent-01-08.json 本批全文复读：复算顶点20字节偏移0/12/16、LRU四未命中与ACMR2、QEM两平面误差5及奇异方向；网格展开到布局、变更和场景查询契约连贯，保留数据约束与独立主归属链接。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Title": {
         "status": "通过",
-        "basis": "H1“网格数据与GPU访问”与文件一致；各级标题客观，无新增标题映射。"
+        "basis": "H1“网格数据与GPU访问”与文件一致；各级标题客观，无新增标题映射。 本批全文复读：复算顶点20字节偏移0/12/16、LRU四未命中与ACMR2、QEM两平面误差5及奇异方向；网格展开到布局、变更和场景查询契约连贯，保留数据约束与独立主归属链接。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Information Architecture": {
         "status": "通过",
-        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。"
+        "basis": "主归属08_几何与网格；本批12篇双链全部存在，相关主实现通过专篇承接。 本批全文复读：复算顶点20字节偏移0/12/16、LRU四未命中与ACMR2、QEM两平面误差5及奇异方向；网格展开到布局、变更和场景查询契约连贯，保留数据约束与独立主归属链接。 见references/fullread-batch-02-2026-10-24.md。"
       },
       "Visuals": {
         "status": "不适用",
@@ -14149,40 +14703,14 @@
     "historical_writing_review": "全文编辑复读完成；正文问题、因果、实现与边界按主归属记录",
     "historical_basis": "审计结构建议已批准；正文动作按本轮补充规范执行，待逐篇语言复读",
     "revision_review": {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "status": "REVIEWED",
-      "phase": "P2-depth",
-      "scope": "全文、公式、代码、来源与标题，含独立复读",
-      "author_record": "revision-06-08.json",
-      "author_sha256": "2c39ca3cb013643ac318d62b76555f7406deb436c87ab6d9316627ff3ae8ed96",
-      "independent_record": "depth-independent-01-08.json",
-      "independent_source_sha256": "684cdaff253c85b2e229d1ace416af4865422db288ba3c3e10b57473124e2750",
-      "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
-      "content_sha256": "1793a2dd00c6de872e8f0fedeedfdbf992521407e3e19ebbbe5e14bb57505c33",
       "independent_review": "PASS",
-      "findings": "完整核对面角展开、20字节记录、LRU模型与QEM奇异回退；修正UNSYNCHRONIZED映射中的等待解释，明确重叠可直接产生未定义结果，不能以无等待证明安全。",
-      "runtime": {
-        "source_scope": {
-          "scope": "flatten_corners、cache_misses、quadric_error：UV缝、4miss/2tri、两平面误差5",
-          "cpu_status": "PASS",
-          "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
-          "shader_compile": "NOT_APPLICABLE",
-          "engine_compile": "UNVERIFIED",
-          "engine_runtime": "UNVERIFIED",
-          "gpu_capture": "UNVERIFIED",
-          "visual_result": "UNVERIFIED",
-          "performance": "UNVERIFIED",
-          "limitations": "未执行全简化器、C++编译、OpenGL映射或真实缓存测量",
-          "results": "知识库/examples/revision_06_08/results.json"
-        },
-        "results": "知识库/examples/revision_06_08/results.json",
-        "new_tests": [],
-        "engine_compile": "UNVERIFIED",
-        "engine_runtime": "UNVERIFIED",
-        "gpu_capture": "UNVERIFIED",
-        "performance": "UNVERIFIED"
-      },
-      "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+      "content_sha256": "1793a2dd00c6de872e8f0fedeedfdbf992521407e3e19ebbbe5e14bb57505c33",
+      "independent_record": "references/fullread-batch-02-2026-10-24.md",
+      "reviewer": "root：全文复读与修法核对",
+      "scope": "复算顶点20字节偏移0/12/16、LRU四未命中与ACMR2、QEM两平面误差5及奇异方向；网格展开到布局、变更和场景查询契约连贯，保留数据约束与独立主归属链接。",
+      "runtime": "实际命令见本批验证记录；未扩大为GPU或完整引擎运行"
     },
     "historical_reviewed_content_sha256": "fa7f26e65f98ae01afeb1dd1db3636cb1a7862945e4c0c5fa31a7a8fab3b429c",
     "historical_content_commit": "4e626da",
@@ -14230,6 +14758,55 @@
         "performance": "UNVERIFIED"
       },
       "acceptance": "正文及声明范围复核通过；引擎、GPU与性能按实际执行状态登记"
+    },
+    "fullread_previous_reviews": [
+      {
+        "baseline": "76dd7c6",
+        "review": {
+          "date": "2026-10-23",
+          "status": "REVIEWED",
+          "phase": "P2-depth",
+          "scope": "全文、公式、代码、来源与标题，含独立复读",
+          "author_record": "revision-06-08.json",
+          "author_sha256": "2c39ca3cb013643ac318d62b76555f7406deb436c87ab6d9316627ff3ae8ed96",
+          "independent_record": "depth-independent-01-08.json",
+          "independent_source_sha256": "684cdaff253c85b2e229d1ace416af4865422db288ba3c3e10b57473124e2750",
+          "source_hash_basis": "报告保留原文件字节；当前content_sha256按UTF-8文本与LF换行计算",
+          "content_sha256": "1793a2dd00c6de872e8f0fedeedfdbf992521407e3e19ebbbe5e14bb57505c33",
+          "independent_review": "PASS",
+          "findings": "完整核对面角展开、20字节记录、LRU模型与QEM奇异回退；修正UNSYNCHRONIZED映射中的等待解释，明确重叠可直接产生未定义结果，不能以无等待证明安全。",
+          "runtime": {
+            "source_scope": {
+              "scope": "flatten_corners、cache_misses、quadric_error：UV缝、4miss/2tri、两平面误差5",
+              "cpu_status": "PASS",
+              "cpu_command": "python -B 知识库/examples/revision_06_08/test_reference.py",
+              "shader_compile": "NOT_APPLICABLE",
+              "engine_compile": "UNVERIFIED",
+              "engine_runtime": "UNVERIFIED",
+              "gpu_capture": "UNVERIFIED",
+              "visual_result": "UNVERIFIED",
+              "performance": "UNVERIFIED",
+              "limitations": "未执行全简化器、C++编译、OpenGL映射或真实缓存测量",
+              "results": "知识库/examples/revision_06_08/results.json"
+            },
+            "results": "知识库/examples/revision_06_08/results.json",
+            "new_tests": [],
+            "engine_compile": "UNVERIFIED",
+            "engine_runtime": "UNVERIFIED",
+            "gpu_capture": "UNVERIFIED",
+            "performance": "UNVERIFIED"
+          },
+          "acceptance": "本轮全文推演与独立正文复核；具体范围及运行边界见depth_review引用报告"
+        }
+      }
+    ],
+    "current_body_review": {
+      "date": "2026-10-24",
+      "record": "references/fullread-batch-02-2026-10-24.md",
+      "content_sha256": "1793a2dd00c6de872e8f0fedeedfdbf992521407e3e19ebbbe5e14bb57505c33",
+      "full_text_read": true,
+      "reviewer": "root",
+      "basis": "复算顶点20字节偏移0/12/16、LRU四未命中与ACMR2、QEM两平面误差5及奇异方向；网格展开到布局、变更和场景查询契约连贯，保留数据约束与独立主归属链接。"
     }
   },
   {

@@ -510,34 +510,366 @@
           "han": 1929
         }
       ]
+    },
+    {
+      "id": "02",
+      "baseline": "76dd7c6",
+      "report": "references/fullread-batch-02-2026-10-24.md",
+      "pages": [
+        {
+          "path": "知识库/05_光照阴影与GI/Light Probe.md",
+          "before_sha256": "c96d48f5415d423ff257356ee93c36e2efaf3a17267658da6de49c31e0f4bffd",
+          "after_sha256": "b7a6695329fceb102285a58f6b3c8e9472337d3cb88189bcb5adeba8caf4616d",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算108字节、八角权重与系数5、屏蔽上层后的归一化2；将体积外坐标先在浮点域钳位再转整数，补网格索引与缓冲容量前提，避免极远位置转换越界。",
+          "han": 1328
+        },
+        {
+          "path": "知识库/05_光照阴影与GI/Lightmap.md",
+          "before_sha256": "f4364286ad7e3ae35bb8433c215df61e7d228a54cccebfe8cb12df34702ba271",
+          "after_sha256": "f4364286ad7e3ae35bb8433c215df61e7d228a54cccebfe8cb12df34702ba271",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算256/2048尺度0.125、512/2048偏移0.25和重复直接光导致2.5/π变4/π；方向编码和贡献归属明确，UV保护边引用图集主归属。",
+          "han": 1121
+        },
+        {
+          "path": "知识库/05_光照阴影与GI/Reflection Probe.md",
+          "before_sha256": "f338df355aa8d20004262557e7566dc3b12e4fc96e6343ec4659abc309bdc55c",
+          "after_sha256": "f338df355aa8d20004262557e7566dc3b12e4fc96e6343ec4659abc309bdc55c",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算盒[-1,1]内点0.5沿+Z的出口方向、单探针权重0.25混全局得到1.75/1.25/1；保留零分量射线、盒外回退及局部权重归一化边界。",
+          "han": 1086
+        },
+        {
+          "path": "知识库/05_光照阴影与GI/Shadow Map.md",
+          "before_sha256": "e5f03b2faf393fe55bda9a0ce1b6a1e726608a0dc139250d166242a2671ea6cb",
+          "after_sha256": "e5f03b2faf393fe55bda9a0ce1b6a1e726608a0dc139250d166242a2671ea6cb",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "逐节核对PCF比较后过滤、PCSS线性距离及完整宽度到半径、CSM重叠和固定光基底吸附；复算0.5002偏置、点光径向距离与方差上界，阴影方案家族保留同页。",
+          "han": 4728
+        },
+        {
+          "path": "知识库/05_光照阴影与GI/动态GI.md",
+          "before_sha256": "31190bd5e4236ab1182cf7a983f7568b9250625471180346125050194cf9decc",
+          "after_sha256": "7dac928ec3c0f125036105c512033cc0669c1e1905667c7a7646f9581463a580",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算SSGI -4/-6穿越-5、体素红蓝前向累加、SDF平面步进、二点矩上界0.8与真实0.5，以及10次更新0.651；追踪表示、命中照明与Lumen版本职责已分清。",
+          "han": 2300
+        },
+        {
+          "path": "知识库/05_光照阴影与GI/直接光照.md",
+          "before_sha256": "877c64efd5627399896ad5cef6bbea001165837eb4e563623c967647a1f9da16",
+          "after_sha256": "877c64efd5627399896ad5cef6bbea001165837eb4e563623c967647a1f9da16",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算1000流明对应79.58坎德拉及2/4米照度19.89/4.97；核对LTC五顶点裁剪、逆矩阵按行构造、边积分除2π与幅度表组合，面积积分不重复乘距离或余弦。",
+          "han": 2556
+        },
+        {
+          "path": "知识库/06_纹理技术/Texture Streaming.md",
+          "before_sha256": "95f6e2ee6d029fae3a7fdf47f8e2fade53204108a2ff7e364ca7dd1306e402f2",
+          "after_sha256": "21e03326d54a45dcb2583cd0025b3bb090a2ff9d85d3b1560c163d69e2ac1c4d",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算1024到256需求mip2、UV乘4需求加2、预算22分21/1及峰值50；回收补齐未提交录制引用，需求、目标、驻留与主生命周期协议衔接完整。",
+          "han": 1362
+        },
+        {
+          "path": "知识库/06_纹理技术/Virtual Texture.md",
+          "before_sha256": "7f2da1abe58f0e59de3be2a84d89a859454561422fb3805f9e6a6ae9aa05bca5",
+          "after_sha256": "8fdf0da4b7420cad7de455aa6c2e0077e77a57a7590e9ab88df212a0fe751932",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算物理页中心7.5/12与1.5/12、回退祖先局部0.75/0.25和12.9%边框；补旧页表版本未提交录制保留，尾部mip和跨页导数条件保留。",
+          "han": 1645
+        },
+        {
+          "path": "知识库/06_纹理技术/纹理压缩格式.md",
+          "before_sha256": "8042f16d9e4a969d34132fc3e89e76ab8165f4c21b05b55fcc99987f470b8e67",
+          "after_sha256": "8042f16d9e4a969d34132fc3e89e76ab8165f4c21b05b55fcc99987f470b8e67",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "核对BC1红蓝调色板与纯绿不可重建、4×4八字节及1024完整mip链699064字节；ASTC4/6/8块的8/3.56/2bpp、LDR/HDR能力和细长mip边界一致。",
+          "han": 1549
+        },
+        {
+          "path": "知识库/06_纹理技术/纹理图集.md",
+          "before_sha256": "586dd26add2c9e0626b252406e9b50d0d9dc4df7e5d296f2e557d636148c13d6",
+          "after_sha256": "70978bab12d746fdbb5f6765637b03d6021c585af7d72319925ea0402da5d570",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算16.5/64至23.5/64的中心语义、mip3边框8变1；完整UV映射和逐级隔离保留，图集不等同于合批，Wrap原始导数与Texture Array作明确对照。",
+          "han": 1568
+        },
+        {
+          "path": "知识库/06_纹理技术/纹理采样与过滤.md",
+          "before_sha256": "a66c0318466dd5cb2446337deec89543c3a49dd686324ea2013527c9ac0d9387",
+          "after_sha256": "a66c0318466dd5cb2446337deec89543c3a49dd686324ea2013527c9ac0d9387",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算2×2双线性3、1024×512导数足迹4与LOD2、8×1共15纹素；法线平均丢失方差、单父纹素无法保持任意Alpha形状，各向异性16/2足迹解释完整。",
+          "han": 1803
+        },
+        {
+          "path": "知识库/06_纹理技术/视差映射.md",
+          "before_sha256": "f9534979528a98d2775f93664d7f25c0c355aaf8452f4c6856cc49c95d046794",
+          "after_sha256": "dbf4f2e23fe4a4ef877d5e13625ba209f80d03a613c9105e789064185a4a4f9d",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算D(u)=u的真实交点0.5、恒定D=0.3时u=0.54、光在深度0.4时qEnd0.2；观察与朝光共用PomHit，材质梯度、虚拟位置和层内光源截止完整，长篇仍围绕同一高度场交点消费。",
+          "han": 3988
+        },
+        {
+          "path": "知识库/07_颜色与后处理/Alpha表示.md",
+          "before_sha256": "3eef24e2d962d155d01711005064c4fcb260c9185013a85791f93eb018a1dca8",
+          "after_sha256": "3eef24e2d962d155d01711005064c4fcb260c9185013a85791f93eb018a1dca8",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算红边先过滤再预乘0.25与预乘后过滤0.5，以及tintA0.5时预乘红0.25；资源制作、mip、混合和UI后合成链连续，透明排序由主归属维护。",
+          "han": 1412
+        },
+        {
+          "path": "知识库/07_颜色与后处理/Bloom.md",
+          "before_sha256": "e4013fd06cb3d630bc04d2ab8690ab5a04cdec825d2c48c186381d86b42619fc",
+          "after_sha256": "e4013fd06cb3d630bc04d2ab8690ab5a04cdec825d2c48c186381d86b42619fc",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算软阈值边界导数、16亮点逐级4/1、帐篷九权重和1及尺度系数0.5/0.25/0.25；保持常量与有限边界能量守恒分开，完整金字塔算法保留。",
+          "han": 2508
+        },
+        {
+          "path": "知识库/07_颜色与后处理/HDR与曝光.md",
+          "before_sha256": "e0f610cceb83a52c9e2b55a886cf10bcd9526643d22d7bcbae54e690fbe66bde",
+          "after_sha256": "e0f610cceb83a52c9e2b55a886cf10bcd9526643d22d7bcbae54e690fbe66bde",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算四亮度几何均值0.56234、裁极值0.31623、对数曝光中点2而非2.5及历史10换40后显示5；预曝光与显示曝光倍率来源已明确。",
+          "han": 1179
+        },
+        {
+          "path": "知识库/07_颜色与后处理/Tone Mapping.md",
+          "before_sha256": "1893793db38118b2f3b5c01370a84324916cf999f101a334241fcc4cc567450b",
+          "after_sha256": "1893793db38118b2f3b5c01370a84324916cf999f101a334241fcc4cc567450b",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算Reinhard10/11、RGB比例变化、LUT整形0/1/3/15到0/.25/.5/1与16级纹素中心；曲线、色域和输出编码职责分开，保持比例不等同于不出色域。",
+          "han": 1028
+        },
+        {
+          "path": "知识库/07_颜色与后处理/屏幕空间AO.md",
+          "before_sha256": "8684d15d73f9708657924eaa920d51eb7cb64d0cc7d3294cebf44ac76a9534d9",
+          "after_sha256": "8684d15d73f9708657924eaa920d51eb7cb64d0cc7d3294cebf44ac76a9534d9",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算负Z比较-4.7通过-4.8+.05、四方向可见0.75与长度比例衰减；缺失方向保留总分母、法线退化备用轴及间接项合成有明确限定。",
+          "han": 1234
+        },
+        {
+          "path": "知识库/07_颜色与后处理/景深与运动模糊.md",
+          "before_sha256": "51f2975b3aa05db8337e46f0eaf6c9b468ce118d7d3a63272e04d51c0bbd2ec2",
+          "after_sha256": "51f2975b3aa05db8337e46f0eaf6c9b468ce118d7d3a63272e04d51c0bbd2ec2",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算50mm焦距的-17.09像素、近景红覆盖0.25及半快门亮点读取0.6；本文以深度覆盖约束比较两类镜头模糊，长度可控且组合顺序明确，保持方案比较，不再拆成缺少比较语境的短页。",
+          "han": 1924
+        },
+        {
+          "path": "知识库/07_颜色与后处理/颜色空间.md",
+          "before_sha256": "676cc2fe287d9e9b31f138160a376f69348034ac77e7f6114fb127160d391b3a",
+          "after_sha256": "676cc2fe287d9e9b31f138160a376f69348034ac77e7f6114fb127160d391b3a",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算sRGB0.5解码0.214、线性0.5编码0.735及红色亮度0.0455；采样解码、原色转换和显示编码顺序准确，数据纹理语义与Alpha职责分别链接。",
+          "han": 1003
+        },
+        {
+          "path": "知识库/08_几何与网格/Billboard.md",
+          "before_sha256": "4848194964bf1558aaf29512b89e540ba0bc06e04ea706cada5d3da2b27f4c30",
+          "after_sha256": "16449c86016bd720f32d0ed975bd76109ee7faa542a0e52048dd4edea654d276",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "核对脚底锚点、Up投影与正上方备用方向，复算8视角60度的2/3与1/3；多视角深度不能直接平均，几何与采样契约完整，使用完整中文说明未验证范围。",
+          "han": 1367
+        },
+        {
+          "path": "知识库/08_几何与网格/Heightfield地形.md",
+          "before_sha256": "2d82676e06e98bfe0baad18916b8dd8712ef77745554bf126ddc3c0f01922de0",
+          "after_sha256": "0f51c672d307489aed4f5f925d4d15b4cd92152d094e06c2edb68d05c26888a0",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算100米8位0.392米和16位1.53毫米、h=2x+3z法线、粗细块T形裂缝；层权重零值回退、共享边法线和细分求值职责清楚。",
+          "han": 1634
+        },
+        {
+          "path": "知识库/08_几何与网格/LOD选择.md",
+          "before_sha256": "287e17348c7fdb1e636648991c3a839e065deb032b54ad2cfd4d78d4f443d09a",
+          "after_sha256": "3549412c4c21b6e9604c56b938b0378748ee814b48c6d9ee2faff3694b20f17b",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算2米深度10/FOV90占108像素、互补噪声及0.18/0.22滞回边界；屏幕误差、流送回退和几何不重合的覆盖局限均保留。",
+          "han": 1501
+        },
+        {
+          "path": "知识库/08_几何与网格/Tessellation与位移.md",
+          "before_sha256": "a594d5b3f9a700fdbf744bc83a6573363adedd2de3e0b1b1367df5b8935f93ca",
+          "after_sha256": "b3cdd94868815383f8c8c542c71c767ffced5ab3217840a4a50c1d251cec06cd",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "核对控制点和参数域不等同、tri/quad/isoline因子、显式mip位移和Phong切平面投影；强度归零、共享边求值与API上限明确，完整细分与URP未运行。",
+          "han": 2688
+        },
+        {
+          "path": "知识库/08_几何与网格/植被包裹法线.md",
+          "before_sha256": "72a4dcf34aafb805f4b14b564320e25fc5bd3ed94e6b03f6f26961bbd5d7642a",
+          "after_sha256": "223807445ff0fc6bfca93b47c2e094ba08984912ceb0e7888a191f2171650937",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算椭球normalize(0.5,1,0)、三角包裹半径1.5与重心法线0.8165/0.4082/0.4082；Taubin两遍快照、逆法线转换M转置及切线重建条件完整。",
+          "han": 2288
+        },
+        {
+          "path": "知识库/08_几何与网格/网格数据与GPU访问.md",
+          "before_sha256": "1793a2dd00c6de872e8f0fedeedfdbf992521407e3e19ebbbe5e14bb57505c33",
+          "after_sha256": "1793a2dd00c6de872e8f0fedeedfdbf992521407e3e19ebbbe5e14bb57505c33",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算顶点20字节偏移0/12/16、LRU四未命中与ACMR2、QEM两平面误差5及奇异方向；网格展开到布局、变更和场景查询契约连贯，保留数据约束与独立主归属链接。",
+          "han": 3071
+        }
+      ]
     }
   ],
   "remaining": [
-    "知识库/05_光照阴影与GI/Light Probe.md",
-    "知识库/05_光照阴影与GI/Lightmap.md",
-    "知识库/05_光照阴影与GI/Reflection Probe.md",
-    "知识库/05_光照阴影与GI/Shadow Map.md",
-    "知识库/05_光照阴影与GI/动态GI.md",
-    "知识库/05_光照阴影与GI/直接光照.md",
-    "知识库/06_纹理技术/Texture Streaming.md",
-    "知识库/06_纹理技术/Virtual Texture.md",
-    "知识库/06_纹理技术/纹理压缩格式.md",
-    "知识库/06_纹理技术/纹理图集.md",
-    "知识库/06_纹理技术/纹理采样与过滤.md",
-    "知识库/06_纹理技术/视差映射.md",
-    "知识库/07_颜色与后处理/Alpha表示.md",
-    "知识库/07_颜色与后处理/Bloom.md",
-    "知识库/07_颜色与后处理/HDR与曝光.md",
-    "知识库/07_颜色与后处理/Tone Mapping.md",
-    "知识库/07_颜色与后处理/屏幕空间AO.md",
-    "知识库/07_颜色与后处理/景深与运动模糊.md",
-    "知识库/07_颜色与后处理/颜色空间.md",
-    "知识库/08_几何与网格/Billboard.md",
-    "知识库/08_几何与网格/Heightfield地形.md",
-    "知识库/08_几何与网格/LOD选择.md",
-    "知识库/08_几何与网格/Tessellation与位移.md",
-    "知识库/08_几何与网格/植被包裹法线.md",
-    "知识库/08_几何与网格/网格数据与GPU访问.md",
     "知识库/09_动画系统/IK.md",
     "知识库/09_动画系统/动画压缩.md",
     "知识库/09_动画系统/动画姿态混合.md",
@@ -624,5 +956,5 @@
     "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
     "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md"
   ],
-  "full_text_read_count": 26
+  "full_text_read_count": 51
 }

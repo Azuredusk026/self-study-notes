@@ -38,7 +38,7 @@ used = sum(bytes[i][target[i]])
 
 预算目标不是立即可用的资源。请求应按“资源、mip、内容版本”去重，读取与解码完成后提交上传。GPU完成上传并满足采样访问状态后，才发布能访问新层的视图或页映射。发布前仍采样旧的有效层。
 
-降低目标层级时，先让未来绘制停止访问被淘汰层，再等待已提交的GPU使用结束，随后释放对应物理存储。只提高Sampler的最小LOD并不自动释放显存；普通资源重建、可驻留资源和稀疏绑定各有不同回收接口。
+降低目标层级时，先让未来绘制停止访问被淘汰层，再等待旧视图的录制保留全部退出、已提交GPU使用全部结束，随后释放对应物理存储。尚未提交的命令也可能引用旧层，不能只检查已提交完成值；三态保留与回收协议见[[13_渲染架构/GPU资源生命周期]]。只提高Sampler的最小LOD并不自动释放显存；普通资源重建、可驻留资源和稀疏绑定各有不同回收接口。
 
 预算还要扣除上传暂存、等待回收的旧资源及同时在途的请求。如果旧纹理与新纹理短时并存，只统计目标载荷会低估峰值。升降级使用不同阈值或延时，能避免相机在边界徘徊时反复读盘。
 
@@ -48,7 +48,7 @@ used = sum(bytes[i][target[i]])
 
 同时显示desired、target、resident三个层级。desired过粗先查UV密度与投影；target比desired粗先查预算竞争；resident比target粗再查IO、解码、上传完成值和发布状态。瞬移、多个相机、动态材质与预算耗尽分别测试，并记录低清持续帧数。
 
-[reference.py](../examples/revision_06_08/reference.py)的`stream_targets`实现上述预算分配，运行 `python -B 知识库/examples/revision_06_08/test_reference.py` 检查回退超预算、优先级分配与达到目标后的停止。模型未创建纹理或执行IO；引擎运行与GPU驻留测量为UNVERIFIED。
+[reference.py](../examples/revision_06_08/reference.py)的`stream_targets`实现上述预算分配，运行 `python -B 知识库/examples/revision_06_08/test_reference.py` 检查回退超预算、优先级分配与达到目标后的停止。模型未创建纹理或执行IO；引擎运行与GPU驻留测量为尚未验证。
 
 ## 相关主题
 

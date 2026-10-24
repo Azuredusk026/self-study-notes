@@ -38,7 +38,8 @@ SH9 InterpolateProbes(float3 positionWS, float3 gridOriginWS,
     float3 cellSize, uint3 gridSize)
 {
     float3 grid = (positionWS - gridOriginWS) / cellSize;
-    int3 baseCell = clamp((int3)floor(grid), int3(0,0,0), int3(gridSize)-2);
+    grid = clamp(grid, float3(0,0,0), float3(gridSize)-1.0);
+    int3 baseCell = min((int3)floor(grid), int3(gridSize)-2);
     float3 t = saturate(grid - float3(baseCell));
     SH9 sh;
     for (uint k=0; k<9; ++k) sh.c[k]=0.0;
@@ -55,7 +56,7 @@ SH9 InterpolateProbes(float3 positionWS, float3 gridOriginWS,
 }
 ```
 
-这是 HLSL 机制函数，`gridSize` 每维至少2，`cellSize` 为正且与世界位置同单位。缓冲按X最快、每探针9个`float3`排列，结构化缓冲元素步长为12字节。示例把体积外位置钳到边界；也可由宿主选择环境回退，需明确策略。得到9个系数后按 [[01_数学与采样/球谐光照]] 的同名实基求值；本页约定系数已做余弦卷积，输出为辐照度，Lambert材质再乘反照率并除π。
+这是 HLSL 机制函数，宿主先验证有限的世界位置、网格原点及正的`cellSize`，长度单位一致；`gridSize`每维在2到2²⁴之间，且`9*gridSize.x*gridSize.y*gridSize.z`能装入32位无符号索引并匹配实际缓冲容量。坐标先在浮点域钳位到网格，再转整数，极远的体积外位置因此不会先触发越界整数转换。缓冲按X最快、每探针9个`float3`排列，结构化缓冲元素步长为12字节。示例把体积外位置钳到边界；也可由宿主选择环境回退，需明确策略。得到9个系数后按 [[01_数学与采样/球谐光照]] 的同名实基求值；本页约定系数已做余弦卷积，输出为辐照度，Lambert材质再乘反照率并除π。
 
 八角权重相加为 `(1-t.x+t.x)*(1-t.y+t.y)*(1-t.z+t.z)=1`，因此常量场保持不变，线性场在单元内可精确重建。简单三线性插值会穿过墙体漏光，可见性或有效性权重加入后，应对剩余权重重新归一化；总权重为零时使用明确回退，不能除以零。距离可见性估计见 [[05_光照阴影与GI/动态GI]]。把物体沿单元边界缓慢移动，亮度应连续；出现格子跳变时先检查索引 Clamp 和八角权重和是否为 1。
 
