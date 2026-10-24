@@ -1266,37 +1266,408 @@
           "han": 3374
         }
       ]
+    },
+    {
+      "id": "04",
+      "baseline": "27a83a1",
+      "report": "references/fullread-batch-04-2026-10-24.md",
+      "pages": [
+        {
+          "path": "知识库/13_渲染架构/Command Buffer与帧提交.md",
+          "before_sha256": "0cbec90b5f8684a78009e283bcf081bdce0f3d081eb6147cd310da34d1c190ee",
+          "after_sha256": "0cbec90b5f8684a78009e283bcf081bdce0f3d081eb6147cd310da34d1c190ee",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "逐行追踪D3D12槽17与完成16的复用、Copy9等待、录制未提交引用及Signal失败；设备移除哨兵和等待错误均阻断复用，保持命令录制与提交的统一主问题。",
+          "han": 2111
+        },
+        {
+          "path": "知识库/13_渲染架构/Draw Call与合批.md",
+          "before_sha256": "37fd1922eec5dafda4ade8568fed615168ea34e5341a4d7cf8a731b5cf26eb91",
+          "after_sha256": "37fd1922eec5dafda4ade8568fed615168ea34e5341a4d7cf8a731b5cf26eb91",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算1000实例各100顶点仍处理十万顶点；静态合批、动态合批、SRP与实例化按兼容范围比较，保留Unity6000的自动路径与显式实例接口区别。",
+          "han": 1942
+        },
+        {
+          "path": "知识库/13_渲染架构/Forward Rendering与Forward+.md",
+          "before_sha256": "8c1a0fee21490073a0b6b02e2338e80ead68e7d405cb041926e2d1e869df8ff7",
+          "after_sha256": "8c1a0fee21490073a0b6b02e2338e80ead68e7d405cb041926e2d1e869df8ff7",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "追踪offset5/count2读取索引5、6再取光源3、9；透明物体用自身深度选簇，构建屏障与BRDF主归属衔接完整。",
+          "han": 878
+        },
+        {
+          "path": "知识库/13_渲染架构/Pipeline State Object.md",
+          "before_sha256": "344adb42a7fccd38cc3ac317eadd79539c6c20dc6a15d06256521e1066cc4b8c",
+          "after_sha256": "cfe230dbb3d1cb803db66cb0d880a8c2fbae623944e1a6b5a823d6036e769f34",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "核对着色器、布局、格式、采样数与动态状态的键语义；回收条件补已录制未提交命令的引用结束，防止只等GPU完成便释放。",
+          "han": 1085
+        },
+        {
+          "path": "知识库/13_渲染架构/Render Graph.md",
+          "before_sha256": "94e3ad42485212c1a44b067a19cd1bf45df65de9431a41a211d7944c7b509b67",
+          "after_sha256": "94e3ad42485212c1a44b067a19cd1bf45df65de9431a41a211d7944c7b509b67",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "全文推演版本X1/X2、内容边与WAR/WAW、根剔除、区间2至7/8至12及并行11/8/12毫秒反例；15项CPU证据与未运行多队列范围一致。",
+          "han": 4650
+        },
+        {
+          "path": "知识库/13_渲染架构/Render Pass与附件.md",
+          "before_sha256": "af48352975a83d0950047cc5f732e6b2d0fa8d9e0c5e0d6dc67aef7d30e3e9f2",
+          "after_sha256": "49766a1aa8558ec3cee8b51e5d1dc5c80d96d2e242a980604fe5198a2fd7d448",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "逐项追踪颜色附件load/store、布局与同步及FBO完整性；按Vulkan官方特性文档补设备查询并启用dynamicRendering，保持附件契约主问题。",
+          "han": 1178
+        },
+        {
+          "path": "知识库/13_渲染架构/Tiled与Clustered光源剔除.md",
+          "before_sha256": "383b3060b0e72af761dd69c85776772527258deb4b1d142b14a1e8fd2850c306",
+          "after_sha256": "7b98c5f1073f5d346446a22d9c2907355a9fba1a0ba4f9deb1d1a4bfa46f508c",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算分离掩码内存、25个角点16线程与计数2/0/3的起点0/2/2；明确轴向正深度及切片、索引有效范围，冻结计数与填充输入。",
+          "han": 1528
+        },
+        {
+          "path": "知识库/14_性能分析与优化/PSO首次使用卡顿.md",
+          "before_sha256": "8cd731f5959a178e887edf1c3feaae8eb6243ad667daff12c8b485e0844282f5",
+          "after_sha256": "8cd731f5959a178e887edf1c3feaae8eb6243ad667daff12c8b485e0844282f5",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "推演首次使用60项与就绪80项不保证命中、代际取消和同锁持有；预热发现关闭与实际持有门禁完整，保留Epic5.8限定。",
+          "han": 3431
+        },
+        {
+          "path": "知识库/14_性能分析与优化/帧捕获与性能分析工具.md",
+          "before_sha256": "612c5c5ec0adf038252e81d95d09b74859d3b3a920cda9ca6f3bb710e90f1adc",
+          "after_sha256": "612c5c5ec0adf038252e81d95d09b74859d3b3a920cda9ca6f3bb710e90f1adc",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "逐项追踪Query在GPU完成后仍有CPU复制借用、120帧取消与123帧复用；捕获定位与独立性能实验分工明确，4.2毫秒为假设示例。",
+          "han": 4506
+        },
+        {
+          "path": "知识库/14_性能分析与优化/帧瓶颈诊断.md",
+          "before_sha256": "1559b340e8073fe0a8b5ce009670bf4c1b414dcbe030a902f85ec03a7826541d",
+          "after_sha256": "297a9f7379e45f3ff8e5e0a6bf6de4ba62b64b9355cf2c68868727b6eb231624",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "REWRITE",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算寄存器65536与32/64/128用量的波数、4GB/s逻辑写入和Copy11时序；CPU公式把G定义为CPU耗时并统一毫秒，避免几何数量与时间相加。",
+          "han": 3286
+        },
+        {
+          "path": "知识库/14_性能分析与优化/性能对照实验.md",
+          "before_sha256": "78945156c8f94e90f945515bf99a7e104373964807ef14806193f6103d75d0f7",
+          "after_sha256": "78945156c8f94e90f945515bf99a7e104373964807ef14806193f6103d75d0f7",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算ABBA四值5/4.3/4.4/5.3得0.8毫秒，a1/b3与0.75缩放得2.6875；P95样本次序、相关帧及局部收益与整帧关键路径明确。",
+          "han": 1712
+        },
+        {
+          "path": "知识库/14_性能分析与优化/移动端渲染优化.md",
+          "before_sha256": "615319feb69050afda439fa6676281bb090ee0bf85d0226ea3fc9461a00b35dd",
+          "after_sha256": "615319feb69050afda439fa6676281bb090ee0bf85d0226ea3fc9461a00b35dd",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算频率0.75对应10.67毫秒、1080p四附件33.18MB及读写3.98GB/s；半分辨率、过绘和VRS收益均有限定，热稳态为独立验收。",
+          "han": 2209
+        },
+        {
+          "path": "知识库/15_资产与工具管线/DCC资产交换.md",
+          "before_sha256": "c48eb21aa7659df5bf773f7cce2babe9d8918c9c4c7abb5bfe9e4675e51c6225",
+          "after_sha256": "c48eb21aa7659df5bf773f7cce2babe9d8918c9c4c7abb5bfe9e4675e51c6225",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "全文核对坐标共轭、厘米换米、切线手性、绑定与Assimp父子累积；Houdini属性归属及VEX混维补齐数例保留，交换契约串联各格式。",
+          "han": 3753
+        },
+        {
+          "path": "知识库/15_资产与工具管线/WFC.md",
+          "before_sha256": "94728e3e29e69ac9c3325f926c45ea5f32ff88233fd8d722c674c169ac9bbb9a",
+          "after_sha256": "94728e3e29e69ac9c3325f926c45ea5f32ff88233fd8d722c674c169ac9bbb9a",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "推演A/B支持X/Y取并集、初始A不支持A的矛盾与传播队列；局部合法和全局可达分开，熵与加权抽样不作全局最优承诺。",
+          "han": 1432
+        },
+        {
+          "path": "知识库/15_资产与工具管线/程序化资产生成.md",
+          "before_sha256": "ceae172ad8e769090078d7aa3a1fae972dbf2ecf467511364c8c54ba55991759",
+          "after_sha256": "ceae172ad8e769090078d7aa3a1fae972dbf2ecf467511364c8c54ba55991759",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "追踪固定候选A/B/C删除B仍保持C、覆盖配置和并行稳定排序；SOP/HDA/PDG职责与分块邻域共同服务可重复资产生成。",
+          "han": 1312
+        },
+        {
+          "path": "知识库/15_资产与工具管线/资产构建CI.md",
+          "before_sha256": "d108b5ed34046cc39f38cb5151570041912ff294fb702f1705b04eb077730fa6",
+          "after_sha256": "d108b5ed34046cc39f38cb5151570041912ff294fb702f1705b04eb077730fa6",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "逐行复读NUL路径与pipefail的暂存指针检查；完整指针和工作区实体分别校验，五项真实Bash证据保留，依赖失效细节链接构建主文。",
+          "han": 1191
+        },
+        {
+          "path": "知识库/15_资产与工具管线/资产构建与发布.md",
+          "before_sha256": "35437b5e1a644e7d8bbd18c1b422b2054add270b66be72d7c824d222c64e78c3",
+          "after_sha256": "35437b5e1a644e7d8bbd18c1b422b2054add270b66be72d7c824d222c64e78c3",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "推演贴图T到材质M及包B的依赖边、版本14先于13发布的CAS拒绝；输入键与输出哈希区分，原子发布与读取固定版本完整。",
+          "han": 2832
+        },
+        {
+          "path": "知识库/16_编程与数据结构/CSharp运行模型.md",
+          "before_sha256": "bd5e1a228048a9b2dba4b8ebfba417835edb40961cb47d2d480f83f865a58391",
+          "after_sha256": "bd5e1a228048a9b2dba4b8ebfba417835edb40961cb47d2d480f83f865a58391",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "追踪struct生命值10到副本0再写回、装箱、延迟枚举和异步资源作用域；ReadExactly明确.NET7+，IL2CPP与AOT仍需目标构建证据。",
+          "han": 2234
+        },
+        {
+          "path": "知识库/16_编程与数据结构/Python宿主集成.md",
+          "before_sha256": "1ff04d17a5b3b0fcb7e9584259d522b2009d349c488a337e8a98a96551697c6f",
+          "after_sha256": "1ff04d17a5b3b0fcb7e9584259d522b2009d349c488a337e8a98a96551697c6f",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复读解释器ABI与sys.path分层、对象42场景7网格12提交检查及关闭迟到回调；自由线程构建与宿主线程规则分开，未声称DCC运行。",
+          "han": 1320
+        },
+        {
+          "path": "知识库/16_编程与数据结构/容器选择.md",
+          "before_sha256": "d6444e64ee0eb3eac92c7ca2a38a3f4bed1e5f7f56c0a5035243e041ea35d55e",
+          "after_sha256": "d6444e64ee0eb3eac92c7ca2a38a3f4bed1e5f7f56c0a5035243e041ea35d55e",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算4桶键1/5到8桶重新分布；数组失效、节点查找、范围查询与工作负载相连，平均与摊还前提及标准实现自由分清。",
+          "han": 2123
+        },
+        {
+          "path": "知识库/16_编程与数据结构/对象生命周期.md",
+          "before_sha256": "e95ba2ba901db828960b448f831bca386ec48d9c5f4b79ca70e99ea2e304496f",
+          "after_sha256": "e95ba2ba901db828960b448f831bca386ec48d9c5f4b79ca70e99ea2e304496f",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "沿根到委托加载器的可达链、强引用环及Active/Stopping/Released关闭逐步推演；取消、在途回调与GPU借用各自完成后释放。",
+          "han": 1595
+        },
+        {
+          "path": "知识库/16_编程与数据结构/空间索引.md",
+          "before_sha256": "487c9f4287a06167e9ee32e4c777d2351200fa4e97c861458c96d1ba647d9462",
+          "after_sha256": "487c9f4287a06167e9ee32e4c777d2351200fa4e97c861458c96d1ba647d9462",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算负坐标-0.1入-1格、A从-1/0/1移至1/2/3与去重；BVH祖先包含及最坏线性明确，精确求交引用既有主文。",
+          "han": 1536
+        },
+        {
+          "path": "知识库/16_编程与数据结构/算法设计.md",
+          "before_sha256": "035e772cad66ed6f41f9c7180f85e4d50d2dbfecbbd5fb6b188e50bda4abdbba",
+          "after_sha256": "035e772cad66ed6f41f9c7180f85e4d50d2dbfecbbd5fb6b188e50bda4abdbba",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "手推AB与ACB的LCS、ABABAC前缀0/0/1/2/3/0与失配5退3；贪心带收益反例、滚动存储与路径输出要求完整。",
+          "han": 2059
+        },
+        {
+          "path": "知识库/16_编程与数据结构/虚拟内存.md",
+          "before_sha256": "f243415a018bd178bd93ac61bf33ab6258a8a3a580276df0bd4510ba24eb080b",
+          "after_sha256": "f243415a018bd178bd93ac61bf33ab6258a8a3a580276df0bd4510ba24eb080b",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算4096页内A与B共享1096字节，保留1GiB与提交4MiB分开；TLB失效与缺页、Windows承诺与Linux策略边界清楚。",
+          "han": 1174
+        },
+        {
+          "path": "知识库/16_编程与数据结构/进程与调度.md",
+          "before_sha256": "50828ba696701f2ec784522680ee0b877c14736f3f8a19b9bd25afcf7c8caad2",
+          "after_sha256": "50828ba696701f2ec784522680ee0b877c14736f3f8a19b9bd25afcf7c8caad2",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算0.055秒累计两步余0.015与共享映射偏移32；输入输出并发排空、后代进程退出和固定Tick过载规则衔接完整。",
+          "han": 2520
+        },
+        {
+          "path": "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
+          "before_sha256": "db17e14add9f238d6f9975e56d092fd72c7d421fc5a8e2a83a7c0e41f596357a",
+          "after_sha256": "db17e14add9f238d6f9975e56d092fd72c7d421fc5a8e2a83a7c0e41f596357a",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "沿job17与prompt Q、丢响应未知态、批量2只产1张和取消迟到写入复读；节点类型与模型语义、历史与产物验收分开，协议基础引用Agent主文。",
+          "han": 1794
+        },
+        {
+          "path": "知识库/17_AIGC与Agent管线/扩散模型.md",
+          "before_sha256": "7769b8b3d4a664cd14f6409a63b27c1758f0d73cde4ffac0de4c4aa6c95ad820",
+          "after_sha256": "7769b8b3d4a664cd14f6409a63b27c1758f0d73cde4ffac0de4c4aa6c95ad820",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算干净值2/噪声1/系数0.64的2.2与重建2，DDPM均值参数和CFG方向一致；循环、训练、VAE和精度按同一生成机制保留。",
+          "han": 1790
+        },
+        {
+          "path": "知识库/17_AIGC与Agent管线/生成条件控制.md",
+          "before_sha256": "09cf1733d4eb37c5a02f838f0ba88f328a2fbfcf2979a96333da6a1adc65c457",
+          "after_sha256": "09cf1733d4eb37c5a02f838f0ba88f328a2fbfcf2979a96333da6a1adc65c457",
+          "full_text_read": true,
+          "boundary_action": "KEEP",
+          "content_actions": [
+            "KEEP",
+            "FACT-CHECK"
+          ],
+          "title_review": "PASS",
+          "review": "复算h2、残差-0.4、权重0.5/2得1.8/1.2；零卷积分支及IP-Adapter两次独立softmax完整，输入错误与条件竞争有定位路径。",
+          "han": 1181
+        }
+      ]
     }
   ],
   "remaining": [
-    "知识库/13_渲染架构/Command Buffer与帧提交.md",
-    "知识库/13_渲染架构/Draw Call与合批.md",
-    "知识库/13_渲染架构/Forward Rendering与Forward+.md",
-    "知识库/13_渲染架构/Pipeline State Object.md",
-    "知识库/13_渲染架构/Render Graph.md",
-    "知识库/13_渲染架构/Render Pass与附件.md",
-    "知识库/13_渲染架构/Tiled与Clustered光源剔除.md",
-    "知识库/14_性能分析与优化/PSO首次使用卡顿.md",
-    "知识库/14_性能分析与优化/帧捕获与性能分析工具.md",
-    "知识库/14_性能分析与优化/帧瓶颈诊断.md",
-    "知识库/14_性能分析与优化/性能对照实验.md",
-    "知识库/14_性能分析与优化/移动端渲染优化.md",
-    "知识库/15_资产与工具管线/DCC资产交换.md",
-    "知识库/15_资产与工具管线/WFC.md",
-    "知识库/15_资产与工具管线/程序化资产生成.md",
-    "知识库/15_资产与工具管线/资产构建CI.md",
-    "知识库/15_资产与工具管线/资产构建与发布.md",
-    "知识库/16_编程与数据结构/CSharp运行模型.md",
-    "知识库/16_编程与数据结构/Python宿主集成.md",
-    "知识库/16_编程与数据结构/容器选择.md",
-    "知识库/16_编程与数据结构/对象生命周期.md",
-    "知识库/16_编程与数据结构/空间索引.md",
-    "知识库/16_编程与数据结构/算法设计.md",
-    "知识库/16_编程与数据结构/虚拟内存.md",
-    "知识库/16_编程与数据结构/进程与调度.md",
-    "知识库/17_AIGC与Agent管线/ComfyUI工作流.md",
-    "知识库/17_AIGC与Agent管线/扩散模型.md",
-    "知识库/17_AIGC与Agent管线/生成条件控制.md",
     "知识库/18_游戏物理与模拟/Ragdoll.md",
     "知识库/18_游戏物理与模拟/刚体物理求解.md",
     "知识库/19_Gameplay与游戏框架/玩法事件与脚本.md",
@@ -1329,5 +1700,5 @@
     "知识库/26_GPU驱动与虚拟几何/GPU-Driven Rendering.md",
     "知识库/26_GPU驱动与虚拟几何/Nanite几何选择与流送.md"
   ],
-  "full_text_read_count": 79
+  "full_text_read_count": 107
 }

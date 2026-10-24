@@ -3430,7 +3430,8 @@
         "13_渲染架构/GPU同步与屏障",
         "13_渲染架构/GPU资源生命周期"
       ],
-      "historical_content_sha256": "ef03985e7942ff506d8bbbbc063bda56f657ed7199da9b7db68681ea7d8e5adf"
+      "historical_content_sha256": "ef03985e7942ff506d8bbbbc063bda56f657ed7199da9b7db68681ea7d8e5adf",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/13_渲染架构/Deferred Rendering.md",
@@ -3478,7 +3479,8 @@
         "25_UI与文本/文字渲染",
         "14_性能分析与优化/帧瓶颈诊断"
       ],
-      "historical_content_sha256": "703bb40d60974ee7e22ccf95fed3ad251c03a311bef3f0d238a485fc43f41fba"
+      "historical_content_sha256": "703bb40d60974ee7e22ccf95fed3ad251c03a311bef3f0d238a485fc43f41fba",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/13_渲染架构/Forward Rendering与Forward+.md",
@@ -3499,7 +3501,8 @@
         "14_性能分析与优化/帧瓶颈诊断",
         "13_渲染架构/渲染路径与光源组织"
       ],
-      "historical_content_sha256": "b82cea81429964b10e784ea643f4bac9a0831b1d8b5f49be1162536c07cf7d77"
+      "historical_content_sha256": "b82cea81429964b10e784ea643f4bac9a0831b1d8b5f49be1162536c07cf7d77",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/13_渲染架构/GBuffer布局.md",
@@ -3595,13 +3598,14 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属13_渲染架构；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "344adb42a7fccd38cc3ac317eadd79539c6c20dc6a15d06256521e1066cc4b8c",
+      "content_sha256": "cfe230dbb3d1cb803db66cb0d880a8c2fbae623944e1a6b5a823d6036e769f34",
       "related_topics": [
         "14_性能分析与优化/PSO首次使用卡顿",
         "03_Shader编程/Shader Variant管理",
         "13_渲染架构/GPU资源绑定"
       ],
-      "historical_content_sha256": "ef63bfeeaa27e8d293ed60d95ecd63b144dadcf769e847995accbae85cb7c2a3"
+      "historical_content_sha256": "ef63bfeeaa27e8d293ed60d95ecd63b144dadcf769e847995accbae85cb7c2a3",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/13_渲染架构/Render Graph.md",
@@ -3622,7 +3626,8 @@
         "13_渲染架构/GPU同步与屏障",
         "13_渲染架构/GPU资源生命周期"
       ],
-      "historical_content_sha256": "e6190658bb8b1f87628c519b5804b5fd8633bfb4a4ae7e2d674b97009786c476"
+      "historical_content_sha256": "e6190658bb8b1f87628c519b5804b5fd8633bfb4a4ae7e2d674b97009786c476",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/13_渲染架构/Render Pass与附件.md",
@@ -3633,13 +3638,14 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属13_渲染架构；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "af48352975a83d0950047cc5f732e6b2d0fa8d9e0c5e0d6dc67aef7d30e3e9f2",
+      "content_sha256": "49766a1aa8558ec3cee8b51e5d1dc5c80d96d2e242a980604fe5198a2fd7d448",
       "related_topics": [
         "13_渲染架构/渲染命令的组织方式",
         "13_渲染架构/GPU同步与屏障",
         "13_渲染架构/GBuffer布局"
       ],
-      "historical_content_sha256": "ae3467ad819d8cb43cfa7b6ba26acea63b0894b3f0012369a7c0938a8a6dc87c"
+      "historical_content_sha256": "ae3467ad819d8cb43cfa7b6ba26acea63b0894b3f0012369a7c0938a8a6dc87c",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/13_渲染架构/Tiled与Clustered光源剔除.md",
@@ -3650,7 +3656,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属13_渲染架构；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "383b3060b0e72af761dd69c85776772527258deb4b1d142b14a1e8fd2850c306",
+      "content_sha256": "7b98c5f1073f5d346446a22d9c2907355a9fba1a0ba4f9deb1d1a4bfa46f508c",
       "related_topics": [
         "02_GPU与光栅化管线/渲染帧流程",
         "05_光照阴影与GI/直接光照",
@@ -3659,7 +3665,8 @@
         "14_性能分析与优化/帧瓶颈诊断",
         "13_渲染架构/渲染路径与光源组织"
       ],
-      "historical_content_sha256": "b470d6a8772c7889f7f57013742a04d4897ed70635a769bda7588d6f95f28a25"
+      "historical_content_sha256": "b470d6a8772c7889f7f57013742a04d4897ed70635a769bda7588d6f95f28a25",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/13_渲染架构/渲染命令的组织方式.md",
@@ -3733,7 +3740,8 @@
         "14_性能分析与优化/帧瓶颈诊断",
         "14_性能分析与优化/性能对照实验"
       ],
-      "historical_content_sha256": "3a50266b03dd1a5243e362f34cc89db714d95d224048a4c441e89b92869b71d8"
+      "historical_content_sha256": "3a50266b03dd1a5243e362f34cc89db714d95d224048a4c441e89b92869b71d8",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/14_性能分析与优化/VFX性能.md",
@@ -3774,7 +3782,8 @@
         "06_纹理技术/Texture Streaming",
         "06_纹理技术/Virtual Texture"
       ],
-      "historical_content_sha256": "6942627cb50c2129dd0bdc178458b46b70b516a03eda2ac1bdb8bbab6cca56df"
+      "historical_content_sha256": "6942627cb50c2129dd0bdc178458b46b70b516a03eda2ac1bdb8bbab6cca56df",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/14_性能分析与优化/帧瓶颈诊断.md",
@@ -3785,7 +3794,7 @@
       "category_review": "PASS",
       "adoption_status": "最终归属已采用",
       "reason": "主归属14_性能分析与优化；全58篇双链存在性检查无缺失；外部反链由父任务集成。",
-      "content_sha256": "1559b340e8073fe0a8b5ce009670bf4c1b414dcbe030a902f85ec03a7826541d",
+      "content_sha256": "297a9f7379e45f3ff8e5e0a6bf6de4ba62b64b9355cf2c68868727b6eb231624",
       "related_topics": [
         "02_GPU与光栅化管线/GPU执行与访存",
         "13_渲染架构/GPU同步与屏障",
@@ -3797,7 +3806,8 @@
         "14_性能分析与优化/帧捕获与性能分析工具",
         "14_性能分析与优化/移动端渲染优化"
       ],
-      "historical_content_sha256": "0901c84329e72dc888131eb17d5fc48075c1cc3f6aa625a216ca39a451214ea4"
+      "historical_content_sha256": "0901c84329e72dc888131eb17d5fc48075c1cc3f6aa625a216ca39a451214ea4",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/14_性能分析与优化/性能对照实验.md",
@@ -3814,7 +3824,8 @@
         "02_GPU与光栅化管线/GPU执行与访存",
         "13_渲染架构/Command Buffer与帧提交"
       ],
-      "historical_content_sha256": "320723cc98b6030a4fc1726ece18b808f4f6f402b0fc76edaa1e38dc1052f567"
+      "historical_content_sha256": "320723cc98b6030a4fc1726ece18b808f4f6f402b0fc76edaa1e38dc1052f567",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/14_性能分析与优化/移动端渲染优化.md",
@@ -3840,7 +3851,8 @@
         "13_渲染架构/Draw Call与合批",
         "03_Shader编程/Shader Variant管理"
       ],
-      "historical_content_sha256": "2ffa1d936c233b710c047e85fd48b3a4206e4d6a9711236b6ad8f0446d3f580b"
+      "historical_content_sha256": "2ffa1d936c233b710c047e85fd48b3a4206e4d6a9711236b6ad8f0446d3f580b",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/15_资产与工具管线/DCC资产交换.md",
@@ -3857,7 +3869,8 @@
         "09_动画系统/骨骼动画与蒙皮",
         "15_资产与工具管线/资产构建与发布"
       ],
-      "historical_content_sha256": "94d134aabbf841fe8fdc3066aa5899f7e29e4d07f1606adbd5318e53ace14695"
+      "historical_content_sha256": "94d134aabbf841fe8fdc3066aa5899f7e29e4d07f1606adbd5318e53ace14695",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/15_资产与工具管线/WFC.md",
@@ -3876,7 +3889,8 @@
         "08_几何与网格/Heightfield地形",
         "08_几何与网格/植被包裹法线"
       ],
-      "historical_content_sha256": "30d8a4341793d263bbb5e9fa6aa80b6568ef40ec16280f088d7093618ec184af"
+      "historical_content_sha256": "30d8a4341793d263bbb5e9fa6aa80b6568ef40ec16280f088d7093618ec184af",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/15_资产与工具管线/大型资产版本控制.md",
@@ -3913,7 +3927,8 @@
         "08_几何与网格/植被包裹法线",
         "15_资产与工具管线/WFC"
       ],
-      "historical_content_sha256": "44a419536a16ba9d9f71f714e595949050f3a43c680948fde761172c6c234f01"
+      "historical_content_sha256": "44a419536a16ba9d9f71f714e595949050f3a43c680948fde761172c6c234f01",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/15_资产与工具管线/编辑器工具的事务与批处理.md",
@@ -3973,7 +3988,8 @@
         "15_资产与工具管线/资产构建与发布",
         "15_资产与工具管线/大型资产版本控制"
       ],
-      "historical_content_sha256": "bb3da01e747ee8e7b9e43f634a40385c64abcb8f9214ac6b2941796685236763"
+      "historical_content_sha256": "bb3da01e747ee8e7b9e43f634a40385c64abcb8f9214ac6b2941796685236763",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/15_资产与工具管线/资产构建与发布.md",
@@ -3991,7 +4007,8 @@
         "15_资产与工具管线/大型资产版本控制",
         "15_资产与工具管线/资产构建CI"
       ],
-      "historical_content_sha256": "54eb6487418489c5cec7298c3ce4dc0fcc187baab5cf9abf89e2e3e825909458"
+      "historical_content_sha256": "54eb6487418489c5cec7298c3ce4dc0fcc187baab5cf9abf89e2e3e825909458",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/16_编程与数据结构/C++工程边界.md",
@@ -4060,7 +4077,8 @@
         "16_编程与数据结构/Python宿主集成",
         "16_编程与数据结构/跨语言接口"
       ],
-      "historical_content_sha256": "c45b1c26a6ae7c051d97027e6e0fb642c4be1d61bc7a72b9b1d52be0bbe7d8a2"
+      "historical_content_sha256": "c45b1c26a6ae7c051d97027e6e0fb642c4be1d61bc7a72b9b1d52be0bbe7d8a2",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/16_编程与数据结构/Python宿主集成.md",
@@ -4079,7 +4097,8 @@
         "16_编程与数据结构/CSharp运行模型",
         "16_编程与数据结构/跨语言接口"
       ],
-      "historical_content_sha256": "c119c53a23dd9f25882836b81c6cbc372e83bb83342b599288c6b12fa370579f"
+      "historical_content_sha256": "c119c53a23dd9f25882836b81c6cbc372e83bb83342b599288c6b12fa370579f",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/16_编程与数据结构/内存布局与分配.md",
@@ -4142,7 +4161,8 @@
         "16_编程与数据结构/图搜索",
         "16_编程与数据结构/空间索引"
       ],
-      "historical_content_sha256": "232ddc3de61d0fd2e10e5792ae8394dabe7a6a48ed2f247d6541d7f6d133cb49"
+      "historical_content_sha256": "232ddc3de61d0fd2e10e5792ae8394dabe7a6a48ed2f247d6541d7f6d133cb49",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/16_编程与数据结构/对象池.md",
@@ -4181,7 +4201,8 @@
         "16_编程与数据结构/内存布局与分配",
         "16_编程与数据结构/对象池"
       ],
-      "historical_content_sha256": "d052d221c7a4f169fbb6f1c0003e7ad7352340dd67029c7ed3ff27ee4066c0bc"
+      "historical_content_sha256": "d052d221c7a4f169fbb6f1c0003e7ad7352340dd67029c7ed3ff27ee4066c0bc",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/16_编程与数据结构/文件IO.md",
@@ -4234,7 +4255,8 @@
         "16_编程与数据结构/容器选择",
         "16_编程与数据结构/图搜索"
       ],
-      "historical_content_sha256": "69872c4eecb18174b24a8fa05b75eb3c8b46f915ebb323352fda9f3f87253b84"
+      "historical_content_sha256": "69872c4eecb18174b24a8fa05b75eb3c8b46f915ebb323352fda9f3f87253b84",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/16_编程与数据结构/算法与数据结构导读.md",
@@ -4273,7 +4295,8 @@
         "16_编程与数据结构/图搜索",
         "16_编程与数据结构/空间索引"
       ],
-      "historical_content_sha256": "f7a06f1a0f2cf22f498d1152c403e76dcb27de623ff8ed7b5f71a07bd1c874a0"
+      "historical_content_sha256": "f7a06f1a0f2cf22f498d1152c403e76dcb27de623ff8ed7b5f71a07bd1c874a0",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/16_编程与数据结构/线程同步.md",
@@ -4312,7 +4335,8 @@
         "16_编程与数据结构/进程与调度",
         "16_编程与数据结构/线程同步"
       ],
-      "historical_content_sha256": "5811b97a467f4b756407ed8e81048ed4b62da962c585ff1e0bdc9ee8a525294a"
+      "historical_content_sha256": "5811b97a467f4b756407ed8e81048ed4b62da962c585ff1e0bdc9ee8a525294a",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/16_编程与数据结构/跨语言接口.md",
@@ -4355,7 +4379,8 @@
         "16_编程与数据结构/线程同步",
         "16_编程与数据结构/文件IO"
       ],
-      "historical_content_sha256": "9878a02f681b19ba51eb7d488cfaee1d219392a6d376dec83fceaa35d44531d8"
+      "historical_content_sha256": "9878a02f681b19ba51eb7d488cfaee1d219392a6d376dec83fceaa35d44531d8",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/17_AIGC与Agent管线/Agent资产管线.md",
@@ -4427,7 +4452,8 @@
         "17_AIGC与Agent管线/扩散模型",
         "17_AIGC与Agent管线/视频生成时序一致性"
       ],
-      "historical_content_sha256": "112639bd6eeb8e583dfce70cd639e2bf82719ab410e99051eb05e92d7cf16981"
+      "historical_content_sha256": "112639bd6eeb8e583dfce70cd639e2bf82719ab410e99051eb05e92d7cf16981",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/17_AIGC与Agent管线/LoRA训练.md",
@@ -4460,7 +4486,8 @@
         "17_AIGC与Agent管线/ComfyUI工作流",
         "17_AIGC与Agent管线/LoRA训练"
       ],
-      "historical_content_sha256": "1fa860267c8dd509f1df65224f55b5f1c9a2ae77007be578e8781d9bf3c94f77"
+      "historical_content_sha256": "1fa860267c8dd509f1df65224f55b5f1c9a2ae77007be578e8781d9bf3c94f77",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/17_AIGC与Agent管线/生成条件控制.md",
@@ -4476,7 +4503,8 @@
         "17_AIGC与Agent管线/扩散模型",
         "17_AIGC与Agent管线/LoRA训练"
       ],
-      "historical_content_sha256": "0e89208e2fa22fc721e78f8de19cab5fb200e87aa3386e0941437ab3f1465d06"
+      "historical_content_sha256": "0e89208e2fa22fc721e78f8de19cab5fb200e87aa3386e0941437ab3f1465d06",
+      "fullread_review": "references/fullread-batch-04-2026-10-24.md"
     },
     {
       "path": "知识库/17_AIGC与Agent管线/视频生成时序一致性.md",

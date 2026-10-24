@@ -24,7 +24,7 @@
 
 ### Vulkan 动态渲染示例
 
-Vulkan 1.3 支持动态渲染，以下只描述颜色附件开始信息。进入前已将图像转换到指定布局；之后还需要绘制、结束和后续资源同步。
+以下机制片段面向Vulkan 1.3；创建设备时先查询并启用dynamicRendering特性，API版本本身不能代替特性启用。片段只描述颜色附件开始信息。进入前已将图像转换到指定布局；之后还需要绘制、结束和后续资源同步。
 
 ```cpp
 VkRenderingAttachmentInfo color{};
@@ -98,6 +98,8 @@ Framebuffer Fetch或附件反馈扩展允许的访问有专门API条件，不能
 示例状态：本页代码用于解释对应的数据和调用约束，完整资源创建、类型与调用环境由项目提供。除文中另列的实际实验外，本页未执行目标引擎编译、GPU捕获或性能计时。
 
 ## 参考资料
+
+- [Vulkan：动态渲染特性](https://docs.vulkan.org/refpages/latest/refpages/source/VkPhysicalDeviceDynamicRenderingFeatures.html)：设备创建时启用dynamicRendering；2026年10月24日核读。
 
 - [Khronos：Render Pass](https://docs.vulkan.org/spec/latest/chapters/renderpass.html)：附件加载/存储操作、动态渲染与局部读取。
 - [Khronos：Subpasses](https://docs.vulkan.org/samples/latest/samples/performance/subpasses/README.html)：片上保留与依赖条件的官方示例。
